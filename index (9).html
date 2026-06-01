@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Podcast del Migrante — Historias Reales. Impacto Real.</title>
+  <meta name="description" content="Descubre historias de migrantes, emprendedores y líderes latinos en Canadá. Una producción de eRadio Global en colaboración con Xplore Canada." />
+  <meta name="keywords" content="podcast migrante, latinos canada, emprendedores latinos, eradio global, xplore canada, inmigracion canada" />
+  <meta property="og:title" content="El Podcast del Migrante" />
+  <meta property="og:description" content="Historias reales. Emprendedores reales. Impacto real." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://img.youtube.com/vi/gRbeyvF_IgY/maxresdefault.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #080808;
+      --black-2: #0f0f0f;
+      --black-3: #161616;
+      --green: #8DC63F;
+      --green-dim: #6fa030;
+      --green-glow: rgba(141,198,63,0.18);
+      --green-glow-strong: rgba(141,198,63,0.35);
+      --white: #f5f5f5;
+      --white-dim: rgba(245,245,245,0.65);
+      --white-faint: rgba(245,245,245,0.1);
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 10px;
+      --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--black-2); }
+    ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 4px; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+      background: linear-gradient(to bottom, rgba(8,8,8,0.98) 0%, transparent 100%);
+      backdrop-filter: blur(2px);
+      transition: background var(--transition);
+    }
+    nav.scrolled { background: rgba(8,8,8,0.97); }
+
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo-badge {
+      width: 38px; height: 38px;
+      background: var(--green);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .nav-brand-text {
+      display: flex; flex-direction: column; line-height: 1.1;
+    }
+    .nav-brand-text span:first-child {
+      font-family: var(--font-display);
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .nav-brand-text span:last-child {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--white-dim);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--green);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--green-dim) !important; color: #fff !important; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 5px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--white);
+      transition: var(--transition);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://img.youtube.com/vi/gRbeyvF_IgY/maxresdefault.jpg');
+      background-size: cover;
+      background-position: center top;
+      filter: brightness(0.38) saturate(1.1);
+      transform: scale(1.04);
+      animation: heroZoom 18s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom {
+      0% { transform: scale(1.04); }
+      100% { transform: scale(1.12); }
+    }
+
+    .hero-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(8,8,8,0.7) 0%,
+        transparent 50%,
+        rgba(8,8,8,0.3) 100%
+      ),
+      linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,0.4) 40%, transparent 70%),
+      linear-gradient(to right, rgba(8,8,8,0.85) 0%, transparent 55%);
+    }
+
+    .hero-noise {
+      position: absolute; inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 5% 100px;
+      max-width: 700px;
+      animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-glow);
+      border: 1px solid rgba(141,198,63,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 9vw, 110px);
+      line-height: 0.9;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .hero-title .accent { color: var(--green); }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(15px, 2vw, 20px);
+      color: var(--white-dim);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .hero-subtitle strong { color: var(--white); font-style: normal; }
+
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      border: none; cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 24px rgba(141,198,63,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--green-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(141,198,63,0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+      backdrop-filter: blur(8px);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* ─── FEATURED EPISODE ─── */
+    .featured {
+      padding: 0 5% 80px;
+      margin-top: -40px;
+      position: relative; z-index: 3;
+    }
+
+    .section-label {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 28px;
+    }
+    .section-label::before {
+      content: '';
+      width: 4px; height: 28px;
+      background: var(--green);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-label h2 {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 28px);
+      letter-spacing: 3px;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    .section-label span {
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-left: 6px;
+    }
+
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--black-3);
+      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .featured-video {
+      position: relative;
+      aspect-ratio: 16/9;
+    }
+    .featured-video iframe {
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .featured-video-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: opacity var(--transition);
+    }
+    .featured-video-overlay img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .featured-video-overlay .play-btn {
+      position: absolute;
+      width: 72px; height: 72px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 12px rgba(141,198,63,0.15), 0 8px 32px rgba(141,198,63,0.4);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .featured-video-overlay:hover .play-btn {
+      transform: scale(1.12);
+      box-shadow: 0 0 0 20px rgba(141,198,63,0.1), 0 12px 40px rgba(141,198,63,0.5);
+    }
+    .featured-video-overlay .play-btn svg {
+      width: 28px; fill: #fff; margin-left: 4px;
+    }
+    .featured-video-overlay.hidden { opacity: 0; pointer-events: none; }
+
+    .featured-info {
+      padding: 40px 36px;
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 16px;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .episode-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .episode-num {
+      background: var(--green);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .featured-info h3 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.1;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .featured-info p {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.7;
+    }
+
+    .featured-topics {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .topic-chip {
+      background: var(--white-faint);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: var(--white-dim);
+      font-weight: 500;
+    }
+    .topic-chip.green {
+      background: var(--green-glow);
+      border-color: rgba(141,198,63,0.25);
+      color: var(--green);
+    }
+
+    .featured-sponsor {
+      padding: 12px 16px;
+      background: rgba(141,198,63,0.06);
+      border-left: 3px solid var(--green);
+      border-radius: 0 6px 6px 0;
+    }
+    .featured-sponsor p { font-size: 12px; color: var(--white-dim); }
+    .featured-sponsor strong { color: var(--white); }
+
+    /* ─── CATEGORIES ─── */
+    .categories-section {
+      padding: 20px 5% 60px;
+    }
+
+    .categories-filters {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .cat-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--black-3);
+      color: var(--white-dim);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 9px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+      box-shadow: 0 4px 20px rgba(141,198,63,0.25);
+    }
+
+    /* ─── EPISODE GRID ─── */
+    .episodes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .episode-card {
+      background: var(--black-3);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      animation: cardFadeIn 0.5s ease both;
+    }
+    .episode-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(141,198,63,0.2);
+      border-color: rgba(141,198,63,0.25);
+    }
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .card-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .episode-card:hover .card-thumb img { transform: scale(1.08); }
+
+    .card-thumb-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .episode-card:hover .card-thumb-overlay { opacity: 1; }
+    .card-play {
+      width: 52px; height: 52px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(141,198,63,0.4);
+      transform: scale(0.8);
+      transition: transform var(--transition);
+    }
+    .episode-card:hover .card-play { transform: scale(1); }
+    .card-play svg { width: 20px; fill: #fff; margin-left: 3px; }
+
+    .card-category-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: rgba(8,8,8,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--white);
+      backdrop-filter: blur(4px);
+    }
+    .card-ep-num {
+      position: absolute; bottom: 12px; right: 12px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+    .card-body h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .card-body p {
+      font-size: 13px;
+      color: var(--white-dim);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .card-action {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .btn-watch {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 8px 18px;
+      border-radius: 4px;
+      border: none; cursor: pointer;
+      text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+      font-family: var(--font-body);
+    }
+    .btn-watch:hover { background: var(--green-dim); transform: translateX(2px); }
+    .card-share {
+      display: flex; gap: 8px;
+    }
+    .share-ico {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition);
+      color: var(--white-dim);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .share-ico:hover { background: var(--white-faint); color: var(--white); border-color: rgba(255,255,255,0.3); }
+
+    /* ─── STATS SECTION ─── */
+    .stats-section {
+      padding: 80px 5%;
+      background: linear-gradient(135deg, var(--black-2) 0%, var(--black-3) 100%);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .stats-numbers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      color: var(--green);
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--white-dim);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 6px;
+      display: block;
+    }
+
+    .stats-divider {
+      width: 1px;
+      height: 160px;
+      background: linear-gradient(to bottom, transparent, rgba(141,198,63,0.4), transparent);
+    }
+
+    .stats-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .stats-text p {
+      font-size: 15px;
+      color: var(--white-dim);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* ─── PARTICIPATE SECTION ─── */
+    .participate-section {
+      padding: 100px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    .participate-section::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(141,198,63,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .participate-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .participate-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 60px);
+      letter-spacing: 2px;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .participate-content h2 em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .participate-content p {
+      font-size: 15px;
+      color: var(--white-dim);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .benefits-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 14px;
+      margin-bottom: 40px;
+    }
+    .benefits-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.5;
+    }
+    .benefits-list li::before {
+      content: '';
+      width: 20px; height: 20px;
+      background: var(--green-glow);
+      border: 1px solid rgba(141,198,63,0.3);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+      display: flex; align-items: center; justify-content: center;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l2 2 4-4' stroke='%238DC63F' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .benefits-list li strong { color: var(--white); }
+
+    .price-tag {
+      display: inline-flex; align-items: baseline; gap: 6px;
+      margin-bottom: 28px;
+    }
+    .price-tag .currency { font-size: 20px; color: var(--green); font-weight: 700; }
+    .price-tag .amount {
+      font-family: var(--font-display);
+      font-size: 64px;
+      color: var(--white);
+      line-height: 1;
+    }
+    .price-tag .note { font-size: 13px; color: var(--white-dim); }
+
+    /* ─── CONTACT FORM ─── */
+    .contact-form {
+      background: var(--black-3);
+      border-radius: 14px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .contact-form h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .contact-form p {
+      font-size: 13px;
+      color: var(--white-dim);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-family: var(--font-body);
+      color: var(--white);
+      outline: none;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+      background: rgba(141,198,63,0.05);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px;
+    }
+    .form-success.show { display: block; }
+    .form-success .checkmark {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .form-success h4 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--green);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+    .form-success p { font-size: 14px; color: var(--white-dim); }
+
+    /* ─── ABOUT SECTION ─── */
+    .about-section {
+      padding: 100px 5%;
+      background: var(--black-2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    .about-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 60px);
+      letter-spacing: 3px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .about-header p {
+      font-size: 16px;
+      color: var(--white-dim);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 70px;
+    }
+    .team-card {
+      background: var(--black-3);
+      border-radius: 14px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.07);
+      display: flex; gap: 24px;
+      align-items: flex-start;
+      transition: border-color var(--transition);
+    }
+    .team-card:hover { border-color: rgba(141,198,63,0.2); }
+
+    .team-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dim) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: #fff;
+      flex-shrink: 0;
+      border: 3px solid rgba(141,198,63,0.3);
+    }
+    .team-info h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .team-info .role {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .team-info p { font-size: 14px; color: var(--white-dim); line-height: 1.6; }
+
+    .alliance-banner {
+      background: linear-gradient(135deg, rgba(141,198,63,0.08) 0%, rgba(141,198,63,0.03) 100%);
+      border: 1px solid rgba(141,198,63,0.2);
+      border-radius: 14px;
+      padding: 48px;
+      text-align: center;
+    }
+    .alliance-banner .logos {
+      display: flex; align-items: center; justify-content: center; gap: 32px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .brand-pill {
+      background: var(--black-2);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 40px;
+      padding: 10px 24px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: var(--white);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .brand-pill .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .plus-sign {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--green);
+    }
+    .alliance-banner h3 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .alliance-banner p {
+      font-size: 15px;
+      color: var(--white-dim);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+      backdrop-filter: blur(8px);
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+    .modal {
+      background: var(--black-3);
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      max-width: 900px;
+      width: 100%;
+      overflow: hidden;
+      transform: scale(0.95);
+      transition: transform var(--transition);
+    }
+    .modal-overlay.open .modal { transform: scale(1); }
+
+    .modal-video {
+      position: relative;
+      aspect-ratio: 16/9;
+    }
+    .modal-video iframe { width: 100%; height: 100%; border: none; }
+
+    .modal-info {
+      padding: 28px 32px;
+    }
+    .modal-info h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .modal-info p { font-size: 14px; color: var(--white-dim); line-height: 1.6; }
+
+    .modal-actions {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(4px);
+      transition: background var(--transition);
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.15); }
+
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-body);
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: opacity var(--transition);
+    }
+    .share-btn:hover { opacity: 0.85; }
+    .share-btn.facebook { background: #1877F2; color: #fff; }
+    .share-btn.whatsapp { background: #25D366; color: #fff; }
+    .share-btn.linkedin { background: #0A66C2; color: #fff; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 60px 5% 40px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      background: var(--black-2);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--white-dim);
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
+    .footer-green { color: var(--green); }
+
+    /* ─── BACK TO TOP ─── */
+    .back-top {
+      position: fixed; bottom: 32px; right: 32px;
+      width: 44px; height: 44px;
+      background: var(--green);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(141,198,63,0.35);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all var(--transition);
+      z-index: 800;
+    }
+    .back-top.visible { opacity: 1; transform: translateY(0); }
+    .back-top svg { width: 18px; fill: #fff; }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      position: fixed; inset: 0;
+      background: rgba(8,8,8,0.98);
+      z-index: 999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 32px;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(12px);
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 36px;
+      letter-spacing: 3px;
+      color: var(--white);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--green); }
+    .mobile-menu-close {
+      position: absolute; top: 24px; right: 24px;
+      background: none; border: none;
+      color: var(--white); font-size: 28px; cursor: pointer;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-info { border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
+      .stats-inner { grid-template-columns: 1fr; gap: 40px; }
+      .stats-divider { display: none; }
+      .participate-inner { grid-template-columns: 1fr; gap: 48px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content { padding-bottom: 80px; }
+      .categories-filters { gap: 8px; }
+      .cat-btn { padding: 7px 14px; font-size: 12px; }
+      .episodes-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .modal-info { padding: 20px; }
+      .modal-info h3 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-brand">
+    <div class="nav-logo-badge">e</div>
+    <div class="nav-brand-text">
+      <span>PODCAST DEL MIGRANTE</span>
+      <span>eRadio Global × Xplore Canada</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#episodios">Episodios</a></li>
+    <li><a href="#participe">Participe</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#participe" class="nav-cta">🎙 Solicitar Entrevista</a></li>
+  </ul>
+  <button class="nav-hamburger" id="menuToggle" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="menuClose">✕</button>
+  <a href="#episodios" class="mobile-link">Episodios</a>
+  <a href="#participe" class="mobile-link">Participe</a>
+  <a href="#nosotros" class="mobile-link">Nosotros</a>
+  <a href="#participe" class="mobile-link" style="color:var(--green)">Solicitar Entrevista</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Nueva Temporada en Vivo</div>
+    <h1 class="hero-title">
+      EL PODCAST<br>
+      DEL <span class="accent">MIGRANTE</span>
+    </h1>
+    <p class="hero-subtitle">
+      <strong>Historias reales.</strong> Emprendedores reales.<br>
+      Impacto real en la comunidad latina de Canadá.
+    </p>
+    <div class="hero-actions">
+      <a href="#episodios" class="btn-primary">
+        <svg viewBox="0 0 24 24" style="width:18px;fill:#fff"><path d="M8 5v14l11-7z"/></svg>
+        Ver Episodios
+      </a>
+      <a href="#nosotros" class="btn-secondary">
+        🎙 Sobre el Proyecto
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED EPISODE -->
+<section class="featured">
+  <div class="section-label">
+    <h2>Episodio Destacado <span>EP. 01</span></h2>
+  </div>
+  <div class="featured-card">
+    <div class="featured-video" id="featuredVideoWrap">
+      <div class="featured-video-overlay" id="featuredOverlay" onclick="playFeatured()">
+        <img src="https://img.youtube.com/vi/gRbeyvF_IgY/maxresdefault.jpg" alt="Country Hills Toyota" />
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="featured-info">
+      <div class="episode-tag">
+        <span class="episode-num">EP. 01</span>
+        Automotriz · Finanzas
+      </div>
+      <h3>¿Cómo comprar un vehículo en Canadá?</h3>
+      <p>Una conversación exclusiva con Country Hills Toyota donde exploramos todo lo que los nuevos inmigrantes necesitan saber para su primer vehículo en Canadá.</p>
+      <div class="featured-topics">
+        <span class="topic-chip green">Compra de Vehículos</span>
+        <span class="topic-chip">Financiamiento</span>
+        <span class="topic-chip">Crédito</span>
+        <span class="topic-chip">Vehículos Híbridos</span>
+        <span class="topic-chip">Nuevos Inmigrantes</span>
+      </div>
+      <div class="featured-sponsor">
+        <p>Con la participación de <strong>Country Hills Toyota</strong> — Primer episodio oficial del Podcast del Migrante.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="openModal('gRbeyvF_IgY','¿Cómo comprar un vehículo en Canadá?','Conversación exclusiva con Country Hills Toyota sobre compra de vehículos, financiamiento, crédito, vehículos híbridos y consejos para nuevos inmigrantes.')">
+          <svg viewBox="0 0 24 24" style="width:16px;fill:#fff"><path d="M8 5v14l11-7z"/></svg>
+          Ver Episodio
+        </button>
+        <a href="https://wa.me/?text=Mira%20este%20episodio%20del%20Podcast%20del%20Migrante%3A%20https%3A%2F%2Fyoutu.be%2FgRbeyvF_IgY" target="_blank" class="btn-secondary" style="padding:10px 18px;font-size:13px;">
+          📤 Compartir
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES + EPISODES -->
+<section class="categories-section" id="episodios">
+  <div class="section-label" style="margin-bottom:24px;">
+    <h2>Todos los Episodios</h2>
+  </div>
+  <div class="categories-filters">
+    <button class="cat-btn active" data-cat="all">🎬 Todos</button>
+    <button class="cat-btn" data-cat="automotriz">🚗 Automotriz</button>
+    <button class="cat-btn" data-cat="negocios">💼 Negocios</button>
+    <button class="cat-btn" data-cat="emprendedores">🏢 Emprendedores</button>
+    <button class="cat-btn" data-cat="restaurantes">🍽 Restaurantes</button>
+    <button class="cat-btn" data-cat="vivienda">🏠 Vivienda</button>
+    <button class="cat-btn" data-cat="educacion">🎓 Educación</button>
+    <button class="cat-btn" data-cat="inmigracion">✈ Inmigración</button>
+    <button class="cat-btn" data-cat="exito">🌎 Historias de Éxito</button>
+  </div>
+  <div class="episodes-grid" id="episodesGrid">
+    <!-- JS rendered -->
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-inner">
+    <div class="stats-numbers">
+      <div class="stat-item">
+        <span class="stat-num" data-target="128600">0</span>
+        <span class="stat-label">Seguidores Combinados</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="15">0</span>
+        <span class="stat-label">Años de Experiencia</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="6">0</span>
+        <span class="stat-label">Episodios Publicados</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="10">0</span>
+        <span class="stat-label">Provincias Alcanzadas</span>
+      </div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stats-text">
+      <h2>ALCANCE REAL.<br>IMPACTO REAL.</h2>
+      <p>El Podcast del Migrante conecta su marca con más de 128,600 seguidores activos de la comunidad latina en Canadá a través de eRadio Global y Xplore Canada.</p>
+      <a href="#participe" class="btn-primary">Participar Ahora →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTICIPATE -->
+<section class="participate-section" id="participe">
+  <div class="participate-inner">
+    <div class="participate-content">
+      <h2>PARTICIPE EN EL <em>PODCAST</em></h2>
+      <p>Posicione su empresa ante miles de latinos en Canadá con una producción profesional de alta definición. Su historia merece ser contada.</p>
+      <ul class="benefits-list">
+        <li><div><strong>Alcance superior a 128,600 seguidores</strong> combinados en eRadio Global y Xplore Canada</div></li>
+        <li><div><strong>Producción profesional</strong> con equipos de alta definición</div></li>
+        <li><div><strong>Fotografía profesional</strong> incluida en la sesión</div></li>
+        <li><div><strong>Reels para redes sociales</strong> para Instagram, TikTok y Facebook</div></li>
+        <li><div><strong>Publicación multiplataforma</strong>: YouTube, Spotify, Apple Podcasts, eRadio</div></li>
+        <li><div><strong>30 a 45 minutos</strong> de grabación en estudio</div></li>
+      </ul>
+      <div class="price-tag">
+        <span class="currency">USD</span>
+        <span class="amount">550</span>
+        <span class="note">+ impuestos aplicables</span>
+      </div>
+      <a href="#contactForm" class="btn-primary" style="font-size:16px;padding:16px 36px;">
+        🎙 Solicitar Mi Entrevista
+      </a>
+    </div>
+    <div class="contact-form" id="contactForm">
+      <h3>SOLICITAR ENTREVISTA</h3>
+      <p>Complete el formulario y nos comunicaremos en menos de 24 horas.</p>
+      <div id="formContent">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre completo *</label>
+            <input type="text" id="fname" placeholder="Su nombre" />
+          </div>
+          <div class="form-group">
+            <label>Empresa *</label>
+            <input type="text" id="fcompany" placeholder="Nombre de su empresa" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ciudad *</label>
+            <input type="text" id="fcity" placeholder="Calgary, Toronto..." />
+          </div>
+          <div class="form-group">
+            <label>Teléfono *</label>
+            <input type="tel" id="fphone" placeholder="+1 (403) 000-0000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico *</label>
+          <input type="email" id="femail" placeholder="correo@empresa.com" />
+        </div>
+        <div class="form-group">
+          <label>Descripción de su negocio</label>
+          <textarea id="fbio" placeholder="Cuéntenos sobre su empresa, su historia y qué le gustaría compartir en el podcast..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;font-size:15px;padding:15px;">
+          Enviar Solicitud →
+        </button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <span class="checkmark">✅</span>
+        <h4>¡SOLICITUD ENVIADA!</h4>
+        <p>Gracias por su interés. El equipo del Podcast del Migrante se comunicará con usted en menos de 24 horas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="nosotros">
+  <div class="about-inner">
+    <div class="about-header">
+      <h2>QUIÉNES SOMOS</h2>
+      <p>Una alianza estratégica que une dos de las plataformas más influyentes de la comunidad latina en Canadá.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">NV</div>
+        <div class="team-info">
+          <h3>Nelson Vahos</h3>
+          <div class="role">Director · Host del Podcast</div>
+          <p>Periodista con más de 20 años de experiencia y fundador de eRadio Global desde 2011. Voz referente de la comunidad latina en Alberta, Canadá. Director del Vahos Group y creador de plataformas para migrantes.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">NP</div>
+        <div class="team-info">
+          <h3>Nelson Parada</h3>
+          <div class="role">Gerente · Xplore Canada</div>
+          <p>Gerente de Xplore Canada, plataforma líder en orientación e información para latinos que llegan a Canadá. Referente en recursos de inmigración, vivienda, empleo y adaptación cultural.</p>
+        </div>
+      </div>
+    </div>
+    <div class="alliance-banner">
+      <div class="logos">
+        <div class="brand-pill">
+          <div class="dot"></div>
+          eRadio Global
+        </div>
+        <div class="plus-sign">×</div>
+        <div class="brand-pill">
+          <div class="dot"></div>
+          Xplore Canada
+        </div>
+      </div>
+      <h3>UNA ALIANZA PARA LA COMUNIDAD LATINA</h3>
+      <p>eRadio Global y Xplore Canada unen su alcance y experiencia para crear el espacio definitivo de historias, emprendimiento e impacto de los latinos en Canadá.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-brand">
+        <div class="nav-logo-badge" style="width:44px;height:44px;font-size:26px;">e</div>
+        <div class="nav-brand-text">
+          <span style="font-size:18px;letter-spacing:3px;">PODCAST DEL MIGRANTE</span>
+          <span>eRadio Global × Xplore Canada</span>
+        </div>
+      </div>
+      <p>El espacio definitivo de historias reales de migrantes, emprendedores y líderes de la comunidad latina en Canadá.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Plataforma</h4>
+      <ul>
+        <li><a href="#episodios">Episodios</a></li>
+        <li><a href="#participe">Participar</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Categorías</h4>
+      <ul>
+        <li><a href="#episodios">🚗 Automotriz</a></li>
+        <li><a href="#episodios">💼 Negocios</a></li>
+        <li><a href="#episodios">✈ Inmigración</a></li>
+        <li><a href="#episodios">🌎 Éxito</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Redes Sociales</h4>
+      <ul>
+        <li><a href="https://www.eRadioGlobal.com" target="_blank">🌐 eRadioGlobal.com</a></li>
+        <li><a href="#" target="_blank">📺 YouTube</a></li>
+        <li><a href="#" target="_blank">📘 Facebook</a></li>
+        <li><a href="#" target="_blank">🎵 TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 <span class="footer-green">El Podcast del Migrante</span>. Una producción de eRadio Global × Xplore Canada. Brooks, Alberta, Canadá.</p>
+    <p style="color:rgba(141,198,63,0.5);font-size:11px;letter-spacing:1px;">HECHO CON 🍁 EN CANADÁ</p>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<!-- VIDEO MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-video">
+      <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="modal-info">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ─── EPISODES DATA ─── */
+  const episodes = [
+    {
+      id: 'gRbeyvF_IgY',
+      ep: '01',
+      title: '¿Cómo comprar un vehículo en Canadá?',
+      desc: 'Conversación exclusiva con Country Hills Toyota: financiamiento, crédito e híbridos para nuevos inmigrantes.',
+      cat: 'automotriz',
+      catLabel: '🚗 Automotriz',
+    },
+    {
+      id: 'm1-yKyxbI1Q',
+      ep: '02',
+      title: 'Emprendimiento Latino en Canadá',
+      desc: 'Historia de éxito de un emprendedor latino que construyó su negocio desde cero en Alberta.',
+      cat: 'emprendedores',
+      catLabel: '🏢 Emprendedores',
+    },
+    {
+      id: 'vwwOyVPMIig',
+      ep: '03',
+      title: 'Vivienda y Bienes Raíces',
+      desc: 'Todo lo que necesitas saber sobre comprar o rentar tu primera casa en Canadá como inmigrante.',
+      cat: 'vivienda',
+      catLabel: '🏠 Vivienda',
+    },
+    {
+      id: 'hc87lEbQ7FI',
+      ep: '04',
+      title: 'Negocios y Oportunidades',
+      desc: 'Descubre cómo los latinos están transformando el ecosistema empresarial canadiense.',
+      cat: 'negocios',
+      catLabel: '💼 Negocios',
+    },
+    {
+      id: 'XQmRXUmMXq8',
+      ep: '05',
+      title: 'Historia de Éxito Latino',
+      desc: 'Un migrante comparte su camino desde llegar sin recursos hasta construir una empresa exitosa.',
+      cat: 'exito',
+      catLabel: '🌎 Éxito',
+    },
+    {
+      id: '-_zGTWDrkhU',
+      ep: '06',
+      title: 'Inmigración: Lo Que Nadie Te Dice',
+      desc: 'Consejos prácticos y reales para navegar el proceso de inmigración a Canadá con éxito.',
+      cat: 'inmigracion',
+      catLabel: '✈ Inmigración',
+    },
+  ];
+
+  /* ─── RENDER EPISODES ─── */
+  function renderEpisodes(cat) {
+    const grid = document.getElementById('episodesGrid');
+    const filtered = cat === 'all' ? episodes : episodes.filter(e => e.cat === cat);
+    grid.innerHTML = filtered.map((ep, i) => `
+      <div class="episode-card" style="animation-delay:${i * 0.07}s" data-cat="${ep.cat}">
+        <div class="card-thumb">
+          <img src="https://img.youtube.com/vi/${ep.id}/mqdefault.jpg" alt="${ep.title}" loading="lazy" />
+          <div class="card-thumb-overlay">
+            <div class="card-play">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <span class="card-category-badge">${ep.catLabel}</span>
+          <span class="card-ep-num">EP. ${ep.ep}</span>
+        </div>
+        <div class="card-body">
+          <h3>${ep.title}</h3>
+          <p>${ep.desc}</p>
+          <div class="card-action">
+            <button class="btn-watch" onclick="openModal('${ep.id}','${ep.title.replace(/'/g,"\\'")}','${ep.desc.replace(/'/g,"\\'")}')">
+              ▶ Ver Episodio
+            </button>
+            <div class="card-share">
+              <a class="share-ico" href="https://wa.me/?text=Mira este episodio: https://youtu.be/${ep.id}" target="_blank" title="WhatsApp">💬</a>
+              <a class="share-ico" href="https://www.facebook.com/sharer/sharer.php?u=https://youtu.be/${ep.id}" target="_blank" title="Facebook">f</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+  renderEpisodes('all');
+
+  /* ─── CATEGORY FILTER ─── */
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      renderEpisodes(this.dataset.cat);
+    });
+  });
+
+  /* ─── MODAL ─── */
+  function openModal(videoId, title, desc) {
+    const overlay = document.getElementById('modalOverlay');
+    document.getElementById('modalIframe').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalDesc').textContent = desc;
+    document.getElementById('modalActions').innerHTML = `
+      <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://youtu.be/${videoId}" target="_blank">📘 Facebook</a>
+      <a class="share-btn whatsapp" href="https://wa.me/?text=Mira este episodio del Podcast del Migrante: https://youtu.be/${videoId}" target="_blank">💬 WhatsApp</a>
+      <a class="share-btn linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https://youtu.be/${videoId}" target="_blank">💼 LinkedIn</a>
+    `;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.getElementById('modalIframe').src = '';
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* ─── FEATURED VIDEO ─── */
+  function playFeatured() {
+    const wrap = document.getElementById('featuredVideoWrap');
+    document.getElementById('featuredOverlay').classList.add('hidden');
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/gRbeyvF_IgY?autoplay=1&rel=0';
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'width:100%;height:100%;border:none;position:absolute;inset:0;';
+    wrap.appendChild(iframe);
+  }
+
+  /* ─── NAV SCROLL ─── */
+  const nav = document.getElementById('mainNav');
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+    backTop.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  /* ─── MOBILE MENU ─── */
+  const mobileMenu = document.getElementById('mobileMenu');
+  document.getElementById('menuToggle').addEventListener('click', () => mobileMenu.classList.add('open'));
+  document.getElementById('menuClose').addEventListener('click', () => mobileMenu.classList.remove('open'));
+  document.querySelectorAll('.mobile-link').forEach(l => {
+    l.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  /* ─── COUNTER ANIMATION ─── */
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 2000;
+    const start = performance.now();
+    function update(t) {
+      const p = Math.min((t - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(ease * target);
+      el.textContent = val >= 1000 ? val.toLocaleString('es') : val;
+      if (p < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  const counters = document.querySelectorAll('.stat-num');
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObs.observe(c));
+
+  /* ─── FORM ─── */
+  function submitForm() {
+    const fields = ['fname','fcompany','fcity','fphone','femail'];
+    let valid = true;
+    fields.forEach(f => {
+      const el = document.getElementById(f);
+      if (!el.value.trim()) { el.style.borderColor = '#ff4444'; valid = false; }
+      else el.style.borderColor = '';
+    });
+    if (!valid) { alert('Por favor complete todos los campos obligatorios.'); return; }
+    
+    // Simulate submission
+    const btn = event.target;
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    setTimeout(() => {
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }, 1200);
+  }
+</script>
+</body>
+</html>
