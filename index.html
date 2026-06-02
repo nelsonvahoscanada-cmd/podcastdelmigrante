@@ -1330,14 +1330,14 @@
           <label>Descripción de su negocio</label>
           <textarea id="fbio" placeholder="Cuéntenos sobre su empresa, su historia y qué le gustaría compartir en el podcast..."></textarea>
         </div>
-        <button class="btn-primary" onclick="submitForm(this)" style="width:100%;justify-content:center;font-size:15px;padding:15px;">
+        <button class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;font-size:15px;padding:15px;">
           Enviar Solicitud →
         </button>
       </div>
       <div class="form-success" id="formSuccess">
         <span class="checkmark">✅</span>
         <h4>¡SOLICITUD ENVIADA!</h4>
-        <p>Solicitud enviada correctamente. Nos comunicaremos con usted en menos de 24 horas.</p>
+        <p>Gracias por su interés. El equipo del Podcast del Migrante se comunicará con usted en menos de 24 horas.</p>
       </div>
     </div>
   </div>
@@ -1629,32 +1629,26 @@
   }, { threshold: 0.5 });
   counters.forEach(c => counterObs.observe(c));
 
-  /* ─── FORM — Formspree POST real ─── */
-  async function submitForm(btn) {
-    var fieldIds = ['fname', 'fcompany', 'fcity', 'fphone', 'femail', 'fbio'];
-    var valid = true;
-
-    fieldIds.forEach(function(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      if (!el.value.trim()) {
-        el.style.borderColor = '#ff4444';
-        valid = false;
-      } else {
-        el.style.borderColor = '';
-      }
+  /* ─── FORM ─── */
+  function submitForm() {
+    const fields = ['fname','fcompany','fcity','fphone','femail'];
+    let valid = true;
+    fields.forEach(f => {
+      const el = document.getElementById(f);
+      if (!el.value.trim()) { el.style.borderColor = '#ff4444'; valid = false; }
+      else el.style.borderColor = '';
     });
-
-    if (!valid) {
-      var firstInvalid = fieldIds.find(function(id) {
-        var el = document.getElementById(id);
-        return el && !el.value.trim();
-      });
-      if (firstInvalid) document.getElementById(firstInvalid).focus();
-      return;
-    }
-
+    if (!valid) { alert('Por favor complete todos los campos obligatorios.'); return; }
+    
+    // Simulate submission
+    const btn = event.target;
     btn.textContent = 'Enviando...';
     btn.disabled = true;
-
- 
+    setTimeout(() => {
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }, 1200);
+  }
+</script>
+</body>
+</html>
