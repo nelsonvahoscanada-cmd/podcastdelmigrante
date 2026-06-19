@@ -1258,7 +1258,7 @@
         <span class="stat-label">Años de Experiencia</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num" data-target="6">0</span>
+        <span class="stat-num" data-target="8">0</span>
         <span class="stat-label">Episodios Publicados</span>
       </div>
       <div class="stat-item">
@@ -1330,14 +1330,14 @@
           <label>Descripción de su negocio</label>
           <textarea id="fbio" placeholder="Cuéntenos sobre su empresa, su historia y qué le gustaría compartir en el podcast..."></textarea>
         </div>
-        <button class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;font-size:15px;padding:15px;">
+        <button class="btn-primary" onclick="submitForm(this)" style="width:100%;justify-content:center;font-size:15px;padding:15px;">
           Enviar Solicitud →
         </button>
       </div>
       <div class="form-success" id="formSuccess">
         <span class="checkmark">✅</span>
         <h4>¡SOLICITUD ENVIADA!</h4>
-        <p>Gracias por su interés. El equipo del Podcast del Migrante se comunicará con usted en menos de 24 horas.</p>
+        <p>Solicitud enviada correctamente. Nos comunicaremos con usted en menos de 24 horas.</p>
       </div>
     </div>
   </div>
@@ -1503,12 +1503,31 @@
       cat: 'inmigracion',
       catLabel: '✈ Inmigración',
     },
+    {
+      id: 'Aa17xwk6dhk',
+      ep: '07',
+      title: 'Cómo Construir Patrimonio y Proteger tu Futuro Financiero en Canadá',
+      desc: 'Carlos D. Castillo, especialista en estrategias patrimoniales, comparte claves sobre planificación financiera, seguros y errores comunes que cometen los inmigrantes al manejar sus finanzas en Canadá.',
+      cat: 'educacion',
+      catLabel: '🎓 Educación',
+    },
+    {
+      id: 'TKF2x8n17sk',
+      ep: '08',
+      title: 'Nace un Sueño Latino en Calgary: Latin Cultural Centre',
+      desc: 'Dennis Méndez revela la visión detrás del Latin Cultural Centre, un espacio para unir, fortalecer y representar a la comunidad latina en Calgary.',
+      cat: 'exito',
+      catLabel: '🌎 Éxito',
+    },
   ];
 
   /* ─── RENDER EPISODES ─── */
   function renderEpisodes(cat) {
     const grid = document.getElementById('episodesGrid');
-    const filtered = cat === 'all' ? episodes : episodes.filter(e => e.cat === cat);
+    // Se invierte el orden: el último episodio agregado al arreglo "episodes"
+    // siempre aparece primero en la grilla (más nuevo = más arriba).
+    const ordered = [...episodes].reverse();
+    const filtered = cat === 'all' ? ordered : ordered.filter(e => e.cat === cat);
     grid.innerHTML = filtered.map((ep, i) => `
       <div class="episode-card" style="animation-delay:${i * 0.07}s" data-cat="${ep.cat}">
         <div class="card-thumb">
@@ -1629,25 +1648,76 @@
   }, { threshold: 0.5 });
   counters.forEach(c => counterObs.observe(c));
 
-  /* ─── FORM ─── */
-  function submitForm() {
-    const fields = ['fname','fcompany','fcity','fphone','femail'];
-    let valid = true;
-    fields.forEach(f => {
-      const el = document.getElementById(f);
-      if (!el.value.trim()) { el.style.borderColor = '#ff4444'; valid = false; }
-      else el.style.borderColor = '';
+  /* ─── FORM — Formspree POST real ─── */
+  async function submitForm(btn) {
+    var fieldIds = ['fname', 'fcompany', 'fcity', 'fphone', 'femail', 'fbio'];
+    var valid = true;
+
+    fieldIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (!el.value.trim()) {
+        el.style.borderColor = '#ff4444';
+        valid = false;
+      } else {
+        el.style.borderColor = '';
+      }
     });
-    if (!valid) { alert('Por favor complete todos los campos obligatorios.'); return; }
-    
-    // Simulate submission
-    const btn = event.target;
+
+    if (!valid) {
+      var firstInvalid = fieldIds.find(function(id) {
+        var el = document.getElementById(id);
+        return el && !el.value.trim();
+      });
+      if (firstInvalid) document.getElementById(firstInvalid).focus();
+      return;
+    }
+
     btn.textContent = 'Enviando...';
     btn.disabled = true;
-    setTimeout(() => {
-      document.getElementById('formContent').style.display = 'none';
-      document.getElementById('formSuccess').classList.add('show');
-    }, 1200);
+
+    // Formspree requiere el campo llamado exactamente "email" para identificar al remitente
+    var payload = {
+      nombre_completo: document.getElementById('fname').value.trim(),
+      empresa:         document.getElementById('fcompany').value.trim(),
+      ciudad:          document.getElementById('fcity').value.trim(),
+      telefono:        document.getElementById('fphone').value.trim(),
+      email:           document.getElementById('femail').value.trim(),
+      descripcion:     document.getElementById('fbio').value.trim()
+    };
+
+    try {
+      var response = await fetch('https://formspree.io/f/mlgvqgzg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      var result = await response.json();
+
+      if (response.ok) {
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      } else {
+        var errDetail = (result.errors || []).map(function(e){ return e.message; }).join(', ') || 'Error desconocido';
+        throw new Error(errDetail);
+      }
+    } catch (err) {
+      console.error('Formspree error:', err);
+      btn.textContent = 'Enviar Solicitud →';
+      btn.disabled = false;
+      var errBox = document.getElementById('formError');
+      if (!errBox) {
+        errBox = document.createElement('p');
+        errBox.id = 'formError';
+        errBox.style.cssText = 'color:#ff4444;font-size:13px;margin-top:14px;text-align:center;padding:10px;border:1px solid rgba(255,68,68,0.3);border-radius:6px;background:rgba(255,68,68,0.06);';
+        btn.insertAdjacentElement('afterend', errBox);
+      }
+      errBox.textContent = '❌ Error al enviar. Intente nuevamente.';
+    }
   }
 </script>
 </body>
