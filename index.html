@@ -106,15 +106,6 @@
     }
     .nav-links a:hover { color: var(--white); }
 
-    .nav-cta {
-      background: var(--green);
-      color: #fff !important;
-      padding: 8px 20px;
-      border-radius: 4px;
-      font-weight: 600 !important;
-      transition: background var(--transition) !important;
-    }
-    .nav-cta:hover { background: var(--green-dim) !important; color: #fff !important; }
 
     .nav-hamburger {
       display: none;
@@ -1141,9 +1132,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#episodios">Episodios</a></li>
-    <li><a href="#participe">Participe</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#participe" class="nav-cta">🎙 Solicitar Entrevista</a></li>
   </ul>
   <button class="nav-hamburger" id="menuToggle" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -1154,9 +1143,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-close" id="menuClose">✕</button>
   <a href="#episodios" class="mobile-link">Episodios</a>
-  <a href="#participe" class="mobile-link">Participe</a>
   <a href="#nosotros" class="mobile-link">Nosotros</a>
-  <a href="#participe" class="mobile-link" style="color:var(--green)">Solicitar Entrevista</a>
 </div>
 
 <!-- HERO -->
@@ -1264,7 +1251,7 @@
         <span class="stat-label">Años de Experiencia</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num" data-target="9">0</span>
+        <span class="stat-num" data-target="10">0</span>
         <span class="stat-label">Episodios Publicados</span>
       </div>
       <div class="stat-item">
@@ -1276,78 +1263,12 @@
     <div class="stats-text">
       <h2>ALCANCE REAL.<br>IMPACTO REAL.</h2>
       <p>El Podcast del Migrante conecta su marca con más de 128,600 seguidores activos de la comunidad latina en Canadá a través de eRadio Global.</p>
-      <a href="#participe" class="btn-primary">Participar Ahora →</a>
     </div>
   </div>
 </section>
 
 <!-- PARTICIPATE -->
-<section class="participate-section" id="participe">
-  <div class="participate-inner">
-    <div class="participate-content">
-      <h2>PARTICIPE EN EL <em>PODCAST</em></h2>
-      <p>Posicione su empresa ante miles de latinos en Canadá con una producción profesional de alta definición. Su historia merece ser contada.</p>
-      <ul class="benefits-list">
-        <li><div><strong>Alcance superior a 128,600 seguidores</strong> a través de eRadio Global</div></li>
-        <li><div><strong>Producción profesional</strong> con equipos de alta definición</div></li>
-        <li><div><strong>Fotografía profesional</strong> incluida en la sesión</div></li>
-        <li><div><strong>Reels para redes sociales</strong> para Instagram, TikTok y Facebook</div></li>
-        <li><div><strong>Publicación multiplataforma</strong>: YouTube, Spotify, Apple Podcasts, eRadio</div></li>
-        <li><div><strong>30 a 45 minutos</strong> de grabación en estudio</div></li>
-      </ul>
-      <div class="price-tag">
-        <span class="currency">USD</span>
-        <span class="amount">550</span>
-        <span class="note">+ impuestos aplicables</span>
-      </div>
-      <a href="#contactForm" class="btn-primary" style="font-size:16px;padding:16px 36px;">
-        🎙 Solicitar Mi Entrevista
-      </a>
-    </div>
-    <div class="contact-form" id="contactForm">
-      <h3>SOLICITAR ENTREVISTA</h3>
-      <p>Complete el formulario y nos comunicaremos en menos de 24 horas.</p>
-      <div id="formContent">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Nombre completo *</label>
-            <input type="text" id="fname" placeholder="Su nombre" />
-          </div>
-          <div class="form-group">
-            <label>Empresa *</label>
-            <input type="text" id="fcompany" placeholder="Nombre de su empresa" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Ciudad *</label>
-            <input type="text" id="fcity" placeholder="Calgary, Toronto..." />
-          </div>
-          <div class="form-group">
-            <label>Teléfono *</label>
-            <input type="tel" id="fphone" placeholder="+1 (403) 000-0000" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Correo electrónico *</label>
-          <input type="email" id="femail" placeholder="correo@empresa.com" />
-        </div>
-        <div class="form-group">
-          <label>Descripción de su negocio</label>
-          <textarea id="fbio" placeholder="Cuéntenos sobre su empresa, su historia y qué le gustaría compartir en el podcast..."></textarea>
-        </div>
-        <button class="btn-primary" onclick="submitForm(this)" style="width:100%;justify-content:center;font-size:15px;padding:15px;">
-          Enviar Solicitud →
-        </button>
-      </div>
-      <div class="form-success" id="formSuccess">
-        <span class="checkmark">✅</span>
-        <h4>¡SOLICITUD ENVIADA!</h4>
-        <p>Solicitud enviada correctamente. Nos comunicaremos con usted en menos de 24 horas.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ABOUT -->
 <section class="about-section" id="nosotros">
@@ -1386,7 +1307,6 @@
       <h4>Plataforma</h4>
       <ul>
         <li><a href="#episodios">Episodios</a></li>
-        <li><a href="#participe">Participar</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
       </ul>
     </div>
@@ -1507,6 +1427,14 @@
       ep: '09',
       title: 'Nuevo Permiso de Conducción en Alberta, Deportaciones y Créditos para Carros 2026',
       desc: 'Analizamos tres temas clave para la comunidad migrante: el nuevo permiso de conducción en Alberta, las órdenes de deportación que afectan a miles de personas, y cómo funcionan los créditos para comprar vehículos en Canadá.',
+      cat: 'inmigracion',
+      catLabel: '✈ Inmigración',
+    },
+    {
+      id: '-k4dzsDrA64',
+      ep: '10',
+      title: '3 REALIDADES que TODO MIGRANTE en Canadá DEBE CONOCER | Construcción, Violencia y Facebook',
+      desc: 'Analizamos tres temas urgentes: ilegalidad en trabajos de construcción, violencia intrafamiliar durante procesos migratorios y alertas al comprar vehículos por Facebook Marketplace. Con Nelson Vahos, Andrés, Tomás Velázquez, Carmen y Raza en Canadá.',
       cat: 'inmigracion',
       catLabel: '✈ Inmigración',
     },
@@ -1639,77 +1567,6 @@
   }, { threshold: 0.5 });
   counters.forEach(c => counterObs.observe(c));
 
-  /* ─── FORM — Formspree POST real ─── */
-  async function submitForm(btn) {
-    var fieldIds = ['fname', 'fcompany', 'fcity', 'fphone', 'femail', 'fbio'];
-    var valid = true;
-
-    fieldIds.forEach(function(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      if (!el.value.trim()) {
-        el.style.borderColor = '#ff4444';
-        valid = false;
-      } else {
-        el.style.borderColor = '';
-      }
-    });
-
-    if (!valid) {
-      var firstInvalid = fieldIds.find(function(id) {
-        var el = document.getElementById(id);
-        return el && !el.value.trim();
-      });
-      if (firstInvalid) document.getElementById(firstInvalid).focus();
-      return;
-    }
-
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
-
-    // Formspree requiere el campo llamado exactamente "email" para identificar al remitente
-    var payload = {
-      nombre_completo: document.getElementById('fname').value.trim(),
-      empresa:         document.getElementById('fcompany').value.trim(),
-      ciudad:          document.getElementById('fcity').value.trim(),
-      telefono:        document.getElementById('fphone').value.trim(),
-      email:           document.getElementById('femail').value.trim(),
-      descripcion:     document.getElementById('fbio').value.trim()
-    };
-
-    try {
-      var response = await fetch('https://formspree.io/f/mlgvqgzg', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-
-      var result = await response.json();
-
-      if (response.ok) {
-        document.getElementById('formContent').style.display = 'none';
-        document.getElementById('formSuccess').classList.add('show');
-      } else {
-        var errDetail = (result.errors || []).map(function(e){ return e.message; }).join(', ') || 'Error desconocido';
-        throw new Error(errDetail);
-      }
-    } catch (err) {
-      console.error('Formspree error:', err);
-      btn.textContent = 'Enviar Solicitud →';
-      btn.disabled = false;
-      var errBox = document.getElementById('formError');
-      if (!errBox) {
-        errBox = document.createElement('p');
-        errBox.id = 'formError';
-        errBox.style.cssText = 'color:#ff4444;font-size:13px;margin-top:14px;text-align:center;padding:10px;border:1px solid rgba(255,68,68,0.3);border-radius:6px;background:rgba(255,68,68,0.06);';
-        btn.insertAdjacentElement('afterend', errBox);
-      }
-      errBox.textContent = '❌ Error al enviar. Intente nuevamente.';
-    }
-  }
 </script>
 </body>
 </html>
