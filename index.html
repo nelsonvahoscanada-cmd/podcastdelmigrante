@@ -1183,14 +1183,14 @@
 </section>
 
 <!-- FEATURED EPISODE -->
-<section class="featured">
+<section class="featured" id="featured-section">
   <div class="section-label">
-    <h2>Episodio Destacado <span>EP. 01</span></h2>
+    <h2>Episodio Destacado <span id="featuredEpLabel"></span></h2>
   </div>
   <div class="featured-card">
     <div class="featured-video" id="featuredVideoWrap">
       <div class="featured-video-overlay" id="featuredOverlay" onclick="playFeatured()">
-        <img src="https://img.youtube.com/vi/gRbeyvF_IgY/maxresdefault.jpg" alt="Country Hills Toyota" />
+        <img id="featuredThumb" src="" alt="Episodio Destacado" style="width:100%;height:100%;object-fit:cover;" />
         <div class="play-btn">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
@@ -1198,27 +1198,17 @@
     </div>
     <div class="featured-info">
       <div class="episode-tag">
-        <span class="episode-num">EP. 01</span>
-        Automotriz · Finanzas
+        <span class="episode-num" id="featuredEpNum"></span>
+        <span id="featuredCatLabel"></span>
       </div>
-      <h3>¿Cómo comprar un vehículo en Canadá?</h3>
-      <p>Una conversación exclusiva con Country Hills Toyota donde exploramos todo lo que los nuevos inmigrantes necesitan saber para su primer vehículo en Canadá.</p>
-      <div class="featured-topics">
-        <span class="topic-chip green">Compra de Vehículos</span>
-        <span class="topic-chip">Financiamiento</span>
-        <span class="topic-chip">Crédito</span>
-        <span class="topic-chip">Vehículos Híbridos</span>
-        <span class="topic-chip">Nuevos Inmigrantes</span>
-      </div>
-      <div class="featured-sponsor">
-        <p>Con la participación de <strong>Country Hills Toyota</strong> — Primer episodio oficial del Podcast del Migrante.</p>
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn-primary" onclick="openModal('gRbeyvF_IgY','¿Cómo comprar un vehículo en Canadá?','Conversación exclusiva con Country Hills Toyota sobre compra de vehículos, financiamiento, crédito, vehículos híbridos y consejos para nuevos inmigrantes.')">
+      <h3 id="featuredTitle"></h3>
+      <p id="featuredDesc"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+        <button class="btn-primary" id="featuredPlayBtn">
           <svg viewBox="0 0 24 24" style="width:16px;fill:#fff"><path d="M8 5v14l11-7z"/></svg>
           Ver Episodio
         </button>
-        <a href="https://wa.me/?text=Mira%20este%20episodio%20del%20Podcast%20del%20Migrante%3A%20https%3A%2F%2Fyoutu.be%2FgRbeyvF_IgY" target="_blank" class="btn-secondary" style="padding:10px 18px;font-size:13px;">
+        <a id="featuredShareBtn" href="#" target="_blank" class="btn-secondary" style="padding:10px 18px;font-size:13px;">
           📤 Compartir
         </a>
       </div>
@@ -1260,7 +1250,7 @@
         <span class="stat-label">Años de Experiencia</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num" data-target="12">0</span>
+        <span class="stat-num" data-target="18">0</span>
         <span class="stat-label">Episodios Publicados</span>
       </div>
       <div class="stat-item">
@@ -1463,7 +1453,97 @@
       cat: 'vivienda',
       catLabel: '🏠 Vivienda',
     },
+    {
+      id: 'ZqIQEan2MNU',
+      ep: '13',
+      title: 'Cómo COMPRAR CASA en Canadá: Crédito, Hipoteca y Errores que Debes Evitar',
+      desc: 'Todo lo que necesitas saber para comprar tu primera casa en Canadá: cómo funciona el crédito hipotecario, los errores más comunes que cometen los migrantes y los pasos clave para hacerlo bien.',
+      cat: 'vivienda',
+      catLabel: '🏠 Vivienda',
+    },
+    {
+      id: '0R7VdjFZQ1k',
+      ep: '14',
+      title: 'Express Entry, Demoras de IRCC y Respuestas a Migrantes EN VIVO',
+      desc: 'Analizamos en vivo el sistema Express Entry, las demoras actuales de IRCC y respondemos preguntas reales de migrantes sobre sus procesos migratorios en Canadá.',
+      cat: 'inmigracion',
+      catLabel: '✈ Inmigración',
+    },
+    {
+      id: '9lWHCnhxme4',
+      ep: '15',
+      title: 'De Bogotá a Canadá: La REALIDAD de Empezar de Cero + Permisos de Trabajo',
+      desc: 'La historia real de empezar desde cero en Canadá llegando desde Bogotá. Todo sobre permisos de trabajo: tipos, requisitos y cómo obtenerlos según tu situación migratoria.',
+      cat: 'exito',
+      catLabel: '🌎 Éxito',
+    },
+    {
+      id: 'WTGGnZBatpA',
+      ep: '16',
+      title: 'De Abogada a Limpiar en Canadá: la Historia de Gina + Empleo y LMIA',
+      desc: 'Gina era abogada en su país y en Canadá comenzó limpiando casas. Su historia de resiliencia y adaptación. Además: todo sobre LMIA, cómo funciona y qué significa para tu proceso de trabajo.',
+      cat: 'exito',
+      catLabel: '🌎 Éxito',
+    },
+    {
+      id: 'kuJQEBlv2Ug',
+      ep: '17',
+      title: 'DEPRESIÓN EN CANADÁ: Invierno, Soledad y Salud Mental del Migrante',
+      desc: 'Un tema urgente: la depresión estacional, la soledad del invierno y el impacto en la salud mental de miles de migrantes latinos en Canadá. Cómo identificarla y dónde buscar ayuda.',
+      cat: 'inmigracion',
+      catLabel: '✈ Inmigración',
+    },
+    {
+      id: 'ZrVtwopm0LI',
+      ep: '18',
+      title: 'De la ANSIEDAD a RECONSTRUIR mi VIDA en Canadá | Resiliencia del Migrante',
+      desc: 'Historias reales de migrantes que pasaron por la ansiedad y lograron reconstruir su vida en Canadá. Resiliencia, propósito y estrategias prácticas para superar los momentos más difíciles.',
+      cat: 'exito',
+      catLabel: '🌎 Éxito',
+    },
   ];
+
+  /* ─── FEATURED ROTATION — cambia cada día automáticamente ─── */
+  function initFeatured() {
+    // Usa el día del año como índice para rotar entre todos los episodios
+    const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+    const featuredEp = episodes[dayOfYear % episodes.length];
+    
+    document.getElementById('featuredThumb').src = 'https://img.youtube.com/vi/' + featuredEp.id + '/maxresdefault.jpg';
+    document.getElementById('featuredEpLabel').textContent = 'EP. ' + featuredEp.ep;
+    document.getElementById('featuredEpNum').textContent = 'EP. ' + featuredEp.ep;
+    document.getElementById('featuredCatLabel').textContent = featuredEp.catLabel;
+    document.getElementById('featuredTitle').textContent = featuredEp.title;
+    document.getElementById('featuredDesc').textContent = featuredEp.desc;
+    
+    document.getElementById('featuredPlayBtn').onclick = function() {
+      openModal(featuredEp.id, featuredEp.title, featuredEp.desc);
+    };
+    document.getElementById('featuredShareBtn').href = 
+      'https://wa.me/?text=Mira este episodio del Podcast del Migrante: https://youtu.be/' + featuredEp.id;
+    
+    // Update the featured video overlay click
+    document.getElementById('featuredOverlay').onclick = function() {
+      playFeaturedDynamic(featuredEp.id);
+    };
+    
+    window._featuredId = featuredEp.id;
+    window._featuredTitle = featuredEp.title;
+    window._featuredDesc = featuredEp.desc;
+  }
+  
+  function playFeaturedDynamic(videoId) {
+    const wrap = document.getElementById('featuredVideoWrap');
+    document.getElementById('featuredOverlay').classList.add('hidden');
+    const existingIframe = wrap.querySelector('iframe');
+    if (existingIframe) existingIframe.remove();
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'width:100%;height:100%;border:none;position:absolute;inset:0;';
+    wrap.appendChild(iframe);
+  }
 
   /* ─── RENDER EPISODES ─── */
   function renderEpisodes(cat) {
@@ -1501,6 +1581,7 @@
     `).join('');
   }
   renderEpisodes('all');
+  initFeatured();
 
   /* ─── CATEGORY FILTER ─── */
   document.querySelectorAll('.cat-btn').forEach(btn => {
