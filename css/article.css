@@ -56,6 +56,18 @@
   margin: -6px 0 16px;
 }
 
+.article-column-badge {
+  display: inline-block;
+  background: var(--verde);
+  color: var(--negro);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: var(--radius-s);
+  margin-bottom: 12px;
+}
+a.article-column-badge:hover { background: #82b204; }
+
 /* ---------- Título / bajada ---------- */
 .article-title {
   font-family: var(--font-display);
@@ -135,6 +147,8 @@
   font-size: 1.15rem;
   color: var(--gris-800);
 }
+.article-body ul { margin: 0 0 20px; padding-left: 22px; }
+.article-body li { margin-bottom: 8px; }
 .article-body img { border-radius: var(--radius-s); margin: 20px 0; }
 
 /* ---------- Video: papel → digital ---------- */
@@ -158,6 +172,39 @@
   justify-content: center;
 }
 .article-video__title { font-size: 0.9rem; color: var(--gris-600); margin-top: 10px; }
+
+/* ---------- Guía práctica gratuita ---------- */
+.article-guide {
+  margin: 32px 0;
+  padding: 22px 20px;
+  border: 1px solid var(--gris-200);
+  border-left: 3px solid var(--verde);
+  border-radius: var(--radius-s);
+  background: var(--gris-100);
+}
+.article-guide__kicker {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  margin-bottom: 8px;
+}
+.article-guide__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.article-guide__desc { font-size: 0.9rem; color: var(--gris-600); margin-bottom: 12px; }
+.article-guide__status {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gris-400);
+  border: 1px solid var(--gris-200);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
 
 /* ---------- Fuentes consultadas ---------- */
 .article-sources { margin: 32px 0; padding: 18px 20px; background: var(--gris-100); border-radius: var(--radius-s); }

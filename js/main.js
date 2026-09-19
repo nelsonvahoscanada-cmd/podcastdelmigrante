@@ -62,9 +62,12 @@
     const titleHtml = main.slug
       ? `<a href="${articleHref(main.slug)}">${main.title}</a>`
       : main.title;
+    const mediaStyle = `background-image:${main.image};${main.aspectRatio ? `aspect-ratio:${main.aspectRatio};` : ""}`;
+    const mediaA11y = main.alt ? ` role="img" aria-label="${main.alt}"` : "";
+    const mediaBadge = main.demo === false ? "" : `<span class="demo-badge">Demo</span>`;
     heroMain.innerHTML = `
-      <div class="hero-main__media" style="background-image:${main.image}">
-        <span class="demo-badge">Demo</span>
+      <div class="hero-main__media" style="${mediaStyle}"${mediaA11y}>
+        ${mediaBadge}
       </div>
       <div class="hero-main__body">
         <span class="tag">${main.category}</span>
@@ -77,12 +80,15 @@
     const list = document.getElementById("heroSecondary");
     HERO.secondary.forEach((item) => {
       const titleInner = item.slug ? `<a href="${articleHref(item.slug)}">${item.title}</a>` : item.title;
+      const mediaStyle = `background-image:${item.image};${item.aspectRatio ? `aspect-ratio:${item.aspectRatio};` : ""}`;
+      const mediaA11y = item.alt ? ` role="img" aria-label="${item.alt}"` : "";
+      const mediaBadge = item.demo === false ? "" : `<span class="demo-badge demo-badge--sm">Demo</span>`;
       const card = el(
         "article",
         "hero-sec-card",
         `
-        <div class="hero-sec-card__media" style="background-image:${item.image}">
-          <span class="demo-badge demo-badge--sm">Demo</span>
+        <div class="hero-sec-card__media" style="${mediaStyle}"${mediaA11y}>
+          ${mediaBadge}
         </div>
         <div class="hero-sec-card__body">
           <span class="tag tag--sm">${item.category}</span>
@@ -241,6 +247,8 @@
       const avatar = c.photo
         ? `<img class="contributor-card__avatar contributor-card__avatar--photo" src="${c.photo}" alt="${c.name}">`
         : `<div class="contributor-card__avatar">${initials(c.name)}</div>`;
+      const orgLine = c.organization ? `<p class="contributor-card__org">${c.organization}</p>` : "";
+      const columnLine = c.columnName ? `<p class="contributor-card__column">Columna: ${c.columnName}</p>` : "";
       const card = el(
         "article",
         "contributor-card",
@@ -248,6 +256,8 @@
         ${avatar}
         <h3 class="contributor-card__name">${c.name}</h3>
         <span class="tag tag--sm">${c.specialty}</span>
+        ${orgLine}
+        ${columnLine}
         <p class="contributor-card__bio">${c.bio}</p>
         ${c.articlesNote ? `<p class="contributor-card__note">${c.articlesNote}</p>` : ""}
         <div class="contributor-card__links">

@@ -62,31 +62,46 @@ const NAV_MORE = [
 const HERO = {
   main: {
     category: "Migración",
-    title: "Los cinco documentos que más retrasan un trámite migratorio, según asesores en Alberta",
-    dek: "Asesores de inmigración identifican los errores más comunes que alargan meses un proceso que podría resolverse en semanas.",
+    title: "Llegar a Canadá: los documentos que conviene tener organizados desde el primer día",
+    dek: "Una guía práctica para proteger y organizar la documentación que puede acompañarte durante tus primeros trámites y tu nueva vida en Canadá.",
     author: "Redacción El Podcast del Migrante",
-    date: "12 de septiembre, 2026",
-    image: "linear-gradient(135deg, #1c1c1c, #3a3a3a)",
-    slug: "documentos-tramite-migratorio-alberta",
+    date: "18 de septiembre, 2026",
+    image: "url('assets/llegar-canada-documentos-migrante.jpg')",
+    aspectRatio: "16/9",
+    alt: "Familia migrante organizando documentos durante sus primeros pasos en Canadá",
+    demo: false,
+    slug: "llegar-canada-documentos-primer-dia",
   },
   secondary: [
     {
       category: "Empleo",
-      title: "Cinco certificaciones que abren puertas laborales rápido para recién llegados",
-      date: "11 de septiembre",
-      image: "linear-gradient(135deg, #232323, #4a4a4a)",
+      title: "Certificaciones cortas que pueden ayudarte a prepararte para trabajar en Alberta",
+      date: "18 de septiembre",
+      image: "url('assets/certificaciones-trabajo-alberta.jpg')",
+      aspectRatio: "16/9",
+      alt: "Trabajador en Alberta junto a elementos de capacitación y seguridad laboral",
+      demo: false,
+      slug: "certificaciones-trabajo-alberta",
     },
     {
       category: "Vivienda",
-      title: "Qué revisar antes de firmar tu primer contrato de arrendamiento",
-      date: "10 de septiembre",
-      image: "linear-gradient(135deg, #202020, #454545)",
+      title: "Tu primer arriendo en Alberta: qué revisar antes de firmar el contrato",
+      date: "18 de septiembre",
+      image: "url('assets/primer-arriendo-alberta.jpg')",
+      aspectRatio: "16/9",
+      alt: "Mujer llegando a una vivienda en Alberta junto a contrato de arrendamiento y llaves.",
+      demo: false,
+      slug: "primer-arriendo-alberta",
     },
     {
       category: "Comunidad",
-      title: "La red de comerciantes latinos que está creciendo en Brooks",
-      date: "9 de septiembre",
-      image: "linear-gradient(135deg, #1e1e1e, #424242)",
+      title: "100 empresarios, 100 historias: el emprendimiento latino que está construyendo comunidad en Calgary",
+      date: "18 de septiembre",
+      image: "url('assets/100-empresarios-100-historias-calgary.jpg')",
+      aspectRatio: "16/9",
+      alt: "Jornada de entrevistas de Desafío 100 Empresas en Calgary.",
+      demo: false,
+      slug: "100-empresarios-100-historias-calgary",
     },
   ],
 };
@@ -196,25 +211,43 @@ const EDITION_MONTHS = [
    quedan listos para cuando haya información real):
    - photo: URL de fotografía profesional (si no hay, se
      muestran iniciales)
-   - name, specialty, bio
+   - name, specialty, bio, longBio (bio extendida, reservada
+     para una futura página de perfil — no se muestra todavía
+     en la tarjeta compacta)
+   - organization: empresa/entidad del colaborador (opcional)
+   - columnName: columna editorial recurrente que firma (opcional)
+   - licensedIn: jurisdicciones donde tiene licencia, si aplica (opcional)
+   - link: enlace de "Ver perfil" — la página de perfil interno
+     (colaborador.html?id=...) una vez que existe
+   - website: enlace externo/profesional adicional, se muestra como
+     una segunda línea EN LA TARJETA cuando existe (opcional, se deja
+     vacío si no se quiere ese segundo enlace visible en la tarjeta)
+   - professionalSite: sitio profesional externo, usado únicamente
+     por el botón "Visitar sitio profesional" dentro del perfil
+     interno — nunca en la tarjeta de la HOME (opcional)
    - articlesNote: relación con los artículos que escribe
-   - link: enlace a su perfil interno (futura página propia)
-   - website: enlace externo/profesional (opcional)
 
-   Carlos D. Castillo es un colaborador real aportado por el
-   cliente — no se le atribuye biografía ni logros inventados,
-   solo su nombre y especialidad confirmados.
+   Carlos D. Castillo es el primer colaborador editorial real
+   del Magazine — firma la columna mensual "Tu dinero en
+   Canadá". Sus datos fueron aportados directamente por el
+   cliente; no se le atribuye ninguna credencial, premio o cifra
+   que no haya sido confirmada explícitamente.
 ========================================================= */
 const CONTRIBUTORS = [
   {
     id: "carlos-castillo",
-    photo: null,
+    photo: "assets/carlos-castillo-avatar.jpg",
     name: "Carlos D. Castillo",
-    specialty: "Seguros y Finanzas",
-    bio: "Perfil profesional — próximamente.",
-    articlesNote: "Colabora con artículos de la sección Finanzas.",
-    link: "#",
+    specialty: "Colaborador — Educación Financiera",
+    organization: "Roca Financial Group",
+    columnName: "Tu dinero en Canadá",
+    bio: "Educación, protección y arquitectura financiera.",
+    longBio: "Carlos D. Castillo desarrolla contenido de educación financiera enfocado en ayudar a familias y migrantes a comprender mejor la organización financiera, la protección y las herramientas disponibles en Canadá. Su trayectoria en seguros comenzó en Colombia en 1994 y cuenta con más de una década de experiencia en la industria de seguros en Canadá.",
+    licensedIn: "Alberta, British Columbia, Ontario y Saskatchewan.",
+    articlesNote: "Firma la columna mensual Tu dinero en Canadá.",
+    link: "colaborador.html?id=carlos-castillo",
     website: "",
+    professionalSite: "https://www.CarlosDCastillo.com",
   },
 ];
 

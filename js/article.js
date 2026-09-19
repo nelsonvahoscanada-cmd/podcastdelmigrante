@@ -27,6 +27,7 @@
     "Opinión": "OpinionNewsArticle",
     "Guía": "Article",
     "Historia de migrante": "Article",
+    "Columna": "Article",
     "Contenido patrocinado": "Article",
   };
 
@@ -100,6 +101,27 @@
     `;
   }
 
+  function columnBadgeHtml(article) {
+    if (!article.columnName) return "";
+    const column = typeof COLUMNS !== "undefined" ? COLUMNS.find((c) => c.title === article.columnName) : null;
+    if (column) {
+      return `<a class="article-column-badge" href="columna.html?slug=${encodeURIComponent(column.slug)}">${article.columnName}</a>`;
+    }
+    return `<span class="article-column-badge">${article.columnName}</span>`;
+  }
+
+  function guideModuleHtml(article) {
+    if (!article.freeGuide) return "";
+    return `
+      <section class="article-guide">
+        <span class="article-guide__kicker">Guía práctica gratuita</span>
+        <h2 class="article-guide__title">${article.freeGuide.title}</h2>
+        <p class="article-guide__desc">${article.freeGuide.description}</p>
+        <span class="article-guide__status">Disponible próximamente</span>
+      </section>
+    `;
+  }
+
   function metaLineHtml(article) {
     const parts = [];
     parts.push(formatDate(article.publishedAt));
@@ -119,9 +141,14 @@
     const credit = article.heroImage.credit
       ? `<p class="article-hero-credit">${article.heroImage.credit}</p>`
       : "";
+    const mediaStyle = `background-image:${article.heroImage.background};${
+      article.heroImage.aspectRatio ? `aspect-ratio:${article.heroImage.aspectRatio};` : ""
+    }`;
+    const mediaA11y = article.heroImage.alt ? ` role="img" aria-label="${article.heroImage.alt}"` : "";
+    const mediaBadge = article.demo === false ? "" : `<span class="demo-badge">Demo</span>`;
     return `
-      <div class="article-hero-media" style="background-image:${article.heroImage.background}">
-        <span class="demo-badge">Demo</span>
+      <div class="article-hero-media" style="${mediaStyle}"${mediaA11y}>
+        ${mediaBadge}
       </div>
       ${credit}
     `;
@@ -330,6 +357,7 @@
     root.innerHTML = `
       ${sponsoredBadgeHtml(article)}
       ${contentTypeHtml(article)}
+      ${columnBadgeHtml(article)}
       <h1 class="article-title">${article.title}</h1>
       <p class="article-dek">${article.dek}</p>
       <div class="article-byline-row">
@@ -341,6 +369,7 @@
       ${heroImageHtml(article)}
       <div class="article-body">${article.bodyHtml}</div>
       ${videoBlockHtml(article)}
+      ${guideModuleHtml(article)}
       ${sourcesHtml(article)}
       ${correctionHtml(article)}
       ${disclaimerHtml(article)}
