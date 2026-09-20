@@ -190,23 +190,32 @@
   }
 
   /* ---------- Desafío 100 Empresas ---------- */
+  function youtubeThumb(id) {
+    return "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
+  }
+
   function buildDesafio() {
     const grid = document.getElementById("desafioGrid");
-    DESAFIO_100.forEach((item) => {
+    DESAFIO_STORIES.forEach((story) => {
+      const thumb = youtubeThumb(story.videoId);
+      const alt = story.image && story.image.alt ? story.image.alt : story.cardTitle;
       const card = el(
-        "article",
+        "a",
         "desafio-card",
         `
-        <div class="desafio-card__media">
-          <span class="demo-badge demo-badge--sm">Demo</span>
+        <div class="desafio-card__media" style="background-image:url('${thumb}')" role="img" aria-label="${alt}">
+          <span class="desafio-card__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
+          </span>
         </div>
         <div class="desafio-card__body">
-          <span class="tag tag--sm">${item.company}</span>
-          <h3 class="desafio-card__title">${item.headline}</h3>
-          <p class="byline">Empresario: ${item.name}</p>
+          <span class="tag tag--sm">${story.empresa || story.area || "Desafío 100 Empresas"}</span>
+          <h3 class="desafio-card__title">${story.cardTitle}</h3>
+          <p class="byline">Empresario: ${story.empresario}</p>
         </div>
       `
       );
+      card.href = "historia.html?slug=" + encodeURIComponent(story.slug);
       grid.appendChild(card);
     });
   }

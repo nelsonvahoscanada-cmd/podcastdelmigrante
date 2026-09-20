@@ -755,11 +755,45 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 @media (min-width: 760px) {
   .desafio-grid { grid-template-columns: repeat(3, 1fr); }
 }
-.desafio-card { border: var(--border); border-radius: var(--radius-s); overflow: hidden; }
+.desafio-card {
+  display: block;
+  border: var(--border);
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.desafio-card:hover { border-color: var(--verde); }
+.desafio-card:hover .desafio-card__title { color: var(--verde-oscuro); }
 .desafio-card__media {
   position: relative;
   aspect-ratio: 16/10;
   background: linear-gradient(135deg, var(--verde-suave), #d8e6bd);
+  background-size: cover;
+  background-position: center;
+}
+.desafio-card__play {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(11, 11, 11, 0.6);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.desafio-card__pending {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3px 9px;
+  border-radius: var(--radius-s);
 }
 .desafio-card__body { padding: 16px; }
 .desafio-card__title {
@@ -768,6 +802,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-weight: 600;
   line-height: 1.3;
   margin: 4px 0 6px;
+  transition: color 0.15s ease;
 }
 
 /* =========================================================

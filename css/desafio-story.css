@@ -1,0 +1,81 @@
+/* =========================================================
+   Historia de Desafío 100 Empresas — reutiliza tokens y
+   componentes de styles.css/article.css
+========================================================= */
+
+.desafio-story__guest {
+  margin: 18px 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--verde);
+  background: var(--gris-100);
+  border-radius: var(--radius-s);
+}
+.desafio-story__guest-kicker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  margin-bottom: 4px;
+}
+.desafio-story__guest-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.desafio-story__guest-line { font-size: 0.88rem; color: var(--gris-600); }
+
+/* Fotografía pendiente — nunca una persona genérica */
+.desafio-story__media--pending {
+  background: linear-gradient(135deg, var(--verde-suave), #d8e6bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.desafio-story__pending-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 6px 14px;
+  border-radius: var(--radius-s);
+}
+
+/* Patrocinio — siempre separado de la narrativa editorial */
+.desafio-story__sponsor {
+  margin: 24px 0;
+  padding: 16px 18px;
+  border: 1px solid var(--gris-200);
+  border-left: 3px solid var(--gris-400);
+  border-radius: var(--radius-s);
+}
+.desafio-story__sponsor-kicker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--gris-600);
+  margin-bottom: 6px;
+}
+.desafio-story__sponsor-role { font-weight: 700; font-size: 0.92rem; margin-bottom: 6px; }
+.desafio-story__sponsor-note { font-size: 0.86rem; color: var(--gris-600); }
+
+/* Sobre el proyecto + participación (CTA preparado, sin enlace falso) */
+.desafio-story__project { margin-top: 40px; padding-top: 28px; border-top: var(--border); }
+.desafio-story__participate {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: var(--gris-100);
+  border-radius: var(--radius-s);
+  text-align: center;
+}
+.desafio-story__participate-title { font-weight: 600; margin-bottom: 12px; }
+.desafio-story__participate-btn {
+  display: inline-block;
+  cursor: default;
+  opacity: 0.85;
+}
+.desafio-story__participate-status { font-size: 0.78rem; color: var(--gris-400); margin-top: 10px; }
+
+@media (max-width: 430px) {
+  .desafio-story__guest { padding: 12px 14px; }
+}

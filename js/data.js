@@ -150,12 +150,6 @@ const VIDEOS = [
   { tag: "Especiales", title: "Especial: guía completa de impuestos para nuevos residentes" },
 ];
 
-const DESAFIO_100 = [
-  { name: "Diana Restrepo", company: "Sabores del Sur Catering", headline: "De cocinar para amigos a surtir eventos corporativos en Calgary" },
-  { name: "Julián Torres", company: "Torres Auto Detailing", headline: "Un servicio móvil de detallado que nació con un solo cliente" },
-  { name: "Fernanda León", company: "León Digital Studio", headline: "Diseño gráfico para pequeños negocios latinos en las praderas" },
-];
-
 const MOST_READ = [
   "Los cinco documentos que más retrasan un trámite migratorio",
   "Cómo construir historial crediticio sin tarjeta previa en Canadá",
