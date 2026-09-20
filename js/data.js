@@ -126,19 +126,25 @@ const USEFUL_INFO = [
 
 const STORIES = [
   {
-    title: "De ingeniera en Bogotá a supervisora de planta en Brooks: la historia de Marcela",
-    excerpt: "Ocho años después de llegar sin hablar inglés, hoy lidera un equipo de doce personas. Esto es lo que aprendió en el camino.",
-    image: "linear-gradient(135deg, #262626, #4d4d4d)",
+    title: "Mi primer trabajo en Canadá: era para una oficina en un ancianato… ¡y acabé trabajando en la cocina!",
+    excerpt: "Andrea Díaz cuenta la historia de su primer trabajo en Canadá — y el contraste entre lo que esperaba y lo que finalmente vivió.",
+    videoId: "oqfNbzC_OLA",
+    href: "historia-vida.html?slug=historia-andrea-diaz-primer-trabajo-canada",
+    demo: false,
   },
   {
-    title: "Lo que nadie le contó a Andrés sobre el primer invierno canadiense",
-    excerpt: "Una historia sobre frío, comunidad y la llamada que le cambió la perspectiva sobre pedir ayuda.",
-    image: "linear-gradient(135deg, #202020, #464646)",
+    title: "De una cabina de radio en FM a una nueva vida en Canadá",
+    excerpt: "Diana Pineda, conocida en la radio colombiana como \"La Pinedita\", nos relata cómo fue ese cambio de vida.",
+    videoId: "6YdTsBzG2gs",
+    href: "historia-vida.html?slug=historia-diana-pineda-radio-canada",
+    demo: false,
   },
   {
-    title: "La cocina que conecta: cómo una familia venezolana construyó negocio y comunidad",
-    excerpt: "Empezaron vendiendo arepas los domingos. Hoy surten a tres restaurantes en la región.",
-    image: "linear-gradient(135deg, #1f1f1f, #454545)",
+    title: "De vender en la calle a triunfar en Canadá: mi pasión por el comercio ambulante",
+    excerpt: "Teresa Jiménez comparte su recorrido desde sus comienzos vendiendo en la calle hasta desarrollar su camino como empresaria en Canadá.",
+    videoId: "UsWWtkmnszw",
+    href: "historia-vida.html?slug=historia-teresa-jimenez-comercio-canada",
+    demo: false,
   },
 ];
 

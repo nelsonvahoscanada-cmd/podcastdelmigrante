@@ -137,17 +137,30 @@
     });
   }
 
+  function youtubeThumb(id) {
+    return "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
+  }
+
   /* ---------- Historias ---------- */
   function buildStories() {
     const grid = document.getElementById("storiesGrid");
     STORIES.forEach((item) => {
-      const titleInner = item.slug ? `<a href="${articleHref(item.slug)}">${item.title}</a>` : item.title;
+      const href = item.href ? item.href : item.slug ? articleHref(item.slug) : null;
+      const titleInner = href ? `<a href="${href}">${item.title}</a>` : item.title;
+      const mediaStyle = item.videoId
+        ? `background-image:url('${youtubeThumb(item.videoId)}')`
+        : `background-image:${item.image}`;
+      const mediaBadge = item.demo === false ? "" : `<span class="demo-badge demo-badge--sm">Demo</span>`;
+      const playIcon = item.videoId
+        ? `<span class="story-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></span>`
+        : "";
       const card = el(
         "article",
         "story-card",
         `
-        <div class="story-card__media" style="background-image:${item.image}">
-          <span class="demo-badge demo-badge--sm">Demo</span>
+        <div class="story-card__media" style="${mediaStyle}">
+          ${mediaBadge}
+          ${playIcon}
         </div>
         <h3 class="story-card__title">${titleInner}</h3>
         <p class="story-card__excerpt">${item.excerpt}</p>
