@@ -123,7 +123,8 @@
             <span class="article-guide__kicker">Guía práctica gratuita</span>
             <h2 class="article-guide__title">${guide.title}</h2>
             <p class="article-guide__desc">${guide.description}</p>
-            <a class="btn article-guide__btn" href="${guide.fileHref}" target="_blank" rel="noopener">${guide.buttonLabel || "Descargar guía gratis"}</a>
+            <a class="btn article-guide__btn" href="${guide.fileHref}" download="${guide.fileHref.split("/").pop()}">${guide.buttonLabel || "Descargar guía gratis"}</a>
+            <p class="article-guide__fallback">¿Se abrió el PDF en una pestaña en vez de descargarse? Usa el ícono de compartir o descargar de tu navegador para guardarlo en tu dispositivo.</p>
           </div>
         </section>
       `;

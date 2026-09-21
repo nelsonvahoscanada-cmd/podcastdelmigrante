@@ -290,6 +290,7 @@ a.article-column-badge:hover { background: #82b204; }
 }
 .article-guide__info { flex: 1; }
 .article-guide__btn { display: inline-block; }
+.article-guide__fallback { font-size: 0.76rem; color: var(--gris-400); margin: 8px 0 0; }
 @media (min-width: 560px) {
   .article-guide--ready { flex-direction: row; align-items: center; }
   .article-guide__cover { align-self: flex-start; }
