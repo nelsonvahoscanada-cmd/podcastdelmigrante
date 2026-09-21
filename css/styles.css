@@ -159,18 +159,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* =========================================================
-   Barra superior — demo notice
-========================================================= */
-.demo-strip {
-  background: var(--negro);
-  color: var(--gris-200);
-  font-size: 0.78rem;
-  text-align: center;
-  padding: 7px 16px;
-}
-.demo-strip strong { color: var(--verde); }
-
-/* =========================================================
    Header
 ========================================================= */
 .site-header {

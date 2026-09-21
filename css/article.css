@@ -272,6 +272,28 @@ a.article-column-badge:hover { background: #82b204; }
   margin-bottom: 8px;
 }
 .article-guide__desc { font-size: 0.9rem; color: var(--gris-600); margin-bottom: 12px; }
+.article-guide--ready {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+}
+.article-guide__cover {
+  flex-shrink: 0;
+  width: 140px;
+  align-self: center;
+}
+.article-guide__cover img {
+  width: 100%;
+  border-radius: var(--radius-s);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+.article-guide__info { flex: 1; }
+.article-guide__btn { display: inline-block; }
+@media (min-width: 560px) {
+  .article-guide--ready { flex-direction: row; align-items: center; }
+  .article-guide__cover { align-self: flex-start; }
+}
 .article-guide__status {
   display: inline-block;
   font-size: 0.78rem;

@@ -105,7 +105,7 @@ const CONTENT_TYPES = [
    garantía de inmunidad legal. */
 const DISCLAIMERS = {
   "Migración": "Este contenido tiene fines informativos y educativos. Los requisitos y las políticas migratorias pueden cambiar, y la situación de cada persona es diferente. Para decisiones sobre un caso particular, consulta fuentes oficiales o a un profesional autorizado.",
-  "Finanzas": "Este artículo tiene fines educativos y ofrece información general. No constituye asesoría financiera, fiscal, legal, de seguros o de inversión personalizada. La elegibilidad, las reglas fiscales y la disponibilidad o conveniencia de productos dependen de las circunstancias personales y pueden cambiar. Verifica la información actual y consulta profesionales calificados cuando corresponda.",
+  "Finanzas": "Este contenido tiene fines educativos e informativos y no constituye asesoría financiera, fiscal, legal, de seguros o de inversión personalizada. La elegibilidad, las reglas fiscales, las condiciones y la disponibilidad de productos dependen de las circunstancias personales y pueden cambiar. Antes de tomar decisiones, verifique la información vigente y consulte con profesionales calificados cuando corresponda.",
   "Salud": "Este contenido tiene fines informativos y educativos, no reemplaza una consulta médica. Ante cualquier síntoma o duda de salud, consulta a un profesional de la salud calificado.",
   "Legal": "Este contenido tiene fines informativos y educativos, no constituye asesoría legal. Cada situación es distinta — consulta con un abogado o profesional autorizado para tu caso particular.",
   "Vivienda": "Esta guía ofrece información general sobre arrendamientos residenciales en Alberta y no constituye asesoría legal. Las reglas pueden variar según el tipo de vivienda o la situación particular. Para información actualizada y casos específicos, consulta Government of Alberta, la Residential Tenancies Act o un profesional calificado.",
@@ -122,18 +122,18 @@ const DISCLAIMERS = {
 const ARTICLES = [
   {
     id: "ART-2026-006",
-    slug: "llegaste-canada-tu-dinero-tambien",
+    slug: "el-error-financiero-inmigrantes-canada",
     category: "Finanzas",
     contentType: "Columna",
     columnName: "Tu dinero en Canadá",
-    title: "Llegaste a Canadá. ¿Tu dinero también?",
-    dek: "Empezar una nueva vida en Canadá también significa aprender un nuevo sistema financiero. Organizar ingresos, gastos, crédito, ahorro, protección e inversión desde el comienzo puede ayudarte a construir una base más sólida para tus próximos años.",
-    excerpt: "Organizar ingresos, gastos, crédito, ahorro, protección e inversión desde el comienzo puede ayudarte a construir una base más sólida para tus próximos años en Canadá.",
+    title: "El error financiero que muchos inmigrantes descubren demasiado tarde",
+    dek: "Ganar dinero, ahorrar y abrir cuentas no basta si cada decisión funciona por separado. El verdadero avance comienza cuando ingresos, protección, inversión y retiro forman parte de un mismo plan.",
+    excerpt: "El verdadero avance financiero comienza cuando ingresos, protección, inversión y retiro forman parte de un mismo plan, no de decisiones aisladas.",
     author: {
       mode: "colaborador",
       name: "Carlos D. Castillo",
-      specialty: "Educación Financiera",
-      profileHref: "index.html#contributors",
+      specialty: "Estratega en arquitectura financiera y asesor licenciado en seguros de vida y salud en Canadá",
+      profileHref: "colaborador.html?id=carlos-castillo",
       authorId: "carlos-castillo",
     },
     publishedAt: "2026-09-18T08:00:00-06:00",
@@ -142,77 +142,35 @@ const ARTICLES = [
     location: null,
     demo: false,
     heroImage: {
-      background: "url('assets/llegaste-canada-tu-dinero-tambien.jpg')",
+      background: "url('assets/error-financiero-inmigrantes-canada.jpg')",
       aspectRatio: "16/9",
-      alt: "Carlos D. Castillo presenta la columna Tu dinero en Canadá en El Podcast del Migrante Magazine.",
+      alt: "Familia inmigrante organizando su plan financiero en Calgary — ingresos, crédito, vivienda, protección, inversiones, educación y retiro.",
     },
     bodyHtml: `
-      <h2>Llegar también significa reorganizar tus finanzas</h2>
-      <p>Cuando llegas a Canadá, las prioridades parecen multiplicarse: encontrar vivienda, conseguir trabajo, organizar documentos, adaptarte al idioma, entender el transporte y comenzar a construir una nueva rutina.</p>
-      <p>Pero existe otra adaptación que muchas veces ocurre silenciosamente: la financiera.</p>
-      <p>Puedes comenzar a recibir ingresos en dólares canadienses y abrir una cuenta bancaria, pero eso no significa automáticamente que tengas un plan.</p>
-      <p>Canadá tiene herramientas, cuentas, beneficios y reglas que posiblemente sean diferentes a las que conocías en tu país de origen. Por eso, antes de pensar en inversiones o productos financieros, conviene comenzar por algo mucho más sencillo: entender dónde estás.</p>
-
-      <h2>1. ¿Sabes realmente cuánto cuesta tu nueva vida?</h2>
-      <p>Tu salario no cuenta toda la historia.</p>
-      <p>Lo importante es saber cuánto dinero entra realmente al hogar y cuánto necesitas para vivienda, alimentación, transporte, servicios, seguros, cuidado infantil, deudas y otros gastos.</p>
-      <p>Un presupuesto te permite visualizar esa realidad. No debería verse como un castigo ni como una lista de cosas que ya no puedes comprar. Es una herramienta para saber qué puedes hacer con el dinero que tienes.</p>
-      <p>La Financial Consumer Agency of Canada recomienda elaborar un presupuesto que permita comparar ingresos, gastos y ahorro y utilizar esa información para establecer objetivos financieros.</p>
-      <p>Antes de preguntarte cuánto puedes invertir, pregúntate: <em>¿Cuánto me cuesta realmente vivir cada mes?</em></p>
-
-      <h2>2. Construye una reserva antes de necesitarla</h2>
-      <p>Una reparación del automóvil, una reducción inesperada de horas laborales o una emergencia familiar pueden cambiar rápidamente las finanzas de un hogar. Ahí aparece el fondo de emergencia.</p>
-      <p>No tiene que construirse de un día para otro. Lo importante es comenzar con una cantidad que puedas sostener y mantener ese dinero disponible para verdaderas emergencias.</p>
-      <p>La orientación de la Financial Consumer Agency of Canada utiliza como referencia eventual aproximadamente tres a seis meses de gastos regulares, aunque reconoce que construir esa reserva requiere tiempo.</p>
-      <p>Primero estabilidad. Después crecimiento. Antes de invertir a largo plazo, conviene comprender cuánto cuesta realmente sostener la vida en Canadá.</p>
-
-      <h2>3. Aprende a utilizar el crédito, no a depender de él</h2>
-      <p>Para muchos recién llegados, el sistema de crédito canadiense es una experiencia completamente nueva.</p>
-      <p>Una tarjeta de crédito puede ser útil para comenzar a establecer historial, pero el límite disponible no es una extensión de tu salario.</p>
-      <p>Pagar puntualmente, comprender las tasas de interés y revisar la información que aparece en tus reportes son hábitos importantes.</p>
-      <p>Una idea central de la guía que acompaña esta columna es: <em>"Utiliza el crédito para construir historial, no para esconder un presupuesto que no alcanza."</em></p>
-      <p>También conviene revisar periódicamente los reportes de crédito y solicitar correcciones cuando existan errores.</p>
-
-      <h2>4. No abras una cuenta solamente porque escuchaste sus siglas</h2>
-      <p>Con el tiempo comenzarás a escuchar términos como TFSA, RRSP, FHSA, RESP. Son herramientas importantes, pero no todas tienen el mismo propósito.</p>
-      <p>Una cuenta registrada tampoco es necesariamente una inversión por sí misma. Es una estructura dentro de la cual pueden mantenerse determinados activos o inversiones, según las reglas aplicables.</p>
-      <p>Antes de realizar aportes conviene confirmar elegibilidad, espacio disponible, objetivo, plazo y necesidad de liquidez.</p>
-      <p>Antes de abrir algo porque un amigo te dijo que "es buenísimo", hazte dos preguntas: <em>¿Para qué necesito este dinero? ¿Cuándo podría necesitar utilizarlo?</em></p>
-
-      <h2>5. Tu relación con la CRA también forma parte de tus finanzas</h2>
-      <p>Los impuestos no deberían aparecer en tu vida solamente cuando llega la temporada de presentar la declaración.</p>
-      <p>Organizar tus comprobantes, conservar documentación y mantener actualizada la información correspondiente puede ayudarte a evitar problemas y comprender mejor los beneficios y créditos para los que eventualmente puedas ser elegible.</p>
-      <p>La situación tributaria de cada persona puede ser diferente, especialmente cuando existen ingresos o activos fuera de Canadá. Por eso no conviene asumir.</p>
-      <p>Cuando existan bienes o ingresos extranjeros que puedan generar obligaciones adicionales, conviene buscar orientación tributaria profesional.</p>
-
-      <h2>6. Protege lo que estás comenzando a construir</h2>
-      <p>Para muchas familias inmigrantes, uno de sus activos económicos más importantes es algo que no aparece en una cuenta bancaria: su capacidad de trabajar y producir ingresos.</p>
-      <p>Por eso una estrategia financiera no debería mirar solamente cuánto ahorras o cuánto puedes invertir. También debería preguntarse: ¿Qué ocurriría si durante varios meses no pudiera trabajar? ¿Quién depende de mis ingresos? ¿Qué beneficios tengo a través de mi empleador? ¿Qué deudas tendría que seguir pagando mi familia? ¿Qué protección tengo actualmente?</p>
-      <p>Una revisión financiera puede incluir beneficios laborales, reserva de emergencia, seguro de vida y protección frente a discapacidad o enfermedad, siempre de acuerdo con las necesidades reales de cada hogar.</p>
-
-      <h2>No necesitas resolverlo todo hoy</h2>
-      <p>Uno de los errores más comunes al comenzar una nueva vida financiera es intentar hacerlo todo al mismo tiempo: abrir cuentas, invertir, comprar casa, construir crédito, ahorrar para los hijos, pensar en el retiro, proteger a la familia.</p>
-      <p>Todo es importante, pero no todo tiene que suceder hoy. Por eso resulta más útil construir una ruta.</p>
-      <p>Una estrategia sencilla puede organizar prioridades en períodos de 30, 60 y 90 días: primero documentos, gastos, crédito y beneficios; después reserva de emergencia y protección; posteriormente objetivos y cuentas registradas.</p>
-
-      <h2>Tu dinero también está comenzando una nueva vida</h2>
-      <p>Migrar no significa solamente cambiar de país. En muchos casos significa reconstruir una carrera, establecer nuevas relaciones, comenzar un historial de crédito, aprender otro sistema tributario y redefinir los objetivos financieros de una familia.</p>
-      <p>No necesitas convertirte en experto financiero para comenzar. Necesitas hacer preguntas. Entender antes de firmar. Organizar antes de invertir. Y construir un plan que tenga sentido para tu realidad.</p>
-
-      <blockquote>Tener muchas cuentas no significa tener un plan. Un verdadero plan comienza cuando puedes explicar qué estás haciendo con tu dinero, por qué lo estás haciendo y hacia dónde quieres llegar.</blockquote>
+      <p>Hay inmigrantes que llevan cinco, diez o hasta veinte años en Canadá. Trabajan, pagan impuestos, tienen tarjetas de crédito, una cuenta TFSA, quizá un RRSP, algún seguro y una pensión a través del empleador. Desde afuera, parece que todo está organizado.</p>
+      <p>Sin embargo, cuando se les pregunta para qué sirve cada cuenta, cuánto necesitan para el retiro o qué ocurriría con su familia si dejaran de producir ingresos, muchas veces no existe una respuesta clara.</p>
+      <p>Ese es el error: confundir actividad financiera con planificación financiera.</p>
+      <p>Recibir un salario, pagar las cuentas y abrir varios productos no significa que exista una estrategia. Un verdadero plan comienza cuando cada dólar tiene un propósito y todas las herramientas trabajan en la misma dirección.</p>
+      <p>El ingreso es el punto de partida. Pero antes de invertir, la familia necesita conocer cuánto entra, cuánto sale y cuánto debe. También necesita una reserva para emergencias. Si cada reparación, enfermedad o reducción de horas termina en la tarjeta de crédito, la estructura todavía es frágil.</p>
+      <p>Después viene la protección. Para muchas familias inmigrantes, el activo más valioso no es la casa ni el automóvil: es la capacidad de trabajar y producir ingresos.</p>
+      <p>Un seguro de vida a término puede cubrir necesidades temporales, como una hipoteca o los años en que los hijos dependen económicamente de sus padres. Una póliza permanente, como Universal Life o Whole Life, puede ofrecer protección vitalicia y, dependiendo de su diseño y contrato, acumular valor. Los seguros de discapacidad y enfermedad grave cubren otro riesgo: continuar con vida, pero perder temporal o permanentemente la capacidad de generar el mismo ingreso.</p>
+      <p>Luego llega el crecimiento. Aquí también existe mucha confusión. TFSA, RRSP, FHSA y RESP no son inversiones por sí mismos. Son cuentas con reglas fiscales diferentes, dentro de las cuales pueden mantenerse distintas inversiones.</p>
+      <p>El TFSA puede ofrecer crecimiento y retiros libres de impuestos dentro de las reglas aplicables. El RRSP puede generar una deducción y difiere el impuesto hasta el retiro. El FHSA ayuda a compradores elegibles de primera vivienda. El RESP permite preparar la educación de los hijos y puede acceder a incentivos gubernamentales.</p>
+      <p>Pero abrir todas esas cuentas sin definir objetivos tampoco resuelve el problema. El dinero para una emergencia, la compra de una vivienda y el retiro no puede invertirse de la misma manera. Cada objetivo tiene un plazo, una necesidad de liquidez y un nivel de riesgo diferente.</p>
+      <p>Finalmente está el retiro. CPP, OAS, pensiones laborales, RRSP y cuentas bloqueadas como la LIRA pueden formar parte de los ingresos futuros. Tenerlas no garantiza que sean suficientes ni que estén coordinadas.</p>
+      <p>Por eso, la pregunta no debería ser únicamente: "¿Cuál inversión ofrece el mejor rendimiento?". La pregunta correcta es: "¿Qué necesito que haga este dinero, cuándo voy a necesitarlo y qué podría impedirme alcanzar esa meta?".</p>
+      <p>Llegar a Canadá fue una gran decisión. Construir una vida financiera con orden, protección y dirección debe ser la siguiente.</p>
+      <p>Descargue gratuitamente la guía "Bienvenido a Canadá: sus primeros pasos financieros". En la edición impresa, escanee el código QR. Si está leyendo este artículo en nuestra web, utilice el botón de descarga que encontrará a continuación.</p>
     `,
     video: null,
     freeGuide: {
       title: "Bienvenido a Canadá — Sus primeros pasos financieros",
-      description: "Complementa esta primera entrega de Tu dinero en Canadá con una guía práctica preparada por Carlos D. Castillo.",
+      description: "Complementa este artículo con la guía práctica preparada por Carlos D. Castillo para comenzar a organizar documentos, crédito, flujo de caja, impuestos, protección y algunas de las principales herramientas financieras disponibles en Canadá.",
+      coverImage: "assets/downloads/guia-carlos-castillo-portada.jpg",
+      fileHref: "assets/downloads/bienvenido-canada-primeros-pasos-financieros-carlos-d-castillo.pdf",
+      buttonLabel: "Descargar guía gratis",
     },
-    sources: [
-      { label: "Financial Consumer Agency of Canada — Making a budget", href: "https://www.canada.ca/en/financial-consumer-agency/services/make-budget.html" },
-      { label: "Financial Consumer Agency of Canada — Setting up an emergency fund", href: "https://www.canada.ca/en/financial-consumer-agency/services/savings-investments/setting-up-emergency-funds.html" },
-      { label: "Canada Revenue Agency — Newcomers to Canada", href: "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/newcomers-canada-immigrants.html" },
-      { label: "Canada Revenue Agency — Tax-Free Savings Account (TFSA)", href: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/tax-free-savings-account.html" },
-      { label: "Canada Revenue Agency — First Home Savings Account (FHSA)", href: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account.html" },
-    ],
+    sources: [],
     correctionNote: null,
     disclaimerCategory: "Finanzas",
     relatedSlugs: [],
@@ -221,7 +179,7 @@ const ARTICLES = [
     translationSlug: null,
     lang: "es",
     seo: {
-      canonicalPath: "/finanzas/llegaste-canada-tu-dinero-tambien/",
+      canonicalPath: "/finanzas/el-error-financiero-inmigrantes-canada/",
     },
   },
   {

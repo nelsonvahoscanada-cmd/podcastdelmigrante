@@ -43,7 +43,7 @@ const COLUMNS = [
     authorName: "Carlos D. Castillo",
     description: "Una columna de educación financiera para ayudar a la comunidad inmigrante a comprender mejor el sistema financiero canadiense y tomar decisiones más informadas sobre organización, ahorro, crédito, protección, inversión y retiro.",
     entries: [
-      { monthLabel: "Septiembre 2026", title: "Llegaste a Canadá. ¿Tu dinero también?", slug: "llegaste-canada-tu-dinero-tambien", published: true },
+      { monthLabel: "Septiembre 2026", title: "El error financiero que muchos inmigrantes descubren demasiado tarde", slug: "el-error-financiero-inmigrantes-canada", published: true },
       { monthLabel: "Octubre 2026", title: "Llegaste a Canadá. ¿Tu dinero también?", published: false },
       { monthLabel: "Noviembre 2026", title: "Trabajas, pagas y ahorras… ¿pero realmente estás avanzando?", published: false },
       { monthLabel: "Diciembre 2026", title: "Una emergencia puede borrar años de esfuerzo", published: false },

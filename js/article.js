@@ -112,11 +112,27 @@
 
   function guideModuleHtml(article) {
     if (!article.freeGuide) return "";
+    const guide = article.freeGuide;
+    if (guide.fileHref) {
+      return `
+        <section class="article-guide article-guide--ready">
+          <div class="article-guide__cover">
+            <img src="${guide.coverImage}" alt="Portada de la guía: ${guide.title}">
+          </div>
+          <div class="article-guide__info">
+            <span class="article-guide__kicker">Guía práctica gratuita</span>
+            <h2 class="article-guide__title">${guide.title}</h2>
+            <p class="article-guide__desc">${guide.description}</p>
+            <a class="btn article-guide__btn" href="${guide.fileHref}" target="_blank" rel="noopener">${guide.buttonLabel || "Descargar guía gratis"}</a>
+          </div>
+        </section>
+      `;
+    }
     return `
       <section class="article-guide">
         <span class="article-guide__kicker">Guía práctica gratuita</span>
-        <h2 class="article-guide__title">${article.freeGuide.title}</h2>
-        <p class="article-guide__desc">${article.freeGuide.description}</p>
+        <h2 class="article-guide__title">${guide.title}</h2>
+        <p class="article-guide__desc">${guide.description}</p>
         <span class="article-guide__status">Disponible próximamente</span>
       </section>
     `;
