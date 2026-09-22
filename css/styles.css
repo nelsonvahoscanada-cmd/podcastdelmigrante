@@ -1089,6 +1089,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 @media (max-width: 759px) {
   .distro-grid { grid-template-columns: 1fr; }
 }
+.distro-empty {
+  grid-column: 1 / -1;
+  padding: 24px 20px;
+  background: var(--gris-100);
+  border-radius: var(--radius-s);
+  color: var(--gris-600);
+  font-size: 0.94rem;
+  text-align: center;
+}
 .distro-card {
   border: var(--border);
   border-radius: var(--radius-s);

@@ -27,12 +27,12 @@
   /* ---------- Edición del mes (para header y módulo) ---------- */
   function fillEdition() {
     document.querySelectorAll("[data-edition-label]").forEach((n) => {
-      n.textContent = `Edición ${EDITION.monthLabel} ${EDITION.year}`;
+      n.textContent = `Edición #${EDITION.number} · ${EDITION.monthLabel} ${EDITION.year}`;
     });
     const headlineNode = document.getElementById("editionHeadline");
     if (headlineNode) headlineNode.textContent = EDITION.headline;
     const numNode = document.getElementById("editionNumLabel");
-    if (numNode) numNode.textContent = `Edición ${String(EDITION.number).padStart(2, "0")}`;
+    if (numNode) numNode.textContent = `Edición #${EDITION.number}`;
 
     const monthsWrap = document.getElementById("editionMonths");
     if (monthsWrap) {
@@ -304,7 +304,18 @@
   function renderDistroGrid(city) {
     const grid = document.getElementById("distroGrid");
     grid.innerHTML = "";
-    DISTRIBUTION_POINTS.filter((p) => p.city === city).forEach((p) => {
+    const points = DISTRIBUTION_POINTS.filter((p) => p.city === city);
+    if (!points.length) {
+      grid.appendChild(
+        el(
+          "p",
+          "distro-empty",
+          `Estamos preparando nuestros puntos de distribución para la Edición #1 — Octubre 2026. Próximamente encontrarás aquí los establecimientos donde podrás recoger gratuitamente El Podcast del Migrante Magazine.`
+        )
+      );
+      return;
+    }
+    points.forEach((p) => {
       const card = el(
         "article",
         "distro-card",
@@ -329,9 +340,8 @@
   }
 
   function buildDistribution() {
-    const cities = [...new Set(DISTRIBUTION_POINTS.map((p) => p.city))];
     const citiesWrap = document.getElementById("distroCities");
-    cities.forEach((city, i) => {
+    DISTRIBUTION_CITIES.forEach((city, i) => {
       const btn = el("button", "distro-city-btn" + (i === 0 ? " is-active" : ""), city);
       btn.type = "button";
       btn.addEventListener("click", () => {
@@ -341,7 +351,7 @@
       });
       citiesWrap.appendChild(btn);
     });
-    if (cities.length) renderDistroGrid(cities[0]);
+    if (DISTRIBUTION_CITIES.length) renderDistroGrid(DISTRIBUTION_CITIES[0]);
   }
 
   /* ---------- Newsletter (demo, sin backend) ---------- */

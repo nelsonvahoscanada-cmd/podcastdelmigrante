@@ -21,16 +21,16 @@ const SITE = {
 
 const EDITION = {
   number: 1,
-  monthLabel: "Septiembre",
+  monthLabel: "Octubre",
   year: 2026,
-  headline: "Lo que todo migrante necesita saber antes de terminar el año",
+  headline: "Nuestra primera edición sigue creciendo: cada semana se suman nuevas historias, columnas y videos.",
   cta: "Ver edición",
 };
 
 const BREAKING = [
-  "Servicio de Ciudadanía e Inmigración amplía horarios de atención en Alberta — demo",
-  "Nueva guía práctica para arrendar vivienda por primera vez en Canadá — demo",
-  "Feria de empleo para nuevos residentes se realizará este mes en Calgary — demo",
+  "Servicio de Ciudadanía e Inmigración amplía horarios de atención en Alberta",
+  "Nueva guía práctica para arrendar vivienda por primera vez en Canadá",
+  "Feria de empleo para nuevos residentes se realizará este mes en Calgary",
 ];
 
 const NAV_PRIMARY = [
@@ -170,8 +170,9 @@ const SPONSORS = [
   { kind: "Patrocinado", name: "Espacio disponible" },
 ];
 
-/* Meses de 2026: solo septiembre está activo (Edición 01, primer número).
-   Los demás aparecen deshabilitados — no representan ediciones publicadas. */
+/* Meses de 2026: solo octubre está activo (Edición 01, primera
+   edición oficial). Los demás aparecen deshabilitados — no
+   representan ediciones publicadas. */
 const EDITION_MONTHS = [
   { label: "Ene", active: false },
   { label: "Feb", active: false },
@@ -181,8 +182,8 @@ const EDITION_MONTHS = [
   { label: "Jun", active: false },
   { label: "Jul", active: false },
   { label: "Ago", active: false },
-  { label: "Sep", active: true },
-  { label: "Oct", active: false },
+  { label: "Sep", active: false },
+  { label: "Oct", active: true },
   { label: "Nov", active: false },
   { label: "Dic", active: false },
 ];
@@ -268,10 +269,15 @@ const CONTRIBUTORS = [
    Todos los establecimientos listados son DEMO — nombres y
    direcciones ficticios, sin representar negocios reales.
 ========================================================= */
-const DISTRIBUTION_POINTS = [
-  { city: "Calgary", name: "Tienda demo — Calgary Centro", address: "Calle Demo 123, Calgary, AB", website: "#" },
-  { city: "Calgary", name: "Café demo — Calgary Norte", address: "Avenida Demo 456, Calgary, AB", website: "" },
-  { city: "Brooks", name: "Mercado demo — Brooks", address: "Calle Demo 789, Brooks, AB", website: "#" },
-  { city: "Airdrie", name: "Panadería demo — Airdrie", address: "Calle Demo 321, Airdrie, AB", website: "" },
-  { city: "Red Deer", name: "Restaurante demo — Red Deer", address: "Avenida Demo 654, Red Deer, AB", website: "#" },
-];
+
+/* Ciudades del directorio — independientes de los puntos reales,
+   para que las pestañas de ciudad sigan existiendo aunque todavía
+   no haya establecimientos cargados para ninguna de ellas. Agregar
+   una ciudad nueva (ej. Edmonton) es solo añadirla aquí. */
+const DISTRIBUTION_CITIES = ["Calgary", "Brooks", "Airdrie", "Red Deer"];
+
+/* Sin establecimientos reales todavía para la Edición #1 — Octubre
+   2026. NO agregar negocios ni direcciones ficticias: cuando existan
+   puntos de distribución reales, se agregan aquí como
+   { city, name, address, website }. */
+const DISTRIBUTION_POINTS = [];
