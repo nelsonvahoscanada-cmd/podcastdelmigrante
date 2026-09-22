@@ -85,6 +85,7 @@
       <p class="article-dek">${contributor.bio}</p>
       ${contributor.longBio ? `<p class="profile-longbio">${contributor.longBio}</p>` : ""}
       ${contributor.licensedIn ? `<p class="profile-licensed"><strong>Licenciado en:</strong> ${contributor.licensedIn}</p>` : ""}
+      ${contributor.brandLogo ? `<div class="profile-brand"><img src="${contributor.brandLogo.src}" alt="${contributor.brandLogo.alt}"></div>` : ""}
 
       ${proSiteBtn ? `<div class="profile-actions">${proSiteBtn}</div>` : ""}
 

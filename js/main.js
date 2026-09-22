@@ -271,6 +271,9 @@
         : `<div class="contributor-card__avatar">${initials(c.name)}</div>`;
       const orgLine = c.organization ? `<p class="contributor-card__org">${c.organization}</p>` : "";
       const columnLine = c.columnName ? `<p class="contributor-card__column">Columna: ${c.columnName}</p>` : "";
+      const brandLogo = c.brandLogo
+        ? `<img class="contributor-card__logo" src="${c.brandLogo.src}" alt="${c.brandLogo.alt}">`
+        : "";
       const card = el(
         "article",
         "contributor-card",
@@ -280,6 +283,7 @@
         <span class="tag tag--sm">${c.specialty}</span>
         ${orgLine}
         ${columnLine}
+        ${brandLogo}
         <p class="contributor-card__bio">${c.bio}</p>
         ${c.articlesNote ? `<p class="contributor-card__note">${c.articlesNote}</p>` : ""}
         <div class="contributor-card__links">

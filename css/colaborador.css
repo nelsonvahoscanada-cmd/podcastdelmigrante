@@ -37,6 +37,11 @@
 
 .profile-longbio { font-size: 0.98rem; color: var(--gris-600); margin-top: 16px; }
 .profile-licensed { font-size: 0.88rem; color: var(--gris-600); margin-top: 12px; }
+.profile-brand { margin-top: 20px; }
+.profile-brand img { width: 150px; height: auto; }
+@media (max-width: 480px) {
+  .profile-brand img { width: 110px; }
+}
 
 .profile-actions { margin: 22px 0 6px; }
 

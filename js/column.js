@@ -49,6 +49,10 @@
     const authorLine = contributor
       ? `<a href="index.html#contributors">${contributor.name}</a>${contributor.organization ? ` — ${contributor.organization}` : ""}`
       : column.authorName;
+    const authorLogo =
+      contributor && contributor.brandLogo
+        ? `<img class="column-author-logo" src="${contributor.brandLogo.src}" alt="${contributor.brandLogo.alt}">`
+        : "";
 
     const entries = column.entries.map(entryRowHtml).join("");
 
@@ -56,7 +60,10 @@
       <span class="tag">${column.category}</span>
       <h1 class="article-title">${column.title}</h1>
       <p class="article-dek">${column.description}</p>
-      <p class="byline article-byline">Por ${authorLine}</p>
+      <div class="column-author-row">
+        <p class="byline article-byline">Por ${authorLine}</p>
+        ${authorLogo}
+      </div>
 
       <section class="column-entries">
         <h2 class="section-title">Entregas</h2>

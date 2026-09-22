@@ -66,9 +66,17 @@
       const link = author.profileHref
         ? `<a href="${author.profileHref}">${author.name}</a>`
         : author.name;
+      const contributor =
+        author.authorId && typeof CONTRIBUTORS !== "undefined"
+          ? CONTRIBUTORS.find((c) => c.id === author.authorId)
+          : null;
+      const logo =
+        contributor && contributor.brandLogo
+          ? `<img class="article-byline__logo" src="${contributor.brandLogo.src}" alt="${contributor.brandLogo.alt}">`
+          : "";
       return `<span class="article-byline__name">${link}</span>${
         author.specialty ? `<span class="article-byline__specialty"> — ${author.specialty}</span>` : ""
-      }`;
+      }${logo}`;
     }
     return `<span class="article-byline__name">${author.name}</span>`;
   }

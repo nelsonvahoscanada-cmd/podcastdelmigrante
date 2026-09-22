@@ -97,6 +97,7 @@ a.article-column-badge:hover { background: #82b204; }
 .article-byline__name a { color: var(--negro); border-bottom: 1px solid var(--verde); }
 .article-byline__name a:hover { color: var(--verde-oscuro); }
 .article-byline__specialty { color: var(--gris-600); }
+.article-byline__logo { height: 22px; width: auto; vertical-align: middle; margin-left: 10px; opacity: 0.9; }
 
 .lang-toggle { display: flex; gap: 6px; flex-shrink: 0; }
 .lang-pill {

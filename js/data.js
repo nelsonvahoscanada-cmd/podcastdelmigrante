@@ -217,6 +217,10 @@ const EDITION_MONTHS = [
    - organization: empresa/entidad del colaborador (opcional)
    - columnName: columna editorial recurrente que firma (opcional)
    - licensedIn: jurisdicciones donde tiene licencia, si aplica (opcional)
+   - brandLogo: { src, alt } — logo oficial de la marca profesional
+     del colaborador (distinto del logo de El Podcast del Migrante),
+     usado como identificación secundaria — nunca reemplaza su foto
+     (opcional)
    - link: enlace de "Ver perfil" — la página de perfil interno
      (colaborador.html?id=...) una vez que existe
    - website: enlace externo/profesional adicional, se muestra como
@@ -244,6 +248,7 @@ const CONTRIBUTORS = [
     bio: "Educación, protección y arquitectura financiera.",
     longBio: "Carlos D. Castillo desarrolla contenido de educación financiera enfocado en ayudar a familias y migrantes a comprender mejor la organización financiera, la protección y las herramientas disponibles en Canadá. Su trayectoria en seguros comenzó en Colombia en 1994 y cuenta con más de una década de experiencia en la industria de seguros en Canadá.",
     licensedIn: "Alberta, British Columbia, Ontario y Saskatchewan.",
+    brandLogo: { src: "assets/carlos-castillo-logo.png", alt: "Carlos Castillo" },
     articlesNote: "Firma la columna mensual Tu dinero en Canadá.",
     link: "colaborador.html?id=carlos-castillo",
     website: "",
