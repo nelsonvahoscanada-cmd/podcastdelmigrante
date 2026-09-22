@@ -29,6 +29,8 @@
     document.querySelectorAll("[data-edition-label]").forEach((n) => {
       n.textContent = `Edición #${EDITION.number} · ${EDITION.monthLabel} ${EDITION.year}`;
     });
+    const kickerNode = document.getElementById("editionKickerLabel");
+    if (kickerNode) kickerNode.textContent = `Edición #${EDITION.number} · ${EDITION.monthLabel} ${EDITION.year} — Edición Digital`;
     const headlineNode = document.getElementById("editionHeadline");
     if (headlineNode) headlineNode.textContent = EDITION.headline;
     const numNode = document.getElementById("editionNumLabel");
@@ -381,7 +383,10 @@
     buildDesafio();
     buildMostRead();
     buildContributors();
-    buildDistribution();
+    /* buildDistribution() se deja preparada en el código pero no se
+       invoca todavía: la Edición #1 es exclusivamente digital y el
+       Magazine impreso (con sus puntos de distribución) aún no se ha
+       lanzado. Reactivar aquí cuando comience la edición física. */
     buildSponsors();
     bindNewsletter();
   });
