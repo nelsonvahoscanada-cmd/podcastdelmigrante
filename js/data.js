@@ -107,12 +107,12 @@ const HERO = {
 };
 
 const LATEST = [
-  { category: "Canadá", title: "Cambios en el requisito de fondos de manutención para 2027", time: "Hace 2 horas" },
-  { category: "Finanzas", title: "Cómo construir historial crediticio sin tarjeta previa en Canadá", time: "Hace 4 horas" },
-  { category: "Educación", title: "Programas de idiomas gratuitos disponibles este otoño en Alberta", time: "Hace 6 horas" },
-  { category: "Empleo", title: "Sectores con mayor demanda de mano de obra en las praderas canadienses", time: "Hoy, 8:10 a.m." },
-  { category: "Migración", title: "Diferencias entre permiso de trabajo abierto y cerrado, explicadas", time: "Ayer" },
-  { category: "Comunidad", title: "Directorio de iglesias y centros comunitarios en español en Brooks", time: "Ayer" },
+  { category: "Canadá", title: "Trabajadores temporales ya pueden estudiar hasta 6 meses sin permiso de estudios", time: "Hoy", slug: "trabajadores-estudiar-sin-study-permit-canada" },
+  { category: "Finanzas", title: "Canadá limita a $10 los cargos bancarios por pagos rechazados por falta de fondos", time: "Hoy", slug: "canada-limite-cargos-nsf-10-dolares" },
+  { category: "Educación", title: "¿Tu profesión quedó atrás al llegar a Canadá? Alberta ofrece capacitación gratuita para inmigrantes elegibles", time: "Hoy", slug: "immigrant-bridging-program-alberta" },
+  { category: "Vivienda", title: "¿El arriendo se está llevando gran parte de tu ingreso? Alberta tiene ayudas mensuales para inquilinos elegibles", time: "Hoy", slug: "ayuda-pagar-arriendo-alberta" },
+  { category: "Salud", title: "¿No tienes seguro dental? Revisa si puedes acceder al plan dental federal de Canadá", time: "Hoy", slug: "plan-dental-canada-cdcp" },
+  { category: "Comunidad", title: "¿Tienes permiso de trabajo en Alberta? Puedes acceder a servicios gratuitos para inmigrantes", time: "Hoy", slug: "servicios-gratuitos-trabajadores-temporales-alberta" },
 ];
 
 const USEFUL_INFO = [

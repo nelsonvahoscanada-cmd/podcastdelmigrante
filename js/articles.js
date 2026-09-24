@@ -109,6 +109,8 @@ const DISCLAIMERS = {
   "Salud": "Este contenido tiene fines informativos y educativos, no reemplaza una consulta médica. Ante cualquier síntoma o duda de salud, consulta a un profesional de la salud calificado.",
   "Legal": "Este contenido tiene fines informativos y educativos, no constituye asesoría legal. Cada situación es distinta — consulta con un abogado o profesional autorizado para tu caso particular.",
   "Vivienda": "Esta guía ofrece información general sobre arrendamientos residenciales en Alberta y no constituye asesoría legal. Las reglas pueden variar según el tipo de vivienda o la situación particular. Para información actualizada y casos específicos, consulta Government of Alberta, la Residential Tenancies Act o un profesional calificado.",
+  "Educación": "Este contenido tiene fines informativos y educativos. La elegibilidad para programas de capacitación o financiamiento depende de los requisitos vigentes de cada organización o entidad gubernamental, y puede cambiar. Verifica los requisitos actuales antes de asumir que calificas.",
+  "Comunidad": "Este contenido tiene fines informativos. La disponibilidad y elegibilidad de los servicios de asentamiento y apoyo comunitario dependen de tu estatus, del programa específico y de los requisitos vigentes, y pueden cambiar. Verifica directamente con la organización correspondiente.",
 };
 
 /* =========================================================
@@ -120,6 +122,377 @@ const DISCLAIMERS = {
    describe hechos, cifras ni declaraciones reales.
 ========================================================= */
 const ARTICLES = [
+  {
+    id: "ART-2026-007",
+    slug: "trabajadores-estudiar-sin-study-permit-canada",
+    category: "Canadá",
+    contentType: "Noticia",
+    title: "Trabajadores temporales ya pueden estudiar hasta 6 meses sin permiso de estudios",
+    dek: "Una política pública temporal permite que determinados trabajadores extranjeros que ya se encuentran en Canadá y poseen un permiso de trabajo válido realicen programas de estudio de seis meses o menos sin solicitar un study permit.",
+    excerpt: "Trabajadores con permiso válido pueden estudiar hasta 6 meses sin study permit, bajo una política temporal de IRCC vigente desde el 4 de septiembre de 2026.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-09-23T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: null,
+    demo: false,
+    heroImage: {
+      background: "url('assets/noticia-canada-estudiar-work-permit.jpg')",
+      aspectRatio: "16/9",
+      alt: "Joven inmigrante estudiando con laptop y cuadernos, combinando trabajo y estudios en Canadá.",
+    },
+    bodyHtml: `
+      <p>Para muchos inmigrantes que ya están trabajando en Canadá, estudiar para mejorar sus habilidades podía significar realizar un trámite migratorio adicional.</p>
+      <p>Desde el 4 de septiembre de 2026, una política pública temporal de Immigration, Refugees and Citizenship Canada (IRCC) permite a determinados titulares de permisos de trabajo estudiar sin un permiso de estudios cuando el programa tiene una duración máxima de seis meses.</p>
+      <h2>¿Quién puede beneficiarse?</h2>
+      <p>IRCC establece dos condiciones centrales:</p>
+      <ul>
+        <li>Tener un work permit válido.</li>
+        <li>Que el programa de estudios dure seis meses o menos.</li>
+      </ul>
+      <p>La autorización permite estudiar durante un máximo de seis meses o hasta que expire el permiso de trabajo, lo que ocurra primero.</p>
+      <p>La medida puede facilitar capacitaciones, educación o procesos de licenciamiento de corta duración para trabajadores que ya se encuentran en Canadá.</p>
+      <h2>Importante si estudias tiempo completo</h2>
+      <p>IRCC advierte que si una persona estudia full-time utilizando esta política temporal, la experiencia laboral obtenida durante ese período no contará para:</p>
+      <ul>
+        <li>Elegibilidad de Canadian Experience Class (CEC).</li>
+        <li>Puntos de experiencia laboral canadiense dentro del Comprehensive Ranking System (CRS) de Express Entry.</li>
+      </ul>
+      <p>Este detalle puede ser especialmente importante para trabajadores que están acumulando experiencia canadiense con objetivos migratorios.</p>
+      <h2>¿Qué pasa con un co-op?</h2>
+      <p>Si el programa incluye una práctica co-op y el empleador o la ocupación son diferentes de los establecidos en el permiso de trabajo actual, puede ser necesario solicitar otro employer-specific work permit.</p>
+      <p>Los titulares de open work permits no necesitan solicitar otro permiso únicamente por esa razón.</p>
+      <h2>¿Hasta cuándo está disponible?</h2>
+      <p>La política entró en vigor el 4 de septiembre de 2026 y está prevista hasta el 31 de diciembre de 2027, salvo que el Gobierno la revoque antes.</p>
+      <h2>¿Qué significa para ti?</h2>
+      <p>Si actualmente tienes un permiso de trabajo válido y estás pensando en realizar una capacitación o programa corto, revisa esta política antes de asumir que necesariamente debes solicitar un study permit.</p>
+      <p>Verifica siempre la duración del programa, la vigencia de tu work permit y las posibles consecuencias migratorias de estudiar mientras trabajas.</p>
+      <p>Esta medida no constituye una nueva vía para venir a Canadá.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Immigration, Refugees and Citizenship Canada (IRCC) — Government of Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/workers-study-without-study-permit.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Migración",
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/canada/trabajadores-estudiar-sin-study-permit-canada/" },
+  },
+  {
+    id: "ART-2026-008",
+    slug: "canada-limite-cargos-nsf-10-dolares",
+    category: "Finanzas",
+    contentType: "Noticia",
+    title: "Canadá limita a $10 los cargos bancarios por pagos rechazados por falta de fondos",
+    dek: "Desde marzo de 2026, los bancos regulados federalmente no pueden cobrar más de $10 en cargos NSF sobre cuentas personales cubiertas por las nuevas reglas.",
+    excerpt: "Los cargos por fondos insuficientes (NSF), que antes rondaban entre $45 y $48, ahora están limitados a $10 en cuentas personales cubiertas por la regulación federal.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-09-23T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: null,
+    demo: false,
+    heroImage: {
+      background: "url('assets/noticia-finanzas-cargos-nsf.jpg')",
+      aspectRatio: "16/9",
+      alt: "Mujer inmigrante revisando su saldo bancario desde el celular junto a una alcancía, frente a un banco en Canadá.",
+    },
+    bodyHtml: `
+      <p>Para alguien que está comenzando su vida financiera en Canadá, quedarse unos dólares corto en una cuenta cuando llega un pago automático podía generar una penalización considerable.</p>
+      <p>Eso cambió el 12 de marzo de 2026.</p>
+      <p>La Financial Consumer Agency of Canada (FCAC) confirmó la entrada en vigor de nuevas regulaciones que limitan a $10 los cargos conocidos como Non-Sufficient Funds (NSF) aplicados por instituciones financieras reguladas federalmente sobre cuentas personales de depósito.</p>
+      <p>Antes de las nuevas reglas, FCAC señala que estos cargos normalmente se encontraban entre $45 y $48.</p>
+      <h2>¿Qué es un NSF?</h2>
+      <p>Puede ocurrir cuando una cuenta no tiene suficiente dinero para cubrir determinadas transacciones, por ejemplo un cheque o un débito preautorizado.</p>
+      <h2>Tres protecciones importantes</h2>
+      <p>En las cuentas personales cubiertas por la regulación:</p>
+      <ul>
+        <li>El cargo NSF no puede superar $10.</li>
+        <li>No puede cobrarse otro NSF sobre la misma cuenta dentro de un período de dos días hábiles.</li>
+        <li>No puede cobrarse NSF cuando el sobregiro de la cuenta sea inferior a $10.</li>
+      </ul>
+      <p>Estas reglas se refieren a cuentas personales cubiertas por las regulaciones de instituciones financieras federales — no a absolutamente cualquier cuenta bancaria o cuenta comercial en Canadá.</p>
+      <h2>Activa las alertas de saldo</h2>
+      <p>Las instituciones financieras reguladas federalmente también deben ofrecer alertas electrónicas cuando el saldo o crédito disponible cae por debajo de determinado umbral.</p>
+      <p>El valor predeterminado es $100 y el cliente puede modificarlo o desactivar la alerta.</p>
+      <h2>¿Qué significa para ti?</h2>
+      <p>Si tienes pagos automáticos de teléfono, seguros, servicios, gimnasio u otras facturas, revisar tu saldo y activar alertas puede ayudarte a evitar pagos rechazados.</p>
+      <p>Si observas un cargo NSF superior al permitido en una cuenta personal cubierta por estas reglas, revisa el movimiento y consulta con tu institución financiera.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Financial Consumer Agency of Canada (FCAC) — Government of Canada, 12 de marzo de 2026", href: "https://www.canada.ca/en/financial-consumer-agency/news/2026/03/new-nsf-fee-regulations-bring-down-cost-of-banking-for-canadians.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Finanzas",
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/finanzas/canada-limite-cargos-nsf-10-dolares/" },
+  },
+  {
+    id: "ART-2026-009",
+    slug: "immigrant-bridging-program-alberta",
+    category: "Educación",
+    contentType: "Guía",
+    title: "¿Tu profesión quedó atrás al llegar a Canadá? Alberta ofrece capacitación gratuita para inmigrantes elegibles",
+    dek: "El Immigrant Bridging Program ayuda a determinados inmigrantes con educación o experiencia previa a adquirir capacitación relacionada con su ocupación y experiencia laboral canadiense.",
+    excerpt: "El Immigrant Bridging Program de Alberta ofrece capacitación relacionada con la ocupación de la persona, sin costo para participantes elegibles.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-09-23T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/noticia-educacion-immigrant-bridging.jpg')",
+      aspectRatio: "16/9",
+      alt: "Mujer inmigrante en una capacitación profesional en Alberta, Canadá.",
+    },
+    bodyHtml: `
+      <p>Llegar a Canadá con años de experiencia profesional no significa necesariamente poder continuar inmediatamente en la misma ocupación.</p>
+      <p>Las diferencias en credenciales, experiencia canadiense, idioma y funcionamiento del mercado laboral pueden convertirse en barreras.</p>
+      <p>Alberta cuenta con el Immigrant Bridging Program.</p>
+      <h2>¿Qué ofrece?</h2>
+      <p>Su objetivo principal es proporcionar capacitación relacionada con la ocupación de la persona.</p>
+      <p>Dependiendo del programa puede incluir:</p>
+      <ul>
+        <li>Capacitación reconocida por la industria.</li>
+        <li>Habilidades esenciales para el trabajo.</li>
+        <li>Experiencia laboral no remunerada.</li>
+        <li>Aplicación de nuevas habilidades en situaciones reales de trabajo.</li>
+      </ul>
+      <h2>¿Quién puede participar?</h2>
+      <p>Los participantes elegibles deben:</p>
+      <ul>
+        <li>Ser adultos en Alberta.</li>
+        <li>Estar desempleados o subempleados.</li>
+        <li>Ser residentes permanentes o ciudadanos canadienses.</li>
+        <li>Necesitar capacitación para obtener y mantener empleo.</li>
+        <li>Demostrar dominio del inglés.</li>
+      </ul>
+      <p>Este programa no está disponible automáticamente para cualquier trabajador temporal o estudiante internacional.</p>
+      <h2>¿Cuánto cuesta?</h2>
+      <p>El programa se ofrece sin costo para participantes elegibles.</p>
+      <p>Alberta también indica que puede existir asistencia financiera para determinados participantes que necesiten apoyo para cubrir gastos de vida mientras realizan la capacitación, dependiendo de sus circunstancias.</p>
+      <h2>¿Cómo encontrar un programa?</h2>
+      <p>El lector puede consultar el Employment and Training Services Directory del Gobierno de Alberta y contactar directamente a la organización que ofrece el programa para verificar su elegibilidad.</p>
+      <h2>¿Qué significa para ti?</h2>
+      <p>Si llegaste con estudios o experiencia profesional y actualmente estás desempleado o trabajando muy por debajo de tu preparación, revisa si existe un programa relacionado con tu profesión.</p>
+      <p>No necesariamente tienes que asumir que debes comenzar desde cero.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Immigrant Bridging Program", href: "https://www.alberta.ca/training-and-employment-services-immigrant-bridging-program" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Educación",
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/educacion/immigrant-bridging-program-alberta/" },
+  },
+  {
+    id: "ART-2026-010",
+    slug: "ayuda-pagar-arriendo-alberta",
+    category: "Vivienda",
+    contentType: "Guía",
+    title: "¿El arriendo se está llevando gran parte de tu ingreso? Alberta tiene ayudas mensuales para inquilinos elegibles",
+    dek: "El Rent Supplement Program puede ayudar a determinados hogares de bajos ingresos a pagar parte del alquiler y contempla opciones de apoyo de largo plazo y temporal.",
+    excerpt: "Alberta ofrece dos programas de apoyo al alquiler — uno de largo plazo y uno temporal — para hogares elegibles de bajos ingresos.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-09-23T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/noticia-vivienda-rent-assistance-alberta.jpg')",
+      aspectRatio: "16/9",
+      alt: "Pareja inmigrante revisando un contrato de arrendamiento con una agente, con vista a Calgary.",
+    },
+    bodyHtml: `
+      <p>El costo de la vivienda puede convertirse en uno de los gastos más difíciles para una familia que se está estableciendo en Alberta.</p>
+      <p>El Gobierno provincial mantiene programas que ayudan a determinados hogares a cubrir parte del alquiler.</p>
+      <h2>Dos tipos principales de ayuda</h2>
+      <p><strong>1. Rent Assistance Benefit (RAB)</strong></p>
+      <p>Es un apoyo de largo plazo para hogares de bajos ingresos. Características:</p>
+      <ul>
+        <li>Se paga directamente al inquilino.</li>
+        <li>Se calcula teniendo en cuenta ingresos del hogar y alquiler del mercado local.</li>
+        <li>Los hogares son priorizados según necesidad.</li>
+        <li>Puede renovarse anualmente mientras continúe la elegibilidad.</li>
+      </ul>
+      <p><strong>2. Temporary Rent Assistance Benefit (TRAB)</strong></p>
+      <p>Está dirigido a determinados hogares trabajadores de bajos ingresos o personas entre empleos que necesitan apoyo temporal. Tiene un límite de dos años y la elegibilidad se vuelve a evaluar después del primer año.</p>
+      <h2>¿Un inmigrante puede solicitarlo?</h2>
+      <p>Dependiendo de su situación.</p>
+      <p>La elegibilidad provincial incluye categorías como ciudadanos canadienses, residentes permanentes, refugiados y determinados solicitantes de estatus de refugiado o inmigrante, además de otras categorías establecidas por Alberta.</p>
+      <p>También existen límites de ingresos y otros requisitos. No todos los inmigrantes califican.</p>
+      <h2>Estar trabajando no necesariamente te excluye</h2>
+      <p>TRAB está precisamente diseñado para determinados hogares trabajadores con bajos ingresos o personas entre empleos.</p>
+      <p>Existen requisitos adicionales y algunas personas que reciben determinados programas de asistencia social no califican para TRAB.</p>
+      <h2>Disponibilidad</h2>
+      <p>RAB está disponible mediante la mayoría de housing management bodies de Alberta.</p>
+      <p>TRAB está disponible en Calgary, Edmonton, Fort McMurray, Grande Prairie, Lethbridge, Medicine Hat, Red Deer y muchas comunidades cercanas.</p>
+      <h2>¿Cómo solicitar?</h2>
+      <p>Utilizar la herramienta oficial Find Housing de Alberta para:</p>
+      <ul>
+        <li>Responder preguntas sobre la situación del hogar.</li>
+        <li>Revisar opciones.</li>
+        <li>Elegir un proveedor local.</li>
+        <li>Contactar al proveedor para obtener la solicitud.</li>
+      </ul>
+      <h2>¿Qué significa para ti?</h2>
+      <p>Si pagas alquiler en Alberta y tus ingresos son bajos, no asumas que estar trabajando automáticamente te excluye.</p>
+      <p>Comprueba tu estatus, ingresos, comunidad y los requisitos específicos del programa.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Rent Assistance", href: "https://www.alberta.ca/rent-assistance" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Vivienda",
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/vivienda/ayuda-pagar-arriendo-alberta/" },
+  },
+  {
+    id: "ART-2026-011",
+    slug: "plan-dental-canada-cdcp",
+    category: "Salud",
+    contentType: "Guía",
+    title: "¿No tienes seguro dental? Revisa si puedes acceder al plan dental federal de Canadá",
+    dek: "El Canadian Dental Care Plan (CDCP) ayuda a reducir determinados costos de atención dental para personas que cumplen sus requisitos. El ingreso familiar neto ajustado debe ser inferior a $90,000.",
+    excerpt: "El Canadian Dental Care Plan (CDCP) tiene cuatro requisitos de elegibilidad centrales — revisa si calificas antes de asumir cualquier cosa.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-09-23T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: null,
+    demo: false,
+    heroImage: {
+      background: "url('assets/noticia-salud-canadian-dental-care-plan.jpg')",
+      aspectRatio: "16/9",
+      alt: "Mujer recibiendo atención dental en un consultorio en Canadá.",
+    },
+    bodyHtml: `
+      <p>Para muchas familias, una visita al dentista puede representar un gasto considerable cuando el empleo no incluye cobertura dental.</p>
+      <p>El Canadian Dental Care Plan establece cuatro requisitos principales de elegibilidad.</p>
+      <h2>Los cuatro requisitos</h2>
+      <p>La persona debe:</p>
+      <ul>
+        <li>No tener acceso a seguro o cobertura dental privada.</li>
+        <li>Haber presentado su declaración de impuestos en Canadá.</li>
+        <li>Tener adjusted family net income inferior a $90,000.</li>
+        <li>Ser residente de Canadá para efectos fiscales.</li>
+      </ul>
+      <p>Cuando existe esposo/a o pareja de hecho, también se aplican las condiciones fiscales correspondientes indicadas por el Gobierno.</p>
+      <p>Ser inmigrante no excluye automáticamente a una persona, pero vivir en Canadá tampoco garantiza elegibilidad. Se deben cumplir todos los requisitos.</p>
+      <h2>¿Qué pasa si mi empleo ofrece cobertura?</h2>
+      <p>El criterio es tener acceso a cobertura privada, no simplemente utilizarla. No se debe rechazar o cancelar arbitrariamente una cobertura laboral para intentar acceder al CDCP.</p>
+      <h2>Otras ayudas públicas</h2>
+      <p>Una persona que tenga cobertura dental mediante determinados programas sociales federales, provinciales o territoriales podría todavía calificar para CDCP si cumple los demás requisitos. Las coberturas pueden coordinarse.</p>
+      <h2>¿El dentista queda completamente gratis?</h2>
+      <p>No necesariamente.</p>
+      <p>Dependiendo del ingreso familiar y de los servicios recibidos, puede existir una parte que el paciente deba pagar. También puede haber diferencias si el proveedor cobra por encima de las tarifas establecidas por el programa o por servicios que el CDCP no cubre.</p>
+      <h2>Cuidado con las estafas</h2>
+      <p>Solicitar o renovar el CDCP no tiene costo. Desconfía de personas, mensajes o páginas que soliciten pagos para presentar la solicitud.</p>
+      <h2>¿Qué significa para ti?</h2>
+      <p>Si no tienes acceso a cobertura dental privada y has pospuesto atención dental por su costo, revisa directamente los cuatro requisitos oficiales.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Canada — Canadian Dental Care Plan (elegibilidad)", href: "https://www.canada.ca/en/services/benefits/dental/dental-care-plan/qualify.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Salud",
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/salud/plan-dental-canada-cdcp/" },
+  },
+  {
+    id: "ART-2026-012",
+    slug: "servicios-gratuitos-trabajadores-temporales-alberta",
+    category: "Comunidad",
+    contentType: "Guía",
+    title: "¿Tienes permiso de trabajo en Alberta? Puedes acceder a servicios gratuitos para inmigrantes",
+    dek: "Alberta financia servicios de asentamiento y apoyo comunitario para determinadas categorías de residentes temporales con permiso de trabajo y refugee claimants.",
+    excerpt: "Alberta financia servicios de asentamiento para residentes temporales con permiso de trabajo, incluso sin residencia permanente todavía.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-09-23T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/noticia-comunidad-servicios-inmigrantes-alberta.jpg')",
+      aspectRatio: "16/9",
+      alt: "Voluntarios organizando donativos de alimentos en un centro comunitario en Canadá.",
+    },
+    bodyHtml: `
+      <p>No tener todavía residencia permanente no significa necesariamente estar solo durante el proceso de adaptación a Canadá.</p>
+      <p>Alberta financia servicios de asentamiento dirigidos a determinadas personas que no necesariamente califican para algunos servicios financiados federalmente.</p>
+      <h2>¿Quiénes pueden recibir determinados servicios provinciales?</h2>
+      <p>Dentro de Supports for Newcomer Integration aparecen como beneficiarios elegibles para settlement and community support:</p>
+      <ul>
+        <li>Ciudadanos canadienses naturalizados.</li>
+        <li>Residentes temporales con work permit bajo Temporary Foreign Worker Program.</li>
+        <li>International Mobility Program.</li>
+        <li>Post-Graduation Work Permit Program.</li>
+        <li>Refugee claimants.</li>
+      </ul>
+      <p>La elegibilidad depende siempre del servicio específico.</p>
+      <h2>¿Qué ayuda puedes encontrar?</h2>
+      <p>Existen recursos relacionados con:</p>
+      <ul>
+        <li>Adaptación y vida cotidiana.</li>
+        <li>Trabajo, derechos laborales y condiciones de trabajo.</li>
+        <li>Salarios.</li>
+        <li>Vivienda.</li>
+        <li>Salud.</li>
+        <li>Contratos laborales.</li>
+        <li>Orientación comunitaria.</li>
+      </ul>
+      <p>Algunos programas provinciales también ofrecen oportunidades de inglés según elegibilidad y disponibilidad.</p>
+      <h2>Servicios en diferentes ciudades</h2>
+      <p>Alberta publica organizaciones para residentes temporales en Banff, Brooks, Calgary, Edmonton, Fort McMurray, Grande Prairie, Lethbridge y Red Deer.</p>
+      <p>En Brooks aparece oficialmente: Brooks and County Immigration Services, Unit 2, 500 Cassils Road East, Brooks, Alberta, T1R 1M6.</p>
+      <h2>Importante para trabajadores temporales</h2>
+      <p>Alberta también dispone de recursos y orientación sobre derechos laborales para temporary foreign workers.</p>
+      <blockquote><strong>Alerta para el migrante:</strong> Si una agencia de empleo quiere cobrarte por conseguirte un trabajo en Alberta, verifica antes de pagar. Las agencias de empleo no pueden cobrar a trabajadores extranjeros temporales por servicios de reclutamiento o por ayudarles a conseguir empleo.</blockquote>
+      <h2>¿Qué significa para ti?</h2>
+      <p>Si tienes un permiso de trabajo en Alberta, no asumas que debes esperar hasta convertirte en residente permanente para pedir orientación.</p>
+      <p>Contacta la organización correspondiente a tu comunidad, explica claramente tu estatus y pregunta qué servicios están disponibles para ti.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Temporary Resident Support Services", href: "https://www.alberta.ca/temporary-resident-support-services" },
+      { label: "Government of Alberta — Supports for Newcomer Integration", href: "https://www.alberta.ca/supports-for-newcomer-integration-grants" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Comunidad",
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/comunidad/servicios-gratuitos-trabajadores-temporales-alberta/" },
+  },
   {
     id: "ART-2026-006",
     slug: "el-error-financiero-inmigrantes-canada",
