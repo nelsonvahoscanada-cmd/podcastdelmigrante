@@ -5,14 +5,18 @@
   Ningún módulo opcional se dibuja si el dato correspondiente no existe
   — ver la regla de oro en articles.js.
 
-  NOTA SOBRE canonicalPath: hoy el artículo "vive" en
-  articulo.html?slug=... — es la única forma de tener URLs estables por
-  artículo sin servidor/backend. `article.seo.canonicalPath` guarda la
-  ruta LIMPIA prevista para cuando exista dominio y enrutamiento real
-  (ej. /migracion/mi-titulo/). Se usa para <link rel="canonical">,
-  Open Graph, JSON-LD y los botones de "Compartir" — de modo que
-  compartir un artículo ya apunta a la URL definitiva, aunque el
-  archivo físico de esta demo use querystring.
+  NOTA SOBRE canonicalPath (IMPORTANTE): `article.seo.canonicalPath`
+  (ej. /migracion/mi-titulo/) es ÚNICAMENTE documentación de la ruta
+  limpia prevista para el día en que exista dominio y enrutamiento
+  real — esa ruta NO existe como página en este sitio estático. NUNCA
+  debe usarse como URL pública/canonical/Open Graph/compartir: GitHub
+  Pages no puede reescribirla, así que compartir esa ruta rompe la
+  página (CSS/JS/imágenes se resuelven mal porque el navegador calcula
+  las rutas relativas desde una carpeta que no existe). La URL pública
+  real y funcional de todo artículo es siempre
+  articulo.html?slug=... — es lo único que debe usarse en
+  canonical, Open Graph y los botones de compartir/copiar enlace.
+  Ver canonicalUrl() más abajo.
 ========================================================================= */
 
 (function () {
@@ -40,7 +44,22 @@
   }
 
   function canonicalUrl(article) {
-    return SITE_ORIGIN + article.seo.canonicalPath;
+    // URL pública REAL y funcional. article.seo.canonicalPath (si existe)
+    // es únicamente documentación de una ruta limpia prevista para el
+    // futuro (ver nota arriba) — NUNCA debe usarse aquí, porque esa ruta
+    // no existe como página real y GitHub Pages no puede reescribirla.
+    return SITE_ORIGIN + "/articulo.html?slug=" + encodeURIComponent(article.slug);
+  }
+
+  function heroImageUrl(article) {
+    const bg = article.heroImage && article.heroImage.background;
+    if (bg) {
+      const match = bg.match(/url\(['"]?([^'")]+)['"]?\)/);
+      if (match) {
+        return SITE_ORIGIN + "/" + match[1].replace(/^\//, "");
+      }
+    }
+    return SITE_ORIGIN + "/assets/logo.png";
   }
 
   function estimateReadingTime(html) {
@@ -345,6 +364,10 @@
     document.getElementById("canonicalLink").setAttribute("href", url);
     document.getElementById("ogUrl").setAttribute("content", url);
 
+    const imageUrl = heroImageUrl(article);
+    document.getElementById("ogImage").setAttribute("content", imageUrl);
+    document.getElementById("twitterImage").setAttribute("content", imageUrl);
+
     const schemaType = CONTENT_TYPE_SCHEMA[article.contentType] || "Article";
     const authorNode =
       article.author.mode === "medio"
@@ -366,7 +389,7 @@
         logo: { "@type": "ImageObject", url: SITE_ORIGIN + "/assets/logo.png" },
       },
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
-      image: SITE_ORIGIN + "/assets/logo.png",
+      image: imageUrl,
     };
     const script = document.createElement("script");
     script.type = "application/ld+json";

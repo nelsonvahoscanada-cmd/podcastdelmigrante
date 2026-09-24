@@ -21,7 +21,10 @@
   }
 
   function canonicalUrl(story) {
-    return SITE_ORIGIN + story.seo.canonicalPath;
+    // URL pública REAL. story.seo.canonicalPath es solo documentación de
+    // una ruta futura que no existe todavía — nunca debe usarse aquí
+    // (rompe la página al compartir, ver la nota en article.js).
+    return SITE_ORIGIN + "/historia-vida.html?slug=" + encodeURIComponent(story.slug);
   }
 
   function youtubeThumb(id) {
@@ -111,6 +114,10 @@
     const url = canonicalUrl(story);
     document.getElementById("canonicalLink").setAttribute("href", url);
     document.getElementById("ogUrl").setAttribute("content", url);
+
+    const imageUrl = youtubeThumb(story.videoId);
+    document.getElementById("ogImage").setAttribute("content", imageUrl);
+    document.getElementById("twitterImage").setAttribute("content", imageUrl);
   }
 
   function renderStory(story) {
