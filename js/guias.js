@@ -34,7 +34,7 @@ const USEFUL_GUIDES = {
         title: "Quiero venir a Canadá",
         desc: "Introducción sencilla a las diferencias entre visitar, estudiar, trabajar e inmigrar permanentemente.",
         cta: "Ver guía →",
-        href: null,
+        href: "guia-ruta.html?ruta=quiero-venir-canada",
       },
       {
         title: "Ya estoy en Canadá",

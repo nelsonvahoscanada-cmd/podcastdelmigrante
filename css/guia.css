@@ -84,3 +84,65 @@
   .guia-route { padding: 16px 16px 14px; }
   .guia-search { padding: 16px; }
 }
+
+/* ---------- Página de ruta ---------- */
+.guia-back {
+  display: inline-block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--gris-600);
+  margin-bottom: 18px;
+}
+.guia-back:hover { color: var(--verde-oscuro); }
+.guia-back--bottom { margin: 36px 0 0; }
+
+.guia-paths { margin-top: 8px; }
+.guia-path {
+  padding: 24px 0;
+  border-bottom: var(--border);
+}
+.guia-path:first-child { padding-top: 0; }
+.guia-path__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 2px 0 12px;
+}
+.guia-path__body { font-size: 0.98rem; color: var(--negro); line-height: 1.65; }
+.guia-path__body p { margin: 0 0 14px; }
+.guia-path__body p:last-child { margin-bottom: 18px; }
+.guia-path__body strong { color: var(--negro); }
+
+/* ---------- Herramienta oficial destacada ---------- */
+.guia-tool-callout {
+  margin: 36px 0;
+  padding: 26px 24px;
+  background: var(--negro);
+  color: var(--blanco);
+  border-radius: var(--radius-s);
+  text-align: center;
+}
+.guia-tool-callout__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.guia-tool-callout__desc {
+  font-size: 0.92rem;
+  color: #c9c9c9;
+  max-width: 56ch;
+  margin: 0 auto 18px;
+}
+
+/* ---------- Antes de pagarle a alguien ---------- */
+.guia-before-paying { margin: 36px 0; padding-top: 28px; border-top: var(--border); }
+.guia-before-paying__list {
+  margin: 16px 0 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.guia-before-paying__list li { font-size: 0.96rem; color: var(--gris-600); padding-left: 4px; }
+.guia-before-paying__list li::marker { color: var(--verde-oscuro); font-weight: 700; }
