@@ -116,7 +116,7 @@ const LATEST = [
 ];
 
 const USEFUL_INFO = [
-  { title: "Migración", desc: "Trámites, permisos y rutas de residencia explicados sin lenguaje técnico." },
+  { title: "Migración", desc: "Trámites, permisos y rutas de residencia explicados sin lenguaje técnico.", href: "guia.html?categoria=migracion" },
   { title: "Empleo", desc: "Dónde buscar trabajo, cómo validar experiencia y qué esperar del primer contrato." },
   { title: "Vivienda", desc: "Cómo rentar, qué son los derechos del arrendatario y errores que salen caros." },
   { title: "Educación", desc: "Escuelas, cursos de idioma y equivalencias de estudios para adultos y menores." },

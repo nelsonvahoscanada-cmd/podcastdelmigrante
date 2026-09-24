@@ -134,7 +134,7 @@
         <span class="useful-card__link">Explorar</span>
       `
       );
-      card.href = "#";
+      card.href = item.href || "#";
       grid.appendChild(card);
     });
   }

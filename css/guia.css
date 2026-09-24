@@ -1,0 +1,86 @@
+/* =========================================================
+   Información útil para migrantes — página de categoría
+   Reutiliza tokens y componentes de styles.css/article.css
+========================================================= */
+
+.guia-page { max-width: 980px; }
+
+.guia-intro {
+  font-size: 1rem;
+  color: var(--gris-600);
+  max-width: 68ch;
+  margin: 18px 0 28px;
+}
+
+/* ---------- Buscador funcional ---------- */
+.guia-search {
+  margin-bottom: 32px;
+  padding: 20px;
+  background: var(--gris-100);
+  border-radius: var(--radius-s);
+}
+.guia-search__label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+.guia-search__input {
+  width: 100%;
+  border: 1px solid var(--gris-200);
+  border-radius: var(--radius-s);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  background: var(--blanco);
+}
+.guia-search__input:focus-visible { outline: 2px solid var(--verde); outline-offset: 1px; }
+.guia-search__empty { font-size: 0.88rem; color: var(--gris-600); margin: 12px 0 0; font-style: italic; }
+
+/* ---------- Tarjetas de ruta ---------- */
+.guia-routes {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 8px;
+}
+@media (max-width: 680px) {
+  .guia-routes { grid-template-columns: 1fr; }
+}
+.guia-route {
+  position: relative;
+  border: var(--border);
+  border-left: 3px solid var(--verde);
+  border-radius: var(--radius-s);
+  padding: 20px 20px 18px;
+}
+.guia-route__num {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--gris-200);
+  margin-bottom: 6px;
+}
+.guia-route__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.guia-route__desc { font-size: 0.9rem; color: var(--gris-600); margin-bottom: 14px; }
+.guia-route__cta {
+  display: inline-block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+.guia-route__cta--pending { color: var(--gris-400); cursor: default; }
+
+/* ---------- Últimas guías (relacionadas reales) ---------- */
+.guia-related { margin: 40px 0; padding-top: 28px; border-top: var(--border); }
+
+@media (max-width: 430px) {
+  .guia-route { padding: 16px 16px 14px; }
+  .guia-search { padding: 16px; }
+}
