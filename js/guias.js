@@ -40,7 +40,7 @@ const USEFUL_GUIDES = {
         title: "Ya estoy en Canadá",
         desc: "Información organizada según la situación del usuario: visitante, estudiante, trabajador temporal o residente permanente.",
         cta: "Ver guía →",
-        href: null,
+        href: "guia-ruta.html?ruta=ya-estoy-en-canada",
       },
       {
         title: "Permisos de trabajo",

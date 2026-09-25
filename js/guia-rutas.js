@@ -93,4 +93,110 @@ const GUIA_RUTAS = {
     ],
     disclaimer: "El contenido de esta sección es informativo y educativo. Las políticas, requisitos y programas migratorios pueden cambiar y la situación de cada persona es diferente. Antes de tomar una decisión sobre un caso particular, verifica la información vigente en las fuentes oficiales del Gobierno de Canadá o consulta a un profesional autorizado.",
   },
+  "ya-estoy-en-canada": {
+    slug: "ya-estoy-en-canada",
+    parentCategoria: "migracion",
+    parentLabel: "Migración",
+    title: "Ya estoy en Canadá",
+    dek: "Identifica tu situación actual y revisa qué debes tener en cuenta para mantener tus documentos y estatus en orden.",
+    intro: "Si ya estás en Canadá, los pasos que debes revisar dependen principalmente de tu situación migratoria actual. Utiliza esta guía para identificar el punto de partida que corresponde a tu caso y acceder a información oficial.",
+
+    situationQuestion: {
+      title: "¿Cuál es tu situación actual?",
+      cards: [
+        {
+          num: "01",
+          title: "Estoy como visitante",
+          desc: "Revisa cuánto tiempo estás autorizado a permanecer, cómo solicitar una extensión y qué debes hacer si tu estatus está próximo a vencer.",
+          cta: "Revisar mi situación como visitante →",
+          href: null,
+          sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/extend-stay.html",
+        },
+        {
+          num: "02",
+          title: "Estoy como estudiante",
+          desc: "Revisa la vigencia y condiciones de tu study permit, qué ocurre cuando se acerca su vencimiento y qué debes considerar si necesitas extenderlo o cambiar tu situación.",
+          cta: "Revisar mi situación como estudiante →",
+          href: null,
+          sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/extend-study-permit.html",
+        },
+        {
+          num: "03",
+          title: "Estoy como trabajador temporal",
+          desc: "Revisa las condiciones y fecha de vencimiento de tu work permit y qué opciones oficiales debes consultar antes de que expire.",
+          cta: "Revisar mi situación como trabajador →",
+          href: null,
+          sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend-permit.html",
+        },
+        {
+          num: "04",
+          title: "Soy residente permanente",
+          desc: "Encuentra información sobre tu estatus de residente permanente, PR card, servicios para recién llegados y otros documentos importantes para establecerte en Canadá.",
+          cta: "Revisar información para residentes permanentes →",
+          href: null,
+          sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants.html",
+        },
+      ],
+    },
+
+    infoSections: [
+      {
+        heading: "Tu visa y tu estatus en Canadá no son necesariamente lo mismo",
+        variant: "callout",
+        bodyHtml: `<p>El documento que usaste para viajar a Canadá y el estatus o autorización que tienes para permanecer, estudiar o trabajar no son necesariamente lo mismo. Revisa el documento que corresponda a tu situación (visitor visa, study permit, work permit o visitor record) y las condiciones que aparecen en él, en lugar de asumir que todos funcionan de la misma manera.</p>`,
+      },
+      {
+        heading: "No esperes a que tu documento expire para revisar qué debes hacer",
+        bodyHtml: `
+          <p>Quienes necesiten extender o cambiar determinadas condiciones de su estancia deben revisar y presentar la solicitud correspondiente antes de que expire su estatus actual, cuando las reglas aplicables así lo permitan.</p>
+          <p>IRCC contempla situaciones en las que una persona que presentó correctamente una solicitud antes del vencimiento puede permanecer legalmente en Canadá mientras se procesa. Sin embargo, los derechos para continuar estudiando o trabajando dependen de la solicitud específica y de las condiciones aplicables — no siempre es correcto decir simplemente "si aplicas antes puedes seguir trabajando".</p>
+        `,
+        cta: { label: "Consultar extensión o cambio de condiciones en IRCC →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/extend-stay.html" },
+      },
+      {
+        heading: "¿Qué pasa si mi estatus ya venció?",
+        variant: "warning",
+        bodyHtml: `
+          <p>Perder el estatus no significa que todas las personas tengan automáticamente la misma solución.</p>
+          <p>En determinadas circunstancias, una persona puede ser elegible para solicitar la restauración de su estatus (restoration of status). La regla general de IRCC contempla solicitudes dentro de los 90 días de haber perdido el estatus, siempre que se cumplan las condiciones aplicables — la aprobación no está garantizada.</p>
+          <p><strong>Si tu permiso o estatus ya venció, no asumas que puedes continuar trabajando o estudiando. Revisa inmediatamente las reglas correspondientes a tu situación.</strong></p>
+        `,
+        cta: { label: "Consultar restauración de estatus →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/visitors/restoration-status.html" },
+      },
+      {
+        heading: "¿Necesitas ayuda para establecerte en Canadá?",
+        bodyHtml: `
+          <p>Canadá financia servicios de asentamiento para personas elegibles, que pueden incluir orientación para empleo, idioma, educación, comunidad y otras necesidades de establecimiento. La elegibilidad depende del estatus y del programa — no todos los inmigrantes o residentes temporales tienen acceso gratuito.</p>
+          <p>Desde el 1 de abril de 2026 existen límites de tiempo para el acceso de residentes permanentes de clase económica a determinados servicios de asentamiento financiados federalmente. La elegibilidad debe verificarse directamente con IRCC.</p>
+        `,
+        cta: { label: "Buscar servicios para recién llegados →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" },
+      },
+    ],
+
+    checklist: {
+      title: "Checklist — si ya estás en Canadá",
+      items: [
+        "Identifiqué cuál es mi estatus actual.",
+        "Revisé la fecha de vencimiento de mi permiso o estadía autorizada.",
+        "Conozco las condiciones que aparecen en mi documento.",
+        "Sé si necesito extender o cambiar alguna condición.",
+        "No estoy asumiendo que una solicitud me autoriza automáticamente a trabajar o estudiar.",
+        "Tengo organizados mis documentos migratorios.",
+        "Sé dónde consultar información oficial si mi situación cambia.",
+      ],
+      note: "Este checklist es orientativo y no sustituye los requisitos oficiales aplicables a cada persona.",
+    },
+
+    sources: [
+      { label: "IRCC — Extend or change your stay in Canada (visitantes)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/extend-stay.html" },
+      { label: "IRCC — Visitor record", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/extend-stay/about.html" },
+      { label: "IRCC — Extend your study permit or restore your status", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/extend-study-permit.html" },
+      { label: "IRCC — Extend your work permit", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend-permit.html" },
+      { label: "IRCC — Restoration of temporary resident status", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/visitors/restoration-status.html" },
+      { label: "IRCC — Permanent resident cards and status", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants.html" },
+      { label: "IRCC — Find free newcomer services near you", href: "https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" },
+    ],
+
+    disclaimer: "El contenido de esta sección es informativo y educativo. Las políticas, requisitos y programas migratorios pueden cambiar y la situación de cada persona es diferente. Antes de tomar una decisión sobre un caso particular, verifica la información vigente en las fuentes oficiales del Gobierno de Canadá o consulta a un profesional autorizado.",
+  },
 };

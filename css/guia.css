@@ -204,3 +204,32 @@
   border-radius: 3px;
 }
 .guia-checklist__note { font-size: 0.82rem; color: var(--gris-400); font-style: italic; margin-top: 16px; }
+
+/* ---------- Pregunta de situación (tarjetas grandes) ---------- */
+.guia-situation { margin: 8px 0 28px; }
+
+/* ---------- Bloques informativos con nombre propio ---------- */
+.guia-infoblocks { display: flex; flex-direction: column; gap: 22px; margin: 28px 0; }
+.guia-infoblock {
+  padding: 22px 22px 20px;
+  border: var(--border);
+  border-radius: var(--radius-s);
+}
+.guia-infoblock__title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+.guia-infoblock .btn-outline { margin-top: 4px; }
+.guia-infoblock--callout {
+  background: var(--verde-suave);
+  border-color: transparent;
+  border-left: 3px solid var(--verde);
+}
+.guia-infoblock--callout .guia-infoblock__title { color: var(--verde-oscuro); }
+.guia-infoblock--warning {
+  background: var(--gris-100);
+  border-color: transparent;
+  border-left: 3px solid var(--negro);
+}

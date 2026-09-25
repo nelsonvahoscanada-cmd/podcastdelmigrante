@@ -167,6 +167,49 @@
     document.getElementById("ogUrl").setAttribute("content", url);
   }
 
+  function situationCardHtml(card) {
+    const ctaNode = card.href
+      ? `<a class="guia-route__cta" href="${card.href}">${card.cta}</a>`
+      : `<span class="guia-route__cta guia-route__cta--pending">${card.cta}</span>`;
+    return `
+      <article class="guia-route">
+        <span class="guia-route__num">${card.num}</span>
+        <h3 class="guia-route__title">${card.title}</h3>
+        <p class="guia-route__desc">${card.desc}</p>
+        ${ctaNode}
+      </article>
+    `;
+  }
+
+  function situationQuestionHtml(sq) {
+    if (!sq) return "";
+    return `
+      <section class="guia-situation">
+        <h2 class="section-title">${sq.title}</h2>
+        <div class="guia-routes">${sq.cards.map(situationCardHtml).join("")}</div>
+      </section>
+    `;
+  }
+
+  function infoSectionHtml(section) {
+    const variantClass = section.variant === "callout" ? " guia-infoblock--callout" : section.variant === "warning" ? " guia-infoblock--warning" : "";
+    const ctaNode = section.cta
+      ? `<a class="btn-outline" href="${section.cta.href}" target="_blank" rel="noopener">${section.cta.label}</a>`
+      : "";
+    return `
+      <article class="guia-infoblock${variantClass}">
+        <h2 class="guia-infoblock__title">${section.heading}</h2>
+        <div class="guia-path__body">${section.bodyHtml}</div>
+        ${ctaNode}
+      </article>
+    `;
+  }
+
+  function infoSectionsHtml(sections) {
+    if (!sections || !sections.length) return "";
+    return `<div class="guia-infoblocks">${sections.map(infoSectionHtml).join("")}</div>`;
+  }
+
   function renderRuta(ruta) {
     setSEO(ruta);
     const root = document.getElementById("guiaRutaRoot");
@@ -177,12 +220,18 @@
       <p class="article-dek">${ruta.dek}</p>
       <p class="guia-intro">${ruta.intro}</p>
 
-      <div class="guia-paths">
-        ${ruta.paths.map(pathBlockHtml).join("")}
-      </div>
+      ${
+        ruta.paths
+          ? `<div class="guia-paths">${ruta.paths.map(pathBlockHtml).join("")}</div>`
+          : ""
+      }
+
+      ${situationQuestionHtml(ruta.situationQuestion)}
+      ${infoSectionsHtml(ruta.infoSections)}
 
       ${toolCalloutHtml(ruta.toolCallout)}
       ${beforePayingHtml(ruta.beforePaying)}
+      ${checklistHtml(ruta.checklist)}
       ${sourcesHtml(ruta)}
 
       <div class="article-disclaimer">
