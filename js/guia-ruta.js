@@ -18,6 +18,85 @@
     return GUIA_RUTAS[slug] || null;
   }
 
+  function findSubruta(slug) {
+    return (typeof GUIA_SUBRUTAS !== "undefined" && GUIA_SUBRUTAS[slug]) || null;
+  }
+
+  function sectionBlockHtml(section, index) {
+    const ctaNode = section.cta
+      ? `<a class="guia-route__cta" href="${section.cta.href}" target="_blank" rel="noopener">${section.cta.label}</a>`
+      : "";
+    return `
+      <article class="guia-section">
+        <h2 class="guia-section__title">${section.heading}</h2>
+        <div class="guia-path__body">${section.bodyHtml}</div>
+        ${ctaNode}
+      </article>
+    `;
+  }
+
+  function calloutHtml(callout) {
+    return `
+      <div class="guia-callout">
+        <h3 class="guia-callout__title">${callout.title}</h3>
+        ${callout.bodyHtml}
+      </div>
+    `;
+  }
+
+  function checklistHtml(checklist) {
+    if (!checklist) return "";
+    const items = checklist.items.map((t) => `<li><span class="guia-checklist__box" aria-hidden="true"></span>${t}</li>`).join("");
+    return `
+      <section class="guia-checklist">
+        <h2 class="section-title">${checklist.title}</h2>
+        <ul class="guia-checklist__list">${items}</ul>
+        ${checklist.note ? `<p class="guia-checklist__note">${checklist.note}</p>` : ""}
+      </section>
+    `;
+  }
+
+  function setSEOSubruta(subruta) {
+    document.title = subruta.title + " — El Podcast del Migrante Magazine";
+    document.getElementById("metaDescription").setAttribute("content", subruta.dek);
+    document.getElementById("ogTitle").setAttribute("content", subruta.title);
+    document.getElementById("ogDescription").setAttribute("content", subruta.dek);
+    document.getElementById("twitterTitle").setAttribute("content", subruta.title);
+    document.getElementById("twitterDescription").setAttribute("content", subruta.dek);
+    const url = "https://podcastdelmigrante.com/guia-ruta.html?subruta=" + encodeURIComponent(subruta.slug);
+    document.getElementById("canonicalLink").setAttribute("href", url);
+    document.getElementById("ogUrl").setAttribute("content", url);
+  }
+
+  function renderSubruta(subruta) {
+    setSEOSubruta(subruta);
+    const backHref = "guia-ruta.html?ruta=" + encodeURIComponent(subruta.parentRuta);
+    const backLabel = "← Volver a " + subruta.parentRutaLabel;
+    const root = document.getElementById("guiaRutaRoot");
+    root.innerHTML = `
+      <a class="guia-back" href="${backHref}">${backLabel}</a>
+      <span class="tag">Información útil para migrantes</span>
+      <h1 class="article-title">${subruta.title}</h1>
+      <p class="article-dek">${subruta.dek}</p>
+      <p class="guia-intro">${subruta.intro}</p>
+
+      <div class="guia-sections">
+        ${subruta.sections.map(sectionBlockHtml).join("")}
+        ${subruta.callouts.map(calloutHtml).join("")}
+      </div>
+
+      ${checklistHtml(subruta.checklist)}
+      ${sourcesHtml(subruta)}
+
+      <div class="article-disclaimer">
+        <h2 class="article-disclaimer__heading">Información importante</h2>
+        <p class="article-disclaimer__text">${subruta.disclaimer}</p>
+      </div>
+
+      <a class="guia-back guia-back--bottom" href="${backHref}">${backLabel}</a>
+    `;
+  }
+
   function pathBlockHtml(path, index) {
     const ctaNode = path.href
       ? `<a class="guia-route__cta" href="${path.href}">${path.cta}</a>`
@@ -128,8 +207,18 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     window.PDM.initSiteChrome();
-    const slug = getParam("ruta");
-    const ruta = slug ? findRuta(slug) : null;
+    const rutaSlug = getParam("ruta");
+    const subrutaSlug = getParam("subruta");
+    if (subrutaSlug) {
+      const subruta = findSubruta(subrutaSlug);
+      if (subruta) {
+        renderSubruta(subruta);
+      } else {
+        renderNotFound();
+      }
+      return;
+    }
+    const ruta = rutaSlug ? findRuta(rutaSlug) : null;
     if (ruta) {
       renderRuta(ruta);
     } else {

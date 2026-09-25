@@ -31,7 +31,7 @@ const GUIA_RUTAS = {
           <p>Es importante tener claro que una visitor visa o una eTA te permiten viajar y solicitar la entrada a Canadá, pero <strong>no garantizan la admisión</strong> — la decisión final la toma un oficial en el punto de entrada. Además, una eTA por sí sola <strong>no te autoriza a trabajar ni a estudiar</strong> en Canadá.</p>
         `,
         cta: "Revisar requisitos para visitar →",
-        href: null,
+        href: "guia-ruta.html?subruta=quiero-visitar-canada",
         sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html",
       },
       {

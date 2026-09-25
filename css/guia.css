@@ -146,3 +146,61 @@
 }
 .guia-before-paying__list li { font-size: 0.96rem; color: var(--gris-600); padding-left: 4px; }
 .guia-before-paying__list li::marker { color: var(--verde-oscuro); font-weight: 700; }
+
+/* ---------- Subguía: secciones numeradas ---------- */
+.guia-sections { margin-top: 8px; }
+.guia-section {
+  padding: 22px 0;
+  border-bottom: var(--border);
+}
+.guia-section:first-child { padding-top: 0; }
+.guia-section__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+/* ---------- Bloques destacados dentro de la subguía ---------- */
+.guia-callout {
+  margin: 22px 0;
+  padding: 18px 20px;
+  background: var(--verde-suave);
+  border-left: 3px solid var(--verde);
+  border-radius: var(--radius-s);
+}
+.guia-callout__title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--verde-oscuro);
+}
+.guia-callout p { font-size: 0.94rem; color: var(--negro); margin: 0; }
+
+/* ---------- Checklist visual ---------- */
+.guia-checklist { margin: 36px 0; padding-top: 28px; border-top: var(--border); }
+.guia-checklist__list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.guia-checklist__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.96rem;
+  color: var(--negro);
+}
+.guia-checklist__box {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  border: 2px solid var(--gris-400);
+  border-radius: 3px;
+}
+.guia-checklist__note { font-size: 0.82rem; color: var(--gris-400); font-style: italic; margin-top: 16px; }
