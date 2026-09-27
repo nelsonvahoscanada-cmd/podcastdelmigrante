@@ -179,10 +179,7 @@
       const mediaStyle = item.videoId ? ` style="background-image:url('${youtubeThumb(item.videoId)}')"` : "";
       const badge = item.demo === false ? "" : `<span class="demo-badge demo-badge--sm">Demo</span>`;
       const desc = item.desc ? `<p class="video-card__desc">${item.desc}</p>` : "";
-      const card = el(
-        "article",
-        "video-card",
-        `
+      const innerHtml = `
         <div class="video-card__media"${mediaStyle}>
           <span class="video-card__play" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="22" height="22"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
@@ -192,8 +189,16 @@
         <span class="tag tag--sm">${item.tag}</span>
         <h3 class="video-card__title">${item.title}</h3>
         ${desc}
-      `
-      );
+      `;
+      const card = item.videoId
+        ? el("a", "video-card video-card--link", innerHtml)
+        : el("article", "video-card", innerHtml);
+      if (item.videoId) {
+        card.href = "https://youtu.be/" + item.videoId;
+        card.target = "_blank";
+        card.rel = "noopener";
+        card.setAttribute("aria-label", "Ver video: " + item.title);
+      }
       track.appendChild(card);
     });
   }

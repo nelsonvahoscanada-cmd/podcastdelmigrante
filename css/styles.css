@@ -715,6 +715,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   max-width: 260px;
   scroll-snap-align: start;
 }
+.video-card--link { cursor: pointer; }
 @media (min-width: 640px) {
   .video-card { flex-basis: 260px; }
 }
