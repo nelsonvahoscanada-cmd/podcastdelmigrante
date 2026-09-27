@@ -151,7 +151,13 @@ const STORIES = [
 const VIDEOS = [
   { tag: "Podcast del Migrante", title: "3 realidades que todo migrante en Canadá debe conocer" },
   { tag: "Entrevistas", title: "Entrevista: reconstruir una carrera profesional desde cero" },
-  { tag: "Desafío 100 Empresas", title: "El emprendimiento que nació en un garaje de Calgary" },
+  {
+    tag: "Desafío 100 Empresas",
+    title: "La Costeñita: el sueño que se convirtió en un Food Market mexicano en Canadá",
+    desc: "Don Hugo Morales nos abre las puertas de La Costeñita y nos muestra cómo una idea de emprendimiento se convirtió en un nuevo espacio de sabor y comunidad en Canadá.",
+    videoId: "ENyFwvkj8W0",
+    demo: false,
+  },
   { tag: "Historias", title: "Documental corto: dos años, una nueva vida" },
   { tag: "Especiales", title: "Especial: guía completa de impuestos para nuevos residentes" },
 ];
