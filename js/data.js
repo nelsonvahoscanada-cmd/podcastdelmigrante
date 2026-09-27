@@ -159,7 +159,13 @@ const VIDEOS = [
     demo: false,
   },
   { tag: "Historias", title: "Documental corto: dos años, una nueva vida" },
-  { tag: "Especiales", title: "Especial: guía completa de impuestos para nuevos residentes" },
+  {
+    tag: "Desafío 100 Empresas",
+    title: "Una alianza que hizo posible el Desafío 100 Empresas",
+    desc: "Desde Country Hills Toyota agradecemos a Farid Mamdani por su respaldo al proyecto y a Tomás Velázquez por ser el puente y aliado que ha acompañado este ciclo.",
+    videoId: "M7JFiyvPDT8",
+    demo: false,
+  },
 ];
 
 const MOST_READ = [
