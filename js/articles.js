@@ -123,6 +123,67 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    id: "ART-2026-013",
+    slug: "nueva-via-jbs-brooks-highway-873",
+    category: "Alberta",
+    contentType: "Noticia",
+    title: "Nueva vía de acceso a JBS en Brooks busca reducir los tiempos de salida de miles de trabajadores",
+    dek: "La nueva conexión con Highway 873 busca aliviar la congestión durante los cambios de turno y mejorar la seguridad vial alrededor de la planta. El Gobierno de Alberta aportó $1.8 millones al proyecto.",
+    excerpt: "La nueva conexión de la planta de JBS con Highway 873 busca aliviar la congestión en los cambios de turno. Alberta aportó $1.8 millones.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-09-27T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta", city: "Brooks" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/nueva-via-jbs-brooks-corte-de-cinta.jpg')",
+      aspectRatio: "3/2",
+      alt: "Varias personas sostienen una cinta azul durante el corte de cinta en la nueva vía de acceso a JBS Canada en Brooks; al fondo, trabajadores con cascos verdes.",
+      credit: "Foto: [CRÉDITO/FUENTE POR CONFIRMAR]",
+    },
+    bodyHtml: `
+      <p>Una nueva vía de acceso para la planta de JBS Canada en Brooks ya conecta el sector con Highway 873, una obra destinada a aliviar uno de los problemas que durante años ha afectado a miles de trabajadores: la congestión vehicular durante los cambios de turno.</p>
+      <p>El Gobierno de Alberta aportó $1.8 millones para la construcción de la nueva conexión vial, según información oficial publicada por Alberta Major Projects. El objetivo señalado por la provincia es mejorar la seguridad y el flujo del tráfico relacionado con las operaciones de JBS.</p>
+      <p>La congestión alrededor de la planta había sido identificada previamente como un problema para trabajadores, transportistas y otros conductores de la zona. En abril de 2025, medios regionales informaron sobre los planes para mejorar la conexión entre la planta y Highway 873 y crear una alternativa que permitiera disminuir el tráfico asociado a los cambios de turno.</p>
+      <p>La nueva vía fue inaugurada recientemente con la participación de representantes provinciales, municipales, del County of Newell y de JBS Canada.</p>
+      <figure class="article-figure">
+        <img src="assets/nueva-via-jbs-brooks-trabajadores-representantes.jpg" alt="Fotografía grupal sobre la nueva vía junto a un atril de JBS Canada, con trabajadores con cascos y chalecos de seguridad y representantes de la inauguración." loading="lazy">
+        <figcaption>Foto: [CRÉDITO/FUENTE POR CONFIRMAR]</figcaption>
+      </figure>
+      <p>La premier de Alberta y representante de Brooks–Medicine Hat, Danielle Smith, destacó durante la inauguración el impacto que la nueva salida puede tener sobre los tiempos que los empleados necesitan para abandonar la planta después de terminar sus turnos.</p>
+      <p>Según información compartida durante la inauguración, algunos trabajadores podían enfrentar esperas considerablemente largas para salir del complejo durante los periodos de mayor congestión. Los participantes en el acto señalaron que con la nueva conexión esos tiempos se han reducido de manera importante.</p>
+      <p>Esas cifras corresponden a declaraciones realizadas en el contexto de la inauguración; no son mediciones independientes realizadas por El Podcast del Migrante Magazine.</p>
+      <p>Más allá de la infraestructura, el impacto más cercano está en el tiempo de los trabajadores.</p>
+      <p>Minutos que antes podían perderse esperando para salir del estacionamiento pueden convertirse ahora en tiempo adicional para regresar a casa, compartir con la familia o atender responsabilidades después de una jornada laboral.</p>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Una carretera que devuelve tiempo</h2>
+        <p>La nueva conexión busca reducir la congestión en los cambios de turno y facilitar el desplazamiento de miles de trabajadores que diariamente entran y salen del complejo de JBS en Brooks.</p>
+      </aside>
+      <p>La nueva ruta también busca separar parte del tránsito de empleados del movimiento de vehículos pesados relacionado con las operaciones industriales de la zona, contribuyendo a mejorar el flujo vehicular y la seguridad.</p>
+      <p>Para una ciudad como Brooks, donde JBS representa una importante fuente de empleo y donde muchas familias inmigrantes forman parte de su fuerza laboral, una obra de infraestructura de este tipo tiene un impacto que va más allá de una carretera.</p>
+      <p>Es tiempo que vuelve a las familias.</p>
+      <figure class="article-figure">
+        <img src="assets/nueva-via-jbs-brooks-participantes-nueva-via.jpg" alt="Cinco participantes en la inauguración posan sobre la nueva vía, con un vehículo utilitario detrás de ellos." loading="lazy">
+        <figcaption>Foto: [CRÉDITO/FUENTE POR CONFIRMAR]</figcaption>
+      </figure>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Alberta Major Projects, JBS Canada Distribution Center", href: "https://majorprojects.alberta.ca/details/JBS-Canada-Distribution-Center/11238" },
+      { label: "Medicine Hat News — cobertura del proyecto vial y la congestión alrededor de JBS, 2 de abril de 2025" },
+      { label: "Información y declaraciones públicas difundidas con motivo de la inauguración de la nueva vía" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/alberta/nueva-via-jbs-brooks-highway-873/" },
+  },
+  {
     id: "ART-2026-007",
     slug: "trabajadores-estudiar-sin-study-permit-canada",
     category: "Canadá",

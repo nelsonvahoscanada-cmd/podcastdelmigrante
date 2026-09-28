@@ -107,6 +107,7 @@ const HERO = {
 };
 
 const LATEST = [
+  { category: "Alberta", title: "Nueva vía de acceso a JBS en Brooks busca reducir los tiempos de salida de miles de trabajadores", time: "27 de septiembre", slug: "nueva-via-jbs-brooks-highway-873" },
   { category: "Canadá", title: "Trabajadores temporales ya pueden estudiar hasta 6 meses sin permiso de estudios", time: "Hoy", slug: "trabajadores-estudiar-sin-study-permit-canada" },
   { category: "Finanzas", title: "Canadá limita a $10 los cargos bancarios por pagos rechazados por falta de fondos", time: "Hoy", slug: "canada-limite-cargos-nsf-10-dolares" },
   { category: "Educación", title: "¿Tu profesión quedó atrás al llegar a Canadá? Alberta ofrece capacitación gratuita para inmigrantes elegibles", time: "Hoy", slug: "immigrant-bridging-program-alberta" },
