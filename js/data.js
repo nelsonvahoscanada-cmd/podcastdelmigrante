@@ -286,10 +286,37 @@ const CONTRIBUTORS = [
    para que las pestañas de ciudad sigan existiendo aunque todavía
    no haya establecimientos cargados para ninguna de ellas. Agregar
    una ciudad nueva (ej. Edmonton) es solo añadirla aquí. */
-const DISTRIBUTION_CITIES = ["Calgary", "Brooks", "Airdrie", "Red Deer"];
+const DISTRIBUTION_CITIES = ["Calgary", "Airdrie", "Brooks", "Edmonton", "Red Deer"];
 
-/* Sin establecimientos reales todavía para la Edición #1 — Octubre
-   2026. NO agregar negocios ni direcciones ficticias: cuando existan
-   puntos de distribución reales, se agregan aquí como
-   { city, name, address, website }. */
-const DISTRIBUTION_POINTS = [];
+/* Puntos oficiales de distribución — futura edición impresa.
+   NO agregar negocios ni direcciones ficticias.
+
+   Cada punto:
+   - statusLabel: distintivo visible en la tarjeta. Hoy dice "Próximo
+     punto oficial de distribución" — cuando la edición impresa
+     comience a circular de verdad, este mismo campo cambia a
+     "Magazine disponible aquí" sin tocar la plantilla.
+   - social: solo Instagram/Facebook/TikTok con el identificador tal
+     como fue entregado (NUNCA se inventa la URL completa — se
+     muestran como texto hasta contar con el enlace oficial
+     verificado). whatsapp y email sí generan enlaces reales
+     (wa.me / mailto), construidos directamente desde el dato dado,
+     no inventados. */
+const DISTRIBUTION_POINTS = [
+  {
+    name: "La Costeñita Mexican & Latin Market",
+    statusLabel: "Próximo punto oficial de distribución",
+    brandLine: "El Podcast del Migrante Magazine",
+    city: "Airdrie",
+    address: "109, 2966 Main St SE, Airdrie, Alberta",
+    desc: "Mexican & Latin Market · Productos latinos · Comunidad",
+    logo: "assets/la-costenita-logo.png",
+    social: {
+      instagram: "@lacostenita.market",
+      facebook: "/lacostenita",
+      tiktok: "@lacostenita.market",
+      whatsapp: "+1 587 330 1517",
+      email: "info@costenita.ca",
+    },
+  },
+];

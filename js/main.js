@@ -309,60 +309,61 @@
 
   /* ---------- Dónde encontrar el Magazine ---------- */
   function mapsLink(point) {
-    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(point.name + ", " + point.address);
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(point.address);
   }
 
-  function renderDistroGrid(city) {
-    const grid = document.getElementById("distroGrid");
-    grid.innerHTML = "";
-    const points = DISTRIBUTION_POINTS.filter((p) => p.city === city);
-    if (!points.length) {
-      grid.appendChild(
-        el(
-          "p",
-          "distro-empty",
-          `Estamos preparando nuestros puntos de distribución para la Edición #1 — Octubre 2026. Próximamente encontrarás aquí los establecimientos donde podrás recoger gratuitamente El Podcast del Migrante Magazine.`
-        )
+  function waLink(phone) {
+    return "https://wa.me/" + phone.replace(/[^\d]/g, "");
+  }
+
+  const SOCIAL_ICONS = {
+    instagram: `<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>`,
+    facebook: `<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3.5h-3V7.8c0-1 .3-1.7 1.7-1.7H16.6V3.1C16.3 3 15.3 3 14.2 3c-2.4 0-4 1.5-4 4.2v2.8H7.7v3.5h2.5V21h3.3z"/></svg>`,
+    tiktok: `<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M16.5 3c.3 1.8 1.5 3.2 3.5 3.5v2.7c-1.3 0-2.5-.4-3.5-1.1v6.4c0 3-2.4 5.5-5.5 5.5S5.5 17.5 5.5 14.5 8 9 11 9c.3 0 .6 0 .9.1v2.8c-.3-.1-.6-.2-.9-.2-1.5 0-2.7 1.2-2.7 2.7s1.2 2.8 2.7 2.8 2.8-1.2 2.8-2.8V3h2.7z"/></svg>`,
+    whatsapp: `<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.5 7.8 9.3 7.3c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3.1.9.9-3-.2-.3C4 14.9 3.6 13.5 3.6 12 3.6 7.4 7.4 3.6 12 3.6S20.4 7.4 20.4 12 16.6 20 12 20z"/></svg>`,
+    email: `<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`,
+  };
+
+  function socialRowHtml(social) {
+    if (!social) return "";
+    const items = [];
+    if (social.instagram) items.push(`<span class="distro-card__social-item">${SOCIAL_ICONS.instagram}${social.instagram}</span>`);
+    if (social.facebook) items.push(`<span class="distro-card__social-item">${SOCIAL_ICONS.facebook}${social.facebook}</span>`);
+    if (social.tiktok) items.push(`<span class="distro-card__social-item">${SOCIAL_ICONS.tiktok}${social.tiktok}</span>`);
+    if (social.whatsapp)
+      items.push(
+        `<a class="distro-card__social-item distro-card__social-item--link" href="${waLink(social.whatsapp)}" target="_blank" rel="noopener">${SOCIAL_ICONS.whatsapp}${social.whatsapp}</a>`
       );
-      return;
-    }
-    points.forEach((p) => {
-      const card = el(
-        "article",
-        "distro-card",
-        `
+    if (social.email)
+      items.push(`<a class="distro-card__social-item distro-card__social-item--link" href="mailto:${social.email}">${SOCIAL_ICONS.email}${social.email}</a>`);
+    return `<div class="distro-card__social">${items.join("")}</div>`;
+  }
+
+  function distroCardHtml(point) {
+    return `
+      <article class="distro-card">
         <div class="distro-card__top">
-          <span class="distro-card__logo">${initials(p.name)}</span>
-          <div>
-            <h3 class="distro-card__name">${p.name}</h3>
-            <span class="tag tag--sm">${p.city}</span>
-          </div>
+          <img class="distro-card__logo-img" src="${point.logo}" alt="${point.name}" loading="lazy">
+          <span class="distro-card__badge">${point.statusLabel}</span>
         </div>
-        <p class="distro-card__address">${p.address}</p>
-        <p class="distro-card__badge">Aquí puedes encontrar el Magazine gratis</p>
-        <div class="distro-card__actions">
-          <a class="btn-outline btn-outline--dark" href="${mapsLink(p)}" target="_blank" rel="noopener">Cómo llegar</a>
-          ${p.website ? `<a class="distro-card__web" href="${p.website}">Web / redes</a>` : ""}
-        </div>
-      `
-      );
-      grid.appendChild(card);
-    });
+        <p class="distro-card__brand">${point.brandLine}</p>
+        <h3 class="distro-card__name">${point.name}</h3>
+        <p class="distro-card__desc">${point.desc}</p>
+        <p class="distro-card__address">${point.address}</p>
+        <a class="btn distro-card__cta" href="${mapsLink(point)}" target="_blank" rel="noopener">📍 Cómo llegar</a>
+        ${socialRowHtml(point.social)}
+      </article>
+    `;
   }
 
   function buildDistribution() {
-    const citiesWrap = document.getElementById("distroCities");
-    DISTRIBUTION_CITIES.forEach((city, i) => {
-      const btn = el("button", "distro-city-btn" + (i === 0 ? " is-active" : ""), city);
-      btn.type = "button";
-      btn.addEventListener("click", () => {
-        citiesWrap.querySelectorAll(".distro-city-btn").forEach((b) => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
-        renderDistroGrid(city);
-      });
-      citiesWrap.appendChild(btn);
-    });
-    if (DISTRIBUTION_CITIES.length) renderDistroGrid(DISTRIBUTION_CITIES[0]);
+    const grid = document.getElementById("distroGrid");
+    if (!grid) return;
+    if (!DISTRIBUTION_POINTS.length) {
+      grid.innerHTML = `<p class="distro-empty">Estamos confirmando nuestros primeros puntos oficiales de distribución. Vuelve pronto.</p>`;
+      return;
+    }
+    grid.innerHTML = DISTRIBUTION_POINTS.map(distroCardHtml).join("");
   }
 
   /* ---------- Newsletter (demo, sin backend) ---------- */
@@ -392,10 +393,7 @@
     buildDesafio();
     buildMostRead();
     buildContributors();
-    /* buildDistribution() se deja preparada en el código pero no se
-       invoca todavía: la Edición #1 es exclusivamente digital y el
-       Magazine impreso (con sus puntos de distribución) aún no se ha
-       lanzado. Reactivar aquí cuando comience la edición física. */
+    buildDistribution();
     buildSponsors();
     bindNewsletter();
   });
