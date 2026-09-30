@@ -86,6 +86,13 @@
 }
 
 /* ---------- Página de ruta ---------- */
+.guia-breadcrumb {
+  font-size: 0.82rem;
+  color: var(--gris-400);
+  margin-bottom: 10px;
+}
+.guia-breadcrumb a { color: var(--gris-600); font-weight: 600; }
+.guia-breadcrumb a:hover { color: var(--verde-oscuro); }
 .guia-back {
   display: inline-block;
   font-size: 0.86rem;

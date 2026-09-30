@@ -109,7 +109,7 @@ const GUIA_RUTAS = {
           title: "Estoy como visitante",
           desc: "Revisa cuánto tiempo estás autorizado a permanecer, cómo solicitar una extensión y qué debes hacer si tu estatus está próximo a vencer.",
           cta: "Revisar mi situación como visitante →",
-          href: null,
+          href: "guia-ruta.html?subruta=estoy-como-visitante",
           sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/extend-stay.html",
         },
         {
@@ -117,7 +117,7 @@ const GUIA_RUTAS = {
           title: "Estoy como estudiante",
           desc: "Revisa la vigencia y condiciones de tu study permit, qué ocurre cuando se acerca su vencimiento y qué debes considerar si necesitas extenderlo o cambiar tu situación.",
           cta: "Revisar mi situación como estudiante →",
-          href: null,
+          href: "guia-ruta.html?subruta=estoy-como-estudiante",
           sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/extend-study-permit.html",
         },
         {
@@ -125,7 +125,7 @@ const GUIA_RUTAS = {
           title: "Estoy como trabajador temporal",
           desc: "Revisa las condiciones y fecha de vencimiento de tu work permit y qué opciones oficiales debes consultar antes de que expire.",
           cta: "Revisar mi situación como trabajador →",
-          href: null,
+          href: "guia-ruta.html?subruta=estoy-como-trabajador-temporal",
           sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend-permit.html",
         },
         {
@@ -133,7 +133,7 @@ const GUIA_RUTAS = {
           title: "Soy residente permanente",
           desc: "Encuentra información sobre tu estatus de residente permanente, PR card, servicios para recién llegados y otros documentos importantes para establecerte en Canadá.",
           cta: "Revisar información para residentes permanentes →",
-          href: null,
+          href: "guia-ruta.html?subruta=soy-residente-permanente",
           sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants.html",
         },
       ],

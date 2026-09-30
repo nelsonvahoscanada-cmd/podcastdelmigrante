@@ -68,12 +68,28 @@
     document.getElementById("ogUrl").setAttribute("content", url);
   }
 
+  function breadcrumbHtml(subruta) {
+    if (!subruta.parentCategoria) return "";
+    const catHref = "guia.html?categoria=" + encodeURIComponent(subruta.parentCategoria);
+    const rutaHref = "guia-ruta.html?ruta=" + encodeURIComponent(subruta.parentRuta);
+    return `
+      <nav class="guia-breadcrumb">
+        <a href="${catHref}">${subruta.parentCategoriaLabel || "Migración"}</a>
+        <span aria-hidden="true"> → </span>
+        <a href="${rutaHref}">${subruta.parentRutaLabel}</a>
+        <span aria-hidden="true"> → </span>
+        <span>${subruta.title}</span>
+      </nav>
+    `;
+  }
+
   function renderSubruta(subruta) {
     setSEOSubruta(subruta);
     const backHref = "guia-ruta.html?ruta=" + encodeURIComponent(subruta.parentRuta);
     const backLabel = "← Volver a " + subruta.parentRutaLabel;
     const root = document.getElementById("guiaRutaRoot");
     root.innerHTML = `
+      ${breadcrumbHtml(subruta)}
       <a class="guia-back" href="${backHref}">${backLabel}</a>
       <span class="tag">Información útil para migrantes</span>
       <h1 class="article-title">${subruta.title}</h1>
@@ -82,14 +98,15 @@
 
       <div class="guia-sections">
         ${subruta.sections.map(sectionBlockHtml).join("")}
-        ${subruta.callouts.map(calloutHtml).join("")}
+        ${(subruta.callouts || []).map(calloutHtml).join("")}
       </div>
 
       ${checklistHtml(subruta.checklist)}
+      ${toolCalloutHtml(subruta.toolCallout)}
       ${sourcesHtml(subruta)}
 
       <div class="article-disclaimer">
-        <h2 class="article-disclaimer__heading">Información importante</h2>
+        <h2 class="article-disclaimer__heading">${subruta.disclaimerHeading || "Información importante"}</h2>
         <p class="article-disclaimer__text">${subruta.disclaimer}</p>
       </div>
 
