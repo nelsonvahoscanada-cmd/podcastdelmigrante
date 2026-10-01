@@ -449,4 +449,178 @@ const GUIA_RUTAS = {
     disclaimerHeading: "Información general",
     disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Los programas, requisitos, cupos, criterios y procedimientos migratorios pueden cambiar. Verifica siempre la información vigente directamente con Immigration, Refugees and Citizenship Canada (IRCC), la provincia o territorio correspondiente, o consulta a un profesional autorizado.",
   },
+
+  "documentos-importantes": {
+    slug: "documentos-importantes",
+    parentCategoria: "migracion",
+    parentLabel: "Migración",
+    title: "Documentos importantes en Canadá",
+    dek: "Identifica qué documentos corresponden a tu situación, revisa sus fechas y mantenlos organizados y protegidos.",
+    intro: "Cuando llegas o vives en Canadá, diferentes documentos pueden demostrar tu identidad, tu estatus migratorio, tu autorización para trabajar o estudiar y otra información importante. No todas las personas necesitan los mismos documentos. Lo importante es saber cuáles corresponden a tu situación, entender qué demuestra cada uno y revisar periódicamente sus fechas y condiciones.",
+
+    situationQuestion: {
+      title: "Empieza por identificar tus documentos",
+      cards: [
+        {
+          num: "01",
+          title: "Pasaporte o documento de viaje",
+          desc: "Es uno de tus principales documentos de identidad y viaje. Revisa siempre su fecha de vencimiento — su vigencia puede afectar la duración de tu work permit, study permit o visitor record, ya que IRCC normalmente no puede emitirlos más allá de la fecha de vencimiento del pasaporte.",
+          cta: "Revisar mi pasaporte →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/passport-travel-document.html",
+        },
+        {
+          num: "02",
+          title: "Tu documento migratorio",
+          desc: "Dependiendo de tu situación, puedes tener un work permit, study permit, visitor record, Confirmation of Permanent Residence u otro documento emitido por IRCC. Identifica exactamente cuál tienes y lee las condiciones y fechas que aparecen en él — no son el mismo documento.",
+          cta: "Identificar mi documento →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/extend-stay/about.html",
+        },
+        {
+          num: "03",
+          title: "Social Insurance Number (SIN)",
+          desc: "Número personal y confidencial utilizado para trabajar legalmente en Canadá y acceder a determinados programas y servicios. Los residentes temporales autorizados a trabajar deben revisar que la información y fecha de vencimiento de su registro SIN correspondan a su documento migratorio vigente.",
+          cta: "Información oficial sobre el SIN →",
+          href: "https://www.canada.ca/en/employment-social-development/services/sin.html",
+        },
+        {
+          num: "04",
+          title: "Documentos personales y familiares",
+          desc: "Dependiendo del trámite, pueden ser importantes: certificado de nacimiento, certificado de matrimonio, documentos de divorcio o separación, de adopción, de cambio legal de nombre, o relacionados con hijos o dependientes. No todos son necesarios para todas las solicitudes.",
+          cta: "Ver documentos que pueden solicitar →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/common-supporting-documents.html",
+        },
+        {
+          num: "05",
+          title: "Estudios y experiencia laboral",
+          desc: "Para determinados procesos puede ser necesario demostrar estudios, experiencia laboral o ambos: diplomas y títulos, transcripts, Educational Credential Assessment (ECA) cuando corresponda, contratos y cartas laborales, pay stubs, T4 o Notice of Assessment.",
+          cta: "Revisar documentos de respaldo →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/common-supporting-documents.html",
+        },
+        {
+          num: "06",
+          title: "Documentos familiares",
+          desc: "Si realizas trámites junto con tu pareja, hijos u otros familiares, determinados procesos pueden requerir pruebas de identidad, parentesco, custodia, matrimonio o unión de hecho.",
+          cta: "Revisar documentación familiar →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/common-supporting-documents.html",
+        },
+      ],
+    },
+
+    infoSections: [
+      {
+        heading: "Tu visa y tu estatus en Canadá no son necesariamente lo mismo",
+        variant: "callout",
+        bodyHtml: `
+          <p>Es importante distinguir entre los documentos utilizados para viajar a Canadá y los documentos que muestran las condiciones de tu estadía dentro del país. Por ejemplo:</p>
+          <ul>
+            <li>Una visitor visa permite viajar y solicitar entrada a Canadá, pero no determina por sí sola cuánto tiempo puedes permanecer.</li>
+            <li>Una eTA es una autorización electrónica de viaje para determinados viajeros y tampoco representa por sí sola autorización para trabajar o estudiar.</li>
+            <li>Un visitor record no es una visa.</li>
+            <li>Un work permit establece autorización y condiciones para trabajar.</li>
+            <li>Un study permit establece autorización y condiciones para estudiar.</li>
+            <li>Una PR card sirve como prueba oficial del estatus de residente permanente.</li>
+          </ul>
+          <p><strong>Lee siempre el documento específico que corresponde a tu situación.</strong></p>
+        `,
+      },
+      {
+        heading: "Revisa estas 5 cosas",
+        bodyHtml: `
+          <ol>
+            <li><strong>Tu nombre.</strong> Verifica que tu nombre y demás datos personales estén correctamente escritos.</li>
+            <li><strong>Fecha de vencimiento.</strong> No esperes hasta el último momento para revisar cuándo vence tu pasaporte o documento migratorio.</li>
+            <li><strong>Condiciones.</strong> Lee las condiciones impresas en tu work permit, study permit, visitor record u otro documento.</li>
+            <li><strong>Pasaporte.</strong> Comprueba que tenga suficiente vigencia para tus próximos trámites.</li>
+            <li><strong>Cambios en tu situación.</strong> Si recibes un nuevo permiso, cambias de estatus, cambias legalmente de nombre u ocurre otro cambio relevante, revisa qué registros o documentos necesitas actualizar.</li>
+          </ol>
+        `,
+      },
+      {
+        heading: "No compartas tus documentos con cualquiera",
+        variant: "warning",
+        bodyHtml: `
+          <p>Tus documentos de identidad y tu SIN contienen información personal sensible.</p>
+          <ul>
+            <li>Guarda los originales en un lugar seguro.</li>
+            <li>Conserva copias digitales protegidas.</li>
+            <li>Evita enviar documentos personales a desconocidos.</li>
+            <li>Confirma quién solicita la información y para qué.</li>
+            <li>Protege especialmente tu SIN.</li>
+            <li>Evita publicar fotografías de permisos, pasaportes o documentos migratorios en redes sociales.</li>
+          </ul>
+          <p><strong>Tu SIN es confidencial. No debe utilizarse como una identificación general para cualquier situación.</strong></p>
+        `,
+      },
+      {
+        heading: "Perdí, me robaron o dañé un documento migratorio",
+        bodyHtml: `
+          <p>IRCC dispone de procedimientos para reemplazar determinados documentos migratorios válidos que hayan sido perdidos, robados o destruidos, entre ellos, según corresponda: visitor record, work permit, study permit, determinados documentos de residencia permanente u otros documentos migratorios.</p>
+          <p>No todos los documentos pueden reemplazarse mediante el mismo procedimiento.</p>
+        `,
+        cta: { label: "Revisar cómo reemplazar un documento →", href: "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=44" },
+      },
+      {
+        heading: "No uses una lista genérica para todos los trámites",
+        bodyHtml: `
+          <p>Cada programa migratorio tiene sus propios requisitos. Cuando presentes una solicitud:</p>
+          <ol>
+            <li>Identifica exactamente el programa.</li>
+            <li>Utiliza la guía oficial correspondiente.</li>
+            <li>Revisa el document checklist de tu solicitud.</li>
+            <li>Verifica que los documentos estén vigentes.</li>
+            <li>Revisa si necesitas traducciones.</li>
+            <li>Conserva una copia de lo que envías.</li>
+          </ol>
+          <p>IRCC genera listas de documentos según el tipo de solicitud. No asumas que una lista encontrada en redes sociales corresponde a tu caso.</p>
+        `,
+      },
+      {
+        heading: "¿Tus documentos no están en inglés o francés?",
+        bodyHtml: `<p>Dependiendo de la solicitud, IRCC puede exigir traducciones de documentos que estén en otros idiomas. No existe aquí una regla universal sobre quién puede traducirlos — revisa los requisitos oficiales de tu solicitud específica.</p>`,
+        cta: { label: "Revisar requisitos oficiales de documentos →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/common-supporting-documents.html" },
+      },
+      {
+        heading: "¿Estás preparando una solicitud?",
+        bodyHtml: `
+          <p>Antes de enviar documentos, revisa la guía y el checklist oficial del programa migratorio específico al que estás aplicando.</p>
+          <div class="guia-cta-row">
+            <a class="btn" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/common-supporting-documents.html" target="_blank" rel="noopener">Revisar documentos en IRCC →</a>
+            <a class="btn-outline" href="guia.html?categoria=migracion">Volver a Migración →</a>
+          </div>
+        `,
+      },
+    ],
+
+    checklist: {
+      title: "Organiza tus documentos antes de necesitarlos",
+      items: [
+        "Pasaporte vigente",
+        "Documento migratorio actual",
+        "Copia de documentos migratorios anteriores",
+        "SIN / confirmación del SIN, cuando corresponda",
+        "Certificados de nacimiento",
+        "Certificado de matrimonio o documentos familiares, cuando corresponda",
+        "Diplomas y documentos académicos",
+        "Contratos y cartas laborales",
+        "Pay stubs",
+        "T4 y Notices of Assessment, cuando corresponda",
+        "Documentos de vivienda relevantes",
+        "Correspondencia importante de IRCC",
+        "Copias de solicitudes y documentos enviados en trámites importantes",
+      ],
+      note: "Esta lista es solamente una herramienta de organización. No significa que todos estos documentos sean obligatorios para cada persona o solicitud.",
+    },
+
+    sources: [
+      { label: "IRCC — Supporting documents", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/common-supporting-documents.html" },
+      { label: "IRCC — Passport and travel documents", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/passport-travel-document.html" },
+      { label: "Service Canada — Social Insurance Number", href: "https://www.canada.ca/en/employment-social-development/services/sin.html" },
+      { label: "Service Canada — SIN for temporary residents", href: "https://www.canada.ca/en/employment-social-development/services/sin/temporary-residents.html" },
+      { label: "IRCC — Replacing lost, stolen or destroyed immigration documents", href: "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=44" },
+      { label: "IRCC — Visitor record", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/extend-stay/about.html" },
+    ],
+
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Los documentos y requisitos dependen del estatus de cada persona, del programa y del trámite específico. Las reglas y requisitos pueden cambiar. Verifica siempre la información vigente directamente con Immigration, Refugees and Citizenship Canada (IRCC), Service Canada u otra autoridad correspondiente, o consulta a un profesional autorizado.",
+  },
 };

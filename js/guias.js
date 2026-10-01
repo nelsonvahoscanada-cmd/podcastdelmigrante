@@ -64,7 +64,7 @@ const USEFUL_GUIDES = {
         title: "Documentos importantes",
         desc: "Organización y explicación general de documentos que pueden ser relevantes durante la vida migratoria en Canadá: pasaporte, permisos, Confirmation of Permanent Residence (COPR), PR card y otros documentos oficiales según corresponda.",
         cta: "Ver guía →",
-        href: null,
+        href: "guia-ruta.html?ruta=documentos-importantes",
       },
       {
         title: "Servicios para recién llegados",
