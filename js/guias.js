@@ -52,7 +52,7 @@ const USEFUL_GUIDES = {
         title: "Estudiar en Canadá",
         desc: "Información general sobre study permits, instituciones designadas, programas, condiciones para trabajar durante los estudios y otros aspectos que deben verificarse antes de estudiar.",
         cta: "Ver guía →",
-        href: null,
+        href: "guia-ruta.html?ruta=estudiar-en-canada",
       },
       {
         title: "Residencia permanente",

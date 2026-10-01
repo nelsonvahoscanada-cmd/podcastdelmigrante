@@ -41,7 +41,7 @@ const GUIA_RUTAS = {
           <p>Existe una excepción importante: si tu programa de estudios dura <strong>seis meses o menos</strong> y no forma parte de un programa más largo, puedes estar exento de solicitar un study permit, siempre que cumplas las condiciones oficiales. Los programas de <strong>más de seis meses</strong> normalmente sí requieren study permit.</p>
         `,
         cta: "Conocer cómo estudiar en Canadá →",
-        href: null,
+        href: "guia-ruta.html?subruta=quiero-estudiar-canada",
         sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility/study-without-permit.html",
       },
       {
@@ -258,5 +258,67 @@ const GUIA_RUTAS = {
 
     disclaimerHeading: "Información general",
     disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
+
+  "estudiar-en-canada": {
+    slug: "estudiar-en-canada",
+    parentCategoria: "migracion",
+    parentLabel: "Migración",
+    title: "Estudiar en Canadá",
+    dek: "Entiende qué debes revisar antes de elegir una institución, solicitar un permiso de estudios, trabajar mientras estudias y planear qué hacer después de graduarte.",
+    intro: "Estudiar en Canadá implica mucho más que recibir una carta de aceptación. Antes de pagar matrícula o tomar una decisión, conviene verificar que la institución y el programa correspondan a tus objetivos y conocer los requisitos migratorios aplicables. Esta guía es educativa y práctica — no vende estudios ni recomienda instituciones.",
+
+    situationQuestion: {
+      title: "¿En qué etapa estás?",
+      cards: [
+        { num: "01", title: "Quiero estudiar en Canadá", desc: "Qué es un DLI y si tu caso requiere study permit.", cta: "Comprobar si necesito study permit →", href: "guia-ruta.html?subruta=quiero-estudiar-canada" },
+        { num: "02", title: "Elegir institución y programa", desc: "Qué verificar antes de pagar matrícula.", cta: "Ver checklist antes de elegir →", href: "guia-ruta.html?subruta=elegir-institucion-programa" },
+        { num: "03", title: "Solicitar el study permit", desc: "Desde dónde se solicita y qué documentos pueden formar parte del proceso.", cta: "Revisar cómo solicitar →", href: "guia-ruta.html?subruta=solicitar-study-permit" },
+        { num: "04", title: "PAL / TAL y documentos", desc: "Qué es la carta de atestación provincial o territorial y sus excepciones vigentes.", cta: "Comprobar si necesito PAL/TAL →", href: "guia-ruta.html?subruta=pal-tal-documentos" },
+        { num: "05", title: "Trabajar mientras estudio", desc: "Trabajo dentro y fuera del campus, y las reglas actuales para co-op/internships.", cta: "Comprobar si puedo trabajar →", href: "guia-ruta.html?subruta=trabajar-mientras-estudio" },
+        { num: "06", title: "Mi study permit está por vencer", desc: "Extensión, maintained status y qué pasa si ya venció.", cta: "Revisar extensión →", href: "guia-ruta.html?subruta=study-permit-por-vencer" },
+        { num: "07", title: "Terminé mis estudios / PGWP", desc: "Elegibilidad para el Post-Graduation Work Permit y cuándo vence tu study permit.", cta: "Comprobar elegibilidad para PGWP →", href: "guia-ruta.html?subruta=termine-estudios-pgwp" },
+        { num: "08", title: "Mi familia viene conmigo", desc: "Qué pueden y no pueden hacer tu pareja e hijos.", cta: "Revisar opciones familiares →", href: "guia-ruta.html?subruta=mi-familia-viene-conmigo" },
+      ],
+    },
+
+    checklist: {
+      title: "Antes de pagar, verifica",
+      items: [
+        "¿La institución aparece en el listado oficial DLI?",
+        "¿El programa específico puede ser elegible para PGWP si ese es tu objetivo?",
+        "¿Entiendes el costo completo del programa?",
+        "¿Conoces los requisitos de fondos?",
+        "¿Necesitas PAL/TAL?",
+        "¿Sabes cuáles son realmente tus derechos para trabajar?",
+        "¿La persona que te asesora en inmigración está autorizada?",
+      ],
+      note: "Una admisión a una institución educativa no es garantía de aprobación de un study permit, permiso de trabajo o residencia permanente.",
+    },
+
+    infoSections: [
+      {
+        heading: "Estudiar no garantiza residencia permanente",
+        bodyHtml: `<p>La educación canadiense puede formar parte del perfil migratorio de una persona, pero completar estudios en Canadá no concede automáticamente residencia permanente.</p>`,
+        cta: { label: "Explorar residencia permanente →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" },
+      },
+      {
+        heading: "Sigue explorando",
+        bodyHtml: `
+          <p>Esta ruta se conecta con otras secciones de Migración:</p>
+          <ul>
+            <li><a href="guia-ruta.html?subruta=quiero-estudiar-canada">Quiero venir a Canadá → Quiero estudiar</a> (dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=ya-estoy-en-canada">Ya estoy en Canadá → Estoy como estudiante</a> (dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=permisos-de-trabajo">Permisos de trabajo</a> (dentro del Magazine).</li>
+            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" target="_blank" rel="noopener">Residencia permanente</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" target="_blank" rel="noopener">Servicios para recién llegados</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/newcomers.html" target="_blank" rel="noopener">Fraudes y estafas migratorias</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+          </ul>
+        `,
+      },
+    ],
+
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
   },
 };

@@ -687,4 +687,327 @@ const GUIA_SUBRUTAS = {
     disclaimerHeading: "Información general",
     disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
   },
+
+  /* ---------------------------------------------------------------
+     Las ocho subguías de "Estudiar en Canadá" (Ruta 04). Todas
+     comparten breadcrumb Migración → Estudiar en Canadá → [subguía]
+     y el aviso "Información general" (versión que menciona también
+     asesoría académica/financiera, tal como fue aprobada para esta
+     ruta).
+  --------------------------------------------------------------- */
+
+  "quiero-estudiar-canada": {
+    slug: "quiero-estudiar-canada",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "estudiar-en-canada",
+    parentRutaLabel: "Estudiar en Canadá",
+    title: "Quiero estudiar en Canadá",
+    dek: "La mayoría de los ciudadanos extranjeros necesita un study permit para estudiar en Canadá, aunque existen determinadas excepciones.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar antes de estudiar en Canadá — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "¿Qué es un DLI?",
+        bodyHtml: `
+          <p>Un <strong>Designated Learning Institution (DLI)</strong> es una institución autorizada por una provincia o territorio para recibir estudiantes internacionales.</p>
+          <p><strong>Antes de pagar una matrícula, verifica la institución.</strong></p>
+        `,
+        cta: { label: "Buscar una institución DLI →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html" },
+      },
+      {
+        heading: "¿Todos los estudios requieren study permit?",
+        bodyHtml: `<p>Existen determinadas excepciones, incluidos algunos programas de corta duración cuando se cumplen las condiciones aplicables. No cualquier curso de menos de seis meses está automáticamente exento — deben revisarse también las demás condiciones.</p>`,
+        cta: { label: "Comprobar si necesito study permit →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility/study-without-permit.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Study in Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html" },
+      { label: "IRCC — Designated Learning Institutions list", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html" },
+      { label: "IRCC — Who can study without a study permit", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility/study-without-permit.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
+
+  "elegir-institucion-programa": {
+    slug: "elegir-institucion-programa",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "estudiar-en-canada",
+    parentRutaLabel: "Estudiar en Canadá",
+    title: "Antes de elegir una escuela, college o universidad",
+    dek: "Qué verificar antes de pagar matrícula.",
+    intro: "Esta guía educativa no recomienda instituciones específicas — te ayuda a identificar qué debes verificar por tu cuenta.",
+    sections: [
+      {
+        heading: "Antes de pagar, verifica",
+        bodyHtml: `
+          <ul>
+            <li>Que la institución sea DLI.</li>
+            <li>El programa exacto.</li>
+            <li>Duración.</li>
+            <li>Requisitos de admisión.</li>
+            <li>Costos de matrícula.</li>
+            <li>Ciudad/provincia.</li>
+            <li>Costos aproximados de vida.</li>
+            <li>Condiciones migratorias aplicables.</li>
+            <li>Si el programa puede ser elegible para PGWP, si ese es uno de tus objetivos.</li>
+          </ul>
+        `,
+        cta: { label: "Buscar DLI →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html" },
+      },
+    ],
+    callouts: [
+      {
+        title: "⚠️ DLI no significa automáticamente PGWP",
+        bodyHtml: `<p>Que una institución sea un Designated Learning Institution no significa que todos sus programas hagan elegible al graduado para un Post-Graduation Work Permit. IRCC señala que la elegibilidad para PGWP depende de varios requisitos y recomienda comprobar el programa antes de presentar la solicitud de study permit.</p>`,
+      },
+    ],
+    sources: [
+      { label: "IRCC — Designated Learning Institutions list", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html" },
+      { label: "IRCC — Work in Canada after you graduate (PGWP)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
+
+  "solicitar-study-permit": {
+    slug: "solicitar-study-permit",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "estudiar-en-canada",
+    parentRutaLabel: "Estudiar en Canadá",
+    title: "Solicitar un permiso de estudios",
+    dek: "Desde dónde se solicita y qué documentos pueden formar parte del proceso.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar antes de solicitar tu study permit — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "¿Desde dónde se solicita?",
+        bodyHtml: `<p>Generalmente, el study permit debe solicitarse antes de viajar a Canadá. Existen situaciones específicas en las que determinadas personas pueden solicitar desde Canadá o, en ciertos casos, en un puerto de entrada. <strong>No cualquier visitante puede simplemente cambiar a estudiante dentro de Canadá</strong> — solo determinadas personas pueden hacerlo.</p>`,
+      },
+      {
+        heading: "Documentos que pueden formar parte del proceso",
+        bodyHtml: `
+          <p>Como orientación, no como checklist universal, pueden incluir:</p>
+          <ul>
+            <li>Letter of Acceptance (LOA).</li>
+            <li>Pasaporte/documento de viaje.</li>
+            <li>Prueba de fondos.</li>
+            <li>PAL/TAL, cuando corresponda.</li>
+            <li>Documentos familiares, cuando corresponda.</li>
+            <li>Biometría, cuando corresponda.</li>
+            <li>Examen médico, cuando corresponda.</li>
+            <li>Otros documentos solicitados por IRCC.</li>
+          </ul>
+          <p><strong>Los requisitos pueden variar según el caso y el lugar desde donde se solicita.</strong></p>
+        `,
+      },
+      {
+        heading: "Demostrar fondos",
+        bodyHtml: `<p>IRCC exige demostrar capacidad financiera para cubrir, según corresponda: matrícula, gastos de vida, familiares acompañantes y transporte de regreso. Los montos pueden cambiar — consulta siempre la cifra vigente directamente con IRCC.</p>`,
+        cta: { label: "Consultar montos actuales de prueba de fondos →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Study permit", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
+
+  "pal-tal-documentos": {
+    slug: "pal-tal-documentos",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "estudiar-en-canada",
+    parentRutaLabel: "Estudiar en Canadá",
+    title: "¿Qué es una PAL o TAL?",
+    dek: "Provincial Attestation Letter / Territorial Attestation Letter — qué es y sus excepciones vigentes.",
+    intro: "Esta guía educativa explica el PAL/TAL en lenguaje sencillo — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "PAL — Provincial Attestation Letter / TAL — Territorial Attestation Letter",
+        bodyHtml: `
+          <p>Es una carta de la provincia o territorio correspondiente que confirma que existe espacio dentro de la asignación aplicable para estudiantes internacionales. Normalmente se obtiene mediante la institución educativa correspondiente.</p>
+          <p><strong>No todos los solicitantes necesitan PAL/TAL. Las reglas tienen excepciones.</strong></p>
+          <p>Desde el 1 de enero de 2026, quienes solicitan estudiar en determinados programas públicos de maestría o doctorado conducentes a grado están entre las categorías que pueden estar exentas del PAL/TAL — pero esta no es la única excepción existente.</p>
+        `,
+        cta: { label: "Comprobar si necesito PAL/TAL →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Provincial or territorial attestation letter", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
+
+  "trabajar-mientras-estudio": {
+    slug: "trabajar-mientras-estudio",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "estudiar-en-canada",
+    parentRutaLabel: "Estudiar en Canadá",
+    title: "¿Puedo trabajar mientras estudio?",
+    dek: "Depende de las condiciones de tu study permit y de que cumplas los requisitos establecidos por IRCC.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar sobre trabajar mientras estudias — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "Trabajo dentro del campus",
+        bodyHtml: `<p>Determinados estudiantes elegibles pueden trabajar on-campus sin un work permit adicional cuando cumplen las condiciones establecidas por IRCC.</p>`,
+      },
+      {
+        heading: "Trabajo fuera del campus",
+        bodyHtml: `
+          <p>Los estudiantes que cumplen actualmente las condiciones establecidas por IRCC pueden trabajar hasta <strong>24 horas por semana durante los períodos académicos regulares</strong>. Pueden existir reglas diferentes durante breaks académicos programados.</p>
+          <p>Esto no es una autorización universal para todos los estudiantes: deben cumplirse condiciones como estar matriculado y cumplir los requisitos correspondientes del programa y permiso.</p>
+        `,
+        cta: { label: "Comprobar si puedo trabajar off-campus →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html" },
+      },
+      {
+        heading: "¿Mi programa incluye co-op o prácticas?",
+        bodyHtml: `
+          <p>IRCC indica que, desde el 1 de abril de 2026, los estudiantes internacionales postsecundarios ya no necesitan un co-op work permit separado para determinados student work placements, como co-op placements o internships, sujeto a los requisitos aplicables — su propio study permit cubre ese trabajo.</p>
+          <p>Las personas que ya tienen un co-op work permit pueden seguir utilizándolo durante su vigencia. Esta regla no debe extrapolarse a todas las prácticas o situaciones sin verificar los requisitos oficiales.</p>
+        `,
+        cta: { label: "Revisar reglas actuales para co-op e internships →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/simplifying-co-op-work-permit-requirement-post-secondary-international-students.html" },
+      },
+    ],
+    callouts: [
+      {
+        title: "Tu study permit debe permitirte trabajar",
+        bodyHtml: `<p>Revisa las condiciones impresas en tu permiso y verifica tu elegibilidad antes de asumir que puedes trabajar.</p>`,
+      },
+    ],
+    sources: [
+      { label: "IRCC — Work on campus", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-on-campus.html" },
+      { label: "IRCC — Work off campus", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html" },
+      { label: "IRCC — Simplifying the co-op work permit requirement (abril 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/simplifying-co-op-work-permit-requirement-post-secondary-international-students.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
+
+  "study-permit-por-vencer": {
+    slug: "study-permit-por-vencer",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "estudiar-en-canada",
+    parentRutaLabel: "Estudiar en Canadá",
+    title: "Mi permiso de estudios está por vencer",
+    dek: "Qué revisar antes del vencimiento, y qué pasa si ya venció.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar sobre tu study permit — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "Antes del vencimiento",
+        bodyHtml: `<p>Si necesitas continuar estudiando, debes revisar y solicitar la extensión de tu study permit antes de su vencimiento. IRCC recomienda solicitar la extensión al menos 30 días antes del vencimiento.</p>`,
+        cta: { label: "Extender mi study permit →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/extend-study-permit.html" },
+      },
+      {
+        heading: "Presenté mi solicitud antes de que venciera",
+        bodyHtml: `
+          <p>Cuando se cumplen las condiciones y la solicitud se presenta antes de que expire el permiso, la persona puede permanecer legalmente en Canadá mientras IRCC procesa la solicitud (maintained status).</p>
+          <p>IRCC indica que, para una extensión en la misma institución y bajo las condiciones aplicables, puedes continuar estudiando bajo las condiciones del permiso vigente mientras se toma una decisión, siempre que permanezcas en Canadá. Las reglas para cambios de institución no deben simplificarse de la misma manera.</p>
+        `,
+      },
+      {
+        heading: "¿Qué pasa si mi study permit ya venció?",
+        bodyHtml: `
+          <p>Si perdiste tu estatus de estudiante, <strong>debes dejar de estudiar</strong>.</p>
+          <p>Puede existir la posibilidad de solicitar restauración cuando se cumplen los requisitos, pero <strong>solicitar restauración no autoriza a continuar estudiando mientras se espera la decisión</strong>. IRCC indica que puedes permanecer en Canadá mientras se procesa la solicitud de restauración, pero no puedes estudiar hasta que tu estatus haya sido restaurado y tengas el nuevo study permit.</p>
+        `,
+        cta: { label: "Revisar restauración de estatus →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/visitors/restoration-status.html" },
+      },
+      {
+        heading: "Quiero cambiar de institución",
+        bodyHtml: `<p>Para cambios de DLI postsecundario, existen requisitos específicos vigentes: puede ser necesario obtener un nuevo study permit antes de comenzar en la nueva institución, salvo determinadas excepciones. IRCC señala que un estudiante que cambia de escuela postsecundaria debe seguir instrucciones específicas y normalmente no puede comenzar en el nuevo DLI hasta que se apruebe el permiso correspondiente, salvo situaciones determinadas.</p>`,
+        cta: { label: "Revisar cómo cambiar de DLI →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/change-schools.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Extend your study permit or restore your status", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/extend-study-permit.html" },
+      { label: "IRCC — Restoration of temporary resident status", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/visitors/restoration-status.html" },
+      { label: "IRCC — Changing your school or program", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/change-schools.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
+
+  "termine-estudios-pgwp": {
+    slug: "termine-estudios-pgwp",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "estudiar-en-canada",
+    parentRutaLabel: "Estudiar en Canadá",
+    title: "Terminé mis estudios: ¿qué sigue?",
+    dek: "Elegibilidad para el Post-Graduation Work Permit y cuándo vence realmente tu study permit.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar después de graduarte — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "Post-Graduation Work Permit (PGWP)",
+        bodyHtml: `
+          <p>Algunos graduados de instituciones y programas elegibles pueden solicitar un Post-Graduation Work Permit.</p>
+          <p><strong>Graduarse en Canadá no garantiza un PGWP.</strong> La elegibilidad puede depender de la institución, el programa, la duración, la modalidad/condiciones de estudio, la fecha de solicitud, requisitos de idioma cuando correspondan, requisitos relacionados con el campo de estudio cuando correspondan, y demás requisitos vigentes.</p>
+        `,
+        cta: { label: "Comprobar elegibilidad para PGWP →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation.html" },
+      },
+      {
+        heading: "¿Cuándo termina realmente mi study permit?",
+        bodyHtml: `<p>Si terminas tus estudios antes de la fecha impresa en el permiso, el permiso puede dejar de ser válido 90 días después de completar los estudios o en la fecha impresa — lo que ocurra primero.</p>`,
+      },
+      {
+        heading: "Sigue explorando",
+        bodyHtml: `
+          <ul>
+            <li><a href="guia-ruta.html?ruta=permisos-de-trabajo">Permisos de trabajo →</a> (dentro del Magazine).</li>
+            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" target="_blank" rel="noopener">Residencia permanente →</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+          </ul>
+        `,
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Work in Canada after you graduate (PGWP)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation.html" },
+      { label: "IRCC — Immigrate to Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
+
+  "mi-familia-viene-conmigo": {
+    slug: "mi-familia-viene-conmigo",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "estudiar-en-canada",
+    parentRutaLabel: "Estudiar en Canadá",
+    title: "Estudiar en Canadá con tu familia",
+    dek: "Qué pueden y no pueden hacer tu pareja e hijos.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar sobre tu familia — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "Cónyuge o pareja",
+        bodyHtml: `
+          <p>Un estudiante puede viajar con determinados familiares cuando cumplen los requisitos correspondientes, pero <strong>tener un study permit no significa automáticamente que tu pareja pueda trabajar en Canadá</strong>.</p>
+          <p>Determinadas parejas de estudiantes internacionales pueden ser elegibles para un open work permit bajo categorías específicas. Desde el 21 de enero de 2025, entre las categorías elegibles se encuentran parejas de estudiantes en programas de maestría de 16 meses o más, programas doctorales, además de otras categorías o programas profesionales elegibles establecidos por IRCC. <strong>No todos los cónyuges de estudiantes reciben open work permit.</strong></p>
+        `,
+        cta: { label: "Comprobar elegibilidad de mi pareja →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/help-your-spouse-common-law-partner-work-canada.html" },
+      },
+      {
+        heading: "Hijos",
+        bodyHtml: `<p>Las reglas para que los hijos menores estudien dependen de su situación y documentación particular.</p>`,
+        cta: { label: "Revisar opciones para hijos menores →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/minor-children-travelling-canada.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Help your spouse or common-law partner work in Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/help-your-spouse-common-law-partner-work-canada.html" },
+      { label: "IRCC — Minor children travelling to Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/minor-children-travelling-canada.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
 };
