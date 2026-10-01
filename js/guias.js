@@ -58,7 +58,7 @@ const USEFUL_GUIDES = {
         title: "Residencia permanente",
         desc: "Introducción a algunas de las principales rutas, incluyendo Express Entry, programas provinciales, patrocinio familiar y otros programas oficiales. Ninguna ruta está garantizada ni determina elegibilidad individual.",
         cta: "Ver guía →",
-        href: null,
+        href: "guia-ruta.html?ruta=residencia-permanente",
       },
       {
         title: "Documentos importantes",

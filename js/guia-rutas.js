@@ -61,7 +61,7 @@ const GUIA_RUTAS = {
           <p>Cada ruta tiene sus propios requisitos y criterios de elegibilidad. Ninguna de estas opciones está garantizada — la elegibilidad se evalúa de forma individual según tu situación particular.</p>
         `,
         cta: "Explorar residencia permanente →",
-        href: null,
+        href: "guia-ruta.html?ruta=residencia-permanente",
         sourceHref: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html",
       },
     ],
@@ -247,8 +247,8 @@ const GUIA_RUTAS = {
           <p>Esta ruta se conecta con otras secciones de Migración:</p>
           <ul>
             <li><a href="guia-ruta.html?subruta=estoy-como-trabajador-temporal">Ya estoy en Canadá → Estoy como trabajador temporal</a> (dentro del Magazine).</li>
-            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html" target="_blank" rel="noopener">Estudiar en Canadá</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
-            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" target="_blank" rel="noopener">Residencia permanente</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=estudiar-en-canada">Estudiar en Canadá</a> (dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=residencia-permanente">Residencia permanente</a> (dentro del Magazine).</li>
             <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/newcomers.html" target="_blank" rel="noopener">Fraudes y estafas migratorias</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
             <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" target="_blank" rel="noopener">Servicios para recién llegados</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
           </ul>
@@ -300,7 +300,7 @@ const GUIA_RUTAS = {
       {
         heading: "Estudiar no garantiza residencia permanente",
         bodyHtml: `<p>La educación canadiense puede formar parte del perfil migratorio de una persona, pero completar estudios en Canadá no concede automáticamente residencia permanente.</p>`,
-        cta: { label: "Explorar residencia permanente →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" },
+        cta: { label: "Explorar residencia permanente →", href: "guia-ruta.html?ruta=residencia-permanente" },
       },
       {
         heading: "Sigue explorando",
@@ -310,7 +310,7 @@ const GUIA_RUTAS = {
             <li><a href="guia-ruta.html?subruta=quiero-estudiar-canada">Quiero venir a Canadá → Quiero estudiar</a> (dentro del Magazine).</li>
             <li><a href="guia-ruta.html?ruta=ya-estoy-en-canada">Ya estoy en Canadá → Estoy como estudiante</a> (dentro del Magazine).</li>
             <li><a href="guia-ruta.html?ruta=permisos-de-trabajo">Permisos de trabajo</a> (dentro del Magazine).</li>
-            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" target="_blank" rel="noopener">Residencia permanente</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=residencia-permanente">Residencia permanente</a> (dentro del Magazine).</li>
             <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" target="_blank" rel="noopener">Servicios para recién llegados</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
             <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/newcomers.html" target="_blank" rel="noopener">Fraudes y estafas migratorias</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
           </ul>
@@ -320,5 +320,133 @@ const GUIA_RUTAS = {
 
     disclaimerHeading: "Información general",
     disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria, legal, académica o financiera. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC), la institución correspondiente o un profesional autorizado cuando sea necesario.",
+  },
+
+  "residencia-permanente": {
+    slug: "residencia-permanente",
+    parentCategoria: "migracion",
+    parentLabel: "Migración",
+    title: "Residencia permanente en Canadá",
+    dek: "Conoce las principales vías para obtener la residencia permanente y empieza por identificar cuál podría corresponder a tu situación.",
+    intro: "No existe una única vía para obtener la residencia permanente en Canadá. Las opciones pueden depender de factores como tu experiencia laboral, estudios, edad, conocimiento de inglés o francés, provincia donde deseas establecerte, experiencia previa en Canadá, oferta de empleo, vínculos familiares y otros requisitos establecidos por cada programa. Esta guía busca ayudarte a entender las principales rutas y dirigirte siempre a las fuentes oficiales para revisar los requisitos vigentes.",
+
+    situationQuestion: {
+      title: "¿Qué camino quieres explorar?",
+      cards: [
+        {
+          num: "01",
+          title: "Express Entry",
+          desc: "Sistema federal que administra solicitudes de trabajadores calificados a través de Canadian Experience Class, Federal Skilled Worker Program y Federal Skilled Trades Program.",
+          cta: "Conocer Express Entry →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html",
+        },
+        {
+          num: "02",
+          title: "Provincial Nominee Program (PNP)",
+          desc: "Las provincias y territorios pueden nominar candidatos que cumplan con sus necesidades económicas y los requisitos de sus programas migratorios. Los requisitos, categorías y períodos de apertura varían según la provincia o territorio.",
+          cta: "Explorar programas provinciales →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html",
+        },
+        {
+          num: "03",
+          title: "Tengo experiencia laboral en Canadá",
+          desc: "La experiencia laboral obtenida legalmente en Canadá puede ser relevante para determinadas vías, especialmente Canadian Experience Class (CEC) — aunque haber trabajado en Canadá no te hace automáticamente elegible.",
+          cta: "Revisar opciones con experiencia canadiense →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/who-can-apply/canadian-experience-class.html",
+        },
+        {
+          num: "04",
+          title: "Estudié en Canadá",
+          desc: "Haber estudiado en Canadá puede formar parte del camino migratorio de algunas personas, pero graduarse no otorga automáticamente la residencia permanente. La experiencia laboral posterior y otros factores pueden ser relevantes.",
+          cta: "Revisar opciones después de estudiar →",
+          href: "guia-ruta.html?ruta=estudiar-en-canada",
+        },
+        {
+          num: "05",
+          title: "Programas regionales y comunitarios",
+          desc: "Además de Express Entry y los programas provinciales, existen vías regionales y comunitarias para candidatos que cumplen requisitos específicos, como el Atlantic Immigration Program, el Rural Community Immigration Pilot y el Francophone Community Immigration Pilot.",
+          cta: "Explorar programas regionales →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/rural-franco-pilots.html",
+        },
+        {
+          num: "06",
+          title: "Patrocinio familiar",
+          desc: "Los ciudadanos canadienses y residentes permanentes que cumplen determinados requisitos pueden patrocinar a ciertos familiares elegibles para obtener la residencia permanente — no cualquier familiar puede ser patrocinado.",
+          cta: "Conocer el patrocinio familiar →",
+          href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship.html",
+        },
+      ],
+    },
+
+    infoSections: [
+      {
+        heading: "Entrar a Express Entry no significa que ya tengas residencia permanente",
+        variant: "callout",
+        bodyHtml: `
+          <p>Express Entry funciona mediante un sistema de perfiles y selección. De forma simplificada:</p>
+          <ol>
+            <li>Revisas si eres elegible para uno de los programas administrados por Express Entry.</li>
+            <li>Si eres elegible, puedes crear y enviar un perfil.</li>
+            <li>Los perfiles elegibles ingresan al pool y reciben una puntuación bajo el Comprehensive Ranking System (CRS).</li>
+            <li>IRCC realiza rondas de invitaciones.</li>
+            <li>Si recibes una Invitation to Apply (ITA), puedes presentar una solicitud de residencia permanente.</li>
+            <li>IRCC revisa la solicitud y toma una decisión.</li>
+          </ol>
+          <p><strong>Crear un perfil o ingresar al pool no garantiza recibir una Invitation to Apply.</strong></p>
+        `,
+      },
+      {
+        heading: "¿De qué depende mi elegibilidad?",
+        bodyHtml: `
+          <ul>
+            <li>Experiencia laboral.</li>
+            <li>Educación.</li>
+            <li>Inglés o francés.</li>
+            <li>Edad.</li>
+            <li>Experiencia canadiense.</li>
+            <li>Provincia o territorio.</li>
+            <li>Oferta laboral, cuando corresponda.</li>
+            <li>Composición familiar.</li>
+            <li>Admisibilidad.</li>
+            <li>Programa migratorio específico.</li>
+          </ul>
+          <p>Cada programa utiliza criterios diferentes. No existe una fórmula única que determine la elegibilidad para todas las vías de residencia permanente.</p>
+        `,
+      },
+      {
+        heading: "¿No sabes qué programa podría aplicar a tu situación?",
+        bodyHtml: `
+          <p>IRCC ofrece herramientas oficiales que pueden ayudarte a explorar programas de inmigración según tu situación.</p>
+          <div class="guia-cta-row">
+            <a class="btn" href="https://ircc.canada.ca/explore-programs/" target="_blank" rel="noopener">Explorar programas oficiales →</a>
+            <a class="btn-outline" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html" target="_blank" rel="noopener">Revisar Express Entry →</a>
+          </div>
+        `,
+      },
+    ],
+
+    beforePaying: {
+      title: "Antes de pagarle a alguien, identifica primero el programa",
+      tips: [
+        "Identifica el nombre exacto del programa migratorio.",
+        "Revisa el programa en Canada.ca.",
+        "Confirma que actualmente esté abierto y que cumplas los requisitos.",
+        "Verifica cualquier representante migratorio que estés considerando contratar.",
+        "Desconfía de quien garantice una residencia permanente o una aprobación.",
+      ],
+    },
+
+    sources: [
+      { label: "IRCC — Live in Canada permanently", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" },
+      { label: "IRCC — Express Entry", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html" },
+      { label: "IRCC — Explore immigration programs", href: "https://ircc.canada.ca/explore-programs/" },
+      { label: "IRCC — Canadian Experience Class", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/who-can-apply/canadian-experience-class.html" },
+      { label: "IRCC — Rural and Francophone Community Immigration Pilots", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/rural-franco-pilots.html" },
+      { label: "IRCC — Atlantic Immigration Program", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/atlantic-immigration.html" },
+      { label: "IRCC — Family sponsorship", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship.html" },
+    ],
+
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Los programas, requisitos, cupos, criterios y procedimientos migratorios pueden cambiar. Verifica siempre la información vigente directamente con Immigration, Refugees and Citizenship Canada (IRCC), la provincia o territorio correspondiente, o consulta a un profesional autorizado.",
   },
 };

@@ -185,8 +185,9 @@
   }
 
   function situationCardHtml(card) {
+    const isExternal = card.href && /^https?:\/\//.test(card.href);
     const ctaNode = card.href
-      ? `<a class="guia-route__cta" href="${card.href}">${card.cta}</a>`
+      ? `<a class="guia-route__cta" href="${card.href}"${isExternal ? ' target="_blank" rel="noopener"' : ""}>${card.cta}</a>`
       : `<span class="guia-route__cta guia-route__cta--pending">${card.cta}</span>`;
     return `
       <article class="guia-route">
@@ -210,8 +211,9 @@
 
   function infoSectionHtml(section) {
     const variantClass = section.variant === "callout" ? " guia-infoblock--callout" : section.variant === "warning" ? " guia-infoblock--warning" : "";
+    const isExternal = section.cta && /^https?:\/\//.test(section.cta.href);
     const ctaNode = section.cta
-      ? `<a class="btn-outline" href="${section.cta.href}" target="_blank" rel="noopener">${section.cta.label}</a>`
+      ? `<a class="btn-outline" href="${section.cta.href}"${isExternal ? ' target="_blank" rel="noopener"' : ""}>${section.cta.label}</a>`
       : "";
     return `
       <article class="guia-infoblock${variantClass}">

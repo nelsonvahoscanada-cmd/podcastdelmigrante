@@ -246,7 +246,7 @@ const GUIA_SUBRUTAS = {
       {
         heading: "5. Quiero quedarme en Canadá después de estudiar",
         bodyHtml: `<p>Estudiar en Canadá no garantiza la residencia permanente. Pueden existir programas federales o provinciales para los cuales una persona llegue a ser elegible dependiendo de su perfil.</p>`,
-        cta: { label: "Explorar caminos hacia residencia permanente →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" },
+        cta: { label: "Explorar caminos hacia residencia permanente →", href: "guia-ruta.html?ruta=residencia-permanente" },
       },
     ],
     callouts: [],
@@ -308,7 +308,7 @@ const GUIA_SUBRUTAS = {
       {
         heading: "6. Quiero quedarme permanentemente",
         bodyHtml: `<p>Dependiendo de tu elegibilidad, puedes explorar opciones como Express Entry, Provincial Nominee Programs u otros programas económicos aplicables. Ninguna de estas opciones promete elegibilidad ni residencia permanente garantizada.</p>`,
-        cta: { label: "Explorar residencia permanente →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" },
+        cta: { label: "Explorar residencia permanente →", href: "guia-ruta.html?ruta=residencia-permanente" },
       },
     ],
     callouts: [],
@@ -964,7 +964,7 @@ const GUIA_SUBRUTAS = {
         bodyHtml: `
           <ul>
             <li><a href="guia-ruta.html?ruta=permisos-de-trabajo">Permisos de trabajo →</a> (dentro del Magazine).</li>
-            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" target="_blank" rel="noopener">Residencia permanente →</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=residencia-permanente">Residencia permanente →</a> (dentro del Magazine).</li>
           </ul>
         `,
       },
