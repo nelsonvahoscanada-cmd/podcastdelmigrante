@@ -252,7 +252,7 @@
       ${sourcesHtml(ruta)}
 
       <div class="article-disclaimer">
-        <h2 class="article-disclaimer__heading">Información importante</h2>
+        <h2 class="article-disclaimer__heading">${ruta.disclaimerHeading || "Información importante"}</h2>
         <p class="article-disclaimer__text">${ruta.disclaimer}</p>
       </div>
 

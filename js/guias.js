@@ -46,7 +46,7 @@ const USEFUL_GUIDES = {
         title: "Permisos de trabajo",
         desc: "Información general sobre permisos abiertos, permisos vinculados a empleador, condiciones, vigencia y cambios relacionados con el permiso.",
         cta: "Ver guía →",
-        href: null,
+        href: "guia-ruta.html?ruta=permisos-de-trabajo",
       },
       {
         title: "Estudiar en Canadá",

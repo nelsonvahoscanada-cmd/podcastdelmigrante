@@ -390,4 +390,301 @@ const GUIA_SUBRUTAS = {
     disclaimerHeading: "Información general",
     disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria. Las reglas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
   },
+
+  /* ---------------------------------------------------------------
+     Las ocho subguías de "Permisos de trabajo" (Ruta 03). Todas
+     comparten breadcrumb Migración → Permisos de trabajo → [subguía]
+     y el mismo aviso "Información general".
+  --------------------------------------------------------------- */
+
+  "necesito-permiso-trabajo": {
+    slug: "necesito-permiso-trabajo",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "permisos-de-trabajo",
+    parentRutaLabel: "Permisos de trabajo",
+    title: "¿Necesito un permiso para trabajar en Canadá?",
+    dek: "La mayoría de los ciudadanos extranjeros necesitan un work permit, aunque existen determinadas excepciones.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar antes de trabajar en Canadá — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "La mayoría necesita un work permit",
+        bodyHtml: `
+          <p>La mayoría de los ciudadanos extranjeros necesitan un work permit para trabajar legalmente en Canadá. Sin embargo, existen determinadas actividades y situaciones para las cuales puede existir una exención.</p>
+          <p>No existe una lista simplificada que garantice que alguien está automáticamente exento — cada situación debe verificarse.</p>
+          <p><strong>Tener una oferta de trabajo no significa automáticamente tener autorización para trabajar.</strong></p>
+        `,
+      },
+      {
+        heading: "Debes determinar",
+        bodyHtml: `
+          <ul>
+            <li>Si necesitas un work permit.</li>
+            <li>Qué tipo de permiso corresponde a tu situación.</li>
+            <li>Si puedes solicitarlo desde fuera o desde dentro de Canadá.</li>
+            <li>Si existe una excepción aplicable a tu caso.</li>
+          </ul>
+        `,
+        cta: { label: "Comprobar si necesito un work permit →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-without-permit.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Who can work without a work permit", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-without-permit.html" },
+      { label: "IRCC — Work in Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/permit.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
+
+  "employer-specific-work-permit": {
+    slug: "employer-specific-work-permit",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "permisos-de-trabajo",
+    parentRutaLabel: "Permisos de trabajo",
+    title: "Permiso de trabajo vinculado a un empleador",
+    dek: "Un employer-specific work permit permite trabajar según las condiciones indicadas en el permiso.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar sobre tu employer-specific work permit — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "Revisa en tu permiso",
+        bodyHtml: `
+          <ul>
+            <li>Empleador.</li>
+            <li>Ocupación, cuando corresponda.</li>
+            <li>Lugar de trabajo, cuando corresponda.</li>
+            <li>Fecha de vencimiento.</li>
+            <li>Condiciones.</li>
+            <li>Remarks / observaciones.</li>
+          </ul>
+          <p><strong>Debes respetar las condiciones que aparecen en tu permiso.</strong></p>
+          <p>Para solicitar este tipo de permiso generalmente se requiere una oferta de trabajo, y el empleador debe completar determinados pasos.</p>
+        `,
+      },
+      {
+        heading: "¿Siempre se necesita LMIA?",
+        bodyHtml: `<p><strong>No.</strong> Algunos empleos requieren una Labour Market Impact Assessment (LMIA) y otros pueden estar exentos. La LMIA no debe presentarse como un requisito universal.</p>`,
+        cta: { label: "Revisar employer-specific work permits →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/employer-specific.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Employer-specific work permits", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/employer-specific.html" },
+      { label: "IRCC — Hire a temporary foreign worker (LMIA)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/hire-temporary-foreign.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
+
+  "open-work-permit": {
+    slug: "open-work-permit",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "permisos-de-trabajo",
+    parentRutaLabel: "Permisos de trabajo",
+    title: "Open work permit",
+    dek: "Un open work permit permite trabajar para distintos empleadores en Canadá, sujeto a las restricciones y condiciones aplicables.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar sobre el open work permit — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "No cualquier persona puede solicitarlo",
+        bodyHtml: `
+          <p><strong>No cualquier persona puede solicitar un open work permit.</strong> Solo está disponible en situaciones específicas establecidas por IRCC, por ejemplo:</p>
+          <ul>
+            <li>Determinados graduados elegibles para PGWP.</li>
+            <li>Determinados cónyuges o parejas elegibles.</li>
+            <li>Determinados solicitantes de residencia permanente.</li>
+            <li>Refugiados, solicitantes de refugio o personas protegidas en situaciones aplicables.</li>
+            <li>Trabajadores vulnerables elegibles.</li>
+            <li>Participantes elegibles de determinados programas.</li>
+          </ul>
+          <p>Pertenecer a una de estas categorías no garantiza automáticamente la elegibilidad. Algunos open work permits pueden además contener restricciones sobre el tipo o lugar de trabajo.</p>
+        `,
+        cta: { label: "Comprobar elegibilidad para open work permit →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/open-work-permit.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Open work permits", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/open-work-permit.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
+
+  "que-es-lmia": {
+    slug: "que-es-lmia",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "permisos-de-trabajo",
+    parentRutaLabel: "Permisos de trabajo",
+    title: "¿Qué es una LMIA?",
+    dek: "Labour Market Impact Assessment — qué es, cuándo se necesita y cómo protegerte de estafas relacionadas.",
+    intro: "Esta guía educativa explica qué es una LMIA en lenguaje sencillo — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "¿Qué es una Labour Market Impact Assessment (LMIA)?",
+        bodyHtml: `
+          <p>Una LMIA es una evaluación que puede ser necesaria para que determinados empleadores puedan contratar a un trabajador extranjero.</p>
+          <p>Normalmente es <strong>el empleador</strong>, no el trabajador, quien realiza el proceso correspondiente para obtener la LMIA cuando es requerida.</p>
+        `,
+        cta: { label: "Información oficial sobre LMIA →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/hire-temporary-foreign.html" },
+      },
+      {
+        heading: "Trabajo que requiere LMIA",
+        bodyHtml: `<p>El empleador debe obtener la documentación correspondiente antes de que el trabajador pueda utilizarla para una solicitud de work permit.</p>`,
+      },
+      {
+        heading: "Trabajo exento de LMIA",
+        bodyHtml: `<p>Algunas contrataciones pueden realizarse bajo programas o exenciones aplicables, pero esto no significa necesariamente que el trabajador esté exento de obtener un work permit.</p>`,
+      },
+    ],
+    callouts: [
+      {
+        title: "⚠️ Cuidado con las estafas",
+        bodyHtml: `<p>Una LMIA o una oferta de empleo nunca debe interpretarse por sí sola como garantía de aprobación de un work permit o residencia permanente. Desconfía de cualquier precio de "venta de LMIA" y de intermediarios privados que la ofrezcan como un producto a la venta.</p>`,
+      },
+    ],
+    sources: [
+      { label: "IRCC — Hire a temporary foreign worker (LMIA)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/hire-temporary-foreign.html" },
+      { label: "IRCC — Protégete del fraude migratorio", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/newcomers.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
+
+  "permiso-trabajo-por-vencer": {
+    slug: "permiso-trabajo-por-vencer",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "permisos-de-trabajo",
+    parentRutaLabel: "Permisos de trabajo",
+    title: "Mi work permit está por vencer",
+    dek: "Qué revisar y cuándo actuar antes de que expire tu permiso de trabajo.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar antes de que venza tu work permit — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "Actúa antes del vencimiento",
+        bodyHtml: `<p>Si necesitas extender tu permiso o cambiar determinadas condiciones, revisa tus opciones antes de la fecha de vencimiento. IRCC actualmente recomienda presentar una solicitud para extender o cambiar condiciones al menos 30 días antes de que expire el permiso.</p>`,
+        cta: { label: "Revisar extensión de work permit →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend-permit.html" },
+      },
+      {
+        heading: "Presenté mi solicitud antes de que venciera",
+        bodyHtml: `
+          <p>Si presentas una solicitud elegible para extender o cambiar tu work permit antes de que expire, puedes mantener estatus legal mientras IRCC decide la solicitud (maintained status).</p>
+          <p>Respecto al trabajo, <strong>no es correcto simplificar diciendo "aplicaste antes de vencer = puedes trabajar donde quieras".</strong> IRCC señala que una persona que continúa trabajando bajo maintained status normalmente debe respetar las condiciones correspondientes de su permiso anterior mientras se procesa la solicitud, salvo que exista otra autorización aplicable.</p>
+        `,
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Extend your work permit", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend-permit.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
+
+  "cambiar-de-empleador": {
+    slug: "cambiar-de-empleador",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "permisos-de-trabajo",
+    parentRutaLabel: "Permisos de trabajo",
+    title: "Quiero cambiar de empleador",
+    dek: "Lo que debes revisar depende del tipo de permiso de trabajo que tengas.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar antes de cambiar de empleador — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "Tengo un open work permit",
+        bodyHtml: `<p>Un titular de open work permit válido generalmente puede cambiar de empleador mientras respete las restricciones de su propio permiso.</p>`,
+      },
+      {
+        heading: "Tengo un employer-specific work permit",
+        bodyHtml: `<p>Generalmente deberás solicitar un nuevo work permit si quieres cambiar de empleador o de empleo.</p>`,
+        cta: { label: "Revisar las reglas para cambiar de empleador →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend/change-jobs-employers.html" },
+      },
+      {
+        heading: "¿Tengo que esperar hasta recibir el nuevo permiso?",
+        bodyHtml: `
+          <p>IRCC mantiene un proceso mediante el cual determinados trabajadores elegibles que ya están en Canadá y solicitaron un nuevo employer-specific work permit pueden pedir autorización para comenzar el nuevo empleo mientras se procesa su solicitud.</p>
+          <p><strong>Presentar la nueva solicitud por sí solo no significa automáticamente que puedas empezar inmediatamente con el nuevo empleador.</strong> Debes cumplir los requisitos y, cuando corresponda, solicitar y recibir la autorización de IRCC antes de comenzar el nuevo empleo.</p>
+        `,
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Changing jobs or employers", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend/change-jobs-employers.html" },
+      { label: "IRCC — Open work permits", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/open-work-permit.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
+
+  "permiso-trabajo-vencio": {
+    slug: "permiso-trabajo-vencio",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "permisos-de-trabajo",
+    parentRutaLabel: "Permisos de trabajo",
+    title: "Mi work permit ya venció",
+    dek: "Qué significa la restauración de estatus y qué no debes asumir mientras la solicitas.",
+    intro: "Esta guía te ayuda a identificar qué debes revisar si tu work permit ya venció — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "Si perdiste tu estatus, debes dejar de trabajar",
+        bodyHtml: `
+          <p><strong>Si perdiste tu estatus y autorización de trabajo, debes dejar de trabajar.</strong></p>
+          <p>Determinadas personas pueden ser elegibles para solicitar la restauración de su estatus y un nuevo work permit. Como regla general, IRCC establece un período de 90 días para solicitar la restauración cuando se cumplen los requisitos, aunque pueden existir medidas o excepciones específicas.</p>
+        `,
+        cta: { label: "Revisar restauración de estatus →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/visitors/restoration-status.html" },
+      },
+    ],
+    callouts: [
+      {
+        title: "Restauración ≠ maintained status",
+        bodyHtml: `<p>Solicitar restauración no significa que puedas seguir trabajando mientras esperas. La aprobación no está garantizada.</p>`,
+      },
+    ],
+    sources: [
+      { label: "IRCC — Restoration of temporary resident status", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/visitors/restoration-status.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
+
+  "derechos-trabajador": {
+    slug: "derechos-trabajador",
+    parentCategoria: "migracion",
+    parentCategoriaLabel: "Migración",
+    parentRuta: "permisos-de-trabajo",
+    parentRutaLabel: "Permisos de trabajo",
+    title: "Tus derechos como trabajador temporal en Canadá",
+    dek: "Los trabajadores extranjeros tienen derechos laborales y existen mecanismos de protección.",
+    intro: "Esta guía educativa explica mecanismos oficiales de protección — no reemplaza la información oficial de tu propio caso.",
+    sections: [
+      {
+        heading: "¿Estás sufriendo abuso o estás en riesgo?",
+        bodyHtml: `
+          <p>IRCC dispone de un <strong>Open Work Permit for Vulnerable Workers</strong> para determinadas personas elegibles que están en Canadá y sufren, o están en riesgo de sufrir, abuso relacionado con su empleo. Esto no promete elegibilidad automática.</p>
+          <p>Pueden existir formas de abuso:</p>
+          <ul>
+            <li>Físico.</li>
+            <li>Sexual.</li>
+            <li>Financiero.</li>
+            <li>Psicológico.</li>
+            <li>Amenazas o represalias.</li>
+            <li>Determinadas condiciones laborales o de vivienda abusivas.</li>
+          </ul>
+          <p><strong>Si estás en peligro inmediato, llama al 911.</strong></p>
+        `,
+        cta: { label: "Ayuda para trabajadores vulnerables →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/vulnerable-workers/eligibility.html" },
+      },
+    ],
+    callouts: [],
+    sources: [
+      { label: "IRCC — Open work permit for vulnerable workers", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/vulnerable-workers/eligibility.html" },
+    ],
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
 };

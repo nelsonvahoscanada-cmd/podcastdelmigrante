@@ -199,4 +199,64 @@ const GUIA_RUTAS = {
 
     disclaimer: "El contenido de esta sección es informativo y educativo. Las políticas, requisitos y programas migratorios pueden cambiar y la situación de cada persona es diferente. Antes de tomar una decisión sobre un caso particular, verifica la información vigente en las fuentes oficiales del Gobierno de Canadá o consulta a un profesional autorizado.",
   },
+
+  "permisos-de-trabajo": {
+    slug: "permisos-de-trabajo",
+    parentCategoria: "migracion",
+    parentLabel: "Migración",
+    title: "Permisos de trabajo en Canadá",
+    dek: "Entiende los principales tipos de permisos de trabajo, sus condiciones y qué revisar antes de solicitar, extender o cambiar tu autorización para trabajar en Canadá.",
+    intro: "La mayoría de los ciudadanos extranjeros necesitan autorización para trabajar en Canadá, aunque existen determinadas excepciones. El tipo de permiso y los requisitos dependen de la situación de cada persona y del trabajo que realizará. Esta guía es educativa — no evalúa tu elegibilidad migratoria individual.",
+
+    situationQuestion: {
+      title: "Empieza por identificar tu situación",
+      cards: [
+        { num: "01", title: "Necesito un permiso para trabajar", desc: "Determina si tu actividad requiere un work permit o si podría existir una excepción aplicable.", cta: "Comprobar si necesito un work permit →", href: "guia-ruta.html?subruta=necesito-permiso-trabajo" },
+        { num: "02", title: "Employer-specific work permit", desc: "Permiso vinculado a un empleador, ocupación y condiciones específicas.", cta: "Revisar employer-specific work permits →", href: "guia-ruta.html?subruta=employer-specific-work-permit" },
+        { num: "03", title: "Open work permit", desc: "Permite trabajar para distintos empleadores, solo en situaciones específicas establecidas por IRCC.", cta: "Comprobar elegibilidad para open work permit →", href: "guia-ruta.html?subruta=open-work-permit" },
+        { num: "04", title: "LMIA: qué significa", desc: "Qué es una Labour Market Impact Assessment y cuándo puede ser necesaria.", cta: "Información oficial sobre LMIA →", href: "guia-ruta.html?subruta=que-es-lmia" },
+        { num: "05", title: "Mi permiso está por vencer", desc: "Qué revisar y cuándo actuar antes de la fecha de vencimiento.", cta: "Revisar extensión de work permit →", href: "guia-ruta.html?subruta=permiso-trabajo-por-vencer" },
+        { num: "06", title: "Quiero cambiar de empleador", desc: "Qué cambia según el tipo de permiso que tengas.", cta: "Revisar cómo cambiar de empleador →", href: "guia-ruta.html?subruta=cambiar-de-empleador" },
+        { num: "07", title: "Mi permiso ya venció", desc: "Qué significa la restauración de estatus y sus límites.", cta: "Revisar restauración de estatus →", href: "guia-ruta.html?subruta=permiso-trabajo-vencio" },
+        { num: "08", title: "Derechos y protección del trabajador", desc: "Tus derechos laborales y qué hacer si sufres o estás en riesgo de abuso.", cta: "Ayuda para trabajadores vulnerables →", href: "guia-ruta.html?subruta=derechos-trabajador" },
+      ],
+    },
+
+    infoSections: [
+      {
+        heading: "¿Desde dónde se solicita un work permit?",
+        bodyHtml: `
+          <p>Dependiendo de tu situación, un work permit puede solicitarse:</p>
+          <ul>
+            <li><strong>Desde fuera de Canadá.</strong></li>
+            <li><strong>Desde dentro de Canadá</strong>, cuando se cumplen los requisitos aplicables.</li>
+            <li><strong>En un puerto de entrada (port of entry)</strong> — solamente cuando se cumplen los requisitos específicos de IRCC.</li>
+          </ul>
+          <p>No cualquier visitante o trabajador puede simplemente ir a la frontera para obtener un permiso: IRCC establece condiciones específicas para las solicitudes en un port of entry y excluye diversas situaciones (por ejemplo, el Post-Graduation Work Permit ya no puede solicitarse en un port of entry).</p>
+        `,
+        cta: { label: "Revisar dónde puedo solicitar mi permiso →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-permit/eligibility.html" },
+      },
+      {
+        heading: "¿Mi familia también puede trabajar o estudiar?",
+        bodyHtml: `<p>Que tengas un work permit no significa automáticamente que tu cónyuge o hijos reciban autorización para trabajar o estudiar. Dependiendo de tu situación, determinados familiares pueden ser elegibles para visitor status, study permit u open work permit.</p>`,
+        cta: { label: "Revisar opciones para familiares →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/need-permit/studying-family.html" },
+      },
+      {
+        heading: "Sigue explorando",
+        bodyHtml: `
+          <p>Esta ruta se conecta con otras secciones de Migración:</p>
+          <ul>
+            <li><a href="guia-ruta.html?subruta=estoy-como-trabajador-temporal">Ya estoy en Canadá → Estoy como trabajador temporal</a> (dentro del Magazine).</li>
+            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html" target="_blank" rel="noopener">Estudiar en Canadá</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html" target="_blank" rel="noopener">Residencia permanente</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/newcomers.html" target="_blank" rel="noopener">Fraudes y estafas migratorias</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" target="_blank" rel="noopener">Servicios para recién llegados</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+          </ul>
+        `,
+      },
+    ],
+
+    disclaimerHeading: "Información general",
+    disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Las reglas, programas y requisitos pueden cambiar y cada caso puede tener condiciones diferentes. Verifica siempre la información vigente con Immigration, Refugees and Citizenship Canada (IRCC) o consulta a un profesional autorizado.",
+  },
 };
