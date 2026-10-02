@@ -107,10 +107,12 @@
   function buildLatest() {
     const list = document.getElementById("latestList");
     LATEST.forEach((item) => {
+      const thumb = item.image ? `<span class="latest-row__thumb" style="background-image:url('${item.image}')"></span>` : "";
       const row = el(
         "a",
-        "latest-row",
+        "latest-row" + (item.image ? " latest-row--img" : ""),
         `
+        ${thumb}
         <span class="tag tag--sm">${item.category}</span>
         <span class="latest-row__title">${item.title}</span>
         <span class="latest-row__time">${item.time}</span>

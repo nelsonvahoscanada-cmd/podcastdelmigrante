@@ -107,6 +107,8 @@ const HERO = {
 };
 
 const LATEST = [
+  { category: "Migración", title: "Carney plantea cuándo Canadá podría volver a aumentar la inmigración de forma controlada", time: "1 OCT 2026", slug: "carney-aumento-controlado-inmigracion-canada", image: "assets/carney-aumento-controlado-inmigracion-canada.jpg" },
+  { category: "Alberta", title: "Alberta suspende el impuesto a la gasolina: conductores ahorran 13 centavos por litro desde octubre", time: "1 OCT 2026", slug: "alberta-suspende-impuesto-gasolina-octubre-2026", image: "assets/alberta-suspende-impuesto-gasolina.jpg" },
   { category: "Alberta", title: "Nueva vía de acceso a JBS en Brooks busca reducir los tiempos de salida de miles de trabajadores", time: "27 de septiembre", slug: "nueva-via-jbs-brooks-highway-873" },
   { category: "Canadá", title: "Trabajadores temporales ya pueden estudiar hasta 6 meses sin permiso de estudios", time: "Hoy", slug: "trabajadores-estudiar-sin-study-permit-canada" },
   { category: "Finanzas", title: "Canadá limita a $10 los cargos bancarios por pagos rechazados por falta de fondos", time: "Hoy", slug: "canada-limite-cargos-nsf-10-dolares" },

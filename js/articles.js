@@ -123,6 +123,128 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    id: "ART-2026-015",
+    slug: "carney-aumento-controlado-inmigracion-canada",
+    category: "Migración",
+    contentType: "Noticia",
+    title: "Carney plantea cuándo Canadá podría volver a aumentar la inmigración de forma controlada",
+    dek: "El primer ministro Mark Carney afirmó que Canadá debe comenzar a plantearse cuándo retomar un crecimiento controlado de la población. Sus declaraciones llegan antes de la presentación del próximo plan federal de niveles migratorios.",
+    excerpt: "Las declaraciones llegan antes del próximo plan de niveles migratorios, pero todavía no representan nuevos cupos ni una apertura de solicitudes.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-01T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/carney-aumento-controlado-inmigracion-canada.jpg')",
+      aspectRatio: "3/2",
+      alt: "El primer ministro Mark Carney habla frente al Parlamento de Ottawa, con viajeros y un pasaporte canadiense en primer plano, ilustrando sus declaraciones sobre un futuro crecimiento controlado de la inmigración.",
+    },
+    bodyHtml: `
+      <p>Canadá todavía no ha anunciado una nueva apertura de la inmigración ni nuevos cupos migratorios, pero las declaraciones recientes del primer ministro Mark Carney abren una conversación importante sobre la dirección que podría tomar la política migratoria del país.</p>
+      <p>En una entrevista reciente con The New York Times, Carney señaló que, después de las medidas adoptadas para reducir el crecimiento de la población temporal, el gobierno considera que el sistema está nuevamente bajo control y que comienza a surgir una nueva pregunta: cuándo retomar un crecimiento controlado de la población.</p>
+      <p>La declaración fue reportada por The Canadian Press el 29 de septiembre.</p>
+      <h2>¿Significa que Canadá aumentará inmediatamente la inmigración?</h2>
+      <p><strong>No.</strong></p>
+      <p>Las declaraciones del primer ministro no constituyen el anuncio de un nuevo programa migratorio, una apertura de solicitudes ni un aumento inmediato de los cupos.</p>
+      <p>Tampoco significan que las personas puedan presentar una nueva solicitud basándose únicamente en estas declaraciones.</p>
+      <p>Por ahora, se trata de una señal sobre una discusión que podría influir en las decisiones migratorias futuras del gobierno.</p>
+      <h2>El próximo plan será clave</h2>
+      <p>Canadá deberá presentar su próximo Immigration Levels Plan, que establecerá los objetivos migratorios federales para los próximos años.</p>
+      <p>Ese documento será el que permita conocer con mayor precisión si habrá cambios en los objetivos de residentes permanentes y temporales.</p>
+      <p>Por esa razón, cualquier posible incremento deberá confirmarse cuando el Gobierno de Canadá publique oficialmente los nuevos niveles.</p>
+      <h2>Canadá todavía está reduciendo la población temporal</h2>
+      <p>Paralelamente, el Gobierno federal mantiene el objetivo de reducir la proporción de residentes temporales a menos del 5% de la población canadiense para finales de 2027.</p>
+      <p>Las políticas recientes han reducido las metas para nuevas llegadas de estudiantes internacionales y trabajadores temporales.</p>
+      <p>Esto demuestra que las declaraciones de Carney no significan un regreso inmediato a los niveles de crecimiento migratorio de años anteriores.</p>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Lo que sabemos / lo que todavía no sabemos</h2>
+        <p><strong>Sí sabemos:</strong></p>
+        <ul>
+          <li>Carney habló de retomar en algún momento un crecimiento controlado de la población.</li>
+          <li>Canadá prepara su próximo plan de niveles migratorios.</li>
+          <li>El Gobierno continúa buscando reducir la proporción de residentes temporales.</li>
+        </ul>
+        <p><strong>Todavía no sabemos:</strong></p>
+        <ul>
+          <li>Si aumentarán los objetivos de residencia permanente.</li>
+          <li>Cuánto podrían aumentar.</li>
+          <li>Qué categorías recibirían más espacios.</li>
+          <li>Cuándo comenzaría cualquier incremento.</li>
+        </ul>
+      </aside>
+      <h2>¿Qué significa esto para quienes quieren emigrar a Canadá?</h2>
+      <p>Por ahora, no cambia los requisitos de ningún programa migratorio.</p>
+      <p>Las personas interesadas en emigrar deben continuar utilizando los programas actualmente disponibles y verificar requisitos, elegibilidad y convocatorias directamente con Immigration, Refugees and Citizenship Canada (IRCC).</p>
+      <p>No pagar a ninguna persona que prometa acceso a supuestos "nuevos cupos" basándose en estas declaraciones.</p>
+      <p>Si en las próximas semanas o meses el Gobierno anuncia cambios oficiales, El Podcast del Migrante Magazine actualizará esta información.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "The Canadian Press / CityNews — 29 de septiembre de 2026", href: "https://toronto.citynews.ca/2026/09/29/carney-suggests-immigration-increase-is-on-the-horizon-in-new-york-times-interview/" },
+      { label: "Government of Canada / IRCC — Immigration, Refugees and Citizenship Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Migración",
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/migracion/carney-aumento-controlado-inmigracion-canada/" },
+  },
+  {
+    id: "ART-2026-014",
+    slug: "alberta-suspende-impuesto-gasolina-octubre-2026",
+    category: "Alberta",
+    contentType: "Noticia",
+    title: "Alberta suspende el impuesto a la gasolina: conductores ahorran 13 centavos por litro desde octubre",
+    dek: "Desde este 1 de octubre, la provincia dejó en cero temporalmente el impuesto provincial sobre gasolina y diésel. La medida permanecerá vigente al menos hasta el 31 de diciembre de 2026.",
+    excerpt: "Desde el 1 de octubre, Alberta suspendió temporalmente el impuesto provincial de 13 centavos por litro sobre gasolina y diésel.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-01T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/alberta-suspende-impuesto-gasolina.jpg')",
+      aspectRatio: "3/2",
+      alt: "Mujer cargando gasolina en una estación de servicio en Calgary, Alberta, con la bandera de Alberta de fondo — surtidores en $0.00 por litro de impuesto provincial, vigente desde el 1 de octubre hasta al menos el 31 de diciembre de 2026.",
+    },
+    bodyHtml: `
+      <p>Desde este 1 de octubre, los conductores de Alberta cuentan con un alivio temporal al momento de llenar el tanque. La provincia suspendió la recaudación del impuesto provincial de 13 centavos por litro sobre la gasolina y el diésel.</p>
+      <p>La medida forma parte del Fuel Tax Relief Program de Alberta y estará vigente al menos hasta el 31 de diciembre de 2026. De acuerdo con la información oficial de la provincia, la fecha más temprana en la que podría comenzar nuevamente el cobro total o parcial del impuesto sería el 1 de enero de 2027.</p>
+      <h2>¿Qué significa para los conductores?</h2>
+      <p>Desde el 1 de octubre, la tasa provincial aplicable a gasolina y diésel es de $0.00 por litro, frente a los 13 centavos por litro que normalmente contempla el impuesto provincial.</p>
+      <p>Como referencia, si un vehículo carga 50 litros, los 13 centavos por litro representan $6.50 de impuesto provincial que no se estaría cobrando en ese llenado. En una carga de 70 litros, equivalen a $9.10.</p>
+      <p>Estos cálculos muestran únicamente el valor matemático correspondiente al impuesto provincial suspendido y no constituyen una garantía sobre el precio final que mostrará cada estación de servicio, ya que el precio en la bomba depende de otros componentes y condiciones del mercado.</p>
+      <h2>La medida estará vigente por lo menos hasta final de año</h2>
+      <p>El Gobierno de Alberta señala que la suspensión permanecerá vigente hasta al menos el 31 de diciembre de 2026.</p>
+      <p>El sistema provincial de alivio al impuesto al combustible está relacionado con el precio del petróleo y contempla revisiones periódicas. Por eso, cualquier cambio posterior deberá verificarse con la información oficial vigente de Alberta.</p>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">¿Todavía no solicitaste el Alberta Energy Rebate?</h2>
+        <p>Alberta extendió hasta el 31 de octubre de 2026 el período de solicitud del pago único de $100 para personas elegibles.</p>
+        <a class="btn" href="https://www.alberta.ca/alberta-energy-rebate" target="_blank" rel="noopener">Revisar el Alberta Energy Rebate →</a>
+      </aside>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Fuel tax: Fuel sellers", href: "https://www.alberta.ca/fuel-tax-information-fuel-sellers" },
+      { label: "Government of Alberta — Tax, levy and prescribed interest rates", href: "https://www.alberta.ca/about-tax-levy-rates-prescribed-interest-rates" },
+      { label: "Government of Alberta — Alberta Energy Rebate", href: "https://www.alberta.ca/alberta-energy-rebate" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: { canonicalPath: "/alberta/alberta-suspende-impuesto-gasolina-octubre-2026/" },
+  },
+  {
     id: "ART-2026-013",
     slug: "nueva-via-jbs-brooks-highway-873",
     category: "Alberta",
