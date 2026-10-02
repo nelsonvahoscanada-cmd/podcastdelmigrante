@@ -249,14 +249,17 @@
   /* ---------- Lo más leído ---------- */
   function buildMostRead() {
     const list = document.getElementById("mostReadList");
-    MOST_READ.forEach((title, i) => {
+    RECOMMENDED_READS.forEach((item, i) => {
       const row = el(
         "a",
         "most-read-row",
         `<span class="most-read-row__num">${String(i + 1).padStart(2, "0")}</span>
-         <span class="most-read-row__title">${title}</span>`
+         <span class="most-read-row__body">
+           <span class="most-read-row__category">${item.category}</span>
+           <span class="most-read-row__title">${item.title}</span>
+         </span>`
       );
-      row.href = "#";
+      row.href = articleHref(item.slug);
       list.appendChild(row);
     });
   }

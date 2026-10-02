@@ -157,6 +157,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--gris-600);
   white-space: nowrap;
 }
+.section-subtitle {
+  font-size: 0.9rem;
+  color: var(--gris-600);
+  margin-top: 6px;
+  max-width: 56ch;
+}
 
 /* =========================================================
    Header
@@ -837,7 +843,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   display: grid;
   grid-template-columns: 40px 1fr;
   gap: 14px;
-  align-items: baseline;
+  align-items: start;
   padding: 14px 0;
   border-bottom: 1px solid var(--gris-100);
 }
@@ -850,7 +856,17 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 .most-read-row:hover .most-read-row__num { color: var(--verde); }
-.most-read-row__title { font-size: 1.02rem; font-weight: 600; }
+.most-read-row__body { display: block; }
+.most-read-row__category {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--verde-oscuro);
+  margin-bottom: 4px;
+}
+.most-read-row__title { display: block; font-size: 1.02rem; font-weight: 600; line-height: 1.35; }
 .most-read-row:hover .most-read-row__title { color: var(--verde-oscuro); }
 
 /* =========================================================

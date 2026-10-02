@@ -171,12 +171,17 @@ const VIDEOS = [
   },
 ];
 
-const MOST_READ = [
-  "Los cinco documentos que más retrasan un trámite migratorio",
-  "Cómo construir historial crediticio sin tarjeta previa en Canadá",
-  "Qué revisar antes de firmar tu primer contrato de arrendamiento",
-  "Diferencias entre permiso de trabajo abierto y cerrado, explicadas",
-  "Sectores con mayor demanda de mano de obra en las praderas canadienses",
+/* "Lecturas recomendadas" — selección editorial manual, NO una
+   clasificación de audiencia. El medio todavía no tiene estadísticas
+   reales de lectura, así que esta lista se cura a mano en vez de
+   afirmar cuáles son "los más leídos". Cuando exista medición real de
+   vistas, esta sección podrá convertirse en un ranking automático. */
+const RECOMMENDED_READS = [
+  { category: "Migración", title: "Carney plantea cuándo Canadá podría volver a aumentar la inmigración de forma controlada", slug: "carney-aumento-controlado-inmigracion-canada" },
+  { category: "Alberta", title: "Alberta suspende el impuesto a la gasolina: conductores ahorran 13 centavos por litro desde octubre", slug: "alberta-suspende-impuesto-gasolina-octubre-2026" },
+  { category: "Migración", title: "Llegar a Canadá: los documentos que conviene tener organizados desde el primer día", slug: "llegar-canada-documentos-primer-dia" },
+  { category: "Empleo", title: "Certificaciones cortas que pueden ayudarte a prepararte para trabajar en Alberta", slug: "certificaciones-trabajo-alberta" },
+  { category: "Vivienda", title: "Tu primer arriendo en Alberta: qué revisar antes de firmar el contrato", slug: "primer-arriendo-alberta" },
 ];
 
 const SPONSORS = [
