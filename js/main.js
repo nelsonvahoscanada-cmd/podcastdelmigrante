@@ -276,6 +276,20 @@
   }
 
   /* ---------- Nuestros colaboradores ---------- */
+  /* Última entrega publicada de un colaborador — calculada dinámicamente
+     desde ARTICLES, nunca guardada a mano. Sirve para cualquier
+     colaborador futuro: en cuanto tenga un artículo real (demo:false)
+     firmado con su authorId, su tarjeta del HOME lo recoge solo. */
+  function getLatestArticleFor(contributorId) {
+    if (typeof ARTICLES === "undefined") return null;
+    const matches = ARTICLES.filter(
+      (a) => a.demo === false && a.author && a.author.mode === "colaborador" && a.author.authorId === contributorId
+    );
+    if (!matches.length) return null;
+    matches.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+    return matches[0];
+  }
+
   function buildContributors() {
     const grid = document.getElementById("contributorsGrid");
     CONTRIBUTORS.forEach((c) => {
@@ -287,6 +301,19 @@
       const brandLogo = c.brandLogo
         ? `<img class="contributor-card__logo" src="${c.brandLogo.src}" alt="${c.brandLogo.alt}">`
         : "";
+      const latest = getLatestArticleFor(c.id);
+      const actionBlock = latest
+        ? `
+          <p class="contributor-card__latest-label">Última entrega:</p>
+          <p class="contributor-card__latest-title">${latest.title}</p>
+          <a class="contributor-card__cta" href="articulo.html?slug=${encodeURIComponent(latest.slug)}">Leer la columna →</a>
+        `
+        : `
+          <div class="contributor-card__links">
+            <a class="contributor-card__link" href="${c.link}">Ver perfil</a>
+            ${c.website ? `<a class="contributor-card__link" href="${c.website}">Web</a>` : ""}
+          </div>
+        `;
       const card = el(
         "article",
         "contributor-card",
@@ -299,10 +326,7 @@
         ${brandLogo}
         <p class="contributor-card__bio">${c.bio}</p>
         ${c.articlesNote ? `<p class="contributor-card__note">${c.articlesNote}</p>` : ""}
-        <div class="contributor-card__links">
-          <a class="contributor-card__link" href="${c.link}">Ver perfil</a>
-          ${c.website ? `<a class="contributor-card__link" href="${c.website}">Web</a>` : ""}
-        </div>
+        ${actionBlock}
       `
       );
       grid.appendChild(card);

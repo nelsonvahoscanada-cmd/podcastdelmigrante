@@ -98,6 +98,8 @@ a.article-column-badge:hover { background: #82b204; }
 .article-byline__name a:hover { color: var(--verde-oscuro); }
 .article-byline__specialty { color: var(--gris-600); }
 .article-byline__logo { height: 22px; width: auto; vertical-align: middle; margin-left: 10px; opacity: 0.9; }
+.article-byline__profile-link { display: inline-block; margin-top: 6px; font-size: 0.84rem; font-weight: 700; color: var(--verde-oscuro); }
+.article-byline__profile-link:hover { color: var(--negro); }
 
 .lang-toggle { display: flex; gap: 6px; flex-shrink: 0; }
 .lang-pill {

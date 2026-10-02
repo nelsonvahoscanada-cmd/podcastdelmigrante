@@ -93,9 +93,12 @@
         contributor && contributor.brandLogo
           ? `<img class="article-byline__logo" src="${contributor.brandLogo.src}" alt="${contributor.brandLogo.alt}">`
           : "";
+      const profileLink = author.profileHref
+        ? `<a class="article-byline__profile-link" href="${author.profileHref}">Conoce al autor →</a>`
+        : "";
       return `<span class="article-byline__name">${link}</span>${
         author.specialty ? `<span class="article-byline__specialty"> — ${author.specialty}</span>` : ""
-      }${logo}`;
+      }${logo}<br>${profileLink}`;
     }
     return `<span class="article-byline__name">${author.name}</span>`;
   }
