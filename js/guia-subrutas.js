@@ -365,7 +365,7 @@ const GUIA_SUBRUTAS = {
       {
         heading: "5. Servicios para recién llegados",
         bodyHtml: `<p>Existen settlement services, apoyo de empleo, idioma y otros recursos disponibles según tu elegibilidad. La sección "Servicios para recién llegados" de esta misma guía de Migración reunirá esta información — mientras tanto, puedes consultar directamente la herramienta oficial de IRCC.</p>`,
-        cta: { label: "Buscar servicios para recién llegados →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" },
+        cta: { label: "Buscar servicios para recién llegados →", href: "guia-ruta.html?ruta=servicios-recien-llegados" },
       },
       {
         heading: "6. Ciudadanía canadiense",

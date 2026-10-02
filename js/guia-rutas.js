@@ -169,7 +169,7 @@ const GUIA_RUTAS = {
           <p>Canadá financia servicios de asentamiento para personas elegibles, que pueden incluir orientación para empleo, idioma, educación, comunidad y otras necesidades de establecimiento. La elegibilidad depende del estatus y del programa — no todos los inmigrantes o residentes temporales tienen acceso gratuito.</p>
           <p>Desde el 1 de abril de 2026 existen límites de tiempo para el acceso de residentes permanentes de clase económica a determinados servicios de asentamiento financiados federalmente. La elegibilidad debe verificarse directamente con IRCC.</p>
         `,
-        cta: { label: "Buscar servicios para recién llegados →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" },
+        cta: { label: "Buscar servicios para recién llegados →", href: "guia-ruta.html?ruta=servicios-recien-llegados" },
       },
     ],
 
@@ -249,8 +249,8 @@ const GUIA_RUTAS = {
             <li><a href="guia-ruta.html?subruta=estoy-como-trabajador-temporal">Ya estoy en Canadá → Estoy como trabajador temporal</a> (dentro del Magazine).</li>
             <li><a href="guia-ruta.html?ruta=estudiar-en-canada">Estudiar en Canadá</a> (dentro del Magazine).</li>
             <li><a href="guia-ruta.html?ruta=residencia-permanente">Residencia permanente</a> (dentro del Magazine).</li>
-            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/newcomers.html" target="_blank" rel="noopener">Fraudes y estafas migratorias</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
-            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" target="_blank" rel="noopener">Servicios para recién llegados</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=fraudes-estafas-migratorias">Fraudes y estafas migratorias</a> (dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=servicios-recien-llegados">Servicios para recién llegados</a> (dentro del Magazine).</li>
           </ul>
         `,
       },
@@ -311,8 +311,8 @@ const GUIA_RUTAS = {
             <li><a href="guia-ruta.html?ruta=ya-estoy-en-canada">Ya estoy en Canadá → Estoy como estudiante</a> (dentro del Magazine).</li>
             <li><a href="guia-ruta.html?ruta=permisos-de-trabajo">Permisos de trabajo</a> (dentro del Magazine).</li>
             <li><a href="guia-ruta.html?ruta=residencia-permanente">Residencia permanente</a> (dentro del Magazine).</li>
-            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/newcomer-services.html" target="_blank" rel="noopener">Servicios para recién llegados</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
-            <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/newcomers.html" target="_blank" rel="noopener">Fraudes y estafas migratorias</a> — página oficial de IRCC (esta ruta todavía no tiene su propia página dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=servicios-recien-llegados">Servicios para recién llegados</a> (dentro del Magazine).</li>
+            <li><a href="guia-ruta.html?ruta=fraudes-estafas-migratorias">Fraudes y estafas migratorias</a> (dentro del Magazine).</li>
           </ul>
         `,
       },
@@ -622,5 +622,263 @@ const GUIA_RUTAS = {
 
     disclaimerHeading: "Información general",
     disclaimer: "Esta guía tiene fines informativos y no constituye asesoría migratoria o legal. Los documentos y requisitos dependen del estatus de cada persona, del programa y del trámite específico. Las reglas y requisitos pueden cambiar. Verifica siempre la información vigente directamente con Immigration, Refugees and Citizenship Canada (IRCC), Service Canada u otra autoridad correspondiente, o consulta a un profesional autorizado.",
+  },
+
+  "servicios-recien-llegados": {
+    slug: "servicios-recien-llegados",
+    parentCategoria: "migracion",
+    parentLabel: "Migración",
+    title: "Servicios para recién llegados a Canadá",
+    dek: "Encuentra apoyo para establecerte, buscar empleo, mejorar tu inglés o francés, conectar con tu comunidad y adaptarte a tu nueva vida en Canadá.",
+    intro: "Llegar a Canadá no significa que tengas que resolverlo todo solo. Existen organizaciones y programas que ayudan a personas elegibles a comprender cómo funciona su nueva comunidad, buscar empleo, mejorar sus idiomas, acceder a recursos y establecerse en Canadá. Muchos servicios de asentamiento financiados por el Gobierno de Canadá son gratuitos para las personas elegibles.",
+
+    situationQuestion: {
+      title: "¿Qué tipo de ayuda necesitas?",
+      cards: [
+        { num: "01", title: "Ayuda para establecerme", desc: "Organizaciones de asentamiento pueden ayudarte a entender servicios disponibles, completar tus primeros pasos en Canadá y conectarte con recursos de tu comunidad.", cta: "Ver servicios disponibles →", href: "https://www.ircc.canada.ca/english/newcomers/services/index.asp" },
+        { num: "02", title: "Ayuda para encontrar trabajo", desc: "Existen servicios que pueden ayudarte con la búsqueda de empleo, preparación de résumé, entrevistas y orientación sobre el mercado laboral canadiense.", cta: "Explorar apoyo laboral →", href: "https://www.ircc.canada.ca/english/newcomers/services/index.asp" },
+        { num: "03", title: "Aprender inglés o francés", desc: "Dependiendo de tu situación migratoria y elegibilidad, puedes encontrar evaluaciones de idioma, clases y otros recursos para mejorar tu inglés o francés.", cta: "Buscar apoyo de idiomas →", href: "https://www.ircc.canada.ca/english/newcomers/services/index.asp" },
+        { num: "04", title: "Escuela y apoyo para mi familia", desc: "Las organizaciones para recién llegados pueden orientar a las familias sobre escuelas, servicios para niños y jóvenes y otros recursos comunitarios.", cta: "Conocer recursos familiares →", href: "https://www.ircc.canada.ca/english/newcomers/services/index.asp" },
+        { num: "05", title: "Conectarme con mi comunidad", desc: "Programas comunitarios pueden ayudarte a conocer personas, entender mejor tu nueva ciudad y crear nuevas redes sociales y profesionales.", cta: "Explorar conexiones comunitarias →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/community-connections.html" },
+        { num: "06", title: "Reconocimiento de estudios y profesión", desc: "Si estudiaste o ejerciste una profesión fuera de Canadá, infórmate sobre evaluación de credenciales, profesiones reguladas y los pasos que podrían corresponder a tu ocupación.", cta: "Revisar información →", href: "https://www.ircc.canada.ca/english/newcomers/services/index.asp" },
+      ],
+    },
+
+    infoSections: [
+      {
+        heading: "Muchos servicios pueden ser gratuitos, pero la elegibilidad depende de tu situación",
+        variant: "callout",
+        bodyHtml: `<p>El Gobierno de Canadá financia servicios gratuitos de asentamiento para determinados recién llegados elegibles. La elegibilidad depende, entre otros factores, de tu estatus y del programa mediante el cual llegaste a Canadá — no todos los inmigrantes, trabajadores temporales, estudiantes o visitantes tienen derecho a estos servicios.</p>`,
+      },
+      {
+        heading: "Si eres residente permanente de clase económica, revisa este cambio",
+        bodyHtml: `
+          <p>Desde el 1 de abril de 2026, los residentes permanentes de clase económica elegibles pueden acceder a los servicios de asentamiento financiados por IRCC durante un período de hasta 6 años desde la fecha en que obtuvieron la residencia permanente. Desde el 1 de abril de 2027, ese período será de hasta 5 años.</p>
+          <p>Estas limitaciones no se aplican de la misma manera a todos los grupos de recién llegados. Por eso es importante verificar tu elegibilidad directamente con IRCC o con una organización proveedora de servicios.</p>
+        `,
+        cta: { label: "Revisar elegibilidad de servicios →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/newcomer-services/eligibility.html" },
+      },
+      {
+        heading: "¿En qué pueden ayudarte?",
+        bodyHtml: `
+          <ul>
+            <li>Orientación para establecerte en Canadá.</li>
+            <li>Búsqueda de empleo.</li>
+            <li>Preparación de résumé.</li>
+            <li>Preparación para entrevistas.</li>
+            <li>Evaluación o capacitación lingüística.</li>
+            <li>Inscripción de niños en la escuela.</li>
+            <li>Recursos para jóvenes.</li>
+            <li>Conexión con organizaciones comunitarias.</li>
+            <li>Información sobre servicios locales.</li>
+            <li>Adaptación a la vida en Canadá.</li>
+          </ul>
+          <p>Los servicios disponibles varían según la organización y tu elegibilidad.</p>
+        `,
+      },
+      {
+        heading: "Encuentra servicios cerca de ti",
+        bodyHtml: `<p>IRCC dispone de un buscador oficial que permite encontrar organizaciones y servicios para recién llegados utilizando tu ciudad, provincia, territorio o código postal.</p>`,
+        cta: { label: "Buscar servicios cerca de mí →", href: "https://www.ircc.canada.ca/english/newcomers/services/index.asp" },
+      },
+      {
+        heading: "¿Todavía estás fuera de Canadá?",
+        bodyHtml: `<p>Algunas personas cuya residencia permanente ya fue aprobada pueden ser elegibles para servicios gratuitos antes de llegar a Canadá. Estos programas pueden ayudar a prepararse para la vida, el trabajo y el establecimiento antes del viaje — no están disponibles para cualquier visitante, estudiante o trabajador.</p>`,
+        cta: { label: "Conocer servicios previos a la llegada →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/pre-arrival-services.html" },
+      },
+      {
+        heading: "Apoyo para niños y jóvenes recién llegados",
+        bodyHtml: `
+          <p>Existen recursos que pueden ayudar a jóvenes recién llegados a:</p>
+          <ul>
+            <li>Adaptarse a la escuela.</li>
+            <li>Practicar inglés o francés.</li>
+            <li>Participar en actividades.</li>
+            <li>Conocer su comunidad.</li>
+            <li>Desarrollar nuevas conexiones.</li>
+          </ul>
+        `,
+        cta: { label: "Ver recursos para jóvenes →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/youth-services.html" },
+      },
+      {
+        heading: "¿Y si no califico para los servicios financiados por IRCC?",
+        bodyHtml: `<p>No ser elegible para un servicio financiado por IRCC no significa que no exista ayuda disponible. Provincias, municipios, bibliotecas, centros comunitarios y organizaciones locales también pueden ofrecer programas y recursos — no todos son necesariamente gratuitos.</p>`,
+      },
+      {
+        heading: "Si vives en Quebec",
+        bodyHtml: `<p>Los servicios de integración en Quebec se administran de manera diferente. Consulta los recursos oficiales del Gobierno de Quebec para conocer los servicios disponibles.</p>`,
+        cta: { label: "Servicios de integración en Quebec →", href: "https://www.quebec.ca/en/immigration/integration-service-for-immigrants" },
+      },
+    ],
+
+    sources: [
+      { label: "IRCC — Settling in Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada.html" },
+      { label: "IRCC — Eligibility for newcomer services", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/newcomer-services/eligibility.html" },
+      { label: "IRCC — Find free newcomer services near you", href: "https://www.ircc.canada.ca/english/newcomers/services/index.asp" },
+      { label: "IRCC — Pre-arrival services", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/pre-arrival-services.html" },
+      { label: "IRCC — Youth services", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/youth-services.html" },
+      { label: "IRCC — Community connections", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/community-connections.html" },
+    ],
+
+    disclaimerHeading: "Información general",
+    disclaimer: "El contenido de esta guía tiene fines informativos y educativos y no constituye asesoría legal ni migratoria. Los programas, requisitos, servicios y políticas pueden cambiar. Verifica siempre la información vigente directamente con Immigration, Refugees and Citizenship Canada (IRCC) u otra autoridad oficial correspondiente antes de tomar decisiones sobre tu situación migratoria.",
+  },
+
+  "fraudes-estafas-migratorias": {
+    slug: "fraudes-estafas-migratorias",
+    parentCategoria: "migracion",
+    parentLabel: "Migración",
+    title: "Fraudes y estafas migratorias",
+    dek: "Aprende a reconocer señales de alerta, verificar quién te asesora y proteger tu dinero, tus documentos y tu proceso migratorio.",
+    intro: "Esta guía tiene un propósito educativo y preventivo. Te ayuda a reconocer señales de alerta comunes y a verificar información oficial antes de tomar decisiones — no acusa a empresas ni personas concretas.",
+
+    situationQuestion: {
+      title: "¿Qué te preocupa?",
+      cards: [
+        { num: "01", title: "Me prometen una visa o residencia garantizada", desc: "Nadie puede garantizar que una solicitud de visa, permiso o residencia permanente será aprobada. Las decisiones corresponden a las autoridades migratorias de Canadá.", cta: "Reconocer señales de alerta →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html" },
+        { num: "02", title: "Me ofrecen un trabajo \"garantizado\"", desc: "Desconfía de ofertas que prometen empleo o inmigración garantizada, especialmente cuando exigen pagos, datos personales o condiciones poco claras.", cta: "Revisar antes de pagar →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html" },
+        { num: "03", title: "Quieren cobrarme por asesoría migratoria", desc: "Si una persona cobra por representarte o darte asesoría migratoria, verifica que esté autorizada para hacerlo en Canadá.", cta: "Verificar representante →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/learn-about-representatives.html" },
+        { num: "04", title: "Recibí una llamada, correo o mensaje de IRCC", desc: "Los estafadores pueden hacerse pasar por autoridades migratorias y utilizar llamadas, correos, mensajes, redes sociales o sitios web falsos.", cta: "Aprender a identificarlos →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/internet-email-telephone.html" },
+        { num: "05", title: "Me piden documentos o información falsa", desc: "Nunca presentes información falsa, documentos alterados o datos que sabes que no son correctos, aunque alguien te diga que eso ayudará a tu solicitud.", cta: "Conocer las consecuencias →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/consequences-fraud.html" },
+        { num: "06", title: "Creo que fui víctima de una estafa", desc: "Si entregaste dinero, información personal o documentos a alguien sospechoso, existen canales oficiales para reportar lo ocurrido y buscar orientación.", cta: "Saber cómo reportarlo →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/report-fraud.html" },
+      ],
+    },
+
+    infoSections: [
+      {
+        heading: "Una regla que puede protegerte",
+        variant: "callout",
+        bodyHtml: `
+          <p><strong>Nadie puede garantizarte una visa, un permiso de trabajo o la residencia permanente en Canadá.</strong></p>
+          <p>Utilizar un representante tampoco garantiza que tu solicitud sea aprobada ni le da un tratamiento especial.</p>
+        `,
+      },
+      {
+        heading: "¿Quién puede cobrar por representarte?",
+        bodyHtml: `
+          <p>Los representantes remunerados autorizados pueden incluir:</p>
+          <ul>
+            <li>Abogados y paralegales miembros en buen estado de una sociedad jurídica provincial o territorial canadiense.</li>
+            <li>Notarios miembros en buen estado de la Chambre des notaires du Québec.</li>
+            <li>Consultores de inmigración o ciudadanía miembros en buen estado del College of Immigration and Citizenship Consultants.</li>
+          </ul>
+          <p><strong>No necesitas contratar un representante para presentar una solicitud migratoria.</strong> Los formularios e instrucciones oficiales de IRCC están disponibles gratuitamente.</p>
+        `,
+        cta: { label: "Verificar si mi representante está autorizado →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/learn-about-representatives.html" },
+      },
+      {
+        heading: "¿IRCC te está pidiendo dinero?",
+        bodyHtml: `
+          <p>Según IRCC, sus empleados no:</p>
+          <ul>
+            <li>Piden depósitos en cuentas bancarias personales.</li>
+            <li>Solicitan transferencias mediante servicios privados de envío de dinero.</li>
+            <li>Amenazan al solicitante.</li>
+            <li>Ofrecen acuerdos migratorios especiales.</li>
+            <li>Utilizan cuentas gratuitas como Gmail, Hotmail o Yahoo para comunicarse oficialmente.</li>
+          </ul>
+          <p>Los estafadores pueden manipular identificadores de llamadas o crear páginas y mensajes que parecen auténticos. No confíes solamente en el nombre o número que aparece en la pantalla.</p>
+        `,
+        cta: { label: "Revisar cómo se comunica IRCC →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/internet-email-telephone.html" },
+      },
+      {
+        heading: "Antes de ingresar tus datos, revisa la dirección",
+        variant: "warning",
+        bodyHtml: `
+          <p>Los estafadores pueden crear páginas que imitan sitios gubernamentales. Antes de proporcionar información personal o realizar un pago:</p>
+          <ul>
+            <li>Revisa cuidadosamente el dominio.</li>
+            <li>Busca la información directamente desde Canada.ca.</li>
+            <li>Evita enlaces sospechosos recibidos por mensajes o redes sociales.</li>
+            <li>Recuerda que los formularios y guías oficiales de IRCC son gratuitos.</li>
+          </ul>
+          <p><strong>Que una página tenga un diseño profesional no significa que pertenezca al Gobierno de Canadá.</strong></p>
+        `,
+      },
+      {
+        heading: "Una oferta laboral no debe convertirse en una compra de \"residencia garantizada\"",
+        bodyHtml: `<p>Una oferta de empleo por sí sola no significa que una persona tenga garantizada una visa, un permiso de trabajo o la residencia permanente. Ten cuidado con personas que venden supuestas ofertas laborales, cartas u otros documentos prometiendo aprobación migratoria — aunque no todo cobro relacionado con reclutamiento constituye automáticamente fraude, conviene mantenerse prudente y remitirse siempre a fuentes oficiales.</p>`,
+      },
+      {
+        heading: "Tú eres responsable de lo que aparece en tu solicitud",
+        variant: "warning",
+        bodyHtml: `
+          <p>Aunque otra persona prepare o presente tu solicitud, eres responsable de la información entregada a IRCC. Presentar documentos falsos o alterados, o proporcionar información falsa, puede tener consecuencias migratorias graves. Por ejemplo:</p>
+          <ul>
+            <li>Pasaportes o documentos de viaje alterados.</li>
+            <li>Resultados de idioma falsos.</li>
+            <li>Ofertas de empleo falsas.</li>
+            <li>Cartas de aceptación falsas.</li>
+            <li>Diplomas o certificados falsos.</li>
+            <li>Documentos familiares falsos.</li>
+            <li>Certificados policiales o documentos judiciales falsos.</li>
+          </ul>
+        `,
+        cta: { label: "Conocer las consecuencias del fraude →", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/consequences-fraud.html" },
+      },
+      {
+        heading: "No ignores lo ocurrido",
+        bodyHtml: `
+          <p>La forma correcta de reportar un fraude depende del tipo de situación y de si estás dentro o fuera de Canadá. Si existe peligro inmediato o una emergencia, utiliza los servicios de emergencia correspondientes. Esta guía no sustituye asesoría jurídica individual.</p>
+          <div class="guia-cta-row">
+            <a class="btn" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/report-fraud.html" target="_blank" rel="noopener">Reportar fraude o abuso →</a>
+            <a class="btn-outline" href="https://www.antifraudcentre-centreantifraude.ca/index-eng.htm" target="_blank" rel="noopener">Canadian Anti-Fraud Centre →</a>
+          </div>
+        `,
+      },
+      {
+        heading: "Antes de creer una promesa migratoria",
+        bodyHtml: `
+          <ul>
+            <li><strong>Detente.</strong> No pagues ni entregues documentos bajo presión.</li>
+            <li><strong>Verifica.</strong> Busca la información directamente en una fuente oficial.</li>
+            <li><strong>Confirma.</strong> Comprueba las credenciales de cualquier persona que cobre por asesorarte o representarte.</li>
+          </ul>
+          <p>Una decisión de unos minutos puede proteger tus documentos, tu dinero y tu proceso migratorio.</p>
+        `,
+      },
+    ],
+
+    checklist: {
+      title: "Señales que deberían hacerte verificar antes de continuar",
+      items: [
+        "\u201cTe garantizo la visa.\u201d",
+        "\u201cTengo contactos dentro de inmigración.\u201d",
+        "\u201cPuedo acelerar tu aprobación si pagas más.\u201d",
+        "\u201cPaga a esta cuenta bancaria personal.\u201d",
+        "\u201cEnvía dinero mediante una transferencia privada.\u201d",
+        "\u201cPon esta información aunque no sea cierta.\u201d",
+        "\u201cCompra esta oferta laboral para poder inmigrar.\u201d",
+        "\u201cDebes pagar inmediatamente o perderás tu estatus.\u201d",
+        "Una oferta laboral con salario extraordinario o condiciones demasiado buenas para parecer reales.",
+        "Una página que intenta parecer oficial pero cuya dirección web no corresponde a un sitio oficial del Gobierno de Canadá.",
+      ],
+      note: "Una señal de alerta no siempre demuestra por sí sola que existe fraude, pero es motivo suficiente para detenerte y verificar.",
+    },
+
+    beforePaying: {
+      title: "Haz estas verificaciones primero",
+      tips: [
+        "Identifica exactamente qué servicio estás pagando.",
+        "Verifica las tarifas oficiales directamente en Canada.ca cuando se trate de pagos gubernamentales.",
+        "Si estás pagando asesoría o representación migratoria, verifica que la persona esté autorizada.",
+        "Solicita por escrito el alcance del servicio y conserva contratos y comprobantes.",
+        "Nunca firmes formularios en blanco.",
+        "Revisa tu solicitud antes de enviarla.",
+        "Conserva copias de los documentos presentados.",
+      ],
+    },
+
+    sources: [
+      { label: "IRCC — Immigration and citizenship fraud and scams", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html" },
+      { label: "IRCC — Online and telephone immigration scams", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/internet-email-telephone.html" },
+      { label: "IRCC — Using an immigration and citizenship representative", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/learn-about-representatives.html" },
+      { label: "IRCC — Consequences of immigration and citizenship fraud", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/consequences-fraud.html" },
+      { label: "IRCC — Report fraud or abuse", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/report-fraud.html" },
+      { label: "Canadian Anti-Fraud Centre", href: "https://www.antifraudcentre-centreantifraude.ca/index-eng.htm" },
+    ],
+
+    disclaimerHeading: "Información general",
+    disclaimer: "El contenido de esta guía tiene fines informativos y educativos y no constituye asesoría legal ni migratoria. Los programas, requisitos, servicios y políticas pueden cambiar. Verifica siempre la información vigente directamente con Immigration, Refugees and Citizenship Canada (IRCC) u otra autoridad oficial correspondiente antes de tomar decisiones sobre tu situación migratoria.",
   },
 };
