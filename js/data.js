@@ -151,23 +151,37 @@ const STORIES = [
   },
 ];
 
+/* "Podcast del Migrante Play" — tarjetas del HOME.
+   Solo se muestran las que tienen `published: true` (contenido real con
+   video). Las demás se conservan aquí desactivadas: para mostrar una
+   nueva tarjeta basta con agregarla (o cambiar a `published: true`). */
 const VIDEOS = [
-  { tag: "Podcast del Migrante", title: "3 realidades que todo migrante en Canadá debe conocer" },
-  { tag: "Entrevistas", title: "Entrevista: reconstruir una carrera profesional desde cero" },
+  { tag: "Podcast del Migrante", title: "3 realidades que todo migrante en Canadá debe conocer", published: false },
+  { tag: "Entrevistas", title: "Entrevista: reconstruir una carrera profesional desde cero", published: false },
   {
     tag: "Desafío 100 Empresas",
     title: "La Costeñita: el sueño que se convirtió en un Food Market mexicano en Canadá",
     desc: "Don Hugo Morales nos abre las puertas de La Costeñita y nos muestra cómo una idea de emprendimiento se convirtió en un nuevo espacio de sabor y comunidad en Canadá.",
     videoId: "ENyFwvkj8W0",
     demo: false,
+    published: true,
   },
-  { tag: "Historias", title: "Documental corto: dos años, una nueva vida" },
+  { tag: "Historias", title: "Documental corto: dos años, una nueva vida", published: false },
   {
     tag: "Desafío 100 Empresas",
     title: "Una alianza que hizo posible el Desafío 100 Empresas",
     desc: "Desde Country Hills Toyota agradecemos a Farid Mamdani por su respaldo al proyecto y a Tomás Velázquez por ser el puente y aliado que ha acompañado este ciclo.",
     videoId: "M7JFiyvPDT8",
     demo: false,
+    published: true,
+  },
+  {
+    tag: "Entrevistas",
+    title: "Eder Campos: Manifestación, poder de la palabra y el “GPS” de tu vida",
+    desc: "Una conversación sobre propósito, decisiones, lenguaje y cómo construir la ruta hacia lo que realmente queremos.",
+    videoId: "jw0cYzjV35U",
+    demo: false,
+    published: true,
   },
 ];
 
