@@ -1360,3 +1360,52 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
 }
 .column-feature__title a:hover { color: var(--verde-oscuro); }
 .column-feature__text { font-size: 0.96rem; color: var(--gris-600); max-width: 60ch; margin-bottom: 14px; }
+
+/* =========================================================
+   HOME — ¿Necesitas ayuda en Canadá? (módulo compacto)
+========================================================= */
+.help-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px 22px;
+  background: var(--verde-suave);
+  border-left: 4px solid var(--verde);
+  border-radius: var(--radius-s);
+}
+.help-banner__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 6px;
+}
+.help-banner__copy { font-size: 0.98rem; color: var(--gris-800); max-width: 58ch; }
+.help-banner__cta {
+  align-self: flex-start;
+  min-height: 50px;
+  padding: 10px 24px;
+  white-space: normal;   /* .btn es nowrap: en 390 px el texto en mayúsculas debe poder partirse en 2 líneas */
+  line-height: 1.25;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+@media (min-width: 760px) {
+  .help-banner { flex-direction: row; align-items: center; justify-content: space-between; gap: 32px; }
+  .help-banner__cta { align-self: center; flex-shrink: 0; }
+}
+@media (max-width: 430px) {
+  .help-banner__cta { align-self: stretch; text-align: center; }
+}
+
+/* .section { padding: 44px 0 } anula el margen lateral de .wrap: este módulo
+   recupera su margen en pantallas menores al ancho máximo del contenido. */
+@media (max-width: 1359px) {
+  .help-section { padding-left: 20px; padding-right: 20px; }
+}
