@@ -63,9 +63,9 @@
     if (wa) list.push({ key: "whatsapp", label: "WhatsApp", href: wa, ext: true, track: "whatsapp_click", target: "whatsapp" });
     const tel = phoneHref(b);
     if (tel) list.push({ key: "phone", label: "Llamar", href: tel, ext: false, track: "phone_click", target: "phone" });
-    if (b.inventoryUrl) list.push({ key: "inventory", label: b.inventoryLabel || "Ver catálogo", href: b.inventoryUrl, ext: true, track: "website_click", target: "inventory" });
+    if (b.inventoryUrl) list.push({ key: "inventory", label: b.inventoryLabel || "Ver catálogo", href: b.inventoryUrl, ext: true, track: "vehicles_click", target: "inventory" });
     const map = mapsHref(b);
-    if (map) list.push({ key: "maps", label: "Cómo llegar", href: map, ext: true, track: "maps_click", target: "maps" });
+    if (map) list.push({ key: "maps", label: "Cómo llegar", href: map, ext: true, track: "directions_click", target: "directions" });
     if (b.email) list.push({ key: "email", label: "Enviar email", href: "mailto:" + b.email, ext: false, track: "email_click", target: "email" });
     return list;
   }
@@ -99,6 +99,7 @@
           ${b.company ? `<p class="biz-company">${esc(b.company)}</p>` : ""}
           ${place ? `<p class="biz-place">${esc(place)}</p>` : ""}
           ${lang ? `<p class="biz-lang">${esc(lang)}</p>` : ""}
+          ${socialHtml(b, "hero")}
         </div>
       </header>
     `;
@@ -128,7 +129,7 @@
         <h2 class="biz-h2">Conoce a ${esc(b.shortName || b.name)}</h2>
         ${b.videoText ? `<p>${esc(b.videoText)}</p>` : ""}
         <div class="biz-video__frame" id="bizVideoFrame">
-          <button type="button" class="biz-video__play" id="bizVideoPlay" data-track="video_click" data-video-id="${id}" aria-label="Reproducir video de presentación">
+          <button type="button" class="biz-video__play" id="bizVideoPlay" data-track="video_click" data-track-target="profile-video" data-video-id="${id}" aria-label="Reproducir video de presentación">
             <span class="biz-video__thumb" style="background-image:url('https://img.youtube.com/vi/${id}/hqdefault.jpg')"></span>
             <span class="biz-video__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></span>
           </button>
@@ -211,15 +212,41 @@
           ${esc([b.city, b.province].filter(Boolean).join(", "))}${b.postalCode ? `<br>${esc(b.postalCode)}` : ""}
         </address>
         ${hours}
-        ${map ? `<a class="biz-btn biz-btn--outline" href="${esc(map)}" target="_blank" rel="noopener" data-track="maps_click" data-track-target="maps-location">Cómo llegar →</a>` : ""}
+        ${map ? `<a class="biz-btn biz-btn--outline" href="${esc(map)}" target="_blank" rel="noopener" data-track="directions_click" data-track-target="directions-location">Cómo llegar →</a>` : ""}
       </section>
     `;
   }
 
-  function socialHtml(b) {
-    const items = [["Instagram", b.instagram], ["Facebook", b.facebook], ["LinkedIn", b.linkedin]].filter((x) => x[1]);
+  /* ---------- Redes sociales oficiales (solo las que tienen URL) ----------
+     Cada red emite su propio evento (instagram_click, tiktok_click, ...).
+     `place` indica dónde está el enlace: "hero" (junto a los datos) o
+     "final" (bloque "¿Quieres hablar con ...?"). */
+  const SOCIAL_ICONS = {
+    instagram: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
+    tiktok: '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1-2.59-2.59 2.59 2.59 0 0 1 3.37-2.47V9.68a5.73 5.73 0 0 0-.78-.05A5.66 5.66 0 0 0 4.2 15.3 5.66 5.66 0 0 0 9.86 21a5.66 5.66 0 0 0 5.66-5.66V9.01a7.33 7.33 0 0 0 4.28 1.37V7.29s-1.88.09-3.2-1.47z"/></svg>',
+    facebook: '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5H16l.5-3.5h-3V7.8c0-1 .3-1.7 1.7-1.7H16.6V3.1C16.3 3 15.3 3 14.2 3c-2.4 0-4 1.5-4 4.2v2.8H7.7v3.5h2.5V21h3.3z"/></svg>',
+    linkedin: '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92zM20.44 13.4c0-3.1-1.66-4.54-3.87-4.54a3.34 3.34 0 0 0-3.02 1.66V8.5h-3.38V20h3.38v-6.2c0-1.63.31-3.2 2.33-3.2 1.99 0 2.02 1.86 2.02 3.31V20h3.38l-.01-6.6z"/></svg>',
+  };
+
+  function socialList(b) {
+    return [
+      { key: "instagram", label: "Instagram", href: b.instagram },
+      { key: "tiktok", label: "TikTok", href: b.tiktok },
+      { key: "facebook", label: "Facebook", href: b.facebook },
+      { key: "linkedin", label: "LinkedIn", href: b.linkedin },
+    ].filter((x) => x.href);
+  }
+
+  function socialHtml(b, place) {
+    const items = socialList(b);
     if (!items.length) return "";
-    return `<p class="biz-social">${items.map((x) => `<a href="${esc(x[1])}" target="_blank" rel="noopener">${x[0]}</a>`).join("")}</p>`;
+    const who = b.shortName || b.name;
+    return `<ul class="biz-social biz-social--${place}" aria-label="Redes sociales de ${esc(who)}">${items
+      .map(
+        (x) =>
+          `<li><a class="biz-social__link" href="${esc(x.href)}" target="_blank" rel="noopener" data-track="${x.key}_click" data-track-target="${x.key}-${place}" aria-label="${esc(x.label)} de ${esc(who)} (se abre en una pestaña nueva)">${SOCIAL_ICONS[x.key]}<span>${esc(x.label)}</span></a></li>`
+      )
+      .join("")}</ul>`;
   }
 
   function contactBlockHtml(b) {
@@ -237,7 +264,7 @@
         <div class="biz-actions">${channels
           .map((a, i) => `<a class="biz-btn${i === 0 ? " biz-btn--primary" : ""}" ${linkAttrs(a)}>${esc(a.label)}</a>`)
           .join("")}</div>
-        ${socialHtml(b)}
+        ${socialHtml(b, "final")}
       </section>
     `;
   }
@@ -245,7 +272,9 @@
   /* Barra inferior móvil: WhatsApp | Llamar | Ver (solo los disponibles) */
   function stickyBarHtml(b) {
     const keep = ["whatsapp", "phone", "inventory"];
-    const list = actionList(b).filter((a) => keep.includes(a.key));
+    const list = actionList(b)
+      .filter((a) => keep.includes(a.key))
+      .map((a) => Object.assign({}, a, { target: a.target + "-sticky" }));
     if (!list.length) return "";
     return `<nav class="biz-sticky" aria-label="Contacto rápido">${list
       .map((a, i) => `<a class="biz-sticky__btn${i === 0 ? " biz-sticky__btn--primary" : ""}" ${linkAttrs(a)}>${esc(a.label)}</a>`)
@@ -285,7 +314,7 @@
     setMeta("twitterImage", "content", absoluteImage(b));
 
     /* Datos estructurados: ProfilePage + Person. Sin reviews ni ratings. */
-    const sameAs = [b.instagram, b.facebook, b.linkedin].filter(Boolean);
+    const sameAs = socialList(b).map((x) => x.href);
     const person = { "@type": "Person", name: b.name, url };
     if (b.professionalTitle) person.jobTitle = b.professionalTitle;
     if (b.profileImage) person.image = toAbsolute(b.profileImage);

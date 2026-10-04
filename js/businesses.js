@@ -42,7 +42,10 @@
     email, website, inventoryUrl, inventoryLabel, bookingUrl
     mapUrl              enlace de Google Maps; si está vacío se genera
                         desde la dirección
-    instagram, facebook, linkedin     URLs completas oficiales
+    instagram, tiktok, facebook, linkedin
+                        URLs completas OFICIALES; vacío = no se muestra.
+                        Aparecen con icono junto a los datos del perfil y
+                        en el bloque final "¿Quieres hablar con ...?".
     youtubeVideoId      ID del video (YouTube no listado). Vacío = sin
                         sección de video
     videoText           texto bajo "Conoce a ..."
@@ -124,7 +127,8 @@ const BUSINESSES = [
     inventoryLabel: "Ver vehículos",
     bookingUrl: "",
 
-    instagram: "",
+    instagram: "https://www.instagram.com/77_automotiveco/",
+    tiktok: "https://www.tiktok.com/@tomasvelasqueztoyota",
     facebook: "",
     linkedin: "",
 
