@@ -26,20 +26,41 @@
     name, shortName     nombre completo / nombre corto para frases
                         ("Conoce a Tomás")
     professionalTitle, company
+    professionalTitleAlt  [OPCIONAL] cargo en otro idioma (ej. inglés)
+    brandName, brandLogo  [OPCIONAL] marca profesional y su logo
+    affiliation         [OPCIONAL] afiliación indicada por el profesional
+    card                [OPCIONAL] { title } versión corta del cargo para
+                        la tarjeta del directorio
     category            id de categoría (ver BUSINESS_CATEGORIES)
     city, province, country, address, postalCode
     languages           ["es", "en", "fr"] — SOLO idiomas confirmados;
                         vacío = no se muestra nada de idiomas
+    serviceAreas        [OPCIONAL] provincias donde el profesional indica
+                        prestar servicios; también cuentan en el filtro
+                        "Provincia" del directorio
+    availability        [OPCIONAL] texto de disponibilidad (ej. "con cita")
     shortDescription    texto breve (tarjeta del directorio)
-    longDescription     texto largo opcional del perfil
+    longDescription     texto largo opcional del perfil (texto o lista de
+                        párrafos)
+    quote               [OPCIONAL] frase/filosofía del profesional
     callToAction        { title, text } bloque principal del perfil
     services            [{ id, label, description?, active }] — solo se
                         muestran los activos; activar = poner active: true
+    serviceGroups       [OPCIONAL] [{ title, items: [...] }] servicios
+                        agrupados por categoría (se muestran tal cual)
+    servicesNote        [OPCIONAL] nota prudente bajo los servicios
+    testimonials        [{ text, author, authorized }] — SOLO testimonios
+                        reales y autorizados (authorized: true). Vacío =
+                        la sección no existe. Nunca inventar.
+    disclaimer          [OPCIONAL] aviso propio del perfil (se suma al
+                        aviso general)
     phone, whatsapp     texto/número reales; vacío = botón oculto
                         (whatsapp: solo dígitos con código de país, ej.
                         "14035551234"; phone: formato libre, ej.
                         "+1 403 555 1234")
-    email, website, inventoryUrl, inventoryLabel, bookingUrl
+    email, website, inventoryUrl, inventoryLabel
+    bookingUrl, bookingLabel  calendario de citas; si existe, es la
+                        acción PRINCIPAL del perfil ("Agenda una consulta")
     mapUrl              enlace de Google Maps; si está vacío se genera
                         desde la dirección
     instagram, tiktok, facebook, linkedin
@@ -50,6 +71,8 @@
                         sección de video
     videoText           texto bajo "Conoce a ..."
     profileImage        foto del PERFIL (vertical 4:5)
+    heroLayout          [OPCIONAL] "wide" = imagen horizontal completa
+                        (ej. 5:4 con fondo de marca), sin recortar
     cardImage           [OPCIONAL] recorte cuadrado rostro+hombros para la
                         tarjeta del directorio (si falta, usa profileImage)
     ogImage             [OPCIONAL] imagen al compartir en redes (cuadrada
@@ -71,9 +94,9 @@
 
 const BUSINESS_CATEGORIES = [
   { id: "automoviles", label: "Automóviles" },
-  /* Estructura futura: se habilitan automáticamente en cuanto exista al
-     menos un negocio publicado en la categoría. Hoy NO tienen negocios. */
-  { id: "seguros-finanzas", label: "Seguros y finanzas" },
+  /* Las demás se habilitan automáticamente en cuanto exista al menos un
+     negocio publicado en la categoría. */
+  { id: "seguros-finanzas", label: "Seguros y protección financiera" },
   { id: "vivienda", label: "Vivienda" },
   { id: "empleo", label: "Empleo" },
   { id: "salud", label: "Salud" },
@@ -145,6 +168,124 @@ const BUSINESSES = [
     seo: {
       title: "Tomás Velázquez | Vehículos en Calgary | El Podcast del Migrante",
       description: "Conoce el perfil profesional de Tomás Velázquez en Calgary, sus datos de contacto, ubicación y recursos para quienes buscan vehículo.",
+    },
+  },
+  {
+    id: "BIZ-002",
+    slug: "carlos-d-castillo",
+    published: true,
+    featured: false,
+    foundingProfile: true,
+
+    name: "Carlos D. Castillo",
+    shortName: "Carlos",
+    professionalTitle: "Asesor de Seguros de Vida y Salud | Estrategias de Protección y Patrimonio",
+    professionalTitleAlt: "Life & Health Insurance Advisor | Wealth & Insurance Strategies",
+    company: "Roca Financial Group Ltd.",
+    brandName: "Carlos D. Castillo – Wealth & Insurance Strategies",
+    brandLogo: "assets/carlos-d-castillo-logo.jpg",
+    affiliation: "Greatway Financial",   /* afiliación indicada por el profesional */
+    category: "seguros-finanzas",
+    card: { title: "Asesor de Seguros de Vida y Salud" },
+
+    city: "Calgary",
+    province: "Alberta",
+    country: "Canadá",
+    address: "",              /* sin dirección pública: atención con cita */
+    postalCode: "",
+    mapUrl: "",
+
+    languages: ["es", "en"],
+    /* Provincias donde Carlos INDICA estar autorizado para prestar servicios
+       (información suministrada por él; no se amplía ni se interpreta). */
+    serviceAreas: ["Alberta", "British Columbia", "Saskatchewan", "Ontario"],
+    availability: "Atención con cita previa, presencial o virtual.",
+
+    shortDescription: "Seguros de vida y salud, protección familiar y estrategias de ahorro y patrimonio en Calgary.",
+    longDescription: [
+      "De acuerdo con la información suministrada por Carlos, cuenta con experiencia en la industria de seguros desde 1994 y una trayectoria profesional desarrollada entre Colombia, Estados Unidos y Canadá.",
+      "Carlos es colombiano y llegó a Canadá en 2008. Su experiencia como inmigrante forma parte de su enfoque de acompañamiento a personas y familias que están construyendo su vida financiera en Canadá.",
+    ],
+    quote: "Quiero que cada cliente entienda qué está haciendo, por qué lo está haciendo y cómo esa decisión encaja dentro de su futuro financiero en Canadá.",
+    callToAction: {
+      title: "Protección hoy. Estrategia para mañana.",
+      text: "Carlos ayuda a familias, inmigrantes, profesionales y empresarios en Canadá a comprender herramientas de protección, seguros y acumulación patrimonial y a desarrollar estrategias alineadas con sus objetivos.",
+    },
+
+    services: [],
+    /* Servicios suministrados por Carlos. Ninguno se presenta como garantía
+       de rendimiento, ahorro fiscal, aprobación ni resultado financiero. */
+    serviceGroups: [
+      {
+        title: "Protección personal y familiar",
+        items: [
+          "Seguros de vida",
+          "Term Life Insurance",
+          "Permanent Life Insurance",
+          "Universal Life Insurance",
+          "Participating Whole Life Insurance",
+          "Critical Illness Insurance y otras soluciones de protección",
+          "Análisis de necesidades financieras y de seguros",
+          "Revisión de pólizas existentes",
+        ],
+      },
+      {
+        title: "Ahorro y acumulación patrimonial",
+        items: [
+          "TFSA",
+          "RRSP",
+          "FHSA",
+          "RESP",
+          "Soluciones de inversión dentro del alcance de sus licencias",
+          "Estrategias de acumulación patrimonial",
+          "Planificación para el retiro",
+        ],
+      },
+      {
+        title: "Empresarios y patrimonio",
+        items: [
+          "Seguros para empresarios y propietarios de corporaciones",
+          "Corporate-Owned Life Insurance",
+          "Estrategias orientadas a planificación sucesoria",
+          "Estrategias de transferencia patrimonial",
+        ],
+      },
+    ],
+    servicesNote: "Cuando una estrategia requiere asesoría tributaria, contable o legal, Carlos trabaja de manera coordinada con los profesionales correspondientes del cliente.",
+
+    /* Sin testimonios autorizados todavía: la sección NO se muestra. */
+    testimonials: [],
+
+    phone: "+1 403 918 4019",
+    whatsapp: "14039184019",
+    email: "advice@carlosdar.io",
+    website: "https://carlosdcastillo.com/",
+    inventoryUrl: "",
+    inventoryLabel: "",
+    bookingUrl: "https://link.carlosdcastillo.com/widget/booking/lQX2qvrteyfJherfQb8r",
+    bookingLabel: "Agenda una consulta",
+
+    instagram: "https://www.instagram.com/carlosdariocastillogarcia/",
+    tiktok: "https://www.tiktok.com/@carlos.dcastillo",
+    facebook: "https://www.facebook.com/CarlosDCastilloSegurosyalgomas",
+    linkedin: "https://www.linkedin.com/company/carlos-d-castillo-wealth-and-insurance-strategies/",
+
+    youtubeVideoId: "",
+    videoText: "",
+
+    heroLayout: "wide",                                   /* imagen 5:4 con skyline de Calgary, sin recortar */
+    profileImage: "assets/carlos-d-castillo.jpg",
+    cardImage: "assets/carlos-d-castillo-card.jpg",       /* directorio: rostro y hombros */
+    ogImage: "assets/carlos-d-castillo-og.jpg",
+    coverImage: "",
+    gallery: [],
+    hours: [],
+
+    disclaimer: "La experiencia, la afiliación y las provincias de servicio indicadas en este perfil fueron suministradas por el profesional. La información es general y no constituye asesoría financiera, tributaria ni legal; ninguna estrategia garantiza rendimiento, ahorro fiscal, aprobación ni un resultado financiero determinado.",
+
+    seo: {
+      title: "Carlos D. Castillo | Seguros de vida y salud en Calgary | El Podcast del Migrante",
+      description: "Perfil empresarial de Carlos D. Castillo en Calgary: seguros de vida y salud, protección familiar y estrategias de ahorro y patrimonio. Atención en español e inglés con cita previa.",
     },
   },
 ];

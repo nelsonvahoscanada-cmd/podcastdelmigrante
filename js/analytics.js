@@ -8,6 +8,7 @@
 
   EVENTOS (perfil empresarial — uno por acción)
     profile_view       se abrió el perfil
+    booking_click      "Agenda una consulta" (calendario de citas)
     video_click        pulsó "reproducir" en el video
     video_start        YouTube confirmó que la reproducción comenzó
     vehicles_click     botón de inventario/catálogo ("Ver vehículos")
@@ -17,8 +18,7 @@
     instagram_click · tiktok_click · facebook_click · linkedin_click
                        redes sociales oficiales
     whatsapp_click · phone_click
-                       RESERVADOS: se emiten solo cuando el perfil tenga
-                       número confirmado (hoy no se muestran)
+                       solo en perfiles con número confirmado
   `target` distingue la ubicación del botón (ej. "instagram-hero" vs
   "instagram-final", "directions" vs "directions-location").
   video_click = la persona pulsó "reproducir". video_start = YouTube
@@ -28,6 +28,7 @@
 
   CADA EVENTO LLEVA
     event, ts (ISO), page (ruta, sin parámetros), business (slug),
+    business_id (ej. "BIZ-002"),
     category, city, target (a qué botón se hizo clic, si aplica),
     utm_source / utm_medium / utm_campaign / utm_content (si existen),
     referrer (solo el dominio de origen, si existe).
