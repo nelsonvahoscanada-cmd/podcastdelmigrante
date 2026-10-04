@@ -6,9 +6,21 @@
   defina. Mientras no haya un destino configurado, los eventos no salen
   del navegador del visitante.
 
-  EVENTOS
-    profile_view · video_click · video_start · whatsapp_click ·
-    phone_click · website_click · maps_click · email_click
+  EVENTOS (perfil empresarial — uno por acción)
+    profile_view       se abrió el perfil
+    video_click        pulsó "reproducir" en el video
+    video_start        YouTube confirmó que la reproducción comenzó
+    vehicles_click     botón de inventario/catálogo ("Ver vehículos")
+    directions_click   "Cómo llegar" (Google Maps)
+    email_click        enlace mailto:
+    website_click      sitio web de la empresa
+    instagram_click · tiktok_click · facebook_click · linkedin_click
+                       redes sociales oficiales
+    whatsapp_click · phone_click
+                       RESERVADOS: se emiten solo cuando el perfil tenga
+                       número confirmado (hoy no se muestran)
+  `target` distingue la ubicación del botón (ej. "instagram-hero" vs
+  "instagram-final", "directions" vs "directions-location").
   video_click = la persona pulsó "reproducir". video_start = YouTube
   confirmó que la reproducción comenzó (se emite una vez por visita).
   Un clic o una reproducción NO equivalen a una venta, un lead ni un
@@ -30,8 +42,9 @@
   Nunca poner claves ni secretos aquí: este archivo es público.
 
   REPORTE MENSUAL (cuando exista destino): visitas al perfil
-  (profile_view), clics WhatsApp, llamada, sitio/inventario
-  (website_click), mapa, email, video (video_click / video_start) y fuentes de
+  (profile_view), clics WhatsApp, llamada, inventario (vehicles_click),
+  sitio web (website_click), cómo llegar (directions_click), email, redes
+  (instagram_click / tiktok_click), video (video_click / video_start) y fuentes de
   tráfico (utm_* + referrer), todo agrupado por `business`.
 
   PRUEBA: abrir cualquier página con ?pdm_debug=1 para ver cada evento
