@@ -106,9 +106,9 @@
   function getRelated(article) {
     let related = [];
     if (article.relatedSlugs && article.relatedSlugs.length) {
-      related = article.relatedSlugs.map((s) => findArticle(s)).filter(Boolean);
+      related = article.relatedSlugs.map((s) => findArticle(s)).filter((a) => a && !a.draft);
     } else {
-      related = ARTICLES.filter((a) => a.slug !== article.slug && a.category === article.category);
+      related = ARTICLES.filter((a) => !a.draft && a.slug !== article.slug && a.category === article.category);
     }
     return related.slice(0, 3);
   }
@@ -171,6 +171,7 @@
 
   function metaLineHtml(article) {
     const parts = [];
+    if (article.edition) parts.push("Edición " + article.edition);
     parts.push(formatDate(article.publishedAt));
     if (article.updatedAt) parts.push("Actualizado el " + formatDate(article.updatedAt));
     const minutes = article.readingTimeOverride || estimateReadingTime(article.bodyHtml);
@@ -185,6 +186,7 @@
   }
 
   function heroImageHtml(article) {
+    if (!article.heroImage) return "";
     const credit = article.heroImage.credit
       ? `<p class="article-hero-credit">${article.heroImage.credit}</p>`
       : "";
@@ -358,7 +360,7 @@
 
   /* ---------- SEO / metadatos por artículo ---------- */
   function setSEO(article) {
-    const title = (article.seo.title || article.title) + " — El Podcast del Migrante Magazine";
+    const title = article.seo.fullTitle || (article.seo.title || article.title) + " — El Podcast del Migrante Magazine";
     document.title = title;
     document.getElementById("htmlRoot").setAttribute("lang", article.lang);
 
@@ -408,24 +410,82 @@
   }
 
   /* ---------- Ensamblado completo ---------- */
+  /* ---------- Columna de autor (layout "columna-autor") ---------- */
+
+  function findColumnFor(article) {
+    return typeof COLUMNS !== "undefined" ? COLUMNS.find((c) => c.title === article.columnName) || null : null;
+  }
+
+  function authorColumnMastheadHtml(article) {
+    const column = findColumnFor(article);
+    const name = column
+      ? `<a class="column-masthead__name" href="columna.html?slug=${encodeURIComponent(column.slug)}">${article.columnName}</a>`
+      : `<span class="column-masthead__name">${article.columnName}</span>`;
+    return `
+      <div class="column-masthead">
+        ${name}
+        <span class="column-masthead__by">Por ${article.author.name}</span>
+      </div>
+    `;
+  }
+
+  function originalNoteHtml(article) {
+    if (!article.originalNote) return "";
+    return `<p class="article-original-note">${article.originalNote}</p>`;
+  }
+
+  function authorCardHtml(article) {
+    const column = findColumnFor(article);
+    if (!column || !column.authorCard) return "";
+    const card = column.authorCard;
+    return `
+      <aside class="article-author-card">
+        <span class="article-author-card__kicker">Sobre el autor</span>
+        <h2 class="article-author-card__name">${card.name}</h2>
+        <p class="article-author-card__role">${card.role}</p>
+        <p class="article-author-card__bio">${card.bio}</p>
+        <a class="btn" href="columna.html?slug=${encodeURIComponent(column.slug)}">${card.ctaLabel}</a>
+      </aside>
+    `;
+  }
+
+  function renderComingSoon(article) {
+    const column = findColumnFor(article);
+    document.title = (article.columnName || "Columna") + " — próximamente — El Podcast del Migrante Magazine";
+    document.getElementById("articleRoot").innerHTML = `
+      <div class="article-not-found">
+        ${article.columnName ? `<p class="column-masthead__name">${article.columnName}</p>` : ""}
+        <h1>Próximamente</h1>
+        <p>Estamos preparando esta entrega para publicarla completa. Muy pronto estará disponible en El Podcast del Migrante.</p>
+        <a class="btn" href="${column ? "columna.html?slug=" + encodeURIComponent(column.slug) : "index.html"}">${column ? "Ver la columna" : "Volver al inicio"}</a>
+      </div>
+    `;
+  }
+
   function renderArticle(article) {
     setSEO(article);
+    const isAuthorColumn = article.layout === "columna-autor";
 
     const root = document.getElementById("articleRoot");
+    root.classList.toggle("article-page--autor-columna", isAuthorColumn);
     root.innerHTML = `
       ${sponsoredBadgeHtml(article)}
-      ${contentTypeHtml(article)}
-      ${columnBadgeHtml(article)}
+      ${isAuthorColumn ? authorColumnMastheadHtml(article) : contentTypeHtml(article) + columnBadgeHtml(article)}
       <h1 class="article-title">${article.title}</h1>
       <p class="article-dek">${article.dek}</p>
-      <div class="article-byline-row">
+      ${
+        isAuthorColumn
+          ? ""
+          : `<div class="article-byline-row">
         <p class="byline article-byline">${renderAuthorHtml(article.author)}</p>
         ${langToggleHtml(article)}
-      </div>
+      </div>`
+      }
       <p class="article-meta">${metaLineHtml(article)}</p>
       ${locationHtml(article)}
       ${heroImageHtml(article)}
       <div class="article-body">${article.bodyHtml}</div>
+      ${isAuthorColumn ? originalNoteHtml(article) + authorCardHtml(article) : ""}
       ${videoBlockHtml(article)}
       ${guideModuleHtml(article)}
       ${sourcesHtml(article)}
@@ -496,7 +556,9 @@
     window.PDM.initSiteChrome();
     const slug = getParam("slug");
     const article = slug ? findArticle(slug) : null;
-    if (article) {
+    if (article && article.draft) {
+      renderComingSoon(article);
+    } else if (article) {
       renderArticle(article);
     } else {
       renderNotFound();

@@ -1332,3 +1332,31 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
   display: inline-flex; align-items: center; justify-content: center;
 }
 .footer-social a:hover { border-color: var(--verde); color: var(--verde); }
+
+/* =========================================================
+   Columna destacada en el HOME (compacta)
+========================================================= */
+.column-feature[hidden] { display: none; }
+.column-feature__inner {
+  max-width: 760px;
+  padding: 4px 0 4px 20px;
+  border-left: 4px solid var(--verde);
+}
+.column-feature__name {
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--verde-oscuro);
+}
+.column-feature__by { font-size: 0.9rem; color: var(--gris-600); margin: 2px 0 10px; }
+.column-feature__title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.25;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.column-feature__title a:hover { color: var(--verde-oscuro); }
+.column-feature__text { font-size: 0.96rem; color: var(--gris-600); max-width: 60ch; margin-bottom: 14px; }

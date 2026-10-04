@@ -75,7 +75,24 @@
   translationSlug   String | null   — [OPCIONAL] slug de la versión en
                               el otro idioma, si existe
   lang              String  — "es" | "en"
-  seo               Object  — { title?, description?, canonicalPath }
+  draft             Boolean — [OPCIONAL] true = contenedor preparado SIN
+                              texto definitivo. Nunca se lista, nunca se
+                              relaciona y, si alguien abre su URL, ve una
+                              página de "Próximamente". Para publicar:
+                              pegar el texto íntegro en bodyHtml y quitar
+                              este campo.
+  layout            String  — [OPCIONAL] "columna-autor" = cabecera de
+                              columna de autor (nombre de la columna +
+                              "Por [autor]"), nota de publicación original
+                              y ficha del autor (esta última se toma de la
+                              columna, ver columns.js).
+  edition           String  — [OPCIONAL] ej. "Octubre 2026"; se muestra
+                              en la línea de metadatos.
+  originalNote      String  — [OPCIONAL] nota discreta al final cuando el
+                              texto se publicó antes en otro medio.
+  seo               Object  — { title?, fullTitle?, description?, canonicalPath }
+                              fullTitle (opcional) se usa tal cual como
+                              <title>, sin añadir el sufijo del sitio.
                               canonicalPath es la ruta LIMPIA que
                               tendrá el artículo cuando exista dominio
                               y servidor con rutas reales (ej.
@@ -122,6 +139,114 @@ const DISCLAIMERS = {
    describe hechos, cifras ni declaraciones reales.
 ========================================================= */
 const ARTICLES = [
+  {
+    /* ENTRE DOS MUNDOS — primera entrega (Nelson Vahos). PUBLICADA.
+       Texto íntegro del artículo original (Magazine Latino, 10 de agosto
+       de 2026). La ficha del autor al final proviene de la columna
+       (js/columns.js), no del cuerpo del artículo. Las próximas entregas
+       de esta columna se crean copiando esta estructura. */
+    id: "ART-2026-016",
+    slug: "el-frio-no-pudo-apagar-mi-senal",
+    layout: "columna-autor",
+    category: "Comunidad",
+    contentType: "Columna",
+    columnName: "Entre dos mundos",
+    title: "El frío no pudo apagar mi señal",
+    dek: "De la radio en Colombia a comenzar desde cero en Canadá: una historia de refugio, humildad y reconstrucción",
+    excerpt: "De la radio en Colombia a comenzar desde cero en Canadá: una historia de refugio, humildad y reconstrucción.",
+    author: { mode: "colaborador", name: "Nelson Vahos" },
+    edition: "Octubre 2026",
+    publishedAt: "2026-10-04T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: null,
+    demo: false,
+    heroImage: {
+      background: "url('assets/entre-dos-mundos-nelson-vahos-nieve.jpg')",
+      aspectRatio: "4/3",
+      alt: "Hombre con gorro rojo con una hoja de arce, chaqueta roja y el rostro cubierto por una bufanda negra escarchada, en un parque cubierto de nieve bajo un cielo despejado.",
+      credit: "Archivo personal de Nelson Vahos",
+    },
+    bodyHtml: `
+      <blockquote>“No salí de Colombia porque hubiera dejado de amarla. Salí porque amaba demasiado a mi familia para continuar viviendo con miedo.”</blockquote>
+      <h2>Salir para proteger a quienes amas</h2>
+      <p>Hay momentos en los que uno no abandona su país porque dejó de amarlo. Se marcha precisamente porque ama demasiado a su familia y no está dispuesto a seguir viviendo con el temor de que algo pueda suceder.</p>
+      <p>Tuve que salir de Colombia por uno de los grandes flagelos que hemos atravesado durante décadas: la inseguridad. Vivir con miedo, sentir angustia por tus hijos, por tu esposa y por las personas que amas puede convertirse en la fuerza que finalmente te impulsa a tomar una decisión que jamás imaginaste.</p>
+      <p>Cuando la seguridad de tu familia está en juego, todo lo material empieza a perder importancia. Ya no importa cuánto hayas trabajado, los proyectos que construiste, la posición que alcanzaste ni los sueños que comenzaban a dar frutos. Todo eso puede volver a levantarse; la vida y la tranquilidad de quienes amas no tienen reemplazo.</p>
+      <p>Así comenzó mi camino hacia Canadá. No salí de Colombia porque no tuviera una historia. Salí dejando atrás una vida completa: recuerdos, amistades, reconocimiento, oportunidades y un camino profesional que me había tomado años construir. Llegué a un país que no conocía, sin dominar su idioma y siendo un completo extraño. Eso es profundamente intimidante.</p>
+      <h2>Una ciudad completamente blanca</h2>
+      <p>Todavía recuerdo mi llegada. Desde la ventana del avión vi una ciudad completamente cubierta de blanco. Para alguien que venía de Colombia, aquella imagen era impresionante. Todo parecía distinto: el paisaje, el clima, las casas, las carreteras y el silencio.</p>
+      <p>En ese momento sentí una emoción difícil de explicar. Mi familia estaba conmigo y, por primera vez después de mucho tiempo, sentí que estaba a salvo. Esa tranquilidad valía más que cualquier cosa que hubiera dejado atrás.</p>
+      <p>Sin embargo, yo todavía no comprendía que llegar a Canadá era solamente el comienzo. Después vendría el verdadero desafío: asentarnos, entender el sistema, aprender a movernos dentro de una nueva sociedad y enfrentarnos a nosotros mismos.</p>
+      <p>Una persona puede cambiar de país en cuestión de horas, pero adaptarse a una nueva vida puede tomar años. El cuerpo llega primero; la mente y el corazón pueden tardar mucho más.</p>
+      <h2>Del micrófono a la construcción</h2>
+      <p>Uno de los momentos más difíciles de mi vida en Canadá llegó cuando comencé a trabajar con una empresa de construcción integrada, en su mayoría, por trabajadores filipinos.</p>
+      <p>Para comprender el impacto de aquel cambio es necesario saber de dónde venía. En Colombia había trabajado en una de las emisoras más importantes de Bogotá, al lado de William Vinasco Ch., una de las figuras más reconocidas de la radio deportiva colombiana, narrador de la Selección Colombia, mi mentor y gran amigo. Había recorrido el país trabajando a su lado y había entrevistado a presidentes, ministros y otras personalidades. La radio era mi ambiente y el micrófono era mi territorio.</p>
+      <p>De repente, mi realidad era completamente distinta: estaba construyendo casas, cambiando techos y ayudando a levantar oficinas.</p>
+      <p>Quiero dejar algo muy claro: trabajar en construcción no es una deshonra. Ningún trabajo honesto debe avergonzar a una persona. Las ciudades y los países se levantan gracias al esfuerzo de hombres y mujeres que realizan trabajos físicamente exigentes y muchas veces poco reconocidos.</p>
+      <p>Mi conflicto no era con el trabajo. Mi conflicto era conmigo mismo. Era el contraste entre la vida que había tenido y la nueva realidad que estaba viviendo.</p>
+      <p>Mi mente me decía: “Mira cómo terminaste. Después de ser exitoso en tu país, ahora no eres nadie. Cometiste el peor error de tu vida.”</p>
+      <blockquote>“Nunca volverás a trabajar en los medios y, sin inglés, jamás tendrás una oportunidad”. Mientras mis manos trabajaban, mi mente peleaba una batalla silenciosa.</blockquote>
+      <h2>José López, el hombre que me enseñó a volver a creer</h2>
+      <p>Nunca olvidaré mi primer día. Llegué temprano al lugar que aquí llaman el shop, donde los trabajadores se reunían para recibir las órdenes y organizar cuadrillas de dos personas. No conocía a nadie, apenas comprendía el idioma y tampoco sabía exactamente qué íbamos a hacer. Me sentía como un general labourer —lo que en Colombia llamaríamos un obrero raso— entrando a un mundo completamente desconocido.</p>
+      <p>Ese día tuve la fortuna de ser asignado a trabajar con otro latino: José López. José tenía 75 años, pero poseía la energía, la fuerza y el entusiasmo de una persona mucho más joven. Se convirtió en mi primer amigo en la construcción. Me enseñó a usar herramientas, a organizar el trabajo y a resolver cada tarea de una manera correcta, segura e inteligente. Sin embargo, su mayor enseñanza no vino de una herramienta ni de una técnica: vino de su ejemplo.</p>
+      <p>Yo observaba a aquel hombre trabajar incansablemente, con responsabilidad, buen humor y una actitud mental positiva. Mientras yo luchaba contra una voz interior que me repetía que mi vida profesional había terminado, José avanzaba sin permitir que su edad se convirtiera en una excusa. Él me enseñó que los años solamente están escritos en la cédula.</p>
+      <p>Durante los descansos me contaba historias de su vida. Había sido alcalde de su pueblo en México y hablaba de aquella etapa con enorme orgullo. Me mostraba fotografías antiguas y recordaba a las personas con quienes había trabajado. Algunas veces me invitaba a almorzar a su casa y allí continuaban las historias.</p>
+      <p>Yo también le hablaba de mi recorrido en Colombia, de la radio y de las entrevistas que había realizado. José me escuchaba con atención, como si estuviéramos en medio de una gran entrevista. Durante aquellos almuerzos dejábamos de ser dos trabajadores de construcción: volvíamos a ser, por un momento, el alcalde y el periodista.</p>
+      <p>Nos reíamos mucho. Nos llamábamos “guerreros” y, cuando una tarea parecía demasiado difícil, repetíamos en forma de chiste que saldríamos juntos a la batalla. Detrás de aquella broma había una verdad importante: sin importar cuán duro fuera el día, teníamos que continuar.</p>
+      <p>José fue mi entrenador, aunque probablemente nunca lo supo. Mientras me enseñaba a trabajar con mis manos, también me ayudaba a reconstruir mi mente. Él no negaba que había sido alcalde, pero tampoco se avergonzaba de ser constructor.</p>
+      <p>Comprendí entonces que una etapa nueva no borra todo lo que una persona fue anteriormente. Yo tampoco había dejado de ser comunicador por estar trabajando en un techo o levantando una oficina.</p>
+      <p>Aquel hombre de 75 años era, muchas veces, más joven que yo. Mientras mi mente estaba cansada, él conservaba la curiosidad, el humor y las ganas de seguir adelante. Su ejemplo me devolvió la esperanza. Gracias, José López, por ayudarme a volver a creer. ¡Vamos adelante, guerreros!</p>
+      <h2>Canadá me enseñó a comenzar desde abajo</h2>
+      <p>Con el tiempo entendí que empezar desde cero no significa haber perdido el valor. Canadá me enseñó que la dignidad no depende de un cargo y que el trabajo honesto no disminuye a nadie.</p>
+      <p>Un país no se construye solamente desde las oficinas, los grandes escenarios o los medios de comunicación; también se levanta desde los techos, las carreteras, las fábricas, los restaurantes, las escuelas y todos los lugares donde una persona entrega su esfuerzo para sacar adelante a su familia.</p>
+      <p>Pero, sobre todo, Canadá me obligó a dejar atrás la prepotencia. Mis experiencias anteriores no me hacían más importante que los demás. Había llegado a un nuevo país y debía aprender otra vez: observar, escuchar, respetar y reconocer que cada persona llevaba consigo una historia que yo desconocía.</p>
+      <p>Canadá no me prometió una vida sin dificultades. Me dio algo más importante: una oportunidad. La oportunidad de vivir con mi familia en un lugar seguro, trabajar, aprender, equivocarme y volver a intentarlo.</p>
+      <p>También me enseñó que podemos crecer tan alto como seamos capaces de soñar y trabajar, pero sin pasar por encima de nadie.</p>
+      <h2>El micrófono seguía esperándome</h2>
+      <p>Durante los días más difíciles llegué a creer que nunca regresaría a los medios de comunicación. No hablaba inglés y no tenía en Canadá las conexiones que había construido durante años en Colombia. Sin embargo, con el tiempo entendí que mi voz no dependía de un edificio, una frecuencia radial o un cargo.</p>
+      <p>Mi experiencia como migrante comenzó a conectarme con las historias de otras personas. Escuché sus preguntas, temores, frustraciones y los errores que podían cometer por desconocimiento. También vi cómo algunos recién llegados eran engañados por quienes se aprovechaban de su necesidad y desesperación.</p>
+      <p>Comprendí que mi experiencia podía servir. A través de eRadio Global, El Podcast del Migrante y mi canal de TikTok empecé a compartir información, conversaciones y aprendizajes para ayudar a la comunidad latina a comprender mejor el sistema canadiense, reconocer posibles estafas, evitar errores graves y buscar orientación profesional cuando su situación lo requiera.</p>
+      <figure class="article-figure">
+        <img src="assets/entre-dos-mundos-nelson-vahos-estudio-monitor.jpg" alt="Hombre con gafas y camiseta color terracota sentado frente a un micrófono, una consola de audio y un monitor, en un estudio de radio." loading="lazy">
+        <figcaption>Archivo personal de Nelson Vahos</figcaption>
+      </figure>
+      <p>No tengo todas las respuestas y mi experiencia no es igual a la de todos. Cada historia migratoria es diferente. Tampoco presento el refugio como una fórmula para emigrar. Solicitar protección es una decisión seria que debe estar sustentada en hechos reales; no es un atajo ni una estrategia que funcione para todas las personas.</p>
+      <h2>La gratitud debe convertirse en acción</h2>
+      <p>Hoy le doy gracias a Dios por haberme permitido comenzar una nueva vida. También agradezco profundamente a Canadá por acoger a mi familia y darnos la oportunidad de cambiar nuestra historia.</p>
+      <p>Pero la gratitud no puede quedarse solamente en palabras. La mejor manera de agradecer es respetar las leyes, trabajar honestamente, cuidar las instituciones, contribuir a la comunidad y ayudar a que este país sea todavía mejor.</p>
+      <p>Quienes hemos sido recibidos aquí no solamente venimos a buscar oportunidades; también tenemos la responsabilidad de aportar.</p>
+      <p>Integrarse no significa dejar de ser quien uno es. Sigo siendo colombiano, sigo amando la radio y sigo creyendo en el poder de la comunicación. Pero ahora también soy un hombre que aprendió a empezar de nuevo y que desea utilizar su voz para servir al país que acogió a su familia.</p>
+      <figure class="article-figure">
+        <img src="assets/entre-dos-mundos-nelson-vahos-estudio-casa.jpg" alt="Hombre con gafas y camiseta gris en un estudio de grabación en casa, con micrófono, consola de audio y una pantalla que muestra la forma de onda de una grabación." loading="lazy">
+        <figcaption>Archivo personal de Nelson Vahos</figcaption>
+      </figure>
+      <h2>No llegamos vacíos</h2>
+      <p>No cuento mi historia para despertar lástima ni para presentar mi vida como una historia perfecta de superación. La cuento porque quizás alguien que acaba de llegar a Canadá se encuentra atravesando la misma batalla mental que yo viví.</p>
+      <p>Quizás una persona está trabajando en algo completamente diferente a su profesión y cada noche se pregunta si cometió un error. Quizás siente que nunca recuperará sus sueños porque todavía no habla inglés, no conoce el sistema o cree que nadie valora su experiencia.</p>
+      <p>A esa persona quiero decirle que empezar desde cero no significa comenzar vacío. Dentro de nosotros continúan los conocimientos, la disciplina, los talentos, las experiencias y todo lo aprendido antes de llegar.</p>
+      <p>Pero también debemos estar dispuestos a transformarnos: aprender el idioma, comprender la cultura, respetar los procesos, aceptar ayuda y reconstruir con humildad.</p>
+      <p>Hoy entiendo que los días en la construcción no borraron mi pasado. Cada golpe del martillo también estaba derribando mi orgullo. Cada jornada difícil me preparaba para comprender el dolor de otros migrantes. Tal vez tenía que empezar desde abajo para descubrir que ninguna persona está por debajo de otra.</p>
+      <p>Canadá me dio la oportunidad de cambiar la historia de mi familia. Ahora siento la responsabilidad de utilizar mi voz para recordar que migrar no significa solamente cambiar de país: también significa reconstruirse por dentro.</p>
+      <p>El frío no pudo apagar mi señal. Solamente me enseñó a transmitir con un propósito diferente.</p>
+      <blockquote>“Empezar desde cero no significa comenzar vacío.”</blockquote>
+    `,
+    originalNote: "Este artículo fue publicado originalmente en Magazine Latino el 10 de agosto de 2026 y forma parte de la columna Entre dos mundos de Nelson Vahos en El Podcast del Migrante.",
+    video: null,
+    sources: [],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "El frío no pudo apagar mi señal | Entre dos mundos — Nelson Vahos",
+      description: "Nelson Vahos relata su paso de la radio en Colombia a comenzar desde cero en Canadá, en la primera entrega de Entre dos mundos.",
+      canonicalPath: "/columnas/entre-dos-mundos/el-frio-no-pudo-apagar-mi-senal/",
+    },
+  },
   {
     id: "ART-2026-015",
     slug: "carney-aumento-controlado-inmigracion-canada",

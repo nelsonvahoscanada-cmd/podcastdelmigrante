@@ -25,6 +25,20 @@
       - published       true solo cuando el artículo real ya existe en
                         js/articles.js
 
+  Campos opcionales de una columna:
+  - authorId          puede omitirse cuando el autor no es un colaborador
+                      de CONTRIBUTORS (ej. la columna de Nelson Vahos)
+  - featuredOnHome    true = el HOME muestra un bloque compacto con la
+                      ÚLTIMA entrega publicada; si todavía no hay ninguna
+                      publicada, el bloque no se muestra
+  - authorCard        { name, role, bio, ctaLabel } — ficha del autor que
+                      aparece al final de cada entrega y enlaza al archivo
+                      de la columna (se escribe una vez, la heredan todas
+                      las entregas futuras)
+  - entries[]         agregar las nuevas entregas AL FINAL (orden
+                      cronológico ascendente, igual que "Tu dinero en
+                      Canadá")
+
   REGLA DE ORO: una entrega con `published: false` NUNCA es clicable,
   nunca tiene slug, y nunca se muestra como si ya existiera contenido.
   Es programación editorial, no una página vacía ni un enlace falso.
@@ -56,6 +70,24 @@ const COLUMNS = [
       { monthLabel: "Julio 2027", title: "La universidad de tus hijos no se paga sola", published: false },
       { monthLabel: "Agosto 2027", title: "Canadá no pagará el retiro que imaginas", published: false },
       { monthLabel: "Septiembre 2027", title: "Tener muchas cuentas no significa tener un plan", published: false },
+    ],
+  },
+  {
+    id: "entre-dos-mundos",
+    slug: "entre-dos-mundos",
+    title: "Entre dos mundos",
+    category: "Comunidad",
+    authorName: "Nelson Vahos",
+    featuredOnHome: true,
+    description: "Una columna personal sobre migración, identidad, familia, comunidad y las experiencias de reconstruir la vida entre el país que dejamos y el país que aprendemos a llamar hogar.",
+    authorCard: {
+      name: "Nelson Vahos",
+      role: "Comunicador y fundador de eRadio Global Corp. Conductor de El Podcast del Migrante.",
+      bio: "Desde Canadá desarrolla contenidos informativos y comunitarios dirigidos especialmente a la comunidad migrante latina.",
+      ctaLabel: "Más de Entre dos mundos →",
+    },
+    entries: [
+      { monthLabel: "Octubre 2026", title: "El frío no pudo apagar mi señal", slug: "el-frio-no-pudo-apagar-mi-senal", published: true },
     ],
   },
 ];

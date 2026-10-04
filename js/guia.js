@@ -57,7 +57,7 @@
   }
 
   function relatedArticlesHtml(guide) {
-    const related = ARTICLES.filter((a) => a.category === guide.label && a.demo === false).slice(0, 6);
+    const related = ARTICLES.filter((a) => a.category === guide.label && a.demo === false && !a.draft).slice(0, 6);
     if (!related.length) return "";
     const cards = related
       .map(

@@ -279,6 +279,34 @@
   }
 
   /* ---------- Nuestros colaboradores ---------- */
+  /* ---------- Columna destacada en el HOME ---------- */
+  /* Muestra, de forma compacta, la ÚLTIMA entrega PUBLICADA de cada columna
+     marcada con featuredOnHome (ver js/columns.js). Si la columna todavía
+     no tiene ninguna entrega publicada (o su artículo sigue en borrador),
+     el bloque permanece oculto: nunca se anuncia una columna sin texto. */
+  function buildColumnFeature() {
+    const host = document.getElementById("columnFeature");
+    if (!host || typeof COLUMNS === "undefined" || typeof ARTICLES === "undefined") return;
+    const column = COLUMNS.find((c) => c.featuredOnHome);
+    if (!column) return;
+    const published = column.entries.filter((e) => e.published && e.slug);
+    if (!published.length) return;
+    const entry = published[published.length - 1];
+    const article = ARTICLES.find((a) => a.slug === entry.slug && !a.draft);
+    if (!article) return;
+    host.innerHTML = `
+      <div class="column-feature__inner">
+        <p class="column-feature__name">${column.title}</p>
+        <p class="column-feature__by">Por ${column.authorName}</p>
+        <h3 class="column-feature__title"><a href="${articleHref(article.slug)}">${article.title}</a></h3>
+        <p class="column-feature__text">${article.excerpt}</p>
+        <a class="btn" href="${articleHref(article.slug)}">Leer la columna →</a>
+      </div>
+    `;
+    host.hidden = false;
+  }
+
+
   /* Última entrega publicada de un colaborador — calculada dinámicamente
      desde ARTICLES, nunca guardada a mano. Sirve para cualquier
      colaborador futuro: en cuanto tenga un artículo real (demo:false)
@@ -286,7 +314,7 @@
   function getLatestArticleFor(contributorId) {
     if (typeof ARTICLES === "undefined") return null;
     const matches = ARTICLES.filter(
-      (a) => a.demo === false && a.author && a.author.mode === "colaborador" && a.author.authorId === contributorId
+      (a) => a.demo === false && !a.draft && a.author && a.author.mode === "colaborador" && a.author.authorId === contributorId
     );
     if (!matches.length) return null;
     matches.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
@@ -421,6 +449,7 @@
     bindVideoScroll();
     buildDesafio();
     buildMostRead();
+    buildColumnFeature();
     buildContributors();
     buildDistribution();
     buildSponsors();
