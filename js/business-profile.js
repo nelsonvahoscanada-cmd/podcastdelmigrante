@@ -5,7 +5,9 @@
   js/businesses.js. Todos los perfiles (hoy Tomás Velázquez; mañana
   Carlos D. Castillo y los demás) usan esta misma plantilla.
   Los datos vacíos no se muestran: ni el texto, ni el botón, ni la
-  sección. Los eventos de medición se emiten desde js/analytics.js.
+  sección. Los campos opcionales (agenda, servicios agrupados,
+  disponibilidad, testimonios autorizados, imagen "wide"...) solo
+  aparecen en los perfiles que los tienen. Los eventos de medición se emiten desde js/analytics.js.
 ========================================================================= */
 
 (function () {
@@ -53,12 +55,23 @@
 
   function languageLine(b) {
     const names = (b.languages || []).map((l) => LANG_NAMES[l]).filter(Boolean);
-    return names.length ? "Atención en " + names.join(" y ") : "";
+    if (!names.length) return "";
+    if (names.length === 1) return "Atención en " + names[0];
+    const last = names[names.length - 1];
+    /* "español e inglés": "y" pasa a "e" ante sonido /i/ */
+    return "Atención en " + names.slice(0, -1).join(", ") + (/^h?i/i.test(last) ? " e " : " y ") + last;
+  }
+
+  /* Idiomas en su propio idioma, para chips ("Español · English") */
+  const LANG_NATIVE = { es: "Español", en: "English", fr: "Français" };
+  function languageNative(b) {
+    return (b.languages || []).map((l) => LANG_NATIVE[l]).filter(Boolean);
   }
 
   /* ---------- Botones de contacto: solo los que tienen dato real ---------- */
   function actionList(b) {
     const list = [];
+    if (b.bookingUrl) list.push({ key: "booking", label: b.bookingLabel || "Agenda una cita", href: b.bookingUrl, ext: true, track: "booking_click", target: "booking" });
     const wa = whatsappHref(b);
     if (wa) list.push({ key: "whatsapp", label: "WhatsApp", href: wa, ext: true, track: "whatsapp_click", target: "whatsapp" });
     const tel = phoneHref(b);
@@ -85,18 +98,21 @@
   /* ---------- Secciones ---------- */
   function heroHtml(b) {
     const media = b.profileImage
-      ? `<img class="biz-hero__photo" src="${esc(b.profileImage)}" alt="${esc(b.name)}" fetchpriority="high">`
+      ? `<img class="biz-hero__photo" src="${esc(b.profileImage)}" alt="${esc(b.name)}"${b.heroLayout === "wide" ? ' width="1600" height="1280"' : ""} fetchpriority="high">`
       : `<div class="biz-hero__photo biz-hero__photo--initials" role="img" aria-label="${esc(b.name)}">${esc(initials(b.name))}</div>`;
     const place = [b.city, b.province].filter(Boolean).join(", ");
     const lang = languageLine(b);
     return `
-      <header class="biz-hero">
+      <header class="biz-hero${b.heroLayout === "wide" ? " biz-hero--wide" : ""}">
         <div class="biz-hero__media">${media}</div>
         <div class="biz-hero__body">
           <span class="biz-label">Perfil empresarial</span>
           <h1 class="biz-name">${esc(b.name)}</h1>
           ${b.professionalTitle ? `<p class="biz-title">${esc(b.professionalTitle)}</p>` : ""}
+          ${b.professionalTitleAlt ? `<p class="biz-title-alt" lang="en">${esc(b.professionalTitleAlt)}</p>` : ""}
+          ${b.brandLogo ? `<img class="biz-brand-logo" src="${esc(b.brandLogo)}" alt="${esc(b.brandName || b.name)}" loading="lazy">` : ""}
           ${b.company ? `<p class="biz-company">${esc(b.company)}</p>` : ""}
+          ${b.affiliation ? `<p class="biz-affiliation">Afiliación indicada por el profesional: ${esc(b.affiliation)}</p>` : ""}
           ${place ? `<p class="biz-place">${esc(place)}</p>` : ""}
           ${lang ? `<p class="biz-lang">${esc(lang)}</p>` : ""}
           ${socialHtml(b, "hero")}
@@ -117,8 +133,14 @@
   }
 
   function aboutHtml(b) {
-    if (!b.longDescription) return "";
-    return `<section class="biz-section"><p class="biz-long">${esc(b.longDescription)}</p></section>`;
+    const paras = [].concat(b.longDescription || []).filter(Boolean);
+    if (!paras.length && !b.quote) return "";
+    return `
+      <section class="biz-section biz-about">
+        ${paras.map((t) => `<p class="biz-long">${esc(t)}</p>`).join("")}
+        ${b.quote ? `<blockquote class="biz-quote"><p>“${esc(b.quote)}”</p><cite>— ${esc(b.name)}</cite></blockquote>` : ""}
+      </section>
+    `;
   }
 
   function videoHtml(b) {
@@ -186,6 +208,53 @@
             .map((s) => `<li class="biz-service"><strong>${esc(s.label)}</strong>${s.description ? `<span>${esc(s.description)}</span>` : ""}</li>`)
             .join("")}
         </ul>
+      </section>
+    `;
+  }
+
+  /* Servicios agrupados por categoría (tal como los suministra el profesional) */
+  function serviceGroupsHtml(b) {
+    const groups = (b.serviceGroups || []).filter((g) => g.title && (g.items || []).length);
+    if (!groups.length) return "";
+    return `
+      <section class="biz-section biz-services">
+        <h2 class="biz-h2">¿Cómo puede ayudarte ${esc(b.shortName || b.name)}?</h2>
+        <div class="biz-groups">
+          ${groups
+            .map((g) => `<div class="biz-group"><h3 class="biz-group__title">${esc(g.title)}</h3><ul class="biz-group__list">${g.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`)
+            .join("")}
+        </div>
+        ${b.servicesNote ? `<p class="biz-services__note">${esc(b.servicesNote)}</p>` : ""}
+      </section>
+    `;
+  }
+
+  /* Disponibilidad: modalidad, provincias indicadas, idiomas y agenda */
+  function availabilityHtml(b) {
+    const areas = b.serviceAreas || [];
+    const langs = languageNative(b);
+    if (!b.availability && !areas.length) return "";
+    return `
+      <section class="biz-section biz-availability">
+        <h2 class="biz-h2">Disponibilidad</h2>
+        ${b.availability ? `<p>${esc(b.availability)}</p>` : ""}
+        <dl class="biz-facts">
+          ${areas.length ? `<div><dt>Provincias de servicio indicadas por el profesional</dt><dd>${areas.map(esc).join(" · ")}</dd></div>` : ""}
+          ${langs.length ? `<div><dt>Idiomas</dt><dd>${langs.map(esc).join(" · ")}</dd></div>` : ""}
+        </dl>
+        ${b.bookingUrl ? `<a class="biz-btn biz-btn--primary biz-btn--booking" href="${esc(b.bookingUrl)}" target="_blank" rel="noopener" data-track="booking_click" data-track-target="booking-availability">${esc(b.bookingLabel || "Agenda una cita")}</a>` : ""}
+      </section>
+    `;
+  }
+
+  /* Testimonios: SOLO reales y autorizados. Sin ellos la sección no existe. */
+  function testimonialsHtml(b) {
+    const list = (b.testimonials || []).filter((t) => t && t.authorized === true && t.text);
+    if (!list.length) return "";
+    return `
+      <section class="biz-section biz-testimonials">
+        <h2 class="biz-h2">Testimonios</h2>
+        ${list.map((t) => `<blockquote class="biz-quote"><p>“${esc(t.text)}”</p>${t.author ? `<cite>— ${esc(t.author)}</cite>` : ""}</blockquote>`).join("")}
       </section>
     `;
   }
@@ -269,15 +338,15 @@
     `;
   }
 
-  /* Barra inferior móvil: WhatsApp | Llamar | Ver (solo los disponibles) */
+  /* Barra inferior móvil: Agenda | WhatsApp | Llamar | Ver (solo los disponibles) */
   function stickyBarHtml(b) {
-    const keep = ["whatsapp", "phone", "inventory"];
+    const keep = ["booking", "whatsapp", "phone", "inventory"];
     const list = actionList(b)
       .filter((a) => keep.includes(a.key))
       .map((a) => Object.assign({}, a, { target: a.target + "-sticky" }));
     if (!list.length) return "";
     return `<nav class="biz-sticky" aria-label="Contacto rápido">${list
-      .map((a, i) => `<a class="biz-sticky__btn${i === 0 ? " biz-sticky__btn--primary" : ""}" ${linkAttrs(a)}>${esc(a.label)}</a>`)
+      .map((a, i) => `<a class="biz-sticky__btn${i === 0 ? " biz-sticky__btn--primary" : ""}" ${linkAttrs(a)}>${esc(a.key === "booking" ? "Agenda" : a.label)}</a>`)
       .join("")}</nav>`;
   }
 
@@ -317,6 +386,7 @@
     const sameAs = socialList(b).map((x) => x.href);
     const person = { "@type": "Person", name: b.name, url };
     if (b.professionalTitle) person.jobTitle = b.professionalTitle;
+    if ((b.languages || []).length) person.knowsLanguage = b.languages;
     if (b.profileImage) person.image = toAbsolute(b.profileImage);
     if (b.company) {
       person.worksFor = { "@type": "Organization", name: b.company };
@@ -350,10 +420,14 @@
       ${aboutHtml(b)}
       ${videoHtml(b)}
       ${servicesHtml(b)}
+      ${serviceGroupsHtml(b)}
       ${galleryHtml(b)}
+      ${availabilityHtml(b)}
+      ${testimonialsHtml(b)}
       ${locationHtml(b)}
       ${contactBlockHtml(b)}
       <p class="biz-note">Perfil empresarial. Verifica directamente con el profesional los servicios, condiciones y disponibilidad antes de tomar decisiones.</p>
+      ${b.disclaimer ? `<p class="biz-note">${esc(b.disclaimer)}</p>` : ""}
       <a class="biz-back" href="quien-puede-ayudarte.html">← Volver a Quién puede ayudarte</a>
     `;
     const bar = stickyBarHtml(b);
@@ -362,7 +436,7 @@
       document.body.classList.add("has-sticky-bar");
     }
     bindVideo(b);
-    window.PDM.analytics.setContext({ business: b.slug, category: b.category, city: b.city });
+    window.PDM.analytics.setContext({ business: b.slug, business_id: b.id, category: b.category, city: b.city });
     window.PDM.analytics.track("profile_view");
   }
 

@@ -83,6 +83,15 @@
   .biz-hero { grid-template-columns: 280px 1fr; gap: 40px; }
   .biz-hero__photo { width: 280px; }
 }
+/* Hero "wide": imagen horizontal de marca completa (5:4), sin recortar */
+.biz-hero--wide .biz-hero__photo { width: 100%; aspect-ratio: auto; object-fit: contain; }
+@media (min-width: 720px) {
+  .biz-hero--wide { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; }
+  .biz-hero--wide .biz-hero__photo { width: 100%; }
+}
+.biz-title-alt { font-size: 0.92rem; font-style: italic; color: var(--gris-600); margin: 0 0 12px; }
+.biz-brand-logo { display: block; width: auto; height: 46px; max-width: 100%; margin: 4px 0 12px; border-radius: var(--radius-s); }
+.biz-affiliation { font-size: 0.86rem; color: var(--gris-600); margin: 0 0 4px; }
 
 /* ---------- Secciones ---------- */
 .biz-section { margin: 44px 0; }
@@ -138,6 +147,28 @@
 .biz-service span { font-size: 0.9rem; color: var(--gris-600); }
 .biz-gallery { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .biz-gallery img { width: 100%; height: auto; border-radius: var(--radius-s); }
+
+/* ---------- Servicios agrupados ---------- */
+.biz-groups { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 14px; }
+.biz-group { padding: 18px 18px 14px; border: var(--border); border-top: 3px solid var(--verde); border-radius: var(--radius-s); }
+.biz-group__title { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; line-height: 1.25; margin: 0 0 10px; }
+.biz-group__list { list-style: none; margin: 0; padding: 0; }
+.biz-group__list li { position: relative; padding: 5px 0 5px 18px; font-size: 0.92rem; line-height: 1.4; color: var(--gris-800); border-bottom: 1px solid var(--gris-100); }
+.biz-group__list li:last-child { border-bottom: 0; }
+.biz-group__list li::before { content: ""; position: absolute; left: 2px; top: 12px; width: 7px; height: 7px; border-radius: 50%; background: var(--verde); }
+.biz-section .biz-services__note { margin-top: 16px; font-size: 0.9rem; color: var(--gris-600); }
+
+/* ---------- Biografía / cita ---------- */
+.biz-about .biz-long { margin: 0 0 12px; }
+.biz-quote { margin: 20px 0 0; padding: 4px 0 4px 18px; border-left: 4px solid var(--verde); }
+.biz-section .biz-quote p { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.4; color: var(--negro); margin: 0 0 6px; }
+.biz-quote cite { font-size: 0.86rem; font-style: normal; font-weight: 600; color: var(--gris-600); }
+
+/* ---------- Disponibilidad ---------- */
+.biz-facts { display: grid; gap: 12px; margin: 14px 0 22px; }
+.biz-facts dt { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gris-600); margin-bottom: 3px; }
+.biz-facts dd { margin: 0; font-size: 1rem; font-weight: 600; }
+@media (max-width: 520px) { .biz-btn--booking { width: 100%; } }
 
 /* ---------- Ubicación ---------- */
 .biz-address { font-style: normal; font-size: 1.02rem; line-height: 1.6; margin: 0 0 18px; }
@@ -250,4 +281,6 @@
 .biz-card__title { font-size: 0.92rem; font-weight: 600; margin: 0 0 2px; }
 .biz-card__company { font-size: 0.88rem; color: var(--gris-800); margin: 0 0 2px; }
 .biz-card__place { font-size: 0.84rem; color: var(--gris-600); margin: 0 0 12px; }
+.biz-card__place:has(+ .biz-card__langs) { margin-bottom: 2px; }
+.biz-card__langs { font-size: 0.8rem; font-weight: 600; color: var(--verde-oscuro); margin: 0 0 12px; }
 .biz-card__cta { min-height: 42px; padding: 0 16px; font-size: 0.8rem; }
