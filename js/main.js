@@ -177,7 +177,7 @@
   /* ---------- Video / Podcast ---------- */
   function buildVideos() {
     const track = document.getElementById("videoTrack");
-    VIDEOS.forEach((item) => {
+    VIDEOS.filter((item) => item.published).forEach((item) => {
       const mediaStyle = item.videoId ? ` style="background-image:url('${youtubeThumb(item.videoId)}')"` : "";
       const badge = item.demo === false ? "" : `<span class="demo-badge demo-badge--sm">Demo</span>`;
       const desc = item.desc ? `<p class="video-card__desc">${item.desc}</p>` : "";
