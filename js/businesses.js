@@ -270,8 +270,10 @@ const BUSINESSES = [
     facebook: "https://www.facebook.com/CarlosDCastilloSegurosyalgomas",
     linkedin: "https://www.linkedin.com/company/carlos-d-castillo-wealth-and-insurance-strategies/",
 
-    youtubeVideoId: "",
-    videoText: "",
+    /* Video PROVISIONAL: entrevista de Desafío 100 Empresas. Para cambiarlo
+       por el video específico del perfil, reemplazar solo este ID. */
+    youtubeVideoId: "xJaXI3r83sA",
+    videoText: "Entrevista realizada en Desafío 100 Empresas.",
 
     heroLayout: "wide",                                   /* imagen 5:4 con skyline de Calgary, sin recortar */
     profileImage: "assets/carlos-d-castillo.jpg",
