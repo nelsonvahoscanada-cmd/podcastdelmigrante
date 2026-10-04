@@ -142,8 +142,8 @@ const BUSINESSES = [
       { id: "espanol", label: "Atención en español", description: "", active: false },
     ],
 
-    phone: "",                /* PENDIENTE — vacío = botón "Llamar" oculto */
-    whatsapp: "",             /* PENDIENTE — vacío = botón "WhatsApp" oculto */
+    phone: "+1 (587) 894-8527",
+    whatsapp: "15878948527",
     email: "tomasvl1977@gmail.com",
     website: "https://www.chtoyota.com/",
     inventoryUrl: "https://www.chtoyota.com/",
