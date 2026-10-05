@@ -37,9 +37,10 @@
   DESTINOS (se usan los que existan; ninguno es obligatorio)
     1. window.dataLayer.push(...)       si ya existe (Google Tag Manager)
     2. document "pdm:analytics"         evento DOM, para cualquier script
-    3. navigator.sendBeacon(endpoint)   solo si se define
-                                        PDM_ANALYTICS.endpoint (URL de un
-                                        servicio SEPARADO del frontend)
+    3. navigator.sendBeacon(endpoint)   PDM_ANALYTICS.endpoint =
+                                        "/api/events": Cloudflare Worker
+                                        "podcastdelmigrante-analytics", que
+                                        valida y guarda en D1 (tabla events)
   Nunca poner claves ni secretos aquí: este archivo es público.
 
   REPORTE MENSUAL (cuando exista destino): visitas al perfil
@@ -55,7 +56,7 @@
 (function () {
   "use strict";
 
-  const PDM_ANALYTICS = (window.PDM_ANALYTICS = window.PDM_ANALYTICS || { endpoint: null });
+  const PDM_ANALYTICS = (window.PDM_ANALYTICS = window.PDM_ANALYTICS || { endpoint: "/api/events" });
   const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
   const STORE_KEY = "pdm_utm";
   const DEBUG = /[?&]pdm_debug=1\b/.test(window.location.search);
