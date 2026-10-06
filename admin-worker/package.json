@@ -1,0 +1,14 @@
+{
+  "name": "podcastdelmigrante-admin",
+  "private": true,
+  "type": "module",
+  "description": "Panel privado y reportes mensuales de Perfiles Empresariales (El Podcast del Migrante / eRadio Global Corp.)",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dev": "wrangler dev --local",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

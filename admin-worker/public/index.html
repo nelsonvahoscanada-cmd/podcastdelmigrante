@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel de Perfiles Empresariales</title>
+<link rel="icon" href="/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="panel">
+<header class="topbar">
+  <img src="/img/logo.png" alt="" width="44" height="44">
+  <div>
+    <p class="topbar__kicker">El Podcast del Migrante · eRadio Global Corp.</p>
+    <h1 class="topbar__title">Panel de Perfiles Empresariales</h1>
+  </div>
+  <span class="topbar__badge">Privado</span>
+</header>
+
+<main class="wrap">
+  <form class="filters" id="filters">
+    <label>Empresa
+      <select id="business" required><option value="">Cargando…</option></select>
+    </label>
+    <label>Mes (hora de Alberta)
+      <input type="month" id="month" required>
+    </label>
+    <button type="submit" class="btn btn--primary">Consultar</button>
+    <a class="btn btn--outline" id="reportLink" href="#" target="_blank" rel="noopener" hidden>Abrir reporte para el cliente →</a>
+  </form>
+
+  <p class="status" id="status" role="status"></p>
+
+  <section id="results" hidden>
+    <div class="summary">
+      <img id="sumPhoto" class="summary__photo" alt="" hidden>
+      <div>
+        <h2 id="sumName" class="summary__name"></h2>
+        <p id="sumMeta" class="summary__meta"></p>
+      </div>
+    </div>
+
+    <div class="tiles" id="tiles"></div>
+
+    <div class="grid2">
+      <section class="card"><h3>Interacciones por tipo</h3><div id="groups"></div></section>
+      <section class="card">
+        <h3>Origen del tráfico</h3>
+        <p class="card__hint">Sobre las visitas al perfil: utm_source si existe; si no, el sitio de origen.</p>
+        <div id="sources"></div>
+        <h3 class="mt">Dispositivos</h3>
+        <p class="card__hint">Sobre las visitas al perfil.</p>
+        <div id="devices"></div>
+      </section>
+    </div>
+
+    <section class="card">
+      <h3>Visitas al perfil por día</h3>
+      <div id="dailyViews"></div>
+      <details><summary>Ver tabla por día</summary><div id="dailyTable"></div></details>
+    </section>
+
+    <p class="footnote">Las cifras son visitas e interacciones registradas por la plataforma (clics en botones y reproducciones). No equivalen a ventas, clientes ni citas confirmadas.</p>
+  </section>
+</main>
+
+<script src="https://podcastdelmigrante.com/js/businesses.js"></script>
+<script src="/js/metrics.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Reporte de rendimiento</title>
+<link rel="icon" href="/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin.css">
+<link rel="stylesheet" href="/css/report.css">
+</head>
+<body class="report-page">
+<div class="toolbar no-print">
+  <a href="/" class="btn btn--outline">← Volver al panel</a>
+  <button type="button" class="btn btn--primary" id="printBtn">Descargar PDF</button>
+  <span class="toolbar__hint">En el diálogo de impresión elige «Guardar como PDF», tamaño Carta.</span>
+</div>
+
+<p class="status" id="status" role="status"></p>
+
+<article class="report" id="report" hidden>
+  <header class="r-head">
+    <img src="/img/logo.png" alt="El Podcast del Migrante" class="r-head__logo" width="84" height="84">
+    <div>
+      <p class="r-head__brand">EL PODCAST DEL MIGRANTE</p>
+      <p class="r-head__kicker">Perfil Empresarial Premium · Reporte de rendimiento</p>
+    </div>
+  </header>
+
+  <section class="r-client">
+    <img id="rPhoto" class="r-client__photo" alt="" hidden>
+    <div>
+      <h1 id="rName" class="r-client__name"></h1>
+      <p id="rTitle" class="r-client__title"></p>
+      <p class="r-client__period"><span id="rPeriod"></span></p>
+    </div>
+  </section>
+
+  <section class="r-tiles" id="rTiles"></section>
+
+  <section class="r-section">
+    <h2>Visitas al perfil por día</h2>
+    <div id="rDaily"></div>
+  </section>
+
+  <section class="r-section r-break-avoid">
+    <h2>Interacciones registradas</h2>
+    <div id="rGroups" class="r-groups"></div>
+  </section>
+
+  <section class="r-grid2 r-break-avoid">
+    <div class="r-section">
+      <h2>Origen del tráfico</h2>
+      <p class="r-hint">Sobre las visitas al perfil.</p>
+      <div id="rSources"></div>
+    </div>
+    <div class="r-section">
+      <h2>Dispositivos</h2>
+      <p class="r-hint">Sobre las visitas al perfil.</p>
+      <div id="rDevices"></div>
+    </div>
+  </section>
+
+  <section class="r-section r-notes r-break-avoid">
+    <h2>Cómo leer este reporte</h2>
+    <ul>
+      <li><strong>Visitas al perfil:</strong> veces que se abrió la página del perfil en El Podcast del Migrante.</li>
+      <li><strong>Contactos iniciados:</strong> clics en WhatsApp, Llamar, Email o Agendar consulta. Indican que la persona abrió ese canal, no que se haya concretado una conversación o una cita.</li>
+      <li><strong>Clics totales:</strong> suma de todas las interacciones con botones del perfil (contacto, sitio web, mapa, video y redes sociales).</li>
+      <li><strong>Período:</strong> mes calendario completo en hora de Alberta (America/Edmonton).</li>
+    </ul>
+    <p class="r-disclaimer">Las cifras representan visitas e interacciones registradas por la plataforma. No equivalen a ventas, clientes obtenidos ni citas confirmadas, y pueden incluir más de una interacción de la misma persona.</p>
+  </section>
+
+  <footer class="r-foot">
+    <span>El Podcast del Migrante · eRadio Global Corp. · podcastdelmigrante.com</span>
+    <span id="rGenerated"></span>
+  </footer>
+</article>
+
+<script src="https://podcastdelmigrante.com/js/businesses.js"></script>
+<script src="/js/metrics.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/report.js"></script>
+</body>
+</html>
