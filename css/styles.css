@@ -1324,6 +1324,12 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
   font-size: 0.78rem;
   color: var(--gris-400);
 }
+.footer-admin {
+  color: var(--gris-400);
+  white-space: nowrap;
+}
+.footer-admin::before { content: "·"; margin: 0 8px; }
+.footer-admin:hover { color: var(--verde); }
 .footer-social { display: flex; gap: 10px; }
 .footer-social a {
   width: 34px; height: 34px;
