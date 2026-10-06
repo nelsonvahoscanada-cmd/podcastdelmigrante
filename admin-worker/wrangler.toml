@@ -1,0 +1,40 @@
+# podcastdelmigrante-admin — panel privado de Perfiles Empresariales.
+# Worker NUEVO e independiente. NO reemplaza ni modifica
+# podcastdelmigrante-analytics (el que recibe /api/events).
+
+name = "podcastdelmigrante-admin"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Sin URLs alternativas: solo se entra por el dominio protegido con Access.
+workers_dev = false
+preview_urls = false
+
+routes = [
+  { pattern = "admin.podcastdelmigrante.com", custom_domain = true }
+]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+html_handling = "drop-trailing-slash"
+not_found_handling = "none"
+# Toda petición (incluidos HTML/JS/CSS del panel) pasa primero por el Worker,
+# que verifica la identidad antes de entregar cualquier archivo.
+run_worker_first = true
+
+# MISMA base D1 que usa podcastdelmigrante-analytics. Este Worker solo
+# ejecuta SELECT de agregados.
+[[d1_databases]]
+binding = "DB"
+database_name = "podcastdelmigrante-analytics"
+database_id = "PEGAR_AQUI_EL_DATABASE_ID"   # Cloudflare → D1 → podcastdelmigrante-analytics → Database ID
+
+[vars]
+REPORT_TIMEZONE = "America/Edmonton"
+# Cloudflare Zero Trust → Settings → Team domain (ej. https://eradio.cloudflareaccess.com)
+ACCESS_TEAM_DOMAIN = ""
+# Zero Trust → Access → Applications → (app del panel) → Application Audience (AUD) Tag
+ACCESS_AUD = ""
+# ADMIN_EMAILS se configura como SECRETO (no aquí):
+#   npx wrangler secret put ADMIN_EMAILS     → "correo1@dominio.com,correo2@dominio.com"

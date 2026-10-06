@@ -1,0 +1,4 @@
+# Copiar a .dev.vars SOLO en tu computador (nunca se sube al repositorio).
+# Permite usar el panel en http://localhost:8787 con `npm run dev` sin
+# Cloudflare Access. No tiene efecto en Cloudflare.
+ALLOW_LOCAL_DEV=1
