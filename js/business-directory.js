@@ -67,7 +67,7 @@
           ${b.company ? `<p class="biz-card__company">${esc(b.company)}</p>` : ""}
           ${place ? `<p class="biz-card__place">${esc(place)}</p>` : ""}
           ${langs.length ? `<p class="biz-card__langs">${langs.map(esc).join(" | ")}</p>` : ""}
-          <a class="biz-btn biz-btn--primary biz-card__cta" href="business-profile.html?slug=${encodeURIComponent(b.slug)}">Ver perfil →</a>
+          <a class="biz-btn biz-btn--primary biz-card__cta" href="perfil-${encodeURIComponent(b.slug)}.html">Ver perfil →</a>
         </div>
       </article>
     `;

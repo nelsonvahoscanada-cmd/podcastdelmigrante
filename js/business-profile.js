@@ -1,8 +1,8 @@
 /*
   business-profile.js — Plantilla ÚNICA de perfil empresarial
   ======================================================================
-  Arma business-profile.html?slug=... a partir de un registro de
-  js/businesses.js. Todos los perfiles (hoy Tomás Velázquez; mañana
+  Arma perfil-<slug>.html (y business-profile.html?slug=...) a partir
+  de un registro de js/businesses.js. Todos los perfiles (hoy Tomás Velázquez; mañana
   Carlos D. Castillo y los demás) usan esta misma plantilla.
   Los datos vacíos no se muestran: ni el texto, ni el botón, ni la
   sección. Los campos opcionales (agenda, servicios agrupados,
@@ -28,8 +28,33 @@
     return BUSINESSES.find((b) => b.slug === slug && b.published) || null;
   }
 
+  /* URL pública de cada perfil: una página estática por empresa
+     (perfil-<slug>.html, generada con scripts/build-profile-pages.mjs) con
+     sus propios metadatos Open Graph en el HTML. WhatsApp, Facebook e
+     iMessage no ejecutan JavaScript: solo así cada perfil se comparte con
+     su propio nombre, descripción y foto. */
+  function profilePath(b) {
+    return "perfil-" + b.slug + ".html";
+  }
+
   function profileUrl(b) {
-    return SITE_ORIGIN + "/business-profile.html?slug=" + encodeURIComponent(b.slug);
+    return SITE_ORIGIN + "/" + profilePath(b);
+  }
+
+  /* Enlaces antiguos (business-profile.html?slug=...) siguen funcionando:
+     la barra de direcciones pasa a la URL propia del perfil para que
+     "Compartir" en el navegador comparta la página correcta. Se conservan
+     los demás parámetros (UTM) y el ancla. */
+  function adoptProfileUrl(b) {
+    if (!/\/business-profile\.html$/.test(window.location.pathname) || !window.history.replaceState) return;
+    const params = new URLSearchParams(window.location.search);
+    params.delete("slug");
+    const query = params.toString();
+    try {
+      window.history.replaceState(null, "", profilePath(b) + (query ? "?" + query : "") + window.location.hash);
+    } catch (e) {
+      /* si el navegador no lo permite, el perfil se muestra igual */
+    }
   }
 
   function initials(name) {
@@ -378,6 +403,7 @@
     setMeta("ogDescription", "content", description);
     setMeta("ogUrl", "content", url);
     setMeta("ogImage", "content", absoluteImage(b));
+    setMeta("ogImageAlt", "content", b.name);
     setMeta("twitterTitle", "content", title);
     setMeta("twitterDescription", "content", description);
     setMeta("twitterImage", "content", absoluteImage(b));
@@ -453,9 +479,13 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     window.PDM.initSiteChrome();
-    const slug = getParam("slug");
+    /* Página estática del perfil: <html data-profile-slug="...">.
+       Plantilla genérica: business-profile.html?slug=... */
+    const slug = document.documentElement.getAttribute("data-profile-slug") || getParam("slug");
     const business = slug ? findBusiness(slug) : null;
-    if (business) renderProfile(business);
-    else renderNotFound();
+    if (business) {
+      adoptProfileUrl(business);
+      renderProfile(business);
+    } else renderNotFound();
   });
 })();
