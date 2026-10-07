@@ -363,6 +363,87 @@
     `;
   }
 
+  /* ---------- "Conecta con ...": QR del perfil y QR de contacto ----------
+     Solo en perfiles con `connect` (piloto: Tomás). Las imágenes y la vCard
+     son archivos estáticos generados por scripts/ a partir del registro;
+     aquí solo se muestran. Eventos: qr_profile_download,
+     qr_contact_download y vcard_download (descargas desde esta página).
+     Los ESCANEOS no se miden: el QR abre la URL directamente. */
+  function connectHtml(b) {
+    const c = b.connect;
+    if (!c || (!c.profileQr && !c.contactCard)) return "";
+    const who = b.shortName || b.name;
+    const cards = [];
+    if (c.profileQr) {
+      cards.push(`
+        <div class="biz-qr">
+          <p class="biz-qr__kicker">Visita mi perfil</p>
+          <figure class="biz-qr__figure">
+            <img class="biz-qr__code" src="assets/qr/perfil-${esc(b.slug)}.svg" width="220" height="220" loading="lazy" alt="Código QR que abre el perfil de ${esc(b.name)} en El Podcast del Migrante">
+            <figcaption class="biz-qr__caption">Escanea y conoce mis servicios</figcaption>
+          </figure>
+          <div class="biz-qr__actions">
+            <a class="biz-btn biz-btn--primary" href="assets/qr/perfil-${esc(b.slug)}.png" download="qr-perfil-${esc(b.slug)}.png" data-track="qr_profile_download" data-track-target="qr-profile">Descargar QR</a>
+            <button type="button" class="biz-btn" data-qr-share>Compartir</button>
+          </div>
+          <p class="biz-qr__status" data-qr-share-status role="status" aria-live="polite"></p>
+        </div>`);
+    }
+    if (c.contactCard) {
+      cards.push(`
+        <div class="biz-qr">
+          <p class="biz-qr__kicker">Guarda mi contacto</p>
+          <figure class="biz-qr__figure">
+            <img class="biz-qr__code" src="assets/qr/contacto-${esc(b.slug)}.svg" width="220" height="220" loading="lazy" alt="Código QR que abre la tarjeta de contacto de ${esc(b.name)}">
+            <figcaption class="biz-qr__caption">Escanea y guarda mi contacto</figcaption>
+          </figure>
+          <div class="biz-qr__actions">
+            <a class="biz-btn biz-btn--primary" href="assets/qr/contacto-${esc(b.slug)}.png" download="qr-contacto-${esc(b.slug)}.png" data-track="qr_contact_download" data-track-target="qr-contact">Descargar QR</a>
+            <a class="biz-btn" href="vcard/${esc(b.slug)}.vcf" type="text/vcard" data-track="vcard_download" data-track-target="vcard-connect">Guardar contacto</a>
+          </div>
+        </div>`);
+    }
+    return `
+      <section class="biz-section biz-connect">
+        <h2 class="biz-h2">Conecta con ${esc(who)}</h2>
+        <p>Escanea con la cámara de tu teléfono, o descarga el código para compartirlo o imprimirlo.</p>
+        <div class="biz-connect__grid">${cards.join("")}</div>
+      </section>
+    `;
+  }
+
+  /* "Compartir" del QR del perfil: comparte la imagen del QR (si el
+     teléfono lo permite) o, si no, el enlace oficial; como último recurso
+     copia el enlace. */
+  function bindConnect(b) {
+    const btn = document.querySelector("[data-qr-share]");
+    if (!btn) return;
+    const status = document.querySelector("[data-qr-share-status]");
+    const url = profileUrl(b);
+    const title = b.name + " | El Podcast del Migrante";
+    const text = "Escanea y conoce los servicios de " + b.name;
+    btn.addEventListener("click", async () => {
+      if (status) status.textContent = "";
+      try {
+        if (navigator.share) {
+          let data = { title, text, url };
+          if (navigator.canShare && window.File) {
+            const blob = await fetch("assets/qr/perfil-" + b.slug + ".png").then((r) => (r.ok ? r.blob() : null));
+            const file = blob && new File([blob], "qr-perfil-" + b.slug + ".png", { type: "image/png" });
+            if (file && navigator.canShare({ files: [file] })) data = { title, text: text + ": " + url, files: [file] };
+          }
+          await navigator.share(data);
+        } else {
+          await navigator.clipboard.writeText(url);
+          if (status) status.textContent = "Enlace copiado: " + url;
+        }
+      } catch (e) {
+        if (e && e.name === "AbortError") return; /* la persona cerró el menú de compartir */
+        if (status) status.textContent = "Comparte este enlace: " + url;
+      }
+    });
+  }
+
   /* Barra inferior móvil: Agenda | WhatsApp | Llamar | Ver (solo los disponibles) */
   function stickyBarHtml(b) {
     const keep = ["booking", "whatsapp", "phone", "inventory"];
@@ -451,6 +532,7 @@
       ${availabilityHtml(b)}
       ${testimonialsHtml(b)}
       ${locationHtml(b)}
+      ${connectHtml(b)}
       ${contactBlockHtml(b)}
       <p class="biz-note">Perfil empresarial. Verifica directamente con el profesional los servicios, condiciones y disponibilidad antes de tomar decisiones.</p>
       ${b.disclaimer ? `<p class="biz-note">${esc(b.disclaimer)}</p>` : ""}
@@ -462,6 +544,7 @@
       document.body.classList.add("has-sticky-bar");
     }
     bindVideo(b);
+    bindConnect(b);
     window.PDM.analytics.setContext({ business: b.slug, business_id: b.id, category: b.category, city: b.city });
     window.PDM.analytics.track("profile_view");
   }

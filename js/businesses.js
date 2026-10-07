@@ -83,6 +83,23 @@
     mismo nombre, o apuntar estos campos a un archivo nuevo. No se toca
     ninguna plantilla.
     seo                 { title, description }
+    connect             [OPCIONAL] sección "Conecta con ..." con dos QR
+                        (piloto: solo Tomás). Sin este campo la sección
+                        no existe.
+                          profileQr: true   QR "Visita mi perfil" →
+                                            perfil-<slug>.html
+                          contactCard: { givenName, familyName }
+                                            QR "Guarda mi contacto" →
+                                            vcard/<slug>.vcf, con nombre,
+                                            cargo, empresa, phone, email,
+                                            website y dirección de ESTE
+                                            registro (nunca otros datos)
+                        Archivos (no se editan a mano):
+                          node scripts/build-profile-pages.mjs
+                              → vcard/<slug>.vcf
+                          python3 scripts/build-qr-images.py
+                              → assets/qr/perfil-<slug>.svg/.png y
+                                assets/qr/contacto-<slug>.svg/.png
 
   CÓMO AGREGAR EL SIGUIENTE NEGOCIO (ej. Carlos D. Castillo)
     1. Copiar el objeto de Tomás al final de BUSINESSES.
@@ -172,6 +189,12 @@ const BUSINESSES = [
     coverImage: "",
     gallery: [],
     hours: [],                /* PENDIENTE — ej. [{ day: "Lunes a viernes", time: "9:00 – 18:00" }] */
+
+    /* Piloto: sección "Conecta con Tomás" (QR del perfil + QR de contacto) */
+    connect: {
+      profileQr: true,
+      contactCard: { givenName: "Tomás", familyName: "Velázquez" },
+    },
 
     seo: {
       title: "Tomás Velázquez | Vehículos en Calgary | El Podcast del Migrante",
