@@ -153,15 +153,24 @@
   <section class="section wrap help-section" id="quien-puede-ayudarte">
     <div class="biz-showcase">
       <div class="biz-showcase__text">
-        <span class="biz-showcase__kicker">Directorio empresarial</span>
-        <h2 class="biz-showcase__title">Conectamos personas con empresas en Canadá</h2>
+        <p class="biz-showcase__kicker">Directorio empresarial</p>
+        <h2 class="biz-showcase__title">Conectamos personas con <span class="biz-showcase__accent">empresas</span> en Canadá</h2>
         <p class="biz-showcase__copy">Descubre negocios, profesionales, productos y servicios en un solo lugar. Encuentra lo que necesitas y conecta directamente con quienes pueden ayudarte.</p>
         <div class="biz-showcase__actions">
-          <a class="btn biz-showcase__btn biz-showcase__btn--primary" href="quien-puede-ayudarte.html">Explorar directorio empresarial</a>
-          <a class="btn biz-showcase__btn" href="registra-tu-empresa.html">Quiero registrar mi empresa</a>
+          <a class="biz-showcase__btn" href="quien-puede-ayudarte.html">Explorar empresas</a>
+          <a class="biz-showcase__link" href="registra-tu-empresa.html">Registrar mi empresa <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <img class="biz-showcase__art" src="assets/directorio-vitrina.svg" width="560" height="440" loading="lazy" alt="">
+      <figure class="biz-showcase__visual" aria-hidden="true">
+        <svg viewBox="0 0 360 260" focusable="false">
+          <circle cx="130" cy="130" r="110" class="biz-showcase__ring"/>
+          <circle cx="230" cy="130" r="110" class="biz-showcase__ring"/>
+          <path d="M180 32.02A110 110 0 0 1 180 227.98A110 110 0 0 1 180 32.02Z" class="biz-showcase__lens"/>
+          <text x="72" y="134" class="biz-showcase__label" text-anchor="middle">Personas</text>
+          <text x="288" y="134" class="biz-showcase__label" text-anchor="middle">Empresas</text>
+        </svg>
+        <figcaption>Contacto directo, sin intermediarios</figcaption>
+      </figure>
     </div>
   </section>
 
