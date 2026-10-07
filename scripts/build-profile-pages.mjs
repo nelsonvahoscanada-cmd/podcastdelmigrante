@@ -155,14 +155,16 @@ function buildVcard(b) {
     "BEGIN:VCARD",
     "VERSION:3.0",
     VCARD_MARK,
-    `N:${vEsc(card.familyName)};${vEsc(card.givenName)};;;`,
+    `N:${vEsc(card.familyName)};${vEsc(card.givenName)};${vEsc(card.middleName || "")};;`,
     `FN:${vEsc(b.name)}`,
     b.company && `ORG:${vEsc(b.company)}`,
     b.professionalTitle && `TITLE:${vEsc(b.professionalTitle)}`,
     tel && `TEL;TYPE=WORK,VOICE:${tel}`,
     b.email && `EMAIL;TYPE=INTERNET,WORK:${b.email}`,
     b.website && `URL:${b.website}`,
-    b.address && `ADR;TYPE=WORK:;;${[b.address, b.city, b.province, b.postalCode, b.country].map((v) => vEsc(v || "")).join(";")}`,
+    /* Sin dirección pública (ej. atención con cita) solo van ciudad,
+       provincia y país, si están en el registro */
+    (b.address || b.city) && `ADR;TYPE=WORK:;;${[b.address, b.city, b.province, b.postalCode, b.country].map((v) => vEsc(v || "")).join(";")}`,
     "END:VCARD",
   ].filter(Boolean);
   return lines.map(vFold).join("\r\n") + "\r\n";

@@ -88,12 +88,15 @@
                         no existe.
                           profileQr: true   QR "Visita mi perfil" →
                                             perfil-<slug>.html
-                          contactCard: { givenName, familyName }
+                          contactCard: { givenName, familyName,
+                                         middleName? }
                                             QR "Guarda mi contacto" →
                                             vcard/<slug>.vcf, con nombre,
                                             cargo, empresa, phone, email,
                                             website y dirección de ESTE
-                                            registro (nunca otros datos)
+                                            registro (nunca otros datos;
+                                            sin address solo van ciudad,
+                                            provincia y país)
                         Archivos (no se editan a mano):
                           node scripts/build-profile-pages.mjs
                               → vcard/<slug>.vcf
@@ -313,6 +316,12 @@ const BUSINESSES = [
     coverImage: "",
     gallery: [],
     hours: [],
+
+    /* Sección "Conecta con Carlos" (QR del perfil + QR de contacto) */
+    connect: {
+      profileQr: true,
+      contactCard: { givenName: "Carlos", middleName: "D.", familyName: "Castillo" },
+    },
 
     disclaimer: "La experiencia, la afiliación y las provincias de servicio indicadas en este perfil fueron suministradas por el profesional. La información es general y no constituye asesoría financiera, tributaria ni legal; ninguna estrategia garantiza rendimiento, ahorro fiscal, aprobación ni un resultado financiero determinado.",
 
