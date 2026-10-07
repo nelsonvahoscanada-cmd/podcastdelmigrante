@@ -4,8 +4,8 @@
   UNA plantilla (business-profile.html + js/business-profile.js) y UN
   directorio (quien-puede-ayudarte.html + js/business-directory.js)
   leen este archivo. Agregar el siguiente negocio/profesional es agregar
-  un objeto a BUSINESSES — no se crea ningún HTML nuevo (ver el final de
-  este comentario).
+  un objeto a BUSINESSES y ejecutar el generador de su página para
+  compartir (ver el final de este comentario).
 
   REGLA DE ORO (la misma del resto del sitio): un campo vacío ("" / []/
   null) NO se muestra, y su botón o sección tampoco. Nunca se rellenan
@@ -18,7 +18,8 @@
   datos privados de clientes.
 
   CAMPOS
-    id, slug            identificadores (slug = business-profile.html?slug=...)
+    id, slug            identificadores (slug = perfil-<slug>.html; solo
+                        minúsculas, números y guiones)
     published           true = aparece en el directorio y su perfil abre
     featured            true = se ordena primero en el directorio
     foundingProfile     marca interna de perfil piloto/fundador (no se
@@ -88,8 +89,15 @@
     2. Cambiar id, slug, nombre, categoría (usar un id existente de
        BUSINESS_CATEGORIES), ciudad/provincia y contactos reales.
     3. Dejar vacío ("" o []) todo lo no confirmado.
+    4. Ejecutar  node scripts/build-profile-pages.mjs  y subir el
+       perfil-su-slug.html que crea. Esa es la URL para compartir: lleva
+       en el HTML el nombre, la descripción (seo) y la foto (ogImage) del
+       profesional, que es lo que leen WhatsApp, Facebook e iMessage.
+       (Si se olvida, el chequeo de GitHub "Perfiles: vistas previas"
+       falla.) Repetirlo también al cambiar seo, ogImage o el slug.
     Listo: aparece solo en el directorio y su perfil abre en
-    business-profile.html?slug=su-slug.
+    perfil-su-slug.html (business-profile.html?slug=su-slug sigue
+    funcionando y lleva a la misma página).
 ========================================================================= */
 
 const BUSINESS_CATEGORIES = [
