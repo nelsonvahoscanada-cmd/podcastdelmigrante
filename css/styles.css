@@ -1369,71 +1369,146 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
 
 /* =========================================================
    HOME — Vitrina del Directorio Empresarial
-   (reemplaza al antiguo módulo «¿Necesitas ayuda en Canadá?»)
+   Composición editorial: titular protagonista a la izquierda y un
+   recurso gráfico sutil (dos círculos que se cruzan: personas y
+   empresas) a la derecha, sobre una retícula muy tenue.
 ========================================================= */
 .biz-showcase {
   position: relative;
   display: grid;
-  gap: 8px;
+  grid-template-columns: 1fr;
   align-items: center;
-  padding: 32px 22px 0;
+  padding: 36px 24px 34px;
   background: var(--negro);
   color: var(--blanco);
   border-radius: var(--radius-s);
-  border-bottom: 4px solid var(--verde);
   overflow: hidden;
+  isolation: isolate;
+}
+/* Retícula fina, desvanecida hacia la izquierda */
+.biz-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: linear-gradient(105deg, transparent 0%, transparent 35%, #000 85%);
+  mask-image: linear-gradient(105deg, transparent 0%, transparent 35%, #000 85%);
+}
+/* Filo verde inferior, como las portadillas de sección del magazine */
+.biz-showcase::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--verde) 0%, var(--verde) 38%, transparent 38%);
 }
 .biz-showcase__kicker {
-  display: inline-block;
-  padding: 5px 11px;
-  margin-bottom: 14px;
-  background: var(--verde);
-  color: var(--negro);
-  border-radius: var(--radius-s);
-  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
+  color: var(--verde);
 }
+.biz-showcase__kicker::before { content: ""; width: 28px; height: 2px; background: var(--verde); }
 .biz-showcase__title {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 4.6vw, 2.7rem);
-  line-height: 1.08;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  margin: 0 0 14px;
-  max-width: 18ch;
+  font-weight: 600;
+  font-size: clamp(2rem, 1.35rem + 2.6vw, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  max-width: 16ch;
+  text-wrap: balance;
 }
-.biz-showcase__copy { font-size: 1.02rem; color: var(--gris-200); max-width: 52ch; margin: 0 0 24px; }
-.biz-showcase__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.biz-showcase__accent { color: var(--verde); }
+.biz-showcase__copy {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--gris-200);
+  max-width: 46ch;
+  margin: 0 0 28px;
+}
+.biz-showcase__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
 .biz-showcase__btn {
-  min-height: 50px;
-  padding: 10px 22px;
-  white-space: normal;   /* .btn es nowrap: en 390 px el texto en mayúsculas debe poder partirse */
-  line-height: 1.25;
-  text-align: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 50px;
+  padding: 0 28px;
+  background: var(--verde);
+  color: var(--negro);
+  border-radius: var(--radius-s);
+  font-size: 0.86rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  background: transparent;
+  letter-spacing: 0.06em;
+  transition: background-color 0.2s ease;
+}
+.biz-showcase__btn:hover, .biz-showcase__btn:focus-visible { background: #82b204; color: var(--negro); }
+.biz-showcase__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: var(--blanco);
-  border: 2px solid var(--blanco);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease, color 0.2s ease;
 }
-.biz-showcase__btn:hover { background: var(--blanco); color: var(--negro); }
-.biz-showcase__btn--primary { background: var(--verde); border-color: var(--verde); color: var(--negro); }
-.biz-showcase__btn--primary:hover { background: #82b204; border-color: #82b204; color: var(--negro); }
-.biz-showcase__art { display: block; width: 100%; max-width: 440px; height: auto; margin: 6px auto 0; }
-@media (max-width: 520px) {
-  .biz-showcase__btn { flex: 1 1 100%; }
+.biz-showcase__link:hover, .biz-showcase__link:focus-visible { color: var(--verde); text-decoration-color: var(--verde); }
+.biz-showcase__btn:focus-visible, .biz-showcase__link:focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; }
+
+/* Recurso gráfico: solo en pantallas medianas y grandes */
+.biz-showcase__visual { display: none; margin: 0; }
+.biz-showcase__visual svg { display: block; width: 100%; height: auto; overflow: visible; }
+.biz-showcase__ring { fill: none; stroke: rgba(255, 255, 255, 0.42); stroke-width: 1.25; }
+.biz-showcase__lens { fill: var(--verde); }
+.biz-showcase__label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  fill: var(--gris-200);
 }
-@media (min-width: 860px) {
-  .biz-showcase { grid-template-columns: 1.1fr 1fr; gap: 28px; padding: 44px 0 0 44px; }
-  .biz-showcase__text { padding-bottom: 44px; }
-  .biz-showcase__art { max-width: none; margin: 0; align-self: end; }
+.biz-showcase__visual figcaption {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gris-400);
+}
+
+@media (max-width: 480px) {
+  .biz-showcase__actions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .biz-showcase__link { justify-content: center; }
+}
+@media (min-width: 900px) {
+  .biz-showcase {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: 48px;
+    padding: 60px 56px 58px;
+  }
+  .biz-showcase__visual { display: block; width: 100%; max-width: 440px; justify-self: center; }
+}
+@media (min-width: 1100px) {
+  .biz-showcase { padding: 68px 72px 66px; gap: 72px; }
 }
 
 /* .section { padding: 44px 0 } anula el margen lateral de .wrap: este módulo

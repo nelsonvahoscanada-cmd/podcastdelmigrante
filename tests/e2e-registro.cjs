@@ -61,12 +61,12 @@ const needsActivation = (route) => route.fulfill({ status: 200, contentType: "ap
     await pg.goto(BASE + "index.html");
     const v = await pg.evaluate(() => ({
       title: document.querySelector(".biz-showcase__title")?.textContent,
-      links: [...document.querySelectorAll(".biz-showcase__btn")].map((a) => a.getAttribute("href") + "|" + a.textContent.trim()),
+      links: [...document.querySelectorAll(".biz-showcase__actions a")].map((a) => a.getAttribute("href") + "|" + a.textContent.trim()),
       oldBanner: !!document.querySelector(".help-banner"),
       sw: document.documentElement.scrollWidth,
     }));
     assert.equal(v.title, "Conectamos personas con empresas en Canadá");
-    assert.deepEqual(v.links, ["quien-puede-ayudarte.html|Explorar directorio empresarial", "registra-tu-empresa.html|Quiero registrar mi empresa"]);
+    assert.deepEqual(v.links, ["quien-puede-ayudarte.html|Explorar empresas", "registra-tu-empresa.html|Registrar mi empresa →"]);
     assert.equal(v.oldBanner, false);
     assert.equal(v.sw, width, "sin scroll horizontal en la portada");
     console.log(`ok portada ${width}px`);
@@ -117,7 +117,7 @@ const needsActivation = (route) => route.fulfill({ status: 200, contentType: "ap
       assert.match(id, /^SOL-\d{8}-[A-Z0-9]{4}$/);
       assert.equal(await pg.isVisible("#intakeForm"), false);
       assert.deepEqual(errors, []);
-      if (width === 390) await pg.locator("#intakeDone").screenshot({ path: process.env.SHOTS ? process.env.SHOTS + "/done-390.png" : "/dev/null" });
+      if (width === 390 && process.env.SHOTS) await pg.locator("#intakeDone").screenshot({ path: process.env.SHOTS + "/done-390.png" });
       console.log(`ok envío ${width}px → ${id}`);
 
       /* reenvío inmediato bloqueado (misma pestaña) */
