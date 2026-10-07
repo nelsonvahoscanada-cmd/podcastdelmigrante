@@ -307,3 +307,99 @@
 .biz-qr__actions .biz-btn { flex: 1 1 150px; min-height: 44px; padding: 0 14px; font-size: 0.8rem; }
 .biz-section .biz-qr__status { margin: 10px 0 0; font-size: 0.85rem; color: var(--gris-600); overflow-wrap: anywhere; }
 .biz-qr__status:empty { display: none; }
+
+/* =========================================================
+   Registra tu empresa — página comercial + formulario
+   (registra-tu-empresa.html · js/business-intake.js)
+========================================================= */
+.intake-page { max-width: 960px; padding-top: 28px; padding-bottom: 64px; }
+.intake-page, .intake-page * { overflow-wrap: break-word; }
+.intake-hero { padding: 34px 24px; background: var(--negro); color: var(--blanco); border-radius: var(--radius-s); border-bottom: 4px solid var(--verde); }
+.intake-hero .biz-label { background: var(--verde); color: var(--negro); }
+.intake-hero__title { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.12; font-weight: 700; margin: 0 0 14px; max-width: 22ch; }
+.intake-hero__lead { font-size: 1.05rem; color: var(--gris-200); max-width: 60ch; margin: 0 0 22px; }
+.intake-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.intake-hero .biz-btn--primary { background: var(--verde); border-color: var(--verde); color: var(--negro); }
+.intake-hero .biz-btn--primary:hover { background: #82b204; border-color: #82b204; }
+.intake-hero .biz-btn:not(.biz-btn--primary) { background: transparent; color: var(--blanco); border-color: var(--blanco); }
+.intake-hero .biz-btn:not(.biz-btn--primary):hover { background: var(--blanco); color: var(--negro); }
+@media (max-width: 520px) { .intake-hero__actions .biz-btn { flex: 1 1 100%; } }
+
+.intake-section { margin: 48px 0; }
+.intake-benefits { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+.intake-benefit { padding: 20px 18px; border: var(--border); border-top: 3px solid var(--verde); border-radius: var(--radius-s); background: var(--blanco); }
+.intake-benefit svg { width: 30px; height: 30px; fill: none; stroke: var(--verde-oscuro); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 10px; }
+.intake-benefit h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin: 0 0 6px; }
+.intake-benefit p { font-size: 0.92rem; color: var(--gris-600); margin: 0; }
+
+.intake-steps { list-style: none; counter-reset: paso; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.intake-steps li { counter-increment: paso; position: relative; padding: 18px 16px 16px 58px; background: var(--gris-100); border-radius: var(--radius-s); }
+.intake-steps li::before { content: counter(paso); position: absolute; left: 16px; top: 16px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--negro); color: var(--verde); font-weight: 700; }
+.intake-steps strong { display: block; margin-bottom: 4px; }
+.intake-steps span { font-size: 0.92rem; color: var(--gris-600); }
+.intake-price { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--verde); background: var(--verde-suave); font-size: 0.98rem; }
+
+/* ---------- Formulario ---------- */
+.intake-intro { color: var(--gris-800); max-width: 66ch; margin: 0 0 22px; }
+.intake-form { display: flex; flex-direction: column; gap: 22px; }
+.intake-fieldset { margin: 0; padding: 22px 18px; border: var(--border); border-radius: var(--radius-s); background: var(--blanco); min-width: 0; }
+@media (min-width: 640px) { .intake-fieldset { padding: 26px 26px; } }
+.intake-fieldset legend { display: flex; align-items: center; gap: 10px; padding: 0 8px; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+.intake-step { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--verde); color: var(--negro); font-family: var(--font-ui); font-size: 0.95rem; font-weight: 700; }
+.intake-grid { display: grid; gap: 0 18px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .intake-grid { grid-template-columns: 1fr 1fr; } }
+.intake-field { display: flex; flex-direction: column; gap: 6px; margin: 0 0 16px; min-width: 0; }
+.intake-page [hidden] { display: none !important; }
+.intake-field > label, .intake-label { font-size: 0.92rem; font-weight: 600; color: var(--negro); margin: 0; }
+.intake-field input[type="text"], .intake-field input[type="email"], .intake-field input[type="url"], .intake-field input[type="tel"], .intake-field select, .intake-field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid var(--gris-400);
+  border-radius: var(--radius-s);
+  background: var(--blanco);
+  color: var(--negro);
+  font: inherit;
+  font-size: 16px;   /* 16 px evita el zoom automático de iPhone al enfocar */
+}
+.intake-field textarea { resize: vertical; min-height: 120px; }
+.intake-field input:focus, .intake-field select:focus, .intake-field textarea:focus { outline: 3px solid var(--verde-suave); border-color: var(--verde-oscuro); }
+.intake-field [aria-invalid="true"] { border-color: #b3261e; }
+.intake-error { margin: 2px 0 0; font-size: 0.86rem; font-weight: 600; color: #b3261e; }
+.intake-hint { margin: 0; font-size: 0.84rem; color: var(--gris-600); }
+.intake-hint--block { margin: 0 0 16px; font-size: 0.9rem; }
+.intake-req { color: #b3261e; font-weight: 700; }
+.intake-opt { font-weight: 400; color: var(--gris-600); }
+.intake-tag { display: inline-block; margin-left: 4px; padding: 1px 7px; border-radius: 10px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; vertical-align: middle; }
+.intake-tag--public { background: var(--verde-suave); color: var(--verde-oscuro); }
+.intake-tag--private { background: var(--gris-100); color: var(--gris-800); border: 1px solid var(--gris-200); }
+.intake-check { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; font-size: 0.95rem; line-height: 1.45; cursor: pointer; }
+.intake-check input { flex-shrink: 0; width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--verde-oscuro); }
+.intake-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.intake-check--chip { padding: 8px 12px; border: 1px solid var(--gris-200); border-radius: 20px; font-size: 0.88rem; }
+.intake-check--chip input { width: 18px; height: 18px; }
+.intake-private { margin-top: 8px; padding: 16px 16px 0; background: var(--gris-100); border-radius: var(--radius-s); }
+.intake-private .intake-label { margin-bottom: 12px; }
+.intake-consents { margin-top: 10px; padding-top: 14px; border-top: var(--border); }
+.intake-consents .intake-field { margin-bottom: 8px; }
+.intake-consents a { color: var(--verde-oscuro); text-decoration: underline; }
+.intake-honey { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.intake-submit { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.intake-submit__btn { min-width: 240px; }
+@media (max-width: 520px) { .intake-submit__btn { width: 100%; } }
+.intake-submit__btn:disabled { opacity: 0.6; cursor: progress; }
+.intake-status { margin: 16px 0 0; padding: 14px 16px; border-radius: var(--radius-s); font-size: 0.95rem; }
+.intake-status--error { background: #fdecea; color: #7a1c15; border-left: 4px solid #b3261e; }
+.intake-status a { text-decoration: underline; }
+.intake-done { padding: 28px 24px; background: var(--verde-suave); border-left: 4px solid var(--verde); border-radius: var(--radius-s); }
+.intake-done:focus { outline: none; }
+.intake-done p { margin: 0 0 10px; max-width: 62ch; }
+.intake-done .biz-btn { margin-top: 8px; }
+
+/* ---------- Invitación a registrarse (directorio) ---------- */
+.biz-join { display: flex; flex-direction: column; gap: 14px; margin-top: 36px; padding: 22px 20px; background: var(--negro); color: var(--blanco); border-radius: var(--radius-s); border-left: 4px solid var(--verde); }
+.biz-join__title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; margin: 0 0 4px; }
+.biz-join p { margin: 0; color: var(--gris-200); font-size: 0.95rem; }
+.biz-join .biz-btn { align-self: flex-start; background: var(--verde); border-color: var(--verde); color: var(--negro); }
+.biz-join .biz-btn:hover { background: #82b204; border-color: #82b204; }
+@media (min-width: 720px) { .biz-join { flex-direction: row; align-items: center; justify-content: space-between; } .biz-join .biz-btn { align-self: center; flex-shrink: 0; } }

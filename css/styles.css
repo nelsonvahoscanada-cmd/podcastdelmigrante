@@ -1368,31 +1368,49 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
 .column-feature__text { font-size: 0.96rem; color: var(--gris-600); max-width: 60ch; margin-bottom: 14px; }
 
 /* =========================================================
-   HOME — ¿Necesitas ayuda en Canadá? (módulo compacto)
+   HOME — Vitrina del Directorio Empresarial
+   (reemplaza al antiguo módulo «¿Necesitas ayuda en Canadá?»)
 ========================================================= */
-.help-banner {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding: 24px 22px;
-  background: var(--verde-suave);
-  border-left: 4px solid var(--verde);
+.biz-showcase {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  align-items: center;
+  padding: 32px 22px 0;
+  background: var(--negro);
+  color: var(--blanco);
   border-radius: var(--radius-s);
+  border-bottom: 4px solid var(--verde);
+  overflow: hidden;
 }
-.help-banner__title {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
+.biz-showcase__kicker {
+  display: inline-block;
+  padding: 5px 11px;
+  margin-bottom: 14px;
+  background: var(--verde);
+  color: var(--negro);
+  border-radius: var(--radius-s);
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin: 0 0 6px;
+  letter-spacing: 0.08em;
 }
-.help-banner__copy { font-size: 0.98rem; color: var(--gris-800); max-width: 58ch; }
-.help-banner__cta {
-  align-self: flex-start;
+.biz-showcase__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4.6vw, 2.7rem);
+  line-height: 1.08;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 14px;
+  max-width: 18ch;
+}
+.biz-showcase__copy { font-size: 1.02rem; color: var(--gris-200); max-width: 52ch; margin: 0 0 24px; }
+.biz-showcase__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.biz-showcase__btn {
   min-height: 50px;
-  padding: 10px 24px;
-  white-space: normal;   /* .btn es nowrap: en 390 px el texto en mayúsculas debe poder partirse en 2 líneas */
+  padding: 10px 22px;
+  white-space: normal;   /* .btn es nowrap: en 390 px el texto en mayúsculas debe poder partirse */
   line-height: 1.25;
   text-align: center;
   display: inline-flex;
@@ -1401,13 +1419,21 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  background: transparent;
+  color: var(--blanco);
+  border: 2px solid var(--blanco);
 }
-@media (min-width: 760px) {
-  .help-banner { flex-direction: row; align-items: center; justify-content: space-between; gap: 32px; }
-  .help-banner__cta { align-self: center; flex-shrink: 0; }
+.biz-showcase__btn:hover { background: var(--blanco); color: var(--negro); }
+.biz-showcase__btn--primary { background: var(--verde); border-color: var(--verde); color: var(--negro); }
+.biz-showcase__btn--primary:hover { background: #82b204; border-color: #82b204; color: var(--negro); }
+.biz-showcase__art { display: block; width: 100%; max-width: 440px; height: auto; margin: 6px auto 0; }
+@media (max-width: 520px) {
+  .biz-showcase__btn { flex: 1 1 100%; }
 }
-@media (max-width: 430px) {
-  .help-banner__cta { align-self: stretch; text-align: center; }
+@media (min-width: 860px) {
+  .biz-showcase { grid-template-columns: 1.1fr 1fr; gap: 28px; padding: 44px 0 0 44px; }
+  .biz-showcase__text { padding-bottom: 44px; }
+  .biz-showcase__art { max-width: none; margin: 0; align-self: end; }
 }
 
 /* .section { padding: 44px 0 } anula el margen lateral de .wrap: este módulo
