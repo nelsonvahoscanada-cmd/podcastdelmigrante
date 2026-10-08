@@ -1,0 +1,25 @@
+name: "Artículos: vistas previas"
+
+# Verifica que cada artículo publicado de js/articles.js tenga su página
+# articulo-<slug>.html y su imagen social 1200×630 al día (lo que leen
+# WhatsApp, Facebook, LinkedIn y X al compartir).
+# Si falla: python3 scripts/build-social-images.py &&
+#           node scripts/build-article-pages.mjs   y subir los cambios.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/build-article-pages.mjs --check

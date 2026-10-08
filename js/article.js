@@ -1,7 +1,8 @@
 /*
   article.js — Plantilla maestra de artículo (Fase 2)
   ======================================================================
-  Arma articulo.html?slug=... a partir de un objeto de js/articles.js.
+  Arma articulo-<slug>.html (y articulo.html?slug=...) a partir de un
+  objeto de js/articles.js.
   Ningún módulo opcional se dibuja si el dato correspondiente no existe
   — ver la regla de oro en articles.js.
 
@@ -12,11 +13,15 @@
   debe usarse como URL pública/canonical/Open Graph/compartir: GitHub
   Pages no puede reescribirla, así que compartir esa ruta rompe la
   página (CSS/JS/imágenes se resuelven mal porque el navegador calcula
-  las rutas relativas desde una carpeta que no existe). La URL pública
-  real y funcional de todo artículo es siempre
-  articulo.html?slug=... — es lo único que debe usarse en
-  canonical, Open Graph y los botones de compartir/copiar enlace.
-  Ver canonicalUrl() más abajo.
+  las rutas relativas desde una carpeta que no existe).
+
+  URL PÚBLICA DE CADA ARTÍCULO: articulo-<slug>.html, una página
+  estática generada por scripts/build-article-pages.mjs con su titular,
+  descripción y fotografía ya escritos en el HTML (WhatsApp, Facebook,
+  LinkedIn y X no ejecutan JavaScript). Es la que se usa en canonical,
+  Open Graph y los botones de compartir/copiar enlace. Los enlaces
+  antiguos articulo.html?slug=... siguen funcionando y la barra de
+  direcciones pasa a la URL pública. Ver canonicalUrl() más abajo.
 ========================================================================= */
 
 (function () {
@@ -43,12 +48,32 @@
     return ARTICLES.find((a) => a.slug === slug) || null;
   }
 
+  function articlePath(article) {
+    return "articulo-" + article.slug + ".html";
+  }
+
   function canonicalUrl(article) {
-    // URL pública REAL y funcional. article.seo.canonicalPath (si existe)
-    // es únicamente documentación de una ruta limpia prevista para el
-    // futuro (ver nota arriba) — NUNCA debe usarse aquí, porque esa ruta
-    // no existe como página real y GitHub Pages no puede reescribirla.
-    return SITE_ORIGIN + "/articulo.html?slug=" + encodeURIComponent(article.slug);
+    // URL pública REAL y funcional: la página estática del artículo
+    // (scripts/build-article-pages.mjs). article.seo.canonicalPath (si
+    // existe) es solo documentación de una ruta limpia futura (ver nota
+    // arriba) — NUNCA debe usarse aquí.
+    return SITE_ORIGIN + "/" + articlePath(article);
+  }
+
+  /* Enlaces antiguos (articulo.html?slug=...): la barra de direcciones
+     pasa a la URL pública del artículo, para que "Compartir" del
+     navegador o del teléfono comparta la página con su foto. Se
+     conservan los demás parámetros (UTM) y el ancla. */
+  function adoptArticleUrl(article) {
+    if (!/\/articulo\.html$/.test(window.location.pathname) || !window.history.replaceState) return;
+    const params = new URLSearchParams(window.location.search);
+    params.delete("slug");
+    const query = params.toString();
+    try {
+      window.history.replaceState(null, "", articlePath(article) + (query ? "?" + query : "") + window.location.hash);
+    } catch (e) {
+      /* si el navegador no lo permite, el artículo se muestra igual */
+    }
   }
 
   function heroImageUrl(article) {
@@ -554,11 +579,14 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     window.PDM.initSiteChrome();
-    const slug = getParam("slug");
+    /* Página estática del artículo: <html data-article-slug="...">.
+       Plantilla genérica: articulo.html?slug=... */
+    const slug = document.documentElement.getAttribute("data-article-slug") || getParam("slug");
     const article = slug ? findArticle(slug) : null;
     if (article && article.draft) {
       renderComingSoon(article);
     } else if (article) {
+      adoptArticleUrl(article);
       renderArticle(article);
     } else {
       renderNotFound();
