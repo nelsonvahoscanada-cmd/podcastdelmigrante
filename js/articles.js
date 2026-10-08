@@ -13,6 +13,14 @@
   el trabajo de Claude es traducir esa información a un objeto con
   esta forma y agregarlo a ARTICLES — nunca tocar diseño/plantilla.
 
+  PUBLICAR = agregar el objeto y ejecutar (genera la imagen social
+  1200 × 630 y la página articulo-<slug>.html con titular, descripción
+  y foto en el HTML, que es lo que leen WhatsApp, Facebook, LinkedIn y
+  X al compartir):
+    python3 scripts/build-social-images.py
+    node scripts/build-article-pages.mjs
+  El chequeo de GitHub «Artículos: vistas previas» falla si se olvida.
+
   REGLA DE ORO (no inventar): un campo opcional ausente o `null` hace
   que su módulo correspondiente desaparezca del artículo. Ningún campo
   opcional se rellena con contenido inventado para "verse completo".
@@ -24,7 +32,9 @@
   id                String  — identificador interno estable, formato
                               "ART-AAAA-NNN" (para futura edición
                               impresa / QR). Ej: "ART-2026-001".
-  slug              String  — usado en articulo.html?slug=...
+  slug              String  — URL pública: articulo-<slug>.html (solo
+                              minúsculas, números y guiones).
+                              articulo.html?slug=... sigue funcionando.
   category          String  — una de las categorías del sitio
                               (Migración, Empleo, Vivienda, Finanzas...)
   contentType       String  — uno de CONTENT_TYPES (abajo)
@@ -56,7 +66,12 @@
   location          Object | null   — [OPCIONAL] { country?, province?,
                               city? }. Si es null, no se muestra ubicación.
   heroImage         Object  — { background: "<css gradient o url()>",
-                              credit?: String [OPCIONAL] }
+                              credit?: String [OPCIONAL],
+                              socialFocus?: "50% 40%" [OPCIONAL] punto de
+                              interés para recortar la imagen social
+                              1200 × 630 (por defecto "50% 40%") }
+                              La foto de url(...) es la que se muestra al
+                              compartir; sin foto se usa el logotipo.
   bodyHtml          String  — cuerpo completo, HTML simple (párrafos,
                               subtítulos <h2>, <blockquote>, etc.)
   video             Object | null   — [OPCIONAL] { title, placeholder:
