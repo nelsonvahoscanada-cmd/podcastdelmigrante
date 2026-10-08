@@ -52,7 +52,7 @@ for (const a of ARTICLES) {
     const file = `articulo-${a.slug}.html`;
     assert.ok(existsSync(new URL(file, ROOT)), `falta ${file}`);
     const html = read(file);
-    const url = `${ORIGIN}/${file}`;
+    const url = `${ORIGIN}/articulo-${a.slug}`;   /* URL pública sin .html (sin redirecciones en Cloudflare Pages) */
 
     assert.match(html, new RegExp(`data-article-slug="${a.slug}"`));
     assert.equal(unescape(one(html, "property", "og:title")), plain(a.title), "og:title = titular exacto");
@@ -64,7 +64,11 @@ for (const a of ARTICLES) {
     assert.equal(one(html, "property", "og:type"), "article");
     assert.equal(one(html, "name", "twitter:card"), "summary_large_image");
     assert.equal(one(html, "property", "og:url"), url);
-    assert.match(html, new RegExp(`<link[^>]*rel="canonical"[^>]*href="${url.replace(/\./g, "\\.")}"`));
+    const canon = [...html.matchAll(/<link[^>]*rel="canonical"[^>]*>/g)];
+    assert.equal(canon.length, 1, "un solo canonical");
+    assert.match(canon[0][0], new RegExp(`href="${url.replace(/\./g, "\\.")}"`));
+    for (const k of ["og:title", "og:description", "og:image", "og:url", "og:type"]) assert.equal(meta(html, "property", k).length, 1, `${k} no duplicado`);
+    for (const k of ["twitter:card", "twitter:title", "twitter:description", "twitter:image"]) assert.equal(meta(html, "name", k).length, 1, `${k} no duplicado`);
 
     const img = one(html, "property", "og:image");
     assert.equal(one(html, "name", "twitter:image"), img);
