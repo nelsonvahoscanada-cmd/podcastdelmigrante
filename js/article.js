@@ -18,10 +18,12 @@
   URL PÚBLICA DE CADA ARTÍCULO: articulo-<slug>.html, una página
   estática generada por scripts/build-article-pages.mjs con su titular,
   descripción y fotografía ya escritos en el HTML (WhatsApp, Facebook,
-  LinkedIn y X no ejecutan JavaScript). Es la que se usa en canonical,
-  Open Graph y los botones de compartir/copiar enlace. Los enlaces
-  antiguos articulo.html?slug=... siguen funcionando y la barra de
-  direcciones pasa a la URL pública. Ver canonicalUrl() más abajo.
+  LinkedIn y X no ejecutan JavaScript). Su URL pública es
+  https://podcastdelmigrante.com/articulo-<slug> (sin .html) y es la que
+  se usa en canonical, Open Graph y los botones de compartir/copiar.
+  Los enlaces antiguos /articulo?slug=... los redirige Cloudflare a esa
+  URL (functions/_middleware.js) y, si no, la barra de direcciones pasa
+  a la URL pública. Ver canonicalUrl() más abajo.
 ========================================================================= */
 
 (function () {
@@ -48,8 +50,10 @@
     return ARTICLES.find((a) => a.slug === slug) || null;
   }
 
+  /* URL pública SIN .html: Cloudflare Pages redirige x.html → /x y
+     GitHub Pages también sirve /x; así no hay redirecciones al compartir. */
   function articlePath(article) {
-    return "articulo-" + article.slug + ".html";
+    return "articulo-" + article.slug;
   }
 
   function canonicalUrl(article) {
@@ -65,7 +69,8 @@
      navegador o del teléfono comparta la página con su foto. Se
      conservan los demás parámetros (UTM) y el ancla. */
   function adoptArticleUrl(article) {
-    if (!/\/articulo\.html$/.test(window.location.pathname) || !window.history.replaceState) return;
+    /* /articulo.html (GitHub Pages) o /articulo (Cloudflare Pages) */
+    if (!/\/articulo(\.html)?\/?$/.test(window.location.pathname) || !window.history.replaceState) return;
     const params = new URLSearchParams(window.location.search);
     params.delete("slug");
     const query = params.toString();

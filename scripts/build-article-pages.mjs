@@ -9,7 +9,8 @@
   titular de cada noticia.
 
   Este script lee js/articles.js y, para cada artículo publicado (no
-  draft), escribe articulo-<slug>.html: una copia exacta de
+  draft), escribe articulo-<slug>.html (URL pública:
+  https://podcastdelmigrante.com/articulo-<slug>, sin .html): una copia exacta de
   articulo.html con <title>, descripción, URL canónica, og:*, article:*
   y twitter:* de ESE artículo ya escritos en el HTML. El cuerpo lo sigue
   armando js/article.js como siempre (mismo diseño).
@@ -28,7 +29,7 @@
   El chequeo de GitHub «Artículos: vistas previas» falla si se olvida.
 ========================================================================= */
 
-import { readFileSync, writeFileSync, readdirSync, unlinkSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, unlinkSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
@@ -41,8 +42,14 @@ const GENERATED_MARK = "<!-- Generado por scripts/build-article-pages.mjs a part
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const CHECK = process.argv.includes("--check");
 
+/* Archivo generado y URL pública. La URL va SIN .html: Cloudflare Pages
+   redirige x.html → /x (308) y GitHub Pages también sirve /x, así que
+   canonical, og:url y compartir no pasan por ninguna redirección. */
 export function articlePath(slug) {
   return `articulo-${slug}.html`;
+}
+export function articleUrl(slug) {
+  return `${SITE_ORIGIN}/articulo-${slug}`;
 }
 
 function loadArticles() {
@@ -102,7 +109,7 @@ function seoFor(a, problems) {
     docTitle: plain(seo.fullTitle || (seo.title || a.title) + " — " + SITE_NAME),
     title: plain(a.title),
     description: plain(seo.description || a.excerpt),
-    url: `${SITE_ORIGIN}/${articlePath(a.slug)}`,
+    url: articleUrl(a.slug),
     image: `${SITE_ORIGIN}/${img.src}`,
     imageSize: imageSize(img.src),
     imageAlt: img.alt,
@@ -158,6 +165,16 @@ for (const a of loadArticles()) {
   expected.set(articlePath(a.slug), buildPage(template, a, problems));
 }
 
+/* Lista de artículos publicados para la función de Cloudflare Pages
+   (functions/_middleware.js redirige /articulo?slug=X → /articulo-X solo
+   si X está aquí). */
+const MANIFEST = "functions/_lib/published-articles.js";
+expected.set(
+  MANIFEST,
+  "/* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */\n" +
+    "export const PUBLISHED_ARTICLES = new Set(" + JSON.stringify([...expected.keys()].map((f) => f.slice("articulo-".length, -".html".length)), null, 2) + ");\n"
+);
+
 const stale = readdirSync(ROOT).filter(
   (f) => /^articulo-.+\.html$/.test(f) && !expected.has(f) && readFileSync(join(ROOT, f), "utf8").includes(GENERATED_MARK)
 );
@@ -167,7 +184,7 @@ for (const [file, html] of expected) {
   const current = existsSync(path) ? readFileSync(path, "utf8") : null;
   if (current === html) continue;
   if (CHECK) problems.push(current === null ? `falta ${file}` : `${file} está desactualizado`);
-  else { writeFileSync(path, html); console.log(`escrito  ${file}`); }
+  else { mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, html); console.log(`escrito  ${file}`); }
 }
 for (const file of stale) {
   if (CHECK) problems.push(`${file} ya no corresponde a un artículo publicado`);
@@ -181,4 +198,4 @@ if (problems.length) {
     process.exit(1);
   }
 }
-console.log(`${expected.size} artículo(s) ${CHECK ? "verificados" : "al día"}.`);
+console.log(`${expected.size - 1} artículo(s) ${CHECK ? "verificados" : "al día"}.`);
