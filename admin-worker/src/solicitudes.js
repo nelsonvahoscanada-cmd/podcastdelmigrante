@@ -113,8 +113,9 @@ function splitName(full) {
   return { givenName: parts[0], familyName: parts.slice(1).join(" ") };
 }
 
-/* Ficha lista para pegar en js/businesses.js (published:false hasta el PR
-   final). El correo privado del solicitante NUNCA se incluye. */
+/* Ficha de texto para pegar en js/businesses.js dentro de un Pull Request:
+   el perfil solo aparece en el sitio cuando ese PR se fusiona (el panel no
+   escribe en el sitio ni en GitHub). El correo privado NUNCA se incluye. */
 export function publicationPackage(row) {
   const isPerson = row.image_kind === "foto" && row.representative && row.representative.toLowerCase() !== row.name.toLowerCase();
   const name = isPerson ? row.representative : row.name;
