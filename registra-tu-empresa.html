@@ -29,12 +29,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/styles.css?v=20261008">
+<link rel="stylesheet" href="css/styles.css?v=20261009">
 <!-- Estilos propios de esta página (archivo separado y versionado: evita que
      el navegador o Cloudflare sirvan una copia vieja sin estos estilos) -->
-<link rel="stylesheet" href="css/registro.css?v=20261008">
+<link rel="stylesheet" href="css/registro.css?v=20261009">
 
-<!-- Formulario de solicitud: js/business-intake.js (envío por FormSubmit) -->
+<!-- Formulario de solicitud: js/directorio/solicitud-form.js → POST /registro/enviar (Cloudflare Pages Function) -->
 </head>
 <body>
 <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -164,8 +164,8 @@
     <section class="reg-section reg-apply" id="solicitud" aria-labelledby="solicitudTitle">
       <div class="reg-section__head">
         <p class="reg-kicker reg-kicker--dark">Inscripción</p>
-        <h2 class="reg-h2" id="solicitudTitle">Solicitud de Perfil Empresarial</h2>
-        <p class="reg-apply__intro">Completar el formulario toma unos 10 minutos.</p>
+        <h2 class="reg-h2" id="solicitudTitle">Registra tu empresa</h2>
+        <p class="reg-apply__intro">Toma de 2 a 3 minutos. Revisaremos tu solicitud y te contactaremos: nada se publica sin tu aprobación.</p>
         <ul class="reg-legend" aria-label="Cómo leer el formulario">
           <li><span class="intake-req">*</span> Obligatorio</li>
           <li><span class="intake-tag intake-tag--public">Público</span> Aparecerá en tu perfil cuando lo apruebes</li>
@@ -173,267 +173,151 @@
         </ul>
       </div>
 
+      <p class="intake-status intake-status--notice" id="intakeUnavailable" role="status" hidden>El registro en línea no está disponible en este momento. Inténtalo más tarde o escríbenos a <a href="mailto:podcastdelmigrante@gmail.com">podcastdelmigrante@gmail.com</a>.</p>
+
       <form class="intake-form" id="intakeForm" novalidate>
         <!-- Trampa anti-spam: invisible para las personas -->
         <div class="intake-honey" aria-hidden="true">
-          <label>No llenar este campo <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+          <label>No llenar este campo <input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
         </div>
 
         <!-- 1 -->
         <fieldset class="intake-fieldset">
-          <legend class="intake-legend"><span class="intake-step">01</span> Datos empresariales</legend>
-          <p class="intake-fs-desc">Cómo se llama tu negocio y dónde atiendes.</p>
+          <legend class="intake-legend"><span class="intake-step">01</span> Información básica</legend>
+          <p class="intake-fs-desc">Cómo te encontrarán los clientes en el directorio.</p>
           <div class="intake-grid">
             <div class="intake-field" data-field>
-              <label for="fCompany">Nombre de la empresa o negocio <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fCompany" name="company" type="text" maxlength="200" autocomplete="organization" required>
+              <label for="fName">Nombre de la empresa o del profesional <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fName" name="name" type="text" maxlength="120" autocomplete="organization" required>
             </div>
             <div class="intake-field" data-field>
-              <label for="fBrand">Marca comercial <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fBrand" name="brandName" type="text" maxlength="200">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fCategoryIntake">Categoría <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <select id="fCategoryIntake" name="category" required><option value="">Elige una categoría</option></select>
+              <label for="fCategory">Categoría comercial <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <select id="fCategory" name="category" required><option value="">Elige una categoría</option></select>
             </div>
             <div class="intake-field" data-field data-show-if="category-otra" hidden>
-              <label for="fCategoryOther">¿A qué se dedica tu empresa? <span class="intake-req">*</span></label>
-              <input id="fCategoryOther" name="categoryOther" type="text" maxlength="200">
+              <label for="fCategoryOther">¿A qué se dedica tu negocio? <span class="intake-req">*</span></label>
+              <input id="fCategoryOther" name="categoryOther" type="text" maxlength="80">
             </div>
             <div class="intake-field" data-field>
               <label for="fCity">Ciudad <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fCity" name="city" type="text" maxlength="200" autocomplete="address-level2" required>
+              <input id="fCity" name="city" type="text" maxlength="120" autocomplete="address-level2" required>
             </div>
             <div class="intake-field" data-field>
-              <label for="fProvinceIntake">Provincia o territorio <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <select id="fProvinceIntake" name="province" required><option value="">Elige la provincia</option></select>
-            </div>
-          </div>
-
-          <div class="intake-field" data-field role="radiogroup" aria-labelledby="addrLabel">
-            <p class="intake-label" id="addrLabel">¿Tienes una dirección física que los clientes puedan visitar? <span class="intake-req">*</span></p>
-            <div class="intake-options">
-              <label class="intake-check intake-option"><input type="radio" name="addressMode" value="publica"> <span>Sí, quiero mostrar mi dirección</span></label>
-              <label class="intake-check intake-option"><input type="radio" name="addressMode" value="sin-direccion"> <span>No, atiendo con cita, en línea o a domicilio</span></label>
-            </div>
-          </div>
-          <div class="intake-grid" data-show-if="address" hidden>
-            <div class="intake-field" data-field>
-              <label for="fAddress">Dirección <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fAddress" name="address" type="text" maxlength="200" autocomplete="street-address">
+              <label for="fProvince">Provincia o territorio <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <select id="fProvince" name="province" required><option value="">Elige la provincia</option></select>
             </div>
             <div class="intake-field" data-field>
-              <label for="fPostal">Código postal <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fPostal" name="postalCode" type="text" maxlength="7" autocomplete="postal-code" placeholder="T2P 1J9">
+              <label for="fRepresentative">Nombre del representante <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fRepresentative" name="representative" type="text" maxlength="120" autocomplete="name" required>
+              <p class="intake-hint">Puede ser el mismo profesional.</p>
             </div>
-          </div>
-
-          <div class="intake-field" data-field>
-            <p class="intake-label">Otras provincias donde prestas servicio <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></p>
-            <div class="intake-chips" id="serviceAreasBox"></div>
+            <div class="intake-field" data-field>
+              <label for="fTitle">Cargo o especialidad <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fTitle" name="title" type="text" maxlength="120" autocomplete="organization-title" placeholder="Ej. Agente inmobiliaria">
+            </div>
           </div>
           <div class="intake-field" data-field>
-            <label for="fWebsite">Sitio web <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-            <input id="fWebsite" name="website" type="url" inputmode="url" maxlength="300" placeholder="https://" autocomplete="url">
+            <label for="fSummary">Reseña corta del negocio <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
+            <textarea id="fSummary" name="summary" rows="4" maxlength="300" required placeholder="Qué ofreces, a quién ayudas y qué te diferencia."></textarea>
+            <p class="intake-hint"><span id="summaryCount">0</span>/300 caracteres</p>
           </div>
         </fieldset>
 
         <!-- 2 -->
         <fieldset class="intake-fieldset">
-          <legend class="intake-legend"><span class="intake-step">02</span> Información profesional</legend>
-          <p class="intake-fs-desc">Quién atiende a los clientes y cómo te presentas.</p>
+          <legend class="intake-legend"><span class="intake-step">02</span> Contacto</legend>
+          <p class="intake-fs-desc">Indica <strong>al menos un</strong> medio de contacto comercial publicable: teléfono, WhatsApp, página web o una red social. Solo mostraremos los botones de los datos que nos des.</p>
+          <div class="intake-field" data-field>
+            <label for="fEmail">Tu correo electrónico <span class="intake-req">*</span><span class="intake-tag intake-tag--private">Privado</span></label>
+            <input id="fEmail" name="email" type="email" inputmode="email" maxlength="200" autocomplete="email" required>
+            <p class="intake-hint">Aquí recibirás la confirmación. No se publica.</p>
+          </div>
           <div class="intake-grid">
             <div class="intake-field" data-field>
-              <label for="fName">Nombre que aparecerá en el perfil <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fName" name="name" type="text" maxlength="200" autocomplete="name" placeholder="Persona o empresa" required>
+              <label for="fPhone">Teléfono comercial <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fPhone" name="phone" type="tel" inputmode="tel" maxlength="30" autocomplete="tel" placeholder="+1 403 555 1234">
             </div>
             <div class="intake-field" data-field>
-              <label for="fShortName">¿Cómo quieres que te llamen? <span class="intake-opt">opcional</span></label>
-              <input id="fShortName" name="shortName" type="text" maxlength="200" placeholder="Ej. «Conoce a Ana»">
+              <label for="fWhatsapp">WhatsApp comercial <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fWhatsapp" name="whatsapp" type="tel" inputmode="tel" maxlength="30" placeholder="1 403 555 1234">
+              <p class="intake-hint">Con código de país (1 para Canadá).</p>
             </div>
             <div class="intake-field" data-field>
-              <label for="fTitle">Cargo o especialidad <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fTitle" name="professionalTitle" type="text" maxlength="200" autocomplete="organization-title" required>
+              <label for="fWebsite">Página web <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fWebsite" name="website" type="url" inputmode="url" maxlength="300" autocomplete="url" placeholder="https://">
             </div>
             <div class="intake-field" data-field>
-              <label for="fTitleAlt">Cargo en inglés <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fTitleAlt" name="professionalTitleAlt" type="text" maxlength="200" lang="en">
+              <label for="fAddress">Dirección comercial <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fAddress" name="address" type="text" maxlength="200" autocomplete="street-address">
+              <p class="intake-hint">Solo si atiendes en un local abierto al público.</p>
             </div>
             <div class="intake-field" data-field>
-              <label for="fAffiliation">Afiliación o licencia <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fAffiliation" name="affiliation" type="text" maxlength="200">
+              <label for="fInstagram">Instagram <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fInstagram" name="instagram" type="text" maxlength="300" placeholder="@usuario o enlace" autocapitalize="off">
             </div>
             <div class="intake-field" data-field>
-              <label for="fAvailability">Disponibilidad <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fAvailability" name="availability" type="text" maxlength="200" placeholder="Ej. Con cita previa, presencial o virtual">
+              <label for="fFacebook">Facebook <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fFacebook" name="facebook" type="text" maxlength="300" placeholder="Enlace de la página" autocapitalize="off">
+            </div>
+            <div class="intake-field" data-field>
+              <label for="fTiktok">TikTok <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fTiktok" name="tiktok" type="text" maxlength="300" placeholder="@usuario o enlace" autocapitalize="off">
+            </div>
+            <div class="intake-field" data-field>
+              <label for="fLinkedin">LinkedIn <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
+              <input id="fLinkedin" name="linkedin" type="text" maxlength="300" placeholder="Enlace del perfil o página" autocapitalize="off">
             </div>
           </div>
-          <div class="intake-field" data-field>
-            <p class="intake-label">Idiomas de atención <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></p>
-            <div class="intake-chips intake-chips--short">
-              <label class="intake-check intake-check--chip"><input type="checkbox" name="languages" value="es"> <span>Español</span></label>
-              <label class="intake-check intake-check--chip"><input type="checkbox" name="languages" value="en"> <span>English</span></label>
-              <label class="intake-check intake-check--chip"><input type="checkbox" name="languages" value="fr"> <span>Français</span></label>
-            </div>
-          </div>
-          <div class="intake-field" data-field>
-            <label for="fLong">Sobre ti o tu empresa <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-            <textarea id="fLong" name="longDescription" rows="5" maxlength="1500" placeholder="Experiencia, trayectoria, qué te diferencia…"></textarea>
-          </div>
-          <div class="intake-field" data-field>
-            <label for="fQuote">Frase o filosofía de trabajo <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-            <input id="fQuote" name="quote" type="text" maxlength="400">
-          </div>
+          <div class="intake-field intake-field--group-error" data-error-for="contact"></div>
         </fieldset>
 
         <!-- 3 -->
         <fieldset class="intake-fieldset">
-          <legend class="intake-legend"><span class="intake-step">03</span> Productos y servicios</legend>
-          <p class="intake-fs-desc">Lo que ofreces, con tus propias palabras.</p>
-          <div class="intake-field" data-field>
-            <label for="fShort">Descripción breve <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-            <input id="fShort" name="shortDescription" type="text" maxlength="180" placeholder="Una frase para la tarjeta del directorio" required>
-            <p class="intake-hint">Máximo 180 caracteres.</p>
+          <legend class="intake-legend"><span class="intake-step">03</span> Imagen</legend>
+          <p class="intake-fs-desc">Se usará en tu perfil, en la tarjeta del directorio y al compartir el enlace de tu perfil.</p>
+          <div class="intake-field" data-field role="radiogroup" aria-labelledby="imageKindLabel">
+            <p class="intake-label" id="imageKindLabel">¿Qué imagen vas a subir? <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></p>
+            <div class="intake-options">
+              <label class="intake-check intake-option"><input type="radio" name="imageKind" value="foto"> <span>Fotografía del profesional</span></label>
+              <label class="intake-check intake-option"><input type="radio" name="imageKind" value="logo"> <span>Logotipo de la empresa</span></label>
+            </div>
           </div>
           <div class="intake-field" data-field>
-            <label for="fServices">Productos y servicios <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-            <textarea id="fServices" name="services" rows="6" maxlength="1500" placeholder="Uno por línea" required></textarea>
-            <p class="intake-hint">Escribe uno por línea. Solo lo que realmente ofreces.</p>
-          </div>
-          <div class="intake-field" data-field>
-            <label for="fCta">Frase principal para tus clientes <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-            <input id="fCta" name="ctaTitle" type="text" maxlength="200" placeholder="Ej. ¿Buscas vivienda en Edmonton?">
+            <label for="fImage">Archivo de imagen <span class="intake-req">*</span></label>
+            <div class="intake-upload">
+              <img class="intake-upload__preview" id="imagePreview" alt="" hidden>
+              <div class="intake-upload__body">
+                <input id="fImage" name="image" type="file" accept="image/jpeg,image/png,image/webp" required>
+                <p class="intake-hint" id="imageInfo">JPG, PNG o WebP · mínimo 300 × 300 px · máximo 5 MB. Para fotografía, de frente y con buena luz.</p>
+              </div>
+            </div>
           </div>
         </fieldset>
 
         <!-- 4 -->
         <fieldset class="intake-fieldset">
-          <legend class="intake-legend"><span class="intake-step">04</span> Contacto y redes sociales</legend>
-          <p class="intake-fs-desc">Indica <strong>al menos un</strong> medio de contacto público: teléfono, WhatsApp, correo, sitio web o agenda. Solo aparecerán los botones de los datos que nos des.</p>
-          <div class="intake-grid">
-            <div class="intake-field" data-field>
-              <label for="fPhone">Teléfono <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fPhone" name="phone" type="tel" inputmode="tel" maxlength="30" placeholder="+1 403 555 1234">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fWhatsapp">WhatsApp <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fWhatsapp" name="whatsapp" type="tel" inputmode="tel" maxlength="30" placeholder="1 403 555 1234">
-              <p class="intake-hint">Con código de país (1 para Canadá).</p>
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fPublicEmail">Correo para clientes <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fPublicEmail" name="publicEmail" type="email" inputmode="email" maxlength="200">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fBooking">Enlace de agenda o citas <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fBooking" name="bookingUrl" type="url" inputmode="url" maxlength="300" placeholder="https://">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fCatalog">Catálogo, menú o inventario <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fCatalog" name="catalogUrl" type="url" inputmode="url" maxlength="300" placeholder="https://">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fInstagram">Instagram <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fInstagram" name="instagram" type="text" maxlength="300" placeholder="@usuario o enlace">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fTiktok">TikTok <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fTiktok" name="tiktok" type="text" maxlength="300" placeholder="@usuario o enlace">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fFacebook">Facebook <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fFacebook" name="facebook" type="text" maxlength="300" placeholder="Enlace de la página">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fLinkedin">LinkedIn <span class="intake-opt">opcional</span><span class="intake-tag intake-tag--public">Público</span></label>
-              <input id="fLinkedin" name="linkedin" type="text" maxlength="300" placeholder="Enlace del perfil o página">
-            </div>
+          <legend class="intake-legend"><span class="intake-step">04</span> Consentimiento</legend>
+          <div class="intake-privacy">
+            <p><strong>Datos públicos</strong> (solo después de tu aprobación): nombre, categoría, ciudad y provincia, representante, cargo, reseña, imagen y los datos de contacto comercial que indicaste.</p>
+            <p><strong>Datos privados</strong>: tu correo electrónico. Lo usamos solo para gestionar tu solicitud y no se publica.</p>
           </div>
-
-          <div class="intake-private">
-            <p class="intake-private__title">Contacto para gestionar tu solicitud <span class="intake-tag intake-tag--private">Privado</span></p>
-            <div class="intake-grid">
-              <div class="intake-field" data-field>
-                <label for="fRequester">Tu nombre <span class="intake-req">*</span></label>
-                <input id="fRequester" name="requesterName" type="text" maxlength="200" autocomplete="name" required>
-              </div>
-              <div class="intake-field" data-field>
-                <label for="fEmail">Tu correo <span class="intake-req">*</span></label>
-                <input id="fEmail" name="email" type="email" inputmode="email" maxlength="200" autocomplete="email" required>
-                <p class="intake-hint">Aquí te enviaremos la confirmación.</p>
-              </div>
-              <div class="intake-field" data-field>
-                <label for="fRequesterPhone">Tu teléfono <span class="intake-opt">opcional</span></label>
-                <input id="fRequesterPhone" name="requesterPhone" type="tel" inputmode="tel" maxlength="30" autocomplete="tel">
-              </div>
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- 5 -->
-        <fieldset class="intake-fieldset">
-          <legend class="intake-legend"><span class="intake-step">05</span> Fotografías, logotipo y video</legend>
-          <p class="intake-fs-desc">Comparte enlaces de Google Drive, Dropbox, iCloud o similar (con acceso para ver), o envía los archivos respondiendo al correo de confirmación. Esta página no sube archivos.</p>
-          <div class="intake-grid">
-            <div class="intake-field" data-field>
-              <label for="fPhoto">Fotografía profesional <span class="intake-opt">opcional</span></label>
-              <input id="fPhoto" name="photoUrl" type="url" inputmode="url" maxlength="300" placeholder="https://">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fLogo">Logotipo <span class="intake-opt">opcional</span></label>
-              <input id="fLogo" name="logoUrl" type="url" inputmode="url" maxlength="300" placeholder="https://">
-            </div>
-            <div class="intake-field" data-field>
-              <label for="fVideo">Video en YouTube <span class="intake-opt">opcional</span></label>
-              <input id="fVideo" name="videoUrl" type="url" inputmode="url" maxlength="300" placeholder="https://youtu.be/…">
-              <p class="intake-hint">Puede ser un video «no listado».</p>
-            </div>
-          </div>
-          <label class="intake-check intake-option intake-option--inline"><input type="checkbox" name="mediaLater"> <span>Enviaré el material respondiendo al correo de confirmación.</span></label>
-        </fieldset>
-
-        <!-- 6 -->
-        <fieldset class="intake-fieldset">
-          <legend class="intake-legend"><span class="intake-step">06</span> Tarjeta digital, consentimiento y publicación</legend>
-          <p class="intake-fs-desc">Los dos códigos QR y la tarjeta digital forman parte del Perfil Empresarial Premium.</p>
-          <div class="intake-field" data-field role="radiogroup" aria-labelledby="connectLabel">
-            <p class="intake-label" id="connectLabel">¿Quieres los dos códigos QR y la tarjeta digital de contacto (vCard)?</p>
-            <div class="intake-options">
-              <label class="intake-check intake-option"><input type="radio" name="wantsConnect" value="si" checked> <span>Sí</span></label>
-              <label class="intake-check intake-option"><input type="radio" name="wantsConnect" value="no"> <span>No por ahora</span></label>
-            </div>
-          </div>
-          <div data-show-if="connect">
-            <p class="intake-hint intake-hint--block">La tarjeta incluirá tu nombre, cargo, empresa y los datos de contacto <strong>públicos</strong> que indicaste (teléfono, correo, sitio web y dirección, si es pública). Nada más.</p>
-            <div class="intake-grid">
-              <div class="intake-field" data-field>
-                <label for="fGiven">Nombre(s) en la tarjeta <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-                <input id="fGiven" name="vcardGivenName" type="text" maxlength="200" autocomplete="given-name">
-              </div>
-              <div class="intake-field" data-field>
-                <label for="fFamily">Apellido(s) en la tarjeta <span class="intake-req">*</span><span class="intake-tag intake-tag--public">Público</span></label>
-                <input id="fFamily" name="vcardFamilyName" type="text" maxlength="200" autocomplete="family-name">
-              </div>
-            </div>
-          </div>
-
           <div class="intake-consents">
-            <p class="intake-consents__title">Consentimiento <span class="intake-req">*</span></p>
             <div class="intake-field" data-field>
-              <label class="intake-check"><input type="checkbox" name="consentData" required> <span><strong>Autorizo</strong> a eRadio Global Corp. (El Podcast del Migrante) a tratar los datos de esta solicitud para evaluarla, contactarme y preparar mi perfil. Los datos se envían por correo a través del servicio FormSubmit y no se venden ni se ceden a terceros. Puedo pedir su corrección o eliminación escribiendo a <a href="mailto:podcastdelmigrante@gmail.com">podcastdelmigrante@gmail.com</a>.</span></label>
+              <label class="intake-check"><input type="checkbox" name="consentData" required> <span><strong>Autorizo</strong> a eRadio Global Corp. (El Podcast del Migrante) a tratar los datos de esta solicitud para evaluarla, contactarme y preparar mi perfil. No se venden ni se ceden a terceros; puedo pedir su corrección o eliminación escribiendo a <a href="mailto:podcastdelmigrante@gmail.com">podcastdelmigrante@gmail.com</a>. <span class="intake-req">*</span></span></label>
             </div>
             <div class="intake-field" data-field>
-              <label class="intake-check"><input type="checkbox" name="consentPublish" required> <span><strong>Autorizo</strong> la publicación de los datos marcados como públicos y del material que entregue (fotografías, logotipo y video) en mi perfil, <strong>solo después de mi aprobación final</strong>.</span></label>
+              <label class="intake-check"><input type="checkbox" name="consentRights" required> <span><strong>Confirmo</strong> que tengo derecho a usar la fotografía o el logotipo que envío y los nombres y marcas indicados. <span class="intake-req">*</span></span></label>
             </div>
             <div class="intake-field" data-field>
-              <label class="intake-check"><input type="checkbox" name="consentTruth" required> <span><strong>Confirmo</strong> que la información es verdadera y que tengo derecho a usar los nombres, marcas, imágenes y videos que comparto.</span></label>
+              <label class="intake-check"><input type="checkbox" name="consentPublish" required> <span><strong>Autorizo</strong> la publicación de la información comercial marcada como pública, <strong>solo después de mi aprobación final</strong>. <span class="intake-req">*</span></span></label>
             </div>
           </div>
+          <div class="intake-turnstile" id="turnstileBox"></div>
         </fieldset>
 
         <div class="intake-submit">
           <button type="submit" class="reg-btn reg-btn--primary intake-submit__btn">Enviar solicitud</button>
-          <p class="intake-hint">Al enviar no se realiza ningún cobro ni se publica nada. Te contactaremos con la propuesta.</p>
+          <p class="intake-hint">Al enviar no se realiza ningún cobro ni se publica nada.</p>
         </div>
       </form>
 
@@ -441,10 +325,11 @@
 
       <div class="intake-done" id="intakeDone" tabindex="-1" hidden>
         <p class="reg-kicker reg-kicker--dark">Solicitud recibida</p>
-        <h2 class="reg-h2">¡Gracias! Registramos tu solicitud.</h2>
+        <h2 class="reg-h2">¡Gracias! Recibimos tu solicitud.</h2>
         <p>Número de solicitud: <strong data-done-id></strong></p>
-        <p>Recibimos la información de <strong data-done-company></strong>. En unos minutos te llegará una confirmación a <strong data-done-email></strong> (revisa también la carpeta de correo no deseado).</p>
-        <p>Revisaremos tu información y te contactaremos con la propuesta y los próximos pasos. <strong>Nada se publica sin tu aprobación.</strong></p>
+        <p>Hemos recibido tu información correctamente. Te enviaremos una confirmación al correo electrónico que registraste.</p>
+        <p>Nuestro equipo revisará tu solicitud y te contactará con los próximos pasos.</p>
+        <p><strong>Nada se publica sin tu aprobación.</strong></p>
         <a class="reg-btn reg-btn--outline" href="quien-puede-ayudarte.html">Ver el directorio</a>
       </div>
     </section>
@@ -494,8 +379,7 @@
 </footer>
 
 <script src="js/data.js"></script>
-<script src="js/businesses.js"></script>
 <script src="js/nav.js"></script>
-<script src="js/business-intake.js?v=20261008"></script>
+<script type="module" src="js/directorio/solicitud-form.js?v=20261009"></script>
 </body>
 </html>

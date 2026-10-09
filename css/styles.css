@@ -1377,8 +1377,8 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
-  padding: 36px 24px 34px;
+  align-items: stretch;
+  padding: 0;
   background: var(--negro);
   color: var(--blanco);
   border-radius: var(--radius-s);
@@ -1472,43 +1472,35 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
 .biz-showcase__link:hover, .biz-showcase__link:focus-visible { color: var(--verde); text-decoration-color: var(--verde); }
 .biz-showcase__btn:focus-visible, .biz-showcase__link:focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; }
 
-/* Recurso gráfico: solo en pantallas medianas y grandes */
-.biz-showcase__visual { display: none; margin: 0; }
-.biz-showcase__visual svg { display: block; width: 100%; height: auto; overflow: visible; }
-.biz-showcase__ring { fill: none; stroke: rgba(255, 255, 255, 0.42); stroke-width: 1.25; }
-.biz-showcase__lens { fill: var(--verde); }
-.biz-showcase__label {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  fill: var(--gris-200);
-}
-.biz-showcase__visual figcaption {
-  margin-top: 18px;
-  text-align: center;
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gris-400);
+/* Fotografía: arriba en móvil (16:9), columna derecha a sangre en escritorio */
+.biz-showcase__text { padding: 30px 24px 36px; }
+.biz-showcase__photo { position: relative; margin: 0; order: -1; aspect-ratio: 16 / 9; overflow: hidden; background: #1a1a1a; }
+.biz-showcase__photo picture, .biz-showcase__photo img { display: block; width: 100%; height: 100%; }
+.biz-showcase__photo img { object-fit: cover; object-position: 42% 40%; }
+.biz-showcase__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 11, 11, 0) 55%, rgba(11, 11, 11, 0.85) 100%);
+  pointer-events: none;
 }
 
 @media (max-width: 480px) {
   .biz-showcase__actions { flex-direction: column; align-items: stretch; gap: 10px; }
   .biz-showcase__link { justify-content: center; }
 }
-@media (min-width: 900px) {
-  .biz-showcase {
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-    gap: 48px;
-    padding: 60px 56px 58px;
-  }
-  .biz-showcase__visual { display: block; width: 100%; max-width: 440px; justify-self: center; }
+@media (min-width: 600px) {
+  .biz-showcase__photo { aspect-ratio: 2 / 1; }
+  .biz-showcase__text { padding: 40px 48px 46px; }
 }
+/* Dos columnas solo cuando la columna de la foto es lo bastante ancha
+   para mostrar a las tres personas sin recortarlas */
 @media (min-width: 1100px) {
-  .biz-showcase { padding: 68px 72px 66px; gap: 72px; }
+  .biz-showcase { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+  .biz-showcase__text { padding: 68px 48px 66px 72px; align-self: center; }
+  .biz-showcase__photo { order: 0; aspect-ratio: auto; min-height: 100%; }
+  .biz-showcase__photo img { position: absolute; inset: 0; object-position: 38% 45%; }
+  .biz-showcase__photo::after { background: linear-gradient(90deg, var(--negro) 0%, rgba(11, 11, 11, 0.55) 14%, rgba(11, 11, 11, 0) 38%); }
 }
 
 /* .section { padding: 44px 0 } anula el margen lateral de .wrap: este módulo

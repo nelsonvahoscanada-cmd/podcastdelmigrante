@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Solicitudes del Directorio Empresarial</title>
+<link rel="icon" href="/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="panel">
+<header class="topbar">
+  <img src="/img/logo.png" alt="" width="44" height="44">
+  <div>
+    <p class="topbar__kicker">El Podcast del Migrante · eRadio Global Corp.</p>
+    <h1 class="topbar__title">Solicitudes del Directorio Empresarial</h1>
+  </div>
+  <nav class="topbar__nav" aria-label="Secciones del panel">
+    <a href="/">Estadísticas</a>
+    <a href="/solicitudes" aria-current="page">Solicitudes</a>
+  </nav>
+  <span class="topbar__badge">Privado</span>
+</header>
+
+<main class="wrap">
+  <div class="sol-layout">
+    <section class="card sol-list" aria-labelledby="listTitle">
+      <div class="sol-list__head">
+        <h2 id="listTitle" class="sol-h2">Solicitudes</h2>
+        <label class="sol-filter">Estado
+          <select id="statusFilter">
+            <option value="">Todas</option>
+            <option value="pendiente">Pendientes</option>
+            <option value="en_revision">En revisión</option>
+            <option value="aprobada">Aprobadas</option>
+            <option value="publicada">Publicadas</option>
+            <option value="rechazada">Rechazadas</option>
+            <option value="duplicada">Duplicadas</option>
+          </select>
+        </label>
+      </div>
+      <p class="sol-counts" id="counts"></p>
+      <ul class="sol-items" id="items" aria-live="polite"></ul>
+    </section>
+
+    <section class="sol-detail" id="detail" aria-live="polite">
+      <div class="card sol-empty"><p class="empty">Elige una solicitud de la lista.</p></div>
+    </section>
+  </div>
+  <p class="status" id="status" role="status"></p>
+  <p class="footnote">Ninguna solicitud se publica automáticamente. Los datos de contacto privados (correo del solicitante) nunca se incluyen en la ficha pública.</p>
+</main>
+
+<script src="/js/solicitudes.js"></script>
+</body>
+</html>

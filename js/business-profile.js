@@ -123,7 +123,7 @@
   /* ---------- Secciones ---------- */
   function heroHtml(b) {
     const media = b.profileImage
-      ? `<img class="biz-hero__photo" src="${esc(b.profileImage)}" alt="${esc(b.name)}"${b.heroLayout === "wide" ? ' width="1600" height="1280"' : ""} fetchpriority="high">`
+      ? `<img class="biz-hero__photo${b.profileImageKind === "logo" ? " biz-hero__photo--logo" : ""}" src="${esc(b.profileImage)}" alt="${esc(b.name)}"${b.heroLayout === "wide" ? ' width="1600" height="1280"' : ""} fetchpriority="high">`
       : `<div class="biz-hero__photo biz-hero__photo--initials" role="img" aria-label="${esc(b.name)}">${esc(initials(b.name))}</div>`;
     const place = [b.city, b.province].filter(Boolean).join(", ");
     const lang = languageLine(b);

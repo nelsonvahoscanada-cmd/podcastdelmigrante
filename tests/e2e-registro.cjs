@@ -1,190 +1,83 @@
 /*
   Prueba de extremo a extremo (navegador) del registro de empresas.
-  FormSubmit se SIMULA: esta prueba nunca envía correos reales.
+  NUNCA envía correos reales: Resend y Turnstile se simulan en local.
 
-  Requiere Playwright y un servidor local en la raíz del sitio:
-    python3 -m http.server 8765
-    node tests/e2e-registro.cjs            (BASE=http://localhost:8765/)
+  1. Simuladores:   node tests/e2e/simuladores.mjs /tmp/correos.jsonl
+  2. Sitio local con D1/R2 locales (wrangler.toml de prueba con los mismos
+     bindings que producción y estas variables):
+       TURNSTILE_VERIFY_URL = "http://127.0.0.1:9999/turnstile"
+       RESEND_API_URL       = "http://127.0.0.1:9999/resend"
+     npx wrangler d1 execute <db> --local --file=db/directorio/0001_solicitudes.sql
+     npx wrangler pages dev . --port 8788
+  3. node tests/e2e-registro.cjs        (BASE=http://127.0.0.1:8788, SHOTS=<carpeta> opcional)
 */
-const { chromium } = require("playwright");
+const { chromium, devices } = require("playwright");
 const assert = require("node:assert/strict");
+const path = require("node:path");
 
-const BASE = process.env.BASE || "http://localhost:8765/";
-const FS = "https://formsubmit.co/**";
+const BASE = process.env.BASE || "http://127.0.0.1:8788";
+const SHOTS = process.env.SHOTS || "";
+const ROOT = path.join(__dirname, "..");
+const ID_RE = /^SOL-\d{8}-[A-Z2-9]{6}$/;
+const FAKE_TURNSTILE = `window.turnstile={render(box){const i=document.createElement('input');i.type='hidden';i.name='cf-turnstile-response';i.value='token-ok';box.appendChild(i);return 'w1';},reset(){}};`;
 
-async function fillValid(pg) {
-  await pg.fill("#fCompany", "Panadería La Esquina");
-  await pg.selectOption("#fCategoryIntake", "vivienda");
-  await pg.fill("#fCity", "Edmonton");
-  await pg.selectOption("#fProvinceIntake", "Alberta");
-  await pg.check("input[name=addressMode][value=sin-direccion]");
-  await pg.fill("#fName", "Ana María Pérez");
-  await pg.fill("#fTitle", "Asesora inmobiliaria");
-  await pg.check("input[name=languages][value=es]");
-  await pg.fill("#fShort", "Te ayudo a encontrar tu primera vivienda en Edmonton.");
-  await pg.fill("#fServices", "Compra de vivienda\nArriendo");
-  await pg.fill("#fWhatsapp", "1 780 555 1234");
-  await pg.fill("#fInstagram", "@ana.perez");
-  await pg.fill("#fRequester", "Ana Pérez");
-  await pg.fill("#fEmail", "ana@example.com");
-  await pg.fill("#fGiven", "Ana María");
-  await pg.fill("#fFamily", "Pérez");
-  for (const n of ["consentData", "consentPublish", "consentTruth"]) await pg.check(`input[name=${n}]`);
-}
-
-async function openForm(b, width, fsHandler) {
-  const ctx = await b.newContext({ viewport: { width, height: 900 } });
+async function open(browser, profile) {
+  const ctx = await browser.newContext(profile);
   const pg = await ctx.newPage();
-  const errors = [];
-  pg.on("pageerror", (e) => errors.push(e.message));
-  const sent = [];
-  await pg.route(/^https:\/\/(fonts\.|www\.youtube|img\.youtube)/, (r) => r.abort());
-  await pg.route(FS, async (route) => {
-    sent.push(JSON.parse(route.request().postData()));
-    await fsHandler(route);
-  });
-  await pg.clock.install();
-  await pg.goto(BASE + "registra-tu-empresa.html");
-  return { ctx, pg, errors, sent };
+  pg.errors = [];
+  pg.on("pageerror", (e) => pg.errors.push(e.message));
+  await pg.route("https://challenges.cloudflare.com/**", (r) => r.fulfill({ contentType: "text/javascript", body: FAKE_TURNSTILE }));
+  await pg.goto(BASE + "/registra-tu-empresa");
+  await pg.waitForFunction(() => !document.querySelector("#intakeForm [type=submit]").disabled);
+  return { ctx, pg };
 }
 
-const ok = (route) => route.fulfill({ status: 200, contentType: "application/json", body: '{"success":"true","message":"The form was submitted successfully."}' });
-const needsActivation = (route) => route.fulfill({ status: 200, contentType: "application/json", body: '{"success":"false","message":"This form needs Activation. We\'ve sent you an email containing an \'Activate Form\' link."}' });
+async function fill(pg, d) {
+  await pg.fill("#fName", d.name);
+  await pg.selectOption("#fCategory", d.category);
+  if (d.categoryOther) await pg.fill("#fCategoryOther", d.categoryOther);
+  await pg.fill("#fCity", d.city);
+  await pg.selectOption("#fProvince", "Alberta");
+  await pg.fill("#fRepresentative", d.rep);
+  await pg.fill("#fSummary", d.summary);
+  await pg.fill("#fEmail", d.email);
+  if (d.whatsapp) await pg.fill("#fWhatsapp", d.whatsapp);
+  if (d.website) await pg.fill("#fWebsite", d.website);
+  await pg.check(`input[name=imageKind][value=${d.kind}]`);
+  await pg.setInputFiles("#fImage", path.join(ROOT, d.file));
+  await pg.waitForSelector("#imagePreview:not([hidden])");
+  for (const n of ["consentData", "consentRights", "consentPublish"]) await pg.check(`input[name=${n}]`);
+}
+
+const RUNS = [
+  ["escritorio", { viewport: { width: 1366, height: 900 } }, { name: "Panadería La Esquina", category: "otra", categoryOther: "Panadería", city: "Edmonton", rep: "Ana María Pérez", summary: "Pan artesanal latino hecho a diario.", email: "ana@example.com", whatsapp: "1 780 555 1234", kind: "foto", file: "assets/tomas-velazquez.jpg" }],
+  ["iphone", devices["iPhone 13"], { name: "Transportes Andes", category: "automoviles", city: "Calgary", rep: "Luis Rojas", summary: "Mudanzas en Alberta.", email: "luis@example.com", website: "transportesandes.ca", kind: "logo", file: "assets/logo.png" }],
+  ["android", devices["Pixel 7"], { name: "Salud Integral María", category: "salud", city: "Red Deer", rep: "María Gómez", summary: "Acompañamiento en salud.", email: "maria@example.com", whatsapp: "14035550000", kind: "foto", file: "assets/carlos-d-castillo-card.jpg" }],
+];
 
 (async () => {
-  const b = await chromium.launch();
-
-  /* 1. Portada: vitrina y botones */
-  for (const width of [1280, 375]) {
-    const pg = await b.newPage({ viewport: { width, height: 900 } });
-    await pg.route(/^https:\/\/(fonts\.|www\.youtube|img\.youtube)/, (r) => r.abort());
-    await pg.goto(BASE + "index.html");
-    const v = await pg.evaluate(() => ({
-      title: document.querySelector(".biz-showcase__title")?.textContent,
-      links: [...document.querySelectorAll(".biz-showcase__actions a")].map((a) => a.getAttribute("href") + "|" + a.textContent.trim()),
-      oldBanner: !!document.querySelector(".help-banner"),
-      sw: document.documentElement.scrollWidth,
-    }));
-    assert.equal(v.title, "Conectamos personas con empresas en Canadá");
-    assert.deepEqual(v.links, ["quien-puede-ayudarte.html|Explorar empresas", "registra-tu-empresa.html|Registrar mi empresa →"]);
-    assert.equal(v.oldBanner, false);
-    assert.equal(v.sw, width, "sin scroll horizontal en la portada");
-    console.log(`ok portada ${width}px`);
-    await pg.close();
-  }
-
-  /* 2. Directorio: sigue funcionando y tiene la invitación */
-  {
-    const pg = await b.newPage();
-    await pg.goto(BASE + "quien-puede-ayudarte.html");
-    assert.ok((await pg.$$(".biz-card")).length >= 2, "el directorio sigue listando perfiles");
-    assert.equal(await pg.getAttribute(".biz-join .biz-btn", "href"), "registra-tu-empresa.html");
-    console.log("ok directorio");
-    await pg.close();
-  }
-
-  for (const width of [1280, 390]) {
-    /* 3. Validación: nada se envía con errores */
-    {
-      const { ctx, pg, errors, sent } = await openForm(b, width, ok);
+  const browser = await chromium.launch();
+  for (const [name, profile, d] of RUNS) {
+    const { ctx, pg } = await open(browser, profile);
+    if (name === "escritorio") {
       await pg.click("#intakeForm [type=submit]");
-      const n = await pg.$$eval(".intake-error", (e) => e.length);
-      assert.ok(n >= 10, "muestra errores por campo");
-      assert.equal(sent.length, 0);
-      assert.equal(await pg.isVisible("#intakeStatus"), true);
-      assert.equal(await pg.evaluate(() => document.documentElement.scrollWidth), width, "sin scroll horizontal en el formulario");
-      assert.deepEqual(errors, []);
-      console.log(`ok validación ${width}px (${n} errores)`);
-      await ctx.close();
+      const errs = await pg.$$eval(".intake-error", (e) => e.map((x) => x.textContent).filter(Boolean));
+      assert.ok(errs.length >= 8, "el formulario vacío muestra errores");
+      assert.ok(await pg.isHidden("#intakeDone"), "sin registro no hay confirmación");
     }
-
-    /* 4. Envío correcto → confirmación con número de solicitud */
-    {
-      const { ctx, pg, errors, sent } = await openForm(b, width, ok);
-      await fillValid(pg);
-      await pg.clock.runFor(9000);
-      await pg.click("#intakeForm [type=submit]");
-      await pg.waitForSelector("#intakeDone:not([hidden])");
-      assert.equal(sent.length, 1);
-      const p = sent[0];
-      assert.equal(p.email, "ana@example.com");
-      assert.equal(p._honey, "");
-      assert.match(p._autoresponse, /SOL-\d{8}-[A-Z0-9]{4}/);
-      assert.match(p["Ficha para js/businesses.js"], /published: false/);
-      assert.match(p["Ficha para js/businesses.js"], /instagram: "https:\/\/www\.instagram\.com\/ana\.perez\/"/);
-      assert.equal(p["1 · Dirección física pública"], "No (sin dirección física pública)");
-      const id = await pg.textContent("[data-done-id]");
-      assert.match(id, /^SOL-\d{8}-[A-Z0-9]{4}$/);
-      assert.equal(await pg.isVisible("#intakeForm"), false);
-      assert.deepEqual(errors, []);
-      if (width === 390 && process.env.SHOTS) await pg.locator("#intakeDone").screenshot({ path: process.env.SHOTS + "/done-390.png" });
-      console.log(`ok envío ${width}px → ${id}`);
-
-      /* reenvío inmediato bloqueado (misma pestaña) */
-      await pg.goto(BASE + "registra-tu-empresa.html");
-      await fillValid(pg);
-      await pg.clock.runFor(9000);
-      await pg.click("#intakeForm [type=submit]");
-      await pg.waitForSelector("#intakeStatus:not([hidden])");
-      assert.equal(sent.length, 1, "no se reenvía en menos de un minuto");
-      await ctx.close();
-    }
-
-    /* 5. FormSubmit no registra (formulario sin activar) → sin confirmación */
-    {
-      const { ctx, pg, sent } = await openForm(b, width, needsActivation);
-      await fillValid(pg);
-      await pg.clock.runFor(9000);
-      await pg.click("#intakeForm [type=submit]");
-      await pg.waitForSelector("#intakeStatus:not([hidden])");
-      assert.equal(sent.length, 1);
-      assert.match(await pg.textContent("#intakeStatus"), /No pudimos registrar tu solicitud/);
-      assert.equal(await pg.isVisible("#intakeDone"), false);
-      assert.equal(await pg.inputValue("#fCompany"), "Panadería La Esquina", "los datos se conservan");
-      console.log(`ok sin activar ${width}px`);
-      await ctx.close();
-    }
-  }
-
-  /* 6. Error de red → sin confirmación */
-  {
-    const { ctx, pg } = await openForm(b, 1280, (r) => r.abort());
-    await fillValid(pg);
-    await pg.clock.runFor(9000);
+    await fill(pg, d);
+    assert.equal(await pg.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `${name}: sin desplazamiento horizontal`);
+    if (SHOTS) await pg.screenshot({ path: path.join(SHOTS, `formulario-${name}.png`), fullPage: true });
     await pg.click("#intakeForm [type=submit]");
-    await pg.waitForSelector("#intakeStatus:not([hidden])");
-    assert.equal(await pg.isVisible("#intakeDone"), false);
-    console.log("ok error de red");
+    await pg.waitForSelector("#intakeDone:not([hidden])", { timeout: 15000 });
+    const id = (await pg.textContent("[data-done-id]")).trim();
+    assert.match(id, ID_RE);
+    assert.doesNotMatch(await pg.textContent("#intakeDone"), /@gmail|Nelson/i, "la confirmación no muestra datos del administrador");
+    if (SHOTS) await pg.locator("#intakeDone").screenshot({ path: path.join(SHOTS, `confirmacion-${name}.png`) });
+    assert.deepEqual(pg.errors, []);
+    console.log(`✓ ${name}: ${id}`);
     await ctx.close();
   }
-
-  /* 7. Anti-spam: trampa llena o envío instantáneo → no se envía */
-  {
-    const { ctx, pg, sent } = await openForm(b, 1280, ok);
-    await fillValid(pg);
-    await pg.click("#intakeForm [type=submit]");          /* < 8 s */
-    await pg.waitForSelector("#intakeStatus:not([hidden])");
-    await pg.evaluate(() => { document.querySelector("[name=_honey]").value = "spam"; });
-    await pg.clock.runFor(9000);
-    await pg.click("#intakeForm [type=submit]");
-    assert.equal(sent.length, 0);
-    console.log("ok anti-spam");
-    await ctx.close();
-  }
-
-  /* 8. Perfiles existentes intactos */
-  for (const slug of ["tomas-velazquez", "carlos-d-castillo"]) {
-    const pg = await b.newPage();
-    await pg.route(/^https:\/\/(fonts\.|www\.youtube|img\.youtube)/, (r) => r.abort());
-    await pg.goto(BASE + `perfil-${slug}.html`);
-    assert.ok(await pg.$(".biz-connect"), "sección Conecta intacta en " + slug);
-    console.log(`ok perfil ${slug}`);
-    await pg.close();
-  }
-
-  await b.close();
-  console.log("TODO OK");
-})().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+  await browser.close();
+  console.log("Registro de extremo a extremo: OK");
+})().catch((e) => { console.error(e); process.exit(1); });

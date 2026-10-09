@@ -24,6 +24,9 @@ sirve los SVG/PNG ya generados (sin librerías externas en el navegador).
 
 REQUISITOS (una vez):  pip install segno pillow
 USO:                   python3 scripts/build-qr-images.py
+                       python3 scripts/build-qr-images.py --check   (CI: verifica
+                       que cada perfil con `connect` tenga sus QR y que el SVG
+                       apunte exactamente a su URL; no necesita las fuentes)
 Las fuentes del sitio (Fraunces y Public Sans, Google Fonts) se descargan
 la primera vez a scripts/.fonts/ (ignorado por git).
 """
@@ -128,7 +131,38 @@ def write_svg(qr, path, title):
     qr.save(str(path), kind="svg", scale=10, border=4, dark=NEGRO, light=BLANCO, xmldecl=False, omitsize=True, title=title)
 
 
+def check():
+    """Verifica sin escribir: SVG idéntico al que se generaría (contiene la
+    URL correcta) y PNG presente, para cada perfil publicado con `connect`."""
+    problems = []
+    for b in load_businesses():
+        c = b.get("connect")
+        if not b.get("published") or not c:
+            continue
+        slug, name = b["slug"], b["name"]
+        wanted = []
+        if c.get("profileQr"):
+            wanted.append(("perfil", f"{SITE_ORIGIN}/perfil-{slug}.html", f"QR del perfil de {name}"))
+        if c.get("contactCard"):
+            wanted.append(("contacto", f"{SITE_ORIGIN}/vcard/{slug}.vcf", f"QR de contacto de {name}"))
+        for kind, url, title in wanted:
+            svg_path, png_path = OUT / f"{kind}-{slug}.svg", OUT / f"{kind}-{slug}.png"
+            buf = io.BytesIO()
+            segno.make(url, error="q", micro=False).save(buf, kind="svg", scale=10, border=4, dark=NEGRO, light=BLANCO, xmldecl=False, omitsize=True, title=title)
+            if not svg_path.exists() or svg_path.read_bytes() != buf.getvalue():
+                problems.append(f"assets/qr/{svg_path.name} falta o no corresponde a {url}")
+            if not png_path.exists():
+                problems.append(f"falta assets/qr/{png_path.name}")
+    if problems:
+        print("Los QR no están al día:\n  - " + "\n  - ".join(problems))
+        print("Ejecuta: python3 scripts/build-qr-images.py  y sube los cambios.")
+        sys.exit(1)
+    print("QR verificados.")
+
+
 def main():
+    if "--check" in sys.argv:
+        return check()
     f = fonts()
     OUT.mkdir(parents=True, exist_ok=True)
     count = 0

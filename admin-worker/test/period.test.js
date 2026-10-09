@@ -4,6 +4,16 @@ import { parseMonth, utcHourToLocalDate, daysOfMonth } from "../src/period.js";
 
 const NOW = Date.parse("2026-10-06T12:00:00Z");
 
+/* Hora local de Alberta de un instante, según la base de zonas horarias del
+   entorno. A partir de noviembre de 2026 no se fija el desfase a mano: las
+   versiones recientes de la base IANA mantienen a Alberta en UTC-6 todo el
+   año y las anteriores vuelven a UTC-7. Lo correcto en ambos casos es que el
+   mes empiece y termine a la medianoche local. */
+const local = (iso) =>
+  new Intl.DateTimeFormat("sv-SE", { timeZone: "America/Edmonton", hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" })
+    .format(new Date(iso));
+const before = (iso) => new Date(Date.parse(iso) - 1).toISOString();
+
 test("octubre 2026 en Alberta (MDT, UTC-6) → rango UTC exacto", () => {
   const p = parseMonth("2026-10", "America/Edmonton", NOW);
   assert.equal(p.start, "2026-10-01T06:00:00.000Z");
@@ -11,10 +21,12 @@ test("octubre 2026 en Alberta (MDT, UTC-6) → rango UTC exacto", () => {
   assert.equal(p.end, "2026-11-01T06:00:00.000Z");
 });
 
-test("noviembre 2026 termina en MST (UTC-7)", () => {
+test("noviembre 2026 termina a la medianoche local (UTC-7 o UTC-6 según la base de zonas)", () => {
   const p = parseMonth("2026-11", "America/Edmonton", NOW);
   assert.equal(p.start, "2026-11-01T06:00:00.000Z");
-  assert.equal(p.end, "2026-12-01T07:00:00.000Z");
+  assert.match(p.end, /^2026-12-01T0[67]:00:00\.000Z$/);
+  assert.equal(local(p.end), "2026-12-01 00:00");
+  assert.equal(local(before(p.end)), "2026-11-30 23:59");
 });
 
 test("marzo 2026 cruza el cambio a horario de verano", () => {
@@ -25,7 +37,10 @@ test("marzo 2026 cruza el cambio a horario de verano", () => {
 
 test("diciembre pasa al año siguiente", () => {
   const p = parseMonth("2026-12", "America/Edmonton", NOW);
-  assert.equal(p.end, "2027-01-01T07:00:00.000Z");
+  assert.match(p.end, /^2027-01-01T0[67]:00:00\.000Z$/);
+  assert.equal(local(p.start), "2026-12-01 00:00");
+  assert.equal(local(p.end), "2027-01-01 00:00");
+  assert.equal(local(before(p.end)), "2026-12-31 23:59");
 });
 
 test("el formato coincide con received_at (comparación de texto válida)", () => {

@@ -1,7 +1,8 @@
 name: "Registro de empresas: pruebas"
 
-# Validación, ficha para js/businesses.js y armado del envío del
-# formulario de registra-tu-empresa.html (sin enviar correos reales).
+# Registro de empresas (formulario, Function /registro/enviar con D1/R2
+# simulados, correos) y panel privado. Sin enviar correos reales.
+# Node 22: las pruebas usan SQLite integrado (node:sqlite) para simular D1.
 
 on:
   pull_request:
@@ -18,5 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - run: node --test tests/*.test.mjs
+          node-version: 22
+      - run: node --no-warnings --test tests/*.test.mjs
+      # Panel privado (solicitudes, estadísticas)
+      - run: node --no-warnings --test admin-worker/test/*.test.js

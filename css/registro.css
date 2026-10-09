@@ -387,3 +387,34 @@
 .intake-done .reg-h2 { margin-bottom: 16px; }
 .intake-done p { margin: 0 0 10px; max-width: 62ch; line-height: 1.55; }
 .intake-done .reg-btn { margin-top: 12px; }
+
+/* ---------- Formulario corto (2026-10): imagen, privacidad, Turnstile ---------- */
+.intake-status--notice { margin: 0 0 18px; background: var(--gris-100); color: var(--gris-800); border-left: 3px solid var(--verde); }
+.intake-field--group-error { margin: -6px 0 6px; }
+.intake-field--group-error:empty { display: none; }
+.intake-upload { display: flex; align-items: center; gap: 16px; padding: 14px; border: 1px dashed #b9b9b4; border-radius: var(--radius-s); background: var(--blanco); }
+.intake-upload__body { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.intake-upload input[type="file"] { max-width: 100%; font: inherit; font-size: 0.92rem; }
+.intake-upload input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 10px 16px;
+  border: 2px solid var(--negro);
+  border-radius: var(--radius-s);
+  background: var(--blanco);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+.intake-upload__preview { flex-shrink: 0; width: 88px; height: 88px; object-fit: cover; border-radius: var(--radius-s); background: var(--gris-100); }
+.intake-upload__preview.is-logo { object-fit: contain; padding: 6px; border: 1px solid var(--gris-200); background: var(--blanco); }
+.intake-privacy { margin: 0 0 16px; padding: 14px 18px; border-left: 3px solid var(--verde); background: var(--verde-suave); font-size: 0.9rem; line-height: 1.55; }
+.intake-privacy p { margin: 0 0 6px; }
+.intake-privacy p:last-child { margin: 0; }
+.intake-turnstile { margin: 4px 0 18px; min-height: 0; }
+.intake-turnstile:empty { display: none; }
+@media (max-width: 480px) {
+  .intake-upload { flex-direction: column; align-items: flex-start; }
+}
