@@ -30,6 +30,21 @@ binding = "DB"
 database_name = "podcastdelmigrante-analytics"
 database_id = "PEGAR_AQUI_EL_DATABASE_ID"   # Cloudflare → D1 → podcastdelmigrante-analytics → Database ID
 
+# Solicitudes del Directorio Empresarial (base D1 SEPARADA de las
+# estadísticas). Crear con:
+#   npx wrangler d1 create podcastdelmigrante-directorio
+#   npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=../db/directorio/0001_solicitudes.sql
+[[d1_databases]]
+binding = "DIRECTORIO_DB"
+database_name = "podcastdelmigrante-directorio"
+database_id = "PEGAR_AQUI_EL_DATABASE_ID_DEL_DIRECTORIO"
+
+# Imágenes de las solicitudes (bucket PRIVADO, sin acceso público):
+#   npx wrangler r2 bucket create podcastdelmigrante-solicitudes
+[[r2_buckets]]
+binding = "SOLICITUDES"
+bucket_name = "podcastdelmigrante-solicitudes"
+
 [vars]
 REPORT_TIMEZONE = "America/Edmonton"
 # Cloudflare Zero Trust → Settings → Team domain (ej. https://eradio.cloudflareaccess.com)

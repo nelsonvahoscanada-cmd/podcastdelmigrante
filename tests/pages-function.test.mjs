@@ -65,8 +65,8 @@ test("la lista de publicados coincide con las páginas generadas", async () => {
   for (const slug of PUBLISHED_ARTICLES) assert.ok(existsSync(new URL(`articulo-${slug}.html`, ROOT)), slug);
 });
 
-test("_routes.json limita la función a la plantilla de artículos", () => {
+test("_routes.json limita las funciones a la plantilla de artículos y al registro", () => {
   const routes = JSON.parse(readFileSync(new URL("_routes.json", ROOT), "utf8"));
   assert.equal(routes.version, 1);
-  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/"].sort());
+  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/registro/*"].sort());
 });

@@ -21,3 +21,9 @@ jobs:
         with:
           node-version: 20
       - run: node scripts/build-profile-pages.mjs --check
+      # QR de los perfiles con `connect`: deben apuntar a su URL aprobada
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install segno pillow
+      - run: python3 scripts/build-qr-images.py --check

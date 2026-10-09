@@ -403,3 +403,9 @@
 .biz-join .biz-btn { align-self: flex-start; background: var(--verde); border-color: var(--verde); color: var(--negro); }
 .biz-join .biz-btn:hover { background: #82b204; border-color: #82b204; }
 @media (min-width: 720px) { .biz-join { flex-direction: row; align-items: center; justify-content: space-between; } .biz-join .biz-btn { align-self: center; flex-shrink: 0; } }
+
+/* ---------- Perfiles con logotipo (profileImageKind: "logo") ----------
+   El logotipo se muestra completo, sin recortar, sobre fondo blanco.
+   Los perfiles con fotografía (Tomás, Carlos…) no cambian. */
+.biz-hero__photo--logo { object-fit: contain; background: var(--blanco); padding: 24px; border: 1px solid var(--gris-200); }
+.biz-card__photo--logo { object-fit: contain; object-position: center; padding: 8px; background: var(--blanco); border: 1px solid var(--gris-200); }

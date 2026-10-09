@@ -1,6 +1,11 @@
 {
   "version": 1,
-  "description": "La función de Pages (functions/_middleware.js) solo se ejecuta en la plantilla de artículos; todo lo demás se sirve como archivo estático.",
-  "include": ["/articulo", "/articulo.html", "/articulo/"],
+  "description": "Las funciones de Pages solo se ejecutan en la plantilla de artículos (redirección de /articulo?slug=) y en el registro de empresas (/registro/*); todo lo demás se sirve como archivo estático.",
+  "include": [
+    "/articulo",
+    "/articulo.html",
+    "/articulo/",
+    "/registro/*"
+  ],
   "exclude": []
 }

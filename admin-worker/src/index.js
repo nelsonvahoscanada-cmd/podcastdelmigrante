@@ -10,11 +10,18 @@
     GET /report?business_id&month  reporte imprimible (public/report.html)
     GET /api/businesses            empresas con eventos registrados
     GET /api/stats?business_id=BIZ-002&month=2026-10
+    GET  /solicitudes                          solicitudes del directorio (public/solicitudes.html)
+    GET  /api/solicitudes?status=pendiente     lista
+    GET  /api/solicitudes/SOL-…                detalle (incluye el correo privado)
+    GET  /api/solicitudes/SOL-…/imagen         imagen privada (R2)
+    GET  /api/solicitudes/SOL-…/paquete        ficha para publicar con un Pull Request
+    POST /api/solicitudes/SOL-…/estado         cambio de estado (JSON, mismo origen)
 */
 
 import { verifyAccess, localDevIdentity, canViewBusiness } from "./auth.js";
 import { parseMonth, DEFAULT_TIMEZONE } from "./period.js";
 import { listBusinesses, businessStats, BUSINESS_ID_RE } from "./stats.js";
+import { listApplications, getApplication, applicationImage, updateApplication, publicationPackage } from "./solicitudes.js";
 
 const SITE_ORIGIN = "https://podcastdelmigrante.com";
 
@@ -55,7 +62,8 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (request.method !== "GET" && request.method !== "HEAD") return deny(405, "Método no permitido");
+    const isStatusChange = request.method === "POST" && /^\/api\/solicitudes\/[^/]+\/estado$/.test(url.pathname);
+    if (request.method !== "GET" && request.method !== "HEAD" && !isStatusChange) return deny(405, "Método no permitido");
     if (url.pathname === "/robots.txt") {
       return withSecurity(new Response("User-agent: *\nDisallow: /\n", { headers: { "Content-Type": "text/plain" } }));
     }
@@ -79,6 +87,35 @@ export default {
       if (!period) return deny(400, "Mes inválido (formato AAAA-MM)");
       if (!canViewBusiness(identity, businessId)) return deny(403, "Sin permiso para esta empresa");
       return json(await businessStats(env.DB, businessId, period));
+    }
+
+    /* ---------- Solicitudes del directorio ---------- */
+    if (url.pathname === "/api/solicitudes" || url.pathname.startsWith("/api/solicitudes/")) {
+      if (!env.DIRECTORIO_DB || !env.SOLICITUDES) return deny(503, "Falta configurar DIRECTORIO_DB y SOLICITUDES en wrangler.toml");
+      if (url.pathname === "/api/solicitudes") {
+        return json(await listApplications(env.DIRECTORIO_DB, url.searchParams.get("status") || ""));
+      }
+      const m = url.pathname.match(/^\/api\/solicitudes\/([^/]+)(?:\/(imagen|paquete|estado))?$/);
+      if (!m) return deny(404, "No encontrado");
+      const [, id, action] = m;
+      if (action === "imagen") {
+        const img = await applicationImage(env, id);
+        return img ? withSecurity(img) : deny(404, "Imagen no encontrada");
+      }
+      if (action === "estado") {
+        /* Defensa contra CSRF además de Access: mismo origen y JSON */
+        const origin = request.headers.get("Origin");
+        if (origin && origin !== url.origin) return deny(403, "Origen no permitido");
+        if (!(request.headers.get("Content-Type") || "").startsWith("application/json")) return deny(415, "Se espera JSON");
+        const input = await request.json().catch(() => null);
+        if (!input || typeof input !== "object") return deny(400, "JSON inválido");
+        const out = await updateApplication(env.DIRECTORIO_DB, id, input, identity);
+        return out.ok ? json({ application: out.row }) : deny(out.status, out.error);
+      }
+      const row = await getApplication(env.DIRECTORIO_DB, id);
+      if (!row) return deny(404, "Solicitud no encontrada");
+      if (action === "paquete") return json(publicationPackage(row));
+      return json({ application: row });
     }
 
     if (url.pathname.startsWith("/api/")) return deny(404, "No encontrado");

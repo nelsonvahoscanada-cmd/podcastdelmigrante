@@ -72,6 +72,9 @@
                         sección de video
     videoText           texto bajo "Conoce a ..."
     profileImage        foto del PERFIL (vertical 4:5)
+    profileImageKind    [OPCIONAL] "logo" = la imagen es un logotipo: se
+                        muestra completa (sin recortar) sobre fondo blanco.
+                        Sin este campo se trata como fotografía.
     heroLayout          [OPCIONAL] "wide" = imagen horizontal completa
                         (ej. 5:4 con fondo de marca), sin recortar
     cardImage           [OPCIONAL] recorte cuadrado rostro+hombros para la
@@ -103,6 +106,12 @@
                           python3 scripts/build-qr-images.py
                               → assets/qr/perfil-<slug>.svg/.png y
                                 assets/qr/contacto-<slug>.svg/.png
+
+  DESDE UNA SOLICITUD DEL FORMULARIO (registra-tu-empresa.html)
+    Panel privado → Solicitudes → (aprobada) → «Preparar publicación»:
+    entrega la ficha lista para pegar aquí y la imagen. Luego:
+      node scripts/build-profile-pages.mjs && python3 scripts/build-qr-images.py
+    y Pull Request. Ver docs/directorio-solicitudes.md.
 
   CÓMO AGREGAR EL SIGUIENTE NEGOCIO (ej. Carlos D. Castillo)
     1. Copiar el objeto de Tomás al final de BUSINESSES.

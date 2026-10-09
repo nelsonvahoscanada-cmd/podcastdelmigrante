@@ -53,7 +53,7 @@
   function cardHtml(b) {
     const img = b.cardImage || b.profileImage;
     const photo = img
-      ? `<img class="biz-card__photo" src="${esc(img)}" alt="${esc(b.name)}" width="84" height="84" loading="lazy">`
+      ? `<img class="biz-card__photo${b.profileImageKind === "logo" && !b.cardImage ? " biz-card__photo--logo" : ""}" src="${esc(img)}" alt="${esc(b.name)}" width="84" height="84" loading="lazy">`
       : `<div class="biz-card__photo biz-card__photo--initials" aria-hidden="true">${esc(initials(b.name))}</div>`;
     const place = [b.city, b.province].filter(Boolean).join(", ");
     const title = (b.card && b.card.title) || b.professionalTitle;
