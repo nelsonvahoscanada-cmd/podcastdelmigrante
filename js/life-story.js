@@ -45,7 +45,7 @@
     const watchUrl = `https://www.youtube.com/watch?v=${story.videoId}` + (story.videoStart ? `&t=${story.videoStart}s` : "");
     return `
       <section class="article-video">
-        <div class="video-cover" id="videoCover" data-embed-src="https://www.youtube.com/embed/${story.videoId}${startParamAutoplay}" data-title="${story.title}">
+        <div class="video-cover" id="videoCover" data-embed-src="https://www.youtube-nocookie.com/embed/${story.videoId}${startParamAutoplay}" data-title="${story.title}">
           <div class="video-cover__thumb" style="background-image:url('${youtubeThumb(story.videoId)}')" role="img" aria-label="${story.title}"></div>
           <button type="button" class="video-cover__play" id="videoCoverBtn" aria-label="Ver historia">
             <span class="video-cover__play-icon" aria-hidden="true">

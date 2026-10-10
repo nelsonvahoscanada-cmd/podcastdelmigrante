@@ -199,7 +199,9 @@
         card.href = "https://youtu.be/" + item.videoId;
         card.target = "_blank";
         card.rel = "noopener";
-        card.setAttribute("aria-label", "Ver video: " + item.title);
+        /* El nombre accesible es el texto visible (título y descripción)
+           más este aviso; un aria-label distinto lo ocultaría (WCAG 2.5.3). */
+        card.insertAdjacentHTML("beforeend", '<span class="sr-only"> (abre YouTube en una pestaña nueva)</span>');
       }
       track.appendChild(card);
     });
