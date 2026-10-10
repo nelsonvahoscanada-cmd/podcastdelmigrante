@@ -94,7 +94,7 @@
         </div>
         <div class="hero-sec-card__body">
           <span class="tag tag--sm">${item.category}</span>
-          <h3 class="hero-sec-card__title">${titleInner}</h3>
+          <h2 class="hero-sec-card__title">${titleInner}</h2>
           <p class="byline">${item.date}</p>
         </div>
       `
