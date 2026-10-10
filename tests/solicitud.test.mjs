@@ -11,7 +11,7 @@ import * as core from "../js/directorio/solicitud-core.js";
 import { internalEmail, confirmationEmail } from "../functions/_lib/correos.js";
 import { onRequestPost } from "../functions/registro/enviar.js";
 import { onRequestGet as configGet } from "../functions/registro/config.js";
-import { fakeEnv, installFetch } from "./helpers/fake-cloudflare.mjs";
+import { fakeEnv, fakeD1, installFetch } from "./helpers/fake-cloudflare.mjs";
 
 const ROOT = new URL("../", import.meta.url);
 const bytesOf = (p) => new Uint8Array(readFileSync(new URL(p, ROOT)));
@@ -262,4 +262,51 @@ test("los registros nombran lo que falta, nunca los valores secretos", async () 
   for (const secret of ["re_SECRETO_123", "0xSECRETO_TURNSTILE"]) assert.ok(!log.includes(secret), "no revela " + secret);
   const body = await (await configGet({ env })).text();
   assert.ok(!/SECRETO/.test(body));
+});
+
+test("historial: la solicitud recibida y el resultado de los correos quedan registrados", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 201);
+    const events = env.DIRECTORIO_DB._db.prepare("SELECT actor, action, to_status, detail FROM application_events WHERE application_id = ? ORDER BY id").all(r.body.requestId);
+    assert.deepEqual(events.map((e) => [e.actor, e.action]), [["formulario", "recibida"], ["sistema", "correos"]]);
+    assert.equal(events[0].to_status, "pendiente");
+    assert.match(events[1].detail, /Aviso interno: enviado · Confirmación: enviado/);
+    assert.doesNotMatch(JSON.stringify(events), /ana@example\.com/i, "sin datos de contacto");
+  } finally { net.restore(); }
+});
+
+test("si el historial no existe todavía (migración 0002 sin aplicar), la solicitud NO se pierde", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv({ DIRECTORIO_DB: fakeD1({ upTo: "0001_solicitudes.sql" }) });
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 201);
+    assert.equal(rows(env).length, 1);
+    assert.equal(net.sent.length, 2, "los dos correos salen igual");
+  } finally { net.restore(); }
+});
+
+test("servicios caídos: Turnstile sin respuesta → 503 claro; D1 caída → 500 JSON sin detalles internos", async () => {
+  let net = installFetch({ turnstileDown: true });
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 503);
+    assert.match(r.body.error, /Tus datos siguen en el formulario/);
+    assert.equal(rows(env).length, 0);
+    assert.equal(net.sent.length, 0);
+  } finally { net.restore(); }
+  net = installFetch();
+  try {
+    const broken = { prepare() { throw new Error("D1_ERROR: database unavailable (detalle interno)"); }, batch() { throw new Error("x"); } };
+    const env = fakeEnv({ DIRECTORIO_DB: broken });
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 500);
+    assert.equal(r.body.ok, false);
+    assert.doesNotMatch(JSON.stringify(r.body), /D1_ERROR|detalle interno/);
+    assert.equal(env.SOLICITUDES.store.size, 0, "no queda ninguna imagen huérfana");
+  } finally { net.restore(); }
 });

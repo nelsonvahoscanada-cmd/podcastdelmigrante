@@ -89,15 +89,51 @@ export async function updateApplication(db, id, input, identity) {
       return { ok: false, status: 409, error: "Para marcar como publicada indica el BIZ-id y el slug del perfil ya publicado." };
     }
   }
+  /* Qué cambia (para el historial). Sin cambios no se escribe nada. */
+  const changes = [];
+  if (ownerApproved !== row.owner_approved) changes.push(`Aprobación del empresario: ${ownerApproved ? "sí" : "no"}`);
+  if (businessId !== (row.business_id || "")) changes.push(`BIZ-id: ${businessId || "—"}`);
+  if (businessSlug !== (row.business_slug || "")) changes.push(`Slug: ${businessSlug || "—"}`);
+  if (notes !== (row.review_notes || "")) changes.push(notes ? `Notas: ${notes.slice(0, 300)}` : "Notas borradas");
+  const statusChanged = next !== row.status;
+  if (!statusChanged && !changes.length) return { ok: true, row };
+
+  /* Cambio + historial en una sola transacción (todo o nada). */
   const now = new Date().toISOString();
-  await db
-    .prepare(
-      `UPDATE business_applications SET status = ?, review_notes = ?, owner_approved = ?, business_id = ?, business_slug = ?,
-        reviewed_by = ?, reviewed_at = ?, updated_at = ? WHERE id = ?`
-    )
-    .bind(next, notes || null, ownerApproved, businessId || null, businessSlug || null, identity.email, now, now, id)
-    .run();
+  try {
+    await db.batch([
+      db
+        .prepare(
+          `UPDATE business_applications SET status = ?, review_notes = ?, owner_approved = ?, business_id = ?, business_slug = ?,
+            reviewed_by = ?, reviewed_at = ?, updated_at = ? WHERE id = ?`
+        )
+        .bind(next, notes || null, ownerApproved, businessId || null, businessSlug || null, identity.email, now, now, id),
+      db
+        .prepare("INSERT INTO application_events (application_id, at, actor, action, from_status, to_status, detail) VALUES (?, ?, ?, ?, ?, ?, ?)")
+        .bind(id, now, identity.email, statusChanged ? "estado" : "revision", row.status, next, changes.join(" · ") || null),
+    ]);
+  } catch (e) {
+    console.error("No se pudo guardar la revisión", id, e && e.message);
+    return /application_events/.test(String(e && e.message))
+      ? { ok: false, status: 503, error: "Falta aplicar la migración db/directorio/0002_historial.sql en D1. No se guardó ningún cambio." }
+      : { ok: false, status: 500, error: "No se pudo guardar el cambio. No se modificó la solicitud." };
+  }
   return { ok: true, row: await getApplication(db, id) };
+}
+
+/* Historial de la solicitud, del más reciente al más antiguo. Devuelve null
+   si la tabla aún no existe (migración 0002 sin aplicar). */
+export async function applicationHistory(db, id) {
+  if (!REQUEST_ID_RE.test(id || "")) return [];
+  try {
+    const { results } = await db
+      .prepare("SELECT at, actor, action, from_status, to_status, detail FROM application_events WHERE application_id = ? ORDER BY id DESC LIMIT 200")
+      .bind(id)
+      .all();
+    return results;
+  } catch (e) {
+    return null;
+  }
 }
 
 /* ---------- Paquete de publicación (para el Pull Request) ---------- */

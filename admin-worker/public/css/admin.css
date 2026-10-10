@@ -161,3 +161,8 @@ summary { cursor: pointer; color: var(--verde-oscuro); font-weight: 600; font-si
   .topbar { flex-wrap: wrap; }
   .topbar__nav { margin-left: 0; order: 3; width: 100%; }
 }
+/* Historial de la solicitud */
+.sol-history th { width: auto; }
+.sol-history td { font-size: 13px; vertical-align: top; }
+.sol-history td:first-child { white-space: nowrap; }
+@media (max-width: 640px) { .sol-history td:first-child { white-space: normal; } }

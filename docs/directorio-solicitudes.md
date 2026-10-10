@@ -20,9 +20,24 @@ Todo cabe en los planes gratuitos (Pages, D1, R2, Turnstile, Resend Free:
 ```
 npx wrangler d1 create podcastdelmigrante-directorio
 npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0001_solicitudes.sql
+npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0002_historial.sql
 ```
 
-Copiar el **Database ID** que devuelve el primer comando.
+Copiar el **Database ID** que devuelve el primer comando. Las migraciones
+también se pueden pegar en Cloudflare → D1 → la base → **Console**. Ninguna
+borra ni modifica datos (`CREATE … IF NOT EXISTS`): repetirlas no tiene efecto.
+
+| Migración | Crea | Necesaria para |
+|---|---|---|
+| `0001_solicitudes.sql` | tabla `business_applications` | guardar las solicitudes |
+| `0002_historial.sql` | tabla `application_events` | el historial de acciones del panel |
+
+Comprobar en la Console:
+`SELECT name FROM sqlite_master WHERE type = 'table' AND name IN ('business_applications','application_events');`
+→ deben aparecer las dos.
+
+Sin `0002`, las solicitudes se siguen recibiendo, pero el panel no deja
+cambiar estados (avisa «Falta aplicar la migración…» y no guarda nada a medias).
 
 ## 2. Bucket R2 privado para las imágenes
 
@@ -153,6 +168,16 @@ El correo privado del solicitante nunca se incluye en la ficha pública.
   máx. 5 MB, 300–8000 px; el navegador las redimensiona y elimina los datos
   EXIF (ubicación) antes de enviarlas.
 - Consentimientos guardados con versión y fecha (`directorio-2026-10`).
+- Historial que no se edita (`application_events`): «recibida» (formulario),
+  resultado de los correos (sistema) y cada cambio de estado o revisión con el
+  correo verificado del administrador y la fecha. El cambio y su registro se
+  guardan juntos (todo o nada). El historial no copia datos de contacto.
+- Panel: Cloudflare Access + verificación del JWT y de `ADMIN_EMAILS` en el
+  Worker en **cada** petición, incluidas las imágenes privadas (sin enlaces
+  públicos) y los archivos del propio panel.
+- Fallos de servicios externos: si Turnstile no responde, se rechaza con un
+  mensaje claro (503) y no se guarda nada; si Resend falla, la solicitud se
+  guarda igual y el panel la marca «Correo con error».
 
 ## 10. Suscripciones futuras
 

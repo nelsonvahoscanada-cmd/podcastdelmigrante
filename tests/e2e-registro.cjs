@@ -10,6 +10,7 @@
        REGISTRO_ABIERTO     = "1"
        TURNSTILE_SITE_KEY   = "1x00000000000000000000AA"   (clave de prueba)
      npx wrangler d1 execute <db> --local --file=db/directorio/0001_solicitudes.sql
+     npx wrangler d1 execute <db> --local --file=db/directorio/0002_historial.sql
      npx wrangler pages dev . --port 8788
   3. node tests/e2e-registro.cjs        (BASE=http://127.0.0.1:8788, SHOTS=<carpeta> opcional)
 */

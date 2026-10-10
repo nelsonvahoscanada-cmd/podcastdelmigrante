@@ -14,6 +14,7 @@
     duplicada: "Duplicada",
   };
   const MAIL = { enviado: "Enviado", error: "Error", pendiente: "Pendiente" };
+  const ACTION = { recibida: "Solicitud recibida", correos: "Correos", estado: "Cambio de estado", revision: "Revisión" };
   const $ = (s, r = document) => r.querySelector(s);
   const esc = (t) => String(t == null ? "" : t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const fmtDate = (iso) => {
@@ -97,10 +98,26 @@
     return `<tr><th scope="row">${esc(label)}</th><td>${v}</td></tr>`;
   }
 
+  function historyHtml(events) {
+    if (events === null) {
+      return '<p class="card__hint">Historial no disponible: falta aplicar la migración <code>db/directorio/0002_historial.sql</code> en D1.</p>';
+    }
+    if (!events.length) return '<p class="empty">Sin acciones registradas.</p>';
+    return `<table class="table sol-table sol-history"><thead><tr><th scope="col">Fecha</th><th scope="col">Acción</th><th scope="col">Quién</th><th scope="col">Detalle</th></tr></thead><tbody>
+      ${events
+        .map((h) => {
+          const move = h.action === "estado" ? `${STATUS[h.from_status] || h.from_status} → ${STATUS[h.to_status] || h.to_status}` : "";
+          const detail = [move, h.detail].filter(Boolean).join(" · ");
+          return `<tr><td>${esc(fmtDate(h.at))}</td><td>${esc(ACTION[h.action] || h.action)}</td><td>${esc(h.actor)}</td><td>${esc(detail)}</td></tr>`;
+        })
+        .join("")}
+    </tbody></table>`;
+  }
+
   async function openDetail(id) {
     document.querySelectorAll(".sol-item").forEach((b) => b.classList.toggle("is-active", b.dataset.id === id));
     try {
-      const { application: a } = await api(`/api/solicitudes/${encodeURIComponent(id)}`);
+      const { application: a, history: events } = await api(`/api/solicitudes/${encodeURIComponent(id)}`);
       history.replaceState(null, "", `/solicitudes?id=${encodeURIComponent(a.id)}`);
       const options = [a.status].concat(a.transitions).map((s) => `<option value="${esc(s)}"${s === a.status ? " selected" : ""}>${esc(STATUS[s] || s)}</option>`).join("");
       $("#detail").innerHTML = `
@@ -154,7 +171,13 @@
             <button class="btn btn--outline" type="button" id="packageBtn"${a.status === "aprobada" || a.status === "publicada" ? "" : " disabled title=\"Disponible cuando la solicitud esté aprobada\""}>Preparar publicación</button>
           </div>
         </form>
-        <div id="package"></div>`;
+        <div id="package"></div>
+
+        <div class="card">
+          <h3>Historial</h3>
+          <p class="card__hint">Registro de lo ocurrido con esta solicitud. No se puede editar.</p>
+          ${historyHtml(events)}
+        </div>`;
 
       $("#statusForm").addEventListener("submit", async (ev) => {
         ev.preventDefault();

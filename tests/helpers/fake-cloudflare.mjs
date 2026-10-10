@@ -4,23 +4,42 @@
     - R2  → mapa en memoria
     - Resend y Turnstile → URLs falsas atendidas por un fetch simulado
 */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
 
-export function fakeD1() {
+/* Aplica todas las migraciones de db/directorio en orden (o solo hasta
+   `upTo`, para simular una base a la que aún no se le aplicó una migración). */
+export function fakeD1({ upTo } = {}) {
   const db = new DatabaseSync(":memory:");
-  db.exec(readFileSync(new URL("../../db/directorio/0001_solicitudes.sql", import.meta.url), "utf8"));
+  const dir = new URL("../../db/directorio/", import.meta.url);
+  for (const f of readdirSync(dir).filter((f) => f.endsWith(".sql")).sort()) {
+    if (upTo && f > upTo) break;
+    db.exec(readFileSync(new URL(f, dir), "utf8"));
+  }
   const wrap = (sql) => {
     let args = [];
     const stmt = {
       bind(...a) { args = a.map((v) => (v === undefined ? null : v)); return stmt; },
       async first() { return db.prepare(sql).get(...args) || null; },
       async all() { return { results: db.prepare(sql).all(...args) }; },
-      async run() { const r = db.prepare(sql).run(...args); return { success: true, meta: { changes: r.changes } }; },
+      async run() { return stmt._run(); },
+      _run() { const r = db.prepare(sql).run(...args); return { success: true, meta: { changes: r.changes } }; },
     };
     return stmt;
   };
-  return { prepare: wrap, _db: db, failInserts: false };
+  /* Como D1: batch() es una transacción (todo o nada). */
+  async function batch(stmts) {
+    db.exec("BEGIN");
+    try {
+      const out = stmts.map((s) => s._run());
+      db.exec("COMMIT");
+      return out;
+    } catch (e) {
+      db.exec("ROLLBACK");
+      throw e;
+    }
+  }
+  return { prepare: wrap, batch, _db: db };
 }
 
 export function fakeR2() {
@@ -38,12 +57,13 @@ export function fakeR2() {
 }
 
 /* fetch simulado: registra los correos y responde a Turnstile */
-export function installFetch({ turnstileOk = true, resendFails = false } = {}) {
+export function installFetch({ turnstileOk = true, turnstileDown = false, resendFails = false } = {}) {
   const sent = [];
   const original = globalThis.fetch;
   globalThis.fetch = async (url, init = {}) => {
     const u = String(url);
     if (u.startsWith("https://turnstile.test/")) {
+      if (turnstileDown) throw new TypeError("fetch failed");
       const params = new URLSearchParams(String(init.body));
       return new Response(JSON.stringify({ success: turnstileOk && params.get("response") === "token-ok" }), { status: 200 });
     }

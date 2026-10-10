@@ -12,16 +12,16 @@
     GET /api/stats?business_id=BIZ-002&month=2026-10
     GET  /solicitudes                          solicitudes del directorio (public/solicitudes.html)
     GET  /api/solicitudes?status=pendiente     lista
-    GET  /api/solicitudes/SOL-…                detalle (incluye el correo privado)
+    GET  /api/solicitudes/SOL-…                detalle (incluye el correo privado) + historial
     GET  /api/solicitudes/SOL-…/imagen         imagen privada (R2)
     GET  /api/solicitudes/SOL-…/paquete        ficha para publicar con un Pull Request
-    POST /api/solicitudes/SOL-…/estado         cambio de estado (JSON, mismo origen)
+    POST /api/solicitudes/SOL-…/estado         cambio de estado (JSON, mismo origen; queda en el historial)
 */
 
 import { verifyAccess, localDevIdentity, canViewBusiness } from "./auth.js";
 import { parseMonth, DEFAULT_TIMEZONE } from "./period.js";
 import { listBusinesses, businessStats, BUSINESS_ID_RE } from "./stats.js";
-import { listApplications, getApplication, applicationImage, updateApplication, publicationPackage } from "./solicitudes.js";
+import { listApplications, getApplication, applicationImage, updateApplication, publicationPackage, applicationHistory } from "./solicitudes.js";
 
 const SITE_ORIGIN = "https://podcastdelmigrante.com";
 
@@ -115,7 +115,7 @@ export default {
       const row = await getApplication(env.DIRECTORIO_DB, id);
       if (!row) return deny(404, "Solicitud no encontrada");
       if (action === "paquete") return json(publicationPackage(row));
-      return json({ application: row });
+      return json({ application: row, history: await applicationHistory(env.DIRECTORIO_DB, id) });
     }
 
     if (url.pathname.startsWith("/api/")) return deny(404, "No encontrado");
