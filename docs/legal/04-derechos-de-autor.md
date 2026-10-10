@@ -47,12 +47,12 @@ titulares.
 - Reproducir artículos completos o una parte sustancial.
 - Usar las fotografías, los videos o los logotipos.
 - Usar el contenido con fines comerciales.
-- Para pedir autorización, escribe a [PENDIENTE: correo institucional].
+- Para pedir autorización, escribe a podcastdelmigrante@gmail.com.
 
 ### Reclamaciones
 
 Si crees que algún contenido del Sitio infringe tus derechos, escríbenos a
-[PENDIENTE: correo institucional] con:
+podcastdelmigrante@gmail.com con:
 - tus datos de contacto;
 - el enlace exacto al contenido;
 - la descripción de la obra protegida;
@@ -102,12 +102,12 @@ are identified by their credit or source. Their rights belong to their owners.
 - Reproducing full articles or a substantial part of them.
 - Using the photographs, videos or logos.
 - Using the content for commercial purposes.
-- To request permission, write to [PENDING: institutional email].
+- To request permission, write to podcastdelmigrante@gmail.com.
 
 ### Claims
 
 If you believe content on the Site infringes your rights, write to
-[PENDING: institutional email] with:
+podcastdelmigrante@gmail.com with:
 - your contact details;
 - the exact link to the content;
 - a description of the protected work;

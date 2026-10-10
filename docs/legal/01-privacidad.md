@@ -15,14 +15,15 @@
 
 El Podcast del Migrante y El Podcast del Migrante Magazine (el «Sitio»,
 podcastdelmigrante.com) son operados por **eRadio Global Corp.**
-[VERIFICAR: denominación jurídica exacta], una corporación registrada a
-nivel federal en Canadá y registrada en la provincia de Alberta
+[VERIFICAR: denominación jurídica exacta], corporación federal canadiense
+con registro provincial en Alberta
 [PENDIENTE: números de registro federal y provincial].
 [VERIFICAR con asesoría legal: si alguna norma aplicable exige publicar una dirección postal o el domicilio oficial. No se publica una dirección física salvo que sea obligatoria.]
 
 Responsable de privacidad: [PENDIENTE: nombre o cargo].
-Canal principal de contacto (privacidad y consultas): [PENDIENTE: correo
-institucional].
+Correo oficial único (contacto general, privacidad y protección de datos,
+solicitudes de acceso, corrección o eliminación, correcciones editoriales,
+asuntos empresariales y publicidad): podcastdelmigrante@gmail.com.
 
 ### 2. Alcance
 
@@ -204,7 +205,7 @@ Si los cambios son importantes, los destacaremos en el Sitio.
 ### 13. Contacto
 
 eRadio Global Corp. — Privacidad
-[PENDIENTE: correo institucional]
+podcastdelmigrante@gmail.com
 
 ---
 
@@ -216,13 +217,14 @@ eRadio Global Corp. — Privacidad
 
 El Podcast del Migrante and El Podcast del Migrante Magazine (the "Site",
 podcastdelmigrante.com) are operated by **eRadio Global Corp.**
-[VERIFY: exact legal name], a federally registered Canadian corporation,
-also registered in the Province of Alberta [PENDING: federal and provincial
+[VERIFY: exact legal name], a Canadian federal corporation with provincial
+registration in Alberta [PENDING: federal and provincial
 registration numbers]. [VERIFY with legal counsel: whether any applicable rule requires publishing a mailing address or registered office. No physical address is published unless required.]
 
 Privacy contact: [PENDING: name or title].
-Main contact channel (privacy and inquiries): [PENDING: institutional
-email].
+Single official email (general contact, privacy and data protection, access,
+correction or deletion requests, editorial corrections, business matters and
+advertising): podcastdelmigrante@gmail.com.
 
 ### 2. Scope
 
@@ -394,4 +396,4 @@ the changes are significant, we will highlight them on the Site.
 ### 13. Contact
 
 eRadio Global Corp. — Privacy
-[PENDING: institutional email]
+podcastdelmigrante@gmail.com

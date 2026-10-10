@@ -105,7 +105,7 @@
 | Google Fonts | Todas las páginas | IP del visitante | No (puede alojarse localmente) |
 | YouTube / `youtube-nocookie.com` / `img.youtube.com` | Noticias con video, historias, Desafío, perfiles; miniaturas en la portada | IP; datos de reproducción | No (contenido opcional) |
 | Resend | Correos del Directorio | Datos de la solicitud | Sí para el Directorio |
-| Google (Gmail) | Bandeja `podcastdelmigrante@gmail.com` | Avisos de solicitudes con imagen | Recomendado: buzón del dominio |
+| Google (Gmail) | Bandeja `podcastdelmigrante@gmail.com` (correo oficial único, decidido por el propietario) | Avisos de solicitudes con imagen | Sí |
 | Facebook, Instagram, TikTok, LinkedIn, WhatsApp | Solo enlaces (sin incrustar ni píxeles) | Nada hasta que la persona hace clic | — |
 
 **Almacenamiento en el navegador:** solo `sessionStorage.pdm_utm`. Cookies de terceros posibles, pendientes de verificar en el navegador:

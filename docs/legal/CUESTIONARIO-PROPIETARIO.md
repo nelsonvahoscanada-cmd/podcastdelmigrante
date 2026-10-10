@@ -8,13 +8,13 @@ apariciones.
 Solo se usará información que ustedes confirmen. Los datos corporativos
 verificados hoy son únicamente: el nombre comercial «El Podcast del Migrante»,
 la mención «eRadio Global Corp.» del pie de página y el correo
-podcastdelmigrante@gmail.com que ya aparece en el sitio.
+podcastdelmigrante@gmail.com, confirmado como correo oficial único.
 
 ## A. Identidad de la empresa (propietario)
-1. ~~Jurisdicción~~ **Confirmado:** eRadio Global Corp. está registrada a nivel federal en Canadá y en Alberta, y es la entidad responsable del sitio y del Magazine. **Falta verificar:** la denominación jurídica exacta (tal como figura en el registro federal) y los números de registro federal y provincial.
+1. ~~Jurisdicción~~ **Confirmado:** eRadio Global Corp. es una corporación federal canadiense con registro provincial en Alberta, y es la entidad responsable del sitio y del Magazine. **Falta verificar:** la denominación jurídica exacta (tal como figura en el registro federal) y los números de registro federal y provincial.
 2. ~~Dirección~~ **Decidido:** no se publica una dirección residencial ni física. **Falta verificar** con asesoría legal si alguna norma aplicable (privacidad, corporaciones, comercio electrónico o consumo) exige identificar una dirección postal o el domicilio legal.
 3. **Responsable de privacidad**: nombre o cargo.
-4. **Decidido:** un **correo institucional** es el canal principal de contacto (privacidad, correcciones y consultas generales). **Falta indicar** cuál es la dirección exacta.
+4. **Decidido:** correo oficial único **podcastdelmigrante@gmail.com** para contacto general, privacidad, protección de datos, solicitudes de eliminación, correcciones editoriales, asuntos empresariales y publicidad. No se usarán otras direcciones.
 
 ## B. Datos personales (propietario)
 5. **Plazos de conservación.** Propuesta para aprobar o cambiar:

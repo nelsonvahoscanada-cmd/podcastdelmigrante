@@ -47,7 +47,7 @@ algunas funciones, como el formulario de registro, podrían no funcionar.
 
 ### Contacto
 
-[PENDIENTE: correo institucional]
+podcastdelmigrante@gmail.com
 
 ---
 
@@ -92,4 +92,4 @@ work.
 
 ### Contact
 
-[PENDING: institutional email]
+podcastdelmigrante@gmail.com

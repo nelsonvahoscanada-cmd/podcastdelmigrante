@@ -34,7 +34,7 @@ indicarlo de forma destacada antes de la compra y avisar
 [PENDIENTE: n] días antes de cada renovación.]
 
 ### 3. Cómo cancelar
-Puedes cancelar en cualquier momento escribiendo a [PENDIENTE: correo institucional]
+Puedes cancelar en cualquier momento escribiendo a podcastdelmigrante@gmail.com
 [DECIDIR: o desde un enlace o panel]. La cancelación detiene las
 renovaciones futuras.
 
@@ -51,7 +51,7 @@ Si retiramos un perfil o un espacio pagado por razones que no se deban a un
 incumplimiento tuyo, reembolsaremos la parte proporcional no utilizada.
 
 ### 6. Contacto
-eRadio Global Corp. — [PENDIENTE: correo institucional]
+eRadio Global Corp. — podcastdelmigrante@gmail.com
 
 ---
 
@@ -69,7 +69,7 @@ prominently before purchase and give notice [PENDING: n] days before each
 renewal.]
 
 ### 3. How to cancel
-You may cancel at any time by writing to [PENDING: institutional email]
+You may cancel at any time by writing to podcastdelmigrante@gmail.com
 [DECIDE: or through a link or dashboard]. Cancellation stops future renewals.
 
 ### 4. Refunds
@@ -84,4 +84,4 @@ If we remove a paid profile or placement for reasons other than your breach,
 we will refund the unused pro-rated portion.
 
 ### 6. Contact
-eRadio Global Corp. — [PENDING: institutional email]
+eRadio Global Corp. — podcastdelmigrante@gmail.com

@@ -51,7 +51,7 @@ desactualizado. No asumimos responsabilidad por las decisiones tomadas
 
 Si publicamos un error, lo corregimos con prontitud e indicamos al final del
 artículo qué se corrigió y cuándo. Para reportar un error, escribe a
-[PENDIENTE: correo institucional].
+podcastdelmigrante@gmail.com.
 
 ### 5. Contenido patrocinado, alianzas y relaciones comerciales
 
@@ -137,7 +137,7 @@ decisions made solely on the basis of it.
 
 If we publish an error, we correct it promptly and note at the end of the
 article what was corrected and when. To report an error, write to
-[PENDING: institutional email].
+podcastdelmigrante@gmail.com.
 
 ### 5. Sponsored content, partnerships and commercial relationships
 

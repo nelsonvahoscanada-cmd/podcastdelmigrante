@@ -39,8 +39,8 @@ Ver **`CUESTIONARIO-PROPIETARIO.md`**: 16 preguntas que resuelven todas las marc
    registrada a nivel federal y en Alberta, responsable del sitio y del
    Magazine.)
 2. Domicilio legal o dirección postal para notificaciones.
-3. Persona responsable de privacidad (nombre o cargo) y correo dedicado
-   (recomendado, p. ej. privacidad@… en lugar de una cuenta Gmail).
+3. Persona responsable de privacidad (nombre o cargo). Correo: decidido,
+   podcastdelmigrante@gmail.com (correo oficial único).
 4. Plazos de conservación: solicitudes rechazadas, solicitudes publicadas,
    imágenes en R2, correos en Gmail, eventos de estadísticas, historial.
 5. Qué guarda exactamente el Worker `podcastdelmigrante-analytics` (su código
