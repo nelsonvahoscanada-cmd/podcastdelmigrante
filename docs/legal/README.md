@@ -31,6 +31,9 @@ español es la de referencia; ambas deben mantenerse equivalentes.
 
 ## Datos que el propietario debe confirmar (resumen)
 
+Ver **`CUESTIONARIO-PROPIETARIO.md`**: 16 preguntas que resuelven todas las marcas.
+
+
 1. Razón social exacta de eRadio Global Corp., jurisdicción de constitución
    y número de registro corporativo.
 2. Domicilio legal o dirección postal para notificaciones.
