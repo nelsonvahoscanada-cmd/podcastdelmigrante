@@ -10,7 +10,8 @@ http.createServer((req, res) => {
   req.on("end", () => {
     if (req.url.startsWith("/turnstile")) {
       const p = new URLSearchParams(body);
-      res.end(JSON.stringify({ success: p.get("response") === "token-ok" }));
+      const ok = p.get("response") === "token-ok";
+      res.end(JSON.stringify(ok ? { success: true, hostname: process.env.TURNSTILE_HOSTNAME || "podcastdelmigrante.com" } : { success: false }));
     } else if (req.url.startsWith("/resend")) {
       const j = JSON.parse(body);
       appendFileSync(LOG, JSON.stringify({ idem: req.headers["idempotency-key"], auth: req.headers.authorization, ...j, attachments: (j.attachments || []).map((a) => ({ filename: a.filename, bytes: Buffer.from(a.content, "base64").length })) }) + "\n");

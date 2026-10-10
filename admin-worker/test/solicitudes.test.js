@@ -12,8 +12,8 @@ import { fakeD1, fakeR2 } from "../../tests/helpers/fake-cloudflare.mjs";
 const PHOTO = new Uint8Array(readFileSync(new URL("../../assets/tomas-velazquez.jpg", import.meta.url)));
 const ORIGIN = "https://admin.podcastdelmigrante.com";
 
-function env() {
-  const e = { DIRECTORIO_DB: fakeD1(), SOLICITUDES: fakeR2(), ALLOW_LOCAL_DEV: "1", ASSETS: { fetch: async () => new Response("asset") } };
+function env(dbOptions) {
+  const e = { DIRECTORIO_DB: fakeD1(dbOptions), SOLICITUDES: fakeR2(), ALLOW_LOCAL_DEV: "1", ASSETS: { fetch: async () => new Response("asset") } };
   const now = "2026-10-09T15:00:00.000Z";
   e.DIRECTORIO_DB._db.prepare(
     `INSERT INTO business_applications (id, idempotency_key, created_at, updated_at, name, category, city, province, representative, title, summary,
@@ -107,4 +107,33 @@ test("logotipo de empresa: el nombre del perfil es la empresa", () => {
   assert.equal(obj.company, "");
   assert.equal(obj.profileImageKind, "logo");
   assert.equal(obj.profileImage, "assets/directorio/perfiles/transportes-andes.png");
+});
+
+test("historial: cada cambio queda registrado con quién y cuándo; sin cambios no se escribe", async () => {
+  const e = env();
+  const id = "SOL-20261009-ABCDEF";
+  await post(e, id, { status: "en_revision", notes: "Llamar el lunes" });
+  await post(e, id, { status: "en_revision", notes: "Llamar el lunes" }); /* sin cambios */
+  await post(e, id, { ownerApproved: true });
+  await post(e, id, { status: "rechazada" });
+  const { body } = await call(e, `/api/solicitudes/${id}`);
+  assert.equal(body.history.length, 3);
+  const [last, middle, first] = body.history; /* más reciente primero */
+  assert.deepEqual([first.action, first.from_status, first.to_status, first.actor], ["estado", "pendiente", "en_revision", "local-dev@localhost"]);
+  assert.match(first.detail, /Notas: Llamar el lunes/);
+  assert.deepEqual([middle.action, middle.detail], ["revision", "Aprobación del empresario: sí"]);
+  assert.deepEqual([last.action, last.from_status, last.to_status], ["estado", "en_revision", "rechazada"]);
+  assert.ok(body.history.every((h) => /^\d{4}-\d{2}-\d{2}T/.test(h.at)));
+  assert.doesNotMatch(JSON.stringify(body.history), /ana@example\.com/, "el historial no copia datos de contacto");
+});
+
+test("sin la migración 0002 no se guarda nada a medias y el detalle sigue funcionando", async () => {
+  const e = env({ upTo: "0001_solicitudes.sql" });
+  const id = "SOL-20261009-ABCDEF";
+  const r = await post(e, id, { status: "en_revision" });
+  assert.equal(r.res.status, 503);
+  assert.match(r.body.error, /0002_historial/);
+  const { body } = await call(e, `/api/solicitudes/${id}`);
+  assert.equal(body.application.status, "pendiente", "el cambio se revirtió");
+  assert.equal(body.history, null);
 });

@@ -14,6 +14,9 @@
     duplicada: "Duplicada",
   };
   const MAIL = { enviado: "Enviado", error: "Error", pendiente: "Pendiente" };
+  const ACTION = { recibida: "Solicitud recibida", correos: "Correos", estado: "Cambio de estado", revision: "Revisión" };
+  const CHANNEL = { correo: "Correo electrónico", telefono: "Teléfono", whatsapp: "WhatsApp", otro: "Otro" };
+  const DEL_STATUS = { programada: "Programada", cancelada: "Cancelada", ejecutada: "Ejecutada" };
   const $ = (s, r = document) => r.querySelector(s);
   const esc = (t) => String(t == null ? "" : t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const fmtDate = (iso) => {
@@ -24,6 +27,23 @@
     }
   };
   const safeUrl = (u) => (/^https:\/\//.test(u || "") ? u : "");
+
+  const fmtDay = (d) => {
+    try {
+      return new Intl.DateTimeFormat("es-CA", { dateStyle: "medium", timeZone: "UTC" }).format(new Date(d + "T00:00:00Z"));
+    } catch (e) {
+      return d;
+    }
+  };
+  const todayEdmonton = () => {
+    try {
+      return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Edmonton" }).format(new Date());
+    } catch (e) {
+      return new Date().toISOString().slice(0, 10);
+    }
+  };
+  const postJson = (path, data) =>
+    api(path, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
 
   async function api(path, opts) {
     const res = await fetch(path, Object.assign({ credentials: "same-origin", headers: { Accept: "application/json" } }, opts));
@@ -56,6 +76,7 @@
                 <span class="sol-item__meta">${esc(a.id)} · ${esc(fmtDate(a.created_at))}</span>
                 <span class="badge badge--${esc(a.status)}">${esc(STATUS[a.status] || a.status)}</span>
                 ${a.internal_email_status === "error" || a.confirmation_email_status === "error" ? '<span class="badge badge--error">Correo con error</span>' : ""}
+                ${a.deletion_pending ? '<span class="badge badge--error">Eliminación programada</span>' : ""}
               </button></li>`
             )
             .join("")
@@ -97,10 +118,159 @@
     return `<tr><th scope="row">${esc(label)}</th><td>${v}</td></tr>`;
   }
 
+  function historyHtml(events) {
+    if (events === null) {
+      return '<p class="card__hint">Historial no disponible: falta aplicar la migración <code>db/directorio/0002_historial.sql</code> en D1.</p>';
+    }
+    if (!events.length) return '<p class="empty">Sin acciones registradas.</p>';
+    return `<table class="table sol-table sol-history"><thead><tr><th scope="col">Fecha</th><th scope="col">Acción</th><th scope="col">Quién</th><th scope="col">Detalle</th></tr></thead><tbody>
+      ${events
+        .map((h) => {
+          const move = h.action === "estado" ? `${STATUS[h.from_status] || h.from_status} → ${STATUS[h.to_status] || h.to_status}` : "";
+          const detail = [move, h.detail].filter(Boolean).join(" · ");
+          return `<tr><td>${esc(fmtDate(h.at))}</td><td>${esc(ACTION[h.action] || h.action)}</td><td>${esc(h.actor)}</td><td>${esc(detail)}</td></tr>`;
+        })
+        .join("")}
+    </tbody></table>`;
+  }
+
+  /* ---------- Privacidad: pedido de eliminación ---------- */
+  function deletionHtml(a, d) {
+    if (!d || !d.available) {
+      return `<div class="card"><h3>Eliminación de datos</h3>
+        <p class="card__hint">No disponible: falta aplicar la migración <code>db/directorio/0003_eliminaciones.sql</code> en D1.</p></div>`;
+    }
+    const past = d.past.length
+      ? `<ul class="sol-del-past">${d.past
+          .map((p) => `<li>${esc(DEL_STATUS[p.status] || p.status)} · pedido del ${esc(fmtDay(p.requested_on))} (${esc(CHANNEL[p.channel] || p.channel)})${p.cancel_reason ? ` · motivo: ${esc(p.cancel_reason)}` : ""}</li>`)
+          .join("")}</ul>`
+      : "";
+    if (!d.open) {
+      return `<form class="card sol-form" id="delScheduleForm">
+        <h3>Eliminación de datos</h3>
+        <p class="card__hint">Paso 1 de 2. Registra aquí el pedido de la persona. Se puede cancelar; no borra nada todavía.</p>
+        <div class="sol-form__row">
+          <label>Fecha del pedido <input type="date" name="requestedOn" required max="${esc(todayEdmonton())}" value="${esc(todayEdmonton())}"></label>
+          <label>Canal <select name="channel">${Object.entries(CHANNEL).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("")}</select></label>
+        </div>
+        <label>Nota (sin correos ni teléfonos) <input name="notes" maxlength="300"></label>
+        <div class="sol-form__actions"><button class="btn btn--outline" type="submit">Registrar pedido de eliminación</button></div>
+        ${past}
+      </form>`;
+    }
+    const o = d.open;
+    const published = a.status === "publicada" || a.business_id;
+    return `<div class="card sol-del">
+      <h3>Eliminación de datos · pedido abierto</h3>
+      <p>Pedido del <strong>${esc(fmtDay(o.requested_on))}</strong> por ${esc(CHANNEL[o.channel] || o.channel)} · registrado por ${esc(o.scheduled_by)}.
+        Responder a más tardar el <strong>${esc(fmtDay(o.due_on))}</strong> (referencia interna de 45 días).</p>
+      ${o.notes ? `<p class="card__hint">Nota: ${esc(o.notes)}</p>` : ""}
+      <form class="sol-form" id="delExecuteForm">
+        <p class="card__hint">Paso 2 de 2. Borra para siempre la solicitud, su historial y la imagen en R2. <strong>No se puede deshacer.</strong>
+          Después, borra en Gmail los correos con el número ${esc(a.id)} y responde a la persona.</p>
+        ${published ? `<label class="sol-check"><input type="checkbox" name="profileRemoved"> El perfil público ya se retiró del sitio (Pull Request fusionado)</label>` : ""}
+        <label>Para confirmar, escribe el número de la solicitud <input name="confirm" autocomplete="off" spellcheck="false" placeholder="${esc(a.id)}"></label>
+        <div class="sol-form__actions">
+          <button class="btn btn--danger" type="submit">Eliminar definitivamente</button>
+        </div>
+      </form>
+      <form class="sol-form" id="delCancelForm">
+        <label>Motivo para cancelar el pedido <input name="reason" maxlength="300" required></label>
+        <div class="sol-form__actions"><button class="btn btn--outline" type="submit">Cancelar pedido</button></div>
+      </form>
+      ${past}
+    </div>`;
+  }
+
+  function bindDeletion(a) {
+    const base = `/api/solicitudes/${encodeURIComponent(a.id)}/eliminacion`;
+    const sched = $("#delScheduleForm");
+    if (sched) {
+      sched.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        try {
+          await postJson(base, { action: "programar", requestedOn: sched.requestedOn.value, channel: sched.channel.value, notes: sched.notes.value });
+          setStatus("Pedido de eliminación registrado.");
+          loadList(a.id);
+          loadDeletions();
+        } catch (e) {
+          setStatus(e.message, true);
+        }
+      });
+    }
+    const exec = $("#delExecuteForm");
+    if (exec) {
+      exec.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        if (exec.confirm.value.trim() !== a.id) {
+          setStatus(`Para confirmar, escribe exactamente ${a.id}.`, true);
+          return;
+        }
+        if (!window.confirm(`¿Eliminar definitivamente ${a.id}? No se puede deshacer.`)) return;
+        try {
+          const out = await postJson(base, { action: "ejecutar", confirm: exec.confirm.value.trim(), profileRemoved: exec.profileRemoved ? exec.profileRemoved.checked : false });
+          setStatus(`Eliminada: ${out.deletion.result}. Falta: borrar los correos en Gmail y responder a la persona.`);
+          history.replaceState(null, "", "/solicitudes");
+          $("#detail").innerHTML = '<div class="card sol-empty"><p class="empty">Solicitud eliminada. Completa los pasos pendientes en el registro de eliminaciones.</p></div>';
+          loadList();
+          loadDeletions();
+        } catch (e) {
+          setStatus(e.message, true);
+        }
+      });
+    }
+    const cancel = $("#delCancelForm");
+    if (cancel) {
+      cancel.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        try {
+          await postJson(base, { action: "cancelar", reason: cancel.reason.value });
+          setStatus("Pedido de eliminación cancelado.");
+          loadList(a.id);
+          loadDeletions();
+        } catch (e) {
+          setStatus(e.message, true);
+        }
+      });
+    }
+  }
+
+  /* ---------- Registro de eliminaciones ---------- */
+  async function loadDeletions() {
+    const box = $("#deletions");
+    if (!box) return;
+    try {
+      const { deletions } = await api("/api/eliminaciones");
+      if (deletions === null) {
+        box.innerHTML = '<p class="card__hint">No disponible: falta aplicar la migración <code>db/directorio/0003_eliminaciones.sql</code> en D1.</p>';
+        return;
+      }
+      if (!deletions.length) {
+        box.innerHTML = '<p class="empty">Sin pedidos de eliminación.</p>';
+        return;
+      }
+      const step = (d, key, label, by, at) =>
+        d.status !== "ejecutada" ? "—" : d[at] ? `${esc(fmtDate(d[at]))} · ${esc(d[by])}` : `<button type="button" class="btn btn--outline btn--small" data-step="${key}" data-n="${esc(d.id)}">${esc(label)}</button>`;
+      box.innerHTML = `<table class="table sol-table"><thead><tr><th scope="col">Solicitud</th><th scope="col">Pedido</th><th scope="col">Estado</th><th scope="col">Responder antes del</th><th scope="col">Resultado</th><th scope="col">Correos en Gmail</th><th scope="col">Respuesta a la persona</th></tr></thead><tbody>
+        ${deletions
+          .map(
+            (d) => `<tr><td>${esc(d.application_id)}</td><td>${esc(fmtDay(d.requested_on))} · ${esc(CHANNEL[d.channel] || d.channel)}</td>
+              <td>${esc(DEL_STATUS[d.status] || d.status)}${d.executed_by ? ` · ${esc(d.executed_by)}` : ""}</td><td>${esc(fmtDay(d.due_on))}</td>
+              <td>${esc(d.result || d.cancel_reason || "")}</td>
+              <td>${step(d, "gmail", "Marcar borrados", "gmail_done_by", "gmail_done_at")}</td>
+              <td>${step(d, "respuesta", "Marcar enviada", "reply_sent_by", "reply_sent_at")}</td></tr>`
+          )
+          .join("")}
+      </tbody></table>`;
+    } catch (e) {
+      box.innerHTML = `<p class="card__hint">${esc(e.message)}</p>`;
+    }
+  }
+
   async function openDetail(id) {
     document.querySelectorAll(".sol-item").forEach((b) => b.classList.toggle("is-active", b.dataset.id === id));
     try {
-      const { application: a } = await api(`/api/solicitudes/${encodeURIComponent(id)}`);
+      const { application: a, history: events, deletion } = await api(`/api/solicitudes/${encodeURIComponent(id)}`);
       history.replaceState(null, "", `/solicitudes?id=${encodeURIComponent(a.id)}`);
       const options = [a.status].concat(a.transitions).map((s) => `<option value="${esc(s)}"${s === a.status ? " selected" : ""}>${esc(STATUS[s] || s)}</option>`).join("");
       $("#detail").innerHTML = `
@@ -154,7 +324,17 @@
             <button class="btn btn--outline" type="button" id="packageBtn"${a.status === "aprobada" || a.status === "publicada" ? "" : " disabled title=\"Disponible cuando la solicitud esté aprobada\""}>Preparar publicación</button>
           </div>
         </form>
-        <div id="package"></div>`;
+        <div id="package"></div>
+
+        <div class="card">
+          <h3>Historial</h3>
+          <p class="card__hint">Registro de lo ocurrido con esta solicitud. No se puede editar.</p>
+          ${historyHtml(events)}
+        </div>
+
+        ${deletionHtml(a, deletion)}`;
+
+      bindDeletion(a);
 
       $("#statusForm").addEventListener("submit", async (ev) => {
         ev.preventDefault();
@@ -194,10 +374,21 @@
     }
   }
 
-  document.addEventListener("click", (ev) => {
+  document.addEventListener("click", async (ev) => {
     const btn = ev.target.closest(".sol-item");
     if (btn) openDetail(btn.dataset.id);
+    const stepBtn = ev.target.closest("[data-step]");
+    if (stepBtn) {
+      try {
+        await postJson(`/api/eliminaciones/${encodeURIComponent(stepBtn.dataset.n)}/pasos`, { step: stepBtn.dataset.step });
+        setStatus("Paso registrado.");
+        loadDeletions();
+      } catch (e) {
+        setStatus(e.message, true);
+      }
+    }
   });
   $("#statusFilter").addEventListener("change", () => loadList());
   loadList(new URLSearchParams(location.search).get("id"));
+  loadDeletions();
 })();

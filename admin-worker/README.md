@@ -28,6 +28,10 @@ admin.podcastdelmigrante.com → Cloudflare Access → Worker podcastdelmigrante
 | `/report?business_id=BIZ-002&month=2026-10` | Reporte del cliente → «Descargar PDF» |
 | `/api/businesses` | Empresas con eventos registrados |
 | `/api/stats?business_id=…&month=AAAA-MM` | Agregados de una empresa en un mes |
+| `/solicitudes` | Solicitudes del Directorio: revisión, historial y eliminación de datos |
+| `POST /api/solicitudes/SOL-…/estado` | Cambio de estado (queda en el historial) |
+| `POST /api/solicitudes/SOL-…/eliminacion` | Pedido de eliminación: `programar`, `cancelar` o `ejecutar` (con el número SOL-… como confirmación) |
+| `GET /api/eliminaciones` · `POST /api/eliminaciones/N/pasos` | Registro de eliminaciones y pasos manuales (Gmail, respuesta) |
 
 ## Seguridad
 
@@ -37,7 +41,9 @@ admin.podcastdelmigrante.com → Cloudflare Access → Worker podcastdelmigrante
    cualquier configuración, **niega todo** (403).
 3. `run_worker_first = true`: ni siquiera el HTML/JS del panel se entrega sin identidad válida.
 4. `workers_dev = false` y `preview_urls = false`: no hay URL alternativa sin Access.
-5. Entradas validadas (`BIZ-\d{3,6}`, `AAAA-MM`), SQL fijo con `bind()`, solo `GET`.
+5. Entradas validadas (`BIZ-\d{3,6}`, `AAAA-MM`, `SOL-…`), SQL fijo con `bind()`.
+   Solo `GET`, salvo las rutas `POST` de solicitudes y eliminaciones, que
+   exigen JSON y el mismo origen (defensa contra CSRF además de Access).
 6. Respuestas con `no-store`, `noindex`, CSP estricta y `X-Frame-Options: DENY`.
 7. `canViewBusiness()` en `src/auth.js` es el punto único de autorización por empresa:
    hoy solo administradores. Para dar acceso a cada empresario, la empresa permitida
@@ -59,8 +65,11 @@ confirmadas. `booking_click` se presenta como «Clics en Agendar consulta».
    - Domain: `admin.podcastdelmigrante.com`
    - Policy: *Allow* → Include → **Emails** → los correos autorizados.
    - Guardar y copiar el **Application Audience (AUD) Tag**.
-3. **D1** → `podcastdelmigrante-analytics` → copiar el **Database ID**.
-4. Completar en `wrangler.toml`: `database_id`, `ACCESS_TEAM_DOMAIN`, `ACCESS_AUD`.
+3. **D1** → copiar el **Database ID** de `podcastdelmigrante-analytics` y el de
+   `podcastdelmigrante-directorio`, y pegarlos en `wrangler.toml` (no son secretos).
+4. **Workers & Pages → podcastdelmigrante-admin → Settings → Variables and Secrets**:
+   `ACCESS_TEAM_DOMAIN` y `ACCESS_AUD` (texto). No van en `wrangler.toml`:
+   `keep_vars = true` hace que cada despliegue los conserve.
 5. Desde `admin-worker/`:
    ```
    npm install

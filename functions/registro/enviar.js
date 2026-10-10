@@ -17,9 +17,12 @@
 */
 import { normalize, validate, validateImage, newRequestId } from "../../js/directorio/solicitud-core.js";
 import { internalEmail, confirmationEmail, sendEmail, toBase64 } from "../_lib/correos.js";
-import { missingConfig, jsonResponse } from "../_lib/registro-env.js";
+import { registrationStatus, closedReason, jsonResponse } from "../_lib/registro-env.js";
+import { recordEvent } from "../_lib/historial.js";
 
-export const CONSENT_VERSION = "directorio-2026-10";
+/* Versión del texto de consentimiento y del aviso de privacidad del formulario
+   (registra-tu-empresa.html). Cambiarla cada vez que cambie ese texto. */
+export const CONSENT_VERSION = "directorio-2026-10-v2";
 const MAX_BODY = 6 * 1024 * 1024;
 const LIMIT_PER_IP_HOUR = 5;
 const LIMIT_PER_EMAIL_DAY = 3;
@@ -29,14 +32,47 @@ async function sha256(text) {
   return [...new Uint8Array(d)].map((x) => x.toString(16).padStart(2, "0")).join("");
 }
 
+/* Dominios desde los que se acepta el token de Turnstile. Por defecto, solo
+   el sitio oficial; para probar en una vista previa de Pages se añade su
+   dominio en TURNSTILE_HOSTNAMES (lista separada por comas). */
+const DEFAULT_TURNSTILE_HOSTNAMES = ["podcastdelmigrante.com", "www.podcastdelmigrante.com"];
+
+export function allowedTurnstileHostnames(env) {
+  const list = String((env && env.TURNSTILE_HOSTNAMES) || "")
+    .split(",")
+    .map((h) => h.trim().toLowerCase())
+    .filter(Boolean);
+  return list.length ? list : DEFAULT_TURNSTILE_HOSTNAMES;
+}
+
+/* true = humano verificado · false = token inválido o emitido en otro
+   dominio · null = Turnstile no respondió (se rechaza igual, pero con un
+   mensaje distinto). */
 async function verifyTurnstile(env, token, ip) {
   if (!token) return false;
   const body = new URLSearchParams({ secret: env.TURNSTILE_SECRET_KEY, response: token });
   if (ip) body.set("remoteip", ip);
-  const res = await fetch(env.TURNSTILE_VERIFY_URL || "https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
-  if (!res.ok) return false;
+  let res;
+  try {
+    res = await fetch(env.TURNSTILE_VERIFY_URL || "https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
+  } catch (e) {
+    console.error("Turnstile no respondió:", e && e.message);
+    return null;
+  }
+  if (!res.ok) {
+    console.error("Turnstile respondió", res.status);
+    return null;
+  }
   const out = await res.json().catch(() => ({}));
-  return out.success === true;
+  if (out.success !== true) return false;
+  /* Un token válido obtenido en otro sitio (p. ej. copiado por un robot desde
+     una página ajena con la misma clave) no sirve aquí. */
+  const host = String(out.hostname || "").toLowerCase();
+  if (!allowedTurnstileHostnames(env).includes(host)) {
+    console.warn("Turnstile: token emitido para un dominio no permitido:", host || "(sin dominio)");
+    return false;
+  }
+  return true;
 }
 
 function receivedLabel(date) {
@@ -47,9 +83,22 @@ function receivedLabel(date) {
   }
 }
 
+/* Cualquier fallo inesperado (p. ej. D1 no disponible) responde con un
+   JSON claro y sin detalles internos; el detalle queda solo en los registros. */
 export async function onRequestPost(context) {
+  try {
+    return await handlePost(context);
+  } catch (e) {
+    console.error("Error inesperado en /registro/enviar:", e && e.message);
+    return jsonResponse({ ok: false, error: "No pudimos registrar tu solicitud. Tus datos siguen en el formulario: inténtalo de nuevo en unos minutos." }, 500);
+  }
+}
+
+async function handlePost(context) {
   const { request, env } = context;
-  if (missingConfig(env).length) {
+  const status = registrationStatus(env);
+  if (!status.open) {
+    console.warn(closedReason(status));
     return jsonResponse({ ok: false, error: "El registro no está disponible en este momento. Inténtalo más tarde." }, 503);
   }
   const ctype = request.headers.get("Content-Type") || "";
@@ -83,7 +132,11 @@ export async function onRequestPost(context) {
   if (data.honey) return jsonResponse({ ok: false, error: "No pudimos procesar la solicitud." }, 400);
 
   const ip = request.headers.get("CF-Connecting-IP") || "";
-  if (!(await verifyTurnstile(env, raw["cf-turnstile-response"], ip))) {
+  const human = await verifyTurnstile(env, raw["cf-turnstile-response"], ip);
+  if (human === null) {
+    return jsonResponse({ ok: false, error: "No pudimos completar la verificación en este momento. Tus datos siguen en el formulario: inténtalo de nuevo en unos minutos." }, 503);
+  }
+  if (!human) {
     return jsonResponse({ ok: false, error: "No pudimos verificar que no eres un robot. Recarga la página e inténtalo de nuevo." }, 403);
   }
 
@@ -147,6 +200,8 @@ export async function onRequestPost(context) {
     return jsonResponse({ ok: false, error: "No pudimos registrar la solicitud. Inténtalo de nuevo en unos minutos." }, 500);
   }
 
+  await recordEvent(db, { id, at: nowIso, actor: "formulario", action: "recibida", to: "pendiente", detail: `Consentimientos ${CONSENT_VERSION} · ${data.imageKind}` });
+
   /* Correos en segundo plano: la solicitud ya está registrada */
   const meta = { id, receivedLabel: receivedLabel(now), panelUrl: (env.PANEL_URL || "").replace(/\/+$/, "") };
   const work = sendNotifications(env, data, image, meta);
@@ -198,5 +253,6 @@ export async function sendNotifications(env, data, image, meta) {
   } catch (e) {
     console.error("No se pudo registrar el estado de los correos", meta.id, e && e.message);
   }
+  await recordEvent(db, { id: meta.id, actor: "sistema", action: "correos", detail: `Aviso interno: ${internalStatus} · Confirmación: ${confStatus}` });
   if (errors.length) console.error("Correos de", meta.id, errors.join(" | "));
 }

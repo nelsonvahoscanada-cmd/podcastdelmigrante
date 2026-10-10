@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="css/styles.css?v=20261009">
 <!-- Estilos propios de esta página (archivo separado y versionado: evita que
      el navegador o Cloudflare sirvan una copia vieja sin estos estilos) -->
-<link rel="stylesheet" href="css/registro.css?v=20261009">
+<link rel="stylesheet" href="css/registro.css?v=20261010">
 
 <!-- Formulario de solicitud: js/directorio/solicitud-form.js → POST /registro/enviar (Cloudflare Pages Function) -->
 </head>
@@ -297,13 +297,24 @@
         <!-- 4 -->
         <fieldset class="intake-fieldset">
           <legend class="intake-legend"><span class="intake-step">04</span> Consentimiento</legend>
-          <div class="intake-privacy">
-            <p><strong>Datos públicos</strong> (solo después de tu aprobación): nombre, categoría, ciudad y provincia, representante, cargo, reseña, imagen y los datos de contacto comercial que indicaste.</p>
-            <p><strong>Datos privados</strong>: tu correo electrónico. Lo usamos solo para gestionar tu solicitud y no se publica.</p>
-          </div>
+          <section class="intake-privacy" id="avisoPrivacidad" aria-labelledby="avisoPrivacidadTitulo">
+            <h3 class="intake-privacy__title" id="avisoPrivacidadTitulo">Aviso de privacidad de esta solicitud</h3>
+            <p><strong>Responsable.</strong> La administración de El Podcast del Migrante, en representación de eRadio Global Corp., atiende las consultas sobre privacidad en <a href="mailto:podcastdelmigrante@gmail.com">podcastdelmigrante@gmail.com</a>.</p>
+            <p><strong>Qué recopilamos.</strong> Los datos de este formulario: nombre de la empresa o del profesional, categoría, ciudad y provincia, representante, cargo o especialidad, reseña, correo electrónico, los datos de contacto comercial y redes sociales que indiques, y la fotografía o el logotipo. Para prevenir abusos también usamos la verificación antirrobots de Cloudflare Turnstile y guardamos una huella de tu dirección IP que no permite recuperarla.</p>
+            <p><strong>Para qué.</strong> Para evaluar tu solicitud, comunicarnos contigo, preparar la vista previa de tu miniweb y, solo con tu aprobación final, publicarla. No vendemos tus datos.</p>
+            <p><strong>Datos públicos</strong> (solo después de tu aprobación final): nombre, categoría, ciudad y provincia, representante, cargo, reseña, imagen y los datos de contacto comercial que indicaste. <strong>Datos privados</strong>: tu correo electrónico; lo usamos solo para gestionar tu solicitud y no se publica.</p>
+            <p><strong>Proveedores que intervienen.</strong> Les confiamos tus datos solo para prestarnos estos servicios:</p>
+            <ul>
+              <li><strong>Cloudflare</strong>: alojamiento del sitio, base de datos, almacenamiento privado de la imagen y verificación antirrobots (Turnstile).</li>
+              <li><strong>Resend</strong>: envío del correo de confirmación y del aviso interno.</li>
+              <li><strong>Gmail (Google)</strong>: nuestro correo, donde recibimos el aviso con los datos de tu solicitud y la imagen.</li>
+            </ul>
+            <p><strong>Tratamiento fuera de Canadá.</strong> Estos proveedores pueden almacenar o procesar tus datos fuera de Canadá, en particular en los Estados Unidos y en otros países donde operan. Allí pueden quedar sujetos a las leyes de esos países, incluido el acceso de sus autoridades. Para obtener información sobre cómo tratamos los datos con proveedores fuera de Canadá, o para hacer preguntas al respecto, escribe a la administración de El Podcast del Migrante en <a href="mailto:podcastdelmigrante@gmail.com">podcastdelmigrante@gmail.com</a>.</p>
+            <p><strong>Tus derechos.</strong> Puedes pedir acceso a tus datos, su corrección o su eliminación, o retirar tu consentimiento, escribiendo a <a href="mailto:podcastdelmigrante@gmail.com">podcastdelmigrante@gmail.com</a>. Si retiras tu consentimiento antes de la publicación, cerramos la solicitud.</p>
+          </section>
           <div class="intake-consents">
             <div class="intake-field" data-field>
-              <label class="intake-check"><input type="checkbox" name="consentData" required> <span><strong>Autorizo</strong> a eRadio Global Corp. (El Podcast del Migrante) a tratar los datos de esta solicitud para evaluarla, contactarme y preparar mi perfil. No se venden ni se ceden a terceros; puedo pedir su corrección o eliminación escribiendo a <a href="mailto:podcastdelmigrante@gmail.com">podcastdelmigrante@gmail.com</a>. <span class="intake-req">*</span></span></label>
+              <label class="intake-check"><input type="checkbox" name="consentData" required> <span><strong>Autorizo</strong> a eRadio Global Corp. (El Podcast del Migrante) a tratar los datos de esta solicitud como se explica en el <a href="#avisoPrivacidad">aviso de privacidad</a>, incluido su tratamiento por Cloudflare, Resend y Gmail (Google), que puede ocurrir fuera de Canadá. <span class="intake-req">*</span></span></label>
             </div>
             <div class="intake-field" data-field>
               <label class="intake-check"><input type="checkbox" name="consentRights" required> <span><strong>Confirmo</strong> que tengo derecho a usar la fotografía o el logotipo que envío y los nombres y marcas indicados. <span class="intake-req">*</span></span></label>
