@@ -277,11 +277,11 @@ const ARTICLES = [
     location: { country: "Canadá" },
     demo: false,
     heroImage: {
-      /* Sin fotografía: la imagen anterior no tenía autorización verificable
-         (ver docs/auditoria — derechos de imágenes). Se repondrá con una foto
-         propia o con licencia documentada. */
-      background: "linear-gradient(135deg, #1c1c1c, #3a3a3a)",
-      aspectRatio: "16/3",
+      background: "url('assets/carney-aumento-controlado-inmigracion-canada.jpg')",
+      aspectRatio: "3/2",
+      alt: "Ilustración generada con inteligencia artificial: representación del primer ministro Mark Carney frente al Parlamento de Ottawa, con viajeros, un pasaporte canadiense y el titular «Carney plantea cuándo podría volver a aumentar la inmigración de forma controlada».",
+      credit: "Imagen ilustrativa generada con inteligencia artificial. No corresponde a una fotografía del acontecimiento.",
+      socialLabel: "Imagen ilustrativa generada con IA",
     },
     bodyHtml: `
       <p>Canadá todavía no ha anunciado una nueva apertura de la inmigración ni nuevos cupos migratorios, pero las declaraciones recientes del primer ministro Mark Carney abren una conversación importante sobre la dirección que podría tomar la política migratoria del país.</p>

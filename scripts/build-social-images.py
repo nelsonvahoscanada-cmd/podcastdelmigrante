@@ -15,6 +15,10 @@ url(...)), una versión social:
   50 % horizontal / 40 % vertical (los rostros suelen estar en el tercio
   superior). Se puede ajustar por artículo con el campo opcional
   heroImage.socialFocus = "50% 30%" en js/articles.js.
+- Si la imagen es una ilustración o fue generada con IA, el campo opcional
+  heroImage.socialLabel = "Imagen ilustrativa generada con IA" la escribe
+  en una franja visible sobre la imagen social: las redes no muestran el
+  pie de foto del artículo, así que la advertencia viaja con la imagen.
 
 Después de agregar o cambiar un artículo:
     python3 scripts/build-social-images.py
@@ -31,7 +35,7 @@ import sys
 from pathlib import Path
 
 try:
-    from PIL import Image, ImageOps
+    from PIL import Image, ImageDraw, ImageFont, ImageOps
 except ImportError:
     sys.exit("Falta Pillow: pip install pillow")
 
@@ -66,6 +70,34 @@ def parse_focus(value):
     return float(parts[0]) / 100, float(parts[1]) / 100
 
 
+FONT_CANDIDATES = [
+    "/usr/share/fonts/opentype/inter/Inter-SemiBold.otf",
+    "/usr/share/fonts/opentype/inter/Inter-Bold.otf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/Library/Fonts/Arial Bold.ttf",
+    "C:/Windows/Fonts/arialbd.ttf",
+]
+
+
+def label_font(size):
+    for path in FONT_CANDIDATES:
+        if Path(path).exists():
+            return ImageFont.truetype(path, size)
+    sys.exit("socialLabel necesita una fuente TrueType/OpenType (Inter o DejaVu Sans): no se encontró ninguna.")
+
+
+def add_label(img, text):
+    """Franja negra semitransparente con el texto, en la parte inferior."""
+    font = label_font(26)
+    band_h = 58
+    overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    draw.rectangle((0, H - band_h, W, H), fill=(11, 11, 11, 215))
+    tw = draw.textlength(text, font=font)
+    draw.text(((W - tw) / 2, H - band_h + (band_h - 30) / 2), text, font=font, fill=(255, 255, 255, 255))
+    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+
 def social_crop(img, focus):
     """Escala para cubrir 1200×630 sin deformar y recorta alrededor del foco."""
     img = ImageOps.exif_transpose(img).convert("RGB")
@@ -93,7 +125,11 @@ def main():
             sys.exit(f"No existe la fotografía {src} del artículo {a['slug']}")
         focus = parse_focus((a.get("heroImage") or {}).get("socialFocus"))
         out = OUT / f"{a['slug']}.jpg"
-        social_crop(Image.open(path), focus).save(out, "JPEG", quality=84, optimize=True, progressive=True)
+        img = social_crop(Image.open(path), focus)
+        label = (a.get("heroImage") or {}).get("socialLabel")
+        if label:
+            img = add_label(img, label)
+        img.save(out, "JPEG", quality=84, optimize=True, progressive=True)
         expected.add(out.name)
         print(f"escrito    assets/social/{out.name}  ({out.stat().st_size // 1024} KB)  ← {src}")
     for f in OUT.glob("*.jpg"):
