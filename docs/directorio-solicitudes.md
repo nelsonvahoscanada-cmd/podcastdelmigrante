@@ -100,12 +100,9 @@ volver a desplegar.
 
 ## 6. Panel privado (`admin-worker/`)
 
-1. En `admin-worker/wrangler.toml` reemplazar los dos marcadores por los
-   Database ID reales (no son secretos):
-   `PEGAR_AQUI_EL_DATABASE_ID` → `podcastdelmigrante-analytics` (estadísticas,
-   el mismo de siempre) y `PEGAR_AQUI_EL_DATABASE_ID_DEL_DIRECTORIO` →
-   `podcastdelmigrante-directorio`. El bucket `podcastdelmigrante-directorio`
-   ya está declarado. Sin los ID, `wrangler deploy` falla sin cambiar nada.
+1. `admin-worker/wrangler.toml` ya declara los Database ID reales (no son
+   secretos) de `podcastdelmigrante-analytics` (estadísticas, sin cambios) y
+   `podcastdelmigrante-directorio`, y el bucket `podcastdelmigrante-directorio`.
 2. Comprobar que `ACCESS_TEAM_DOMAIN` y `ACCESS_AUD` existen en Workers & Pages
    → `podcastdelmigrante-admin` → Settings → Variables and Secrets. Ya no van
    en `wrangler.toml`: `keep_vars = true` los conserva en cada despliegue.

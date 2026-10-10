@@ -33,7 +33,7 @@ run_worker_first = true
 [[d1_databases]]
 binding = "DB"
 database_name = "podcastdelmigrante-analytics"
-database_id = "PEGAR_AQUI_EL_DATABASE_ID"   # Cloudflare → D1 → podcastdelmigrante-analytics → Database ID
+database_id = "6acee1af-85c4-485c-9fd5-1e2cb9f2066b"   # Cloudflare → D1 → podcastdelmigrante-analytics → Database ID
 
 # Solicitudes del Directorio Empresarial (base D1 SEPARADA de las
 # estadísticas; ya creada en Cloudflare con la tabla business_applications
@@ -42,7 +42,7 @@ database_id = "PEGAR_AQUI_EL_DATABASE_ID"   # Cloudflare → D1 → podcastdelmi
 [[d1_databases]]
 binding = "DIRECTORIO_DB"
 database_name = "podcastdelmigrante-directorio"
-database_id = "PEGAR_AQUI_EL_DATABASE_ID_DEL_DIRECTORIO"   # Cloudflare → D1 → podcastdelmigrante-directorio → Database ID
+database_id = "de6b6950-eab9-4cba-827a-599b76156084"   # Cloudflare → D1 → podcastdelmigrante-directorio → Database ID
 
 # Imágenes de las solicitudes: bucket R2 PRIVADO (sin acceso público), el
 # mismo que usa el sitio con el binding SOLICITUDES. El panel solo las lee.
