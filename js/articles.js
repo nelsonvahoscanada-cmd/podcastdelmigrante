@@ -279,7 +279,9 @@ const ARTICLES = [
     heroImage: {
       background: "url('assets/carney-aumento-controlado-inmigracion-canada.jpg')",
       aspectRatio: "3/2",
-      alt: "El primer ministro Mark Carney habla frente al Parlamento de Ottawa, con viajeros y un pasaporte canadiense en primer plano, ilustrando sus declaraciones sobre un futuro crecimiento controlado de la inmigración.",
+      alt: "Ilustración generada con inteligencia artificial: representación del primer ministro Mark Carney frente al Parlamento de Ottawa, con viajeros, un pasaporte canadiense y el titular «Carney plantea cuándo podría volver a aumentar la inmigración de forma controlada».",
+      credit: "Imagen ilustrativa generada con inteligencia artificial. No corresponde a una fotografía del acontecimiento.",
+      socialLabel: "Imagen ilustrativa generada con IA",
     },
     bodyHtml: `
       <p>Canadá todavía no ha anunciado una nueva apertura de la inmigración ni nuevos cupos migratorios, pero las declaraciones recientes del primer ministro Mark Carney abren una conversación importante sobre la dirección que podría tomar la política migratoria del país.</p>
@@ -352,6 +354,7 @@ const ARTICLES = [
       background: "url('assets/alberta-suspende-impuesto-gasolina.jpg')",
       aspectRatio: "3/2",
       alt: "Mujer cargando gasolina en una estación de servicio en Calgary, Alberta, con la bandera de Alberta de fondo — surtidores en $0.00 por litro de impuesto provincial, vigente desde el 1 de octubre hasta al menos el 31 de diciembre de 2026.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Desde este 1 de octubre, los conductores de Alberta cuentan con un alivio temporal al momento de llenar el tanque. La provincia suspendió la recaudación del impuesto provincial de 13 centavos por litro sobre la gasolina y el diésel.</p>
@@ -399,20 +402,17 @@ const ARTICLES = [
     location: { country: "Canadá", province: "Alberta", city: "Brooks" },
     demo: false,
     heroImage: {
-      background: "url('assets/nueva-via-jbs-brooks-corte-de-cinta.jpg')",
-      aspectRatio: "3/2",
-      alt: "Varias personas sostienen una cinta azul durante el corte de cinta en la nueva vía de acceso a JBS Canada en Brooks; al fondo, trabajadores con cascos verdes.",
-      credit: "Foto: [CRÉDITO/FUENTE POR CONFIRMAR]",
+      /* Sin fotografía: la imagen anterior no tenía autorización verificable
+         (ver docs/auditoria — derechos de imágenes). Se repondrá con una foto
+         propia o con licencia documentada. */
+      background: "linear-gradient(135deg, #1c1c1c, #3a3a3a)",
+      aspectRatio: "16/3",
     },
     bodyHtml: `
       <p>Una nueva vía de acceso para la planta de JBS Canada en Brooks ya conecta el sector con Highway 873, una obra destinada a aliviar uno de los problemas que durante años ha afectado a miles de trabajadores: la congestión vehicular durante los cambios de turno.</p>
       <p>El Gobierno de Alberta aportó $1.8 millones para la construcción de la nueva conexión vial, según información oficial publicada por Alberta Major Projects. El objetivo señalado por la provincia es mejorar la seguridad y el flujo del tráfico relacionado con las operaciones de JBS.</p>
       <p>La congestión alrededor de la planta había sido identificada previamente como un problema para trabajadores, transportistas y otros conductores de la zona. En abril de 2025, medios regionales informaron sobre los planes para mejorar la conexión entre la planta y Highway 873 y crear una alternativa que permitiera disminuir el tráfico asociado a los cambios de turno.</p>
       <p>La nueva vía fue inaugurada recientemente con la participación de representantes provinciales, municipales, del County of Newell y de JBS Canada.</p>
-      <figure class="article-figure">
-        <img src="assets/nueva-via-jbs-brooks-trabajadores-representantes.jpg" alt="Fotografía grupal sobre la nueva vía junto a un atril de JBS Canada, con trabajadores con cascos y chalecos de seguridad y representantes de la inauguración." loading="lazy">
-        <figcaption>Foto: [CRÉDITO/FUENTE POR CONFIRMAR]</figcaption>
-      </figure>
       <p>La premier de Alberta y representante de Brooks–Medicine Hat, Danielle Smith, destacó durante la inauguración el impacto que la nueva salida puede tener sobre los tiempos que los empleados necesitan para abandonar la planta después de terminar sus turnos.</p>
       <p>Según información compartida durante la inauguración, algunos trabajadores podían enfrentar esperas considerablemente largas para salir del complejo durante los periodos de mayor congestión. Los participantes en el acto señalaron que con la nueva conexión esos tiempos se han reducido de manera importante.</p>
       <p>Esas cifras corresponden a declaraciones realizadas en el contexto de la inauguración; no son mediciones independientes realizadas por El Podcast del Migrante Magazine.</p>
@@ -425,10 +425,6 @@ const ARTICLES = [
       <p>La nueva ruta también busca separar parte del tránsito de empleados del movimiento de vehículos pesados relacionado con las operaciones industriales de la zona, contribuyendo a mejorar el flujo vehicular y la seguridad.</p>
       <p>Para una ciudad como Brooks, donde JBS representa una importante fuente de empleo y donde muchas familias inmigrantes forman parte de su fuerza laboral, una obra de infraestructura de este tipo tiene un impacto que va más allá de una carretera.</p>
       <p>Es tiempo que vuelve a las familias.</p>
-      <figure class="article-figure">
-        <img src="assets/nueva-via-jbs-brooks-participantes-nueva-via.jpg" alt="Cinco participantes en la inauguración posan sobre la nueva vía, con un vehículo utilitario detrás de ellos." loading="lazy">
-        <figcaption>Foto: [CRÉDITO/FUENTE POR CONFIRMAR]</figcaption>
-      </figure>
     `,
     video: null,
     sources: [
@@ -463,6 +459,7 @@ const ARTICLES = [
       background: "url('assets/noticia-canada-estudiar-work-permit.jpg')",
       aspectRatio: "16/9",
       alt: "Joven inmigrante estudiando con laptop y cuadernos, combinando trabajo y estudios en Canadá.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Para muchos inmigrantes que ya están trabajando en Canadá, estudiar para mejorar sus habilidades podía significar realizar un trámite migratorio adicional.</p>
@@ -523,6 +520,7 @@ const ARTICLES = [
       background: "url('assets/noticia-finanzas-cargos-nsf.jpg')",
       aspectRatio: "16/9",
       alt: "Mujer inmigrante revisando su saldo bancario desde el celular junto a una alcancía, frente a un banco en Canadá.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Para alguien que está comenzando su vida financiera en Canadá, quedarse unos dólares corto en una cuenta cuando llega un pago automático podía generar una penalización considerable.</p>
@@ -577,6 +575,7 @@ const ARTICLES = [
       background: "url('assets/noticia-educacion-immigrant-bridging.jpg')",
       aspectRatio: "16/9",
       alt: "Mujer inmigrante en una capacitación profesional en Alberta, Canadá.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Llegar a Canadá con años de experiencia profesional no significa necesariamente poder continuar inmediatamente en la misma ocupación.</p>
@@ -641,6 +640,7 @@ const ARTICLES = [
       background: "url('assets/noticia-vivienda-rent-assistance-alberta.jpg')",
       aspectRatio: "16/9",
       alt: "Pareja inmigrante revisando un contrato de arrendamiento con una agente, con vista a Calgary.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>El costo de la vivienda puede convertirse en uno de los gastos más difíciles para una familia que se está estableciendo en Alberta.</p>
@@ -709,6 +709,7 @@ const ARTICLES = [
       background: "url('assets/noticia-salud-canadian-dental-care-plan.jpg')",
       aspectRatio: "16/9",
       alt: "Mujer recibiendo atención dental en un consultorio en Canadá.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Para muchas familias, una visita al dentista puede representar un gasto considerable cuando el empleo no incluye cobertura dental.</p>
@@ -766,6 +767,7 @@ const ARTICLES = [
       background: "url('assets/noticia-comunidad-servicios-inmigrantes-alberta.jpg')",
       aspectRatio: "16/9",
       alt: "Voluntarios organizando donativos de alimentos en un centro comunitario en Canadá.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>No tener todavía residencia permanente no significa necesariamente estar solo durante el proceso de adaptación a Canadá.</p>
@@ -841,6 +843,7 @@ const ARTICLES = [
       background: "url('assets/error-financiero-inmigrantes-canada.jpg')",
       aspectRatio: "16/9",
       alt: "Familia inmigrante organizando su plan financiero en Calgary — ingresos, crédito, vivienda, protección, inversiones, educación y retiro.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Hay inmigrantes que llevan cinco, diez o hasta veinte años en Canadá. Trabajan, pagan impuestos, tienen tarjetas de crédito, una cuenta TFSA, quizá un RRSP, algún seguro y una pensión a través del empleador. Desde afuera, parece que todo está organizado.</p>
@@ -989,6 +992,7 @@ const ARTICLES = [
       background: "url('assets/primer-arriendo-alberta.jpg')",
       aspectRatio: "16/9",
       alt: "Mujer llegando a una vivienda en Alberta junto a contrato de arrendamiento y llaves.",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Encontrar una vivienda puede convertirse en una de las primeras grandes decisiones después de llegar a Alberta. Cuando aparece un lugar que parece adecuado, las ganas de asegurar el arriendo rápidamente pueden llevar a pasar por alto detalles importantes.</p>
@@ -1091,6 +1095,7 @@ const ARTICLES = [
       background: "url('assets/certificaciones-trabajo-alberta.jpg')",
       aspectRatio: "16/9",
       alt: "Trabajador en Alberta junto a elementos de capacitación y seguridad laboral",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Para muchos recién llegados, una de las primeras preguntas es: ¿qué curso puedo hacer para conseguir trabajo?</p>
@@ -1193,6 +1198,7 @@ const ARTICLES = [
       background: "url('assets/llegar-canada-documentos-migrante.jpg')",
       aspectRatio: "16/9",
       alt: "Familia migrante organizando documentos durante sus primeros pasos en Canadá",
+      credit: "Imagen ilustrativa",
     },
     bodyHtml: `
       <p>Llegar a Canadá implica mucho más que bajar del avión con una maleta. Durante las primeras semanas comienzan trámites relacionados con trabajo, identificación, salud, vivienda, educación y servicios gubernamentales.</p>
