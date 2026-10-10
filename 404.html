@@ -1,42 +1,17 @@
 <!DOCTYPE html>
-<html lang="es" id="htmlRoot">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Información útil para migrantes — El Podcast del Migrante Magazine</title>
-<meta id="metaDescription" name="description" content="El Podcast del Migrante Magazine.">
-<link id="canonicalLink" rel="canonical" href="https://podcastdelmigrante.com/">
-
-<!-- Open Graph (se completan por artículo en js/article.js) -->
-<meta id="ogType" property="og:type" content="article">
-<meta property="og:site_name" content="El Podcast del Migrante Magazine">
-<meta id="ogTitle" property="og:title" content="El Podcast del Migrante Magazine">
-<meta id="ogDescription" property="og:description" content="Información real para la vida real de los migrantes en Canadá.">
-<meta id="ogUrl" property="og:url" content="https://podcastdelmigrante.com/">
-<meta id="ogImage" property="og:image" content="https://podcastdelmigrante.com/assets/logo.png">
-<meta id="ogLocale" property="og:locale" content="es_CA">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta id="twitterTitle" name="twitter:title" content="El Podcast del Migrante Magazine">
-<meta id="twitterDescription" name="twitter:description" content="Información real para la vida real de los migrantes en Canadá.">
-<meta id="twitterImage" name="twitter:image" content="https://podcastdelmigrante.com/assets/logo.png">
-
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
-
+<title>Página no encontrada — El Podcast del Migrante Magazine</title>
+<meta name="description" content="La página que buscas no existe o cambió de dirección.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
 <!-- Tipografías alojadas en el sitio (sin conexión a Google Fonts) -->
-<link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/fonts.css">
-
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/article.css">
-<link rel="stylesheet" href="css/guia.css">
-
-<!-- El JSON-LD del artículo (NewsArticle/Article/OpinionNewsArticle) se
-     inyecta dinámicamente en js/article.js una vez se identifica el
-     artículo — depende de su contentType, ver Ficha Maestra en
-     js/articles.js -->
+<link rel="preload" href="/assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/article.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -44,8 +19,8 @@
 <!-- ================= HEADER / MASTHEAD (idéntico al HOME) ================= -->
 <header class="site-header" id="siteHeader">
   <div class="wrap masthead-row">
-    <a href="index.html#inicio" class="masthead-brand" aria-label="El Podcast del Migrante Magazine — inicio">
-      <img src="assets/logo.png" alt="El Podcast del Migrante">
+    <a href="/index.html#inicio" class="masthead-brand" aria-label="El Podcast del Migrante Magazine — inicio">
+      <img src="/assets/logo.png" alt="El Podcast del Migrante">
       <span class="masthead-brand__text">
         <span class="masthead-brand__name">El Podcast del Migrante</span>
         <span class="masthead-brand__mag">Magazine</span>
@@ -55,7 +30,7 @@
     <p class="masthead-tagline">Información, historias y comunidad para los migrantes latinos en Canadá</p>
 
     <div class="header-actions">
-      <a class="edition-pill" href="index.html#edicion" data-edition-label>Edición</a>
+      <a class="edition-pill" href="/index.html#edicion" data-edition-label>Edición</a>
       <button class="icon-btn" id="searchToggle" aria-expanded="false" aria-controls="searchBar" aria-label="Abrir buscador">
         <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
@@ -91,7 +66,7 @@
 <!-- Menú móvil (idéntico al HOME; los enlaces internos apuntan a index.html#...) -->
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav__head">
-    <img src="assets/logo.png" alt="El Podcast del Migrante">
+    <img src="/assets/logo.png" alt="El Podcast del Migrante">
     <button id="mobileNavClose" aria-label="Cerrar menú" class="icon-btn">
       <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
@@ -100,9 +75,17 @@
 </div>
 
 <main id="main">
-  <article class="article-page guia-page wrap" id="guiaRoot">
-    <p class="article-loading">Cargando…</p>
-  </article>
+  <section class="article-page wrap notfound">
+    <p class="notfound__code">Error 404</p>
+    <h1 class="notfound__title">No encontramos esta página</h1>
+    <p class="notfound__text">Es posible que el enlace esté incompleto o que la página haya cambiado de dirección.</p>
+    <ul class="notfound__links">
+      <li><a class="btn" href="/index.html">Ir a la portada</a></li>
+      <li><a href="/guia.html?categoria=migracion">Guía de migración</a></li>
+      <li><a href="/quien-puede-ayudarte.html">Quién puede ayudarte</a></li>
+      <li><a href="mailto:podcastdelmigrante@gmail.com?subject=Enlace%20roto">Avísanos de un enlace roto</a></li>
+    </ul>
+  </section>
 </main>
 
 <!-- ================= FOOTER (idéntico al HOME) ================= -->
@@ -110,38 +93,38 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo.png" alt="El Podcast del Migrante">
+        <img src="/assets/logo.png" alt="El Podcast del Migrante">
         <p>El Podcast del Migrante Magazine<br>Una publicación de eRadio Global Corp.<br>Canadá</p>
       </div>
       <div class="footer-col">
         <h2 class="footer-col__title">Secciones</h2>
-        <a href="guia.html?categoria=migracion">Migración</a>
-        <a href="index.html#historias">Historias</a>
-        <a href="index.html#video">Videos</a>
-        <a href="index.html#desafio">Desafío 100 Empresas</a>
-        <a href="quien-puede-ayudarte.html">Quién puede ayudarte</a>
+        <a href="/guia.html?categoria=migracion">Migración</a>
+        <a href="/index.html#historias">Historias</a>
+        <a href="/index.html#video">Videos</a>
+        <a href="/index.html#desafio">Desafío 100 Empresas</a>
+        <a href="/quien-puede-ayudarte.html">Quién puede ayudarte</a>
         <!-- Secciones sin página propia todavía (ocultas, no eliminadas): -->
-        <a href="index.html#" hidden>Canadá</a>
-        <a href="index.html#" hidden>Empleo</a>
-        <a href="index.html#" hidden>Vivienda</a>
-        <a href="index.html#" hidden>Comunidad</a>
+        <a href="/index.html#" hidden>Canadá</a>
+        <a href="/index.html#" hidden>Empleo</a>
+        <a href="/index.html#" hidden>Vivienda</a>
+        <a href="/index.html#" hidden>Comunidad</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-col__title">El medio</h2>
-        <a href="index.html#edicion">Ediciones</a>
-        <a href="index.html#contributors">Colaboradores</a>
-        <a href="index.html#distribution">Puntos de distribución</a>
+        <a href="/index.html#edicion">Ediciones</a>
+        <a href="/index.html#contributors">Colaboradores</a>
+        <a href="/index.html#distribution">Puntos de distribución</a>
         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
-        <a href="index.html#" hidden>Archivo</a>
+        <a href="/index.html#" hidden>Archivo</a>
       </div>
       <!-- Legal: oculto hasta publicar las páginas aprobadas (borradores en docs/legal/). -->
       <div class="footer-col" hidden>
         <h2 class="footer-col__title">Legal</h2>
-        <a href="index.html#">Política editorial</a>
-        <a href="index.html#">Privacidad</a>
-        <a href="index.html#">Términos</a>
-        <a href="index.html#">Correcciones</a>
+        <a href="/index.html#">Política editorial</a>
+        <a href="/index.html#">Privacidad</a>
+        <a href="/index.html#">Términos</a>
+        <a href="/index.html#">Correcciones</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -155,10 +138,9 @@
   </div>
 </footer>
 
-<script src="js/data.js"></script>
-<script src="js/articles.js"></script>
-<script src="js/guias.js"></script>
-<script src="js/nav.js"></script>
-<script src="js/guia.js"></script>
+<script>window.PDM_SITE_ROOT_LINKS = true;</script>
+<script src="/js/data.js"></script>
+<script src="/js/nav.js"></script>
+<script>document.addEventListener("DOMContentLoaded", () => window.PDM && window.PDM.initSiteChrome && window.PDM.initSiteChrome());</script>
 </body>
 </html>

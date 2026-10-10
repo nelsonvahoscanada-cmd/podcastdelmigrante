@@ -1165,7 +1165,7 @@ const ARTICLES = [
       { label: "ALIS — Government of Alberta — Newcomer's guide to working in Alberta", href: "https://alis.alberta.ca/tools-and-resources/resources-for-newcomers/newcomers-guide-to-working-in-alberta/" },
     ],
     correctionNote: null,
-    disclaimerCategory: null,
+    disclaimerCategory: "Educación", /* certificaciones y capacitación: el aviso existente aplica */
     relatedSlugs: [],
     showNewsletter: true,
     sponsored: false,

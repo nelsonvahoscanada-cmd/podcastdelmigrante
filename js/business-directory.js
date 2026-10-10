@@ -62,7 +62,7 @@
       <article class="biz-card">
         ${photo}
         <div class="biz-card__body">
-          <h3 class="biz-card__name">${esc(b.name)}</h3>
+          <h2 class="biz-card__name">${esc(b.name)}</h2>
           ${title ? `<p class="biz-card__title">${esc(title)}</p>` : ""}
           ${b.company ? `<p class="biz-card__company">${esc(b.company)}</p>` : ""}
           ${place ? `<p class="biz-card__place">${esc(place)}</p>` : ""}

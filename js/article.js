@@ -236,12 +236,20 @@
   function videoBlockHtml(article) {
     if (!article.video) return "";
     if (article.video.youtubeId) {
+      /* El video de YouTube solo se carga cuando la persona pulsa
+         «Reproducir» (antes se cargaba al llegar a la sección). */
       return `
         <section class="article-video">
           <h2 class="article-video__heading">Esta historia también puedes verla en video</h2>
-          <div class="article-video__frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/${article.video.youtubeId}" title="${article.video.title}" allowfullscreen loading="lazy"></iframe>
+          <div class="article-video__frame article-video__frame--cover" data-video-id="${encodeURIComponent(article.video.youtubeId)}" data-video-title="${article.video.title}">
+            <button type="button" class="article-video__play" data-video-play>
+              <span class="video-card__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
+              </span>
+              <span class="article-video__play-label">Reproducir video<span class="sr-only">: ${article.video.title}</span></span>
+            </button>
           </div>
+          <p class="article-video__note">Al reproducirlo, el video se carga desde YouTube.</p>
         </section>
       `;
     }
@@ -339,9 +347,10 @@
     return `
       <section class="article-newsletter">
         <p class="article-newsletter__title">Recibe las historias y noticias útiles para la comunidad migrante.</p>
-        <form class="newsletter-form" id="articleNewsletterForm">
-          <input type="email" required placeholder="tu@correo.com" aria-label="Correo electrónico">
-          <button class="btn" type="submit">Suscribirme</button>
+        <p class="article-newsletter__note" id="articleNewsletterNote">Aún no disponible — próximamente. Por ahora no recopilamos correos.</p>
+        <form class="newsletter-form" id="articleNewsletterForm" aria-describedby="articleNewsletterNote">
+          <input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico" disabled>
+          <button class="btn" type="submit" disabled>Próximamente</button>
         </form>
         <p class="newsletter-msg" id="articleNewsletterMsg"></p>
       </section>
@@ -492,6 +501,24 @@
     `;
   }
 
+  function bindVideoPlay(root) {
+    root.addEventListener("click", (e) => {
+      const btn = e.target.closest ? e.target.closest("[data-video-play]") : null;
+      if (!btn) return;
+      const frame = btn.closest(".article-video__frame");
+      const id = frame.getAttribute("data-video-id");
+      const title = frame.getAttribute("data-video-title") || "Video";
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+      iframe.title = title;
+      iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+      iframe.allowFullscreen = true;
+      frame.classList.remove("article-video__frame--cover");
+      frame.replaceChildren(iframe);
+      iframe.focus();
+    });
+  }
+
   function renderArticle(article) {
     setSEO(article);
     const isAuthorColumn = article.layout === "columna-autor";
@@ -526,6 +553,7 @@
       ${relatedHtml(article)}
     `;
 
+    bindVideoPlay(root);
     const copyBtn = document.getElementById("copyLinkBtn");
     if (copyBtn) {
       copyBtn.addEventListener("click", () => {
