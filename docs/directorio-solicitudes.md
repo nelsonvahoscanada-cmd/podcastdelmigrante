@@ -4,10 +4,11 @@ Flujo: **formulario → `/registro/enviar` (Pages Function) → D1 + R2 → corr
 (Resend) → panel privado → aprobación del empresario → Pull Request manual →
 perfil publicado.** Nada se publica automáticamente.
 
-Mientras falte alguna pieza de esta guía, el formulario muestra
-«El formulario no está disponible por el momento» y **no acepta envíos**
-(falla cerrado: nunca muestra un éxito falso). Conviene configurar todo
-**antes** de fusionar el Pull Request, o justo después.
+El formulario está **cerrado por defecto**. Solo se abre cuando la variable
+`REGISTRO_ABIERTO` vale exactamente `1` **y** toda la configuración de esta
+guía está completa. En cualquier otro caso muestra «El formulario no está
+disponible por el momento» y **no acepta envíos** (falla cerrado: nunca
+muestra un éxito falso).
 
 Todo cabe en los planes gratuitos (Pages, D1, R2, Turnstile, Resend Free:
 100 correos/día, 3 000/mes). No se activa ningún servicio de pago.
@@ -26,7 +27,7 @@ Copiar el **Database ID** que devuelve el primer comando.
 ## 2. Bucket R2 privado para las imágenes
 
 ```
-npx wrangler r2 bucket create podcastdelmigrante-solicitudes
+npx wrangler r2 bucket create podcastdelmigrante-directorio
 ```
 
 **No** activar «Public access» ni dominio público: las imágenes solo se ven
@@ -44,7 +45,7 @@ Cloudflare → **Turnstile → Add widget**
 
 1. Crear cuenta gratuita en resend.com.
 2. **Domains → Add domain** → usar un **subdominio de envío**, p. ej.
-   `envios.podcastdelmigrante.com`, para no tocar el correo existente del
+   `correo.podcastdelmigrante.com` (ya verificado), para no tocar el correo existente del
    dominio raíz.
 3. Resend muestra registros DNS (SPF/`TXT`, DKIM/`TXT` y, si aplica, `MX` del
    subdominio de rebote). Añadirlos en Cloudflare DNS **tal cual** y esperar a
@@ -54,7 +55,7 @@ Cloudflare → **Turnstile → Add widget**
 4. **API Keys → Create** con permiso *Sending access* restringido a ese dominio.
 
 El remitente (`MAIL_FROM`) **debe** pertenecer al dominio verificado, p. ej.
-`El Podcast del Migrante <solicitudes@envios.podcastdelmigrante.com>`.
+`El Podcast del Migrante <solicitudes@correo.podcastdelmigrante.com>`.
 No se envía «desde» Gmail: el aviso interno llega **a**
 podcastdelmigrante@gmail.com y las respuestas del solicitante van a esa
 dirección mediante `reply_to`.
@@ -66,7 +67,7 @@ dirección mediante `reply_to`.
 | Tipo | Nombre de la variable | Recurso |
 |---|---|---|
 | D1 database | `DIRECTORIO_DB` | `podcastdelmigrante-directorio` |
-| R2 bucket | `SOLICITUDES` | `podcastdelmigrante-solicitudes` |
+| R2 bucket | `SOLICITUDES` | `podcastdelmigrante-directorio` |
 
 **Settings → Variables and Secrets**:
 
@@ -76,28 +77,47 @@ dirección mediante `reply_to`.
 | `TURNSTILE_SECRET_KEY` | Secreto | Secret Key de Turnstile |
 | `IP_HASH_SALT` | Secreto | texto aleatorio largo (p. ej. `openssl rand -hex 32`) |
 | `TURNSTILE_SITE_KEY` | Texto | Site Key de Turnstile |
-| `MAIL_FROM` | Texto | `El Podcast del Migrante <solicitudes@envios.podcastdelmigrante.com>` |
+| `MAIL_FROM` | Texto | `El Podcast del Migrante <solicitudes@correo.podcastdelmigrante.com>` |
 | `MAIL_INTERNAL_TO` | Texto | `podcastdelmigrante@gmail.com` |
 | `MAIL_REPLY_TO` | Texto (opcional) | dirección a la que responde el solicitante (por defecto `MAIL_INTERNAL_TO`) |
 | `PANEL_URL` | Texto (opcional) | `https://admin.podcastdelmigrante.com` |
+| `REGISTRO_ABIERTO` | Texto | **interruptor**: `1` abre el formulario; sin la variable, vacía o con cualquier otro valor, queda cerrado |
 
-Después de guardar: **Deployments → Retry deployment** (los bindings se aplican
-en el siguiente despliegue). Las claves nunca están en el repositorio ni en
-archivos JavaScript públicos; `/registro/config` solo entrega la Site Key, que
-es pública por diseño.
+Los cambios de variables y bindings se aplican en el **siguiente despliegue**
+(Deployments → Retry deployment). Las claves nunca están en el repositorio ni
+en archivos JavaScript públicos; `/registro/config` solo entrega la Site Key,
+que es pública por diseño, y solo cuando el formulario está abierto.
+
+**¿Por qué está cerrado?** Workers & Pages → el proyecto → último despliegue de
+Producción → *Functions → Real-time logs*, y recargar `/registro/config`. La
+línea «Registro de empresas cerrado — …» indica si es el interruptor o qué
+**nombres** faltan (nunca muestra valores). Una `TURNSTILE_SITE_KEY` que no
+tenga forma de Site Key (p. ej. el nombre del widget) también lo mantiene
+cerrado.
+
+**Abrir / cerrar:** poner `REGISTRO_ABIERTO` en `1` (o `0`) en Producción y
+volver a desplegar.
 
 ## 6. Panel privado (`admin-worker/`)
 
-1. En `admin-worker/wrangler.toml` reemplazar
-   `PEGAR_AQUI_EL_DATABASE_ID_DEL_DIRECTORIO` por el Database ID del paso 1.
-   (El bucket ya está declarado.) **No volver a desplegar el panel sin este
-   ID**: `wrangler deploy` fallaría.
-2. Desde `admin-worker/`: `npx wrangler deploy`.
-   Cloudflare Access, los correos autorizados y las estadísticas no cambian.
-3. Abrir `https://admin.podcastdelmigrante.com/solicitudes`.
+1. En `admin-worker/wrangler.toml` reemplazar los dos marcadores por los
+   Database ID reales (no son secretos):
+   `PEGAR_AQUI_EL_DATABASE_ID` → `podcastdelmigrante-analytics` (estadísticas,
+   el mismo de siempre) y `PEGAR_AQUI_EL_DATABASE_ID_DEL_DIRECTORIO` →
+   `podcastdelmigrante-directorio`. El bucket `podcastdelmigrante-directorio`
+   ya está declarado. Sin los ID, `wrangler deploy` falla sin cambiar nada.
+2. Comprobar que `ACCESS_TEAM_DOMAIN` y `ACCESS_AUD` existen en Workers & Pages
+   → `podcastdelmigrante-admin` → Settings → Variables and Secrets. Ya no van
+   en `wrangler.toml`: `keep_vars = true` los conserva en cada despliegue.
+3. Desde `admin-worker/`: `npx wrangler deploy --dry-run` (revisar que liste
+   `DB`, `DIRECTORIO_DB` y `SOLICITUDES`) y luego `npx wrangler deploy`.
+   Cloudflare Access, `ADMIN_EMAILS` y las estadísticas no cambian.
+4. Abrir `https://admin.podcastdelmigrante.com/solicitudes`.
 
 ## 7. Prueba en producción (una vez)
 
+0. Poner `REGISTRO_ABIERTO=1` en Producción y volver a desplegar.
+   `/registro/config` debe responder `"ready":true` con la Site Key.
 1. Enviar una solicitud de prueba real desde el celular.
 2. Comprobar: pantalla con número `SOL-AAAAMMDD-XXXXXX`; correo interno
    «Nueva solicitud empresarial — … — SOL-…» con la imagen adjunta; correo de

@@ -209,7 +209,57 @@ test("si D1 falla, se borra la imagen y no se confirma", async () => {
 
 test("GET /registro/config: listo solo con toda la configuración, sin revelar secretos", async () => {
   const ok = await (await configGet({ env: fakeEnv() })).json();
-  assert.deepEqual(ok, { ready: true, turnstileSiteKey: "site" });
+  assert.deepEqual(ok, { ready: true, turnstileSiteKey: "1x00000000000000000000AA" });
   const no = await (await configGet({ env: fakeEnv({ IP_HASH_SALT: "" }) })).json();
   assert.deepEqual(no, { ready: false, turnstileSiteKey: "" });
+});
+
+/* Captura console.warn para comprobar que el registro nombra lo que falta
+   sin incluir ningún valor secreto. */
+async function captureWarn(fn) {
+  const lines = [];
+  const original = console.warn;
+  console.warn = (...a) => lines.push(a.join(" "));
+  try { await fn(); } finally { console.warn = original; }
+  return lines.join("\n");
+}
+
+test("interruptor REGISTRO_ABIERTO: cerrado salvo que valga exactamente \"1\"", async () => {
+  for (const value of [undefined, "", "0", "true", "si", " 1", "1 ", "01", 1]) {
+    const env = fakeEnv({ REGISTRO_ABIERTO: value });
+    const cfg = await (await configGet({ env })).json();
+    assert.deepEqual(cfg, { ready: false, turnstileSiteKey: "" }, `config con ${JSON.stringify(value)}`);
+  }
+});
+
+test("con el interruptor cerrado no se procesa ni se guarda nada", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv({ REGISTRO_ABIERTO: "0" });
+    const log = await captureWarn(async () => {
+      const r = await send(env, VALID);
+      assert.equal(r.res.status, 503);
+      assert.equal(r.body.ok, false);
+    });
+    assert.match(log, /REGISTRO_ABIERTO/);
+    assert.equal(rows(env).length, 0);
+    assert.equal(env.SOLICITUDES.store.size, 0);
+    assert.equal(net.sent.length, 0, "ni Turnstile ni correos");
+  } finally { net.restore(); }
+});
+
+test("clave pública de Turnstile mal puesta (nombre del widget): cerrado", async () => {
+  const cfg = await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "Directorio empresarial" }) })).json();
+  assert.deepEqual(cfg, { ready: false, turnstileSiteKey: "" });
+  assert.equal((await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "0x4AAAAAAAabcdefghijklmn" }) })).json()).ready, true);
+});
+
+test("los registros nombran lo que falta, nunca los valores secretos", async () => {
+  const env = fakeEnv({ REGISTRO_ABIERTO: "", IP_HASH_SALT: "", RESEND_API_KEY: "re_SECRETO_123", TURNSTILE_SECRET_KEY: "0xSECRETO_TURNSTILE" });
+  const log = await captureWarn(() => configGet({ env }));
+  assert.match(log, /REGISTRO_ABIERTO/);
+  assert.match(log, /IP_HASH_SALT/);
+  for (const secret of ["re_SECRETO_123", "0xSECRETO_TURNSTILE"]) assert.ok(!log.includes(secret), "no revela " + secret);
+  const body = await (await configGet({ env })).text();
+  assert.ok(!/SECRETO/.test(body));
 });

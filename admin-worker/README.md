@@ -59,8 +59,11 @@ confirmadas. `booking_click` se presenta como «Clics en Agendar consulta».
    - Domain: `admin.podcastdelmigrante.com`
    - Policy: *Allow* → Include → **Emails** → los correos autorizados.
    - Guardar y copiar el **Application Audience (AUD) Tag**.
-3. **D1** → `podcastdelmigrante-analytics` → copiar el **Database ID**.
-4. Completar en `wrangler.toml`: `database_id`, `ACCESS_TEAM_DOMAIN`, `ACCESS_AUD`.
+3. **D1** → copiar el **Database ID** de `podcastdelmigrante-analytics` y el de
+   `podcastdelmigrante-directorio`, y pegarlos en `wrangler.toml` (no son secretos).
+4. **Workers & Pages → podcastdelmigrante-admin → Settings → Variables and Secrets**:
+   `ACCESS_TEAM_DOMAIN` y `ACCESS_AUD` (texto). No van en `wrangler.toml`:
+   `keep_vars = true` hace que cada despliegue los conserve.
 5. Desde `admin-worker/`:
    ```
    npm install

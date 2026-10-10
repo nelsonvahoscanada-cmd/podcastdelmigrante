@@ -6,6 +6,11 @@ name = "podcastdelmigrante-admin"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
 
+# Conservar al desplegar las variables ya configuradas en el panel de
+# Cloudflare (ACCESS_TEAM_DOMAIN, ACCESS_AUD). Sin esto, un «wrangler deploy»
+# las borraría y el panel quedaría bloqueado (falla cerrado con 403).
+keep_vars = true
+
 # Sin URLs alternativas: solo se entra por el dominio protegido con Access.
 workers_dev = false
 preview_urls = false
@@ -31,25 +36,26 @@ database_name = "podcastdelmigrante-analytics"
 database_id = "PEGAR_AQUI_EL_DATABASE_ID"   # Cloudflare → D1 → podcastdelmigrante-analytics → Database ID
 
 # Solicitudes del Directorio Empresarial (base D1 SEPARADA de las
-# estadísticas). Crear con:
-#   npx wrangler d1 create podcastdelmigrante-directorio
-#   npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=../db/directorio/0001_solicitudes.sql
+# estadísticas; ya creada en Cloudflare con la tabla business_applications
+# de db/directorio/0001_solicitudes.sql). El panel la lee y solo cambia el
+# estado de revisión de una solicitud.
 [[d1_databases]]
 binding = "DIRECTORIO_DB"
 database_name = "podcastdelmigrante-directorio"
-database_id = "PEGAR_AQUI_EL_DATABASE_ID_DEL_DIRECTORIO"
+database_id = "PEGAR_AQUI_EL_DATABASE_ID_DEL_DIRECTORIO"   # Cloudflare → D1 → podcastdelmigrante-directorio → Database ID
 
-# Imágenes de las solicitudes (bucket PRIVADO, sin acceso público):
-#   npx wrangler r2 bucket create podcastdelmigrante-solicitudes
+# Imágenes de las solicitudes: bucket R2 PRIVADO (sin acceso público), el
+# mismo que usa el sitio con el binding SOLICITUDES. El panel solo las lee.
 [[r2_buckets]]
 binding = "SOLICITUDES"
-bucket_name = "podcastdelmigrante-solicitudes"
+bucket_name = "podcastdelmigrante-directorio"
 
 [vars]
 REPORT_TIMEZONE = "America/Edmonton"
-# Cloudflare Zero Trust → Settings → Team domain (ej. https://eradio.cloudflareaccess.com)
-ACCESS_TEAM_DOMAIN = ""
-# Zero Trust → Access → Applications → (app del panel) → Application Audience (AUD) Tag
-ACCESS_AUD = ""
+# ACCESS_TEAM_DOMAIN y ACCESS_AUD NO se declaran aquí: viven en Cloudflare →
+# Workers & Pages → podcastdelmigrante-admin → Settings → Variables and Secrets
+# y se conservan gracias a keep_vars. (Declararlos vacíos los borraría.)
+#   ACCESS_TEAM_DOMAIN  Zero Trust → Settings → Team domain (ej. https://eradio.cloudflareaccess.com)
+#   ACCESS_AUD          Zero Trust → Access → Applications → (app del panel) → Application Audience (AUD) Tag
 # ADMIN_EMAILS se configura como SECRETO (no aquí):
 #   npx wrangler secret put ADMIN_EMAILS     → "correo1@dominio.com,correo2@dominio.com"

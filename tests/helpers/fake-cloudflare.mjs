@@ -64,12 +64,13 @@ export function fakeEnv(over = {}) {
       RESEND_API_KEY: "re_test",
       RESEND_API_URL: "https://resend.test/emails",
       TURNSTILE_SECRET_KEY: "secret",
-      TURNSTILE_SITE_KEY: "site",
+      TURNSTILE_SITE_KEY: "1x00000000000000000000AA", /* clave de prueba pública de Cloudflare */
       TURNSTILE_VERIFY_URL: "https://turnstile.test/siteverify",
       IP_HASH_SALT: "sal",
       MAIL_FROM: "El Podcast del Migrante <solicitudes@podcastdelmigrante.com>",
       MAIL_INTERNAL_TO: "podcastdelmigrante@gmail.com",
       PANEL_URL: "https://admin.podcastdelmigrante.com",
+      REGISTRO_ABIERTO: "1",
     },
     over
   );

@@ -17,7 +17,7 @@
 */
 import { normalize, validate, validateImage, newRequestId } from "../../js/directorio/solicitud-core.js";
 import { internalEmail, confirmationEmail, sendEmail, toBase64 } from "../_lib/correos.js";
-import { missingConfig, jsonResponse } from "../_lib/registro-env.js";
+import { registrationStatus, closedReason, jsonResponse } from "../_lib/registro-env.js";
 
 export const CONSENT_VERSION = "directorio-2026-10";
 const MAX_BODY = 6 * 1024 * 1024;
@@ -49,7 +49,9 @@ function receivedLabel(date) {
 
 export async function onRequestPost(context) {
   const { request, env } = context;
-  if (missingConfig(env).length) {
+  const status = registrationStatus(env);
+  if (!status.open) {
+    console.warn(closedReason(status));
     return jsonResponse({ ok: false, error: "El registro no está disponible en este momento. Inténtalo más tarde." }, 503);
   }
   const ctype = request.headers.get("Content-Type") || "";
