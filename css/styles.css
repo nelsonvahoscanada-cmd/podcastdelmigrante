@@ -17,6 +17,7 @@
   --gris-800: #2a2a2a;
   --gris-600: #5b5b5b;
   --gris-400: #8c8c8c;
+  --gris-texto: #6b6b6b; /* texto secundario: 5.3:1 sobre blanco, 4.7:1 sobre crema (WCAG AA) */
   --gris-200: #d9d9d6;
   --gris-100: #f2f1ed;
   --blanco: #ffffff;
@@ -767,7 +768,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .video-card__desc {
   font-size: 0.86rem;
-  color: var(--gris-600);
+  color: #a3a3a3; /* 7.8:1 sobre el fondo negro (WCAG AA) */
   line-height: 1.4;
   margin-top: 6px;
 }
@@ -852,7 +853,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-style: italic;
   font-size: 1.7rem;
   font-weight: 600;
-  color: var(--gris-200);
+  color: #8c8c8c; /* número decorativo grande: 3.4:1 (WCAG AA texto grande ≥ 3:1) */
   font-variant-numeric: tabular-nums;
 }
 .most-read-row:hover .most-read-row__num { color: var(--verde); }
@@ -925,7 +926,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: var(--gris-400);
+  color: var(--gris-texto);
   margin-top: 4px;
 }
 .contributor-card__latest-title {
@@ -1169,7 +1170,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--gris-400);
+  color: var(--gris-texto);
   margin-bottom: 6px;
 }
 .distro-card__name {
@@ -1508,3 +1509,18 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
 @media (max-width: 1359px) {
   .help-section { padding-left: 20px; padding-right: 20px; }
 }
+
+/* Texto solo para lectores de pantalla (accesibilidad) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Boletín aún no disponible: campos desactivados, legibles */
+.newsletter-form input:disabled,
+.newsletter-form .btn:disabled { cursor: not-allowed; opacity: 0.75; }

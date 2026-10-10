@@ -1,11 +1,18 @@
 {
   "version": 1,
-  "description": "Las funciones de Pages solo se ejecutan en la plantilla de artículos (redirección de /articulo?slug=) y en el registro de empresas (/registro/*); todo lo demás se sirve como archivo estático.",
+  "description": "Las funciones de Pages solo se ejecutan en la plantilla de artículos (redirección de /articulo?slug=), en el registro de empresas (/registro/*) y en las carpetas internas del repositorio, que responden 404 (no son parte del sitio); todo lo demás se sirve como archivo estático.",
   "include": [
     "/articulo",
     "/articulo.html",
     "/articulo/",
-    "/registro/*"
+    "/registro/*",
+    "/admin-worker/*",
+    "/db/*",
+    "/docs/*",
+    "/tests/*",
+    "/scripts/*",
+    "/functions/*",
+    "/.github/*"
   ],
   "exclude": []
 }

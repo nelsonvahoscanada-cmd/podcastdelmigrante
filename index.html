@@ -289,12 +289,12 @@
     <div class="wrap newsletter-inner">
       <div>
         <p class="newsletter-title">Recibe lo esencial cada semana</p>
-        <p class="newsletter-desc">Migración, empleo y vida en Canadá directo a tu correo. Aún no disponible — próximamente.</p>
+        <p class="newsletter-desc" id="newsletterDesc">Migración, empleo y vida en Canadá directo a tu correo. Aún no disponible — próximamente. Por ahora no recopilamos correos.</p>
       </div>
       <div>
-        <form class="newsletter-form" id="newsletterForm">
-          <input type="email" required placeholder="tu@correo.com" aria-label="Correo electrónico">
-          <button class="btn" type="submit">Suscribirme</button>
+        <form class="newsletter-form" id="newsletterForm" aria-describedby="newsletterDesc">
+          <input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico" disabled>
+          <button class="btn" type="submit" disabled>Próximamente</button>
         </form>
         <p class="newsletter-msg" id="newsletterMsg"></p>
       </div>
