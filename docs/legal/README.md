@@ -34,8 +34,10 @@ español es la de referencia; ambas deben mantenerse equivalentes.
 Ver **`CUESTIONARIO-PROPIETARIO.md`**: 16 preguntas que resuelven todas las marcas.
 
 
-1. Razón social exacta de eRadio Global Corp., jurisdicción de constitución
-   y número de registro corporativo.
+1. Denominación jurídica exacta de eRadio Global Corp. y números de registro
+   federal y de Alberta. (Confirmado por el propietario: corporación
+   registrada a nivel federal y en Alberta, responsable del sitio y del
+   Magazine.)
 2. Domicilio legal o dirección postal para notificaciones.
 3. Persona responsable de privacidad (nombre o cargo) y correo dedicado
    (recomendado, p. ej. privacidad@… en lugar de una cuenta Gmail).

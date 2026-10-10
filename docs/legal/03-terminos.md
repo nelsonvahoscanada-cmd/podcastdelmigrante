@@ -13,7 +13,9 @@
 ### 1. Aceptación
 
 Estos términos regulan el uso de podcastdelmigrante.com (el «Sitio»), operado
-por eRadio Global Corp. [PENDIENTE: razón social exacta y domicilio]. Al usar
+por eRadio Global Corp. [VERIFICAR: denominación jurídica exacta], corporación
+registrada a nivel federal en Canadá y registrada en Alberta
+[PENDIENTE: números de registro y domicilio oficial]. Al usar
 el Sitio aceptas estos términos. Si no estás de acuerdo, no lo uses.
 
 ### 2. Qué ofrece el Sitio
@@ -120,7 +122,9 @@ eRadio Global Corp. — [PENDIENTE: dirección] — [PENDIENTE: correo]
 ### 1. Acceptance
 
 These terms govern the use of podcastdelmigrante.com (the "Site"), operated by
-eRadio Global Corp. [PENDING: exact legal name and address]. By using the Site
+eRadio Global Corp. [VERIFY: exact legal name], a federally registered
+Canadian corporation also registered in Alberta [PENDING: registration numbers
+and registered office]. By using the Site
 you accept these terms. If you do not agree, do not use it.
 
 ### 2. What the Site offers

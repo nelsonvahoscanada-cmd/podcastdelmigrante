@@ -11,8 +11,8 @@ la mención «eRadio Global Corp.» del pie de página y el correo
 podcastdelmigrante@gmail.com que ya aparece en el sitio.
 
 ## A. Identidad de la empresa (propietario)
-1. **Razón social exacta**, jurisdicción de constitución (¿Alberta? ¿federal?) y número de registro corporativo.
-2. **Dirección postal** para notificaciones legales (puede ser un apartado postal).
+1. ~~Jurisdicción~~ **Confirmado:** eRadio Global Corp. está registrada a nivel federal en Canadá y en Alberta, y es la entidad responsable del sitio y del Magazine. **Falta verificar:** la denominación jurídica exacta (tal como figura en el registro federal) y los números de registro federal y provincial.
+2. **Domicilio oficial** (registered office) y, si es distinta, la dirección postal para notificaciones.
 3. **Responsable de privacidad**: nombre o cargo.
 4. **Correos dedicados** que se publicarán: privacidad, editorial/correcciones y contacto general. Recomendado: correos del dominio, por ejemplo privacidad@podcastdelmigrante.com, en lugar de Gmail.
 

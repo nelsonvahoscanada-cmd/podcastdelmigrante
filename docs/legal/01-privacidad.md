@@ -15,9 +15,10 @@
 
 El Podcast del Migrante y El Podcast del Migrante Magazine (el «Sitio»,
 podcastdelmigrante.com) son operados por **eRadio Global Corp.**
-[PENDIENTE: razón social exacta, jurisdicción de constitución y número de
-registro], con operaciones en Alberta, Canadá
-[PENDIENTE: dirección postal para notificaciones].
+[VERIFICAR: denominación jurídica exacta], una corporación registrada a
+nivel federal en Canadá y registrada en la provincia de Alberta
+[PENDIENTE: números de registro federal y provincial].
+Domicilio: [PENDIENTE: domicilio oficial].
 
 Responsable de privacidad: [PENDIENTE: nombre o cargo].
 Correo de contacto para privacidad: [PENDIENTE: correo dedicado; mientras
@@ -216,8 +217,9 @@ eRadio Global Corp. — Privacidad
 
 El Podcast del Migrante and El Podcast del Migrante Magazine (the "Site",
 podcastdelmigrante.com) are operated by **eRadio Global Corp.**
-[PENDING: exact legal name, jurisdiction of incorporation and registration
-number], operating in Alberta, Canada [PENDING: mailing address for notices].
+[VERIFY: exact legal name], a federally registered Canadian corporation,
+also registered in the Province of Alberta [PENDING: federal and provincial
+registration numbers]. Address: [PENDING: registered office].
 
 Privacy contact: [PENDING: name or title].
 Privacy email: [PENDING: dedicated address; in the meantime,
