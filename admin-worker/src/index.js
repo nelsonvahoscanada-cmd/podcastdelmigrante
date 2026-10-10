@@ -16,12 +16,16 @@
     GET  /api/solicitudes/SOL-…/imagen         imagen privada (R2)
     GET  /api/solicitudes/SOL-…/paquete        ficha para publicar con un Pull Request
     POST /api/solicitudes/SOL-…/estado         cambio de estado (JSON, mismo origen; queda en el historial)
+    POST /api/solicitudes/SOL-…/eliminacion    pedido de eliminación: programar | cancelar | ejecutar
+    GET  /api/eliminaciones                    registro de pedidos de eliminación
+    POST /api/eliminaciones/N/pasos            pasos manuales: correos borrados en Gmail, respuesta enviada
 */
 
 import { verifyAccess, localDevIdentity, canViewBusiness } from "./auth.js";
 import { parseMonth, DEFAULT_TIMEZONE } from "./period.js";
 import { listBusinesses, businessStats, BUSINESS_ID_RE } from "./stats.js";
 import { listApplications, getApplication, applicationImage, updateApplication, publicationPackage, applicationHistory } from "./solicitudes.js";
+import { deletionState, scheduleDeletion, cancelDeletion, executeDeletion, listDeletions, markDeletionStep } from "./eliminaciones.js";
 
 const SITE_ORIGIN = "https://podcastdelmigrante.com";
 
@@ -58,12 +62,26 @@ function json(data, status = 200) {
 
 const deny = (status, error) => json({ error }, status);
 
+/* Únicas rutas que aceptan POST (todas JSON y del mismo origen). */
+const POST_ROUTES = [/^\/api\/solicitudes\/[^/]+\/(?:estado|eliminacion)$/, /^\/api\/eliminaciones\/[^/]+\/pasos$/];
+
+/* Defensa contra CSRF además de Access: mismo origen y JSON.
+   Devuelve { input } o { error: Response }. */
+async function readJson(request, url) {
+  const origin = request.headers.get("Origin");
+  if (origin && origin !== url.origin) return { error: deny(403, "Origen no permitido") };
+  if (!(request.headers.get("Content-Type") || "").startsWith("application/json")) return { error: deny(415, "Se espera JSON") };
+  const input = await request.json().catch(() => null);
+  if (!input || typeof input !== "object") return { error: deny(400, "JSON inválido") };
+  return { input };
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    const isStatusChange = request.method === "POST" && /^\/api\/solicitudes\/[^/]+\/estado$/.test(url.pathname);
-    if (request.method !== "GET" && request.method !== "HEAD" && !isStatusChange) return deny(405, "Método no permitido");
+    const isPost = request.method === "POST" && POST_ROUTES.some((re) => re.test(url.pathname));
+    if (request.method !== "GET" && request.method !== "HEAD" && !isPost) return deny(405, "Método no permitido");
     if (url.pathname === "/robots.txt") {
       return withSecurity(new Response("User-agent: *\nDisallow: /\n", { headers: { "Content-Type": "text/plain" } }));
     }
@@ -90,32 +108,45 @@ export default {
     }
 
     /* ---------- Solicitudes del directorio ---------- */
-    if (url.pathname === "/api/solicitudes" || url.pathname.startsWith("/api/solicitudes/")) {
+    if (url.pathname === "/api/solicitudes" || url.pathname.startsWith("/api/solicitudes/") || url.pathname.startsWith("/api/eliminaciones")) {
       if (!env.DIRECTORIO_DB || !env.SOLICITUDES) return deny(503, "Falta configurar DIRECTORIO_DB y SOLICITUDES en wrangler.toml");
       if (url.pathname === "/api/solicitudes") {
         return json(await listApplications(env.DIRECTORIO_DB, url.searchParams.get("status") || ""));
       }
-      const m = url.pathname.match(/^\/api\/solicitudes\/([^/]+)(?:\/(imagen|paquete|estado))?$/);
+      if (url.pathname === "/api/eliminaciones") {
+        return json({ deletions: await listDeletions(env.DIRECTORIO_DB) });
+      }
+      const step = url.pathname.match(/^\/api\/eliminaciones\/([^/]+)\/pasos$/);
+      if (step && isPost) {
+        const { input, error } = await readJson(request, url);
+        if (error) return error;
+        const out = await markDeletionStep(env.DIRECTORIO_DB, step[1], input, identity);
+        return out.ok ? json({ deletion: out.deletion }) : deny(out.status, out.error);
+      }
+      const m = url.pathname.match(/^\/api\/solicitudes\/([^/]+)(?:\/(imagen|paquete|estado|eliminacion))?$/);
       if (!m) return deny(404, "No encontrado");
       const [, id, action] = m;
       if (action === "imagen") {
         const img = await applicationImage(env, id);
         return img ? withSecurity(img) : deny(404, "Imagen no encontrada");
       }
-      if (action === "estado") {
-        /* Defensa contra CSRF además de Access: mismo origen y JSON */
-        const origin = request.headers.get("Origin");
-        if (origin && origin !== url.origin) return deny(403, "Origen no permitido");
-        if (!(request.headers.get("Content-Type") || "").startsWith("application/json")) return deny(415, "Se espera JSON");
-        const input = await request.json().catch(() => null);
-        if (!input || typeof input !== "object") return deny(400, "JSON inválido");
-        const out = await updateApplication(env.DIRECTORIO_DB, id, input, identity);
-        return out.ok ? json({ application: out.row }) : deny(out.status, out.error);
+      if (action === "estado" || action === "eliminacion") {
+        if (!isPost) return deny(405, "Método no permitido");
+        const { input, error } = await readJson(request, url);
+        if (error) return error;
+        if (action === "estado") {
+          const out = await updateApplication(env.DIRECTORIO_DB, id, input, identity);
+          return out.ok ? json({ application: out.row }) : deny(out.status, out.error);
+        }
+        const run = { programar: () => scheduleDeletion(env.DIRECTORIO_DB, id, input, identity), cancelar: () => cancelDeletion(env.DIRECTORIO_DB, id, input, identity), ejecutar: () => executeDeletion(env, id, input, identity) }[input.action];
+        if (!run) return deny(400, "Acción no válida");
+        const out = await run();
+        return out.ok ? json({ ok: true, deletion: out.deletion || null }) : deny(out.status, out.error);
       }
       const row = await getApplication(env.DIRECTORIO_DB, id);
       if (!row) return deny(404, "Solicitud no encontrada");
       if (action === "paquete") return json(publicationPackage(row));
-      return json({ application: row, history: await applicationHistory(env.DIRECTORIO_DB, id) });
+      return json({ application: row, history: await applicationHistory(env.DIRECTORIO_DB, id), deletion: await deletionState(env.DIRECTORIO_DB, id) });
     }
 
     if (url.pathname.startsWith("/api/")) return deny(404, "No encontrado");

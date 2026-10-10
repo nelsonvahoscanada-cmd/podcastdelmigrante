@@ -52,12 +52,13 @@ export function fakeR2() {
       if (!o) return null;
       return { body: o.bytes, httpMetadata: o.httpMetadata, customMetadata: o.customMetadata, size: o.bytes.length, async arrayBuffer() { return o.bytes.buffer; } };
     },
-    async delete(key) { store.delete(key); },
+    async delete(key) { for (const k of [].concat(key)) store.delete(k); },
+    async list({ prefix = "" } = {}) { return { objects: [...store.keys()].filter((k) => k.startsWith(prefix)).map((key) => ({ key })), truncated: false }; },
   };
 }
 
 /* fetch simulado: registra los correos y responde a Turnstile */
-export function installFetch({ turnstileOk = true, turnstileDown = false, resendFails = false } = {}) {
+export function installFetch({ turnstileOk = true, turnstileDown = false, resendFails = false, turnstileHostname = "podcastdelmigrante.com" } = {}) {
   const sent = [];
   const original = globalThis.fetch;
   globalThis.fetch = async (url, init = {}) => {
@@ -65,7 +66,9 @@ export function installFetch({ turnstileOk = true, turnstileDown = false, resend
     if (u.startsWith("https://turnstile.test/")) {
       if (turnstileDown) throw new TypeError("fetch failed");
       const params = new URLSearchParams(String(init.body));
-      return new Response(JSON.stringify({ success: turnstileOk && params.get("response") === "token-ok" }), { status: 200 });
+      const success = turnstileOk && params.get("response") === "token-ok";
+      /* Como siteverify: el dominio donde se resolvió el desafío */
+      return new Response(JSON.stringify(success ? { success, hostname: turnstileHostname } : { success }), { status: 200 });
     }
     if (u.startsWith("https://resend.test/")) {
       sent.push({ headers: init.headers, body: JSON.parse(init.body) });

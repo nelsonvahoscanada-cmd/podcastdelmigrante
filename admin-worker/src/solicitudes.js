@@ -12,8 +12,11 @@
     · «aprobada» exige que el empresario haya aprobado la vista previa.
     · «publicada» exige el BIZ-id y el slug del perfil ya publicado (el
       perfil se publica con un Pull Request: ver «Preparar publicación»).
+    · Con un pedido de eliminación abierto no se puede aprobar ni publicar
+      (ver eliminaciones.js).
 */
 import { categoryLabel, CATEGORIES, REQUEST_ID_RE, IMAGE_KINDS } from "../../js/directorio/solicitud-core.js";
+import { hasOpenDeletion, openDeletionIds } from "./eliminaciones.js";
 
 export const STATUSES = ["pendiente", "en_revision", "aprobada", "publicada", "rechazada", "duplicada"];
 const TRANSITIONS = {
@@ -38,8 +41,11 @@ export async function listApplications(db, status) {
   );
   const { results } = await (where ? stmt.bind(status) : stmt).all();
   const counts = await db.prepare("SELECT status, COUNT(*) AS n FROM business_applications GROUP BY status").all();
+  const pendingDeletion = await openDeletionIds(db);
   return {
-    applications: results.map((r) => Object.assign(r, { category_label: categoryLabel({ category: r.category, categoryOther: r.category_other }) })),
+    applications: results.map((r) =>
+      Object.assign(r, { category_label: categoryLabel({ category: r.category, categoryOther: r.category_other }), deletion_pending: pendingDeletion.has(r.id) })
+    ),
     counts: Object.fromEntries(counts.results.map((c) => [c.status, c.n])),
   };
 }
@@ -80,6 +86,9 @@ export async function updateApplication(db, id, input, identity) {
   if (!STATUSES.includes(next)) return { ok: false, status: 400, error: "Estado no válido" };
   if (next !== row.status && !TRANSITIONS[row.status].includes(next)) {
     return { ok: false, status: 409, error: `No se puede pasar de «${row.status}» a «${next}».` };
+  }
+  if ((next === "aprobada" || next === "publicada") && next !== row.status && (await hasOpenDeletion(db, id))) {
+    return { ok: false, status: 409, error: "Hay un pedido de eliminación abierto: no se puede aprobar ni publicar. Ejecútalo o cancélalo primero." };
   }
   if (next === "aprobada" && !ownerApproved) {
     return { ok: false, status: 409, error: "Antes de aprobar, marca que el empresario aprobó la vista previa del perfil." };

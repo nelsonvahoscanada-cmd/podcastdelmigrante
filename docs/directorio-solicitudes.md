@@ -21,6 +21,7 @@ Todo cabe en los planes gratuitos (Pages, D1, R2, Turnstile, Resend Free:
 npx wrangler d1 create podcastdelmigrante-directorio
 npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0001_solicitudes.sql
 npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0002_historial.sql
+npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0003_eliminaciones.sql
 ```
 
 Copiar el **Database ID** que devuelve el primer comando. Las migraciones
@@ -31,13 +32,20 @@ borra ni modifica datos (`CREATE … IF NOT EXISTS`): repetirlas no tiene efecto
 |---|---|---|
 | `0001_solicitudes.sql` | tabla `business_applications` | guardar las solicitudes |
 | `0002_historial.sql` | tabla `application_events` | el historial de acciones del panel |
+| `0003_eliminaciones.sql` | tabla `deletion_requests` | los pedidos de eliminación de datos |
 
 Comprobar en la Console:
-`SELECT name FROM sqlite_master WHERE type = 'table' AND name IN ('business_applications','application_events');`
-→ deben aparecer las dos.
+`SELECT name FROM sqlite_master WHERE type = 'table' AND name IN ('business_applications','application_events','deletion_requests');`
+→ deben aparecer las tres.
 
 Sin `0002`, las solicitudes se siguen recibiendo, pero el panel no deja
 cambiar estados (avisa «Falta aplicar la migración…» y no guarda nada a medias).
+Sin `0003`, el panel no permite registrar ni ejecutar eliminaciones (lo avisa).
+
+**Antes de cualquier migración en producción**, copia de seguridad:
+`npx wrangler d1 export podcastdelmigrante-directorio --remote --output=respaldo-AAAAMMDD.sql`
+(guardarla cifrada y fuera del repositorio) y anotar el punto de restauración:
+`npx wrangler d1 time-travel info podcastdelmigrante-directorio`.
 
 ## 2. Bucket R2 privado para las imágenes
 
@@ -96,6 +104,7 @@ dirección mediante `reply_to`.
 | `MAIL_INTERNAL_TO` | Texto | `podcastdelmigrante@gmail.com` |
 | `MAIL_REPLY_TO` | Texto (opcional) | dirección a la que responde el solicitante (por defecto `MAIL_INTERNAL_TO`) |
 | `PANEL_URL` | Texto (opcional) | `https://admin.podcastdelmigrante.com` |
+| `TURNSTILE_HOSTNAMES` | Texto (opcional) | dominios aceptados para el token de Turnstile, separados por comas. Por defecto `podcastdelmigrante.com,www.podcastdelmigrante.com`. Solo en **Preview**, para probar en una vista previa: añadir su dominio `….pages.dev` |
 | `REGISTRO_ABIERTO` | Texto | **interruptor**: `1` abre el formulario; sin la variable, vacía o con cualquier otro valor, queda cerrado |
 
 Los cambios de variables y bindings se aplican en el **siguiente despliegue**
@@ -167,7 +176,13 @@ El correo privado del solicitante nunca se incluye en la ficha pública.
 - Imágenes: JPG/PNG/WebP comprobados por su contenido (no por la extensión),
   máx. 5 MB, 300–8000 px; el navegador las redimensiona y elimina los datos
   EXIF (ubicación) antes de enviarlas.
-- Consentimientos guardados con versión y fecha (`directorio-2026-10`).
+- Turnstile: además del token, se comprueba que se resolvió en el dominio
+  oficial (`TURNSTILE_HOSTNAMES`); un token obtenido en otro sitio se rechaza.
+- Aviso de privacidad en el formulario (responsable, datos, fines,
+  proveedores Cloudflare, Resend y Gmail, tratamiento fuera de Canadá y
+  derechos). Consentimientos guardados con versión y fecha
+  (`directorio-2026-10-v2`; cambiar `CONSENT_VERSION` en
+  `functions/registro/enviar.js` cada vez que cambie ese texto).
 - Historial que no se edita (`application_events`): «recibida» (formulario),
   resultado de los correos (sistema) y cada cambio de estado o revisión con el
   correo verificado del administrador y la fecha. El cambio y su registro se
@@ -179,10 +194,37 @@ El correo privado del solicitante nunca se incluye en la ficha pública.
   mensaje claro (503) y no se guarda nada; si Resend falla, la solicitud se
   guarda igual y el panel la marca «Correo con error».
 
-## 10. Suscripciones futuras
+## 10. Pedidos de eliminación de datos
+
+Cuando una persona pide eliminar sus datos (a podcastdelmigrante@gmail.com o
+por otro canal), se tramita desde el panel → la solicitud → **Eliminación de
+datos**. Referencia interna: responder dentro de 45 días.
+
+1. **Registrar el pedido** (paso 1): fecha y canal. No borra nada y se puede
+   **cancelar** con un motivo. Mientras esté abierto, la solicitud no se puede
+   aprobar ni publicar.
+2. Si el perfil **ya está publicado**: retirarlo antes del sitio con un Pull
+   Request (quitar la ficha de `js/businesses.js`, su imagen y regenerar las
+   páginas). Ojo: el repositorio es público y su historial conserva la versión
+   anterior.
+3. **Eliminar definitivamente** (paso 2): escribir el número `SOL-…` exacto y
+   confirmar. Se borran la imagen en R2 (primero; si falla no se toca D1), el
+   historial y la solicitud en D1 (en una sola transacción).
+4. **Gmail**: buscar el número `SOL-…`, borrar los correos del caso y vaciar
+   la papelera. Marcar «Correos en Gmail» en el registro de eliminaciones.
+5. **Responder** a la persona confirmando la eliminación y marcar «Respuesta a
+   la persona».
+
+El **registro de eliminaciones** (tabla `deletion_requests`) conserva solo el
+número de solicitud, una huella SHA-256 del correo, fechas, canal y quién hizo
+cada paso, para acreditar la gestión. Quedan fuera del alcance del panel, y
+se vencen solos: el Time Travel de D1, los registros de envío de Resend y las
+copias de seguridad (ver `docs/directorio-conservacion-propuesta.md`).
+
+## 11. Suscripciones futuras
 
 No hay pagos ni Stripe. El esquema está listo para añadir, en una migración
-`0002_…sql`, tablas `memberships` / `payments` que referencien
+nueva (`0004_…sql`), tablas `memberships` / `payments` que referencien
 `business_applications.business_id`, sin cambiar el flujo actual.
 
 ## Pruebas

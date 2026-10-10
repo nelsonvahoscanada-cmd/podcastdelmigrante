@@ -166,3 +166,14 @@ summary { cursor: pointer; color: var(--verde-oscuro); font-weight: 600; font-si
 .sol-history td { font-size: 13px; vertical-align: top; }
 .sol-history td:first-child { white-space: nowrap; }
 @media (max-width: 640px) { .sol-history td:first-child { white-space: normal; } }
+
+/* Eliminación de datos (privacidad) */
+.btn--danger { background: var(--rojo); color: var(--blanco); }
+.btn--danger:hover { background: #8f1d14; }
+.btn--small { padding: 5px 10px; font-size: 13px; }
+.sol-del { border-left: 4px solid var(--rojo); }
+.sol-del .sol-form + .sol-form { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--gris-200, #e5e5e5); }
+.sol-del-past { margin: 12px 0 0; padding-left: 1.2em; font-size: 14px; }
+.sol-deletions { margin-top: 20px; overflow-x: auto; }
+.sol-deletions .sol-table th { width: auto; }
+.sol-deletions .sol-table td { font-size: 13px; vertical-align: top; }

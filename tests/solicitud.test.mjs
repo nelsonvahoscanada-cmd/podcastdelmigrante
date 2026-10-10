@@ -168,6 +168,38 @@ test("rechazos: validación, imagen falsa, robot, Turnstile, sin configuración"
   } finally { net.restore(); }
 });
 
+test("Turnstile: un token válido emitido en otro dominio se rechaza", async () => {
+  let net = installFetch({ turnstileHostname: "sitio-ajeno.example" });
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 403);
+    assert.equal(rows(env).length, 0, "nada se guarda");
+    assert.equal(env.SOLICITUDES.store.size, 0);
+    assert.equal(net.sent.length, 0, "no salen correos");
+  } finally { net.restore(); }
+  /* Vista previa de Pages: solo si se autoriza su dominio expresamente */
+  net = installFetch({ turnstileHostname: "abc123.podcastdelmigrante.pages.dev" });
+  try {
+    assert.equal((await send(fakeEnv(), VALID)).res.status, 403, "por defecto, solo el dominio oficial");
+    const env = fakeEnv({ TURNSTILE_HOSTNAMES: "podcastdelmigrante.com, abc123.podcastdelmigrante.pages.dev" });
+    assert.equal((await send(env, VALID)).res.status, 201);
+  } finally { net.restore(); }
+  net = installFetch({ turnstileHostname: "www.podcastdelmigrante.com" });
+  try {
+    assert.equal((await send(fakeEnv(), VALID)).res.status, 201, "www también es oficial");
+  } finally { net.restore(); }
+});
+
+test("consentimiento: se guarda la versión vigente del aviso de privacidad", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv();
+    assert.equal((await send(env, VALID)).res.status, 201);
+    assert.equal(rows(env)[0].consent_version, "directorio-2026-10-v2");
+  } finally { net.restore(); }
+});
+
 test("sin duplicados: reintento y misma empresa abierta devuelven el mismo número", async () => {
   const net = installFetch();
   try {

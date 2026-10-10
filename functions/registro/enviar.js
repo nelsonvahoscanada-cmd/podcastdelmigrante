@@ -20,7 +20,9 @@ import { internalEmail, confirmationEmail, sendEmail, toBase64 } from "../_lib/c
 import { registrationStatus, closedReason, jsonResponse } from "../_lib/registro-env.js";
 import { recordEvent } from "../_lib/historial.js";
 
-export const CONSENT_VERSION = "directorio-2026-10";
+/* Versión del texto de consentimiento y del aviso de privacidad del formulario
+   (registra-tu-empresa.html). Cambiarla cada vez que cambie ese texto. */
+export const CONSENT_VERSION = "directorio-2026-10-v2";
 const MAX_BODY = 6 * 1024 * 1024;
 const LIMIT_PER_IP_HOUR = 5;
 const LIMIT_PER_EMAIL_DAY = 3;
@@ -30,8 +32,22 @@ async function sha256(text) {
   return [...new Uint8Array(d)].map((x) => x.toString(16).padStart(2, "0")).join("");
 }
 
-/* true = humano verificado · false = token inválido · null = Turnstile no
-   respondió (se rechaza igual, pero con un mensaje distinto). */
+/* Dominios desde los que se acepta el token de Turnstile. Por defecto, solo
+   el sitio oficial; para probar en una vista previa de Pages se añade su
+   dominio en TURNSTILE_HOSTNAMES (lista separada por comas). */
+const DEFAULT_TURNSTILE_HOSTNAMES = ["podcastdelmigrante.com", "www.podcastdelmigrante.com"];
+
+export function allowedTurnstileHostnames(env) {
+  const list = String((env && env.TURNSTILE_HOSTNAMES) || "")
+    .split(",")
+    .map((h) => h.trim().toLowerCase())
+    .filter(Boolean);
+  return list.length ? list : DEFAULT_TURNSTILE_HOSTNAMES;
+}
+
+/* true = humano verificado · false = token inválido o emitido en otro
+   dominio · null = Turnstile no respondió (se rechaza igual, pero con un
+   mensaje distinto). */
 async function verifyTurnstile(env, token, ip) {
   if (!token) return false;
   const body = new URLSearchParams({ secret: env.TURNSTILE_SECRET_KEY, response: token });
@@ -48,7 +64,15 @@ async function verifyTurnstile(env, token, ip) {
     return null;
   }
   const out = await res.json().catch(() => ({}));
-  return out.success === true;
+  if (out.success !== true) return false;
+  /* Un token válido obtenido en otro sitio (p. ej. copiado por un robot desde
+     una página ajena con la misma clave) no sirve aquí. */
+  const host = String(out.hostname || "").toLowerCase();
+  if (!allowedTurnstileHostnames(env).includes(host)) {
+    console.warn("Turnstile: token emitido para un dominio no permitido:", host || "(sin dominio)");
+    return false;
+  }
+  return true;
 }
 
 function receivedLabel(date) {
