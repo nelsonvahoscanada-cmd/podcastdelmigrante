@@ -15,7 +15,7 @@
 Estos términos regulan el uso de podcastdelmigrante.com (el «Sitio»), operado
 por eRadio Global Corp. [VERIFICAR: denominación jurídica exacta], corporación
 registrada a nivel federal en Canadá y registrada en Alberta
-[PENDIENTE: números de registro y domicilio oficial]. Al usar
+[PENDIENTE: números de registro] [VERIFICAR con asesoría legal: si alguna norma aplicable exige publicar una dirección postal o el domicilio oficial. No se publica una dirección física salvo que sea obligatoria.]. Al usar
 el Sitio aceptas estos términos. Si no estás de acuerdo, no lo uses.
 
 ### 2. Qué ofrece el Sitio
@@ -94,7 +94,7 @@ pueden excluirse por contrato.
 
 ### 9. Correcciones
 
-Si encuentras un error, escríbenos a [PENDIENTE: correo editorial]. Lo
+Si encuentras un error, escríbenos a [PENDIENTE: correo institucional]. Lo
 revisaremos y, si corresponde, lo corregiremos indicando la fecha de la
 corrección (ver el Aviso editorial).
 
@@ -111,7 +111,7 @@ jurisdicción de los tribunales.]
 
 ### 12. Contacto
 
-eRadio Global Corp. — [PENDIENTE: dirección] — [PENDIENTE: correo]
+eRadio Global Corp. — [PENDIENTE: correo institucional]
 
 ---
 
@@ -123,8 +123,7 @@ eRadio Global Corp. — [PENDIENTE: dirección] — [PENDIENTE: correo]
 
 These terms govern the use of podcastdelmigrante.com (the "Site"), operated by
 eRadio Global Corp. [VERIFY: exact legal name], a federally registered
-Canadian corporation also registered in Alberta [PENDING: registration numbers
-and registered office]. By using the Site
+Canadian corporation also registered in Alberta [PENDING: registration numbers] [VERIFY with legal counsel: whether any applicable rule requires publishing a mailing address or registered office. No physical address is published unless required.]. By using the Site
 you accept these terms. If you do not agree, do not use it.
 
 ### 2. What the Site offers
@@ -203,7 +202,7 @@ excluded by contract.
 
 ### 9. Corrections
 
-If you find an error, write to [PENDING: editorial email]. We will review it
+If you find an error, write to [PENDING: institutional email]. We will review it
 and, where appropriate, correct it and note the date of the correction (see
 the Editorial Notice).
 
@@ -220,4 +219,4 @@ legal counsel.]
 
 ### 12. Contact
 
-eRadio Global Corp. — [PENDING: address] — [PENDING: email]
+eRadio Global Corp. — [PENDING: institutional email]

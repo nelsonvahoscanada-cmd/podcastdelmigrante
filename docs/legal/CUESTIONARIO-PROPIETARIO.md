@@ -12,9 +12,9 @@ podcastdelmigrante@gmail.com que ya aparece en el sitio.
 
 ## A. Identidad de la empresa (propietario)
 1. ~~Jurisdicción~~ **Confirmado:** eRadio Global Corp. está registrada a nivel federal en Canadá y en Alberta, y es la entidad responsable del sitio y del Magazine. **Falta verificar:** la denominación jurídica exacta (tal como figura en el registro federal) y los números de registro federal y provincial.
-2. **Domicilio oficial** (registered office) y, si es distinta, la dirección postal para notificaciones.
+2. ~~Dirección~~ **Decidido:** no se publica una dirección residencial ni física. **Falta verificar** con asesoría legal si alguna norma aplicable (privacidad, corporaciones, comercio electrónico o consumo) exige identificar una dirección postal o el domicilio legal.
 3. **Responsable de privacidad**: nombre o cargo.
-4. **Correos dedicados** que se publicarán: privacidad, editorial/correcciones y contacto general. Recomendado: correos del dominio, por ejemplo privacidad@podcastdelmigrante.com, en lugar de Gmail.
+4. **Decidido:** un **correo institucional** es el canal principal de contacto (privacidad, correcciones y consultas generales). **Falta indicar** cuál es la dirección exacta.
 
 ## B. Datos personales (propietario)
 5. **Plazos de conservación.** Propuesta para aprobar o cambiar:

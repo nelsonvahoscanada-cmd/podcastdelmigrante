@@ -103,7 +103,7 @@ aceptación expresa del negocio.]
 ### 10. Cambios y baja
 
 Puedes pedir en cualquier momento que corrijamos tu perfil o lo demos de
-baja, escribiendo a [PENDIENTE: correo]. Lo haremos en un plazo razonable
+baja, escribiendo a [PENDIENTE: correo institucional]. Lo haremos en un plazo razonable
 [PENDIENTE: p. ej. 10 días hábiles].
 - Las páginas ya compartidas o guardadas por terceros, como capturas o
   cachés de buscadores, pueden tardar en desaparecer.
@@ -111,7 +111,7 @@ baja, escribiendo a [PENDIENTE: correo]. Lo haremos en un plazo razonable
 
 ### 11. Contacto
 
-eRadio Global Corp. — [PENDIENTE: dirección] — [PENDIENTE: correo]
+eRadio Global Corp. — [PENDIENTE: correo institucional]
 
 ---
 
@@ -209,7 +209,7 @@ accepted by the business.]
 ### 10. Changes and removal
 
 You may ask us at any time to correct or remove your profile by writing to
-[PENDING: email]. We will do so within a reasonable time
+[PENDING: institutional email]. We will do so within a reasonable time
 [PENDING: e.g. 10 business days].
 - Pages already shared or saved by third parties, such as screenshots or
   search-engine caches, may take time to disappear.
@@ -217,4 +217,4 @@ You may ask us at any time to correct or remove your profile by writing to
 
 ### 11. Contact
 
-eRadio Global Corp. — [PENDING: address] — [PENDING: email]
+eRadio Global Corp. — [PENDING: institutional email]

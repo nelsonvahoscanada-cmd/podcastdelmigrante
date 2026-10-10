@@ -18,11 +18,11 @@ podcastdelmigrante.com) son operados por **eRadio Global Corp.**
 [VERIFICAR: denominación jurídica exacta], una corporación registrada a
 nivel federal en Canadá y registrada en la provincia de Alberta
 [PENDIENTE: números de registro federal y provincial].
-Domicilio: [PENDIENTE: domicilio oficial].
+[VERIFICAR con asesoría legal: si alguna norma aplicable exige publicar una dirección postal o el domicilio oficial. No se publica una dirección física salvo que sea obligatoria.]
 
 Responsable de privacidad: [PENDIENTE: nombre o cargo].
-Correo de contacto para privacidad: [PENDIENTE: correo dedicado; mientras
-tanto, podcastdelmigrante@gmail.com].
+Canal principal de contacto (privacidad y consultas): [PENDIENTE: correo
+institucional].
 
 ### 2. Alcance
 
@@ -204,8 +204,7 @@ Si los cambios son importantes, los destacaremos en el Sitio.
 ### 13. Contacto
 
 eRadio Global Corp. — Privacidad
-[PENDIENTE: dirección postal]
-[PENDIENTE: correo de privacidad]
+[PENDIENTE: correo institucional]
 
 ---
 
@@ -219,11 +218,11 @@ El Podcast del Migrante and El Podcast del Migrante Magazine (the "Site",
 podcastdelmigrante.com) are operated by **eRadio Global Corp.**
 [VERIFY: exact legal name], a federally registered Canadian corporation,
 also registered in the Province of Alberta [PENDING: federal and provincial
-registration numbers]. Address: [PENDING: registered office].
+registration numbers]. [VERIFY with legal counsel: whether any applicable rule requires publishing a mailing address or registered office. No physical address is published unless required.]
 
 Privacy contact: [PENDING: name or title].
-Privacy email: [PENDING: dedicated address; in the meantime,
-podcastdelmigrante@gmail.com].
+Main contact channel (privacy and inquiries): [PENDING: institutional
+email].
 
 ### 2. Scope
 
@@ -395,5 +394,4 @@ the changes are significant, we will highlight them on the Site.
 ### 13. Contact
 
 eRadio Global Corp. — Privacy
-[PENDING: mailing address]
-[PENDING: privacy email]
+[PENDING: institutional email]

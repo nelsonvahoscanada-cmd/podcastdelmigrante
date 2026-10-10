@@ -47,7 +47,7 @@ algunas funciones, como el formulario de registro, podrían no funcionar.
 
 ### Contacto
 
-[PENDIENTE: correo de privacidad]
+[PENDIENTE: correo institucional]
 
 ---
 
@@ -92,4 +92,4 @@ work.
 
 ### Contact
 
-[PENDING: privacy email]
+[PENDING: institutional email]
