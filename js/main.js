@@ -179,8 +179,7 @@
     const track = document.getElementById("videoTrack");
     VIDEOS.filter((item) => item.published).forEach((item) => {
       const badge = item.demo === false ? "" : `<span class="demo-badge demo-badge--sm">Demo</span>`;
-      const lang = item.lang ? ` lang="${item.lang}"` : "";
-      const desc = item.desc ? `<p class="video-card__desc"${lang}>${item.desc}</p>` : "";
+      const desc = item.desc ? `<p class="video-card__desc">${item.desc}</p>` : "";
       /* Con video: miniatura original y reproducción en la misma tarjeta
          (js/video-cover.js, el iframe solo se crea al pulsar), más el
          enlace al video original en YouTube. */
@@ -198,7 +197,7 @@
       track.appendChild(el("article", "video-card", `
         ${media}
         <span class="tag tag--sm">${item.tag}</span>
-        <h3 class="video-card__title"${lang}>${item.title}</h3>
+        <h3 class="video-card__title">${item.title}</h3>
         ${desc}
         ${link}
       `));

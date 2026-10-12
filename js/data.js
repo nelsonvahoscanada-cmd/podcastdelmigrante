@@ -170,7 +170,8 @@ const STORIES = [
    nueva tarjeta basta con agregarla (o cambiar a `published: true`).
    Se muestran en el orden de este array. Cada video se reproduce en la
    misma tarjeta (js/video-cover.js) y tiene además su enlace a YouTube.
-   lang: "en" marca un video en inglés (etiqueta e idioma del título). */
+   Títulos y descripciones siempre en español; un video en otro idioma
+   se identifica en `tag` (p. ej. «Entrevista en inglés»). */
 const VIDEOS = [
   {
     tag: "Entrevistas",
@@ -182,10 +183,9 @@ const VIDEOS = [
   },
   {
     tag: "Entrevista en inglés",
-    title: "Dr. Eddy Valverde Narvaez | Family Medicine in Brooks, Alberta",
-    desc: "Interview by Elmy Castillo with Dr. Eddy Valverde Narvaez, family physician in Brooks, Alberta.",
+    title: "Dr. Eddy Valverde Narvaez | Medicina familiar en Brooks, Alberta",
+    desc: "Elmy Castillo entrevista en inglés al Dr. Eddy Valverde Narvaez, médico de familia en Brooks, Alberta.",
     videoId: "z2Ih590xSP4",
-    lang: "en",
     demo: false,
     published: true,
   },
