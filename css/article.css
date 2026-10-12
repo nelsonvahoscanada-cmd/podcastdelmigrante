@@ -516,12 +516,26 @@ a.column-masthead__name:hover { color: var(--negro); }
 
 /* Video de noticia: portada con botón; el iframe de YouTube se crea al pulsar */
 .article-video__frame--cover { background: linear-gradient(135deg, #1c1c1c, #3a3a3a); }
+/* Miniatura original de YouTube (js/video-cover.js), recortada a 16:9 */
+.article-video__thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .article-video__play {
   position: absolute; inset: 0; width: 100%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-  background: transparent; border: 0; color: var(--blanco); cursor: pointer; font: inherit;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.15));
+  border: 0; color: var(--blanco); cursor: pointer; font: inherit;
 }
-.article-video__play-label { font-weight: 700; font-size: 0.95rem; }
+.article-video__play-icon {
+  display: grid; place-items: center;
+  width: clamp(56px, 12vw, 76px); height: clamp(56px, 12vw, 76px); border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94); color: #1c1c1c;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+.article-video__play-icon svg { margin-left: 3px; }
+.article-video__play:hover .article-video__play-icon,
+.article-video__play:focus-visible .article-video__play-icon { transform: scale(1.08); background: var(--verde); color: var(--blanco); }
+.article-video__play-label { font-weight: 700; font-size: 0.95rem; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+@media (prefers-reduced-motion: reduce) { .article-video__play-icon { transition: none; } }
 .article-video__play:focus-visible { outline: 3px solid var(--verde); outline-offset: -6px; }
 .article-video__note { font-size: 0.8rem; color: var(--gris-texto, #6b6b6b); margin: 8px 0 0; }
 .article-newsletter__note { font-size: 0.86rem; color: var(--gris-600); margin: 4px 0 10px; }
