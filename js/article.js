@@ -358,7 +358,7 @@
         (a) => `
         <article class="related-card">
           <div class="related-card__media" style="background-image:${a.heroImage.background}">
-            <span class="demo-badge demo-badge--sm">Demo</span>
+            ${a.demo === false ? "" : `<span class="demo-badge demo-badge--sm">Demo</span>`}
           </div>
           <span class="tag tag--sm">${a.category}</span>
           <h3 class="related-card__title"><a href="articulo.html?slug=${encodeURIComponent(a.slug)}">${a.title}</a></h3>

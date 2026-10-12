@@ -160,6 +160,389 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Reembolso nacional para bombas de calor (anuncio federal del 8 de
+       octubre de 2026). El programa todavía NO recibe solicitudes: no se
+       publican fechas, lista de equipos ni reglas que no estén confirmadas.
+       Verificado el 12 de octubre de 2026 en pm.gc.ca y canada.ca.
+       Imagen: ilustración editorial asistida por IA (no es una foto real). */
+    id: "ART-2026-018",
+    slug: "reembolso-bombas-de-calor-canada",
+    category: "Canadá",
+    contentType: "Noticia",
+    title: "Canadá anuncia reembolsos de hasta $10,000 para cambiar la calefacción por una bomba de calor",
+    dek: "El Gobierno federal presentó un programa de $2,000 millones para apoyar la renovación energética de un millón de viviendas. Todavía no recibe solicitudes: esto es lo que se sabe y lo que falta por confirmar.",
+    excerpt: "Ottawa anunció reembolsos de hasta $10,000 para hogares con ingresos por debajo de la mediana y de $2,000 para otros propietarios elegibles que instalen una bomba de calor. El programa aún no está abierto.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-12T14:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/reembolso-bombas-de-calor-canada.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: una familia en la sala de su casa observa un equipo de bomba de calor instalado en la pared, con un paisaje de otoño y montañas nevadas al fondo.",
+      credit: "Ilustración editorial asistida por inteligencia artificial. No corresponde a una fotografía real.",
+      socialFocus: "50% 45%",
+      socialLabel: "Ilustración editorial asistida por IA",
+    },
+    bodyHtml: `
+      <p>El Gobierno de Canadá anunció un nuevo reembolso para que más familias cambien su sistema de calefacción por una bomba de calor eléctrica. El anuncio lo hizo el primer ministro Mark Carney el 8 de octubre de 2026, en Sherbrooke, Quebec.</p>
+      <p>Se trata de una inversión de <strong>$2,000 millones durante ocho años</strong>, parte de un plan más amplio para apoyar la renovación energética de hasta un millón de viviendas en el país.</p>
+      <p><strong>Importante:</strong> el programa todavía no recibe solicitudes. El Gobierno no ha publicado la fecha de apertura.</p>
+      <h2>¿Cuánto dinero ofrece?</h2>
+      <p>Según el anuncio oficial:</p>
+      <ul>
+        <li>Los hogares con ingresos <strong>por debajo de la mediana</strong> podrán recibir <strong>hasta $10,000</strong> para instalar una bomba de calor eléctrica.</li>
+        <li>Los demás propietarios elegibles podrán recibir <strong>$2,000</strong>.</li>
+        <li>El reembolso se podrá combinar con los programas provinciales existentes.</li>
+      </ul>
+      <p>El Gobierno estima que hasta 820,000 hogares podrían beneficiarse de este reembolso. También calcula que los hogares que hoy se calientan con petróleo, propano o calefacción eléctrica por resistencia podrían ahorrar en promedio más de $1,400 al año en energía.</p>
+      <h2>¿Cómo funcionará?</h2>
+      <p>De acuerdo con la información publicada por el Gobierno federal:</p>
+      <ul>
+        <li>La solicitud se hará en un <strong>portal en línea</strong>.</li>
+        <li>No se exigirán evaluaciones energéticas antes ni después de la instalación.</li>
+        <li>La aprobación se confirmará en un plazo de 24 horas.</li>
+        <li>Después de la instalación, se enviarán los recibos y el pago se aprobará en un plazo de cinco días.</li>
+        <li>La bomba de calor deberá figurar en una lista oficial de equipos elegibles (<em>Eligible Products List</em>).</li>
+      </ul>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Lo que sabemos / lo que todavía no sabemos</h2>
+        <p><strong>Sí sabemos:</strong></p>
+        <ul>
+          <li>Los montos anunciados: hasta $10,000 o $2,000, según los ingresos del hogar.</li>
+          <li>Que la solicitud será en línea y que la bomba deberá estar en la lista oficial de equipos.</li>
+        </ul>
+        <p><strong>Todavía no sabemos:</strong></p>
+        <ul>
+          <li>La fecha en que abrirá el portal.</li>
+          <li>Qué equipos estarán en la lista oficial.</li>
+          <li>Los detalles completos de elegibilidad, por ejemplo, cómo se calculará el ingreso del hogar.</li>
+        </ul>
+      </aside>
+      <h2>Información útil antes de comprar</h2>
+      <ul>
+        <li><strong>No te apresures a instalar.</strong> Mientras no se publiquen las reglas y la lista de equipos, no hay garantía de que una compra hecha hoy califique.</li>
+        <li><strong>Inscríbete para recibir novedades.</strong> La página oficial del Gobierno de Canadá permite registrarse para recibir información sobre la fecha de apertura, la elegibilidad y cómo solicitar.</li>
+        <li><strong>Si arriendas,</strong> ten en cuenta que el anuncio habla de propietarios de vivienda. Cuando se publiquen las reglas, revisa si hay opciones para tu situación.</li>
+        <li><strong>Cuidado con las estafas.</strong> El Gobierno no cobra por inscribirte. Desconfía de llamadas, mensajes o vendedores que pidan pagos o datos personales para «asegurar» el reembolso.</li>
+      </ul>
+      <p>El Podcast del Migrante Magazine actualizará esta información cuando el Gobierno publique la fecha de apertura y las reglas del programa.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Primer Ministro de Canadá — Prime Minister Carney announces landmark investment to retrofit one million homes (8 de octubre de 2026)", href: "https://www.pm.gc.ca/en/news/news-releases/2026/10/08/prime-minister-carney-announces-landmark-investment-retrofit-one" },
+      { label: "Government of Canada — One million home energy retrofits (inscripción para recibir novedades)", href: "https://www.canada.ca/en/environment-climate-change/campaigns/one-million-home-energy-retrofits.html" },
+      { label: "Government of Canada — The Government of Canada is supporting new measures to lower energy costs and reduce emissions", href: "https://www.canada.ca/en/environment-climate-change/news/2026/10/the-government-of-canada-is-supporting-new-measures-to-lower-energy-costs-and-reduce-emissions.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["alberta-energy-rebate-plazo-octubre", "alberta-suspende-impuesto-gasolina-octubre-2026"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Reembolso de hasta $10,000 para bombas de calor en Canadá | Lo que se sabe",
+      description: "Canadá anunció reembolsos de hasta $10,000 para instalar una bomba de calor. El programa aún no está abierto: montos, cómo funcionará y lo que falta confirmar.",
+      canonicalPath: "/canada/reembolso-bombas-de-calor-canada/",
+    },
+  },
+  {
+    /* Alberta Energy Rebate: plazo ampliado al 31 de octubre de 2026.
+       Verificado el 12 de octubre de 2026 en alberta.ca (página del programa
+       y hoja informativa) y en la cobertura de la extensión (CTV News).
+       Imagen: ilustración editorial asistida por IA (no es una foto real). */
+    id: "ART-2026-019",
+    slug: "alberta-energy-rebate-plazo-octubre",
+    category: "Alberta",
+    contentType: "Noticia",
+    title: "Últimas semanas para pedir el pago de $100 de Alberta: el plazo vence el 31 de octubre",
+    dek: "La provincia amplió el plazo del Alberta Energy Rebate, el pago único de $100 por adulto elegible. Te explicamos quién puede pedirlo, cómo hacerlo y cómo evitar estafas.",
+    excerpt: "Alberta amplió hasta el 31 de octubre de 2026 el plazo para solicitar el Alberta Energy Rebate, un pago único de $100 por adulto elegible.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-12T13:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/alberta-energy-rebate-plazo-octubre.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: una pareja revisa facturas con una calculadora y una computadora portátil en la cocina de su casa, con el centro de Calgary al fondo.",
+      credit: "Ilustración editorial asistida por inteligencia artificial. No corresponde a una fotografía real.",
+      socialFocus: "50% 45%",
+      socialLabel: "Ilustración editorial asistida por IA",
+    },
+    bodyHtml: `
+      <p>Si vives en Alberta y todavía no pediste el pago de $100 del <strong>Alberta Energy Rebate</strong>, aún estás a tiempo. La provincia amplió el plazo de solicitud hasta el <strong>31 de octubre de 2026</strong>. El plazo original vencía el 30 de septiembre.</p>
+      <p>Al anunciar la extensión, se informó que más de 1.45 millones de personas ya lo habían solicitado o recibido. Aun así, muchas de las cerca de 3.4 millones de personas que se estima son elegibles no lo habían pedido.</p>
+      <h2>¿Quién puede recibirlo?</h2>
+      <p>Según la información oficial de Alberta, puedes recibir el pago si:</p>
+      <ul>
+        <li>tenías 18 años o más al 1 de julio de 2026;</li>
+        <li>vives en Alberta;</li>
+        <li>presentaste tu declaración de impuestos de 2025;</li>
+        <li>el ingreso total de tu hogar es de $225,000 o menos.</li>
+      </ul>
+      <p>El pago es de <strong>$100 por cada adulto elegible</strong>. Por ejemplo, un hogar con dos adultos elegibles puede recibir $200 en total.</p>
+      <h2>¿Quién lo recibe sin pedirlo?</h2>
+      <p>Las personas que reciben el <em>Alberta Seniors Benefit</em>, el programa AISH o <em>Income Support</em> quedan inscritas automáticamente y no necesitan presentar una solicitud.</p>
+      <h2>Cómo solicitarlo</h2>
+      <ol>
+        <li>Entra a la página oficial: <a href="https://www.alberta.ca/alberta-energy-rebate" target="_blank" rel="noopener">alberta.ca/alberta-energy-rebate</a>.</li>
+        <li>Completa la solicitud en línea antes del 31 de octubre de 2026.</li>
+        <li>Verifica tu identidad. Al ampliar el plazo, la provincia añadió la opción de verificarte con tu aviso de evaluación de impuestos de 2025 (<em>Notice of Assessment</em>).</li>
+        <li>Recibe el pago por transferencia electrónica (e-Transfer). Según la provincia, llega en un plazo de 14 días después de la solicitud.</li>
+      </ol>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Cuidado con las estafas</h2>
+        <p>La provincia advirtió que no abras enlaces para solicitar el pago que te lleguen por mensaje de texto. Solicítalo únicamente en la página oficial alberta.ca/alberta-energy-rebate.</p>
+      </aside>
+      <h2>Información en español</h2>
+      <p>El Gobierno de Alberta publicó una hoja informativa del programa en español: <em>Reembolso por la energía de Alberta</em>. Ten en cuenta que esa hoja se publicó antes de la extensión, así que puede mostrar la fecha límite original del 30 de septiembre. La fecha vigente es el 31 de octubre de 2026.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Alberta Energy Rebate", href: "https://www.alberta.ca/alberta-energy-rebate" },
+      { label: "Government of Alberta — Reembolso por la energía de Alberta (hoja informativa en español)", href: "https://open.alberta.ca/publications/alberta-energy-rebate-fact-sheet-spanish" },
+      { label: "Government of Alberta — Affordability resources", href: "https://www.alberta.ca/affordability-resources" },
+      { label: "CTV News Calgary — Alberta extends deadline for $100 energy rebate", href: "https://www.ctvnews.ca/calgary/article/alberta-extends-deadline-for-100-energy-rebate/" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["alberta-suspende-impuesto-gasolina-octubre-2026", "reembolso-bombas-de-calor-canada"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Pago de $100 de Alberta: plazo hasta el 31 de octubre | Cómo solicitarlo",
+      description: "Alberta amplió hasta el 31 de octubre de 2026 el plazo del Alberta Energy Rebate, el pago de $100 por adulto elegible. Requisitos, cómo solicitarlo y cómo evitar estafas.",
+      canonicalPath: "/alberta/alberta-energy-rebate-plazo-octubre/",
+    },
+  },
+  {
+    /* Subvenciones Ethnocultural y Anti-Racism de Alberta (anuncio del 2 de
+       octubre de 2026, también publicado en español por la provincia).
+       Las páginas oficiales difieren en el cierre (30 vs. 31 de octubre):
+       se informan ambas y se recomienda no esperar al último día.
+       Verificado el 12 de octubre de 2026 en alberta.ca.
+       Imagen: ilustración editorial asistida por IA (no es una foto real). */
+    id: "ART-2026-020",
+    slug: "subvenciones-etnoculturales-antirracismo-alberta",
+    category: "Comunidad",
+    contentType: "Noticia",
+    title: "Alberta abre $2.5 millones en subvenciones para proyectos culturales y contra el racismo",
+    dek: "Las organizaciones comunitarias pueden solicitar fondos para celebraciones culturales, encuentros entre comunidades y proyectos contra el racismo. Las solicitudes cierran a finales de octubre.",
+    excerpt: "Alberta abrió la convocatoria 2026 de sus programas Ethnocultural Grant y Anti-Racism Grant, con hasta $2.5 millones para proyectos comunitarios.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-12T12:30:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/subvenciones-etnoculturales-antirracismo-alberta.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: una bailarina con traje folclórico amarillo, azul y rojo baila en un festival cultural al aire libre en Calgary, rodeada de músicos, puestos de artesanías y público.",
+      credit: "Ilustración editorial asistida por inteligencia artificial. No corresponde a una fotografía real.",
+      socialFocus: "50% 40%",
+      socialLabel: "Ilustración editorial asistida por IA",
+    },
+    bodyHtml: `
+      <p>El Gobierno de Alberta abrió la convocatoria 2026 de dos programas de subvenciones para organizaciones comunitarias: el <strong>Ethnocultural Grant</strong> y el <strong>Anti-Racism Grant</strong>. Según el anuncio oficial del 2 de octubre de 2026, la provincia destina <strong>$2.5 millones</strong> a ambos programas.</p>
+      <p>Para muchas asociaciones latinas, grupos culturales y organizaciones que trabajan con inmigrantes, es una oportunidad para financiar festivales, encuentros comunitarios y proyectos educativos.</p>
+      <h2>Ethnocultural Grant: hasta $2 millones</h2>
+      <p>Este programa apoya iniciativas que construyen comunidades multiculturales, inclusivas y acogedoras. Tiene dos líneas de financiación:</p>
+      <ul>
+        <li><strong>Línea 1 — Conexiones entre culturas:</strong> proyectos como intercambios culturales, diálogos comunitarios y conferencias. Se puede solicitar hasta <strong>$50,000</strong>.</li>
+        <li><strong>Línea 2 — Celebraciones:</strong> eventos que celebran la diversidad cultural de Alberta. Se puede solicitar hasta <strong>$8,000</strong> para un evento de un día o hasta <strong>$15,000</strong> para un evento de varios días.</li>
+      </ul>
+      <p>Cada organización puede presentar <strong>una sola solicitud</strong> por convocatoria. Según la provincia, las respuestas se comunicarán hacia el 31 de marzo de 2027.</p>
+      <h2>Anti-Racism Grant: hasta $500,000</h2>
+      <p>Este programa financia iniciativas comunitarias contra el racismo:</p>
+      <ul>
+        <li>hasta <strong>$10,000</strong> para proyectos que combinan educación pública con acciones para ampliar su alcance;</li>
+        <li>hasta <strong>$5,000</strong> para iniciativas de concientización sobre el racismo y sus efectos.</li>
+      </ul>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Fecha límite: no esperes al último día</h2>
+        <p>La página oficial del Ethnocultural Grant indica que la convocatoria cierra el <strong>30 de octubre de 2026 a las 5 p. m.</strong> El anuncio provincial menciona el 31 de octubre. Te recomendamos presentar tu solicitud antes del 30 de octubre y confirmar la fecha de cada programa en alberta.ca.</p>
+      </aside>
+      <h2>Información útil para tu organización</h2>
+      <ul>
+        <li>Estas subvenciones son para <strong>organizaciones</strong>, no para personas individuales.</li>
+        <li>Lee la guía oficial del programa 2026-2027 antes de presentar la solicitud: allí están los requisitos y los gastos que se pueden financiar.</li>
+        <li>La provincia puede aprobar un monto menor al solicitado.</li>
+        <li>Si tu organización es pequeña o nueva, busca apoyo en las agencias de servicios para inmigrantes de tu ciudad para preparar la solicitud.</li>
+      </ul>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Ethnocultural Grant", href: "https://www.alberta.ca/ethnocultural-grant" },
+      { label: "Government of Alberta — Anti-Racism Grant", href: "https://www.alberta.ca/anti-racism-grant" },
+      { label: "Government of Alberta — Anuncio del 2 de octubre de 2026 sobre las subvenciones (versión en español, PDF)", href: "https://www.alberta.ca/system/files/news-investing-in-community-led-cultural-initiatives-20261002-langes.pdf" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["premios-impacto-inmigrante-alberta-2026", "servicios-gratuitos-trabajadores-temporales-alberta"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Alberta abre $2.5 millones en subvenciones culturales y contra el racismo",
+      description: "Alberta abrió las subvenciones Ethnocultural Grant y Anti-Racism Grant 2026: montos de hasta $50,000, quién puede solicitarlas y fechas límite de octubre.",
+      canonicalPath: "/comunidad/subvenciones-etnoculturales-antirracismo-alberta/",
+    },
+  },
+  {
+    /* Alberta Immigrant Impact Awards 2026 (anuncio del 5 de octubre de 2026).
+       Solo se nombran galardonados confirmados en más de una consulta de la
+       página oficial; la lista completa se enlaza en alberta.ca.
+       Verificado el 12 de octubre de 2026.
+       Imagen: ilustración editorial asistida por IA (no es una foto real,
+       no representa a ninguna de las personas premiadas). */
+    id: "ART-2026-021",
+    slug: "premios-impacto-inmigrante-alberta-2026",
+    category: "Migración",
+    contentType: "Noticia",
+    title: "Alberta reconoce a 20 inmigrantes por su impacto en la provincia",
+    dek: "Los Alberta Immigrant Impact Awards 2026 premiaron a personas nacidas fuera de Canadá que han contribuido a sus comunidades en ocho categorías, desde el arte y el deporte hasta el emprendimiento.",
+    excerpt: "Veinte personas recibieron los Alberta Immigrant Impact Awards 2026, que reconocen el aporte de los inmigrantes a las comunidades de Alberta.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-12T12:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/premios-impacto-inmigrante-alberta-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: una mujer sonriente sostiene un trofeo de cristal mientras un grupo de personas la aplaude, con banderas de Canadá al fondo. No representa a ninguna de las personas premiadas.",
+      credit: "Ilustración editorial asistida por inteligencia artificial. No corresponde a una fotografía real ni representa a las personas premiadas.",
+      socialFocus: "50% 40%",
+      socialLabel: "Ilustración editorial asistida por IA",
+    },
+    bodyHtml: `
+      <p>Veinte personas recibieron los <strong>Alberta Immigrant Impact Awards 2026</strong>, los premios con los que el Gobierno de Alberta reconoce los logros y aportes de los inmigrantes a las comunidades de la provincia. La provincia anunció a las personas galardonadas el 5 de octubre de 2026.</p>
+      <h2>Ocho categorías</h2>
+      <p>Los premios se entregan en ocho categorías. Estos son sus nombres oficiales, en inglés, con su traducción:</p>
+      <ul>
+        <li><em>Arts and Sports</em> — Arte y deporte</li>
+        <li><em>Career and Academics Contribution</em> — Aporte profesional y académico</li>
+        <li><em>Entrepreneurial Spirit</em> — Espíritu emprendedor</li>
+        <li><em>Immigrant Excellence</em> — Excelencia inmigrante</li>
+        <li><em>Immigrant Women's Impact</em> — Impacto de las mujeres inmigrantes</li>
+        <li><em>Inclusive Workplaces</em> — Lugares de trabajo inclusivos</li>
+        <li><em>Small Community Enhancement</em> — Aporte a comunidades pequeñas</li>
+        <li><em>Young Leader</em> — Joven líder</li>
+      </ul>
+      <p>Entre las personas reconocidas este año están la Dra. Renate Weller, decana de la Facultad de Medicina Veterinaria de la Universidad de Calgary, y Amandeep Singh Sidhu, fundador de Young Bhangra. La lista completa, con cada categoría, está en la página oficial de los premios.</p>
+      <h2>¿Quién puede ser nominado?</h2>
+      <p>Pueden ser nominadas las personas que:</p>
+      <ul>
+        <li>nacieron fuera de Canadá;</li>
+        <li>hoy son ciudadanas canadienses o residentes permanentes;</li>
+        <li>viven en Alberta.</li>
+      </ul>
+      <p>Las nominaciones de 2026 ya cerraron. Si conoces a alguien de la comunidad latina cuyo trabajo merece este reconocimiento, revisa la página oficial para conocer la próxima convocatoria y las guías de nominación.</p>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Otro reconocimiento en Calgary</h2>
+        <p>En Calgary, la organización Immigrant Services Calgary entrega cada año los <em>Immigrants of Distinction Awards</em>. Según su sitio web, la edición 2026 está en marcha. Allí se publicarán las novedades.</p>
+      </aside>
+      <h2>Historias que inspiran</h2>
+      <p>Estos reconocimientos recuerdan que llegar a un país nuevo también es una forma de construirlo. Detrás de cada premio hay un camino de esfuerzo, aprendizaje y servicio a la comunidad, como el de tantas familias migrantes que hoy hacen parte de Alberta.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Alberta Immigrant Impact Awards (galardonados 2026)", href: "https://www.alberta.ca/alberta-immigrant-impact-awards" },
+      { label: "Government of Alberta — Alberta Immigrant Impact Awards: nomination guidelines", href: "https://open.alberta.ca/publications/alberta-immigrant-impact-awards-nomination-guidelines" },
+      { label: "Immigrant Services Calgary — Immigrants of Distinction Awards", href: "https://immigrantsofdistinction.ca/" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["subvenciones-etnoculturales-antirracismo-alberta", "100-empresarios-100-historias-calgary"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Alberta Immigrant Impact Awards 2026: 20 inmigrantes reconocidos",
+      description: "Veinte personas recibieron los Alberta Immigrant Impact Awards 2026 en ocho categorías. Quiénes pueden ser nominados y dónde ver la lista completa.",
+      canonicalPath: "/migracion/premios-impacto-inmigrante-alberta-2026/",
+    },
+  },
+  {
+    /* Rocky Ridge Athletic Park (Ciudad de Calgary, inauguración de
+       comienzos de octubre de 2026). No se publica dirección exacta porque
+       las fuentes oficiales difieren; se ubica junto al Shane Homes YMCA.
+       Verificado el 12 de octubre de 2026 en newsroom.calgary.ca y calgary.ca.
+       Imagen: ilustración editorial asistida por IA; no muestra el parque real. */
+    id: "ART-2026-022",
+    slug: "rocky-ridge-athletic-park-calgary",
+    category: "Comunidad",
+    contentType: "Noticia",
+    title: "Calgary inaugura el Rocky Ridge Athletic Park, con dos nuevas canchas de césped artificial en el noroeste",
+    dek: "El nuevo parque deportivo de $26 millones tiene dos canchas multiuso con iluminación y es la primera etapa de un complejo deportivo más grande junto al Shane Homes YMCA at Rocky Ridge.",
+    excerpt: "La Ciudad de Calgary abrió el Rocky Ridge Athletic Park, un parque deportivo de $26 millones con dos canchas multiuso de césped artificial en el noroeste de la ciudad.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-12T11:30:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta", city: "Calgary" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/rocky-ridge-athletic-park-calgary.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: jóvenes juegan fútbol en una cancha de césped artificial junto a un edificio deportivo moderno, con árboles de otoño y el centro de Calgary al fondo. No muestra el parque real.",
+      credit: "Ilustración editorial asistida por inteligencia artificial. No corresponde a una fotografía real ni muestra las instalaciones reales del parque.",
+      socialFocus: "50% 45%",
+      socialLabel: "Ilustración editorial asistida por IA",
+    },
+    bodyHtml: `
+      <p>Las familias del noroeste de Calgary tienen un nuevo lugar para hacer deporte. La Ciudad de Calgary abrió a comienzos de octubre de 2026 el <strong>Rocky Ridge Athletic Park</strong>, un parque deportivo de <strong>$26 millones</strong> ubicado junto al Shane Homes YMCA at Rocky Ridge.</p>
+      <h2>¿Qué tiene el nuevo parque?</h2>
+      <p>Según la Ciudad de Calgary, el parque cuenta con:</p>
+      <ul>
+        <li><strong>dos canchas multiuso de césped artificial</strong>;</li>
+        <li>iluminación, que permite jugar durante más horas;</li>
+        <li>gradas para el público;</li>
+        <li>baños y estacionamiento.</li>
+      </ul>
+      <p>La construcción comenzó en septiembre de 2024. La Ciudad opera las instalaciones.</p>
+      <h2>La primera etapa de un complejo más grande</h2>
+      <p>El parque es la primera fase del futuro Rocky Ridge Athletic Complex. El proyecto contempla un edificio deportivo cubierto (<em>fieldhouse</em>), que todavía no tiene financiación. Según la Ciudad, esa financiación se evaluará en el proceso de planes de servicio y presupuestos 2027-2030.</p>
+      <h2>Información útil para familias y equipos</h2>
+      <ul>
+        <li><strong>¿Cómo se usan las canchas?</strong> Las canchas están disponibles para grupos y organizaciones a través del sistema de reservas de la Ciudad de Calgary.</li>
+        <li><strong>¿Tus hijos quieren jugar?</strong> Pregunta en las ligas y asociaciones deportivas de tu comunidad si tienen entrenamientos o partidos programados en el nuevo parque.</li>
+        <li><strong>Antes de ir,</strong> revisa en el sitio de la Ciudad el estado de las canchas, por ejemplo, si están abiertas o cerradas por el clima.</li>
+      </ul>
+      <p>Para muchas familias migrantes, el deporte es una de las mejores formas de hacer amigos, conocer el barrio y sentirse parte de la comunidad. Más canchas significan más oportunidades para que niños, jóvenes y adultos puedan jugar cerca de casa.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "City of Calgary Newsroom — Rocky Ridge Athletic Park opens new opportunities for sport in northwest Calgary", href: "https://newsroom.calgary.ca/rocky-ridge-athletic-park-opens-new-opportunities-for-sport-in-northwest-calgary/" },
+      { label: "City of Calgary — Rocky Ridge Athletic Complex", href: "https://www.calgary.ca/planning/parks-rec/rocky-ridge-athletic-complex.html" },
+      { label: "City of Calgary — Check the status of a field", href: "https://www.calgary.ca/rec-locations/athletic-parks/status.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["100-empresarios-100-historias-calgary", "premios-impacto-inmigrante-alberta-2026"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Calgary abre el Rocky Ridge Athletic Park: dos canchas nuevas en el noroeste",
+      description: "La Ciudad de Calgary inauguró el Rocky Ridge Athletic Park, de $26 millones, con dos canchas de césped artificial iluminadas. Qué tiene y cómo se usan las canchas.",
+      canonicalPath: "/comunidad/rocky-ridge-athletic-park-calgary/",
+    },
+  },
+  {
     /* Entrevista al Dr. Eddy Valverde Narvaez (El Podcast del Migrante) +
        guía práctica para buscar médico de familia en Alberta.
        Sin citas textuales hasta contar con la transcripción verificada.
