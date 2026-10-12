@@ -241,14 +241,7 @@
       return `
         <section class="article-video">
           <h2 class="article-video__heading">Esta historia también puedes verla en video</h2>
-          <div class="article-video__frame article-video__frame--cover" data-video-id="${encodeURIComponent(article.video.youtubeId)}" data-video-title="${article.video.title}">
-            <button type="button" class="article-video__play" data-video-play>
-              <span class="video-card__play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-              </span>
-              <span class="article-video__play-label">Reproducir video<span class="sr-only">: ${article.video.title}</span></span>
-            </button>
-          </div>
+          ${VideoCover.html({ id: article.video.youtubeId, title: article.video.title })}
           <p class="article-video__note">Al reproducirlo, el video se carga desde YouTube.</p>
         </section>
       `;
@@ -501,24 +494,6 @@
     `;
   }
 
-  function bindVideoPlay(root) {
-    root.addEventListener("click", (e) => {
-      const btn = e.target.closest ? e.target.closest("[data-video-play]") : null;
-      if (!btn) return;
-      const frame = btn.closest(".article-video__frame");
-      const id = frame.getAttribute("data-video-id");
-      const title = frame.getAttribute("data-video-title") || "Video";
-      const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-      iframe.title = title;
-      iframe.allow = "autoplay; encrypted-media; picture-in-picture";
-      iframe.allowFullscreen = true;
-      frame.classList.remove("article-video__frame--cover");
-      frame.replaceChildren(iframe);
-      iframe.focus();
-    });
-  }
-
   function renderArticle(article) {
     setSEO(article);
     const isAuthorColumn = article.layout === "columna-autor";
@@ -553,7 +528,7 @@
       ${relatedHtml(article)}
     `;
 
-    bindVideoPlay(root);
+    VideoCover.bind(root);
     const copyBtn = document.getElementById("copyLinkBtn");
     if (copyBtn) {
       copyBtn.addEventListener("click", () => {

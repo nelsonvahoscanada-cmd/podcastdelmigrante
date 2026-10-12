@@ -57,14 +57,7 @@
           <article class="profile-interview">
             <span class="profile-interview__lang">${esc(LANG_LABEL[iv.lang] || "Entrevista")}${iv.lang === "en" ? ' · <span lang="en">English interview</span>' : ""}</span>
             <h3 class="profile-interview__title"${langAttr}>${esc(iv.title)}</h3>
-            <div class="article-video__frame article-video__frame--cover" data-video-id="${encodeURIComponent(iv.youtubeId)}" data-video-title="${esc(iv.title)}">
-              <button type="button" class="article-video__play" data-video-play>
-                <span class="video-card__play" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="22" height="22"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-                </span>
-                <span class="article-video__play-label">Reproducir video<span class="sr-only">: ${esc(iv.title)}</span></span>
-              </button>
-            </div>
+            ${VideoCover.html({ id: iv.youtubeId, title: iv.title })}
             <p class="article-video__note">Al reproducirlo, el video se carga desde YouTube.</p>
             <p class="profile-interview__links">
               <a href="https://www.youtube.com/watch?v=${encodeURIComponent(iv.youtubeId)}" target="_blank" rel="noopener">Ver en YouTube<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
@@ -139,21 +132,7 @@
     }
     const copy = root.querySelector("[data-copy-link]");
     if (copy) copy.addEventListener("click", async () => say((await copyText(url)) ? "Enlace copiado: " + url : "Copia este enlace: " + url));
-    root.querySelectorAll("[data-video-play]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const frame = btn.closest("[data-video-id]");
-        const iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube-nocookie.com/embed/" + frame.dataset.videoId + "?autoplay=1&rel=0";
-        iframe.title = frame.dataset.videoTitle || "Video";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-        iframe.allowFullscreen = true;
-        iframe.loading = "lazy";
-        frame.classList.remove("article-video__frame--cover");
-        frame.innerHTML = "";
-        frame.appendChild(iframe);
-        iframe.focus();
-      });
-    });
+    VideoCover.bind(root);
   }
 
   function findContributor(id) {
