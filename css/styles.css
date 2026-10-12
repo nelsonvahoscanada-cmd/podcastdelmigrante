@@ -734,6 +734,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   flex: 0 0 72vw;
   max-width: 260px;
   scroll-snap-align: start;
+  position: relative; /* contiene su .sr-only: sin esto se sale del carrusel y la portada se desplaza a los lados en celular */
 }
 .video-card--link { cursor: pointer; }
 @media (min-width: 640px) {
