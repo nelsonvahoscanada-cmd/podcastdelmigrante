@@ -57,6 +57,12 @@ test("ningún borrador legal ni documento interno llega a dist/", () => {
   }
 });
 
+test("los borradores legales y las auditorías no están en este repositorio público", () => {
+  for (const p of ["docs/legal", "docs/auditoria-legal-accesibilidad-2026-10.md"]) {
+    assert.equal(existsSync(join(ROOT, p)), false, `${p} pertenece al repositorio privado podcastdelmigrante-interno`);
+  }
+});
+
 /* ---------- La verificación detecta errores (sitio de juguete) ---------- */
 function fakeSite(files) {
   const root = tmp();

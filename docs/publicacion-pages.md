@@ -82,3 +82,9 @@ Prueba local:
 ```
 node scripts/build-public.mjs
 ```
+
+## Documentación interna
+
+Los borradores legales, el cuestionario del propietario y los informes de
+auditoría **no viven en este repositorio público**: están en el repositorio
+privado `podcastdelmigrante-interno`. No se deben volver a añadir aquí.
