@@ -155,7 +155,7 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
-    /* Entrevista al doctor Eddie Valverde (El Podcast del Migrante) +
+    /* Entrevista al Dr. Eddy Valverde Narvaez (El Podcast del Migrante) +
        guía práctica para buscar médico de familia en Alberta.
        Sin citas textuales hasta contar con la transcripción verificada.
        No se menciona clínica, cupos ni forma de inscripción: no están
@@ -164,9 +164,9 @@ const ARTICLES = [
     slug: "medico-familia-latino-brooks-alberta",
     category: "Salud",
     contentType: "Noticia",
-    title: "Un médico de familia latino llega a Brooks: lo que deben saber quienes todavía buscan doctor en Alberta",
-    dek: "El Podcast del Migrante conversó con el doctor Eddie Valverde sobre su historia, el sistema de salud en Canadá y la atención a pacientes. Si todavía no tienes médico de familia, te explicamos cómo buscar uno con las herramientas oficiales de Alberta.",
-    excerpt: "La llegada de un médico de familia latino a Brooks es una buena noticia para la comunidad, pero no significa que esté aceptando nuevos pacientes. Así puedes buscar médico de familia en Alberta.",
+    title: "El Dr. Eddy Valverde Narvaez, médico de familia latino, llega a Brooks: lo que debes saber si aún buscas doctor en Alberta",
+    dek: "El Podcast del Migrante conversó con el Dr. Eddy Valverde Narvaez sobre su historia, el sistema de salud en Canadá y la atención a pacientes. Si todavía no tienes médico de familia, te explicamos cómo buscar uno con las herramientas oficiales de Alberta.",
+    excerpt: "La llegada del Dr. Eddy Valverde Narvaez, médico de familia latino, a Brooks es una buena noticia para la comunidad, pero no significa que esté aceptando nuevos pacientes. Así puedes buscar médico de familia en Alberta.",
     author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
     publishedAt: "2026-10-12T12:00:00-06:00",
     updatedAt: null,
@@ -176,22 +176,23 @@ const ARTICLES = [
     heroImage: {
       background: "url('assets/medico-familia-latino-brooks-alberta.jpg')",
       aspectRatio: "16/9",
-      alt: "Imagen editorial de El Podcast del Migrante: el doctor Eddie Valverde conversa con el entrevistador durante la grabación, con el titular «Un médico de familia latino llega a Brooks, Alberta».",
-      credit: "Imagen editorial de El Podcast del Migrante elaborada a partir de la entrevista.",
+      alt: "Composición editorial asistida por inteligencia artificial, elaborada a partir de una fotografía de la entrevista: el Dr. Eddy Valverde Narvaez conversa con el entrevistador de El Podcast del Migrante, con el titular «Un médico de familia latino llega a Brooks, Alberta».",
+      credit: "Composición editorial asistida por inteligencia artificial, elaborada a partir de una fotografía original de la entrevista.",
       socialFocus: "50% 50%",
+      socialLabel: "Composición editorial asistida por IA",
     },
     bodyHtml: `
-      <p>Brooks cuenta con un nuevo médico de familia latino. El doctor Eddie Valverde llegó a esta ciudad del sureste de Alberta y conversó con El Podcast del Migrante sobre su historia, el sistema de salud en Canadá y la atención a pacientes.</p>
+      <p>Brooks cuenta con un nuevo médico de familia latino. El Dr. Eddy Valverde Narvaez llegó a esta ciudad del sureste de Alberta y conversó con El Podcast del Migrante sobre su historia, el sistema de salud en Canadá y la atención a pacientes.</p>
       <p>Para muchas familias latinas de Brooks y de la región, la noticia despierta una pregunta inmediata: <strong>¿puedo convertirme en su paciente?</strong> La respuesta corta es que, por ahora, no hay información confirmada sobre si está aceptando nuevos pacientes. Por eso, además de presentar la entrevista, en esta nota explicamos cómo buscar médico de familia en Alberta con las herramientas oficiales.</p>
       <h2>Una conversación sobre su historia y la salud en Canadá</h2>
-      <p>En la entrevista, disponible completa en el canal de YouTube de El Podcast del Migrante, el doctor Valverde aborda tres temas: su historia, cómo funciona el sistema de salud en Canadá y la atención a pacientes.</p>
+      <p>En la entrevista, disponible completa en el canal de YouTube de El Podcast del Migrante, el Dr. Valverde Narvaez aborda tres temas: su historia, cómo funciona el sistema de salud en Canadá y la atención a pacientes.</p>
       <p>Para muchas personas migrantes, escuchar a un médico que conoce su idioma y su cultura ayuda a entender mejor un sistema de salud que, al llegar, puede resultar desconocido.</p>
       <p>Puedes ver la entrevista completa en el video de esta página o directamente en <a href="https://www.youtube.com/watch?v=AnAZeaE7LV4" target="_blank" rel="noopener">YouTube</a>.</p>
       <aside class="article-highlight">
         <h2 class="article-highlight__title">Lo que sabemos / lo que todavía no sabemos</h2>
         <p><strong>Sí sabemos:</strong></p>
         <ul>
-          <li>El doctor Eddie Valverde es médico de familia y llegó a Brooks, Alberta.</li>
+          <li>El Dr. Eddy Valverde Narvaez es médico de familia y llegó a Brooks, Alberta.</li>
           <li>Conversó con El Podcast del Migrante sobre su historia, el sistema de salud en Canadá y la atención a pacientes.</li>
         </ul>
         <p><strong>Todavía no sabemos:</strong></p>
@@ -227,7 +228,7 @@ const ARTICLES = [
       <h2>Una buena noticia para la comunidad</h2>
       <p>La llegada de profesionales de la salud latinos a ciudades como Brooks, donde viven muchas familias migrantes, puede facilitar que más familias se sientan comprendidas al hablar de su salud. Mientras tanto, la mejor forma de buscar médico de familia sigue siendo usar los canales oficiales y confirmar siempre la información directamente con cada clínica.</p>
     `,
-    video: { youtubeId: "AnAZeaE7LV4", title: "Un médico de familia latino llega a Brooks, Alberta — entrevista completa con el doctor Eddie Valverde" },
+    video: { youtubeId: "AnAZeaE7LV4", title: "Un médico de familia latino llega a Brooks, Alberta — entrevista completa con el Dr. Eddy Valverde Narvaez" },
     sources: [
       { label: "El Podcast del Migrante — Entrevista completa en YouTube", href: "https://www.youtube.com/watch?v=AnAZeaE7LV4" },
       { label: "Alberta Find a Provider — buscador oficial de médicos de familia, nurse practitioners y clínicas", href: "https://albertafindaprovider.ca/" },
@@ -243,8 +244,8 @@ const ARTICLES = [
     translationSlug: null,
     lang: "es",
     seo: {
-      fullTitle: "Médico de familia latino llega a Brooks | Cómo buscar doctor en Alberta",
-      description: "El doctor Eddie Valverde, médico de familia latino, llegó a Brooks. Su entrevista con El Podcast del Migrante y cómo buscar médico de familia en Alberta.",
+      fullTitle: "Dr. Eddy Valverde Narvaez llega a Brooks | Cómo buscar médico en Alberta",
+      description: "El Dr. Eddy Valverde Narvaez, médico de familia latino, llegó a Brooks. Su entrevista con El Podcast del Migrante y cómo buscar médico de familia en Alberta.",
       canonicalPath: "/salud/medico-familia-latino-brooks-alberta/",
     },
   },
