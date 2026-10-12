@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /admin-worker/
+Disallow: /db/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /scripts/
+Disallow: /functions/
+Disallow: /registro/
 
 Sitemap: https://podcastdelmigrante.com/sitemap.xml

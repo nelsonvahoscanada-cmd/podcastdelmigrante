@@ -22,14 +22,28 @@
   - Solo se ejecuta en /articulo y /articulo.html (ver _routes.json):
     el resto del sitio, el panel y las estadísticas no pasan por aquí.
   - Sin dependencias, sin claves, sin almacenamiento.
+
+  Carpetas internas: Cloudflare Pages publica la raíz del repositorio, así
+  que admin-worker/, db/, docs/, tests/, scripts/, functions/ y .github/
+  quedarían accesibles como archivos. No contienen claves, pero no son
+  parte del sitio (código del panel privado, esquema de la base, guías
+  internas): aquí responden 404. Ver _routes.json.
 ========================================================================= */
 
 import { PUBLISHED_ARTICLES } from "./_lib/published-articles.js";
 
 const TEMPLATE_PATHS = new Set(["/articulo", "/articulo.html", "/articulo/"]);
 
+const INTERNAL_PATH = /^\/(?:admin-worker|db|docs|tests|scripts|functions|\.github)(?:\/|$)/;
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
+  if (INTERNAL_PATH.test(url.pathname)) {
+    return new Response("No encontrado", {
+      status: 404,
+      headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store", "X-Robots-Tag": "noindex" },
+    });
+  }
   const slug = url.searchParams.get("slug");
   const method = context.request.method;
 

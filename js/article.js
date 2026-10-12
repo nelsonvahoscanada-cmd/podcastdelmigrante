@@ -240,7 +240,7 @@
         <section class="article-video">
           <h2 class="article-video__heading">Esta historia también puedes verla en video</h2>
           <div class="article-video__frame">
-            <iframe src="https://www.youtube.com/embed/${article.video.youtubeId}" title="${article.video.title}" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/${article.video.youtubeId}" title="${article.video.title}" allowfullscreen loading="lazy"></iframe>
           </div>
         </section>
       `;
