@@ -33,28 +33,31 @@ const BREAKING = [
   "Feria de empleo para nuevos residentes se realizará este mes en Calgary",
 ];
 
+/* pending: true → la sección aún no tiene página propia; el menú la oculta
+   hasta que exista (no se elimina). Al publicarla, poner su href y quitar
+   pending. */
 const NAV_PRIMARY = [
   { label: "Inicio", href: "index.html#inicio" },
-  { label: "Canadá", href: "index.html#" },
-  { label: "Migración", href: "index.html#" },
-  { label: "Empleo", href: "index.html#" },
-  { label: "Comunidad", href: "index.html#" },
+  { label: "Canadá", href: "index.html#", pending: true },
+  { label: "Migración", href: "guia.html?categoria=migracion" },
+  { label: "Empleo", href: "index.html#", pending: true },
+  { label: "Comunidad", href: "index.html#", pending: true },
   { label: "Historias", href: "index.html#historias" },
   { label: "Videos", href: "index.html#video" },
 ];
 
 const NAV_MORE = [
-  { label: "Educación", href: "index.html#" },
-  { label: "Emprendimiento", href: "index.html#" },
-  { label: "Vivienda", href: "index.html#" },
-  { label: "Finanzas", href: "index.html#" },
-  { label: "Cultura", href: "index.html#" },
-  { label: "Opinión", href: "index.html#" },
+  { label: "Educación", href: "index.html#", pending: true },
+  { label: "Emprendimiento", href: "index.html#", pending: true },
+  { label: "Vivienda", href: "index.html#", pending: true },
+  { label: "Finanzas", href: "index.html#", pending: true },
+  { label: "Cultura", href: "index.html#", pending: true },
+  { label: "Opinión", href: "index.html#", pending: true },
   { label: "Entrevistas", href: "index.html#video" },
   { label: "Desafío 100 Empresas", href: "index.html#desafio" },
   { label: "Podcast del Migrante", href: "index.html#video" },
   { label: "Ediciones", href: "index.html#edicion" },
-  { label: "Archivo", href: "index.html#" },
+  { label: "Archivo", href: "index.html#", pending: true },
   { label: "Puntos de distribución", href: "index.html#distribution" },
   { label: "Nuestros colaboradores", href: "index.html#contributors" },
 ];

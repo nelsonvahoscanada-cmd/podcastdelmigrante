@@ -25,9 +25,9 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Tipografías alojadas en el sitio (sin conexión a Google Fonts) -->
+<link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
 
 <link rel="stylesheet" href="css/styles.css">
 
@@ -312,22 +312,30 @@
         <p>El Podcast del Migrante Magazine<br>Una publicación de eRadio Global Corp.<br>Canadá</p>
       </div>
       <div class="footer-col">
-        <h4>Secciones</h4>
-        <a href="#">Canadá</a>
-        <a href="#">Migración</a>
-        <a href="#">Empleo</a>
-        <a href="#">Vivienda</a>
-        <a href="#">Comunidad</a>
+        <h2 class="footer-col__title">Secciones</h2>
+        <a href="guia.html?categoria=migracion">Migración</a>
+        <a href="#historias">Historias</a>
+        <a href="#video">Videos</a>
+        <a href="#desafio">Desafío 100 Empresas</a>
+        <a href="quien-puede-ayudarte.html">Quién puede ayudarte</a>
+        <!-- Secciones sin página propia todavía (ocultas, no eliminadas): -->
+        <a href="#" hidden>Canadá</a>
+        <a href="#" hidden>Empleo</a>
+        <a href="#" hidden>Vivienda</a>
+        <a href="#" hidden>Comunidad</a>
       </div>
       <div class="footer-col">
-        <h4>El medio</h4>
+        <h2 class="footer-col__title">El medio</h2>
         <a href="#edicion">Ediciones</a>
-        <a href="#">Archivo</a>
-        <a href="#">Publicidad</a>
-        <a href="#">Contacto</a>
+        <a href="#contributors">Colaboradores</a>
+        <a href="#distribution">Puntos de distribución</a>
+        <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+        <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
+        <a href="#" hidden>Archivo</a>
       </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
+      <!-- Legal: oculto hasta publicar las páginas aprobadas (borradores en docs/legal/). -->
+      <div class="footer-col" hidden>
+        <h2 class="footer-col__title">Legal</h2>
         <a href="#">Política editorial</a>
         <a href="#">Privacidad</a>
         <a href="#">Términos</a>

@@ -33,24 +33,28 @@
   }
 
   function buildNav() {
+    const visible = (item) => !item.pending; /* secciones sin página propia: ocultas */
+    /* La página 404 puede mostrarse en cualquier ruta (p. ej. /a/b/c): allí
+       los enlaces del menú se resuelven desde la raíz del sitio. */
+    const link = (href) => (window.PDM_SITE_ROOT_LINKS ? new URL(href, location.origin + "/").href : href);
     const primary = document.getElementById("navPrimary");
-    NAV_PRIMARY.forEach((item) => {
+    NAV_PRIMARY.filter(visible).forEach((item) => {
       const a = el("a", "nav-link", item.label);
-      a.href = item.href;
+      a.href = link(item.href);
       primary.appendChild(a);
     });
 
     const more = document.getElementById("navMoreMenu");
-    NAV_MORE.forEach((item) => {
+    NAV_MORE.filter(visible).forEach((item) => {
       const a = el("a", "nav-more-link", item.label);
-      a.href = item.href;
+      a.href = link(item.href);
       more.appendChild(a);
     });
 
     const mobileList = document.getElementById("mobileNavList");
-    [...NAV_PRIMARY, ...NAV_MORE].forEach((item) => {
+    [...NAV_PRIMARY, ...NAV_MORE].filter(visible).forEach((item) => {
       const a = el("a", "mobile-nav-link", item.label);
-      a.href = item.href;
+      a.href = link(item.href);
       a.addEventListener("click", closeMobileMenu);
       mobileList.appendChild(a);
     });
