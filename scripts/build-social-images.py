@@ -19,6 +19,9 @@ url(...)), una versión social:
   heroImage.socialLabel = "Imagen ilustrativa generada con IA" la escribe
   en una franja visible sobre la imagen social: las redes no muestran el
   pie de foto del artículo, así que la advertencia viaja con la imagen.
+  Con heroImage.socialLabelPosition = "top-left" la etiqueta es una pastilla
+  pequeña en la esquina superior izquierda (para imágenes que ya llevan
+  titular o botones en la parte inferior); por defecto, franja inferior.
 
 Después de agregar o cambiar un artículo:
     python3 scripts/build-social-images.py
@@ -98,6 +101,22 @@ def add_label(img, text):
     return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
 
+def add_corner_label(img, text):
+    """Pastilla discreta y legible en la esquina superior izquierda."""
+    font = label_font(21)
+    margin, pad_x, pad_y = 16, 14, 8
+    overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    left, top, right, bottom = draw.textbbox((0, 0), text, font=font)
+    box = (margin, margin, margin + (right - left) + 2 * pad_x, margin + (bottom - top) + 2 * pad_y)
+    draw.rounded_rectangle(box, radius=8, fill=(11, 11, 11, 205))
+    draw.text((margin + pad_x - left, margin + pad_y - top), text, font=font, fill=(255, 255, 255, 255))
+    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+
+LABEL_POSITIONS = {"bottom": add_label, "top-left": add_corner_label}
+
+
 def social_crop(img, focus):
     """Escala para cubrir 1200×630 sin deformar y recorta alrededor del foco."""
     img = ImageOps.exif_transpose(img).convert("RGB")
@@ -128,7 +147,10 @@ def main():
         img = social_crop(Image.open(path), focus)
         label = (a.get("heroImage") or {}).get("socialLabel")
         if label:
-            img = add_label(img, label)
+            position = (a.get("heroImage") or {}).get("socialLabelPosition") or "bottom"
+            if position not in LABEL_POSITIONS:
+                sys.exit(f"socialLabelPosition no válido en {a['slug']}: {position!r} (usa: {', '.join(LABEL_POSITIONS)})")
+            img = LABEL_POSITIONS[position](img, label)
         img.save(out, "JPEG", quality=84, optimize=True, progressive=True)
         expected.add(out.name)
         print(f"escrito    assets/social/{out.name}  ({out.stat().st_size // 1024} KB)  ← {src}")

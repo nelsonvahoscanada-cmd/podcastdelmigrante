@@ -69,7 +69,12 @@
                               credit?: String [OPCIONAL],
                               socialFocus?: "50% 40%" [OPCIONAL] punto de
                               interés para recortar la imagen social
-                              1200 × 630 (por defecto "50% 40%") }
+                              1200 × 630 (por defecto "50% 40%"),
+                              socialLabel?: String [OPCIONAL] aviso escrito
+                              sobre la imagen social (p. ej. imagen con IA),
+                              socialLabelPosition?: "bottom" | "top-left"
+                              [OPCIONAL] franja inferior (por defecto) o
+                              pastilla discreta arriba a la izquierda }
                               La foto de url(...) es la que se muestra al
                               compartir; sin foto se usa el logotipo.
   bodyHtml          String  — cuerpo completo, HTML simple (párrafos,
@@ -180,6 +185,7 @@ const ARTICLES = [
       credit: "Composición editorial asistida por inteligencia artificial, elaborada a partir de una fotografía original de la entrevista.",
       socialFocus: "50% 50%",
       socialLabel: "Composición editorial asistida por IA",
+      socialLabelPosition: "top-left",
     },
     bodyHtml: `
       <p>Brooks cuenta con un nuevo médico de familia latino. El Dr. Eddy Valverde Narvaez llegó a esta ciudad del sureste de Alberta y conversó con El Podcast del Migrante sobre su historia, el sistema de salud en Canadá y la atención a pacientes.</p>
