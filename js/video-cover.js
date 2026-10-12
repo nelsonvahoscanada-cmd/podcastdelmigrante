@@ -24,6 +24,7 @@
   function html(opts) {
     const id = opts.id;
     const title = opts.title || "Video";
+    const playLabel = opts.playLabel || "Reproducir video";
     return `
       <div class="article-video__frame article-video__frame--cover" data-video-id="${esc(id)}" data-video-title="${esc(title)}">
         <img class="article-video__thumb" src="${thumb(id, "maxresdefault")}" alt="" loading="lazy" decoding="async" width="1280" height="720" data-video-thumb>
@@ -31,7 +32,7 @@
           <span class="article-video__play-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="30" height="30"><polygon points="8,5 19,12 8,19" fill="currentColor"/></svg>
           </span>
-          <span class="article-video__play-label">Reproducir video<span class="sr-only">: ${esc(title)}</span></span>
+          <span class="article-video__play-label">${esc(playLabel)}<span class="sr-only">: ${esc(title)}</span></span>
         </button>
       </div>`;
   }

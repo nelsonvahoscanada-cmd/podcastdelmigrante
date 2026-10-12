@@ -293,6 +293,10 @@ const EDITION_MONTHS = [
    - longBio: texto en español (párrafos separados por una línea en
      blanco)
    - en: { specialty, longBio } — presentación en inglés (opcional)
+   - lang: "en" — el perfil completo (textos, botones, SEO y tarjeta
+     para compartir) se publica en inglés; specialty, bio, longBio,
+     roleLabel, shareSpecialty y shareDescription van en inglés
+     (opcional; por defecto "es")
    - interviews: [{ youtubeId, title, lang: "es" | "en", date,
      relatedArticleSlug }] — entrevistas con video (se cargan al pulsar)
 
@@ -328,16 +332,14 @@ const CONTRIBUTORS = [
   },
   {
     id: "elmy-castillo",
+    lang: "en",
     photo: "assets/elmy-castillo-avatar.jpg",
     photoLarge: "assets/elmy-castillo.jpg",
     name: "Elmy Castillo",
-    specialty: "Colaboradora — Salud y Entrevistas en Inglés",
-    bio: "Entrevistas y contenidos de salud, especialmente en inglés, para las comunidades migrantes.",
-    longBio: "Elmy Castillo se graduó de la Universidad de Alberta en 2025 con una licenciatura con honores en Fisiología. Actualmente cursa una maestría en Salud de Precisión en la Universidad de Calgary, con especialización en Educación y Liderazgo en Profesiones de la Salud.\n\nAdemás, trabaja como analista de investigación en el sector de la salud en una firma local de capital privado.\n\nComo colaboradora de El Podcast del Migrante, participa en entrevistas y contenidos informativos relacionados con la salud, especialmente en inglés, ayudándonos a llegar a las comunidades migrantes que prefieren informarse en ese idioma.",
-    en: {
-      specialty: "Contributor — Health and English-Language Interviews",
-      longBio: "Elmy Castillo graduated from the University of Alberta in 2025 with an honours bachelor's degree in Physiology. She is currently pursuing a Master's in Precision Health at the University of Calgary, specializing in Health Professions Education and Leadership.\n\nShe also works as a research analyst in the healthcare sector at a local private equity firm.\n\nAs a contributor to El Podcast del Migrante, she takes part in interviews and informational content related to health, especially in English, helping us reach migrant communities who prefer to get their information in that language.",
-    },
+    specialty: "Rural Health Correspondent | Health Education & Interviews",
+    organization: "eRadio Global | El Podcast del Migrante Magazine",
+    bio: "Health interviews and educational content in English and Spanish for immigrant and rural audiences across Alberta.",
+    longBio: "In 2025, Elmy Castillo earned a degree in Honours Physiology from the University of Alberta, and she is now pursuing a Master's in Precision Health at the University of Calgary with a focus on Health Professions Education and Leadership.\n\nCurrently, she works as a healthcare research analyst at a private equity firm, is the Rural Health Correspondent for the County of Newell, Alberta with eRadio Global, and is a contributor to El Podcast del Migrante, where she produces health interviews and educational content in English and Spanish for immigrant and rural audiences across Alberta.\n\nShe is dedicated to rural health, health education, and expanding access to reliable health information in underserved communities. Elmy Castillo is now preparing her medical school applications, including the Cumming School of Medicine at the University of Calgary.",
     interviews: [
       {
         youtubeId: "z2Ih590xSP4",
@@ -348,9 +350,9 @@ const CONTRIBUTORS = [
     ],
     link: "colaborador-elmy-castillo",
     website: "",
-    roleLabel: "Colaboradora",
-    shareSpecialty: "Salud y Entrevistas en Inglés",
-    shareDescription: "Graduada con honores en Fisiología (Universidad de Alberta) y estudiante de maestría en Salud de Precisión (Universidad de Calgary). Colabora en entrevistas y contenidos de salud, especialmente en inglés.",
+    roleLabel: "Contributor",
+    shareSpecialty: "Rural Health Correspondent",
+    shareDescription: "Rural Health Correspondent for the County of Newell, Alberta with eRadio Global. Health interviews and educational content in English and Spanish for immigrant and rural audiences across Alberta.",
     socialPhoto: { src: "assets/elmy-castillo.jpg", focus: "50% 30%", zoom: 1.15 },
   },
 ];

@@ -55,16 +55,35 @@ test("cada colaborador tiene perfil público con vista previa e imagen 1200 × 6
   }
 });
 
-test("Elmy Castillo: credenciales confirmadas, inglés y entrevista", () => {
+test("Elmy Castillo: perfil completo en inglés, credenciales confirmadas y entrevista", () => {
   const e = CONTRIBUTORS.find((c) => c.id === "elmy-castillo");
   assert.ok(e);
-  assert.equal(e.specialty, "Colaboradora — Salud y Entrevistas en Inglés");
-  assert.match(e.longBio, /Universidad de Alberta en 2025 con una licenciatura con honores en Fisiología/);
-  assert.match(e.longBio, /maestría en Salud de Precisión en la Universidad de Calgary/);
-  assert.doesNotMatch(e.longBio + e.en.longBio + e.shareDescription, /médic[oa] titulad|estudiante de medicina|medical (student|doctor)|\bMD\b/i);
-  assert.ok(e.en && /Master's in Precision Health at the University of Calgary/.test(e.en.longBio));
+  assert.equal(e.lang, "en");
+  assert.equal(e.specialty, "Rural Health Correspondent | Health Education & Interviews");
+  assert.equal(e.organization, "eRadio Global | El Podcast del Migrante Magazine");
+  assert.match(e.longBio, /^In 2025, Elmy Castillo earned a degree in Honours Physiology from the University of Alberta/);
+  assert.match(e.longBio, /Rural Health Correspondent for the County of Newell, Alberta with eRadio Global/);
+  assert.match(e.longBio, /preparing her medical school applications, including the Cumming School of Medicine/);
+  assert.equal(e.en, undefined, "sin presentación en inglés duplicada");
+  const text = [e.specialty, e.bio, e.longBio, e.roleLabel, e.shareSpecialty, e.shareDescription].join(" ");
+  assert.doesNotMatch(text, /licensed physician|medical student|admitted to medical|\bMD\b|\bDr\.? Elmy/i);
+  assert.doesNotMatch(text, /[áéíóúñ]|Colaborador|Salud|Entrevista/i, "textos del perfil en inglés");
   assert.deepEqual(JSON.parse(JSON.stringify(e.interviews.map((i) => [i.youtubeId, i.lang, i.relatedArticleSlug]))), [["z2Ih590xSP4", "en", "medico-familia-latino-brooks-alberta"]]);
   for (const f of [e.photo, e.photoLarge]) assert.ok(existsSync(new URL(f, ROOT)), f);
+  const html = read("colaborador-elmy-castillo.html");
+  assert.match(html, /<html lang="en"/);
+  assert.equal(meta(html, "og:locale"), "en_CA");
+  assert.equal(meta(html, "og:title"), "Elmy Castillo — Rural Health Correspondent | El Podcast del Migrante Magazine");
+  assert.equal(meta(html, "description"), e.shareDescription);
+  // Carlos sigue igual, en español
+  const carlos = read("colaborador-carlos-castillo.html");
+  assert.match(carlos, /<html lang="es"/);
+  assert.equal(meta(carlos, "og:locale"), "es_CA");
+});
+
+test("el perfil en inglés muestra sus botones y títulos en inglés", () => {
+  const js = read("js/colaborador.js");
+  for (const label of ["Interviews", "Watch Interview", "Share Profile", "Copy Link", "Link copied: "]) assert.ok(js.includes(`"${label}"`), label);
 });
 
 test("los colaboradores no se mezclan con las miniwebs empresariales", () => {

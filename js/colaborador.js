@@ -16,6 +16,9 @@
   (`interviews`, se cargan desde YouTube solo al pulsar) y los botones
   «Compartir perfil» y «Copiar enlace» con su URL pública
   (colaborador-<id>, generada por scripts/build-contributor-pages.mjs).
+
+  Con `lang: "en"` en el colaborador, todo el perfil (títulos, botones y
+  mensajes) se muestra en inglés (textos en UI.en).
 ========================================================================= */
 
 (function () {
@@ -43,10 +46,51 @@
     return SITE_ORIGIN + "/colaborador-" + c.id;
   }
 
-  const LANG_LABEL = { en: "Entrevista en inglés", es: "Entrevista en español" };
+  /* Textos propios del perfil, según `lang` del colaborador */
+  const UI = {
+    es: {
+      langLabel: { en: "Entrevista en inglés", es: "Entrevista en español" },
+      interview: "Entrevista",
+      interviews: "Entrevistas",
+      videoNote: "Al reproducirlo, el video se carga desde YouTube.",
+      playVideo: "Reproducir video",
+      watch: "Ver en YouTube",
+      newTab: " (se abre en una pestaña nueva)",
+      related: (title) => `Lee nuestra cobertura en español: ${esc(title)}`,
+      share: "Compartir perfil",
+      copy: "Copiar enlace",
+      copied: "Enlace copiado: ",
+      copyThis: "Copia este enlace: ",
+      photoOf: "Fotografía de ",
+      proSite: "Visitar sitio profesional",
+      licensedIn: "Licenciado en:",
+    },
+    en: {
+      langLabel: { en: "English interview", es: "Spanish interview" },
+      interview: "Interview",
+      interviews: "Interviews",
+      videoNote: "The video loads from YouTube when you play it.",
+      playVideo: "Play video",
+      watch: "Watch Interview",
+      newTab: " (opens in a new tab)",
+      related: () => "Read our coverage (in Spanish)",
+      share: "Share Profile",
+      copy: "Copy Link",
+      copied: "Link copied: ",
+      copyThis: "Copy this link: ",
+      photoOf: "Photograph of ",
+      proSite: "Visit professional website",
+      licensedIn: "Licensed in:",
+    },
+  };
+
+  function ui(c) {
+    return UI[c.lang] || UI.es;
+  }
 
   function interviewsHtml(c) {
     if (!c.interviews || !c.interviews.length) return "";
+    const t = ui(c);
     const items = c.interviews
       .map((iv) => {
         const related = iv.relatedArticleSlug && typeof ARTICLES !== "undefined"
@@ -55,26 +99,26 @@
         const langAttr = iv.lang ? ` lang="${esc(iv.lang)}"` : "";
         return `
           <article class="profile-interview">
-            <span class="profile-interview__lang">${esc(LANG_LABEL[iv.lang] || "Entrevista")}${iv.lang === "en" ? ' · <span lang="en">English interview</span>' : ""}</span>
+            <span class="profile-interview__lang">${esc(t.langLabel[iv.lang] || t.interview)}${iv.lang === "en" && c.lang !== "en" ? ' · <span lang="en">English interview</span>' : ""}</span>
             <h3 class="profile-interview__title"${langAttr}>${esc(iv.title)}</h3>
-            ${VideoCover.html({ id: iv.youtubeId, title: iv.title })}
-            <p class="article-video__note">Al reproducirlo, el video se carga desde YouTube.</p>
+            ${VideoCover.html({ id: iv.youtubeId, title: iv.title, playLabel: t.playVideo })}
+            <p class="article-video__note">${t.videoNote}</p>
             <p class="profile-interview__links">
-              <a href="https://www.youtube.com/watch?v=${encodeURIComponent(iv.youtubeId)}" target="_blank" rel="noopener">Ver en YouTube<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
-              ${related ? ` · <a href="articulo-${encodeURIComponent(related.slug)}">Lee nuestra cobertura en español: ${esc(related.title)}</a>` : ""}
+              <a href="https://www.youtube.com/watch?v=${encodeURIComponent(iv.youtubeId)}" target="_blank" rel="noopener">${t.watch}<span class="sr-only">${t.newTab}</span></a>
+              ${related ? ` · <a href="articulo-${encodeURIComponent(related.slug)}">${t.related(related.title)}</a>` : ""}
             </p>
           </article>`;
       })
       .join("");
     return `
       <section class="profile-column profile-interviews" aria-labelledby="interviewsTitle">
-        <h2 class="section-title" id="interviewsTitle">Entrevistas</h2>
+        <h2 class="section-title" id="interviewsTitle">${t.interviews}</h2>
         ${items}
       </section>`;
   }
 
   function englishHtml(c) {
-    if (!c.en || !c.en.longBio) return "";
+    if (!c.en || !c.en.longBio || c.lang === "en") return "";
     return `
       <section class="profile-column profile-en" lang="en" aria-labelledby="enTitle">
         <h2 class="section-title" id="enTitle">About ${esc(c.name.split(" ")[0])} <span class="profile-en__badge">English</span></h2>
@@ -83,11 +127,12 @@
       </section>`;
   }
 
-  function shareHtml() {
+  function shareHtml(c) {
+    const t = ui(c);
     return `
       <div class="profile-share">
-        <button type="button" class="btn-outline btn-outline--dark" data-share-profile>Compartir perfil</button>
-        <button type="button" class="btn-outline btn-outline--dark" data-copy-link>Copiar enlace</button>
+        <button type="button" class="btn-outline btn-outline--dark" data-share-profile>${t.share}</button>
+        <button type="button" class="btn-outline btn-outline--dark" data-copy-link>${t.copy}</button>
         <p class="profile-share__status" role="status" aria-live="polite"></p>
       </div>`;
   }
@@ -115,6 +160,7 @@
     const root = document.getElementById("profileRoot");
     const status = root.querySelector(".profile-share__status");
     const url = profileUrl(c);
+    const t = ui(c);
     const say = (msg) => { if (status) status.textContent = msg; };
     const share = root.querySelector("[data-share-profile]");
     if (share) {
@@ -127,11 +173,11 @@
             if (e && e.name === "AbortError") return;
           }
         }
-        say((await copyText(url)) ? "Enlace copiado: " + url : "Copia este enlace: " + url);
+        say((await copyText(url)) ? t.copied + url : t.copyThis + url);
       });
     }
     const copy = root.querySelector("[data-copy-link]");
-    if (copy) copy.addEventListener("click", async () => say((await copyText(url)) ? "Enlace copiado: " + url : "Copia este enlace: " + url));
+    if (copy) copy.addEventListener("click", async () => say((await copyText(url)) ? t.copied + url : t.copyThis + url));
     VideoCover.bind(root);
   }
 
@@ -176,19 +222,21 @@
 
   function renderProfile(contributor) {
     document.title = contributor.name + " — El Podcast del Migrante Magazine";
+    const t = ui(contributor);
+    if (contributor.lang) document.getElementById("main")?.setAttribute("lang", contributor.lang);
 
     const avatar = contributor.photo
       ? `<img class="profile-avatar" src="${contributor.photo}" alt="${contributor.name}">`
       : `<div class="profile-avatar profile-avatar--initials">${contributor.name.charAt(0)}</div>`;
     const photoLarge = contributor.photoLarge
-      ? `<figure class="profile-photo"><img src="${contributor.photoLarge}" alt="Fotografía de ${esc(contributor.name)}" width="900" height="1200"></figure>`
+      ? `<figure class="profile-photo"><img src="${contributor.photoLarge}" alt="${t.photoOf}${esc(contributor.name)}" width="900" height="1200"></figure>`
       : "";
 
     const columns = columnsByAuthor(contributor.id);
     const columnsHtml = columns.map(columnSectionHtml).join("");
 
     const proSiteBtn = contributor.professionalSite
-      ? `<a class="btn-outline btn-outline--dark" href="${contributor.professionalSite}" target="_blank" rel="noopener">Visitar sitio profesional</a>`
+      ? `<a class="btn-outline btn-outline--dark" href="${contributor.professionalSite}" target="_blank" rel="noopener">${t.proSite}</a>`
       : "";
 
     document.getElementById("profileRoot").innerHTML = `
@@ -204,11 +252,11 @@
       <p class="article-dek">${contributor.bio}</p>
       ${photoLarge}
       ${paragraphs(contributor.longBio, "profile-longbio")}
-      ${contributor.licensedIn ? `<p class="profile-licensed"><strong>Licenciado en:</strong> ${contributor.licensedIn}</p>` : ""}
+      ${contributor.licensedIn ? `<p class="profile-licensed"><strong>${t.licensedIn}</strong> ${contributor.licensedIn}</p>` : ""}
       ${contributor.brandLogo ? `<div class="profile-brand"><img src="${contributor.brandLogo.src}" alt="${contributor.brandLogo.alt}"></div>` : ""}
 
       ${proSiteBtn ? `<div class="profile-actions">${proSiteBtn}</div>` : ""}
-      ${shareHtml()}
+      ${shareHtml(contributor)}
 
       ${columnsHtml}
       ${interviewsHtml(contributor)}
