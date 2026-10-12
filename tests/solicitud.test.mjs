@@ -11,7 +11,7 @@ import * as core from "../js/directorio/solicitud-core.js";
 import { internalEmail, confirmationEmail } from "../functions/_lib/correos.js";
 import { onRequestPost } from "../functions/registro/enviar.js";
 import { onRequestGet as configGet } from "../functions/registro/config.js";
-import { fakeEnv, installFetch } from "./helpers/fake-cloudflare.mjs";
+import { fakeEnv, fakeD1, installFetch } from "./helpers/fake-cloudflare.mjs";
 
 const ROOT = new URL("../", import.meta.url);
 const bytesOf = (p) => new Uint8Array(readFileSync(new URL(p, ROOT)));
@@ -168,6 +168,38 @@ test("rechazos: validación, imagen falsa, robot, Turnstile, sin configuración"
   } finally { net.restore(); }
 });
 
+test("Turnstile: un token válido emitido en otro dominio se rechaza", async () => {
+  let net = installFetch({ turnstileHostname: "sitio-ajeno.example" });
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 403);
+    assert.equal(rows(env).length, 0, "nada se guarda");
+    assert.equal(env.SOLICITUDES.store.size, 0);
+    assert.equal(net.sent.length, 0, "no salen correos");
+  } finally { net.restore(); }
+  /* Vista previa de Pages: solo si se autoriza su dominio expresamente */
+  net = installFetch({ turnstileHostname: "abc123.podcastdelmigrante.pages.dev" });
+  try {
+    assert.equal((await send(fakeEnv(), VALID)).res.status, 403, "por defecto, solo el dominio oficial");
+    const env = fakeEnv({ TURNSTILE_HOSTNAMES: "podcastdelmigrante.com, abc123.podcastdelmigrante.pages.dev" });
+    assert.equal((await send(env, VALID)).res.status, 201);
+  } finally { net.restore(); }
+  net = installFetch({ turnstileHostname: "www.podcastdelmigrante.com" });
+  try {
+    assert.equal((await send(fakeEnv(), VALID)).res.status, 201, "www también es oficial");
+  } finally { net.restore(); }
+});
+
+test("consentimiento: se guarda la versión vigente del aviso de privacidad", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv();
+    assert.equal((await send(env, VALID)).res.status, 201);
+    assert.equal(rows(env)[0].consent_version, "directorio-2026-10-v2");
+  } finally { net.restore(); }
+});
+
 test("sin duplicados: reintento y misma empresa abierta devuelven el mismo número", async () => {
   const net = installFetch();
   try {
@@ -209,7 +241,104 @@ test("si D1 falla, se borra la imagen y no se confirma", async () => {
 
 test("GET /registro/config: listo solo con toda la configuración, sin revelar secretos", async () => {
   const ok = await (await configGet({ env: fakeEnv() })).json();
-  assert.deepEqual(ok, { ready: true, turnstileSiteKey: "site" });
+  assert.deepEqual(ok, { ready: true, turnstileSiteKey: "1x00000000000000000000AA" });
   const no = await (await configGet({ env: fakeEnv({ IP_HASH_SALT: "" }) })).json();
   assert.deepEqual(no, { ready: false, turnstileSiteKey: "" });
+});
+
+/* Captura console.warn para comprobar que el registro nombra lo que falta
+   sin incluir ningún valor secreto. */
+async function captureWarn(fn) {
+  const lines = [];
+  const original = console.warn;
+  console.warn = (...a) => lines.push(a.join(" "));
+  try { await fn(); } finally { console.warn = original; }
+  return lines.join("\n");
+}
+
+test("interruptor REGISTRO_ABIERTO: cerrado salvo que valga exactamente \"1\"", async () => {
+  for (const value of [undefined, "", "0", "true", "si", " 1", "1 ", "01", 1]) {
+    const env = fakeEnv({ REGISTRO_ABIERTO: value });
+    const cfg = await (await configGet({ env })).json();
+    assert.deepEqual(cfg, { ready: false, turnstileSiteKey: "" }, `config con ${JSON.stringify(value)}`);
+  }
+});
+
+test("con el interruptor cerrado no se procesa ni se guarda nada", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv({ REGISTRO_ABIERTO: "0" });
+    const log = await captureWarn(async () => {
+      const r = await send(env, VALID);
+      assert.equal(r.res.status, 503);
+      assert.equal(r.body.ok, false);
+    });
+    assert.match(log, /REGISTRO_ABIERTO/);
+    assert.equal(rows(env).length, 0);
+    assert.equal(env.SOLICITUDES.store.size, 0);
+    assert.equal(net.sent.length, 0, "ni Turnstile ni correos");
+  } finally { net.restore(); }
+});
+
+test("clave pública de Turnstile mal puesta (nombre del widget): cerrado", async () => {
+  const cfg = await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "Directorio empresarial" }) })).json();
+  assert.deepEqual(cfg, { ready: false, turnstileSiteKey: "" });
+  assert.equal((await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "0x4AAAAAAAabcdefghijklmn" }) })).json()).ready, true);
+});
+
+test("los registros nombran lo que falta, nunca los valores secretos", async () => {
+  const env = fakeEnv({ REGISTRO_ABIERTO: "", IP_HASH_SALT: "", RESEND_API_KEY: "re_SECRETO_123", TURNSTILE_SECRET_KEY: "0xSECRETO_TURNSTILE" });
+  const log = await captureWarn(() => configGet({ env }));
+  assert.match(log, /REGISTRO_ABIERTO/);
+  assert.match(log, /IP_HASH_SALT/);
+  for (const secret of ["re_SECRETO_123", "0xSECRETO_TURNSTILE"]) assert.ok(!log.includes(secret), "no revela " + secret);
+  const body = await (await configGet({ env })).text();
+  assert.ok(!/SECRETO/.test(body));
+});
+
+test("historial: la solicitud recibida y el resultado de los correos quedan registrados", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 201);
+    const events = env.DIRECTORIO_DB._db.prepare("SELECT actor, action, to_status, detail FROM application_events WHERE application_id = ? ORDER BY id").all(r.body.requestId);
+    assert.deepEqual(events.map((e) => [e.actor, e.action]), [["formulario", "recibida"], ["sistema", "correos"]]);
+    assert.equal(events[0].to_status, "pendiente");
+    assert.match(events[1].detail, /Aviso interno: enviado · Confirmación: enviado/);
+    assert.doesNotMatch(JSON.stringify(events), /ana@example\.com/i, "sin datos de contacto");
+  } finally { net.restore(); }
+});
+
+test("si el historial no existe todavía (migración 0002 sin aplicar), la solicitud NO se pierde", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv({ DIRECTORIO_DB: fakeD1({ upTo: "0001_solicitudes.sql" }) });
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 201);
+    assert.equal(rows(env).length, 1);
+    assert.equal(net.sent.length, 2, "los dos correos salen igual");
+  } finally { net.restore(); }
+});
+
+test("servicios caídos: Turnstile sin respuesta → 503 claro; D1 caída → 500 JSON sin detalles internos", async () => {
+  let net = installFetch({ turnstileDown: true });
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 503);
+    assert.match(r.body.error, /Tus datos siguen en el formulario/);
+    assert.equal(rows(env).length, 0);
+    assert.equal(net.sent.length, 0);
+  } finally { net.restore(); }
+  net = installFetch();
+  try {
+    const broken = { prepare() { throw new Error("D1_ERROR: database unavailable (detalle interno)"); }, batch() { throw new Error("x"); } };
+    const env = fakeEnv({ DIRECTORIO_DB: broken });
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 500);
+    assert.equal(r.body.ok, false);
+    assert.doesNotMatch(JSON.stringify(r.body), /D1_ERROR|detalle interno/);
+    assert.equal(env.SOLICITUDES.store.size, 0, "no queda ninguna imagen huérfana");
+  } finally { net.restore(); }
 });
