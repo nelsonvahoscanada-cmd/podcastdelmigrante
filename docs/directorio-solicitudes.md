@@ -219,7 +219,8 @@ El **registro de eliminaciones** (tabla `deletion_requests`) conserva solo el
 número de solicitud, una huella SHA-256 del correo, fechas, canal y quién hizo
 cada paso, para acreditar la gestión. Quedan fuera del alcance del panel, y
 se vencen solos: el Time Travel de D1, los registros de envío de Resend y las
-copias de seguridad (ver `docs/directorio-conservacion-propuesta.md`).
+copias de seguridad (ver la propuesta de conservación en el repositorio
+privado `podcastdelmigrante-interno`, `directorio/conservacion-propuesta.md`).
 
 ## 11. Suscripciones futuras
 
