@@ -1,5 +1,6 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "medico-familia-latino-brooks-alberta",
   "el-frio-no-pudo-apagar-mi-senal",
   "carney-aumento-controlado-inmigracion-canada",
   "alberta-suspende-impuesto-gasolina-octubre-2026",
