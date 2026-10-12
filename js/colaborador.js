@@ -10,13 +10,150 @@
   Agregar un futuro artículo de este colaborador es: crearlo en
   js/articles.js con `author.authorId` igual al `id` de este
   colaborador — aparecerá aquí solo, sin editar esta página.
+
+  También muestra, si el colaborador los tiene: foto grande, biografía
+  en párrafos, presentación en inglés (`en`), entrevistas en video
+  (`interviews`, se cargan desde YouTube solo al pulsar) y los botones
+  «Compartir perfil» y «Copiar enlace» con su URL pública
+  (colaborador-<id>, generada por scripts/build-contributor-pages.mjs).
 ========================================================================= */
 
 (function () {
   "use strict";
 
+  const SITE_ORIGIN = "https://podcastdelmigrante.com";
+
   function getParam(name) {
     return new URLSearchParams(window.location.search).get(name);
+  }
+
+  function esc(t) {
+    return String(t == null ? "" : t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function paragraphs(text, cls) {
+    return String(text || "")
+      .split(/\n\s*\n/)
+      .filter(Boolean)
+      .map((p) => `<p class="${cls}">${esc(p)}</p>`)
+      .join("");
+  }
+
+  function profileUrl(c) {
+    return SITE_ORIGIN + "/colaborador-" + c.id;
+  }
+
+  const LANG_LABEL = { en: "Entrevista en inglés", es: "Entrevista en español" };
+
+  function interviewsHtml(c) {
+    if (!c.interviews || !c.interviews.length) return "";
+    const items = c.interviews
+      .map((iv) => {
+        const related = iv.relatedArticleSlug && typeof ARTICLES !== "undefined"
+          ? ARTICLES.find((a) => a.slug === iv.relatedArticleSlug && !a.draft)
+          : null;
+        const langAttr = iv.lang ? ` lang="${esc(iv.lang)}"` : "";
+        return `
+          <article class="profile-interview">
+            <span class="profile-interview__lang">${esc(LANG_LABEL[iv.lang] || "Entrevista")}${iv.lang === "en" ? ' · <span lang="en">English interview</span>' : ""}</span>
+            <h3 class="profile-interview__title"${langAttr}>${esc(iv.title)}</h3>
+            <div class="article-video__frame article-video__frame--cover" data-video-id="${encodeURIComponent(iv.youtubeId)}" data-video-title="${esc(iv.title)}">
+              <button type="button" class="article-video__play" data-video-play>
+                <span class="video-card__play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
+                </span>
+                <span class="article-video__play-label">Reproducir video<span class="sr-only">: ${esc(iv.title)}</span></span>
+              </button>
+            </div>
+            <p class="article-video__note">Al reproducirlo, el video se carga desde YouTube.</p>
+            <p class="profile-interview__links">
+              <a href="https://www.youtube.com/watch?v=${encodeURIComponent(iv.youtubeId)}" target="_blank" rel="noopener">Ver en YouTube<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+              ${related ? ` · <a href="articulo-${encodeURIComponent(related.slug)}">Lee nuestra cobertura en español: ${esc(related.title)}</a>` : ""}
+            </p>
+          </article>`;
+      })
+      .join("");
+    return `
+      <section class="profile-column profile-interviews" aria-labelledby="interviewsTitle">
+        <h2 class="section-title" id="interviewsTitle">Entrevistas</h2>
+        ${items}
+      </section>`;
+  }
+
+  function englishHtml(c) {
+    if (!c.en || !c.en.longBio) return "";
+    return `
+      <section class="profile-column profile-en" lang="en" aria-labelledby="enTitle">
+        <h2 class="section-title" id="enTitle">About ${esc(c.name.split(" ")[0])} <span class="profile-en__badge">English</span></h2>
+        ${c.en.specialty ? `<p class="profile-en__specialty">${esc(c.en.specialty)}</p>` : ""}
+        ${paragraphs(c.en.longBio, "profile-longbio")}
+      </section>`;
+  }
+
+  function shareHtml() {
+    return `
+      <div class="profile-share">
+        <button type="button" class="btn-outline btn-outline--dark" data-share-profile>Compartir perfil</button>
+        <button type="button" class="btn-outline btn-outline--dark" data-copy-link>Copiar enlace</button>
+        <p class="profile-share__status" role="status" aria-live="polite"></p>
+      </div>`;
+  }
+
+  async function copyText(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
+      ta.remove();
+      return ok;
+    }
+  }
+
+  function bindProfileActions(c) {
+    const root = document.getElementById("profileRoot");
+    const status = root.querySelector(".profile-share__status");
+    const url = profileUrl(c);
+    const say = (msg) => { if (status) status.textContent = msg; };
+    const share = root.querySelector("[data-share-profile]");
+    if (share) {
+      share.addEventListener("click", async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: c.name + " — El Podcast del Migrante Magazine", text: c.shareDescription || c.bio || "", url });
+            return;
+          } catch (e) {
+            if (e && e.name === "AbortError") return;
+          }
+        }
+        say((await copyText(url)) ? "Enlace copiado: " + url : "Copia este enlace: " + url);
+      });
+    }
+    const copy = root.querySelector("[data-copy-link]");
+    if (copy) copy.addEventListener("click", async () => say((await copyText(url)) ? "Enlace copiado: " + url : "Copia este enlace: " + url));
+    root.querySelectorAll("[data-video-play]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const frame = btn.closest("[data-video-id]");
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + frame.dataset.videoId + "?autoplay=1&rel=0";
+        iframe.title = frame.dataset.videoTitle || "Video";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.loading = "lazy";
+        frame.classList.remove("article-video__frame--cover");
+        frame.innerHTML = "";
+        frame.appendChild(iframe);
+        iframe.focus();
+      });
+    });
   }
 
   function findContributor(id) {
@@ -64,6 +201,9 @@
     const avatar = contributor.photo
       ? `<img class="profile-avatar" src="${contributor.photo}" alt="${contributor.name}">`
       : `<div class="profile-avatar profile-avatar--initials">${contributor.name.charAt(0)}</div>`;
+    const photoLarge = contributor.photoLarge
+      ? `<figure class="profile-photo"><img src="${contributor.photoLarge}" alt="Fotografía de ${esc(contributor.name)}" width="900" height="1200"></figure>`
+      : "";
 
     const columns = columnsByAuthor(contributor.id);
     const columnsHtml = columns.map(columnSectionHtml).join("");
@@ -83,14 +223,19 @@
       </div>
 
       <p class="article-dek">${contributor.bio}</p>
-      ${contributor.longBio ? `<p class="profile-longbio">${contributor.longBio}</p>` : ""}
+      ${photoLarge}
+      ${paragraphs(contributor.longBio, "profile-longbio")}
       ${contributor.licensedIn ? `<p class="profile-licensed"><strong>Licenciado en:</strong> ${contributor.licensedIn}</p>` : ""}
       ${contributor.brandLogo ? `<div class="profile-brand"><img src="${contributor.brandLogo.src}" alt="${contributor.brandLogo.alt}"></div>` : ""}
 
       ${proSiteBtn ? `<div class="profile-actions">${proSiteBtn}</div>` : ""}
+      ${shareHtml()}
 
       ${columnsHtml}
+      ${interviewsHtml(contributor)}
+      ${englishHtml(contributor)}
     `;
+    bindProfileActions(contributor);
   }
 
   function renderNotFound() {
@@ -106,7 +251,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     window.PDM.initSiteChrome();
-    const id = getParam("id");
+    const id = document.documentElement.getAttribute("data-contributor-id") || getParam("id");
     const contributor = id ? findContributor(id) : null;
     if (contributor) {
       renderProfile(contributor);

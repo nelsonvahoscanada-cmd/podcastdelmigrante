@@ -23,7 +23,15 @@ url(...)), una versión social:
   pequeña en la esquina superior izquierda (para imágenes que ya llevan
   titular o botones en la parte inferior); por defecto, franja inferior.
 
-Después de agregar o cambiar un artículo:
+Además, para cada colaborador de js/data.js (CONTRIBUTORS) escribe la
+tarjeta para compartir su perfil:
+
+  assets/social/colaborador-<id>.jpg   1200 × 630: foto a la izquierda;
+  logotipo del Magazine, nombre, especialidad y descripción a la derecha.
+  La foto sale de `socialPhoto` ({ src, focus, zoom }) o, si falta, de
+  `photo`. Usa las tipografías del sitio (assets/fonts).
+
+Después de agregar o cambiar un artículo o un colaborador:
     python3 scripts/build-social-images.py
     node scripts/build-article-pages.mjs
 (el chequeo de GitHub «Artículos: vistas previas» avisa si falta algo).
@@ -46,6 +54,16 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "social"
 W, H = 1200, 630
 DEFAULT_FOCUS = (0.5, 0.4)
+
+
+def load_contributors():
+    code = (
+        "const fs=require('fs'),vm=require('vm');const c=vm.createContext({});"
+        "vm.runInContext(fs.readFileSync(process.argv[1],'utf8')+';globalThis.__C=CONTRIBUTORS;',c);"
+        "process.stdout.write(JSON.stringify(c.__C));"
+    )
+    out = subprocess.run(["node", "-e", code, str(ROOT / "js" / "data.js")], check=True, capture_output=True, text=True).stdout
+    return json.loads(out)
 
 
 def load_articles():
@@ -129,6 +147,82 @@ def social_crop(img, focus):
     return img.crop((left, top, left + W, top + H))
 
 
+# ---------- Tarjeta para compartir el perfil de un colaborador ----------
+VERDE, VERDE_OSCURO, NEGRO, GRIS = (111, 154, 3), (85, 121, 2), (11, 11, 11), (91, 91, 91)
+CREMA = (247, 246, 241)
+
+
+def site_font(kind, size, weight):
+    files = {"display": "fraunces-latin-opsz-normal.woff2", "ui": "public-sans-latin-wght-normal.woff2"}
+    font = ImageFont.truetype(str(ROOT / "assets" / "fonts" / files[kind]), size)
+    axes = [a["name"] for a in font.get_variation_axes()]
+    values = [min(144, size) if n == b"Optical Size" else weight for n in axes]
+    font.set_variation_by_axes(values)
+    return font
+
+
+def wrap(draw, text, font, width, max_lines):
+    words, lines, cur = text.split(), [], ""
+    for w in words:
+        test = (cur + " " + w).strip()
+        if draw.textlength(test, font=font) <= width:
+            cur = test
+        else:
+            lines.append(cur); cur = w
+    if cur:
+        lines.append(cur)
+    if len(lines) > max_lines:
+        lines = lines[:max_lines]
+        while draw.textlength(lines[-1] + "…", font=font) > width and " " in lines[-1]:
+            lines[-1] = lines[-1].rsplit(" ", 1)[0]
+        lines[-1] += "…"
+    return lines
+
+
+def contributor_card(c):
+    sp = c.get("socialPhoto") or {"src": c.get("photo")}
+    if not sp.get("src"):
+        return None
+    card = Image.new("RGB", (W, H), CREMA)
+    # Foto (izquierda): cubre 470 × 630 sin deformar, con zoom y punto de interés
+    PW = 470
+    photo = ImageOps.exif_transpose(Image.open(ROOT / sp["src"])).convert("RGB")
+    zoom = float(sp.get("zoom") or 1)
+    fx, fy = parse_focus(sp.get("focus") or "50% 35%")
+    scale = max(PW / photo.width, H / photo.height) * zoom
+    rw, rh = round(photo.width * scale), round(photo.height * scale)
+    photo = photo.resize((rw, rh), Image.LANCZOS)
+    left = min(max(round(rw * fx - PW / 2), 0), rw - PW)
+    top = min(max(round(rh * fy - H / 2), 0), rh - H)
+    card.paste(photo.crop((left, top, left + PW, top + H)), (0, 0))
+    d = ImageDraw.Draw(card)
+    d.rectangle((PW, 0, PW + 8, H), fill=VERDE)
+    x, maxw = PW + 64, W - PW - 64 - 56
+    # Identidad del Magazine
+    logo = Image.open(ROOT / "assets" / "logo.png").convert("RGBA")
+    logo.thumbnail((76, 76), Image.LANCZOS)
+    card.paste(logo, (x, 48), logo)
+    d.text((x + 92, 56), "El Podcast del Migrante", font=site_font("display", 30, 600), fill=NEGRO)
+    d.text((x + 92, 94), "MAGAZINE", font=site_font("ui", 18, 700), fill=VERDE_OSCURO)
+    # Rol, nombre, especialidad, descripción
+    y = 190
+    d.text((x, y), (c.get("roleLabel") or "Colaborador").upper(), font=site_font("ui", 20, 700), fill=VERDE_OSCURO)
+    y += 38
+    name_font = site_font("display", 64, 600)
+    for line in wrap(d, c["name"], name_font, maxw, 2):
+        d.text((x, y), line, font=name_font, fill=NEGRO); y += 74
+    y += 4
+    spec_font = site_font("ui", 30, 600)
+    for line in wrap(d, c.get("shareSpecialty") or c.get("specialty", ""), spec_font, maxw, 2):
+        d.text((x, y), line, font=spec_font, fill=VERDE_OSCURO); y += 40
+    y += 18
+    desc_font = site_font("ui", 22, 400)
+    for line in wrap(d, c.get("shareDescription") or c.get("bio", ""), desc_font, maxw, 4):
+        d.text((x, y), line, font=desc_font, fill=GRIS); y += 31
+    d.text((x, H - 58), "podcastdelmigrante.com", font=site_font("ui", 20, 600), fill=GRIS)
+    return card
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     expected = set()
@@ -154,6 +248,14 @@ def main():
         img.save(out, "JPEG", quality=84, optimize=True, progressive=True)
         expected.add(out.name)
         print(f"escrito    assets/social/{out.name}  ({out.stat().st_size // 1024} KB)  ← {src}")
+    for c in load_contributors():
+        card = contributor_card(c)
+        if card is None:
+            continue
+        out = OUT / f"colaborador-{c['id']}.jpg"
+        card.save(out, "JPEG", quality=86, optimize=True, progressive=True)
+        expected.add(out.name)
+        print(f"escrito    assets/social/{out.name}  ({out.stat().st_size // 1024} KB)  ← colaborador {c['id']}")
     for f in OUT.glob("*.jpg"):
         if f.name not in expected:
             f.unlink()
