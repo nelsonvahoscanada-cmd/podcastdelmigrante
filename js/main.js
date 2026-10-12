@@ -178,33 +178,31 @@
   function buildVideos() {
     const track = document.getElementById("videoTrack");
     VIDEOS.filter((item) => item.published).forEach((item) => {
-      const mediaStyle = item.videoId ? ` style="background-image:url('${youtubeThumb(item.videoId)}')"` : "";
       const badge = item.demo === false ? "" : `<span class="demo-badge demo-badge--sm">Demo</span>`;
       const desc = item.desc ? `<p class="video-card__desc">${item.desc}</p>` : "";
-      const innerHtml = `
-        <div class="video-card__media"${mediaStyle}>
-          <span class="video-card__play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-          </span>
-          ${badge}
-        </div>
+      /* Con video: miniatura original y reproducción en la misma tarjeta
+         (js/video-cover.js, el iframe solo se crea al pulsar), más el
+         enlace al video original en YouTube. */
+      const media = item.videoId
+        ? `<div class="video-card__media video-card__media--player">${VideoCover.html({ id: item.videoId, title: item.title })}${badge}</div>`
+        : `<div class="video-card__media">
+            <span class="video-card__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
+            </span>
+            ${badge}
+          </div>`;
+      const link = item.videoId
+        ? `<a class="video-card__link" href="https://www.youtube.com/watch?v=${encodeURIComponent(item.videoId)}" target="_blank" rel="noopener">Ver en YouTube<span class="sr-only">: ${item.title} (se abre en una pestaña nueva)</span></a>`
+        : "";
+      track.appendChild(el("article", "video-card", `
+        ${media}
         <span class="tag tag--sm">${item.tag}</span>
         <h3 class="video-card__title">${item.title}</h3>
         ${desc}
-      `;
-      const card = item.videoId
-        ? el("a", "video-card video-card--link", innerHtml)
-        : el("article", "video-card", innerHtml);
-      if (item.videoId) {
-        card.href = "https://youtu.be/" + item.videoId;
-        card.target = "_blank";
-        card.rel = "noopener";
-        /* El nombre accesible es el texto visible (título y descripción)
-           más este aviso; un aria-label distinto lo ocultaría (WCAG 2.5.3). */
-        card.insertAdjacentHTML("beforeend", '<span class="sr-only"> (abre YouTube en una pestaña nueva)</span>');
-      }
-      track.appendChild(card);
+        ${link}
+      `));
     });
+    VideoCover.bind(track);
   }
 
   function bindVideoScroll() {
