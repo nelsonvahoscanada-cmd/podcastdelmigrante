@@ -15,6 +15,9 @@
   scripts/build-social-images.py). El cuerpo lo arma js/colaborador.js
   igual que siempre.
 
+  Con `lang: "en"` en el colaborador, la página se publica en inglés:
+  <html lang="en">, og:locale en_CA y textos alternativos en inglés.
+
   Agregar un colaborador = añadir su objeto a CONTRIBUTORS y ejecutar:
     python3 scripts/build-social-images.py
     node scripts/build-contributor-pages.mjs
@@ -72,7 +75,11 @@ export function seoFor(c) {
     url: `${SITE_ORIGIN}/colaborador-${c.id}`,
     image: `${SITE_ORIGIN}/${image}`,
     imageSize: jpegSize(join(ROOT, image)),
-    imageAlt: `${c.name}, ${(c.roleLabel || "colaborador").toLowerCase()} de El Podcast del Migrante Magazine — ${specialty}`,
+    imageAlt: c.lang === "en"
+      ? `${c.name}, ${(c.roleLabel || "contributor").toLowerCase()} at El Podcast del Migrante Magazine — ${specialty}`
+      : `${c.name}, ${(c.roleLabel || "colaborador").toLowerCase()} de El Podcast del Migrante Magazine — ${specialty}`,
+    lang: c.lang === "en" ? "en" : "es",
+    locale: c.lang === "en" ? "en_CA" : "es_CA",
   };
 }
 
@@ -86,7 +93,7 @@ function setById(html, id, attr, value) {
 function buildPage(template, c) {
   const seo = seoFor(c);
   let html = template;
-  html = html.replace(/<html\b([^>]*)>/, (m, attrs) => `<html${attrs} data-contributor-id="${escAttr(c.id)}">`);
+  html = html.replace(/<html\b([^>]*)>/, (m, attrs) => `<html${attrs.replace(/\blang="[^"]*"/, `lang="${seo.lang}"`)} data-contributor-id="${escAttr(c.id)}">`);
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${escAttr(seo.title)}</title>`);
   html = setById(html, "metaDescription", "content", seo.description);
   html = setById(html, "canonicalLink", "href", seo.url);
@@ -95,6 +102,7 @@ function buildPage(template, c) {
   html = setById(html, "ogUrl", "content", seo.url);
   html = setById(html, "ogImage", "content", seo.image);
   html = setById(html, "ogImageAlt", "content", seo.imageAlt);
+  html = setById(html, "ogLocale", "content", seo.locale);
   html = setById(html, "twitterTitle", "content", seo.title);
   html = setById(html, "twitterDescription", "content", seo.description);
   html = setById(html, "twitterImage", "content", seo.image);
