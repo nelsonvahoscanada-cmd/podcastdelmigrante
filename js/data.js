@@ -167,8 +167,36 @@ const STORIES = [
 /* "Podcast del Migrante Play" — tarjetas del HOME.
    Solo se muestran las que tienen `published: true` (contenido real con
    video). Las demás se conservan aquí desactivadas: para mostrar una
-   nueva tarjeta basta con agregarla (o cambiar a `published: true`). */
+   nueva tarjeta basta con agregarla (o cambiar a `published: true`).
+   Se muestran en el orden de este array. Cada video se reproduce en la
+   misma tarjeta (js/video-cover.js) y tiene además su enlace a YouTube.
+   lang: "en" marca un video en inglés (etiqueta e idioma del título). */
 const VIDEOS = [
+  {
+    tag: "Entrevistas",
+    title: "Un médico de familia latino llega a Brooks, Alberta",
+    desc: "Nelson Vahos conversa con el Dr. Eddy Valverde Narvaez sobre su historia, el sistema de salud en Canadá y la atención a pacientes.",
+    videoId: "AnAZeaE7LV4",
+    demo: false,
+    published: true,
+  },
+  {
+    tag: "Entrevista en inglés",
+    title: "Dr. Eddy Valverde Narvaez | Family Medicine in Brooks, Alberta",
+    desc: "Interview by Elmy Castillo with Dr. Eddy Valverde Narvaez, family physician in Brooks, Alberta.",
+    videoId: "z2Ih590xSP4",
+    lang: "en",
+    demo: false,
+    published: true,
+  },
+  {
+    tag: "Desafío 100 Empresas",
+    title: "Dos años y medio separados: la historia de una familia migrante en Canadá",
+    desc: "Andrea cuenta cómo vivió la separación de su esposo durante dos años y medio, el reencuentro familiar y los desafíos de comenzar una nueva vida en Brooks, Alberta.",
+    videoId: "3tOZfCwZWN8",
+    demo: false,
+    published: true,
+  },
   { tag: "Podcast del Migrante", title: "3 realidades que todo migrante en Canadá debe conocer", published: false },
   { tag: "Entrevistas", title: "Entrevista: reconstruir una carrera profesional desde cero", published: false },
   {
@@ -186,7 +214,7 @@ const VIDEOS = [
     desc: "Desde Country Hills Toyota agradecemos a Farid Mamdani por su respaldo al proyecto y a Tomás Velázquez por ser el puente y aliado que ha acompañado este ciclo.",
     videoId: "M7JFiyvPDT8",
     demo: false,
-    published: true,
+    published: false, // retirado del carrusel (el video sigue en YouTube)
   },
   {
     tag: "Entrevistas",
