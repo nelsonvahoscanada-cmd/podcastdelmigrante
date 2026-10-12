@@ -155,6 +155,100 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Entrevista al doctor Eddie Valverde (El Podcast del Migrante) +
+       guía práctica para buscar médico de familia en Alberta.
+       Sin citas textuales hasta contar con la transcripción verificada.
+       No se menciona clínica, cupos ni forma de inscripción: no están
+       confirmados. Fuentes de la guía verificadas el 12 de octubre de 2026. */
+    id: "ART-2026-017",
+    slug: "medico-familia-latino-brooks-alberta",
+    category: "Salud",
+    contentType: "Noticia",
+    title: "Un médico de familia latino llega a Brooks: lo que deben saber quienes todavía buscan doctor en Alberta",
+    dek: "El Podcast del Migrante conversó con el doctor Eddie Valverde sobre su historia, el sistema de salud en Canadá y la atención a pacientes. Si todavía no tienes médico de familia, te explicamos cómo buscar uno con las herramientas oficiales de Alberta.",
+    excerpt: "La llegada de un médico de familia latino a Brooks es una buena noticia para la comunidad, pero no significa que esté aceptando nuevos pacientes. Así puedes buscar médico de familia en Alberta.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-12T12:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta", city: "Brooks" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/medico-familia-latino-brooks-alberta.jpg')",
+      aspectRatio: "16/9",
+      alt: "Imagen editorial de El Podcast del Migrante: el doctor Eddie Valverde conversa con el entrevistador durante la grabación, con el titular «Un médico de familia latino llega a Brooks, Alberta».",
+      credit: "Imagen editorial de El Podcast del Migrante elaborada a partir de la entrevista.",
+      socialFocus: "50% 50%",
+    },
+    bodyHtml: `
+      <p>Brooks cuenta con un nuevo médico de familia latino. El doctor Eddie Valverde llegó a esta ciudad del sureste de Alberta y conversó con El Podcast del Migrante sobre su historia, el sistema de salud en Canadá y la atención a pacientes.</p>
+      <p>Para muchas familias latinas de Brooks y de la región, la noticia despierta una pregunta inmediata: <strong>¿puedo convertirme en su paciente?</strong> La respuesta corta es que, por ahora, no hay información confirmada sobre si está aceptando nuevos pacientes. Por eso, además de presentar la entrevista, en esta nota explicamos cómo buscar médico de familia en Alberta con las herramientas oficiales.</p>
+      <h2>Una conversación sobre su historia y la salud en Canadá</h2>
+      <p>En la entrevista, disponible completa en el canal de YouTube de El Podcast del Migrante, el doctor Valverde aborda tres temas: su historia, cómo funciona el sistema de salud en Canadá y la atención a pacientes.</p>
+      <p>Para muchas personas migrantes, escuchar a un médico que conoce su idioma y su cultura ayuda a entender mejor un sistema de salud que, al llegar, puede resultar desconocido.</p>
+      <p>Puedes ver la entrevista completa en el video de esta página o directamente en <a href="https://www.youtube.com/watch?v=AnAZeaE7LV4" target="_blank" rel="noopener">YouTube</a>.</p>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Lo que sabemos / lo que todavía no sabemos</h2>
+        <p><strong>Sí sabemos:</strong></p>
+        <ul>
+          <li>El doctor Eddie Valverde es médico de familia y llegó a Brooks, Alberta.</li>
+          <li>Conversó con El Podcast del Migrante sobre su historia, el sistema de salud en Canadá y la atención a pacientes.</li>
+        </ul>
+        <p><strong>Todavía no sabemos:</strong></p>
+        <ul>
+          <li>Si está aceptando nuevos pacientes.</li>
+          <li>Cómo inscribirse ni en qué condiciones.</li>
+        </ul>
+        <p>No te presentes ni llames pidiendo una cita con él basándote solo en esta noticia. Si se confirma información oficial sobre su disponibilidad, El Podcast del Migrante Magazine actualizará esta nota.</p>
+      </aside>
+      <h2>¿Todavía buscas médico de familia en Alberta?</h2>
+      <p>No tener médico de familia es una situación común en Alberta, sobre todo en ciudades pequeñas y zonas rurales. Estas son las vías oficiales para buscar uno.</p>
+      <h3>1. Busca en Alberta Find a Provider</h3>
+      <p><a href="https://albertafindaprovider.ca/" target="_blank" rel="noopener">Alberta Find a Provider</a> es el buscador oficial de la provincia para encontrar médicos de familia, enfermeras y enfermeros practicantes (<em>nurse practitioners</em>) y clínicas que aceptan nuevos pacientes. Reemplazó en febrero de 2026 al antiguo sitio Alberta Find a Doctor y hoy lo administra Primary Care Alberta.</p>
+      <ul>
+        <li>Busca por ubicación, por ejemplo, Brooks.</li>
+        <li>Puedes filtrar por idioma para buscar profesionales que hablen español. Si aparecen pocos resultados, quita los filtros y busca solo por ubicación.</li>
+        <li>El sitio no reserva citas: cuando encuentres una opción que acepte pacientes, comunícate directamente con la clínica.</li>
+      </ul>
+      <p><strong>Ten en cuenta:</strong> la información del buscador depende de que las clínicas la mantengan al día. Antes de desplazarte, llama a la clínica para confirmar que todavía acepta nuevos pacientes.</p>
+      <h3>2. Llama a Health Link al 811</h3>
+      <p>Health Link es un servicio telefónico gratuito y confidencial, disponible las 24 horas, los 7 días de la semana. Al marcar 811 puedes:</p>
+      <ul>
+        <li>recibir orientación de profesionales de enfermería sobre síntomas o dudas de salud;</li>
+        <li>pedir ayuda para encontrar un médico de familia, un <em>nurse practitioner</em> o una clínica.</li>
+      </ul>
+      <h3>3. Considera a un <em>nurse practitioner</em></h3>
+      <p>En Alberta, los <em>nurse practitioners</em> también pueden ser tu proveedor de atención primaria, incluso en clínicas propias, gracias al programa provincial <em>Nurse Practitioner Primary Care Program</em>. Aparecen en el mismo buscador oficial, así que vale la pena incluirlos en tu búsqueda.</p>
+      <h3>4. Mientras tanto, no dejes de atenderte</h3>
+      <ul>
+        <li>Para dudas o síntomas que no son una emergencia, llama al 811.</li>
+        <li>Si tienes una emergencia médica, llama al <strong>911</strong> o acude al servicio de urgencias más cercano.</li>
+      </ul>
+      <h2>Una buena noticia para la comunidad</h2>
+      <p>La llegada de profesionales de la salud latinos a ciudades como Brooks, donde viven muchas familias migrantes, puede facilitar que más familias se sientan comprendidas al hablar de su salud. Mientras tanto, la mejor forma de buscar médico de familia sigue siendo usar los canales oficiales y confirmar siempre la información directamente con cada clínica.</p>
+    `,
+    video: { youtubeId: "AnAZeaE7LV4", title: "Un médico de familia latino llega a Brooks, Alberta — entrevista completa con el doctor Eddie Valverde" },
+    sources: [
+      { label: "El Podcast del Migrante — Entrevista completa en YouTube", href: "https://www.youtube.com/watch?v=AnAZeaE7LV4" },
+      { label: "Alberta Find a Provider — buscador oficial de médicos de familia, nurse practitioners y clínicas", href: "https://albertafindaprovider.ca/" },
+      { label: "Primary Care Alberta — Expanded Alberta Find a Provider website helps Albertans access primary care", href: "https://www.primarycarealberta.ca/news/Page14240.aspx" },
+      { label: "Primary Care Alberta — Navigating care options (Health Link 811)", href: "https://www.primarycarealberta.ca/page14142.aspx" },
+      { label: "Government of Alberta — Nurse Practitioner Primary Care Program", href: "https://www.alberta.ca/nurse-practitioner-primary-care-program" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Salud",
+    relatedSlugs: ["plan-dental-canada-cdcp", "servicios-gratuitos-trabajadores-temporales-alberta"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Médico de familia latino llega a Brooks | Cómo buscar doctor en Alberta",
+      description: "El doctor Eddie Valverde, médico de familia latino, llegó a Brooks. Su entrevista con El Podcast del Migrante y cómo buscar médico de familia en Alberta.",
+      canonicalPath: "/salud/medico-familia-latino-brooks-alberta/",
+    },
+  },
+  {
     /* ENTRE DOS MUNDOS — primera entrega (Nelson Vahos). PUBLICADA.
        Texto íntegro del artículo original (Magazine Latino, 10 de agosto
        de 2026). La ficha del autor al final proviene de la columna
