@@ -57,3 +57,30 @@
   .profile-header { gap: 14px; }
   .profile-avatar { width: 72px; height: 72px; }
 }
+
+/* Foto grande, compartir, entrevistas y presentación en inglés */
+.profile-photo { margin: 20px 0 8px; max-width: 360px; }
+.profile-photo img { display: block; width: 100%; height: auto; border-radius: var(--radius-s, 6px); }
+@media (max-width: 480px) { .profile-photo { max-width: none; } }
+
+.profile-share { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 22px 0 6px; }
+.profile-share button { cursor: pointer; font: inherit; }
+.profile-share__status { flex-basis: 100%; margin: 0; font-size: 0.88rem; color: var(--gris-600); min-height: 1.2em; overflow-wrap: anywhere; }
+
+.profile-interview + .profile-interview { margin-top: 28px; }
+.profile-interview__lang {
+  display: inline-block; margin-bottom: 8px; padding: 3px 10px; border-radius: 999px;
+  background: var(--verde-suave); color: var(--verde-oscuro); font-size: 0.8rem; font-weight: 700;
+}
+.profile-interview__title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin: 0 0 12px; }
+.profile-interview__links { font-size: 0.92rem; margin-top: 10px; }
+.profile-interview__links a { color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 2px; }
+
+.profile-en__badge {
+  display: inline-block; vertical-align: middle; margin-left: 8px; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid var(--gris-200); font-family: var(--font-ui); font-size: 0.75rem; font-weight: 700; color: var(--gris-600);
+}
+.profile-en__specialty { font-weight: 600; color: var(--verde-oscuro); margin: 6px 0 4px; }
+/* Botón de contorno sobre fondo claro (perfil de colaborador) */
+.btn-outline--dark { background: transparent; border-color: var(--negro); color: var(--negro); }
+.btn-outline--dark:hover, .btn-outline--dark:focus-visible { background: var(--negro); color: var(--blanco); }

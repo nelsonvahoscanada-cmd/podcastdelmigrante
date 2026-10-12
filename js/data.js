@@ -279,6 +279,26 @@ const EDITION_MONTHS = [
      interno — nunca en la tarjeta de la HOME (opcional)
    - articlesNote: relación con los artículos que escribe
 
+   Perfil público compartible (uno por colaborador, sin programar nada):
+   - link: "colaborador-<id>" — página estática generada por
+     scripts/build-contributor-pages.mjs (vista previa para WhatsApp,
+     Facebook, LinkedIn, X). colaborador.html?id=<id> sigue funcionando.
+   - roleLabel: "Colaborador" / "Colaboradora" (tarjeta para compartir)
+   - shareSpecialty: especialidad corta para la tarjeta para compartir
+   - shareDescription: descripción breve (meta description y Open Graph)
+   - socialPhoto: { src, focus: "50% 35%", zoom: 1 } — foto grande para la
+     imagen social 1200 × 630 (assets/social/colaborador-<id>.jpg, la
+     genera scripts/build-social-images.py). Si falta, se usa `photo`.
+   - photoLarge: foto vertical que se muestra en el perfil (opcional)
+   - longBio: texto en español (párrafos separados por una línea en
+     blanco)
+   - en: { specialty, longBio } — presentación en inglés (opcional)
+   - interviews: [{ youtubeId, title, lang: "es" | "en", date,
+     relatedArticleSlug }] — entrevistas con video (se cargan al pulsar)
+
+   Los colaboradores son perfiles EDITORIALES: no tienen relación con las
+   miniwebs empresariales (js/businesses.js, perfil-<slug>.html).
+
    Carlos D. Castillo es el primer colaborador editorial real
    del Magazine — firma la columna mensual "Tu dinero en
    Canadá". Sus datos fueron aportados directamente por el
@@ -298,9 +318,40 @@ const CONTRIBUTORS = [
     licensedIn: "Alberta, British Columbia, Ontario y Saskatchewan.",
     brandLogo: { src: "assets/carlos-castillo-logo.png", alt: "Carlos Castillo" },
     articlesNote: "Firma la columna mensual Tu dinero en Canadá.",
-    link: "colaborador.html?id=carlos-castillo",
+    link: "colaborador-carlos-castillo",
     website: "",
     professionalSite: "https://www.CarlosDCastillo.com",
+    roleLabel: "Colaborador",
+    shareSpecialty: "Educación Financiera",
+    shareDescription: "Colaborador de El Podcast del Migrante Magazine. Firma la columna mensual Tu dinero en Canadá, con educación financiera para familias y migrantes.",
+    socialPhoto: { src: "assets/carlos-d-castillo.jpg", focus: "62% 52%", zoom: 1.45 },
+  },
+  {
+    id: "elmy-castillo",
+    photo: "assets/elmy-castillo-avatar.jpg",
+    photoLarge: "assets/elmy-castillo.jpg",
+    name: "Elmy Castillo",
+    specialty: "Colaboradora — Salud y Entrevistas en Inglés",
+    bio: "Entrevistas y contenidos de salud, especialmente en inglés, para las comunidades migrantes.",
+    longBio: "Elmy Castillo se graduó de la Universidad de Alberta en 2025 con una licenciatura con honores en Fisiología. Actualmente cursa una maestría en Salud de Precisión en la Universidad de Calgary, con especialización en Educación y Liderazgo en Profesiones de la Salud.\n\nAdemás, trabaja como analista de investigación en el sector de la salud en una firma local de capital privado.\n\nComo colaboradora de El Podcast del Migrante, participa en entrevistas y contenidos informativos relacionados con la salud, especialmente en inglés, ayudándonos a llegar a las comunidades migrantes que prefieren informarse en ese idioma.",
+    en: {
+      specialty: "Contributor — Health and English-Language Interviews",
+      longBio: "Elmy Castillo graduated from the University of Alberta in 2025 with an honours bachelor's degree in Physiology. She is currently pursuing a Master's in Precision Health at the University of Calgary, specializing in Health Professions Education and Leadership.\n\nShe also works as a research analyst in the healthcare sector at a local private equity firm.\n\nAs a contributor to El Podcast del Migrante, she takes part in interviews and informational content related to health, especially in English, helping us reach migrant communities who prefer to get their information in that language.",
+    },
+    interviews: [
+      {
+        youtubeId: "z2Ih590xSP4",
+        title: "Interview with Dr. Eddy Valverde Narvaez, family physician in Brooks, Alberta",
+        lang: "en",
+        relatedArticleSlug: "medico-familia-latino-brooks-alberta",
+      },
+    ],
+    link: "colaborador-elmy-castillo",
+    website: "",
+    roleLabel: "Colaboradora",
+    shareSpecialty: "Salud y Entrevistas en Inglés",
+    shareDescription: "Graduada con honores en Fisiología (Universidad de Alberta) y estudiante de maestría en Salud de Precisión (Universidad de Calgary). Colabora en entrevistas y contenidos de salud, especialmente en inglés.",
+    socialPhoto: { src: "assets/elmy-castillo.jpg", focus: "50% 30%", zoom: 1.15 },
   },
 ];
 

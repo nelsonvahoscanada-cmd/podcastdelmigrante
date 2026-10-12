@@ -3,24 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colaborador — El Podcast del Migrante Magazine</title>
+<title>Colaboradores — El Podcast del Migrante Magazine</title>
 <meta id="metaDescription" name="description" content="El Podcast del Migrante Magazine.">
 <link id="canonicalLink" rel="canonical" href="https://podcastdelmigrante.com/">
 
-<!-- Open Graph (se completan por artículo en js/article.js) -->
-<meta id="ogType" property="og:type" content="article">
+<!-- Open Graph: cada colaborador tiene su página colaborador-<id>.html con
+     estas etiquetas ya completas (scripts/build-contributor-pages.mjs) -->
+<meta id="ogType" property="og:type" content="profile">
 <meta property="og:site_name" content="El Podcast del Migrante Magazine">
 <meta id="ogTitle" property="og:title" content="El Podcast del Migrante Magazine">
 <meta id="ogDescription" property="og:description" content="Información real para la vida real de los migrantes en Canadá.">
 <meta id="ogUrl" property="og:url" content="https://podcastdelmigrante.com/">
-<meta property="og:image" content="https://podcastdelmigrante.com/assets/logo.png">
+<meta id="ogImage" property="og:image" content="https://podcastdelmigrante.com/assets/logo.png">
+<meta id="ogImageAlt" property="og:image:alt" content="El Podcast del Migrante Magazine">
 <meta id="ogLocale" property="og:locale" content="es_CA">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta id="twitterTitle" name="twitter:title" content="El Podcast del Migrante Magazine">
 <meta id="twitterDescription" name="twitter:description" content="Información real para la vida real de los migrantes en Canadá.">
-<meta name="twitter:image" content="https://podcastdelmigrante.com/assets/logo.png">
+<meta id="twitterImage" name="twitter:image" content="https://podcastdelmigrante.com/assets/logo.png">
+<meta id="twitterImageAlt" name="twitter:image:alt" content="El Podcast del Migrante Magazine">
 
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -33,10 +36,6 @@
 <link rel="stylesheet" href="css/article.css">
 <link rel="stylesheet" href="css/colaborador.css">
 
-<!-- El JSON-LD del artículo (NewsArticle/Article/OpinionNewsArticle) se
-     inyecta dinámicamente en js/article.js una vez se identifica el
-     artículo — depende de su contentType, ver Ficha Maestra en
-     js/articles.js -->
 </head>
 <body>
 <a class="skip-link" href="#main">Saltar al contenido</a>

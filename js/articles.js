@@ -237,6 +237,7 @@ const ARTICLES = [
     video: { youtubeId: "AnAZeaE7LV4", title: "Un médico de familia latino llega a Brooks, Alberta — entrevista completa con el Dr. Eddy Valverde Narvaez" },
     sources: [
       { label: "El Podcast del Migrante — Entrevista completa en YouTube", href: "https://www.youtube.com/watch?v=AnAZeaE7LV4" },
+      { label: "Entrevista en inglés con el Dr. Eddy Valverde Narvaez, por Elmy Castillo (El Podcast del Migrante)", href: "colaborador-elmy-castillo" },
       { label: "Alberta Find a Provider — buscador oficial de médicos de familia, nurse practitioners y clínicas", href: "https://albertafindaprovider.ca/" },
       { label: "Primary Care Alberta — Expanded Alberta Find a Provider website helps Albertans access primary care", href: "https://www.primarycarealberta.ca/news/Page14240.aspx" },
       { label: "Primary Care Alberta — Navigating care options (Health Link 811)", href: "https://www.primarycarealberta.ca/page14142.aspx" },

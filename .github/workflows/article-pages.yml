@@ -23,3 +23,5 @@ jobs:
         with:
           node-version: 20
       - run: node scripts/build-article-pages.mjs --check
+      # Perfiles públicos de colaboradores (colaborador-<id>.html)
+      - run: node scripts/build-contributor-pages.mjs --check
