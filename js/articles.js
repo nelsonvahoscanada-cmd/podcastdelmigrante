@@ -160,6 +160,91 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Cierre de la temporada 2026 de International Experience Canada (IEC).
+       Fecha verificada el 14 de octubre de 2026 en la página oficial de
+       IRCC «Rounds of invitations»: última ronda para todos los grupos la
+       semana del 19 de octubre; perfiles antes de las 9 a. m. (hora del Este)
+       del 19 de octubre. No se publican cifras de cupos porque las fuentes
+       secundarias no coinciden. Imagen: ilustración editorial asistida por IA. */
+    id: "ART-2026-023",
+    slug: "working-holiday-2026-cierre-invitaciones-canada",
+    category: "Migración",
+    contentType: "Noticia",
+    title: "Canadá cierra las invitaciones de Working Holiday 2026: esta es la fecha límite para participar",
+    dek: "La temporada 2026 de International Experience Canada termina con una última ronda de invitaciones la semana del 19 de octubre. Para participar, el perfil debe enviarse antes de las 9 a. m. (hora del Este) de ese día.",
+    excerpt: "IRCC hará la última ronda de invitaciones de la temporada 2026 de International Experience Canada la semana del 19 de octubre. El perfil debe enviarse antes de las 9 a. m., hora del Este, del 19 de octubre.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-14T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/working-holiday-2026-cierre-invitaciones.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: una pareja joven revisa una computadora portátil junto a pasaportes, un mapa y maletas, con el horizonte de Toronto y una bandera de Canadá al fondo.",
+      credit: "Ilustración editorial asistida por inteligencia artificial. No corresponde a una fotografía real.",
+      socialFocus: "50% 45%",
+      socialLabel: "Ilustración editorial asistida por IA",
+    },
+    bodyHtml: `
+      <p>La temporada 2026 de <strong>International Experience Canada (IEC)</strong>, el programa que incluye la visa <em>Working Holiday</em>, está por terminar. Según Immigration, Refugees and Citizenship Canada (IRCC), la <strong>última ronda de invitaciones</strong> para todos los grupos que siguen abiertos será la <strong>semana del 19 de octubre de 2026</strong>.</p>
+      <p>Para ser tenido en cuenta en esta temporada, el perfil debe enviarse <strong>antes de las 9:00 a. m., hora del Este, del 19 de octubre de 2026</strong>. En Alberta, eso equivale a las <strong>7:00 a. m.</strong> de ese mismo día.</p>
+      <h2>¿Qué es International Experience Canada?</h2>
+      <p>IEC permite a jóvenes de los países que tienen un acuerdo con Canadá viajar y trabajar temporalmente en el país. Tiene tres categorías:</p>
+      <ul>
+        <li><strong>Working Holiday:</strong> permiso de trabajo abierto, para trabajar con casi cualquier empleador.</li>
+        <li><strong>Young Professionals:</strong> para ganar experiencia profesional con una oferta de empleo en Canadá.</li>
+        <li><strong>International Co-op:</strong> para estudiantes que deben hacer una práctica laboral como parte de sus estudios.</li>
+      </ul>
+      <p>La edad permitida suele ser de 18 a 35 años, aunque en algunos países el límite es de 29 o 30 años. Entre los países con acuerdo están Chile y Costa Rica. Los requisitos y las categorías disponibles cambian según el país de ciudadanía.</p>
+      <h2>¿Cómo funciona la selección?</h2>
+      <ol>
+        <li><strong>Creas un perfil</strong> en línea y entras al grupo (<em>pool</em>) de candidatos de tu país y categoría.</li>
+        <li><strong>IRCC hace rondas de invitaciones.</strong> En Working Holiday, la selección es aleatoria: todos los candidatos del grupo tienen la misma probabilidad de ser invitados. Suele haber más candidatos que cupos, así que es posible no recibir invitación.</li>
+        <li><strong>Si recibes una invitación</strong> (<em>Invitation to Apply</em>), tienes <strong>10 días</strong> para aceptarla o rechazarla.</li>
+        <li><strong>Después de aceptarla</strong>, tienes <strong>20 días</strong> para enviar tu solicitud de permiso de trabajo.</li>
+      </ol>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Fechas clave</h2>
+        <ul>
+          <li><strong>19 de octubre de 2026, antes de las 9:00 a. m. (hora del Este):</strong> último momento para enviar tu perfil y participar en la temporada 2026 (7:00 a. m. en Alberta).</li>
+          <li><strong>Semana del 19 de octubre:</strong> última ronda de invitaciones para todos los grupos que siguen abiertos.</li>
+        </ul>
+        <p>Si ya recibiste una invitación antes del cierre, o ya comenzaste tu solicitud de permiso de trabajo, todavía puedes completarla y enviarla dentro de los plazos.</p>
+      </aside>
+      <h2>Información útil</h2>
+      <ul>
+        <li><strong>No dejes el perfil para el último momento.</strong> La hora límite es la del Este de Canadá; calcula la diferencia con tu país o tu provincia.</li>
+        <li><strong>Enviar el perfil no garantiza una invitación.</strong> Aun así, solo quienes estén en el grupo antes de la última ronda pueden ser invitados.</li>
+        <li><strong>Invitaciones después del cierre:</strong> IRCC indica que podría enviar un número muy pequeño de invitaciones después de la última ronda, si los cupos no se completan por invitaciones rechazadas, vencidas o solicitudes denegadas.</li>
+        <li><strong>Usa solo los canales oficiales.</strong> El perfil se crea en el sitio del Gobierno de Canadá. Desconfía de quien prometa invitaciones garantizadas a cambio de dinero.</li>
+        <li><strong>Revisa tu país en la página oficial.</strong> IRCC publica las rondas, los cupos y las fechas de cada país y categoría en su página «Rounds of invitations».</li>
+      </ul>
+      <p>Si tienes familiares o amigos jóvenes en un país con acuerdo con Canadá que sueñan con vivir esta experiencia, comparte esta información antes del 19 de octubre.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "IRCC — International Experience Canada: Rounds of invitations", href: "https://www.ircc.canada.ca/english/work/iec/selections.asp" },
+      { label: "Government of Canada — Work and Travel in Canada with International Experience Canada", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec.html" },
+      { label: "Government of Canada — IEC: Create your IEC profile and get your invitation to apply", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec/become-candidate.html" },
+      { label: "Government of Canada — IEC: Understand the ratings and numbers", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec/become-candidate/chances.html" },
+      { label: "Government of Canada — IEC: Submit your work permit application", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec/apply-work-permit.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Migración",
+    relatedSlugs: ["trabajadores-estudiar-sin-study-permit-canada", "llegar-canada-documentos-primer-dia"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Working Holiday 2026: Canadá cierra las invitaciones | Fecha límite",
+      description: "La última ronda de invitaciones de International Experience Canada 2026 será la semana del 19 de octubre. Envía tu perfil antes de las 9 a. m. (hora del Este) del 19 de octubre.",
+      canonicalPath: "/migracion/working-holiday-2026-cierre-invitaciones-canada/",
+    },
+  },
+  {
     /* Reembolso nacional para bombas de calor (anuncio federal del 8 de
        octubre de 2026). El programa todavía NO recibe solicitudes: no se
        publican fechas, lista de equipos ni reglas que no estén confirmadas.
