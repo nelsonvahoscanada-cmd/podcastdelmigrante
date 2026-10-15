@@ -160,6 +160,86 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Reglas de invierno para servicios públicos en Alberta (anuncio
+       provincial del 14 de octubre de 2026). Datos verificados el 14 de
+       octubre de 2026 en las páginas oficiales del Utilities Consumer
+       Advocate (UCA) y de la Alberta Utilities Commission (AUC).
+       Publicación programada: 15 de octubre de 2026, 6:00 a. m. (Edmonton).
+       Imagen: ilustración editorial asistida por IA (no es una foto real). */
+    id: "ART-2026-025",
+    slug: "reglas-invierno-electricidad-gas-alberta",
+    category: "Alberta",
+    contentType: "Noticia",
+    title: "Alberta activa sus reglas de invierno: desde hoy no pueden cortarte por completo la luz en casa",
+    dek: "Desde este 15 de octubre y hasta el 15 de abril, las empresas no pueden desconectar por completo la electricidad de los hogares. Desde el 1 de noviembre, la protección se extiende al gas natural. Te explicamos qué cubre, qué no y a quién pedir ayuda.",
+    excerpt: "Las reglas de invierno de Alberta impiden desconectar por completo la electricidad residencial desde el 15 de octubre y el gas natural desde el 1 de noviembre. La deuda no desaparece y hay excepciones.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-15T06:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/reglas-invierno-electricidad-gas-alberta.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: una pareja revisa una factura de servicios en la mesa de su casa, junto a una computadora portátil y una calculadora, con íconos de electricidad, gas y calefacción y un paisaje nevado de ciudad al fondo.",
+      credit: "Ilustración editorial asistida por inteligencia artificial. No corresponde a una fotografía real.",
+      socialFocus: "50% 45%",
+      socialLabel: "Ilustración editorial asistida por IA",
+    },
+    bodyHtml: `
+      <p>Con la llegada del frío, Alberta activó sus <strong>reglas de invierno</strong> para los servicios públicos del hogar. Desde este jueves 15 de octubre, las empresas de distribución <strong>no pueden desconectar por completo la electricidad</strong> de una vivienda, aunque haya facturas pendientes. El Gobierno de Alberta recordó estas protecciones en un anuncio publicado el 14 de octubre.</p>
+      <p>Para muchas familias migrantes, que enfrentan por primera vez un invierno canadiense y facturas de calefacción más altas, conocer estas reglas puede evitar sustos y ayudar a pedir apoyo a tiempo.</p>
+      <h2>¿Qué protegen las reglas de invierno?</h2>
+      <ul>
+        <li><strong>Electricidad:</strong> del 15 de octubre al 15 de abril, la electricidad de un hogar no se puede desconectar por completo.</li>
+        <li><strong>Gas natural:</strong> la misma protección empieza el <strong>1 de noviembre</strong> y dura hasta mediados de abril (el 14 de abril, según el Utilities Consumer Advocate).</li>
+        <li><strong>Regla de temperatura, todo el año:</strong> tampoco se puede hacer una desconexión total si el pronóstico indica temperaturas bajo cero en las 24 horas siguientes a la desconexión prevista.</li>
+      </ul>
+      <h2>Lo que no cubren</h2>
+      <ul>
+        <li><strong>La deuda no desaparece.</strong> Si la cuenta sigue sin pagarse cuando terminan las reglas de invierno, el servicio puede cortarse en primavera.</li>
+        <li><strong>Limitador de carga.</strong> En lugar de cortar la electricidad, la empresa puede instalar un limitador (<em>load limiter</em>) en el medidor. Según el Utilities Consumer Advocate, deja energía suficiente para lo básico, como la calefacción, el refrigerador, un elemento de la estufa y algunas luces. Si se usan a la vez aparatos de alto consumo, como una estufa eléctrica o una secadora, el limitador corta la energía hasta que se restablece.</li>
+        <li><strong>Solo hogares.</strong> Las reglas aplican a clientes residenciales. No cubren medidores comerciales ni el servicio de agua.</li>
+      </ul>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">¿Ya te cortaron el servicio?</h2>
+        <p>Las reglas de invierno no reconectan automáticamente los servicios que ya estaban desconectados. Para eso existe el programa de reconexión de invierno (<em>Winter Utility Reconnection Program</em>) de la Alberta Utilities Commission. El Utilities Consumer Advocate se comunica con los hogares desconectados y trabaja con las empresas y con Alberta Supports para ayudar a reconectarlos.</p>
+        <p><strong>Utilities Consumer Advocate:</strong> 310-4822 (gratis desde Alberta), de lunes a viernes, de 8:15 a. m. a 4:30 p. m. También ofrece servicio de intérpretes.</p>
+      </aside>
+      <h2>Recomendaciones prácticas</h2>
+      <ul>
+        <li><strong>No esperes a que llegue el aviso de corte.</strong> Si sabes que no podrás pagar, llama a tu proveedor y pregunta por un plan de pagos.</li>
+        <li><strong>Pide ayuda gratuita al Utilities Consumer Advocate</strong> si tienes un problema con tu proveedor, una factura que no entiendes o un servicio desconectado.</li>
+        <li><strong>Si tienes un limitador de carga,</strong> evita usar al mismo tiempo varios aparatos de alto consumo.</li>
+        <li><strong>Revisa si puedes recibir apoyo económico</strong> de Alberta Supports para cubrir necesidades básicas.</li>
+        <li><strong>Guarda tus facturas y avisos</strong> y anota con quién hablas y cuándo. Te servirá si necesitas presentar un reclamo.</li>
+      </ul>
+      <p>Las reglas de invierno dan tranquilidad durante los meses más fríos, pero no reemplazan el pago de las facturas. Lo más importante es pedir ayuda a tiempo.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Noticias (anuncio del 14 de octubre de 2026 sobre las reglas de invierno)", href: "https://www.alberta.ca/news" },
+      { label: "Utilities Consumer Advocate — Winter Rules", href: "https://ucahelps.alberta.ca/residential/winter-rules/" },
+      { label: "Utilities Consumer Advocate — Utilities disconnection", href: "https://ucahelps.alberta.ca/your-utilities/electricity/utilities-disconnection/" },
+      { label: "Alberta Utilities Commission — Help for utility customers at risk of being disconnected during winter months", href: "https://www.auc.ab.ca/help-for-utility-customers-at-risk-of-being-disconnected-during-winter-months/" },
+      { label: "Alberta Utilities Commission — Winter Utility Reconnection Program", href: "https://www.auc.ab.ca/winter-utility-reconnection-program/" },
+      { label: "Utilities Consumer Advocate — Contacto", href: "https://www.ucahelps.alberta.ca/contact.aspx" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["reembolso-bombas-de-calor-canada", "alberta-energy-rebate-plazo-octubre"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Reglas de invierno en Alberta: no pueden cortarte la luz hasta abril",
+      description: "Desde el 15 de octubre, en Alberta no se puede desconectar por completo la electricidad de los hogares, y desde el 1 de noviembre el gas natural. Qué cubre, excepciones y ayuda.",
+      canonicalPath: "/alberta/reglas-invierno-electricidad-gas-alberta/",
+    },
+  },
+  {
     /* Entrevista de El Podcast del Migrante con Diana Cardona (texto
        entregado por la redacción el 15 de octubre de 2026). Las cifras de
        ingresos y pagos son declaraciones de la entrevistada: se presentan
