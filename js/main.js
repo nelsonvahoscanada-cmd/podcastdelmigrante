@@ -226,7 +226,11 @@
 
   function buildDesafio() {
     const grid = document.getElementById("desafioGrid");
-    DESAFIO_STORIES.forEach((story) => {
+    /* Solo las historias destacadas (homeOrder), en ese orden; las demás
+       siguen en el catálogo con su página propia. */
+    DESAFIO_STORIES.filter((story) => story.homeOrder)
+      .sort((a, b) => a.homeOrder - b.homeOrder)
+      .forEach((story) => {
       const thumb = youtubeThumb(story.videoId);
       const alt = story.image && story.image.alt ? story.image.alt : story.cardTitle;
       const card = el(
@@ -239,9 +243,9 @@
           </span>
         </div>
         <div class="desafio-card__body">
-          <span class="tag tag--sm">${story.empresa || story.area || "Desafío 100 Empresas"}</span>
+          <span class="tag tag--sm">${story.cardTag || story.empresa || story.area || "Desafío 100 Empresas"}</span>
           <h3 class="desafio-card__title">${story.cardTitle}</h3>
-          <p class="byline">Empresario: ${story.empresario}</p>
+          <p class="byline">${story.bylineLabel || "Empresario"}: ${story.empresario}</p>
         </div>
       `
       );
