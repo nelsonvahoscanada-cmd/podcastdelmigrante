@@ -798,6 +798,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-size: 0.86rem; font-weight: 600; color: var(--verde);
 }
 .video-card__link:hover { text-decoration: underline; }
+.video-card__link + .video-card__link { margin-left: 16px; }
 
 /* =========================================================
    Desafío 100 Empresas

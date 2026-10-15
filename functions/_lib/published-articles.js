@@ -1,5 +1,6 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "diana-cardona-emprendimiento-digital-canada",
   "working-holiday-2026-cierre-invitaciones-canada",
   "reembolso-bombas-de-calor-canada",
   "alberta-energy-rebate-plazo-octubre",

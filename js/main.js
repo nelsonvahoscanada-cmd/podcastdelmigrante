@@ -194,11 +194,15 @@
       const link = item.videoId
         ? `<a class="video-card__link" href="https://www.youtube.com/watch?v=${encodeURIComponent(item.videoId)}" target="_blank" rel="noopener">Ver en YouTube<span class="sr-only">: ${item.title} (se abre en una pestaña nueva)</span></a>`
         : "";
+      const articleLink = item.articleSlug
+        ? `<a class="video-card__link" href="articulo-${encodeURIComponent(item.articleSlug)}">Leer el artículo</a>`
+        : "";
       track.appendChild(el("article", "video-card", `
         ${media}
         <span class="tag tag--sm">${item.tag}</span>
         <h3 class="video-card__title">${item.title}</h3>
         ${desc}
+        ${articleLink}
         ${link}
       `));
     });
