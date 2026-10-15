@@ -21,11 +21,11 @@ test("las páginas con videos cargan el componente VideoCover", () => {
   for (const p of pages) assert.match(read(p), /<script src="js\/video-cover\.js"><\/script>\s*<script src="js\/(article|colaborador)\.js">/, p);
 });
 
-test("carrusel Podcast del Migrante Play: cinco videos con reproducción en la portada", () => {
+test("carrusel Podcast del Migrante Play: videos con reproducción en la portada", () => {
   const ctx = {};
   vm.runInNewContext(read("js/data.js") + ";globalThis.V = VIDEOS;", ctx);
   const shown = ctx.V.filter((v) => v.published);
-  assert.deepEqual([...shown.map((v) => v.videoId)], ["AnAZeaE7LV4", "z2Ih590xSP4", "3tOZfCwZWN8", "ENyFwvkj8W0", "jw0cYzjV35U"]);
+  assert.deepEqual([...shown.map((v) => v.videoId)], ["O5on_J9cRb4", "AnAZeaE7LV4", "z2Ih590xSP4", "3tOZfCwZWN8", "ENyFwvkj8W0", "jw0cYzjV35U"]);
   const en = shown.find((v) => v.videoId === "z2Ih590xSP4");
   assert.equal(en.tag, "Entrevista en inglés");
   assert.match(en.title + " " + en.desc, /Medicina familiar|entrevista en inglés/, "títulos y descripciones en español");

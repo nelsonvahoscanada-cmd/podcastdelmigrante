@@ -160,6 +160,77 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Entrevista de El Podcast del Migrante con Diana Cardona (texto
+       entregado por la redacción el 15 de octubre de 2026). Las cifras de
+       ingresos y pagos son declaraciones de la entrevistada: se presentan
+       como tales, nunca como promesa de resultados. */
+    id: "ART-2026-024",
+    slug: "diana-cardona-emprendimiento-digital-canada",
+    category: "Finanzas",
+    contentType: "Entrevista",
+    title: "De limpiar casas en Canadá a facturar más de US$9.000 al mes: las estrategias digitales de Diana Cardona",
+    dek: "En El Podcast del Migrante, la emprendedora colombiana compartió cómo transformó su experiencia migratoria en diferentes fuentes de ingresos, desde la reventa de productos hasta el marketing de afiliados y la creación de contenido para marcas.",
+    excerpt: "Diana Cardona, trabajadora social colombiana radicada en Canadá, contó en El Podcast del Migrante cómo pasó de la limpieza al emprendimiento digital: Facebook Marketplace, contenido UGC, productos digitales y marketing de afiliados.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-15T08:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/diana-cardona-emprendimiento-digital-canada.jpg')",
+      aspectRatio: "16/9",
+      alt: "Portada editorial de El Podcast del Migrante Play: sobre fondo negro, el titular «De limpiar casas en Canadá a facturar más de US$9.000 al mes», el texto «Entrevista con Diana Cardona» y un ícono de reproducción.",
+      credit: "Portada editorial de El Podcast del Migrante. La miniatura oficial del video aparece en el reproductor.",
+      socialFocus: "50% 50%",
+    },
+    bodyHtml: `
+      <p>Empezar de nuevo en otro país puede significar aceptar trabajos muy diferentes a los que se ejercían antes de migrar. Esa fue parte de la experiencia de Diana Cardona, trabajadora social colombiana radicada en Canadá, quien contó en El Podcast del Migrante cómo pasó de realizar labores de limpieza a desarrollar actividades de emprendimiento digital.</p>
+      <p>Durante la conversación, Diana afirmó que sus diferentes actividades le han permitido facturar más de US$9.000 mensuales. Su historia abrió una conversación sobre oportunidades para quienes quieren explorar fuentes de ingresos adicionales, pero también sobre disciplina, atención al cliente y construcción de una marca personal.</p>
+      <h2>1. Facebook Marketplace: comenzar con lo que ya tienes</h2>
+      <p>Una de las recomendaciones más prácticas de Diana fue comenzar vendiendo artículos que ya no se utilizan en casa.</p>
+      <p>La estrategia permite familiarizarse con la publicación de productos, las conversaciones con compradores y la negociación sin necesidad de invertir inicialmente en inventario.</p>
+      <p>Después, explicó el modelo conocido como <em>flipping</em>: comprar artículos a precios bajos en ventas de garaje, tiendas de segunda mano o establecimientos de liquidación para revenderlos a un precio superior.</p>
+      <p>Diana destacó la importancia de utilizar fotografías reales, describir correctamente el estado de los productos y mantener una buena reputación comercial.</p>
+      <h2>2. No todo depende de tener miles de seguidores</h2>
+      <p>Otra alternativa presentada durante el programa fue el contenido generado por usuarios, conocido como UGC.</p>
+      <p>Diana explicó que algunas marcas contratan creadores para producir videos cortos mostrando sus productos, incluso cuando no cuentan con audiencias numerosas.</p>
+      <p>Durante la entrevista mencionó ejemplos de pagos de entre US$100 y US$300 por video. Estos valores corresponden a su experiencia y no representan tarifas garantizadas del mercado.</p>
+      <h2>3. Productos digitales y marketing de afiliados</h2>
+      <p>La invitada también compartió su experiencia con plataformas como Hotmart, utilizadas para comercializar guías, cursos y otros productos digitales.</p>
+      <p>En este modelo, los ingresos pueden provenir de productos propios o de comisiones por recomendar productos de terceros.</p>
+      <p>También habló del uso de herramientas de inteligencia artificial para organizar información y preparar materiales educativos, destacando la necesidad de revisar cuidadosamente los resultados antes de publicarlos.</p>
+      <h2>4. La confianza es parte del negocio</h2>
+      <p>Durante la conversación, los participantes insistieron en que vender no consiste únicamente en publicar anuncios.</p>
+      <p>Responder preguntas, informar sobre posibles defectos de los artículos, gestionar reclamos y cumplir lo prometido son prácticas fundamentales para construir relaciones comerciales sostenibles.</p>
+      <h2>5. Una oportunidad que requiere organización</h2>
+      <p>El programa también abordó la importancia de administrar el tiempo, establecer metas y evitar que un emprendimiento digital termine convirtiéndose en una jornada de trabajo sin límites.</p>
+      <p>La principal invitación de Diana fue comenzar con acciones concretas, aprender de los primeros resultados y desarrollar una marca personal auténtica.</p>
+      <aside class="article-highlight">
+        <p><strong>Los ingresos mencionados corresponden a declaraciones de la entrevistada. No constituyen una promesa de resultados.</strong> Quienes emprendan en Canadá deben considerar sus obligaciones fiscales, las normas aplicables a su actividad y las condiciones de cada plataforma.</p>
+      </aside>
+      <h2>Mira la entrevista completa</h2>
+      <p>En el episodio, Diana Cardona responde preguntas sobre Facebook Marketplace, reventa de productos, Hotmart, contenido UGC, atención al cliente y oportunidades de emprendimiento para migrantes.</p>
+      <p><strong>Producción:</strong> El Podcast del Migrante — eRadio Global Corp.</p>
+    `,
+    video: { youtubeId: "O5on_J9cRb4", title: "De limpiar casas en Canadá a facturar más de US$9.000 al mes — entrevista completa con Diana Cardona" },
+    sources: [
+      { label: "El Podcast del Migrante — Entrevista completa con Diana Cardona en YouTube", href: "https://youtu.be/O5on_J9cRb4" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Finanzas",
+    relatedSlugs: ["el-error-financiero-inmigrantes-canada", "100-empresarios-100-historias-calgary"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Diana Cardona: de limpiar casas en Canadá al emprendimiento digital",
+      description: "Diana Cardona contó en El Podcast del Migrante cómo pasó de la limpieza al emprendimiento digital en Canadá: Facebook Marketplace, UGC, Hotmart y marketing de afiliados.",
+      canonicalPath: "/finanzas/diana-cardona-emprendimiento-digital-canada/",
+    },
+  },
+  {
     /* Cierre de la temporada 2026 de International Experience Canada (IEC).
        Fecha verificada el 14 de octubre de 2026 en la página oficial de
        IRCC «Rounds of invitations»: última ronda para todos los grupos la

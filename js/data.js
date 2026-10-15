@@ -176,9 +176,19 @@ const STORIES = [
    nueva tarjeta basta con agregarla (o cambiar a `published: true`).
    Se muestran en el orden de este array. Cada video se reproduce en la
    misma tarjeta (js/video-cover.js) y tiene además su enlace a YouTube.
+   articleSlug (opcional) añade el enlace «Leer el artículo» a su página.
    Títulos y descripciones siempre en español; un video en otro idioma
    se identifica en `tag` (p. ej. «Entrevista en inglés»). */
 const VIDEOS = [
+  {
+    tag: "Entrevistas",
+    title: "De limpiar casas en Canadá a facturar más de US$9.000 al mes: las estrategias digitales de Diana Cardona",
+    desc: "La emprendedora colombiana cuenta cómo pasó de la limpieza al emprendimiento digital: Facebook Marketplace, contenido UGC, Hotmart y marketing de afiliados.",
+    videoId: "O5on_J9cRb4",
+    articleSlug: "diana-cardona-emprendimiento-digital-canada",
+    demo: false,
+    published: true,
+  },
   {
     tag: "Entrevistas",
     title: "Un médico de familia latino llega a Brooks, Alberta",
