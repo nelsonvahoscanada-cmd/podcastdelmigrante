@@ -64,16 +64,16 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Migración",
-    title: "Canadá cierra las invitaciones de Working Holiday 2026: esta es la fecha límite para participar",
-    dek: "La temporada 2026 de International Experience Canada termina con una última ronda de invitaciones la semana del 19 de octubre. Para participar, el perfil debe enviarse antes de las 9 a. m. (hora del Este) de ese día.",
+    category: "Alberta",
+    title: "Alberta activa sus reglas de invierno: desde hoy no pueden cortarte por completo la luz en casa",
+    dek: "Desde este 15 de octubre y hasta el 15 de abril, las empresas no pueden desconectar por completo la electricidad de los hogares. Desde el 1 de noviembre, la protección se extiende al gas natural. Te explicamos qué cubre, qué no y a quién pedir ayuda.",
     author: "Redacción El Podcast del Migrante",
-    date: "14 de octubre, 2026",
-    image: "url('assets/working-holiday-2026-cierre-invitaciones.jpg')",
+    date: "15 de octubre, 2026",
+    image: "url('assets/reglas-invierno-electricidad-gas-alberta.jpg')",
     aspectRatio: "16/9",
-    alt: "Ilustración editorial asistida por inteligencia artificial: una pareja joven revisa una computadora portátil junto a pasaportes, un mapa y maletas, con el horizonte de Toronto y una bandera de Canadá al fondo.",
+    alt: "Ilustración editorial asistida por inteligencia artificial: una pareja revisa una factura de servicios en la mesa de su casa, junto a una computadora portátil y una calculadora, con íconos de electricidad, gas y calefacción y un paisaje nevado de ciudad al fondo.",
     demo: false,
-    slug: "working-holiday-2026-cierre-invitaciones-canada",
+    slug: "reglas-invierno-electricidad-gas-alberta",
   },
   secondary: [
     {
@@ -120,6 +120,7 @@ const HERO = {
 };
 
 const LATEST = [
+  { category: "Migración", title: "Canadá cierra las invitaciones de Working Holiday 2026: esta es la fecha límite para participar", time: "14 OCT 2026", slug: "working-holiday-2026-cierre-invitaciones-canada", image: "assets/working-holiday-2026-cierre-invitaciones.jpg" },
   { category: "Canadá", title: "Canadá anuncia reembolsos de hasta $10,000 para cambiar la calefacción por una bomba de calor", time: "12 OCT 2026", slug: "reembolso-bombas-de-calor-canada", image: "assets/reembolso-bombas-de-calor-canada.jpg" },
   { category: "Salud", title: "El Dr. Eddy Valverde Narvaez, médico de familia latino, llega a Brooks: lo que debes saber si aún buscas doctor en Alberta", time: "12 OCT 2026", slug: "medico-familia-latino-brooks-alberta", image: "assets/medico-familia-latino-brooks-alberta.jpg" },
   { category: "Migración", title: "Llegar a Canadá: los documentos que conviene tener organizados desde el primer día", time: "18 de septiembre", slug: "llegar-canada-documentos-primer-dia", image: "assets/llegar-canada-documentos-migrante.jpg" },
