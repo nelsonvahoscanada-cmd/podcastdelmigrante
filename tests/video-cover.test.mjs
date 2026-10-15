@@ -32,3 +32,15 @@ test("carrusel Podcast del Migrante Play: videos con reproducción en la portada
   assert.ok(ctx.V.some((v) => v.videoId === "M7JFiyvPDT8" && !v.published), "Tomás Velázquez: retirado, no borrado");
   assert.match(read("index.html"), /<script src="js\/video-cover\.js"><\/script>\s*<script src="js\/main\.js">/);
 });
+
+test("Desafío 100 Empresas: tres videos destacados en orden, desde el inicio, sin borrar el catálogo", () => {
+  const ctx = {};
+  vm.runInNewContext(read("js/desafio-stories.js") + ";globalThis.D = DESAFIO_STORIES;", ctx);
+  const home = ctx.D.filter((s) => s.homeOrder).sort((a, b) => a.homeOrder - b.homeOrder);
+  assert.deepEqual([...home.map((s) => s.videoId)], ["3tOZfCwZWN8", "0rFRBV7wYqM", "2RcMF0Uiz2Y"]);
+  for (const s of home) assert.equal(s.videoStart, undefined, `${s.slug}: sin segundo de inicio`);
+  assert.equal(home[0].cardTag, "Desafío 100 Empresas", "Andrea: sin número de capítulo");
+  assert.match(home[1].cardTag, /capítulo 30/i);
+  assert.match(home[2].cardTag, /capítulo 29/i);
+  for (const id of ["xJaXI3r83sA", "bDhX_XW2bE0", "UloNyWGYEXo"]) assert.ok(ctx.D.some((s) => s.videoId === id), `se conserva ${id}`);
+});

@@ -34,12 +34,85 @@
                       patrocinio, SIEMPRE en un bloque visualmente
                       diferenciado del cuerpo editorial, nunca mezclado
                       con la narrativa de la historia.
+  - homeOrder          [OPCIONAL] posición (1, 2, 3) en la sección
+                      «Desafío 100 Empresas» del HOME. Solo se muestran
+                      las historias que lo tienen; las demás siguen en
+                      este catálogo y su página historia.html?slug=...
+                      sigue funcionando.
+  - cardTag            [OPCIONAL] etiqueta de la tarjeta (por defecto,
+                      empresa o área)
+  - bylineLabel        [OPCIONAL] texto antes del nombre en la tarjeta
+                      (por defecto, «Empresario»)
   - seo.canonicalPath  ruta limpia prevista (mismo criterio que en
                       articles.js: hoy la página funciona vía
                       historia.html?slug=..., esta es la ruta futura).
 ========================================================================= */
 
 const DESAFIO_STORIES = [
+  {
+    slug: "desafio-andrea-diaz-posada-familia-separada",
+    homeOrder: 1,
+    empresario: "Andrea Paola Díaz Posada",
+    cardTag: "Desafío 100 Empresas",
+    bylineLabel: "Entrevistada",
+    cardTitle: "Dos años y medio separados: el sacrificio de una familia para reunirse en Canadá",
+    cardDescription: "Andrea Paola Díaz Posada relata cómo enfrentó la separación de su esposo, el reencuentro de sus hijas con su padre y el desafío de comenzar una nueva vida en Brooks, Alberta.",
+    pageTitle: "Dos años y medio separados: el sacrificio de una familia para reunirse en Canadá | Andrea Paola Díaz Posada",
+    bodyHtml: `
+      <p>En esta entrevista de Desafío 100 Empresas, una serie de El Podcast del Migrante, Andrea Paola Díaz Posada comparte una historia de migración familiar.</p>
+      <p>Andrea relata cómo enfrentó durante dos años y medio la separación de su esposo, cómo vivió el reencuentro de sus hijas con su padre y el desafío de comenzar una nueva vida en Brooks, Alberta.</p>
+      <p>Es una conversación sobre el sacrificio, la paciencia y la fuerza que muchas familias migrantes necesitan para volver a estar juntas en un nuevo país.</p>
+    `,
+    guest: { name: "Andrea Paola Díaz Posada", area: "Historia migrante — Brooks, Alberta" },
+    image: { alt: "Miniatura del video de Andrea Paola Díaz Posada en Desafío 100 Empresas." },
+    videoId: "3tOZfCwZWN8",
+    disclaimer: null,
+    sponsor: null,
+    seo: { canonicalPath: "/desafio-100-empresas/desafio-andrea-diaz-posada-familia-separada/" },
+  },
+  {
+    slug: "desafio-mario-de-matteiz-gc-equipment",
+    homeOrder: 2,
+    empresario: "Mario de Matteiz",
+    empresa: "GC Equipment",
+    cardTag: "Desafío 100 Empresas · Capítulo 30",
+    cardTitle: "De empresario en México a comenzar de cero en Canadá: la historia de Mario de Matteiz",
+    cardDescription: "Después de desarrollar importantes proyectos industriales en México, Mario emigró a Canadá y comenzó trabajando en jardinería. Hoy dirige GC Equipment en Calgary, donde coordina un equipo de trabajadores latinos.",
+    pageTitle: "De empresario en México a comenzar de cero en Canadá: la historia de Mario de Matteiz | Desafío 100 Empresas, capítulo 30",
+    bodyHtml: `
+      <p>En el capítulo 30 de Desafío 100 Empresas conversamos con Mario de Matteiz, de GC Equipment.</p>
+      <p>Después de desarrollar importantes proyectos industriales en México, Mario emigró a Canadá y comenzó de cero, trabajando en jardinería.</p>
+      <p>Hoy dirige GC Equipment en Calgary, donde coordina un equipo de trabajadores latinos. Su historia muestra que empezar de nuevo también puede ser el comienzo de otra etapa empresarial.</p>
+    `,
+    guest: { name: "Mario de Matteiz", company: "GC Equipment", area: "Calgary, Alberta" },
+    image: { alt: "Miniatura del video de Mario de Matteiz, de GC Equipment, en Desafío 100 Empresas." },
+    videoId: "0rFRBV7wYqM",
+    disclaimer: null,
+    sponsor: null,
+    seo: { canonicalPath: "/desafio-100-empresas/desafio-mario-de-matteiz-gc-equipment/" },
+  },
+  {
+    slug: "desafio-veronica-duran-novelo",
+    homeOrder: 3,
+    empresario: "Verónica Durán Novelo",
+    area: "Acompañamiento holístico",
+    cardTag: "Desafío 100 Empresas · Capítulo 29",
+    bylineLabel: "Emprendedora",
+    cardTitle: "Dejar México y reinventarse en Canadá: la historia de Verónica Durán Novelo",
+    cardDescription: "Verónica comparte su experiencia migratoria, la importancia de la familia y cómo retomó su vocación para emprender en el ámbito del acompañamiento holístico.",
+    pageTitle: "Dejar México y reinventarse en Canadá: la historia de Verónica Durán Novelo | Desafío 100 Empresas, capítulo 29",
+    bodyHtml: `
+      <p>En el capítulo 29 de Desafío 100 Empresas conversamos con Verónica Durán Novelo.</p>
+      <p>Verónica comparte su experiencia migratoria al dejar México, la importancia de la familia en ese proceso y cómo retomó su vocación para emprender en Canadá en el ámbito del acompañamiento holístico.</p>
+      <p>Es una historia sobre reinventarse en un nuevo país sin dejar atrás lo que uno es.</p>
+    `,
+    guest: { name: "Verónica Durán Novelo", area: "Acompañamiento holístico" },
+    image: { alt: "Miniatura del video de Verónica Durán Novelo en Desafío 100 Empresas." },
+    videoId: "2RcMF0Uiz2Y",
+    disclaimer: "Esta entrevista tiene fines informativos. Las prácticas de acompañamiento holístico mencionadas no son tratamientos médicos ni sustituyen la atención de profesionales de la salud. Ante cualquier problema de salud, consulta a un profesional calificado.",
+    sponsor: null,
+    seo: { canonicalPath: "/desafio-100-empresas/desafio-veronica-duran-novelo/" },
+  },
   {
     slug: "desafio-carlos-castillo-proteccion-familiar",
     empresario: "Carlos D. Castillo",
