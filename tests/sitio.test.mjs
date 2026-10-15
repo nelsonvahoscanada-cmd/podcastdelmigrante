@@ -79,3 +79,8 @@ test("menú: oculta las secciones sin página propia y no deja enlaces a «#»",
   assert.equal(ctx.N.find((i) => i.label === "Migración").href, "guia.html?categoria=migracion");
   assert.match(read("js/nav.js"), /filter\(visible\)/);
 });
+
+test("menú: «Directorio Empresarial» lleva a la sección del directorio en la portada", () => {
+  assert.match(read("js/data.js"), /\{ label: "Directorio Empresarial", href: "index\.html#quien-puede-ayudarte" \}/);
+  assert.match(read("index.html"), /<section[^>]*id="quien-puede-ayudarte"/);
+});
