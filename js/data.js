@@ -44,6 +44,7 @@ const NAV_PRIMARY = [
   { label: "Comunidad", href: "index.html#", pending: true },
   { label: "Historias", href: "index.html#historias" },
   { label: "Videos", href: "index.html#video" },
+  { label: "Directorio Empresarial", href: "index.html#quien-puede-ayudarte" },
 ];
 
 const NAV_MORE = [
