@@ -65,16 +65,16 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Alberta",
-    title: "Alberta activa sus reglas de invierno: desde hoy no pueden cortarte por completo la luz en casa",
-    dek: "Desde este 15 de octubre y hasta el 15 de abril, las empresas no pueden desconectar por completo la electricidad de los hogares. Desde el 1 de noviembre, la protección se extiende al gas natural. Te explicamos qué cubre, qué no y a quién pedir ayuda.",
+    category: "Migración",
+    title: "Canadá anunciará cambios en Express Entry este viernes 16 de octubre: lo que deben saber los inmigrantes",
+    dek: "La ministra de Inmigración, Lena Metlege Diab, hará el anuncio este viernes a las 9:00 a. m., hora de Alberta. Los cambios concretos todavía no se conocen: te explicamos qué es Express Entry, a quién puede interesarle y qué conviene revisar.",
     author: "Redacción El Podcast del Migrante",
-    date: "15 de octubre, 2026",
-    image: "url('assets/reglas-invierno-electricidad-gas-alberta.jpg')",
+    date: "16 de octubre, 2026",
+    image: "url('assets/express-entry-anuncio-cambios-octubre-2026.jpg')",
     aspectRatio: "16/9",
-    alt: "Ilustración editorial asistida por inteligencia artificial: una pareja revisa una factura de servicios en la mesa de su casa, junto a una computadora portátil y una calculadora, con íconos de electricidad, gas y calefacción y un paisaje nevado de ciudad al fondo.",
+    alt: "Ilustración editorial asistida por inteligencia artificial: cuatro jóvenes revisan una computadora portátil junto a documentos de Express Entry y un pasaporte canadiense, con la bandera de Canadá y el horizonte de Toronto al fondo, y el titular «Canadá anunciará cambios en Express Entry — viernes 16 de octubre».",
     demo: false,
-    slug: "reglas-invierno-electricidad-gas-alberta",
+    slug: "express-entry-anuncio-cambios-octubre-2026",
   },
   secondary: [
     {
@@ -121,6 +121,7 @@ const HERO = {
 };
 
 const LATEST = [
+  { category: "Alberta", title: "Alberta activa sus reglas de invierno: desde hoy no pueden cortarte por completo la luz en casa", time: "15 OCT 2026", slug: "reglas-invierno-electricidad-gas-alberta", image: "assets/reglas-invierno-electricidad-gas-alberta.jpg" },
   { category: "Migración", title: "Canadá cierra las invitaciones de Working Holiday 2026: esta es la fecha límite para participar", time: "14 OCT 2026", slug: "working-holiday-2026-cierre-invitaciones-canada", image: "assets/working-holiday-2026-cierre-invitaciones.jpg" },
   { category: "Canadá", title: "Canadá anuncia reembolsos de hasta $10,000 para cambiar la calefacción por una bomba de calor", time: "12 OCT 2026", slug: "reembolso-bombas-de-calor-canada", image: "assets/reembolso-bombas-de-calor-canada.jpg" },
   { category: "Salud", title: "El Dr. Eddy Valverde Narvaez, médico de familia latino, llega a Brooks: lo que debes saber si aún buscas doctor en Alberta", time: "12 OCT 2026", slug: "medico-familia-latino-brooks-alberta", image: "assets/medico-familia-latino-brooks-alberta.jpg" },

@@ -160,6 +160,95 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Anuncio de cambios en Express Entry (aviso de IRCC del 15 de octubre
+       de 2026). Los cambios concretos NO se conocen todavía: el artículo no
+       menciona requisitos, categorías, puntajes ni beneficios nuevos.
+       Pendiente: actualizar con la información oficial después del anuncio
+       del 16 de octubre (9:00 a. m., hora de Alberta), solo si está verificada.
+       Publicación programada: 16 de octubre de 2026, 6:00 a. m. (Edmonton).
+       Imagen: ilustración editorial asistida por IA (no es una foto real). */
+    id: "ART-2026-026",
+    slug: "express-entry-anuncio-cambios-octubre-2026",
+    category: "Migración",
+    contentType: "Noticia",
+    title: "Canadá anunciará cambios en Express Entry este viernes 16 de octubre: lo que deben saber los inmigrantes",
+    dek: "La ministra de Inmigración, Lena Metlege Diab, hará el anuncio este viernes a las 9:00 a. m., hora de Alberta. Los cambios concretos todavía no se conocen: te explicamos qué es Express Entry, a quién puede interesarle y qué conviene revisar.",
+    excerpt: "IRCC confirmó que la ministra de Inmigración anunciará cambios en Express Entry el viernes 16 de octubre a las 9:00 a. m., hora de Alberta. Los detalles aún no se conocen.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-16T06:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/express-entry-anuncio-cambios-octubre-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: cuatro jóvenes revisan una computadora portátil junto a documentos de Express Entry y un pasaporte canadiense, con la bandera de Canadá y el horizonte de Toronto al fondo, y el titular «Canadá anunciará cambios en Express Entry — viernes 16 de octubre».",
+      credit: "Ilustración editorial asistida por inteligencia artificial. No corresponde a una fotografía real.",
+      socialFocus: "50% 45%",
+      socialLabel: "Ilustración editorial asistida por IA",
+      socialLabelPosition: "top-left",
+    },
+    bodyHtml: `
+      <p>El Gobierno de Canadá anunciará <strong>cambios en Express Entry</strong>, el sistema que gestiona muchas de las solicitudes de residencia permanente para trabajadores calificados. Así lo confirmó Immigration, Refugees and Citizenship Canada (IRCC) en un aviso a los medios publicado el 15 de octubre de 2026.</p>
+      <p>Según ese aviso, la ministra de Inmigración, Refugiados y Ciudadanía, <strong>Lena Metlege Diab</strong>, hará el anuncio el <strong>viernes 16 de octubre de 2026 a las 11:00 a. m., hora del Este</strong>, es decir, a las <strong>9:00 a. m., hora de Alberta</strong>, en Kitchener, Ontario.</p>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Lo que sabemos / lo que todavía no sabemos</h2>
+        <p><strong>Sí sabemos:</strong></p>
+        <ul>
+          <li>Que la ministra anunciará cambios en Express Entry.</li>
+          <li>La fecha, la hora y la ciudad del anuncio.</li>
+        </ul>
+        <p><strong>Todavía no sabemos:</strong></p>
+        <ul>
+          <li>En qué consisten los cambios.</li>
+          <li>A quiénes afectarán ni desde cuándo se aplicarán.</li>
+        </ul>
+        <p>El aviso oficial no detalla las modificaciones. Desconfía de publicaciones que ya den por hechos nuevos requisitos, puntajes o categorías antes del anuncio.</p>
+      </aside>
+      <h2>¿Qué es Express Entry?</h2>
+      <p>Express Entry es el sistema en línea que usa el Gobierno de Canadá para gestionar las solicitudes de residencia permanente de trabajadores calificados en tres programas federales:</p>
+      <ul>
+        <li><em>Federal Skilled Worker Program</em> (trabajadores calificados);</li>
+        <li><em>Federal Skilled Trades Program</em> (oficios calificados);</li>
+        <li><em>Canadian Experience Class</em> (experiencia laboral en Canadá).</li>
+      </ul>
+      <p>Una parte del Programa de Nominados Provinciales también usa este sistema. Las personas crean un perfil en línea, reciben una puntuación según el Sistema de Clasificación Integral (CRS) y, en sorteos periódicos, IRCC invita a algunas de ellas a solicitar la residencia permanente.</p>
+      <h2>¿A quién le puede interesar el anuncio?</h2>
+      <ul>
+        <li>A quienes ya tienen un perfil activo en Express Entry.</li>
+        <li>A trabajadores temporales y estudiantes en Canadá que planean solicitar la residencia permanente.</li>
+        <li>A quienes viven fuera de Canadá y preparan su perfil.</li>
+        <li>A empleadores y profesionales que acompañan procesos migratorios.</li>
+      </ul>
+      <h2>Qué conviene revisar mientras tanto</h2>
+      <ul>
+        <li><strong>Que tu perfil esté actualizado</strong> y que toda la información sea exacta y verificable.</li>
+        <li><strong>La vigencia de tus documentos</strong>, como los resultados de los exámenes de idioma y la evaluación de tus estudios.</li>
+        <li><strong>Las fuentes oficiales.</strong> Después del anuncio, consulta los detalles en las páginas de IRCC en canada.ca antes de tomar decisiones.</li>
+        <li><strong>Cuidado con las estafas.</strong> Nadie puede garantizarte una invitación. Si necesitas ayuda, busca a un consultor de inmigración regulado o a un abogado autorizado.</li>
+      </ul>
+      <p>El Podcast del Migrante Magazine actualizará esta nota con la información oficial cuando IRCC dé a conocer los cambios.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "IRCC — Minister Metlege Diab to make an announcement in Kitchener (aviso a los medios, 15 de octubre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/minister-metlege-diab-to-make-an-announcement-in-kitchener.html" },
+      { label: "Government of Canada — Express Entry", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Migración",
+    relatedSlugs: ["working-holiday-2026-cierre-invitaciones-canada", "carney-aumento-controlado-inmigracion-canada"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Cambios en Express Entry: anuncio de IRCC este 16 de octubre | Lo que se sabe",
+      description: "La ministra de Inmigración anunciará cambios en Express Entry el 16 de octubre a las 9:00 a. m., hora de Alberta. Los detalles aún no se conocen: qué es Express Entry y qué revisar.",
+      canonicalPath: "/migracion/express-entry-anuncio-cambios-octubre-2026/",
+    },
+  },
+  {
     /* Reglas de invierno para servicios públicos en Alberta (anuncio
        provincial del 14 de octubre de 2026). Datos verificados el 14 de
        octubre de 2026 en las páginas oficiales del Utilities Consumer
