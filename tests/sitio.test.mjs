@@ -40,10 +40,15 @@ test("pie de página: sin enlaces visibles a «#» en ninguna página", () => {
   }
 });
 
-test("pie de página: la columna Legal sigue oculta (sin páginas legales publicadas)", () => {
+test("pie de página: columna Legal solo con la Política de privacidad (el resto oculto hasta publicarse)", () => {
+  assert.ok(existsSync(new URL("privacidad.html", ROOT)), "privacidad.html");
   for (const f of PAGES) {
     const footer = footerOf(read(f));
-    assert.match(footer, /<div class="footer-col" hidden>\s*<h2 class="footer-col__title">Legal<\/h2>/, f);
+    assert.match(footer, /<div class="footer-col">\s*<h2 class="footer-col__title">Legal<\/h2>/, f);
+    assert.match(footer, /<a href="\/?privacidad"( aria-current="page")?>Política de privacidad<\/a>/, f);
+    for (const name of ["Política editorial", "Términos", "Correcciones"]) {
+      assert.match(footer, new RegExp(`<a href="[^"]*" hidden>${name}</a>`), `${f}: ${name} oculto`);
+    }
   }
 });
 
