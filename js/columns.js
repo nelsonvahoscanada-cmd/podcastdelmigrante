@@ -35,6 +35,10 @@
                       aparece al final de cada entrega y enlaza al archivo
                       de la columna (se escribe una vez, la heredan todas
                       las entregas futuras)
+  - banner            { src, srcSmall, width, height, alt } — imagen
+                      institucional permanente de la columna (portada y
+                      archivo). Nunca lleva el título de una entrega:
+                      las crónicas nuevas aparecen sin cambiarla
   - entries[]         agregar las nuevas entregas AL FINAL (orden
                       cronológico ascendente, igual que "Tu dinero en
                       Canadá")
@@ -79,6 +83,13 @@ const COLUMNS = [
     category: "Comunidad",
     authorName: "Nelson Vahos",
     featuredOnHome: true,
+    banner: {
+      src: "assets/entre-dos-mundos-columna-nelson-vahos.webp",
+      srcSmall: "assets/entre-dos-mundos-columna-nelson-vahos-768.webp",
+      width: 1536,
+      height: 1024,
+      alt: "Nelson Vahos, con audífonos y gorra blanca, habla frente a un micrófono de estudio. Junto a él, el logo de El Podcast del Migrante y el título «Entre dos mundos, por Nelson Vahos» sobre un mapamundi verde y el horizonte de una ciudad canadiense con la bandera de Canadá.",
+    },
     description: "Una columna personal sobre migración, identidad, familia, comunidad y las experiencias de reconstruir la vida entre el país que dejamos y el país que aprendemos a llamar hogar.",
     authorCard: {
       name: "Nelson Vahos",
@@ -91,3 +102,13 @@ const COLUMNS = [
     ],
   },
 ];
+
+/* Imagen institucional de una columna (column.banner), con versión
+   reducida para celulares y dimensiones fijas para que la página no
+   salte mientras carga. Devuelve "" si la columna no tiene imagen. */
+function columnBannerHtml(column, { className = "", sizes = "100vw", eager = false } = {}) {
+  const b = column && column.banner;
+  if (!b) return "";
+  const loading = eager ? `fetchpriority="high"` : `loading="lazy"`;
+  return `<img class="${className}" src="${b.src}" srcset="${b.srcSmall} 768w, ${b.src} ${b.width}w" sizes="${sizes}" width="${b.width}" height="${b.height}" alt="${b.alt}" ${loading} decoding="async">`;
+}

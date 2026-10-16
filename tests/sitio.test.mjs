@@ -84,3 +84,21 @@ test("menú: «Directorio Empresarial» lleva a la sección del directorio en la
   assert.match(read("js/data.js"), /\{ label: "Directorio Empresarial", href: "index\.html#quien-puede-ayudarte" \}/);
   assert.match(read("index.html"), /<section[^>]*id="quien-puede-ayudarte"/);
 });
+
+test("columna «Entre dos mundos»: imagen institucional permanente, sin el título de la crónica", () => {
+  const ctx = vm.createContext({});
+  vm.runInContext(read("js/columns.js") + ";globalThis.C = COLUMNS; globalThis.html = columnBannerHtml;", ctx);
+  const col = ctx.C.find((c) => c.slug === "entre-dos-mundos");
+  const b = col.banner;
+  assert.ok(existsSync(new URL(b.src, ROOT)) && existsSync(new URL(b.srcSmall, ROOT)), "archivos de la imagen");
+  assert.equal(b.width / b.height, 3 / 2);
+  assert.match(b.alt, /Nelson Vahos/);
+  assert.doesNotMatch(b.alt, /frío no pudo apagar/i);
+  const img = ctx.html(col, { className: "x" });
+  assert.match(img, /width="1536" height="1024"/);
+  assert.match(img, /loading="lazy"/);
+  assert.equal(ctx.html({ slug: "sin-imagen" }), "");
+  // La crónica conserva su título y su enlace
+  assert.ok(col.entries.some((e) => e.slug === "el-frio-no-pudo-apagar-mi-senal" && e.title === "El frío no pudo apagar mi señal" && e.published));
+  assert.ok(existsSync(new URL("articulo-el-frio-no-pudo-apagar-mi-senal.html", ROOT)));
+});
