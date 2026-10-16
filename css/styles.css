@@ -1563,3 +1563,68 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
 .notfound__text { color: var(--gris-600); margin: 0 0 24px; }
 .notfound__links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
 .notfound__links a:not(.btn) { color: var(--negro); text-decoration: underline; text-underline-offset: 3px; }
+
+/* =========================================================
+   HOME — Columna con identidad visual propia (column.banner)
+   Imagen institucional permanente + última crónica. La imagen
+   conserva su proporción 3:2 completa (sin recortes).
+========================================================= */
+.column-banner {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--negro);
+  color: var(--blanco);
+  border-top: 4px solid var(--verde);
+  border-radius: var(--radius-s);
+  overflow: hidden;
+}
+.column-banner__media { display: block; background: var(--negro); }
+.column-banner__img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; }
+.column-banner__body { padding: 24px 20px 28px; }
+.column-banner__kicker {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #9fd42a;
+}
+.column-banner__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  line-height: 1.08;
+  font-weight: 700;
+  margin: 6px 0 4px;
+}
+.column-banner__by { font-size: 0.98rem; color: #d6d6d6; margin-bottom: 20px; }
+.column-banner__label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #b5b5b5;
+  padding-top: 16px;
+  border-top: 1px solid var(--gris-800);
+}
+.column-banner__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 6px 0 8px;
+}
+.column-banner__title a:hover { color: #9fd42a; }
+.column-banner__text { font-size: 0.95rem; color: #d6d6d6; max-width: 60ch; margin-bottom: 18px; }
+.column-banner__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.column-banner__more {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--blanco);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.column-banner__more:hover { color: #9fd42a; }
+.column-banner a:focus-visible { outline: 2px solid #9fd42a; outline-offset: 3px; }
+@media (min-width: 900px) {
+  .column-banner { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); align-items: center; }
+  .column-banner__body { padding: 28px 32px; }
+}

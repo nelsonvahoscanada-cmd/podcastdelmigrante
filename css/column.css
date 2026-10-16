@@ -62,3 +62,8 @@
   .column-entry { grid-template-columns: 1fr; gap: 4px; }
   .column-entry__status { justify-self: start; margin-top: 4px; }
 }
+
+/* Imagen institucional de la columna (column.banner): proporción 3:2
+   completa, sin recortes; dimensiones reservadas para evitar saltos. */
+.column-page-banner { margin: 0 0 24px; border-top: 4px solid var(--verde); background: var(--negro); }
+.column-page-banner__img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; }

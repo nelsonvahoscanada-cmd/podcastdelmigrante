@@ -302,6 +302,33 @@
     const entry = published[published.length - 1];
     const article = ARTICLES.find((a) => a.slug === entry.slug && !a.draft);
     if (!article) return;
+    if (column.banner) {
+      /* Columna con identidad visual propia: la imagen institucional es
+         permanente y la entrega se presenta aparte, para que cada
+         crónica nueva aparezca sin cambiar la imagen. */
+      const archiveHref = `columna.html?slug=${encodeURIComponent(column.slug)}`;
+      host.innerHTML = `
+        <div class="column-banner">
+          <a class="column-banner__media" href="${archiveHref}" aria-label="${column.title}: ver todas las crónicas">
+            ${columnBannerHtml(column, { className: "column-banner__img", sizes: "(min-width: 900px) 760px, 100vw" })}
+          </a>
+          <div class="column-banner__body">
+            <span class="column-banner__kicker">Columna de autor</span>
+            <h2 class="column-banner__name">${column.title}</h2>
+            <p class="column-banner__by">Una columna de ${column.authorName}</p>
+            <p class="column-banner__label">Última crónica</p>
+            <h3 class="column-banner__title"><a href="${articleHref(article.slug)}">${article.title}</a></h3>
+            <p class="column-banner__text">${article.excerpt}</p>
+            <div class="column-banner__actions">
+              <a class="btn" href="${articleHref(article.slug)}">Leer la crónica →</a>
+              <a class="column-banner__more" href="${archiveHref}">Ver todas las crónicas</a>
+            </div>
+          </div>
+        </div>
+      `;
+      host.hidden = false;
+      return;
+    }
     host.innerHTML = `
       <div class="column-feature__inner">
         <p class="column-feature__name">${column.title}</p>

@@ -56,12 +56,17 @@
 
     const entries = column.entries.map(entryRowHtml).join("");
 
+    const banner = column.banner
+      ? `<figure class="column-page-banner">${columnBannerHtml(column, { className: "column-page-banner__img", sizes: "(min-width: 800px) 720px, 100vw", eager: true })}</figure>`
+      : "";
+
     document.getElementById("columnRoot").innerHTML = `
+      ${banner}
       <span class="tag">${column.category}</span>
       <h1 class="article-title">${column.title}</h1>
       <p class="article-dek">${column.description}</p>
       <div class="column-author-row">
-        <p class="byline article-byline">Por ${authorLine}</p>
+        <p class="byline article-byline">${column.banner ? "Una columna de" : "Por"} ${authorLine}</p>
         ${authorLogo}
       </div>
 
