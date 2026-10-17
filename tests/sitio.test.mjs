@@ -1,7 +1,7 @@
 /*
   Comprobaciones del sitio público (sin navegador):
   - ningún enlace visible del pie de página apunta a «#»;
-  - la columna Legal permanece oculta hasta publicar las páginas aprobadas;
+  - la columna Legal muestra solo las políticas publicadas (privacidad y cookies);
   - ninguna página pública carga Google Fonts (tipografías locales);
   - la página 404 existe, no se indexa y usa rutas desde la raíz;
   - el menú oculta las secciones sin página propia.
@@ -40,12 +40,13 @@ test("pie de página: sin enlaces visibles a «#» en ninguna página", () => {
   }
 });
 
-test("pie de página: columna Legal solo con la Política de privacidad (el resto oculto hasta publicarse)", () => {
+test("pie de página: columna Legal con las políticas de privacidad y de cookies (el resto oculto hasta publicarse)", () => {
   assert.ok(existsSync(new URL("privacidad.html", ROOT)), "privacidad.html");
+  assert.ok(existsSync(new URL("cookies.html", ROOT)), "cookies.html");
   for (const f of PAGES) {
     const footer = footerOf(read(f));
     assert.match(footer, /<div class="footer-col">\s*<h2 class="footer-col__title">Legal<\/h2>/, f);
-    assert.match(footer, /<a href="\/?privacidad"( aria-current="page")?>Política de privacidad<\/a>/, f);
+    assert.match(footer, /<a href="(\/?)privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>/, f);
     for (const name of ["Política editorial", "Términos", "Correcciones"]) {
       assert.match(footer, new RegExp(`<a href="[^"]*" hidden>${name}</a>`), `${f}: ${name} oculto`);
     }
@@ -101,4 +102,31 @@ test("columna «Entre dos mundos»: imagen institucional permanente, sin el tít
   // La crónica conserva su título y su enlace
   assert.ok(col.entries.some((e) => e.slug === "el-frio-no-pudo-apagar-mi-senal" && e.title === "El frío no pudo apagar mi señal" && e.published));
   assert.ok(existsSync(new URL("articulo-el-frio-no-pudo-apagar-mi-senal.html", ROOT)));
+});
+
+test("Política de cookies: operador, contacto, enlace a privacidad y solo tecnologías reales", () => {
+  const html = read("cookies.html");
+  assert.match(html, /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/cookies">/);
+  assert.match(html, /eRadio Global Corp\./);
+  assert.match(html, /Responsable de Privacidad/);
+  assert.match(html, /mailto:podcastdelmigrante@gmail\.com/);
+  assert.match(html, /<a href="\/privacidad">Política de privacidad<\/a>/);
+  assert.match(html, /pendiente de revisión jurídica/);
+  // Solo describe lo que el código usa
+  assert.match(html, /pdm_utm/);
+  assert.match(read("js/analytics.js"), /STORE_KEY = "pdm_utm"/);
+  assert.match(html, /youtube-nocookie\.com/);
+  // Sin banners ni sistemas de consentimiento en esta etapa
+  assert.doesNotMatch(html, /<script[^>]*consent|cookie-banner|id="consent/i);
+  assert.match(read("privacidad.html"), /<a href="\/cookies">Política de cookies<\/a>/);
+});
+
+test("sin herramientas de publicidad o seguimiento ni cookies propias en el sitio público", () => {
+  const files = [...PAGES, ...readdirSync(new URL("js/", ROOT), { recursive: true }).filter((f) => f.endsWith(".js")).map((f) => "js/" + f)];
+  for (const f of files) {
+    // En las páginas solo cuenta el código (<script>), no el texto que lo explica
+    const t = f.endsWith(".html") ? [...read(f).matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>|<script\b[^>]*src="([^"]*)"/g)].map((m) => m[0]).join("\n") : read(f);
+    assert.doesNotMatch(t, /googletagmanager\.com|google-analytics\.com|gtag\(|fbq\(|connect\.facebook\.net|hotjar|clarity\.ms/, f);
+    assert.doesNotMatch(t, /document\.cookie|localStorage/, f);
+  }
 });
