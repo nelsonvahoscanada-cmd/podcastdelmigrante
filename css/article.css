@@ -539,3 +539,41 @@ a.column-masthead__name:hover { color: var(--negro); }
 .article-video__play:focus-visible { outline: 3px solid var(--verde); outline-offset: -6px; }
 .article-video__note { font-size: 0.8rem; color: var(--gris-texto, #6b6b6b); margin: 8px 0 0; }
 .article-newsletter__note { font-size: 0.86rem; color: var(--gris-600); margin: 4px 0 10px; }
+
+/* =========================================================
+   Tablas de las páginas legales (Política de cookies)
+   En celulares cada fila se apila como una ficha con etiquetas.
+========================================================= */
+.legal-table { margin: 18px 0 22px; }
+.legal-table table { width: 100%; border-collapse: collapse; font-size: 0.92rem; line-height: 1.5; }
+.legal-table th,
+.legal-table td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: var(--border); }
+.legal-table thead th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gris-600);
+  border-bottom: 2px solid var(--verde);
+}
+.legal-table td:first-child { font-weight: 600; }
+@media (max-width: 640px) {
+  .legal-table thead { display: none; }
+  .legal-table table, .legal-table tbody, .legal-table tr, .legal-table td { display: block; width: 100%; }
+  .legal-table tr { padding: 12px 0; border-bottom: var(--border); }
+  .legal-table td { border: 0; padding: 4px 0; }
+  .legal-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gris-600);
+  }
+}
+
+/* Páginas legales: enlaces reconocibles y viñetas en las listas
+   (solo .legal-page; no cambia el estilo de los artículos). */
+.legal-page .article-body a { color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 2px; }
+.legal-page .article-body a:hover { color: var(--negro); }
+.legal-page .article-body ul { list-style: disc; }
