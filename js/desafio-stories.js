@@ -21,8 +21,8 @@
                       "Invitado" (name, company, area)
   - image             { alt }. La miniatura en sí NUNCA se guarda como
                       archivo propio — se deriva siempre de `videoId`
-                      (miniatura oficial de YouTube,
-                      https://img.youtube.com/vi/<id>/hqdefault.jpg),
+                      (copia local de la miniatura oficial, o portada
+                      neutra local: VideoCover.thumb en js/video-cover.js),
                       así cada tarjeta muestra exclusivamente el video
                       que le corresponde y nunca queda cruzada ni
                       reutilizada entre empresarios.

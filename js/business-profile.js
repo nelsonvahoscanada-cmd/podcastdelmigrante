@@ -177,8 +177,9 @@
         ${b.videoText ? `<p>${esc(b.videoText)}</p>` : ""}
         <div class="biz-video__frame" id="bizVideoFrame">
           <button type="button" class="biz-video__play" id="bizVideoPlay" data-track="video_click" data-track-target="profile-video" data-video-id="${id}" aria-label="Reproducir video de presentación">
-            <span class="biz-video__thumb" style="background-image:url('https://img.youtube.com/vi/${id}/hqdefault.jpg')"></span>
+            <span class="biz-video__thumb" style="background-image:url('${VideoCover.thumb(b.youtubeVideoId)}')"></span>
             <span class="biz-video__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></span>
+            ${VideoCover.noteHtml()}
           </button>
         </div>
       </section>

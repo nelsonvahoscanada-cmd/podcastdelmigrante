@@ -141,8 +141,9 @@
     });
   }
 
+  /* Portada local (sin contactar a YouTube al abrir la página). */
   function youtubeThumb(id) {
-    return "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
+    return VideoCover.thumb(id);
   }
 
   /* ---------- Historias ---------- */
@@ -220,8 +221,9 @@
   }
 
   /* ---------- Desafío 100 Empresas ---------- */
+  /* Portada local (sin contactar a YouTube al abrir la página). */
   function youtubeThumb(id) {
-    return "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
+    return VideoCover.thumb(id);
   }
 
   function buildDesafio() {

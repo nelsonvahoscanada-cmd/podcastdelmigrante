@@ -1,19 +1,46 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import vm from "node:vm";
 
 const ROOT = new URL("../", import.meta.url);
 const read = (f) => readFileSync(new URL(f, ROOT), "utf8");
 
-test("VideoCover: miniatura de YouTube con botón y sin reproductor antes de pulsar", () => {
+test("VideoCover: portada local con aviso de privacidad y sin reproductor antes de pulsar", () => {
   const ctx = { window: {} };
   vm.runInNewContext(read("js/video-cover.js"), ctx);
-  const html = ctx.window.VideoCover.html({ id: "z2Ih590xSP4", title: 'Entrevista "x" <y>' });
-  assert.match(html, /<img class="article-video__thumb" src="https:\/\/i\.ytimg\.com\/vi\/z2Ih590xSP4\/maxresdefault\.jpg"/);
+  const VC = ctx.window.VideoCover;
+  const html = VC.html({ id: "videoExterno", title: 'Entrevista "x" <y>' });
+  assert.match(html, /<img class="article-video__thumb" src="\/assets\/yt\/sin-miniatura\.svg"/);
   assert.match(html, /data-video-play/);
-  assert.doesNotMatch(html, /<iframe/);
+  assert.match(html, /class="video-privacy-note">Al reproducir, te conectas con YouTube/);
+  assert.doesNotMatch(html, /<iframe|ytimg|img\.youtube/);
   assert.doesNotMatch(html, /<y>/);
+  assert.ok(existsSync(new URL("assets/yt/sin-miniatura.svg", ROOT)));
+  // Cada miniatura registrada existe como archivo local
+  const src = read("js/video-cover.js");
+  const reg = src.match(/const LOCAL_THUMBS = \{([\s\S]*?)\};/)[1];
+  for (const [, id] of reg.matchAll(/"([A-Za-z0-9_-]{11})":/g)) {
+    assert.ok(existsSync(new URL(`assets/yt/${id}.jpg`, ROOT)), `assets/yt/${id}.jpg`);
+    assert.match(reg, new RegExp(`"${id}": \\["/assets/yt/${id}\\.jpg", \\d+, \\d+\\]`), id);
+    assert.equal(VC.thumb(id), `/assets/yt/${id}.jpg`);
+  }
+  // El reproductor sigue en modo de privacidad mejorada
+  assert.match(src, /https:\/\/www\.youtube-nocookie\.com\/embed\//);
+});
+
+test("privacidad: ninguna página pública pide miniaturas a YouTube ni crea el reproductor al abrirse", () => {
+  const files = [
+    ...readdirSync(ROOT).filter((f) => f.endsWith(".html")),
+    ...readdirSync(new URL("js/", ROOT), { recursive: true }).filter((f) => f.endsWith(".js")).map((f) => "js/" + f),
+  ];
+  for (const f of files) assert.doesNotMatch(read(f), /i\.ytimg\.com|img\.youtube\.com/, f);
+  for (const f of ["js/desafio-story.js", "js/life-story.js", "js/business-profile.js"]) {
+    assert.match(read(f), /VideoCover\.noteHtml\(\)/, `${f}: aviso antes de reproducir`);
+    assert.match(read(f), /youtube-nocookie\.com/, f);
+  }
+  const pages = ["historia.html", "historia-vida.html", "business-profile.html", ...readdirSync(ROOT).filter((f) => /^perfil-.+\.html$/.test(f))];
+  for (const p of pages) assert.match(read(p), /<script src="js\/video-cover\.js"><\/script>\s*<script src="js\/(desafio-story|life-story|business-profile)\.js">/, p);
 });
 
 test("las páginas con videos cargan el componente VideoCover", () => {
