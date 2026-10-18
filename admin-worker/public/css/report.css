@@ -53,6 +53,13 @@
 .send-field[hidden] { display: none; }
 .send-field__note { font-weight: 400; color: var(--gris-600); font-size: 12px; }
 .send-note { font-size: 14px; font-weight: 600; background: var(--verde-suave); border-left: 4px solid var(--verde-oscuro); padding: 10px 12px; border-radius: 3px; margin: 0 0 10px; }
+.share-pdf { border: var(--border); border-top: 3px solid var(--verde); border-radius: 4px; padding: 12px; margin: 0 0 12px; }
+.share-pdf__title { margin: 0 0 4px; font-weight: 700; }
+.share-pdf__steps { margin: 0 0 10px; font-size: 13px; color: var(--gris-600); }
+.share-pdf__row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.share-pdf__pick { cursor: pointer; }
+.share-pdf:focus-within .share-pdf__pick { outline: 2px solid var(--verde-oscuro); outline-offset: 2px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
 .send-error { color: var(--rojo); font-size: 13px; font-weight: 600; margin: 0 0 8px; }
 .send-error:empty { display: none; }
 .send-form__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 6px; }

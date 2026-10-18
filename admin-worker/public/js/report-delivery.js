@@ -22,6 +22,19 @@
   let mailConfig = { enabled: false, from: "", max_pdf_bytes: 4 * 1024 * 1024 };
   let mode = "";
   let pending = null;
+  let shareFile = null;
+
+  /* Menú «Compartir» nativo con archivos (Web Share). Lo admiten Chrome en
+     Android, Safari en iPhone/iPad/Mac y Chrome/Edge en Windows; no Firefox
+     ni Chrome en Linux. Sin soporte, se ofrece adjuntar el PDF a mano. */
+  function canShareFiles() {
+    try {
+      const probe = new File(["%PDF-"], "reporte.pdf", { type: "application/pdf" });
+      return typeof navigator.share === "function" && typeof navigator.canShare === "function" && navigator.canShare({ files: [probe] });
+    } catch (e) {
+      return false;
+    }
+  }
 
   const waDigits = (v) => String(v || "").replace(/[\s().+-]/g, "");
   const validWa = (d) => /^[1-9]\d{9,14}$/.test(d);
@@ -94,12 +107,21 @@
     $("msgInput").value = wa ? waMessage() : mailMessage();
     $("pdfField").hidden = !direct;
     $("pdfInput").value = "";
-    $("sendNote").textContent = wa
-      ? "Importante: WhatsApp no adjunta el PDF solo. Antes de enviar, adjúntalo tú con 📎 → Documento."
-      : direct
-        ? `Se enviará desde ${mailConfig.from} con el PDF adjunto.`
-        : "Importante: el correo no adjunta el PDF solo. Antes de enviar, adjúntalo tú (📎 Adjuntar archivo).";
-    $("reviewBtn").textContent = wa ? "Abrir WhatsApp" : direct ? "Revisar y enviar" : "Abrir correo";
+    const share = !direct && canShareFiles();
+    $("shareBlock").hidden = !share;
+    shareFile = null;
+    $("shareInput").value = "";
+    $("shareBtn").disabled = true;
+    $("shareFile").textContent = "Ningún PDF elegido. Si aún no lo tienes, usa «Descargar PDF».";
+    $("sendNote").textContent = direct
+      ? `Se enviará desde ${mailConfig.from} con el PDF adjunto.`
+      : share
+        ? `También puedes abrir solo el mensaje en ${wa ? "WhatsApp" : "tu correo"}: en ese caso, adjunta tú el PDF antes de enviar.`
+        : wa
+          ? "Importante: este navegador no puede compartir archivos. WhatsApp se abrirá solo con el mensaje: antes de enviar, adjunta tú el PDF descargado con 📎 → Documento."
+          : "Importante: este navegador no puede compartir archivos. El correo se abrirá solo con el mensaje: antes de enviar, adjunta tú el PDF descargado.";
+    $("reviewBtn").textContent = wa ? (share ? "Solo abrir WhatsApp" : "Abrir WhatsApp") : direct ? "Revisar y enviar" : share ? "Solo abrir correo" : "Abrir correo";
+    $("reviewBtn").className = share ? "btn btn--outline" : "btn btn--primary";
     setError("");
     show("edit");
     $("sendDialog").showModal();
@@ -211,6 +233,45 @@
     }
   }
 
+  /* El PDF elegido se valida al elegirlo, para que «Compartir» se ejecute
+     dentro del mismo clic (los navegadores lo exigen). */
+  async function pickShareFile() {
+    const file = $("shareInput").files[0];
+    shareFile = null;
+    $("shareBtn").disabled = true;
+    setError("");
+    if (!file) return;
+    let head = "";
+    try {
+      head = await file.slice(0, 5).text();
+    } catch (e) {
+      head = "";
+    }
+    if (head !== "%PDF-") {
+      $("shareFile").textContent = "Ningún PDF elegido.";
+      return setError("El archivo elegido no es un PDF. Elige el reporte que descargaste.");
+    }
+    /* Algunos sistemas no informan el tipo; se fija para el menú Compartir. */
+    shareFile = file.type === "application/pdf" ? file : new File([file], file.name, { type: "application/pdf" });
+    $("shareFile").textContent = `PDF elegido: ${file.name} (${kb(file.size)})`;
+    $("shareBtn").disabled = false;
+  }
+
+  async function sharePdf() {
+    if (!shareFile) return;
+    const message = $("msgInput").value.trim();
+    const data = { files: [shareFile], title: subject() };
+    if (message) data.text = message;
+    if (!navigator.canShare(data)) return setError("Este dispositivo no permite compartir este archivo. Adjúntalo a mano.");
+    try {
+      await navigator.share(data);
+      done("Listo. Revisa en la aplicación que elegiste que el PDF y el mensaje estén incluidos antes de enviar.");
+    } catch (e) {
+      if (e && e.name === "AbortError") return; /* el usuario cerró el menú */
+      setError("No se pudo abrir el menú Compartir. Puedes adjuntar el PDF a mano.");
+    }
+  }
+
   function close() {
     pending = null;
     $("sendDialog").close();
@@ -230,6 +291,8 @@
   $("waBtn").addEventListener("click", () => open("wa"));
   $("mailBtn").addEventListener("click", () => open("mail"));
   $("reviewBtn").addEventListener("click", review);
+  $("shareInput").addEventListener("change", pickShareFile);
+  $("shareBtn").addEventListener("click", sharePdf);
   $("backBtn").addEventListener("click", () => show("edit"));
   $("confirmChk").addEventListener("change", () => ($("confirmBtn").disabled = !$("confirmChk").checked));
   $("confirmBtn").addEventListener("click", confirm);

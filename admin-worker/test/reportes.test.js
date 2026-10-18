@@ -183,3 +183,12 @@ test("PDF: sin margen de página, Chrome no puede imprimir la dirección interna
   assert.match(css, /@page\s*\{\s*size:\s*letter;\s*margin:\s*0;\s*\}/);
   assert.match(css, /box-decoration-break:\s*clone/);
 });
+
+test("Compartir nativo: solo el PDF elegido y el mensaje, nunca una URL", () => {
+  const js = readFileSync(new URL("../public/js/report-delivery.js", import.meta.url), "utf8");
+  const fn = js.slice(js.indexOf("async function sharePdf"), js.indexOf("function close"));
+  assert.match(fn, /files: \[shareFile\]/);
+  assert.doesNotMatch(fn, /\burl\s*:/, "no se comparte ningún enlace");
+  assert.match(js, /navigator\.canShare\(\{ files: \[probe\] \}\)/, "se detecta el soporte antes de ofrecerlo");
+  assert.match(js, /head !== "%PDF-"/, "solo se comparten PDF");
+});

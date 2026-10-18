@@ -22,7 +22,7 @@
     <button type="button" class="btn btn--outline" id="waBtn">Compartir por WhatsApp</button>
     <button type="button" class="btn btn--outline" id="mailBtn">Enviar por correo</button>
   </div>
-  <p class="delivery__hint">Para descargar, elige «Guardar como PDF» y tamaño Carta. Primero descarga el PDF; luego lo adjuntas en WhatsApp o en el correo.</p>
+  <p class="delivery__hint">Para descargar, elige «Guardar como PDF» y tamaño Carta. Después compártelo por WhatsApp o por correo.</p>
 </section>
 
 <dialog class="send-dialog no-print" id="sendDialog" aria-labelledby="sendTitle">
@@ -44,6 +44,16 @@
         <input type="file" id="pdfInput" accept="application/pdf,.pdf">
         <small class="send-field__note">Se adjunta tal cual al correo. No se guarda en el panel ni se publica.</small>
       </label>
+      <div class="share-pdf" id="shareBlock" hidden>
+        <p class="share-pdf__title">Compartir el PDF desde este dispositivo</p>
+        <p class="share-pdf__steps">Abre el menú «Compartir» del dispositivo con el PDF y el mensaje. Ahí eliges WhatsApp, correo u otra aplicación, y el contacto.</p>
+        <div class="share-pdf__row">
+          <label class="btn btn--outline share-pdf__pick" for="shareInput">1. Elegir el PDF descargado</label>
+          <input type="file" id="shareInput" class="visually-hidden" accept="application/pdf,.pdf">
+          <button type="button" class="btn btn--primary" id="shareBtn" disabled>2. Compartir PDF</button>
+        </div>
+        <small class="send-field__note" id="shareFile">Ningún PDF elegido. Si aún no lo tienes, usa «Descargar PDF».</small>
+      </div>
       <p class="send-note" id="sendNote"></p>
       <p class="send-error" id="sendError" role="alert"></p>
       <div class="send-form__actions">
