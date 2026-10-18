@@ -71,6 +71,9 @@
 .send-confirm { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
 .send-confirm input { margin-top: 3px; width: 18px; height: 18px; flex: none; }
 .send-done { font-size: 15px; margin: 0 0 10px; }
+.send-steps { margin: 0 0 12px; padding-left: 22px; font-size: 15px; }
+.send-steps li { margin-bottom: 4px; }
+.send-copy { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: -4px 0 10px; }
 
 @media (max-width: 700px) {
   .delivery__actions .btn { flex: 1 1 100%; }

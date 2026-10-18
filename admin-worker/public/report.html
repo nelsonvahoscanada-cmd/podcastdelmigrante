@@ -22,7 +22,7 @@
     <button type="button" class="btn btn--outline" id="waBtn">Compartir por WhatsApp</button>
     <button type="button" class="btn btn--outline" id="mailBtn">Enviar por correo</button>
   </div>
-  <p class="delivery__hint">Para descargar, elige «Guardar como PDF» y tamaño Carta. Después compártelo por WhatsApp o por correo.</p>
+  <p class="delivery__hint">1. Descarga el PDF («Guardar como PDF», tamaño Carta). 2. Pulsa WhatsApp o Correo y adjunta el PDF antes de enviar.</p>
 </section>
 
 <dialog class="send-dialog no-print" id="sendDialog" aria-labelledby="sendTitle">
@@ -76,6 +76,11 @@
 
     <div id="sendDone" hidden>
       <p class="send-done" id="doneText" role="status"></p>
+      <ol class="send-steps" id="doneSteps" hidden></ol>
+      <div id="copyBox" hidden>
+        <pre class="send-review__msg" id="copyMsg"></pre>
+        <div class="send-copy"><button type="button" class="btn btn--outline btn--small" id="copyBtn">Copiar mensaje</button> <span id="copyState" class="send-field__note" role="status"></span></div>
+      </div>
       <div class="send-form__actions">
         <button type="button" class="btn btn--primary" id="closeBtn">Cerrar</button>
       </div>
