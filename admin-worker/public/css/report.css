@@ -72,11 +72,15 @@
   .r-groups, .r-grid2 { grid-template-columns: 1fr; gap: 6px; }
 }
 
-@page { size: letter; margin: 0.45in; }
+/* Margen de página 0: así Chrome no tiene dónde imprimir su encabezado y pie
+   (fecha, título y la DIRECCIÓN INTERNA del panel), aunque la opción
+   «Encabezados y pies de página» esté activada. El margen visible lo da el
+   padding de .report, repetido en cada hoja con box-decoration-break. */
+@page { size: letter; margin: 0; }
 @media print {
   .no-print, .status { display: none !important; }
   body, .report-page { background: var(--blanco); }
-  .report { box-shadow: none; margin: 0; padding: 0; max-width: none; }
+  .report { box-shadow: none; margin: 0; padding: 0.45in; max-width: none; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .r-break-avoid, .r-group, .r-tile, .chart, .bars__row { break-inside: avoid; }
   .r-section h2, .r-group h3, .r-hint { break-after: avoid; }
