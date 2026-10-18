@@ -84,6 +84,26 @@ confirmadas. `booking_click` se presenta como «Clics en Agendar consulta».
 
 Este despliegue **no modifica** `podcastdelmigrante-analytics` ni los datos de D1.
 
+### Despliegue automático desde GitHub (Workers Builds)
+
+Desde octubre de 2026 el panel se publica sin comandos locales: Cloudflare →
+Workers & Pages → `podcastdelmigrante-admin` → Settings → Builds, conectado a
+`nelsonvahoscanada-cmd/podcastdelmigrante`, rama `main`.
+
+| Campo | Valor |
+|---|---|
+| Root directory | `admin-worker` |
+| Build command | `npm ci` |
+| Deploy command | `npx wrangler deploy` |
+| Preview builds | desactivados (`preview_urls = false`) |
+| Build watch paths | `admin-worker/*` y `js/directorio/*` |
+
+Cada cambio en esas carpetas que llega a `main` publica una versión nueva; los
+cambios del sitio público (noticias, artículos, videos) no la disparan. El
+despliegue conserva los secretos (`ADMIN_EMAILS`), las variables del panel
+(`keep_vars`), Cloudflare Access y los datos de D1 y R2. Si una versión no
+convence, Deployments → versión anterior → **Rollback**.
+
 ## Desarrollo y pruebas locales
 
 ```
