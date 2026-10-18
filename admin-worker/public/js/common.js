@@ -72,8 +72,8 @@
 
   /* Columnas por día (una serie). Tooltip nativo por columna; zona activa
      de todo el ancho del día, más grande que la marca. */
-  function dailyColumns(daily, key, label) {
-    const W = 720, H = 200, padL = 34, padR = 8, padT = 10, padB = 26;
+  function dailyColumns(daily, key, label, opts) {
+    const W = 720, H = (opts && opts.height) || 200, padL = 34, padR = 8, padT = 10, padB = 26;
     const n = daily.length || 1;
     const max = niceMax(Math.max(...daily.map((d) => d[key]), 0));
     const plotW = W - padL - padR, plotH = H - padT - padB;
