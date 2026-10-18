@@ -4,6 +4,7 @@
 */
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import worker from "../src/index.js";
 import { buildReportEmail, emailConfig, MAX_PDF_BYTES } from "../src/reportes.js";
 
@@ -163,4 +164,22 @@ test("el envío no lee ni escribe D1 ni R2", async () => {
   } finally {
     m.restore();
   }
+});
+
+test("WhatsApp y correo llevan solo texto: ningún enlace al panel ni al reporte", () => {
+  const js = readFileSync(new URL("../public/js/report-delivery.js", import.meta.url), "utf8");
+  for (const fn of ["waMessage", "mailMessage", "subject"]) {
+    const body = js.slice(js.indexOf(fn), js.indexOf("\n  }", js.indexOf(fn)) + 4);
+    assert.ok(body.length > 20, fn);
+    assert.doesNotMatch(body, /https?:|www\.|\.com|admin|\/report|location/i, fn);
+  }
+  /* wa.me solo recibe el número y el texto; mailto, destinatario, asunto y texto. */
+  assert.match(js, /wa\.me\/\$\{p\.to\}\?text=\$\{encodeURIComponent\(p\.message\)\}/);
+  assert.doesNotMatch(js, /location\.href|document\.URL|location\.search[^)]*message/);
+});
+
+test("PDF: sin margen de página, Chrome no puede imprimir la dirección interna", () => {
+  const css = readFileSync(new URL("../public/css/report.css", import.meta.url), "utf8");
+  assert.match(css, /@page\s*\{\s*size:\s*letter;\s*margin:\s*0;\s*\}/);
+  assert.match(css, /box-decoration-break:\s*clone/);
 });

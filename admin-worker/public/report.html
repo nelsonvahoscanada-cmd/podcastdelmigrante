@@ -22,7 +22,7 @@
     <button type="button" class="btn btn--outline" id="waBtn">Compartir por WhatsApp</button>
     <button type="button" class="btn btn--outline" id="mailBtn">Enviar por correo</button>
   </div>
-  <p class="delivery__hint">Descargar: en el diálogo de impresión elige «Guardar como PDF», tamaño Carta (2 páginas). WhatsApp y correo te muestran el destinatario y piden confirmación antes de abrir o enviar nada.</p>
+  <p class="delivery__hint">Para descargar, elige «Guardar como PDF» y tamaño Carta. Primero descarga el PDF; luego lo adjuntas en WhatsApp o en el correo.</p>
 </section>
 
 <dialog class="send-dialog no-print" id="sendDialog" aria-labelledby="sendTitle">
@@ -37,7 +37,7 @@
       </label>
       <label class="send-field">
         <span>Mensaje</span>
-        <textarea id="msgInput" rows="9" maxlength="2000"></textarea>
+        <textarea id="msgInput" rows="7" maxlength="2000"></textarea>
       </label>
       <label class="send-field" id="pdfField" hidden>
         <span>PDF del reporte (descárgalo primero con «Descargar PDF»)</span>
@@ -48,7 +48,7 @@
       <p class="send-error" id="sendError" role="alert"></p>
       <div class="send-form__actions">
         <button type="button" class="btn btn--outline" id="cancelBtn">Cancelar</button>
-        <button type="button" class="btn btn--primary" id="reviewBtn">Revisar destinatario</button>
+        <button type="button" class="btn btn--primary" id="reviewBtn">Continuar</button>
       </div>
     </div>
 

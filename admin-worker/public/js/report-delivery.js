@@ -43,9 +43,8 @@
 
   function waMessage() {
     return [
-      `${hello(",")} te saludamos de El Podcast del Migrante.`,
-      `Te compartimos el reporte de rendimiento de tu Perfil Empresarial Premium correspondiente a ${monthText()}. Te enviamos el PDF en este mismo chat.`,
-      "Las cifras corresponden a visitas e interacciones registradas en la plataforma. Si tienes alguna pregunta, con gusto te ayudamos.",
+      hello(":"),
+      `Te compartimos tu reporte de rendimiento correspondiente a ${monthText()}.`,
       "Equipo de El Podcast del Migrante",
     ].join("\n\n");
   }
@@ -53,8 +52,8 @@
   function mailMessage() {
     return [
       hello(":"),
-      `Te compartimos el reporte de rendimiento de tu Perfil Empresarial Premium correspondiente a ${monthText()}.`,
-      "Si tienes alguna pregunta sobre las cifras, responde a este correo y con gusto te ayudamos.",
+      `Te compartimos tu reporte de rendimiento correspondiente a ${monthText()}.`,
+      "Si tienes alguna pregunta, responde a este correo y con gusto te ayudamos.",
       "Equipo de El Podcast del Migrante",
     ].join("\n\n");
   }
@@ -82,24 +81,25 @@
     const direct = !wa && mailConfig.enabled;
 
     $("sendTitle").textContent = wa ? "Compartir por WhatsApp" : "Enviar por correo";
-    $("toLabel").textContent = wa ? "Número de WhatsApp del empresario (con código de país)" : "Correo del empresario";
+    $("toLabel").textContent = wa ? `Para: ${report.name} · WhatsApp` : `Para: ${report.name} · correo`;
     $("toInput").type = wa ? "tel" : "email";
     $("toInput").inputMode = wa ? "tel" : "email";
     $("toInput").value = ok ? (wa ? `+${known}` : known) : "";
     $("toInput").placeholder = wa ? "+1 403 555 1234" : "nombre@empresa.com";
     $("toSource").textContent = ok
-      ? "Dato publicado en el perfil del empresario. Verifícalo antes de continuar."
+      ? "Dato publicado en su perfil. Verifícalo antes de continuar."
       : wa
-        ? "El perfil no tiene un WhatsApp publicado. Escríbelo con el código de país."
-        : "El perfil no tiene un correo publicado. Escríbelo antes de continuar.";
+        ? "Su perfil no tiene WhatsApp publicado: escribe el número con código de país."
+        : "Su perfil no tiene correo publicado: escríbelo aquí.";
     $("msgInput").value = wa ? waMessage() : mailMessage();
     $("pdfField").hidden = !direct;
     $("pdfInput").value = "";
     $("sendNote").textContent = wa
-      ? "WhatsApp no permite adjuntar archivos desde un enlace. Se abrirá la conversación con el mensaje listo; adjunta tú el PDF descargado (📎 → Documento) antes de enviar."
+      ? "Importante: WhatsApp no adjunta el PDF solo. Antes de enviar, adjúntalo tú con 📎 → Documento."
       : direct
-        ? `Se enviará desde el remitente oficial (${mailConfig.from}) con el PDF adjunto.`
-        : "El envío directo desde el panel todavía no está activado. Se abrirá tu programa de correo con el mensaje listo; adjunta tú el PDF descargado antes de enviarlo.";
+        ? `Se enviará desde ${mailConfig.from} con el PDF adjunto.`
+        : "Importante: el correo no adjunta el PDF solo. Antes de enviar, adjúntalo tú (📎 Adjuntar archivo).";
+    $("reviewBtn").textContent = wa ? "Abrir WhatsApp" : direct ? "Revisar y enviar" : "Abrir correo";
     setError("");
     show("edit");
     $("sendDialog").showModal();
@@ -144,20 +144,18 @@
     }
     setError("");
     pending = { to, message, pdf, key: crypto.randomUUID() };
+    /* WhatsApp y el correo propio: la pantalla ya muestra destinatario y
+       mensaje, y nada se envía hasta pulsar Enviar en esa aplicación. */
+    if (!direct) return openApp(pending);
 
-    const rows = wa
-      ? [["Para", `${report.name} · +${to}`], ["Canal", "WhatsApp (se abre en una pestaña nueva)"], ["PDF", "Lo adjuntas tú en la conversación"]]
-      : direct
-        ? [["De", mailConfig.from], ["Para", `${report.name} · ${to}`], ["Asunto", subject()], ["Adjunto", `${pdf.name} (${kb(pdf.size)})`]]
-        : [["Para", `${report.name} · ${to}`], ["Asunto", subject()], ["Canal", "Tu programa de correo"], ["PDF", "Lo adjuntas tú antes de enviar"]];
+    /* Envío directo (real): segunda pantalla con confirmación. */
+    const rows = [["De", mailConfig.from], ["Para", `${report.name} · ${to}`], ["Asunto", subject()], ["Adjunto", `${pdf.name} (${kb(pdf.size)})`]];
     $("reviewList").innerHTML = rows.map(([k, v]) => `<dt>${A.esc(k)}</dt><dd>${A.esc(v)}</dd>`).join("");
     $("reviewMsg").textContent = message;
-    $("confirmText").textContent = wa
-      ? `Confirmo que el número +${to} corresponde a ${report.name}.`
-      : `Confirmo que el correo ${to} corresponde a ${report.name}.`;
+    $("confirmText").textContent = `Confirmo que el correo ${to} corresponde a ${report.name}.`;
     $("confirmChk").checked = false;
     $("confirmBtn").disabled = true;
-    $("confirmBtn").textContent = wa ? "Abrir WhatsApp" : direct ? "Enviar correo" : "Abrir mi correo";
+    $("confirmBtn").textContent = "Enviar correo";
     show("review");
     $("confirmChk").focus();
   }
@@ -168,19 +166,22 @@
     $("closeBtn").focus();
   }
 
-  async function confirm() {
-    if (!pending || !$("confirmChk").checked) return;
-    const p = pending;
+  /* Abre WhatsApp o el correo propio con el mensaje. Solo texto: nunca se
+     incluye un enlace al panel ni al reporte (son de uso interno). */
+  function openApp(p) {
     if (mode === "wa") {
       window.open(`https://wa.me/${p.to}?text=${encodeURIComponent(p.message)}`, "_blank", "noopener");
-      return done("Se abrió WhatsApp con el mensaje listo. Adjunta el PDF en la conversación; nada se envía hasta que pulses Enviar en WhatsApp.");
+      return done("Se abrió WhatsApp. Adjunta el PDF con 📎 → Documento y envía el mensaje desde allí.");
     }
-    if (!mailConfig.enabled) {
-      const a = document.createElement("a");
-      a.href = `mailto:${encodeURIComponent(p.to)}?subject=${encodeURIComponent(subject())}&body=${encodeURIComponent(p.message)}`;
-      a.click();
-      return done("Se abrió tu programa de correo con el mensaje listo. Adjunta el PDF antes de enviarlo.");
-    }
+    const a = document.createElement("a");
+    a.href = `mailto:${encodeURIComponent(p.to)}?subject=${encodeURIComponent(subject())}&body=${encodeURIComponent(p.message)}`;
+    a.click();
+    return done("Se abrió tu correo. Adjunta el PDF y envía el mensaje desde allí.");
+  }
+
+  async function confirm() {
+    if (!pending || !$("confirmChk").checked || !mailConfig.enabled) return;
+    const p = pending;
     $("confirmBtn").disabled = true;
     $("confirmBtn").textContent = "Enviando…";
     $("sendError2").textContent = "";

@@ -63,7 +63,9 @@ En `/report` hay tres opciones juntas. Ninguna crea enlaces públicos al reporte
 ni toca métricas, D1 o R2.
 
 - **Descargar PDF**: diálogo de impresión → «Guardar como PDF», tamaño Carta.
-  Un mes completo ocupa 2 páginas.
+  Un mes completo ocupa 2 páginas. La página no tiene margen de impresión
+  (`@page { margin: 0 }`), así Chrome no imprime en el pie la dirección
+  interna del reporte aunque «Encabezados y pies de página» esté activado.
 - **Compartir por WhatsApp**: abre `wa.me` con el número y un mensaje listo.
   Un enlace de WhatsApp **no puede adjuntar archivos**: el PDF descargado se
   adjunta a mano en la conversación.
@@ -72,8 +74,10 @@ ni toca métricas, D1 o R2.
   el programa de correo del administrador con el mensaje listo.
 
 El número o correo se toma del perfil publicado (`businesses.js`) y se puede
-corregir; si falta, se escribe. Siempre se muestra el destinatario y se pide
-confirmación antes de abrir o enviar.
+corregir; si falta, se escribe. WhatsApp y el correo propio se abren desde una
+sola pantalla con el destinatario y un mensaje breve (solo texto: **nunca** un
+enlace al panel ni al reporte, que son internos). El envío directo, cuando se
+active, pide además confirmar el destinatario.
 
 ### Activar el envío directo por correo (desactivado por defecto)
 
