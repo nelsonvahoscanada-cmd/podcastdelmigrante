@@ -424,3 +424,32 @@ test("Premium: la Function nunca crea ni publica una miniweb", () => {
   assert.doesNotMatch(src, /'publicada'|"publicada"|'aprobada'|businesses\.js|business_slug|business_id/);
   assert.match(src, /VALUES \(\?, \?, \?, \?, 'pendiente'/);
 });
+
+test("Política de privacidad: describe el formulario Premium y separa lo público de lo privado", () => {
+  const html = readFileSync(new URL("privacidad.html", ROOT), "utf8");
+  const c = html.slice(html.indexOf("<h3>c)"), html.indexOf("<h3>d)"));
+  assert.match(c, /«Solicita tu Perfil Empresarial Premium» \(antes llamado «Registra tu empresa»/);
+  for (const t of ["productos o servicios principales", "fotografías adicionales", "logotipo", "información adicional", "Información destinada a publicarse", "Información privada", "tu correo electrónico"]) assert.ok(c.toLowerCase().includes(t.toLowerCase()), t);
+  assert.match(html, /Documento pendiente de revisión jurídica/);
+  assert.doesNotMatch(readFileSync(new URL("cookies.html", ROOT), "utf8"), /«Registra tu empresa»/);
+});
+
+test("migración 0004: se aplica sobre una base con solicitudes y no pierde ni cambia datos", async () => {
+  const { DatabaseSync } = await import("node:sqlite");
+  const db = new DatabaseSync(":memory:");
+  const dir = new URL("db/directorio/", ROOT);
+  for (const f of ["0001_solicitudes.sql", "0002_historial.sql", "0003_eliminaciones.sql"]) db.exec(readFileSync(new URL(f, dir), "utf8"));
+  db.prepare(`INSERT INTO business_applications (id, idempotency_key, created_at, updated_at, status, name, category, city, province, representative, summary,
+    email, image_kind, image_key, image_type, image_bytes, consent_version, consent_at)
+    VALUES ('SOL-20261010-ABCDEF','k','2026-10-10T00:00:00Z','2026-10-10T00:00:00Z','en_revision','Anterior','salud','Calgary','Alberta','Persona','Reseña',
+    'a@example.com','logo','solicitudes/SOL-20261010-ABCDEF/imagen.png','image/png',10,'directorio-2026-10-v2','2026-10-10T00:00:00Z')`).run();
+  const before = db.prepare("SELECT * FROM business_applications").all();
+  db.exec(readFileSync(new URL("0004_perfil_premium.sql", dir), "utf8"));
+  const after = db.prepare("SELECT * FROM business_applications").all();
+  assert.equal(after.length, 1);
+  for (const [k, v] of Object.entries(before[0])) assert.equal(after[0][k], v, k);
+  assert.equal(after[0].services, null);
+  assert.equal(after[0].extra_images, null);
+  assert.throws(() => db.exec(readFileSync(new URL("0004_perfil_premium.sql", dir), "utf8")), /duplicate column/, "repetirla no cambia nada");
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM business_applications").get().n, 1);
+});
