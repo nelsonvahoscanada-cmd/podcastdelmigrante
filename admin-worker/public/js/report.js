@@ -57,15 +57,23 @@
       tile(v.interactions, "Clics totales", "Interacciones con botones del perfil") +
       (v.videoStarts || (b && b.youtubeVideoId) ? tile(v.videoStarts, "Reproducciones de video") : "");
 
-    $("rDaily").innerHTML = A.dailyColumns(v.daily, "views", "visitas al perfil");
+    $("rDaily").innerHTML = A.dailyColumns(v.daily, "views", "visitas al perfil", { height: 130 });
 
+    /* Grupos repartidos en 3 columnas de altura parecida (cada grupo va a la
+       columna más corta, en orden): así no quedan huecos y el reporte cabe
+       en menos espacio impreso. Solo cambia la ubicación, no las cifras. */
+    const groupHtml = (g) => `<div class="r-group"><h3>${A.esc(g.title)}</h3>${A.barList(
+      g.items.map((i) => ({ label: i.label, n: i.value })),
+      { total: 0 }
+    )}${g.items.filter((i) => i.note).map((i) => `<p class="r-hint">${A.esc(i.label)}: ${A.esc(i.note)}</p>`).join("")}</div>`;
+    const cols = [[], [], []], weight = [0, 0, 0];
+    for (const g of v.groups) {
+      const c = weight.indexOf(Math.min(...weight));
+      cols[c].push(groupHtml(g));
+      weight[c] += 1.3 + g.items.length + 1.6 * g.items.filter((i) => i.note).length;
+    }
     $("rGroups").innerHTML = v.groups.length
-      ? v.groups
-          .map((g) => `<div class="r-group"><h3>${A.esc(g.title)}</h3>${A.barList(
-            g.items.map((i) => ({ label: i.label, n: i.value })),
-            { total: 0 }
-          )}${g.items.filter((i) => i.note).map((i) => `<p class="r-hint">${A.esc(i.label)}: ${A.esc(i.note)}</p>`).join("")}</div>`)
-          .join("")
+      ? cols.filter((c) => c.length).map((c) => `<div class="r-gcol">${c.join("")}</div>`).join("")
       : `<p class="empty">Sin interacciones registradas en este período.</p>`;
 
     $("rSources").innerHTML = A.barList(v.sources);
