@@ -29,7 +29,26 @@
   /* Miniaturas propias alojadas en el sitio: id → [ruta, ancho, alto].
      La ruta completa permite que scripts/build-public.mjs compruebe que
      cada archivo existe antes de publicar. */
-  const LOCAL_THUMBS = {};
+  const LOCAL_THUMBS = {
+    /* Canal oficial @ElPodcastDelMigranteOficial (confirmado por Nelson,
+       18 de octubre de 2026). Archivos originales sin modificar. */
+    "O5on_J9cRb4": ["/assets/yt/O5on_J9cRb4.jpg", 1280, 720],
+    "AnAZeaE7LV4": ["/assets/yt/AnAZeaE7LV4.jpg", 1280, 720],
+    "z2Ih590xSP4": ["/assets/yt/z2Ih590xSP4.jpg", 1280, 720],
+    "3tOZfCwZWN8": ["/assets/yt/3tOZfCwZWN8.jpg", 1280, 720],
+    "ENyFwvkj8W0": ["/assets/yt/ENyFwvkj8W0.jpg", 1280, 720],
+    "jw0cYzjV35U": ["/assets/yt/jw0cYzjV35U.jpg", 1280, 720],
+    "M7JFiyvPDT8": ["/assets/yt/M7JFiyvPDT8.jpg", 1280, 720],
+    "0rFRBV7wYqM": ["/assets/yt/0rFRBV7wYqM.jpg", 1280, 720],
+    "2RcMF0Uiz2Y": ["/assets/yt/2RcMF0Uiz2Y.jpg", 1280, 720],
+    "xJaXI3r83sA": ["/assets/yt/xJaXI3r83sA.jpg", 1280, 720],
+    "bDhX_XW2bE0": ["/assets/yt/bDhX_XW2bE0.jpg", 1280, 720],
+    "UloNyWGYEXo": ["/assets/yt/UloNyWGYEXo.jpg", 1280, 720],
+    "oqfNbzC_OLA": ["/assets/yt/oqfNbzC_OLA.jpg", 1280, 720],
+    "6YdTsBzG2gs": ["/assets/yt/6YdTsBzG2gs.jpg", 1280, 720],
+    "UsWWtkmnszw": ["/assets/yt/UsWWtkmnszw.jpg", 1280, 720],
+    "EEqjez0MuAY": ["/assets/yt/EEqjez0MuAY.jpg", 1280, 720],
+  };
   const PLACEHOLDER = "/assets/yt/sin-miniatura.svg";
   const NOTE = "Al reproducir, te conectas con YouTube, que puede usar cookies de seguimiento.";
 
