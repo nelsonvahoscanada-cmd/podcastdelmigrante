@@ -22,17 +22,21 @@ npx wrangler d1 create podcastdelmigrante-directorio
 npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0001_solicitudes.sql
 npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0002_historial.sql
 npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0003_eliminaciones.sql
+npx wrangler d1 execute podcastdelmigrante-directorio --remote --file=db/directorio/0004_perfil_premium.sql
 ```
 
 Copiar el **Database ID** que devuelve el primer comando. Las migraciones
 también se pueden pegar en Cloudflare → D1 → la base → **Console**. Ninguna
 borra ni modifica datos (`CREATE … IF NOT EXISTS`): repetirlas no tiene efecto.
+`0004` añade columnas: si se ejecuta dos veces responde «duplicate column
+name» y no cambia nada.
 
 | Migración | Crea | Necesaria para |
 |---|---|---|
 | `0001_solicitudes.sql` | tabla `business_applications` | guardar las solicitudes |
 | `0002_historial.sql` | tabla `application_events` | el historial de acciones del panel |
 | `0003_eliminaciones.sql` | tabla `deletion_requests` | los pedidos de eliminación de datos |
+| `0004_perfil_premium.sql` | columnas `services`, `notes`, `extra_images` | el formulario «Solicita tu Perfil Empresarial Premium» (productos o servicios, información adicional privada y hasta 3 fotografías adicionales) |
 
 Comprobar en la Console:
 `SELECT name FROM sqlite_master WHERE type = 'table' AND name IN ('business_applications','application_events','deletion_requests');`
@@ -41,6 +45,11 @@ Comprobar en la Console:
 Sin `0002`, las solicitudes se siguen recibiendo, pero el panel no deja
 cambiar estados (avisa «Falta aplicar la migración…» y no guarda nada a medias).
 Sin `0003`, el panel no permite registrar ni ejecutar eliminaciones (lo avisa).
+**Sin `0004`, el formulario no puede guardar solicitudes** (responde «No
+pudimos registrar la solicitud» y borra las imágenes que alcanzó a subir):
+aplicarla **antes** de poner `REGISTRO_ABIERTO=1`. El panel funciona con o
+sin ella. Comprobar: `SELECT services, notes, extra_images FROM business_applications LIMIT 1;`
+no debe dar error.
 
 **Antes de cualquier migración en producción**, copia de seguridad:
 `npx wrangler d1 export podcastdelmigrante-directorio --remote --output=respaldo-AAAAMMDD.sql`
@@ -173,15 +182,19 @@ El correo privado del solicitante nunca se incluye en la ficha pública.
   con sal) y 3 por día por correo.
 - Sin duplicados: clave de idempotencia por envío y detección de una solicitud
   abierta con el mismo correo y nombre.
-- Imágenes: JPG/PNG/WebP comprobados por su contenido (no por la extensión),
-  máx. 5 MB, 300–8000 px; el navegador las redimensiona y elimina los datos
-  EXIF (ubicación) antes de enviarlas.
+- Imágenes: una principal (obligatoria) y hasta 3 fotografías adicionales;
+  JPG/PNG/WebP comprobados por su contenido (no por la extensión), máx. 5 MB
+  cada una, 300–8000 px; el navegador las redimensiona y elimina los datos
+  EXIF (ubicación) antes de enviarlas. Se guardan en R2 privado
+  (`solicitudes/SOL-…/imagen.*` y `adicional-1…3.*`); si algo falla, se
+  borran las que alcanzaron a subir. El aviso interno adjunta la principal y
+  las adicionales que quepan en 12 MB; el resto se ve en el panel.
 - Turnstile: además del token, se comprueba que se resolvió en el dominio
   oficial (`TURNSTILE_HOSTNAMES`); un token obtenido en otro sitio se rechaza.
 - Aviso de privacidad en el formulario (responsable, datos, fines,
   proveedores Cloudflare, Resend y Gmail, tratamiento fuera de Canadá y
   derechos). Consentimientos guardados con versión y fecha
-  (`directorio-2026-10-v2`; cambiar `CONSENT_VERSION` en
+  (`directorio-2026-10-v3`; cambiar `CONSENT_VERSION` en
   `functions/registro/enviar.js` cada vez que cambie ese texto).
 - Historial que no se edita (`application_events`): «recibida» (formulario),
   resultado de los correos (sistema) y cada cambio de estado o revisión con el

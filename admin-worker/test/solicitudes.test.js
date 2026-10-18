@@ -137,3 +137,33 @@ test("sin la migración 0002 no se guarda nada a medias y el detalle sigue funci
   assert.equal(body.application.status, "pendiente", "el cambio se revirtió");
   assert.equal(body.history, null);
 });
+
+test("Premium: servicios, información adicional y fotografías adicionales privadas en el panel", async () => {
+  const e = env();
+  const extra = [{ key: "solicitudes/SOL-20261009-ABCDEF/adicional-1.jpg", type: "image/jpeg", bytes: 100, width: 800, height: 600 }];
+  e.DIRECTORIO_DB._db.prepare("UPDATE business_applications SET services = ?, notes = ?, extra_images = ? WHERE id = 'SOL-20261009-ABCDEF'")
+    .run("Pan dulce y tortas.", "Prefiere llamadas por la tarde.", JSON.stringify(extra));
+  e.SOLICITUDES.put(extra[0].key, PHOTO, { httpMetadata: { contentType: "image/jpeg" } });
+  const r = await call(e, "/api/solicitudes/SOL-20261009-ABCDEF");
+  const a = r.body.application;
+  assert.equal(a.services, "Pan dulce y tortas.");
+  assert.equal(a.notes, "Prefiere llamadas por la tarde.");
+  assert.deepEqual(a.extra_images, [{ n: 1, type: "image/jpeg", bytes: 100, width: 800, height: 600 }]);
+  assert.doesNotMatch(JSON.stringify(r.body), /solicitudes\/SOL-|idempotency|ip_hash/, "sin claves internas de R2 ni datos internos");
+  const img = await worker.fetch(req("/api/solicitudes/SOL-20261009-ABCDEF/adicional/1"), e);
+  assert.equal(img.status, 200);
+  assert.equal(img.headers.get("Cache-Control"), "no-store");
+  assert.equal((await worker.fetch(req("/api/solicitudes/SOL-20261009-ABCDEF/adicional/2"), e)).status, 404);
+  assert.equal((await worker.fetch(req("/api/solicitudes/SOL-20261009-ABCDEF/adicional/4"), e)).status, 404);
+  const anon = await worker.fetch(new Request(ORIGIN + "/api/solicitudes/SOL-20261009-ABCDEF/adicional/1", { headers: { "CF-Connecting-IP": "203.0.113.5" } }), e);
+  assert.equal(anon.status, 403, "sin identidad no se ven las fotografías");
+  assert.match(publicationPackage(a).ficha || JSON.stringify(publicationPackage(a)), /indicados en la solicitud: \\"Pan dulce y tortas\.\\"|indicados en la solicitud: "Pan dulce y tortas\."/);
+});
+
+test("Premium: el panel sigue funcionando si la migración 0004 aún no está aplicada", async () => {
+  const e = env({ skip: ["0004_perfil_premium.sql"] });
+  const r = await call(e, "/api/solicitudes/SOL-20261009-ABCDEF");
+  assert.equal(r.res.status, 200);
+  assert.deepEqual(r.body.application.extra_images, []);
+  assert.equal((await worker.fetch(req("/api/solicitudes/SOL-20261009-ABCDEF/adicional/1"), e)).status, 404);
+});

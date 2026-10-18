@@ -258,6 +258,11 @@
 }
 .biz-dir-promise { font-size: 1.1rem; font-weight: 600; margin: 0 0 10px; }
 .biz-dir-sub { font-size: 0.98rem; color: var(--gris-600); margin: 0 0 28px; }
+/* Llamada a la acción para empresarios (Perfil Empresarial Premium) */
+.biz-dir-sub:has(+ .biz-dir-cta) { margin-bottom: 12px; }
+.biz-dir-cta { font-size: 0.95rem; font-weight: 600; margin: 0 0 28px; }
+.biz-dir-cta a { color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 3px; }
+.biz-dir-cta a:hover { color: var(--negro); }
 .biz-filters { display: grid; gap: 14px; grid-template-columns: 1fr; margin-bottom: 28px; padding: 18px; background: var(--gris-100); border-radius: var(--radius-s); }
 @media (min-width: 720px) { .biz-filters { grid-template-columns: 1.3fr 1fr 1fr; } }
 .biz-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }

@@ -8,12 +8,14 @@ import { readFileSync, readdirSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
 
 /* Aplica todas las migraciones de db/directorio en orden (o solo hasta
-   `upTo`, para simular una base a la que aún no se le aplicó una migración). */
-export function fakeD1({ upTo } = {}) {
+   `upTo`, o todas menos las de `skip`, para simular una base a la que aún no
+   se le aplicó una migración). */
+export function fakeD1({ upTo, skip = [] } = {}) {
   const db = new DatabaseSync(":memory:");
   const dir = new URL("../../db/directorio/", import.meta.url);
   for (const f of readdirSync(dir).filter((f) => f.endsWith(".sql")).sort()) {
     if (upTo && f > upTo) break;
+    if (skip.includes(f)) continue;
     db.exec(readFileSync(new URL(f, dir), "utf8"));
   }
   const wrap = (sql) => {

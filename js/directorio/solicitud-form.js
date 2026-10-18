@@ -1,10 +1,11 @@
 /*
-  solicitud-form.js — Formulario «Registra tu empresa»
+  solicitud-form.js — Formulario «Solicita tu Perfil Empresarial Premium»
   ======================================================================
   - Valida con las MISMAS reglas que el servidor (solicitud-core.js).
-  - Reduce la imagen en el navegador (máx. 1600 px foto / 1000 px logo) y
-    la vuelve a codificar: pesa menos y se eliminan sus metadatos (EXIF,
-    ubicación GPS, etc.). El servidor la vuelve a validar.
+  - Reduce las imágenes en el navegador (máx. 1600 px foto / 1000 px logo;
+    hasta 3 fotografías adicionales a 1600 px) y las vuelve a codificar:
+    pesan menos y se eliminan sus metadatos (EXIF, ubicación GPS, etc.).
+    El servidor las vuelve a validar.
   - Protección antispam: Cloudflare Turnstile + campo trampa.
   - Envía a POST /registro/enviar (Cloudflare Pages Function). La
     confirmación solo aparece cuando el servidor responde que la solicitud
@@ -12,7 +13,7 @@
   - No guarda nada en el navegador.
 ========================================================================= */
 
-import { CATEGORIES, PROVINCES, LIMITS, normalize, validate } from "./solicitud-core.js?v=20261009";
+import { CATEGORIES, PROVINCES, LIMITS, normalize, validate } from "./solicitud-core.js?v=20261018";
 
 const ENDPOINT = "/registro/enviar";
 const CONFIG = "/registro/config";
@@ -130,9 +131,10 @@ async function init() {
   $("#fCategory").addEventListener("change", toggle);
   toggle();
 
-  const summary = $("#fSummary");
-  const counter = $("#summaryCount");
-  summary.addEventListener("input", () => { counter.textContent = String(summary.value.length); });
+  [["#fSummary", "#summaryCount"], ["#fServices", "#servicesCount"], ["#fNotes", "#notesCount"]].forEach(([field, count]) => {
+    const input = $(field);
+    input.addEventListener("input", () => { $(count).textContent = String(input.value.length); });
+  });
 
   /* Vista previa y preparación de la imagen al elegirla */
   const fileInput = $("#fImage");
@@ -158,6 +160,47 @@ async function init() {
     }
   }
   fileInput.addEventListener("change", refreshImage);
+
+  /* Fotografías adicionales (opcionales, hasta LIMITS.extraImagesMax) */
+  const extraInput = $("#fExtraImages");
+  const extraPreviews = $("#extraPreviews");
+  const extraInfo = $("#extraInfo");
+  const extraDefault = extraInfo.textContent;
+  let extras = [];        /* imágenes ya procesadas */
+  let extrasPending = null;
+  let extrasError = "";
+  async function refreshExtras() {
+    clearError("extraImages");
+    extras = [];
+    extrasError = "";
+    extraPreviews.replaceChildren();
+    extraPreviews.hidden = true;
+    extraInfo.textContent = extraDefault;
+    const files = Array.from(extraInput.files || []);
+    if (!files.length) return;
+    if (files.length > LIMITS.extraImagesMax) {
+      extrasError = `Puedes enviar como máximo ${LIMITS.extraImagesMax} fotografías adicionales.`;
+      showErrors({ extraImages: extrasError });
+      return;
+    }
+    try {
+      for (const f of files) extras.push(await prepareImage(f, "foto"));
+    } catch (e) {
+      extras = [];
+      extrasError = "Fotografía adicional: " + e.message.charAt(0).toLowerCase() + e.message.slice(1);
+      showErrors({ extraImages: extrasError });
+      return;
+    }
+    extras.forEach((x) => {
+      const img = document.createElement("img");
+      img.alt = "";
+      img.src = URL.createObjectURL(x.blob);
+      extraPreviews.appendChild(img);
+    });
+    extraPreviews.hidden = false;
+    extraInfo.textContent = `${extras.length} lista${extras.length > 1 ? "s" : ""} para enviar.`;
+  }
+  extraInput.addEventListener("change", () => { extrasPending = refreshExtras(); });
   form.querySelectorAll("[name=imageKind]").forEach((r) => r.addEventListener("change", () => fileInput.files.length && refreshImage()));
 
   /* ¿Está listo el servidor? (si no, se avisa antes de llenar nada) */
@@ -220,6 +263,11 @@ async function init() {
       if (fileInput.files && fileInput.files[0]) await refreshImage();
       if (!prepared) errors.image = errors.image || "Adjunta una fotografía o un logotipo.";
     }
+    if (extrasPending) await extrasPending;
+    const extraCount = (extraInput.files || []).length;
+    if (extraCount && extras.length !== extraCount) {
+      errors.extraImages = extrasError || "Revisa las fotografías adicionales.";
+    }
     const keys = Object.keys(errors);
     if (keys.length) {
       const first = showErrors(errors);
@@ -235,6 +283,8 @@ async function init() {
     body.delete("image");
     const ext = prepared.blob.type === "image/png" ? "png" : prepared.blob.type === "image/webp" ? "webp" : "jpg";
     body.append("image", prepared.blob, `imagen.${ext}`);
+    body.delete("extraImages");
+    extras.forEach((x, i) => body.append("extraImages", x.blob, `adicional-${i + 1}.${x.blob.type === "image/png" ? "png" : x.blob.type === "image/webp" ? "webp" : "jpg"}`));
     body.set("idempotencyKey", idempotencyKey);
 
     button.disabled = true;

@@ -189,3 +189,16 @@ test("si R2 falla no se borra nada en D1", async () => {
   assert.deepEqual(appRows(e), [ID, OTHER]);
   assert.equal((await call(e, `/api/solicitudes/${ID}`)).body.deletion.open.status, "programada", "el pedido sigue abierto para reintentar");
 });
+
+test("Premium: la eliminación también borra las fotografías adicionales en R2", async () => {
+  const e = env();
+  const extras = [1, 2, 3].map((n) => ({ key: `solicitudes/${ID}/adicional-${n}.jpg`, type: "image/jpeg", bytes: 100, width: 800, height: 600 }));
+  e.DIRECTORIO_DB._db.prepare("UPDATE business_applications SET extra_images = ?, notes = 'privado', services = 'Pan' WHERE id = ?").run(JSON.stringify(extras), ID);
+  for (const x of extras) e.SOLICITUDES.put(x.key, PHOTO, { httpMetadata: { contentType: "image/jpeg" } });
+  assert.equal((await del(e, ID, SCHEDULE)).res.status, 200);
+  const r = await del(e, ID, { action: "ejecutar", confirm: ID });
+  assert.equal(r.res.status, 200);
+  assert.match(r.body.deletion.result, /R2: 4 archivo\(s\) borrado\(s\)/);
+  assert.deepEqual([...e.SOLICITUDES.store.keys()], [`solicitudes/${OTHER}/imagen.jpg`]);
+  assert.doesNotMatch(JSON.stringify(e.DIRECTORIO_DB._db.prepare("SELECT * FROM deletion_requests").all()), /privado|Pan/, "el registro no guarda los datos borrados");
+});

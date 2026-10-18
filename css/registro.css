@@ -422,3 +422,7 @@
 @media (max-width: 480px) {
   .intake-upload { flex-direction: column; align-items: flex-start; }
 }
+
+/* Fotografías adicionales (opcionales): miniaturas de vista previa */
+.intake-extras { display: flex; flex-wrap: wrap; gap: 8px; }
+.intake-extras img { width: 72px; height: 72px; object-fit: cover; border-radius: var(--radius-s); background: var(--gris-100); }

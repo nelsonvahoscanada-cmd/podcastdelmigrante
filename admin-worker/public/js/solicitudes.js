@@ -294,6 +294,7 @@
             ${row("TikTok", a.tiktok, safeUrl(a.tiktok))}
             ${row("LinkedIn", a.linkedin, safeUrl(a.linkedin))}
             ${row("Imagen", `${a.image_kind === "logo" ? "Logotipo" : "Fotografía"} · ${a.image_width}×${a.image_height} px · ${Math.round(a.image_bytes / 1024)} KB`, `/api/solicitudes/${a.id}/imagen`)}
+            ${(a.extra_images || []).map((x) => row(`Fotografía adicional ${x.n}`, `${x.width}×${x.height} px · ${Math.round(x.bytes / 1024)} KB`, `/api/solicitudes/${a.id}/adicional/${x.n}`)).join("")}
             ${row("Correo interno", MAIL[a.internal_email_status] || a.internal_email_status)}
             ${row("Confirmación al empresario", MAIL[a.confirmation_email_status] || a.confirmation_email_status)}
             ${row("Error de correo", a.email_error)}
@@ -302,6 +303,8 @@
           </tbody></table>
           <h3 class="mt">Reseña</h3>
           <p class="sol-summary">${esc(a.summary)}</p>
+          ${a.services ? `<h3 class="mt">Productos o servicios principales</h3><p class="sol-summary">${esc(a.services)}</p>` : ""}
+          ${a.notes ? `<h3 class="mt">Información adicional (privada)</h3><p class="sol-summary">${esc(a.notes)}</p>` : ""}
         </div>
 
         <div class="card">

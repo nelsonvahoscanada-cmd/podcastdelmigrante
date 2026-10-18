@@ -3,27 +3,34 @@
   ======================================================================
   Flujo (nada se publica automáticamente):
     1. Valida y sanea en el servidor (mismas reglas que el formulario:
-       js/directorio/solicitud-core.js) y comprueba la imagen por su
-       contenido real (JPG / PNG / WebP, ≤ 5 MB, ≥ 300 px).
+       js/directorio/solicitud-core.js) y comprueba cada imagen por su
+       contenido real (JPG / PNG / WebP, ≤ 5 MB, ≥ 300 px): la principal
+       (obligatoria) y hasta 3 fotografías adicionales (opcionales).
     2. Antispam: Cloudflare Turnstile + campo trampa + límite de
        frecuencia por IP (hash con sal, nunca la IP en claro) y por correo.
     3. Evita duplicados: misma clave de envío (reintentos) o misma empresa
        y correo con una solicitud abierta → devuelve el número existente.
-    4. Guarda la imagen en R2 (privado) y la solicitud en D1 con estado
-       «pendiente». Solo si ambos quedan guardados responde «ok».
+    4. Guarda las imágenes en R2 (privado) y la solicitud en D1 con estado
+       «pendiente». Solo si todo queda guardado responde «ok»; si algo
+       falla, borra lo que alcanzó a subir.
+    Nunca crea ni publica una miniweb: el perfil se prepara a mano.
     5. Después envía (en segundo plano) el aviso interno y la confirmación
        al empresario con Resend y registra el resultado. Un fallo de
        correo NO pierde la solicitud: queda marcada en el panel.
 */
-import { normalize, validate, validateImage, newRequestId } from "../../js/directorio/solicitud-core.js";
+import { normalize, validate, validateImage, newRequestId, LIMITS } from "../../js/directorio/solicitud-core.js";
 import { internalEmail, confirmationEmail, sendEmail, toBase64 } from "../_lib/correos.js";
 import { registrationStatus, closedReason, jsonResponse } from "../_lib/registro-env.js";
 import { recordEvent } from "../_lib/historial.js";
 
 /* Versión del texto de consentimiento y del aviso de privacidad del formulario
    (registra-tu-empresa.html). Cambiarla cada vez que cambie ese texto. */
-export const CONSENT_VERSION = "directorio-2026-10-v2";
-const MAX_BODY = 6 * 1024 * 1024;
+export const CONSENT_VERSION = "directorio-2026-10-v3";
+/* Imagen principal + hasta 3 adicionales (≤ 5 MB cada una) + texto */
+const MAX_BODY = (1 + LIMITS.extraImagesMax) * LIMITS.imageMaxBytes + 512 * 1024;
+/* Adjuntos del aviso interno: tope para no superar el límite de Gmail
+   (25 MB, y base64 suma ~33 %). Lo que no quepa se ve en el panel. */
+const MAX_ATTACH_BYTES = 12 * 1024 * 1024;
 const LIMIT_PER_IP_HOUR = 5;
 const LIMIT_PER_EMAIL_DAY = 3;
 
@@ -104,7 +111,7 @@ async function handlePost(context) {
   const ctype = request.headers.get("Content-Type") || "";
   if (!ctype.startsWith("multipart/form-data")) return jsonResponse({ ok: false, error: "Solicitud no válida." }, 415);
   const length = Number(request.headers.get("Content-Length") || 0);
-  if (length > MAX_BODY) return jsonResponse({ ok: false, error: "La imagen pesa demasiado (máximo 5 MB)." }, 413);
+  if (length > MAX_BODY) return jsonResponse({ ok: false, error: "Las imágenes pesan demasiado (máximo 5 MB cada una)." }, 413);
 
   let form;
   try {
@@ -125,6 +132,19 @@ async function handlePost(context) {
     const check = validateImage(bytes);
     if (!check.ok) errors.image = check.error;
     else image = Object.assign({ bytes }, check.info);
+  }
+  /* Fotografías adicionales (opcionales): se ignoran los campos vacíos */
+  const extraFiles = form.getAll("extraImages").filter((f) => f && typeof f !== "string" && f.size > 0);
+  const extras = [];
+  if (extraFiles.length > LIMITS.extraImagesMax) {
+    errors.extraImages = `Puedes enviar como máximo ${LIMITS.extraImagesMax} fotografías adicionales.`;
+  } else {
+    for (const f of extraFiles) {
+      const bytes = new Uint8Array(await f.arrayBuffer());
+      const check = validateImage(bytes);
+      if (!check.ok) { errors.extraImages = "Fotografía adicional: " + check.error.charAt(0).toLowerCase() + check.error.slice(1); break; }
+      extras.push(Object.assign({ bytes }, check.info));
+    }
   }
   if (Object.keys(errors).length) return jsonResponse({ ok: false, error: "Revisa los campos marcados.", errors }, 400);
 
@@ -177,44 +197,64 @@ async function handlePost(context) {
   if (!id) return jsonResponse({ ok: false, error: "No pudimos registrar la solicitud. Inténtalo de nuevo." }, 500);
 
   const imageKey = `solicitudes/${id}/imagen.${image.ext}`;
+  const extraMeta = extras.map((x, i) => ({ key: `solicitudes/${id}/adicional-${i + 1}.${x.ext}`, type: x.type, bytes: x.size, width: x.width, height: x.height }));
+  const uploaded = [];
   try {
     await env.SOLICITUDES.put(imageKey, image.bytes, {
       httpMetadata: { contentType: image.type },
       customMetadata: { solicitud: id, tipo: data.imageKind },
     });
+    uploaded.push(imageKey);
+    for (let i = 0; i < extras.length; i++) {
+      await env.SOLICITUDES.put(extraMeta[i].key, extras[i].bytes, {
+        httpMetadata: { contentType: extras[i].type },
+        customMetadata: { solicitud: id, tipo: "adicional" },
+      });
+      uploaded.push(extraMeta[i].key);
+    }
     await db
       .prepare(
         `INSERT INTO business_applications (id, idempotency_key, created_at, updated_at, status, name, category, category_other, city, province,
           representative, title, summary, email, phone, whatsapp, website, address, instagram, facebook, tiktok, linkedin,
-          image_kind, image_key, image_type, image_bytes, image_width, image_height, consent_version, consent_at, ip_hash)
-         VALUES (?, ?, ?, ?, 'pendiente', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+          image_kind, image_key, image_type, image_bytes, image_width, image_height, consent_version, consent_at, ip_hash,
+          services, notes, extra_images)
+         VALUES (?, ?, ?, ?, 'pendiente', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
       )
       .bind(id, idemKey, nowIso, nowIso, data.name, data.category, data.categoryOther || null, data.city, data.province,
         data.representative, data.title || null, data.summary, data.email, data.phone || null, data.whatsapp || null, data.website || null,
         data.address || null, data.instagram || null, data.facebook || null, data.tiktok || null, data.linkedin || null,
-        data.imageKind, imageKey, image.type, image.size, image.width, image.height, CONSENT_VERSION, nowIso, ipHash)
+        data.imageKind, imageKey, image.type, image.size, image.width, image.height, CONSENT_VERSION, nowIso, ipHash,
+        data.services, data.notes || null, extraMeta.length ? JSON.stringify(extraMeta) : null)
       .run();
   } catch (e) {
     console.error("No se pudo guardar la solicitud", id, e && e.message);
-    await env.SOLICITUDES.delete(imageKey).catch(() => {});
+    for (const key of uploaded) await env.SOLICITUDES.delete(key).catch(() => {});
     return jsonResponse({ ok: false, error: "No pudimos registrar la solicitud. Inténtalo de nuevo en unos minutos." }, 500);
   }
 
-  await recordEvent(db, { id, at: nowIso, actor: "formulario", action: "recibida", to: "pendiente", detail: `Consentimientos ${CONSENT_VERSION} · ${data.imageKind}` });
+  await recordEvent(db, { id, at: nowIso, actor: "formulario", action: "recibida", to: "pendiente", detail: `Consentimientos ${CONSENT_VERSION} · ${data.imageKind}${extras.length ? ` + ${extras.length} fotografía(s) adicional(es)` : ""}` });
 
   /* Correos en segundo plano: la solicitud ya está registrada */
   const meta = { id, receivedLabel: receivedLabel(now), panelUrl: (env.PANEL_URL || "").replace(/\/+$/, "") };
-  const work = sendNotifications(env, data, image, meta);
+  const work = sendNotifications(env, data, image, meta, extras);
   if (context.waitUntil) context.waitUntil(work);
   else await work;
 
   return jsonResponse({ ok: true, requestId: id }, 201);
 }
 
-export async function sendNotifications(env, data, image, meta) {
+export async function sendNotifications(env, data, image, meta, extras = []) {
   const db = env.DIRECTORIO_DB;
   const errors = [];
-  const internal = internalEmail(data, meta);
+  /* Imagen principal siempre; adicionales mientras quepan en el tope */
+  const attachments = [{ filename: `${meta.id}-${data.imageKind}.${image.ext}`, content: toBase64(image.bytes) }];
+  let attached = image.size;
+  extras.forEach((x, i) => {
+    if (attached + x.size > MAX_ATTACH_BYTES) return;
+    attached += x.size;
+    attachments.push({ filename: `${meta.id}-adicional-${i + 1}.${x.ext}`, content: toBase64(x.bytes) });
+  });
+  const internal = internalEmail(data, Object.assign({ extraCount: extras.length, extraAttached: attachments.length - 1 }, meta));
   let internalStatus = "enviado";
   try {
     await sendEmail(env, {
@@ -224,7 +264,7 @@ export async function sendNotifications(env, data, image, meta) {
       subject: internal.subject,
       html: internal.html,
       text: internal.text,
-      attachments: [{ filename: `${meta.id}-${data.imageKind}.${image.ext}`, content: toBase64(image.bytes) }],
+      attachments,
     }, `${meta.id}-interno`);
   } catch (e) {
     internalStatus = "error";

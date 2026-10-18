@@ -14,6 +14,7 @@
     GET  /api/solicitudes?status=pendiente     lista
     GET  /api/solicitudes/SOL-…                detalle (incluye el correo privado) + historial
     GET  /api/solicitudes/SOL-…/imagen         imagen privada (R2)
+    GET  /api/solicitudes/SOL-…/adicional/1–3  fotografías adicionales privadas (R2)
     GET  /api/solicitudes/SOL-…/paquete        ficha para publicar con un Pull Request
     POST /api/solicitudes/SOL-…/estado         cambio de estado (JSON, mismo origen; queda en el historial)
     POST /api/solicitudes/SOL-…/eliminacion    pedido de eliminación: programar | cancelar | ejecutar
@@ -24,7 +25,7 @@
 import { verifyAccess, localDevIdentity, canViewBusiness } from "./auth.js";
 import { parseMonth, DEFAULT_TIMEZONE } from "./period.js";
 import { listBusinesses, businessStats, BUSINESS_ID_RE } from "./stats.js";
-import { listApplications, getApplication, applicationImage, updateApplication, publicationPackage, applicationHistory } from "./solicitudes.js";
+import { listApplications, getApplication, applicationImage, applicationExtraImage, updateApplication, publicationPackage, applicationHistory } from "./solicitudes.js";
 import { deletionState, scheduleDeletion, cancelDeletion, executeDeletion, listDeletions, markDeletionStep } from "./eliminaciones.js";
 
 const SITE_ORIGIN = "https://podcastdelmigrante.com";
@@ -122,6 +123,11 @@ export default {
         if (error) return error;
         const out = await markDeletionStep(env.DIRECTORIO_DB, step[1], input, identity);
         return out.ok ? json({ deletion: out.deletion }) : deny(out.status, out.error);
+      }
+      const extra = url.pathname.match(/^\/api\/solicitudes\/([^/]+)\/adicional\/([1-3])$/);
+      if (extra) {
+        const img = await applicationExtraImage(env, extra[1], extra[2]);
+        return img ? withSecurity(img) : deny(404, "Imagen no encontrada");
       }
       const m = url.pathname.match(/^\/api\/solicitudes\/([^/]+)(?:\/(imagen|paquete|estado|eliminacion))?$/);
       if (!m) return deny(404, "No encontrado");
