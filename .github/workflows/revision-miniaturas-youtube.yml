@@ -109,4 +109,15 @@ jobs:
       - name: Borrar la rama temporal
         env:
           TOKEN: ${{ github.token }}
-        run: git push "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --delete "${RAMA}" || echo "La rama ya no existe."
+        run: |
+          git init -q limpieza && cd limpieza
+          URL="https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code "$URL" "refs/heads/${RAMA}" >/dev/null; then
+            git push "$URL" --delete "${RAMA}"
+          else
+            echo "La rama ya no existe."
+          fi
+          if git ls-remote --exit-code "$URL" "refs/heads/${RAMA}" >/dev/null; then
+            echo "::error::La rama ${RAMA} sigue existiendo"; exit 1
+          fi
+          echo "Rama ${RAMA} borrada."
