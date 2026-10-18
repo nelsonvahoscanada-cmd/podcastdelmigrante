@@ -76,8 +76,9 @@
 
     $("status").textContent = "";
     $("report").hidden = false;
+    /* Datos para las opciones de entrega (report-delivery.js). */
+    document.dispatchEvent(new CustomEvent("report:ready", { detail: { id, month: stats.period.month, period, name, business: b } }));
   }
 
-  $("printBtn").addEventListener("click", () => window.print());
   init();
 })();

@@ -20,6 +20,8 @@
     POST /api/solicitudes/SOL-…/eliminacion    pedido de eliminación: programar | cancelar | ejecutar
     GET  /api/eliminaciones                    registro de pedidos de eliminación
     POST /api/eliminaciones/N/pasos            pasos manuales: correos borrados en Gmail, respuesta enviada
+    GET  /api/reportes/correo                  ¿está activado el envío del reporte por correo?
+    POST /api/reportes/enviar                  envía el PDF del reporte por correo (desactivado por defecto)
 */
 
 import { verifyAccess, localDevIdentity, canViewBusiness } from "./auth.js";
@@ -27,6 +29,7 @@ import { parseMonth, DEFAULT_TIMEZONE } from "./period.js";
 import { listBusinesses, businessStats, BUSINESS_ID_RE } from "./stats.js";
 import { listApplications, getApplication, applicationImage, applicationExtraImage, updateApplication, publicationPackage, applicationHistory } from "./solicitudes.js";
 import { deletionState, scheduleDeletion, cancelDeletion, executeDeletion, listDeletions, markDeletionStep } from "./eliminaciones.js";
+import { emailConfig, sendReportEmail, MAX_BODY_BYTES } from "./reportes.js";
 
 const SITE_ORIGIN = "https://podcastdelmigrante.com";
 
@@ -64,7 +67,7 @@ function json(data, status = 200) {
 const deny = (status, error) => json({ error }, status);
 
 /* Únicas rutas que aceptan POST (todas JSON y del mismo origen). */
-const POST_ROUTES = [/^\/api\/solicitudes\/[^/]+\/(?:estado|eliminacion)$/, /^\/api\/eliminaciones\/[^/]+\/pasos$/];
+const POST_ROUTES = [/^\/api\/solicitudes\/[^/]+\/(?:estado|eliminacion)$/, /^\/api\/eliminaciones\/[^/]+\/pasos$/, /^\/api\/reportes\/enviar$/];
 
 /* Defensa contra CSRF además de Access: mismo origen y JSON.
    Devuelve { input } o { error: Response }. */
@@ -106,6 +109,18 @@ export default {
       if (!period) return deny(400, "Mes inválido (formato AAAA-MM)");
       if (!canViewBusiness(identity, businessId)) return deny(403, "Sin permiso para esta empresa");
       return json(await businessStats(env.DB, businessId, period));
+    }
+
+    /* ---------- Entrega del reporte por correo ---------- */
+    if (url.pathname === "/api/reportes/correo") return json(emailConfig(env));
+    if (url.pathname === "/api/reportes/enviar") {
+      if (!isPost) return deny(405, "Método no permitido");
+      if (Number(request.headers.get("Content-Length") || 0) > MAX_BODY_BYTES) return deny(413, "El PDF supera el tamaño permitido (4 MB)");
+      const { input, error } = await readJson(request, url);
+      if (error) return error;
+      if (!canViewBusiness(identity, String(input.business_id || ""))) return deny(403, "Sin permiso para esta empresa");
+      const out = await sendReportEmail(env, input);
+      return out.ok ? json({ ok: true, to: out.to }) : deny(out.status, out.error);
     }
 
     /* ---------- Solicitudes del directorio ---------- */

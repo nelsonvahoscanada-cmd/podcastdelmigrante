@@ -37,7 +37,37 @@
 .r-disclaimer { font-size: 12px; color: var(--gris-800); background: var(--verde-suave); padding: 8px 10px; border-radius: 3px; margin: 0; }
 .r-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 18px; padding-top: 10px; border-top: var(--border); font-size: 11px; color: var(--gris-600); }
 
+/* Entrega del reporte (solo en pantalla) */
+.delivery { max-width: 8.5in; margin: 12px auto 0; background: var(--blanco); border: var(--border); border-top: 3px solid var(--verde); border-radius: 6px; padding: 14px 16px; box-sizing: border-box; }
+.delivery__title { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--verde-oscuro); }
+.delivery__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.delivery__hint { margin: 10px 0 0; font-size: 13px; color: var(--gris-600); }
+
+.send-dialog { width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 32px); border: 0; border-top: 4px solid var(--verde); border-radius: 6px; padding: 0; box-shadow: 0 10px 40px rgba(0, 0, 0, .25); }
+.send-dialog::backdrop { background: rgba(11, 11, 11, .45); }
+.send-form { padding: 20px 22px; }
+.send-form__title { margin: 0 0 14px; font-family: var(--font-display); font-size: 22px; }
+.send-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; font-size: 13px; font-weight: 600; }
+.send-field input, .send-field textarea { font: inherit; font-size: 15px; font-weight: 400; color: var(--negro); padding: 8px 10px; border: 1px solid var(--gris-400); border-radius: 4px; background: var(--blanco); }
+.send-field textarea { resize: vertical; line-height: 1.45; }
+.send-field[hidden] { display: none; }
+.send-field__note { font-weight: 400; color: var(--gris-600); font-size: 12px; }
+.send-note { font-size: 13px; background: var(--verde-suave); padding: 8px 10px; border-radius: 3px; margin: 0 0 10px; }
+.send-error { color: var(--rojo); font-size: 13px; font-weight: 600; margin: 0 0 8px; }
+.send-error:empty { display: none; }
+.send-form__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 6px; }
+.send-review__lead { margin: 0 0 8px; font-weight: 600; }
+.send-review { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 0 0 10px; font-size: 14px; }
+.send-review dt { font-weight: 700; color: var(--gris-600); }
+.send-review dd { margin: 0; overflow-wrap: anywhere; }
+.send-review__msg { white-space: pre-wrap; font: inherit; font-size: 13px; max-height: 180px; overflow: auto; background: var(--gris-100); border: var(--border); border-radius: 4px; padding: 8px 10px; margin: 0 0 12px; }
+.send-confirm { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.send-confirm input { margin-top: 3px; width: 18px; height: 18px; flex: none; }
+.send-done { font-size: 15px; margin: 0 0 10px; }
+
 @media (max-width: 700px) {
+  .delivery__actions .btn { flex: 1 1 100%; }
+  .send-review { grid-template-columns: 1fr; }
   .report { padding: 20px 16px; }
   .r-groups, .r-grid2 { grid-template-columns: 1fr; gap: 6px; }
 }
@@ -48,6 +78,34 @@
   body, .report-page { background: var(--blanco); }
   .report { box-shadow: none; margin: 0; padding: 0; max-width: none; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .r-break-avoid, .r-group, .r-tile, .chart { break-inside: avoid; }
+  .r-break-avoid, .r-group, .r-tile, .chart, .bars__row { break-inside: avoid; }
+  .r-section h2, .r-group h3, .r-hint { break-after: avoid; }
   .chart__day:hover .chart__hit { fill: transparent; }
+
+  /* Versión compacta para que un mes completo quepa en dos hojas Carta:
+     solo cambian tamaños y márgenes; el contenido es el mismo. */
+  .r-head { gap: 12px; padding-bottom: 10px; }
+  .r-head__logo { width: 52px; height: 52px; }
+  .r-head__brand { font-size: 19px; }
+  .r-head__kicker { font-size: 11px; }
+  .r-client { gap: 14px; margin: 14px 0 12px; }
+  .r-client__photo { width: 64px; height: 64px; }
+  .r-client__name { font-size: 24px; }
+  .r-client__title { font-size: 12.5px; }
+  .r-tiles { gap: 8px; margin-bottom: 14px; }
+  .r-tile { padding: 7px 10px; }
+  .r-tile__value { font-size: 24px; }
+  .r-tile__label { font-size: 12.5px; }
+  .r-section { margin-bottom: 12px; }
+  .r-section h2 { font-size: 13px; margin-bottom: 6px; }
+  .r-groups { gap: 2px 24px; }
+  .r-group h3 { font-size: 12px; margin: 4px 0 0; }
+  .report .bars__row { padding: 2.5px 0; font-size: 12px; grid-template-columns: minmax(0, 1.9fr) minmax(50px, 1fr) auto; }
+  .report .bars__track { height: 8px; }
+  .r-hint { font-size: 11px; margin-bottom: 4px; }
+  .r-grid2 { gap: 24px; }
+  .r-notes ul { font-size: 12px; }
+  .r-notes li { margin-bottom: 2px; }
+  .r-disclaimer { font-size: 11px; padding: 6px 10px; }
+  .r-foot { margin-top: 12px; padding-top: 8px; }
 }
