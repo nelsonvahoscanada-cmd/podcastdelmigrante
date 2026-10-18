@@ -413,6 +413,10 @@
 .intake-privacy { margin: 0 0 16px; padding: 14px 18px; border-left: 3px solid var(--verde); background: var(--verde-suave); font-size: 0.9rem; line-height: 1.55; }
 .intake-privacy p { margin: 0 0 6px; }
 .intake-privacy p:last-child { margin: 0; }
+.intake-privacy__title { margin: 0 0 10px; font-size: 1rem; font-weight: 700; color: var(--gris-800); }
+.intake-privacy ul { margin: 0 0 8px; padding-left: 1.2em; }
+.intake-privacy li { margin: 0 0 4px; }
+.intake-privacy a { color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
 .intake-turnstile { margin: 4px 0 18px; min-height: 0; }
 .intake-turnstile:empty { display: none; }
 @media (max-width: 480px) {
