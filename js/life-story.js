@@ -27,8 +27,9 @@
     return SITE_ORIGIN + "/historia-vida.html?slug=" + encodeURIComponent(story.slug);
   }
 
+  /* Portada local (sin contactar a YouTube al abrir la página). */
   function youtubeThumb(id) {
-    return "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
+    return VideoCover.thumb(id);
   }
 
   function heroMediaHtml(story) {
@@ -54,6 +55,7 @@
             <span class="video-cover__play-label">Ver historia</span>
           </button>
           <span class="video-cover__kicker">${LIFE_STORIES_COLLECTION}</span>
+          ${VideoCover.noteHtml()}
         </div>
         <div class="article-video__frame" id="videoFrame" hidden></div>
         <a class="video-cover__yt-link" href="${watchUrl}" target="_blank" rel="noopener">Ver directamente en YouTube ↗</a>
