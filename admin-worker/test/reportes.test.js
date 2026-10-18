@@ -192,3 +192,13 @@ test("Compartir nativo: solo el PDF elegido y el mensaje, nunca una URL", () => 
   assert.match(js, /navigator\.canShare\(\{ files: \[probe\] \}\)/, "se detecta el soporte antes de ofrecerlo");
   assert.match(js, /head !== "%PDF-"/, "solo se comparten PDF");
 });
+
+test("El PDF elegido debe ser de la empresa y el mes del reporte abierto", () => {
+  const js = readFileSync(new URL("../public/js/report-delivery.js", import.meta.url), "utf8");
+  assert.match(js, /norm\(title\)\.includes\(norm\(report\.name\)\) && norm\(title\)\.includes\(norm\(report\.period\)\)/);
+  const pick = js.slice(js.indexOf("async function pickShareFile"), js.indexOf("async function sharePdf"));
+  assert.match(pick, /checkPdfMatches\(file\)/);
+  assert.match(pick, /if \(!match\.ok\)/);
+  const direct = js.slice(js.indexOf("async function review"), js.indexOf("function done"));
+  assert.match(direct, /checkPdfMatches\(file\)/, "también en el envío directo");
+});

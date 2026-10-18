@@ -163,6 +163,8 @@
       } catch (e) {
         return setError(e.message);
       }
+      const match = await checkPdfMatches(file);
+      if (!match.ok) return setError(`Este PDF no corresponde a ${report.name} · ${report.period} (es «${match.title}»).`);
     }
     setError("");
     pending = { to, message, pdf, key: crypto.randomUUID() };
@@ -233,6 +235,55 @@
     }
   }
 
+  /* Título interno del PDF (Chrome y Safari guardan el título de la página:
+     «<Empresa> · <Mes Año> · Reporte de rendimiento»). "" si no se encuentra. */
+  async function pdfTitle(file) {
+    const latin1 = async (blob) => {
+      const bytes = new Uint8Array(await blob.arrayBuffer());
+      let out = "";
+      for (let i = 0; i < bytes.length; i += 8192) out += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
+      return out;
+    };
+    const span = 256 * 1024;
+    const raw = (await latin1(file.slice(0, span))) + (file.size > span ? await latin1(file.slice(-span)) : "");
+    const utf16 = (bin) => {
+      let t = "";
+      for (let i = 2; i + 1 < bin.length; i += 2) t += String.fromCharCode((bin.charCodeAt(i) << 8) | bin.charCodeAt(i + 1));
+      return t;
+    };
+    const decode = (bin) => (bin.startsWith("\xfe\xff") ? utf16(bin) : decodeURIComponent(escape(bin)));
+    let m = raw.match(/\/Title\s*<([0-9A-Fa-f\s]+)>/);
+    if (m) {
+      const hex = m[1].replace(/\s+/g, "");
+      let bin = "";
+      for (let i = 0; i + 1 < hex.length; i += 2) bin += String.fromCharCode(parseInt(hex.slice(i, i + 2), 16));
+      try { return decode(bin); } catch (e) { return bin; }
+    }
+    m = raw.match(/\/Title\s*\(((?:\\.|[^\\)])*)\)/);
+    if (m) {
+      const bin = m[1].replace(/\\([()\\])/g, "$1");
+      try { return decode(bin); } catch (e) { return bin; }
+    }
+    m = raw.match(/<dc:title>[\s\S]*?<rdf:li[^>]*>([^<]*)<\/rdf:li>/);
+    if (m) {
+      try { return decodeURIComponent(escape(m[1])); } catch (e) { return m[1]; }
+    }
+    return "";
+  }
+
+  const norm = (t) => String(t || "").normalize("NFC").toLowerCase().replace(/\s+/g, " ").trim();
+
+  /* ¿El PDF es de la empresa y el mes de ESTE reporte? Evita enviar a una
+     empresa el reporte (o el nombre) de otra. */
+  async function checkPdfMatches(file) {
+    const title = await pdfTitle(file).catch(() => "");
+    /* Solo se bloquea un reporte nuestro de OTRA empresa o mes; si el título
+       no es reconocible (otro navegador), se avisa para revisarlo a mano. */
+    if (!norm(title).includes("reporte de rendimiento")) return { ok: true, unknown: true };
+    const ok = norm(title).includes(norm(report.name)) && norm(title).includes(norm(report.period));
+    return { ok, title };
+  }
+
   /* El PDF elegido se valida al elegirlo, para que «Compartir» se ejecute
      dentro del mismo clic (los navegadores lo exigen). */
   async function pickShareFile() {
@@ -251,9 +302,16 @@
       $("shareFile").textContent = "Ningún PDF elegido.";
       return setError("El archivo elegido no es un PDF. Elige el reporte que descargaste.");
     }
+    const match = await checkPdfMatches(file);
+    if (!match.ok) {
+      $("shareFile").textContent = "Ningún PDF elegido.";
+      return setError(`Este PDF no corresponde a ${report.name} · ${report.period} (es «${match.title}»). Descarga el reporte de esta empresa y elígelo.`);
+    }
     /* Algunos sistemas no informan el tipo; se fija para el menú Compartir. */
     shareFile = file.type === "application/pdf" ? file : new File([file], file.name, { type: "application/pdf" });
-    $("shareFile").textContent = `PDF elegido: ${file.name} (${kb(file.size)})`;
+    $("shareFile").textContent = match.unknown
+      ? `PDF elegido: ${file.name} (${kb(file.size)}). No se pudo comprobar su empresa: verifica que sea el de ${report.name} · ${report.period}.`
+      : `PDF de ${report.name} · ${report.period} comprobado (${kb(file.size)}).`;
     $("shareBtn").disabled = false;
   }
 
