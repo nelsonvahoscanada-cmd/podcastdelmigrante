@@ -43,7 +43,8 @@
 
   function waMessage() {
     return [
-      `${hello(",")} te compartimos el reporte de rendimiento de tu Perfil Empresarial Premium de ${monthText()}. Te adjuntamos el PDF a continuación.`,
+      hello(":"),
+      `Te compartimos tu reporte de rendimiento correspondiente a ${monthText()}.`,
       "Equipo de El Podcast del Migrante",
     ].join("\n\n");
   }
@@ -51,7 +52,7 @@
   function mailMessage() {
     return [
       hello(":"),
-      `Te compartimos el reporte de rendimiento de tu Perfil Empresarial Premium de ${monthText()}. Encontrarás el PDF adjunto.`,
+      `Te compartimos tu reporte de rendimiento correspondiente a ${monthText()}.`,
       "Si tienes alguna pregunta, responde a este correo y con gusto te ayudamos.",
       "Equipo de El Podcast del Migrante",
     ].join("\n\n");
@@ -94,10 +95,10 @@
     $("pdfField").hidden = !direct;
     $("pdfInput").value = "";
     $("sendNote").textContent = wa
-      ? "Se abrirá WhatsApp con este mensaje. Antes de enviarlo, adjunta el PDF descargado con 📎 → Documento."
+      ? "Importante: WhatsApp no adjunta el PDF solo. Antes de enviar, adjúntalo tú con 📎 → Documento."
       : direct
         ? `Se enviará desde ${mailConfig.from} con el PDF adjunto.`
-        : "Se abrirá tu correo con este mensaje. Antes de enviarlo, adjunta el PDF descargado.";
+        : "Importante: el correo no adjunta el PDF solo. Antes de enviar, adjúntalo tú (📎 Adjuntar archivo).";
     $("reviewBtn").textContent = wa ? "Abrir WhatsApp" : direct ? "Revisar y enviar" : "Abrir correo";
     setError("");
     show("edit");

@@ -52,7 +52,7 @@
 .send-field textarea { resize: vertical; line-height: 1.45; }
 .send-field[hidden] { display: none; }
 .send-field__note { font-weight: 400; color: var(--gris-600); font-size: 12px; }
-.send-note { font-size: 13px; background: var(--verde-suave); padding: 8px 10px; border-radius: 3px; margin: 0 0 10px; }
+.send-note { font-size: 14px; font-weight: 600; background: var(--verde-suave); border-left: 4px solid var(--verde-oscuro); padding: 10px 12px; border-radius: 3px; margin: 0 0 10px; }
 .send-error { color: var(--rojo); font-size: 13px; font-weight: 600; margin: 0 0 8px; }
 .send-error:empty { display: none; }
 .send-form__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 6px; }
