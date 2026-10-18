@@ -13,9 +13,65 @@
 <body class="report-page">
 <div class="toolbar no-print">
   <a href="/" class="btn btn--outline">← Volver al panel</a>
-  <button type="button" class="btn btn--primary" id="printBtn">Descargar PDF</button>
-  <span class="toolbar__hint">En el diálogo de impresión elige «Guardar como PDF», tamaño Carta.</span>
 </div>
+
+<section class="delivery no-print" id="delivery" aria-labelledby="deliveryTitle" hidden>
+  <h2 id="deliveryTitle" class="delivery__title">Entregar el reporte</h2>
+  <div class="delivery__actions">
+    <button type="button" class="btn btn--primary" id="printBtn">Descargar PDF</button>
+    <button type="button" class="btn btn--outline" id="waBtn">Compartir por WhatsApp</button>
+    <button type="button" class="btn btn--outline" id="mailBtn">Enviar por correo</button>
+  </div>
+  <p class="delivery__hint">Descargar: en el diálogo de impresión elige «Guardar como PDF», tamaño Carta (2 páginas). WhatsApp y correo te muestran el destinatario y piden confirmación antes de abrir o enviar nada.</p>
+</section>
+
+<dialog class="send-dialog no-print" id="sendDialog" aria-labelledby="sendTitle">
+  <form method="dialog" class="send-form" id="sendForm" novalidate>
+    <h2 id="sendTitle" class="send-form__title"></h2>
+
+    <div id="sendEdit">
+      <label class="send-field">
+        <span id="toLabel"></span>
+        <input id="toInput" autocomplete="off" spellcheck="false">
+        <small id="toSource" class="send-field__note"></small>
+      </label>
+      <label class="send-field">
+        <span>Mensaje</span>
+        <textarea id="msgInput" rows="9" maxlength="2000"></textarea>
+      </label>
+      <label class="send-field" id="pdfField" hidden>
+        <span>PDF del reporte (descárgalo primero con «Descargar PDF»)</span>
+        <input type="file" id="pdfInput" accept="application/pdf,.pdf">
+        <small class="send-field__note">Se adjunta tal cual al correo. No se guarda en el panel ni se publica.</small>
+      </label>
+      <p class="send-note" id="sendNote"></p>
+      <p class="send-error" id="sendError" role="alert"></p>
+      <div class="send-form__actions">
+        <button type="button" class="btn btn--outline" id="cancelBtn">Cancelar</button>
+        <button type="button" class="btn btn--primary" id="reviewBtn">Revisar destinatario</button>
+      </div>
+    </div>
+
+    <div id="sendReview" hidden>
+      <p class="send-review__lead">Revisa antes de continuar:</p>
+      <dl class="send-review" id="reviewList"></dl>
+      <pre class="send-review__msg" id="reviewMsg"></pre>
+      <label class="send-confirm"><input type="checkbox" id="confirmChk"> <span id="confirmText"></span></label>
+      <p class="send-error" id="sendError2" role="alert"></p>
+      <div class="send-form__actions">
+        <button type="button" class="btn btn--outline" id="backBtn">Volver a editar</button>
+        <button type="button" class="btn btn--primary" id="confirmBtn" disabled></button>
+      </div>
+    </div>
+
+    <div id="sendDone" hidden>
+      <p class="send-done" id="doneText" role="status"></p>
+      <div class="send-form__actions">
+        <button type="button" class="btn btn--primary" id="closeBtn">Cerrar</button>
+      </div>
+    </div>
+  </form>
+</dialog>
 
 <p class="status" id="status" role="status"></p>
 
@@ -44,7 +100,7 @@
     <div id="rDaily"></div>
   </section>
 
-  <section class="r-section r-break-avoid">
+  <section class="r-section">
     <h2>Interacciones registradas</h2>
     <div id="rGroups" class="r-groups"></div>
   </section>
@@ -83,5 +139,6 @@
 <script src="/js/metrics.js"></script>
 <script src="/js/common.js"></script>
 <script src="/js/report.js"></script>
+<script src="/js/report-delivery.js"></script>
 </body>
 </html>

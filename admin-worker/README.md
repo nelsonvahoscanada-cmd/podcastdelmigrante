@@ -57,6 +57,37 @@ Ningún secreto vive en este repositorio. `ACCESS_TEAM_DOMAIN`, `ACCESS_AUD` y e
 Visitas, clics e interacciones registradas. **Nunca** ventas, clientes ni citas
 confirmadas. `booking_click` se presenta como «Clics en Agendar consulta».
 
+## Entrega del reporte (Descargar PDF, WhatsApp y correo)
+
+En `/report` hay tres opciones juntas. Ninguna crea enlaces públicos al reporte
+ni toca métricas, D1 o R2.
+
+- **Descargar PDF**: diálogo de impresión → «Guardar como PDF», tamaño Carta.
+  Un mes completo ocupa 2 páginas.
+- **Compartir por WhatsApp**: abre `wa.me` con el número y un mensaje listo.
+  Un enlace de WhatsApp **no puede adjuntar archivos**: el PDF descargado se
+  adjunta a mano en la conversación.
+- **Enviar por correo**: si el envío directo está activado, el PDF descargado
+  se adjunta y sale desde el remitente oficial (Resend). Si no lo está, se abre
+  el programa de correo del administrador con el mensaje listo.
+
+El número o correo se toma del perfil publicado (`businesses.js`) y se puede
+corregir; si falta, se escribe. Siempre se muestra el destinatario y se pide
+confirmación antes de abrir o enviar.
+
+### Activar el envío directo por correo (desactivado por defecto)
+
+Workers & Pages → `podcastdelmigrante-admin` → Settings → Variables and Secrets:
+
+| Nombre | Tipo | Valor |
+|---|---|---|
+| `RESEND_API_KEY` | Secreto | clave de Resend (la misma cuenta del sitio; mejor una clave nueva con permiso «Sending access») |
+| `MAIL_FROM` | Texto | remitente del dominio verificado en Resend, p. ej. `El Podcast del Migrante <reportes@correo.podcastdelmigrante.com>` |
+| `MAIL_REPLY_TO` | Texto (opcional) | `podcastdelmigrante@gmail.com` |
+| `REPORTES_CORREO` | Texto | `1` (interruptor; sin él no se envía nada aunque existan los otros) |
+
+Para desactivarlo, borra `REPORTES_CORREO`. El PDF admite hasta 4 MB.
+
 ## Puesta en marcha en Cloudflare (en este orden)
 
 1. **Zero Trust** → activar (plan Free) y elegir el *team name*.
@@ -120,6 +151,6 @@ local (`ALLOW_LOCAL_DEV=1`) solo funciona para conexiones desde la propia máqui
 ## Futuro (no implementado)
 
 - Reportes del mes en lote (Cron Trigger) y copia fija en una tabla `monthly_reports`.
-- Envío automático por email y PDF generado en servidor (Browser Rendering).
+- Envío automático por email y PDF generado en servidor (Browser Rendering): hoy el envío es manual y el PDF lo genera el navegador.
 - Acceso propio por empresario (tabla `business_access`, vía `canViewBusiness`).
 - Comparación entre meses, tendencias y exportación CSV (`businessStats` ya acepta cualquier período).
