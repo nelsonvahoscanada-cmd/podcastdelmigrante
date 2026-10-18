@@ -66,9 +66,13 @@ ni toca métricas, D1 o R2.
   Un mes completo ocupa 2 páginas. La página no tiene margen de impresión
   (`@page { margin: 0 }`), así Chrome no imprime en el pie la dirección
   interna del reporte aunque «Encabezados y pies de página» esté activado.
-- **Compartir por WhatsApp**: abre `wa.me` con el número y un mensaje listo.
-  Un enlace de WhatsApp **no puede adjuntar archivos**: el PDF descargado se
-  adjunta a mano en la conversación.
+- **Compartir por WhatsApp**: si el navegador admite compartir archivos
+  (Chrome en Android, Safari en iPhone/iPad/Mac, Chrome o Edge en Windows),
+  se elige el PDF descargado y «Compartir PDF» abre el menú nativo del
+  dispositivo con el PDF y el mensaje (WhatsApp, correo u otra app). Si no lo
+  admite (Firefox, Linux), o con «Solo abrir WhatsApp», se abre `wa.me` con el
+  mensaje y el PDF se adjunta a mano: un enlace de WhatsApp **no puede
+  adjuntar archivos**.
 - **Enviar por correo**: si el envío directo está activado, el PDF descargado
   se adjunta y sale desde el remitente oficial (Resend). Si no lo está, se abre
   el programa de correo del administrador con el mensaje listo.
