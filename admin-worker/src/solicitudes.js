@@ -12,8 +12,11 @@
     · «aprobada» exige que el empresario haya aprobado la vista previa.
     · «publicada» exige el BIZ-id y el slug del perfil ya publicado (el
       perfil se publica con un Pull Request: ver «Preparar publicación»).
+    · Con un pedido de eliminación abierto no se puede aprobar ni publicar
+      (ver eliminaciones.js).
 */
 import { categoryLabel, CATEGORIES, REQUEST_ID_RE, IMAGE_KINDS } from "../../js/directorio/solicitud-core.js";
+import { hasOpenDeletion, openDeletionIds } from "./eliminaciones.js";
 
 export const STATUSES = ["pendiente", "en_revision", "aprobada", "publicada", "rechazada", "duplicada"];
 const TRANSITIONS = {
@@ -25,10 +28,20 @@ const TRANSITIONS = {
   duplicada: ["en_revision"],
 };
 
-const PUBLIC_COLUMNS = `id, created_at, updated_at, status, name, category, category_other, city, province, representative, title, summary,
-  email, phone, whatsapp, website, address, instagram, facebook, tiktok, linkedin, image_kind, image_type, image_bytes, image_width, image_height,
-  consent_version, consent_at, internal_email_status, confirmation_email_status, email_error, reviewed_by, reviewed_at, review_notes,
-  owner_approved, business_id, business_slug`;
+/* Columnas internas que el panel nunca entrega al navegador. Se lee con
+   SELECT * para que el panel siga funcionando aunque la migración 0004
+   (services, notes, extra_images) todavía no esté aplicada. */
+const HIDDEN_COLUMNS = ["idempotency_key", "ip_hash", "image_key"];
+
+/* [{ n, type, bytes, width, height }] sin las claves de R2 */
+function extraImagesOf(row) {
+  try {
+    const list = JSON.parse(row.extra_images || "[]");
+    return Array.isArray(list) ? list.slice(0, 3) : [];
+  } catch (e) {
+    return [];
+  }
+}
 
 export async function listApplications(db, status) {
   const where = STATUSES.includes(status) ? "WHERE status = ?" : "";
@@ -38,19 +51,40 @@ export async function listApplications(db, status) {
   );
   const { results } = await (where ? stmt.bind(status) : stmt).all();
   const counts = await db.prepare("SELECT status, COUNT(*) AS n FROM business_applications GROUP BY status").all();
+  const pendingDeletion = await openDeletionIds(db);
   return {
-    applications: results.map((r) => Object.assign(r, { category_label: categoryLabel({ category: r.category, categoryOther: r.category_other }) })),
+    applications: results.map((r) =>
+      Object.assign(r, { category_label: categoryLabel({ category: r.category, categoryOther: r.category_other }), deletion_pending: pendingDeletion.has(r.id) })
+    ),
     counts: Object.fromEntries(counts.results.map((c) => [c.status, c.n])),
   };
 }
 
 export async function getApplication(db, id) {
   if (!REQUEST_ID_RE.test(id || "")) return null;
-  const row = await db.prepare(`SELECT ${PUBLIC_COLUMNS} FROM business_applications WHERE id = ?`).bind(id).first();
+  const row = await db.prepare("SELECT * FROM business_applications WHERE id = ?").bind(id).first();
   if (!row) return null;
+  for (const k of HIDDEN_COLUMNS) delete row[k];
+  row.extra_images = extraImagesOf(row).map((x, i) => ({ n: i + 1, type: x.type, bytes: x.bytes, width: x.width, height: x.height }));
   row.category_label = categoryLabel({ category: row.category, categoryOther: row.category_other });
   row.transitions = TRANSITIONS[row.status] || [];
   return row;
+}
+
+/* Fotografía adicional n (1–3) de una solicitud, desde R2 privado */
+export async function applicationExtraImage(env, id, n) {
+  if (!REQUEST_ID_RE.test(id || "") || !/^[1-3]$/.test(String(n))) return null;
+  const row = await env.DIRECTORIO_DB.prepare("SELECT * FROM business_applications WHERE id = ?").bind(id).first();
+  const extra = row && extraImagesOf(row)[Number(n) - 1];
+  if (!extra || !/^image\/(jpeg|png|webp)$/.test(extra.type) || !String(extra.key).startsWith(`solicitudes/${id}/`)) return null;
+  const obj = await env.SOLICITUDES.get(extra.key);
+  if (!obj) return null;
+  return new Response(obj.body, {
+    headers: {
+      "Content-Type": extra.type,
+      "Content-Disposition": `inline; filename="${id}-adicional-${n}.${extra.type.split("/")[1].replace("jpeg", "jpg")}"`,
+    },
+  });
 }
 
 export async function applicationImage(env, id) {
@@ -81,6 +115,9 @@ export async function updateApplication(db, id, input, identity) {
   if (next !== row.status && !TRANSITIONS[row.status].includes(next)) {
     return { ok: false, status: 409, error: `No se puede pasar de «${row.status}» a «${next}».` };
   }
+  if ((next === "aprobada" || next === "publicada") && next !== row.status && (await hasOpenDeletion(db, id))) {
+    return { ok: false, status: 409, error: "Hay un pedido de eliminación abierto: no se puede aprobar ni publicar. Ejecútalo o cancélalo primero." };
+  }
   if (next === "aprobada" && !ownerApproved) {
     return { ok: false, status: 409, error: "Antes de aprobar, marca que el empresario aprobó la vista previa del perfil." };
   }
@@ -89,15 +126,51 @@ export async function updateApplication(db, id, input, identity) {
       return { ok: false, status: 409, error: "Para marcar como publicada indica el BIZ-id y el slug del perfil ya publicado." };
     }
   }
+  /* Qué cambia (para el historial). Sin cambios no se escribe nada. */
+  const changes = [];
+  if (ownerApproved !== row.owner_approved) changes.push(`Aprobación del empresario: ${ownerApproved ? "sí" : "no"}`);
+  if (businessId !== (row.business_id || "")) changes.push(`BIZ-id: ${businessId || "—"}`);
+  if (businessSlug !== (row.business_slug || "")) changes.push(`Slug: ${businessSlug || "—"}`);
+  if (notes !== (row.review_notes || "")) changes.push(notes ? `Notas: ${notes.slice(0, 300)}` : "Notas borradas");
+  const statusChanged = next !== row.status;
+  if (!statusChanged && !changes.length) return { ok: true, row };
+
+  /* Cambio + historial en una sola transacción (todo o nada). */
   const now = new Date().toISOString();
-  await db
-    .prepare(
-      `UPDATE business_applications SET status = ?, review_notes = ?, owner_approved = ?, business_id = ?, business_slug = ?,
-        reviewed_by = ?, reviewed_at = ?, updated_at = ? WHERE id = ?`
-    )
-    .bind(next, notes || null, ownerApproved, businessId || null, businessSlug || null, identity.email, now, now, id)
-    .run();
+  try {
+    await db.batch([
+      db
+        .prepare(
+          `UPDATE business_applications SET status = ?, review_notes = ?, owner_approved = ?, business_id = ?, business_slug = ?,
+            reviewed_by = ?, reviewed_at = ?, updated_at = ? WHERE id = ?`
+        )
+        .bind(next, notes || null, ownerApproved, businessId || null, businessSlug || null, identity.email, now, now, id),
+      db
+        .prepare("INSERT INTO application_events (application_id, at, actor, action, from_status, to_status, detail) VALUES (?, ?, ?, ?, ?, ?, ?)")
+        .bind(id, now, identity.email, statusChanged ? "estado" : "revision", row.status, next, changes.join(" · ") || null),
+    ]);
+  } catch (e) {
+    console.error("No se pudo guardar la revisión", id, e && e.message);
+    return /application_events/.test(String(e && e.message))
+      ? { ok: false, status: 503, error: "Falta aplicar la migración db/directorio/0002_historial.sql en D1. No se guardó ningún cambio." }
+      : { ok: false, status: 500, error: "No se pudo guardar el cambio. No se modificó la solicitud." };
+  }
   return { ok: true, row: await getApplication(db, id) };
+}
+
+/* Historial de la solicitud, del más reciente al más antiguo. Devuelve null
+   si la tabla aún no existe (migración 0002 sin aplicar). */
+export async function applicationHistory(db, id) {
+  if (!REQUEST_ID_RE.test(id || "")) return [];
+  try {
+    const { results } = await db
+      .prepare("SELECT at, actor, action, from_status, to_status, detail FROM application_events WHERE application_id = ? ORDER BY id DESC LIMIT 200")
+      .bind(id)
+      .all();
+    return results;
+  } catch (e) {
+    return null;
+  }
 }
 
 /* ---------- Paquete de publicación (para el Pull Request) ---------- */
@@ -152,7 +225,7 @@ export function publicationPackage(row) {
     `${I}languages: [],`,
     `${I}shortDescription: ${j(row.summary)},`,
     `${I}longDescription: ${j(row.summary)},`,
-    `${I}services: [],`,
+    `${I}services: [],${row.services ? `   /* indicados en la solicitud: ${j(row.services).replace(/\*\//g, "* /")} */` : ""}`,
     "",
     `${I}phone: ${j(row.phone || "")},`,
     `${I}whatsapp: ${j(row.whatsapp || "")},`,

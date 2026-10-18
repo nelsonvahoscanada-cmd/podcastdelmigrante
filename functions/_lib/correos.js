@@ -54,6 +54,13 @@ export function internalEmail(d, meta) {
     ["TikTok", d.tiktok],
     ["LinkedIn", d.linkedin],
     ["Imagen", `${IMAGE_KINDS[d.imageKind]} (adjunta)`],
+    ["Fotografías adicionales", meta.extraCount ? (meta.extraAttached === meta.extraCount ? `${meta.extraCount} (adjuntas)` : `${meta.extraCount} (${meta.extraAttached} adjuntas; el resto, en el panel)`) : ""],
+  ].filter(([, v]) => v);
+  /* Textos largos: públicos (servicios) y privado (información adicional) */
+  const blocks = [
+    ["Reseña", d.summary],
+    ["Productos o servicios principales", d.services],
+    ["Información adicional (privada)", d.notes],
   ].filter(([, v]) => v);
 
   const htmlRows = rows
@@ -65,16 +72,14 @@ export function internalEmail(d, meta) {
 <tr><td style="padding:4px 28px 0;"><h1 style="margin:0 0 6px;font-family:Georgia,serif;font-size:24px;">Nueva solicitud empresarial</h1>
 <p style="margin:0 0 16px;font-size:14px;color:#2a2a2a;">Pendiente de revisión. No se publica nada sin aprobación.</p></td></tr>
 <tr><td style="padding:0 28px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #d9d9d6;border-bottom:1px solid #d9d9d6;">${htmlRows}</table></td></tr>
-<tr><td style="padding:16px 28px 0;"><p style="margin:0 0 6px;font-size:13px;color:#5b5b5b;">Reseña</p><p style="margin:0;font-size:14px;line-height:1.55;white-space:pre-line;">${esc(d.summary)}</p></td></tr>
+${blocks.map(([k, v]) => `<tr><td style="padding:16px 28px 0;"><p style="margin:0 0 6px;font-size:13px;color:#5b5b5b;">${esc(k)}</p><p style="margin:0;font-size:14px;line-height:1.55;white-space:pre-line;">${esc(v)}</p></td></tr>`).join("")}
 ${panel ? `<tr><td style="padding:22px 28px 6px;"><a href="${esc(panel)}" style="display:inline-block;background:#0b0b0b;color:#ffffff;text-decoration:none;font-weight:bold;font-size:14px;padding:12px 20px;">Revisar en el panel</a></td></tr>` : ""}`);
 
   const text = [
     "Nueva solicitud empresarial (pendiente de revisión)",
     "",
     ...rows.map(([k, v]) => `${k}: ${v}`),
-    "",
-    "Reseña:",
-    d.summary,
+    ...blocks.flatMap(([k, v]) => ["", `${k}:`, v]),
     "",
     panel ? `Revisar en el panel: ${panel}` : "",
   ].join("\n");
@@ -89,19 +94,22 @@ ${panel ? `<tr><td style="padding:22px 28px 6px;"><a href="${esc(panel)}" style=
 /* ---------- B. Confirmación al empresario ---------- */
 export function confirmationEmail(meta) {
   const html = layout(`
-<tr><td style="padding:4px 28px 0;"><h1 style="margin:0 0 14px;font-family:Georgia,serif;font-size:24px;">¡Gracias por registrar tu empresa!</h1>
-<p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Hemos recibido correctamente tu solicitud para formar parte del Directorio Empresarial de El Podcast del Migrante.</p>
+<tr><td style="padding:4px 28px 0;"><h1 style="margin:0 0 14px;font-family:Georgia,serif;font-size:24px;">Recibimos tu solicitud</h1>
+<p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Hemos recibido correctamente tu solicitud de Perfil Empresarial Premium en El Podcast del Migrante.</p>
 <p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Número de solicitud: <strong>${esc(meta.id)}</strong></p>
 <p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Nuestro equipo revisará la información y se comunicará contigo para explicarte los siguientes pasos.</p>
+<p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Enviar esta solicitud no implica contratar ni pagar ningún servicio.</p>
 <p style="margin:0 0 20px;font-size:15px;line-height:1.6;"><strong>Tu perfil no será publicado sin tu aprobación.</strong></p></td></tr>`);
   const text = [
-    "¡Gracias por registrar tu empresa!",
+    "Recibimos tu solicitud",
     "",
-    "Hemos recibido correctamente tu solicitud para formar parte del Directorio Empresarial de El Podcast del Migrante.",
+    "Hemos recibido correctamente tu solicitud de Perfil Empresarial Premium en El Podcast del Migrante.",
     "",
     `Número de solicitud: ${meta.id}`,
     "",
     "Nuestro equipo revisará la información y se comunicará contigo para explicarte los siguientes pasos.",
+    "",
+    "Enviar esta solicitud no implica contratar ni pagar ningún servicio.",
     "",
     "Tu perfil no será publicado sin tu aprobación.",
     "",

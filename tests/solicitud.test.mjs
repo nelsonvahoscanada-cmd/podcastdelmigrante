@@ -11,7 +11,7 @@ import * as core from "../js/directorio/solicitud-core.js";
 import { internalEmail, confirmationEmail } from "../functions/_lib/correos.js";
 import { onRequestPost } from "../functions/registro/enviar.js";
 import { onRequestGet as configGet } from "../functions/registro/config.js";
-import { fakeEnv, installFetch } from "./helpers/fake-cloudflare.mjs";
+import { fakeEnv, fakeD1, installFetch } from "./helpers/fake-cloudflare.mjs";
 
 const ROOT = new URL("../", import.meta.url);
 const bytesOf = (p) => new Uint8Array(readFileSync(new URL(p, ROOT)));
@@ -22,6 +22,7 @@ const WEBP = bytesOf("assets/directorio/vitrina-720.webp");
 const VALID = {
   name: "Panadería La Esquina", category: "vivienda", city: "Edmonton", province: "Alberta",
   representative: "Ana Pérez", title: "Propietaria", summary: "Pan artesanal latino en Edmonton.\nPedidos para eventos.",
+  services: "Pan dulce, tortas por encargo y catering para eventos.",
   email: "Ana@Example.com", whatsapp: "1 780 555 1234", instagram: "@la.esquina", imageKind: "foto",
   consentData: "on", consentRights: "on", consentPublish: "on", "cf-turnstile-response": "token-ok",
 };
@@ -86,7 +87,8 @@ test("correo interno: organizado, sin código, con datos escapados", () => {
 test("confirmación al empresario: asunto y texto aprobados, sin datos del administrador", () => {
   const m = confirmationEmail({ id: "SOL-20261009-ABCDEF" });
   assert.equal(m.subject, "Recibimos tu solicitud — El Podcast del Migrante");
-  for (const t of ["¡Gracias por registrar tu empresa!", "Número de solicitud: SOL-20261009-ABCDEF", "Tu perfil no será publicado sin tu aprobación.", "Conectando latinos, construyendo futuro"]) assert.ok(m.text.includes(t), t);
+  for (const t of ["Recibimos tu solicitud", "solicitud de Perfil Empresarial Premium", "Número de solicitud: SOL-20261009-ABCDEF", "no implica contratar ni pagar", "Tu perfil no será publicado sin tu aprobación.", "Conectando latinos, construyendo futuro"]) assert.ok(m.text.includes(t), t);
+  assert.doesNotMatch(m.text + m.html, /gratis|gratuito|sin costo|aprobad[ao] autom|en \d+ (horas|días)/i, "no promete gratuidad, aprobación ni plazos");
   assert.doesNotMatch(m.text + m.html, /gmail|Nelson/i);
 });
 
@@ -168,6 +170,38 @@ test("rechazos: validación, imagen falsa, robot, Turnstile, sin configuración"
   } finally { net.restore(); }
 });
 
+test("Turnstile: un token válido emitido en otro dominio se rechaza", async () => {
+  let net = installFetch({ turnstileHostname: "sitio-ajeno.example" });
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 403);
+    assert.equal(rows(env).length, 0, "nada se guarda");
+    assert.equal(env.SOLICITUDES.store.size, 0);
+    assert.equal(net.sent.length, 0, "no salen correos");
+  } finally { net.restore(); }
+  /* Vista previa de Pages: solo si se autoriza su dominio expresamente */
+  net = installFetch({ turnstileHostname: "abc123.podcastdelmigrante.pages.dev" });
+  try {
+    assert.equal((await send(fakeEnv(), VALID)).res.status, 403, "por defecto, solo el dominio oficial");
+    const env = fakeEnv({ TURNSTILE_HOSTNAMES: "podcastdelmigrante.com, abc123.podcastdelmigrante.pages.dev" });
+    assert.equal((await send(env, VALID)).res.status, 201);
+  } finally { net.restore(); }
+  net = installFetch({ turnstileHostname: "www.podcastdelmigrante.com" });
+  try {
+    assert.equal((await send(fakeEnv(), VALID)).res.status, 201, "www también es oficial");
+  } finally { net.restore(); }
+});
+
+test("consentimiento: se guarda la versión vigente del aviso de privacidad", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv();
+    assert.equal((await send(env, VALID)).res.status, 201);
+    assert.equal(rows(env)[0].consent_version, "directorio-2026-10-v3");
+  } finally { net.restore(); }
+});
+
 test("sin duplicados: reintento y misma empresa abierta devuelven el mismo número", async () => {
   const net = installFetch();
   try {
@@ -209,7 +243,213 @@ test("si D1 falla, se borra la imagen y no se confirma", async () => {
 
 test("GET /registro/config: listo solo con toda la configuración, sin revelar secretos", async () => {
   const ok = await (await configGet({ env: fakeEnv() })).json();
-  assert.deepEqual(ok, { ready: true, turnstileSiteKey: "site" });
+  assert.deepEqual(ok, { ready: true, turnstileSiteKey: "1x00000000000000000000AA" });
   const no = await (await configGet({ env: fakeEnv({ IP_HASH_SALT: "" }) })).json();
   assert.deepEqual(no, { ready: false, turnstileSiteKey: "" });
+});
+
+/* Captura console.warn para comprobar que el registro nombra lo que falta
+   sin incluir ningún valor secreto. */
+async function captureWarn(fn) {
+  const lines = [];
+  const original = console.warn;
+  console.warn = (...a) => lines.push(a.join(" "));
+  try { await fn(); } finally { console.warn = original; }
+  return lines.join("\n");
+}
+
+test("interruptor REGISTRO_ABIERTO: cerrado salvo que valga exactamente \"1\"", async () => {
+  for (const value of [undefined, "", "0", "true", "si", " 1", "1 ", "01", 1]) {
+    const env = fakeEnv({ REGISTRO_ABIERTO: value });
+    const cfg = await (await configGet({ env })).json();
+    assert.deepEqual(cfg, { ready: false, turnstileSiteKey: "" }, `config con ${JSON.stringify(value)}`);
+  }
+});
+
+test("con el interruptor cerrado no se procesa ni se guarda nada", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv({ REGISTRO_ABIERTO: "0" });
+    const log = await captureWarn(async () => {
+      const r = await send(env, VALID);
+      assert.equal(r.res.status, 503);
+      assert.equal(r.body.ok, false);
+    });
+    assert.match(log, /REGISTRO_ABIERTO/);
+    assert.equal(rows(env).length, 0);
+    assert.equal(env.SOLICITUDES.store.size, 0);
+    assert.equal(net.sent.length, 0, "ni Turnstile ni correos");
+  } finally { net.restore(); }
+});
+
+test("clave pública de Turnstile mal puesta (nombre del widget): cerrado", async () => {
+  const cfg = await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "Directorio empresarial" }) })).json();
+  assert.deepEqual(cfg, { ready: false, turnstileSiteKey: "" });
+  assert.equal((await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "0x4AAAAAAAabcdefghijklmn" }) })).json()).ready, true);
+});
+
+test("los registros nombran lo que falta, nunca los valores secretos", async () => {
+  const env = fakeEnv({ REGISTRO_ABIERTO: "", IP_HASH_SALT: "", RESEND_API_KEY: "re_SECRETO_123", TURNSTILE_SECRET_KEY: "0xSECRETO_TURNSTILE" });
+  const log = await captureWarn(() => configGet({ env }));
+  assert.match(log, /REGISTRO_ABIERTO/);
+  assert.match(log, /IP_HASH_SALT/);
+  for (const secret of ["re_SECRETO_123", "0xSECRETO_TURNSTILE"]) assert.ok(!log.includes(secret), "no revela " + secret);
+  const body = await (await configGet({ env })).text();
+  assert.ok(!/SECRETO/.test(body));
+});
+
+test("historial: la solicitud recibida y el resultado de los correos quedan registrados", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 201);
+    const events = env.DIRECTORIO_DB._db.prepare("SELECT actor, action, to_status, detail FROM application_events WHERE application_id = ? ORDER BY id").all(r.body.requestId);
+    assert.deepEqual(events.map((e) => [e.actor, e.action]), [["formulario", "recibida"], ["sistema", "correos"]]);
+    assert.equal(events[0].to_status, "pendiente");
+    assert.match(events[1].detail, /Aviso interno: enviado · Confirmación: enviado/);
+    assert.doesNotMatch(JSON.stringify(events), /ana@example\.com/i, "sin datos de contacto");
+  } finally { net.restore(); }
+});
+
+test("si el historial no existe todavía (migración 0002 sin aplicar), la solicitud NO se pierde", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv({ DIRECTORIO_DB: fakeD1({ skip: ["0002_historial.sql"] }) });
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 201);
+    assert.equal(rows(env).length, 1);
+    assert.equal(net.sent.length, 2, "los dos correos salen igual");
+  } finally { net.restore(); }
+});
+
+test("servicios caídos: Turnstile sin respuesta → 503 claro; D1 caída → 500 JSON sin detalles internos", async () => {
+  let net = installFetch({ turnstileDown: true });
+  try {
+    const env = fakeEnv();
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 503);
+    assert.match(r.body.error, /Tus datos siguen en el formulario/);
+    assert.equal(rows(env).length, 0);
+    assert.equal(net.sent.length, 0);
+  } finally { net.restore(); }
+  net = installFetch();
+  try {
+    const broken = { prepare() { throw new Error("D1_ERROR: database unavailable (detalle interno)"); }, batch() { throw new Error("x"); } };
+    const env = fakeEnv({ DIRECTORIO_DB: broken });
+    const r = await send(env, VALID);
+    assert.equal(r.res.status, 500);
+    assert.equal(r.body.ok, false);
+    assert.doesNotMatch(JSON.stringify(r.body), /D1_ERROR|detalle interno/);
+    assert.equal(env.SOLICITUDES.store.size, 0, "no queda ninguna imagen huérfana");
+  } finally { net.restore(); }
+});
+
+/* ---------- Perfil Empresarial Premium: campos y fotografías adicionales ---------- */
+function requestWithExtras(fields, extras, { ip = "203.0.113.9" } = {}) {
+  const fd = new FormData();
+  for (const [k, v] of Object.entries(fields)) fd.set(k, v);
+  fd.set("image", new Blob([PHOTO], { type: "image/jpeg" }), "foto.jpg");
+  for (const [bytes, type] of extras) fd.append("extraImages", new Blob([bytes], { type }), "extra");
+  return new Request("https://podcastdelmigrante.com/registro/enviar", { method: "POST", body: fd, headers: { "CF-Connecting-IP": ip } });
+}
+async function sendExtras(env, fields, extras, opts) {
+  const pending = [];
+  const res = await onRequestPost({ request: requestWithExtras(fields, extras, opts), env, waitUntil: (p) => pending.push(p) });
+  await Promise.all(pending);
+  return { res, body: await res.json() };
+}
+
+test("Premium: productos o servicios obligatorios (≤ 500) e información adicional privada (≤ 1000)", () => {
+  assert.ok(core.validate(core.normalize({ ...VALID, services: "" })).errors.services);
+  assert.ok(core.validate(core.normalize({ ...VALID, services: "x".repeat(501) })).errors.services);
+  assert.ok(core.validate(core.normalize({ ...VALID, notes: "x".repeat(1001) })).errors.notes);
+  const { data, errors } = core.validate(core.normalize({ ...VALID, notes: "Horario: lunes a sábado.\r\nPrefiero que me llamen por la tarde." }));
+  assert.deepEqual(errors, {});
+  assert.equal(data.notes, "Horario: lunes a sábado.\nPrefiero que me llamen por la tarde.");
+});
+
+test("Premium: hasta 3 fotografías adicionales quedan en R2 privado, en D1 y adjuntas al aviso interno", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv();
+    const { res, body } = await sendExtras(env, { ...VALID, notes: "Solo para preparar el perfil." }, [[PHOTO, "image/jpeg"], [WEBP, "image/webp"]]);
+    assert.equal(res.status, 201);
+    const [row] = rows(env);
+    assert.equal(row.services, VALID.services);
+    assert.equal(row.notes, "Solo para preparar el perfil.");
+    const extras = JSON.parse(row.extra_images);
+    assert.deepEqual(extras.map((x) => x.key), [`solicitudes/${body.requestId}/adicional-1.jpg`, `solicitudes/${body.requestId}/adicional-2.webp`]);
+    for (const x of extras) assert.ok(env.SOLICITUDES.store.has(x.key), x.key);
+    const internal = net.sent[0].body;
+    assert.equal(internal.attachments.length, 3);
+    assert.match(internal.text, /Fotografías adicionales: 2 \(adjuntas\)/);
+    assert.match(internal.text, /Productos o servicios principales:\nPan dulce/);
+    assert.match(internal.text, /Información adicional \(privada\):\nSolo para preparar el perfil\./);
+    const confirm = net.sent[1].body;
+    assert.doesNotMatch(confirm.text + confirm.html, /Solo para preparar|Pan dulce|780 555/, "la confirmación no repite datos");
+  } finally { net.restore(); }
+});
+
+test("Premium: más de 3 fotografías adicionales o un archivo que no es imagen se rechazan sin guardar nada", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv();
+    let r = await sendExtras(env, VALID, [[PHOTO, "image/jpeg"], [PHOTO, "image/jpeg"], [PHOTO, "image/jpeg"], [PHOTO, "image/jpeg"]]);
+    assert.equal(r.res.status, 400);
+    assert.match(r.body.errors.extraImages, /como máximo 3/);
+    r = await sendExtras(env, VALID, [[new TextEncoder().encode("<script>alert(1)</script>".repeat(4)), "image/jpeg"]]);
+    assert.equal(r.res.status, 400);
+    assert.match(r.body.errors.extraImages, /Fotografía adicional: formato no admitido/);
+    assert.equal(rows(env).length, 0);
+    assert.equal(env.SOLICITUDES.store.size, 0);
+    assert.equal(net.sent.length, 0);
+  } finally { net.restore(); }
+});
+
+test("Premium: si falta la migración 0004 en D1, no se confirma y no quedan imágenes huérfanas en R2", async () => {
+  const net = installFetch();
+  try {
+    const env = fakeEnv({ DIRECTORIO_DB: fakeD1({ skip: ["0004_perfil_premium.sql"] }) });
+    const r = await sendExtras(env, VALID, [[PHOTO, "image/jpeg"]]);
+    assert.equal(r.res.status, 500);
+    assert.doesNotMatch(JSON.stringify(r.body), /column|SQL|services/i, "sin detalles internos");
+    assert.equal(env.SOLICITUDES.store.size, 0);
+    assert.equal(net.sent.length, 0);
+  } finally { net.restore(); }
+});
+
+test("Premium: la Function nunca crea ni publica una miniweb", () => {
+  const src = readFileSync(new URL("functions/registro/enviar.js", ROOT), "utf8");
+  assert.doesNotMatch(src, /'publicada'|"publicada"|'aprobada'|businesses\.js|business_slug|business_id/);
+  assert.match(src, /VALUES \(\?, \?, \?, \?, 'pendiente'/);
+});
+
+test("Política de privacidad: describe el formulario Premium y separa lo público de lo privado", () => {
+  const html = readFileSync(new URL("privacidad.html", ROOT), "utf8");
+  const c = html.slice(html.indexOf("<h3>c)"), html.indexOf("<h3>d)"));
+  assert.match(c, /«Solicita tu Perfil Empresarial Premium» \(antes llamado «Registra tu empresa»/);
+  for (const t of ["productos o servicios principales", "fotografías adicionales", "logotipo", "información adicional", "Información destinada a publicarse", "Información privada", "tu correo electrónico"]) assert.ok(c.toLowerCase().includes(t.toLowerCase()), t);
+  assert.match(html, /Documento pendiente de revisión jurídica/);
+  assert.doesNotMatch(readFileSync(new URL("cookies.html", ROOT), "utf8"), /«Registra tu empresa»/);
+});
+
+test("migración 0004: se aplica sobre una base con solicitudes y no pierde ni cambia datos", async () => {
+  const { DatabaseSync } = await import("node:sqlite");
+  const db = new DatabaseSync(":memory:");
+  const dir = new URL("db/directorio/", ROOT);
+  for (const f of ["0001_solicitudes.sql", "0002_historial.sql", "0003_eliminaciones.sql"]) db.exec(readFileSync(new URL(f, dir), "utf8"));
+  db.prepare(`INSERT INTO business_applications (id, idempotency_key, created_at, updated_at, status, name, category, city, province, representative, summary,
+    email, image_kind, image_key, image_type, image_bytes, consent_version, consent_at)
+    VALUES ('SOL-20261010-ABCDEF','k','2026-10-10T00:00:00Z','2026-10-10T00:00:00Z','en_revision','Anterior','salud','Calgary','Alberta','Persona','Reseña',
+    'a@example.com','logo','solicitudes/SOL-20261010-ABCDEF/imagen.png','image/png',10,'directorio-2026-10-v2','2026-10-10T00:00:00Z')`).run();
+  const before = db.prepare("SELECT * FROM business_applications").all();
+  db.exec(readFileSync(new URL("0004_perfil_premium.sql", dir), "utf8"));
+  const after = db.prepare("SELECT * FROM business_applications").all();
+  assert.equal(after.length, 1);
+  for (const [k, v] of Object.entries(before[0])) assert.equal(after[0][k], v, k);
+  assert.equal(after[0].services, null);
+  assert.equal(after[0].extra_images, null);
+  assert.throws(() => db.exec(readFileSync(new URL("0004_perfil_premium.sql", dir), "utf8")), /duplicate column/, "repetirla no cambia nada");
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM business_applications").get().n, 1);
 });

@@ -32,6 +32,9 @@ export const LIMITS = {
   text: 120,          /* nombres, ciudad, cargo */
   categoryOther: 80,
   summary: 300,       /* reseña corta */
+  services: 500,      /* productos o servicios principales */
+  notes: 1000,        /* información adicional (privada) */
+  extraImagesMax: 3,  /* fotografías adicionales, opcionales */
   url: 300,
   address: 200,
   imageMaxBytes: 5 * 1024 * 1024,   /* lo que acepta el servidor */
@@ -97,6 +100,8 @@ export function normalize(raw) {
     representative: one(g("representative")),
     title: one(g("title")),
     summary: multi(g("summary")),
+    services: multi(g("services")),
+    notes: multi(g("notes")),
     email: one(g("email")).toLowerCase(),
     phone: one(g("phone")),
     whatsapp: one(g("whatsapp")),
@@ -131,9 +136,12 @@ export function validate(input) {
   if (!PROVINCES.includes(d.province)) e.province = "Elige la provincia o territorio.";
   need("representative", "Escribe el nombre del representante.");
   need("summary", "Escribe una reseña corta de tu negocio.");
+  need("services", "Indica tus productos o servicios principales.");
   ["name", "city", "representative", "title"].forEach((k) => max(k, LIMITS.text));
   max("categoryOther", LIMITS.categoryOther);
   max("summary", LIMITS.summary);
+  max("services", LIMITS.services);
+  max("notes", LIMITS.notes);
   max("address", LIMITS.address);
 
   if (!EMAIL_RE.test(d.email) || d.email.length > 200) e.email = "Escribe un correo válido: ahí recibirás la confirmación.";

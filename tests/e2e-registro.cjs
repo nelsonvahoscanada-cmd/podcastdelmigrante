@@ -7,7 +7,12 @@
      bindings que producción y estas variables):
        TURNSTILE_VERIFY_URL = "http://127.0.0.1:9999/turnstile"
        RESEND_API_URL       = "http://127.0.0.1:9999/resend"
+       REGISTRO_ABIERTO     = "1"
+       TURNSTILE_SITE_KEY   = "1x00000000000000000000AA"   (clave de prueba)
      npx wrangler d1 execute <db> --local --file=db/directorio/0001_solicitudes.sql
+     npx wrangler d1 execute <db> --local --file=db/directorio/0002_historial.sql
+     npx wrangler d1 execute <db> --local --file=db/directorio/0003_eliminaciones.sql
+     npx wrangler d1 execute <db> --local --file=db/directorio/0004_perfil_premium.sql
      npx wrangler pages dev . --port 8788
   3. node tests/e2e-registro.cjs        (BASE=http://127.0.0.1:8788, SHOTS=<carpeta> opcional)
 */
@@ -40,19 +45,26 @@ async function fill(pg, d) {
   await pg.selectOption("#fProvince", "Alberta");
   await pg.fill("#fRepresentative", d.rep);
   await pg.fill("#fSummary", d.summary);
+  await pg.fill("#fServices", d.services);
+  if (d.notes) await pg.fill("#fNotes", d.notes);
   await pg.fill("#fEmail", d.email);
   if (d.whatsapp) await pg.fill("#fWhatsapp", d.whatsapp);
   if (d.website) await pg.fill("#fWebsite", d.website);
   await pg.check(`input[name=imageKind][value=${d.kind}]`);
   await pg.setInputFiles("#fImage", path.join(ROOT, d.file));
   await pg.waitForSelector("#imagePreview:not([hidden])");
+  if (d.extras) {
+    await pg.setInputFiles("#fExtraImages", d.extras.map((f) => path.join(ROOT, f)));
+    await pg.waitForSelector("#extraPreviews:not([hidden])");
+    assert.equal(await pg.locator("#extraPreviews img").count(), d.extras.length);
+  }
   for (const n of ["consentData", "consentRights", "consentPublish"]) await pg.check(`input[name=${n}]`);
 }
 
 const RUNS = [
-  ["escritorio", { viewport: { width: 1366, height: 900 } }, { name: "Panadería La Esquina", category: "otra", categoryOther: "Panadería", city: "Edmonton", rep: "Ana María Pérez", summary: "Pan artesanal latino hecho a diario.", email: "ana@example.com", whatsapp: "1 780 555 1234", kind: "foto", file: "assets/tomas-velazquez.jpg" }],
-  ["iphone", devices["iPhone 13"], { name: "Transportes Andes", category: "automoviles", city: "Calgary", rep: "Luis Rojas", summary: "Mudanzas en Alberta.", email: "luis@example.com", website: "transportesandes.ca", kind: "logo", file: "assets/logo.png" }],
-  ["android", devices["Pixel 7"], { name: "Salud Integral María", category: "salud", city: "Red Deer", rep: "María Gómez", summary: "Acompañamiento en salud.", email: "maria@example.com", whatsapp: "14035550000", kind: "foto", file: "assets/carlos-d-castillo-card.jpg" }],
+  ["escritorio", { viewport: { width: 1366, height: 900 } }, { name: "Panadería La Esquina", category: "otra", categoryOther: "Panadería", city: "Edmonton", rep: "Ana María Pérez", summary: "Pan artesanal latino hecho a diario.", services: "Pan dulce, tortas por encargo y catering.", notes: "Atendemos en español e inglés.", email: "ana@example.com", whatsapp: "1 780 555 1234", kind: "foto", file: "assets/tomas-velazquez.jpg", extras: ["assets/carlos-d-castillo-card.jpg", "assets/directorio/vitrina-720.webp"] }],
+  ["iphone", devices["iPhone 13"], { name: "Transportes Andes", category: "automoviles", city: "Calgary", rep: "Luis Rojas", summary: "Mudanzas en Alberta.", services: "Mudanzas locales y de larga distancia.", email: "luis@example.com", netFail: true, website: "transportesandes.ca", kind: "logo", file: "assets/logo.png" }],
+  ["android", devices["Pixel 7"], { name: "Salud Integral María", category: "salud", city: "Red Deer", rep: "María Gómez", summary: "Acompañamiento en salud.", services: "Consultas de bienestar a domicilio.", email: "maria@example.com", whatsapp: "14035550000", kind: "foto", file: "assets/carlos-d-castillo-card.jpg", extras: ["assets/tomas-velazquez.jpg"] }],
 ];
 
 (async () => {
@@ -68,6 +80,16 @@ const RUNS = [
     await fill(pg, d);
     assert.equal(await pg.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `${name}: sin desplazamiento horizontal`);
     if (SHOTS) await pg.screenshot({ path: path.join(SHOTS, `formulario-${name}.png`), fullPage: true });
+    if (d.netFail) {
+      /* Corte de red al enviar: aviso claro y los datos siguen en el formulario */
+      await pg.route("**/registro/enviar", (r) => r.abort("internetdisconnected"));
+      await pg.click("#intakeForm [type=submit]");
+      await pg.waitForSelector("#intakeStatus:not([hidden])");
+      assert.match(await pg.textContent("#intakeStatus"), /Tus datos siguen en el formulario/);
+      assert.equal(await pg.inputValue("#fName"), d.name, "los datos no se pierden");
+      assert.ok(await pg.isHidden("#intakeDone"));
+      await pg.unroute("**/registro/enviar");
+    }
     await pg.click("#intakeForm [type=submit]");
     await pg.waitForSelector("#intakeDone:not([hidden])", { timeout: 15000 });
     const id = (await pg.textContent("[data-done-id]")).trim();
