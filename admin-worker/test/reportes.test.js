@@ -173,8 +173,10 @@ test("WhatsApp y correo llevan solo texto: ningún enlace al panel ni al reporte
     assert.ok(body.length > 20, fn);
     assert.doesNotMatch(body, /https?:|www\.|\.com|admin|\/report|location/i, fn);
   }
-  /* wa.me solo recibe el número y el texto; mailto, destinatario, asunto y texto. */
-  assert.match(js, /wa\.me\/\$\{p\.to\}\?text=\$\{encodeURIComponent\(p\.message\)\}/);
+  /* wa.me abre el chat SIN texto: el mensaje se pega junto al PDF y nunca
+     sale solo. mailto: destinatario, asunto y texto (un borrador). */
+  assert.match(js, /window\.open\(`https:\/\/wa\.me\/\$\{p\.to\}`/);
+  assert.doesNotMatch(js, /wa\.me[^`]*\?text=/);
   assert.doesNotMatch(js, /location\.href|document\.URL|location\.search[^)]*message/);
 });
 
@@ -201,4 +203,15 @@ test("El PDF elegido debe ser de la empresa y el mes del reporte abierto", () =>
   assert.match(pick, /if \(!match\.ok\)/);
   const direct = js.slice(js.indexOf("async function review"), js.indexOf("function done"));
   assert.match(direct, /checkPdfMatches\(file\)/, "también en el envío directo");
+});
+
+test("Ningún texto da por enviado o adjuntado el PDF salvo el envío directo confirmado", () => {
+  const js = readFileSync(new URL("../public/js/report-delivery.js", import.meta.url), "utf8");
+  const msgs = [...js.matchAll(/done\(\s*(["`])([^"`]*)\1/g)].map((m) => m[2]);
+  assert.ok(msgs.length >= 4, msgs.join(" | "));
+  for (const m of msgs) {
+    if (/Resend aceptó/.test(m)) continue; /* solo tras la respuesta del servidor */
+    assert.doesNotMatch(m, /\b(enviad[oa]|adjuntad[oa]|listo)\b/i, m);
+  }
+  assert.doesNotMatch(js, /Te adjuntamos|va adjunto/);
 });

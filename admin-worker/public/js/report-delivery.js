@@ -5,8 +5,12 @@
     confirmación.
   - Los contactos se toman SOLO del perfil publicado (businesses.js); si
     falta alguno, el administrador lo escribe.
-  - WhatsApp: un enlace wa.me no puede adjuntar archivos. Se abre la
-    conversación con el mensaje listo y el PDF se adjunta a mano.
+  - WhatsApp: un enlace wa.me no puede adjuntar archivos. En computadora se
+    abre el chat SIN texto y el mensaje queda copiado, para pegarlo como
+    comentario del PDF: así nunca sale el mensaje sin el reporte. En teléfono
+    se ofrece además el menú «Compartir» del sistema con el PDF.
+  - Ningún texto afirma que el PDF se envió o adjuntó: el panel no puede
+    comprobarlo.
   - Correo: si el envío directo está activado en el Worker, se adjunta el PDF
     descargado y se envía desde el remitente oficial. Si no, se abre el
     programa de correo del administrador con el mensaje listo.
@@ -24,9 +28,17 @@
   let pending = null;
   let shareFile = null;
 
-  /* Menú «Compartir» nativo con archivos (Web Share). Lo admiten Chrome en
-     Android, Safari en iPhone/iPad/Mac y Chrome/Edge en Windows; no Firefox
-     ni Chrome en Linux. Sin soporte, se ofrece adjuntar el PDF a mano. */
+  /* Teléfono o tableta. En computadora el menú «Compartir» de Windows/Mac no
+     entrega el archivo de forma fiable a WhatsApp (ni a WhatsApp Web), así
+     que allí no se ofrece. iPadOS se presenta como Mac con pantalla táctil. */
+  function isMobile() {
+    if (navigator.userAgentData && typeof navigator.userAgentData.mobile === "boolean" && navigator.userAgentData.mobile) return true;
+    const ua = navigator.userAgent || "";
+    return /Android|iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  }
+
+  /* Menú «Compartir» nativo con archivos (Web Share): Chrome en Android y
+     Safari en iPhone/iPad. */
   function canShareFiles() {
     try {
       const probe = new File(["%PDF-"], "reporte.pdf", { type: "application/pdf" });
@@ -107,7 +119,8 @@
     $("msgInput").value = wa ? waMessage() : mailMessage();
     $("pdfField").hidden = !direct;
     $("pdfInput").value = "";
-    const share = !direct && canShareFiles();
+    const mobile = isMobile();
+    const share = !direct && mobile && canShareFiles();
     $("shareBlock").hidden = !share;
     shareFile = null;
     $("shareInput").value = "";
@@ -115,12 +128,10 @@
     $("shareFile").textContent = "Ningún PDF elegido. Si aún no lo tienes, usa «Descargar PDF».";
     $("sendNote").textContent = direct
       ? `Se enviará desde ${mailConfig.from} con el PDF adjunto.`
-      : share
-        ? `También puedes abrir solo el mensaje en ${wa ? "WhatsApp" : "tu correo"}: en ese caso, adjunta tú el PDF antes de enviar.`
-        : wa
-          ? "Importante: este navegador no puede compartir archivos. WhatsApp se abrirá solo con el mensaje: antes de enviar, adjunta tú el PDF descargado con 📎 → Documento."
-          : "Importante: este navegador no puede compartir archivos. El correo se abrirá solo con el mensaje: antes de enviar, adjunta tú el PDF descargado.";
-    $("reviewBtn").textContent = wa ? (share ? "Solo abrir WhatsApp" : "Abrir WhatsApp") : direct ? "Revisar y enviar" : share ? "Solo abrir correo" : "Abrir correo";
+      : wa
+        ? `${share ? "Otra forma: se" : "Se"} abrirá el chat vacío y el mensaje quedará copiado. Adjunta el PDF y pega el mensaje como comentario del archivo.`
+        : `${share ? "Otra forma: se" : "Se"} abrirá un borrador en tu correo. Adjunta el PDF antes de enviarlo.`;
+    $("reviewBtn").textContent = wa ? "Abrir WhatsApp" : direct ? "Revisar y enviar" : "Abrir correo";
     $("reviewBtn").className = share ? "btn btn--outline" : "btn btn--primary";
     setError("");
     show("edit");
@@ -184,23 +195,48 @@
     $("confirmChk").focus();
   }
 
-  function done(text) {
+  /* Pantalla final: lo que falta hacer (nunca «enviado» ni «adjuntado»). */
+  function done(text, steps, copyText) {
     $("doneText").textContent = text;
+    $("doneSteps").innerHTML = (steps || []).map((t) => `<li>${A.esc(t)}</li>`).join("");
+    $("doneSteps").hidden = !(steps && steps.length);
+    $("copyBox").hidden = !copyText;
+    $("copyMsg").textContent = copyText || "";
+    $("copyState").textContent = "";
     show("done");
     $("closeBtn").focus();
+  }
+
+  function copyMessage(text) {
+    try {
+      return navigator.clipboard.writeText(text).then(() => true, () => false);
+    } catch (e) {
+      return Promise.resolve(false);
+    }
   }
 
   /* Abre WhatsApp o el correo propio con el mensaje. Solo texto: nunca se
      incluye un enlace al panel ni al reporte (son de uso interno). */
   function openApp(p) {
     if (mode === "wa") {
-      window.open(`https://wa.me/${p.to}?text=${encodeURIComponent(p.message)}`, "_blank", "noopener");
-      return done("Se abrió WhatsApp. Adjunta el PDF con 📎 → Documento y envía el mensaje desde allí.");
+      /* Chat SIN texto: el mensaje va copiado y se pega junto al PDF. */
+      const copied = copyMessage(p.message);
+      window.open(`https://wa.me/${p.to}`, "_blank", "noopener");
+      const mobile = isMobile();
+      done(
+        "Falta adjuntar el PDF. En el chat de WhatsApp:",
+        mobile
+          ? ["Toca 📎 → Documento y elige el PDF del reporte.", "En el comentario del archivo, mantén pulsado y elige Pegar.", "Revisa que el PDF esté en el chat y envía."]
+          : ["Arrastra el PDF al chat (o 📎 → Documento).", "En el comentario del archivo, pega el mensaje con Ctrl+V (⌘+V en Mac).", "Revisa que el PDF esté en el chat y envía."],
+        p.message
+      );
+      copied.then((ok) => ($("copyState").textContent = ok ? "Mensaje copiado." : "No se pudo copiar automáticamente: usa «Copiar mensaje»."));
+      return;
     }
     const a = document.createElement("a");
     a.href = `mailto:${encodeURIComponent(p.to)}?subject=${encodeURIComponent(subject())}&body=${encodeURIComponent(p.message)}`;
     a.click();
-    return done("Se abrió tu correo. Adjunta el PDF y envía el mensaje desde allí.");
+    return done("Falta adjuntar el PDF. En el borrador de tu correo:", ["Adjunta el PDF del reporte (📎 Adjuntar).", "Revisa que el PDF esté adjunto y envía."]);
   }
 
   async function confirm() {
@@ -227,7 +263,7 @@
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || `Error ${res.status}`);
-      done(`Correo enviado a ${data.to} con el PDF adjunto.`);
+      done(`Resend aceptó el correo para ${data.to} con el PDF adjunto.`);
     } catch (e) {
       $("sendError2").textContent = `${e.message} Puedes intentarlo de nuevo: no se enviará dos veces.`;
       $("confirmBtn").disabled = !$("confirmChk").checked;
@@ -323,7 +359,7 @@
     if (!navigator.canShare(data)) return setError("Este dispositivo no permite compartir este archivo. Adjúntalo a mano.");
     try {
       await navigator.share(data);
-      done("Listo. Revisa en la aplicación que elegiste que el PDF y el mensaje estén incluidos antes de enviar.");
+      done("Revisa en la aplicación que elegiste, antes de enviar:", ["Que el PDF aparezca en el chat o en el correo.", "Que el mensaje esté incluido; si no, escríbelo o pégalo."], message);
     } catch (e) {
       if (e && e.name === "AbortError") return; /* el usuario cerró el menú */
       setError("No se pudo abrir el menú Compartir. Puedes adjuntar el PDF a mano.");
@@ -351,6 +387,8 @@
   $("reviewBtn").addEventListener("click", review);
   $("shareInput").addEventListener("change", pickShareFile);
   $("shareBtn").addEventListener("click", sharePdf);
+  $("copyBtn").addEventListener("click", () =>
+    copyMessage($("copyMsg").textContent).then((ok) => ($("copyState").textContent = ok ? "Mensaje copiado." : "No se pudo copiar: selecciona el texto y cópialo.")));
   $("backBtn").addEventListener("click", () => show("edit"));
   $("confirmChk").addEventListener("change", () => ($("confirmBtn").disabled = !$("confirmChk").checked));
   $("confirmBtn").addEventListener("click", confirm);
