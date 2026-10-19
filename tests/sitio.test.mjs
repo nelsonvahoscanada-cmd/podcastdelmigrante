@@ -152,9 +152,13 @@ test("Aviso legal y política editorial: identificación, IA, transparencia y si
   assert.match(html, /Transparencia sobre vínculos profesionales/);
   assert.match(html, /Contenido patrocinado/);
   assert.match(html, /id="correcciones"/);
-  // Sin domicilios, números de registro, plazos ni afirmaciones sobre patrocinios o el Desafío 100 Empresas
+  // Desafío 100 Empresas: texto aprobado (gratuito, sin garantías e independiente de Premium y publicidad)
   const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
-  assert.doesNotMatch(main, /no publicamos contenido patrocinado|Desafío 100 Empresas|domicilio|número de registro|\d+\s*(días|horas)/i);
+  assert.match(main, /id="desafio-100-empresas"/);
+  assert.match(main, /completamente gratuita<\/strong>\. No cobramos a los empresarios/);
+  assert.match(main, /independiente de los servicios comerciales de publicidad y de los Perfiles Empresariales Premium/);
+  // Sin domicilios, números de registro, plazos ni la afirmación permanente de que no hay patrocinios
+  assert.doesNotMatch(main, /no publicamos contenido patrocinado|domicilio|número de registro|\d+\s*(días|horas)/i);
   for (const p of ["privacidad.html", "cookies.html", "terminos.html"]) {
     assert.match(read(p), /<a href="\/politica-editorial">Aviso legal y política editorial<\/a>/, p);
   }
