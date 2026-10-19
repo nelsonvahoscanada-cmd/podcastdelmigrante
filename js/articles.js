@@ -160,6 +160,114 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Cambios en Express Entry anunciados por IRCC el 16 de octubre de 2026,
+       vigentes desde el 3 de noviembre de 2026. Datos tomados de las páginas
+       oficiales de IRCC (comunicado, documento de antecedentes, página de
+       cambios y página de ocupaciones de salarios altos en canada.ca).
+       Publicación programada: 19 de octubre de 2026, 5:00 a. m. (Edmonton).
+       Imagen: ilustración editorial asistida por IA (no es una foto real). */
+    id: "ART-2026-027",
+    slug: "express-entry-nuevos-puntos-noviembre-2026",
+    category: "Migración",
+    contentType: "Noticia",
+    title: "Canadá cambia Express Entry: nuevos puntos por experiencia laboral y ofertas de empleo desde noviembre",
+    dek: "Desde el 3 de noviembre de 2026, Express Entry dará puntos adicionales a quienes tengan experiencia laboral canadiense o una oferta de empleo válida en ocupaciones de salarios altos, y ya no exigirá la LMIA para esas ofertas. Te explicamos los cambios y qué hacer antes de esa fecha.",
+    excerpt: "IRCC anunció que desde el 3 de noviembre Express Entry otorgará puntos por experiencia laboral canadiense y por ofertas de empleo en ocupaciones de salarios altos: 50, 70 o 100 puntos por oferta, sin LMIA.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-19T05:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/express-entry-nuevos-puntos-noviembre-2026.jpg')",
+      aspectRatio: "3/2",
+      alt: "Ilustración editorial asistida por inteligencia artificial: una mujer sonriente sostiene un pasaporte canadiense y una carpeta de Express Entry frente al Parlamento de Canadá y la bandera canadiense, con el titular «Express Entry en Canadá: nuevos puntos y beneficios desde noviembre» y los íconos «Experiencia laboral en Canadá», «Ofertas de empleo» y «Hasta 100 puntos adicionales».",
+      credit: "Ilustración editorial asistida por IA.",
+      socialFocus: "50% 50%",
+      socialLabel: "Ilustración editorial asistida por IA",
+      socialLabelPosition: "top-left",
+    },
+    bodyHtml: `
+      <p>El Gobierno de Canadá anunció el <strong>16 de octubre de 2026</strong> cambios en <strong>Express Entry</strong>, el sistema que gestiona muchas solicitudes de residencia permanente para trabajadores calificados. Desde el <strong>3 de noviembre de 2026</strong>, el Sistema de Clasificación Integral (CRS) dará puntos adicionales a quienes tengan <strong>experiencia laboral canadiense</strong> o una <strong>oferta de empleo válida</strong> en una <strong>ocupación de salarios altos</strong>. Además, esas ofertas de empleo ya no necesitarán una evaluación de impacto en el mercado laboral (LMIA).</p>
+      <p>Según Immigration, Refugees and Citizenship Canada (IRCC), el objetivo es dar prioridad en Express Entry a trabajadores con experiencia y ofertas en ocupaciones mejor pagadas.</p>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Lo esencial</h2>
+        <ul>
+          <li><strong>Desde cuándo:</strong> 3 de noviembre de 2026.</li>
+          <li><strong>Oferta de empleo válida</strong> en una ocupación de salarios altos: <strong>50, 70 o 100 puntos</strong>, según el nivel salarial de la ocupación.</li>
+          <li><strong>Experiencia laboral canadiense</strong> de al menos 12 meses en una ocupación de salarios altos: <strong>20, 40 o 70 puntos adicionales</strong>, además de los que ya se otorgan por años de experiencia.</li>
+          <li><strong>No se suman entre sí:</strong> se aplica la opción que te dé más puntos.</li>
+          <li><strong>Sin LMIA</strong> para las ofertas de empleo que cumplan las nuevas reglas.</li>
+          <li><strong>Si tienes una oferta de empleo</strong>, actualiza tu perfil antes del 3 de noviembre.</li>
+        </ul>
+      </aside>
+      <h2>¿Qué es una ocupación de salarios altos?</h2>
+      <p>IRCC considera de salarios altos una ocupación cuyo salario mediano, el de todas las personas que la ejercen en Canadá, es <strong>al menos 1,3 veces</strong> el salario mediano promedio de toda la fuerza laboral canadiense. Se mide por la ocupación, según su código de la Clasificación Nacional de Ocupaciones (NOC), y <strong>no por lo que gana cada persona</strong>.</p>
+      <p>Las ocupaciones de salarios altos se agrupan en tres niveles:</p>
+      <ul>
+        <li><strong>Nivel 1:</strong> al menos 2 veces el salario mediano.</li>
+        <li><strong>Nivel 2:</strong> entre 1,5 y menos de 2 veces.</li>
+        <li><strong>Nivel 3:</strong> entre 1,3 y menos de 1,5 veces.</li>
+      </ul>
+      <p>Para clasificarlas, IRCC usa datos de Job Bank, de la Encuesta de Población Activa y del Censo de los últimos tres años, y asigna a cada código NOC el nivel más alto que haya alcanzado en ese período. La lista de ocupaciones está publicada en canada.ca.</p>
+      <h2>Puntos por una oferta de empleo</h2>
+      <p>Una oferta de empleo válida en una ocupación de salarios altos dará:</p>
+      <ul>
+        <li><strong>100 puntos</strong> si la ocupación es de nivel 1 (al menos 2 veces el salario mediano);</li>
+        <li><strong>70 puntos</strong> si es de nivel 2 (al menos 1,5 veces);</li>
+        <li><strong>50 puntos</strong> si es de nivel 3 (al menos 1,3 veces).</li>
+      </ul>
+      <p>Una oferta en una ocupación que no sea de salarios altos no dará puntos. IRCC indicó que seguirá verificando que las ofertas sean genuinas.</p>
+      <h2>Puntos por experiencia laboral en Canadá</h2>
+      <p>Los puntos que ya existen por años de experiencia laboral en Canadá se mantienen. A ellos se sumarán puntos adicionales si tienes <strong>al menos 12 meses</strong> de experiencia canadiense calificada en una ocupación de salarios altos:</p>
+      <ul>
+        <li><strong>70 puntos</strong> en una ocupación de nivel 1;</li>
+        <li><strong>40 puntos</strong> en una de nivel 2;</li>
+        <li><strong>20 puntos</strong> en una de nivel 3.</li>
+      </ul>
+      <p>Con la experiencia en el nivel más alto, el máximo por experiencia laboral canadiense elegible será de <strong>150 puntos sin cónyuge o pareja acompañante</strong> y de <strong>140 puntos con cónyuge o pareja acompañante</strong>.</p>
+      <h2>Los puntos no se acumulan</h2>
+      <p>Si cumples las dos condiciones, experiencia laboral y oferta de empleo, <strong>no recibirás ambos puntajes</strong>. IRCC aplicará solo la opción que te dé más puntos.</p>
+      <h2>Ofertas de empleo sin LMIA</h2>
+      <p>Desde el 3 de noviembre, una oferta de empleo válida <strong>ya no necesitará una LMIA</strong> para recibir los nuevos puntos ni para cumplir el requisito de oferta de empleo del <em>Federal Skilled Worker Program</em> y del <em>Federal Skilled Trades Program</em>. Tener una LMIA tampoco dará puntos adicionales.</p>
+      <h2>Si ya tienes un perfil en Express Entry</h2>
+      <ul>
+        <li><strong>Tu puntaje se recalculará automáticamente.</strong> IRCC revisará los puntos de los perfiles existentes con las nuevas reglas. El proceso puede tardar <strong>hasta dos semanas</strong>, y durante ese tiempo se pausarán las rondas de invitación.</li>
+        <li><strong>Si tienes una oferta de empleo</strong> y quieres recibir los nuevos puntos, debes <strong>actualizar tu perfil con la información requerida antes del 3 de noviembre</strong>. IRCC explica cómo hacerlo con una oferta sin LMIA en sus <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/job-offer.html" target="_blank" rel="noopener">instrucciones oficiales sobre ofertas de empleo</a>.</li>
+      </ul>
+      <h2>Recomendaciones prácticas</h2>
+      <ul>
+        <li><strong>Busca el código NOC de tu ocupación</strong> y compruébalo en la lista oficial de ocupaciones de salarios altos de IRCC. Lo que cuenta es la ocupación, no tu salario.</li>
+        <li><strong>Revisa tu perfil.</strong> Confirma que tu experiencia laboral y tu oferta de empleo estén descritas con el código NOC correcto y que toda la información sea exacta y verificable.</li>
+        <li><strong>No esperes al último día</strong> si necesitas actualizar tu perfil con una oferta de empleo: hazlo antes del 3 de noviembre.</li>
+        <li><strong>Desconfía de quien te ofrezca «vender» una oferta de empleo</strong> o te prometa una invitación. IRCC verifica que las ofertas sean genuinas, y dar información falsa puede tener consecuencias graves para tu solicitud.</li>
+        <li><strong>Si tienes dudas,</strong> consulta a un consultor de inmigración regulado (RCIC) o a un abogado autorizado.</li>
+      </ul>
+      <p><strong>Importante:</strong> recibir más puntos <strong>no garantiza una invitación</strong> para solicitar la residencia permanente ni la aprobación de la residencia. Las invitaciones dependen de cada ronda y de los puntajes de los demás candidatos. Consulta siempre los detalles en las páginas oficiales de IRCC antes de tomar decisiones.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "IRCC — Canada refocusing Express Entry on top talent that drives economic growth (comunicado, 16 de octubre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" },
+      { label: "IRCC — 2026 Changes to points for Canadian work experience and job offers in the Express Entry system", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" },
+      { label: "IRCC — Changes to Express Entry for high-wage occupations (documento de antecedentes)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/changes-to-express-entry-for-high-wage-occupations.html" },
+      { label: "IRCC — High-wage occupations and how we assess them", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/high-wage.html" },
+      { label: "IRCC — Express Entry: Job offer (cómo indicar una oferta de empleo en tu perfil)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/job-offer.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Migración",
+    relatedSlugs: ["express-entry-anuncio-cambios-octubre-2026", "working-holiday-2026-cierre-invitaciones-canada"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Express Entry cambia el 3 de noviembre: nuevos puntos por experiencia y ofertas de empleo",
+      description: "Desde el 3 de noviembre de 2026, Express Entry da 50, 70 o 100 puntos por ofertas de empleo en ocupaciones de salarios altos, puntos por experiencia en Canadá y elimina la LMIA.",
+      canonicalPath: "/migracion/express-entry-nuevos-puntos-noviembre-2026/",
+    },
+  },
+  {
     /* Anuncio de cambios en Express Entry (aviso de IRCC del 15 de octubre
        de 2026). Los cambios concretos NO se conocen todavía: el artículo no
        menciona requisitos, categorías, puntajes ni beneficios nuevos.
