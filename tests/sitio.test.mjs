@@ -1,7 +1,7 @@
 /*
   Comprobaciones del sitio público (sin navegador):
   - ningún enlace visible del pie de página apunta a «#»;
-  - la columna Legal muestra solo los documentos publicados (aviso legal y política editorial, privacidad, cookies y términos);
+  - la columna Legal muestra solo los documentos publicados (aviso legal y política editorial, privacidad, cookies, términos y publicidad);
   - ninguna página pública carga Google Fonts (tipografías locales);
   - la página 404 existe, no se indexa y usa rutas desde la raíz;
   - el menú oculta las secciones sin página propia.
@@ -40,12 +40,12 @@ test("pie de página: sin enlaces visibles a «#» en ninguna página", () => {
   }
 });
 
-test("pie de página: columna Legal con aviso legal y política editorial, privacidad, cookies y términos («Correcciones» oculto)", () => {
-  for (const p of ["politica-editorial.html", "privacidad.html", "cookies.html", "terminos.html"]) assert.ok(existsSync(new URL(p, ROOT)), p);
+test("pie de página: columna Legal con aviso legal y política editorial, privacidad, cookies, términos y publicidad («Correcciones» oculto)", () => {
+  for (const p of ["politica-editorial.html", "privacidad.html", "cookies.html", "terminos.html", "publicidad.html"]) assert.ok(existsSync(new URL(p, ROOT)), p);
   for (const f of PAGES) {
     const footer = footerOf(read(f));
     assert.match(footer, /<div class="footer-col">\s*<h2 class="footer-col__title">Legal<\/h2>/, f);
-    assert.match(footer, /<a href="(\/?)politica-editorial"( aria-current="page")?>Aviso legal y política editorial<\/a>\s*<a href="\1privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>\s*<a href="\1terminos"( aria-current="page")?>Términos y condiciones<\/a>/, f);
+    assert.match(footer, /<a href="(\/?)politica-editorial"( aria-current="page")?>Aviso legal y política editorial<\/a>\s*<a href="\1privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>\s*<a href="\1terminos"( aria-current="page")?>Términos y condiciones<\/a>\s*<a href="\1publicidad"( aria-current="page")?>Publicidad y contenido patrocinado<\/a>/, f);
     for (const name of ["Correcciones"]) {
       assert.match(footer, new RegExp(`<a href="[^"]*" hidden>${name}</a>`), `${f}: ${name} oculto`);
     }
@@ -162,6 +162,27 @@ test("Aviso legal y política editorial: identificación, IA, transparencia y si
   assert.doesNotMatch(main, /no publicamos contenido patrocinado|domicilio|número de registro|\d+\s*(días|horas)/i);
   for (const p of ["privacidad.html", "cookies.html", "terminos.html"]) {
     assert.match(read(p), /<a href="\/politica-editorial">Aviso legal y política editorial<\/a>/, p);
+  }
+});
+
+test("Política de publicidad: Desafío gratuito, aliado de producción vigente, representantes autorizados y sin datos no aprobados", () => {
+  const html = read("publicidad.html");
+  const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  assert.match(html, /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/publicidad">/);
+  assert.match(main, /Documento pendiente de revisión jurídica profesional/);
+  assert.match(main, /eRadio Global Corp\./);
+  assert.match(main, /completamente gratuitas para los empresarios/);
+  assert.match(main, /no requiere contratar ningún servicio comercial/);
+  assert.match(main, /Country Hills Toyota<\/strong> facilita las instalaciones/);
+  assert.match(main, /menciona y le otorga créditos durante el podcast/);
+  assert.match(main, /prometa o garantice resultados migratorios/);
+  assert.match(main, /Chambre des notaires du Québec/);
+  assert.match(main, /College of Immigration and Citizenship Consultants/);
+  assert.match(main, /no convierte todo el artículo en contenido patrocinado/);
+  // Sin nombrar colaboraciones anteriores, sin precios ni contratos, sin afirmar que solo existen RCIC y abogados
+  assert.doesNotMatch(main, /Sterna|\$\s?\d|tarifa|precio de|solo (los )?(RCIC|abogados)/i);
+  for (const p of ["politica-editorial.html", "terminos.html"]) {
+    assert.match(read(p), /<a href="\/publicidad">Política de publicidad y contenido patrocinado<\/a>/, p);
   }
 });
 
