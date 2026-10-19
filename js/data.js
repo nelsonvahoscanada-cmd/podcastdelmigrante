@@ -66,15 +66,15 @@ const NAV_MORE = [
 const HERO = {
   main: {
     category: "Migración",
-    title: "Canadá anunciará cambios en Express Entry este viernes 16 de octubre: lo que deben saber los inmigrantes",
-    dek: "La ministra de Inmigración, Lena Metlege Diab, hará el anuncio este viernes a las 9:00 a. m., hora de Alberta. Los cambios concretos todavía no se conocen: te explicamos qué es Express Entry, a quién puede interesarle y qué conviene revisar.",
+    title: "Canadá cambia Express Entry: nuevos puntos por experiencia laboral y ofertas de empleo desde noviembre",
+    dek: "Desde el 3 de noviembre de 2026, Express Entry dará puntos adicionales a quienes tengan experiencia laboral canadiense o una oferta de empleo válida en ocupaciones de salarios altos, y ya no exigirá la LMIA para esas ofertas. Te explicamos los cambios y qué hacer antes de esa fecha.",
     author: "Redacción El Podcast del Migrante",
-    date: "16 de octubre, 2026",
-    image: "url('assets/express-entry-anuncio-cambios-octubre-2026.jpg')",
+    date: "19 de octubre, 2026",
+    image: "url('assets/express-entry-nuevos-puntos-noviembre-2026.jpg')",
     aspectRatio: "16/9",
-    alt: "Ilustración editorial asistida por inteligencia artificial: cuatro jóvenes revisan una computadora portátil junto a documentos de Express Entry y un pasaporte canadiense, con la bandera de Canadá y el horizonte de Toronto al fondo, y el titular «Canadá anunciará cambios en Express Entry — viernes 16 de octubre».",
+    alt: "Ilustración editorial asistida por inteligencia artificial: una mujer sonriente sostiene un pasaporte canadiense y una carpeta de Express Entry frente al Parlamento de Canadá y la bandera canadiense, con el titular «Express Entry en Canadá: nuevos puntos y beneficios desde noviembre».",
     demo: false,
-    slug: "express-entry-anuncio-cambios-octubre-2026",
+    slug: "express-entry-nuevos-puntos-noviembre-2026",
   },
   secondary: [
     {
@@ -121,6 +121,7 @@ const HERO = {
 };
 
 const LATEST = [
+  { category: "Migración", title: "Canadá anunciará cambios en Express Entry este viernes 16 de octubre: lo que deben saber los inmigrantes", time: "16 OCT 2026", slug: "express-entry-anuncio-cambios-octubre-2026", image: "assets/express-entry-anuncio-cambios-octubre-2026.jpg" },
   { category: "Alberta", title: "Alberta activa sus reglas de invierno: desde hoy no pueden cortarte por completo la luz en casa", time: "15 OCT 2026", slug: "reglas-invierno-electricidad-gas-alberta", image: "assets/reglas-invierno-electricidad-gas-alberta.jpg" },
   { category: "Migración", title: "Canadá cierra las invitaciones de Working Holiday 2026: esta es la fecha límite para participar", time: "14 OCT 2026", slug: "working-holiday-2026-cierre-invitaciones-canada", image: "assets/working-holiday-2026-cierre-invitaciones.jpg" },
   { category: "Canadá", title: "Canadá anuncia reembolsos de hasta $10,000 para cambiar la calefacción por una bomba de calor", time: "12 OCT 2026", slug: "reembolso-bombas-de-calor-canada", image: "assets/reembolso-bombas-de-calor-canada.jpg" },
