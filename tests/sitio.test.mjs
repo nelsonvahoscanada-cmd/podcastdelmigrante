@@ -1,7 +1,7 @@
 /*
   Comprobaciones del sitio público (sin navegador):
   - ningún enlace visible del pie de página apunta a «#»;
-  - la columna Legal muestra solo las políticas publicadas (privacidad y cookies);
+  - la columna Legal muestra solo los documentos publicados (privacidad, cookies y términos);
   - ninguna página pública carga Google Fonts (tipografías locales);
   - la página 404 existe, no se indexa y usa rutas desde la raíz;
   - el menú oculta las secciones sin página propia.
@@ -40,14 +40,13 @@ test("pie de página: sin enlaces visibles a «#» en ninguna página", () => {
   }
 });
 
-test("pie de página: columna Legal con las políticas de privacidad y de cookies (el resto oculto hasta publicarse)", () => {
-  assert.ok(existsSync(new URL("privacidad.html", ROOT)), "privacidad.html");
-  assert.ok(existsSync(new URL("cookies.html", ROOT)), "cookies.html");
+test("pie de página: columna Legal con privacidad, cookies y términos (el resto oculto hasta publicarse)", () => {
+  for (const p of ["privacidad.html", "cookies.html", "terminos.html"]) assert.ok(existsSync(new URL(p, ROOT)), p);
   for (const f of PAGES) {
     const footer = footerOf(read(f));
     assert.match(footer, /<div class="footer-col">\s*<h2 class="footer-col__title">Legal<\/h2>/, f);
-    assert.match(footer, /<a href="(\/?)privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>/, f);
-    for (const name of ["Política editorial", "Términos", "Correcciones"]) {
+    assert.match(footer, /<a href="(\/?)privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>\s*<a href="\1terminos"( aria-current="page")?>Términos y condiciones<\/a>/, f);
+    for (const name of ["Política editorial", "Correcciones"]) {
       assert.match(footer, new RegExp(`<a href="[^"]*" hidden>${name}</a>`), `${f}: ${name} oculto`);
     }
   }
@@ -119,6 +118,24 @@ test("Política de cookies: operador, contacto, enlace a privacidad y solo tecno
   // Sin banners ni sistemas de consentimiento en esta etapa
   assert.doesNotMatch(html, /<script[^>]*consent|cookie-banner|id="consent/i);
   assert.match(read("privacidad.html"), /<a href="\/cookies">Política de cookies<\/a>/);
+});
+
+test("Términos y condiciones: operador, aviso de revisión, descargo migratorio y sin condiciones comerciales", () => {
+  const html = read("terminos.html");
+  assert.match(html, /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/terminos">/);
+  assert.match(html, /eRadio Global Corp\./);
+  assert.match(html, /mailto:podcastdelmigrante@gmail\.com/);
+  assert.match(html, /pendiente de revisión jurídica/);
+  assert.match(html, /no es un proveedor de asesoría migratoria/);
+  assert.match(html, /no implica contratar ni pagar/);
+  assert.match(html, /no pueden renunciarse/);
+  assert.match(html, /<a href="\/privacidad">Política de privacidad<\/a>/);
+  assert.match(html, /<a href="\/cookies">Política de cookies<\/a>/);
+  // Sin anotaciones internas, precios ni cláusulas no aprobadas
+  assert.doesNotMatch(html, /Pendiente:|tribunales|\$\s?\d|suscripci|renovaci|reembols|indemniz/i);
+  // Enlaces cruzados desde las otras dos políticas
+  assert.match(read("privacidad.html"), /<a href="\/terminos">Términos y condiciones de uso<\/a>/);
+  assert.match(read("cookies.html"), /<a href="\/terminos">Términos y condiciones de uso<\/a>/);
 });
 
 test("sin herramientas de publicidad o seguimiento ni cookies propias en el sitio público", () => {
