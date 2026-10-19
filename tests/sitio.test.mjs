@@ -155,6 +155,7 @@ test("Aviso legal y política editorial: identificación, IA, transparencia y si
   // Desafío 100 Empresas: texto aprobado (gratuito, sin garantías e independiente de Premium y publicidad)
   const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
   assert.match(main, /id="desafio-100-empresas"/);
+  assert.match(main, /no cobramos a los empresarios por participar ni por aparecer en el programa[\s\S]*href="#desafio-100-empresas"/);
   assert.match(main, /completamente gratuita<\/strong>\. No cobramos a los empresarios/);
   assert.match(main, /independiente de los servicios comerciales de publicidad y de los Perfiles Empresariales Premium/);
   // Sin domicilios, números de registro, plazos ni la afirmación permanente de que no hay patrocinios
