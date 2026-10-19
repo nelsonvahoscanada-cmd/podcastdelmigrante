@@ -1,7 +1,7 @@
 /*
   Comprobaciones del sitio público (sin navegador):
   - ningún enlace visible del pie de página apunta a «#»;
-  - la columna Legal muestra solo los documentos publicados (privacidad, cookies y términos);
+  - la columna Legal muestra solo los documentos publicados (aviso legal y política editorial, privacidad, cookies y términos);
   - ninguna página pública carga Google Fonts (tipografías locales);
   - la página 404 existe, no se indexa y usa rutas desde la raíz;
   - el menú oculta las secciones sin página propia.
@@ -40,13 +40,13 @@ test("pie de página: sin enlaces visibles a «#» en ninguna página", () => {
   }
 });
 
-test("pie de página: columna Legal con privacidad, cookies y términos (el resto oculto hasta publicarse)", () => {
-  for (const p of ["privacidad.html", "cookies.html", "terminos.html"]) assert.ok(existsSync(new URL(p, ROOT)), p);
+test("pie de página: columna Legal con aviso legal y política editorial, privacidad, cookies y términos («Correcciones» oculto)", () => {
+  for (const p of ["politica-editorial.html", "privacidad.html", "cookies.html", "terminos.html"]) assert.ok(existsSync(new URL(p, ROOT)), p);
   for (const f of PAGES) {
     const footer = footerOf(read(f));
     assert.match(footer, /<div class="footer-col">\s*<h2 class="footer-col__title">Legal<\/h2>/, f);
-    assert.match(footer, /<a href="(\/?)privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>\s*<a href="\1terminos"( aria-current="page")?>Términos y condiciones<\/a>/, f);
-    for (const name of ["Política editorial", "Correcciones"]) {
+    assert.match(footer, /<a href="(\/?)politica-editorial"( aria-current="page")?>Aviso legal y política editorial<\/a>\s*<a href="\1privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>\s*<a href="\1terminos"( aria-current="page")?>Términos y condiciones<\/a>/, f);
+    for (const name of ["Correcciones"]) {
       assert.match(footer, new RegExp(`<a href="[^"]*" hidden>${name}</a>`), `${f}: ${name} oculto`);
     }
   }
@@ -136,6 +136,33 @@ test("Términos y condiciones: operador, aviso de revisión, descargo migratorio
   // Enlaces cruzados desde las otras dos políticas
   assert.match(read("privacidad.html"), /<a href="\/terminos">Términos y condiciones de uso<\/a>/);
   assert.match(read("cookies.html"), /<a href="\/terminos">Términos y condiciones de uso<\/a>/);
+});
+
+test("Aviso legal y política editorial: identificación, IA, transparencia y sin afirmaciones no aprobadas", () => {
+  const html = read("politica-editorial.html");
+  assert.match(html, /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/politica-editorial">/);
+  assert.match(html, /Documento pendiente de revisión jurídica profesional/);
+  assert.match(html, /eRadio Global Corp\., empresa registrada en Alberta y a nivel federal en Canadá/);
+  assert.match(html, /mailto:podcastdelmigrante@gmail\.com/);
+  assert.match(html, /Práctica vigente/);
+  assert.match(html, /En preparación/);
+  assert.match(html, /La IA no es una fuente de información/);
+  assert.match(html, /revisión y aprobación editorial humana/);
+  assert.match(html, /no es un proveedor de asesoría migratoria/);
+  assert.match(html, /Transparencia sobre vínculos profesionales/);
+  assert.match(html, /Contenido patrocinado/);
+  assert.match(html, /id="correcciones"/);
+  // Desafío 100 Empresas: texto aprobado (gratuito, sin garantías e independiente de Premium y publicidad)
+  const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  assert.match(main, /id="desafio-100-empresas"/);
+  assert.match(main, /no cobramos a los empresarios por participar ni por aparecer en el programa[\s\S]*href="#desafio-100-empresas"/);
+  assert.match(main, /completamente gratuita<\/strong>\. No cobramos a los empresarios/);
+  assert.match(main, /independiente de los servicios comerciales de publicidad y de los Perfiles Empresariales Premium/);
+  // Sin domicilios, números de registro, plazos ni la afirmación permanente de que no hay patrocinios
+  assert.doesNotMatch(main, /no publicamos contenido patrocinado|domicilio|número de registro|\d+\s*(días|horas)/i);
+  for (const p of ["privacidad.html", "cookies.html", "terminos.html"]) {
+    assert.match(read(p), /<a href="\/politica-editorial">Aviso legal y política editorial<\/a>/, p);
+  }
 });
 
 test("sin herramientas de publicidad o seguimiento ni cookies propias en el sitio público", () => {
