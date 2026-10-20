@@ -227,6 +227,8 @@ test("Correcciones: responsable, funcionalidad vs. aplicación, réplica prudent
   const ed = read("politica-editorial.html");
   assert.doesNotMatch(ed, /En preparación\.<\/strong> Una nota de corrección visible/);
   assert.match(ed, /Funcionalidad disponible\.<\/strong> Nuestro sistema de publicación de noticias permite mostrar una nota de corrección visible/);
+  assert.doesNotMatch(ed, /En preparación\.<\/strong> Indicar la fecha de actualización/);
+  assert.match(ed, /Funcionalidad disponible\.<\/strong> Nuestro sistema de publicación de noticias permite indicar la fecha de actualización/);
   for (const p of ["politica-editorial.html", "terminos.html", "derechos-de-autor.html", "privacidad.html"]) {
     assert.match(read(p), /<a href="\/correcciones">Política de correcciones y derecho de réplica<\/a>/, p);
   }
