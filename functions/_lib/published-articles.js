@@ -1,5 +1,6 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "referendum-alberta-octubre-2026-inmigrantes",
   "express-entry-nuevos-puntos-noviembre-2026",
   "express-entry-anuncio-cambios-octubre-2026",
   "reglas-invierno-electricidad-gas-alberta",
