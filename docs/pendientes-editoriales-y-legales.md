@@ -66,6 +66,44 @@ pendiente y lo conservan hasta que esa revisión se complete:
 - [Términos y condiciones de uso](../terminos.html)
 - [Aviso legal y política editorial](../politica-editorial.html)
 - [Política de publicidad y contenido patrocinado](../publicidad.html)
+- [Política de derechos de autor y uso de contenidos](../derechos-de-autor.html)
 
 Cuando se complete la revisión, actualizar cada página y su fecha, y quitar
 el aviso solo con la aprobación de la dirección del medio.
+
+## 7. Autorizaciones de Desafío 100 Empresas
+
+Los empresarios entrevistados firman un modelo de autorización escrita
+(descrito en la [Política de derechos de autor](../derechos-de-autor.html),
+apartado 8). Pendiente: revisión jurídica profesional del modelo y de su
+aplicación a los documentos ya firmados, en particular:
+
+- derechos de terceros sobre los materiales que aportan los participantes;
+- duración e irrevocabilidad;
+- privacidad (incluido el uso de las historias en el libro en preparación);
+- si es licencia de uso o cesión de titularidad.
+
+> No subir a este repositorio copias de las autorizaciones ni datos
+> personales de los entrevistados.
+
+Relacionado: revisar si la Política de privacidad debe mencionar el uso de
+las historias de los entrevistados en libros comerciales antes de publicar
+el libro «El Desafío 100 Empresas: Las 100 historias más conmovedoras»
+(título provisional, en preparación).
+
+## 8. Cuestiones abiertas de derechos de autor
+
+Sin confirmar todavía (no presentarlas como hechos en el sitio):
+
+- acuerdos escritos con colaboradores y titularidad de sus contenidos;
+- permiso para alojar y compartir la guía en PDF de un colaborador;
+- autorización para republicar la columna publicada antes en otro medio;
+- autorización expresa para la composición con IA hecha a partir de una
+  fotografía real de una entrevista;
+- titularidad de los canales de YouTube y redes que enlaza el sitio;
+- registro de las marcas «El Podcast del Migrante» y su logotipo;
+- herramientas de IA en uso y sus condiciones;
+- plazos y responsable para atender avisos de infracción;
+- uso de las imágenes de los perfiles fuera del sitio (redes, edición
+  impresa);
+- título definitivo del libro y mención de la plataforma de venta.

@@ -1,7 +1,7 @@
 /*
   Comprobaciones del sitio público (sin navegador):
   - ningún enlace visible del pie de página apunta a «#»;
-  - la columna Legal muestra solo los documentos publicados (aviso legal y política editorial, privacidad, cookies, términos y publicidad);
+  - la columna Legal muestra solo los documentos publicados (aviso legal y política editorial, privacidad, cookies, términos, publicidad y derechos de autor);
   - ninguna página pública carga Google Fonts (tipografías locales);
   - la página 404 existe, no se indexa y usa rutas desde la raíz;
   - el menú oculta las secciones sin página propia.
@@ -40,12 +40,12 @@ test("pie de página: sin enlaces visibles a «#» en ninguna página", () => {
   }
 });
 
-test("pie de página: columna Legal con aviso legal y política editorial, privacidad, cookies, términos y publicidad («Correcciones» oculto)", () => {
-  for (const p of ["politica-editorial.html", "privacidad.html", "cookies.html", "terminos.html", "publicidad.html"]) assert.ok(existsSync(new URL(p, ROOT)), p);
+test("pie de página: columna Legal con aviso legal y política editorial, privacidad, cookies, términos, publicidad y derechos de autor («Correcciones» oculto)", () => {
+  for (const p of ["politica-editorial.html", "privacidad.html", "cookies.html", "terminos.html", "publicidad.html", "derechos-de-autor.html"]) assert.ok(existsSync(new URL(p, ROOT)), p);
   for (const f of PAGES) {
     const footer = footerOf(read(f));
     assert.match(footer, /<div class="footer-col">\s*<h2 class="footer-col__title">Legal<\/h2>/, f);
-    assert.match(footer, /<a href="(\/?)politica-editorial"( aria-current="page")?>Aviso legal y política editorial<\/a>\s*<a href="\1privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>\s*<a href="\1terminos"( aria-current="page")?>Términos y condiciones<\/a>\s*<a href="\1publicidad"( aria-current="page")?>Publicidad y contenido patrocinado<\/a>/, f);
+    assert.match(footer, /<a href="(\/?)politica-editorial"( aria-current="page")?>Aviso legal y política editorial<\/a>\s*<a href="\1privacidad"( aria-current="page")?>Política de privacidad<\/a>\s*<a href="\1cookies"( aria-current="page")?>Política de cookies<\/a>\s*<a href="\1terminos"( aria-current="page")?>Términos y condiciones<\/a>\s*<a href="\1publicidad"( aria-current="page")?>Publicidad y contenido patrocinado<\/a>\s*<a href="\1derechos-de-autor"( aria-current="page")?>Derechos de autor<\/a>/, f);
     for (const name of ["Correcciones"]) {
       assert.match(footer, new RegExp(`<a href="[^"]*" hidden>${name}</a>`), `${f}: ${name} oculto`);
     }
@@ -183,6 +183,29 @@ test("Política de publicidad: Desafío gratuito, aliado de producción vigente,
   assert.doesNotMatch(main, /Sterna|\$\s?\d|tarifa|precio de|solo (los )?(RCIC|abogados)/i);
   for (const p of ["politica-editorial.html", "terminos.html"]) {
     assert.match(read(p), /<a href="\/publicidad">Política de publicidad y contenido patrocinado<\/a>/, p);
+  }
+});
+
+test("Derechos de autor: protección según la ley, autorizaciones del Desafío como licencia, libro en preparación y sin datos no aprobados", () => {
+  const html = read("derechos-de-autor.html");
+  const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  assert.match(html, /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/derechos-de-autor">/);
+  assert.match(main, /Documento pendiente de revisión jurídica profesional/);
+  assert.match(main, /cuando cumplen los requisitos de la legislación canadiense/);
+  assert.match(main, /No todos los materiales tienen automáticamente esa protección/);
+  assert.match(main, /No afirmamos que esos materiales tengan automáticamente protección de derecho de autor/);
+  assert.match(main, /firman una autorización escrita/);
+  assert.match(main, /Licencia de uso, no transferencia de titularidad/);
+  assert.match(main, /No la presentamos como una transferencia total de los derechos de autor/);
+  assert.match(main, /pendientes de revisión profesional/);
+  assert.match(main, /El libro está en preparación: todavía no es una publicación disponible/);
+  assert.match(main, /título provisional/);
+  assert.match(main, /completamente gratuitas para los empresarios/);
+  assert.match(main, /fair dealing/);
+  // Sin registro de marcas, cesiones totales ni plazos obligatorios
+  assert.doesNotMatch(main, /marca registrada|®|™|cedieron (la totalidad|todos)|\d+\s*(días|horas)/i);
+  for (const [p, href] of [["terminos.html", "/derechos-de-autor"], ["politica-editorial.html", "/derechos-de-autor"], ["publicidad.html", "/derechos-de-autor#entrevistas"]]) {
+    assert.match(read(p), new RegExp(`<a href="${href}">Política de derechos de autor y uso de contenidos<\\/a>`), p);
   }
 });
 
