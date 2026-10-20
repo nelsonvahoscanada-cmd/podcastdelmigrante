@@ -67,6 +67,7 @@ pendiente y lo conservan hasta que esa revisión se complete:
 - [Aviso legal y política editorial](../politica-editorial.html)
 - [Política de publicidad y contenido patrocinado](../publicidad.html)
 - [Política de derechos de autor y uso de contenidos](../derechos-de-autor.html)
+- [Política de correcciones y derecho de réplica](../correcciones.html)
 
 Cuando se complete la revisión, actualizar cada página y su fecha, y quitar
 el aviso solo con la aprobación de la dirección del medio.
@@ -107,3 +108,23 @@ Sin confirmar todavía (no presentarlas como hechos en el sitio):
 - uso de las imágenes de los perfiles fuera del sitio (redes, edición
   impresa);
 - título definitivo del libro y mención de la plataforma de venta.
+
+## 9. Correcciones y derecho de réplica
+
+Mejoras técnicas pendientes (no implementadas; ver la
+[Política de correcciones](../correcciones.html), apartado 6):
+
+- mostrar la nota de corrección al inicio del contenido cuando el error
+  afecte a su sentido principal (hoy aparece al final);
+- admitir varias notas de corrección por contenido, cada una con su fecha;
+- agregar fecha visible y nota de corrección a las historias de Desafío 100
+  Empresas.
+
+Procedimiento pendiente:
+
+- registro interno de solicitudes en un sistema **privado**; nunca en este
+  repositorio ni con datos personales en él;
+- plazos de referencia de respuesta (no aprobados todavía).
+
+Revisión jurídica pendiente de las disposiciones sobre difamación,
+privacidad, derechos de autor y solicitudes de retirada o anonimización.
