@@ -66,8 +66,8 @@ const NAV_MORE = [
 const HERO = {
   main: {
     category: "Alberta",
-    title: "Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?",
-    dek: "Las preguntas sobre inmigración y el futuro de la provincia generan inquietudes entre los residentes. Te explicamos qué se votó, qué sigue pendiente y qué podría cambiar.",
+    title: "Alberta votó por permanecer en Canadá: cerca del 75 % rechazó iniciar el proceso separatista",
+    dek: "Los resultados preliminares del referéndum del 19 de octubre muestran una amplia ventaja para la permanencia en Canadá. Te explicamos las cifras, qué significa para los inmigrantes y qué falta por conocer de las otras nueve preguntas.",
     author: "Redacción El Podcast del Migrante",
     date: "20 de octubre, 2026",
     image: "url('assets/referendum-alberta-octubre-2026-inmigrantes.jpg')",
