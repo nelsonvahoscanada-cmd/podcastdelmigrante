@@ -21,7 +21,14 @@ url(...)), una versión social:
   pie de foto del artículo, así que la advertencia viaja con la imagen.
   Con heroImage.socialLabelPosition = "top-left" la etiqueta es una pastilla
   pequeña en la esquina superior izquierda (para imágenes que ya llevan
-  titular o botones en la parte inferior); por defecto, franja inferior.
+  titular o botones en la parte inferior); con "top-right", en la esquina
+  superior derecha (cuando la izquierda lleva el logotipo); por defecto,
+  franja inferior.
+- Si un recorte no puede conservar a la vez el logotipo y el titular de una
+  ilustración, heroImage.socialArea = "0% 86%" indica la franja vertical
+  (desde, hasta) que debe verse COMPLETA: se escala a 630 px de alto, sin
+  deformar ni recortar, y los lados se rellenan con la misma imagen
+  difuminada y oscurecida. Sin socialArea, se usa el recorte habitual.
 
 Además, para cada colaborador de js/data.js (CONTRIBUTORS) escribe la
 tarjeta para compartir su perfil:
@@ -46,7 +53,7 @@ import sys
 from pathlib import Path
 
 try:
-    from PIL import Image, ImageDraw, ImageFont, ImageOps
+    from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 except ImportError:
     sys.exit("Falta Pillow: pip install pillow")
 
@@ -119,20 +126,26 @@ def add_label(img, text):
     return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
 
-def add_corner_label(img, text):
-    """Pastilla discreta y legible en la esquina superior izquierda."""
+def add_corner_label(img, text, right=False):
+    """Pastilla discreta y legible en una esquina superior (izquierda por defecto)."""
     font = label_font(21)
     margin, pad_x, pad_y = 16, 14, 8
     overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
-    left, top, right, bottom = draw.textbbox((0, 0), text, font=font)
-    box = (margin, margin, margin + (right - left) + 2 * pad_x, margin + (bottom - top) + 2 * pad_y)
+    left, top, right_, bottom = draw.textbbox((0, 0), text, font=font)
+    bw = (right_ - left) + 2 * pad_x
+    x0 = W - margin - bw if right else margin
+    box = (x0, margin, x0 + bw, margin + (bottom - top) + 2 * pad_y)
     draw.rounded_rectangle(box, radius=8, fill=(11, 11, 11, 205))
-    draw.text((margin + pad_x - left, margin + pad_y - top), text, font=font, fill=(255, 255, 255, 255))
+    draw.text((x0 + pad_x - left, margin + pad_y - top), text, font=font, fill=(255, 255, 255, 255))
     return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
 
-LABEL_POSITIONS = {"bottom": add_label, "top-left": add_corner_label}
+LABEL_POSITIONS = {
+    "bottom": add_label,
+    "top-left": add_corner_label,
+    "top-right": lambda img, text: add_corner_label(img, text, right=True),
+}
 
 
 def social_crop(img, focus):
@@ -145,6 +158,27 @@ def social_crop(img, focus):
     left = min(max(round(rw * fx - W / 2), 0), rw - W)
     top = min(max(round(rh * fy - H / 2), 0), rh - H)
     return img.crop((left, top, left + W, top + H))
+
+
+def parse_area(value):
+    parts = re.findall(r"(\d+(?:\.\d+)?)%", value or "")
+    if len(parts) != 2 or not 0 <= float(parts[0]) < float(parts[1]) <= 100:
+        sys.exit(f"socialArea no válido: {value!r} (formato: \"0% 86%\")")
+    return float(parts[0]) / 100, float(parts[1]) / 100
+
+
+def social_area(img, area, focus):
+    """Muestra completa la franja vertical `area`; rellena los lados con la imagen difuminada."""
+    img = ImageOps.exif_transpose(img).convert("RGB")
+    y0, y1 = round(img.height * area[0]), round(img.height * area[1])
+    band = img.crop((0, y0, img.width, y1))
+    if band.width / band.height >= W / H:
+        return social_crop(band, focus)
+    bg = social_crop(img, focus).filter(ImageFilter.GaussianBlur(28))
+    bg = ImageEnhance.Brightness(bg).enhance(0.45)
+    fw = round(band.width * H / band.height)
+    bg.paste(band.resize((fw, H), Image.LANCZOS), ((W - fw) // 2, 0))
+    return bg
 
 
 # ---------- Tarjeta para compartir el perfil de un colaborador ----------
@@ -238,7 +272,8 @@ def main():
             sys.exit(f"No existe la fotografía {src} del artículo {a['slug']}")
         focus = parse_focus((a.get("heroImage") or {}).get("socialFocus"))
         out = OUT / f"{a['slug']}.jpg"
-        img = social_crop(Image.open(path), focus)
+        area = (a.get("heroImage") or {}).get("socialArea")
+        img = social_area(Image.open(path), parse_area(area), focus) if area else social_crop(Image.open(path), focus)
         label = (a.get("heroImage") or {}).get("socialLabel")
         if label:
             position = (a.get("heroImage") or {}).get("socialLabelPosition") or "bottom"

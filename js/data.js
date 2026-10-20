@@ -65,16 +65,16 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Migración",
-    title: "Canadá cambia Express Entry: nuevos puntos por experiencia laboral y ofertas de empleo desde noviembre",
-    dek: "Desde el 3 de noviembre de 2026, Express Entry dará puntos adicionales a quienes tengan experiencia laboral canadiense o una oferta de empleo válida en ocupaciones de salarios altos, y ya no exigirá la LMIA para esas ofertas. Te explicamos los cambios y qué hacer antes de esa fecha.",
+    category: "Alberta",
+    title: "Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?",
+    dek: "Las preguntas sobre inmigración y el futuro de la provincia generan inquietudes entre los residentes. Te explicamos qué se votó, qué sigue pendiente y qué podría cambiar.",
     author: "Redacción El Podcast del Migrante",
-    date: "19 de octubre, 2026",
-    image: "url('assets/express-entry-nuevos-puntos-noviembre-2026.jpg')",
+    date: "20 de octubre, 2026",
+    image: "url('assets/referendum-alberta-octubre-2026-inmigrantes.jpg')",
     aspectRatio: "16/9",
-    alt: "Ilustración editorial asistida por inteligencia artificial: una mujer sonriente sostiene un pasaporte canadiense y una carpeta de Express Entry frente al Parlamento de Canadá y la bandera canadiense, con el titular «Express Entry en Canadá: nuevos puntos y beneficios desde noviembre».",
+    alt: "Ilustración editorial asistida por inteligencia artificial: cinco personas miran hacia la Legislatura de Alberta, con las banderas de Alberta y de Canadá, mientras una mano deposita un voto en una urna con la palabra «Alberta». Titular: «Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?».",
     demo: false,
-    slug: "express-entry-nuevos-puntos-noviembre-2026",
+    slug: "referendum-alberta-octubre-2026-inmigrantes",
   },
   secondary: [
     {
@@ -121,6 +121,7 @@ const HERO = {
 };
 
 const LATEST = [
+  { category: "Migración", title: "Canadá cambia Express Entry: nuevos puntos por experiencia laboral y ofertas de empleo desde noviembre", time: "19 OCT 2026", slug: "express-entry-nuevos-puntos-noviembre-2026", image: "assets/express-entry-nuevos-puntos-noviembre-2026.jpg" },
   { category: "Migración", title: "Canadá anunciará cambios en Express Entry este viernes 16 de octubre: lo que deben saber los inmigrantes", time: "16 OCT 2026", slug: "express-entry-anuncio-cambios-octubre-2026", image: "assets/express-entry-anuncio-cambios-octubre-2026.jpg" },
   { category: "Alberta", title: "Alberta activa sus reglas de invierno: desde hoy no pueden cortarte por completo la luz en casa", time: "15 OCT 2026", slug: "reglas-invierno-electricidad-gas-alberta", image: "assets/reglas-invierno-electricidad-gas-alberta.jpg" },
   { category: "Migración", title: "Canadá cierra las invitaciones de Working Holiday 2026: esta es la fecha límite para participar", time: "14 OCT 2026", slug: "working-holiday-2026-cierre-invitaciones-canada", image: "assets/working-holiday-2026-cierre-invitaciones.jpg" },

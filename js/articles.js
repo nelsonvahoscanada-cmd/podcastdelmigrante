@@ -160,6 +160,116 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Referéndum provincial de Alberta del lunes 19 de octubre de 2026 (diez
+       preguntas). Nota explicativa SIN resultados: cierre editorial el lunes
+       19 de octubre a las 7:05 p. m. (Edmonton), con los lugares de votación
+       todavía abiertos. Los resultados irán en una noticia aparte, con
+       cifras confirmadas por Elections Alberta. Texto de las preguntas:
+       O.C. 109, 110 y 160/2026. Resultados oficiales: 29 de octubre de 2026,
+       10:00 a. m. (Elections Alberta).
+       Publicación prevista: 20 de octubre de 2026, 5:00 a. m. (Edmonton).
+       Imagen: ilustración editorial asistida por IA (no es una foto real). */
+    id: "ART-2026-028",
+    slug: "referendum-alberta-octubre-2026-inmigrantes",
+    category: "Alberta",
+    contentType: "Noticia",
+    title: "Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?",
+    dek: "Las preguntas sobre inmigración y el futuro de la provincia generan inquietudes entre los residentes. Te explicamos qué se votó, qué sigue pendiente y qué podría cambiar.",
+    excerpt: "Alberta votó el 19 de octubre diez preguntas, cinco sobre inmigración. Qué se votó, qué podría significar para los inmigrantes y qué sigue; los resultados oficiales llegan el 29 de octubre.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-20T05:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/referendum-alberta-octubre-2026-inmigrantes.jpg')",
+      aspectRatio: "3/2",
+      alt: "Ilustración editorial asistida por inteligencia artificial: cinco personas miran hacia la Legislatura de Alberta, con las banderas de Alberta y de Canadá, mientras una mano deposita un voto en una urna con la palabra «Alberta». Titular: «Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?», con los íconos «Trabajadores temporales», «Estudiantes internacionales», «Residentes permanentes» y «Familias inmigrantes».",
+      credit: "Ilustración editorial asistida por IA.",
+      socialFocus: "50% 40%",
+      socialArea: "0% 86%",
+      socialLabel: "Ilustración editorial asistida por IA",
+      socialLabelPosition: "top-right",
+    },
+    bodyHtml: `
+      <p>Los electores de Alberta votaron el <strong>lunes 19 de octubre de 2026</strong> en un referéndum provincial con <strong>diez preguntas</strong>. Cinco tratan sobre inmigración y sobre el acceso de los residentes temporales a los servicios que paga la provincia. La décima consulta si Alberta debe iniciar el proceso legal hacia un futuro referéndum sobre su separación de Canadá.</p>
+      <p>Lo más importante para la comunidad inmigrante: <strong>el referéndum, por sí mismo, no modifica las leyes migratorias ni las reglas de acceso a los servicios</strong>. Las preguntas sobre inmigración <strong>no son vinculantes</strong>: el gobierno provincial decide qué hacer con los resultados, y cualquier cambio necesitaría nuevas leyes o políticas que todavía no existen.</p>
+      <aside class="article-highlight">
+        <h2 class="article-highlight__title">Lo esencial</h2>
+        <ul>
+          <li><strong>Resultados:</strong> esta nota no los incluye. Al cierre editorial, los lugares de votación seguían abiertos. Puedes consultar los resultados no oficiales en el <a href="https://results.elections.ab.ca/" target="_blank" rel="noopener">sitio de Elections Alberta</a>, y publicaremos una noticia aparte con cifras confirmadas.</li>
+          <li><strong>Resultados oficiales:</strong> Elections Alberta los anunciará el <strong>jueves 29 de octubre</strong> a las 10:00 a. m.</li>
+          <li><strong>El referéndum, por sí mismo, no modifica las leyes migratorias ni las reglas de acceso a los servicios.</strong> Para trabajadores temporales, estudiantes internacionales, residentes permanentes y sus familias, siguen vigentes las mismas reglas que antes de la votación.</li>
+          <li><strong>Las preguntas 1 a 5 y la 10 no son vinculantes.</strong> Cualquier medida tendría que convertirse primero en ley o en política pública.</li>
+          <li><strong>La pregunta 10 no decide la separación de Alberta.</strong> Consulta si se inicia un proceso legal hacia otro referéndum, que sí sería vinculante.</li>
+        </ul>
+      </aside>
+      <h2>¿Y los resultados?</h2>
+      <p>Los votos se cuentan <strong>a mano</strong>. Según Elections Alberta, se cuenta y se informa primero la <strong>pregunta 10</strong> y después las preguntas 1 a 9, en orden. Elections Alberta indicó que los resultados no oficiales se publicarían en su <a href="https://results.elections.ab.ca/" target="_blank" rel="noopener">sitio de resultados</a> solo después de confirmar el cierre de todos los lugares de votación de la provincia. Algunos abrieron tarde y extendieron su horario, por lo que el último cierre se esperaba, como pronto, a las 10:00 p. m. del lunes.</p>
+      <p><strong>Cierre editorial de esta nota: lunes 19 de octubre de 2026, 7:05 p. m., hora de Alberta.</strong> A esa hora los lugares de votación seguían abiertos, así que todavía no había resultados que verificar. Por eso esta nota <strong>no incluye cifras</strong> de ninguna de las diez preguntas.</p>
+      <p>Los resultados no oficiales <strong>no son definitivos</strong> hasta que Elections Alberta publique los oficiales. Publicaremos una noticia aparte con los resultados, con cifras confirmadas y su hora de corte.</p>
+      <h2>Las cinco preguntas sobre inmigración</h2>
+      <p>Resumen de cada pregunta (traducción no oficial; el texto original en inglés está en la <a href="https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_110.html" target="_blank" rel="noopener">orden O.C. 110/2026 del Gobierno de Alberta</a> y en la <a href="https://www.elections.ab.ca/elections/referendum/" target="_blank" rel="noopener">página del referéndum de Elections Alberta</a>). Todas se respondían con «sí» o «no».</p>
+      <ul>
+        <li><strong>Pregunta 1 — Más control sobre la inmigración.</strong> Si Alberta debe tener más control sobre la inmigración para reducirla a niveles más sostenibles, dar prioridad a la inmigración económica y dar a los habitantes de Alberta la primera opción a los empleos nuevos.</li>
+        <li><strong>Pregunta 2 — Quién puede usar los programas provinciales.</strong> Si Alberta debe aprobar una ley que limite los programas que paga la provincia, como la salud, la educación y otros servicios sociales, a los ciudadanos canadienses, los residentes permanentes y las personas con un estatus migratorio aprobado por Alberta.</li>
+        <li><strong>Pregunta 3 — 12 meses de residencia.</strong> Si las personas con estatus legal no permanente deben vivir en Alberta al menos 12 meses antes de recibir ayudas sociales provinciales. La pregunta parte de que los ciudadanos y residentes permanentes seguirían como hoy.</li>
+        <li><strong>Pregunta 4 — Cuota por salud y educación.</strong> Si el gobierno debe cobrar una cuota o prima razonable a las personas con estatus migratorio no permanente que viven en Alberta por el uso que ellas y sus familias hagan de la salud y la educación públicas. También parte de que los ciudadanos y residentes permanentes seguirían como hoy.</li>
+        <li><strong>Pregunta 5 — Prueba de ciudadanía para votar.</strong> Si el gobierno debe aprobar una ley que exija una prueba de ciudadanía, como un pasaporte, un acta de nacimiento o un certificado de ciudadanía, para votar en las elecciones provinciales. Hoy ya solo los ciudadanos canadienses pueden votar en ellas.</li>
+      </ul>
+      <h2>¿Qué podría cambiar para cada grupo?</h2>
+      <p>Lo que sigue describe <strong>posibles efectos si el gobierno decidiera llevar adelante estas propuestas</strong>. No son leyes vigentes, y su alcance dependería de cómo se redacten.</p>
+      <ul>
+        <li><strong>Trabajadores temporales:</strong> son el grupo más mencionado en las preguntas 2, 3 y 4. Si esas propuestas llegaran a aprobarse, podrían enfrentar una espera de 12 meses para recibir ayudas sociales provinciales, el pago de una cuota por salud o educación, o la necesidad de un estatus aprobado por la provincia para usar algunos programas.</li>
+        <li><strong>Estudiantes internacionales:</strong> también tienen estatus temporal, así que les afectarían las mismas propuestas si llegaran a aprobarse. La pregunta 4 menciona además a sus familias, por ejemplo, hijos en escuelas públicas.</li>
+        <li><strong>Residentes permanentes:</strong> las preguntas 3 y 4 parten de que conservarían el acceso que tienen hoy, y la pregunta 2 los incluye entre quienes podrían seguir usando los programas. Como no son ciudadanos, no pueden votar en elecciones provinciales, y la pregunta 5 no cambia eso.</li>
+        <li><strong>Familias con estatus mixto:</strong> en hogares donde unos son ciudadanos o residentes permanentes y otros tienen estatus temporal, esas propuestas, si se aprobaran, podrían afectar de manera distinta a cada integrante.</li>
+        <li><strong>Todos:</strong> la pregunta 1 trata sobre cuánta inmigración recibe Alberta. Los niveles nacionales los fija el Gobierno de Canadá, así que la provincia tendría que negociar con Ottawa para tener más control.</li>
+      </ul>
+      <h2>La pregunta sobre el futuro de Alberta en Canadá</h2>
+      <p>La pregunta 10 ofrecía dos opciones: que <strong>Alberta siga siendo una provincia de Canadá</strong>, o que el gobierno provincial <strong>inicie el proceso legal que exige la Constitución canadiense para celebrar un referéndum provincial vinculante</strong> sobre si Alberta debe separarse de Canadá.</p>
+      <p>Es decir, esta votación <strong>no decide una separación</strong>. Su resultado no es vinculante, y aunque ganara la segunda opción, Alberta seguiría siendo parte de Canadá: haría falta otro referéndum y un proceso constitucional. Para los inmigrantes, esta pregunta <strong>no modifica</strong> los permisos, la residencia permanente, la ciudadanía ni los trámites ante IRCC.</p>
+      <h2>Las otras cuatro preguntas</h2>
+      <p>Las preguntas 6 a 9 consultan si Alberta debe trabajar con otras provincias dispuestas para <strong>reformar la Constitución de Canadá</strong> en cuatro puntos: que los gobiernos provinciales, y no el federal, elijan a los jueces de los tribunales provinciales del Rey y de Apelación; abolir el Senado; permitir que las provincias se retiren de programas federales en áreas provinciales, como la salud, la educación y los servicios sociales, sin perder los fondos federales correspondientes; y que las leyes provinciales prevalezcan sobre las federales cuando entren en conflicto en áreas de competencia provincial o compartida. Cualquier reforma constitucional necesitaría, además, el acuerdo del Parlamento federal y de otras provincias. No tratan directamente de inmigración.</p>
+      <h2>¿Qué sigue?</h2>
+      <ul>
+        <li><strong>Conteo:</strong> Elections Alberta publica los resultados no oficiales en su <a href="https://results.elections.ab.ca/" target="_blank" rel="noopener">sitio de resultados</a> a medida que avanza el conteo: primero la pregunta 10 y después las preguntas 1 a 9.</li>
+        <li><strong>29 de octubre de 2026, 10:00 a. m.:</strong> anuncio oficial de los resultados, según Elections Alberta.</li>
+        <li><strong>Después:</strong> el gobierno provincial decidirá qué hacer con los resultados. Si propone leyes, tendrán que presentarse y aprobarse en la Asamblea Legislativa de Alberta.</li>
+      </ul>
+      <h2>Recomendaciones prácticas</h2>
+      <ul>
+        <li><strong>No cambies tus trámites</strong> por rumores: el referéndum, por sí mismo, no modificó tus derechos ni tus obligaciones.</li>
+        <li><strong>Sigue usando los servicios</strong> de salud, educación y apoyo social a los que tienes derecho.</li>
+        <li><strong>Desconfía de mensajes</strong> que hablen de «nuevas reglas» o pidan pagos para «mantener» tu estatus o tu cobertura. Consulta siempre las fuentes oficiales.</li>
+        <li><strong>Si tienes dudas sobre tu caso,</strong> consulta a un consultor de inmigración regulado (RCIC) o a un abogado autorizado.</li>
+      </ul>
+      <p><strong>Importante:</strong> esta nota explica el referéndum y no incluye resultados. Los resultados oficiales los anunciará Elections Alberta el 29 de octubre de 2026.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Elections Alberta — Resultados del referéndum de 2026", href: "https://results.elections.ab.ca/" },
+      { label: "Elections Alberta — Referendum (preguntas, votación y anuncio oficial de resultados)", href: "https://www.elections.ab.ca/elections/referendum/" },
+      { label: "Elections Alberta — Unofficial Referendum Results Reporting Process (19 de octubre de 2026)", href: "https://www.elections.ab.ca/resources/media/news-releases/2026-10-19-2/" },
+      { label: "Gobierno de Alberta — O.C. 110/2026 (preguntas 1 a 5, inmigración)", href: "https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_110.html" },
+      { label: "Gobierno de Alberta — O.C. 109/2026 (preguntas 6 a 9, Constitución)", href: "https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_109.html" },
+      { label: "Gobierno de Alberta — O.C. 160/2026 (pregunta 10, futuro de Alberta en Canadá)", href: "https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_160.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Migración",
+    relatedSlugs: ["express-entry-nuevos-puntos-noviembre-2026"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Referéndum en Alberta: qué pasó y qué significa para los inmigrantes",
+      description: "Alberta votó diez preguntas el 19 de octubre de 2026, cinco sobre inmigración. Qué se votó, qué podría significar para los inmigrantes y qué sigue.",
+      canonicalPath: "/alberta/referendum-alberta-octubre-2026-inmigrantes/",
+    },
+  },
+  {
     /* Cambios en Express Entry anunciados por IRCC el 16 de octubre de 2026,
        vigentes desde el 3 de noviembre de 2026. Datos tomados de las páginas
        oficiales de IRCC (comunicado, documento de antecedentes, página de
