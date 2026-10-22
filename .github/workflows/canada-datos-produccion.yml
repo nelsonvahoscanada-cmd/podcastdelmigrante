@@ -1,4 +1,4 @@
-# TEMPORAL: comprobación de solo lectura de Canadá en Datos en producción. Se elimina después de usarse.
+# TEMPORAL: comprobación de solo lectura del portal en producción. Se elimina después de usarse.
 name: canada-datos-produccion
 on:
   push:
@@ -11,21 +11,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Cabeceras y metadatos
+      - name: Portal (solo lectura)
         run: |
-          for u in https://www.podcastdelmigrante.com/canada-en-datos/ https://www.podcastdelmigrante.com/canada-en-datos/alberta https://podcastdelmigrante.com/canada-en-datos/ https://podcastdelmigrante.com/canada-en-datos/alberta; do
-            echo "=== $u"
-            curl -sSL -o /tmp/p.html -w "final=%{url_effective} status=%{http_code} redirects=%{num_redirects}\n" "$u"
-            grep -o '<title>[^<]*</title>' /tmp/p.html
-            grep -oE '<link rel="canonical"[^>]*>|<meta (property|name)="(og:[a-z:]+|twitter:[a-z]+|robots)"[^>]*>' /tmp/p.html
-            grep -c 'noindex' /tmp/p.html || true
-            grep -c 'Prototipo en revisión' /tmp/p.html || true
+          for p in / /articulo-referendum-alberta-octubre-2026-inmigrantes /articulo-express-entry-nuevos-puntos-noviembre-2026 /guia /perfil-carlos-d-castillo /perfil-tomas-velazquez /colaborador-carlos-castillo /privacidad /canada-en-datos/ /canada-en-datos/alberta /sitemap.xml /robots.txt; do
+            curl -sS -o /tmp/p.html -w "%{http_code} $p " "https://podcastdelmigrante.com$p"
+            grep -o '<title>[^<]*</title>' /tmp/p.html | head -1 || echo
           done
-          for a in social-canada-en-datos.jpg social-alberta.jpg; do curl -sS -o /dev/null -w "$a %{http_code} %{content_type} %{size_download}\n" https://podcastdelmigrante.com/assets/canada-en-datos/$a; done
-          curl -sS https://podcastdelmigrante.com/sitemap.xml | grep canada
-          curl -sS https://podcastdelmigrante.com/js/data.js | grep '"Canadá", href'
-      - name: Navegador (computador, tableta y celular) contra producción
+          curl -sS -o /dev/null -w "admin %{http_code} -> %{redirect_url}\n" https://admin.podcastdelmigrante.com/
+      - name: Navegador contra producción
         run: |
           npm i --no-save playwright@1.48.2 >/dev/null 2>&1
           npx playwright install --with-deps chromium >/dev/null 2>&1
-          BASE=https://podcastdelmigrante.com node tests/e2e-canada-datos.cjs
+          cat > /tmp/regresion.cjs <<'JS'
+          const { chromium } = require(process.cwd() + "/node_modules/playwright");
+          (async () => {
+            const b = await chromium.launch(); let fallos = 0;
+            for (const ruta of ["/", "/articulo-referendum-alberta-octubre-2026-inmigrantes", "/perfil-carlos-d-castillo", "/perfil-tomas-velazquez", "/guia"]) {
+              const p = await b.newPage({ viewport: { width: 390, height: 844 } }); const err = [];
+              p.on("pageerror", (e) => err.push(e.message));
+              p.on("response", (r) => r.status() >= 400 && err.push(r.status() + " " + r.url()));
+              await p.goto("https://podcastdelmigrante.com" + ruta, { waitUntil: "networkidle" });
+              const menu = await p.$$eval("#navPrimary a, #mobileNavList a", (as) => as.map((a) => a.textContent.trim()));
+              const h1 = await p.$eval("h1", (h) => h.textContent.trim()).catch(() => "(sin h1)");
+              const imgs = await p.$$eval("img", (is) => is.filter((i) => i.complete && i.naturalWidth === 0 && i.loading !== "lazy").length);
+              console.log(ruta, "| h1:", h1.slice(0, 70), "| menú Canadá:", menu.includes("Canadá"), "| imágenes rotas:", imgs, "| errores:", JSON.stringify(err));
+              if (err.length || imgs) fallos++;
+              await p.close();
+            }
+            await b.close(); process.exit(fallos ? 1 : 0);
+          })();
+          JS
+          node /tmp/regresion.cjs
