@@ -46,6 +46,7 @@ const DIRS = {
   js: ["js"],
   vcard: ["vcf"],
   "guia-carlos": ["html", ...MEDIA],
+  "canada-en-datos": ["html"], /* Canadá en Datos: páginas generadas por scripts/build-canada-datos.mjs */
 };
 /* Material de origen dentro de carpetas públicas que el sitio no usa
    (p. ej. fotos originales en alta resolución de clientes). */
