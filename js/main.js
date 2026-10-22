@@ -103,22 +103,26 @@
     });
   }
 
-  /* ---------- Últimas noticias ---------- */
+  /* ---------- Últimas noticias ----------
+     Las 5 noticias publicadas más recientes de ARTICLES (sin repetir
+     las del bloque principal); las anteriores quedan en noticias.html.
+     Ver js/noticias.js. */
   function buildLatest() {
     const list = document.getElementById("latestList");
-    LATEST.forEach((item) => {
-      const thumb = item.image ? `<span class="latest-row__thumb" style="background-image:url('${item.image}')"></span>` : "";
+    PDM_NOTICIAS.portada(ARTICLES, HERO).forEach((item) => {
+      const image = PDM_NOTICIAS.imagen(item);
+      const thumb = image ? `<span class="latest-row__thumb" style="background-image:url('${image}')"></span>` : "";
       const row = el(
         "a",
-        "latest-row" + (item.image ? " latest-row--img" : ""),
+        "latest-row" + (image ? " latest-row--img" : ""),
         `
         ${thumb}
         <span class="tag tag--sm">${item.category}</span>
         <span class="latest-row__title">${item.title}</span>
-        <span class="latest-row__time">${item.time}</span>
+        <time class="latest-row__time" datetime="${item.publishedAt}">${PDM_NOTICIAS.fechaCorta(item.publishedAt)}</time>
       `
       );
-      row.href = item.slug ? articleHref(item.slug) : "#";
+      row.href = articleHref(item.slug);
       list.appendChild(row);
     });
   }

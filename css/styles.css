@@ -576,6 +576,34 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .latest-row--img { grid-template-columns: 40px auto 1fr auto; }
   .latest-row__thumb { width: 40px; height: 40px; }
 }
+.latest-more { margin-top: 18px; }
+
+/* Archivo de noticias (noticias.html) */
+.news-archive__intro { color: var(--gris-600); margin: -10px 0 8px; }
+.news-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.news-pager a,
+.news-pager span {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gris-100);
+  border-radius: var(--radius-s);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.news-pager a:hover { border-color: var(--verde-oscuro); color: var(--verde-oscuro); }
+.news-pager a[aria-current="page"] { background: var(--verde-oscuro); border-color: var(--verde-oscuro); color: #fff; }
+.news-pager span[aria-disabled="true"] { color: var(--gris-600); opacity: 0.6; }
 
 /* =========================================================
    Información útil para migrantes

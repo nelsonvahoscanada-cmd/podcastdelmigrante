@@ -120,27 +120,9 @@ const HERO = {
   ],
 };
 
-const LATEST = [
-  { category: "Migración", title: "Canadá cambia Express Entry: nuevos puntos por experiencia laboral y ofertas de empleo desde noviembre", time: "19 OCT 2026", slug: "express-entry-nuevos-puntos-noviembre-2026", image: "assets/express-entry-nuevos-puntos-noviembre-2026.jpg" },
-  { category: "Migración", title: "Canadá anunciará cambios en Express Entry este viernes 16 de octubre: lo que deben saber los inmigrantes", time: "16 OCT 2026", slug: "express-entry-anuncio-cambios-octubre-2026", image: "assets/express-entry-anuncio-cambios-octubre-2026.jpg" },
-  { category: "Alberta", title: "Alberta activa sus reglas de invierno: desde hoy no pueden cortarte por completo la luz en casa", time: "15 OCT 2026", slug: "reglas-invierno-electricidad-gas-alberta", image: "assets/reglas-invierno-electricidad-gas-alberta.jpg" },
-  { category: "Migración", title: "Canadá cierra las invitaciones de Working Holiday 2026: esta es la fecha límite para participar", time: "14 OCT 2026", slug: "working-holiday-2026-cierre-invitaciones-canada", image: "assets/working-holiday-2026-cierre-invitaciones.jpg" },
-  { category: "Canadá", title: "Canadá anuncia reembolsos de hasta $10,000 para cambiar la calefacción por una bomba de calor", time: "12 OCT 2026", slug: "reembolso-bombas-de-calor-canada", image: "assets/reembolso-bombas-de-calor-canada.jpg" },
-  { category: "Salud", title: "El Dr. Eddy Valverde Narvaez, médico de familia latino, llega a Brooks: lo que debes saber si aún buscas doctor en Alberta", time: "12 OCT 2026", slug: "medico-familia-latino-brooks-alberta", image: "assets/medico-familia-latino-brooks-alberta.jpg" },
-  { category: "Migración", title: "Llegar a Canadá: los documentos que conviene tener organizados desde el primer día", time: "18 de septiembre", slug: "llegar-canada-documentos-primer-dia", image: "assets/llegar-canada-documentos-migrante.jpg" },
-  { category: "Empleo", title: "Certificaciones cortas que pueden ayudarte a prepararte para trabajar en Alberta", time: "18 de septiembre", slug: "certificaciones-trabajo-alberta", image: "assets/certificaciones-trabajo-alberta.jpg" },
-  { category: "Vivienda", title: "Tu primer arriendo en Alberta: qué revisar antes de firmar el contrato", time: "18 de septiembre", slug: "primer-arriendo-alberta", image: "assets/primer-arriendo-alberta.jpg" },
-  { category: "Comunidad", title: "100 empresarios, 100 historias: el emprendimiento latino que está construyendo comunidad en Calgary", time: "18 de septiembre", slug: "100-empresarios-100-historias-calgary", image: "assets/100-empresarios-100-historias-calgary.jpg" },
-  { category: "Migración", title: "Carney plantea cuándo Canadá podría volver a aumentar la inmigración de forma controlada", time: "1 OCT 2026", slug: "carney-aumento-controlado-inmigracion-canada", image: "assets/carney-aumento-controlado-inmigracion-canada.jpg" },
-  { category: "Alberta", title: "Alberta suspende el impuesto a la gasolina: conductores ahorran 13 centavos por litro desde octubre", time: "1 OCT 2026", slug: "alberta-suspende-impuesto-gasolina-octubre-2026", image: "assets/alberta-suspende-impuesto-gasolina.jpg" },
-  { category: "Alberta", title: "Nueva vía de acceso a JBS en Brooks busca reducir los tiempos de salida de miles de trabajadores", time: "27 de septiembre", slug: "nueva-via-jbs-brooks-highway-873" },
-  { category: "Canadá", title: "Trabajadores temporales ya pueden estudiar hasta 6 meses sin permiso de estudios", time: "Hoy", slug: "trabajadores-estudiar-sin-study-permit-canada" },
-  { category: "Finanzas", title: "Canadá limita a $10 los cargos bancarios por pagos rechazados por falta de fondos", time: "Hoy", slug: "canada-limite-cargos-nsf-10-dolares" },
-  { category: "Educación", title: "¿Tu profesión quedó atrás al llegar a Canadá? Alberta ofrece capacitación gratuita para inmigrantes elegibles", time: "Hoy", slug: "immigrant-bridging-program-alberta" },
-  { category: "Vivienda", title: "¿El arriendo se está llevando gran parte de tu ingreso? Alberta tiene ayudas mensuales para inquilinos elegibles", time: "Hoy", slug: "ayuda-pagar-arriendo-alberta" },
-  { category: "Salud", title: "¿No tienes seguro dental? Revisa si puedes acceder al plan dental federal de Canadá", time: "Hoy", slug: "plan-dental-canada-cdcp" },
-  { category: "Comunidad", title: "¿Tienes permiso de trabajo en Alberta? Puedes acceder a servicios gratuitos para inmigrantes", time: "Hoy", slug: "servicios-gratuitos-trabajadores-temporales-alberta" },
-];
+/* «Últimas noticias» ya no se mantiene a mano: la portada toma las 5
+   noticias publicadas más recientes de ARTICLES (js/noticias.js) y el
+   archivo completo está en noticias.html. */
 
 const USEFUL_INFO = [
   { title: "Migración", desc: "Trámites, permisos y rutas de residencia explicados sin lenguaje técnico.", href: "guia.html?categoria=migracion" },
