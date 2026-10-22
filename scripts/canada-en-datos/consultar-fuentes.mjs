@@ -1,112 +1,106 @@
 #!/usr/bin/env node
 /*
-  consultar-fuentes.mjs — Consulta directa de fuentes oficiales para «Canadá en Datos»
+  consultar-fuentes.mjs — Verificación de páginas oficiales para «Canadá en Datos»
   ======================================================================
-  Herramienta de verificación (no forma parte del sitio). Consulta:
-  - la API oficial de Statistics Canada (Web Data Service, WDS): elige cada
-    serie por el NOMBRE de sus miembros en los metadatos de la tabla y
-    muestra la serie elegida, el período y la fecha de publicación;
-  - páginas oficiales de alberta.ca y CMHC (texto, para leer cifras y
-    condiciones tal como están publicadas).
-  Imprime todo en la salida para que quede registrado y se pueda auditar.
+  Herramienta de verificación (no forma parte del sitio).
+  - paginas: descarga páginas oficiales (alberta.ca, canada.ca, IRCC…) e
+    imprime solo las líneas que coinciden con lo que hay que verificar
+    (cifras, plazos, requisitos), con la fecha de actualización publicada.
+  - enlaces: comprueba la respuesta HTTP de todos los enlaces de
+    js/canada-datos.js y de los enlaces candidatos.
+  - cmhc: lista las descargas de las tablas del Rental Market Survey.
+  Las cifras de Statistics Canada se consultan con consultar-statcan.py.
 
-  Uso: node scripts/canada-en-datos/consultar-fuentes.mjs [statcan|paginas|cmhc ...]
+  Uso: node scripts/canada-en-datos/consultar-fuentes.mjs [paginas|enlaces|cmhc ...]
 */
+import { readFileSync } from "node:fs";
 
-const WDS = "https://www150.statcan.gc.ca/t1/wds/rest";
-const UA = { "User-Agent": "Mozilla/5.0 (compatible; PodcastDelMigrante-verificacion/1.0)" };
-
-async function post(path, body) {
-  const r = await fetch(`${WDS}/${path}`, { method: "POST", headers: { ...UA, "Content-Type": "application/json" }, body: JSON.stringify(body) });
-  if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
-  return r.json();
-}
-
-/* Cada consulta: tabla y, por dimensión, una expresión que debe coincidir con el nombre del miembro. */
-const CONSULTAS = [
-  { clave: "population", pid: 17100009, n: 2, dims: { Geography: /^Alberta$/ } },
-  { clave: "censusPopulation2021", pid: 98100001, n: 1, dims: { Geography: /^Alberta$/, "Population and dwelling counts": /^Population, 2021$/ } },
-  { clave: "unemploymentRate", pid: 14100287, n: 2, dims: { Geography: /^Alberta$/, "Labour force characteristics": /^Unemployment rate$/, Gender: /^Total - Gender$/, "Age group": /^15 years and over$/, Statistics: /^Estimate$/, "Data type": /^Seasonally adjusted$/ } },
-  { clave: "averageHourlyWage", pid: 14100064, n: 2, dims: { Geography: /^Alberta$/, Wages: /^Average hourly wage rate$/, "Type of work": /^Both full- and part-time employees$/, "North American Industry Classification System (NAICS)": /^Total employees, all industries$/, Gender: /^Total - Gender$/, "Age group": /^15 years and over$/ } },
-  { clave: "medianHourlyWage", pid: 14100064, n: 2, dims: { Geography: /^Alberta$/, Wages: /^Median hourly wage rate$/, "Type of work": /^Both full- and part-time employees$/, "North American Industry Classification System (NAICS)": /^Total employees, all industries$/, Gender: /^Total - Gender$/, "Age group": /^15 years and over$/ } },
-  { clave: "gdp", pid: 36100222, n: 2, dims: { Geography: /^Alberta$/, Prices: /^Current prices$/, Estimates: /^Gross domestic product at market prices$/ } },
-  { clave: "crimeSeverity", pid: 35100026, n: 2, dims: { Geography: /^Alberta/, Statistics: /^Crime severity index$/ } },
-];
-
-async function statcan() {
-  for (const c of CONSULTAS) {
-    console.log(`\n=== ${c.clave} — tabla ${c.pid} ===`);
-    try {
-      const [meta] = await post("getCubeMetadata", [{ productId: c.pid }]);
-      if (meta.status !== "SUCCESS") throw new Error(JSON.stringify(meta).slice(0, 300));
-      const m = meta.object;
-      console.log(`Título: ${m.cubeTitleEn}`);
-      console.log(`Publicación: ${m.releaseTime} · Frecuencia: ${m.frequencyCode} · Período: ${m.cubeStartDate} a ${m.cubeEndDate}`);
-      const coord = [];
-      const elegidos = [];
-      for (const dim of m.dimension) {
-        const nombre = dim.dimensionNameEn;
-        const re = c.dims[nombre];
-        let miembro = re ? dim.member.find((x) => re.test(x.memberNameEn)) : dim.member.find((x) => x.memberId === 1);
-        if (!miembro) {
-          console.log(`  ¡Sin coincidencia en «${nombre}»! Miembros: ${dim.member.slice(0, 60).map((x) => `${x.memberId}=${x.memberNameEn}`).join(" | ")}`);
-          throw new Error(`dimensión ${nombre}`);
-        }
-        coord.push(miembro.memberId);
-        elegidos.push(`${nombre} = ${miembro.memberNameEn}`);
-      }
-      while (coord.length < 10) coord.push(0);
-      console.log(`Serie: ${elegidos.join(" · ")}`);
-      const [datos] = await post("getDataFromCubePidCoordAndLatestNPeriods", [{ productId: c.pid, coordinate: coord.join("."), latestN: c.n }]);
-      if (datos.status !== "SUCCESS") throw new Error(JSON.stringify(datos).slice(0, 300));
-      const o = datos.object;
-      console.log(`Vector: v${o.vectorId} · Coordenada: ${o.coordinate}`);
-      for (const p of o.vectorDataPoint) {
-        console.log(`  ${p.refPer} → ${p.value} (escala ${p.scalarFactorCode}, decimales ${p.decimals}, estado ${p.statusCode}, símbolo ${p.symbolCode}, publicado ${p.releaseTime})`);
-      }
-      console.log(`RESULTADO ${JSON.stringify({ clave: c.clave, pid: c.pid, vector: o.vectorId, serie: elegidos, puntos: o.vectorDataPoint.map((p) => ({ refPer: p.refPer, value: p.value, scalar: p.scalarFactorCode, released: p.releaseTime })) })}`);
-    } catch (e) {
-      console.log(`ERROR ${c.clave}: ${e.message}`);
-    }
-  }
-}
+const UA = { "User-Agent": "Mozilla/5.0 (compatible; PodcastDelMigrante-verificacion/1.0)", "Accept-Language": "en-CA,en;q=0.9" };
 
 function texto(html) {
   return html
-    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<noscript[\s\S]*?<\/noscript>/gi, " ")
-    .replace(/<(br|\/p|\/li|\/h\d|\/tr|\/div)[^>]*>/gi, "\n")
-    .replace(/<td[^>]*>/gi, " | ")
+    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<noscript[\s\S]*?<\/noscript>|<header[\s\S]*?<\/header>|<footer[\s\S]*?<\/footer>|<nav[\s\S]*?<\/nav>/gi, " ")
+    .replace(/<(br|\/p|\/li|\/h\d|\/tr|\/div|\/dt|\/dd)[^>]*>/gi, "\n")
+    .replace(/<t[dh][^>]*>/gi, " | ")
     .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#36;|&dollar;/g, "$").replace(/&rsquo;|&#8217;/g, "'").replace(/&ndash;|&#8211;/g, "–")
-    .split("\n").map((l) => l.replace(/\s+/g, " ").trim()).filter(Boolean).join("\n");
+    .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#36;|&dollar;/g, "$").replace(/&rsquo;|&#8217;/g, "'").replace(/&ndash;|&#8211;/g, "–").replace(/&mdash;|&#8212;/g, "—")
+    .split("\n").map((l) => l.replace(/\s+/g, " ").trim()).filter(Boolean);
 }
 
+/* url, expresión de las líneas que interesan, máximo de líneas */
 const PAGINAS = [
-  "https://www.alberta.ca/minimum-wage",
-  "https://www.alberta.ca/aaip-updates",
-  "https://www.alberta.ca/alberta-advantage-immigration-program",
-  "https://www.alberta.ca/ahcip-moving-to-alberta",
-  "https://www.alberta.ca/ahcip-temporary-residents",
-  "https://www.alberta.ca/get-id-card",
-  "https://www.alberta.ca/alberta-child-and-family-benefit",
-  "https://www.alberta.ca/albertas-school-system",
-  "https://www.canada.ca/en/employment-social-development/services/sin/temporary-residents.html",
-  "https://ircc.canada.ca/english/newcomers/services/index.asp",
+  ["https://www.alberta.ca/minimum-wage", /minimum wage|\$\s?\d|effective|per hour/i, 40],
+  ["https://www.alberta.ca/aaip-updates", /nominat|allocation|2026|expression/i, 45],
+  ["https://www.alberta.ca/alberta-advantage-immigration-program", /nominat|stream|pathway|permanent|fee|IRCC|representative|fraud/i, 40],
+  ["https://www.alberta.ca/ahcip-moving-to-alberta", /month|eligib|coverage|register|residen|apply|document/i, 40],
+  ["https://www.alberta.ca/ahcip-temporary-residents", /permit|eligib|month|coverage|visitor|student|worker|document|12/i, 45],
+  ["https://www.alberta.ca/get-id-card", /citizen|lawful|resid|\$|fee|registry|valid/i, 30],
+  ["https://www.alberta.ca/alberta-child-and-family-benefit", /\$|eligib|tax|automatic|CRA|resident|instal/i, 45],
+  ["https://www.alberta.ca/albertas-school-system", /register|enrol|school board|age|kindergarten|grade|free|tuition|francophone/i, 30],
+  ["https://www.alberta.ca/common-problems-landlords-and-tenants", /deposit|rent|scam|fraud|notice|RTDRS|lease/i, 30],
+  ["https://www.alberta.ca/employment-standards", /minimum|overtime|vacation|holiday|pay|rights|complaint/i, 30],
+  ["https://www.canada.ca/en/employment-social-development/services/sin/temporary-residents.html", /expire|9|apply|document|free|permit/i, 30],
+  ["https://www.canada.ca/en/employment-social-development/services/sin.html", /apply|online|mail|person|free|third/i, 20],
+  ["https://ircc.canada.ca/english/newcomers/services/index.asp", /eligib|temporary|permanent|April|limit|Quebec|province/i, 30],
+  ["https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html", /fraud|scam|pay|representative|guarantee|job/i, 30],
+  ["https://www.antifraudcentre-centrefraudeantifraude.ca/index-eng.htm", /report|fraud|scam|call|1-888/i, 20],
+  ["https://economicdashboard.alberta.ca/", /industr|energy|GDP|employment|sector/i, 20],
 ];
 
-async function paginas(lista = PAGINAS, max = 9000) {
-  for (const url of lista) {
+const CANDIDATOS = [
+  "https://www.alberta.ca/employment-standards",
+  "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html",
+  "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative.html",
+  "https://www.antifraudcentre-centrefraudeantifraude.ca/index-eng.htm",
+  "https://www.alberta.ca/post-secondary-institutions",
+  "https://www.alberta.ca/apprenticeship-and-industry-training",
+  "https://tradesecrets.alberta.ca/",
+  "https://www.alberta.ca/foreign-qualification-recognition",
+  "https://www.alberta.ca/language-training-programs",
+  "https://www.alberta.ca/settlement-and-integration",
+  "https://www.alberta.ca/occupational-health-and-safety",
+  "https://www.canada.ca/en/financial-consumer-agency/services/banking/opening-bank-account.html",
+  "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/new-life-canada/find-job.html",
+  "https://www.alberta.ca/residential-tenancy-dispute-resolution-service",
+  "https://www.alberta.ca/tenancies-act-overview",
+  "https://www.alberta.ca/k-to-12-education",
+  "https://www.alberta.ca/alberta-supports",
+  "https://www.alberta.ca/income-support",
+  "https://www.alberta.ca/alberta-adult-health-benefit",
+  "https://www.alberta.ca/child-care-subsidy",
+  "https://www.alberta.ca/alberta-child-health-benefit",
+];
+
+async function paginas() {
+  for (const [url, re, max] of PAGINAS) {
     console.log(`\n=== PÁGINA ${url} ===`);
     try {
       const r = await fetch(url, { headers: UA, redirect: "follow" });
       const html = await r.text();
-      const mod = html.match(/(?:Updated|Last updated|Date modified)[^<]{0,60}/i);
-      console.log(`HTTP ${r.status} · URL final ${r.url}${mod ? ` · ${mod[0].trim()}` : ""}`);
-      const t = texto(html);
-      console.log(t.slice(0, max));
-      if (t.length > max) console.log(`[… ${t.length - max} caracteres más]`);
+      const mod = html.match(/(?:Updated|Last updated|Date modified|dateModified)[^<\n]{0,60}/i);
+      console.log(`HTTP ${r.status} · ${r.url}${mod ? ` · ${mod[0].replace(/\s+/g, " ").trim()}` : ""}`);
+      const lineas = texto(html);
+      const titulo = (html.match(/<title>([^<]*)<\/title>/i) || [])[1];
+      if (titulo) console.log(`Título: ${titulo.trim()}`);
+      const elegidas = lineas.filter((l) => re.test(l) && l.length > 12).slice(0, max);
+      for (const l of elegidas) console.log("  · " + l.slice(0, 400));
     } catch (e) {
       console.log(`ERROR ${url}: ${e.message}`);
+    }
+  }
+}
+
+async function enlaces() {
+  const datos = readFileSync(new URL("../../js/canada-datos.js", import.meta.url), "utf8");
+  const urls = [...new Set([...datos.matchAll(/https:\/\/[^"'\s]+/g)].map((m) => m[0]))];
+  console.log(`\n=== ENLACES (${urls.length} del módulo + ${CANDIDATOS.length} candidatos) ===`);
+  for (const url of [...urls, ...CANDIDATOS]) {
+    try {
+      let r = await fetch(url, { method: "GET", headers: UA, redirect: "follow" });
+      const titulo = ((await r.text()).match(/<title>([^<]*)<\/title>/i) || [])[1] || "";
+      console.log(`${r.status} ${url}${r.url !== url ? ` → ${r.url}` : ""} · ${titulo.replace(/\s+/g, " ").trim().slice(0, 90)}`);
+    } catch (e) {
+      console.log(`ERR ${url}: ${e.message}`);
     }
   }
 }
@@ -115,19 +109,15 @@ async function cmhc() {
   const url = "https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-data/data-tables/rental-market/rental-market-report-data-tables";
   console.log(`\n=== CMHC ${url} ===`);
   try {
-    const r = await fetch(url, { headers: UA });
-    const html = await r.text();
-    console.log(`HTTP ${r.status}`);
-    const enlaces = [...html.matchAll(/href="([^"]+\.xlsx[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi)].map((m) => `${texto(m[2]).replace(/\n/g, " ")} → ${new URL(m[1], url).href}`);
-    console.log(enlaces.join("\n") || "(sin enlaces .xlsx)");
-    console.log(texto(html).slice(0, 4000));
+    const html = await (await fetch(url, { headers: UA })).text();
+    const refs = [...new Set([...html.matchAll(/(?:href|data-[a-z-]+)="([^"]*(?:xlsx|xls|csv|assets\.cmhc|\/sites\/cmhc\/)[^"]*)"/gi)].map((m) => new URL(m[1].replace(/&amp;/g, "&"), url).href))];
+    console.log(refs.join("\n") || "(sin descargas en el HTML)");
   } catch (e) {
     console.log(`ERROR CMHC: ${e.message}`);
   }
 }
 
 const modos = process.argv.slice(2);
-const todos = modos.length === 0;
-if (todos || modos.includes("statcan")) await statcan();
-if (todos || modos.includes("paginas")) await paginas();
-if (todos || modos.includes("cmhc")) await cmhc();
+if (!modos.length || modos.includes("paginas")) await paginas();
+if (!modos.length || modos.includes("enlaces")) await enlaces();
+if (!modos.length || modos.includes("cmhc")) await cmhc();
