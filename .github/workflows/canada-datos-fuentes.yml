@@ -13,24 +13,9 @@ on:
 permissions:
   contents: read
 jobs:
-  statcan:
+  tablas:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/canada-en-datos/consultar-statcan.py
-  paginas:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: node scripts/canada-en-datos/consultar-fuentes.mjs cifras
-  enlaces:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: node scripts/canada-en-datos/consultar-fuentes.mjs enlaces cmhc
+      - run: pip install openpyxl
+      - run: python3 scripts/canada-en-datos/consultar-tablas.py
