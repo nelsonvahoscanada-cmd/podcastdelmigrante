@@ -427,7 +427,7 @@ export function paginas(L, ctx) {
       escuelas = `<p>El directorio oficial de Alberta Education registra ${miles(e.total)} escuelas con dirección en ${esc(r.n)} (actualizado el ${esc(fechaEs(ciu.escuelas_fecha))}), entre públicas, católicas, francófonas, privadas y otras.</p>
       <h3>Autoridades escolares con escuelas en ${esc(r.n)}</h3>
       <ul class="cd-list-items">
-        ${auts.map(([n, v]) => `<li>${v.web ? `<a href="${esc(v.web)}" target="_blank" rel="noopener">${esc(n)}</a>` : esc(n)} — ${esc(tipoAut[v.tipo] || v.tipo)}, ${v.n} ${v.n === 1 ? "escuela" : "escuelas"}</li>`).join("\n        ")}
+        ${auts.map(([n, v]) => `<li>${v.web ? `<a href="${esc(v.web.replace(/^http:\/\//, "https://"))}" target="_blank" rel="noopener">${esc(n)}</a>` : esc(n)} — ${esc(tipoAut[v.tipo] || v.tipo)}, ${v.n} ${v.n === 1 ? "escuela" : "escuelas"}</li>`).join("\n        ")}
       </ul>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.escuelas, esc)}. Para inscribir a tus hijos, comunícate con la autoridad escolar de tu zona.</p>`;
     }

@@ -8,14 +8,14 @@ UA = {"User-Agent": "Mozilla/5.0 (verificacion de enlaces; podcastdelmigrante.co
 urls = set()
 for f in glob.glob("canada-en-datos/**/*.html", recursive=True):
     for u in re.findall(r'<a [^>]*href="(https?://[^"]+)"', open(f, encoding="utf-8").read()):
-        if "podcastdelmigrante.com" not in u:
+        if "podcastdelmigrante.com" not in u and not re.match(r"https://(instagram|facebook)\.com/", u):  # redes del pie: limitan consultas automáticas
             urls.add(u.replace("&amp;", "&"))
 
 
 def probar(u):
-    for metodo in ("HEAD", "GET"):
+    for metodo in ("GET", "GET", "HEAD"):
         try:
-            with urllib.request.urlopen(urllib.request.Request(u, headers=UA, method=metodo), timeout=45) as r:
+            with urllib.request.urlopen(urllib.request.Request(u, headers=UA, method=metodo), timeout=90) as r:
                 return u, r.status, r.geturl()
         except Exception as e:
             err = e
