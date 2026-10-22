@@ -8,21 +8,22 @@ def get(u):
 d = json.loads(get("https://open.alberta.ca/api/3/action/package_show?id=alberta-health-facility-and-functional-centre-definitions-and-facility-listing"))["result"]
 rec = [r for r in d["resources"] if not r["name"].startswith("[SUPERSEDED]")][0]
 lineas = [l.rstrip() for p in PdfReader(io.BytesIO(get(rec["url"]))).pages for l in (p.extract_text() or "").split("\n") if l.strip()]
-# Encabezados de sección (mayúsculas) y de ciudad
-for i, l in enumerate(lineas):
-    if re.match(r"^[A-Z][A-Z &/\-,()]{6,}$", l.strip()) or l.startswith("FACILITY TYPE") or "TYPE:" in l:
-        print("SEC", i, l.strip()[:120])
-ciudad, tipo, res = None, None, {}
-for i, l in enumerate(lineas):
-    s = l.strip()
-    m = re.match(r"^(?:FACILITY )?TYPE:\s*(.+)$", s)
-    if m: tipo = m.group(1).strip()
-    m = re.match(r"^CITY:\s*(.+)$", s)
+ciudad, res = None, {}
+for l in lineas:
+    s_ = l.strip()
+    m = re.match(r"^CITY:\s*(.+)$", s_)
     if m: ciudad = m.group(1).strip(); continue
     if ciudad in ("Calgary", "Edmonton", "Brooks", "Red Deer", "Lethbridge", "Medicine Hat"):
-        m = re.match(r"^(.+?)\s+(\d{1,5})\s+([A-Z/]{2,6})\s+(.+)$", s)
+        m = re.match(r"^(.+?)\s+(\d{1,5})\s+([A-Z/]{2,6})\s+(.+)$", s_)
         if m:
-            res.setdefault(ciudad, {}).setdefault(tipo, {}).setdefault(m.group(1).strip(), m.group(2))
-for c, tipos in res.items():
-    for t, fac in tipos.items():
-        print("FAC", c, "|", t, "|", sorted(fac))
+            f = res.setdefault(ciudad, {}).setdefault(m.group(1).strip(), {"num": m.group(2), "fc": {}})
+            f["fc"][m.group(3)] = m.group(4).strip()
+salida = {}
+for c, facs in res.items():
+    for n, f in facs.items():
+        urg = {k: v for k, v in f["fc"].items() if re.search(r"emergenc|urgent", v, re.I)}
+        hosp = {k: v for k, v in f["fc"].items() if re.search(r"in-?patient|surg|obstet|intensive", v, re.I)}
+        if urg:
+            salida.setdefault(c, []).append({"nombre": n, "numero": f["num"], "urgencias": urg, "hospitalizacion": hosp})
+            print("URG", c, "|", n, "|", f["num"], "|", urg, "|", list(hosp.values())[:4])
+print("JSON", json.dumps({"fuente": rec["name"], "url": rec["url"], "ciudades": salida}, ensure_ascii=False))
