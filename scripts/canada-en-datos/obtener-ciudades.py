@@ -122,6 +122,7 @@ for m in sorted(set(re.findall(r'href="([^"]*(?:transit|bus|transport)[^"]*)"', 
     print("  brooks enlace:", m)
 
 texto = json.dumps(salida, ensure_ascii=False, separators=(",", ":"))
+open("scripts/canada-en-datos/alberta-ciudades.json", "w", encoding="utf-8").write(texto)
 b64 = base64.b64encode(gzip.compress(texto.encode("utf-8"), 9)).decode()
 print("bytes:", len(texto), "base64:", len(b64))
 print("DATOS-INICIO")

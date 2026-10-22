@@ -30,5 +30,7 @@ for c, facs in res.items():
         if urg:
             salida.setdefault(c, []).append({"nombre": n, "numero": f["num"], "urgencias": urg, "hospitalizacion": hosp})
             print("URG", c, "|", n, "|", f["num"], "|", urg, "|", list(hosp.values())[:4])
-print("MUESTRA", [l for l in lineas if "Foothills" in l or "Chinook Regional" in l][:6])
-print("JSON", json.dumps({"fuente": rec["name"], "url": rec["url"], "ciudades": salida}, ensure_ascii=False))
+import datetime
+texto = json.dumps({"fuente": rec["name"], "url": rec["url"], "consultado": datetime.date.today().isoformat(), "ciudades": salida}, ensure_ascii=False)
+open("scripts/canada-en-datos/alberta-hospitales.json", "w", encoding="utf-8").write(texto)
+print("JSON", texto)

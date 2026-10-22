@@ -151,6 +151,20 @@ export function cargar(root) {
   const hosp = JSON.parse(readFileSync(join(base, "alberta-hospitales.json"), "utf8"));
 
   const todos = loc.localidades.map((r) => ({ ...r }));
+  /* Encuadre del mapa: en la proyección cónica el paralelo 49 (frontera sur)
+     se curva, así que los límites se calculan con la geometría real. */
+  const xs = [], ys = [];
+  for (const r of loc.mapa.regiones) for (const m of r.d.matchAll(/(-?[\d.]+),(-?[\d.]+)/g)) xs.push(+m[1]), ys.push(+m[2]);
+  for (const r of todos) xs.push(r.x), ys.push(r.y);
+  const MARGEN = 6;
+  const dx = MARGEN - Math.min(...xs), dy = MARGEN - Math.min(...ys);
+  const mueve = (v, d) => Math.round((v + d) * 10) / 10;
+  const mapa = {
+    ancho: Math.ceil(Math.max(...xs) + dx + MARGEN),
+    alto: Math.ceil(Math.max(...ys) + dy + MARGEN),
+    regiones: loc.mapa.regiones.map((r) => ({ ...r, d: r.d.replace(/(-?[\d.]+),(-?[\d.]+)/g, (_, x, y) => `${mueve(+x, dx)},${mueve(+y, dy)}`) })),
+  };
+  for (const r of todos) (r.x = mueve(r.x, dx)), (r.y = mueve(r.y, dy));
   const porCodigo = new Map(todos.filter((r) => ES_MUNICIPIO(r.t)).map((r) => [r.c, r]));
   /* Un mismo lugar puede figurar como área de servicio urbano y como
      hamlet o localidad del mismo municipio: se muestra una sola vez. */
@@ -184,7 +198,7 @@ export function cargar(root) {
     (p.comunidades ||= []).push(r);
   }
   /* Población de las áreas especiales: la lista la publica solo en conjunto (Special Areas Board) */
-  return { meta: loc._fuentes, conteo: loc.conteo_capas, regiones: loc.regiones, mapa: loc.mapa, items, porCodigo, ciu, hosp };
+  return { meta: loc._fuentes, conteo: loc.conteo_capas, regiones: loc.regiones, mapa, items, porCodigo, ciu, hosp };
 }
 
 /* ---------- Datos para el navegador (js/alberta-localidades.js) ---------- */
@@ -427,7 +441,7 @@ export function paginas(L, ctx) {
       escuelas = `<p>El directorio oficial de Alberta Education registra ${miles(e.total)} escuelas con dirección en ${esc(r.n)} (actualizado el ${esc(fechaEs(ciu.escuelas_fecha))}), entre públicas, católicas, francófonas, privadas y otras.</p>
       <h3>Autoridades escolares con escuelas en ${esc(r.n)}</h3>
       <ul class="cd-list-items">
-        ${auts.map(([n, v]) => `<li>${v.web ? `<a href="${esc(v.web.replace(/^http:\/\//, "https://"))}" target="_blank" rel="noopener">${esc(n)}</a>` : esc(n)} — ${esc(tipoAut[v.tipo] || v.tipo)}, ${v.n} ${v.n === 1 ? "escuela" : "escuelas"}</li>`).join("\n        ")}
+        ${auts.map(([n, v]) => `<li>${v.web ? `<a href="${esc(v.web)}" target="_blank" rel="noopener">${esc(n)}</a>` : esc(n)} — ${esc(tipoAut[v.tipo] || v.tipo)}, ${v.n} ${v.n === 1 ? "escuela" : "escuelas"}</li>`).join("\n        ")}
       </ul>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.escuelas, esc)}. Para inscribir a tus hijos, comunícate con la autoridad escolar de tu zona.</p>`;
     }
