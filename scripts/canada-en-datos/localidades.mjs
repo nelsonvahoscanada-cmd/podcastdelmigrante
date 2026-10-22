@@ -232,7 +232,7 @@ export function seccionDirectorio(L, esc) {
     .map(([g, titulo]) => {
       const tipos = Object.entries(TIPOS).filter(([, v]) => v.grupo === g);
       const total = tipos.reduce((a, [k]) => a + cuenta(k), 0);
-      return `<li><strong>${esc(titulo)}: ${miles(total)}</strong> — ${tipos.map(([k, v]) => `${miles(cuenta(k))} ${esc(v.plural)}`).join(", ")}</li>`;
+      return `<li><strong>${esc(titulo)}: ${miles(total)}</strong> — ${tipos.map(([k, v]) => `${miles(cuenta(k))} ${esc(cuenta(k) === 1 ? (v.es === v.en ? v.es.toLowerCase() : `${v.es.toLowerCase()} (${v.en.toLowerCase()})`) : v.plural)}`).join(", ")}</li>`;
     })
     .join("\n          ");
   const fichas = Object.keys(FICHAS)

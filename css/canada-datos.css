@@ -267,3 +267,5 @@
 @media (max-width: 520px) {
   .cd-loc__filtros { grid-template-columns: 1fr; }
 }
+.cd-loc__mas[hidden] { display: none; }
+.cd-loc__mapa { max-width: 440px; }
