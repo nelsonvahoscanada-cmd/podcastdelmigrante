@@ -98,6 +98,8 @@ const CD_PROFILES = {
     intro:
       "Alberta es una de las provincias de las Praderas canadienses. Su capital es Edmonton y su ciudad más poblada es Calgary. Limita con Columbia Británica, Saskatchewan, los Territorios del Noroeste y el estado de Montana, en Estados Unidos. Usa la hora de la montaña y cambia al horario de verano.",
     summary: ["population", "unemploymentRate", "minimumWage"],
+    /* Directorio «Explora las ciudades y pueblos de Alberta» (scripts/canada-en-datos/localidades.mjs) */
+    localidades: true,
     indicators: {
       population: {
         label: "Población (estimación)",

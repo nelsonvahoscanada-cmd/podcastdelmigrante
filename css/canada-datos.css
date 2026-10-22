@@ -198,3 +198,74 @@
 .cd-method ul { list-style: disc; padding-left: 20px; }
 
 .cd-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* =========================================================
+   Explora las ciudades y pueblos de Alberta (#localidades)
+   y páginas de cada localidad (canada-en-datos/alberta/…)
+========================================================= */
+.cd-loc__resumen, .cd-loc__fichas { margin: 16px 0; }
+.cd-loc__resumen ul, .cd-loc__fichas ul { padding-left: 1.2em; }
+.cd-loc__resumen li { margin: 4px 0; }
+.cd-loc__fichas ul { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; padding: 0; }
+.cd-loc__fichas a { font-weight: 700; color: var(--verde-oscuro); }
+.cd-loc__nota, .cd-loc__fuente { font-size: 0.85rem; color: var(--gris-600); }
+.cd-loc__app { margin-top: 20px; border-top: 3px solid var(--verde); padding-top: 16px; }
+.cd-loc__filtros { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; }
+.cd-loc__campo { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.cd-loc__campo label { font-size: 0.85rem; font-weight: 700; }
+.cd-loc__campo input, .cd-loc__campo select {
+  width: 100%; min-height: 44px; padding: 8px 10px; font: inherit;
+  border: 1px solid #b9b8b0; border-radius: var(--radius-s); background: #fff; color: inherit;
+}
+.cd-loc__campo input:focus-visible, .cd-loc__campo select:focus-visible { outline: 3px solid var(--verde); outline-offset: 1px; }
+.cd-loc__estado { margin: 12px 0; font-weight: 600; }
+.cd-loc__cuerpo { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 20px; align-items: start; }
+.cd-loc__mapa { margin: 0; position: relative; }
+.cd-loc__svg { width: 100%; height: auto; display: block; }
+.cd-loc__region { fill: #f2f1ed; stroke: #9aa58a; stroke-width: 1.2; cursor: pointer; }
+.cd-loc__region:hover { fill: var(--verde-suave); }
+.cd-loc__region.es-activa { fill: #dcecc4; stroke: var(--verde-oscuro); stroke-width: 2; }
+.cd-loc__punto { fill: #9aa58a; cursor: pointer; }
+.cd-loc__punto.es-municipio { fill: var(--verde); stroke: #fff; stroke-width: 0.8; }
+.cd-loc__punto.es-ficha { fill: var(--verde-oscuro); stroke: #fff; stroke-width: 1.5; }
+.cd-loc__punto.es-hover, .cd-loc__punto.es-sel { fill: #111; r: 7; stroke: #fff; stroke-width: 2; }
+.cd-loc__tarjeta {
+  position: absolute; left: 8px; right: 8px; bottom: 8px; background: #fff;
+  border: 1px solid #b9b8b0; border-left: 4px solid var(--verde); border-radius: var(--radius-s);
+  padding: 10px 36px 10px 12px; font-size: 0.9rem; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.cd-loc__tarjeta p { margin: 0 0 4px; }
+.cd-loc__tarjeta a { font-weight: 700; color: var(--verde-oscuro); }
+.cd-loc__tarjeta-nombre { font-weight: 700; font-size: 1rem; }
+.cd-loc__cerrar { position: absolute; top: 4px; right: 4px; width: 32px; height: 32px; border: 0; background: none; font-size: 1.3rem; cursor: pointer; }
+.cd-loc__lista { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--gris-100); }
+.cd-loc__item a {
+  display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 10px 4px;
+  border-bottom: 1px solid var(--gris-100); color: inherit; text-decoration: none;
+}
+.cd-loc__item a:hover .cd-loc__item-nombre, .cd-loc__item a:focus-visible .cd-loc__item-nombre { color: var(--verde-oscuro); text-decoration: underline; }
+.cd-loc__item-nombre { font-weight: 700; }
+.cd-loc__item-tipo { grid-column: 1; font-size: 0.82rem; color: var(--gris-600); }
+.cd-loc__item-pob { grid-column: 2; grid-row: 1; font-size: 0.82rem; color: var(--gris-600); white-space: nowrap; }
+.cd-loc__marca { display: inline-block; margin-left: 6px; padding: 1px 6px; font-size: 0.7rem; font-weight: 700; color: #fff; background: var(--verde-oscuro); border-radius: 3px; vertical-align: 2px; }
+.cd-loc__mas { margin-top: 12px; }
+.cd-loc-mini { margin: 0; max-width: 360px; }
+.cd-loc-mini__lienzo { position: relative; width: 100%; }
+.cd-loc-mini__lienzo img { width: 100%; height: 100%; display: block; }
+.cd-loc-mini__punto {
+  position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%;
+  background: var(--verde-oscuro); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--verde-oscuro);
+}
+.cd-loc-mini figcaption { font-size: 0.82rem; color: var(--gris-600); margin-top: 6px; }
+.cd-loc-comunidades { line-height: 1.7; }
+@media (max-width: 900px) {
+  .cd-loc__filtros { grid-template-columns: 1fr 1fr; }
+  .cd-loc__campo--buscar { grid-column: 1 / -1; }
+  .cd-loc__cuerpo { grid-template-columns: 1fr; }
+  .cd-loc__mapa { max-width: 420px; margin: 0 auto; width: 100%; }
+}
+@media (max-width: 520px) {
+  .cd-loc__filtros { grid-template-columns: 1fr; }
+}
+.cd-loc__mas[hidden] { display: none; }
+.cd-loc__mapa { max-width: 440px; }

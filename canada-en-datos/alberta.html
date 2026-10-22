@@ -132,6 +132,7 @@
       <a href="#beneficios">Beneficios familiares y ayudas</a>
       <a href="#integracion">Asentamiento e integración</a>
       <a href="#seguridad">Seguridad, emergencias y fraudes</a>
+      <a href="#localidades">Ciudades y pueblos</a>
       <a href="#recien-llegado">Recién llegado</a>
       <a href="#estafas">Estafas</a>
       <a href="#noticias">Noticias</a>
@@ -406,6 +407,97 @@
       </div>
     </section>
 
+    <section class="cd-section cd-loc" id="localidades" aria-labelledby="localidades-titulo">
+      <h2 id="localidades-titulo">Explora las ciudades y pueblos de Alberta</h2>
+      <p>Investiga las localidades de Alberta antes de decidir dónde vivir, trabajar o estudiar. El directorio incluye todos los municipios y las comunidades no incorporadas que publica el Gobierno de Alberta, con su clasificación oficial. Los <strong>hamlets</strong> y las demás comunidades no incorporadas no son municipios: pertenecen a un municipio, que es quien las administra.</p>
+      <div class="cd-loc__resumen">
+        <h3>Qué incluye</h3>
+        <ul>
+          <li><strong>Municipios incorporados: 322</strong> — 19 ciudades, 105 pueblos (towns), 78 villas (villages), 51 villas de verano (summer villages), 6 municipios especializados, 63 distritos municipales y condados</li>
+          <li><strong>Distritos de mejora y áreas especiales: 10</strong> — 7 distritos de mejora, 3 áreas especiales</li>
+          <li><strong>Asentamientos métis: 8</strong> — 8 asentamientos métis</li>
+          <li><strong>Comunidades no incorporadas: 1,275</strong> — 3 áreas de servicio urbano, 433 hamlets, 1 townsite, 838 localidades (lugares con nombre)</li>
+        </ul>
+        <p class="cd-loc__nota">Total: 1,615 localidades. Las regiones son las 8 regiones económicas oficiales de 2021; cada localidad se asignó según su ubicación en los límites oficiales.</p>
+      </div>
+      <div class="cd-loc__fichas">
+        <h3>Fichas completas</h3>
+        <ul>
+          <li><a href="/canada-en-datos/alberta/calgary">Calgary</a></li>
+          <li><a href="/canada-en-datos/alberta/edmonton">Edmonton</a></li>
+          <li><a href="/canada-en-datos/alberta/brooks">Brooks</a></li>
+          <li><a href="/canada-en-datos/alberta/red-deer">Red Deer</a></li>
+          <li><a href="/canada-en-datos/alberta/lethbridge">Lethbridge</a></li>
+          <li><a href="/canada-en-datos/alberta/medicine-hat">Medicine Hat</a></li>
+        </ul>
+        <p class="cd-loc__nota">Las demás localidades tienen, por ahora, una página con información básica. Iremos completándolas.</p>
+      </div>
+
+      <div class="cd-loc__app" id="cdLoc" data-src="/js/alberta-localidades.js">
+        <form class="cd-loc__filtros" role="search" aria-label="Buscar localidades de Alberta" onsubmit="return false">
+          <div class="cd-loc__campo cd-loc__campo--buscar">
+            <label for="cdLocBuscar">Buscar por nombre</label>
+            <input type="search" id="cdLocBuscar" autocomplete="off" placeholder="Por ejemplo: Brooks" disabled>
+          </div>
+          <div class="cd-loc__campo">
+            <label for="cdLocTipo">Tipo de localidad</label>
+            <select id="cdLocTipo" disabled>
+              <option value="">Todos los tipos</option>
+            <optgroup label="Municipios incorporados">
+              <option value="grupo:incorporado">Todos: municipios incorporados</option>
+              <option value="city">Ciudad (City)</option>
+              <option value="town">Pueblo (Town)</option>
+              <option value="village">Villa (Village)</option>
+              <option value="summer-village">Villa de verano (Summer Village)</option>
+              <option value="specialized">Municipio especializado (Specialized Municipality)</option>
+              <option value="md">Distrito municipal o condado (Municipal District / County)</option>
+            </optgroup>
+            <optgroup label="Distritos de mejora y áreas especiales">
+              <option value="grupo:provincial">Todos: distritos de mejora y áreas especiales</option>
+              <option value="id">Distrito de mejora (Improvement District)</option>
+              <option value="special-area">Área especial (Special Area)</option>
+            </optgroup>
+            <optgroup label="Asentamientos métis">
+              <option value="grupo:metis">Todos: asentamientos métis</option>
+              <option value="metis">Asentamiento métis (Metis Settlement)</option>
+            </optgroup>
+            <optgroup label="Comunidades no incorporadas">
+              <option value="grupo:comunidad">Todos: comunidades no incorporadas</option>
+              <option value="usa">Área de servicio urbano (Urban Service Area)</option>
+              <option value="hamlet">Hamlet (Hamlet)</option>
+              <option value="townsite">Townsite (Townsite)</option>
+              <option value="locality">Localidad (Locality)</option>
+            </optgroup>
+            </select>
+          </div>
+          <div class="cd-loc__campo">
+            <label for="cdLocRegion">Región económica</label>
+            <select id="cdLocRegion" disabled>
+              <option value="">Todas las regiones</option>
+            <option value="4810">Lethbridge–Medicine Hat</option>
+            <option value="4820">Camrose–Drumheller</option>
+            <option value="4830">Calgary</option>
+            <option value="4840">Banff–Jasper–Rocky Mountain House</option>
+            <option value="4850">Red Deer</option>
+            <option value="4860">Edmonton</option>
+            <option value="4870">Athabasca–Grande Prairie–Peace River</option>
+            <option value="4880">Wood Buffalo–Cold Lake</option>
+            </select>
+          </div>
+        </form>
+        <p class="cd-loc__estado" id="cdLocEstado" role="status" aria-live="polite">Cargando el directorio…</p>
+        <div class="cd-loc__cuerpo">
+          <figure class="cd-loc__mapa" id="cdLocMapa" aria-label="Mapa de Alberta con las localidades del listado"></figure>
+          <div class="cd-loc__lista-caja">
+            <ul class="cd-loc__lista" id="cdLocLista"></ul>
+            <button type="button" class="btn cd-loc__mas" id="cdLocMas" hidden>Mostrar más</button>
+          </div>
+        </div>
+        <noscript><p>Para usar el buscador y el mapa, activa JavaScript. Puedes abrir directamente las fichas completas de arriba.</p></noscript>
+      </div>
+      <p class="cd-loc__fuente">Fuentes: <a href="https://geospatial.alberta.ca/titan/rest/services/boundaries" target="_blank" rel="noopener">Gobierno de Alberta — Límites municipales y comunidades (servidor geoespacial)</a>; <a href="https://geospatial.alberta.ca/titan/rest/services/census/census_boundaries_2021/MapServer" target="_blank" rel="noopener">regiones económicas 2021</a>; población: <a href="https://open.alberta.ca/dataset/alberta-municipal-affairs-population-list" target="_blank" rel="noopener">Municipal Affairs Population List 2025</a> (no es una estimación oficial de población). Consultado el 22 de octubre de 2026.</p>
+    </section>
+
     <section class="cd-section cd-newcomer" id="recien-llegado" aria-labelledby="recien-llegado-titulo">
       <h2 id="recien-llegado-titulo">Recién llegado: ¿por dónde empezar?</h2>
       <p>Una ruta de primeros pasos para instalarte en Alberta. Cada trámite tiene sus requisitos: confírmalos siempre en la página oficial.</p>
@@ -563,5 +655,6 @@
 <script src="/js/canada-reloj.js"></script>
 <script src="/js/articles.js"></script>
 <script src="/js/canada-region.js"></script>
+<script src="/js/alberta-directorio.js"></script>
 </body>
 </html>

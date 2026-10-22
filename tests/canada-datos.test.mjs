@@ -15,7 +15,9 @@ import { build } from "../scripts/build-public.mjs";
 const ROOT = new URL("..", import.meta.url).pathname;
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
 const D = loadData();
-const PAGES = render();
+const TODAS = render();
+/* Portada y fichas de provincia; las páginas de localidades de Alberta y sus datos se prueban en alberta-localidades.test.mjs */
+const PAGES = Object.fromEntries(Object.entries(TODAS).filter(([k]) => !k.startsWith("/") && !k.startsWith("alberta/")));
 const reloj = createRequire(import.meta.url)("../js/canada-reloj.js");
 
 function jpegSize(path) {
@@ -30,10 +32,11 @@ function jpegSize(path) {
 const meta = (html, prop) => (html.match(new RegExp(`<meta (?:property|name)="${prop}" content="([^"]*)"`)) || [])[1];
 
 test("las páginas generadas están al día (node scripts/build-canada-datos.mjs)", () => {
-  for (const [name, html] of Object.entries(PAGES)) {
-    assert.equal(read(`canada-en-datos/${name}`), html, `canada-en-datos/${name} desactualizado`);
+  for (const [name, html] of Object.entries(TODAS)) {
+    const ruta = name.startsWith("/") ? name.slice(1) : `canada-en-datos/${name}`;
+    assert.equal(read(ruta), html, `${ruta} desactualizado`);
   }
-  const sobrantes = readdirSync(join(ROOT, "canada-en-datos")).filter((f) => !PAGES[f]);
+  const sobrantes = readdirSync(join(ROOT, "canada-en-datos")).filter((f) => !PAGES[f] && f !== "alberta");
   assert.deepEqual(sobrantes, []);
 });
 
