@@ -13,9 +13,16 @@ on:
 permissions:
   contents: read
 jobs:
-  abiertos:
+  statcan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pip install openpyxl pypdf
-      - run: python3 scripts/canada-en-datos/consultar-abiertos.py
+      - run: python3 scripts/canada-en-datos/consultar-statcan.py
+  enlaces:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/canada-en-datos/consultar-fuentes.mjs enlaces

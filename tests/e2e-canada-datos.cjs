@@ -52,6 +52,7 @@ async function sinScrollHorizontal(page) {
     assert.equal(await page.locator(".cd-region").count(), 13, "13 regiones en el mapa");
     assert.equal(await page.locator(".cd-chip").count(), 13, "13 botones en la lista");
     assert.equal(await page.locator("#cdPanelTitle").textContent(), "Alberta");
+    assert.match(await page.locator(".cd-panel").textContent(), /5,101,050/, "población verificada en el panel");
     await page.waitForFunction(() => /\d:\d\d:\d\d/.test(document.querySelector("[data-reloj-hora]").textContent));
     const hora = (await page.locator("[data-reloj-hora]").textContent()).replace(/\u202f|\u00a0/g, " ");
     assert.match(hora, RELOJ, `formato del reloj: ${hora}`);
@@ -104,7 +105,9 @@ async function sinScrollHorizontal(page) {
     for (const id of ["poblacion", "economia", "empleo", "vivienda", "salud", "educacion", "inmigracion", "beneficios", "integracion", "seguridad", "recien-llegado", "noticias", "fuentes"]) {
       assert.equal(await page.locator(`#${id}`).count(), 1, `sección #${id}`);
     }
-    assert.ok((await page.locator(".cd-step").count()) >= 6, "pasos de Recién llegado");
+    assert.equal(await page.locator(".cd-step").count(), 8, "pasos de Recién llegado");
+    assert.equal(await page.locator("#estafas li").count(), 3, "estafas de empleo, vivienda e inmigración");
+    assert.match(await page.locator("#vivienda").textContent(), /\$1,914/);
     const noticias = await page.locator("#cdNews a").evaluateAll((as) => as.map((a) => ({ href: a.getAttribute("href"), fecha: a.querySelector("time").getAttribute("datetime") })));
     assert.ok(noticias.length > 0 && noticias.length <= 6, "noticias de Alberta");
     for (let i = 1; i < noticias.length; i++) assert.ok(new Date(noticias[i - 1].fecha) >= new Date(noticias[i].fecha), "orden: de la más reciente a la más antigua");

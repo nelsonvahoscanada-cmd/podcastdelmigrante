@@ -9,7 +9,7 @@ import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import vm from "node:vm";
-import { render, loadData } from "../scripts/build-canada-datos.mjs";
+import { render, loadData, formatoValor } from "../scripts/build-canada-datos.mjs";
 import { build } from "../scripts/build-public.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -61,10 +61,16 @@ test("ninguna cifra sin fuente oficial, período de referencia y fecha de consul
     for (const [k, ind] of Object.entries(perfil.indicators)) {
       assert.match(ind.source.url, /^https:\/\//, `${slug}.${k}: fuente`);
       assert.ok(ind.source.org && ind.source.title && ind.label && ind.cadence, `${slug}.${k}`);
+      assert.ok(["numero", "moneda", "porcentaje", "indice"].includes(ind.format), `${slug}.${k}: formato`);
       if (ind.value !== null) {
         assert.equal(typeof ind.value, "number", `${slug}.${k}: valor numérico`);
         assert.ok(ind.refPeriod, `${slug}.${k}: período de referencia`);
+        assert.ok(ind.unit, `${slug}.${k}: unidad`);
         assert.match(ind.retrievedAt || "", /^\d{4}-\d{2}-\d{2}$/, `${slug}.${k}: fecha de consulta`);
+        assert.match(ind.reviewedAt || "", /^\d{4}-\d{2}-\d{2}$/, `${slug}.${k}: fecha de revisión`);
+        assert.ok(ind.note, `${slug}.${k}: aclaración de qué mide la cifra`);
+      } else {
+        assert.ok(ind.pending, `${slug}.${k}: debe explicar por qué sigue pendiente`);
       }
     }
     for (const k of perfil.summary) assert.ok(perfil.indicators[k], `${slug}: resumen ${k}`);
@@ -77,7 +83,13 @@ test("Alberta: ficha completa con todas las secciones y «Recién llegado»", ()
   const ab = D.CD_PROFILES.alberta;
   const ids = ab.sections.map((s) => s.id);
   for (const id of ["poblacion", "economia", "empleo", "vivienda", "salud", "educacion", "inmigracion", "beneficios", "integracion", "seguridad"]) assert.ok(ids.includes(id), id);
-  assert.ok(ab.newcomer.length >= 6);
+  assert.equal(ab.newcomer.length, 8, "ocho pasos de «Recién llegado»");
+  assert.ok(ab.scams.length >= 3, "orientación sobre estafas de empleo, vivienda e inmigración");
+  // Estimación y censo se distinguen; la cifra del AAIP explica qué mide
+  assert.match(ab.indicators.population.label, /estimaci/i);
+  assert.match(ab.indicators.censusPopulation.label, /censo/i);
+  assert.match(ab.indicators.aaipNominations.note, /no es el número de personas/i);
+  assert.match(ab.indicators.averageWage.note, /promedio/i);
   for (const p of ab.newcomer) assert.match(p.link.href, /^(https:\/\/|\/)/);
   for (const s of ab.sections) for (const l of s.links) assert.match(l.href, /^(https:\/\/|\/articulo-)/, l.href);
 });
@@ -128,6 +140,17 @@ test("rutas absolutas (páginas en subcarpeta), tipografías locales y footer le
       assert.ok(html.includes(`href="${legal}"`), `${name}: ${legal}`);
     }
   }
+});
+
+test("formato numérico del portal: igual en la página generada y en el navegador", () => {
+  assert.equal(formatoValor({ value: 5101050, format: "numero" }), "5,101,050");
+  assert.equal(formatoValor({ value: 7.2, format: "porcentaje", decimals: 1 }), "7.2%");
+  assert.equal(formatoValor({ value: 37.35, format: "moneda", decimals: 2 }), "$37.35");
+  assert.equal(formatoValor({ value: 1914, format: "moneda" }), "$1,914");
+  assert.equal(formatoValor({ value: 95.63, format: "indice", decimals: 2 }), "95.63");
+  const fuente = read("js/canada-mapa.js");
+  const cuerpo = (src) => src.slice(src.indexOf("function formatoValor"), src.indexOf("}", src.indexOf('return ind.format === "porcentaje"')) + 1).replace(/\s+/g, " ");
+  assert.equal(cuerpo(fuente), cuerpo(read("scripts/build-canada-datos.mjs")), "js/canada-mapa.js y el generador deben formatear igual");
 });
 
 test("reloj: 12 horas con segundos y día/noche por la salida y puesta del sol", () => {

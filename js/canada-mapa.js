@@ -31,14 +31,22 @@
   let reloj = null;
 
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  const fmtNum = (v) => new Intl.NumberFormat("es-CA").format(v);
+  /* Formato numérico del portal (convención canadiense): 5,101,050 · 7.2% · $37.35 · 95.63.
+     Propio y sin Intl, para que la página generada y el navegador muestren lo mismo. */
+  function formatoValor(ind) {
+    const [entero, decimales] = Math.abs(ind.value).toFixed(ind.decimals ?? 0).split(".");
+    const num = (ind.value < 0 ? "-" : "") + entero.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (decimales ? "." + decimales : "");
+    if (ind.format === "moneda") return "$" + num;
+    return ind.format === "porcentaje" ? num + "%" : num;
+  }
 
   function filaIndicador(ind) {
     if (!ind) return "";
-    const valor = ind.value === null || ind.value === undefined
-      ? '<span class="cd-pending">Pendiente de verificación</span>'
-      : esc(fmtNum(ind.value) + (ind.unit === "%" ? " %" : ""));
-    return `<div class="cd-fact"><dt>${esc(ind.label)}</dt><dd>${valor}</dd></div>`;
+    if (ind.value === null || ind.value === undefined) {
+      return `<div class="cd-fact"><dt>${esc(ind.label)}</dt><dd><span class="cd-pending">Pendiente de verificación</span></dd></div>`;
+    }
+    const unidad = ind.format === "moneda" && /^(por|al)\b/.test(ind.unit) ? ` ${esc(ind.unit)}` : "";
+    return `<div class="cd-fact"><dt>${esc(ind.label)}</dt><dd>${esc(formatoValor(ind))}${unidad}<small class="cd-fact__period">${esc(ind.refPeriod)}</small></dd></div>`;
   }
 
   function contenidoPanel(r) {

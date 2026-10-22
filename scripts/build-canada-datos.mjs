@@ -130,25 +130,43 @@ function relojHtml(region) {
       </div>`;
 }
 
+/* Formato numérico del portal (convención canadiense): 5,101,050 · 7.2% · $37.35 · 95.63.
+   Propio y sin Intl, para que la página generada y el navegador muestren lo mismo. */
+export function formatoValor(ind) {
+  const [entero, decimales] = Math.abs(ind.value).toFixed(ind.decimals ?? 0).split(".");
+  const num = (ind.value < 0 ? "-" : "") + entero.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (decimales ? "." + decimales : "");
+  if (ind.format === "moneda") return "$" + num;
+  return ind.format === "porcentaje" ? num + "%" : num;
+}
+
+const pendiente = (ind) => ind.value === null || ind.value === undefined;
+
 function valorIndicador(ind) {
-  if (ind.value === null || ind.value === undefined) return '<span class="cd-pending">Pendiente de verificación</span>';
-  const num = new Intl.NumberFormat("es-CA").format(ind.value);
-  return esc(ind.unit === "%" ? `${num} %` : num);
+  if (pendiente(ind)) return '<span class="cd-pending">Pendiente de verificación</span>';
+  const unidad = ind.format === "moneda" && /^(por|al)\b/.test(ind.unit) ? ` ${esc(ind.unit)}` : "";
+  return `${esc(formatoValor(ind))}${unidad}<small class="cd-fact__period">${esc(ind.refPeriod)}</small>`;
 }
 
 function filaIndicador(ind) {
   return `<div class="cd-fact"><dt>${esc(ind.label)}</dt><dd>${valorIndicador(ind)}</dd></div>`;
 }
 
+const fuenteHtml = (ind) => `<a href="${esc(ind.source.url)}" target="_blank" rel="noopener">${esc(ind.source.org)} — ${esc(ind.source.title)}</a>`;
+
 function tarjetaIndicador(ind) {
-  const pendiente = ind.value === null || ind.value === undefined;
-  const detalle = pendiente
-    ? `Se publicará con el dato oficial de <a href="${esc(ind.source.url)}" target="_blank" rel="noopener">${esc(ind.source.org)} — ${esc(ind.source.title)}</a>. Frecuencia: ${esc(ind.cadence.toLowerCase())}.`
-    : `${esc(ind.unit)} · Período: ${esc(ind.refPeriod)}. Fuente: <a href="${esc(ind.source.url)}" target="_blank" rel="noopener">${esc(ind.source.org)} — ${esc(ind.source.title)}</a>. Consultado el ${esc(fechaLarga(ind.retrievedAt))}.`;
+  if (pendiente(ind)) {
+    return `<div class="cd-indicator">
+          <p class="cd-indicator__label">${esc(ind.label)}</p>
+          <p class="cd-indicator__value cd-pending">Pendiente de verificación</p>
+          <p class="cd-indicator__src">${ind.pending ? `${esc(ind.pending)} ` : ""}Se publicará con el dato oficial de ${fuenteHtml(ind)}. Frecuencia: ${esc(ind.cadence.toLowerCase())}.</p>
+        </div>`;
+  }
   return `<div class="cd-indicator">
           <p class="cd-indicator__label">${esc(ind.label)}</p>
-          <p class="cd-indicator__value${pendiente ? " cd-pending" : ""}">${pendiente ? "Pendiente de verificación" : valorIndicador(ind)}</p>
-          <p class="cd-indicator__src">${detalle}</p>
+          <p class="cd-indicator__value">${esc(formatoValor(ind))}</p>
+          <p class="cd-indicator__unit">${esc(ind.unit)} · ${esc(ind.refPeriod)}</p>
+          ${ind.note ? `<p class="cd-indicator__note">${esc(ind.note)}</p>` : ""}
+          <p class="cd-indicator__src">Fuente: ${fuenteHtml(ind)}. Consultado el ${esc(fechaLarga(ind.retrievedAt))}; revisado el ${esc(fechaLarga(ind.reviewedAt))}. Frecuencia: ${esc(ind.cadence.toLowerCase())}.</p>
         </div>`;
 }
 
@@ -304,12 +322,16 @@ function paginaRegion(d, region, comun) {
       ],
     },
   };
-  const toc = [...perfil.sections.map((s) => [s.id, s.title]), ["recien-llegado", "Recién llegado"], ["noticias", "Noticias"], ["fuentes", "Fuentes"]]
+  const toc = [...perfil.sections.map((s) => [s.id, s.title]), ["recien-llegado", "Recién llegado"], ...(perfil.scams && perfil.scams.length ? [["estafas", "Estafas"]] : []), ["noticias", "Noticias"], ["fuentes", "Fuentes"]]
     .map(([id, t]) => `<a href="#${id}">${esc(t)}</a>`)
     .join("\n      ");
   const secciones = perfil.sections
     .map((s) => {
       const parrafos = s.text.map((p) => `<p>${esc(p)}</p>`).join("\n      ");
+      const lista = s.items && s.items.length ? `<ul class="cd-list-items">
+        ${s.items.map((i) => `<li>${esc(i)}</li>`).join("\n        ")}
+      </ul>` : "";
+      const aviso = s.alert ? `<p class="cd-alert">${esc(s.alert)}</p>` : "";
       const tarjetas = s.indicators.length
         ? `<div class="cd-indicators">
         ${s.indicators.map((k) => tarjetaIndicador(perfil.indicators[k])).join("\n        ")}
@@ -319,6 +341,8 @@ function paginaRegion(d, region, comun) {
       return `<section class="cd-section" id="${s.id}" aria-labelledby="${s.id}-titulo">
       <h2 id="${s.id}-titulo">${esc(s.title)}</h2>
       ${parrafos}
+      ${lista}
+      ${aviso}
       ${tarjetas}
       <div class="cd-links">
         ${enlaces}
@@ -330,11 +354,21 @@ function paginaRegion(d, region, comun) {
     .map((p) => `<li class="cd-step">
           <h3>${esc(p.title)}</h3>
           <p>${esc(p.text)}</p>
+          ${p.warning ? `<p class="cd-step__warn"><strong>Atención:</strong> ${esc(p.warning)}</p>` : ""}
           <a href="${esc(p.link.href)}"${enlaceExterno(p.link.href)}>${esc(p.link.label)}</a>
         </li>`)
     .join("\n        ");
+  const estafas = perfil.scams && perfil.scams.length
+    ? `<div class="cd-scams" id="estafas">
+        <h3>Cómo reconocer estafas</h3>
+        <p>Estas son señales de alerta frecuentes. Ante la duda, no pagues y consulta las fuentes oficiales. Esta guía es informativa y no sustituye la asesoría de un profesional autorizado.</p>
+        <ul>
+          ${perfil.scams.map((e) => `<li><strong>${esc(e.title)}:</strong> ${esc(e.text)}</li>`).join("\n          ")}
+        </ul>
+      </div>`
+    : "";
   const listaFuentes = Object.values(perfil.indicators)
-    .map((ind) => `<li>${esc(ind.label)}: <a href="${esc(ind.source.url)}" target="_blank" rel="noopener">${esc(ind.source.org)} — ${esc(ind.source.title)}</a> (${ind.value === null || ind.value === undefined ? "pendiente de verificación" : `período ${esc(ind.refPeriod)}, consultado el ${esc(fechaLarga(ind.retrievedAt))}`}).</li>`)
+    .map((ind) => `<li>${esc(ind.label)}: ${fuenteHtml(ind)} (${pendiente(ind) ? "pendiente de verificación" : `período: ${esc(ind.refPeriod)}; consultado el ${esc(fechaLarga(ind.retrievedAt))}`}).</li>`)
     .join("\n        ");
   return `${head({ meta, title, description: perfil.seo.description, path, image: `/assets/canada-en-datos/social-${region.profile}.jpg`, imageAlt: `Mapa de Canadá con ${region.name} resaltada y el título ${region.name} en datos, de El Podcast del Migrante.`, jsonLd })}
 <body data-cd-region="${esc(region.slug)}">
@@ -373,6 +407,7 @@ ${comun.cabecera}
       <ol class="cd-steps">
         ${pasos}
       </ol>
+      ${estafas}
     </section>
 
     <section class="cd-section" id="noticias" aria-labelledby="noticias-titulo">
@@ -384,7 +419,7 @@ ${comun.cabecera}
 
     <section class="cd-method" id="fuentes" aria-labelledby="fuentes-titulo">
       <h2 id="fuentes-titulo">Fuentes y metodología</h2>
-      <p>Esta ficha reúne información general y enlaces a fuentes oficiales; no sustituye la información oficial vigente ni la asesoría profesional. Las cifras solo se publican con su fuente, su período de referencia y la fecha de consulta.</p>
+      <p>Esta ficha reúne información general y enlaces a fuentes oficiales; no sustituye la información oficial vigente ni la asesoría profesional. Las cifras se leyeron directamente en la publicación oficial (archivo o página original) y solo se publican con su fuente, su período de referencia y las fechas de consulta y revisión. Una estimación de población no es un censo: cada cifra indica qué mide.</p>
       <ul>
         <li>Capital: <a href="${esc(fuentes.capitals.url)}" target="_blank" rel="noopener">${esc(fuentes.capitals.org)} — ${esc(fuentes.capitals.title)}</a>.</li>
         <li>Hora local: zona horaria ${esc(region.timeZone)} (<a href="${esc(fuentes.timeZones.url)}" target="_blank" rel="noopener">${esc(fuentes.timeZones.org)}</a>), calculada en tu navegador.</li>
