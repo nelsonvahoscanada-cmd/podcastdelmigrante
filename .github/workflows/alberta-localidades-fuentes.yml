@@ -3,7 +3,7 @@ name: alberta-localidades-fuentes
 on:
   push:
     branches: [claude/alberta-localidades]
-    paths: [.github/workflows/alberta-localidades-fuentes.yml, scripts/canada-en-datos/obtener-localidades.py, scripts/canada-en-datos/consultar-ciudades.py]
+    paths: [.github/workflows/alberta-localidades-fuentes.yml, scripts/canada-en-datos/obtener-localidades.py, scripts/canada-en-datos/obtener-ciudades.py]
 permissions:
   contents: read
 jobs:
@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pip install -q openpyxl shapely
-      - run: python3 scripts/canada-en-datos/consultar-ciudades.py
+      - run: pip install -q openpyxl shapely pypdf
+      - run: python3 scripts/canada-en-datos/obtener-ciudades.py
