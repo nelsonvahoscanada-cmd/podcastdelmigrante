@@ -1,0 +1,27 @@
+# TEMPORAL: comprobación de solo lectura del portal en producción. Se elimina después de usarse.
+name: noticias-produccion
+on:
+  push:
+    branches: [claude/ultimas-noticias]
+    paths: [.github/workflows/noticias-produccion.yml]
+permissions:
+  contents: read
+jobs:
+  produccion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Portal (solo lectura)
+        run: |
+          for p in / /noticias "/noticias?pagina=2" /js/noticias.js /articulo-referendum-alberta-octubre-2026-inmigrantes /articulo-nueva-via-jbs-brooks-highway-873 /articulo-canada-limite-cargos-nsf-10-dolares /articulo-primer-arriendo-alberta /perfil-carlos-d-castillo /perfil-tomas-velazquez /colaborador-carlos-castillo /canada-en-datos/ /canada-en-datos/alberta /privacidad /sitemap.xml; do
+            curl -sS -o /tmp/p.html -w "%{http_code} $p " "https://podcastdelmigrante.com$p"
+            grep -o '<title>[^<]*</title>' /tmp/p.html | head -1 || echo
+          done
+          curl -sS https://podcastdelmigrante.com/sitemap.xml | grep -o '<loc>[^<]*</loc>'
+          curl -sS -o /dev/null -w "admin %{http_code}\n" https://admin.podcastdelmigrante.com/
+      - name: Navegador contra producción
+        run: |
+          npm i --no-save playwright@1.48.2 >/dev/null 2>&1
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+          BASE=https://podcastdelmigrante.com node tests/e2e-noticias.cjs
+          BASE=https://podcastdelmigrante.com node tests/e2e-canada-datos.cjs
