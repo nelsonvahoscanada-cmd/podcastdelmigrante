@@ -21,25 +21,6 @@ def seccion(t):
     print("\n" + "=" * 8, t, "=" * 8)
 
 
-# 1. Notas de la Municipal Affairs Population List 2025
-seccion("MAPL 2025: notas y columnas de las seis ciudades")
-x, _, _ = get("https://open.alberta.ca/dataset/8dae0ffd-dbb7-46f7-89eb-efa64b2ce385/resource/387c1c81-cfcb-4616-be4e-dc829c7fd6fb/download/2025-mapl-worksheets-for-internet-posting.xlsx")
-wb = openpyxl.load_workbook(io.BytesIO(x), data_only=True)
-for ws in wb.worksheets:
-    for fila in ws.iter_rows(values_only=True):
-        celdas = [str(c) for c in fila if c not in (None, "")]
-        texto = " | ".join(celdas)
-        if celdas and (re.search(r"[A-Za-z]{4,}", texto) and not re.match(r"^\d{4} \|", texto)) and len(texto) > 40 and not re.search(r"\| \d+ \| [\d.]+ \|", texto):
-            if any(k in texto.lower() for k in ("*", "note", "source", "census", "population", "federal", "shadow", "estimate")):
-                print(f"  [{ws.title}] {texto[:400]}")
-ws = wb["Data"]
-cab = [str(c) for c in next(ws.iter_rows(values_only=True))]
-for fila in ws.iter_rows(values_only=True):
-    d = dict(zip(cab, fila))
-    if d.get("LEGAL NAME") in [f"City of {c}" for c in CIUDADES] or (d.get("TYPE") == "Special Areas"):
-        print("  ", {k: (v.isoformat() if hasattr(v, "isoformat") else v) for k, v in d.items() if v not in (None, "")})
-print("  valores de '*':", sorted({str(f[3]) for f in ws.iter_rows(min_row=2, values_only=True) if f and f[3] not in (None, "")}))
-
 # 2. Censo 2021 — tabla 98-10-0002-01 (población por subdivisión de recensement)
 seccion("Statistics Canada 98-10-0002-01 (Censo 2021)")
 try:
@@ -52,8 +33,8 @@ try:
         print("  columnas:", cab)
         for fila in r:
             geo = fila[1] if len(fila) > 1 else ""
-            if re.match(r"^(Calgary|Edmonton|Brooks|Red Deer|Lethbridge|Medicine Hat) \(CY\), Alta\.?$", geo) or re.match(r"^(Calgary|Edmonton|Brooks|Red Deer|Lethbridge|Medicine Hat), City \(CY\)", geo):
-                print("  ", fila)
+            if re.match(r"^(Calgary|Edmonton|Brooks|Red Deer|Lethbridge|Medicine Hat)\b", geo) and ("Alberta" in geo or "Alta" in geo or fila[2].startswith("2021A000548")):
+                print("  ", fila[:9])
 except Exception as e:
     print("  ERROR", e)
 
@@ -67,53 +48,59 @@ for tabla, filtro in (("14100393", r"Unemployment rate|Population|Employment rat
         with zf.open(nombre) as f:
             r = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig"))
             print("  columnas:", r.fieldnames)
-            filas = [fila for fila in r if fila["REF_DATE"] in ("2025", "2024") and ", Alberta" in fila["GEO"]]
+            todas = [fila for fila in r if "Alberta" in fila["GEO"]]
+            print("  años:", sorted({f["REF_DATE"] for f in todas})[-4:], "geo:", sorted({f["GEO"] for f in todas})[:12])
+            ult = max(f["REF_DATE"] for f in todas)
+            filas = [f for f in todas if f["REF_DATE"] == ult]
         if tabla == "14100393":
             for fila in filas:
-                if fila["REF_DATE"] == "2025" and re.search(filtro, fila.get("Labour force characteristics", "")) and fila.get("Statistics", "Estimate") in ("Estimate", ""):
+                if re.search(filtro, fila.get("Labour force characteristics", "")) and fila.get("Statistics", "Estimate") in ("Estimate", ""):
                     print("  ", fila["REF_DATE"], fila["GEO"], fila.get("Labour force characteristics"), fila.get("UOM"), fila["VALUE"], fila.get("STATUS"))
         else:
             for fila in filas:
-                if fila["REF_DATE"] == "2025":
-                    print("  ", fila["GEO"], "|", fila.get("North American Industry Classification System (NAICS)"), "|", fila.get("UOM"), fila["VALUE"], fila.get("STATUS"))
+                if True:
+                    print("  ", fila["REF_DATE"], fila["GEO"], "|", fila.get("North American Industry Classification System (NAICS)"), "|", fila.get("UOM"), fila["VALUE"], fila.get("STATUS"))
     except Exception as e:
         print("  ERROR", e)
 
-# 4. CMHC — Rental Market Survey 2025 (centros de Alberta)
-seccion("CMHC Rental Market Survey 2025")
-for c in ["red-deer", "lethbridge", "medicine-hat", "brooks", "alberta"]:
-    url = f"https://assets.cmhc-schl.gc.ca/sites/cmhc/professional/housing-markets-data-and-research/housing-data-tables/rental-market/rental-market-report-data-tables/2025/rmr-{c}-2025-en.xlsx"
-    try:
-        x, _, _ = get(url)
-        wb = openpyxl.load_workbook(io.BytesIO(x), read_only=True, data_only=True)
-        print("  OK", c, wb.sheetnames[:12])
-        for nombre in wb.sheetnames:
-            if re.match(r"^Table 1\.1\.[12]\b", nombre) or (c == "alberta" and re.match(r"^Table 1\.0\b|^Table 1\b", nombre)):
-                print("   --", nombre)
-                for fila in wb[nombre].iter_rows(values_only=True):
-                    celdas = [str(v).strip() for v in fila if v not in (None, "")]
-                    if celdas and (c != "alberta" or re.search(r"Red Deer|Lethbridge|Medicine Hat|Brooks|Grande|Wood Buffalo|Total|Bachelor|Bedroom|Centre", " ".join(celdas))):
-                        print("     ", " | ".join(celdas)[:240])
-    except Exception as e:
-        print("  ERR", c, e)
+# 4. Escuelas: Alberta Education, «Alberta schools and authorities»
+seccion("Alberta Education: escuelas y autoridades")
+try:
+    x, _, _ = get("https://education.alberta.ca/media/1626669/authority_and_school.xlsx")
+    wb = openpyxl.load_workbook(io.BytesIO(x), read_only=True, data_only=True)
+    print("  hojas:", wb.sheetnames)
+    ws = wb[wb.sheetnames[0]]
+    filas = list(ws.iter_rows(values_only=True))
+    for k, f in enumerate(filas[:6]):
+        print("  cab", k, [c for c in f if c not in (None, "")][:30])
+except Exception as e:
+    print("  ERROR", e)
 
-# 5. Datos abiertos de Alberta: hospitales, escuelas y transporte
-seccion("open.alberta.ca: conjuntos de datos")
-for q in ["hospital locations", "health facilities", "school locations", "school authority", "public transit", "settlement services newcomers"]:
-    try:
-        d = json.loads(get("https://open.alberta.ca/api/3/action/package_search?rows=6&q=" + urllib.parse.quote(q))[0])["result"]
-        print("  q=", q, d["count"])
-        for p in d["results"]:
-            print("    -", p["name"], "|", p["title"][:90], "|", p.get("metadata_modified", "")[:10], "|", [(r.get("format"), r.get("url")) for r in p["resources"]][:3])
-    except Exception as e:
-        print("  ERR", q, e)
+# 5. Hospitales: listado oficial de instalaciones (AHCIP facility listing)
+seccion("Facility listing")
+try:
+    import subprocess
+    d = json.loads(get("https://open.alberta.ca/api/3/action/package_show?id=alberta-health-facility-and-functional-centre-definitions-and-facility-listing")[0])["result"]
+    for r in d["resources"]:
+        print("  recurso:", r.get("name"), r.get("format"), r.get("url"))
+    url = [r["url"] for r in d["resources"] if (r.get("format") or "").upper() == "PDF" and "listing" in r["url"]][0]
+    open("/tmp/f.pdf", "wb").write(get(url)[0])
+    subprocess.run(["pdftotext", "-layout", "/tmp/f.pdf", "/tmp/f.txt"], check=True)
+    t = open("/tmp/f.txt", encoding="utf-8", errors="ignore").read().split("\n")
+    print("  líneas:", len(t))
+    for l in t[:40]:
+        if l.strip(): print("   |", l[:200])
+    for l in t:
+        if re.search(r"(Calgary|Edmonton|Brooks|Red Deer|Lethbridge|Medicine Hat)", l) and re.search(r"Hospital|Health Centre|Medical Centre", l, re.I):
+            print("   H", re.sub(r"\s{2,}", " | ", l.strip())[:220])
+except Exception as e:
+    print("  ERROR", e)
 
 # 6. Sitios web municipales y recursos oficiales
 seccion("Enlaces oficiales")
-for u in ["https://www.calgary.ca/", "https://www.edmonton.ca/", "https://www.brooks.ca/", "https://www.reddeer.ca/", "https://www.lethbridge.ca/", "https://www.medicinehat.ca/",
-          "https://www.calgary.ca/transit.html", "https://www.edmonton.ca/ets", "https://www.reddeer.ca/city-services/transit/", "https://www.lethbridge.ca/transit", "https://www.medicinehat.ca/transit",
-          "https://www.brooks.ca/", "https://ircc.canada.ca/english/newcomers/services/index.asp", "https://www.albertahealthservices.ca/findhealth/", "https://www.alberta.ca/municipal-profiles",
-          "https://www.jobbank.gc.ca/trend-analysis/job-market-reports/alberta/environmental-scan"]:
+for u in ["https://www.edmonton.ca/", "https://www.edmonton.ca/ets", "https://www.calgarytransit.com/", "https://www.calgary.ca/transit", "https://www.brooks.ca/p/transit", "https://www.brooks.ca/p/brooks-transit",
+          "https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=Brooks%2C+AB", "https://alis.alberta.ca/look-for-work/", "https://www.alberta.ca/find-a-school-board", "https://www.albertahealthservices.ca/findhealth/Search.aspx?q=hospital&loc=Brooks",
+          "https://www.alberta.ca/settlement-integration-language-programs", "https://ab.211.ca/", "https://www.alberta.ca/municipal-census", "https://www.alberta.ca/municipal-affairs-population-list"]:
     try:
         b, final, st = get(u, 60)
         t = re.search(rb"<title[^>]*>(.*?)</title>", b, re.S)
