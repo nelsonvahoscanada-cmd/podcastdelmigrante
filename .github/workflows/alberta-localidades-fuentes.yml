@@ -11,4 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: pip install -q openpyxl shapely
       - run: python3 scripts/canada-en-datos/explorar-localidades.py

@@ -15,16 +15,23 @@ for folder in ["boundaries", ""]:
         print("== carpeta", folder or "(raíz)", "folders:", d.get("folders"), "services:", [s["name"] for s in d.get("services", [])])
     except Exception as e: print("ERR", folder, e)
 
+for folder in ["census", "economics", "society"]:
+    try:
+        d = js(f"{G}/{folder}?f=json"); print("== carpeta", folder, [s["name"] + ":" + s["type"] for s in d.get("services", [])])
+    except Exception as e: print("ERR", folder, e)
+for svc in ["boundaries/municipal_metis_settlement_public"]:
+    d = js(f"{G}/{svc}/FeatureServer/layers?f=json")
+    for l in d.get("layers", []):
+        c = js(f"{G}/{svc}/FeatureServer/{l['id']}/query?where=1%3D1&returnCountOnly=true&f=json")
+        print(" metis layer", l["id"], l["name"], [f["name"] for f in l["fields"]], c)
+
 # 2. Tipos de la capa de puntos (Hamlet, Locality, Townsite)
 d = js(f"{G}/boundaries/municipal_communities_public/FeatureServer/0/query?where=1%3D1&outFields=TYPE&returnGeometry=false&f=json&resultRecordCount=5000")
 print("TIPOS punto:", collections.Counter(f["attributes"]["TYPE"] for f in d["features"]), "n=", len(d["features"]), "exceeded", d.get("exceededTransferLimit"))
 print("maxRecordCount:", js(f"{G}/boundaries/municipal_communities_public/FeatureServer/0?f=json").get("maxRecordCount"))
 
 # 3. Lista de población 2025 (Municipal Affairs)
-try:
-    import openpyxl
-except ImportError:
-    import subprocess, sys; subprocess.run([sys.executable, "-m", "pip", "install", "-q", "openpyxl"]); import openpyxl
+import openpyxl
 x = get("https://open.alberta.ca/dataset/8dae0ffd-dbb7-46f7-89eb-efa64b2ce385/resource/387c1c81-cfcb-4616-be4e-dc829c7fd6fb/download/2025-mapl-worksheets-for-internet-posting.xlsx")
 wb = openpyxl.load_workbook(io.BytesIO(x), data_only=True)
 for ws in wb.worksheets:
