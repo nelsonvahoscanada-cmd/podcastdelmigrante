@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """consultar-abiertos.py — Herramienta temporal de verificación (no forma parte del sitio).
-Lee archivos del catálogo oficial de datos abiertos del Gobierno de Alberta
-(open.alberta.ca) e imprime las filas y el texto tal como están publicados.
+Lee publicaciones del catálogo oficial de datos abiertos del Gobierno de Alberta
+(open.alberta.ca) e imprime las líneas pertinentes tal como están publicadas.
 Requiere: pip install openpyxl pypdf"""
-import io, json, re, urllib.parse, urllib.request, zipfile
-import openpyxl
+import io, json, re, urllib.parse, urllib.request
 from pypdf import PdfReader
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; PodcastDelMigrante-verificacion/1.0)"}
@@ -12,46 +11,52 @@ def get(url):
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=180) as r:
         return r.read()
 
-def excel(url, ultimas=10, primeras=8):
-    print(f"\n=== EXCEL {url}")
-    wb = openpyxl.load_workbook(io.BytesIO(get(url)), read_only=True, data_only=True)
-    for nombre in wb.sheetnames[:2]:
-        ws = wb[nombre]
-        filas = [" | ".join(str(c) for c in f if c not in (None, "")) for f in ws.iter_rows(values_only=True)]
-        filas = [f for f in filas if f]
-        print(f"-- Hoja {nombre} ({len(filas)} filas)")
-        for f in filas[:primeras] + ["…"] + filas[-ultimas:]:
-            print("  " + f[:240])
+def paquete(pid):
+    url = f"https://open.alberta.ca/api/3/action/package_show?id={pid}"
+    try:
+        p = json.loads(get(url))["result"]
+        print(f"\n=== {pid}: {p['title']} · modificado {p['metadata_modified'][:10]}")
+        for r in p.get("resources", [])[:6]:
+            print(f"    - {r.get('name')} · {r.get('format')} · {r.get('url')}")
+        return p.get("resources", [])
+    except Exception as e:
+        print(f"\n=== {pid}: ERROR {e}")
+        return []
 
-def pdf(url, paginas=2, max_chars=5000):
+def pdf_lineas(url, patron, max_lineas=40, max_paginas=60):
     print(f"\n=== PDF {url}")
     lector = PdfReader(io.BytesIO(get(url)))
-    texto = "\n".join((lector.pages[i].extract_text() or "") for i in range(min(paginas, len(lector.pages))))
-    print(texto[:max_chars])
+    print(f"  páginas: {len(lector.pages)}")
+    n = 0
+    for i, pag in enumerate(lector.pages[:max_paginas]):
+        for linea in (pag.extract_text() or "").splitlines():
+            if re.search(patron, linea, re.I):
+                print(f"  p{i+1}: {linea.strip()[:220]}")
+                n += 1
+                if n >= max_lineas:
+                    return
 
-def buscar(q, n=5):
-    url = "https://open.alberta.ca/api/3/action/package_search?" + urllib.parse.urlencode({"q": q, "rows": n, "sort": "metadata_modified desc"})
-    print(f"\n=== BÚSQUEDA open.alberta.ca: {q}")
-    j = json.loads(get(url))
-    for p in j["result"]["results"]:
-        print(f"* {p['title']} · {p['name']} · modificado {p['metadata_modified'][:10]}")
-        for r in p.get("resources", [])[:4]:
-            print(f"    - {r.get('name')} · {r.get('format')} · {r.get('url')}")
+for pid in ["2021-census-of-canada-population-and-dwelling-release", "2021-census-of-canada-population-and-dwelling-counts", "2021-census-of-canada-population-and-dwellings"]:
+    recursos = paquete(pid)
+    for r in recursos[:1]:
+        if (r.get("format") or "").upper() == "PDF":
+            try:
+                pdf_lineas(r["url"], r"Alberta|population|2021|2016|per cent|%", 25, 3)
+            except Exception as e:
+                print(f"ERROR {e}")
 
-for tarea in [
-    lambda: excel("https://open.alberta.ca/dataset/c45f2f78-0d6c-4a7e-98bc-313fbb232040/resource/1b346528-5188-47ee-8fef-b3d41e3db7c0/download/population-estimates-ab-quarterly-1951-to-current.xlsx"),
-    lambda: pdf("https://open.alberta.ca/dataset/6b5d7997-6062-474f-a955-837fbab70a89/resource/a4cf065e-5743-400d-bda2-68ec4ba0a808/download/tbf-quarterly-population-report-q2-2026.pdf"),
-    lambda: buscar("Alberta economic accounts gross domestic product"),
-    lambda: buscar("2021 census population and dwelling counts Alberta"),
-    lambda: buscar("crime severity index Alberta"),
-]:
-    try:
-        tarea()
-    except Exception as e:
-        print(f"ERROR: {e}")
+try:
+    pdf_lineas("https://open.alberta.ca/dataset/b569d90f-b07e-4b77-824d-2a02d760966f/resource/43295490-5d85-4318-aa19-21b0fb4c2ad6/download/jus-report-crime-justice-statistics-2020-2021-to-2024-2025.pdf", r"severity|CSI", 40)
+except Exception as e:
+    print(f"ERROR crimen: {e}")
+
+try:
+    pdf_lineas("https://open.alberta.ca/dataset/3393a7b5-07bf-4b9f-8aaf-a6d89273297b/resource/58a8d024-398f-482e-b1c2-81a754a97253/download/budget-2026-fiscal-plan-2026-29.pdf", r"nominal GDP|real GDP|gross domestic product", 25, 40)
+except Exception as e:
+    print(f"ERROR PIB: {e}")
 
 print("\n=== STATISTICS CANADA (nuevo intento)")
-for tabla in ("17100009", "35100026", "36100222"):
+for tabla in ("17100009", "35100026", "36100222", "98100001"):
     try:
         d = get(f"https://www150.statcan.gc.ca/n1/tbl/csv/{tabla}-eng.zip")
         print(f"  {tabla}: {'disponible' if d.startswith(b'PK') else 'no disponible'} ({len(d)//1024} KB)")
