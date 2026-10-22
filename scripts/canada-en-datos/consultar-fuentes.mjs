@@ -90,6 +90,41 @@ async function paginas() {
   }
 }
 
+/* Fuentes oficiales alternativas para las cifras (si Statistics Canada no responde) */
+const CIFRAS = [
+  ["https://economicdashboard.alberta.ca/dashboard/population/", /population|\d{1,3},\d{3},\d{3}|quarter|as of|source/i, 40],
+  ["https://economicdashboard.alberta.ca/dashboard/unemployment-rate/", /unemployment|%|source|month|20\d\d/i, 40],
+  ["https://economicdashboard.alberta.ca/dashboard/average-weekly-earnings/", /earnings|wage|\$|source|20\d\d/i, 30],
+  ["https://economicdashboard.alberta.ca/dashboard/gross-domestic-product/", /GDP|gross domestic|\$|billion|source|20\d\d/i, 30],
+  ["https://economicdashboard.alberta.ca/dashboard/vacancy-rate/", /vacancy|%|source|20\d\d|Calgary|Edmonton/i, 30],
+  ["https://economicdashboard.alberta.ca/dashboard/average-rent/", /rent|\$|source|20\d\d|Calgary|Edmonton/i, 30],
+  ["https://www.alberta.ca/population-statistics", /population|\d{1,3},\d{3},\d{3}|quarter|census|2021|2026/i, 40],
+  ["https://www.jobbank.gc.ca/trend-analysis/job-market-reports/alberta/environmental-scan", /wage|\$|unemployment|population|%|2025|2026/i, 40],
+  ["https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-centres", /Calgary|Edmonton|vacancy|rent|\$|%|2025/i, 40],
+];
+
+async function cifras() {
+  for (const [url, re, max] of CIFRAS) {
+    console.log(`\n=== CIFRAS ${url} ===`);
+    try {
+      const r = await fetch(url, { headers: UA, redirect: "follow" });
+      const html = await r.text();
+      console.log(`HTTP ${r.status} · ${r.url}`);
+      const titulo = (html.match(/<title>([^<]*)<\/title>/i) || [])[1];
+      if (titulo) console.log(`Título: ${titulo.trim()}`);
+      for (const l of texto(html).filter((l) => re.test(l) && l.length > 6).slice(0, max)) console.log("  · " + l.slice(0, 300));
+      const datos = [...new Set([...html.matchAll(/(?:href|src|data-[a-z-]+)="([^"]*(?:\.csv|\.xlsx|\.json|\.pdf|\/download|api\/)[^"]*)"/gi)].map((m) => m[1]))].slice(0, 25);
+      if (datos.length) console.log("  Descargas: " + datos.join(" | "));
+      if (/economicdashboard/.test(url)) {
+        const temas = [...new Set([...html.matchAll(/href="(\/dashboard\/[^"#?]+)"/g)].map((m) => m[1]))];
+        console.log("  Temas: " + temas.join(" "));
+      }
+    } catch (e) {
+      console.log(`ERROR ${url}: ${e.message}`);
+    }
+  }
+}
+
 async function enlaces() {
   const datos = readFileSync(new URL("../../js/canada-datos.js", import.meta.url), "utf8");
   const urls = [...new Set([...datos.matchAll(/https:\/\/[^"'\s]+/g)].map((m) => m[0]))];
@@ -121,3 +156,4 @@ const modos = process.argv.slice(2);
 if (!modos.length || modos.includes("paginas")) await paginas();
 if (!modos.length || modos.includes("enlaces")) await enlaces();
 if (!modos.length || modos.includes("cmhc")) await cmhc();
+if (!modos.length || modos.includes("cifras")) await cifras();

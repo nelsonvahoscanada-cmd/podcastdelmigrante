@@ -41,6 +41,9 @@ def descargar(tabla):
     with urllib.request.urlopen(req, timeout=300) as r:
         datos = r.read()
     print(f"Descarga: {url} ({len(datos) // 1024} KB)")
+    if not datos.startswith(b"PK"):
+        aviso = re.search(rb"<title>([^<]*)</title>", datos)
+        raise RuntimeError(f"Statistics Canada no entregó el archivo: {aviso.group(1).decode('utf-8', 'replace') if aviso else datos[:120]}")
     return zipfile.ZipFile(io.BytesIO(datos))
 
 
