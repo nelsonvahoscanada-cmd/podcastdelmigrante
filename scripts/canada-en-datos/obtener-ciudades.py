@@ -44,7 +44,7 @@ with tabla_statcan("98100002") as f:
     cab = next(r)
     for fila in r:
         for k, dguid in CSD.items():
-            if fila[2] == dguid:
+            if len(fila) > 8 and fila[2] == dguid:
                 salida["ciudades"][k]["censo2021"] = {"pob2021": int(fila[4]), "pob2016": int(fila[6]), "cambio": float(fila[8]), "dguid": dguid, "geo": fila[1]}
 print("Censo 2021:", {k: v.get("censo2021") for k, v in salida["ciudades"].items()})
 
