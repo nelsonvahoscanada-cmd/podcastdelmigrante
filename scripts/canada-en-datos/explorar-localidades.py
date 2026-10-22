@@ -1,54 +1,47 @@
 """Exploración (solo lectura) de las fuentes oficiales de localidades de Alberta."""
-import json, sys, urllib.request, urllib.parse
+import json, io, re, urllib.request, collections
 
 UA = {"User-Agent": "Mozilla/5.0 (verificacion de datos; podcastdelmigrante.com)"}
+def get(url):
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r:
+        return r.read()
+def js(url): return json.loads(get(url))
+G = "https://geospatial.alberta.ca/titan/rest/services"
 
-def get(url, n=None):
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=60) as r:
-        b = r.read()
-    return b if n is None else b[:n]
-
-def js(url):
-    return json.loads(get(url))
-
-for svc in ["boundaries/municipal_communities_public", "boundaries/municipal_boundary_public"]:
-    for kind in ["FeatureServer", "MapServer"]:
-        u = f"https://geospatial.alberta.ca/titan/rest/services/{svc}/{kind}/layers?f=json"
-        try:
-            d = js(u)
-            print("==", u)
-            for l in d.get("layers", []):
-                print(" layer", l["id"], l["name"], l.get("geometryType"), "| desc:", (l.get("description") or "")[:300].replace("\n", " "))
-                print("   fields:", [(f["name"], f.get("alias")) for f in l.get("fields", [])])
-                try:
-                    c = js(f"https://geospatial.alberta.ca/titan/rest/services/{svc}/{kind}/{l['id']}/query?where=1%3D1&returnCountOnly=true&f=json")
-                    print("   count:", c)
-                    s = js(f"https://geospatial.alberta.ca/titan/rest/services/{svc}/{kind}/{l['id']}/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=3&f=json")
-                    print("   sample:", json.dumps([f["attributes"] for f in s.get("features", [])], ensure_ascii=False)[:1500])
-                except Exception as e:
-                    print("   query error", e)
-            break
-        except Exception as e:
-            print("ERR", u, e)
-
-for q in ["alberta-municipal-affairs-population-list"]:
+# 1. Servicios de límites disponibles
+for folder in ["boundaries", ""]:
     try:
-        d = js("https://open.alberta.ca/api/3/action/package_show?id=" + q)["result"]
-        print("== CKAN", d["title"], d.get("metadata_modified"))
-        for r in d["resources"]:
-            print("  ", r.get("name"), r.get("format"), r.get("url"), r.get("last_modified") or r.get("created"))
-    except Exception as e:
-        print("ERR CKAN", q, e)
+        d = js(f"{G}/{folder}?f=json")
+        print("== carpeta", folder or "(raíz)", "folders:", d.get("folders"), "services:", [s["name"] for s in d.get("services", [])])
+    except Exception as e: print("ERR", folder, e)
 
-for u in ["https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=E",
-          "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410006401",
-          "https://www.alberta.ca/types-of-municipalities-in-alberta",
-          "https://www.alberta.ca/municipal-profiles"]:
+# 2. Tipos de la capa de puntos (Hamlet, Locality, Townsite)
+d = js(f"{G}/boundaries/municipal_communities_public/FeatureServer/0/query?where=1%3D1&outFields=TYPE&returnGeometry=false&f=json&resultRecordCount=5000")
+print("TIPOS punto:", collections.Counter(f["attributes"]["TYPE"] for f in d["features"]), "n=", len(d["features"]), "exceeded", d.get("exceededTransferLimit"))
+print("maxRecordCount:", js(f"{G}/boundaries/municipal_communities_public/FeatureServer/0?f=json").get("maxRecordCount"))
+
+# 3. Lista de población 2025 (Municipal Affairs)
+try:
+    import openpyxl
+except ImportError:
+    import subprocess, sys; subprocess.run([sys.executable, "-m", "pip", "install", "-q", "openpyxl"]); import openpyxl
+x = get("https://open.alberta.ca/dataset/8dae0ffd-dbb7-46f7-89eb-efa64b2ce385/resource/387c1c81-cfcb-4616-be4e-dc829c7fd6fb/download/2025-mapl-worksheets-for-internet-posting.xlsx")
+wb = openpyxl.load_workbook(io.BytesIO(x), data_only=True)
+for ws in wb.worksheets:
+    print("== hoja", ws.title, ws.max_row, "x", ws.max_column)
+    for i, row in enumerate(ws.iter_rows(values_only=True)):
+        if i < 14 or i in (ws.max_row - 3, ws.max_row - 2, ws.max_row - 1):
+            print("  ", i, [c for c in row if c is not None][:14])
+
+# 4. StatCan: clasificación geográfica (división censal → región económica)
+for u in ["https://www.statcan.gc.ca/en/subjects/standard/sgc/2021/introduction",
+          "https://www150.statcan.gc.ca/n1/en/catalogue/12-571-X",
+          "https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm",
+          "https://www.statcan.gc.ca/en/subjects/standard/sgc/2021/sgc-cgt-2021-structure-eng.csv",
+          "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201"]:
     try:
-        b = get(u, 400000).decode("utf-8", "ignore")
-        import re
+        b = get(u)[:300000].decode("utf-8", "ignore")
         t = re.search(r"<title>(.*?)</title>", b, re.S)
-        print("OK", u, (t.group(1).strip() if t else "")[:120], "unavailable" in b.lower())
-    except Exception as e:
-        print("ERR", u, e)
+        print("OK", u, (t.group(1).strip() if t else b[:200].replace("\n", " "))[:160])
+        for m in sorted(set(re.findall(r'href="([^"]+\.(?:csv|zip|xlsx?))"', b)))[:30]: print("    link", m)
+    except Exception as e: print("ERR", u, e)
