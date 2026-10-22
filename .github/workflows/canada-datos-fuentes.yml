@@ -1,0 +1,30 @@
+# TEMPORAL — solo en la rama claude/canada-en-datos. Consulta de solo lectura
+# de fuentes oficiales (Statistics Canada, alberta.ca, CMHC) para verificar
+# las cifras de «Canadá en Datos». Sin secretos ni permisos de escritura.
+# Se elimina de la rama después de usarse: no debe llegar a main.
+name: "Canadá en Datos: consulta de fuentes oficiales"
+on:
+  push:
+    branches: [claude/canada-en-datos]
+    paths:
+      - scripts/canada-en-datos/consultar-fuentes.mjs
+      - .github/workflows/canada-datos-fuentes.yml
+permissions:
+  contents: read
+jobs:
+  statcan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/canada-en-datos/consultar-fuentes.mjs statcan
+  paginas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/canada-en-datos/consultar-fuentes.mjs paginas cmhc
