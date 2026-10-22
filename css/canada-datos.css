@@ -157,6 +157,9 @@
 .cd-list-items { list-style: disc; padding-left: 22px; margin: 4px 0 14px; max-width: 70ch; }
 .cd-list-items li { margin-bottom: 8px; line-height: 1.6; }
 .cd-alert { border-left: 4px solid var(--negro); background: var(--gris-100); padding: 12px 16px; font-weight: 600; }
+.cd-explainer { margin: 20px 0; padding: 16px 20px; border: 1px solid var(--gris-200, #ddd); border-radius: 8px; }
+.cd-explainer h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.cd-explainer .cd-alert { margin-bottom: 0; }
 .cd-links { margin-top: 10px; display: grid; gap: 6px; }
 .cd-links a { color: var(--verde-oscuro); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .cd-links a::after { content: " ↗"; font-weight: 400; }

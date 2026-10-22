@@ -146,6 +146,29 @@ async function sinScrollHorizontal(page) {
   assert.deepEqual(errores, []);
   await ctx.close();
 
+  /* ---------- Menú principal: «Canadá» lleva al módulo (desde la portada y desde la ficha) ---------- */
+  for (const ruta of ["/", "/canada-en-datos/alberta"]) {
+    const m = await abrir(browser, "computador", ruta);
+    const href = await m.page.locator('#navPrimary a.nav-link', { hasText: "Canadá" }).getAttribute("href");
+    assert.equal(new URL(href, BASE).pathname, "/canada-en-datos/", ruta);
+    await m.ctx.close();
+  }
+
+  /* ---------- Salarios: explicación y advertencia junto a los indicadores ---------- */
+  {
+    const m = await abrir(browser, "celular", "/canada-en-datos/alberta");
+    const empleo = await m.page.locator("#empleo").textContent();
+    assert.match(empleo, /\$15\s*CAD por hora/);
+    assert.match(empleo, /\$37\.35\s*CAD por hora · Año 2025/);
+    assert.match(empleo, /Salario mediano provincial por hora\s*Pendiente de verificación/);
+    assert.match(empleo, /No significa que todos ganen esa cantidad/);
+    assert.match(empleo, /no representa necesariamente el salario inicial/);
+    assert.equal(await m.page.locator('meta[name="robots"]').count(), 0, "sin noindex");
+    assert.equal(await m.page.locator("text=Prototipo en revisión editorial").count(), 0);
+    if (SHOTS) await m.page.locator("#empleo").screenshot({ path: path.join(SHOTS, "cd-empleo-celular.png") });
+    await m.ctx.close();
+  }
+
   /* ---------- Rutas ---------- */
   for (const [ruta, estado] of [["/canada-en-datos/ontario", 404], ["/canada-en-datos/alberta.html", 308]]) {
     const r = await fetch(BASE + ruta, { redirect: "manual" });

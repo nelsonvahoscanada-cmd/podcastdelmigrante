@@ -23,7 +23,7 @@
 */
 
 const CD_META = {
-  prototype: true,
+  prototype: false,
   title: "Canadá en Datos",
   lastReview: "2026-10-22",
   geometry: {
@@ -97,7 +97,7 @@ const CD_PROFILES = {
     },
     intro:
       "Alberta es una de las provincias de las Praderas canadienses. Su capital es Edmonton y su ciudad más poblada es Calgary. Limita con Columbia Británica, Saskatchewan, los Territorios del Noroeste y el estado de Montana, en Estados Unidos. Usa la hora de la montaña y cambia al horario de verano.",
-    summary: ["population", "unemploymentRate", "averageWage"],
+    summary: ["population", "unemploymentRate", "minimumWage"],
     indicators: {
       population: {
         label: "Población (estimación)",
@@ -127,24 +127,24 @@ const CD_PROFILES = {
         note: "Promedio de 2025 (Encuesta de Población Activa). La tasa mensual más reciente se agregará cuando pueda verificarse en Statistics Canada.",
       },
       averageWage: {
-        label: "Salario promedio por hora",
-        value: 37.35, format: "moneda", decimals: 2, unit: "por hora",
+        label: "Salario promedio provincial por hora",
+        value: 37.35, format: "moneda", decimals: 2, unit: "CAD por hora",
         refPeriod: "Año 2025", retrievedAt: "2026-10-22", reviewedAt: "2026-10-22", cadence: "Anual",
         source: { org: "Job Bank (Gobierno de Canadá)", title: "Economic Scan – Alberta: 2026", url: "https://www.jobbank.gc.ca/trend-analysis/job-market-reports/alberta/environmental-scan" },
-        note: "Es un PROMEDIO de todos los empleados, no una mediana: los salarios altos lo elevan. Los salarios por ocupación están en Job Bank.",
+        note: "Promedio de 2025 de las remuneraciones por hora de las personas asalariadas de Alberta, según Job Bank. Es una media estadística: no es un salario inicial, una oferta laboral ni una referencia para recién llegados. Los salarios por ocupación están en Job Bank.",
       },
       medianWage: {
-        label: "Salario mediano por hora",
-        value: null, format: "moneda", decimals: 2, unit: "por hora", refPeriod: null, retrievedAt: null, reviewedAt: null, cadence: "Anual",
+        label: "Salario mediano provincial por hora",
+        value: null, format: "moneda", decimals: 2, unit: "CAD por hora", refPeriod: null, retrievedAt: null, reviewedAt: null, cadence: "Anual",
         source: { org: "Statistics Canada", title: "Tabla 14-10-0064-01 — Salarios de los empleados por industria, anual", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410006401" },
         pending: "El sitio de Statistics Canada no estuvo disponible durante la verificación.",
       },
       minimumWage: {
         label: "Salario mínimo general",
-        value: 15, format: "moneda", decimals: 0, unit: "por hora",
+        value: 15, format: "moneda", decimals: 0, unit: "CAD por hora",
         refPeriod: "Vigente al 22 de octubre de 2026", retrievedAt: "2026-10-22", reviewedAt: "2026-10-22", cadence: "Cuando cambia",
         source: { org: "Gobierno de Alberta", title: "Employment standards rules – Minimum wage", url: "https://www.alberta.ca/minimum-wage" },
-        note: "Para estudiantes menores de 18 años, el mínimo es $13 por hora en las primeras 28 horas semanales durante el período escolar, con restricciones.",
+        note: "Es la remuneración mínima legal general, con algunas excepciones. Por ejemplo, para estudiantes menores de 18 años el mínimo es $13 por hora en las primeras 28 horas semanales durante el período escolar.",
       },
       gdp: {
         label: "Producto interno bruto",
@@ -230,7 +230,12 @@ const CD_PROFILES = {
           "Si tu profesión u oficio está regulado en Canadá, revisa cómo se reconocen tus estudios y tu experiencia del extranjero.",
           "Ningún empleador legítimo te cobra por darte un empleo.",
         ],
-        indicators: ["unemploymentRate", "averageWage", "medianWage", "minimumWage"],
+        indicators: ["minimumWage", "averageWage", "medianWage", "unemploymentRate"],
+        explainer: {
+          title: "Cómo leer estos salarios",
+          text: "El salario mínimo es la remuneración mínima legal general que debe pagar un empleador, con algunas excepciones. El salario promedio es una media estadística de las remuneraciones de distintos trabajadores. No significa que todos ganen esa cantidad. Los salarios más altos pueden elevar el promedio. El salario mediano representa el punto central de la distribución: la mitad de los trabajadores del grupo medido gana más y la otra mitad gana menos.",
+          warning: "El salario promedio provincial no representa necesariamente el salario inicial ni garantiza cuánto ganará una persona. Los ingresos varían según ocupación, experiencia, ciudad y sector económico.",
+        },
         links: [
           { label: "Job Bank — Panorama económico y salarios de Alberta", href: "https://www.jobbank.gc.ca/trend-analysis/job-market-reports/alberta/environmental-scan" },
           { label: "ALIS — Carreras, formación y búsqueda de empleo en Alberta", href: "https://alis.alberta.ca/" },
@@ -296,7 +301,7 @@ const CD_PROFILES = {
       {
         id: "inmigracion", title: "Inmigración provincial (AAIP)",
         text: [
-          "El Alberta Advantage Immigration Program (AAIP) es el programa de inmigración económica de Alberta: nomina personas para la residencia permanente. Lo administran los gobiernos de Alberta y de Canadá, y la decisión final sobre la residencia permanente la toma IRCC.",
+          "El Alberta Advantage Immigration Program (AAIP) es el programa de inmigración económica de Alberta: puede nominar para la residencia permanente a personas que cumplan los requisitos de alguna de sus vías. Una nominación no garantiza la residencia. Lo administran los gobiernos de Alberta y de Canadá, y la decisión final sobre la residencia permanente la toma IRCC.",
           "Para 2026, IRCC le asignó al AAIP 6,603 nominaciones. Es un cupo de certificados de nominación, no el número de personas que reciben la residencia.",
         ],
         items: [
@@ -315,8 +320,8 @@ const CD_PROFILES = {
       {
         id: "beneficios", title: "Beneficios familiares y ayudas",
         text: [
-          "La Canada Child Benefit (CCB) es un pago federal para familias con hijos menores de 18 años. Para solicitarla necesitas un número de seguro social (SIN), y quienes acaban de llegar deben completar un formulario adicional sobre su estatus. Hay que presentar la declaración de impuestos cada año.",
-          "El Alberta Child and Family Benefit (ACFB) es un beneficio provincial, libre de impuestos, para familias de ingresos bajos y medios. No requiere una solicitud aparte: se evalúa automáticamente al presentar la declaración de impuestos si calificas para la CCB. Lo paga la Agencia de Ingresos de Canadá (CRA) en 4 cuotas al año. Si te mudas a Alberta, puedes recibirlo desde el mes siguiente a hacerte residente.",
+          "La Canada Child Benefit (CCB) es un pago federal para familias elegibles con hijos menores de 18 años; la elegibilidad depende, entre otros requisitos, de la residencia y el estatus en Canadá. Para solicitarla necesitas un número de seguro social (SIN), y quienes acaban de llegar deben completar un formulario adicional sobre su estatus. Hay que presentar la declaración de impuestos cada año.",
+          "El Alberta Child and Family Benefit (ACFB) es un beneficio provincial, libre de impuestos, para familias de ingresos bajos y medios que cumplen los requisitos. No requiere una solicitud aparte: se evalúa automáticamente al presentar la declaración de impuestos si calificas para la CCB. Lo paga la Agencia de Ingresos de Canadá (CRA) en 4 cuotas al año. Si te mudas a Alberta y cumples los requisitos, puedes recibirlo desde el mes siguiente a hacerte residente.",
           "La elegibilidad para estos programas depende de tu estatus migratorio, tus ingresos y tu residencia: no todos los recién llegados tienen derecho a los mismos programas.",
         ],
         indicators: [],

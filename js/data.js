@@ -38,7 +38,7 @@ const BREAKING = [
    pending. */
 const NAV_PRIMARY = [
   { label: "Inicio", href: "index.html#inicio" },
-  { label: "Canadá", href: "index.html#", pending: true },
+  { label: "Canadá", href: "canada-en-datos/" },
   { label: "Migración", href: "guia.html?categoria=migracion" },
   { label: "Empleo", href: "index.html#", pending: true },
   { label: "Comunidad", href: "index.html#", pending: true },

@@ -45,7 +45,7 @@
     if (ind.value === null || ind.value === undefined) {
       return `<div class="cd-fact"><dt>${esc(ind.label)}</dt><dd><span class="cd-pending">Pendiente de verificación</span></dd></div>`;
     }
-    const unidad = ind.format === "moneda" && /^(por|al)\b/.test(ind.unit) ? ` ${esc(ind.unit)}` : "";
+    const unidad = ind.format === "moneda" && /^(CAD )?(por|al)\b/.test(ind.unit) ? ` ${esc(ind.unit)}` : "";
     return `<div class="cd-fact"><dt>${esc(ind.label)}</dt><dd>${esc(formatoValor(ind))}${unidad}<small class="cd-fact__period">${esc(ind.refPeriod)}</small></dd></div>`;
   }
 

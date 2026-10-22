@@ -143,7 +143,7 @@ const pendiente = (ind) => ind.value === null || ind.value === undefined;
 
 function valorIndicador(ind) {
   if (pendiente(ind)) return '<span class="cd-pending">Pendiente de verificación</span>';
-  const unidad = ind.format === "moneda" && /^(por|al)\b/.test(ind.unit) ? ` ${esc(ind.unit)}` : "";
+  const unidad = ind.format === "moneda" && /^(CAD )?(por|al)\b/.test(ind.unit) ? ` ${esc(ind.unit)}` : "";
   return `${esc(formatoValor(ind))}${unidad}<small class="cd-fact__period">${esc(ind.refPeriod)}</small>`;
 }
 
@@ -332,6 +332,11 @@ function paginaRegion(d, region, comun) {
         ${s.items.map((i) => `<li>${esc(i)}</li>`).join("\n        ")}
       </ul>` : "";
       const aviso = s.alert ? `<p class="cd-alert">${esc(s.alert)}</p>` : "";
+      const explicacion = s.explainer ? `<aside class="cd-explainer" aria-labelledby="${s.id}-explicacion">
+        <h3 id="${s.id}-explicacion">${esc(s.explainer.title)}</h3>
+        <p>${esc(s.explainer.text)}</p>
+        <p class="cd-alert">${esc(s.explainer.warning)}</p>
+      </aside>` : "";
       const tarjetas = s.indicators.length
         ? `<div class="cd-indicators">
         ${s.indicators.map((k) => tarjetaIndicador(perfil.indicators[k])).join("\n        ")}
@@ -344,6 +349,7 @@ function paginaRegion(d, region, comun) {
       ${lista}
       ${aviso}
       ${tarjetas}
+      ${explicacion}
       <div class="cd-links">
         ${enlaces}
       </div>

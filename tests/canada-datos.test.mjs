@@ -122,12 +122,33 @@ test("SEO y vistas previas: canónica, og/twitter, imagen 1200×630 y JSON-LD en
   }
 });
 
-test("prototipo: noindex y aviso mientras no se autorice la publicación", () => {
-  if (!D.CD_META.prototype) return;
+test("publicado: sin noindex ni aviso de prototipo", () => {
+  assert.equal(D.CD_META.prototype, false);
   for (const html of Object.values(PAGES)) {
-    assert.match(html, /<meta name="robots" content="noindex">/);
-    assert.match(html, /Prototipo en revisión editorial/);
+    assert.doesNotMatch(html, /noindex/);
+    assert.doesNotMatch(html, /Prototipo en revisión editorial/);
   }
+});
+
+test("salarios: mínimo, promedio y mediano con explicación y advertencia textuales", () => {
+  const ind = D.CD_PROFILES.alberta.indicators;
+  assert.equal(ind.minimumWage.value, 15);
+  assert.equal(ind.averageWage.value, 37.35);
+  assert.equal(ind.averageWage.refPeriod, "Año 2025");
+  assert.equal(ind.medianWage.value, null, "el mediano solo se publica con fuente oficial verificada");
+  for (const k of ["minimumWage", "averageWage", "medianWage"]) assert.equal(ind[k].unit, "CAD por hora");
+  const html = Object.entries(PAGES).find(([n]) => /alberta/.test(n))[1];
+  const empleo = html.slice(html.indexOf('id="empleo"'), html.indexOf('id="vivienda"'));
+  assert.match(empleo, /\$15<\/p>\s*<p class="cd-indicator__unit">CAD por hora · Vigente/);
+  assert.match(empleo, /\$37\.35<\/p>\s*<p class="cd-indicator__unit">CAD por hora · Año 2025/);
+  assert.match(empleo, /Salario mediano provincial por hora<\/p>\s*<p class="cd-indicator__value cd-pending">Pendiente de verificación/);
+  const textual = [
+    "El salario mínimo es la remuneración mínima legal general que debe pagar un empleador, con algunas excepciones. El salario promedio es una media estadística de las remuneraciones de distintos trabajadores. No significa que todos ganen esa cantidad. Los salarios más altos pueden elevar el promedio. El salario mediano representa el punto central de la distribución: la mitad de los trabajadores del grupo medido gana más y la otra mitad gana menos.",
+    "El salario promedio provincial no representa necesariamente el salario inicial ni garantiza cuánto ganará una persona. Los ingresos varían según ocupación, experiencia, ciudad y sector económico.",
+  ];
+  for (const t of textual) assert.ok(empleo.includes(t), t.slice(0, 40));
+  // El promedio no aparece en el resumen del panel como referencia rápida
+  assert.ok(!D.CD_PROFILES.alberta.summary.includes("averageWage"));
 });
 
 test("rutas absolutas (páginas en subcarpeta), tipografías locales y footer legal completo", () => {
@@ -168,14 +189,22 @@ test("reloj: 12 horas con segundos y día/noche por la salida y puesta del sol",
   assert.equal(`${nl.hora}:${nl.minutos}`, "5:35", "Terranova: media hora");
 });
 
-test("aislamiento: el menú «Canadá» sigue oculto y ninguna otra página enlaza al módulo", () => {
+test("publicación: menú «Canadá» activo, sitemap con las dos páginas y sin enlaces a fichas inexistentes", () => {
   const ctx = vm.createContext({});
   vm.runInContext(read("js/data.js") + ";globalThis.N=NAV_PRIMARY;", ctx);
   const canada = ctx.N.find((i) => i.label === "Canadá");
-  assert.equal(canada.pending, true, "«Canadá» debe seguir oculto hasta autorizar la publicación");
-  const paginas = readdirSync(ROOT).filter((f) => f.endsWith(".html"));
-  for (const f of paginas) assert.doesNotMatch(read(f), /canada-en-datos/, f);
-  assert.doesNotMatch(read("sitemap.xml"), /canada-en-datos/, "fuera del sitemap mientras sea prototipo");
+  assert.ok(!canada.pending, "«Canadá» visible en el menú");
+  assert.equal(canada.href, "canada-en-datos/");
+  const sitemap = read("sitemap.xml");
+  assert.match(sitemap, /<loc>https:\/\/podcastdelmigrante\.com\/canada-en-datos\/<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/podcastdelmigrante\.com\/canada-en-datos\/alberta<\/loc>/);
+  // Solo las regiones con ficha generada enlazan a ella
+  const fichas = new Set(readdirSync(join(ROOT, "canada-en-datos")).filter((f) => f.endsWith(".html") && f !== "index.html").map((f) => f.replace(/\.html$/, "")));
+  for (const r of D.CD_REGIONS) assert.equal(Boolean(r.profile), fichas.has(r.profile || r.slug), r.name);
+  const portada = read("canada-en-datos/index.html");
+  for (const [, destino] of portada.matchAll(/href="\/canada-en-datos\/([a-z-]+)"/g)) assert.ok(fichas.has(destino), destino);
+  // Fuera del módulo, solo el menú (data.js) y el sitemap lo enlazan
+  for (const f of readdirSync(ROOT).filter((f) => f.endsWith(".html"))) assert.doesNotMatch(read(f), /canada-en-datos/, f);
 });
 
 test("la carpeta pública incluye el módulo y sigue limpia", () => {
