@@ -25,6 +25,7 @@
 */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
+import * as Localidades from "./canada-en-datos/localidades.mjs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
@@ -61,7 +62,7 @@ function chrome(root) {
 }
 
 /* ---------- <head> ---------- */
-function head({ meta, title, description, path, image, imageAlt, jsonLd }) {
+function head({ meta, title, description, path, image, imageAlt, jsonLd, noindex = false }) {
   const url = SITE + path;
   return `<!DOCTYPE html>
 <html lang="es">
@@ -70,7 +71,7 @@ function head({ meta, title, description, path, image, imageAlt, jsonLd }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-${meta.prototype ? '<meta name="robots" content="noindex">\n' : ""}<link rel="canonical" href="${url}">
+${meta.prototype || noindex ? '<meta name="robots" content="noindex">\n' : ""}<link rel="canonical" href="${url}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="El Podcast del Migrante Magazine">
 <meta property="og:title" content="${esc(title)}">
@@ -107,14 +108,14 @@ function aviso(meta) {
   </div>`;
 }
 
-function scripts(extra) {
+function scripts(extra, { soloSitio = false } = {}) {
   return `<script>window.PDM_SITE_ROOT_LINKS = true;</script>
 <script src="/js/data.js"></script>
 <script src="/js/nav.js"></script>
 <script>document.addEventListener("DOMContentLoaded", () => window.PDM && window.PDM.initSiteChrome && window.PDM.initSiteChrome());</script>
-<script src="/js/canada-datos.js"></script>
+${soloSitio ? "" : `<script src="/js/canada-datos.js"></script>
 <script src="/js/canada-reloj.js"></script>
-${extra.map((s) => `<script src="${s}"></script>`).join("\n")}
+`}${extra.map((s) => `<script src="${s}"></script>`).join("\n")}
 </body>
 </html>
 `;
@@ -297,7 +298,7 @@ ${scripts(["/js/canada-mapa.js"])}`;
 }
 
 /* ---------- Ficha de una región ---------- */
-function paginaRegion(d, region, comun) {
+function paginaRegion(d, region, comun, L) {
   const { CD_META: meta, CD_SOURCES: fuentes, CD_PROFILES: perfiles } = d;
   const perfil = perfiles[region.profile];
   const path = `${BASE_PATH}/${region.profile}`;
@@ -322,7 +323,7 @@ function paginaRegion(d, region, comun) {
       ],
     },
   };
-  const toc = [...perfil.sections.map((s) => [s.id, s.title]), ["recien-llegado", "Recién llegado"], ...(perfil.scams && perfil.scams.length ? [["estafas", "Estafas"]] : []), ["noticias", "Noticias"], ["fuentes", "Fuentes"]]
+  const toc = [...perfil.sections.map((s) => [s.id, s.title]), ...(perfil.localidades ? [["localidades", "Ciudades y pueblos"]] : []), ["recien-llegado", "Recién llegado"], ...(perfil.scams && perfil.scams.length ? [["estafas", "Estafas"]] : []), ["noticias", "Noticias"], ["fuentes", "Fuentes"]]
     .map(([id, t]) => `<a href="#${id}">${esc(t)}</a>`)
     .join("\n      ");
   const secciones = perfil.sections
@@ -407,6 +408,8 @@ ${comun.cabecera}
 
     ${secciones}
 
+    ${perfil.localidades ? Localidades.seccionDirectorio(L, esc) : ""}
+
     <section class="cd-section cd-newcomer" id="recien-llegado" aria-labelledby="recien-llegado-titulo">
       <h2 id="recien-llegado-titulo">Recién llegado: ¿por dónde empezar?</h2>
       <p>Una ruta de primeros pasos para instalarte en ${esc(region.name)}. Cada trámite tiene sus requisitos: confírmalos siempre en la página oficial.</p>
@@ -437,7 +440,7 @@ ${comun.cabecera}
 
 ${comun.pie}
 
-${scripts(["/js/articles.js", "/js/canada-region.js"])}`;
+${scripts(["/js/articles.js", "/js/canada-region.js", ...(perfil.localidades ? ["/js/alberta-directorio.js"] : [])])}`;
 }
 
 /* ---------- Generación ---------- */
@@ -446,9 +449,16 @@ export function render(root = ROOT) {
   const geo = JSON.parse(readFileSync(join(root, "scripts/canada-en-datos/mapa-canada.json"), "utf8"));
   const comun = chrome(root);
   const files = { "index.html": paginaIndice(d, geo, comun) };
+  /* Directorio de localidades de Alberta (claves que empiezan por «/»: rutas desde la raíz del proyecto) */
+  const L = Object.values(d.CD_PROFILES).some((p) => p.localidades) ? Localidades.cargar(root) : null;
   for (const region of d.CD_REGIONS.filter((r) => r.profile)) {
     if (!d.CD_PROFILES[region.profile]) throw new Error(`Falta CD_PROFILES.${region.profile}`);
-    files[`${region.profile}.html`] = paginaRegion(d, region, comun);
+    files[`${region.profile}.html`] = paginaRegion(d, region, comun, L);
+  }
+  if (L) {
+    Object.assign(files, Localidades.paginas(L, { esc, head, chrome: comun, scriptsBase: (extra) => scripts(extra, { soloSitio: true }), meta: d.CD_META }));
+    files["/js/alberta-localidades.js"] = Localidades.datosNavegador(L);
+    files["/assets/canada-en-datos/alberta-regiones.svg"] = Localidades.mapaSvg(L);
   }
   return files;
 }
@@ -458,16 +468,21 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const problemas = [];
   if (!CHECK) mkdirSync(OUT_DIR, { recursive: true });
   for (const [name, html] of Object.entries(files)) {
-    const dest = join(OUT_DIR, name);
+    const dest = name.startsWith("/") ? join(ROOT, name) : join(OUT_DIR, name);
+    if (!CHECK) mkdirSync(dirname(dest), { recursive: true });
     const actual = existsSync(dest) ? readFileSync(dest, "utf8") : null;
     if (actual === html) continue;
-    if (CHECK) problemas.push(`desactualizado: canada-en-datos/${name}`);
+    const rel = name.startsWith("/") ? name.slice(1) : `canada-en-datos/${name}`;
+    if (CHECK) problemas.push(`desactualizado: ${rel}`);
     else {
       writeFileSync(dest, html);
-      console.log(`escrito  canada-en-datos/${name}`);
+      if (!/^canada-en-datos\/alberta\//.test(rel)) console.log(`escrito  ${rel}`);
     }
   }
-  const sobrantes = existsSync(OUT_DIR) ? readdirSync(OUT_DIR).filter((f) => f.endsWith(".html") && !files[f]) : [];
+  const sobrantes = [
+    ...(existsSync(OUT_DIR) ? readdirSync(OUT_DIR).filter((f) => f.endsWith(".html") && !files[f]) : []),
+    ...(existsSync(join(OUT_DIR, "alberta")) ? readdirSync(join(OUT_DIR, "alberta")).map((f) => `alberta/${f}`).filter((f) => !files[f]) : []),
+  ];
   for (const f of sobrantes) problemas.push(`sobrante: canada-en-datos/${f} (no corresponde a ninguna ficha)`);
   if (problemas.length) {
     console.error(problemas.join("\n") + "\nEjecuta: node scripts/build-canada-datos.mjs");

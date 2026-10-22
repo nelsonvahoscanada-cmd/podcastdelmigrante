@@ -168,8 +168,8 @@ for r in registros:
 print("Sin fila en MAPL:", sin_mapl)
 
 # ------------------------------------------------------------------ mapa SVG
-# Proyección cónica conforme de Lambert (paralelos 49° y 77°, como el mapa de Canadá)
-phi1, phi2, phi0, lam0 = map(math.radians, (49, 77, 63.390675, -91.866667))
+# Proyección cónica conforme de Lambert centrada en Alberta (paralelos 50° y 58°, meridiano 115° O)
+phi1, phi2, phi0, lam0 = map(math.radians, (50, 58, 54, -115))
 n = math.log(math.cos(phi1) / math.cos(phi2)) / math.log(math.tan(math.pi / 4 + phi2 / 2) / math.tan(math.pi / 4 + phi1 / 2))
 F = math.cos(phi1) * math.tan(math.pi / 4 + phi1 / 2) ** n / n
 rho0 = F / math.tan(math.pi / 4 + phi0 / 2) ** n
