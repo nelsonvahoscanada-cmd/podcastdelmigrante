@@ -116,6 +116,13 @@ for f in puntos:
     sin_padre += padre is None
     registros.append({"c": str(a["CULPT_CODE"]).strip(), "n": str(a["CULPT_NAME"]).strip(), "t": TIPO_PUNTO[a["TYPE"]], "lat": round(lat, 4), "lon": round(lon, 4), "r": region_de(p), "m": padre})
 print("Puntos:", len(puntos), "sin municipio contenedor:", sin_padre)
+# Las áreas de servicio urbano también pertenecen a un municipio
+for r in registros:
+    if r["t"] == "usa":
+        p = Point(r["lon"], r["lat"])
+        contiene = [(ORDEN_PADRE[t], g.area, c) for c, t, g in poligonos if g.contains(p)]
+        r["m"] = min(contiene)[2] if contiene else None
+        print("USA", r["n"], "→", r["m"])
 
 # ------------------------------------------------ Municipal Affairs Population List 2025
 wb = openpyxl.load_workbook(io.BytesIO(get(MAPL)), data_only=True)
