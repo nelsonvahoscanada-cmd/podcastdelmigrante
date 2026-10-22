@@ -117,12 +117,12 @@ async function sinScrollHorizontal(page) {
     // Enlaces externos en pestaña nueva y con rel="noopener"
     const externos = await page.locator('main a[href^="http"]').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
     assert.ok(externos);
+    if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `cd-alberta-${perfil}.png`), fullPage: true });
     // Teclado: el índice lleva a la sección
     await page.locator('.cd-toc a[href="#salud"]').focus();
     await page.keyboard.press("Enter");
     assert.equal(new URL(page.url()).hash, "#salud");
     await sinScrollHorizontal(page);
-    if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `cd-alberta-${perfil}.png`), fullPage: true });
     assert.deepEqual(errores, []);
     await ctx.close();
     console.log(`ok ${perfil}`);

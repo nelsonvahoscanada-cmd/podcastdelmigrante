@@ -297,7 +297,7 @@ const CD_PROFILES = {
         id: "inmigracion", title: "Inmigración provincial (AAIP)",
         text: [
           "El Alberta Advantage Immigration Program (AAIP) es el programa de inmigración económica de Alberta: nomina personas para la residencia permanente. Lo administran los gobiernos de Alberta y de Canadá, y la decisión final sobre la residencia permanente la toma IRCC.",
-          "Para 2026, IRCC le asignó al AAIP 6603 nominaciones. Es un cupo de certificados de nominación, no el número de personas que reciben la residencia.",
+          "Para 2026, IRCC le asignó al AAIP 6,603 nominaciones. Es un cupo de certificados de nominación, no el número de personas que reciben la residencia.",
         ],
         items: [
           "Vías para trabajadores: Alberta Opportunity Stream, Tourism and Hospitality Stream, Rural Renewal Stream y Alberta Express Entry Stream, este último con vías dedicadas a salud, tecnología y policía. La mayoría exige una oferta de empleo de Alberta.",
