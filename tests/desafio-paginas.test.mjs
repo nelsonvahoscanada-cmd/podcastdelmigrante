@@ -142,3 +142,20 @@ test("Muro del Legado: todos los participantes con nombre, empresa y ciudad", ()
   }
   for (const c of ["Airdrie", "Okotoks", "Winnipeg", "Brooks"]) assert.match(muro, new RegExp(`${c}, (Alberta|Manitoba)`), c);
 });
+
+test("pie de página: «Desafío 100 Empresas» lleva a /desafio-100-empresas/ en todas las páginas", () => {
+  const paginas = readdirSync(ROOT, { recursive: true }).map(String).filter((f) => f.endsWith(".html") && !/^(dist|node_modules|\.)/.test(f));
+  let conPie = 0;
+  for (const f of paginas) {
+    const html = read(f);
+    const pie = html.slice(html.indexOf('<footer class="site-footer"'));
+    if (!html.includes('<footer class="site-footer"')) continue;
+    conPie++;
+    const enlaces = [...pie.matchAll(/<a href="([^"]*)">Desafío 100 Empresas<\/a>/g)].map((m) => m[1]);
+    assert.equal(enlaces.length, 1, `${f}: un enlace al Desafío en el pie`);
+    /* Las páginas de subcarpetas usan rutas absolutas; las de la raíz, relativas */
+    assert.ok(enlaces[0] === "/desafio-100-empresas/" || (enlaces[0] === "desafio-100-empresas/" && !f.includes("/")), `${f}: ${enlaces[0]}`);
+    assert.doesNotMatch(html, /href="(\/?index\.html)?#desafio"/, `${f}: enlace antiguo`);
+  }
+  assert.ok(conPie > 400, `páginas con pie: ${conPie}`);
+});
