@@ -73,19 +73,19 @@ const DESAFIO_STORIES = [
   {
     slug: "desafio-mario-de-matteiz-gc-equipment",
     homeOrder: 2,
-    empresario: "Mario de Matteiz",
+    empresario: "Mario De Matteis",
     empresa: "GC Equipment",
     cardTag: "Desafío 100 Empresas · Capítulo 30",
-    cardTitle: "De empresario en México a comenzar de cero en Canadá: la historia de Mario de Matteiz",
+    cardTitle: "De empresario en México a comenzar de cero en Canadá: la historia de Mario De Matteis",
     cardDescription: "Después de desarrollar importantes proyectos industriales en México, Mario emigró a Canadá y comenzó trabajando en jardinería. Hoy dirige GC Equipment en Calgary, donde coordina un equipo de trabajadores latinos.",
-    pageTitle: "De empresario en México a comenzar de cero en Canadá: la historia de Mario de Matteiz | Desafío 100 Empresas, capítulo 30",
+    pageTitle: "De empresario en México a comenzar de cero en Canadá: la historia de Mario De Matteis | Desafío 100 Empresas, capítulo 30",
     bodyHtml: `
-      <p>En el capítulo 30 de Desafío 100 Empresas conversamos con Mario de Matteiz, de GC Equipment.</p>
+      <p>En el capítulo 30 de Desafío 100 Empresas conversamos con Mario De Matteis, de GC Equipment.</p>
       <p>Después de desarrollar importantes proyectos industriales en México, Mario emigró a Canadá y comenzó de cero, trabajando en jardinería.</p>
       <p>Hoy dirige GC Equipment en Calgary, donde coordina un equipo de trabajadores latinos. Su historia muestra que empezar de nuevo también puede ser el comienzo de otra etapa empresarial.</p>
     `,
-    guest: { name: "Mario de Matteiz", company: "GC Equipment", area: "Calgary, Alberta" },
-    image: { alt: "Miniatura del video de Mario de Matteiz, de GC Equipment, en Desafío 100 Empresas." },
+    guest: { name: "Mario De Matteis", company: "GC Equipment", area: "Calgary, Alberta" },
+    image: { alt: "Miniatura del video de Mario De Matteis, de GC Equipment, en Desafío 100 Empresas." },
     videoId: "0rFRBV7wYqM",
     disclaimer: null,
     sponsor: null,
@@ -168,10 +168,7 @@ const DESAFIO_STORIES = [
     videoId: "bDhX_XW2bE0",
     videoStart: 636,
     disclaimer: "Este contenido tiene fines informativos y educativos y no constituye asesoría migratoria individual. Cada situación migratoria es diferente y las normas, requisitos y programas pueden cambiar. Para tu caso particular, consulta con un consultor de inmigración regulado o un profesional autorizado.",
-    sponsor: {
-      role: "Patrocinadora oficial de Desafío 100 Empresas",
-      note: "Sterna Global Immigration Inc. apoya el proyecto y facilita la locación profesional utilizada para las grabaciones, para que cada empresario inscrito pueda grabar su episodio, compartir su historia y mostrar su empresa sin ningún costo. Su respaldo demuestra que una empresa también puede crecer mientras abre puertas para que otros avancen.",
-    },
+    sponsor: null,
     seo: { canonicalPath: "/desafio-100-empresas/desafio-gina-salinas-sterna-global-immigration/" },
   },
   {
