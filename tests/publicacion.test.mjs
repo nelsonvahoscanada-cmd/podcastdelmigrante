@@ -20,7 +20,7 @@ test("el sitio real genera una dist/ limpia, sin problemas", () => {
     const { files, problems } = build(out);
     assert.deepEqual(problems, []);
     const top = new Set(files.map((f) => f.split("/")[0]).filter((f) => !f.includes(".")));
-    assert.deepEqual([...top].sort(), ["assets", "canada-en-datos", "css", "guia-carlos", "js", "vcard"]);
+    assert.deepEqual([...top].sort(), ["assets", "canada-en-datos", "css", "desafio-100-empresas", "guia-carlos", "js", "vcard"]);
     for (const dir of ["admin-worker", "db", "docs", "functions", "scripts", "tests", ".github", ".git", "assets/originals"]) {
       assert.equal(existsSync(join(out, dir)), false, `${dir} no se publica`);
     }

@@ -48,6 +48,30 @@
     "6YdTsBzG2gs": ["/assets/yt/6YdTsBzG2gs.jpg", 1280, 720],
     "UsWWtkmnszw": ["/assets/yt/UsWWtkmnszw.jpg", 1280, 720],
     "EEqjez0MuAY": ["/assets/yt/EEqjez0MuAY.jpg", 1280, 720],
+    /* Desafío 100 Empresas: miniaturas oficiales del canal (23-10-2026). Los
+       episodios cuya miniatura muestra a Sterna como patrocinador no se
+       copian: el portal usa su propia portada editorial. */
+    "8UYFajH0uPE": ["/assets/yt/8UYFajH0uPE.jpg", 1280, 720],
+    "9qVEidoolTw": ["/assets/yt/9qVEidoolTw.jpg", 1280, 720],
+    "IKbrXrukwFY": ["/assets/yt/IKbrXrukwFY.jpg", 1280, 720],
+    "It-VuNDZI1o": ["/assets/yt/It-VuNDZI1o.jpg", 1280, 720],
+    "Lfx5p_SLl-4": ["/assets/yt/Lfx5p_SLl-4.jpg", 1280, 720],
+    "MnpUWRQYq_E": ["/assets/yt/MnpUWRQYq_E.jpg", 1280, 720],
+    "PchTJA6UO-A": ["/assets/yt/PchTJA6UO-A.jpg", 1280, 720],
+    "R9thQCujWNU": ["/assets/yt/R9thQCujWNU.jpg", 1280, 720],
+    "TQ02VLtx9lU": ["/assets/yt/TQ02VLtx9lU.jpg", 1280, 720],
+    "U43mi0VUrQQ": ["/assets/yt/U43mi0VUrQQ.jpg", 1280, 720],
+    "V-63cO73c_M": ["/assets/yt/V-63cO73c_M.jpg", 1280, 720],
+    "_yazppIXYVk": ["/assets/yt/_yazppIXYVk.jpg", 1280, 720],
+    "ewVZd0D9J8E": ["/assets/yt/ewVZd0D9J8E.jpg", 1280, 720],
+    "gwpQ2rkEdP8": ["/assets/yt/gwpQ2rkEdP8.jpg", 1280, 720],
+    "ipgUwcu3BwA": ["/assets/yt/ipgUwcu3BwA.jpg", 1280, 720],
+    "kS9Ff6J8i_s": ["/assets/yt/kS9Ff6J8i_s.jpg", 1280, 720],
+    "m3gEVvWqwPc": ["/assets/yt/m3gEVvWqwPc.jpg", 1280, 720],
+    "nwt8pWOOb0s": ["/assets/yt/nwt8pWOOb0s.jpg", 1280, 720],
+    "t7aT3SD94Xg": ["/assets/yt/t7aT3SD94Xg.jpg", 1280, 720],
+    "vuMEr5384LI": ["/assets/yt/vuMEr5384LI.jpg", 1280, 720],
+    "xuQYHWBNQL0": ["/assets/yt/xuQYHWBNQL0.jpg", 1280, 720],
   };
   const PLACEHOLDER = "/assets/yt/sin-miniatura.svg";
   const NOTE = "Al reproducir, te conectas con YouTube, que puede usar cookies de seguimiento.";

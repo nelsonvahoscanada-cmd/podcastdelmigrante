@@ -55,7 +55,7 @@ const NAV_MORE = [
   { label: "Cultura", href: "index.html#", pending: true },
   { label: "Opinión", href: "index.html#", pending: true },
   { label: "Entrevistas", href: "index.html#video" },
-  { label: "Desafío 100 Empresas", href: "index.html#desafio" },
+  { label: "Desafío 100 Empresas", href: "desafio-100-empresas/" },
   { label: "Podcast del Migrante", href: "index.html#video" },
   { label: "Ediciones", href: "index.html#edicion" },
   { label: "Archivo", href: "index.html#", pending: true },

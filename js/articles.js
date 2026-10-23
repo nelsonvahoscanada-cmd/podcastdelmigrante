@@ -1989,7 +1989,7 @@ const ARTICLES = [
         <li><strong>Hugo R. Morales — La Costenita Latin Market Food.</strong> Emprendimiento relacionado con alimentos y con la apertura de espacios para productos de otros emprendedores latinos.</li>
         <li><strong>Milena Bolaños — Peluquería Infantil.</strong> Una historia de emprendimiento, adaptación y construcción de un servicio enfocado en familias y niños.</li>
       </ul>
-      <p>Sterna Global Immigration es patrocinador oficial de Desafío 100 Empresas y ha facilitado espacio para las jornadas de grabación del proyecto.</p>
+      <p>En sus primeras jornadas, Sterna Global Immigration facilitó el espacio para las grabaciones del proyecto.</p>
 
       <h2>El emprendimiento inmigrante en Canadá</h2>
       <p>El fenómeno que documenta el proyecto también forma parte de una realidad económica más amplia.</p>
