@@ -14,7 +14,7 @@
   Las tablas de Statistics Canada y CMHC se consultan con
   consultar-ontario.py.
 
-  Uso: node scripts/canada-en-datos/consultar-ontario.mjs [paginas|ronda2|enlaces] [filtro]
+  Uso: node scripts/canada-en-datos/consultar-ontario.mjs [paginas|ronda2|ronda3|enlaces] [filtro]
 */
 import { readFileSync } from "node:fs";
 
@@ -135,6 +135,25 @@ export const RONDA2 = [
   ["https://www.citywindsor.ca/", /City of Windsor|Windsor/i, 3],
 ];
 
+/* Tercera ronda: sitios oficiales y transporte público de las fichas completas de localidades */
+const TRANSPORTE = /transit|bus\b|buses|transport|ttc|miway|oc transpo|hsr|grt|ltc|gova|getting around/i;
+export const RONDA3 = [
+  ...[
+    "https://www.toronto.ca/", "https://ottawa.ca/en", "https://www.hamilton.ca/", "https://london.ca/", "https://www.kitchener.ca/", "https://www.waterloo.ca/",
+    "https://www.mississauga.ca/", "https://www.brampton.ca/", "https://www.citywindsor.ca/", "https://www.greatersudbury.ca/", "https://www.cityofkingston.ca/",
+    "https://www.thunderbay.ca/", "https://guelph.ca/", "https://www.barrie.ca/", "https://www.oshawa.ca/", "https://www.stcatharines.ca/",
+  ].map((u) => [u, /^$/, 0, TRANSPORTE]),
+  ...[
+    "https://www.ttc.ca/", "https://www.octranspo.com/", "https://www.hamilton.ca/streets-transportation/hsr-bus-schedules-fares", "https://www.londontransit.ca/",
+    "https://www.grt.ca/", "https://www.mississauga.ca/miway-transit/", "https://www.brampton.ca/EN/residents/transit/Pages/Welcome.aspx", "https://www.citywindsor.ca/residents/transitwindsor",
+    "https://www.greatersudbury.ca/live/transit/", "https://www.cityofkingston.ca/residents/transit", "https://www.thunderbay.ca/en/city-services/transit.aspx",
+    "https://guelph.ca/living/getting-around/bus/", "https://www.barrie.ca/transit", "https://www.durhamregiontransit.com/", "https://nrtransit.ca/", "https://www.gotransit.com/",
+  ].map((u) => [u, /^$/, 0]),
+  /* Clasificación y tipos de municipios de Ontario */
+  ["https://www.ontario.ca/page/list-ontario-municipalities", /municipal|single-tier|lower-tier|upper-tier|444|total|status|updated/i, 25],
+  ["https://www.ontario.ca/document/ontario-municipal-councillors-guide/2-municipal-organization", /single-tier|lower-tier|upper-tier|county|region|district|444|township|town|village|city|unorganized/i, 40],
+];
+
 async function paginas(filtro, lista = PAGINAS) {
   for (const [url, re, max, reEnlaces] of lista) {
     if (filtro && !url.includes(filtro)) continue;
@@ -184,5 +203,6 @@ if (process.argv[1] && process.argv[1].endsWith("consultar-ontario.mjs")) {
   const [modo = "paginas", filtro] = process.argv.slice(2);
   if (modo === "paginas") await paginas(filtro);
   if (modo === "ronda2") await paginas(filtro, RONDA2);
+  if (modo === "ronda3") await paginas(filtro, RONDA3);
   if (modo === "enlaces") await enlaces();
 }

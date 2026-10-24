@@ -1,0 +1,20 @@
+# TEMPORAL: descarga de fuentes oficiales del directorio de localidades de Ontario (solo lectura). Se elimina antes del commit final.
+name: ontario-localidades-fuentes
+on:
+  push:
+    branches: [claude/canada-datos-ontario-localidades-compartir]
+    paths: [.github/workflows/ontario-localidades-fuentes.yml]
+permissions:
+  contents: read
+jobs:
+  datos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q openpyxl pyshp shapely pyproj
+      - run: python3 scripts/canada-en-datos/obtener-ontario-localidades.py
+  paginas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/canada-en-datos/consultar-ontario.mjs ronda3
