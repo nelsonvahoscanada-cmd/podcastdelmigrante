@@ -8,12 +8,15 @@ hacen en scripts/canada-en-datos/ontario-localidades.mjs, auditables) y
 los imprime comprimidos en el registro entre DATOS-INICIO y DATOS-FIN.
 
 Fuentes:
-  - Gobierno de Ontario, «List of Ontario municipalities»: nombre,
-    estatus municipal (city, town, township...), nivel (single-tier,
-    lower-tier, upper-tier) y área geográfica (condado, región o distrito).
-  - Statistics Canada, límites cartográficos del Censo 2021: subdivisiones
-    censales (CSD) y regiones económicas (ER) de Ontario, en la proyección
-    cónica conforme de Lambert de Statistics Canada (EPSG:3347).
+  - Ontario Data Catalogue, «Municipalities» (Ministerio de Asuntos
+    Municipales y Vivienda): los 444 municipios con su estatus y nivel
+    (single-tier, lower-tier, upper-tier) y su área geográfica.
+  - Gobierno de Ontario, Land Information Ontario (LIO): límites
+    municipales de nivel inferior y único, y de nivel superior y
+    distritos. Se guardan en la proyección cónica conforme de Lambert de
+    Statistics Canada (EPSG:3347), la misma del mapa de Canadá.
+  - Statistics Canada, «Variant of SGC 2021 for Economic Regions»:
+    divisiones censales que forman cada región económica (y excepciones).
   - Statistics Canada 98-10-0002-01: población y viviendas, Censo 2021,
     por subdivisión y división censal.
   - Statistics Canada 14-10-0393-01 y 14-10-0392-01: Encuesta de
@@ -28,13 +31,11 @@ import base64, csv, datetime, gzip, io, json, re, sys, urllib.request, zipfile
 from html.parser import HTMLParser
 
 import openpyxl
-import shapefile  # pyshp
 from pyproj import Transformer
 from shapely.geometry import shape
 from shapely.ops import unary_union
 
 UA = {"User-Agent": "Mozilla/5.0 (verificacion de datos; podcastdelmigrante.com)", "Accept-Language": "en-CA"}
-BOUNDARY = "https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/files-fichiers/{}"
 RMS = "https://assets.cmhc-schl.gc.ca/sites/cmhc/professional/housing-markets-data-and-research/housing-data-tables/rental-market/rental-market-report-data-tables/2025/rmr-{}-2025-en.xlsx"
 CMHC_CENTROS = ["toronto", "ottawa", "hamilton", "london", "kitchener-cambridge-waterloo", "windsor", "oshawa", "st-catharines-niagara", "guelph", "barrie", "kingston", "thunder-bay", "greater-sudbury", "sudbury", "ontario"]
 a_lonlat = Transformer.from_crs("EPSG:3347", "EPSG:4326", always_xy=True)
@@ -51,97 +52,108 @@ def paso(nombre):
 
 
 # ------------------------------------------------ Lista oficial de municipios
-class Tablas(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.tablas, self.fila, self.celda, self.en_celda, self.enlace = [], None, "", False, None
+paso("Ontario Data Catalogue: Municipalities")
+d = json.loads(get("https://data.ontario.ca/api/3/action/package_show?id=municipalities", 120))["result"]
+print(d.get("title"), "| modificado:", d.get("metadata_modified"))
+rec = [r for r in d["resources"] if (r.get("format") or "").upper() == "CSV" and re.search(r"_-_en_|english|\ben\b", (r.get("url") or "") + " " + (r.get("name") or ""), re.I)] or [r for r in d["resources"] if (r.get("format") or "").upper() == "CSV"]
+for r in d["resources"]:
+    print("   recurso:", r.get("name"), r.get("format"), r.get("url"), r.get("last_modified"))
+rec = rec[0]
+filas = list(csv.reader(io.StringIO(get(rec["url"], 120).decode("utf-8-sig", "ignore"))))
+print("columnas:", filas[0], "filas:", len(filas) - 1)
+for f in filas[1:6]:
+    print("  ", f)
+salida["municipios"] = {"paquete": "municipalities", "titulo": d.get("title"), "url": rec["url"], "modificado": rec.get("last_modified") or d.get("metadata_modified"), "cabecera": filas[0], "filas": filas[1:]}
+salida["fuentes"]["municipios"] = rec["url"]
 
-    def handle_starttag(self, tag, attrs):
-        if tag == "table":
-            self.tablas.append([])
-        elif tag == "tr" and self.tablas:
-            self.fila = []
-        elif tag in ("td", "th") and self.fila is not None:
-            self.en_celda, self.celda, self.enlace = True, "", None
-        elif tag == "a" and self.en_celda:
-            self.enlace = dict(attrs).get("href")
-
-    def handle_endtag(self, tag):
-        if tag in ("td", "th") and self.en_celda:
-            self.fila.append({"t": re.sub(r"\s+", " ", self.celda).strip(), "a": self.enlace})
-            self.en_celda = False
-        elif tag == "tr" and self.fila is not None:
-            if self.fila:
-                self.tablas[-1].append(self.fila)
-            self.fila = None
-
-    def handle_data(self, data):
-        if self.en_celda:
-            self.celda += data
+# ----------------------------------------- Límites municipales (Land Information Ontario)
+LIO = "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA"
+a_3347 = Transformer.from_crs("EPSG:4326", "EPSG:3347", always_xy=True)
+from shapely.ops import transform as sh_transform
 
 
-paso("Lista de municipios de Ontario")
-for url in ("https://www.ontario.ca/page/list-ontario-municipalities", "https://www.ontario.ca/document/list-ontario-municipalities"):
+def redondea(geo):
+    """GeoJSON con coordenadas enteras (metros): reduce el tamaño sin perder precisión útil para el mapa."""
+    def r(c):
+        return [r(x) for x in c] if isinstance(c[0], (list, tuple)) else [round(c[0]), round(c[1])]
+    return {"type": geo["type"], "coordinates": r(geo["coordinates"])}
+
+
+def proyecta(g):
+    return sh_transform(lambda x, y, z=None: a_3347.transform(x, y), g)
+
+
+paso("LIO: capas de límites municipales")
+capas = {}
+for i in range(1, 11):
+    srv = f"{LIO}/LIO_Open{i:02d}/MapServer"
+    try:
+        info = json.loads(get(srv + "?f=json", 120))
+    except Exception as e:
+        print("ERROR", srv, e)
+        continue
+    for l in info.get("layers", []):
+        if re.search(r"municipal", l["name"], re.I):
+            print(f"  LIO_Open{i:02d}/{l['id']}: {l['name']}")
+            capas[l["name"]] = f"{srv}/{l['id']}"
+
+
+def consulta(url, campos="*", offset=0.0005):
+    out, desde = [], 0
+    while True:
+        q = {"where": "1=1", "outFields": campos, "returnGeometry": "true", "outSR": "4326", "f": "geojson", "maxAllowableOffset": str(offset), "resultOffset": str(desde), "resultRecordCount": "500"}
+        fs = json.loads(get(url + "/query?" + __import__("urllib.parse").parse.urlencode(q), 600))["features"]
+        out += fs
+        if len(fs) < 500:
+            return out
+        desde += 500
+
+
+inferior = [u for n, u in capas.items() if re.search(r"lower.*single|single.*lower", n, re.I)]
+superior = [u for n, u in capas.items() if re.search(r"upper", n, re.I)]
+print("capa inferior/única:", inferior, "| capa superior/distritos:", superior)
+salida["lio"] = {"capas": capas}
+if inferior:
+    fs = consulta(inferior[0])
+    print("municipios (inferior/único):", len(fs), "campos:", list(fs[0]["properties"]) if fs else None)
+    for f in fs[:3]:
+        print("  ", f["properties"])
+    salida["lio"]["inferior"] = []
+    for f in fs:
+        g = proyecta(shape(f["geometry"]))
+        p = g.representative_point()
+        lon, lat = a_lonlat.transform(p.x, p.y)
+        salida["lio"]["inferior"].append({"a": f["properties"], "x": round(p.x), "y": round(p.y), "lat": round(lat, 4), "lon": round(lon, 4), "geo": redondea(g.simplify(1200, preserve_topology=True).__geo_interface__)})
+if superior:
+    fs = consulta(superior[0])
+    print("nivel superior y distritos:", len(fs), "campos:", list(fs[0]["properties"]) if fs else None)
+    for f in fs[:3]:
+        print("  ", f["properties"])
+    salida["lio"]["superior"] = [{"a": f["properties"], "geo": redondea(proyecta(shape(f["geometry"])).simplify(1500, preserve_topology=True).__geo_interface__)} for f in fs]
+salida["fuentes"]["limites"] = LIO
+
+# ------------------------------------- Regiones económicas: divisiones censales que las forman
+paso("Statistics Canada: variante de la SGC 2021 para regiones económicas")
+for url in ("https://www.statcan.gc.ca/en/subjects/standard/sgc/2021/er-additionalinfo",):
     try:
         html = get(url, 120).decode("utf-8", "ignore")
     except Exception as e:
         print("ERROR", url, e)
         continue
-    m = re.search(r"Updated:?\s*</?[^>]*>?\s*([A-Z][a-z]+ \d{1,2}, \d{4})", html) or re.search(r"Updated:?\s*([A-Z][a-z]+ \d{1,2}, \d{4})", html)
     p = Tablas()
     p.feed(html)
-    print(url, "tablas:", [len(t) for t in p.tablas], "actualizada:", m and m.group(1))
-    if p.tablas:
-        filas = [f for t in p.tablas for f in t]
-        print("  cabecera:", [c["t"] for c in filas[0]])
-        for f in filas[1:6]:
-            print("  ", [c["t"] for c in f])
-        salida["municipios"] = {"url": url, "actualizada": m and m.group(1), "tablas": [[[c["t"] for c in f] for f in t] for t in p.tablas]}
-        salida["fuentes"]["municipios"] = url
-        break
-
-# ----------------------------------------- Límites censales: CSD y ER de Ontario
-def leer_shp(archivo, filtro):
-    zf = zipfile.ZipFile(io.BytesIO(get(BOUNDARY.format(archivo), 900)))
-    base = [n[:-4] for n in zf.namelist() if n.endswith(".shp")][0]
-    r = shapefile.Reader(shp=io.BytesIO(zf.read(base + ".shp")), dbf=io.BytesIO(zf.read(base + ".dbf")), shx=io.BytesIO(zf.read(base + ".shx")))
-    campos = [f[0] for f in r.fields[1:]]
-    print(archivo, "campos:", campos, "registros:", len(r))
-    out = []
-    for sr in r.iterShapeRecords():
-        a = dict(zip(campos, sr.record))
-        if filtro(a):
-            out.append((a, shape(sr.shape.__geo_interface__)))
-    return out
-
-
-paso("Regiones económicas (ER)")
-ers = leer_shp("ler_000b21a_e.zip", lambda a: str(a.get("PRUID")) == "35")
-er_geo = [(str(a["ERUID"]), a["ERNAME"], g) for a, g in ers]
-print("ER de Ontario:", [(u, n) for u, n, _ in er_geo])
-
-
-def er_de(p):
-    for uid, _, g in er_geo:
-        if g.contains(p):
-            return uid
-    return min(er_geo, key=lambda r: r[2].distance(p))[0]
-
-
-paso("Subdivisiones censales (CSD)")
-csds = leer_shp("lcsd000b21a_e.zip", lambda a: str(a.get("PRUID")) == "35")
-tipos = {}
-salida["csd"] = []
-for a, g in csds:
-    p = g.representative_point()
-    lon, lat = a_lonlat.transform(p.x, p.y)
-    tipos[a["CSDTYPE"]] = tipos.get(a["CSDTYPE"], 0) + 1
-    salida["csd"].append({"uid": str(a["CSDUID"]), "dguid": a.get("DGUID"), "n": a["CSDNAME"], "t": a["CSDTYPE"], "er": er_de(p), "x": round(p.x), "y": round(p.y), "lat": round(lat, 4), "lon": round(lon, 4), "area": a.get("LANDAREA")})
-print("CSD de Ontario:", len(salida["csd"]), "por tipo:", tipos)
-
-# Mapa: contorno de las ER simplificado (metros, EPSG:3347)
-salida["er"] = [{"uid": u, "n": n, "geo": unary_union([g]).simplify(1500, preserve_topology=True).__geo_interface__} for u, n, g in er_geo]
-salida["fuentes"]["limites"] = BOUNDARY.format("lcsd000b21a_e.zip") + " ; " + BOUNDARY.format("ler_000b21a_e.zip")
+    tablas = [[[c["t"] for c in f] for f in t] for t in p.tablas]
+    print(url, "tablas:", [len(t) for t in tablas])
+    for t in tablas:
+        for f in t:
+            if any(re.match(r"^35\d{2}$", c) or "Ontario" in c or "Burlington" in c for c in f):
+                print("  ", f)
+    texto = re.sub(r"<[^>]+>", " ", html)
+    notas = [re.sub(r"\s+", " ", m).strip() for m in re.findall(r"[^.]{0,300}(?:Burlington|Halton)[^.]{0,300}\.", texto)]
+    for n in notas[:6]:
+        print("  nota:", n)
+    salida["er_sgc"] = {"url": url, "tablas": tablas, "notas": notas}
+    salida["fuentes"]["er"] = url
 
 # ------------------------------------------------------------ Censo 2021
 def tabla_statcan(pid):
