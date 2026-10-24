@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install -q openpyxl shapely pyproj
-      - run: python3 scripts/canada-en-datos/obtener-ontario-localidades.py
+      - run: python3 scripts/canada-en-datos/obtener-ontario-localidades.py  # v3

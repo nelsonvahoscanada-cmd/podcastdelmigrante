@@ -51,6 +51,37 @@ def paso(nombre):
     print(f"\n=== {nombre} ===", flush=True)
 
 
+class Tablas(HTMLParser):
+    """Tablas HTML como listas de filas y celdas (texto y enlace)."""
+
+    def __init__(self):
+        super().__init__()
+        self.tablas, self.fila, self.celda, self.en_celda, self.enlace = [], None, "", False, None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "table":
+            self.tablas.append([])
+        elif tag == "tr" and self.tablas:
+            self.fila = []
+        elif tag in ("td", "th") and self.fila is not None:
+            self.en_celda, self.celda, self.enlace = True, "", None
+        elif tag == "a" and self.en_celda:
+            self.enlace = dict(attrs).get("href")
+
+    def handle_endtag(self, tag):
+        if tag in ("td", "th") and self.en_celda:
+            self.fila.append({"t": re.sub(r"\s+", " ", self.celda).strip(), "a": self.enlace})
+            self.en_celda = False
+        elif tag == "tr" and self.fila is not None:
+            if self.fila:
+                self.tablas[-1].append(self.fila)
+            self.fila = None
+
+    def handle_data(self, data):
+        if self.en_celda:
+            self.celda += data
+
+
 # ------------------------------------------------ Lista oficial de municipios
 paso("Ontario Data Catalogue: Municipalities")
 d = json.loads(get("https://data.ontario.ca/api/3/action/package_show?id=municipalities", 120))["result"]
@@ -69,7 +100,6 @@ salida["fuentes"]["municipios"] = rec["url"]
 # ----------------------------------------- Límites municipales (Land Information Ontario)
 LIO = "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA"
 a_3347 = Transformer.from_crs("EPSG:4326", "EPSG:3347", always_xy=True)
-from shapely.ops import transform as sh_transform
 
 
 def redondea(geo):
@@ -80,7 +110,8 @@ def redondea(geo):
 
 
 def proyecta(g):
-    return sh_transform(lambda x, y, z=None: a_3347.transform(x, y), g)
+    import shapely
+    return shapely.transform(g, lambda c: __import__("numpy").column_stack(a_3347.transform(c[:, 0], c[:, 1])))
 
 
 paso("LIO: capas de límites municipales")
@@ -118,18 +149,39 @@ if inferior:
     print("municipios (inferior/único):", len(fs), "campos:", list(fs[0]["properties"]) if fs else None)
     for f in fs[:3]:
         print("  ", f["properties"])
-    salida["lio"]["inferior"] = []
+    # Un municipio puede tener varias partes (tierra firme, islas y agua): se agrupan por MUNID.
+    # El punto del mapa se calcula sobre la tierra firme (o las islas), nunca sobre el agua.
+    grupos = {}
     for f in fs:
-        g = proyecta(shape(f["geometry"]))
-        p = g.representative_point()
+        a = f["properties"]
+        g = grupos.setdefault(a["MUNID"], {"a": a, "partes": {}, "extensiones": []})
+        ext = a.get("MUNICIPAL_AREA_EXTENT_TYPE") or ""
+        g["extensiones"].append(ext)
+        g["partes"].setdefault(ext, []).append(proyecta(shape(f["geometry"])))
+        if ext == "Mainland":
+            g["a"] = a
+    salida["lio"]["inferior"] = []
+    for munid, g in grupos.items():
+        tierra = unary_union(g["partes"].get("Mainland", []) or g["partes"].get("Islands", []) or [x for v in g["partes"].values() for x in v])
+        p = tierra.representative_point()
         lon, lat = a_lonlat.transform(p.x, p.y)
-        salida["lio"]["inferior"].append({"a": f["properties"], "x": round(p.x), "y": round(p.y), "lat": round(lat, 4), "lon": round(lon, 4), "geo": redondea(g.simplify(1200, preserve_topology=True).__geo_interface__)})
+        sin_agua = unary_union([x for k, v in g["partes"].items() if k != "Water" for x in v] or [tierra])
+        salida["lio"]["inferior"].append({"a": g["a"], "ext": sorted(set(g["extensiones"])), "x": round(p.x), "y": round(p.y), "lat": round(lat, 4), "lon": round(lon, 4), "geo": redondea(sin_agua.simplify(1200, preserve_topology=True).__geo_interface__)})
+    print("municipios agrupados por MUNID:", len(salida["lio"]["inferior"]))
 if superior:
     fs = consulta(superior[0])
     print("nivel superior y distritos:", len(fs), "campos:", list(fs[0]["properties"]) if fs else None)
     for f in fs[:3]:
         print("  ", f["properties"])
-    salida["lio"]["superior"] = [{"a": f["properties"], "geo": redondea(proyecta(shape(f["geometry"])).simplify(1500, preserve_topology=True).__geo_interface__)} for f in fs]
+    sup = {}
+    for f in fs:
+        a = f["properties"]
+        if (a.get("MUNICIPAL_AREA_EXTENT_TYPE") or "") == "Water":
+            continue
+        s = sup.setdefault(a["MUNID"], {"a": a, "g": []})
+        s["g"].append(proyecta(shape(f["geometry"])))
+    salida["lio"]["superior"] = [{"a": s["a"], "geo": redondea(unary_union(s["g"]).simplify(1500, preserve_topology=True).__geo_interface__)} for s in sup.values()]
+    print("nivel superior y distritos agrupados:", len(salida["lio"]["superior"]), sorted(s["a"]["MUNICIPAL_NAME"] for s in sup.values()))
 salida["fuentes"]["limites"] = LIO
 
 # ------------------------------------- Regiones económicas: divisiones censales que las forman
