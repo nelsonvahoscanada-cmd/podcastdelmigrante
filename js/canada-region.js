@@ -4,7 +4,8 @@
   Páginas: canada-en-datos/<slug>.html (las genera
   scripts/build-canada-datos.mjs con todo el contenido ya escrito).
   Este script solo agrega lo que cambia con el tiempo:
-  - el reloj local de la capital (js/canada-reloj.js);
+  - el reloj local de la capital (js/canada-reloj.js) y, si la región
+    tiene otras zonas horarias, su hora ([data-zona]);
   - las noticias publicadas de la región, leídas de ARTICLES
     (js/articles.js) SIN modificar el sistema editorial: se excluyen
     borradores y contenido demostrativo, y se ordenan de la más reciente
@@ -22,6 +23,21 @@
 
   const reloj = document.getElementById("cdClock");
   if (reloj && window.CDReloj) window.CDReloj.montar(reloj, { timeZone: region.timeZone, coords: region.coords });
+
+  /* Otras zonas horarias de la región: hora y minutos, actualizados cada 15 s */
+  const zonas = document.querySelectorAll("[data-zona]");
+  if (zonas.length && window.CDReloj) {
+    const pintarZonas = () => {
+      const ahora = new Date();
+      zonas.forEach((z) => {
+        const p = window.CDReloj.partes(ahora, z.dataset.zona);
+        const t = z.querySelector("[data-zona-hora]");
+        if (t) t.textContent = `${p.hora}:${p.minutos} ${p.periodo}`.trim();
+      });
+    };
+    pintarZonas();
+    setInterval(pintarZonas, 15000);
+  }
 
   const lista = document.getElementById("cdNews");
   if (!lista || !perfil || !perfil.news || typeof ARTICLES === "undefined") return;

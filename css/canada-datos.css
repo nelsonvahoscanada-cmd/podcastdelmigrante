@@ -197,6 +197,37 @@
 .cd-method a { color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 2px; }
 .cd-method ul { list-style: disc; padding-left: 20px; }
 
+/* Otras zonas horarias de la región (p. ej., el noroeste de Ontario) */
+.cd-zones { margin-top: 12px; border-top: var(--border); }
+.cd-zone { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 10px 0; border-bottom: var(--border); font-size: 0.88rem; }
+.cd-zone__label { font-weight: 700; }
+.cd-zone__time { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.cd-zone__note { grid-column: 1 / -1; font-size: 0.76rem; color: var(--gris-texto); line-height: 1.45; }
+
+/* Tabla comparativa (p. ej., alquileres por ciudad) */
+.cd-table { margin: 20px 0 8px; }
+.cd-table figcaption { font-weight: 700; margin-bottom: 8px; }
+.cd-table__wrap { overflow-x: auto; border: var(--border); }
+.cd-table__wrap:focus-visible { outline: 3px solid var(--cd-acento); outline-offset: 2px; }
+.cd-table table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.cd-table th, .cd-table td { padding: 9px 12px; border-bottom: var(--border); text-align: left; vertical-align: top; }
+.cd-table thead th { background: var(--gris-100); font-size: 0.8rem; }
+.cd-table td { font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+.cd-table thead th:not(:first-child) { text-align: right; }
+.cd-table tbody th { font-weight: 600; }
+.cd-table tbody tr:last-child > * { border-bottom: 0; }
+.cd-section .cd-table__note { font-size: 0.78rem; color: var(--gris-texto); line-height: 1.5; margin-top: 8px; max-width: 80ch; }
+.cd-table__note a { color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Fichas de ciudades dentro de la ficha provincial */
+.cd-cities { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin: 16px 0 8px; }
+.cd-city { border: var(--border); border-top: 3px solid var(--cd-acento); padding: 16px 18px; background: var(--blanco); scroll-margin-top: calc(var(--header-offset, 0px) + 12px); }
+.cd-city h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; }
+.cd-section .cd-city p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 8px; }
+.cd-section .cd-city .cd-city__meta { font-size: 0.8rem; font-weight: 600; color: var(--gris-texto); }
+.cd-section .cd-city .cd-city__src { font-size: 0.76rem; color: var(--gris-texto); }
+.cd-city .cd-links { font-size: 0.88rem; }
+
 .cd-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* =========================================================

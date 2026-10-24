@@ -97,6 +97,69 @@ test("Alberta: ficha completa con todas las secciones y «Recién llegado»", ()
   for (const s of ab.sections) for (const l of s.links) assert.match(l.href, /^(https:\/\/|\/articulo-)/, l.href);
 });
 
+test("Ontario: ficha completa con secciones, ciudades, tabla de alquileres y zonas horarias", () => {
+  const on = D.CD_PROFILES.ontario;
+  const region = D.CD_REGIONS.find((r) => r.code === "ON");
+  assert.equal(region.profile, "ontario");
+  assert.equal(region.capital, "Toronto");
+  assert.equal(region.timeZone, "America/Toronto");
+  assert.deepEqual(region.zones.map((z) => z.timeZone), ["America/Winnipeg"], "el noroeste usa la hora central");
+  const ids = on.sections.map((s) => s.id);
+  for (const id of ["poblacion", "geografia", "economia", "empleo", "inmigracion", "vivienda", "salud", "educacion", "licencias", "beneficios", "integracion", "seguridad", "ciudades"]) assert.ok(ids.includes(id), id);
+  assert.equal(on.newcomer.length, 8, "ocho pasos de «Recién llegado»");
+  assert.ok(on.scams.length >= 3);
+  assert.match(on.indicators.population.label, /estimaci/i);
+  assert.match(on.indicators.censusPopulation.label, /censo/i);
+  for (const s of on.sections) for (const l of s.links) assert.match(l.href, /^(https:\/\/|\/articulo-)/, l.href);
+  for (const p of on.newcomer) assert.match(p.link.href, /^https:\/\//);
+
+  const html = PAGES["ontario.html"];
+  // Zonas horarias: la capital y el noroeste
+  assert.match(html, /data-tz="America\/Toronto"|America\/Toronto/);
+  assert.match(html, /<p class="cd-zone" data-zona="America\/Winnipeg"><span class="cd-zone__label">Noroeste de Ontario<\/span>/);
+  // Ciudades pedidas, dentro de la página (sin miniportales)
+  const ciudades = on.sections.find((s) => s.id === "ciudades").cities;
+  assert.deepEqual(ciudades.map((c) => c.name), ["Toronto", "Ottawa", "Hamilton", "London", "Kitchener-Waterloo", "Mississauga", "Brampton", "Windsor"]);
+  for (const c of ciudades) {
+    assert.ok(html.includes(`id="ciudad-${c.id}"`), c.name);
+    assert.ok(c.sectors.length && c.sectorsSource && c.links.length, c.name);
+    for (const l of c.links) assert.match(l.href, /^https:\/\//, l.href);
+  }
+  assert.ok(!Object.keys(TODAS).some((k) => k.startsWith("ontario/")), "sin páginas por ciudad");
+  // Tabla de alquileres: una sola encuesta (CMHC, octubre de 2025), con fuente y período
+  const tabla = on.sections.find((s) => s.id === "vivienda").table;
+  assert.equal(tabla.source.org, "CMHC");
+  assert.equal(tabla.refPeriod, "octubre de 2025");
+  for (const fila of tabla.rows) {
+    assert.equal(fila.length, tabla.headers.length);
+    assert.match(fila[1], /^\$\d,\d{3}$/, fila[0]);
+    assert.match(fila[2], /^\d\.\d%$/, fila[0]);
+  }
+  assert.ok(tabla.rows.some((f) => f[0].startsWith("Toronto") && f[1] === "$2,046"));
+  assert.match(html, /<th scope="row">Windsor<\/th><td>\$1,454<\/td><td>3\.7%<\/td>/);
+  assert.match(html, /Fuente: <a href="https:\/\/www\.cmhc-schl\.gc\.ca\/[^"]+"[^>]*>CMHC — Rental Market Survey 2025[^<]*<\/a>\. Período: octubre de 2025; consultado el 23 de octubre de 2026\./);
+  // Salario mínimo con su fecha y las excepciones
+  assert.equal(on.indicators.minimumWage.value, 17.95);
+  assert.match(on.indicators.minimumWage.refPeriod, /1 de octubre de 2026/);
+  assert.match(on.indicators.minimumWage.note, /\$16\.90/);
+  // Inmigración: lo provincial y lo federal, sin presentar vías cerradas como disponibles
+  const inm = html.slice(html.indexOf('id="inmigracion"'), html.indexOf('id="vivienda"'));
+  assert.match(inm, /Ontario Workforce Priority/);
+  assert.match(inm, /todas las demás están cerradas/);
+  assert.match(inm, /invitación/);
+  assert.match(inm, /Express Entry es un sistema federal/);
+  assert.doesNotMatch(inm, /Human Capital Priorities|Employer Job Offer|Masters Graduate|PhD Graduate|Entrepreneur Stream/i, "vías cerradas no se presentan");
+  // Empleo: sin promesas
+  assert.doesNotMatch(html, /garantizad[oa]s? (un )?empleo|empleo asegurado|consigue trabajo en/i);
+});
+
+test("Alberta no cambia con las extensiones de Ontario (zonas, tablas y ciudades)", () => {
+  const ab = PAGES["alberta.html"];
+  assert.doesNotMatch(ab, /cd-zones|cd-table|cd-cities/);
+  assert.match(ab, /Última revisión: 22 de octubre de 2026/);
+  assert.match(PAGES["index.html"], /Ya están disponibles las fichas completas de Alberta y Ontario/);
+});
+
 test("solo las regiones con ficha tienen página; las demás no enlazan a fichas inexistentes", () => {
   const conFicha = D.CD_REGIONS.filter((r) => r.profile).map((r) => `${r.profile}.html`);
   assert.deepEqual(Object.keys(PAGES).sort(), ["index.html", ...conFicha].sort());
@@ -107,7 +170,7 @@ test("solo las regiones con ficha tienen página; las demás no enlazan a fichas
 });
 
 test("SEO y vistas previas: canónica, og/twitter, imagen 1200×630 y JSON-LD en el HTML", () => {
-  const esperadas = { "index.html": "https://podcastdelmigrante.com/canada-en-datos/", "alberta.html": "https://podcastdelmigrante.com/canada-en-datos/alberta" };
+  const esperadas = { "index.html": "https://podcastdelmigrante.com/canada-en-datos/", "alberta.html": "https://podcastdelmigrante.com/canada-en-datos/alberta", "ontario.html": "https://podcastdelmigrante.com/canada-en-datos/ontario" };
   for (const [name, url] of Object.entries(esperadas)) {
     const html = PAGES[name];
     assert.match(html, new RegExp(`<link rel="canonical" href="${url}">`));
@@ -201,6 +264,7 @@ test("publicación: menú «Canadá» activo, sitemap con las dos páginas y sin
   const sitemap = read("sitemap.xml");
   assert.match(sitemap, /<loc>https:\/\/podcastdelmigrante\.com\/canada-en-datos\/<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/podcastdelmigrante\.com\/canada-en-datos\/alberta<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/podcastdelmigrante\.com\/canada-en-datos\/ontario<\/loc>/);
   // Solo las regiones con ficha generada enlazan a ella
   const fichas = new Set(readdirSync(join(ROOT, "canada-en-datos")).filter((f) => f.endsWith(".html") && f !== "index.html").map((f) => f.replace(/\.html$/, "")));
   for (const r of D.CD_REGIONS) assert.equal(Boolean(r.profile), fichas.has(r.profile || r.slug), r.name);
@@ -215,7 +279,7 @@ test("la carpeta pública incluye el módulo y sigue limpia", () => {
   try {
     const { files, problems } = build(out);
     assert.deepEqual(problems, []);
-    for (const f of ["canada-en-datos/index.html", "canada-en-datos/alberta.html", "css/canada-datos.css", "js/canada-datos.js", "js/canada-mapa.js", "js/canada-reloj.js", "js/canada-region.js", "assets/canada-en-datos/social-alberta.jpg"]) {
+    for (const f of ["canada-en-datos/index.html", "canada-en-datos/alberta.html", "css/canada-datos.css", "js/canada-datos.js", "js/canada-mapa.js", "js/canada-reloj.js", "js/canada-region.js", "assets/canada-en-datos/social-alberta.jpg", "canada-en-datos/ontario.html", "assets/canada-en-datos/social-ontario.jpg"]) {
       assert.ok(files.includes(f), f);
     }
     assert.ok(!files.some((f) => f.startsWith("scripts/")), "la geometría y los generadores no se publican");

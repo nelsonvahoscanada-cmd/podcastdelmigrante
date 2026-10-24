@@ -131,6 +131,49 @@ function relojHtml(region) {
       </div>`;
 }
 
+/* Otras zonas horarias de la región (region.zones), además de la capital.
+   La hora la escribe js/canada-region.js; sin JavaScript se ve la descripción. */
+function zonasHtml(region) {
+  if (!region.zones || !region.zones.length) return "";
+  return `<div class="cd-zones" aria-label="Otras zonas horarias de ${esc(region.name)}">
+          ${region.zones.map((z) => `<p class="cd-zone" data-zona="${esc(z.timeZone)}"><span class="cd-zone__label">${esc(z.label)}</span> <time class="cd-zone__time" data-zona-hora>—</time><small class="cd-zone__note">${esc(z.note)}</small></p>`).join("\n          ")}
+        </div>`;
+}
+
+/* Tabla comparativa de una sección (p. ej., alquileres de varias ciudades de una misma encuesta) */
+function tablaHtml(s) {
+  const tb = s.table;
+  return `<figure class="cd-table">
+        <figcaption>${esc(tb.caption)}</figcaption>
+        <div class="cd-table__wrap" tabindex="0" role="region" aria-label="${esc(tb.caption)}">
+          <table>
+            <thead><tr>${tb.headers.map((h) => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead>
+            <tbody>
+              ${tb.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(c)}</td>`)).join("")}</tr>`).join("\n              ")}
+            </tbody>
+          </table>
+        </div>
+        <p class="cd-table__note">${esc(tb.note)} Fuente: <a href="${esc(tb.source.url)}" target="_blank" rel="noopener">${esc(tb.source.org)} — ${esc(tb.source.title)}</a>. Período: ${esc(tb.refPeriod)}; consultado el ${esc(fechaLarga(tb.retrievedAt))}.</p>
+      </figure>`;
+}
+
+/* Fichas de ciudades dentro de la página provincial */
+function ciudadesHtml(s) {
+  return `<div class="cd-cities">
+        ${s.cities.map((c) => `<article class="cd-city" id="ciudad-${esc(c.id)}">
+          <h3>${esc(c.name)}</h3>
+          <p class="cd-city__meta">${esc(c.region)}${c.population ? ` · ${esc(formatoValor({ value: c.population.value, format: "numero" }))} habitantes (${esc(c.population.refPeriod)})` : ""}</p>
+          <p>${esc(c.text)}</p>
+          <p class="cd-city__sectors"><strong>Sectores destacados:</strong> ${esc(c.sectors.join(", "))}.</p>
+          <p class="cd-city__src">${esc(c.sectorsSource)}</p>
+          <div class="cd-links">
+            ${c.links.map((l) => `<a href="${esc(l.href)}"${enlaceExterno(l.href)}>${esc(l.label)}</a>`).join("\n            ")}
+          </div>
+        </article>`).join("\n        ")}
+      </div>
+      ${s.citiesNote ? `<p class="cd-table__note">${esc(s.citiesNote)}</p>` : ""}`;
+}
+
 /* Formato numérico del portal (convención canadiense): 5,101,050 · 7.2% · $37.35 · 95.63.
    Propio y sin Intl, para que la página generada y el navegador muestren lo mismo. */
 export function formatoValor(ind) {
@@ -230,7 +273,13 @@ function mapaSvg(geo, regiones) {
 function paginaIndice(d, geo, comun) {
   const { CD_META: meta, CD_SOURCES: fuentes, CD_REGIONS: regiones, CD_PROFILES: perfiles } = d;
   const title = "Canadá en Datos: provincias y territorios de Canadá — El Podcast del Migrante";
-  const description = "Mapa interactivo de las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial para inmigrantes y recién llegados. Empezamos por Alberta.";
+  /* Regiones con ficha completa, en el orden del mapa: «Alberta», «Alberta y Ontario»… */
+  const conFicha = regiones.filter((r) => r.profile).map((r) => r.name);
+  const fichas = conFicha.length > 1 ? `${conFicha.slice(0, -1).join(", ")} y ${conFicha.at(-1)}` : conFicha[0];
+  const description = conFicha.length > 1
+    ? `Mapa interactivo de las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial para inmigrantes y recién llegados. Fichas completas: ${fichas}.`
+    : `Mapa interactivo de las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial para inmigrantes y recién llegados. Empezamos por ${fichas}.`;
+  const revision = [meta.lastReview, ...Object.values(perfiles).map((p) => p.lastReview).filter(Boolean)].sort().at(-1);
   const path = `${BASE_PATH}/`;
   const alberta = regiones.find((r) => r.code === "AB");
   const jsonLd = {
@@ -256,8 +305,8 @@ ${comun.cabecera}
     <div class="wrap">
       <p class="cd-kicker">El Podcast del Migrante</p>
       <h1>Canadá en Datos</h1>
-      <p class="cd-lead">Explora las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial útil para inmigrantes y recién llegados. Empezamos por Alberta; las demás fichas llegarán pronto.</p>
-      <p class="cd-meta">Última revisión: ${esc(fechaLarga(meta.lastReview))}</p>
+      <p class="cd-lead">Explora las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial útil para inmigrantes y recién llegados. ${conFicha.length > 1 ? `Ya están disponibles las fichas completas de ${esc(fichas)}; las demás llegarán pronto` : `Empezamos por ${esc(fichas)}; las demás fichas llegarán pronto`}.</p>
+      <p class="cd-meta">Última revisión: ${esc(fechaLarga(revision))}</p>
     </div>
   </section>
 
@@ -311,7 +360,7 @@ function paginaRegion(d, region, comun, L) {
     description: perfil.seo.description,
     url: SITE + path,
     inLanguage: "es",
-    dateModified: meta.lastReview,
+    dateModified: perfil.lastReview || meta.lastReview,
     isPartOf: { "@type": "CollectionPage", name: meta.title, url: `${SITE}${BASE_PATH}/` },
     about: { "@type": "AdministrativeArea", name: region.name, containedInPlace: { "@type": "Country", name: "Canadá" } },
     breadcrumb: {
@@ -349,7 +398,7 @@ function paginaRegion(d, region, comun, L) {
       ${parrafos}
       ${lista}
       ${aviso}
-      ${tarjetas}
+      ${tarjetas}${s.table ? tablaHtml(s) : ""}${s.cities ? ciudadesHtml(s) : ""}
       ${explicacion}
       <div class="cd-links">
         ${enlaces}
@@ -390,7 +439,7 @@ ${comun.cabecera}
         <p class="cd-kicker">Canadá en Datos · ${tipo}</p>
         <h1>${esc(region.name)}</h1>
         <p class="cd-lead">${esc(perfil.intro)}</p>
-        <p class="cd-meta">Última revisión: ${esc(fechaLarga(meta.lastReview))}</p>
+        <p class="cd-meta">Última revisión: ${esc(fechaLarga(perfil.lastReview || meta.lastReview))}</p>
       </div>
       <aside class="cd-panel" aria-label="Datos rápidos de ${esc(region.name)}">
         ${relojHtml(region)}
@@ -398,7 +447,7 @@ ${comun.cabecera}
           <div class="cd-fact"><dt>Capital</dt><dd>${esc(region.capital)}</dd></div>
           ${perfil.summary.map((k) => filaIndicador(perfil.indicators[k])).join("\n          ")}
         </dl>
-        <p class="cd-panel__note">${region.multiZone ? `${esc(region.name)} tiene más de una zona horaria: el reloj muestra la hora de ${esc(region.capital)}.` : `Hora oficial de ${esc(region.capital)}.`}</p>
+        <p class="cd-panel__note">${region.multiZone ? `${esc(region.name)} tiene más de una zona horaria: el reloj muestra la hora de ${esc(region.capital)}.` : `Hora oficial de ${esc(region.capital)}.`}</p>${zonasHtml(region)}
       </aside>
     </div>
 
