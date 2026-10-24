@@ -8,7 +8,8 @@
 
   Comprueba en computador, tableta y celular: rutas, mapa (clic, toque y
   teclado), lista accesible, panel, reloj de 12 horas con segundos,
-  noticias de Alberta ordenadas, enlaces, metadatos sociales, ausencia de
+  noticias de Alberta ordenadas, ficha de Ontario (zonas horarias,
+  tabla de alquileres y ciudades), enlaces, metadatos sociales, ausencia de
   errores y de desplazamiento horizontal.
 */
 const { chromium, devices } = require("playwright");
@@ -68,10 +69,15 @@ async function sinScrollHorizontal(page) {
     assert.equal(await page.locator('.cd-region[data-code="ON"]').getAttribute("aria-pressed"), "true");
     assert.equal(await page.locator('.cd-chip[data-code="ON"]').getAttribute("aria-pressed"), "true");
     assert.match(await page.locator(".cd-panel").textContent(), /Toronto/);
-    assert.match(await page.locator(".cd-panel").textContent(), /Ficha completa: próximamente/);
-    assert.equal(await page.locator('.cd-panel a[href*="/canada-en-datos/"]').count(), 0, "sin enlaces a fichas inexistentes");
+    assert.match(await page.locator(".cd-panel").textContent(), /16,262,121/, "población verificada de Ontario");
+    assert.equal(await page.locator('.cd-panel a[href="/canada-en-datos/ontario"]').count(), 1, "enlace a la ficha de Ontario");
     assert.match(await page.locator(".cd-panel__note").textContent(), /más de una zona horaria/);
     assert.equal(new URL(page.url()).hash, "#ontario");
+
+    // Una provincia sin ficha (Quebec) sigue en «Próximamente», sin enlaces
+    await page.locator('.cd-chip[data-code="QC"]').click();
+    assert.match(await page.locator(".cd-panel").textContent(), /Ficha completa: próximamente/);
+    assert.equal(await page.locator('.cd-panel a[href*="/canada-en-datos/"]').count(), 0, "sin enlaces a fichas inexistentes");
 
     // Lista accesible: la Isla del Príncipe Eduardo
     await page.locator('.cd-chip[data-code="PE"]').click();
@@ -125,6 +131,42 @@ async function sinScrollHorizontal(page) {
     await sinScrollHorizontal(page);
     assert.deepEqual(errores, []);
     await ctx.close();
+
+    /* ---------- Ficha de Ontario (desde el mapa) ---------- */
+    ({ ctx, page, errores } = await abrir(browser, perfil, "/canada-en-datos/#ontario"));
+    await page.locator('.cd-panel a[href="/canada-en-datos/ontario"]').click();
+    await page.waitForURL(/\/canada-en-datos\/ontario$/);
+    assert.equal(await page.locator("h1").textContent(), "Ontario");
+    await page.waitForFunction(() => /\d:\d\d:\d\d/.test(document.querySelector("[data-reloj-hora]").textContent));
+    const horaDe = (tz) => page.evaluate((z) => new Intl.DateTimeFormat("es-CA", { timeZone: z, hour: "numeric", hour12: true }).formatToParts(new Date()).find((p) => p.type === "hour").value, tz);
+    assert.equal((await page.locator("[data-reloj-hora]").textContent()).split(":")[0], await horaDe("America/Toronto"), "hora de Toronto");
+    // Segunda zona horaria: el noroeste de Ontario, una hora menos que Toronto
+    const zona = page.locator('.cd-zone[data-zona="America/Winnipeg"] [data-zona-hora]');
+    await page.waitForFunction(() => /\d:\d\d/.test(document.querySelector("[data-zona-hora]").textContent));
+    const textoZona = (await zona.textContent()).replace(/\u202f|\u00a0/g, " ");
+    assert.match(textoZona, /^\d{1,2}:\d{2}\s?(a|p)\.\s?m\.$/, `formato de la zona: ${textoZona}`);
+    assert.equal(textoZona.split(":")[0], await horaDe("America/Winnipeg"), "hora central del noroeste");
+    for (const id of ["poblacion", "geografia", "economia", "empleo", "inmigracion", "vivienda", "salud", "educacion", "licencias", "beneficios", "integracion", "seguridad", "ciudades", "recien-llegado", "noticias", "fuentes"]) {
+      assert.equal(await page.locator(`#${id}`).count(), 1, `sección #${id}`);
+    }
+    assert.equal(await page.locator(".cd-city").count(), 8, "ocho ciudades");
+    assert.equal(await page.locator(".cd-table tbody tr").count(), 15, "filas de la tabla de alquileres");
+    assert.match(await page.locator("#vivienda").textContent(), /\$2,046/);
+    assert.match(await page.locator("#empleo").textContent(), /\$17\.95\s*CAD por hora/);
+    assert.equal(await page.locator(".cd-step").count(), 8);
+    // Noticias: lista o aviso de que todavía no hay
+    assert.ok((await page.locator("#cdNews a").count()) > 0 || (await page.locator(".cd-news-empty").count()) === 1);
+    const externosON = await page.locator('main a[href^="http"]').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
+    assert.ok(externosON);
+    await sinScrollHorizontal(page);
+    if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `cd-ontario-${perfil}.png`), fullPage: true });
+    if (SHOTS) await page.locator(".cd-region-hero").screenshot({ path: path.join(SHOTS, `cd-ontario-cabecera-${perfil}.png`) });
+    if (SHOTS) await page.locator("#vivienda").screenshot({ path: path.join(SHOTS, `cd-ontario-vivienda-${perfil}.png`) });
+    if (SHOTS) await page.locator("#ciudades").screenshot({ path: path.join(SHOTS, `cd-ontario-ciudades-${perfil}.png`) });
+    await page.locator('.cd-toc a[href="#ciudades"]').click();
+    assert.equal(new URL(page.url()).hash, "#ciudades");
+    assert.deepEqual(errores, []);
+    await ctx.close();
     console.log(`ok ${perfil}`);
   }
 
@@ -170,7 +212,7 @@ async function sinScrollHorizontal(page) {
   }
 
   /* ---------- Rutas ---------- */
-  for (const [ruta, estado] of [["/canada-en-datos/ontario", 404], ["/canada-en-datos/alberta.html", 308]]) {
+  for (const [ruta, estado] of [["/canada-en-datos/ontario", 200], ["/canada-en-datos/quebec", 404], ["/canada-en-datos/alberta.html", 308], ["/canada-en-datos/ontario.html", 308]]) {
     const r = await fetch(BASE + ruta, { redirect: "manual" });
     assert.equal(r.status, estado, ruta);
   }
