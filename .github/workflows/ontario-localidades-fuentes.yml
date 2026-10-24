@@ -7,14 +7,36 @@ on:
 permissions:
   contents: read
 jobs:
-  datos:
+  sonda:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: pip install -q openpyxl pyshp shapely pyproj
-      - run: python3 scripts/canada-en-datos/obtener-ontario-localidades.py
-  paginas:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: node scripts/canada-en-datos/consultar-ontario.mjs ronda3
+      - name: Límites de Statistics Canada con distintos agentes
+        run: |
+          U=https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/files-fichiers/ler_000b21a_e.zip
+          for ua in "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36" "curl/8.5" ""; do
+            echo "UA=[$ua] -> $(curl -s -o /dev/null -w '%{http_code} %{size_download}' -A "$ua" -r 0-1000 "$U")"
+          done
+          curl -sI -A "Mozilla/5.0 (X11; Linux x86_64) Chrome/130.0" "$U" | head -12
+          curl -s -A "Mozilla/5.0 (X11; Linux x86_64) Chrome/130.0" "https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21" | grep -o 'href="[^"]*\.zip"' | head -40
+      - name: Estructura de la lista de municipios
+        run: |
+          curl -s -A "Mozilla/5.0" https://www.ontario.ca/page/list-ontario-municipalities -o l.html
+          wc -c l.html
+          grep -o 'Township of [A-Z][a-zA-Z .-]*' l.html | head -5
+          python3 - <<'PY'
+          import re
+          h=open("l.html",encoding="utf-8",errors="ignore").read()
+          for m in list(re.finditer(r"Ajax|Addington Highlands", h))[:3]:
+              print("-----", m.start()); print(h[max(0,m.start()-1500):m.start()+800])
+          print("data-/json hints:", sorted(set(re.findall(r'(?:src|href)="([^"]*(?:json|csv|xlsx|api)[^"]*)"', h)))[:30])
+          PY
+      - name: Catálogo de datos de Ontario
+        run: |
+          for q in municipalities "municipal boundary" "upper tier"; do
+            curl -s "https://data.ontario.ca/api/3/action/package_search?rows=10&q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")" | python3 -c "import json,sys;d=json.load(sys.stdin)['result'];print('Q', d['count']);[print(' ', p['name'],'|',p['title'],'|',[ (r.get('format'),r.get('url')) for r in p['resources']][:4]) for p in d['results']]"
+          done
+      - name: Servicios geoespaciales de Ontario (LIO)
+        run: |
+          for u in "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA?f=json" "https://ws.lioservices.lrc.gov.on.ca/arcgis1071a/rest/services/LIO_OPEN_DATA?f=json"; do
+            echo "== $u"; curl -s -A "Mozilla/5.0" "$u" | head -c 3000; echo
+          done
