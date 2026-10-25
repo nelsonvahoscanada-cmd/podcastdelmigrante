@@ -176,7 +176,7 @@ const ARTICLES = [
     dek: "De Venezuela a Niagara Falls, pasando por Panamá y Estados Unidos, Héctor Rivero transformó una tradición familiar en un proyecto que lleva alegría a niños, inmigrantes y comunidades latinas. Ahora comparte su historia en El Podcast del Migrante.",
     excerpt: "Héctor Rivero, venezolano radicado en Niagara Falls, cuenta en El Podcast del Migrante cómo una tradición familiar se convirtió en Santa Latino, un personaje con el que lleva alegría a niños y familias inmigrantes en Canadá.",
     author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
-    publishedAt: "2026-10-24T22:00:00-06:00",
+    publishedAt: "2026-10-24T23:03:00-06:00",
     updatedAt: null,
     readingTimeOverride: null,
     location: { country: "Canadá", province: "Ontario", city: "Niagara Falls" },
