@@ -52,7 +52,7 @@ test("carrusel Podcast del Migrante Play: videos con reproducción en la portada
   const ctx = {};
   vm.runInNewContext(read("js/data.js") + ";globalThis.V = VIDEOS;", ctx);
   const shown = ctx.V.filter((v) => v.published);
-  assert.deepEqual([...shown.map((v) => v.videoId)], ["O5on_J9cRb4", "AnAZeaE7LV4", "z2Ih590xSP4", "3tOZfCwZWN8", "ENyFwvkj8W0", "jw0cYzjV35U"]);
+  assert.deepEqual([...shown.map((v) => v.videoId)], ["LxTr1Zda3dg", "O5on_J9cRb4", "AnAZeaE7LV4", "z2Ih590xSP4", "3tOZfCwZWN8", "ENyFwvkj8W0", "jw0cYzjV35U"]);
   const en = shown.find((v) => v.videoId === "z2Ih590xSP4");
   assert.equal(en.tag, "Entrevista en inglés");
   assert.match(en.title + " " + en.desc, /Medicina familiar|entrevista en inglés/, "títulos y descripciones en español");
