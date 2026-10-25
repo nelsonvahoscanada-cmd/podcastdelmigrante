@@ -121,7 +121,7 @@ async function sinScrollHorizontal(page) {
     // Ninguna cifra inventada: los indicadores sin valor se muestran como pendientes
     assert.ok((await page.locator(".cd-indicator__value.cd-pending").count()) >= 1);
     // Enlaces externos en pestaña nueva y con rel="noopener"
-    const externos = await page.locator('main a[href^="http"]').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
+    const externos = await page.locator('main a[href^="http"]:not([href^="https://podcastdelmigrante.com"])').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
     assert.ok(externos);
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `cd-alberta-${perfil}.png`), fullPage: true });
     // Teclado: el índice lleva a la sección
@@ -156,7 +156,7 @@ async function sinScrollHorizontal(page) {
     assert.equal(await page.locator(".cd-step").count(), 8);
     // Noticias: lista o aviso de que todavía no hay
     assert.ok((await page.locator("#cdNews a").count()) > 0 || (await page.locator(".cd-news-empty").count()) === 1);
-    const externosON = await page.locator('main a[href^="http"]').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
+    const externosON = await page.locator('main a[href^="http"]:not([href^="https://podcastdelmigrante.com"])').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
     assert.ok(externosON);
     await sinScrollHorizontal(page);
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `cd-ontario-${perfil}.png`), fullPage: true });

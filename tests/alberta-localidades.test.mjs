@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { render } from "../scripts/build-canada-datos.mjs";
-import { cargar, TIPOS, FICHAS } from "../scripts/canada-en-datos/localidades.mjs";
+import { cargar, TIPOS, FICHAS } from "../scripts/canada-en-datos/provincias/alberta.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
@@ -59,6 +59,8 @@ test("una página por municipio, con nombre de URL único y sin páginas sobrant
   assert.equal(paginas.length, municipios.length);
   assert.equal(new Set(municipios.map((x) => x.s)).size, municipios.length);
   const enDisco = readdirSync(join(ROOT, "canada-en-datos/alberta")).sort();
+  /* una imagen social propia por página */
+  assert.deepEqual(readdirSync(join(ROOT, "assets/canada-en-datos/alberta")).sort(), enDisco.map((f) => f.replace(".html", ".jpg")).sort());
   assert.deepEqual(enDisco, paginas.map(([k]) => k.replace("alberta/", "")).sort());
 });
 
@@ -113,7 +115,8 @@ test("la ficha de Alberta conserva su contenido y suma la sección del directori
 test("datos del navegador coherentes con el directorio", () => {
   const ctx = {};
   new Function("window", read("js/alberta-localidades.js"))(ctx);
-  const d = ctx.AB_LOCALIDADES;
+  const d = ctx.CD_LOCALIDADES;
+  assert.equal(d.provincia.slug, "alberta");
   assert.equal(d.localidades.length, L.items.length);
   for (const f of d.localidades) {
     if (f[5] === -1) assert.ok(f[7], `${f[0]} sin página`);

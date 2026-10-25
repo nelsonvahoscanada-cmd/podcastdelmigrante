@@ -41,7 +41,7 @@ const meta = (page, prop) => page.locator(`meta[property="${prop}"], meta[name="
     /* ---------- Directorio en la ficha de Alberta ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/canada-en-datos/alberta");
     // Carga diferida: los datos no se piden hasta llegar a la sección
-    assert.equal(await page.evaluate(() => typeof window.AB_LOCALIDADES), "undefined", "datos cargados antes de tiempo");
+    assert.equal(await page.evaluate(() => typeof window.CD_LOCALIDADES), "undefined", "datos cargados antes de tiempo");
     assert.equal(await page.locator("#localidades h2").textContent(), "Explora las ciudades y pueblos de Alberta");
     assert.equal(await page.locator('.cd-toc a[href="#localidades"]').count(), 1);
     // La ficha de Alberta conserva sus secciones y estadísticas
@@ -49,7 +49,7 @@ const meta = (page, prop) => page.locator(`meta[property="${prop}"], meta[name="
     assert.match(await page.locator("#vivienda").textContent(), /\$1,914/);
     await page.locator("#localidades").scrollIntoViewIfNeeded();
     await page.waitForFunction(() => !document.getElementById("cdLocBuscar").disabled);
-    const total = await page.evaluate(() => window.AB_LOCALIDADES.localidades.length);
+    const total = await page.evaluate(() => window.CD_LOCALIDADES.localidades.length);
     assert.ok(total > 1500, `localidades: ${total}`);
     assert.match(await page.locator("#cdLocEstado").textContent(), /localidades encontradas/);
     assert.equal(await page.locator("#cdLocLista li").count(), 40, "primer bloque del listado");
@@ -70,7 +70,7 @@ const meta = (page, prop) => page.locator(`meta[property="${prop}"], meta[name="
     await page.locator("#cdLocTipo").selectOption("hamlet");
     await page.waitForFunction(() => /^4\d\d hamlet|localidades encontradas/.test(document.getElementById("cdLocEstado").textContent));
     const hamlet = page.locator("#cdLocLista li").first();
-    assert.match(await hamlet.textContent(), /Hamlet \(Hamlet\) · pertenece a /);
+    assert.match(await hamlet.textContent(), /Hamlet · pertenece a /);
     assert.match(await hamlet.locator("a").getAttribute("href"), /^\/canada-en-datos\/alberta\/[a-z0-9-]+$/);
     assert.match(await hamlet.locator("a").textContent(), /.+/);
 
@@ -115,7 +115,7 @@ const meta = (page, prop) => page.locator(`meta[property="${prop}"], meta[name="
     assert.match(await page.locator("#salud").textContent(), /Brooks Health Centre/);
     assert.match(await page.locator("#transporte").textContent(), /Dato no disponible/);
     assert.match(await page.locator("#economia-empleo").textContent(), /Lethbridge–Medicine Hat/);
-    const externos = await page.locator('main a[href^="http"]').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
+    const externos = await page.locator('main a[href^="http"]:not([href^="https://podcastdelmigrante.com"])').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
     assert.ok(externos, "enlaces externos en pestaña nueva");
     assert.match(await page.locator("#navPrimary").textContent(), /Canadá/);
     await sinScrollHorizontal(page);

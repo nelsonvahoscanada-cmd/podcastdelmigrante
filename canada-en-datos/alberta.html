@@ -103,6 +103,16 @@
         <h1>Alberta</h1>
         <p class="cd-lead">Alberta es una de las provincias de las Praderas canadienses. Su capital es Edmonton y su ciudad más poblada es Calgary. Limita con Columbia Británica, Saskatchewan, los Territorios del Noroeste y el estado de Montana, en Estados Unidos. Usa la hora de la montaña y cambia al horario de verano.</p>
         <p class="cd-meta">Última revisión: 22 de octubre de 2026</p>
+        <div class="cd-share" data-cd-share data-url="https://podcastdelmigrante.com/canada-en-datos/alberta" data-titulo="Alberta en datos: guía para inmigrantes y recién llegados" data-texto="Alberta en datos: guía para migrantes con cifras y enlaces oficiales, en Canadá en Datos de El Podcast del Migrante.">
+          <p class="cd-share__titulo" id="cdShareTitulo">Comparte esta guía de Alberta</p>
+          <div class="cd-share__acciones">
+            <button type="button" class="cd-share__btn cd-share__btn--principal" data-share-nativo aria-describedby="cdShareTitulo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Compartir esta guía</span></button>
+            <button type="button" class="cd-share__btn" data-share-copiar aria-describedby="cdShareTitulo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Copiar enlace</span></button>
+          </div>
+          <p class="cd-share__redes" data-share-redes>También en: <a class="cd-share__red cd-share__red--whatsapp" href="https://wa.me/?text=Alberta%20en%20datos%3A%20gu%C3%ADa%20para%20migrantes%20con%20cifras%20y%20enlaces%20oficiales%2C%20en%20Canad%C3%A1%20en%20Datos%20de%20El%20Podcast%20del%20Migrante.%20https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta" target="_blank" rel="noopener" aria-label="Compartir la guía de Alberta por WhatsApp">WhatsApp</a> · <a class="cd-share__red cd-share__red--facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta" target="_blank" rel="noopener" aria-label="Compartir la guía de Alberta por Facebook">Facebook</a> · <a class="cd-share__red cd-share__red--x" href="https://twitter.com/intent/tweet?text=Alberta%20en%20datos%3A%20gu%C3%ADa%20para%20migrantes%20con%20cifras%20y%20enlaces%20oficiales%2C%20en%20Canad%C3%A1%20en%20Datos%20de%20El%20Podcast%20del%20Migrante.&amp;url=https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta" target="_blank" rel="noopener" aria-label="Compartir la guía de Alberta por X">X</a> · <a class="cd-share__red cd-share__red--correo" href="mailto:?subject=Alberta%20en%20datos%3A%20gu%C3%ADa%20para%20inmigrantes%20y%20reci%C3%A9n%20llegados&amp;body=Alberta%20en%20datos%3A%20gu%C3%ADa%20para%20migrantes%20con%20cifras%20y%20enlaces%20oficiales%2C%20en%20Canad%C3%A1%20en%20Datos%20de%20El%20Podcast%20del%20Migrante.%20https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta" aria-label="Compartir la guía de Alberta por Correo">Correo</a></p>
+          <p class="cd-share__url"><span>Enlace permanente:</span> <a href="https://podcastdelmigrante.com/canada-en-datos/alberta">podcastdelmigrante.com/canada-en-datos/alberta</a></p>
+          <p class="cd-share__estado" data-share-estado role="status" aria-live="polite"></p>
+        </div>
       </div>
       <aside class="cd-panel" aria-label="Datos rápidos de Alberta">
         <div class="cd-clock" id="cdClock">
@@ -433,7 +443,7 @@
         <p class="cd-loc__nota">Las demás localidades tienen, por ahora, una página con información básica. Iremos completándolas.</p>
       </div>
 
-      <div class="cd-loc__app" id="cdLoc" data-src="/js/alberta-localidades.js">
+      <div class="cd-loc__app" id="cdLoc" data-src="/js/alberta-localidades.js" data-prov="alberta">
         <form class="cd-loc__filtros" role="search" aria-label="Buscar localidades de Alberta" onsubmit="return false">
           <div class="cd-loc__campo cd-loc__campo--buscar">
             <label for="cdLocBuscar">Buscar por nombre</label>
@@ -464,8 +474,8 @@
             <optgroup label="Comunidades no incorporadas">
               <option value="grupo:comunidad">Todos: comunidades no incorporadas</option>
               <option value="usa">Área de servicio urbano (Urban Service Area)</option>
-              <option value="hamlet">Hamlet (Hamlet)</option>
-              <option value="townsite">Townsite (Townsite)</option>
+              <option value="hamlet">Hamlet</option>
+              <option value="townsite">Townsite</option>
               <option value="locality">Localidad (Locality)</option>
             </optgroup>
             </select>
@@ -474,13 +484,13 @@
             <label for="cdLocRegion">Región económica</label>
             <select id="cdLocRegion" disabled>
               <option value="">Todas las regiones</option>
-            <option value="4810">Lethbridge–Medicine Hat</option>
-            <option value="4820">Camrose–Drumheller</option>
-            <option value="4830">Calgary</option>
-            <option value="4840">Banff–Jasper–Rocky Mountain House</option>
-            <option value="4850">Red Deer</option>
-            <option value="4860">Edmonton</option>
             <option value="4870">Athabasca–Grande Prairie–Peace River</option>
+            <option value="4840">Banff–Jasper–Rocky Mountain House</option>
+            <option value="4830">Calgary</option>
+            <option value="4820">Camrose–Drumheller</option>
+            <option value="4860">Edmonton</option>
+            <option value="4810">Lethbridge–Medicine Hat</option>
+            <option value="4850">Red Deer</option>
             <option value="4880">Wood Buffalo–Cold Lake</option>
             </select>
           </div>
@@ -655,6 +665,7 @@
 <script src="/js/canada-reloj.js"></script>
 <script src="/js/articles.js"></script>
 <script src="/js/canada-region.js"></script>
-<script src="/js/alberta-directorio.js"></script>
+<script src="/js/canada-compartir.js"></script>
+<script src="/js/canada-directorio.js"></script>
 </body>
 </html>

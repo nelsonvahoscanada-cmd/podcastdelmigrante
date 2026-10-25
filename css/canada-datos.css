@@ -300,3 +300,27 @@
 }
 .cd-loc__mas[hidden] { display: none; }
 .cd-loc__mapa { max-width: 440px; }
+
+/* =========================================================
+   Compartir esta guía (fichas provinciales y de localidades)
+========================================================= */
+.cd-share { margin: 18px 0 4px; padding: 14px 16px; border: var(--border); border-left: 4px solid var(--verde); background: var(--blanco); }
+.cd-share__titulo { font-weight: 700; margin-bottom: 10px; }
+.cd-share__acciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.cd-share__btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px;
+  font: inherit; font-weight: 700; font-size: 0.92rem; cursor: pointer;
+  border: 1px solid var(--verde-oscuro); border-radius: 999px; background: var(--blanco); color: var(--verde-oscuro);
+}
+.cd-share__btn svg { width: 18px; height: 18px; flex: none; }
+.cd-share__btn--principal { background: var(--verde); border-color: var(--verde); color: var(--blanco); }
+.cd-share__btn:hover { border-color: var(--negro); }
+.cd-share__btn--principal:hover { background: var(--verde-oscuro); border-color: var(--verde-oscuro); }
+.cd-share__btn:focus-visible { outline: 3px solid var(--negro); outline-offset: 2px; }
+.cd-section .cd-share p, .cd-region-hero .cd-share p { margin-bottom: 0; }
+.cd-share__redes { margin-top: 10px; font-size: 0.86rem; color: var(--gris-texto); }
+.cd-share__redes a { color: var(--verde-oscuro); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.cd-share__redes.es-destacado { background: var(--gris-100); padding: 6px 8px; }
+.cd-share__url { margin-top: 6px; font-size: 0.78rem; color: var(--gris-texto); overflow-wrap: anywhere; }
+.cd-share__url a { color: var(--gris-800); }
+.cd-share__estado { margin-top: 6px; font-size: 0.86rem; font-weight: 700; color: var(--verde-oscuro); min-height: 1.2em; overflow-wrap: anywhere; }

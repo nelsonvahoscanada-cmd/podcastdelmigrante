@@ -16,8 +16,8 @@ const ROOT = new URL("..", import.meta.url).pathname;
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
 const D = loadData();
 const TODAS = render();
-/* Portada y fichas de provincia; las páginas de localidades de Alberta y sus datos se prueban en alberta-localidades.test.mjs */
-const PAGES = Object.fromEntries(Object.entries(TODAS).filter(([k]) => !k.startsWith("/") && !k.startsWith("alberta/")));
+/* Portada y fichas de provincia; las páginas de localidades se prueban en alberta-localidades.test.mjs y ontario-localidades.test.mjs */
+const PAGES = Object.fromEntries(Object.entries(TODAS).filter(([k]) => !k.startsWith("/") && !k.includes("/")));
 const reloj = createRequire(import.meta.url)("../js/canada-reloj.js");
 
 function jpegSize(path) {
@@ -36,7 +36,7 @@ test("las páginas generadas están al día (node scripts/build-canada-datos.mjs
     const ruta = name.startsWith("/") ? name.slice(1) : `canada-en-datos/${name}`;
     assert.equal(read(ruta), html, `${ruta} desactualizado`);
   }
-  const sobrantes = readdirSync(join(ROOT, "canada-en-datos")).filter((f) => !PAGES[f] && f !== "alberta");
+  const sobrantes = readdirSync(join(ROOT, "canada-en-datos")).filter((f) => !PAGES[f] && !["alberta", "ontario"].includes(f));
   assert.deepEqual(sobrantes, []);
 });
 
@@ -123,9 +123,14 @@ test("Ontario: ficha completa con secciones, ciudades, tabla de alquileres y zon
   for (const c of ciudades) {
     assert.ok(html.includes(`id="ciudad-${c.id}"`), c.name);
     assert.ok(c.sectors.length && c.sectorsSource && c.links.length, c.name);
-    for (const l of c.links) assert.match(l.href, /^https:\/\//, l.href);
+    for (const l of c.links) assert.match(l.href, /^(https:\/\/|\/canada-en-datos\/ontario\/[a-z-]+$)/, l.href);
   }
-  assert.ok(!Object.keys(TODAS).some((k) => k.startsWith("ontario/")), "sin páginas por ciudad");
+  /* Cada tarjeta de ciudad enlaza a su ficha de localidad (canada-en-datos/ontario/<ciudad>), que existe */
+  for (const c of ciudades) {
+    const internos = c.links.filter((l) => l.href.startsWith("/canada-en-datos/ontario/"));
+    assert.ok(internos.length >= 1, `${c.name}: enlace a su ficha`);
+    for (const l of internos) assert.ok(TODAS[`${l.href.replace("/canada-en-datos/", "")}.html`], l.href);
+  }
   // Tabla de alquileres: una sola encuesta (CMHC, octubre de 2025), con fuente y período
   const tabla = on.sections.find((s) => s.id === "vivienda").table;
   assert.equal(tabla.source.org, "CMHC");
@@ -285,5 +290,22 @@ test("la carpeta pública incluye el módulo y sigue limpia", () => {
     assert.ok(!files.some((f) => f.startsWith("scripts/")), "la geometría y los generadores no se publican");
   } finally {
     rmSync(out, { recursive: true, force: true });
+  }
+});
+
+test("compartir: cada página comparte su URL permanente y tiene una imagen social propia que existe", () => {
+  for (const [k, html] of Object.entries(TODAS)) {
+    if (k.startsWith("/") || !k.endsWith(".html")) continue;
+    const canonical = (html.match(/<link rel="canonical" href="([^"]+)">/) || [])[1];
+    assert.ok(canonical, `${k}: canonical`);
+    assert.equal(meta(html, "og:url"), canonical, `${k}: og:url`);
+    assert.equal(meta(html, "twitter:card"), "summary_large_image", k);
+    const img = meta(html, "og:image");
+    assert.match(img, /^https:\/\/podcastdelmigrante\.com\/assets\//, `${k}: og:image absoluta`);
+    assert.ok(existsSync(join(ROOT, img.replace("https://podcastdelmigrante.com/", ""))), `${k}: ${img} existe`);
+    if (k === "index.html") continue;
+    assert.equal((html.match(/data-cd-share data-url="([^"]+)"/) || [])[1], canonical, `${k}: «Compartir» usa la URL de la página`);
+    assert.match(html, /data-share-copiar/);
+    assert.match(html, /data-share-estado role="status"/);
   }
 });

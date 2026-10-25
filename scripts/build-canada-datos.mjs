@@ -26,6 +26,12 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import * as Localidades from "./canada-en-datos/localidades.mjs";
+import { compartirHtml } from "./canada-en-datos/compartir.mjs";
+import Alberta from "./canada-en-datos/provincias/alberta.mjs";
+import Ontario from "./canada-en-datos/provincias/ontario.mjs";
+
+/* Provincias y territorios con directorio de localidades (ver docs del estándar en el repositorio interno) */
+export const PROVINCIAS = { alberta: Alberta, ontario: Ontario };
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
@@ -440,6 +446,7 @@ ${comun.cabecera}
         <h1>${esc(region.name)}</h1>
         <p class="cd-lead">${esc(perfil.intro)}</p>
         <p class="cd-meta">Última revisión: ${esc(fechaLarga(perfil.lastReview || meta.lastReview))}</p>
+        ${compartirHtml({ url: SITE + path, titulo: perfil.seo.title, texto: `${region.name} en datos: guía para migrantes con cifras y enlaces oficiales, en Canadá en Datos de El Podcast del Migrante.`, lugar: region.name })}
       </div>
       <aside class="cd-panel" aria-label="Datos rápidos de ${esc(region.name)}">
         ${relojHtml(region)}
@@ -457,7 +464,7 @@ ${comun.cabecera}
 
     ${secciones}
 
-    ${perfil.localidades ? Localidades.seccionDirectorio(L, esc) : ""}
+    ${perfil.localidades ? Localidades.seccionDirectorio(PROVINCIAS[region.profile], L[region.profile], esc) : ""}
 
     <section class="cd-section cd-newcomer" id="recien-llegado" aria-labelledby="recien-llegado-titulo">
       <h2 id="recien-llegado-titulo">Recién llegado: ¿por dónde empezar?</h2>
@@ -489,7 +496,29 @@ ${comun.cabecera}
 
 ${comun.pie}
 
-${scripts(["/js/articles.js", "/js/canada-region.js", ...(perfil.localidades ? ["/js/alberta-directorio.js"] : [])])}`;
+${scripts(["/js/articles.js", "/js/canada-region.js", "/js/canada-compartir.js", ...(perfil.localidades ? ["/js/canada-directorio.js"] : [])])}`;
+}
+
+/* ---------- Sitemap: bloque de Canadá en Datos (entre marcadores) ----------
+   Solo las páginas indexables: portada, fichas provinciales y fichas
+   completas de localidades (las de información básica llevan noindex). */
+const SITEMAP_INI = "  <!-- canada-en-datos: generado por scripts/build-canada-datos.mjs -->";
+const SITEMAP_FIN = "  <!-- /canada-en-datos -->";
+export function sitemapCanada(xml, rutas) {
+  const bloque = `${SITEMAP_INI}\n${rutas
+    .map(([ruta, fecha, prioridad]) => `  <url>\n    <loc>${SITE}${ruta}</loc>\n    <lastmod>${fecha}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${prioridad}</priority>\n  </url>`)
+    .join("\n")}\n${SITEMAP_FIN}`;
+  const i = xml.indexOf(SITEMAP_INI), f = xml.indexOf(SITEMAP_FIN);
+  if (i >= 0 && f > i) return xml.slice(0, i) + bloque + xml.slice(f + SITEMAP_FIN.length);
+  return xml.replace("</urlset>", `${bloque}\n</urlset>`);
+}
+
+/* ---------- Imágenes sociales de las localidades (scripts/build-canada-datos-images.py) ---------- */
+export function manifiestoImagenes(root = ROOT) {
+  const d = loadData(root);
+  return Object.entries(d.CD_PROFILES)
+    .filter(([, p]) => p.localidades)
+    .map(([k]) => Localidades.imagenes(PROVINCIAS[k], PROVINCIAS[k].cargar(root)));
 }
 
 /* ---------- Generación ---------- */
@@ -499,15 +528,30 @@ export function render(root = ROOT) {
   const comun = chrome(root);
   const files = { "index.html": paginaIndice(d, geo, comun) };
   /* Directorio de localidades de Alberta (claves que empiezan por «/»: rutas desde la raíz del proyecto) */
-  const L = Object.values(d.CD_PROFILES).some((p) => p.localidades) ? Localidades.cargar(root) : null;
+  const L = {};
+  for (const [k, p] of Object.entries(d.CD_PROFILES)) {
+    if (!p.localidades) continue;
+    if (!PROVINCIAS[k]) throw new Error(`Falta el módulo de localidades de ${k} (scripts/canada-en-datos/provincias/)`);
+    L[k] = PROVINCIAS[k].cargar(root);
+  }
   for (const region of d.CD_REGIONS.filter((r) => r.profile)) {
     if (!d.CD_PROFILES[region.profile]) throw new Error(`Falta CD_PROFILES.${region.profile}`);
     files[`${region.profile}.html`] = paginaRegion(d, region, comun, L);
   }
-  if (L) {
-    Object.assign(files, Localidades.paginas(L, { esc, head, chrome: comun, scriptsBase: (extra) => scripts(extra, { soloSitio: true }), meta: d.CD_META }));
-    files["/js/alberta-localidades.js"] = Localidades.datosNavegador(L);
-    files["/assets/canada-en-datos/alberta-regiones.svg"] = Localidades.mapaSvg(L);
+  /* Sitemap: portada, fichas provinciales y fichas completas de localidades */
+  const revision = [d.CD_META.lastReview, ...Object.values(d.CD_PROFILES).map((p) => p.lastReview).filter(Boolean)].sort().at(-1);
+  const rutas = [[`${BASE_PATH}/`, revision, "0.8"]];
+  for (const region of d.CD_REGIONS.filter((r) => r.profile)) {
+    const p = d.CD_PROFILES[region.profile];
+    rutas.push([`${BASE_PATH}/${region.profile}`, p.lastReview || d.CD_META.lastReview, "0.8"]);
+    if (L[region.profile]) for (const r of L[region.profile].items.filter((x) => x.ficha)) rutas.push([`${BASE_PATH}/${region.profile}/${r.s}`, L[region.profile].meta.consultado, "0.7"]);
+  }
+  files["/sitemap.xml"] = sitemapCanada(readFileSync(join(root, "sitemap.xml"), "utf8"), rutas);
+  for (const [k, l] of Object.entries(L)) {
+    const P = PROVINCIAS[k];
+    Object.assign(files, Localidades.paginas(P, l, { esc, head, chrome: comun, scriptsBase: (extra) => scripts(extra, { soloSitio: true }), meta: d.CD_META }));
+    files[`/js/${k}-localidades.js`] = Localidades.datosNavegador(P, l);
+    files[`/assets/canada-en-datos/${k}-regiones.svg`] = Localidades.mapaSvg(P, l);
   }
   return files;
 }
@@ -525,12 +569,12 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     if (CHECK) problemas.push(`desactualizado: ${rel}`);
     else {
       writeFileSync(dest, html);
-      if (!/^canada-en-datos\/alberta\//.test(rel)) console.log(`escrito  ${rel}`);
+      if (!/^canada-en-datos\/[a-z-]+\/[^/]+\.html$/.test(rel)) console.log(`escrito  ${rel}`);
     }
   }
   const sobrantes = [
     ...(existsSync(OUT_DIR) ? readdirSync(OUT_DIR).filter((f) => f.endsWith(".html") && !files[f]) : []),
-    ...(existsSync(join(OUT_DIR, "alberta")) ? readdirSync(join(OUT_DIR, "alberta")).map((f) => `alberta/${f}`).filter((f) => !files[f]) : []),
+    ...Object.keys(PROVINCIAS).flatMap((k) => (existsSync(join(OUT_DIR, k)) ? readdirSync(join(OUT_DIR, k)).map((f) => `${k}/${f}`).filter((f) => !files[f]) : [])),
   ];
   for (const f of sobrantes) problemas.push(`sobrante: canada-en-datos/${f} (no corresponde a ninguna ficha)`);
   if (problemas.length) {
