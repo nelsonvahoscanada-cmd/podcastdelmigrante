@@ -159,3 +159,31 @@ test("pie de página: «Desafío 100 Empresas» lleva a /desafio-100-empresas/ e
   }
   assert.ok(conPie > 400, `páginas con pie: ${conPie}`);
 });
+
+test("inscripción: «Quiero participar» abre el formulario oficial de Google (sin formularios propios)", () => {
+  const FORM = "https://forms.gle/ZxDpuzUuEbr3LjjS6";
+  assert.equal(DATOS.programas[0].inscripcion, FORM);
+  const boton = `<a class="btn" href="${FORM}" target="_blank" rel="noopener" data-dz-inscripcion>Quiero participar en el Desafío 100 Empresas`;
+  assert.equal(FILES["index.html"].split(boton).length - 1, 2, "portada: botón en la cabecera y en «¿Tu historia merece estar entre las 100?»");
+  assert.equal(FILES["calgary/index.html"].split(boton).length - 1, 1, "edición Calgary");
+  for (const [k, html] of PAGES) {
+    assert.doesNotMatch(html.replace(/<form role="search"[^>]*>/g, ""), /<form[\s>]/, `${k}: sin formularios propios (solo el buscador del portal)`);
+    for (const [u] of html.matchAll(/https:\/\/(?:forms\.gle|docs\.google\.com\/forms)\/[^"\s<]+/g)) assert.equal(u, FORM, `${k}: solo el formulario oficial`);
+  }
+});
+
+test("libro: carátula «EL LIBRO DE LAS 100 HISTORIAS — PRÓXIMAMENTE» en HTML y CSS, sin datos inventados", () => {
+  const html = FILES["index.html"];
+  const bloque = html.slice(html.indexOf('<div class="dz-libro3d"'), html.indexOf('id="dz-libro"'));
+  assert.ok(bloque.length > 0, "carátula presente en la portada del programa");
+  assert.match(bloque, /role="img" aria-label="Carátula de «El libro de las 100 historias», del Desafío 100 Empresas\. Próximamente\."/);
+  assert.match(bloque, /<b class="dz-libro3d__titulo">EL LIBRO DE LAS 100 HISTORIAS<\/b>/);
+  assert.match(bloque, /<span class="dz-libro3d__estado">PRÓXIMAMENTE<\/span>/);
+  for (const parte of ["dz-libro3d__cubierta", "dz-libro3d__lomo", "dz-libro3d__cantos"]) assert.ok(bloque.includes(parte), parte);
+  assert.doesNotMatch(bloque, /<img|url\(/, "sin imágenes ni fotografías");
+  assert.doesNotMatch(bloque, /ISBN|editorial|precio|\$\s?\d|\b20\d\d\b|disponible en/i, "sin editorial, ISBN, fecha ni precio");
+  const css = read("css/desafio.css");
+  assert.match(css, /\.dz-libro3d__libro \{[^}]*transform-style: preserve-3d/);
+  assert.match(css, /prefers-reduced-motion: reduce\) \{ \.dz-libro3d__libro \{ transition: none; \}/);
+  assert.ok(!css.includes("dz-libro-portada"), "estilos de la portada plana anterior retirados");
+});
