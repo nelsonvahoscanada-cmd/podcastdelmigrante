@@ -44,9 +44,10 @@ test("artículo: datos de la oferta oficial, sin promesas de patrocinio ni requi
   }
   assert.match(art.bodyHtml, /La oferta no anuncia patrocinio migratorio ni garantiza la contratación de trabajadores extranjeros\./);
   assert.match(art.bodyHtml, /autorización legal para trabajar en Canadá/);
-  assert.match(art.bodyHtml, /href="https:\/\/jobpostings\.alberta\.ca\/job\/Various-Wildfire-Crew-Member\/606646017\/"/);
-  assert.match(art.bodyHtml, /href="https:\/\/www\.alberta\.ca\/alberta-wildfire-recruitment"/);
-  assert.ok(art.sources.length >= 2);
+  const fuentes = Array.from(art.sources, (f) => f.href);
+  assert.ok(fuentes.includes("https://jobpostings.alberta.ca/job/Various-Wildfire-Crew-Member/606646017/"), "oferta oficial en «Fuentes consultadas»");
+  assert.ok(fuentes.includes("https://www.alberta.ca/alberta-wildfire-recruitment"), "reclutamiento oficial en «Fuentes consultadas»");
+  assert.doesNotMatch(art.bodyHtml, /Fuentes oficiales|jobpostings\.alberta\.ca/, "las fuentes no se repiten en el cuerpo");
 });
 
 test("imagen: ilustración propia identificada como IA, completa en la vista previa social", () => {

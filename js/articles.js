@@ -176,7 +176,7 @@ const ARTICLES = [
     dek: "El Gobierno de Alberta mantiene abierta una convocatoria para contratar bomberos forestales durante la temporada de 2027. La oferta contempla salarios base de $24,52 a $31,02 CAD por hora y tiene como fecha límite de postulación el 30 de noviembre de 2026.",
     excerpt: "Alberta contrata bomberos forestales (Wildfire Crew Member) para la temporada de 2027, con salarios base de $24,52 a $31,02 CAD por hora. Las postulaciones cierran el 30 de noviembre de 2026.",
     author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
-    publishedAt: "2026-10-25T07:55:00-06:00",
+    publishedAt: "2026-10-25T08:05:00-06:00",
     updatedAt: null,
     readingTimeOverride: null,
     location: { country: "Canadá", province: "Alberta" },
@@ -211,11 +211,6 @@ const ARTICLES = [
       <p>Para residentes de Alberta interesados en actividades forestales, emergencias o trabajos físicamente exigentes, esta convocatoria puede representar una alternativa de empleo estacional.</p>
       <p>Es indispensable cumplir los requisitos del empleador y contar con autorización legal para trabajar en Canadá.</p>
       <p>La oferta no anuncia patrocinio migratorio ni garantiza la contratación de trabajadores extranjeros.</p>
-      <h2>Fuentes oficiales</h2>
-      <ul>
-        <li>Oferta laboral: <a href="https://jobpostings.alberta.ca/job/Various-Wildfire-Crew-Member/606646017/" target="_blank" rel="noopener">jobpostings.alberta.ca — Wildfire Crew Member</a></li>
-        <li>Reclutamiento Alberta Wildfire: <a href="https://www.alberta.ca/alberta-wildfire-recruitment" target="_blank" rel="noopener">alberta.ca/alberta-wildfire-recruitment</a></li>
-      </ul>
     `,
     video: null,
     sources: [
