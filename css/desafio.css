@@ -14,6 +14,7 @@
 .dz-nota a, .dz-texto a { color: var(--verde-oscuro); font-weight: 600; text-decoration: underline; }
 .dz-texto p { line-height: 1.7; margin-bottom: 12px; }
 .dz-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.dz-ctas > a { max-width: 100%; white-space: normal; text-align: center; } /* textos largos («Quiero participar…») sin desbordar en pantallas de 320 px */
 .dz-boton-borde { display: inline-block; border: 1px solid var(--verde-oscuro); color: var(--verde-oscuro); font-weight: 700; font-size: .9rem; padding: 11px 20px; border-radius: var(--radius-s); background: var(--blanco); cursor: pointer; }
 .dz-boton-borde:hover { background: var(--verde-suave); }
 .dz-alt { background: var(--gris-100); }
@@ -121,10 +122,76 @@
 .dz-paso b::before { counter-increment: paso; content: counter(paso, decimal-leading-zero) " · "; color: var(--verde-oscuro); }
 .dz-paso p { font-size: .86rem; color: var(--gris-800); line-height: 1.5; }
 .dz-libro { display: grid; gap: 28px; align-items: center; }
-@media (min-width: 760px) { .dz-libro { grid-template-columns: 240px minmax(0, 1fr); gap: 48px; } }
-.dz-libro-portada { width: 100%; max-width: 240px; aspect-ratio: 2/3; border-radius: var(--radius-s); background: linear-gradient(160deg, var(--verde-suave), #dce9c0); border: 1px solid #c5d99a; box-shadow: 10px 14px 34px rgba(0, 0, 0, .12); display: flex; flex-direction: column; justify-content: space-between; padding: 26px 22px; }
-.dz-libro-portada b { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.1; }
-.dz-libro-portada small, .dz-proximamente { font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde-oscuro); }
+@media (min-width: 760px) { .dz-libro { grid-template-columns: 320px minmax(0, 1fr); gap: 56px; } }
+.dz-proximamente { font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde-oscuro); }
+
+/* Carátula 3D de «El libro de las 100 historias»: solo HTML y CSS (sin imágenes).
+   Cubierta, lomo a la izquierda y cantos de las páginas arriba, con sombra en el suelo. */
+.dz-libro3d {
+  --w: 196px; --h: 284px; --d: 30px;
+  --tapa: #17330f; --tapa-2: #22471a; --oro: #c9a54e; --oro-claro: #e7d49a; --papel: #f6f0df;
+  position: relative; display: flex; justify-content: center; align-items: center;
+  padding: 26px 0 40px; perspective: 1500px; perspective-origin: 50% -10%; /* vista desde arriba: se ven los cantos */
+}
+.dz-libro3d::after { /* sombra suave en el suelo */
+  content: ""; position: absolute; left: 50%; bottom: 20px; width: calc(var(--w) * 1.05); height: 26px;
+  transform: translateX(-46%); border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(20, 30, 10, .32), rgba(20, 30, 10, 0)); filter: blur(3px);
+}
+.dz-libro3d__libro {
+  position: relative; z-index: 1; width: var(--w); height: var(--h);
+  transform-style: preserve-3d; transform: rotateX(-12deg) rotateY(26deg);
+  transition: transform .6s cubic-bezier(.2, .7, .2, 1);
+}
+.dz-libro3d:hover .dz-libro3d__libro { transform: rotateX(-10deg) rotateY(16deg); }
+.dz-libro3d__libro > div { position: absolute; backface-visibility: hidden; }
+.dz-libro3d__cubierta {
+  inset: 0; transform: translateZ(calc(var(--d) / 2));
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 26px 20px 22px 26px; border-radius: 2px 5px 5px 2px; color: var(--oro-claro);
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .12) 9px, rgba(0, 0, 0, 0) 16px), /* bisagra */
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, .018) 0 2px, rgba(0, 0, 0, .025) 2px 4px), /* textura de tela */
+    linear-gradient(155deg, var(--tapa-2), var(--tapa) 62%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .35), 14px 18px 30px -8px rgba(15, 25, 8, .35);
+}
+.dz-libro3d__cubierta::before { /* marco dorado */
+  content: ""; position: absolute; inset: 11px 10px 11px 17px; border: 1px solid rgba(201, 165, 78, .7);
+  outline: 1px solid rgba(201, 165, 78, .32); outline-offset: 3px; border-radius: 2px; pointer-events: none;
+}
+.dz-libro3d__marca { font-size: .56rem; font-weight: 700; letter-spacing: .14em; white-space: nowrap; text-transform: uppercase; color: var(--oro); }
+.dz-libro3d__sello {
+  display: grid; place-items: center; width: 48px; height: 48px; margin: 16px 0 12px; border-radius: 50%;
+  border: 1px solid var(--oro); box-shadow: inset 0 0 0 3px var(--tapa), inset 0 0 0 4px rgba(201, 165, 78, .55);
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--oro-claro);
+}
+.dz-libro3d__titulo {
+  font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; line-height: 1.22; letter-spacing: .07em;
+  color: #f4ead0; overflow-wrap: break-word; hyphens: none;
+}
+.dz-libro3d__titulo::after { content: ""; display: block; width: 46px; height: 1px; margin: 14px auto 0; background: var(--oro); }
+.dz-libro3d__lema { margin: 12px 0 16px; font-family: var(--font-display); font-style: italic; font-size: .7rem; line-height: 1.35; color: var(--oro-claro); }
+.dz-libro3d__estado {
+  margin-top: auto; padding: 5px 12px; border-radius: 2px; background: var(--oro); color: var(--tapa);
+  font-size: .62rem; font-weight: 800; letter-spacing: .22em;
+}
+.dz-libro3d__lomo { /* cara izquierda */
+  top: 0; left: calc((var(--w) - var(--d)) / 2); width: var(--d); height: var(--h);
+  transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
+  display: flex; align-items: center; justify-content: center; border-radius: 3px 0 0 3px;
+  background: linear-gradient(90deg, #0f240a, #1b3a12 45%, #12290c);
+  box-shadow: inset 0 14px 0 -12px rgba(201, 165, 78, .8), inset 0 -14px 0 -12px rgba(201, 165, 78, .8);
+}
+.dz-libro3d__lomo span { writing-mode: vertical-rl; font-size: .54rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--oro); white-space: nowrap; }
+.dz-libro3d__cantos { /* cara superior: cantos de las páginas, entre las dos tapas */
+  top: calc((var(--h) - var(--d)) / 2); left: 0; width: var(--w); height: var(--d);
+  transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
+  background:
+    linear-gradient(0deg, var(--tapa) 0 3px, transparent 3px calc(100% - 3px), var(--tapa) calc(100% - 3px)),
+    repeating-linear-gradient(0deg, var(--papel) 0 1px, #e3dac2 1px 2px);
+}
+@media (min-width: 760px) { .dz-libro3d { --w: 250px; --h: 362px; --d: 38px; padding: 34px 0 52px; } .dz-libro3d__titulo { font-size: 1.32rem; } .dz-libro3d__marca { font-size: .6rem; letter-spacing: .2em; } .dz-libro3d__sello { width: 60px; height: 60px; margin: 18px 0 14px; font-size: 1.3rem; } }
+@media (prefers-reduced-motion: reduce) { .dz-libro3d__libro { transition: none; } .dz-libro3d:hover .dz-libro3d__libro { transform: rotateX(-12deg) rotateY(26deg); } }
 .dz-proximamente { display: inline-block; border: 1px solid var(--verde); padding: 4px 10px; border-radius: var(--radius-s); background: var(--verde-suave); }
 .dz-ediciones { display: grid; gap: 12px; }
 @media (min-width: 760px) { .dz-ediciones { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

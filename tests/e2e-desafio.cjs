@@ -101,6 +101,16 @@ async function comunes(page, ruta) {
         }
         await popup.close();
       }
+      if (nombre === "programa") {
+        /* Carátula del libro: visible, legible y dentro de la pantalla */
+        const libro = page.locator(".dz-libro3d");
+        await libro.scrollIntoViewIfNeeded();
+        assert.ok(await libro.isVisible(), "carátula visible");
+        assert.equal(await libro.getAttribute("aria-label"), "Carátula de «El libro de las 100 historias», del Desafío 100 Empresas. Próximamente.");
+        assert.equal(await page.locator(".dz-libro3d__titulo").innerText(), "EL LIBRO DE LAS 100 HISTORIAS");
+        const caja = await libro.boundingBox();
+        assert.ok(caja.x >= 0 && caja.x + caja.width <= (page.viewportSize() || { width: 9999 }).width + 1, "carátula dentro del ancho de la pantalla");
+      }
       if (nombre === "calgary") {
         assert.equal(await page.locator(".dz-mosaico i.pub").count(), R.historiasPublicadas);
         assert.equal(await page.locator(".dz-mosaico i").count(), 100);
