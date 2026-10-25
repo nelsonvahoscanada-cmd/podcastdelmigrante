@@ -159,3 +159,15 @@ test("pie de página: «Desafío 100 Empresas» lleva a /desafio-100-empresas/ e
   }
   assert.ok(conPie > 400, `páginas con pie: ${conPie}`);
 });
+
+test("inscripción: «Quiero participar» abre el formulario oficial de Google (sin formularios propios)", () => {
+  const FORM = "https://forms.gle/ZxDpuzUuEbr3LjjS6";
+  assert.equal(DATOS.programas[0].inscripcion, FORM);
+  const boton = `<a class="btn" href="${FORM}" target="_blank" rel="noopener" data-dz-inscripcion>Quiero participar en el Desafío 100 Empresas`;
+  assert.equal(FILES["index.html"].split(boton).length - 1, 2, "portada: botón en la cabecera y en «¿Tu historia merece estar entre las 100?»");
+  assert.equal(FILES["calgary/index.html"].split(boton).length - 1, 1, "edición Calgary");
+  for (const [k, html] of PAGES) {
+    assert.doesNotMatch(html.replace(/<form role="search"[^>]*>/g, ""), /<form[\s>]/, `${k}: sin formularios propios (solo el buscador del portal)`);
+    for (const [u] of html.matchAll(/https:\/\/(?:forms\.gle|docs\.google\.com\/forms)\/[^"\s<]+/g)) assert.equal(u, FORM, `${k}: solo el formulario oficial`);
+  }
+});

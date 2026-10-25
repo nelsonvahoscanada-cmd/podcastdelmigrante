@@ -325,7 +325,7 @@ function paginaPrograma(api, c, VC, historias) {
         <p class="dz-kicker">${esc(prog.nombre)} · El Podcast del Migrante</p>
         <h1>100 empresarios. 100 historias. <em>Un legado.</em></h1>
         <p class="dz-lead">Documentamos 100 historias empresariales de latinos que construyen negocios en Canadá: sus decisiones, sus aprendizajes y el legado que dejan a la comunidad. La primera edición nació en ${esc(ed.ciudad)}.</p>
-        <div class="dz-ctas"><a class="btn" href="${d.base}/">Ir a la edición ${esc(ed.ciudad)}</a><a class="dz-boton-borde" href="${d.base}/entrevistas">Ver las entrevistas</a></div>
+        <div class="dz-ctas">${botonInscripcion(prog)}<a class="dz-boton-borde" href="${d.base}/">Ir a la edición ${esc(ed.ciudad)}</a><a class="dz-boton-borde" href="${d.base}/entrevistas">Ver las entrevistas</a></div>
       </div>
       ${contador(ed, r, `${d.base}/entrevistas`)}
     </div>
@@ -411,7 +411,7 @@ function paginaPrograma(api, c, VC, historias) {
     <details><summary>¿Cuándo estará disponible el libro?</summary><p>Próximamente. Anunciaremos el título, la fecha y los canales de publicación cuando estén confirmados.</p></details>
   </div>
 </section>
-${cta()}`;
+${cta(prog)}`;
   return pagina(c, {
     title: `${prog.nombre} — El Podcast del Migrante Magazine`,
     description: "100 empresarios. 100 historias. Un legado. Entrevistas a empresarios latinos que construyen negocios en Canadá: El Podcast del Migrante documenta 100 historias empresariales.",
@@ -421,13 +421,20 @@ ${cta()}`;
   });
 }
 
-function cta() {
+/* Inscripción: el formulario oficial de Google, administrado por el equipo del Desafío.
+   El portal solo enlaza a él (no lo copia ni lo sustituye). */
+function botonInscripcion(prog) {
+  if (!/^https:\/\/forms\.gle\/[A-Za-z0-9]+$/.test(prog.inscripcion || "")) throw new Error(`${prog.nombre}: falta el enlace del formulario oficial de inscripción (programas[].inscripcion)`);
+  return `<a class="btn" href="${esc(prog.inscripcion)}" target="_blank" rel="noopener" data-dz-inscripcion>Quiero participar en el Desafío 100 Empresas<span class="sr-only"> (formulario de Google, se abre en una pestaña nueva)</span></a>`;
+}
+
+function cta(prog) {
   return `
 <section class="section dz-cta" id="participa" aria-labelledby="dz-participa">
   <div class="wrap">
     <h2 id="dz-participa">¿Tu historia merece estar entre las 100?</h2>
-    <p class="dz-lead" style="margin-top:10px">Si eres empresario latino, escríbenos y el equipo editorial se pondrá en contacto contigo.</p>
-    <div class="dz-ctas"><a class="btn" href="mailto:podcastdelmigrante@gmail.com?subject=Desaf%C3%ADo%20100%20Empresas">Quiero ser uno de los 100</a><a class="dz-boton-borde" href="mailto:podcastdelmigrante@gmail.com?subject=Alianzas%20Desaf%C3%ADo%20100%20Empresas">Alianzas para organizaciones</a></div>
+    <p class="dz-lead" style="margin-top:10px">Si eres empresario latino, completa el formulario de inscripción y el equipo editorial se pondrá en contacto contigo.</p>
+    <div class="dz-ctas">${botonInscripcion(prog)}<a class="dz-boton-borde" href="mailto:podcastdelmigrante@gmail.com?subject=Alianzas%20Desaf%C3%ADo%20100%20Empresas">Alianzas para organizaciones</a></div>
   </div>
 </section>`;
 }
@@ -505,7 +512,7 @@ ${directorio ? `
     </div>
   </div>
 </section>` : ""}
-${cta()}`;
+${cta(d.programa)}`;
   return pagina(c, {
     title: `${ed.nombre}: entrevistas y Muro del Legado — El Podcast del Migrante`,
     description: `Primera edición del Desafío 100 Empresas: ${r.historiasPublicadas} de 100 historias empresariales publicadas, entrevistas en video y el Muro del Legado de empresarios latinos.`,

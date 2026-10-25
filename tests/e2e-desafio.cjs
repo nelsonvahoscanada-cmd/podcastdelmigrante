@@ -81,6 +81,26 @@ async function comunes(page, ruta) {
         assert.equal((await page.locator('[data-dz-cifra="historias"]').innerText()).replace(/\s+/g, " ").trim(), `${R.historiasPublicadas} / ${R.meta}`);
         if (DATOS.ediciones[0].conteo.estado === "provisional") assert.match(await page.locator(".dz-contador").innerText(), /provisional/i);
       }
+      if (nombre === "programa" || nombre === "calgary") {
+        /* Inscripción: el botón abre el formulario oficial de Google en una pestaña nueva (no se envía nada) */
+        const FORM = DATOS.programas[0].inscripcion;
+        const boton = page.locator("a[data-dz-inscripcion]").first();
+        await boton.scrollIntoViewIfNeeded();
+        assert.ok(await boton.isVisible(), `${ruta}: botón de inscripción visible`);
+        assert.match(await boton.innerText(), /Quiero participar en el Desafío 100 Empresas/);
+        assert.equal(await boton.getAttribute("href"), FORM);
+        assert.equal(await boton.getAttribute("target"), "_blank");
+        const pedidas = [];
+        ctx.on("request", (q) => pedidas.push(q.url()));
+        const [popup] = await Promise.all([ctx.waitForEvent("page"), boton.click()]);
+        await page.waitForTimeout(400);
+        assert.ok(pedidas.includes(FORM), `${ruta}: la pestaña nueva pide ${FORM}`);
+        if (process.env.FORMULARIO_REAL === "1") {
+          await popup.waitForURL(/^https:\/\/docs\.google\.com\/forms\//, { timeout: 30000 });
+          assert.match(popup.url(), /^https:\/\/docs\.google\.com\/forms\/d\/e\/[\w-]+\/viewform/, `${ruta}: formulario de Google`);
+        }
+        await popup.close();
+      }
       if (nombre === "calgary") {
         assert.equal(await page.locator(".dz-mosaico i.pub").count(), R.historiasPublicadas);
         assert.equal(await page.locator(".dz-mosaico i").count(), 100);

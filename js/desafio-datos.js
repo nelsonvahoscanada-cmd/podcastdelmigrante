@@ -36,7 +36,8 @@
       {
         "id": "desafio-100-empresas",
         "nombre": "Desafío 100 Empresas",
-        "lema": "100 empresarios. 100 historias. Un legado."
+        "lema": "100 empresarios. 100 historias. Un legado.",
+        "inscripcion": "https://forms.gle/ZxDpuzUuEbr3LjjS6"
       }
     ],
     "ediciones": [
