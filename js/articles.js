@@ -160,6 +160,78 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Convocatoria «Wildfire Crew Member» del Gobierno de Alberta (Forestry
+       and Parks) para la temporada de incendios de 2027. Datos verificados el
+       25 de octubre de 2026 en la oferta oficial (requisición 88017, publicada
+       el 1 de octubre de 2026, cierre el 30 de noviembre de 2026) y en las
+       actualizaciones de las áreas forestales de Calgary, Rocky Mountain
+       House, Slave Lake y Whitecourt del 23 de octubre de 2026. La oferta no
+       menciona patrocinio migratorio. Imagen: ilustración editorial de El
+       Podcast del Migrante creada con IA; no es una fotografía documental. */
+    id: "ART-2026-030",
+    slug: "alberta-bomberos-forestales-2027",
+    category: "Empleo en Alberta",
+    contentType: "Noticia",
+    title: "Alberta busca bomberos forestales para 2027 con salarios de hasta $31,02 por hora: convocatoria abierta",
+    dek: "El Gobierno de Alberta mantiene abierta una convocatoria para contratar bomberos forestales durante la temporada de 2027. La oferta contempla salarios base de $24,52 a $31,02 CAD por hora y tiene como fecha límite de postulación el 30 de noviembre de 2026.",
+    excerpt: "Alberta contrata bomberos forestales (Wildfire Crew Member) para la temporada de 2027, con salarios base de $24,52 a $31,02 CAD por hora. Las postulaciones cierran el 30 de noviembre de 2026.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-25T08:05:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/alberta-bomberos-forestales-2027.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial creada con inteligencia artificial: un bombero forestal con casco amarillo y gafas en primer plano, la bandera de Alberta, un helicóptero que descarga agua sobre un incendio forestal y una brigada que avanza por el bosque. Textos: «Alberta busca bomberos forestales», «Convocatoria abierta para 2027», «Hasta $31,02 por hora», «Requisitos», «Diferentes regiones» y «Cierre: 30 nov 2026».",
+      credit: "Ilustración editorial de El Podcast del Migrante creada con inteligencia artificial. No es una fotografía de un incendio ni de personas reales.",
+      socialArea: "0% 100%",
+      socialLabel: "Ilustración editorial asistida por IA",
+      socialLabelPosition: "top-left",
+    },
+    bodyHtml: `
+      <p>El Gobierno de Alberta mantiene abierta una convocatoria de empleo para contratar personal que participará en las operaciones de prevención y combate de incendios forestales durante la temporada de 2027.</p>
+      <p>La oportunidad fue destacada nuevamente en las actualizaciones sobre incendios forestales que el Gobierno de Alberta publicó el 23 de octubre de 2026.</p>
+      <p>Las vacantes corresponden al puesto de <strong>Wildfire Crew Member</strong>, con posibilidades de trabajar en diferentes regiones de Alberta.</p>
+      <p>Según la oferta oficial, la remuneración base anunciada oscila entre <strong>$24,52 y $31,02 dólares canadienses por hora</strong>. El salario final dependerá de las condiciones de contratación y no todos los candidatos recibirán el máximo del rango.</p>
+      <p>El cargo es temporal y estacional, con una jornada regular anunciada de hasta 36,25 horas semanales y posibles turnos adicionales según las necesidades operativas.</p>
+      <h2>¿Qué trabajo realizarán?</h2>
+      <p>Entre las responsabilidades se encuentran la detección y el control de incendios forestales, la construcción de líneas de contención, el mantenimiento de herramientas y equipos, la preparación física y las actividades preventivas.</p>
+      <p>Algunos equipos pueden ser trasladados en helicóptero a zonas de difícil acceso.</p>
+      <h2>¿Cuáles son los requisitos?</h2>
+      <p>La convocatoria contempla requisitos de educación y experiencia, además de la capacidad de realizar trabajo físico exigente.</p>
+      <p>Los candidatos deberán superar las evaluaciones físicas correspondientes y cumplir los requisitos de contratación, que pueden incluir licencia de conducir válida de clase 5 o equivalente canadiense, certificaciones de primeros auxilios y documentación de conducción.</p>
+      <p>Los aspirantes deberán tener al menos 18 años antes de su incorporación.</p>
+      <h2>¿Hasta cuándo pueden postularse?</h2>
+      <p><strong>Fecha límite anunciada: 30 de noviembre de 2026.</strong></p>
+      <p>El proceso puede incluir revisión de solicitudes, pruebas físicas, entrevistas y verificaciones previas a la contratación.</p>
+      <p>Los seleccionados podrían comenzar a trabajar entre marzo y abril de 2027.</p>
+      <h2>Una oportunidad para la comunidad latina</h2>
+      <p>Para residentes de Alberta interesados en actividades forestales, emergencias o trabajos físicamente exigentes, esta convocatoria puede representar una alternativa de empleo estacional.</p>
+      <p>Es indispensable cumplir los requisitos del empleador y contar con autorización legal para trabajar en Canadá.</p>
+      <p>La oferta no anuncia patrocinio migratorio ni garantiza la contratación de trabajadores extranjeros.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Government of Alberta — Wildfire Crew Member (oferta laboral, cierre el 30 de noviembre de 2026)", href: "https://jobpostings.alberta.ca/job/Various-Wildfire-Crew-Member/606646017/" },
+      { label: "Alberta Wildfire — Reclutamiento", href: "https://www.alberta.ca/alberta-wildfire-recruitment" },
+      { label: "Alberta Wildfire — Calgary Forest Area, actualización del 23 de octubre de 2026", href: "https://www.alberta.ca/calgary-forest-area-october-23-2026" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["certificaciones-trabajo-alberta"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Alberta busca bomberos forestales para 2027: hasta $31,02 por hora",
+      description: "Alberta abre la convocatoria de bomberos forestales para 2027: salario base de $24,52 a $31,02 CAD por hora, requisitos y cierre el 30 de noviembre.",
+      canonicalPath: "/empleo/alberta-bomberos-forestales-2027/",
+    },
+  },
+  {
     /* Entrevista de El Podcast del Migrante con Héctor Rivero, «Santa
        Latino» (texto aprobado por la redacción el 24 de octubre de 2026).
        Fuente biográfica: el testimonio del propio Héctor Rivero. Sus

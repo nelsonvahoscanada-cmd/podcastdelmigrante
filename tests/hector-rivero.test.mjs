@@ -48,7 +48,7 @@ test("noticia principal de la portada; la anterior sigue en el bloque principal 
   assert.equal(ctx.H.main.image, `url('assets/yt/${VIDEO}.jpg')`);
   assert.equal(ctx.H.main.demo, false);
   assert.ok(ctx.H.main.alt.length > 40, "texto alternativo");
-  assert.equal(ctx.H.secondary[0].slug, "referendum-alberta-octubre-2026-inmigrantes", "la noticia principal anterior pasa a la primera secundaria");
+  assert.ok(ctx.H.secondary.some((x) => x.slug === "referendum-alberta-octubre-2026-inmigrantes"), "la noticia principal anterior sigue entre las secundarias");
   assert.equal(ctx.H.secondary.length, 4);
   for (const s of ["referendum-alberta-octubre-2026-inmigrantes", "rocky-ridge-athletic-park-calgary", "alberta-energy-rebate-plazo-octubre"]) {
     assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: sigue publicado`);

@@ -78,6 +78,16 @@ const HERO = {
   },
   secondary: [
     {
+      category: "Empleo en Alberta",
+      title: "Alberta busca bomberos forestales para 2027 con salarios de hasta $31,02 por hora: convocatoria abierta",
+      date: "25 de octubre",
+      image: "url('assets/alberta-bomberos-forestales-2027.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial creada con inteligencia artificial: un bombero forestal en primer plano, la bandera de Alberta y un helicóptero que descarga agua sobre un incendio forestal, con el titular «Alberta busca bomberos forestales».",
+      demo: false,
+      slug: "alberta-bomberos-forestales-2027",
+    },
+    {
       category: "Alberta",
       title: "Alberta votó por permanecer en Canadá: cerca del 75 % rechazó iniciar el proceso separatista",
       date: "20 de octubre",
@@ -106,16 +116,6 @@ const HERO = {
       alt: "Ilustración editorial asistida por inteligencia artificial: una bailarina con traje folclórico baila en un festival cultural al aire libre en Calgary.",
       demo: false,
       slug: "subvenciones-etnoculturales-antirracismo-alberta",
-    },
-    {
-      category: "Migración",
-      title: "Alberta reconoce a 20 inmigrantes por su impacto en la provincia",
-      date: "12 de octubre",
-      image: "url('assets/premios-impacto-inmigrante-alberta-2026.jpg')",
-      aspectRatio: "16/9",
-      alt: "Ilustración editorial asistida por inteligencia artificial: una mujer sostiene un trofeo de cristal mientras un grupo de personas la aplaude. No representa a ninguna de las personas premiadas.",
-      demo: false,
-      slug: "premios-impacto-inmigrante-alberta-2026",
     },
   ],
 };

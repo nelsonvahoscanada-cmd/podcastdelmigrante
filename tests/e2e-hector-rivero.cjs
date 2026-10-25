@@ -69,7 +69,7 @@ async function reproduce(page, contenedor) {
     const fondo = await hero.locator(".hero-main__media").getAttribute("style");
     assert.match(fondo, new RegExp(`assets/yt/${VIDEO}\\.jpg`));
     assert.equal((await fetch(`${BASE}/assets/yt/${VIDEO}.jpg`)).status, 200);
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").first().innerText(), /Alberta votó por permanecer en Canadá/, "la noticia principal anterior sigue en la portada");
+    assert.match(await page.locator("#heroSecondary").innerText(), /Alberta votó por permanecer en Canadá/, "la noticia principal anterior sigue en la portada");
 
     /* ---------- Podcast del Migrante Play (carrusel) ---------- */
     const primera = page.locator("#videoTrack .video-card").first();
