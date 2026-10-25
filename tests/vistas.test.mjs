@@ -187,10 +187,13 @@ test("privacidad: no se guarda la IP, el navegador ni nada que identifique a la 
   assert.equal(filas(env, "SELECT COUNT(*) AS n FROM vistas_reciente")[0].n, 1);
 });
 
-test("día en hora de Alberta (cambio de día y horario de verano)", () => {
+test("día en hora de Alberta, no en UTC", () => {
+  /* 23:30 del 31 de octubre en Alberta ya es 1 de noviembre en UTC */
   assert.equal(diaAlberta(Date.parse("2026-11-01T05:30:00Z")), "2026-10-31");
   assert.equal(diaAlberta(Date.parse("2026-11-01T06:30:00Z")), "2026-11-01");
-  assert.equal(diaAlberta(Date.parse("2026-12-01T06:59:00Z")), "2026-11-30");
+  /* Misma regla que Intl con la zona de Alberta, sea cual sea su horario vigente */
+  const ms = Date.parse("2026-12-01T06:59:00Z");
+  assert.equal(diaAlberta(ms), new Intl.DateTimeFormat("en-CA", { timeZone: "America/Edmonton" }).format(new Date(ms)));
 });
 
 test("fallos del servicio: sin base, sin sal o con D1 caída responde 503 sin romper nada", async () => {

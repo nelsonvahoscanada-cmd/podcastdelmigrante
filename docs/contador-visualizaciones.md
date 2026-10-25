@@ -173,7 +173,7 @@ Las estadísticas de las miniwebs (`/api/events`, `podcastdelmigrante-analytics`
 
 | Prueba | Qué comprueba |
 |---|---|
-| `tests/vistas.test.mjs` (14 pruebas, D1 simulada con SQLite) | Cobertura exacta 18 + 8; regla igual en generador y cliente; el HTML de las redes sin cambios; conteo y fecha de inicio; 30 minutos; vistas previas, dominios e identificadores inexistentes; robots y navegadores de apps; manipulación (origen, tipo, tamaño, cuerpo, número enviado, métodos); límite de frecuencia; privacidad (sin IP ni navegador guardados, vencimiento de huellas); día de Alberta; fallos de D1 y de configuración; las rutas de la Function |
+| `tests/vistas.test.mjs` (14 pruebas, D1 simulada con SQLite) | Cobertura exacta 18 + 8; regla igual en generador y cliente; el HTML de las redes sin cambios; conteo y fecha de inicio; 30 minutos; vistas previas, dominios e identificadores inexistentes; robots y navegadores de apps; manipulación (origen, tipo, tamaño, cuerpo, número enviado, métodos); límite de frecuencia; privacidad (sin IP ni navegador guardados, vencimiento de huellas); día en hora de Alberta; fallos de D1 y de configuración; las rutas de la Function |
 | `tests/e2e-vistas.cjs` (Pages local + D1 local) | Computador, tableta y celular: posición y formato; ícono oculto a lectores de pantalla; color; 5 s visibles; recarga sin suma; el servidor sumó 1 (lectura de la base local); sin desplazamientos (CLS posterior al contador < 0,01) ni desborde; guía; deduplicación en el servidor con el navegador borrado; pestaña oculta; Googlebot; `navigator.webdriver`; sin contador en entrevistas, columnas ni portada (y Santa Latino sigue primero); servicio caído o con error 503 |
 | `tests/pages-function.test.mjs` | `_routes.json` incluye `/api/vistas/*` |
 
