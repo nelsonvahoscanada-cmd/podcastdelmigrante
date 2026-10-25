@@ -340,7 +340,7 @@ function pagina(r, L, { esc }) {
 
   const titulo = r.ficha ? `${r.n}, Ontario: guía para inmigrantes y recién llegados` : `${r.n}, Ontario: información básica`;
   const descripcion = r.ficha
-    ? `${r.n} (Ontario) en datos: población, empleo, alquileres, escuelas, hospitales, transporte y servicios para recién llegados, con fuentes oficiales.`
+    ? `${r.nBase ? `${r.n}, en Ontario,` : `${r.n} (Ontario)`} en datos: población, empleo, alquileres, escuelas, hospitales, transporte y servicios para recién llegados, con fuentes oficiales.`
     : `${r.n} es un municipio de Ontario (${unico ? "nivel único" : `nivel inferior, en ${r.area}`}). Clasificación oficial, región, población del Censo 2021 y enlaces oficiales.`;
 
   /* --- Datos rápidos --- */
@@ -366,7 +366,7 @@ function pagina(r, L, { esc }) {
   /* --- Empleo (región económica) --- */
   const empleo = empleoRegional({ epa, nombre: r.n, nombreEpa: region, esc, consultado, fuentes: FUENTES });
   const busqueda = r.ficha
-    ? [{ label: `Job Bank — Empleos en ${r.n}`, href: `https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=${encodeURIComponent(r.n).replace(/%20/g, "+")}%2C+ON` }, ...RECURSOS.empleo.slice(1)]
+    ? [{ label: `Job Bank — Empleos en ${r.n}`, href: `https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=${encodeURIComponent(r.nBase || r.n).replace(/%20/g, "+")}%2C+ON` }, ...RECURSOS.empleo.slice(1)]
     : RECURSOS.empleo;
 
   /* --- Vivienda --- */

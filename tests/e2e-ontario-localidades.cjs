@@ -139,6 +139,8 @@ async function compartir(page, ruta, imagen) {
 
     /* ---------- Página básica (noindex) ---------- */
     ({ ctx, page, errores } = await abrir(browser, perfil, "/canada-en-datos/ontario/hamilton-township"));
+    assert.equal(await page.locator("h1").textContent(), "Hamilton (cantón)", "no se confunde con la ciudad de Hamilton");
+    assert.match(await page.title(), /^Hamilton \(cantón\), Ontario/);
     assert.equal(await page.locator('meta[name="robots"]').getAttribute("content"), "noindex");
     assert.match(await page.locator(".cd-kicker").textContent(), /Información básica/);
     assert.match(await page.locator("#resumen").textContent(), /Northumberland/);
@@ -156,6 +158,8 @@ async function compartir(page, ruta, imagen) {
     ({ ctx, page, errores } = await abrir(browser, perfil, "/canada-en-datos/alberta/brooks"));
     await compartir(page, "/canada-en-datos/alberta/brooks", "/assets/canada-en-datos/alberta/brooks.jpg");
     assert.match(await page.locator("#resumen").textContent(), /14,924/, "contenido de Alberta intacto");
+    assert.match(await page.locator("#familias").textContent(), /Alberta Child and Family Benefit/);
+    assert.equal(await page.locator('a[href="#familias"]').count() >= 1, true, "«Familias» en el índice");
     await sinScrollHorizontal(page);
     assert.deepEqual(errores, []);
     await ctx.close();

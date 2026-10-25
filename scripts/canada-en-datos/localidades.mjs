@@ -131,11 +131,33 @@ export function viviendaCmhc({ cmhc, centro, esc, fuenteCmhc, periodo = "octubre
       <p class="cd-indicator__src">Los promedios incluyen contratos antiguos y nuevos: un alquiler nuevo suele costar más que el promedio.</p>`;
 }
 
+/* ---------- Nombres que se pueden confundir ----------
+   Si dos municipios con página comparten nombre (Hamilton, ciudad, y
+   Hamilton, cantón, en Ontario), el nombre visible lleva el tipo entre
+   paréntesis. La URL no cambia: sigue saliendo del nombre oficial. */
+export function nombresVisibles(P, L) {
+  const grupos = new Map();
+  for (const r of L.items.filter((x) => x.s)) {
+    const k = r.n.toLowerCase();
+    grupos.set(k, [...(grupos.get(k) || []), r]);
+  }
+  const nv = new Map();
+  for (const g of grupos.values()) {
+    if (g.length < 2) continue;
+    for (const r of g) nv.set(r, `${r.n} (${P.TIPOS[r.t].es.toLowerCase()})`);
+    if (new Set(g.map((r) => nv.get(r))).size < g.length) throw new Error(`${P.nombre}: nombres repetidos sin distinguir: ${g[0].n}`);
+  }
+  return (r) => nv.get(r) || r.n;
+}
+/* Copia de la localidad con el nombre visible (n) y el oficial (nBase) */
+const conNombre = (r, visible) => (visible(r) === r.n ? r : { ...r, n: visible(r), nBase: r.n });
+
 /* ---------- Datos para el navegador (js/<provincia>-localidades.js) ---------- */
 export function datosNavegador(P, L) {
   const indice = new Map(L.items.map((r, i) => [r, i]));
+  const visible = nombresVisibles(P, L);
   const filas = L.items.map((r) => [
-    r.n,
+    visible(r),
     r.t,
     String(r.r),
     r.x,
@@ -258,7 +280,9 @@ export function seccionDirectorio(P, L, esc) {
 export function paginas(P, L, ctx) {
   const { esc, head, chrome, scriptsBase, meta } = ctx;
   const out = {};
-  for (const r of L.items.filter((x) => x.s)) {
+  const visible = nombresVisibles(P, L);
+  for (const original of L.items.filter((x) => x.s)) {
+    const r = conNombre(original, visible);
     const k = r.s;
     const path = `/canada-en-datos/${P.slug}/${k}`;
     const url = SITE + path;
@@ -306,7 +330,7 @@ export function paginas(P, L, ctx) {
         <figcaption>${f.ubicacion}</figcaption>
       </figure>${f.ubicacionExtra || ""}`;
 
-    out[`${P.slug}/${k}.html`] = `${head({ meta, title: `${f.titulo} — El Podcast del Migrante`, description: f.descripcion, path, image: imagen, imageAlt: `Tarjeta de ${r.n} (${P.nombre}) con su ubicación en el mapa de la provincia, de Canadá en Datos de El Podcast del Migrante.`, jsonLd, noindex: !f.indexar })}
+    out[`${P.slug}/${k}.html`] = `${head({ meta, title: `${f.titulo} — El Podcast del Migrante`, description: f.descripcion, path, image: imagen, imageAlt: `Tarjeta de ${r.nBase ? `${r.n}, en ${P.nombre},` : `${r.n} (${P.nombre})`} con su ubicación en el mapa de la provincia, de Canadá en Datos de El Podcast del Migrante.`, jsonLd, noindex: !f.indexar })}
 <body data-cd-localidad="${esc(k)}" data-cd-provincia="${P.slug}">
 ${chrome.cabecera}
 
@@ -374,13 +398,15 @@ ${scriptsBase(["/js/canada-compartir.js"])}`;
 
 /* ---------- Datos de las imágenes sociales (build-canada-datos-images.py) ---------- */
 export function imagenes(P, L) {
+  const visible = nombresVisibles(P, L);
   return {
     provincia: P.slug,
     nombre: P.nombre,
     mapa: L.mapa,
     localidades: L.items
       .filter((r) => r.s)
-      .map((r) => {
+      .map((original) => {
+        const r = conNombre(original, visible);
         const f = P.tarjeta(r, L);
         return { s: r.s, n: r.n, x: r.x, y: r.y, tipo: f.tipo, dato: f.dato };
       }),

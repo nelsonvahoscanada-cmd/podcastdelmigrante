@@ -91,6 +91,12 @@ const RECURSOS = {
     { label: "IRCC — Servicios gratuitos para recién llegados cerca de ti", href: "https://ircc.canada.ca/english/newcomers/services/index.asp" },
     { label: "211 Alberta — Orientación sobre ayudas comunitarias", href: "https://ab.211.ca/" },
   ],
+  familias: [
+    { label: "Gobierno de Alberta — Alberta Child and Family Benefit", href: "https://www.alberta.ca/alberta-child-and-family-benefit" },
+    { label: "Gobierno de Alberta — Alberta Child Health Benefit", href: "https://www.alberta.ca/alberta-child-health-benefit" },
+    { label: "Gobierno de Alberta — Subsidio de cuidado infantil", href: "https://www.alberta.ca/child-care-subsidy-program" },
+    { label: "CRA — Cómo solicitar la Canada Child Benefit", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html" },
+  ],
 };
 
 /* ---------- Carga y preparación de datos ---------- */
@@ -214,7 +220,7 @@ function pagina(r, L, { esc }) {
     consultado,
     fuentes: FUENTES,
   });
-  const busqueda = r.ficha ? [{ label: `Job Bank — Empleos en ${r.n}`, href: `https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=${encodeURIComponent(r.n).replace(/%20/g, "+")}%2C+AB` }, ...RECURSOS.empleo.slice(1)] : RECURSOS.empleo;
+  const busqueda = r.ficha ? [{ label: `Job Bank — Empleos en ${r.n}`, href: `https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=${encodeURIComponent(r.nBase || r.n).replace(/%20/g, "+")}%2C+AB` }, ...RECURSOS.empleo.slice(1)] : RECURSOS.empleo;
 
   /* --- Vivienda --- */
   let vivienda = `<p>${NO_DISPONIBLE}: CMHC no publica alquileres para esta localidad en su encuesta anual.</p>`;
@@ -238,7 +244,7 @@ function pagina(r, L, { esc }) {
 
   /* --- Salud --- */
   let salud = `<p>${NO_DISPONIBLE} en esta página. Usa el buscador oficial de servicios de salud o llama a Health Link 811. En una emergencia, llama al 911.</p>`;
-  const h = r.ficha ? hosp.ciudades[r.n] : null;
+  const h = r.ficha ? hosp.ciudades[r.nBase || r.n] : null;
   if (h) {
     const urg = h.filter((x) => x.urgencias.EMRG);
     const ucc = h.filter((x) => x.urgencias.UCC);
@@ -262,6 +268,10 @@ function pagina(r, L, { esc }) {
   const recien = `<p>Los servicios de asentamiento financiados por el Gobierno de Canadá son gratuitos para quienes cumplen los requisitos de elegibilidad. Busca los más cercanos con tu código postal.</p>
       ${enlaces(RECURSOS.recienLlegados, esc)}
       <p>Consulta también la <a href="/canada-en-datos/alberta#recien-llegado">guía de primeros pasos en Alberta</a>.</p>`;
+
+  const familias = `<p>Estos son recursos provinciales y federales: se aplican en toda Alberta, no solo en ${esc(r.n)}. La elegibilidad depende de tu estatus migratorio, tus ingresos y tu residencia.</p>
+      ${enlaces(RECURSOS.familias, esc)}
+      <p>Más información en la sección de <a href="/canada-en-datos/alberta#beneficios">beneficios de la guía de Alberta</a>.</p>`;
 
   /* --- Fuentes --- */
   const fuentes = [
@@ -299,6 +309,7 @@ function pagina(r, L, { esc }) {
     saludEnlaces: RECURSOS.salud,
     transporte,
     recien,
+    familias,
     oficiales,
     fuentes,
     indexar: !!r.ficha,

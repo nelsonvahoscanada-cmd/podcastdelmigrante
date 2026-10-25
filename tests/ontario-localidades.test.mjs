@@ -115,3 +115,21 @@ test("enlaces oficiales: los que ya no respondían se reemplazan o se retiran", 
   assert.match(PAGES["ontario/fort-frances.html"], /href="https:\/\/www\.fortfrances\.ca\/"/);
   assert.doesNotMatch(PAGES["ontario/machar.html"], /Sitio oficial de Machar/);
 });
+
+test("nombres que se pueden confundir: Hamilton (ciudad) y Hamilton (cantón), con las mismas URL", () => {
+  const ciudad = PAGES["ontario/hamilton.html"], canton = PAGES["ontario/hamilton-township.html"];
+  assert.match(ciudad, /<h1>Hamilton \(ciudad\)<\/h1>/);
+  assert.match(canton, /<h1>Hamilton \(cantón\)<\/h1>/);
+  assert.match(ciudad, /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/canada-en-datos\/ontario\/hamilton">/);
+  assert.match(canton, /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/canada-en-datos\/ontario\/hamilton-township">/);
+  /* Job Bank busca por el nombre oficial, sin el aclarativo */
+  assert.match(ciudad, /locationstring=Hamilton%2C\+ON"/);
+  /* Ningún título se repite en la provincia */
+  const titulos = paginas.map(([, h]) => h.match(/<title>([^<]+)<\/title>/)[1]);
+  assert.equal(new Set(titulos).size, titulos.length);
+  const ctx = {};
+  new Function("window", read("js/ontario-localidades.js"))(ctx);
+  const nombres = ctx.CD_LOCALIDADES.localidades.map((f) => f[0]);
+  assert.ok(nombres.includes("Hamilton (ciudad)") && nombres.includes("Hamilton (cantón)"));
+  assert.equal(new Set(nombres).size, nombres.length, "nombres únicos en el directorio");
+});

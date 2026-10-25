@@ -309,3 +309,33 @@ test("compartir: cada página comparte su URL permanente y tiene una imagen soci
     assert.match(html, /data-share-estado role="status"/);
   }
 });
+
+test("sitemap.xml: XML bien formado, URL únicas y absolutas, fichas provinciales incluidas", () => {
+  const xml = read("sitemap.xml");
+  assert.match(xml, /^<\?xml version="1\.0" encoding="UTF-8"\?>\s*<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+  assert.match(xml, /<\/urlset>\s*$/);
+  /* Cada etiqueta abierta se cierra en orden (sin atributos ni contenido mixto en un sitemap) */
+  const pila = [];
+  for (const [, cierre, nombre] of xml.replace(/<\?xml[^>]*\?>/, "").replace(/<!--[\s\S]*?-->/g, "").matchAll(/<(\/?)([a-z:]+)[^>]*>/g)) {
+    if (cierre) assert.equal(pila.pop(), nombre, `etiqueta </${nombre}> sin abrir`);
+    else pila.push(nombre);
+  }
+  assert.deepEqual(pila, [], "etiquetas sin cerrar");
+  const bloques = xml.match(/<url>[\s\S]*?<\/url>/g);
+  const locs = bloques.map((b) => (b.match(/<loc>([^<]+)<\/loc>/) || [])[1]);
+  assert.ok(locs.every((l) => /^https:\/\/podcastdelmigrante\.com\//.test(l)), "cada <url> con <loc> absoluto");
+  assert.equal(new Set(locs).size, locs.length, "sin URL repetidas");
+  for (const p of ["canada-en-datos/", "canada-en-datos/alberta", "canada-en-datos/ontario"]) assert.ok(locs.includes(`https://podcastdelmigrante.com/${p}`), p);
+});
+
+test("imágenes sociales: una propia por página (provincia o localidad)", () => {
+  const usos = new Map();
+  for (const [k, html] of Object.entries(TODAS)) {
+    if (k.startsWith("/") || !k.endsWith(".html")) continue;
+    const img = meta(html, "og:image");
+    usos.set(img, [...(usos.get(img) || []), k]);
+  }
+  for (const [img, ks] of usos) assert.equal(ks.length, 1, `${img} repetida en ${ks.join(", ")}`);
+  assert.equal(meta(TODAS["alberta.html"], "og:image"), "https://podcastdelmigrante.com/assets/canada-en-datos/social-alberta.jpg");
+  assert.equal(meta(TODAS["ontario.html"], "og:image"), "https://podcastdelmigrante.com/assets/canada-en-datos/social-ontario.jpg");
+});

@@ -124,3 +124,18 @@ test("datos del navegador coherentes con el directorio", () => {
   }
   assert.equal(d.localidades.filter((f) => f[8] === 1).length, 6);
 });
+
+test("«Recursos para familias» en todas las páginas de Alberta, con enlaces oficiales de Alberta", () => {
+  for (const [k, html] of paginas) {
+    assert.match(html, /<section class="cd-section" id="familias"/, k);
+    assert.match(html, /<a href="#familias">Familias<\/a>/, k);
+  }
+  const brooks = PAGES["alberta/brooks.html"];
+  assert.match(brooks, /se aplican en toda Alberta, no solo en Brooks/);
+  for (const u of ["https://www.alberta.ca/alberta-child-and-family-benefit", "https://www.alberta.ca/alberta-child-health-benefit", "https://www.alberta.ca/child-care-subsidy-program"]) {
+    assert.ok(brooks.includes(`href="${u}"`), u);
+    assert.ok(PAGES["alberta.html"].includes(`href="${u}"`), `${u} también en la guía de Alberta`);
+  }
+  const titulos = paginas.map(([, h]) => h.match(/<title>([^<]+)<\/title>/)[1]);
+  assert.equal(new Set(titulos).size, titulos.length, "títulos únicos");
+});
