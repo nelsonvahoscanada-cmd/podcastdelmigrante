@@ -32,6 +32,7 @@
   const LOCAL_THUMBS = {
     /* Canal oficial @ElPodcastDelMigranteOficial (confirmado por Nelson,
        18 de octubre de 2026). Archivos originales sin modificar. */
+    "LxTr1Zda3dg": ["/assets/yt/LxTr1Zda3dg.jpg", 1280, 720],
     "O5on_J9cRb4": ["/assets/yt/O5on_J9cRb4.jpg", 1280, 720],
     "AnAZeaE7LV4": ["/assets/yt/AnAZeaE7LV4.jpg", 1280, 720],
     "z2Ih590xSP4": ["/assets/yt/z2Ih590xSP4.jpg", 1280, 720],

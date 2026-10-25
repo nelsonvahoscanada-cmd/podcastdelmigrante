@@ -65,18 +65,28 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Alberta",
-    title: "Alberta votó por permanecer en Canadá: cerca del 75 % rechazó iniciar el proceso separatista",
-    dek: "Los resultados preliminares del referéndum del 19 de octubre muestran una amplia ventaja para la permanencia en Canadá. Te explicamos las cifras, qué significa para los inmigrantes y qué falta por conocer de las otras nueve preguntas.",
+    category: "Comunidad",
+    title: "Héctor Rivero, el Santa Latino que convirtió su historia migratoria en esperanza para las familias de Canadá",
+    dek: "De Venezuela a Niagara Falls, pasando por Panamá y Estados Unidos, Héctor Rivero transformó una tradición familiar en un proyecto que lleva alegría a niños, inmigrantes y comunidades latinas. Ahora comparte su historia en El Podcast del Migrante.",
     author: "Redacción El Podcast del Migrante",
-    date: "20 de octubre, 2026",
-    image: "url('assets/referendum-alberta-octubre-2026-inmigrantes.jpg')",
+    date: "24 de octubre, 2026",
+    image: "url('assets/yt/LxTr1Zda3dg.jpg')",
     aspectRatio: "16/9",
-    alt: "Ilustración editorial asistida por inteligencia artificial: cinco personas miran hacia la Legislatura de Alberta, con las banderas de Alberta y de Canadá, mientras una mano deposita un voto en una urna con la palabra «Alberta». Titular: «Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?».",
+    alt: "Miniatura oficial del episodio de El Podcast del Migrante: Santa Claus sonriente con las cataratas del Niágara y la bandera de Canadá al fondo, y los textos «De inmigrante a Santa Latino en Canadá» y «Héctor Rivero, invitado especial».",
     demo: false,
-    slug: "referendum-alberta-octubre-2026-inmigrantes",
+    slug: "hector-rivero-santa-latino-canada",
   },
   secondary: [
+    {
+      category: "Alberta",
+      title: "Alberta votó por permanecer en Canadá: cerca del 75 % rechazó iniciar el proceso separatista",
+      date: "20 de octubre",
+      image: "url('assets/referendum-alberta-octubre-2026-inmigrantes.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: cinco personas miran hacia la Legislatura de Alberta, con las banderas de Alberta y de Canadá, mientras una mano deposita un voto en una urna con la palabra «Alberta». Titular: «Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?».",
+      demo: false,
+      slug: "referendum-alberta-octubre-2026-inmigrantes",
+    },
     {
       category: "Alberta",
       title: "Últimas semanas para pedir el pago de $100 de Alberta: el plazo vence el 31 de octubre",
@@ -106,16 +116,6 @@ const HERO = {
       alt: "Ilustración editorial asistida por inteligencia artificial: una mujer sostiene un trofeo de cristal mientras un grupo de personas la aplaude. No representa a ninguna de las personas premiadas.",
       demo: false,
       slug: "premios-impacto-inmigrante-alberta-2026",
-    },
-    {
-      category: "Comunidad",
-      title: "Calgary inaugura el Rocky Ridge Athletic Park, con dos nuevas canchas de césped artificial en el noroeste",
-      date: "12 de octubre",
-      image: "url('assets/rocky-ridge-athletic-park-calgary.jpg')",
-      aspectRatio: "16/9",
-      alt: "Ilustración editorial asistida por inteligencia artificial: jóvenes juegan fútbol en una cancha de césped artificial en Calgary. No muestra el parque real.",
-      demo: false,
-      slug: "rocky-ridge-athletic-park-calgary",
     },
   ],
 };
@@ -167,6 +167,15 @@ const STORIES = [
    Títulos y descripciones siempre en español; un video en otro idioma
    se identifica en `tag` (p. ej. «Entrevista en inglés»). */
 const VIDEOS = [
+  {
+    tag: "Entrevistas",
+    title: "Héctor Rivero, el Santa Latino en Canadá",
+    desc: "De Venezuela a Niagara Falls: Héctor Rivero cuenta cómo una tradición familiar se convirtió en Santa Latino, el personaje con el que lleva alegría a niños y familias inmigrantes en Canadá.",
+    videoId: "LxTr1Zda3dg",
+    articleSlug: "hector-rivero-santa-latino-canada",
+    demo: false,
+    published: true,
+  },
   {
     tag: "Entrevistas",
     title: "De limpiar casas en Canadá a facturar más de US$9.000 al mes: las estrategias digitales de Diana Cardona",

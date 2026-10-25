@@ -160,6 +160,88 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Entrevista de El Podcast del Migrante con Héctor Rivero, «Santa
+       Latino» (texto aprobado por la redacción el 24 de octubre de 2026).
+       Fuente biográfica: el testimonio del propio Héctor Rivero. Sus
+       recuerdos, donaciones y aspiraciones se presentan como su testimonio,
+       no como hechos verificados de forma independiente. El deseo de
+       aparecer en un comercial de Coca-Cola es una aspiración personal, no
+       una colaboración con la marca. Imagen: miniatura oficial del episodio
+       en el canal de YouTube de El Podcast del Migrante. */
+    id: "ART-2026-029",
+    slug: "hector-rivero-santa-latino-canada",
+    category: "Comunidad",
+    contentType: "Noticia",
+    title: "Héctor Rivero, el Santa Latino que convirtió su historia migratoria en esperanza para las familias de Canadá",
+    dek: "De Venezuela a Niagara Falls, pasando por Panamá y Estados Unidos, Héctor Rivero transformó una tradición familiar en un proyecto que lleva alegría a niños, inmigrantes y comunidades latinas. Ahora comparte su historia en El Podcast del Migrante.",
+    excerpt: "Héctor Rivero, venezolano radicado en Niagara Falls, cuenta en El Podcast del Migrante cómo una tradición familiar se convirtió en Santa Latino, un personaje con el que lleva alegría a niños y familias inmigrantes en Canadá.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-24T22:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Ontario", city: "Niagara Falls" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/yt/LxTr1Zda3dg.jpg')",
+      aspectRatio: "16/9",
+      alt: "Miniatura oficial del episodio de El Podcast del Migrante: Santa Claus sonriente con las cataratas del Niágara y la bandera de Canadá al fondo, y los textos «De inmigrante a Santa Latino en Canadá» y «Héctor Rivero, invitado especial».",
+      credit: "Miniatura oficial del episodio en el canal de YouTube de El Podcast del Migrante.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p>Detrás del traje rojo, la barba blanca y la sonrisa de Santa Claus hay una historia de migración, perseverancia y sueños que todavía están por cumplirse.</p>
+      <p>Su protagonista es <strong>Héctor Rivero</strong>, un venezolano nacido en Caracas que hoy vive en Niagara Falls, Ontario, donde se ha dado a conocer como <strong>Santa Latino</strong>, un personaje con el que busca llevar alegría y esperanza a las familias, especialmente durante la Navidad.</p>
+      <p>En una entrevista con El Podcast del Migrante, Rivero comparte el recorrido que lo llevó hasta Canadá, las dificultades que enfrentó junto a su familia y la manera en que encontró en Santa Claus una oportunidad para servir a su comunidad.</p>
+      <h2>Un viaje migratorio marcado por la fe y la perseverancia</h2>
+      <p>Antes de establecerse en Canadá, Héctor salió de Venezuela y continuó su camino desde Panamá. Junto a su familia atravesó Centroamérica, México y Estados Unidos buscando seguridad, estabilidad y nuevas oportunidades para sus hijos.</p>
+      <p>Según relata, el trayecto estuvo acompañado de incertidumbre, cansancio y momentos difíciles, pero también de solidaridad. La ayuda de personas que encontraron durante el camino fue fundamental para seguir adelante.</p>
+      <p>Su fe también ocupa un lugar importante en su historia. Rivero recuerda ese apoyo como la presencia de personas que llegaron en los momentos en que más lo necesitaban.</p>
+      <h2>El traje de Santa que comenzó a cambiar su vida</h2>
+      <p>Su relación con Santa Claus nació mucho antes de llegar a Canadá, como parte de una tradición familiar.</p>
+      <p>Durante su estancia en Miami, consiguió la tela y el apoyo de una costurera para confeccionar un traje de Santa que todavía conserva.</p>
+      <p>Con ese traje comenzó a participar en actividades comunitarias, visitar colegios y hogares, y recoger donaciones destinadas a inmigrantes que atravesaban dificultades económicas.</p>
+      <p>Lo que inicialmente era una tradición navideña se convirtió en una forma de acercarse a otras personas y generar momentos de alegría.</p>
+      <h2>Diez bicicletas y una Navidad inolvidable en Niagara Falls</h2>
+      <p>Uno de los momentos más significativos de su historia ocurrió después de llegar a Canadá.</p>
+      <p>Durante su primera Navidad en un hotel Ramada de Niagara Falls, donde se alojaban familias refugiadas, Héctor decidió volver a ponerse el traje de Santa.</p>
+      <p>Niños y adultos comenzaron a acercarse para saludarlo y tomarse fotografías. Según cuenta, también consiguió reunir aproximadamente diez bicicletas que entregó como regalos a niños que permanecían en el hotel.</p>
+      <p>Aquella experiencia marcó el inicio de una nueva etapa para Santa Latino en Canadá.</p>
+      <h2>Un Santa que también es emprendedor</h2>
+      <p>En los últimos años, Rivero ha participado en celebraciones navideñas y actividades comunitarias, entre ellas el Latin Christmas Festival de Mississauga y eventos en St. Catharines.</p>
+      <p>Pero su vida no gira exclusivamente alrededor de la Navidad.</p>
+      <p>Héctor también es fundador de <strong>Pets Grooming VIP</strong>, un emprendimiento dedicado a la peluquería para mascotas. En su día a día combina el trabajo empresarial con las actividades de Santa Latino.</p>
+      <p>Incluso cuenta que algunas personas lo conocen primero como Santa y después recurren a él para el cuidado de sus mascotas.</p>
+      <h2>Su próximo sueño: aparecer en un comercial de Coca-Cola</h2>
+      <p>Héctor ya tuvo la oportunidad de participar en un comercial de televisión durante su etapa en Panamá. Ahora tiene una aspiración que considera especialmente importante: aparecer algún día en una campaña de Coca-Cola interpretando a Santa Latino.</p>
+      <p>Se trata de un sueño personal, no de una colaboración anunciada con la marca.</p>
+      <p>También desea llevar su personaje a otras regiones de Canadá, como Montreal, Calgary y distintas comunidades de Alberta, y ampliar sus iniciativas solidarias en beneficio de niños y familias inmigrantes.</p>
+      <h2>Una historia que va más allá de la Navidad</h2>
+      <p>La historia de Héctor Rivero recuerda que emigrar no significa necesariamente abandonar los sueños. A veces implica encontrar nuevas maneras de perseguirlos.</p>
+      <p>Su experiencia reúne varios elementos comunes en las historias de muchos inmigrantes: dejar atrás un país, comenzar de nuevo, emprender y encontrar oportunidades para contribuir a la sociedad que los recibe.</p>
+      <p>Para Héctor, ser Santa Latino es una manera de compartir alegría durante todo el año y demostrar que los pequeños gestos pueden tener un impacto significativo en la vida de otras personas.</p>
+      <p><strong>Mira la entrevista completa con Héctor Rivero en El Podcast del Migrante:</strong></p>
+      <p><a href="https://youtu.be/LxTr1Zda3dg" target="_blank" rel="noopener">https://youtu.be/LxTr1Zda3dg</a></p>
+      <p>Más episodios en <a href="/#video">El Podcast del Migrante Play</a>.</p>
+      <p><em>Fuente: biografía proporcionada por Héctor Rivero y entrevista de El Podcast del Migrante. Las experiencias personales y aspiraciones se presentan como su testimonio.</em></p>
+    `,
+    video: { youtubeId: "LxTr1Zda3dg", title: "Héctor Rivero, el Santa Latino en Canadá — entrevista completa en El Podcast del Migrante" },
+    sources: [
+      { label: "El Podcast del Migrante — Entrevista completa con Héctor Rivero en YouTube", href: "https://youtu.be/LxTr1Zda3dg" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["diana-cardona-emprendimiento-digital-canada", "100-empresarios-100-historias-calgary"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Héctor Rivero, el Santa Latino en Canadá: de Venezuela a Niagara Falls",
+      description: "Héctor Rivero cuenta en El Podcast del Migrante cómo pasó de Venezuela a Niagara Falls y convirtió una tradición familiar en Santa Latino.",
+      canonicalPath: "/comunidad/hector-rivero-santa-latino-canada/",
+    },
+  },
+  {
     /* Referéndum provincial de Alberta del lunes 19 de octubre de 2026 (diez
        preguntas). Publicada el 20 de octubre a las 5:00 a. m. como nota
        explicativa; ACTUALIZADA el mismo día con resultados PRELIMINARES.
