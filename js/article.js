@@ -199,10 +199,23 @@
     `;
   }
 
+  /* Contador público de visualizaciones: noticias y guías publicadas (misma
+     regla que scripts/build-article-pages.mjs). Aquí solo se deja el hueco,
+     oculto; js/vistas.js lo completa si el servicio responde. */
+  const TIPOS_CON_CONTADOR = ["Noticia", "Guía"];
+  function tieneContador(article) {
+    return TIPOS_CON_CONTADOR.includes(article.contentType) && !article.draft && article.demo !== true;
+  }
+
+  function viewsSlotHtml(article) {
+    if (!tieneContador(article)) return "";
+    return `<span class="article-views" data-vistas-id="${article.id}" data-publicado="${article.publishedAt || ""}" hidden></span>`;
+  }
+
   function metaLineHtml(article) {
     const parts = [];
     if (article.edition) parts.push("Edición " + article.edition);
-    parts.push(formatDate(article.publishedAt));
+    parts.push(formatDate(article.publishedAt) + viewsSlotHtml(article));
     if (article.updatedAt) parts.push("Actualizado el " + formatDate(article.updatedAt));
     const minutes = article.readingTimeOverride || estimateReadingTime(article.bodyHtml);
     parts.push(minutes + " min de lectura");

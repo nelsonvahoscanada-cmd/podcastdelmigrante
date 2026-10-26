@@ -155,24 +155,39 @@ function buildPage(template, a, problems) {
   return html.replace("<head>", "<head>\n" + GENERATED_MARK);
 }
 
+/* Contador público de visualizaciones: noticias y guías publicadas (misma
+   regla que tieneContador() en js/article.js). Ver docs/contador-visualizaciones.md. */
+const TIPOS_CON_CONTADOR = ["Noticia", "Guía"];
+const tieneContador = (a) => TIPOS_CON_CONTADOR.includes(a.contentType) && !a.draft && a.demo !== true;
+const ID_RE = /^ART-\d{4}-\d{3}$/;
+
 const template = readFileSync(join(ROOT, "articulo.html"), "utf8");
 const problems = [];
 const expected = new Map();
+const conContador = [];
 for (const a of loadArticles()) {
   if (a.draft) continue;   /* los borradores no se publican ni se comparten */
   if (!SLUG_RE.test(a.slug || "")) throw new Error(`Slug no válido para ${a.id}: "${a.slug}" (solo minúsculas, números y guiones)`);
   if (expected.has(articlePath(a.slug))) throw new Error(`Slug duplicado: ${a.slug}`);
   expected.set(articlePath(a.slug), buildPage(template, a, problems));
+  if (tieneContador(a)) {
+    if (!ID_RE.test(a.id || "")) throw new Error(`Identificador no válido para el contador en ${a.slug}: "${a.id}" (formato ART-AAAA-NNN)`);
+    if (conContador.includes(a.id)) throw new Error(`Identificador duplicado: ${a.id}`);
+    conContador.push(a.id);
+  }
 }
 
 /* Lista de artículos publicados para la función de Cloudflare Pages
    (functions/_middleware.js redirige /articulo?slug=X → /articulo-X solo
-   si X está aquí). */
+   si X está aquí) y lista de identificadores con contador de
+   visualizaciones (functions/_lib/vistas.js solo acepta estos). */
 const MANIFEST = "functions/_lib/published-articles.js";
 expected.set(
   MANIFEST,
   "/* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */\n" +
-    "export const PUBLISHED_ARTICLES = new Set(" + JSON.stringify([...expected.keys()].map((f) => f.slice("articulo-".length, -".html".length)), null, 2) + ");\n"
+    "export const PUBLISHED_ARTICLES = new Set(" + JSON.stringify([...expected.keys()].map((f) => f.slice("articulo-".length, -".html".length)), null, 2) + ");\n" +
+    "\n/* Noticias y guías publicadas con contador público de visualizaciones. */\n" +
+    "export const ARTICULOS_CON_CONTADOR = new Set(" + JSON.stringify(conContador, null, 2) + ");\n"
 );
 
 const stale = readdirSync(ROOT).filter(

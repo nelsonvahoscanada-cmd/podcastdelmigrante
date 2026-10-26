@@ -65,10 +65,10 @@ test("la lista de publicados coincide con las páginas generadas", async () => {
   for (const slug of PUBLISHED_ARTICLES) assert.ok(existsSync(new URL(`articulo-${slug}.html`, ROOT)), slug);
 });
 
-test("_routes.json limita las funciones a la plantilla de artículos, al registro y a las carpetas internas", () => {
+test("_routes.json limita las funciones a la plantilla de artículos, al contador de visualizaciones, al registro y a las carpetas internas", () => {
   const routes = JSON.parse(readFileSync(new URL("_routes.json", ROOT), "utf8"));
   assert.equal(routes.version, 1);
-  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/registro/*", "/admin-worker/*", "/db/*", "/docs/*", "/tests/*", "/scripts/*", "/functions/*", "/.github/*"].sort());
+  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/api/vistas/*", "/registro/*", "/admin-worker/*", "/db/*", "/docs/*", "/tests/*", "/scripts/*", "/functions/*", "/.github/*"].sort());
 });
 
 test("carpetas internas del repositorio → 404 (no forman parte del sitio)", async () => {

@@ -31,3 +31,33 @@ export const PUBLISHED_ARTICLES = new Set([
   "llegar-canada-documentos-primer-dia",
   "documentos-tramite-migratorio-alberta"
 ]);
+
+/* Noticias y guías publicadas con contador público de visualizaciones. */
+export const ARTICULOS_CON_CONTADOR = new Set([
+  "ART-2026-030",
+  "ART-2026-029",
+  "ART-2026-028",
+  "ART-2026-027",
+  "ART-2026-026",
+  "ART-2026-025",
+  "ART-2026-023",
+  "ART-2026-018",
+  "ART-2026-019",
+  "ART-2026-020",
+  "ART-2026-021",
+  "ART-2026-022",
+  "ART-2026-017",
+  "ART-2026-015",
+  "ART-2026-014",
+  "ART-2026-013",
+  "ART-2026-007",
+  "ART-2026-008",
+  "ART-2026-009",
+  "ART-2026-010",
+  "ART-2026-011",
+  "ART-2026-012",
+  "ART-2026-004",
+  "ART-2026-003",
+  "ART-2026-002",
+  "ART-2026-001"
+]);

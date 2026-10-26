@@ -114,6 +114,11 @@ a.article-column-badge:hover { background: #82b204; }
 .lang-pill.is-disabled { color: #767676; cursor: default; } /* 4.5:1 (WCAG AA) */
 
 .article-meta { font-size: 0.86rem; color: var(--gris-600); margin: 6px 0 4px; }
+/* Contador público de visualizaciones (js/vistas.js) */
+.article-views { white-space: nowrap; }
+.article-views__icono { width: 1.05em; height: 1.05em; vertical-align: -0.17em; margin-right: 0.3em; color: var(--verde-oscuro); }
+.article-views__n { color: var(--verde-oscuro); font-weight: 600; }
+.article-views--reserva { visibility: hidden; }
 .article-location { font-size: 0.86rem; color: var(--gris-600); margin-bottom: 20px; }
 
 /* ---------- Imagen principal ---------- */
