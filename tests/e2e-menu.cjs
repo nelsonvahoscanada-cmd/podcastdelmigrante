@@ -42,6 +42,19 @@ async function abrir(browser, opts, ruta) {
       assert.match(await boton.evaluate((a) => a.href), DESTINO, "lleva a la portada del Desafío");
       const estilo = await boton.evaluate((e) => { const s = getComputedStyle(e); return [s.backgroundColor, s.color]; });
       assert.deepEqual(estilo, ["rgb(85, 121, 2)", "rgb(255, 255, 255)"], "verde de la marca con texto blanco (5,1:1)");
+      /* Trofeo discreto (18 px), a la izquierda del texto, en la misma línea, a 6 px, y botón alineado con el menú */
+      const g = await boton.evaluate((a) => {
+        const svg = a.querySelector("svg").getBoundingClientRect();
+        const r = document.createRange(); r.selectNodeContents(a); r.setStartAfter(a.querySelector("svg"));
+        const txt = r.getBoundingClientRect(), btn = a.getBoundingClientRect();
+        const otro = document.querySelector("#navPrimary a:not(.nav-link--destacado)").getBoundingClientRect();
+        return { w: svg.width, h: svg.height, sep: txt.left - svg.right, dy: Math.abs((svg.top + svg.height / 2) - (txt.top + txt.height / 2)), lineas: Math.round(txt.height / parseFloat(getComputedStyle(a).lineHeight || 20)), alto: btn.height, dc: Math.abs((btn.top + btn.height / 2) - (otro.top + otro.height / 2)) };
+      });
+      assert.deepEqual([g.w, g.h], [18, 18], `${ancho} ${ruta}: trofeo de 18 px`);
+      assert.ok(g.sep >= 5.5 && g.sep <= 8.5, `${ancho} ${ruta}: separación ${g.sep}`);
+      assert.ok(g.dy <= 2, `${ancho} ${ruta}: trofeo centrado con el texto (${g.dy})`);
+      assert.ok(g.alto <= 40, `${ancho} ${ruta}: botón compacto (${g.alto})`);
+      assert.ok(g.dc <= 2, `${ancho} ${ruta}: alineado con las demás opciones (${g.dc})`);
       /* Nada se sale ni queda oculto: todos los enlaces y «Más» dentro de la fila */
       const fila = await page.locator(".nav-row__inner").boundingBox();
       for (const sel of ["#navPrimary a", "#navMoreBtn"]) {
@@ -80,6 +93,23 @@ async function abrir(browser, opts, ruta) {
     console.log("ok teclado");
   }
 
+  /* ---------- Hoja de estilos antigua en caché: el trofeo no debe crecer ---------- */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    await ctx.route("**/css/styles.css", async (route) => {
+      const r = await route.fetch();
+      const css = (await r.text()).replace(/\.(mobile-)?nav-(trofeo|link--destacado)[^{]*\{[^}]*\}/g, "");
+      await route.fulfill({ response: r, body: css });
+    });
+    const page = await ctx.newPage();
+    await page.goto(BASE + "/", { waitUntil: "domcontentloaded" });
+    await page.waitForSelector("#navPrimary svg.nav-trofeo");
+    const [w, h] = await page.locator("#navPrimary svg.nav-trofeo").evaluate((e) => { const b = e.getBoundingClientRect(); return [b.width, b.height]; });
+    assert.deepEqual([w, h], [18, 18], "sin la hoja nueva el trofeo sigue en 18 px");
+    await ctx.close();
+    console.log("ok hoja en caché");
+  }
+
   /* ---------- Tableta y celular: menú desplegable con la opción una sola vez ---------- */
   for (const [nombre, dispositivo] of [["tableta", devices["iPad Mini"]], ["celular", devices["iPhone 13"]]]) {
     for (const ruta of ["/", "/canada-en-datos/alberta", "/articulo-hector-rivero-santa-latino-canada"]) {
@@ -91,6 +121,9 @@ async function abrir(browser, opts, ruta) {
       assert.equal(await opcion.count(), 1, `${nombre} ${ruta}: una sola vez`);
       assert.ok(await opcion.evaluate((e) => e.classList.contains("mobile-nav-link--destacado")));
       assert.equal(await opcion.locator("svg.nav-trofeo").count(), 1);
+      const m = await opcion.evaluate((a) => { const v = a.querySelector("svg").getBoundingClientRect(); const r = document.createRange(); r.selectNodeContents(a); r.setStartAfter(a.querySelector("svg")); const t = r.getBoundingClientRect(); return [v.width, v.height, t.left - v.right, Math.abs((v.top + v.height / 2) - (t.top + t.height / 2))]; });
+      assert.deepEqual(m.slice(0, 2), [17, 17], `${nombre}: trofeo de 17 px`);
+      assert.ok(m[2] >= 5.5 && m[2] <= 8.5 && m[3] <= 2, `${nombre}: separación ${m[2]}, centrado ${m[3]}`);
       for (const t of EXISTENTES) assert.equal(await page.locator("#mobileNavList a", { hasText: t }).first().isVisible(), true, `${nombre}: ${t}`);
       const [sw, cw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
       assert.ok(sw <= cw + 1, `${nombre} ${ruta}: sin desplazamiento horizontal`);
