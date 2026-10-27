@@ -5,12 +5,17 @@
     <span class="article-views" data-vistas-id="ART-…" data-publicado="…" hidden>
   Este archivo:
     1. Pide la cifra (GET /api/vistas/ART-…, en caché 60 s) y la muestra:
-       «· 1.248 visualizaciones». Si el servicio no responde, no se muestra
-       nada: la noticia se lee igual.
+       «· 1.248 visualizaciones». Las piezas publicadas ANTES de la activación
+       del contador (hora exacta de vistas_config.inicio, que envía el
+       servidor) muestran en su lugar «· Artículo del Magazine»: su cifra no
+       refleja toda su vida. Si el servicio no responde, no se muestra nada:
+       la noticia se lee igual.
     2. Registra UNA visualización (POST) cuando la pestaña lleva 5 segundos
        visible, como máximo una vez por noticia cada 30 minutos en esta
        pestaña (sessionStorage). El servidor vuelve a comprobar todo
        (functions/_lib/vistas.js): dominio oficial, robots, duplicados.
+       Se registra en TODAS las piezas, también en las anteriores a la
+       activación: el registro real se conserva aunque no se muestre.
   No usa cookies ni almacenamiento persistente, no envía datos personales y nunca envía
   un número: el servidor solo suma 1.
   Ver docs/contador-visualizaciones.md.
@@ -21,11 +26,13 @@
   const ESPERA_MS = 5000;
   const VENTANA_MS = 30 * 60 * 1000;
   const CLAVE = "pdm_vistas";
-  const MESES = ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic."];
-  /* Las piezas publicadas antes de esta fecha mostrarán «desde el [inicio]»
-     (la medición empieza con esta versión): solo sirve para reservar el
-     espacio con la forma correcta. La cifra y la fecha reales vienen del servidor. */
-  const ANTES_DE_LA_MEDICION = Date.parse("2026-10-27T00:00:00-06:00");
+  /* Hora real de activación del contador (vistas_config.inicio en producción:
+     25 oct. 2026, 21:17:04 en Alberta). Solo sirve para reservar el espacio
+     con la forma correcta antes de la respuesta, o si el servidor aún no
+     tiene inicio; manda siempre el «inicio» que envía el servidor. */
+  const ACTIVACION = Date.parse("2026-10-26T03:17:04.778Z");
+  const LIBRO =
+    '<svg class="article-views__icono" width="16" height="16" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg>';
   const OJO =
     '<svg class="article-views__icono" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
 
@@ -39,23 +46,22 @@
     return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
 
-  /* Fecha de inicio de la medición en hora de Alberta: «25 oct. 2026». */
-  function fechaCorta(iso) {
-    const p = {};
-    new Intl.DateTimeFormat("en-CA", { timeZone: "America/Edmonton", year: "numeric", month: "numeric", day: "numeric" })
-      .formatToParts(new Date(iso))
-      .forEach((x) => (p[x.type] = x.value));
-    return `${Number(p.day)} ${MESES[Number(p.month) - 1]} ${p.year}`;
+  const SEP = '<span class="article-views__sep" aria-hidden="true"> · </span>';
+
+  function textoHtml(n) {
+    return SEP + OJO + '<span class="article-views__n">' + miles(n) + "</span> " + (n === 1 ? "visualización" : "visualizaciones");
   }
 
-  function textoHtml(n, desde) {
-    return (
-      '<span class="article-views__sep" aria-hidden="true"> · </span>' +
-      OJO +
-      '<span class="article-views__n">' + miles(n) + "</span> " +
-      (n === 1 ? "visualización" : "visualizaciones") +
-      desde
-    );
+  function magazineHtml() {
+    return SEP + LIBRO + '<span class="article-views__magazine">Artículo del Magazine</span>';
+  }
+
+  /* Publicada antes de la hora exacta de activación (no del día): una pieza
+     del mismo día publicada antes de esa hora también es anterior. */
+  function anterior(inicioIso) {
+    const publicado = Date.parse(hueco.getAttribute("data-publicado") || "");
+    const corte = (inicioIso && Date.parse(inicioIso)) || ACTIVACION;
+    return Boolean(publicado) && publicado < corte;
   }
 
   /* Espacio reservado: se escribe en la misma tarea en que js/article.js
@@ -63,9 +69,7 @@
      misma forma que tendrá la cifra. Al llegar el dato solo cambia el texto:
      la línea no salta ni empuja lo que está debajo, también en celular. */
   function reservar() {
-    const publicado = Date.parse(hueco.getAttribute("data-publicado") || "");
-    const desde = publicado && publicado < ANTES_DE_LA_MEDICION ? " desde el 25 oct. 2026" : "";
-    hueco.innerHTML = textoHtml(10, desde);
+    hueco.innerHTML = anterior(null) ? magazineHtml() : textoHtml(10);
     hueco.classList.add("article-views--reserva");
     hueco.setAttribute("aria-hidden", "true");
     hueco.hidden = false;
@@ -73,11 +77,7 @@
 
   function mostrar(datos) {
     const n = Math.max(0, Math.floor(Number(datos.vistas) || 0));
-    const publicado = Date.parse(hueco.getAttribute("data-publicado") || "");
-    const inicio = datos.inicio ? Date.parse(datos.inicio) : NaN;
-    /* Publicada antes de que empezara la medición: se dice desde cuándo se cuenta. */
-    const desde = inicio && publicado && publicado < inicio ? " desde el " + fechaCorta(datos.inicio) : "";
-    hueco.innerHTML = textoHtml(n, desde);
+    hueco.innerHTML = anterior(datos.inicio) ? magazineHtml() : textoHtml(n);
     hueco.classList.remove("article-views--reserva");
     hueco.removeAttribute("aria-hidden");
     hueco.hidden = false;

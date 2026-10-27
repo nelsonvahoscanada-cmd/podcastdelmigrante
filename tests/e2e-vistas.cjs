@@ -105,10 +105,12 @@ const esperar = (ms) => new Promise((r) => setTimeout(r, ms));
     const contador = page.locator(".article-meta .article-views");
     await contador.waitFor({ state: "visible", timeout: 5000 });
     const meta = await page.locator(".article-meta").innerText();
-    assert.match(meta, /^\d{1,2} de \w+ de 2026 · \d[\d.]* visualizaci(ón|ones)( desde el .+)? · \d+ min de lectura$/, meta);
+    /* Publicada antes de la activación: «Artículo del Magazine», sin cifra */
+    assert.match(meta, /^\d{1,2} de \w+ de 2026 · Artículo del Magazine · \d+ min de lectura$/, meta);
+    assert.equal(await contador.locator(".article-views__n").count(), 0, "no muestra la cifra");
     assert.equal(await contador.locator("svg[aria-hidden='true']").count(), 1, "ícono decorativo oculto para lectores de pantalla");
     assert.equal(await contador.evaluate((e) => getComputedStyle(e).whiteSpace), "nowrap");
-    const color = await contador.locator(".article-views__n").evaluate((e) => getComputedStyle(e).color);
+    const color = await contador.locator("svg").evaluate((e) => getComputedStyle(e).color);
     assert.equal(color, "rgb(85, 121, 2)", "verde oscuro de la marca (contraste 5,1:1)");
     assert.equal(await page.locator("h1").first().innerText().then((t) => t.startsWith("Héctor Rivero")), true);
 
@@ -152,6 +154,57 @@ const esperar = (ms) => new Promise((r) => setTimeout(r, ms));
     if (DB) assert.equal(total("ART-2026-011") - guiaAntes, 1, suma ? "guía: primera visita cuenta" : "mismo navegador en otra pestaña: el servidor no suma");
   }
   console.log("ok guía y deduplicación en el servidor");
+
+  /* ---------- Regla por la hora exacta de activación (vistas_config.inicio) ----------
+     Bomberos se publicó el 25 oct. 2026 a las 08:05 de Alberta (14:05 UTC), el
+     mismo día de la activación real (21:17:04 de Alberta). Se prueba el borde
+     cambiando solo el «inicio» de la respuesta en el navegador; la cifra es la
+     que envía el servidor y la base no se toca. */
+  {
+    const BOMBEROS = "/articulo-alberta-bomberos-forestales-2027";
+    const casos = [
+      ["2026-10-26T03:17:04.778Z", "magazine", "activación real (21:17 del mismo día): anterior"],
+      ["2026-10-25T14:05:00.001Z", "magazine", "publicada 1 ms antes de la activación: anterior"],
+      ["2026-10-25T14:05:00.000Z", "cifra", "publicada en el instante de la activación: nueva"],
+      ["2026-10-25T06:00:00.000Z", "cifra", "activación a medianoche del mismo día: nueva"],
+    ];
+    for (const perfil of ["computador", "celular"]) {
+      for (const [inicio, espera, nombre] of casos) {
+        let real = null;
+        /* Navegador automatizado (webdriver): esta parte no registra visitas. */
+        const ctx = await browser.newContext({ ...PERFILES[perfil], locale: "es-CA", timezoneId: "America/Edmonton" });
+        await ctx.route("**/api/vistas/**", async (r) => {
+          if (r.request().method() !== "GET") return r.continue();
+          const resp = await r.fetch();
+          const d = await resp.json();
+          real = d.vistas;
+          await r.fulfill({ response: resp, json: { ...d, inicio } });
+        });
+        const page = await ctx.newPage();
+        await page.goto(BASE + BOMBEROS, { waitUntil: "networkidle" });
+        const c = page.locator(".article-meta .article-views");
+        await c.waitFor({ state: "visible", timeout: 5000 });
+        const meta = await page.locator(".article-meta").innerText();
+        if (espera === "magazine") {
+          assert.match(meta, / · Artículo del Magazine · /, `${perfil}: ${nombre}`);
+          assert.equal(await c.locator(".article-views__n").count(), 0);
+        } else {
+          assert.equal(await c.locator(".article-views__n").innerText(), String(real), `${perfil}: ${nombre}: cifra real del servidor`);
+          assert.match(meta, new RegExp(` · ${real} visualizaci(ón|ones) · `), `${perfil}: ${nombre}`);
+          assert.doesNotMatch(meta, /desde el|Magazine/);
+        }
+        const [sw, cw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+        assert.ok(sw <= cw + 1, `${perfil}: sin desplazamiento horizontal`);
+        if (SHOTS && inicio.endsWith("06:00:00.000Z")) {
+          const box = await page.locator(".article-eyebrow-row").first().boundingBox();
+          const vp = page.viewportSize();
+          await page.screenshot({ path: path.join(SHOTS, `contador-nueva-${perfil}.png`), clip: { x: 0, y: Math.max(0, box.y - 16), width: vp.width, height: Math.min(vp.height, perfil === "computador" ? 480 : 820) } });
+        }
+        await ctx.close();
+      }
+    }
+  }
+  console.log("ok regla por hora exacta (mismo día)");
 
   /* ---------- Pestaña oculta: no cuenta ---------- */
   {

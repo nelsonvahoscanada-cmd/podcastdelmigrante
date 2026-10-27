@@ -5,7 +5,8 @@ Documento técnico interno: `docs/` no se publica en el sitio y responde 404.
 
 | Dato | Valor |
 |---|---|
-| Estado | Implementado en el PR del contador. **Inicio real de la medición: se fija solo con el primer conteo en producción** (`vistas_config.inicio`) y se anota aquí después de la activación |
+| Estado | En producción. **Inicio real de la medición** (`vistas_config.inicio`): `2026-10-26T03:17:04.778Z` = **25 oct. 2026, 21:17:04 en Alberta** (leído del GET público el 27 oct. 2026) |
+| Presentación | Piezas publicadas **antes** de ese instante: «Artículo del Magazine» con ícono de periódico, sin cifra. Publicadas **desde** ese instante: cifra real de D1 |
 | Cobertura | `contentType` «Noticia» o «Guía», publicadas (`draft` no verdadero y `demo` distinto de `true`). Hoy: **18 noticias + 8 guías = 26** |
 | Fuera del contador | Entrevistas que no son Noticia, columnas, historias, miniwebs, portada |
 | Infraestructura | Pages Function `/api/vistas/*` + D1 **independiente** `podcastdelmigrante-vistas` |
@@ -22,7 +23,8 @@ Página de noticia o guía (articulo-<slug>.html)
   js/vistas.js   → (solo en podcastdelmigrante.com)
      1. reserva el espacio, invisible, en la misma tarea en que se dibuja la noticia (sin saltos);
      2. GET  /api/vistas/ART-…  → { id, vistas, inicio }   (caché 60 s en el borde, 30 s en el navegador);
-     3. muestra «· 👁 1.248 visualizaciones [desde el 25 oct. 2026]»;
+     3. muestra «· 👁 1.248 visualizaciones» o, si la pieza se publicó antes de la
+        activación, «· 📰 Artículo del Magazine» (sin cifra);
      4. tras 5 s con la pestaña visible: POST /api/vistas/ART-…  { "id": "ART-…" }
         (una vez por noticia cada 30 min en esa pestaña: sessionStorage «pdm_vistas»).
           ↓
@@ -85,7 +87,9 @@ Se suma **1** solo si se cumplen **todas** estas condiciones:
 
 **Presentación:**
 - miles con punto («1.248»); singular «1 visualización»;
-- las piezas publicadas antes del `inicio` muestran «… desde el [fecha de inicio]»;
+- regla editorial: las piezas publicadas antes de la activación muestran **«Artículo del Magazine»** con un ícono discreto de periódico, en lugar de la cifra (su cifra no reflejaría toda su vida). Las publicadas desde la activación muestran sus visualizaciones reales;
+- se compara la fecha y **hora** original de publicación (`publishedAt`) con la **hora exacta** de `vistas_config.inicio` que envía el servidor: una pieza del mismo día publicada antes de esa hora es anterior (p. ej., bomberos forestales, 25 oct. 2026 08:05 < 21:17:04). Publicada en el mismo instante o después: nueva. `js/vistas.js` guarda la misma hora (`ACTIVACION`) solo para reservar el espacio o si el servidor no enviara `inicio`;
+- **el registro no cambia:** todas las piezas, también las anteriores, siguen registrando sus visualizaciones reales en D1; solo cambia lo que se muestra. No se borró ni modificó ningún registro;
 - si el servicio no responde, no se muestra nada y la noticia se lee igual.
 
 ## 4. Limitaciones conocidas (declaradas al público en la Política de privacidad)
@@ -142,7 +146,7 @@ Todo esto entra en el plan gratuito de Cloudflare (D1 y Pages Functions). No act
 1. `https://podcastdelmigrante.com/api/vistas/ART-2026-029` responde 200 con `{"id":"ART-2026-029","vistas":N,"inicio":…}`.
 2. Abrir una noticia en el celular, esperar más de 5 segundos y, en la consola de D1, ejecutar `SELECT * FROM vistas_total;`: debe sumar 1.
 3. En una vista previa (`*.pages.dev`), la noticia no muestra contador y no aparecen filas nuevas.
-4. Anotar en este documento la fecha real de inicio (`SELECT valor FROM vistas_config WHERE clave = 'inicio';`).
+4. Anotar en este documento la fecha real de inicio (`SELECT valor FROM vistas_config WHERE clave = 'inicio';`). Hecho: `2026-10-26T03:17:04.778Z` (tabla del inicio).
 
 ## 8. Respaldo y recuperación
 
@@ -173,7 +177,7 @@ Las estadísticas de las miniwebs (`/api/events`, `podcastdelmigrante-analytics`
 
 | Prueba | Qué comprueba |
 |---|---|
-| `tests/vistas.test.mjs` (14 pruebas, D1 simulada con SQLite) | Cobertura exacta 18 + 8; regla igual en generador y cliente; el HTML de las redes sin cambios; conteo y fecha de inicio; 30 minutos; vistas previas, dominios e identificadores inexistentes; robots y navegadores de apps; manipulación (origen, tipo, tamaño, cuerpo, número enviado, métodos); límite de frecuencia; privacidad (sin IP ni navegador guardados, vencimiento de huellas); día en hora de Alberta; fallos de D1 y de configuración; las rutas de la Function |
+| `tests/vistas.test.mjs` (18 pruebas, D1 simulada con SQLite) | Cobertura exacta 18 + 8; «Artículo del Magazine» en las 26 piezas anteriores a la activación y cifra real en las nuevas, con el borde del mismo día por hora exacta; regla igual en generador y cliente; el HTML de las redes sin cambios; conteo y fecha de inicio; 30 minutos; vistas previas, dominios e identificadores inexistentes; robots y navegadores de apps; manipulación (origen, tipo, tamaño, cuerpo, número enviado, métodos); límite de frecuencia; privacidad (sin IP ni navegador guardados, vencimiento de huellas); día en hora de Alberta; fallos de D1 y de configuración; las rutas de la Function |
 | `tests/e2e-vistas.cjs` (Pages local + D1 local) | Computador, tableta y celular: posición y formato; ícono oculto a lectores de pantalla; color; 5 s visibles; recarga sin suma; el servidor sumó 1 (lectura de la base local); sin desplazamientos (CLS posterior al contador < 0,01) ni desborde; guía; deduplicación en el servidor con el navegador borrado; pestaña oculta; Googlebot; `navigator.webdriver`; sin contador en entrevistas, columnas ni portada (y Santa Latino sigue primero); servicio caído o con error 503 |
 | `tests/pages-function.test.mjs` | `_routes.json` incluye `/api/vistas/*` |
 
