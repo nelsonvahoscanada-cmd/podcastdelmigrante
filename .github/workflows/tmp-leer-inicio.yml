@@ -1,0 +1,15 @@
+name: tmp leer inicio del contador
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1]
+permissions:
+  contents: read
+jobs:
+  leer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GET de solo lectura (no registra visitas)
+        run: |
+          for id in ART-2026-029 ART-2026-030 ART-2026-001; do
+            echo "R|$id|$(curl -fsS https://podcastdelmigrante.com/api/vistas/$id)"
+          done
