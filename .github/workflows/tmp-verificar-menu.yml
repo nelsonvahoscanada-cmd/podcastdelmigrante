@@ -1,0 +1,17 @@
+name: tmp verificar menú (producción)
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1]
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm i --no-save playwright@1 && npx playwright install --with-deps chromium
+      - run: for i in $(seq 1 60); do curl -fsS "https://podcastdelmigrante.com/js/data.js?v=$i" | grep -q 'destacado: true' && exit 0; sleep 15; done; exit 1
+      - run: BASE=https://podcastdelmigrante.com node tests/e2e-menu.cjs
