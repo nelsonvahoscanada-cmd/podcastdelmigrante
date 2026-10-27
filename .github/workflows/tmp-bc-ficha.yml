@@ -2,7 +2,7 @@ name: tmp BC ficha provincial
 on:
   push:
     branches: [claude/laughing-albattani-1rvkc1]
-    paths: [".github/workflows/tmp-bc-ficha.yml", "scripts/canada-en-datos/obtener-bc-ficha2.py"]
+    paths: [".github/workflows/tmp-bc-ficha.yml", "scripts/canada-en-datos/obtener-bc-ficha3.py"]
 permissions:
   contents: read
 jobs:
@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install openpyxl
-      - run: python3 scripts/canada-en-datos/obtener-bc-ficha2.py
+      - run: python3 scripts/canada-en-datos/obtener-bc-ficha3.py
