@@ -5,7 +5,7 @@ UA = {"User-Agent": "Mozilla/5.0 (verificacion; podcastdelmigrante.com)"}
 
 
 def get(url, t=120):
-    for i in range(4):
+    for i in range(8):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=t) as r:
                 return r.status, r.read()
@@ -13,7 +13,7 @@ def get(url, t=120):
             return e.code, b""
         except Exception as e:
             err = e
-            time.sleep(5)
+            time.sleep(20)
     raise err
 
 
@@ -26,23 +26,26 @@ print("nuestros municipios:", len(nuestros))
 
 print("\n=== Lista oficial (PDF) frente a nuestros 160 ===")
 from pypdf import PdfReader
-_, b = get("https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/local-governments/finance/local-government-statistics/local_government_legal_name_and_incorporation_dates.pdf")
-t = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(b)).pages)
-t = t.split("CORPORATE NAME - REGIONAL DISTRICTS")[0]
-fila = re.compile(r"^(.+?)\s+(January|February|March|April|May|June|July|August|September|October|November|December) \d{2}, \d{4}\s*$")
-oficiales = [m.group(1).strip() for l in t.split("\n") if (m := fila.match(l.strip()))]
-print("filas en el PDF:", len(oficiales))
-base = lambda s: norm(re.sub(r"\s*(Mountain Resort Municipality|Regional Municipality|Island Municipality|Municipality|, Resort Municipality of|Nation Government District)$", "", s.split(",")[0]))
-pendientes = [norm(n) for n in nuestros]
-sobran = []
-for o in oficiales:
-    k = base(o)
-    if k in pendientes:
-        pendientes.remove(k)
-    else:
-        sobran.append(o)
-print("en la lista oficial y no entre nuestros 160:", sobran)
-print("entre nuestros 160 y no en la lista oficial:", pendientes)
+try:
+    _, b = get("https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/local-governments/finance/local-government-statistics/local_government_legal_name_and_incorporation_dates.pdf")
+    t = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(b)).pages)
+    t = t.split("CORPORATE NAME - REGIONAL DISTRICTS")[0]
+    fila = re.compile(r"^(.+?)\s+(January|February|March|April|May|June|July|August|September|October|November|December) \d{2}, \d{4}\s*$")
+    oficiales = [m.group(1).strip() for l in t.split("\n") if (m := fila.match(l.strip()))]
+    print("filas en el PDF:", len(oficiales))
+    base = lambda s: norm(re.sub(r"\s*(Mountain Resort Municipality|Regional Municipality|Island Municipality|Municipality|, Resort Municipality of|Nation Government District)$", "", s.split(",")[0]))
+    pendientes = [norm(n) for n in nuestros]
+    sobran = []
+    for o in oficiales:
+        k = base(o)
+        if k in pendientes:
+            pendientes.remove(k)
+        else:
+            sobran.append(o)
+    print("en la lista oficial y no entre nuestros 160:", sobran)
+    print("entre nuestros 160 y no en la lista oficial:", pendientes)
+except Exception as e:
+    print("ERROR PDF", type(e).__name__, e)
 
 print("\n=== Vista previa ===")
 P = sys.argv[1]
