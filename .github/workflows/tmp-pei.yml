@@ -1,0 +1,14 @@
+name: tmp PEI
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1]
+    paths: [".github/workflows/tmp-pei.yml", "scripts/canada-en-datos/consultar-pei.py", "scripts/canada-en-datos/obtener-pei*.py"]
+permissions:
+  contents: read
+jobs:
+  pei:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pyshp==2.3.1 openpyxl==3.1.5 pypdf==5.1.0
+      - run: python3 scripts/canada-en-datos/consultar-pei.py
