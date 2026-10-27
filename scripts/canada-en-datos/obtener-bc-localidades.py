@@ -8,11 +8,15 @@ en scripts/canada-en-datos/provincias/british-columbia.mjs, auditables) y
 los imprime comprimidos en el registro entre DATOS-INICIO y DATOS-FIN.
 
 Fuentes:
-  - Statistics Canada, archivos cartográficos de límites del Censo 2021
-    (servicio ArcGIS geo.statcan.gc.ca): subdivisiones censales (CSD) con
-    su tipo oficial, lugares designados (DPL), divisiones censales
-    (distritos regionales) y regiones económicas. Proyección cónica
+  - Límites y perfil del Censo 2021 de Statistics Canada, en la copia
+    oficial del Gobierno de Columbia Británica (BC Geographic Warehouse):
+    subdivisiones censales (CSD) con su tipo oficial, distrito regional,
+    región económica y área metropolitana; perfil general de cada CSD;
+    divisiones censales y regiones económicas. Se proyectan a la cónica
     conforme de Lambert de Statistics Canada (EPSG:3347).
+    (El servicio ArcGIS de geo.statcan.gc.ca devolvía error 500.)
+  - Statistics Canada, Archivo de atributos geográficos 2021 (92-151-X),
+    copia de BC: une cada lugar designado (DPL) con su subdivisión censal.
   - Statistics Canada 98-10-0002-01 (Censo 2021: población por CSD y CD)
     y 98-10-0012-01 (Censo 2021: población de los lugares designados).
   - Gobierno de Columbia Británica, BC Geographical Names (BCGNIS):
@@ -83,65 +87,119 @@ def punto(geo):
     return {"x": round(p.x), "y": round(p.y), "lon": round(lon, 5), "lat": round(lat, 5)}
 
 
-# ------------------------------------------------------------ Límites del Censo 2021
-paso("Subdivisiones censales (CSD), Censo 2021")
-csd = capa(9, offset=100)
+# ------------------------------------------------------------ Gobierno de BC (WFS)
+def wfs(capa_, filtro=None, props=None, srs="EPSG:4326"):
+    feats, desde = [], 0
+    while True:
+        q = {"service": "WFS", "version": "2.0.0", "request": "GetFeature", "typeName": capa_, "outputFormat": "application/json", "srsName": srs, "count": 5000, "startIndex": desde, "sortBy": "OBJECTID"}
+        if filtro:
+            q["CQL_FILTER"] = filtro
+        if props:
+            q["propertyName"] = props
+        d = json.loads(get(WFS + "?" + urllib.parse.urlencode(q), 900))
+        lote = d.get("features", [])
+        feats += lote
+        if len(lote) < 5000:
+            break
+        desde += 5000
+    return feats
+
+
+def a_metros(geo):
+    """GeoJSON en grados → geometría shapely en EPSG:3347 (Lambert de Statistics Canada)."""
+    from shapely.ops import transform
+    return transform(lambda x, y, z=None: a_lambert.transform(x, y), shape(geo))
+
+
+def punto(g):
+    p = g.representative_point()
+    lon, lat = a_lonlat.transform(p.x, p.y)
+    return {"x": round(p.x), "y": round(p.y), "lon": round(lon, 5), "lat": round(lat, 5)}
+
+
+# ------------------------------------------------------------ Límites del Censo 2021 (copia del Gobierno de BC)
+paso("Subdivisiones censales (CSD), Censo 2021 — CEN_CENSUS_SUBDIVSIONS_SVW")
+csd = wfs("WHSE_HUMAN_CULTURAL_ECONOMIC.CEN_CENSUS_SUBDIVSIONS_SVW")
 print("CSD:", len(csd), "campos:", list(csd[0]["properties"]))
-tipos = {}
-for f in csd:
-    t = f["properties"].get("CSDTYPE")
-    tipos[t] = tipos.get(t, 0) + 1
-print("tipos:", sorted(tipos.items(), key=lambda x: -x[1]))
-geom_csd = [shape(f["geometry"]) for f in csd]
+geom_csd = [a_metros(f["geometry"]) for f in csd]
 arbol = STRtree(geom_csd)
-salida["csd"] = [{**{k: v for k, v in f["properties"].items() if k in ("CSDUID", "CSDNAME", "CSDTYPE", "CDUID", "DGUID", "LANDAREA")}, **punto(f["geometry"])} for f in csd]
-salida["fuentes"]["limites"] = GEO
+CAMPOS_CSD = ("CENSUS_YEAR", "CENSUS_SUBDIVISION_ID", "CENSUS_SUBDIVISION_NAME", "CENSUS_SUBDIVISION_TYPE_CODE", "CENSUS_SUBDIVISION_TYPE_DESC", "CENSUS_DIVISION_ID", "CENSUS_DIVISION_NAME", "CENSUS_DIVISION_TYPE_CODE", "CENSUS_METRO_AREA_ID", "CENSUS_METRO_AREA_NAME", "STAT_AREA_CLASS_TYPE_CODE", "ECONOMIC_REGION_ID", "ECONOMIC_REGION_NAME")
+salida["csd"] = [{**{k: f["properties"].get(k) for k in CAMPOS_CSD}, **punto(g)} for f, g in zip(csd, geom_csd)]
+tipos = {}
+for c in salida["csd"]:
+    k = (c["CENSUS_SUBDIVISION_TYPE_CODE"], c["CENSUS_SUBDIVISION_TYPE_DESC"])
+    tipos[k] = tipos.get(k, 0) + 1
+print("tipos:", sorted(tipos.items(), key=lambda x: -x[1]))
+salida["fuentes"]["limites"] = "https://catalogue.data.gov.bc.ca/dataset/current-census-subdivision-boundaries"
 
 
 def csd_de(x, y):
     p = Point(x, y)
     for i in arbol.query(p):
         if geom_csd[i].contains(p):
-            return csd[i]["properties"]["CSDUID"]
-    # Si cae justo en la costa (límites cartográficos), la más cercana
+            return csd[i]["properties"]["CENSUS_SUBDIVISION_ID"]
     i = arbol.nearest(p)
-    return csd[i]["properties"]["CSDUID"]
+    return csd[i]["properties"]["CENSUS_SUBDIVISION_ID"]
 
 
-paso("Lugares designados (DPL), Censo 2021")
-dpl = capa(8, offset=50)
-print("DPL:", len(dpl), "campos:", list(dpl[0]["properties"]) if dpl else None)
-salida["dpl"] = []
-for f in dpl:
-    pt = punto(f["geometry"])
-    salida["dpl"].append({**{k: v for k, v in f["properties"].items() if k in ("DPLUID", "DPLNAME", "DPLTYPE", "DGUID", "LANDAREA")}, **pt, "csd": csd_de(pt["x"], pt["y"])})
-print("ejemplo:", salida["dpl"][:3])
+paso("Perfil del Censo 2021 por CSD — CEN_PROF_CSD_GENERAL_SV")
+prof = wfs("WHSE_HUMAN_CULTURAL_ECONOMIC.CEN_PROF_CSD_GENERAL_SV")
+print("filas:", len(prof), "campos:", list(prof[0]["properties"]))
+salida["perfil"] = {str(f["properties"]["CENSUS_SUBDIVISION_ID"]): {k: v for k, v in f["properties"].items() if k not in ("SE_ANNO_CAD_DATA", "FEATURE_AREA_SQM", "FEATURE_LENGTH_M", "OBJECTID", "CEN_CPCPS_SYSID")} for f in prof if f["properties"].get("CENSUS_YEAR") == 2021}
+print("perfiles 2021:", len(salida["perfil"]))
+salida["fuentes"]["perfil"] = "https://catalogue.data.gov.bc.ca/dataset/census-profiles-for-bc-census-subdivisions-2021-census"
 
-paso("Divisiones censales (distritos regionales)")
-cd = capa(4, offset=800)
-print("CD:", len(cd), [(f["properties"]["CDUID"], f["properties"]["CDNAME"], f["properties"].get("CDTYPE")) for f in cd])
-salida["cd"] = [{"CDUID": f["properties"]["CDUID"], "CDNAME": f["properties"]["CDNAME"], "CDTYPE": f["properties"].get("CDTYPE"), "geo": redondea(f["geometry"])} for f in cd]
-
-paso("Regiones económicas")
-er = capa(2, offset=800)
-print("ER:", [(f["properties"]["ERUID"], f["properties"]["ERNAME"]) for f in er])
-geom_er = [(f["properties"]["ERUID"], shape(f["geometry"])) for f in er]
-salida["er"] = {f["properties"]["ERUID"]: f["properties"]["ERNAME"] for f in er}
-# Región económica de cada división censal: la que contiene su punto representativo
-salida["cd_er"] = {}
+paso("Divisiones censales (distritos regionales) — CEN_CENSUS_DIVISIONS_SVW")
+cd = wfs("WHSE_HUMAN_CULTURAL_ECONOMIC.CEN_CENSUS_DIVISIONS_SVW")
+print("CD:", [(f["properties"]["CENSUS_DIVISION_ID"], f["properties"]["CENSUS_DIVISION_NAME"], f["properties"]["CENSUS_DIVISION_TYPE_CODE"], f["properties"]["CENSUS_YEAR"]) for f in cd])
+cd = [f for f in cd if f["properties"]["CENSUS_YEAR"] == 2021]
+salida["cd"] = []
 for f in cd:
-    p = shape(f["geometry"]).representative_point()
-    salida["cd_er"][f["properties"]["CDUID"]] = next((k for k, g in geom_er if g.buffer(2000).contains(p)), None)
-print("CD → ER:", salida["cd_er"])
-# Comprobación: ¿alguna CSD cae fuera de la región de su CD?
-fuera = []
-for f, c in zip(csd, salida["csd"]):
-    p = Point(c["x"], c["y"])
-    real = next((k for k, g in geom_er if g.contains(p)), None)
-    if real and real != salida["cd_er"].get(c["CDUID"]):
-        fuera.append((c["CSDUID"], c["CSDNAME"], c["CDUID"], real))
-print("CSD cuya región no coincide con la de su CD:", fuera)
-salida["csd_er_excepciones"] = fuera
+    g = a_metros(f["geometry"]).simplify(600, preserve_topology=True)
+    salida["cd"].append({"CDUID": f["properties"]["CENSUS_DIVISION_ID"], "CDNAME": f["properties"]["CENSUS_DIVISION_NAME"], "CDTYPE": f["properties"]["CENSUS_DIVISION_TYPE_CODE"], "geo": redondea(json.loads(json.dumps(g.__geo_interface__)))})
+print("CD 2021:", len(salida["cd"]), "bytes geometría:", len(json.dumps([c["geo"] for c in salida["cd"]])))
+
+paso("Regiones económicas — CEN_ECONOMIC_REGIONS_SVW")
+er = wfs("WHSE_HUMAN_CULTURAL_ECONOMIC.CEN_ECONOMIC_REGIONS_SVW", props="CENSUS_YEAR,ECONOMIC_REGION_ID,ECONOMIC_REGION_NAME,OBJECTID")
+salida["er"] = {f["properties"]["ECONOMIC_REGION_ID"]: f["properties"]["ECONOMIC_REGION_NAME"] for f in er if f["properties"]["CENSUS_YEAR"] == 2021}
+print("ER:", salida["er"])
+
+# ------------------------------------------------------------ Lugares designados (Archivo de atributos geográficos 2021)
+paso("Archivo de atributos geográficos 2021 (92-151-X), BC")
+GAF = "https://catalogue.data.gov.bc.ca/dataset/4ed0c389-43ed-4b00-b1be-7c259f47b6a0/resource/6c8eeb86-bb56-48e8-b734-0d25d6a51a7b/download/2021_92-151_x_bc.csv"
+filas = list(csv.DictReader(io.StringIO(get(GAF, 900).decode("latin-1"))))
+print("bloques:", len(filas), "campos:", list(filas[0]))
+print("ejemplo:", filas[0])
+def campo(f, *nombres):
+    for n in nombres:
+        for k in f:
+            if k.strip().upper() == n:
+                return f[k]
+    return None
+dpls = {}
+for f in filas:
+    uid = campo(f, "DPLDGUID_DPLIDUGD", "DPLUID_DPLIDU", "DPLUID")
+    if not uid or not uid.strip():
+        continue
+    pob = int(campo(f, "DBPOP2021_IDPOP2021") or 0)
+    d = dpls.setdefault(uid.strip(), {"n": campo(f, "DPLNAME_DPLNOM"), "tipo": campo(f, "DPLTYPE_DPLGENRE"), "pob_db": 0, "csd": {}, "sx": 0.0, "sy": 0.0, "k": 0})
+    c = campo(f, "CSDUID_SDRIDU")
+    d["csd"][c] = d["csd"].get(c, 0) + pob + 0.001
+    d["pob_db"] += pob
+    lat, lon = float(campo(f, "DBRPLAT_IDRPLAT") or 0), float(campo(f, "DBRPLONG_IDRPLONG") or 0)
+    if lat:
+        w = pob + 0.01
+        d["sx"] += lon * w
+        d["sy"] += lat * w
+        d["k"] += w
+salida["dpl"] = []
+for uid, d in dpls.items():
+    lon, lat = d["sx"] / d["k"], d["sy"] / d["k"]
+    x, y = a_lambert.transform(lon, lat)
+    principal = max(d["csd"].items(), key=lambda kv: kv[1])[0]
+    salida["dpl"].append({"uid": uid, "n": d["n"], "tipo": d["tipo"], "lat": round(lat, 5), "lon": round(lon, 5), "x": round(x), "y": round(y), "csd": principal, "csds": sorted(d["csd"]), "pob_db": d["pob_db"]})
+print("lugares designados:", len(salida["dpl"]), salida["dpl"][:3])
+salida["fuentes"]["gaf"] = "https://catalogue.data.gov.bc.ca/dataset/census-geographic-attribute-file"
 
 # ------------------------------------------------------------ Censo 2021 (tablas)
 def tabla_statcan(pid):
@@ -176,24 +234,6 @@ with tabla_statcan("98100012") as f:
 print("filas:", len(censo_dpl))
 salida["censo_dpl"] = censo_dpl
 salida["fuentes"]["censo_dpl"] = "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810001201"
-
-# ------------------------------------------------------------ Gobierno de BC (WFS)
-def wfs(capa_, filtro=None, props=None, srs="EPSG:4326"):
-    feats, desde = [], 0
-    while True:
-        q = {"service": "WFS", "version": "2.0.0", "request": "GetFeature", "typeName": capa_, "outputFormat": "application/json", "srsName": srs, "count": 5000, "startIndex": desde, "sortBy": "OBJECTID"}
-        if filtro:
-            q["CQL_FILTER"] = filtro
-        if props:
-            q["propertyName"] = props
-        d = json.loads(get(WFS + "?" + urllib.parse.urlencode(q), 900))
-        lote = d.get("features", [])
-        feats += lote
-        if len(lote) < 5000:
-            break
-        desde += 5000
-    return feats
-
 
 paso("BC Geographical Names (BCGNIS): lugares poblados")
 TIPOS_GN = ["City", "Town", "Community", "Locality", "Urban Community", "Recreational Community", "First Nation Village", "Settlement", "Indian Government District", "Resort Municipality", "Mountain Resort Municipality", "Former Locality"]
@@ -277,7 +317,7 @@ for c in CMHC_CENTROS:
     print(c, "primeras columnas:", [f[0] for f in hojas.get("Table 1.1.2", [])][:60])
 
 # ------------------------------------------------------------ Hospitales y escuelas
-paso("Hospitales (Hospitals in BC)")
+paso("Hospitales (Hospitals in BC, CSV de HealthLink BC)")
 try:
     d = json.loads(get("https://catalogue.data.gov.bc.ca/api/3/action/package_show?id=hospitals-in-bc", 120))["result"]
     print(d["title"], "| modificado:", d.get("metadata_modified"))
@@ -291,14 +331,33 @@ try:
 except Exception as e:
     print("ERROR hospitales", e)
 
+paso("Hospitales — GSR_HOSPITALS_SVW (con coordenadas)")
+try:
+    fs = wfs("WHSE_IMAGERY_AND_BASE_MAPS.GSR_HOSPITALS_SVW")
+    salida["hospitales_wfs"] = [{k: f["properties"].get(k) for k in ("OCCUPANT_NAME", "LOCALITY", "PHYSICAL_ADDRESS", "LATITUDE", "LONGITUDE", "HOURS", "WEBSITE_URL", "DESCRIPTION", "DATE_UPDATED")} for f in fs]
+    for h in salida["hospitales_wfs"]:
+        x, y = a_lambert.transform(h["LONGITUDE"], h["LATITUDE"])
+        h["csd"] = csd_de(x, y)
+    print("hospitales:", len(fs))
+except Exception as e:
+    print("ERROR hospitales WFS", e)
+
 paso("Escuelas K-12 (GSR_SCHOOLS_K_TO_12_SVW)")
 try:
     fs = wfs("WHSE_IMAGERY_AND_BASE_MAPS.GSR_SCHOOLS_K_TO_12_SVW")
     print("escuelas:", len(fs), "campos:", list(fs[0]["properties"]))
     print("   ejemplo:", fs[0]["properties"])
-    utiles = [k for k in fs[0]["properties"] if re.search(r"NAME|DISTRICT|LOCALITY|CITY|TYPE|CATEGORY|LANGUAGE|FRANCO|GRADE|WEBSITE|URL|AUTHORITY", k, re.I)]
-    print("   campos guardados:", utiles)
-    salida["escuelas"] = {"campos": utiles, "filas": [[f["properties"].get(k) for k in utiles] + [round(f["geometry"]["coordinates"][1], 5) if f.get("geometry") else None, round(f["geometry"]["coordinates"][0], 5) if f.get("geometry") else None] for f in fs]}
+    utiles = ["OCCUPANT_NAME", "LOCALITY", "DISTRICT_NAME", "DISTRICT_NUMBER", "SCHOOL_CATEGORY", "SCHOOL_EDUCATION_LEVEL", "FACILITY_TYPE", "FRANCOPHONE_PROGRAM_OFFERED", "EARLY_FRENCH_IMMERSION_OFFERED", "LATE_FRENCH_IMMERSION_OFFERED", "DATE_UPDATED"]
+    filas_e = []
+    for f in fs:
+        p = f["properties"]
+        x, y = a_lambert.transform(p["LONGITUDE"], p["LATITUDE"]) if p.get("LATITUDE") else (None, None)
+        filas_e.append([p.get(k) for k in utiles] + [csd_de(x, y) if x else None])
+    salida["escuelas"] = {"campos": utiles + ["csd"], "filas": filas_e}
+    cat = {}
+    for f in filas_e:
+        cat[f[4]] = cat.get(f[4], 0) + 1
+    print("   por categoría:", cat)
 except Exception as e:
     print("ERROR escuelas", e)
 
