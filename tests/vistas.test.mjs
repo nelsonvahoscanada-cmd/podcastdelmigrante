@@ -229,3 +229,67 @@ test("las pruebas locales solo se habilitan en 127.0.0.1 con VISTAS_PRUEBAS_LOCA
   assert.equal((await registrarVista(post(HECTOR, { host: "127.0.0.1" }), env, HECTOR, T0)).status, 200);
   assert.equal((await registrarVista(post(HECTOR, { host: "abc.podcastdelmigrante.pages.dev" }), env, HECTOR, T0)).status, 403);
 });
+
+/* ---------- Presentación: «Artículo del Magazine» antes de la activación ---------- */
+/* Ejecuta js/vistas.js real con un DOM mínimo y devuelve el HTML final del hueco. */
+async function presentar(publicado, respuesta) {
+  const hueco = {
+    attrs: { "data-vistas-id": respuesta.id, "data-publicado": publicado },
+    innerHTML: "",
+    hidden: true,
+    classList: { add() {}, remove() {} },
+    getAttribute(k) { return this.attrs[k] ?? null; },
+    setAttribute() {},
+    removeAttribute() {},
+  };
+  const sandbox = {
+    window: { location: { hostname: "podcastdelmigrante.com" }, fetch: true, sessionStorage: { getItem: () => null, setItem() {} } },
+    document: { readyState: "complete", visibilityState: "visible", querySelector: () => hueco, addEventListener() {} },
+    navigator: { webdriver: true },
+    fetch: () => Promise.resolve({ ok: true, json: () => Promise.resolve(respuesta) }),
+    setTimeout: () => 0,
+    clearTimeout() {},
+  };
+  vm.runInNewContext(read("js/vistas.js"), sandbox);
+  await new Promise((r) => setImmediate(r));
+  return hueco.innerHTML;
+}
+const INICIO_REAL = "2026-10-26T03:17:04.778Z"; /* vistas_config.inicio en producción */
+
+test("las 26 piezas medidas, publicadas antes de la activación, muestran «Artículo del Magazine» y no la cifra", async () => {
+  const medidas = ARTS.filter((a) => ARTICULOS_CON_CONTADOR.has(a.id));
+  assert.equal(medidas.length, 26);
+  for (const a of medidas) {
+    assert.ok(Date.parse(a.publishedAt) < Date.parse(INICIO_REAL), `${a.id} anterior a la activación`);
+    const html = await presentar(a.publishedAt, { id: a.id, vistas: 7, inicio: INICIO_REAL });
+    assert.match(html, /Artículo del Magazine/, a.id);
+    assert.doesNotMatch(html, /visualizaci|article-views__n/, `${a.id}: sin cifra`);
+  }
+});
+
+test("mismo día: decide la hora exacta de activación, no la fecha", async () => {
+  const bomberos = ARTS.find((a) => a.id === "ART-2026-030");
+  assert.equal(bomberos.publishedAt, "2026-10-25T08:05:00-06:00");
+  const con = (inicio) => presentar(bomberos.publishedAt, { id: bomberos.id, vistas: 1248, inicio });
+  assert.match(await con(INICIO_REAL), /Artículo del Magazine/, "activación a las 21:17 de ese día: anterior");
+  assert.match(await con("2026-10-25T14:05:00.001Z"), /Artículo del Magazine/, "1 ms antes: anterior");
+  const nueva = await con("2026-10-25T14:05:00.000Z");
+  assert.match(nueva, /<span class="article-views__n">1\.248<\/span> visualizaciones/, "en el instante de la activación: cifra real");
+  assert.doesNotMatch(nueva, /Magazine|desde el/);
+});
+
+test("una pieza publicada después de la activación muestra su cifra real tal como llega del servidor", async () => {
+  const despues = "2026-10-28T09:00:00-06:00";
+  assert.match(await presentar(despues, { id: "ART-2026-031", vistas: 0, inicio: INICIO_REAL }), /article-views__n">0<\/span> visualizaciones/);
+  assert.match(await presentar(despues, { id: "ART-2026-031", vistas: 1, inicio: INICIO_REAL }), /article-views__n">1<\/span> visualización$/);
+  /* Sin inicio en el servidor se usa la hora real de activación anotada en el cliente */
+  assert.match(read("js/vistas.js"), /const ACTIVACION = Date\.parse\("2026-10-26T03:17:04\.778Z"\);/);
+  assert.match(await presentar("2026-10-25T08:05:00-06:00", { id: "ART-2026-030", vistas: 3, inicio: null }), /Artículo del Magazine/);
+});
+
+test("el registro sigue en todas las piezas: la presentación no cambia el servidor ni el envío", () => {
+  const cliente = read("js/vistas.js");
+  /* mostrar() siempre sigue con esperarVisible(), también en piezas anteriores */
+  assert.match(cliente, /mostrar\(datos\);\n\s+esperarVisible\(\);/);
+  assert.doesNotMatch(read("functions/_lib/vistas.js"), /Magazine/);
+});
