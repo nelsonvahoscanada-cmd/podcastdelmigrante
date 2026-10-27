@@ -301,6 +301,33 @@
 .cd-loc__mas[hidden] { display: none; }
 .cd-loc__mapa { max-width: 440px; }
 
+/* El botón del panel admite dos líneas: «Ver la ficha completa de Columbia Británica» no cabe en una en celular */
+.cd-panel__cta .btn { white-space: normal; text-align: center; max-width: 100%; }
+
+/* Directorio extendido (provincias que lo activan: Columbia Británica) */
+.cd-loc__filtros--extendido { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cd-loc__filtros--extendido .cd-loc__campo--buscar { grid-column: 1 / -1; }
+.cd-loc__campo--accion { justify-content: flex-end; }
+.cd-loc__restablecer { min-height: 44px; width: 100%; }
+.cd-loc__zoom { position: absolute; top: 8px; right: 8px; display: flex; flex-direction: column; gap: 4px; }
+.cd-loc__zoom button {
+  width: 40px; height: 40px; font: inherit; font-size: 1.15rem; font-weight: 700; line-height: 1; cursor: pointer;
+  border: 1px solid #b9b8b0; border-radius: var(--radius-s); background: #fff; color: var(--verde-oscuro);
+}
+.cd-loc__zoom button:hover { border-color: var(--verde-oscuro); }
+.cd-loc__zoom button:focus-visible, .cd-loc__grupo:focus-visible { outline: 3px solid var(--negro); outline-offset: 2px; }
+.cd-loc__svg--zoom path, .cd-loc__svg--zoom circle { vector-effect: non-scaling-stroke; }
+.cd-loc__grupo { cursor: pointer; }
+.cd-loc__grupo circle { fill: var(--verde); fill-opacity: 0.88; stroke: #fff; stroke-width: 1.5; }
+.cd-loc__grupo text { fill: #fff; font-weight: 700; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.cd-loc__grupo:hover circle { fill: var(--verde-oscuro); }
+@media (max-width: 900px) {
+  .cd-loc__filtros--extendido { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .cd-loc__filtros--extendido { grid-template-columns: 1fr; }
+}
+
 /* =========================================================
    Compartir esta guía (fichas provinciales y de localidades)
 ========================================================= */

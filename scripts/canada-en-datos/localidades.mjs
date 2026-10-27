@@ -156,6 +156,8 @@ const conNombre = (r, visible) => (visible(r) === r.n ? r : { ...r, n: visible(r
 export function datosNavegador(P, L) {
   const indice = new Map(L.items.map((r, i) => [r, i]));
   const visible = nombresVisibles(P, L);
+  /* Directorio extendido (opcional por provincia): variantes del nombre para la búsqueda */
+  const ext = !!P.directorio.extendido;
   const filas = L.items.map((r) => [
     visible(r),
     r.t,
@@ -167,14 +169,15 @@ export function datosNavegador(P, L) {
     r.s || "",
     r.ficha ? 1 : 0,
     r.sup || "",
+    ...(ext ? [(r.alias || []).join("|")] : []),
   ]);
   const datos = {
-    provincia: { slug: P.slug, nombre: P.nombre, poblacion: P.directorio.poblacion, regiones: P.directorio.regiones, subregion: P.directorio.subregion || null },
+    provincia: { slug: P.slug, nombre: P.nombre, poblacion: P.directorio.poblacion, regiones: P.directorio.regiones, subregion: P.directorio.subregion || null, ...(ext ? { extendido: true } : {}) },
     tipos: Object.fromEntries(Object.entries(P.TIPOS).map(([k, v]) => [k, [v.es, v.en, v.grupo]])),
     grupos: P.GRUPOS,
     regiones: Object.fromEntries(Object.entries(L.regiones).map(([k, v]) => [k, nombreRegion(v)])),
     mapa: L.mapa,
-    campos: ["nombre", "tipo", "region", "x", "y", "municipio", "poblacion", "url", "ficha", "subregion"],
+    campos: ["nombre", "tipo", "region", "x", "y", "municipio", "poblacion", "url", "ficha", "subregion", ...(ext ? ["alias"] : [])],
     localidades: filas,
   };
   return `/* Generado por scripts/build-canada-datos.mjs a partir de fuentes oficiales (${P.directorio.origen}). No editar a mano. */
@@ -223,6 +226,44 @@ export function seccionDirectorio(P, L, esc) {
     .map(([k, v]) => `<option value="${k}">${esc(nombreRegion(v))}</option>`)
     .join("\n            ");
   const D = P.directorio;
+  /* Directorio extendido (opcional por provincia): distrito, tamaño de población, orden y restablecer */
+  const subregiones = [...new Set(L.items.map((r) => r.sup).filter(Boolean))].sort((a, b) => a.localeCompare(b, "es"));
+  const extra = D.extendido
+    ? `
+          <div class="cd-loc__campo">
+            <label for="cdLocSub">${esc(D.subregion || "Subregión")}</label>
+            <select id="cdLocSub" disabled>
+              <option value="">Todos</option>
+              ${subregiones.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join("\n              ")}
+            </select>
+          </div>
+          <div class="cd-loc__campo">
+            <label for="cdLocPob">Población (${esc(D.poblacion)})</label>
+            <select id="cdLocPob" disabled>
+              <option value="">Cualquier tamaño</option>
+              <option value="100000-">100,000 o más</option>
+              <option value="10000-99999">10,000 a 99,999</option>
+              <option value="1000-9999">1,000 a 9,999</option>
+              <option value="1-999">1 a 999</option>
+              <option value="0-0">0 habitantes</option>
+              <option value="con">Con dato de población</option>
+              <option value="sin">Sin dato de población</option>
+            </select>
+          </div>
+          <div class="cd-loc__campo">
+            <label for="cdLocOrden">Ordenar</label>
+            <select id="cdLocOrden" disabled>
+              <option value="">Recomendado</option>
+              <option value="az">Nombre (A–Z)</option>
+              <option value="za">Nombre (Z–A)</option>
+              <option value="pob-">Mayor población</option>
+              <option value="pob+">Menor población</option>
+            </select>
+          </div>
+          <div class="cd-loc__campo cd-loc__campo--accion">
+            <button type="button" class="btn cd-loc__restablecer" id="cdLocReset" disabled>Restablecer filtros</button>
+          </div>`
+    : "";
   return `<section class="cd-section cd-loc" id="localidades" aria-labelledby="localidades-titulo">
       <h2 id="localidades-titulo">Explora las ciudades y pueblos de ${esc(P.nombre)}</h2>
       ${D.intro(L, esc)}
@@ -242,7 +283,7 @@ export function seccionDirectorio(P, L, esc) {
       </div>
 
       <div class="cd-loc__app" id="cdLoc" data-src="/js/${P.slug}-localidades.js" data-prov="${P.slug}">
-        <form class="cd-loc__filtros" role="search" aria-label="Buscar localidades de ${esc(P.nombre)}" onsubmit="return false">
+        <form class="cd-loc__filtros${D.extendido ? " cd-loc__filtros--extendido" : ""}" role="search" aria-label="Buscar localidades de ${esc(P.nombre)}" onsubmit="return false">
           <div class="cd-loc__campo cd-loc__campo--buscar">
             <label for="cdLocBuscar">Buscar por nombre</label>
             <input type="search" id="cdLocBuscar" autocomplete="off" placeholder="Por ejemplo: ${esc(D.ejemplo)}" disabled>
@@ -260,7 +301,7 @@ export function seccionDirectorio(P, L, esc) {
               <option value="">Todas las regiones</option>
             ${opcionesRegion}
             </select>
-          </div>
+          </div>${extra}
         </form>
         <p class="cd-loc__estado" id="cdLocEstado" role="status" aria-live="polite">Cargando el directorio…</p>
         <div class="cd-loc__cuerpo">
