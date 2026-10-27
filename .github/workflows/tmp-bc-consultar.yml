@@ -1,0 +1,13 @@
+name: tmp BC consultar fuentes
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1]
+    paths: [".github/workflows/tmp-bc-consultar.yml", "scripts/canada-en-datos/consultar-bc.py"]
+permissions:
+  contents: read
+jobs:
+  consultar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/canada-en-datos/consultar-bc.py
