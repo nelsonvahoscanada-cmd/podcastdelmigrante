@@ -53,7 +53,7 @@ test("identidad del portal: cabecera, menú, pie, estilos y sin fondos negros pr
   }
   const css = read("css/desafio.css");
   assert.doesNotMatch(css, /background(-color)?:\s*(#0b0b0b|#000\b|#000000|black|var\(--negro\)|var\(--gris-950\))/i);
-  assert.match(read("js/data.js"), /\{ label: "Desafío 100 Empresas", href: "desafio-100-empresas\/" \}/);
+  assert.match(read("js/data.js"), /\{ label: "Desafío 100 Empresas", href: "desafio-100-empresas\/", destacado: true \}/);
 });
 
 test("contenido editorial: lema, sin plazos, sin patrocinio vigente y libro «Próximamente»", () => {

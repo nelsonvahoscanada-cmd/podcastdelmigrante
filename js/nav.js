@@ -32,6 +32,11 @@
       .toUpperCase();
   }
 
+  /* Ícono de trofeo (decorativo) para las opciones destacadas del menú */
+  const TROFEO =
+    '<svg class="nav-trofeo" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a4 4 0 0 1-4 4M7 5H4v2a4 4 0 0 0 4 4"/></svg>';
+  const etiqueta = (item) => (item.destacado ? TROFEO : "") + item.label;
+
   function buildNav() {
     const visible = (item) => !item.pending; /* secciones sin página propia: ocultas */
     /* La página 404 puede mostrarse en cualquier ruta (p. ej. /a/b/c): allí
@@ -39,7 +44,7 @@
     const link = (href) => (window.PDM_SITE_ROOT_LINKS ? new URL(href, location.origin + "/").href : href);
     const primary = document.getElementById("navPrimary");
     NAV_PRIMARY.filter(visible).forEach((item) => {
-      const a = el("a", "nav-link", item.label);
+      const a = el("a", item.destacado ? "nav-link nav-link--destacado" : "nav-link", etiqueta(item));
       a.href = link(item.href);
       primary.appendChild(a);
     });
@@ -53,7 +58,7 @@
 
     const mobileList = document.getElementById("mobileNavList");
     [...NAV_PRIMARY, ...NAV_MORE].filter(visible).forEach((item) => {
-      const a = el("a", "mobile-nav-link", item.label);
+      const a = el("a", item.destacado ? "mobile-nav-link mobile-nav-link--destacado" : "mobile-nav-link", etiqueta(item));
       a.href = link(item.href);
       a.addEventListener("click", closeMobileMenu);
       mobileList.appendChild(a);

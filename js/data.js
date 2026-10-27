@@ -35,7 +35,9 @@ const BREAKING = [
 
 /* pending: true → la sección aún no tiene página propia; el menú la oculta
    hasta que exista (no se elimina). Al publicarla, poner su href y quitar
-   pending. */
+   pending.
+   destacado: true → botón verde con ícono de trofeo (js/nav.js), en el
+   menú de computador y en el móvil. */
 const NAV_PRIMARY = [
   { label: "Inicio", href: "index.html#inicio" },
   { label: "Canadá", href: "canada-en-datos/" },
@@ -45,6 +47,7 @@ const NAV_PRIMARY = [
   { label: "Historias", href: "index.html#historias" },
   { label: "Videos", href: "index.html#video" },
   { label: "Directorio Empresarial", href: "index.html#quien-puede-ayudarte" },
+  { label: "Desafío 100 Empresas", href: "desafio-100-empresas/", destacado: true },
 ];
 
 const NAV_MORE = [
@@ -55,7 +58,6 @@ const NAV_MORE = [
   { label: "Cultura", href: "index.html#", pending: true },
   { label: "Opinión", href: "index.html#", pending: true },
   { label: "Entrevistas", href: "index.html#video" },
-  { label: "Desafío 100 Empresas", href: "desafio-100-empresas/" },
   { label: "Podcast del Migrante", href: "index.html#video" },
   { label: "Ediciones", href: "index.html#edicion" },
   { label: "Archivo", href: "index.html#", pending: true },
