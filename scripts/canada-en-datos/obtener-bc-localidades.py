@@ -88,10 +88,10 @@ def punto(geo):
 
 
 # ------------------------------------------------------------ Gobierno de BC (WFS)
-def wfs(capa_, filtro=None, props=None, srs="EPSG:4326"):
+def wfs(capa_, filtro=None, props=None, srs="EPSG:4326", orden="OBJECTID"):
     feats, desde = [], 0
     while True:
-        q = {"service": "WFS", "version": "2.0.0", "request": "GetFeature", "typeName": capa_, "outputFormat": "application/json", "srsName": srs, "count": 5000, "startIndex": desde, "sortBy": "OBJECTID"}
+        q = {"service": "WFS", "version": "2.0.0", "request": "GetFeature", "typeName": capa_, "outputFormat": "application/json", "srsName": srs, "count": 5000, "startIndex": desde, "sortBy": orden}
         if filtro:
             q["CQL_FILTER"] = filtro
         if props:
@@ -178,15 +178,16 @@ def campo(f, *nombres):
     return None
 dpls = {}
 for f in filas:
-    uid = campo(f, "DPLDGUID_DPLIDUGD", "DPLUID_DPLIDU", "DPLUID")
+    uid = campo(f, "DPLDGUID_LDIDUGD")
     if not uid or not uid.strip():
         continue
     pob = int(campo(f, "DBPOP2021_IDPOP2021") or 0)
-    d = dpls.setdefault(uid.strip(), {"n": campo(f, "DPLNAME_DPLNOM"), "tipo": campo(f, "DPLTYPE_DPLGENRE"), "pob_db": 0, "csd": {}, "sx": 0.0, "sy": 0.0, "k": 0})
+    d = dpls.setdefault(uid.strip(), {"n": campo(f, "DPLNAME_LDNOM"), "tipo": campo(f, "DPLTYPE_LDGENRE"), "pob_db": 0, "csd": {}, "sx": 0.0, "sy": 0.0, "k": 0})
     c = campo(f, "CSDUID_SDRIDU")
     d["csd"][c] = d["csd"].get(c, 0) + pob + 0.001
     d["pob_db"] += pob
-    lat, lon = float(campo(f, "DBRPLAT_IDRPLAT") or 0), float(campo(f, "DBRPLONG_IDRPLONG") or 0)
+    # El archivo no trae coordenadas de bloque: punto representativo de su área de difusión (DA)
+    lat, lon = float(campo(f, "DARPLAT_ADLAT") or 0), float(campo(f, "DARPLONG_ADLONG") or 0)
     if lat:
         w = pob + 0.01
         d["sx"] += lon * w
@@ -333,7 +334,7 @@ except Exception as e:
 
 paso("Hospitales — GSR_HOSPITALS_SVW (con coordenadas)")
 try:
-    fs = wfs("WHSE_IMAGERY_AND_BASE_MAPS.GSR_HOSPITALS_SVW")
+    fs = wfs("WHSE_IMAGERY_AND_BASE_MAPS.GSR_HOSPITALS_SVW", orden="SEQUENCE_ID")
     salida["hospitales_wfs"] = [{k: f["properties"].get(k) for k in ("OCCUPANT_NAME", "LOCALITY", "PHYSICAL_ADDRESS", "LATITUDE", "LONGITUDE", "HOURS", "WEBSITE_URL", "DESCRIPTION", "DATE_UPDATED")} for f in fs]
     for h in salida["hospitales_wfs"]:
         x, y = a_lambert.transform(h["LONGITUDE"], h["LATITUDE"])
@@ -344,7 +345,7 @@ except Exception as e:
 
 paso("Escuelas K-12 (GSR_SCHOOLS_K_TO_12_SVW)")
 try:
-    fs = wfs("WHSE_IMAGERY_AND_BASE_MAPS.GSR_SCHOOLS_K_TO_12_SVW")
+    fs = wfs("WHSE_IMAGERY_AND_BASE_MAPS.GSR_SCHOOLS_K_TO_12_SVW", orden="SEQUENCE_ID")
     print("escuelas:", len(fs), "campos:", list(fs[0]["properties"]))
     print("   ejemplo:", fs[0]["properties"])
     utiles = ["OCCUPANT_NAME", "LOCALITY", "DISTRICT_NAME", "DISTRICT_NUMBER", "SCHOOL_CATEGORY", "SCHOOL_EDUCATION_LEVEL", "FACILITY_TYPE", "FRANCOPHONE_PROGRAM_OFFERED", "EARLY_FRENCH_IMMERSION_OFFERED", "LATE_FRENCH_IMMERSION_OFFERED", "DATE_UPDATED"]
