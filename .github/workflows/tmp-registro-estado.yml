@@ -1,0 +1,16 @@
+name: tmp estado del registro
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1]
+    paths: [".github/workflows/tmp-registro-estado.yml"]
+permissions:
+  contents: read
+jobs:
+  estado:
+    runs-on: ubuntu-latest
+    steps:
+      - name: formulario (solo lectura, sin enviar nada)
+        run: |
+          c=$(curl -s "https://podcastdelmigrante.com/registro/config")
+          echo "::notice title=CONFIG::$(echo "$c" | sed 's/"turnstileSiteKey":"[^"]*"/"turnstileSiteKey":"(presente)"/')"
+          echo "::notice title=FORM::$(curl -s -o /dev/null -w '%{http_code}' https://podcastdelmigrante.com/registra-tu-empresa)"
