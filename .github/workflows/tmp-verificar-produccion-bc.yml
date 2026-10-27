@@ -16,6 +16,25 @@ jobs:
         with:
           node-version: 20
       - run: npm i --no-save playwright@1 && npx playwright install --with-deps chromium
-      - run: pip install pypdf==5.1.0 && python3 .github/tmp/hora-alberta.py
+      - name: miniwebs, directorio y registro (solo carga, sin enviar nada)
+        run: |
+          NODE_OPTIONS="--require ./.github/tmp/sin-visitas.cjs" node -e '
+          const { chromium, devices } = require("playwright");
+          (async () => {
+            const b = await chromium.launch();
+            for (const [n, o] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              for (const r of ["/perfil-carlos-d-castillo", "/perfil-tomas-velazquez", "/guia", "/quien-puede-ayudarte", "/registra-tu-empresa", "/canada-en-datos/british-columbia", "/canada-en-datos/alberta", "/canada-en-datos/ontario"]) {
+                const c = await b.newContext({ ...o, locale: "es-CA" }); const p = await c.newPage(); const err = [];
+                p.on("pageerror", (e) => err.push(e.message));
+                const resp = await p.goto(process.env.BASE + r, { waitUntil: "load" });
+                await p.waitForTimeout(1500);
+                const h1 = await p.locator("h1").first().innerText().catch(() => "");
+                const sw = await p.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+                console.log("PAG|", n, resp.status(), r, "|", h1.replace(/\s+/g, " ").slice(0, 60), "| errores JS:", err.length, err.slice(0, 2).join(" ; "), "| desborde:", sw);
+                await c.close();
+              }
+            }
+            await b.close();
+          })();'
       - name: contadores después
         run: for id in ART-2026-029 ART-2026-030; do echo "DESPUES|$id|$(curl -fsS "$BASE/api/vistas/$id")"; done
