@@ -28,7 +28,9 @@ test("nav.js dibuja el destacado con trofeo decorativo en el menú de computador
   const nav = read("js/nav.js");
   assert.match(nav, /"nav-link nav-link--destacado"/);
   assert.match(nav, /"mobile-nav-link mobile-nav-link--destacado"/);
-  assert.match(nav, /<svg class="nav-trofeo" aria-hidden="true" focusable="false"/);
+  assert.match(nav, /<svg class="nav-trofeo" width="18" height="18" aria-hidden="true" focusable="false"/, "tamaño propio aunque la hoja llegue tarde o desde caché");
+  assert.match(read("css/styles.css"), /\.nav-trofeo \{ width: 18px; height: 18px;/);
+  assert.match(read("css/styles.css"), /\.mobile-nav-link--destacado \.nav-trofeo \{ width: 17px; height: 17px; \}/);
   const css = read("css/styles.css");
   assert.match(css, /\.nav-link--destacado:focus-visible \{ outline: 2px solid var\(--negro\)/);
   assert.match(css, /\.mobile-nav-link--destacado:focus-visible/);

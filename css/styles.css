@@ -304,7 +304,9 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .nav-link:hover { color: var(--verde-oscuro); border-color: var(--verde); }
 /* Opción destacada del menú (Desafío 100 Empresas): botón verde con trofeo */
-.nav-trofeo { width: 1.05em; height: 1.05em; flex: none; }
+/* Tamaño fijo y discreto; el SVG lleva además width/height=18 por si esta hoja
+   llega tarde o desde caché, para que el trofeo nunca crezca. */
+.nav-trofeo { width: 18px; height: 18px; flex: none; display: block; }
 .nav-link--destacado {
   display: inline-flex;
   align-items: center;
@@ -455,6 +457,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   background: var(--verde-oscuro);
   color: var(--blanco);
 }
+.mobile-nav-link--destacado .nav-trofeo { width: 17px; height: 17px; }
 .mobile-nav-link--destacado:focus-visible { outline: 2px solid var(--negro); outline-offset: 2px; }
 
 /* =========================================================
