@@ -1,0 +1,55 @@
+name: tmp verificar BC en produccion
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1]
+    paths: [".github/workflows/tmp-verificar-produccion-bc.yml"]
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    env:
+      BASE: https://podcastdelmigrante.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm i --no-save playwright@1 && npx playwright install --with-deps chromium
+      - name: esperar el despliegue
+        run: |
+          for i in $(seq 1 60); do
+            curl -fsS "$BASE/canada-en-datos/british-columbia?v=$i" | grep -q "shíshálh" && exit 0
+            sleep 15
+          done
+          exit 1
+      - name: contadores antes
+        run: for id in ART-2026-029 ART-2026-030; do echo "ANTES|$id|$(curl -fsS "$BASE/api/vistas/$id")"; done
+      - name: pruebas de navegador (sin visitas)
+        run: |
+          for t in british-columbia-localidades alberta-localidades ontario-localidades canada-datos noticias menu desafio; do
+            NODE_OPTIONS="--require ./.github/tmp/sin-visitas.cjs" node tests/e2e-$t.cjs > r.txt 2>&1 && echo "R|OK|$t" || echo "R|FALLA|$t"
+            grep -E "búsquedas|opciones|reloj|directorio listo|PETICIONES|^OK|Error|assert" r.txt | head -12
+          done
+      - name: páginas, anclas y rutas
+        run: |
+          node -e '
+          const B = process.env.BASE;
+          (async () => {
+            const js = await (await fetch(B + "/js/british-columbia-localidades.js")).text();
+            const w = {}; new Function("window", js)(w); const L = w.CD_LOCALIDADES.localidades;
+            const pags = [...new Set(L.filter((f) => f[7]).map((f) => f[7]))];
+            const html = {}; const malos = [];
+            for (let i = 0; i < pags.length; i += 10) await Promise.all(pags.slice(i, i + 10).map(async (s) => {
+              const r = await fetch(`${B}/canada-en-datos/british-columbia/${s}`); const h = await r.text(); html[s] = h;
+              if (r.status !== 200 || !h.includes(`<link rel="canonical" href="https://podcastdelmigrante.com/canada-en-datos/british-columbia/${s}">`)) malos.push(`${s} ${r.status}`);
+            }));
+            const sin = L.filter((f) => f[5] !== -1 && !html[L[f[5]][7]].includes(`id="${f[11]}"`));
+            console.log("PAGINAS|", pags.length, "con error:", malos.length, malos.slice(0, 5).join(", "));
+            console.log("ANCLAS|", L.filter((f) => f[5] !== -1).length, "sin ancla:", sin.length);
+            for (const r of ["/", "/canada-en-datos/", "/canada-en-datos/alberta", "/canada-en-datos/ontario", "/sitemap.xml", "/noticias", "/directorio", "/desafio-100-empresas/", "/assets/canada-en-datos/social-british-columbia.jpg"]) console.log("RUTA|", (await fetch(B + r)).status, r);
+            const sm = await (await fetch(B + "/sitemap.xml")).text();
+            console.log("SITEMAP| URL de BC:", (sm.match(/british-columbia/g) || []).length);
+          })();'
+      - name: contadores después
+        run: for id in ART-2026-029 ART-2026-030; do echo "DESPUES|$id|$(curl -fsS "$BASE/api/vistas/$id")"; done
