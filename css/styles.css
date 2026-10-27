@@ -303,6 +303,21 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-bottom: 2px solid transparent;
 }
 .nav-link:hover { color: var(--verde-oscuro); border-color: var(--verde); }
+/* Opción destacada del menú (Desafío 100 Empresas): botón verde con trofeo */
+.nav-trofeo { width: 1.05em; height: 1.05em; flex: none; }
+.nav-link--destacado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+}
+.nav-link--destacado:hover { background: var(--negro); color: var(--blanco); }
+.nav-link--destacado:focus-visible { outline: 2px solid var(--negro); outline-offset: 2px; }
 
 .nav-more { position: relative; }
 .nav-more__btn {
@@ -430,6 +445,17 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   padding: 14px 14px;
   border-bottom: 1px solid var(--gris-100);
 }
+.mobile-nav-link--destacado {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+}
+.mobile-nav-link--destacado:focus-visible { outline: 2px solid var(--negro); outline-offset: 2px; }
 
 /* =========================================================
    Franja de última hora
