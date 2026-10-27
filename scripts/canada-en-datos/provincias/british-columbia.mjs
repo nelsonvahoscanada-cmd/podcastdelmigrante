@@ -174,6 +174,9 @@ export const FUENTES = {
   cmhc: { org: "CMHC", title: "Rental Market Survey 2025 — tablas de datos", url: "https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-data/data-tables/rental-market/rental-market-report-data-tables" },
   escuelas: { org: "Gobierno de Columbia Británica (Ministerio de Educación)", title: "BC Schools K-12 — ubicación de las escuelas (BC Geographic Warehouse)", url: "https://catalogue.data.gov.bc.ca/dataset/bc-schools-k-12-with-francophone-indicators" },
   hospitales: { org: "Gobierno de Columbia Británica (HealthLink BC)", title: "Hospitals in BC", url: "https://catalogue.data.gov.bc.ca/dataset/hospitals-in-bc" },
+  listaMunicipios: { org: "Gobierno de Columbia Británica, Ministerio de Vivienda y Asuntos Municipales", title: "Local Government Legal Names and Incorporation Dates (actualizado el 6 de agosto de 2026)", url: "https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/local-governments/finance/local-government-statistics/local_government_legal_name_and_incorporation_dates.pdf" },
+  okanaganFalls: { org: "Gobierno de Columbia Británica", title: "Okanagan Falls taking final steps to become a municipality", url: "https://news.gov.bc.ca/releases/2026HMA0069-000747" },
+  horaRegiones: { org: "Gobierno de Columbia Británica", title: "Adopting permanent daylight saving time (2 de marzo de 2026): zonas con hora de la montaña", url: "https://news.gov.bc.ca/releases/2026AG0013-000209" },
   hora: { org: "Gobierno de Columbia Británica", title: "No falling back with B.C.’s new time zone code, Pacific Time: PCT (17 de septiembre de 2026)", url: "https://news.gov.bc.ca/releases/2026CITZ0009-001073" },
   municipios: { org: "Gobierno de Columbia Británica", title: "Municipalities in B.C.", url: "https://www2.gov.bc.ca/gov/content/governments/local-governments/facts-framework/systems/municipalities" },
   distritos: { org: "Gobierno de Columbia Británica", title: "Regional districts in B.C.", url: "https://www2.gov.bc.ca/gov/content/governments/local-governments/facts-framework/systems/regional-districts" },
@@ -315,7 +318,7 @@ export function cargar(root) {
       c: c.id,
       n: actual || c.nombre,
       censoNombre: c.nombre,
-      alias: actual ? [c.nombre] : [],
+      alias: actual ? [c.nombre] : c.tipo === "IGD" ? [IGD_NOMBRE] : [],
       t,
       r: c.er,
       cd: c.cd,
@@ -385,7 +388,15 @@ export function cargar(root) {
     if (!t) continue; /* ciudades, pueblos y municipios (ya tienen página) y lugares antiguos (Former Locality) */
     agrega({ n: g.nombre, t, m: g.csd, mx: g.x, my: g.y, lat: g.lat, lon: g.lon, id: `bcgnis-${g.id}` });
   }
-  for (const o of comunidades) (porCodigo.get(o.m).comunidades ||= []).push(o);
+  /* Ancla estable de cada lugar dentro de la página de su subdivisión (/<subdivisión>#lugar-<nombre>) */
+  for (const o of comunidades) {
+    const hermanos = (porCodigo.get(o.m).comunidades ||= []);
+    const base = `lugar-${slug(o.n) || String(o.id).toLowerCase()}`;
+    let ancla = base;
+    for (let k = 2; hermanos.some((h) => h.ancla === ancla); k++) ancla = `${base}-${k}`;
+    o.ancla = ancla;
+    hermanos.push(o);
+  }
 
   return {
     meta: { consultado: J.consultado, anioEstimaciones: ANIO },
@@ -425,7 +436,7 @@ const directorio = {
         <li><strong>Comunidades y lugares no incorporados</strong>: no son municipios; aparecen dentro de la subdivisión censal en la que están.</li>
       </ul>`;
   },
-  nota: (L) => `Total: ${miles(L.items.length)} localidades. Las regiones son las 8 regiones económicas oficiales de Statistics Canada (2021) y los distritos regionales, los ${miles(L.abms.distritos - 1)} de la provincia más el Stikine (región no incorporada) y Northern Rockies (municipio regional). No hay un inventario oficial completo de asentamientos informales o históricos: solo se incluyen lugares registrados en fuentes oficiales.`,
+  nota: (L) => `Total: ${miles(L.items.length)} localidades. Las regiones son las 8 regiones económicas oficiales de Statistics Canada (2021) y los distritos regionales, los ${miles(L.abms.distritos - 1)} de la provincia más el Stikine (región no incorporada) y Northern Rockies (municipio regional). No hay un inventario oficial completo de asentamientos informales o históricos: solo se incluyen lugares registrados en fuentes oficiales. La lista del Ministerio de Vivienda y Asuntos Municipales (6 de agosto de 2026) cuenta 161 municipios porque incluye el ${IGD_NOMBRE}, que el Censo 2021 clasifica como distrito de gobierno indígena: aquí aparece entre las tierras de las Primeras Naciones («Sechelt (Part)», en dos partes). El District of Okanagan Falls se incorpora el 6 de noviembre de 2026; mientras las fuentes oficiales de límites y población no lo incluyan, Okanagan Falls figura como comunidad del área electoral Okanagan-Similkameen D.`,
   fuentes: (L, esc) => `Fuentes: ${fuente(FUENTES.csd, esc)}; ${fuente(FUENTES.perfil, esc)}; ${fuente(FUENTES.dpl, esc)}; ${fuente(FUENTES.nombres, esc)}; ${fuente(FUENTES.abms, esc)}. Consultado el ${esc(fechaEs(L.meta.consultado))}.`,
 };
 
@@ -438,10 +449,24 @@ const DIAS = (n) => (n === 1 ? "1 km" : `${miles(Math.round(n))} km`);
 /* 1234.5 → «1,234.5» (formato del sitio: coma de miles y punto decimal, como en el censo) */
 const decimal = (v) => { const [e, d] = String(v).split("."); return miles(e) + (d ? `.${d}` : ""); };
 
+/* Hora local según el comunicado oficial del 2-3-2026 (2026AG0013-000209): BC usa la hora del Pacífico (PCT, UTC−7)
+   todo el año; el noreste (Peace River y las Montañas Rocosas del norte) sigue con la hora estándar de la montaña
+   (UTC−7, la misma), salvo Fort Ware (Kwadacha), que usa la del Pacífico; el sureste (East Kootenay y la región de
+   Golden) sigue a Alberta: UTC−7 en invierno y UTC−6 en verano. Cada gobierno local puede cambiar su práctica. */
+/* Lista de municipios del Ministerio de Vivienda y Asuntos Municipales (6-8-2026): 161, porque incluye este distrito,
+   que el Censo 2021 clasifica como «Indian Government District» (dos partes: Sechelt (Part) en qathet y en Sunshine Coast) */
+const IGD_NOMBRE = "shíshálh Nation Government District";
+/* Okanagan Falls (lugar no incorporado del área electoral D de Okanagan-Similkameen) se incorpora el 6-11-2026 */
+const OKANAGAN_FALLS_AREA = "5907047";
+const SURESTE = new Set(["5939007", "5939011"]); /* Golden y el área electoral A de Columbia-Shuswap (región de Golden) */
 function zonaHoraria(r) {
-  if (r.cd === "5901") return "Hora del Pacífico (PCT), UTC−7 todo el año. <small class=\"cd-fact__period\">Algunas comunidades del sureste, como Cranbrook, usan la hora de la montaña: igual que el resto de BC en invierno y una hora más en verano.</small>";
-  if (r.cd === "5955") return "Hora del Pacífico (PCT), UTC−7 todo el año. <small class=\"cd-fact__period\">Algunas comunidades del noreste, como Dawson Creek, usan la hora estándar de la montaña todo el año, que coincide con la hora del Pacífico.</small>";
-  return "Hora del Pacífico (PCT), UTC−7 todo el año";
+  const pct = "Hora del Pacífico (PCT), UTC−7 todo el año";
+  if (r.cd === "5901" || SURESTE.has(r.c))
+    return "Hora de la montaña, como en Alberta: UTC−7 en invierno (igual que el resto de BC) y UTC−6 en verano (una hora más). <small class=\"cd-fact__period\">Así lo indica el Gobierno de BC para el sureste (East Kootenay y la región de Golden); cada gobierno local puede decidir pasarse a la hora del Pacífico.</small>";
+  if (r.c === "5955807") return `${pct}. <small class="cd-fact__period">Fort Ware (Kwadacha) usa la hora del Pacífico, a diferencia de otras comunidades del noreste.</small>`;
+  if (r.cd === "5955" || r.cd === "5959")
+    return "Hora estándar de la montaña (UTC−7) todo el año, que coincide con la hora del Pacífico del resto de BC. <small class=\"cd-fact__period\">Así lo indica el Gobierno de BC para el noreste (Peace River y las Montañas Rocosas del norte); cada gobierno local puede cambiar su práctica.</small>";
+  return pct;
 }
 
 function pagina(r, L, { esc }) {
@@ -465,7 +490,7 @@ function pagina(r, L, { esc }) {
     ? `${miles(r.p)} <small class="cd-fact__period">Censo 2021${r.p16 != null ? `; Censo 2016: ${miles(r.p16)}${r.cambio != null ? ` (${r.cambio >= 0 ? "+" : ""}${r.cambio}%)` : ""}` : ""}</small>`
     : `${NO_DISPONIBLE} <small class="cd-fact__period">Statistics Canada no publica la población de esta subdivisión en el Censo 2021.</small>`;
   const datos = [
-    fila("Clasificación oficial", `${esc(denom)} <small class="cd-fact__period">Tipo de subdivisión censal: ${esc(tipo.censo)}${r.legal ? ` · Nombre legal: ${esc(r.legal)}` : ""}${r.alias.length ? ` · En el Censo 2021: ${esc(r.alias.join(", "))}` : ""}</small>`),
+    fila("Clasificación oficial", `${esc(denom)} <small class="cd-fact__period">Tipo de subdivisión censal: ${esc(tipo.censo)}${r.legal ? ` · Nombre legal: ${esc(r.legal)}` : ""}${r.n !== r.censoNombre ? ` · En el Censo 2021: ${esc(r.censoNombre)}` : ""}</small>`),
     fila(r.cd === "5959" ? "Área geográfica" : r.cd === "5957" ? "Región" : "Distrito regional", esc(r.distrito)),
     fila("Región económica", esc(region)),
     r.cma ? fila("Área metropolitana o aglomeración", `${esc(r.cma)} <small class="cd-fact__period">Censo 2021</small>`) : "",
@@ -484,7 +509,7 @@ function pagina(r, L, { esc }) {
     ? `<p>Dentro de ${esc(nombre)} hay ${miles(lista.length)} ${lista.length === 1 ? "comunidad o lugar con nombre oficial" : "comunidades y lugares con nombre oficial"}. No son municipios: forman parte de ${esc(nombre)}.</p>
       ${Object.entries(porTipo)
         .map(([t, xs]) => `<h3>${esc(TIPOS[t].plural.replace(/^./, (m) => m.toUpperCase()))} (${xs.length})</h3>
-      <p class="cd-loc-comunidades">${xs.map((x) => `${esc(x.n)}${typeof x.p === "number" ? ` <small>(${miles(x.p)} hab., Censo 2021)</small>` : ""}`).join(" · ")}</p>`)
+      <p class="cd-loc-comunidades">${xs.map((x) => `<span class="cd-loc-lugar" id="${x.ancla}">${esc(x.n)}${typeof x.p === "number" ? ` <small>(${miles(x.p)} hab., Censo 2021)</small>` : ""}</span>`).join(" · ")}</p>`)
         .join("\n      ")}
       <p class="cd-indicator__src">Fuentes: ${fuente(FUENTES.dpl, esc)}; ${fuente(FUENTES.nombres, esc)}. Cada lugar se ubicó en la subdivisión censal que contiene sus coordenadas oficiales.</p>`
     : "";
@@ -580,12 +605,15 @@ function pagina(r, L, { esc }) {
     { label: `Statistics Canada — Perfil del Censo 2021 de ${r.censoNombre} (en inglés)`, href: perfilCenso },
     grupo === "municipio" ? { label: "Gobierno de BC — Municipios de Columbia Británica", href: FUENTES.municipios.url } : { label: "Gobierno de BC — Distritos regionales y áreas electorales", href: FUENTES.distritos.url },
   ];
-  const fuentes = [FUENTES.csd, FUENTES.perfil, FUENTES.censo, FUENTES.er, ...(r.legal ? [FUENTES.abms] : []), ...(r.est ? [FUENTES.estimaciones] : []), ...(lista.length ? [FUENTES.dpl, FUENTES.nombres] : []), ...(epa ? [FUENTES.epa, FUENTES.industrias] : []), ...(f ? [FUENTES.cmhc] : []), FUENTES.escuelas, FUENTES.hospitales, FUENTES.hora];
+  const fuentes = [FUENTES.csd, FUENTES.perfil, FUENTES.censo, FUENTES.er, ...(r.legal ? [FUENTES.abms] : []), ...(r.est ? [FUENTES.estimaciones] : []), ...(lista.length ? [FUENTES.dpl, FUENTES.nombres] : []), ...(epa ? [FUENTES.epa, FUENTES.industrias] : []), ...(f ? [FUENTES.cmhc] : []), FUENTES.escuelas, FUENTES.hospitales, FUENTES.hora, FUENTES.horaRegiones, ...(r.t === "igd" ? [FUENTES.listaMunicipios] : []), ...(r.c === OKANAGAN_FALLS_AREA ? [FUENTES.okanaganFalls] : [])];
 
   const intro = {
     municipio: `${nombre} es ${tipo.es === "Ciudad" ? "una ciudad" : `un municipio clasificado como ${tipo.es.toLowerCase()}`} (${tipo.en})${r.cd === "5959" ? "" : ` en el área del ${r.distrito}`}, en la región económica ${region}.${typeof r.p === "number" ? ` Según el Censo 2021 de Statistics Canada, tenía ${miles(r.p)} habitantes.` : ""}`,
-    rural: `${nombre} es un área electoral del ${r.distrito}: territorio rural no incorporado (no es un municipio), cuyo gobierno local es el distrito regional. Está en la región económica ${region}.${typeof r.p === "number" ? ` En el Censo 2021 tenía ${miles(r.p)} habitantes.` : ""}`,
-    indigena: `${nombre} figura en el Censo 2021 de Statistics Canada como ${tipo.es.toLowerCase()} (${tipo.en}), en el área del ${r.distrito} y la región económica ${region}. No es un municipio. Para información sobre la comunidad, consulta directamente a la Primera Nación correspondiente.`,
+    rural: `${nombre} es un área electoral del ${r.distrito}: territorio rural no incorporado (no es un municipio), cuyo gobierno local es el distrito regional. Está en la región económica ${region}.${typeof r.p === "number" ? ` En el Censo 2021 tenía ${miles(r.p)} habitantes.` : ""}${r.c === OKANAGAN_FALLS_AREA ? " Según el Gobierno de BC, la comunidad de Okanagan Falls, dentro de esta área, se incorpora como municipio (District of Okanagan Falls) el 6 de noviembre de 2026; los datos de esta página son anteriores a ese cambio." : ""}`,
+    indigena:
+      r.t === "igd"
+        ? `${nombre} es una de las dos partes en que el Censo 2021 de Statistics Canada divide el ${IGD_NOMBRE} (en el censo, «Sechelt», ${tipo.es.toLowerCase()} o ${tipo.en}); esta parte está en el área del ${r.distrito}, en la región económica ${region}. El censo no lo clasifica como municipio, pero la lista oficial del Ministerio de Vivienda y Asuntos Municipales lo cuenta entre los 161 municipios de la provincia. Para información sobre la comunidad, consulta directamente a la shíshálh Nation.`
+        : `${nombre} figura en el Censo 2021 de Statistics Canada como ${tipo.es.toLowerCase()} (${tipo.en}), en el área del ${r.distrito} y la región económica ${region}. No es un municipio. Para información sobre la comunidad, consulta directamente a la Primera Nación correspondiente.`,
   }[grupo];
   const cierre = r.ficha
     ? " Aquí encontrarás datos oficiales y enlaces útiles para investigar la ciudad antes de mudarte, trabajar o estudiar."

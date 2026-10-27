@@ -130,7 +130,7 @@ test("sin datos vacíos ni inventados; datos regionales presentados como regiona
   assert.match(reserva, /reserva indígena \(Indian Reserve\)/);
   assert.match(reserva, /No es un municipio/);
   /* Zona horaria: matiz del sureste (East Kootenay) */
-  assert.match(PAGES["british-columbia/cranbrook.html"], /Cranbrook, usan la hora de la montaña/);
+  assert.match(PAGES["british-columbia/cranbrook.html"], /Hora de la montaña, como en Alberta: UTC−7 en invierno/);
 });
 
 test("la guía provincial: secciones, hora del Pacífico, BC PNP, tabla de alquileres y directorio extendido", () => {
@@ -182,5 +182,55 @@ test("datos del navegador: directorio extendido con variantes de nombre, y Alber
     assert.equal(c.CD_LOCALIDADES.provincia.extendido, undefined, `${p}: sin directorio extendido`);
     assert.equal(c.CD_LOCALIDADES.campos.length, 10);
     assert.doesNotMatch(PAGES[`${p}.html`], /cdLocSub|cdLocReset/);
+  }
+});
+
+test("cada lugar sin página propia tiene un ancla única y existente en la página de su subdivisión", () => {
+  const ctx = {};
+  new Function("window", read("js/british-columbia-localidades.js"))(ctx);
+  const d = ctx.CD_LOCALIDADES;
+  assert.deepEqual(d.campos.slice(-2), ["alias", "ancla"]);
+  const lugares = d.localidades.filter((f) => f[5] !== -1);
+  assert.equal(lugares.length, 1627);
+  const vistas = new Set();
+  const paginas = new Map();
+  for (const f of lugares) {
+    const sub = d.localidades[f[5]];
+    assert.ok(sub[7], `${f[0]}: su subdivisión tiene página`);
+    assert.match(f[11], /^lugar-[a-z0-9-]+$/, f[0]);
+    const clave = `${sub[7]}#${f[11]}`;
+    assert.ok(!vistas.has(clave), `ancla repetida: ${clave}`);
+    vistas.add(clave);
+    if (!paginas.has(sub[7])) paginas.set(sub[7], read(`canada-en-datos/british-columbia/${sub[7]}.html`));
+    const html = paginas.get(sub[7]);
+    const i = html.indexOf(`id="${f[11]}"`);
+    assert.ok(i > 0 && html.indexOf(`id="${f[11]}"`, i + 1) === -1, `${clave}: el ancla está una sola vez`);
+    assert.ok(html.slice(i, i + 300).includes(`>${f[0].replace(/&/g, "&amp;").replace(/'/g, "&#39;")}`), `${clave}: el ancla rodea el nombre ${f[0]}`);
+  }
+  /* Las 751 subdivisiones no llevan ancla */
+  assert.ok(d.localidades.filter((f) => f[5] === -1).every((f) => f[11] === ""));
+});
+
+test("161 frente a 160 municipios y hora regional: explicados con sus fuentes oficiales, sin registros inventados", () => {
+  const ctx = {};
+  new Function("window", read("js/british-columbia-localidades.js"))(ctx);
+  const d = ctx.CD_LOCALIDADES;
+  assert.equal(d.localidades.filter((f) => d.tipos[f[1]][2] === "municipio").length, 160, "160 municipios con datos del censo y límites legales");
+  const igd = d.localidades.filter((f) => f[1] === "igd");
+  assert.equal(igd.length, 2);
+  assert.ok(igd.every((f) => f[10] === "shíshálh Nation Government District"), "se encuentra por su nombre oficial");
+  assert.ok(!d.localidades.some((f) => f[7] && /okanagan-falls/.test(f[7])), "Okanagan Falls no tiene página propia hasta que las fuentes la incluyan");
+  const guia = PAGES["british-columbia.html"];
+  assert.match(guia, /161 municipios porque incluye el shíshálh Nation Government District/);
+  assert.match(guia, /District of Okanagan Falls se incorpora el 6 de noviembre de 2026/);
+  const pag = (s) => read(`canada-en-datos/british-columbia/${s}.html`);
+  assert.match(pag("sechelt-part-qathet"), /lista oficial del Ministerio de Vivienda y Asuntos Municipales lo cuenta entre los 161 municipios/);
+  assert.match(pag("sechelt-part-qathet"), /local_government_legal_name_and_incorporation_dates\.pdf/);
+  assert.match(pag("okanagan-similkameen-d"), /District of Okanagan Falls\) el 6 de noviembre de 2026/);
+  assert.match(pag("okanagan-similkameen-d"), /2026HMA0069-000747/);
+  /* Hora local según el comunicado 2026AG0013-000209 */
+  for (const [s, re] of [["cranbrook", /UTC−6 en verano/], ["golden", /UTC−6 en verano/], ["dawson-creek", /Hora estándar de la montaña \(UTC−7\) todo el año/], ["northern-rockies", /Hora estándar de la montaña \(UTC−7\) todo el año/], ["fort-ware-1", /Fort Ware \(Kwadacha\) usa la hora del Pacífico/], ["vancouver", /Hora del Pacífico \(PCT\), UTC−7 todo el año/]]) {
+    assert.match(pag(s), re, s);
+    assert.match(pag(s), /2026AG0013-000209/, `${s}: fuente de la hora regional`);
   }
 });

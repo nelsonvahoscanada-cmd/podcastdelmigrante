@@ -108,10 +108,75 @@ async function compartir(page, ruta, imagen) {
     await page.locator("#cdLocBuscar").fill("queen charlotte");
     await page.waitForFunction(() => /Daajing Giids/.test(document.querySelector("#cdLocLista").textContent));
     assert.equal(await page.locator("#cdLocLista li a").first().getAttribute("href"), "/canada-en-datos/british-columbia/daajing-giids");
-    /* Una comunidad no incorporada lleva a su subdivisión */
+    /* El distrito de gobierno indígena se encuentra por su nombre oficial (shíshálh), con o sin acentos */
+    await page.locator("#cdLocBuscar").fill("shishalh");
+    await page.waitForFunction(() => document.querySelectorAll("#cdLocLista li").length === 2);
+    assert.match(await page.locator("#cdLocLista").textContent(), /Sechelt \(Part\)/);
+    /* Una comunidad no incorporada lleva al lugar resaltado dentro de su subdivisión, y el mapa la muestra */
     await page.locator("#cdLocBuscar").fill("bamfield");
     await page.waitForFunction(() => /Bamfield/.test(document.querySelector("#cdLocLista").textContent));
-    assert.equal(await page.locator("#cdLocLista li a").first().getAttribute("href"), "/canada-en-datos/british-columbia/alberni-clayoquot-a");
+    assert.equal(await page.locator("#cdLocLista li a").first().getAttribute("href"), "/canada-en-datos/british-columbia/alberni-clayoquot-a#lugar-bamfield");
+    assert.match(await page.locator("#cdLocLista .cd-loc__item-tipo").first().textContent(), /está en Alberni-Clayoquot A \(área electoral\) · Alberni-Clayoquot · región Vancouver Island and Coast/);
+    await page.locator(".cd-loc__punto").first().dispatchEvent("click");
+    assert.match(await page.locator("#cdLocTarjeta").textContent(), /Bamfield[\s\S]*está en Alberni-Clayoquot A \(área electoral\)[\s\S]*Ver dónde está: Alberni-Clayoquot A/);
+    assert.equal(await page.locator("#cdLocTarjeta a").getAttribute("href"), "/canada-en-datos/british-columbia/alberni-clayoquot-a#lugar-bamfield");
+    await page.locator("#cdLocTarjeta .cd-loc__cerrar").click();
+
+    /* Todo el catálogo: cada una de las localidades y lugares aparece al buscar su nombre, con su enlace y su subdivisión */
+    const catalogo = await page.evaluate(() => {
+      const D = window.CD_LOCALIDADES;
+      const [buscar, tipo, mas, lista] = ["cdLocBuscar", "cdLocTipo", "cdLocMas", "cdLocLista"].map((id) => document.getElementById(id));
+      const base = "/canada-en-datos/british-columbia/";
+      const fallos = [];
+      let comunidades = 0;
+      for (const f of D.localidades) {
+        buscar.value = f[0];
+        tipo.dispatchEvent(new Event("change")); /* filtra al instante (sin la espera de la escritura) */
+        const m = f[5] === -1 ? null : D.localidades[f[5]];
+        const esperado = m ? base + m[7] + (f[11] ? "#" + f[11] : "") : base + f[7];
+        let a;
+        for (;;) {
+          a = [...lista.querySelectorAll("a")].find((x) => x.getAttribute("href") === esperado && x.querySelector(".cd-loc__item-nombre").textContent.startsWith(f[0]));
+          if (a || mas.hidden) break;
+          mas.click();
+        }
+        if (!a) fallos.push(`no aparece: ${f[0]}`);
+        else if (m) {
+          comunidades++;
+          const texto = a.querySelector(".cd-loc__item-tipo").textContent;
+          if (!f[11] || !texto.includes(`está en ${m[0]} (`) || !texto.includes(`región ${D.regiones[f[2]]}`)) fallos.push(`sin subdivisión o región: ${f[0]}`);
+        }
+      }
+      buscar.value = "";
+      tipo.dispatchEvent(new Event("change"));
+      return { total: D.localidades.length, comunidades, fallos };
+    });
+    assert.deepEqual(catalogo.fallos, [], catalogo.fallos.slice(0, 10).join("; "));
+    assert.equal(catalogo.total, 2378);
+    assert.equal(catalogo.comunidades, 1627);
+    console.log(`  ${perfil}: ${catalogo.total} búsquedas por nombre correctas (${catalogo.comunidades} lugares sin página propia, con su subdivisión)`);
+
+    /* Filtros por tipo y por región económica: el número mostrado coincide con los datos oficiales */
+    const opciones = await page.evaluate(() => ({
+      tipos: [...document.querySelectorAll("#cdLocTipo option")].map((o) => o.value).filter(Boolean),
+      regiones: [...document.querySelectorAll("#cdLocRegion option")].map((o) => o.value).filter(Boolean),
+    }));
+    assert.ok(opciones.tipos.length >= 20 && opciones.regiones.length === 8, JSON.stringify(opciones));
+    let filtrosProbados = 0;
+    for (const [sel, valores] of [["#cdLocTipo", opciones.tipos], ["#cdLocRegion", opciones.regiones]]) {
+      for (const v of valores) {
+        await page.locator(sel).selectOption(v);
+        const esperado = await page.evaluate(([sel, v]) => {
+          const D = window.CD_LOCALIDADES;
+          return D.localidades.filter((f) => (sel === "#cdLocRegion" ? String(f[2]) === v : v.startsWith("grupo:") ? D.tipos[f[1]][2] === v.slice(6) : f[1] === v)).length;
+        }, [sel, v]);
+        assert.ok(esperado > 0, `${sel}=${v} sin localidades`);
+        filtrosProbados++;
+        assert.match(await page.locator("#cdLocEstado").textContent(), new RegExp(`^${esperado.toLocaleString("en-US")} localidad(es)? encontradas? de 2,378\\.$`), `${sel}=${v}`);
+      }
+      await page.locator(sel).selectOption("");
+    }
+    console.log(`  ${perfil}: ${filtrosProbados} opciones de tipo y región con el conteo correcto`);
     /* 3-5. Filtros por tipo y por región económica, combinados */
     await page.locator("#cdLocBuscar").fill("");
     await page.locator("#cdLocTipo").selectOption("city");
@@ -192,6 +257,52 @@ async function compartir(page, ruta, imagen) {
       if (SHOTS && ruta.endsWith("alberni-clayoquot-a")) await page.screenshot({ path: path.join(SHOTS, `bc-area-electoral-${perfil}.png`), fullPage: true });
       assert.deepEqual(errores, []);
       await ctx.close();
+    }
+
+    /* ---------- Lugar sin página propia: se abre resaltado y visible en la página de su subdivisión ---------- */
+    ({ ctx, page, errores } = await abrir(browser, perfil, "/canada-en-datos/british-columbia/alberni-clayoquot-a#lugar-bamfield"));
+    const lugar = page.locator(":target");
+    assert.equal(await lugar.getAttribute("id"), "lugar-bamfield");
+    assert.match(await lugar.textContent(), /^Bamfield/);
+    assert.equal(await lugar.evaluate((e) => getComputedStyle(e).fontWeight), "700", "resaltado");
+    await page.waitForFunction(() => { const r = document.querySelector(":target").getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight; });
+    assert.match(await page.locator("#comunidades").textContent(), /forman parte de Alberni-Clayoquot A/);
+    assert.deepEqual(errores, []);
+    await ctx.close();
+
+    /* ---------- Reloj antes y después del 1 de noviembre de 2026 (fecha simulada en el navegador) ---------- */
+    if (perfil === "computador") {
+      /* [instante UTC, Victoria (PCT, UTC−7 siempre), sureste (Cranbrook, hora de la montaña), Edmonton (Alberta)] */
+      for (const [utc, victoria, sureste, alberta] of [
+        ["2026-10-31T18:00:00Z", "11:00", "12:00", "12:00"],
+        ["2026-11-02T18:00:00Z", "11:00", "11:00", "11:00"],
+        ["2027-01-15T18:00:00Z", "11:00", "11:00", "11:00"],
+        ["2027-03-15T18:00:00Z", "11:00", "12:00", "12:00"],
+        ["2027-07-01T18:00:00Z", "11:00", "12:00", "12:00"],
+      ]) {
+        for (const [ruta, esperado, zona] of [["/canada-en-datos/british-columbia", victoria, sureste], ["/canada-en-datos/alberta", alberta, null]]) {
+          const c = await browser.newContext({ ...PERFILES.computador, locale: "es-CA" });
+          const pg = await c.newPage();
+          await pg.clock.setFixedTime(new Date(utc));
+          await pg.goto(BASE + ruta, { waitUntil: "networkidle" });
+          await pg.waitForFunction(() => /\d/.test(document.querySelector("[data-reloj-hora]").textContent));
+          assert.match(await pg.locator("[data-reloj-hora]").textContent(), new RegExp(`^${esperado}:00`), `${ruta} ${utc}`);
+          if (zona) {
+            await pg.waitForFunction(() => /\d/.test(document.querySelector('[data-zona="America/Edmonton"] [data-zona-hora]').textContent));
+            assert.match(await pg.locator('[data-zona="America/Edmonton"] [data-zona-hora]').textContent(), new RegExp(`^${zona}`), `sureste ${utc}`);
+          }
+          await c.close();
+        }
+      }
+      /* Portada: el reloj de BC al elegir la provincia en el mapa, después del 1 de noviembre */
+      const c = await browser.newContext({ ...PERFILES.computador, locale: "es-CA" });
+      const pg = await c.newPage();
+      await pg.clock.setFixedTime(new Date("2026-11-02T18:00:00Z"));
+      await pg.goto(BASE + "/canada-en-datos/", { waitUntil: "networkidle" });
+      await pg.locator('path[data-code="BC"]').dispatchEvent("click");
+      await pg.waitForFunction(() => /^11:00/.test(document.querySelector("#cdClock [data-reloj-hora]").textContent));
+      await c.close();
+      console.log("  reloj: Victoria UTC−7 antes y después del 1-11-2026; sureste y Alberta con hora de la montaña (UTC−6 en verano, UTC−7 en invierno)");
     }
 
     /* ---------- 13. Portada de Canadá en Datos: BC enlazada y con hora correcta ---------- */

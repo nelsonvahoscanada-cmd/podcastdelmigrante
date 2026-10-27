@@ -94,6 +94,7 @@
       ficha: f[8] === 1,
       sub: f[9] || "",
       clave: norm(f[0] + (f[10] ? " " + f[10].replace(/\|/g, " ") : "")),
+      ancla: f[11] || "",
     }));
     ext = !!D.provincia.extendido;
     /* Orden: fichas completas, municipios (de mayor a menor población) y después comunidades, por nombre */
@@ -282,13 +283,18 @@
     const base = `/canada-en-datos/${D.provincia.slug}/`;
     if (it.url) return { href: base + it.url, texto: it.ficha ? `Ver la ficha completa de ${it.nombre}` : `Ver información de ${it.nombre}` };
     const m = D.localidades[it.municipio];
+    /* Directorio extendido: el lugar se abre resaltado dentro de la página de su subdivisión, que puede no ser un municipio */
+    if (ext) return { href: base + m[7] + (it.ancla ? "#" + it.ancla : ""), texto: `Ver dónde está: ${m[0]}` };
     return { href: base + m[7], texto: `Ver el municipio: ${m[0]}` };
   }
 
   function descripcion(it) {
     const tipo = D.tipos[it.tipo];
     const partes = [tipo[0] === tipo[1] ? tipo[0] : `${tipo[0]} (${tipo[1]})`];
-    if (it.municipio !== -1) partes.push(`pertenece a ${D.localidades[it.municipio][0]}`);
+    if (it.municipio !== -1) {
+      const m = D.localidades[it.municipio];
+      partes.push(ext ? `está en ${m[0]} (${D.tipos[m[1]][0].toLowerCase()})` : `pertenece a ${m[0]}`);
+    }
     if (it.sub && it.sub !== it.nombre) partes.push(it.sub);
     partes.push(`región ${D.regiones[it.region]}`);
     return partes.join(" · ");

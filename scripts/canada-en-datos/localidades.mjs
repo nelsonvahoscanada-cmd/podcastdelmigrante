@@ -156,7 +156,7 @@ const conNombre = (r, visible) => (visible(r) === r.n ? r : { ...r, n: visible(r
 export function datosNavegador(P, L) {
   const indice = new Map(L.items.map((r, i) => [r, i]));
   const visible = nombresVisibles(P, L);
-  /* Directorio extendido (opcional por provincia): variantes del nombre para la búsqueda */
+  /* Directorio extendido (opcional por provincia): variantes del nombre para la búsqueda y ancla del lugar en la página de su subdivisión */
   const ext = !!P.directorio.extendido;
   const filas = L.items.map((r) => [
     visible(r),
@@ -169,7 +169,7 @@ export function datosNavegador(P, L) {
     r.s || "",
     r.ficha ? 1 : 0,
     r.sup || "",
-    ...(ext ? [(r.alias || []).join("|")] : []),
+    ...(ext ? [(r.alias || []).join("|"), r.ancla || ""] : []),
   ]);
   const datos = {
     provincia: { slug: P.slug, nombre: P.nombre, poblacion: P.directorio.poblacion, regiones: P.directorio.regiones, subregion: P.directorio.subregion || null, ...(ext ? { extendido: true } : {}) },
@@ -177,7 +177,7 @@ export function datosNavegador(P, L) {
     grupos: P.GRUPOS,
     regiones: Object.fromEntries(Object.entries(L.regiones).map(([k, v]) => [k, nombreRegion(v)])),
     mapa: L.mapa,
-    campos: ["nombre", "tipo", "region", "x", "y", "municipio", "poblacion", "url", "ficha", "subregion", ...(ext ? ["alias"] : [])],
+    campos: ["nombre", "tipo", "region", "x", "y", "municipio", "poblacion", "url", "ficha", "subregion", ...(ext ? ["alias", "ancla"] : [])],
     localidades: filas,
   };
   return `/* Generado por scripts/build-canada-datos.mjs a partir de fuentes oficiales (${P.directorio.origen}). No editar a mano. */
