@@ -3,6 +3,7 @@ consultar-pei.py — Exploración (solo lectura) de las fuentes oficiales para I
 ====================================================================================================
 Se ejecuta en GitHub Actions (el entorno de desarrollo no llega a los sitios
 oficiales). Comprueba qué fuentes responden y qué contienen, sin guardar nada.
+Ronda 2: escuelas, hospitales, alquileres, estimaciones por subdivisión y hora.
 """
 import csv, io, json, re, urllib.parse, urllib.request, zipfile
 
@@ -30,43 +31,83 @@ def prueba(nombre, url, fn=None):
 
 def zip_lista(b):
     z = zipfile.ZipFile(io.BytesIO(b))
-    print("   archivos:", [(n, i.file_size) for n, i in zip(z.namelist(), z.infolist())][:12])
+    print("   archivos:", [(i.filename, i.file_size) for i in z.infolist()][:15])
+    return z
 
 
-paso("Límites censales 2021 (Statistics Canada)")
-for n in ["lpr_000b21a_e", "lcd_000b21a_e", "lcsd000b21a_e", "lcsd000a21a_e", "ler_000b21a_e", "ldpl000b21a_e"]:
-    prueba(n, f"https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/files-fichiers/{n}.zip", zip_lista)
-prueba("GAF 92-151-X", "https://www12.statcan.gc.ca/census-recensement/2021/geo/aip-pia/attribute-attribs/files-fichiers/2021_92-151_X.zip", zip_lista)
-GEO = "https://geo.statcan.gc.ca/geo_wa/rest/services/2021/Cartographic_boundary_files/MapServer"
-prueba("ArcGIS StatCan raíz", GEO + "?f=json", lambda b: print("   capas:", [(l["id"], l["name"]) for l in json.loads(b).get("layers", [])][:20]))
-for i in range(0, 12):
-    prueba(f"ArcGIS capa {i}", f"{GEO}/{i}/query?where=PRUID%3D%2711%27&outFields=*&returnGeometry=false&resultRecordCount=3&f=json", lambda b: print("   ", str(json.loads(b))[:300]))
+def ckan(b):
+    for r in json.loads(b)["result"]["results"][:10]:
+        print("   ", r["name"][:70], "|", r.get("title", "")[:80], "|", r.get("metadata_modified", "")[:10], "|", r.get("organization", {}).get("title", "")[:50])
+        for res in r.get("resources", [])[:4]:
+            print("        ·", res.get("format"), res.get("url", "")[:150])
 
-paso("Nombres geográficos de Canadá (CGNDB, Recursos Naturales Canadá)")
-prueba("CGN CSV PEI", "https://ftp.cartes.canada.ca/pub/nrcan_rncan/vector/geobase_cgn_toponyme/prov_csv_eng/cgn_pe_csv_eng.zip", zip_lista)
-prueba("CGN API", "https://geogratis.gc.ca/services/geoname/en/geonames.json?province=11&concise=CITY&num=5", lambda b: print("   ", b[:600]))
-prueba("CGN API UNP", "https://geogratis.gc.ca/services/geoname/en/geonames.json?province=11&concise=UNP&num=3", lambda b: print("   ", b[:600]))
 
-paso("Datos abiertos del Gobierno de PEI")
-for q in ["municipal boundaries", "municipalities", "lots", "schools", "hospitals", "communities", "place names", "population"]:
-    prueba(f"catálogo: {q}", "https://data.princeedwardisland.ca/api/catalog/v1?only=datasets&limit=12&q=" + urllib.parse.quote(q),
-           lambda b: [print("   ", r["resource"]["id"], "|", r["resource"]["name"][:90], "|", r["resource"].get("updatedAt", "")[:10], "|", r["resource"].get("type")) for r in json.loads(b)["results"]])
+paso("Portal de datos abiertos de PEI")
+prueba("raíz", "https://data.princeedwardisland.ca/", lambda b: print("   título:", re.search(rb"<title>(.*?)</title>", b, re.S)))
+paso("Gobierno abierto de Canadá (incluye datos de PEI)")
+for q in ["Prince Edward Island schools", "Prince Edward Island municipal boundaries", "Prince Edward Island hospitals", "Open Database of Healthcare Facilities", "Open Database of Educational Facilities"]:
+    prueba(q, "https://open.canada.ca/data/api/3/action/package_search?rows=6&q=" + urllib.parse.quote(q), ckan)
 
-paso("Páginas oficiales de PEI")
-for nombre, url in [
-    ("Municipios", "https://www.princeedwardisland.ca/en/information/housing-land-and-communities/municipalities-in-prince-edward-island"),
-    ("Buscar municipios", "https://www.princeedwardisland.ca/en/search/site?f%5B0%5D=type%3Ainformation&search_api_fulltext=municipalities"),
-    ("Salario mínimo", "https://www.princeedwardisland.ca/en/information/economic-development-innovation-and-trade/minimum-wage-order"),
-    ("Population report", "https://www.princeedwardisland.ca/en/information/finance/pei-population-report-quarterly"),
-    ("Health card", "https://www.princeedwardisland.ca/en/information/health-and-wellness/pei-health-card"),
-    ("PEI PNP", "https://www.princeedwardisland.ca/en/topic/office-immigration"),
-    ("Health PEI", "https://www.healthpei.ca/"),
-    ("Public Schools Branch", "https://psb.edu.pe.ca/"),
-    ("Newcomers", "https://www.peianc.com/"),
-    ("WorkPEI", "https://www.workpei.ca/"),
+paso("CGNDB PEI: tipos de entidades")
+def cgn(b):
+    z = zipfile.ZipFile(io.BytesIO(b))
+    rows = list(csv.DictReader(io.TextIOWrapper(z.open(z.namelist()[0]), encoding="utf-8-sig")))
+    print("   columnas:", list(rows[0].keys()))
+    from collections import Counter
+    for k in ["Generic Term", "Concise Code", "Status Term"]:
+        if k in rows[0]:
+            print("  ", k, Counter(r[k] for r in rows).most_common(40))
+    print("   ejemplo:", rows[0])
+prueba("CGN CSV", "https://ftp.cartes.canada.ca/pub/nrcan_rncan/vector/geobase_cgn_toponyme/prov_csv_eng/cgn_pe_csv_eng.zip", cgn)
+
+paso("CMHC RMS 2025 PEI")
+RMS = "https://assets.cmhc-schl.gc.ca/sites/cmhc/professional/housing-markets-data-and-research/housing-data-tables/rental-market/rental-market-report-data-tables"
+for f in ["2025/rmr-prince-edward-island-2025-en.xlsx", "2025/rmr-pei-2025-en.xlsx"]:
+    prueba(f, f"{RMS}/{f}")
+print(open("scripts/canada-en-datos/obtener-bc-localidades.py").read().split("RMS = ")[1][:300])
+
+paso("StatCan 17-10-0142-01 (estimaciones por subdivisión)")
+def est(b):
+    z = zipfile.ZipFile(io.BytesIO(b))
+    n = [x for x in z.namelist() if x.endswith(".csv") and "MetaData" not in x][0]
+    r = csv.DictReader(io.TextIOWrapper(z.open(n), encoding="utf-8-sig"))
+    filas = [x for x in r if "Prince Edward Island" in x["GEO"]]
+    print("   columnas:", list(filas[0].keys()))
+    print("   fechas:", sorted({x["REF_DATE"] for x in filas})[-4:], "| geos PEI:", len({x["GEO"] for x in filas}))
+    print("   ejemplo:", [x for x in filas if x["REF_DATE"] == max(y["REF_DATE"] for y in filas)][:3])
+prueba("17100142", "https://www150.statcan.gc.ca/n1/tbl/csv/17100142-eng.zip", est)
+
+paso("Hora: base de zonas horarias de IANA (Atlántico)")
+def tz(b):
+    t = b.decode("utf-8", "ignore")
+    for l in t[:200000].split("\n"):
+        if re.search(r"Halifax|Prince Edward|Nova Scotia|New Brunswick|Atlantic Canada|Moncton", l):
+            print("  >", l[:200])
+prueba("NEWS", "https://data.iana.org/time-zones/tzdb/NEWS", tz)
+def tzna(b):
+    t = b.decode("utf-8", "ignore")
+    i = t.find("Zone America/Halifax")
+    print(t[max(0, i - 6000):i + 1200])
+prueba("northamerica", "https://data.iana.org/time-zones/tzdb/northamerica", tzna)
+
+paso("Copias archivadas de páginas oficiales de PEI (Wayback)")
+for u in [
+    "https://www.princeedwardisland.ca/en/information/economic-development-innovation-and-trade/minimum-wage-order",
+    "https://www.princeedwardisland.ca/en/information/health-and-wellness/pei-health-card",
+    "https://www.princeedwardisland.ca/en/information/office-of-immigration/pei-provincial-nominee-program",
+    "https://www.princeedwardisland.ca/en/information/finance/pei-population-report-quarterly",
+    "https://www.princeedwardisland.ca/en/information/housing-land-and-communities/municipalities-in-prince-edward-island",
 ]:
-    prueba(nombre, url, lambda b: print("   título:", (re.search(rb"<title>(.*?)</title>", b, re.S) or [b"", b"-"])[1][:120]))
+    prueba("wayback " + u[-60:], "https://archive.org/wayback/available?url=" + urllib.parse.quote(u, safe=""), lambda b: print("   ", json.loads(b).get("archived_snapshots", {}).get("closest")))
 
-paso("Statistics Canada — tablas útiles (cabeceras)")
-for pid in ["17100142", "98100002", "98100012", "14100393", "14100287"]:
-    prueba(f"metadatos {pid}", f"https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata", None)
+paso("Otras fuentes")
+for n, u in [
+    ("Salario mínimo (Gobierno de Canadá)", "https://minwage-salairemin.service.canada.ca/en/general.html"),
+    ("PSB escuelas", "https://psb.edu.pe.ca/schools"),
+    ("CSLF", "https://cslfipe.ca/"),
+    ("PEIANC", "https://www.peianc.com/"),
+    ("Holland College", "https://www.hollandcollege.com/"),
+    ("UPEI", "https://www.upei.ca/"),
+    ("T3 Transit", "https://www.t3transit.ca/"),
+]:
+    prueba(n, u, lambda b: print("   título:", (re.search(rb"<title>(.*?)</title>", b, re.S) or [b"", b"-"])[1][:120]))
