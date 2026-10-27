@@ -9,8 +9,35 @@ jobs:
   estado:
     runs-on: ubuntu-latest
     steps:
-      - name: formulario (solo lectura, sin enviar nada) 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm i --no-save playwright@1 && npx playwright install --with-deps chromium
+      - name: abrir el formulario en producción (sin enviar nada)
         run: |
-          c=$(curl -s "https://podcastdelmigrante.com/registro/config")
-          echo "::notice title=CONFIG::$(echo "$c" | sed -E 's/"turnstileSiteKey":"[^"]+"/"turnstileSiteKey":"(presente)"/')"
-          echo "::notice title=FORM::$(curl -s -o /dev/null -w '%{http_code}' https://podcastdelmigrante.com/registra-tu-empresa)"
+          echo "::notice title=CONFIG-CURL::$(curl -s https://podcastdelmigrante.com/registro/config | sed -E 's/"turnstileSiteKey":"[^"]+"/"turnstileSiteKey":"(presente)"/')"
+          echo "::notice title=HTML-HEADERS::$(curl -sI https://podcastdelmigrante.com/registra-tu-empresa | grep -iE '^(cache-control|cf-cache-status|age|content-security-policy)' | tr '\r\n' '  ' | cut -c1-900)"
+          cat > p.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          (async () => {
+            const b = await chromium.launch();
+            for (const [n, o] of [["computador", { viewport: { width: 1366, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              const c = await b.newContext({ ...o, locale: "es-CA" });
+              await c.route(/\/registro\/enviar|\/api\/(events|vistas)/, (r) => r.abort());
+              const p = await c.newPage(); const log = [];
+              p.on("console", (m) => (m.type() === "error" || m.type() === "warning") && log.push("console:" + m.text().slice(0, 160)));
+              p.on("pageerror", (e) => log.push("pageerror:" + e.message.slice(0, 160)));
+              p.on("requestfailed", (r) => log.push("failed:" + r.url().slice(0, 90) + " " + (r.failure() || {}).errorText));
+              p.on("response", async (r) => { if (/registro\/config|turnstile|solicitud-form/.test(r.url())) log.push(`resp:${r.status()} ${r.url().slice(0, 90)}`); });
+              await p.goto("https://podcastdelmigrante.com/registra-tu-empresa", { waitUntil: "load" });
+              await p.waitForTimeout(6000);
+              const st = await p.evaluate(() => ({ unavailable: !document.querySelector("#intakeUnavailable").hidden, buttonDisabled: document.querySelector("#intakeForm button[type=submit]")?.disabled, turnstileIframe: !!document.querySelector("#turnstileBox iframe"), turnstileHtml: (document.querySelector("#turnstileBox")?.innerHTML || "").length, script: [...document.scripts].map((s) => s.src).filter((s) => /solicitud|turnstile/.test(s)) }));
+              console.log(`::notice title=${n}-ESTADO::${JSON.stringify(st)}`);
+              console.log(`::notice title=${n}-LOG::${log.join(" | ").slice(0, 3000)}`);
+              await p.screenshot({ path: `${n}.png` });
+              await c.close();
+            }
+            await b.close();
+          })();
+          JS
+          node p.cjs
