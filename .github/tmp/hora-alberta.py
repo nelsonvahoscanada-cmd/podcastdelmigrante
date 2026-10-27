@@ -1,30 +1,28 @@
-"""Solo lectura: notas de IANA y fuentes oficiales sobre la hora de Alberta, Manitoba, Territorios del Noroeste y el sureste de BC."""
-import html as H, re, urllib.request
+"""Solo lectura: texto oficial de la hora permanente de Alberta y lo que se sabe del sureste de BC."""
+import html as H, io, re, urllib.parse, urllib.request
+from pypdf import PdfReader
 def get(u):
-    return urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) Chrome/130.0", "Accept-Language": "en-CA"}), timeout=120).read().decode("utf-8", "ignore")
+    return urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) Chrome/130.0", "Accept-Language": "en-CA"}), timeout=120).read()
 def texto(h):
     h = re.sub(r"(?is)<(script|style|noscript|svg|nav|footer|header)[^>]*>.*?</\1>", " ", h)
     h = re.sub(r"(?i)<br\s*/?>|</(p|li|h\d|tr|div)>", "\n", h)
     return re.sub(r"[ \t\xa0]+", " ", re.sub(r"\n\s*\n+", "\n", H.unescape(re.sub(r"<[^>]+>", " ", h)))).strip()
-news = get("https://data.iana.org/time-zones/tzdb/NEWS")
-fin = news.find("\nRelease 2026b")
-print("NEWSHEAD|" + news[:min(fin if fin > 0 else 9000, 12000)].replace("\n", "\nNEWSHEAD|"))
-na = get("https://data.iana.org/time-zones/tzdb/northamerica")
-for zona in ["Zone America/Edmonton", "Zone America/Vancouver", "Zone America/Creston", "Zone America/Dawson_Creek"]:
-    i = na.find(zona)
-    ini = max(na.rfind("\n\n\n", 0, i - 50), i - 9000)
-    print(f"=== {zona} (comentarios anteriores) ===")
-    print("NA|" + na[ini:i + 600].replace("\n", "\nNA|"))
-urls = sorted(set(re.findall(r"https?://[^\s>)\]]*(?:alberta\.ca|gov\.mb\.ca|gov\.nt\.ca|gov\.bc\.ca|cranbrook|rdek)[^\s>)\]]*", na + news)))
-print("URLS|", urls)
-for u in urls:
-    if not re.search(r"alberta\.ca|gov\.nt\.ca|cranbrook|rdek|news\.gov\.mb\.ca", u):
-        continue
+for u in ["https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_204.pdf", "https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_206.pdf"]:
+    print("=== OIC", u)
     try:
-        t = texto(get(u))
-        print(f"=== OFICIAL {u} ===")
-        for l in t.split("\n"):
-            if len(l) > 40 and re.search(r"time|clock|daylight|hour|UTC|Mountain|Central", l, re.I):
-                print("OF|", l.strip()[:500])
+        r = PdfReader(io.BytesIO(get(u)))
+        print("PDF|" + "\n".join(p.extract_text() or "" for p in r.pages)[:3500].replace("\n", "\nPDF|"))
     except Exception as e:
-        print("OF| ERROR", u, type(e).__name__, e)
+        print("PDF| ERROR", type(e).__name__, e)
+for base, qs in [("https://www.alberta.ca/news?search=", ["daylight saving time", "time change"]), ("https://news.gov.bc.ca/search?q=", ["mountain time", "Kootenay time", "time zone Alberta"])]:
+    for q in qs:
+        u = base + urllib.parse.quote(q)
+        try:
+            h = get(u).decode("utf-8", "ignore")
+            print("BUSQ|", u)
+            for m in re.finditer(r'<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', h, re.I | re.S):
+                t = re.sub(r"\s+", " ", H.unescape(re.sub(r"<[^>]+>", " ", m.group(2)))).strip()
+                if re.search(r"time|clock|daylight", t, re.I) and len(t) > 15:
+                    print("BUSQ|   ", t[:140], "→", urllib.parse.urljoin(u, m.group(1)))
+        except Exception as e:
+            print("BUSQ| ERROR", u, type(e).__name__, e)

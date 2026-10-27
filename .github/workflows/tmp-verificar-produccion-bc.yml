@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: 20
       - run: npm i --no-save playwright@1 && npx playwright install --with-deps chromium
-      - run: python3 .github/tmp/hora-alberta.py
+      - run: pip install pypdf==5.1.0 && python3 .github/tmp/hora-alberta.py
       - name: contadores después
         run: for id in ART-2026-029 ART-2026-030; do echo "DESPUES|$id|$(curl -fsS "$BASE/api/vistas/$id")"; done
