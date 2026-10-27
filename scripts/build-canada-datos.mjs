@@ -29,9 +29,10 @@ import * as Localidades from "./canada-en-datos/localidades.mjs";
 import { compartirHtml } from "./canada-en-datos/compartir.mjs";
 import Alberta from "./canada-en-datos/provincias/alberta.mjs";
 import Ontario from "./canada-en-datos/provincias/ontario.mjs";
+import BritishColumbia from "./canada-en-datos/provincias/british-columbia.mjs";
 
 /* Provincias y territorios con directorio de localidades (ver docs del estándar en el repositorio interno) */
-export const PROVINCIAS = { alberta: Alberta, ontario: Ontario };
+export const PROVINCIAS = { alberta: Alberta, ontario: Ontario, "british-columbia": BritishColumbia };
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
