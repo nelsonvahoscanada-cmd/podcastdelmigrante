@@ -229,26 +229,19 @@ function tarjeta(d, e, VC) {
 }
 
 function persona(d, p) {
-  const h = d.historia(p.historia);
-  const pub = h.estado === "publicada";
-  const eps = d.episodiosDe(p.historia);
-  /* El enlace va al episodio de la propia persona; si no lo hay, al primero de su historia */
-  const palabras = new Set(slug(p.nombre).split("-"));
-  const propio = eps.length ? eps.slice().sort((a, b) => coincidencias(palabras, b) - coincidencias(palabras, a) || a.ep - b.ep)[0] : null;
+  /* Solo se llama con personas del Muro: todas tienen su capítulo publicado. */
+  const propio = d.capituloDe(p);
   const texto = `${p.nombre} ${p.empresa || ""} ${p.ciudad}`.toLowerCase();
-  return `<article class="dz-persona${pub ? " dz-persona--pub" : ""}${p.muro ? "" : " dz-persona--sin-num"}" data-estado="${pub ? "publicada" : "confirmado"}" data-texto="${esc(texto)}">
+  return `<article class="dz-persona dz-persona--pub${p.muro ? "" : " dz-persona--sin-num"}" data-estado="publicada" data-texto="${esc(texto)}">
         ${p.muro ? `<span class="dz-persona__num" aria-label="Número ${p.muro}">${p.muro}</span>` : ""}
         <h3 class="dz-persona__nombre">${esc(p.nombre)}</h3>
         <p class="dz-persona__empresa">${esc(p.empresa || "Empresa por confirmar")}</p>
-        <p class="dz-persona__meta"><span class="dz-lugar">${PIN}${esc(p.ciudad)}, ${esc(p.provincia)}</span>${pub ? '<span class="dz-estado dz-estado--pub">Historia publicada</span>' : '<span class="dz-estado">Confirmado</span>'}${propio && pub ? `<a class="dz-persona__ver" href="${d.url(propio)}">Ver EP ${dos(propio.ep)}<span class="sr-only">: ${esc(p.nombre)}</span></a>` : ""}</p>
+        <p class="dz-persona__meta"><span class="dz-lugar">${PIN}${esc(p.ciudad)}, ${esc(p.provincia)}</span><span class="dz-estado dz-estado--pub">Historia publicada</span><a class="dz-persona__ver" href="${d.url(propio)}">Ver EP ${dos(propio.ep)}<span class="sr-only">: ${esc(p.nombre)}</span></a></p>
       </article>`;
 }
 
 function slug(s) {
   return String(s).normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
-function coincidencias(palabras, e) {
-  return slug(e.persona).split("-").filter((w) => palabras.has(w)).length;
 }
 
 function mosaico(r) {
@@ -264,7 +257,7 @@ function cifras(ed, r, base) {
   return `<div class="dz-cifras">
       <div class="dz-stat dz-stat--principal"><b>${r.historiasPublicadas}</b><span>Historias empresariales publicadas</span><p>Historias únicas con video público. Es la cifra del contador${ed.conteo && ed.conteo.estado === "provisional" ? " (provisional)" : ""}.</p></div>
       <div class="dz-stat"><b>${r.episodiosPublicados}</b><span>Episodios publicados</span><p>Algunas historias tienen más de un episodio.</p></div>${grabadas}
-      <div class="dz-stat"><b>${r.participantes}</b><span>Empresarios confirmados en el Muro</span><p>Incluye a quienes aún no tienen su historia publicada. <a href="${base}/muro">Ver el Muro del Legado</a>.</p></div>
+      <div class="dz-stat"><b>${r.muro}</b><span>Empresarios en el Muro del Legado</span><p>Empresarios de Alberta con su capítulo publicado. <a href="${base}/muro">Ver el Muro del Legado</a>.</p></div>
     </div>`;
 }
 
@@ -287,9 +280,12 @@ function contexto(api, edicionId, VC, historiasEditoriales) {
   const enEd = (x) => (x.edicion || "calgary") === edicionId;
   const episodios = D.episodios.filter(enEd).slice().sort((a, b) => a.ep - b.ep);
   const participantes = D.participantes.filter(enEd);
+  /* Muro del Legado: solo Alberta y con capítulo con video publicado (api.muro).
+     `participantes` sigue siendo el registro completo (perfiles del Directorio). */
+  const muro = api.muro(edicionId);
   const base = `${BASE}/${ed.id}`;
   const d = {
-    D, ed, programa, r, base, episodios, participantes, VC,
+    D, ed, programa, r, base, episodios, participantes, muro, VC, capituloDe: api.capituloDe,
     url: (e) => `${base}/${e.slug}`,
     historia: (id) => D.historias.find((h) => h.id === id),
     episodiosDe: (id) => episodios.filter((e) => e.historia === id),
@@ -308,7 +304,7 @@ function paginaPrograma(api, c, VC, historias) {
   const ed = activas[0];
   const d = contexto(api, ed.id, VC, historias);
   const r = d.r;
-  const ciudades = [...new Set(d.participantes.map((p) => p.ciudad))].sort((a, b) => (a === ed.ciudad ? -1 : b === ed.ciudad ? 1 : a.localeCompare(b, "es")));
+  const ciudades = [...new Set(d.muro.map((p) => p.ciudad))].sort((a, b) => (a === ed.ciudad ? -1 : b === ed.ciudad ? 1 : a.localeCompare(b, "es")));
   const recientes = d.episodios.slice().sort((a, b) => b.ep - a.ep).slice(0, 3);
   const path = `${BASE}/`;
   const items = [["Inicio", "/"], [prog.nombre, null, path]];
@@ -460,7 +456,7 @@ function paginaEdicion(d, c) {
   const { ed, r, base, VC } = d;
   const path = `${base}/`;
   const items = [["Inicio", "/"], [d.programa.nombre, `${BASE}/`], [ed.ciudad, null, path]];
-  const ciudades = [...new Set(d.participantes.map((p) => p.ciudad))].filter((x) => x !== ed.ciudad).sort((a, b) => a.localeCompare(b, "es"));
+  const ciudades = [...new Set(d.muro.map((p) => p.ciudad))].filter((x) => x !== ed.ciudad).sort((a, b) => a.localeCompare(b, "es"));
   const recientes = d.episodios.slice().sort((a, b) => b.ep - a.ep).slice(0, 6);
   const perfiles = d.participantes.filter((p) => p.businessSlug);
   const directorio = perfiles.length
@@ -504,10 +500,10 @@ function paginaEdicion(d, c) {
 
 <section class="section" aria-labelledby="dz-muro">
   <div class="wrap">
-    <div class="section-head"><h2 class="section-title" id="dz-muro">Muro del Legado</h2><a class="section-link" href="${base}/muro">Ver los ${r.participantes} empresarios</a></div>
-    <p class="dz-nota" style="margin:-10px 0 16px">Cada empresario que se suma al Desafío queda en el Muro, con su ciudad real. Sin datos de contacto: quien lo autorice tiene su perfil en el Directorio Empresarial.</p>
+    <div class="section-head"><h2 class="section-title" id="dz-muro">Muro del Legado</h2><a class="section-link" href="${base}/muro">Ver los ${r.muro} empresarios</a></div>
+    <p class="dz-nota" style="margin:-10px 0 16px">Los empresarios de Alberta entran al Muro cuando se publica su capítulo, con su ciudad real. Sin datos de contacto: quien lo autorice tiene su perfil en el Directorio Empresarial.</p>
     <div class="dz-muro dz-muro--avance">
-      ${d.participantes.slice(0, 8).map((p) => persona(d, p)).join("\n      ")}
+      ${d.muro.slice(0, 8).map((p) => persona(d, p)).join("\n      ")}
     </div>
     <div class="dz-mas"><a class="dz-boton-borde" href="${base}/muro">Ver el Muro completo</a></div>
   </div>
@@ -688,34 +684,28 @@ function paginaMuro(d, c) {
   const { ed, r, base } = d;
   const path = `${base}/muro`;
   const items = [["Inicio", "/"], [d.programa.nombre, `${BASE}/`], [ed.ciudad, `${base}/`], ["Muro del Legado", null, path]];
-  const conHistoria = d.participantes.filter((p) => d.historia(p.historia).estado === "publicada").length;
   const cuerpo = `
 <div class="wrap">${migas(items)}</div>
 <section class="section" aria-labelledby="dz-titulo" style="border-top:0;padding-top:22px">
   <div class="wrap">
     <p class="dz-kicker">${esc(ed.nombre)}</p>
     <h1 class="dz-titulo-pagina" id="dz-titulo">Muro del Legado</h1>
-    <p class="dz-lead">Los empresarios de la ${ed.numero === 1 ? "primera edición" : `edición ${ed.numero}`}, con su ciudad real. Cuando su historia se publica, su tarjeta enlaza a la entrevista.</p>
+    <p class="dz-lead">Los empresarios de Alberta de la ${ed.numero === 1 ? "primera edición" : `edición ${ed.numero}`} que ya contaron su historia en El Podcast del Migrante, con su ciudad real. Cada tarjeta enlaza a su capítulo. Cuando se publica un capítulo nuevo, su protagonista se suma al Muro.</p>
     <div class="dz-cifras" style="margin-top:22px">
-      <div class="dz-stat"><b>${r.participantes}</b><span>Empresarios confirmados en el Muro</span></div>
+      <div class="dz-stat"><b>${r.muro}</b><span>Empresarios en el Muro</span></div>
       <div class="dz-stat dz-stat--principal"><b>${r.historiasPublicadas}</b><span>Historias empresariales publicadas${ed.conteo && ed.conteo.estado === "provisional" ? " (provisional)" : ""}</span></div>
       <div class="dz-stat"><b>${r.meta - r.historiasPublicadas}</b><span>Historias por completar</span></div>
     </div>
-    <p class="dz-nota" style="margin-top:12px">Algunas historias reúnen a más de un empresario de la misma empresa: por eso hay más empresarios con historia publicada (${conHistoria}) que historias.</p>
+    ${r.muro > r.historiasPublicadas ? `<p class="dz-nota" style="margin-top:12px">Algunas historias reúnen a más de un empresario de la misma empresa: por eso hay más empresarios en el Muro (${r.muro}) que historias.</p>` : ""}
   </div>
 </section>
 <section class="section dz-alt" aria-label="Empresarios del Muro">
   <div class="wrap">
     <div class="dz-buscar">
       <input id="dzBuscarMuro" type="search" placeholder="Buscar por nombre, empresa o ciudad" aria-label="Buscar en el Muro">
-      <div class="dz-filtros" role="group" aria-label="Filtrar por estado">
-        <button class="dz-filtro" type="button" data-dz-estado="todos" aria-pressed="true">Todos (${r.participantes})</button>
-        <button class="dz-filtro" type="button" data-dz-estado="publicada" aria-pressed="false">Historia publicada (${conHistoria})</button>
-        <button class="dz-filtro" type="button" data-dz-estado="confirmado" aria-pressed="false">Confirmados (${r.participantes - conHistoria})</button>
-      </div>
     </div>
     <div class="dz-muro" id="dzMuro">
-      ${d.participantes.map((p) => persona(d, p)).join("\n      ")}
+      ${d.muro.map((p) => persona(d, p)).join("\n      ")}
     </div>
     <p class="dz-sin-resultados" id="dzMuroVacio" hidden>No hay empresarios que coincidan con la búsqueda.</p>
     <p class="dz-nota" style="margin-top:18px">El Muro no publica correos, teléfonos ni direcciones. Para contactar a una empresa, consulta su perfil en el <a href="/index.html#quien-puede-ayudarte">Directorio Empresarial</a> cuando exista.</p>
@@ -723,7 +713,7 @@ function paginaMuro(d, c) {
 </section>`;
   return pagina(c, {
     title: `Muro del Legado — ${ed.nombre}`,
-    description: `Los ${r.participantes} empresarios del ${ed.nombre}, con su empresa y su ciudad real.`,
+    description: `Los ${r.muro} empresarios de Alberta del ${ed.nombre} con su capítulo publicado, con su empresa y su ciudad real.`,
     path,
     jsonLd: { "@context": "https://schema.org", "@type": "CollectionPage", name: `Muro del Legado — ${ed.nombre}`, url: SITE + path, inLanguage: "es", breadcrumb: breadcrumbLd(items) },
     cuerpo,

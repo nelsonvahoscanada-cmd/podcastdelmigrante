@@ -19,9 +19,11 @@
     (verificada en la pestaña pública de videos del canal). slug fija la
     URL (no cambia aunque se corrija un nombre). portadaPropia: el portal
     muestra su portada editorial en lugar de la miniatura de YouTube.
-  - Participante: una persona del Muro del Legado. muro: número de
-    registro (null si aún no tiene). businessSlug: perfil del Directorio
-    (perfil-<slug>.html), solo si existe y está autorizado.
+  - Participante: una persona inscrita en la edición (registro interno).
+    Solo se MUESTRA en el Muro del Legado si es de Alberta y tiene su
+    capítulo con video publicado (ver muro() y enMuro() abajo). muro:
+    número de registro (null si aún no tiene). businessSlug: perfil del
+    Directorio (perfil-<slug>.html), solo si existe y está autorizado.
   - confirmar: campos pendientes de confirmación por el equipo editorial.
     Se muestran tal como figuran en las fuentes públicas; no se inventan.
   Sin correos, teléfonos ni direcciones: el contacto vive solo en el
@@ -1663,6 +1665,56 @@
     ]
   };
 
+  /* ---------- Muro del Legado (regla automática) ----------
+     Un participante aparece en el Muro de una edición solo si cumple a la vez:
+       1. pertenece a Alberta (provincia === "Alberta");
+       2. su historia está publicada;
+       3. tiene un capítulo propio publicado: episodio de su historia con
+          visibilidad "publico" (verificada en el canal), página (slug) e
+          identificador de video de YouTube válido;
+       4. ese capítulo está vinculado con la persona: el nombre del episodio
+          comparte al menos un nombre o apellido con el del participante.
+     Quien no cumpla alguna condición sigue en DATOS.participantes (registro
+     interno, perfiles y estadísticas no cambian), pero no se muestra en el
+     Muro. Cuando se publique su capítulo, entra solo. */
+  const VIDEO_RE = /^[A-Za-z0-9_-]{11}$/;
+  const PALABRAS_VACIAS = new Set(["de", "del", "la", "las", "los", "y", "e"]);
+  function palabras(s) {
+    return String(s || "")
+      .normalize("NFKD")
+      .replace(/[̀-ͯ]/g, "")
+      .toLowerCase()
+      .split(/[^a-z0-9]+/)
+      .filter((w) => w.length > 1 && !PALABRAS_VACIAS.has(w));
+  }
+
+  /* Capítulo publicado propio de un participante (el que más coincide con su
+     nombre), o null si no lo tiene. */
+  function capituloDe(p) {
+    const suyas = new Set(palabras(p.nombre));
+    let mejor = null;
+    let puntos = 0;
+    for (const e of DATOS.episodios) {
+      if (e.edicion !== p.edicion || e.historia !== p.historia) continue;
+      if (e.visibilidad !== "publico" || !e.slug || !VIDEO_RE.test(e.videoId || "")) continue;
+      const n = palabras(e.persona).filter((w) => suyas.has(w)).length;
+      if (n > puntos || (n === puntos && mejor && e.ep < mejor.ep)) {
+        mejor = e;
+        puntos = n;
+      }
+    }
+    return puntos > 0 ? mejor : null;
+  }
+
+  function enMuro(p) {
+    const h = DATOS.historias.find((x) => x.id === p.historia);
+    return p.provincia === "Alberta" && Boolean(h) && h.estado === "publicada" && Boolean(capituloDe(p));
+  }
+
+  function muro(edicionId) {
+    return DATOS.participantes.filter((p) => p.edicion === edicionId && enMuro(p));
+  }
+
   function resumen(edicionId) {
     const edicion = DATOS.ediciones.find((e) => e.id === edicionId);
     if (!edicion) throw new Error("Edición desconocida: " + edicionId);
@@ -1675,13 +1727,14 @@
       historiasPublicadas: publicadas.length,
       episodiosPublicados: eps.length,
       historiasPendientes: historias.filter((h) => h.estado === "pendiente").length,
-      participantes: DATOS.participantes.filter(enEdicion).length,
+      participantes: DATOS.participantes.filter(enEdicion).length,   /* registro interno completo */
+      muro: muro(edicionId).length,                                  /* visibles en el Muro del Legado */
       enVerificacion: publicadas.filter((h) => h.verificar).length,
       grabadas: edicion.grabadas,
     };
   }
 
-  const api = { DATOS, resumen };
+  const api = { DATOS, resumen, muro, enMuro, capituloDe };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else raiz.PDM_DESAFIO = api;
 })(typeof window !== "undefined" ? window : globalThis);

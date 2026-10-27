@@ -5,7 +5,7 @@ import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 
 const ROOT = new URL("..", import.meta.url).pathname;
-const { DATOS, resumen } = createRequire(import.meta.url)("../js/desafio-datos.js");
+const { DATOS, resumen, muro, enMuro, capituloDe } = createRequire(import.meta.url)("../js/desafio-datos.js");
 const { historias, episodios, participantes, ediciones } = DATOS;
 
 test("edición Calgary: meta de 100 historias, sin plazo", () => {
@@ -20,7 +20,8 @@ test("contador: historias empresariales únicas con al menos un video público",
   assert.equal(r.episodiosPublicados, 36);
   assert.equal(r.historiasPublicadas, 34);
   assert.ok(r.historiasPublicadas <= r.episodiosPublicados && r.historiasPublicadas <= r.meta);
-  assert.equal(r.participantes, 49);
+  assert.equal(r.participantes, 49, "registro interno completo: nadie se borra");
+  assert.equal(r.muro, 36, "visibles en el Muro del Legado");
   /* Una misma empresa con varios episodios cuenta una vez */
   assert.deepEqual(historias.find((h) => h.id === "wenfer-group").episodios, [11, 28]);
   assert.deepEqual(historias.find((h) => h.id === "expert-mortgage-consulting").episodios, [17, 33]);
@@ -81,7 +82,7 @@ test("estructura reutilizable: cada registro pertenece a una edición existente"
   assert.throws(() => resumen("edmonton"), /Edición desconocida/);
 });
 
-test("Muro del Legado: cada participante con nombre, ciudad real e historia; números únicos", () => {
+test("registro de participantes (interno): nombre, ciudad real e historia; números únicos", () => {
   assert.equal(new Set(participantes.map((p) => p.muro)).size, participantes.length);
   for (const p of participantes) {
     assert.ok(p.nombre && p.ciudad, p.muro);
@@ -101,4 +102,80 @@ test("privacidad: sin correos, teléfonos ni direcciones de participantes", () =
 test("Sterna no figura como patrocinador vigente", () => {
   assert.doesNotMatch(readFileSync(ROOT + "js/desafio-stories.js", "utf8"), /Patrocinador[a]? oficial/i);
   assert.doesNotMatch(readFileSync(ROOT + "js/articles.js", "utf8"), /Sterna Global Immigration es patrocinador/);
+});
+
+/* ---------- Muro del Legado: regla automática ---------- */
+const RETIRADOS = ["006", "007", "009", "014", "017", "029", "032", "034", "040", "041", "044", "045", "048"];
+
+test("Muro: retira a quienes no tienen capítulo publicado y a quienes no son de Alberta, sin borrarlos del registro", () => {
+  const visibles = muro("calgary");
+  for (const n of RETIRADOS) {
+    const p = participantes.find((x) => x.muro === n);
+    assert.ok(p, `${n} sigue en el registro interno`);
+    assert.ok(!visibles.includes(p), `${n} ${p.nombre} fuera del Muro`);
+  }
+  for (const p of participantes.filter((x) => x.ciudad === "Winnipeg")) {
+    assert.equal(p.provincia, "Manitoba");
+    assert.equal(enMuro(p), false, p.nombre);
+  }
+  assert.deepEqual(participantes.filter((x) => x.ciudad === "Winnipeg").map((x) => x.nombre).sort(), ["Lesdy Johana Perilla Ruiz", "Marcela Galindo"]);
+  assert.equal(visibles.length + RETIRADOS.length, participantes.length);
+});
+
+test("Muro: todos los visibles son de Alberta, con historia publicada y su propio capítulo con video", () => {
+  for (const p of muro("calgary")) {
+    assert.equal(p.provincia, "Alberta", p.nombre);
+    assert.equal(historias.find((h) => h.id === p.historia).estado, "publicada", p.nombre);
+    const e = capituloDe(p);
+    assert.ok(e && e.historia === p.historia && e.visibilidad === "publico" && /^[A-Za-z0-9_-]{11}$/.test(e.videoId) && e.slug, p.nombre);
+  }
+  /* Andrea Paola Díaz Posada (Brooks, Alberta) se conserva, con su EP 37 */
+  const andrea = participantes.find((p) => p.nombre === "Andrea Paola Díaz Posada");
+  assert.equal(enMuro(andrea), true);
+  assert.equal(capituloDe(andrea).ep, 37);
+  /* Historias compartidas: cada persona enlaza a su propio episodio */
+  assert.equal(capituloDe(participantes.find((p) => p.nombre === "Wendy Montoya Aguirre")).ep, 28);
+  assert.equal(capituloDe(participantes.find((p) => p.nombre === "Cristina Acosta")).ep, 33);
+  assert.equal(capituloDe(participantes.find((p) => p.nombre === "Juan Acosta")).ep, 17);
+});
+
+/* Simula datos futuros sin dejar rastro en DATOS */
+function conEpisodio(ep, fn) {
+  episodios.push(ep);
+  try {
+    return fn();
+  } finally {
+    episodios.splice(episodios.indexOf(ep), 1);
+  }
+}
+function conEstado(historiaId, estado, fn) {
+  const h = historias.find((x) => x.id === historiaId);
+  const antes = h.estado;
+  h.estado = estado;
+  try {
+    return fn();
+  } finally {
+    h.estado = antes;
+  }
+}
+
+test("Muro: un empresario de Alberta entra solo cuando se publica su capítulo con video", () => {
+  const p = participantes.find((x) => x.muro === "007"); /* Jorge Navas, Calgary, pendiente */
+  const ep = { edicion: "calgary", ep: 99, historia: p.historia, persona: "Jorge Navas", videoId: "AbCdEfGhIjK", visibilidad: "publico", slug: "ep-99-jorge-navas" };
+  assert.equal(enMuro(p), false);
+  conEstado(p.historia, "publicada", () => {
+    assert.equal(enMuro(p), false, "historia publicada pero sin capítulo: no entra");
+    conEpisodio(ep, () => assert.equal(enMuro(p), true, "con capítulo publicado: entra solo"));
+    conEpisodio({ ...ep, visibilidad: "privado" }, () => assert.equal(enMuro(p), false, "video no público"));
+    conEpisodio({ ...ep, videoId: "https://youtu.be/x" }, () => assert.equal(enMuro(p), false, "URL escrita, no un video válido"));
+    conEpisodio({ ...ep, slug: "" }, () => assert.equal(enMuro(p), false, "sin página del capítulo"));
+    conEpisodio({ ...ep, persona: "Otra Persona" }, () => assert.equal(enMuro(p), false, "capítulo no vinculado a la persona"));
+  });
+  assert.equal(enMuro(p), false, "los datos quedan como estaban");
+});
+
+test("Muro: fuera de Alberta no entra aunque tenga capítulo publicado", () => {
+  const p = participantes.find((x) => x.nombre === "Marcela Galindo");
+  const ep = { edicion: "calgary", ep: 98, historia: p.historia, persona: "Marcela Galindo", videoId: "AbCdEfGhIjK", visibilidad: "publico", slug: "ep-98-marcela-galindo" };
+  conEstado(p.historia, "publicada", () => conEpisodio(ep, () => assert.equal(enMuro(p), false)));
 });
