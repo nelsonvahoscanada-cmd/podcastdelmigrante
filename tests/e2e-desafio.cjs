@@ -9,7 +9,7 @@
 const { chromium, devices } = require("playwright");
 const assert = require("node:assert/strict");
 const path = require("node:path");
-const { DATOS, resumen } = require("../js/desafio-datos.js");
+const { DATOS, resumen, muro: muroDe } = require("../js/desafio-datos.js");
 
 const BASE = process.env.BASE || "http://127.0.0.1:8890";
 const SHOTS = process.env.SHOTS || "";
@@ -143,17 +143,18 @@ async function comunes(page, ruta) {
       }
       if (nombre === "muro") {
         const tarjetas = page.locator("#dzMuro .dz-persona");
-        assert.equal(await tarjetas.count(), R.participantes);
+        assert.equal(await tarjetas.count(), R.muro);
         /* En todos los tamaños: nombre, empresa y ciudad visibles */
         for (const sel of [".dz-persona__nombre", ".dz-persona__empresa", ".dz-lugar"]) assert.ok(await tarjetas.first().locator(sel).isVisible(), sel);
         await page.fill("#dzBuscarMuro", "winnipeg");
-        assert.equal(await page.locator("#dzMuro .dz-persona:visible").count(), DATOS.participantes.filter((p) => p.ciudad === "Winnipeg").length);
+        assert.equal(await page.locator("#dzMuro .dz-persona:visible").count(), 0, "el Muro de Alberta no incluye Winnipeg");
+        assert.equal(await page.locator("#dzMuroVacio").isVisible(), true);
         await page.fill("#dzBuscarMuro", "brooks");
         assert.match(await page.locator("#dzMuro .dz-persona:visible").innerText(), /Andrea Paola Díaz Posada/);
         await page.fill("#dzBuscarMuro", "");
-        await page.locator('[data-dz-estado="confirmado"]').click();
-        assert.equal(await page.locator("#dzMuro .dz-persona:visible").count(), DATOS.participantes.filter((p) => DATOS.historias.find((h) => h.id === p.historia).estado === "pendiente").length);
-        await page.locator('[data-dz-estado="todos"]').click();
+        assert.equal(await page.locator("#dzMuro .dz-persona:visible").count(), muroDe("calgary").length);
+        /* Cada tarjeta enlaza a su capítulo */
+        assert.equal(await page.locator("#dzMuro .dz-persona__ver").count(), R.muro);
       }
       if (SHOTS && ["computador", "celular"].includes(perfil) || (SHOTS && perfil === "tableta" && nombre === "calgary")) {
         await page.reload({ waitUntil: "networkidle" });

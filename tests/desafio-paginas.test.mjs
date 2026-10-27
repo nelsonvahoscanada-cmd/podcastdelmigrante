@@ -8,7 +8,7 @@ import { render } from "../scripts/build-desafio.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
-const { DATOS, resumen } = createRequire(import.meta.url)("../js/desafio-datos.js");
+const { DATOS, resumen, muro: muroDe } = createRequire(import.meta.url)("../js/desafio-datos.js");
 const R = resumen("calgary");
 const FILES = render();
 const PAGES = Object.entries(FILES).filter(([k]) => !k.startsWith("/"));
@@ -80,7 +80,8 @@ test("contador: cifras calculadas desde los datos y marcadas como provisionales"
   assert.equal((ed.match(/<i( class="pub")?><\/i>/g) || []).length, R.meta + 2 /* leyenda */);
   /* Las entrevistas grabadas solo se muestran con un dato comprobable */
   if (DATOS.ediciones[0].grabadas == null) assert.doesNotMatch(ed, /Entrevistas grabadas/);
-  assert.match(FILES["calgary/muro.html"], new RegExp(`<b>${R.participantes}</b><span>Empresarios confirmados en el Muro`));
+  assert.match(FILES["calgary/muro.html"], new RegExp(`<b>${R.muro}</b><span>Empresarios en el Muro</span>`));
+  assert.match(ed, new RegExp(`<b>${R.muro}</b><span>Empresarios en el Muro del Legado</span>`));
 });
 
 test("entrevistas: todas en el archivo, con su ciudad real y su video", () => {
@@ -133,14 +134,25 @@ test("privacidad: ninguna página publica correos (salvo el institucional) ni te
   }
 });
 
-test("Muro del Legado: todos los participantes con nombre, empresa y ciudad", () => {
+test("Muro del Legado: solo empresarios de Alberta con su capítulo publicado, cada uno enlazado a su episodio", () => {
   const muro = FILES["calgary/muro.html"];
-  assert.equal((muro.match(/<article class="dz-persona/g) || []).length, DATOS.participantes.length);
+  const visibles = muroDe("calgary");
+  assert.equal(visibles.length, 36);
+  assert.equal((muro.match(/<article class="dz-persona/g) || []).length, visibles.length);
   for (const p of DATOS.participantes) {
-    assert.ok(muro.includes(`>${p.nombre.replace(/&/g, "&amp;")}</h3>`), p.nombre);
-    assert.ok(muro.includes(`${p.ciudad}, ${p.provincia}`), p.ciudad);
+    const esta = muro.includes(`>${p.nombre.replace(/&/g, "&amp;")}</h3>`);
+    assert.equal(esta, visibles.includes(p), p.nombre);
   }
-  for (const c of ["Airdrie", "Okotoks", "Winnipeg", "Brooks"]) assert.match(muro, new RegExp(`${c}, (Alberta|Manitoba)`), c);
+  /* Cada tarjeta enlaza a una página de episodio que existe */
+  const enlaces = [...muro.matchAll(/class="dz-persona__ver" href="\/desafio-100-empresas\/calgary\/([a-z0-9-]+)"/g)].map((m) => m[1]);
+  assert.equal(enlaces.length, visibles.length);
+  for (const e of enlaces) assert.ok(FILES[`calgary/${e}.html`], e);
+  /* Fuera de Alberta, nadie: ni en el Muro ni en las ciudades de las portadas */
+  for (const k of ["calgary/muro.html", "calgary/index.html", "index.html"]) assert.doesNotMatch(FILES[k], /Winnipeg|Manitoba/, k);
+  for (const c of ["Calgary", "Airdrie", "Okotoks", "Brooks"]) assert.match(muro, new RegExp(`${c}, Alberta`), c);
+  assert.match(muro, /Andrea Paola Díaz Posada<\/h3>[\s\S]*?Brooks, Alberta[\s\S]*?href="\/desafio-100-empresas\/calgary\/ep-37-andrea-paola-diaz-posada"/);
+  /* Sin «Confirmados»: en el Muro solo hay historias publicadas */
+  assert.doesNotMatch(muro, /data-estado="confirmado"|data-dz-estado/);
 });
 
 test("pie de página: «Desafío 100 Empresas» lleva a /desafio-100-empresas/ en todas las páginas", () => {
