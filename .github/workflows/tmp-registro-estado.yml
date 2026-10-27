@@ -9,8 +9,8 @@ jobs:
   estado:
     runs-on: ubuntu-latest
     steps:
-      - name: formulario (solo lectura, sin enviar nada)
+      - name: formulario (solo lectura, sin enviar nada) 2
         run: |
           c=$(curl -s "https://podcastdelmigrante.com/registro/config")
-          echo "::notice title=CONFIG::$(echo "$c" | sed 's/"turnstileSiteKey":"[^"]*"/"turnstileSiteKey":"(presente)"/')"
+          echo "::notice title=CONFIG::$(echo "$c" | sed -E 's/"turnstileSiteKey":"[^"]+"/"turnstileSiteKey":"(presente)"/')"
           echo "::notice title=FORM::$(curl -s -o /dev/null -w '%{http_code}' https://podcastdelmigrante.com/registra-tu-empresa)"
