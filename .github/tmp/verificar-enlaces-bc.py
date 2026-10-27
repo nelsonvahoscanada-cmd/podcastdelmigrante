@@ -33,3 +33,22 @@ for u, st, final in res:
 print(f"{len(res)} enlaces; {len(malos)} con problemas")
 for u, st, _ in malos:
     print("MAL|", st, u)
+
+# Segunda pasada con navegador real, uno por uno, para los que rechazan robots
+if malos:
+    from playwright.sync_api import sync_playwright
+    import time
+    with sync_playwright() as p:
+        b = p.chromium.launch()
+        ctx = b.new_context(user_agent=UA["User-Agent"], locale="en-CA")
+        for u, _, _ in malos:
+            pg = ctx.new_page()
+            try:
+                r = pg.goto(u, wait_until="domcontentloaded", timeout=90000)
+                titulo = re.sub(r"\s+", " ", pg.title())[:90]
+                print("NAV|", r.status if r else None, u, "->", pg.url if pg.url != u else "", "|", titulo)
+            except Exception as e:
+                print("NAV|", str(e).split("\n")[0][:80], u)
+            pg.close()
+            time.sleep(3)
+        b.close()
