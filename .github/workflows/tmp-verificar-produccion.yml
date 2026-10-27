@@ -1,0 +1,30 @@
+name: tmp verificar produccion vistas
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1]
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm i --no-save playwright@1 && npx playwright install --with-deps chromium
+      - name: esperar el despliegue
+        run: |
+          for i in $(seq 1 60); do
+            curl -fsS "https://podcastdelmigrante.com/js/vistas.js?v=$i" | grep -q 'Artículo del Magazine' && exit 0
+            sleep 15
+          done
+          exit 1
+      - run: mkdir -p shots && node .github/tmp/verificar-produccion.cjs
+      - run: BASE=https://podcastdelmigrante.com node tests/e2e-menu.cjs
+      - name: miniwebs y portal (solo encabezados HTTP, sin ejecutar JavaScript)
+        run: |
+          for u in https://podcastdelmigrante.com/ https://podcastdelmigrante.com/noticias https://podcastdelmigrante.com/registra-tu-empresa.html https://podcastdelmigrante.com/desafio-100-empresas/ https://carlosdcastillo.com/; do
+            echo "H|$u|$(curl -sS -o /dev/null -w '%{http_code}' -L "$u")"
+          done
+      - run: for f in shots/prod-*.png; do echo "F|$f"; gzip -c "$f" | base64 -w0 | fold -w 4000 | sed 's/^/C|/'; echo; done
