@@ -956,7 +956,7 @@ const CD_PROFILES = {
         links: [
           { label: "Gobierno de BC — Normas de empleo (Employment Standards)", href: "https://www2.gov.bc.ca/gov/content/employment-business/employment-standards-advice/employment-standards" },
           { label: "Gobierno de BC — Salario mínimo", href: "https://www2.gov.bc.ca/gov/content/employment-business/employment-standards-advice/employment-standards/wages/minimum-wage" },
-          { label: "WorkBC — Centros de empleo", href: "https://www.workbc.ca/discover-employment-services/workbc-centres" },
+          { label: "WorkBC — Centros de empleo", href: "https://www.workbc.ca/get-support/workbc-centre-services" },
           { label: "WorkBC — Bolsa de empleo y mercado laboral", href: "https://www.workbc.ca/" },
           { label: "Job Bank — Panorama del mercado laboral de Columbia Británica", href: "https://www.jobbank.gc.ca/trend-analysis/job-market-reports/british-columbia/environmental-scan" },
         ],
@@ -979,8 +979,8 @@ const CD_PROFILES = {
         alert: "Si alguien te pide pagar al BC PNP por otro medio que no sea su portal oficial, o te promete una nominación, es una señal de fraude. El programa pide reportarlo a PNP.fraud.tips@gov.bc.ca.",
         links: [
           { label: "WelcomeBC — El BC Provincial Nominee Program", href: "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/the-bc-provincial-nominee-program" },
-          { label: "WelcomeBC — Skills Immigration (trabajadores)", href: "https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" },
-          { label: "WelcomeBC — Entrepreneur Immigration", href: "https://www.welcomebc.ca/immigrate-to-b-c/entrepreneur-immigration" },
+          { label: "WelcomeBC — Skills Immigration (trabajadores)", href: "https://www.welcomebc.ca/immigrate-to-b-c/for-workers" },
+          { label: "WelcomeBC — Entrepreneur Immigration", href: "https://www.welcomebc.ca/immigrate-to-b-c/for-entrepreneurs-and-businesses" },
           { label: "WelcomeBC — Invitaciones del BC PNP", href: "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" },
           { label: "WelcomeBC — Noticias del BC PNP", href: "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" },
           { label: "WelcomeBC — Prevención de fraudes del BC PNP", href: "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/fraud-awareness" },
@@ -1027,7 +1027,7 @@ const CD_PROFILES = {
         },
         links: [
           { label: "Gobierno de BC — Residential Tenancy Branch", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies" },
-          { label: "Gobierno de BC — Depósitos de garantía y por mascotas", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/starting-a-tenancy/deposits-and-fees" },
+          { label: "Gobierno de BC — Depósitos de garantía y por mascotas", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/starting-a-tenancy/deposits-fees" },
           { label: "Gobierno de BC — Aumento máximo de alquiler 2027 (comunicado)", href: "https://news.gov.bc.ca/releases/2026HMA0085-000982" },
           { label: "BC Housing — Vivienda de alquiler subsidiada", href: "https://www.bchousing.org/housing-assistance/rental-housing" },
           { label: "CMHC — Datos del mercado de alquiler", href: "https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-data/data-tables/rental-market/rental-market-report-data-tables" },
@@ -1050,7 +1050,7 @@ const CD_PROFILES = {
           { label: "Gobierno de BC — Elegibilidad para MSP", href: "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible" },
           { label: "Gobierno de BC — Período de espera de MSP", href: "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/how-to-enrol/coverage-wait-period" },
           { label: "HealthLink BC (8-1-1)", href: "https://www.healthlinkbc.ca/" },
-          { label: "Health Connect Registry — Médico de familia", href: "https://www.healthlinkbc.ca/health-connect-registry" },
+          { label: "Health Connect Registry — Médico de familia", href: "https://www.healthlinkbc.ca/find-care/health-connect-registry" },
         ],
       },
       {
@@ -1064,7 +1064,7 @@ const CD_PROFILES = {
         links: [
           { label: "Gobierno de BC — Buscar escuelas y distritos escolares", href: "https://bcschoolcontacts.gov.bc.ca/" },
           { label: "StudentAid BC — Ayuda financiera para estudiantes", href: "https://studentaidbc.ca/" },
-          { label: "WelcomeBC — Servicios para recién llegados", href: "https://www.welcomebc.ca/start-your-life-in-b-c/settlement-services" },
+          { label: "WelcomeBC — Servicios para recién llegados", href: "https://www.welcomebc.ca/start-your-life-in-b-c/find-newcomer-services" },
           { label: "CICIC — Evaluación de credenciales extranjeras", href: "https://www.cicic.ca/" },
         ],
       },
@@ -1092,7 +1092,7 @@ const CD_PROFILES = {
         links: [
           { label: "CRA — Cómo solicitar la Canada Child Benefit", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html" },
           { label: "Gobierno de BC — B.C. family benefit", href: "https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/family-benefit" },
-          { label: "WelcomeBC — B.C. Newcomers' Guide (también en español)", href: "https://www.welcomebc.ca/start-your-life-in-b-c/newcomers-guides" },
+          { label: "WelcomeBC — B.C. Newcomers' Guide (también en español)", href: "https://www.welcomebc.ca/start-your-life-in-b-c/bc-newcomers-guide" },
         ],
       },
       {
@@ -1104,8 +1104,8 @@ const CD_PROFILES = {
         ],
         indicators: [],
         links: [
-          { label: "WelcomeBC — Servicios para recién llegados", href: "https://www.welcomebc.ca/start-your-life-in-b-c/settlement-services" },
-          { label: "WelcomeBC — B.C. Newcomers' Guide", href: "https://www.welcomebc.ca/start-your-life-in-b-c/newcomers-guides" },
+          { label: "WelcomeBC — Servicios para recién llegados", href: "https://www.welcomebc.ca/start-your-life-in-b-c/find-newcomer-services" },
+          { label: "WelcomeBC — B.C. Newcomers' Guide", href: "https://www.welcomebc.ca/start-your-life-in-b-c/bc-newcomers-guide" },
           { label: "WelcomeBC — Career Paths for Skilled Immigrants", href: "https://www.welcomebc.ca/start-your-life-in-b-c/career-paths-for-skilled-immigrants" },
           { label: "IRCC — Encuentra servicios gratuitos para recién llegados", href: "https://ircc.canada.ca/english/newcomers/services/index.asp" },
           { label: "211 British Columbia", href: "https://bc.211.ca/" },
@@ -1169,8 +1169,8 @@ const CD_PROFILES = {
       { title: "Abre una cuenta bancaria", text: "Necesitarás una cuenta para recibir tu salario y los beneficios. La Agencia de Consumo en Materia Financiera de Canadá explica qué identificación te pueden pedir y tus derechos al abrirla.", link: { label: "Gobierno de Canadá — Abrir una cuenta bancaria", href: "https://www.canada.ca/en/financial-consumer-agency/services/banking/opening-bank-account.html" } },
       { title: "Encuentra vivienda y conoce tus derechos como inquilino", text: "El depósito de garantía no puede superar la mitad de un mes de alquiler. El alquiler solo puede subir una vez cada 12 meses, con tres meses de aviso y dentro del máximo anual (2.2% en 2027).", warning: "Nunca pagues un depósito sin ver la vivienda y comprobar quién la alquila.", link: { label: "Gobierno de BC — Residential Tenancy Branch", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies" } },
       { title: "Inscribe a tus hijos en la escuela", text: "Comunícate con el distrito escolar (school district) de tu zona para saber qué escuela te corresponde y qué documentos llevar.", link: { label: "Gobierno de BC — Escuelas y distritos escolares", href: "https://bcschoolcontacts.gov.bc.ca/" } },
-      { title: "Busca servicios para recién llegados y la guía en español", text: "Hay orientación, clases de idioma y apoyo para el empleo sin costo, si cumples los requisitos de cada programa. La Guía para recién llegados de BC está disponible en español.", link: { label: "WelcomeBC — Servicios para recién llegados", href: "https://www.welcomebc.ca/start-your-life-in-b-c/settlement-services" } },
-      { title: "Busca empleo con ayuda gratuita", text: "Los centros WorkBC ayudan sin costo a buscar empleo, preparar tu hoja de vida (résumé) y encontrar formación; Job Bank publica ofertas y salarios por ocupación.", warning: "Ningún empleador legítimo te cobra por una oferta de empleo.", link: { label: "WorkBC — Centros de empleo", href: "https://www.workbc.ca/discover-employment-services/workbc-centres" } },
+      { title: "Busca servicios para recién llegados y la guía en español", text: "Hay orientación, clases de idioma y apoyo para el empleo sin costo, si cumples los requisitos de cada programa. La Guía para recién llegados de BC está disponible en español.", link: { label: "WelcomeBC — Servicios para recién llegados", href: "https://www.welcomebc.ca/start-your-life-in-b-c/find-newcomer-services" } },
+      { title: "Busca empleo con ayuda gratuita", text: "Los centros WorkBC ayudan sin costo a buscar empleo, preparar tu hoja de vida (résumé) y encontrar formación; Job Bank publica ofertas y salarios por ocupación.", warning: "Ningún empleador legítimo te cobra por una oferta de empleo.", link: { label: "WorkBC — Centros de empleo", href: "https://www.workbc.ca/get-support/workbc-centre-services" } },
     ],
     scams: [
       { title: "Estafas de empleo", text: "Ofertas que piden pagar por el puesto, por una evaluación de impacto en el mercado laboral (LMIA) o por «asegurar» una visa; sueldos muy altos por poco trabajo; entrevistas solo por chat." },

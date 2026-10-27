@@ -181,19 +181,19 @@ export const FUENTES = {
 const RECURSOS = {
   empleo: [
     { label: "Job Bank — Buscar empleo en Columbia Británica", href: "https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=British+Columbia" },
-    { label: "WorkBC — Centros de empleo con ayuda gratuita", href: "https://www.workbc.ca/discover-employment-services/workbc-centres" },
+    { label: "WorkBC — Centros de empleo con ayuda gratuita", href: "https://www.workbc.ca/get-support/workbc-centre-services" },
   ],
   escuelas: [
     { label: "Gobierno de BC — Buscar escuelas y distritos escolares (BC School Contacts)", href: "https://bcschoolcontacts.gov.bc.ca/" },
   ],
   salud: [
     { label: "HealthLink BC — Consejos de salud las 24 horas (8-1-1)", href: "https://www.healthlinkbc.ca/" },
-    { label: "Health Connect Registry — Inscribirse para conseguir médico de familia", href: "https://www.healthlinkbc.ca/health-connect-registry" },
+    { label: "Health Connect Registry — Inscribirse para conseguir médico de familia", href: "https://www.healthlinkbc.ca/find-care/health-connect-registry" },
     { label: "Gobierno de BC — Elegibilidad para MSP", href: "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible" },
   ],
   recienLlegados: [
-    { label: "WelcomeBC — Servicios gratuitos para recién llegados", href: "https://www.welcomebc.ca/start-your-life-in-b-c/settlement-services" },
-    { label: "WelcomeBC — B.C. Newcomers' Guide (también en español)", href: "https://www.welcomebc.ca/start-your-life-in-b-c/newcomers-guides" },
+    { label: "WelcomeBC — Servicios gratuitos para recién llegados", href: "https://www.welcomebc.ca/start-your-life-in-b-c/find-newcomer-services" },
+    { label: "WelcomeBC — B.C. Newcomers' Guide (también en español)", href: "https://www.welcomebc.ca/start-your-life-in-b-c/bc-newcomers-guide" },
     { label: "IRCC — Servicios gratuitos para recién llegados cerca de ti", href: "https://ircc.canada.ca/english/newcomers/services/index.asp" },
     { label: "211 British Columbia — Orientación sobre ayudas comunitarias", href: "https://bc.211.ca/" },
   ],
