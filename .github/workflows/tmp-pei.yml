@@ -1,0 +1,59 @@
+name: tmp PEI producción
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1]
+    paths: [".github/workflows/tmp-pei.yml"]
+permissions:
+  contents: read
+jobs:
+  produccion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [pei, paginas, alberta, ontario, bc, portada-noticias]
+    env:
+      BASE: https://podcastdelmigrante.com
+      NODE_OPTIONS: --require ./bloquear.cjs
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - if: matrix.parte != 'paginas'
+        run: npm i --no-save playwright@1.47.0 && npx playwright install --with-deps chromium
+      - name: Contadores antes (solo lectura)
+        if: matrix.parte == 'paginas'
+        run: for a in ART-2026-029 ART-2026-030; do echo "$a $(curl -s $BASE/api/vistas/$a)"; done
+      - if: matrix.parte == 'pei'
+        run: node tests/e2e-prince-edward-island-localidades.cjs
+      - if: matrix.parte == 'alberta'
+        run: node tests/e2e-alberta-localidades.cjs
+      - if: matrix.parte == 'ontario'
+        run: node tests/e2e-ontario-localidades.cjs
+      - if: matrix.parte == 'bc'
+        run: node tests/e2e-british-columbia-localidades.cjs
+      - if: matrix.parte == 'portada-noticias'
+        run: node tests/e2e-canada-datos.cjs && node tests/e2e-noticias.cjs
+      - name: 98 páginas, guía, imágenes, sitemap y formulario (solo GET)
+        if: matrix.parte == 'paginas'
+        run: |
+          fallos=0
+          for f in canada-en-datos/prince-edward-island/*.html; do
+            s=$(basename $f .html); u="$BASE/canada-en-datos/prince-edward-island/$s"
+            h=$(curl -s -w '\n%{http_code}' "$u"); c=$(echo "$h" | tail -1)
+            echo "$h" | grep -q "<link rel=\"canonical\" href=\"https://podcastdelmigrante.com/canada-en-datos/prince-edward-island/$s\">" || { echo "SIN CANONICAL $s"; fallos=$((fallos+1)); }
+            echo "$h" | grep -q "data-cd-share data-url=\"https://podcastdelmigrante.com/canada-en-datos/prince-edward-island/$s\"" || { echo "SIN COMPARTIR $s"; fallos=$((fallos+1)); }
+            [ "$c" = 200 ] || { echo "$c $s"; fallos=$((fallos+1)); }
+            [ "$(curl -s -o /dev/null -w '%{http_code}' $BASE/assets/canada-en-datos/prince-edward-island/$s.jpg)" = 200 ] || { echo "SIN IMAGEN $s"; fallos=$((fallos+1)); }
+          done
+          echo "98 páginas revisadas"
+          for r in /canada-en-datos/prince-edward-island /canada-en-datos/ /js/prince-edward-island-localidades.js /assets/canada-en-datos/social-prince-edward-island.jpg /canada-en-datos/alberta /canada-en-datos/ontario /canada-en-datos/british-columbia /canada-en-datos/british-columbia/vancouver /noticias /registra-tu-empresa /quien-puede-ayudarte; do
+            c=$(curl -s -o /dev/null -w '%{http_code}' "$BASE$r"); echo "$c $r"; [ "$c" = 200 ] || fallos=$((fallos+1))
+          done
+          curl -s $BASE/sitemap.xml | grep -c "prince-edward-island" 
+          echo "registro/config: $(curl -s $BASE/registro/config | head -c 200)"
+          echo "fallos: $fallos"; [ $fallos = 0 ]
+      - name: Contadores después (solo lectura)
+        if: matrix.parte == 'paginas'
+        run: sleep 600; for a in ART-2026-029 ART-2026-030; do echo "$a $(curl -s $BASE/api/vistas/$a)"; done
