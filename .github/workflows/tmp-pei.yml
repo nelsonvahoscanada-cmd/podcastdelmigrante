@@ -22,6 +22,7 @@ jobs:
         with: { node-version: 22 }
       - if: matrix.parte != 'paginas'
         run: npm i --no-save playwright@1.47.0 && npx playwright install --with-deps chromium
+        env: { NODE_OPTIONS: "" }
       - name: Contadores antes (solo lectura)
         if: matrix.parte == 'paginas'
         run: for a in ART-2026-029 ART-2026-030; do echo "$a $(curl -s $BASE/api/vistas/$a)"; done
@@ -56,4 +57,4 @@ jobs:
           echo "fallos: $fallos"; [ $fallos = 0 ]
       - name: Contadores después (solo lectura)
         if: matrix.parte == 'paginas'
-        run: sleep 600; for a in ART-2026-029 ART-2026-030; do echo "$a $(curl -s $BASE/api/vistas/$a)"; done
+        run: sleep 900; for a in ART-2026-029 ART-2026-030; do echo "$a $(curl -s $BASE/api/vistas/$a)"; done
