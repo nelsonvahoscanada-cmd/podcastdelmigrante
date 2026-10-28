@@ -52,11 +52,21 @@ export function allowedTurnstileHostnames(env) {
   return list.length ? list : DEFAULT_TURNSTILE_HOSTNAMES;
 }
 
-/* true = humano verificado · false = token inválido o emitido en otro
-   dominio · null = Turnstile no respondió (se rechaza igual, pero con un
-   mensaje distinto). */
-async function verifyTurnstile(env, token, ip) {
-  if (!token) return false;
+/* Resultado de la verificación: { ok, reason }.
+   reason: "missing" (sin token) · "expired" (vencido o ya usado: el token
+   vale 300 s y una sola vez) · "invalid" (rechazado) · "hostname" (emitido
+   en otro dominio) · "config" (clave secreta errónea o ausente: problema
+   nuestro, no de la persona) · "unavailable" (Turnstile no respondió).
+   El registro anota solo los códigos de error de Cloudflare y el dominio,
+   nunca el token, la IP ni datos personales. */
+const TURNSTILE_EXPIRED = ["timeout-or-duplicate"];
+const TURNSTILE_CONFIG = ["missing-input-secret", "invalid-input-secret"];
+
+export async function verifyTurnstile(env, token, ip) {
+  if (!token) {
+    console.warn("Turnstile: la solicitud llegó sin token");
+    return { ok: false, reason: "missing" };
+  }
   const body = new URLSearchParams({ secret: env.TURNSTILE_SECRET_KEY, response: token });
   if (ip) body.set("remoteip", ip);
   let res;
@@ -64,22 +74,38 @@ async function verifyTurnstile(env, token, ip) {
     res = await fetch(env.TURNSTILE_VERIFY_URL || "https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
   } catch (e) {
     console.error("Turnstile no respondió:", e && e.message);
-    return null;
+    return { ok: false, reason: "unavailable" };
   }
   if (!res.ok) {
     console.error("Turnstile respondió", res.status);
-    return null;
+    return { ok: false, reason: "unavailable" };
   }
   const out = await res.json().catch(() => ({}));
-  if (out.success !== true) return false;
+  if (out.success !== true) {
+    const codes = (Array.isArray(out["error-codes"]) ? out["error-codes"] : []).map((c) => String(c).replace(/[^a-z0-9-]/gi, "").slice(0, 40));
+    const reason = codes.some((c) => TURNSTILE_CONFIG.includes(c)) ? "config" : codes.some((c) => TURNSTILE_EXPIRED.includes(c)) ? "expired" : "invalid";
+    (reason === "config" ? console.error : console.warn)(`Turnstile rechazó el token (${reason}): ${codes.join(",") || "sin códigos"}`);
+    return { ok: false, reason };
+  }
   /* Un token válido obtenido en otro sitio (p. ej. copiado por un robot desde
      una página ajena con la misma clave) no sirve aquí. */
   const host = String(out.hostname || "").toLowerCase();
   if (!allowedTurnstileHostnames(env).includes(host)) {
     console.warn("Turnstile: token emitido para un dominio no permitido:", host || "(sin dominio)");
-    return false;
+    return { ok: false, reason: "hostname" };
   }
-  return true;
+  return { ok: true, reason: "" };
+}
+
+/* Respuesta al navegador según el motivo. Ninguna pide recargar la página
+   (se perderían los datos y las fotografías): el formulario renueva la
+   verificación y permite reintentar con el mismo número de solicitud. */
+const KEEP = "Tus datos y fotografías siguen en el formulario.";
+export function turnstileFailure(reason) {
+  if (reason === "unavailable") return [503, "turnstile_unavailable", `No pudimos completar la verificación de seguridad en este momento. ${KEEP} Inténtalo de nuevo en unos minutos.`];
+  if (reason === "config") return [503, "turnstile_config", `No pudimos completar la verificación de seguridad por un problema de nuestro sitio, no tuyo. ${KEEP} Inténtalo más tarde o escríbenos.`];
+  if (reason === "expired" || reason === "missing") return [403, "turnstile_expired", `La verificación de seguridad venció. Vuelve a completarla (la casilla de Cloudflare, arriba del botón) y pulsa «Enviar solicitud». ${KEEP}`];
+  return [403, "turnstile_invalid", `No pudimos verificar que no eres un robot. Vuelve a completar la verificación y pulsa «Enviar solicitud». ${KEEP}`];
 }
 
 function receivedLabel(date) {
@@ -153,11 +179,9 @@ async function handlePost(context) {
 
   const ip = request.headers.get("CF-Connecting-IP") || "";
   const human = await verifyTurnstile(env, raw["cf-turnstile-response"], ip);
-  if (human === null) {
-    return jsonResponse({ ok: false, error: "No pudimos completar la verificación en este momento. Tus datos siguen en el formulario: inténtalo de nuevo en unos minutos." }, 503);
-  }
-  if (!human) {
-    return jsonResponse({ ok: false, error: "No pudimos verificar que no eres un robot. Recarga la página e inténtalo de nuevo." }, 403);
+  if (!human.ok) {
+    const [httpStatus, code, error] = turnstileFailure(human.reason);
+    return jsonResponse({ ok: false, code, error }, httpStatus);
   }
 
   const db = env.DIRECTORIO_DB;

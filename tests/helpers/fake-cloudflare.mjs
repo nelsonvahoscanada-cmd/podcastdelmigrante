@@ -68,9 +68,11 @@ export function installFetch({ turnstileOk = true, turnstileDown = false, resend
     if (u.startsWith("https://turnstile.test/")) {
       if (turnstileDown) throw new TypeError("fetch failed");
       const params = new URLSearchParams(String(init.body));
+      /* Como siteverify: códigos de error de Cloudflare y el dominio donde se resolvió el desafío */
+      if (/MAL/.test(params.get("secret") || "")) return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-secret"] }), { status: 200 });
+      if (params.get("response") === "token-vencido") return new Response(JSON.stringify({ success: false, "error-codes": ["timeout-or-duplicate"] }), { status: 200 });
       const success = turnstileOk && params.get("response") === "token-ok";
-      /* Como siteverify: el dominio donde se resolvió el desafío */
-      return new Response(JSON.stringify(success ? { success, hostname: turnstileHostname } : { success }), { status: 200 });
+      return new Response(JSON.stringify(success ? { success, hostname: turnstileHostname } : { success, "error-codes": ["invalid-input-response"] }), { status: 200 });
     }
     if (u.startsWith("https://resend.test/")) {
       sent.push({ headers: init.headers, body: JSON.parse(init.body) });

@@ -329,7 +329,8 @@ test("servicios caídos: Turnstile sin respuesta → 503 claro; D1 caída → 50
     const env = fakeEnv();
     const r = await send(env, VALID);
     assert.equal(r.res.status, 503);
-    assert.match(r.body.error, /Tus datos siguen en el formulario/);
+    assert.match(r.body.error, /Tus datos y fotografías siguen en el formulario/);
+    assert.equal(r.body.code, "turnstile_unavailable");
     assert.equal(rows(env).length, 0);
     assert.equal(net.sent.length, 0);
   } finally { net.restore(); }
@@ -452,4 +453,51 @@ test("migración 0004: se aplica sobre una base con solicitudes y no pierde ni c
   assert.equal(after[0].extra_images, null);
   assert.throws(() => db.exec(readFileSync(new URL("0004_perfil_premium.sql", dir), "utf8")), /duplicate column/, "repetirla no cambia nada");
   assert.equal(db.prepare("SELECT COUNT(*) AS n FROM business_applications").get().n, 1);
+});
+
+test("Turnstile: token vencido o ya usado, clave secreta errónea e inválido se distinguen, sin pedir recargar la página", async () => {
+  const net = installFetch();
+  const log = [];
+  const orig = { warn: console.warn, error: console.error };
+  console.warn = (...a) => log.push(a.join(" "));
+  console.error = (...a) => log.push(a.join(" "));
+  try {
+    const env = fakeEnv();
+    /* Vencido (más de 5 minutos, p. ej., en el iPhone al elegir fotografías) o ya usado */
+    let r = await send(env, { ...VALID, "cf-turnstile-response": "token-vencido" });
+    assert.equal(r.res.status, 403);
+    assert.equal(r.body.code, "turnstile_expired");
+    assert.match(r.body.error, /venció/);
+    /* Sin token */
+    r = await send(env, { ...VALID, "cf-turnstile-response": "" });
+    assert.equal(r.body.code, "turnstile_expired");
+    /* Inválido */
+    r = await send(env, { ...VALID, "cf-turnstile-response": "falso" });
+    assert.equal(r.res.status, 403);
+    assert.equal(r.body.code, "turnstile_invalid");
+    /* Clave secreta errónea: es un problema del sitio, no de la persona */
+    r = await send(fakeEnv({ TURNSTILE_SECRET_KEY: "0xMAL_SECRETO" }), VALID);
+    assert.equal(r.res.status, 503);
+    assert.equal(r.body.code, "turnstile_config");
+    assert.doesNotMatch(r.body.error, /robot/);
+    for (const x of [r]) assert.doesNotMatch(x.body.error, /[Rr]ecarga/);
+    assert.equal(rows(env).length, 0, "nada se guarda");
+    assert.equal(net.sent.length, 0, "no salen correos");
+    /* Los registros dicen el motivo, sin el token ni el secreto */
+    const texto = log.join("\n");
+    assert.match(texto, /timeout-or-duplicate/);
+    assert.match(texto, /invalid-input-secret/);
+    assert.match(texto, /sin token/);
+    for (const s of ["token-vencido", "0xMAL_SECRETO", "falso"]) assert.ok(!texto.includes(s), "no revela " + s);
+    /* Después del rechazo, el reintento con un token nuevo registra la solicitud una sola vez */
+    r = await send(env, { ...VALID, idempotencyKey: "6f1c2b3a-4d5e-4f60-8a9b-0c1d2e3f4a5b" });
+    assert.equal(r.res.status, 201);
+    const again = await send(env, { ...VALID, idempotencyKey: "6f1c2b3a-4d5e-4f60-8a9b-0c1d2e3f4a5b" });
+    assert.equal(again.body.requestId, r.body.requestId, "mismo número: sin duplicados");
+    assert.equal(rows(env).length, 1);
+  } finally {
+    console.warn = orig.warn;
+    console.error = orig.error;
+    net.restore();
+  }
 });
