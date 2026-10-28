@@ -293,7 +293,9 @@
     const partes = [tipo[0] === tipo[1] ? tipo[0] : `${tipo[0]} (${tipo[1]})`];
     if (it.municipio !== -1) {
       const m = D.localidades[it.municipio];
-      partes.push(ext ? `está en ${m[0]} (${D.tipos[m[1]][0].toLowerCase()})` : `pertenece a ${m[0]}`);
+      /* Los homónimos ya llevan el tipo en el nombre, p. ej., «Souris (distrito de bomberos)»: no se repite */
+      const tipoM = `(${D.tipos[m[1]][0].toLowerCase()})`;
+      partes.push(ext ? `está en ${m[0].endsWith(tipoM) ? m[0] : `${m[0]} ${tipoM}`}` : `pertenece a ${m[0]}`);
     }
     if (it.sub && it.sub !== it.nombre) partes.push(it.sub);
     partes.push(`región ${D.regiones[it.region]}`);

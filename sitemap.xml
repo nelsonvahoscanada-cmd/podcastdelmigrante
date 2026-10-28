@@ -23,7 +23,7 @@
   <!-- canada-en-datos: generado por scripts/build-canada-datos.mjs -->
   <url>
     <loc>https://podcastdelmigrante.com/canada-en-datos/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -264,6 +264,36 @@
   <url>
     <loc>https://podcastdelmigrante.com/canada-en-datos/ontario/windsor</loc>
     <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/prince-edward-island</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/prince-edward-island/charlottetown</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/prince-edward-island/stratford</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/prince-edward-island/cornwall</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/prince-edward-island/summerside</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
