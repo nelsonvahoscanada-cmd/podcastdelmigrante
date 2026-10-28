@@ -105,9 +105,9 @@ async function sinScrollHorizontal(page) {
     await page.waitForFunction(() => /\d:\d\d:\d\d/.test(document.querySelector("[data-reloj-hora]").textContent));
     assert.match((await page.locator("[data-reloj-hora]").textContent()).replace(/\u202f|\u00a0/g, " "), RELOJ);
     const esperado = await page.evaluate(() =>
-      new Intl.DateTimeFormat("es-CA", { timeZone: "America/Edmonton", hour: "numeric", hour12: true }).formatToParts(new Date()).find((p) => p.type === "hour").value,
+      new Intl.DateTimeFormat("es-CA", { timeZone: "Etc/GMT+6", hour: "numeric", hour12: true }).formatToParts(new Date()).find((p) => p.type === "hour").value,
     );
-    assert.equal((await page.locator("[data-reloj-hora]").textContent()).split(":")[0], esperado, "hora de Edmonton");
+    assert.equal((await page.locator("[data-reloj-hora]").textContent()).split(":")[0], esperado, "hora de Edmonton: UTC−6 todo el año (Alberta Time)");
     for (const id of ["poblacion", "economia", "empleo", "vivienda", "salud", "educacion", "inmigracion", "beneficios", "integracion", "seguridad", "recien-llegado", "noticias", "fuentes"]) {
       assert.equal(await page.locator(`#${id}`).count(), 1, `sección #${id}`);
     }
@@ -140,12 +140,12 @@ async function sinScrollHorizontal(page) {
     await page.waitForFunction(() => /\d:\d\d:\d\d/.test(document.querySelector("[data-reloj-hora]").textContent));
     const horaDe = (tz) => page.evaluate((z) => new Intl.DateTimeFormat("es-CA", { timeZone: z, hour: "numeric", hour12: true }).formatToParts(new Date()).find((p) => p.type === "hour").value, tz);
     assert.equal((await page.locator("[data-reloj-hora]").textContent()).split(":")[0], await horaDe("America/Toronto"), "hora de Toronto");
-    // Segunda zona horaria: el noroeste de Ontario, una hora menos que Toronto
-    const zona = page.locator('.cd-zone[data-zona="America/Winnipeg"] [data-zona-hora]');
+    // Segunda zona horaria: el noroeste de Ontario (UTC−5 todo el año, como Manitoba)
+    const zona = page.locator('.cd-zone[data-zona="America/Atikokan"] [data-zona-hora]');
     await page.waitForFunction(() => /\d:\d\d/.test(document.querySelector("[data-zona-hora]").textContent));
     const textoZona = (await zona.textContent()).replace(/\u202f|\u00a0/g, " ");
     assert.match(textoZona, /^\d{1,2}:\d{2}\s?(a|p)\.\s?m\.$/, `formato de la zona: ${textoZona}`);
-    assert.equal(textoZona.split(":")[0], await horaDe("America/Winnipeg"), "hora central del noroeste");
+    assert.equal(textoZona.split(":")[0], await horaDe("Etc/GMT+5"), "noroeste: UTC−5 todo el año, como Manitoba");
     for (const id of ["poblacion", "geografia", "economia", "empleo", "inmigracion", "vivienda", "salud", "educacion", "licencias", "beneficios", "integracion", "seguridad", "ciudades", "recien-llegado", "noticias", "fuentes"]) {
       assert.equal(await page.locator(`#${id}`).count(), 1, `sección #${id}`);
     }

@@ -45,7 +45,7 @@ const CD_SOURCES = {
     org: "IANA",
     title: "Time Zone Database (zona de la capital)",
     url: "https://www.iana.org/time-zones",
-    retrievedAt: "2026-10-22",
+    retrievedAt: "2026-10-28",
   },
 };
 
@@ -65,20 +65,28 @@ const CD_REGIONS = [
      (news.gov.bc.ca, 2 de marzo y 17 de septiembre de 2026). «America/Vancouver» de los
      navegadores aún aplica el cambio de noviembre; «America/Whitehorse» (Yukón, UTC−7 todo
      el año, con el que se alinea la hora del Pacífico) da la hora correcta. */
+  /* Horas permanentes de 2026. Los navegadores con datos horarios anteriores a 2026 aún aplicarían el cambio de
+     noviembre en «America/Edmonton», «America/Yellowknife» y «America/Winnipeg»; por eso se usan zonas que ya tienen
+     el mismo desfase todo el año (base IANA 2026, comentarios de Canadá, y fuentes oficiales citadas en cada ficha):
+     - UTC−6 todo el año («America/Regina», Saskatchewan): Alberta («Alberta Time», Official Time Act, OIC 204 y 206/2026,
+       desde el 18-6-2026); Territorios del Noroeste (reglamento del 21-8-2026); sureste de BC (East Kootenay, 14-8-2026,
+       y Golden, 22-9-2026, siguen a Alberta).
+     - UTC−5 todo el año («America/Atikokan», sin cambio de hora): Manitoba (Official Time Amendment Act, en vigor el
+       31-10-2026, OIC 221/2026) y, según la base IANA, el noroeste de Ontario, que históricamente sigue a Manitoba. */
   { code: "BC", slug: "columbia-britanica", name: "Columbia Británica", type: "provincia", capital: "Victoria", timeZone: "America/Whitehorse", multiZone: true, coords: [48.43, -123.37], profile: "british-columbia",
-    zones: [{ label: "Sureste (p. ej., Cranbrook)", timeZone: "America/Edmonton", note: "Hora de la montaña en algunas comunidades del sureste: igual que el resto de BC en invierno y una hora más en verano" }] },
-  { code: "AB", slug: "alberta", name: "Alberta", type: "provincia", capital: "Edmonton", timeZone: "America/Edmonton", multiZone: false, coords: [53.55, -113.49], profile: "alberta" },
+    zones: [{ label: "Sureste (p. ej., Cranbrook y Golden)", timeZone: "America/Regina", note: "Como Alberta, UTC−6 todo el año: una hora más que el resto de BC" }] },
+  { code: "AB", slug: "alberta", name: "Alberta", type: "provincia", capital: "Edmonton", timeZone: "America/Regina", multiZone: false, coords: [53.55, -113.49], profile: "alberta" },
   { code: "SK", slug: "saskatchewan", name: "Saskatchewan", type: "provincia", capital: "Regina", timeZone: "America/Regina", multiZone: true, coords: [50.45, -104.62], profile: null },
-  { code: "MB", slug: "manitoba", name: "Manitoba", type: "provincia", capital: "Winnipeg", timeZone: "America/Winnipeg", multiZone: false, coords: [49.9, -97.14], profile: null },
+  { code: "MB", slug: "manitoba", name: "Manitoba", type: "provincia", capital: "Winnipeg", timeZone: "America/Atikokan", multiZone: false, coords: [49.9, -97.14], profile: null },
   { code: "ON", slug: "ontario", name: "Ontario", type: "provincia", capital: "Toronto", timeZone: "America/Toronto", multiZone: true, coords: [43.65, -79.38], profile: "ontario",
-    zones: [{ label: "Noroeste de Ontario", timeZone: "America/Winnipeg", note: "Hora central: en general, al oeste de los 90° O (gran parte de los distritos de Kenora, Rainy River y Thunder Bay)" }] },
+    zones: [{ label: "Noroeste de Ontario", timeZone: "America/Atikokan", note: "Hora central, en general al oeste de los 90° O (gran parte de los distritos de Kenora, Rainy River y Thunder Bay). Sigue a Manitoba, que usa UTC−5 todo el año desde el 31 de octubre de 2026, según la base de datos horaria IANA; Ontario no lo ha anunciado oficialmente: confirma la hora de cada localidad" }] },
   { code: "QC", slug: "quebec", name: "Quebec", type: "provincia", capital: "Ciudad de Quebec", timeZone: "America/Toronto", multiZone: true, coords: [46.81, -71.21], profile: null },
   { code: "NB", slug: "nuevo-brunswick", name: "Nuevo Brunswick", type: "provincia", capital: "Fredericton", timeZone: "America/Moncton", multiZone: false, coords: [45.96, -66.64], profile: null },
   { code: "NS", slug: "nueva-escocia", name: "Nueva Escocia", type: "provincia", capital: "Halifax", timeZone: "America/Halifax", multiZone: false, coords: [44.65, -63.58], profile: null },
   { code: "PE", slug: "isla-del-principe-eduardo", name: "Isla del Príncipe Eduardo", type: "provincia", capital: "Charlottetown", timeZone: "America/Halifax", multiZone: false, coords: [46.24, -63.13], profile: "prince-edward-island" },
   { code: "NL", slug: "terranova-y-labrador", name: "Terranova y Labrador", type: "provincia", capital: "St. John's", timeZone: "America/St_Johns", multiZone: true, coords: [47.56, -52.71], profile: null },
   { code: "YT", slug: "yukon", name: "Yukón", type: "territorio", capital: "Whitehorse", timeZone: "America/Whitehorse", multiZone: false, coords: [60.72, -135.06], profile: null },
-  { code: "NT", slug: "territorios-del-noroeste", name: "Territorios del Noroeste", type: "territorio", capital: "Yellowknife", timeZone: "America/Yellowknife", multiZone: false, coords: [62.45, -114.37], profile: null },
+  { code: "NT", slug: "territorios-del-noroeste", name: "Territorios del Noroeste", type: "territorio", capital: "Yellowknife", timeZone: "America/Regina", multiZone: false, coords: [62.45, -114.37], profile: null },
   { code: "NU", slug: "nunavut", name: "Nunavut", type: "territorio", capital: "Iqaluit", timeZone: "America/Iqaluit", multiZone: true, coords: [63.75, -68.52], profile: null },
 ];
 
@@ -104,7 +112,7 @@ const CD_PROFILES = {
       description: "Alberta en datos: población, empleo, salarios, alquileres, salud, educación, inmigración, beneficios y primeros pasos para recién llegados, con cifras y enlaces oficiales.",
     },
     intro:
-      "Alberta es una de las provincias de las Praderas canadienses. Su capital es Edmonton y su ciudad más poblada es Calgary. Limita con Columbia Británica, Saskatchewan, los Territorios del Noroeste y el estado de Montana, en Estados Unidos. Usa la hora de la montaña y cambia al horario de verano.",
+      "Alberta es una de las provincias de las Praderas canadienses. Su capital es Edmonton y su ciudad más poblada es Calgary. Limita con Columbia Británica, Saskatchewan, los Territorios del Noroeste y el estado de Montana, en Estados Unidos. Desde el 18 de junio de 2026 usa todo el año la «hora de Alberta» (Alberta Time), seis horas menos que el tiempo universal coordinado (UTC−6): el 1 de noviembre de 2026 no se atrasan los relojes.",
     summary: ["population", "unemploymentRate", "minimumWage"],
     /* Directorio «Explora las ciudades y pueblos de Alberta» (scripts/canada-en-datos/localidades.mjs) */
     localidades: true,
@@ -514,7 +522,7 @@ const CD_PROFILES = {
         text: [
           "Ontario es la segunda provincia más grande de Canadá. Tiene más de 250,000 lagos y limita al sur con los Grandes Lagos y el río San Lorenzo. La mayoría de la población vive en el sur; el norte es extenso y poco poblado.",
           "El inglés es el idioma oficial de Ontario. La ley garantiza servicios del gobierno provincial en francés en las regiones designadas, donde vive cerca del 80% de la población francófona.",
-          "La mayor parte de la provincia usa la hora del Este. El noroeste, en general al oeste del meridiano de 90° O (gran parte de los distritos de Kenora, Rainy River y Thunder Bay), usa la hora central. La provincia cambia al horario de verano en marzo y vuelve a la hora estándar en noviembre.",
+          "La mayor parte de la provincia usa la hora del Este. El noroeste, en general al oeste del meridiano de 90° O (gran parte de los distritos de Kenora, Rainy River y Thunder Bay), usa la hora central, alineada con Manitoba. La mayor parte de la provincia cambia al horario de verano en marzo y vuelve a la hora estándar en noviembre (UTC−5 en invierno y UTC−4 en verano). Manitoba usa UTC−5 todo el año desde el 31 de octubre de 2026; la base de datos horaria internacional (IANA) asume que el noroeste de Ontario la seguirá, pero no hay un anuncio oficial de Ontario: confirma la hora con tu municipio.",
           "El clima varía mucho de sur a norte: los inviernos son fríos y con nieve, más largos y extremos en el norte, y los veranos pueden ser calurosos y húmedos en el sur. Para el pronóstico y las alertas meteorológicas, consulta el servicio oficial de Medio Ambiente y Cambio Climático Canadá.",
         ],
         indicators: ["landArea"],
@@ -907,7 +915,7 @@ const CD_PROFILES = {
           "Columbia Británica tiene costa en el océano Pacífico, cadenas montañosas en casi todo su territorio e islas como la de Vancouver y Haida Gwaii. La mayor parte de la población vive en el suroeste: el área metropolitana de Vancouver, la isla de Vancouver y el valle del Fraser.",
           "Según la lista oficial del Ministerio de Vivienda y Asuntos Municipales (actualizada el 6 de agosto de 2026), la provincia tiene 161 municipios y 27 distritos regionales. Esa lista incluye el shíshálh Nation Government District, que el Censo 2021 clasifica como distrito de gobierno indígena; por eso el directorio de esta guía muestra 160 municipios y lo incluye entre las tierras de las Primeras Naciones. El 6 de noviembre de 2026 se incorpora un nuevo municipio, el District of Okanagan Falls. Los distritos regionales cubren casi todo el territorio y funcionan como gobierno local de las áreas electorales: el territorio rural que no pertenece a ningún municipio. Las tierras de las Primeras Naciones tienen su propia clasificación.",
           "Los servicios del Gobierno de Columbia Británica se ofrecen principalmente en inglés, y muchos tienen interpretación: HealthLink BC (8-1-1), en más de 130 idiomas; la Residential Tenancy Branch, en más de 200, y la línea de ICBC para licencias, en 170.",
-          "Hora: el 8 de marzo de 2026 fue el último cambio de hora. La provincia usa todo el año la hora del Pacífico (Pacific Time, PCT), siete horas menos que el tiempo universal coordinado (UTC−7), y el 1 de noviembre de 2026 no se atrasan los relojes. Algunas comunidades del noreste y del sureste mantienen la hora de la montaña: en el noreste (Peace River y las Montañas Rocosas del norte, p. ej., Dawson Creek y Fort Nelson) usan la hora estándar de la montaña todo el año y quedan con la misma hora que el resto de la provincia (Fort Ware, o Kwadacha, usa la hora del Pacífico); en el sureste (East Kootenay y la región de Golden, p. ej., Cranbrook) siguen a Alberta: coinciden en invierno y quedan una hora adelante en verano. Cada gobierno local puede decidir su práctica.",
+          "Hora: el 8 de marzo de 2026 fue el último cambio de hora. La provincia usa todo el año la hora del Pacífico (Pacific Time, PCT), siete horas menos que el tiempo universal coordinado (UTC−7), y el 1 de noviembre de 2026 no se atrasan los relojes. Algunas comunidades del noreste y del sureste mantienen la hora de la montaña: en el noreste (Peace River y las Montañas Rocosas del norte, p. ej., Dawson Creek y Fort Nelson) usan la hora estándar de la montaña todo el año y quedan con la misma hora que el resto de la provincia (Fort Ware, o Kwadacha, usa la hora del Pacífico); en el sureste (East Kootenay y la región de Golden, p. ej., Cranbrook) siguen a Alberta, que desde junio de 2026 usa UTC−6 todo el año: el distrito regional de East Kootenay lo adoptó el 14 de agosto de 2026 y el pueblo de Golden, el 22 de septiembre, así que quedan una hora por delante del resto de BC todo el año. Cada gobierno local puede decidir su práctica.",
           "El clima varía mucho entre la costa, más templada y lluviosa, y el interior y el norte, con inviernos más fríos. La provincia tiene riesgos naturales como incendios forestales, inundaciones, sismos y tsunamis en la costa: el mapa oficial de riesgos muestra los de cada zona.",
         ],
         indicators: ["landArea"],

@@ -56,7 +56,7 @@ test("13 regiones: 10 provincias y 3 territorios, con capital, zona horaria vál
   }
   const ab = D.CD_REGIONS.find((r) => r.code === "AB");
   assert.equal(ab.capital, "Edmonton");
-  assert.equal(ab.timeZone, "America/Edmonton");
+  assert.equal(ab.timeZone, "America/Regina", "Alberta Time: UTC−6 todo el año desde el 18-6-2026");
 });
 
 test("ninguna cifra sin fuente oficial, período de referencia y fecha de consulta", () => {
@@ -103,7 +103,7 @@ test("Ontario: ficha completa con secciones, ciudades, tabla de alquileres y zon
   assert.equal(region.profile, "ontario");
   assert.equal(region.capital, "Toronto");
   assert.equal(region.timeZone, "America/Toronto");
-  assert.deepEqual(region.zones.map((z) => z.timeZone), ["America/Winnipeg"], "el noroeste usa la hora central");
+  assert.deepEqual(region.zones.map((z) => z.timeZone), ["America/Atikokan"], "el noroeste sigue a Manitoba: UTC−5 todo el año");
   const ids = on.sections.map((s) => s.id);
   for (const id of ["poblacion", "geografia", "economia", "empleo", "inmigracion", "vivienda", "salud", "educacion", "licencias", "beneficios", "integracion", "seguridad", "ciudades"]) assert.ok(ids.includes(id), id);
   assert.equal(on.newcomer.length, 8, "ocho pasos de «Recién llegado»");
@@ -116,7 +116,7 @@ test("Ontario: ficha completa con secciones, ciudades, tabla de alquileres y zon
   const html = PAGES["ontario.html"];
   // Zonas horarias: la capital y el noroeste
   assert.match(html, /data-tz="America\/Toronto"|America\/Toronto/);
-  assert.match(html, /<p class="cd-zone" data-zona="America\/Winnipeg"><span class="cd-zone__label">Noroeste de Ontario<\/span>/);
+  assert.match(html, /<p class="cd-zone" data-zona="America\/Atikokan"><span class="cd-zone__label">Noroeste de Ontario<\/span>/);
   // Ciudades pedidas, dentro de la página (sin miniportales)
   const ciudades = on.sections.find((s) => s.id === "ciudades").cities;
   assert.deepEqual(ciudades.map((c) => c.name), ["Toronto", "Ottawa", "Hamilton", "London", "Kitchener-Waterloo", "Mississauga", "Brampton", "Windsor"]);
@@ -338,4 +338,29 @@ test("imágenes sociales: una propia por página (provincia o localidad)", () =>
   for (const [img, ks] of usos) assert.equal(ks.length, 1, `${img} repetida en ${ks.join(", ")}`);
   assert.equal(meta(TODAS["alberta.html"], "og:image"), "https://podcastdelmigrante.com/assets/canada-en-datos/social-alberta.jpg");
   assert.equal(meta(TODAS["ontario.html"], "og:image"), "https://podcastdelmigrante.com/assets/canada-en-datos/social-ontario.jpg");
+});
+
+test("horas permanentes de 2026: Alberta, Territorios del Noroeste, Manitoba, sureste de BC y noroeste de Ontario sin el cambio de noviembre", () => {
+  const desfase = (tz, iso) => {
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-CA", { timeZone: tz, hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).formatToParts(new Date(iso)).map((x) => [x.type, x.value]));
+    return (Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute) - Date.parse(iso)) / 3600000;
+  };
+  const reg = (c) => D.CD_REGIONS.find((r) => r.code === c);
+  const casos = [
+    [reg("AB").timeZone, -6, "Alberta"],
+    [reg("NT").timeZone, -6, "Territorios del Noroeste"],
+    [reg("SK").timeZone, -6, "Saskatchewan"],
+    [reg("MB").timeZone, -5, "Manitoba"],
+    [reg("BC").timeZone, -7, "Columbia Británica"],
+    [reg("BC").zones[0].timeZone, -6, "sureste de BC"],
+    [reg("ON").zones[0].timeZone, -5, "noroeste de Ontario"],
+  ];
+  for (const iso of ["2026-10-30T18:00:00Z", "2026-11-02T18:00:00Z", "2027-01-15T18:00:00Z", "2027-07-01T18:00:00Z"]) {
+    for (const [tz, h, n] of casos) assert.equal(desfase(tz, iso), h, `${n} (${tz}) el ${iso}`);
+  }
+  /* Las demás siguen con el cambio de hora estacional */
+  assert.equal(desfase(reg("ON").timeZone, "2027-01-15T18:00:00Z"), -5);
+  assert.equal(desfase(reg("ON").timeZone, "2027-07-01T18:00:00Z"), -4);
+  assert.equal(desfase(reg("PE").timeZone, "2027-01-15T18:00:00Z"), -4);
+  assert.equal(desfase(reg("PE").timeZone, "2027-07-01T18:00:00Z"), -3);
 });

@@ -60,6 +60,8 @@ async function compartir(page, ruta, imagen) {
   }
   // «Copiar enlace»: copia la URL y lo confirma en un mensaje accesible
   assert.equal(await caja.locator("[data-share-estado]").getAttribute("role"), "status");
+  /* Lejos de los 12 px en los que el encabezado del sitio cambia de tamaño (js/nav.js; ver la propuesta aparte) */
+  await caja.evaluate((e) => window.scrollTo(0, Math.max(120, e.getBoundingClientRect().top + window.scrollY - 120)));
   await caja.locator("[data-share-copiar]").click();
   await page.waitForFunction(() => /Enlace copiado|Copia este enlace/.test(document.querySelector("[data-share-estado]").textContent));
   const copiado = await page.evaluate(() => navigator.clipboard.readText().catch(() => null));
