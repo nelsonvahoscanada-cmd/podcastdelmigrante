@@ -130,7 +130,7 @@ test("sin datos vacíos ni inventados; datos regionales presentados como regiona
   assert.match(reserva, /reserva indígena \(Indian Reserve\)/);
   assert.match(reserva, /No es un municipio/);
   /* Zona horaria: matiz del sureste (East Kootenay) */
-  assert.match(PAGES["british-columbia/cranbrook.html"], /Hora de la montaña, como en Alberta: UTC−7 en invierno/);
+  assert.match(PAGES["british-columbia/cranbrook.html"], /Hora de Alberta, UTC−6 todo el año: una hora más que el resto de BC/);
 });
 
 test("la guía provincial: secciones, hora del Pacífico, BC PNP, tabla de alquileres y directorio extendido", () => {
@@ -229,7 +229,7 @@ test("161 frente a 160 municipios y hora regional: explicados con sus fuentes of
   assert.match(pag("okanagan-similkameen-d"), /District of Okanagan Falls\) el 6 de noviembre de 2026/);
   assert.match(pag("okanagan-similkameen-d"), /2026HMA0069-000747/);
   /* Hora local según el comunicado 2026AG0013-000209 */
-  for (const [s, re] of [["cranbrook", /UTC−6 en verano/], ["golden", /UTC−6 en verano/], ["dawson-creek", /Hora estándar de la montaña \(UTC−7\) todo el año/], ["northern-rockies", /Hora estándar de la montaña \(UTC−7\) todo el año/], ["fort-ware-1", /Fort Ware \(Kwadacha\) usa la hora del Pacífico/], ["vancouver", /Hora del Pacífico \(PCT\), UTC−7 todo el año/]]) {
+  for (const [s, re] of [["cranbrook", /UTC−6 todo el año/], ["golden", /UTC−6 todo el año/], ["dawson-creek", /Hora estándar de la montaña \(UTC−7\) todo el año/], ["northern-rockies", /Hora estándar de la montaña \(UTC−7\) todo el año/], ["fort-ware-1", /Fort Ware \(Kwadacha\) usa la hora del Pacífico/], ["vancouver", /Hora del Pacífico \(PCT\), UTC−7 todo el año/]]) {
     assert.match(pag(s), re, s);
     assert.match(pag(s), /2026AG0013-000209/, `${s}: fuente de la hora regional`);
   }

@@ -62,6 +62,8 @@ async function compartir(page, ruta, imagen) {
   }
   // «Copiar enlace»: copia la URL y lo confirma en un mensaje accesible
   assert.equal(await caja.locator("[data-share-estado]").getAttribute("role"), "status");
+  /* Lejos de los 12 px en los que el encabezado del sitio cambia de tamaño (js/nav.js; ver la propuesta aparte) */
+  await caja.evaluate((e) => window.scrollTo(0, Math.max(120, e.getBoundingClientRect().top + window.scrollY - 120)));
   await caja.locator("[data-share-copiar]").click();
   await page.waitForFunction(() => /Enlace copiado|Copia este enlace/.test(document.querySelector("[data-share-estado]").textContent));
   const copiado = await page.evaluate(() => navigator.clipboard.readText().catch(() => null));
@@ -244,7 +246,7 @@ async function compartir(page, ruta, imagen) {
     for (const [ruta, h1, texto] of [
       ["/canada-en-datos/british-columbia/alberni-clayoquot-a", "Alberni-Clayoquot A", /área electoral/],
       ["/canada-en-datos/british-columbia/alert-bay-indian-reserve", "Alert Bay (reserva indígena)", /reserva indígena \(Indian Reserve\)/],
-      ["/canada-en-datos/british-columbia/cranbrook", "Cranbrook", /hora de la montaña/],
+      ["/canada-en-datos/british-columbia/cranbrook", "Cranbrook", /Hora de Alberta, UTC−6 todo el año/],
     ]) {
       ({ ctx, page, errores } = await abrir(browser, perfil, ruta));
       assert.equal(await page.locator("h1").textContent(), h1);
@@ -272,11 +274,11 @@ async function compartir(page, ruta, imagen) {
 
     /* ---------- Reloj antes y después del 1 de noviembre de 2026 (fecha simulada en el navegador) ---------- */
     if (perfil === "computador") {
-      /* [instante UTC, Victoria (PCT, UTC−7 siempre), sureste (Cranbrook, hora de la montaña), Edmonton (Alberta)] */
+      /* [instante UTC, Victoria (PCT, UTC−7 siempre), sureste (Cranbrook, como Alberta), Edmonton (Alberta Time, UTC−6 siempre)] */
       for (const [utc, victoria, sureste, alberta] of [
         ["2026-10-31T18:00:00Z", "11:00", "12:00", "12:00"],
-        ["2026-11-02T18:00:00Z", "11:00", "11:00", "11:00"],
-        ["2027-01-15T18:00:00Z", "11:00", "11:00", "11:00"],
+        ["2026-11-02T18:00:00Z", "11:00", "12:00", "12:00"],
+        ["2027-01-15T18:00:00Z", "11:00", "12:00", "12:00"],
         ["2027-03-15T18:00:00Z", "11:00", "12:00", "12:00"],
         ["2027-07-01T18:00:00Z", "11:00", "12:00", "12:00"],
       ]) {
@@ -288,8 +290,8 @@ async function compartir(page, ruta, imagen) {
           await pg.waitForFunction(() => /\d/.test(document.querySelector("[data-reloj-hora]").textContent));
           assert.match(await pg.locator("[data-reloj-hora]").textContent(), new RegExp(`^${esperado}:00`), `${ruta} ${utc}`);
           if (zona) {
-            await pg.waitForFunction(() => /\d/.test(document.querySelector('[data-zona="America/Edmonton"] [data-zona-hora]').textContent));
-            assert.match(await pg.locator('[data-zona="America/Edmonton"] [data-zona-hora]').textContent(), new RegExp(`^${zona}`), `sureste ${utc}`);
+            await pg.waitForFunction(() => /\d/.test(document.querySelector('[data-zona="America/Regina"] [data-zona-hora]').textContent));
+            assert.match(await pg.locator('[data-zona="America/Regina"] [data-zona-hora]').textContent(), new RegExp(`^${zona}`), `sureste ${utc}`);
           }
           await c.close();
         }
@@ -302,7 +304,7 @@ async function compartir(page, ruta, imagen) {
       await pg.locator('path[data-code="BC"]').dispatchEvent("click");
       await pg.waitForFunction(() => /^11:00/.test(document.querySelector("#cdClock [data-reloj-hora]").textContent));
       await c.close();
-      console.log("  reloj: Victoria UTC−7 antes y después del 1-11-2026; sureste y Alberta con hora de la montaña (UTC−6 en verano, UTC−7 en invierno)");
+      console.log("  reloj: Victoria UTC−7 antes y después del 1-11-2026; sureste y Alberta con UTC−6 todo el año");
     }
 
     /* ---------- 13. Portada de Canadá en Datos: BC enlazada y con hora correcta ---------- */

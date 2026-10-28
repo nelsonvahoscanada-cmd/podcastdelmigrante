@@ -452,7 +452,9 @@ const decimal = (v) => { const [e, d] = String(v).split("."); return miles(e) + 
 /* Hora local según el comunicado oficial del 2-3-2026 (2026AG0013-000209): BC usa la hora del Pacífico (PCT, UTC−7)
    todo el año; el noreste (Peace River y las Montañas Rocosas del norte) sigue con la hora estándar de la montaña
    (UTC−7, la misma), salvo Fort Ware (Kwadacha), que usa la del Pacífico; el sureste (East Kootenay y la región de
-   Golden) sigue a Alberta: UTC−7 en invierno y UTC−6 en verano. Cada gobierno local puede cambiar su práctica. */
+   Golden) sigue a Alberta, que desde el 18-6-2026 usa UTC−6 todo el año: el distrito regional de East Kootenay lo
+   adoptó el 14-8-2026 y el pueblo de Golden el 22-9-2026 (base de datos horaria IANA, comentarios de Columbia
+   Británica, con las actas citadas). Cada gobierno local puede cambiar su práctica. */
 /* Lista de municipios del Ministerio de Vivienda y Asuntos Municipales (6-8-2026): 161, porque incluye este distrito,
    que el Censo 2021 clasifica como «Indian Government District» (dos partes: Sechelt (Part) en qathet y en Sunshine Coast) */
 const IGD_NOMBRE = "shíshálh Nation Government District";
@@ -462,7 +464,7 @@ const SURESTE = new Set(["5939007", "5939011"]); /* Golden y el área electoral 
 function zonaHoraria(r) {
   const pct = "Hora del Pacífico (PCT), UTC−7 todo el año";
   if (r.cd === "5901" || SURESTE.has(r.c))
-    return "Hora de la montaña, como en Alberta: UTC−7 en invierno (igual que el resto de BC) y UTC−6 en verano (una hora más). <small class=\"cd-fact__period\">Así lo indica el Gobierno de BC para el sureste (East Kootenay y la región de Golden); cada gobierno local puede decidir pasarse a la hora del Pacífico.</small>";
+    return "Hora de Alberta, UTC−6 todo el año: una hora más que el resto de BC. <small class=\"cd-fact__period\">El sureste (East Kootenay y la región de Golden) sigue a Alberta, según el Gobierno de BC; desde 2026 Alberta no cambia la hora, y el distrito regional de East Kootenay (14 de agosto de 2026) y el pueblo de Golden (22 de septiembre de 2026) adoptaron UTC−6 todo el año. Cada gobierno local puede cambiar su práctica.</small>";
   if (r.c === "5955807") return `${pct}. <small class="cd-fact__period">Fort Ware (Kwadacha) usa la hora del Pacífico, a diferencia de otras comunidades del noreste.</small>`;
   if (r.cd === "5955" || r.cd === "5959")
     return "Hora estándar de la montaña (UTC−7) todo el año, que coincide con la hora del Pacífico del resto de BC. <small class=\"cd-fact__period\">Así lo indica el Gobierno de BC para el noreste (Peace River y las Montañas Rocosas del norte); cada gobierno local puede cambiar su práctica.</small>";
