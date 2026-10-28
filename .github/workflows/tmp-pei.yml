@@ -15,27 +15,25 @@ jobs:
         parte: [pei, paginas, alberta, ontario, bc, portada-noticias]
     env:
       BASE: https://podcastdelmigrante.com
-      NODE_OPTIONS: --require ./bloquear.cjs
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - if: matrix.parte != 'paginas'
         run: npm i --no-save playwright@1.47.0 && npx playwright install --with-deps chromium
-        env: { NODE_OPTIONS: "" }
       - name: Contadores antes (solo lectura)
         if: matrix.parte == 'paginas'
         run: for a in ART-2026-029 ART-2026-030; do echo "$a $(curl -s $BASE/api/vistas/$a)"; done
       - if: matrix.parte == 'pei'
-        run: node tests/e2e-prince-edward-island-localidades.cjs
+        run: NODE_OPTIONS=--require=./bloquear.cjs node tests/e2e-prince-edward-island-localidades.cjs
       - if: matrix.parte == 'alberta'
-        run: node tests/e2e-alberta-localidades.cjs
+        run: NODE_OPTIONS=--require=./bloquear.cjs node tests/e2e-alberta-localidades.cjs
       - if: matrix.parte == 'ontario'
-        run: node tests/e2e-ontario-localidades.cjs
+        run: NODE_OPTIONS=--require=./bloquear.cjs node tests/e2e-ontario-localidades.cjs
       - if: matrix.parte == 'bc'
-        run: node tests/e2e-british-columbia-localidades.cjs
+        run: NODE_OPTIONS=--require=./bloquear.cjs node tests/e2e-british-columbia-localidades.cjs
       - if: matrix.parte == 'portada-noticias'
-        run: node tests/e2e-canada-datos.cjs && node tests/e2e-noticias.cjs
+        run: export NODE_OPTIONS=--require=./bloquear.cjs && node tests/e2e-canada-datos.cjs && node tests/e2e-noticias.cjs
       - name: 98 páginas, guía, imágenes, sitemap y formulario (solo GET)
         if: matrix.parte == 'paginas'
         run: |
