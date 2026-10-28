@@ -2,13 +2,17 @@ name: tmp PEI
 on:
   push:
     branches: [claude/laughing-albattani-1rvkc1]
-    paths: [".github/workflows/tmp-pei.yml", "scripts/canada-en-datos/consultar-pei.py", "scripts/canada-en-datos/obtener-pei*.py"]
+    paths: [".github/workflows/tmp-pei.yml", "scripts/canada-en-datos/obtener-pei*.py"]
 permissions:
   contents: read
 jobs:
   pei:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [statcan, paginas, archivo]
     steps:
       - uses: actions/checkout@v4
-      - run: pip install openpyxl==3.1.5 pyproj==3.7.1 shapely==2.0.7
-      - run: python3 scripts/canada-en-datos/obtener-pei-ficha.py
+      - run: python3 scripts/canada-en-datos/obtener-pei-ficha.py ${{ matrix.parte }}
