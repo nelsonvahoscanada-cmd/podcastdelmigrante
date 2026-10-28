@@ -36,7 +36,7 @@ test("las páginas generadas están al día (node scripts/build-canada-datos.mjs
     const ruta = name.startsWith("/") ? name.slice(1) : `canada-en-datos/${name}`;
     assert.equal(read(ruta), html, `${ruta} desactualizado`);
   }
-  const sobrantes = readdirSync(join(ROOT, "canada-en-datos")).filter((f) => !PAGES[f] && !["alberta", "ontario", "british-columbia"].includes(f));
+  const sobrantes = readdirSync(join(ROOT, "canada-en-datos")).filter((f) => !PAGES[f] && !["alberta", "ontario", "british-columbia", "prince-edward-island"].includes(f));
   assert.deepEqual(sobrantes, []);
 });
 
@@ -162,7 +162,7 @@ test("Alberta no cambia con las extensiones de Ontario (zonas, tablas y ciudades
   const ab = PAGES["alberta.html"];
   assert.doesNotMatch(ab, /cd-zones|cd-table|cd-cities/);
   assert.match(ab, /Última revisión: 22 de octubre de 2026/);
-  assert.match(PAGES["index.html"], /Ya están disponibles las fichas completas de Columbia Británica, Alberta y Ontario/);
+  assert.match(PAGES["index.html"], /Ya están disponibles las fichas completas de Columbia Británica, Alberta, Ontario y Isla del Príncipe Eduardo/);
 });
 
 test("solo las regiones con ficha tienen página; las demás no enlazan a fichas inexistentes", () => {

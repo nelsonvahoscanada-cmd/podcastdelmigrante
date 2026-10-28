@@ -144,7 +144,7 @@ async function compartir(page, ruta, imagen) {
         else if (m) {
           comunidades++;
           const texto = a.querySelector(".cd-loc__item-tipo").textContent;
-          if (!f[11] || !texto.includes(`está en ${m[0]} (`) || !texto.includes(`región ${D.regiones[f[2]]}`)) fallos.push(`sin subdivisión o región: ${f[0]}`);
+          if (!f[11] || !texto.includes(`está en ${m[0]}`) || !texto.includes(`región ${D.regiones[f[2]]}`)) fallos.push(`sin subdivisión o región: ${f[0]}`);
         }
       }
       buscar.value = "";
