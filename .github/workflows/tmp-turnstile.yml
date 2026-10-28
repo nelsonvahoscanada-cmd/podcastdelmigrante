@@ -1,0 +1,21 @@
+name: tmp Turnstile WebKit
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-turnstile]
+    paths: [".github/workflows/tmp-turnstile.yml"]
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        navegador: [webkit, chromium]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm i --no-save playwright@1.47.0 && npx playwright install --with-deps ${{ matrix.navegador }}
+      - run: (python3 -m http.server 8799 --bind 127.0.0.1 &) && sleep 2 && NAVEGADOR=${{ matrix.navegador }} node tests/e2e-registro-turnstile.cjs
