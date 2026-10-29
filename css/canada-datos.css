@@ -353,20 +353,3 @@
 .cd-share__url { margin-top: 6px; font-size: 0.78rem; color: var(--gris-texto); overflow-wrap: anywhere; }
 .cd-share__url a { color: var(--gris-800); }
 .cd-share__estado { margin-top: 6px; font-size: 0.86rem; font-weight: 700; color: var(--verde-oscuro); min-height: 1.2em; overflow-wrap: anywhere; }
-
-/* ---------- Saskatchewan: detalles dorados ----------
-   Solo en la guía de Saskatchewan y en sus localidades. La bandera
-   provincial es verde (bosques del norte) y dorada (campos de grano del
-   sur): el dorado reemplaza al verde complementario como realce. Igual que
-   --cd-acento, se usa solo como relleno o sobre negro (contraste 11,7:1),
-   nunca como color de texto sobre blanco. */
-body[data-cd-region="saskatchewan"] .cd,
-body[data-cd-provincia="saskatchewan"] .cd {
-  --cd-acento: #f2c230;
-  --cd-acento-suave: #f8ebbf;
-}
-body[data-cd-region="saskatchewan"] .cd::before,
-body[data-cd-provincia="saskatchewan"] .cd::before {
-  content: ""; display: block; height: 8px;
-  background: linear-gradient(to bottom, var(--verde-oscuro) 0 50%, #f2c230 50% 100%);
-}

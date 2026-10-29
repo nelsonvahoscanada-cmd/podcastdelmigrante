@@ -338,6 +338,7 @@ export function paginas(P, L, ctx) {
       ["educacion", "Educación"],
       ["salud", "Salud"],
       ["transporte", "Transporte"],
+      ...(f.servicios ? [["servicios", "Servicios municipales"]] : []),
       ["recien-llegados", "Recién llegados"],
       ...(f.familias ? [["familias", "Familias"]] : []),
       ["enlaces", "Enlaces y fuentes"],
@@ -414,7 +415,9 @@ ${chrome.cabecera}
       ${enlaces(f.saludEnlaces, esc)}`)}
 
     ${seccion("transporte", "Transporte", f.transporte)}
-
+${f.servicios ? `
+    ${seccion("servicios", "Servicios municipales", f.servicios)}
+` : ""}
     ${seccion("recien-llegados", "Servicios para inmigrantes y recién llegados", f.recien)}${f.familias ? `
 
     ${seccion("familias", "Recursos para familias", f.familias)}` : ""}

@@ -90,10 +90,31 @@ async function compartir(page, ruta, imagen) {
     for (const id of ["poblacion", "geografia", "economia", "empleo", "inmigracion", "vivienda", "salud", "educacion", "licencias", "beneficios", "integracion", "seguridad", "ciudades", "recien-llegado", "fuentes"]) assert.equal(await page.locator(`#${id}`).count(), 1, id);
     assert.match(await page.locator("#geografia").textContent(), /UTC−6/);
     assert.match(await page.locator("#empleo").textContent(), /\$15\.70/);
-    /* Detalles dorados (bandera provincial: verde y dorado) solo en Saskatchewan */
-    const franja = await page.evaluate(() => getComputedStyle(document.querySelector("main.cd"), "::before").backgroundImage);
-    assert.match(franja, /rgb\(242, 194, 48\)/, "franja verde y dorada");
-    assert.equal(await page.evaluate(() => getComputedStyle(document.querySelector("main.cd")).getPropertyValue("--cd-acento").trim()), "#f2c230");
+    /* Identidad visual: la misma que Alberta (verde, negro y blanco). Se comparan los estilos calculados */
+    const estilo = (pg) => pg.evaluate(() => {
+      const main = document.querySelector("main.cd");
+      const seg = document.querySelector(".cd-clock__sec");
+      const kicker = document.querySelector(".cd-kicker");
+      return {
+        acento: getComputedStyle(main).getPropertyValue("--cd-acento").trim(),
+        franja: getComputedStyle(main, "::before").content,
+        segundos: seg && getComputedStyle(seg).color,
+        reloj: getComputedStyle(document.querySelector(".cd-clock")).backgroundColor,
+        kicker: getComputedStyle(kicker, "::before").backgroundColor,
+        indicador: (() => { const e = document.querySelector(".cd-indicator"); return e && getComputedStyle(e).borderLeftColor; })(),
+        h1: getComputedStyle(document.querySelector("h1")).color,
+        fondo: getComputedStyle(document.body).backgroundColor,
+      };
+    });
+    await page.waitForFunction(() => document.querySelector(".cd-clock__sec"));
+    const sk = await estilo(page);
+    const ab = await abrir(browser, perfil, "/canada-en-datos/alberta");
+    await ab.page.waitForFunction(() => document.querySelector(".cd-clock__sec"));
+    assert.deepEqual(sk, await estilo(ab.page), "Saskatchewan y Alberta con los mismos colores");
+    await ab.ctx.close();
+    assert.equal(sk.franja, "none", "sin franja propia bajo el encabezado");
+    assert.ok(!/242, 194, 48/.test(JSON.stringify(sk)), "sin dorado");
+    assert.equal(sk.segundos, "rgb(141, 198, 63)", "segundos del reloj en el verde de la identidad (#8DC63F, sobre negro)");
     await compartir(page, GUIA, "/assets/canada-en-datos/social-saskatchewan.jpg");
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `sk-guia-${perfil}.png`) });
     /* Los datos se cargan cuando el buscador se acerca a la pantalla (en el celular, la sección es más larga) */
@@ -259,22 +280,34 @@ async function compartir(page, ruta, imagen) {
     await ctx.close();
     console.log(`  ${perfil}: directorio listo en ${msCarga} ms, ${grupos} grupos y ${marcadores} círculos en el mapa`);
 
-    /* ---------- Fichas completas: Regina y Saskatoon ---------- */
-    for (const [s, pob, alquiler, hospital, transporte, web] of [
-      ["regina", "226,404", "$1,474 al mes", "Regina General Hospital", "https://www.regina.ca/transportation-roads-parking/transit/", "https://www.regina.ca/"],
-      ["saskatoon", "266,141", "$1,545 al mes", "Royal University Hospital", "https://saskatoontransit.ca/", "https://www.saskatoon.ca/"],
+    /* ---------- Fichas completas: las ocho ciudades ---------- */
+    for (const [s, h1, pob, alquiler, hospital, transporte, web, agencia] of [
+      ["regina", "Regina", "226,404", "$1,474 al mes", "Regina General Hospital", "https://www.regina.ca/transportation-roads-parking/transit/", "https://www.regina.ca/", "Regina Open Door Society"],
+      ["saskatoon", "Saskatoon", "266,141", "$1,545 al mes", "Royal University Hospital", "https://saskatoontransit.ca/", "https://www.saskatoon.ca/", "Saskatoon Open Door Society"],
+      ["prince-albert", "Prince Albert", "37,756", "$1,245 al mes", "Victoria Hospital", "https://www.citypa.ca/parking-streets-and-transportation/transit/", "https://www.citypa.ca/", "Prince Albert Multicultural Council"],
+      ["moose-jaw", "Moose Jaw", "33,665", "$1,336 al mes", "Dr. F.H. Wigmore Regional Hospital", "https://moosejaw.ca/transit/", "https://moosejaw.ca/", "Moose Jaw Multicultural Council"],
+      ["swift-current", "Swift Current", "16,750", "$1,011 al mes", "Cypress Regional Hospital", "https://www.swiftcurrent.ca/divisions/engineering-infrastructure/transportation-services/swift-transit", "https://www.swiftcurrent.ca/", "Southwest Newcomer Welcome Centre"],
+      ["yorkton", "Yorkton", "16,280", "$1,224 al mes", "Yorkton Regional Health Centre", "https://www.yorkton.ca/living-in-yorkton/transit/", "https://www.yorkton.ca/", "East Central Newcomer Welcome Centre"],
+      ["north-battleford", "North Battleford", "13,836", "$1,166 al mes", "Battlefords Union Hospital", null, "https://www.cityofnb.ca/", "Battlefords Immigration Resource Center"],
+      ["lloydminster", "Lloydminster (parte de Saskatchewan)", "11,843", "$1,353 al mes", "Lloydminster Hospital", "https://www.lloydminster.ca/home-property-utilities/roads-sidewalks-and-transportation/", "https://www.lloydminster.ca/", "Lloydminster Learning Council Association"],
     ]) {
+      /* En tableta y celular se recorren cuatro, para acortar la prueba */
+      if (perfil !== "computador" && !["regina", "saskatoon", "moose-jaw", "lloydminster"].includes(s)) continue;
       ({ ctx, page, errores } = await abrir(browser, perfil, `${GUIA}/${s}`));
-      assert.equal(await page.locator("h1").textContent(), s[0].toUpperCase() + s.slice(1));
+      assert.equal(await page.locator("h1").textContent(), h1);
       assert.equal(await page.locator('meta[name="robots"]').count(), 0, "las fichas completas se indexan");
-      assert.match(await page.locator(".cd-breadcrumb").textContent(), new RegExp(`Canadá en Datos\\s*›\\s*Saskatchewan\\s*›\\s*${s[0].toUpperCase() + s.slice(1)}`));
-      for (const id of ["resumen", "ubicacion", "comunidades", "economia-empleo", "vivienda", "educacion", "salud", "transporte", "recien-llegados", "familias", "enlaces"]) assert.equal(await page.locator(`#${id}`).count(), 1, id);
+      assert.ok((await page.locator(".cd-breadcrumb").textContent()).includes(h1));
+      for (const id of ["resumen", "ubicacion", "economia-empleo", "vivienda", "educacion", "salud", "transporte", "recien-llegados", "familias", "enlaces"]) assert.equal(await page.locator(`#${id}`).count(), 1, id);
+      assert.equal(await page.locator("#servicios").count(), ["regina", "saskatoon"].includes(s) ? 0 : 1, "servicios municipales");
+      assert.ok((await page.locator("#recien-llegados").textContent()).includes(agencia), agencia);
+      assert.match(await page.locator("#economia-empleo").textContent(), /se publican por región económica, no por localidad/, "empleo presentado como dato regional");
       const resumen = await page.locator("#resumen").textContent();
       assert.ok(resumen.includes(pob), pob);
       assert.match(resumen, /UTC−6/);
       assert.ok((await page.locator("#vivienda").textContent()).includes(alquiler), alquiler);
       assert.ok((await page.locator("#salud").textContent()).includes(hospital), hospital);
-      assert.equal(await page.locator(`#transporte a[href="${transporte}"]`).count(), 1);
+      if (transporte) assert.equal(await page.locator(`#transporte a[href="${transporte}"]`).count(), 1);
+      else assert.match(await page.locator("#transporte").textContent(), /No encontramos información sobre transporte público/);
       assert.equal(await page.locator(`#enlaces a[href="${web}"]`).count(), 1);
       const externos = await page.locator('main a[href^="http"]:not([href^="https://podcastdelmigrante.com"])').evaluateAll((as) => as.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
       assert.ok(externos, "enlaces externos en pestaña nueva");
@@ -290,7 +323,7 @@ async function compartir(page, ruta, imagen) {
       [`${GUIA}/corman-park-no-344`, "Corman Park No. 344", /municipio rural \(Rural Municipality\)/],
       [`${GUIA}/ahtahkakoop-104`, "Ahtahkakoop 104", /reserva indígena \(Indian Reserve\)/],
       [`${GUIA}/la-loche`, "La Loche", /villa del norte \(Northern Village\)/],
-      [`${GUIA}/lloydminster`, "Lloydminster (parte de Saskatchewan)", /esta página trata solo de la parte de Saskatchewan/],
+      [`${GUIA}/creighton`, "Creighton", /pueblo \(Town\)/],
     ]) {
       ({ ctx, page, errores } = await abrir(browser, perfil, ruta));
       assert.equal(await page.locator("h1").textContent(), h1);
@@ -358,7 +391,7 @@ async function compartir(page, ruta, imagen) {
     assert.equal(r.status, estado, ruta);
   }
   await browser.close();
-  console.log("OK Saskatchewan: guía, directorio, mapa, fichas, reloj, colores y compartir");
+  console.log("OK Saskatchewan: guía, directorio, mapa, fichas, reloj, identidad visual de Alberta y compartir");
 })().catch((e) => {
   console.error(e);
   process.exit(1);

@@ -69,7 +69,7 @@ const CD_REGIONS = [
     zones: [{ label: "Sureste (p. ej., Cranbrook)", timeZone: "America/Edmonton", note: "Hora de la montaña en algunas comunidades del sureste: igual que el resto de BC en invierno y una hora más en verano" }] },
   { code: "AB", slug: "alberta", name: "Alberta", type: "provincia", capital: "Edmonton", timeZone: "America/Edmonton", multiZone: false, coords: [53.55, -113.49], profile: "alberta" },
   { code: "SK", slug: "saskatchewan", name: "Saskatchewan", type: "provincia", capital: "Regina", timeZone: "America/Regina", multiZone: true, coords: [50.45, -104.62], profile: "saskatchewan",
-    zones: [{ label: "Creighton y Denare Beach (junto a Flin Flon)", timeZone: "America/Atikokan", note: "En la práctica siguen la hora de Manitoba, que usa UTC−5 todo el año desde el 31 de octubre de 2026 (una hora más que el resto de Saskatchewan). La Time Act, 2026 permite fijar por reglamento la hora de estas zonas: confirma la hora local" }] },
+    zones: [{ label: "Creighton y Denare Beach (junto a Flin Flon)", timeZone: "America/Atikokan", note: "Práctica local, no norma legal: siguen la hora de Flin Flon (Manitoba), UTC−5, una hora más que el resto de Saskatchewan. Manitoba mantendrá UTC−5 todo el año a partir del 31 de octubre de 2026. La ley fija UTC−6 salvo que un reglamento declare la zona con opción horaria: confirma la hora local" }] },
   { code: "MB", slug: "manitoba", name: "Manitoba", type: "provincia", capital: "Winnipeg", timeZone: "America/Winnipeg", multiZone: false, coords: [49.9, -97.14], profile: null },
   { code: "ON", slug: "ontario", name: "Ontario", type: "provincia", capital: "Toronto", timeZone: "America/Toronto", multiZone: true, coords: [43.65, -79.38], profile: "ontario",
     zones: [{ label: "Noroeste de Ontario", timeZone: "America/Winnipeg", note: "Hora central: en general, al oeste de los 90° O (gran parte de los distritos de Kenora, Rainy River y Thunder Bay)" }] },
@@ -1671,7 +1671,7 @@ const CD_PROFILES = {
           "Según el Censo 2021, la provincia tenía 17 ciudades (contando la parte de Saskatchewan de Lloydminster y de Flin Flon), 149 pueblos, 251 villas, 40 villas turísticas, 296 municipios rurales y 22 municipios del norte, además de 172 reservas indígenas. Los municipios rurales (rural municipalities) se identifican por su nombre y su número, por ejemplo, Sherwood No. 159 o Corman Park No. 344, y no incluyen las ciudades, pueblos y villas que están en su territorio.",
           "Según el Censo 2021, 773,789 personas (68.3%) vivían en los 65 centros de población de la provincia (las áreas urbanas, de al menos 1,000 habitantes y 400 habitantes por km²) y 358,716 (31.7%), en zonas rurales. Es una suma propia de las cifras de cada centro de población publicadas por Statistics Canada.",
           "Idiomas y población, según el Censo 2021 (población en hogares privados): el 94.5% hablaba solo inglés de los dos idiomas oficiales, el 4.7% hablaba inglés y francés (51,970 personas) y el 0.8% no hablaba ninguno de los dos (8,625). Para el 14.4%, la lengua materna no era ni el inglés ni el francés. 187,885 personas tenían identidad indígena (17.0%): 121,175 de Primeras Naciones y 62,800 métis. La comunidad francófona se llama fransaskoise.",
-          "Hora: Saskatchewan usa la hora central estándar (CST), seis horas menos que el tiempo universal coordinado (UTC−6), todo el año: no cambia la hora en verano. La nueva Time Act, 2026, vigente desde el 30 de octubre de 2026, mantiene UTC−6 en toda la provincia, incluida Lloydminster (que antes seguía la hora de Alberta, hoy también UTC−6 todo el año), y permite que el Gobierno fije por reglamento una hora distinta en zonas que lo pidan. En la práctica, Creighton y Denare Beach, junto a Flin Flon (Manitoba), han usado la hora de Manitoba: confirma la hora local si vas a esa zona.",
+          "Hora: Saskatchewan usa la hora central estándar (CST), seis horas menos que el tiempo universal coordinado (UTC−6), todo el año: no cambia la hora en verano. La Time Act, 2026 entra en vigor el 30 de octubre de 2026 (decreto OC 438/2026) y reemplaza a la ley anterior: fija UTC−6 en toda la provincia, incluida expresamente la ciudad de Lloydminster, y permite que el Gobierno declare por reglamento «zonas con opción horaria» junto al límite provincial, con UTC−5, UTC−6 o UTC−7. Hasta esa fecha, Lloydminster sigue por su carta municipal la hora de Alberta, que desde el 18 de junio de 2026 también es UTC−6 todo el año: su hora no cambia. Creighton y Denare Beach, junto a Flin Flon (Manitoba), usan en la práctica la hora de Manitoba (UTC−5), que Manitoba mantendrá todo el año a partir del 31 de octubre de 2026; es una costumbre local, y no encontramos un reglamento que declare esa zona con opción horaria. Si vas a una comunidad junto al límite provincial, confirma la hora local.",
           "La bandera provincial, adoptada en 1969, tiene una mitad superior verde, por los bosques del norte, y una inferior dorada, por los campos de grano del sur. El clima es continental: inviernos muy fríos y veranos calurosos. El Gobierno de Saskatchewan recomienda informar a quien llega sobre el clima de su comunidad y preparar ropa de invierno desde las primeras semanas.",
         ],
         indicators: ["landArea"],
@@ -1681,6 +1681,7 @@ const CD_PROFILES = {
           { label: "Statistics Canada — Población de los centros de población (tabla 98-10-0011-01)", href: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810001101" },
           { label: "Gobierno de Saskatchewan — Símbolos, emblemas y banderas", href: "https://www.saskatchewan.ca/government/visual-identity-and-protocol/emblems-and-flags" },
           { label: "Asamblea Legislativa de Saskatchewan — Proyecto de ley 58, The Time Act, 2026", href: "https://docs.legassembly.sk.ca/legdocs/Bills/30L2S/Bill30-58.pdf" },
+          { label: "Gobierno de Saskatchewan — Decreto OC 438/2026: entrada en vigor de la Time Act, 2026 (30 de octubre de 2026)", href: "https://publications.saskatchewan.ca/#/products/130175" },
           { label: "Gobierno de Canadá — Pronóstico del tiempo", href: "https://weather.gc.ca/" },
         ],
       },
@@ -1890,7 +1891,7 @@ const CD_PROFILES = {
       {
         id: "ciudades", title: "Ciudades más pobladas",
         text: [
-          "Las diez ciudades más pobladas de Saskatchewan según el Censo 2021, la última cifra oficial por municipio. Cada una tiene su página en el directorio de abajo.",
+          "Las diez ciudades más pobladas de Saskatchewan según el Censo 2021, la última cifra oficial por municipio. Cada una tiene su página en el directorio de abajo; Regina, Saskatoon, Prince Albert, Moose Jaw, Swift Current, Yorkton, North Battleford y Lloydminster tienen ficha completa, con alquileres de CMHC de su ciudad o aglomeración, transporte, servicios municipales y agencias de asentamiento.",
         ],
         table: {
           caption: "Ciudades más pobladas de Saskatchewan (Censo 2021)",
@@ -1916,6 +1917,12 @@ const CD_PROFILES = {
         links: [
           { label: "Ficha completa de Regina en Canadá en Datos", href: "/canada-en-datos/saskatchewan/regina" },
           { label: "Ficha completa de Saskatoon en Canadá en Datos", href: "/canada-en-datos/saskatchewan/saskatoon" },
+          { label: "Ficha completa de Prince Albert en Canadá en Datos", href: "/canada-en-datos/saskatchewan/prince-albert" },
+          { label: "Ficha completa de Moose Jaw en Canadá en Datos", href: "/canada-en-datos/saskatchewan/moose-jaw" },
+          { label: "Ficha completa de Swift Current en Canadá en Datos", href: "/canada-en-datos/saskatchewan/swift-current" },
+          { label: "Ficha completa de Yorkton en Canadá en Datos", href: "/canada-en-datos/saskatchewan/yorkton" },
+          { label: "Ficha completa de North Battleford en Canadá en Datos", href: "/canada-en-datos/saskatchewan/north-battleford" },
+          { label: "Ficha completa de Lloydminster (parte de Saskatchewan) en Canadá en Datos", href: "/canada-en-datos/saskatchewan/lloydminster" },
         ],
       },
     ],

@@ -104,7 +104,7 @@ const EPA_ES = {
   "Swift Current-Moose Jaw, Saskatchewan": "Swift Current–Moose Jaw",
   "Saskatoon-Biggar, Saskatchewan": "Saskatoon–Biggar",
   "Yorkton-Melville, Saskatchewan": "Yorkton–Melville",
-  "Prince Albert and Northern, Saskatchewan": "Prince Albert y Northern (publicadas juntas)",
+  "Prince Albert and Northern, Saskatchewan": "Prince Albert y Northern",
 };
 
 /* Código de subdivisión → nombre visible, URL y variantes de búsqueda. Lloydminster y Flin Flon son ciudades
@@ -117,19 +117,125 @@ const NOMBRE_VISIBLE = {
 };
 
 /* ---------- Fichas completas ----------
-   Regina (capital) y Saskatoon (la ciudad más poblada). Enlaces comprobados antes de publicar. */
+   Regina (capital), Saskatoon (la ciudad más poblada) y las seis ciudades con encuesta de alquileres de CMHC
+   en su aglomeración: Prince Albert, Moose Jaw, Swift Current, Yorkton, North Battleford y la parte de
+   Saskatchewan de Lloydminster. Agencias de asentamiento: lista del Gobierno de Saskatchewan (Settlement
+   Services, consultada el 29-10-2026). Enlaces comprobados antes de publicar. */
+const ASENTAMIENTO = { label: "Gobierno de Saskatchewan — Agencias de asentamiento (Regional Newcomer Gateways) por ciudad", href: "https://www.saskatchewan.ca/residents/moving-to-saskatchewan/live-in-saskatchewan/language-training-and-settlement-services/settlement-services" };
 export const FICHAS = {
   regina: {
     nombre: "Regina",
     web: "https://www.regina.ca/",
     cmhc: ["regina", "Regina City (Zones 1-7)", "Regina CMA", "la ciudad de Regina (zonas 1 a 7 de CMHC)"],
     transporte: [{ label: "Regina Transit — Rutas, horarios y tarifas", href: "https://www.regina.ca/transportation-roads-parking/transit/" }],
+    agencias: ["Regina Open Door Society", "RIWC Regina Immigrant Women Centre", "International Women of Saskatoon (oficina de Regina)"],
+    agenciasEnlaces: [{ label: "Regina Open Door Society", href: "https://rods.sk.ca/" }, { label: "RIWC Regina Immigrant Women Centre", href: "https://reginaiwc.ca/" }],
   },
   saskatoon: {
     nombre: "Saskatoon",
     web: "https://www.saskatoon.ca/",
     cmhc: ["saskatoon", "Saskatoon City (Zones 1-7)", "Saskatoon CMA", "la ciudad de Saskatoon (zonas 1 a 7 de CMHC)"],
     transporte: [{ label: "Saskatoon Transit — Rutas, horarios y tarifas", href: "https://saskatoontransit.ca/" }],
+    agencias: ["Saskatoon Open Door Society", "International Women of Saskatoon"],
+    agenciasEnlaces: [{ label: "Saskatoon Open Door Society", href: "https://sods.sk.ca/" }],
+  },
+  "prince-albert": {
+    nombre: "Prince Albert",
+    web: "https://www.citypa.ca/",
+    cmhc: ["saskatchewan", "Prince Albert CA", "Prince Albert CA", "la aglomeración de Prince Albert"],
+    transporte: [{ label: "Ciudad de Prince Albert — Prince Albert Transit (rutas, horarios y tarifas)", href: "https://www.citypa.ca/parking-streets-and-transportation/transit/" }],
+    agencias: ["Prince Albert Multicultural Council", "YWCA Prince Albert"],
+    agenciasEnlaces: [{ label: "Prince Albert Multicultural Council", href: "https://www.pamcsk.com/" }],
+    servicios: [
+      { label: "Basura y reciclaje", href: "https://www.citypa.ca/living-in-our-community/garbage-and-recycling/" },
+      { label: "Agua y alcantarillado (pago de la factura)", href: "https://www.citypa.ca/living-in-our-community/water-and-sewer-services/" },
+      { label: "Impuesto a la propiedad", href: "https://www.citypa.ca/living-in-our-community/property-taxes/" },
+      { label: "Reportar un problema", href: "https://www.citypa.ca/city-hall/report-a-concern/" },
+      { label: "Directorio de contactos", href: "https://www.citypa.ca/contacts-directory/" },
+    ],
+  },
+  "moose-jaw": {
+    nombre: "Moose Jaw",
+    web: "https://moosejaw.ca/",
+    cmhc: ["saskatchewan", "Moose Jaw CA", "Moose Jaw CA", "la aglomeración de Moose Jaw"],
+    transporte: [{ label: "Ciudad de Moose Jaw — Transporte público (horarios)", href: "https://moosejaw.ca/transit/" }],
+    agencias: ["Moose Jaw Multicultural Council"],
+    agenciasEnlaces: [
+      { label: "Moose Jaw Multicultural Council", href: "https://mjmcinc.ca/" },
+      { label: "Ciudad de Moose Jaw — Guía para inmigrantes: asentamiento, empleo, vivienda, salud y educación", href: "https://moosejaw.ca/immigration-immigration-and-settlement-services/" },
+    ],
+    servicios: [
+      { label: "Servicios públicos (agua y alcantarillado)", href: "https://moosejaw.ca/utilities/" },
+      { label: "Pagar impuestos y servicios en línea", href: "https://moosejaw.ca/pay-utilities/" },
+      { label: "Basura y reciclaje", href: "https://moosejaw.ca/letstalktrash/" },
+      { label: "Reportar un problema", href: "https://moosejaw.ca/report-an-issue/" },
+      { label: "Contacto", href: "https://moosejaw.ca/contact-us/" },
+    ],
+  },
+  "swift-current": {
+    nombre: "Swift Current",
+    web: "https://www.swiftcurrent.ca/",
+    cmhc: ["saskatchewan", "Swift Current CA", "Swift Current CA", "la aglomeración de Swift Current"],
+    transporte: [{ label: "Ciudad de Swift Current — Swift Transit", href: "https://www.swiftcurrent.ca/divisions/engineering-infrastructure/transportation-services/swift-transit" }],
+    agencias: ["Southwest Newcomer Welcome Centre"],
+    agenciasEnlaces: [{ label: "Southwest Newcomer Welcome Centre", href: "https://www.newcomerwelcomecentre.com/" }],
+    escuelas: [{ label: "Great Plains College — Campus de Swift Current", href: "https://www.greatplainscollege.ca/contact-us/swift-current" }],
+    servicios: [
+      { label: "Facturación de servicios públicos (agua y electricidad)", href: "https://www.swiftcurrent.ca/divisions/corporate-services/financial-services/utility-billing" },
+      { label: "Impuesto a la propiedad", href: "https://www.swiftcurrent.ca/divisions/corporate-services/financial-services/taxation" },
+      { label: "Consultar o reportar un problema", href: "https://www.swiftcurrent.ca/i-want-to/inquire-or-report" },
+      { label: "Contacto", href: "https://www.swiftcurrent.ca/about-us/contact-us" },
+    ],
+  },
+  yorkton: {
+    nombre: "Yorkton",
+    web: "https://www.yorkton.ca/",
+    cmhc: ["saskatchewan", "Yorkton CA", "Yorkton CA", "la aglomeración de Yorkton"],
+    transporte: [{ label: "Ciudad de Yorkton — Yorkton Transit y Access Transit", href: "https://www.yorkton.ca/living-in-yorkton/transit/" }],
+    transporteNota: "Según la ciudad, Yorkton Transit está cambiando a un servicio a pedido: en lugar de rutas y horarios fijos, se reservará el viaje por aplicación, en línea o por teléfono.",
+    agencias: ["East Central Newcomer Welcome Centre"],
+    agenciasEnlaces: [{ label: "East Central Newcomer Welcome Centre", href: "https://eastcentralnewcomercentre.ca" }],
+    servicios: [
+      { label: "Basura, reciclaje y orgánicos", href: "https://www.yorkton.ca/living-in-yorkton/garbage-recycling-and-organics/" },
+      { label: "Agua y alcantarillado", href: "https://www.yorkton.ca/living-in-yorkton/water-and-sewer-services/" },
+      { label: "Impuesto a la propiedad", href: "https://www.yorkton.ca/our-government/property-taxes/" },
+      { label: "Reportar un problema", href: "https://forms.yorkton.ca/General/Report-a-Concern" },
+      { label: "Directorio de contactos", href: "https://www.yorkton.ca/contacts-directory/" },
+    ],
+  },
+  "north-battleford": {
+    nombre: "North Battleford",
+    web: "https://www.cityofnb.ca/",
+    cmhc: ["saskatchewan", "North Battleford CA", "North Battleford CA", "la aglomeración de North Battleford"],
+    transporte: [],
+    transporteNota: "No encontramos información sobre transporte público en el sitio de la ciudad; consulta en la ciudad si hay servicio de autobús.",
+    agencias: ["Battlefords Immigration Resource Center"],
+    agenciasEnlaces: [],
+    servicios: [
+      { label: "Vivienda, propiedad y servicios públicos", href: "https://www.cityofnb.ca/home-property-utilities/" },
+      { label: "Basura y reciclaje", href: "https://www.cityofnb.ca/home-property-utilities/garbage-and-recycling/" },
+      { label: "Impuesto a la propiedad", href: "https://www.cityofnb.ca/home-property-utilities/property-taxes/" },
+      { label: "Solicitudes de servicio", href: "https://www.cityofnb.ca/home-property-utilities/service-requests/" },
+      { label: "Contacto", href: "https://www.cityofnb.ca/our-city-government/contact-us/" },
+    ],
+  },
+  lloydminster: {
+    nombre: "Lloydminster (parte de Saskatchewan)",
+    web: "https://www.lloydminster.ca/",
+    cmhc: ["saskatchewan", "Lloydminster CA (Sask Part)", "Lloydminster CA (Sask Part)", "la parte de Saskatchewan de la aglomeración de Lloydminster"],
+    transporte: [{ label: "Ciudad de Lloydminster — Calles, aceras y transporte", href: "https://www.lloydminster.ca/home-property-utilities/roads-sidewalks-and-transportation/" }],
+    transporteNota: "La ciudad, que se extiende a ambos lados del límite con Alberta, publica la información de transporte en su sitio.",
+    agencias: ["Lloydminster Learning Council Association"],
+    agenciasEnlaces: [],
+    escuelas: [{ label: "Lakeland College — Campus de Lloydminster (lado de Alberta)", href: "https://www.lakelandcollege.ca/about/campuses/lloydminster.html" }],
+    servicios: [
+      { label: "Servicios públicos y facturación", href: "https://www.lloydminster.ca/home-property-utilities/utilities-and-billing/" },
+      { label: "Basura y reciclaje", href: "https://www.lloydminster.ca/home-property-utilities/garbage-and-recycling/" },
+      { label: "Impuesto a la propiedad", href: "https://www.lloydminster.ca/home-property-utilities/property-taxes/" },
+      { label: "Salud y bienestar", href: "https://www.lloydminster.ca/home-property-utilities/health-care-and-wellness/" },
+      { label: "Reportar un problema", href: "https://www.lloydminster.ca/home-property-utilities/report-a-concern/" },
+      { label: "Contacto", href: "https://www.lloydminster.ca/council-administration/contact-us/" },
+    ],
   },
 };
 
@@ -156,7 +262,10 @@ const HOSPITALES = {
   "nipawin hospital": "Nipawin Hospital",
   "meadow lake hospital": "Meadow Lake Hospital",
   "la loche health centre": "La Loche Health Centre and Hospital",
+  "saskatchewan hospital": "Saskatchewan Hospital North Battleford (salud mental)",
 };
+/* Hospitales especializados: se listan en su localidad, pero no cuentan como «el más cercano» para las demás */
+const SOLO_LOCAL = new Set(["Saskatchewan Hospital North Battleford (salud mental)"]);
 
 /* ---------- Fuentes ---------- */
 export const FUENTES = {
@@ -170,7 +279,7 @@ export const FUENTES = {
   escuelas: { org: "Statistics Canada", title: "Open Database of Educational Facilities (ODEF), versión 2.1 (2022)", url: "https://www.statcan.gc.ca/en/lode/databases/odef" },
   hospitales: { org: "Statistics Canada", title: "Open Database of Healthcare Facilities (ODHF), versión 1.1 (2020)", url: "https://www.statcan.gc.ca/en/lode/databases/odhf" },
   hora: { org: "IANA", title: "Base de datos de zonas horarias (America/Regina): hora central, UTC−6 todo el año", url: "https://www.iana.org/time-zones" },
-  leyHora: { org: "Asamblea Legislativa de Saskatchewan", title: "Proyecto de ley 58 — The Time Act, 2026 (en vigor desde el 30 de octubre de 2026)", url: "https://docs.legassembly.sk.ca/legdocs/Bills/30L2S/Bill30-58.pdf" },
+  leyHora: { org: "Asamblea Legislativa de Saskatchewan", title: "Proyecto de ley 58 — The Time Act, 2026 (entra en vigor el 30 de octubre de 2026, decreto OC 438/2026)", url: "https://docs.legassembly.sk.ca/legdocs/Bills/30L2S/Bill30-58.pdf" },
 };
 const RECURSOS = {
   empleo: [
@@ -323,6 +432,7 @@ export function cargar(root) {
   for (const k of Object.keys(FICHAS)) {
     const r = items.find((x) => x.s === k);
     if (!r || r.t !== "city") throw new Error(`Ficha completa sin ciudad: ${k}`);
+    if (FICHAS[k].nombre !== r.n) throw new Error(`Nombre de la ficha distinto del de la localidad: ${k}`);
     r.ficha = true;
   }
 
@@ -454,8 +564,8 @@ const decimal = (v) => { const [e, d] = String(v).split("."); return miles(e) + 
 /* Creighton, Denare Beach y la parte de Saskatchewan de Flin Flon */
 const ZONA_FLIN_FLON = new Set(["4718051", "4718049", "4718052"]);
 function zonaHoraria(r) {
-  if (r.c === "4717029") return "Hora central, UTC−6 todo el año. Lloydminster seguía la hora de Alberta; desde el 30 de octubre de 2026, la Time Act, 2026 fija UTC−6 en toda Saskatchewan, incluida Lloydminster, y Alberta también usa UTC−6 todo el año desde el 18 de junio de 2026: la hora es la misma a ambos lados del límite";
-  if (ZONA_FLIN_FLON.has(r.c)) return "La ley fija UTC−6 todo el año, pero en la práctica esta zona sigue la hora de Flin Flon (Manitoba), que usa UTC−5 todo el año desde el 31 de octubre de 2026. La Time Act, 2026 permite fijar por reglamento la hora de estas zonas: confirma la hora local";
+  if (r.c === "4717029") return "Hora central, UTC−6 todo el año. Hasta el 29 de octubre de 2026, Lloydminster sigue por su carta municipal la hora de Alberta, que desde el 18 de junio de 2026 también es UTC−6 todo el año. La Time Act, 2026, que entra en vigor el 30 de octubre de 2026, fija UTC−6 en toda Saskatchewan e incluye expresamente a Lloydminster: la hora no cambia";
+  if (ZONA_FLIN_FLON.has(r.c)) return "La ley fija la hora central, UTC−6, todo el año. En la práctica, esta zona sigue la hora de Flin Flon (Manitoba), UTC−5, que Manitoba mantendrá todo el año a partir del 31 de octubre de 2026. La Time Act, 2026 (en vigor el 30 de octubre de 2026) permite declarar por reglamento zonas con opción horaria; no encontramos uno para esta zona: confirma la hora local";
   return "Hora central (CST), UTC−6 todo el año: Saskatchewan no cambia la hora en verano";
 }
 
@@ -565,20 +675,30 @@ function pagina(r, L, { esc }) {
       </ul>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.hospitales, esc)}. Confirma servicios y horarios con la Saskatchewan Health Authority antes de ir.</p>`;
   } else {
-    const cerca = L.hospitales.map((h) => ({ h, d: km({ lat: r.lat, lon: r.lon }, { lat: h.lat, lon: h.lon }) })).sort((x, y) => x.d - y.d)[0];
+    const cerca = L.hospitales.filter((h) => !SOLO_LOCAL.has(h.nombre)).map((h) => ({ h, d: km({ lat: r.lat, lon: r.lon }, { lat: h.lat, lon: h.lon }) })).sort((x, y) => x.d - y.d)[0];
     salud = `<p>De los principales hospitales de la provincia, el más cercano al punto de referencia de ${esc(nombre)} es <strong>${esc(cerca.h.nombre)}</strong>, a unos ${DIST(cerca.d)} en línea recta (la distancia por carretera puede ser mayor). Puede haber un hospital comunitario o un centro de salud más cerca: consulta la Saskatchewan Health Authority. ${llamar}</p>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.hospitales, esc)}. Distancia calculada con las coordenadas oficiales.</p>`;
   }
 
   /* --- Transporte --- */
-  const transporte = f && f.transporte && f.transporte.length
-    ? `<p>Información oficial de transporte público:</p>${enlaces(f.transporte, esc)}`
+  const transporte = f
+    ? `${f.transporteNota ? `<p>${esc(f.transporteNota)}</p>` : ""}${f.transporte.length ? `<p>Información oficial de transporte:</p>${enlaces(f.transporte, esc)}` : ""}
+      <p>Para manejar, la licencia de conducir y el registro y el seguro obligatorio de los vehículos se tramitan con SGI (Saskatchewan Government Insurance).</p>
+      ${enlaces([{ label: "SGI — Licencias de conducir y registro de vehículos", href: "https://www.sgi.sk.ca/" }], esc)}`
     : `<p>Fuera de las ciudades con transporte urbano, en Saskatchewan se depende sobre todo del automóvil. La licencia de conducir y el registro y el seguro obligatorio de los vehículos se tramitan con SGI (Saskatchewan Government Insurance). Consulta en tu municipio si hay transporte local:</p>
       ${enlaces([{ label: "SGI — Licencias de conducir y registro de vehículos", href: "https://www.sgi.sk.ca/" }], esc)}`;
 
-  const recien = `<p>Los servicios para recién llegados financiados por el Gobierno de Canadá son gratuitos para quienes cumplen sus requisitos; cada organización indica a quién puede atender. Busca los más cercanos:</p>
+  const recien = f
+    ? `<p>Según el Gobierno de Saskatchewan, en ${esc(f.nombre.replace(" (parte de Saskatchewan)", ""))} ofrece${f.agencias.length > 1 ? "n" : ""} servicios de asentamiento gratuitos ${f.agencias.map(esc).join(", ").replace(/, ([^,]*)$/, " y $1")}. Dan información, referencias y apoyo personal con un asesor, también con intérprete por teléfono si no hablas inglés; no tramitan documentos migratorios. La Assemblée communautaire fransaskoise ofrece servicios en francés en toda la provincia.</p>
+      ${enlaces([...f.agenciasEnlaces, ASENTAMIENTO, ...RECURSOS.recienLlegados], esc)}
+      <p>Consulta también la <a href="/canada-en-datos/saskatchewan#recien-llegado">guía de primeros pasos en Saskatchewan</a>.</p>`
+    : `<p>Los servicios para recién llegados financiados por el Gobierno de Canadá son gratuitos para quienes cumplen sus requisitos; cada organización indica a quién puede atender. Busca los más cercanos:</p>
       ${enlaces(RECURSOS.recienLlegados, esc)}
       <p>Consulta también la <a href="/canada-en-datos/saskatchewan#recien-llegado">guía de primeros pasos en Saskatchewan</a>.</p>`;
+  const servicios = f && f.servicios
+    ? `<p>Servicios de la ciudad de ${esc(f.nombre.replace(" (parte de Saskatchewan)", ""))} en su sitio oficial:</p>
+      ${enlaces(f.servicios.map((x) => ({ label: `Ciudad de ${f.nombre.replace(" (parte de Saskatchewan)", "")} — ${x.label}`, href: x.href })), esc)}`
+    : "";
   const familias = `<p>Estos son recursos provinciales y federales: se aplican en toda la provincia, no solo en ${esc(nombre)}. La elegibilidad depende de tu estatus migratorio, tus ingresos y tu residencia.</p>
       ${enlaces(RECURSOS.familias, esc)}
       <p>Más información en la sección de <a href="/canada-en-datos/saskatchewan#beneficios">beneficios de la guía de Saskatchewan</a>.</p>`;
@@ -614,10 +734,11 @@ function pagina(r, L, { esc }) {
     busqueda,
     vivienda,
     escuelas,
-    escuelasEnlaces: RECURSOS.escuelas,
+    escuelasEnlaces: [...(f && f.escuelas ? f.escuelas : []), ...RECURSOS.escuelas],
     salud,
     saludEnlaces: RECURSOS.salud,
     transporte,
+    servicios,
     recien,
     familias,
     oficiales,

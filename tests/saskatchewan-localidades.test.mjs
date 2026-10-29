@@ -117,7 +117,7 @@ test("una página por subdivisión, URL única, ciudades partidas y homónimos r
 
 test("fichas completas indexables y en el sitemap; las básicas con noindex; metadatos y compartir con la URL pública", () => {
   const sitemap = read("sitemap.xml");
-  assert.deepEqual(Object.keys(FICHAS).sort(), ["regina", "saskatoon"]);
+  assert.deepEqual(Object.keys(FICHAS).sort(), ["lloydminster", "moose-jaw", "north-battleford", "prince-albert", "regina", "saskatoon", "swift-current", "yorkton"]);
   for (const [k, html] of paginas) {
     const s = k.replace("saskatchewan/", "").replace(".html", "");
     const url = `https://podcastdelmigrante.com/canada-en-datos/saskatchewan/${s}`;
@@ -165,14 +165,31 @@ test("sin datos vacíos ni inventados; datos regionales y provinciales presentad
   assert.doesNotMatch(rm, /CMHC, octubre de 2025, para/, "las páginas básicas no muestran alquileres de otra localidad");
   assert.match(rm, /ya está incluida en la de Corman Park No\. 344/, "la población de los lugares designados no se suma");
   assert.match(rm, /Beaver Creek <small>\(111 hab\., Censo 2021\)<\/small>/);
-  assert.match(PAGES["saskatchewan/prince-albert.html"], /Prince Albert y Northern \(publicadas juntas\)/);
+  assert.match(PAGES["saskatchewan/prince-albert.html"], /región Prince Albert y Northern \(Statistics Canada publica juntas las regiones Prince Albert y Northern\)/);
+  /* Fichas ampliadas: alquiler de CMHC de su aglomeración, hospital, agencias de asentamiento y servicios municipales */
+  for (const [s, alquiler, hospital, agencia] of [
+    ["prince-albert", "$1,245 al mes", "Victoria Hospital", "Prince Albert Multicultural Council"],
+    ["moose-jaw", "$1,336 al mes", "Dr. F.H. Wigmore Regional Hospital", "Moose Jaw Multicultural Council"],
+    ["swift-current", "$1,011 al mes", "Cypress Regional Hospital", "Southwest Newcomer Welcome Centre"],
+    ["yorkton", "$1,224 al mes", "Yorkton Regional Health Centre", "East Central Newcomer Welcome Centre"],
+    ["north-battleford", "$1,166 al mes", "Battlefords Union Hospital", "Battlefords Immigration Resource Center"],
+    ["lloydminster", "$1,353 al mes", "Lloydminster Hospital", "Lloydminster Learning Council Association"],
+  ]) {
+    const h = PAGES[`saskatchewan/${s}.html`];
+    for (const t of [alquiler, hospital, agencia, 'id="servicios"', "Servicios municipales"]) assert.ok(h.includes(t), `${s}: ${t}`);
+    assert.doesNotMatch(h, /noindex/, s);
+  }
+  assert.match(PAGES["saskatchewan/lloydminster.html"], /la parte de Saskatchewan de la aglomeración de Lloydminster/);
+  assert.match(PAGES["saskatchewan/north-battleford.html"], /Saskatchewan Hospital North Battleford \(salud mental\)/);
+  assert.match(PAGES["saskatchewan/north-battleford-no-437.html"], /el más cercano[^<]*<strong>Battlefords Union Hospital<\/strong>/, "el hospital especializado no cuenta como el más cercano");
   const reserva = PAGES["saskatchewan/ahtahkakoop-104.html"];
   assert.match(reserva, /reserva indígena \(Indian Reserve\)/);
   assert.match(reserva, /No es un municipio/);
   assert.match(PAGES["saskatchewan/north-battleford-crown-colony.html"], /Es distinta de la ciudad de North Battleford/);
   /* Hora: toda la provincia UTC−6; nota para Lloydminster y para la zona de Flin Flon */
-  assert.match(PAGES["saskatchewan/lloydminster.html"], /Time Act, 2026 fija UTC−6 en toda Saskatchewan, incluida Lloydminster/);
-  assert.match(PAGES["saskatchewan/creighton.html"], /sigue la hora de Flin Flon \(Manitoba\), que usa UTC−5/);
+  assert.match(PAGES["saskatchewan/lloydminster.html"], /La Time Act, 2026, que entra en vigor el 30 de octubre de 2026, fija UTC−6 en toda Saskatchewan e incluye expresamente a Lloydminster/);
+  assert.doesNotMatch(read("js/canada-datos.js") + Object.values(PAGES).filter((h) => h.includes("Time Act")).join(""), /vigente desde el 30 de octubre|en vigor desde el 30 de octubre/, "la Time Act no se presenta como vigente antes del 30-10-2026");
+  assert.match(PAGES["saskatchewan/creighton.html"], /En la práctica, esta zona sigue la hora de Flin Flon \(Manitoba\), UTC−5, que Manitoba mantendrá todo el año a partir del 31 de octubre de 2026/);
   assert.match(PAGES["saskatchewan/moose-jaw.html"], /Hora central \(CST\), UTC−6 todo el año/);
 });
 
@@ -196,11 +213,16 @@ test("la guía provincial: secciones, cifras verificadas, filtros y directorio e
   assert.doesNotMatch(html, /garantizad[oa]s? (un )?empleo|empleo asegurado|garantiza(mos)? (la|tu) (nominación|residencia)/i);
   assert.match(html, /no garantiza una nominación/);
   for (const k of Object.keys(FICHAS)) assert.ok(html.includes(`href="/canada-en-datos/saskatchewan/${k}"`), k);
-  /* Identidad visual: verde y dorado solo en las páginas de Saskatchewan */
+  /* Identidad visual: la misma de El Podcast del Migrante que Alberta (verde, negro y blanco), sin paleta propia */
   assert.match(html, /<body data-cd-region="saskatchewan">/);
   assert.match(PAGES["saskatchewan/regina.html"], /data-cd-provincia="saskatchewan"/);
   const css = read("css/canada-datos.css");
-  assert.match(css, /body\[data-cd-region="saskatchewan"\] \.cd,\nbody\[data-cd-provincia="saskatchewan"\] \.cd \{\n  --cd-acento: #f2c230;/);
+  assert.doesNotMatch(css, /saskatchewan|data-cd-region=|data-cd-provincia=/i, "ninguna regla de estilo propia de una provincia");
+  assert.doesNotMatch(css, /#f2c230|#f8ebbf/i, "sin dorado");
+  assert.equal((css.match(/--cd-acento:/g) || []).length, 1, "un solo acento para todas las provincias");
+  const hojas = (h) => [...h.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(hojas(html), hojas(PAGES["alberta.html"]), "mismas hojas de estilo que Alberta");
+  assert.deepEqual(hojas(PAGES["saskatchewan/regina.html"]), hojas(PAGES["alberta/calgary.html"] || PAGES[Object.keys(PAGES).find((k) => k.startsWith("alberta/"))]));
 });
 
 test("reloj: Saskatchewan usa America/Regina (UTC−6 todo el año) y la zona de Creighton se muestra aparte", () => {
@@ -231,7 +253,7 @@ test("datos del navegador: directorio extendido, división censal como filtro y 
   assert.deepEqual(Object.keys(d.regiones).sort(), ["4710", "4720", "4730", "4740", "4750", "4760"]);
   assert.equal(d.localidades.length, 3205);
   assert.equal(d.localidades.filter((f) => f[7]).length, 951);
-  assert.equal(d.localidades.filter((f) => f[8] === 1).length, 2);
+  assert.equal(d.localidades.filter((f) => f[8] === 1).length, 8);
   assert.equal(new Set(d.localidades.map((f) => f[9])).size, 18);
   const nombres = d.localidades.filter((f) => f[7]).map((f) => f[0]);
   assert.equal(new Set(nombres).size, nombres.length, "nombres únicos entre las páginas");
