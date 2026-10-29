@@ -90,7 +90,7 @@ export function fakeEnv(over = {}) {
       SOLICITUDES: fakeR2(),
       RESEND_API_KEY: "re_test",
       RESEND_API_URL: "https://resend.test/emails",
-      TURNSTILE_SECRET_KEY: "secret",
+      TURNSTILE_SECRET_KEY: "1x0000000000000000000000000000000AA", /* clave secreta de prueba de Cloudflare */
       TURNSTILE_SITE_KEY: "1x00000000000000000000AA", /* clave de prueba pública de Cloudflare */
       TURNSTILE_VERIFY_URL: "https://turnstile.test/siteverify",
       IP_HASH_SALT: "sal",

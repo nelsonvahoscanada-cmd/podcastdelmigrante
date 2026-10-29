@@ -9,6 +9,7 @@
        RESEND_API_URL       = "http://127.0.0.1:9999/resend"
        REGISTRO_ABIERTO     = "1"
        TURNSTILE_SITE_KEY   = "1x00000000000000000000AA"   (clave de prueba)
+     y en .dev.vars TURNSTILE_SECRET_KEY = "1x0000000000000000000000000000000AA" (secreta de prueba)
      npx wrangler d1 execute <db> --local --file=db/directorio/0001_solicitudes.sql
      npx wrangler d1 execute <db> --local --file=db/directorio/0002_historial.sql
      npx wrangler d1 execute <db> --local --file=db/directorio/0003_eliminaciones.sql

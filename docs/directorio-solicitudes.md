@@ -73,6 +73,32 @@ Cloudflare → **Turnstile → Add widget**
 - Modo: *Managed*.
 - Copiar la **Site Key** (pública) y la **Secret Key** (secreta).
 
+### Si el formulario dice «No pudimos verificar que no eres un robot»
+
+En Cloudflare → **Turnstile → el widget del formulario → Analytics**:
+
+- **Desafíos resueltos, pero 0 «Siteverify requests»**: el servidor sí
+  valida, pero con una clave secreta que **no es la de este widget**. Puede
+  ser de otro widget, la clave de prueba, o tener espacios o comillas.
+  Solución: en el widget, **copiar de nuevo la Secret Key**. Pegarla en
+  Pages → Settings → Variables and Secrets → **Production** →
+  `TURNSTILE_SECRET_KEY`, como **Secret** y sin comillas. Después,
+  **redesplegar**. La Site Key (`TURNSTILE_SITE_KEY`) y la Secret Key deben
+  ser del mismo widget, y el widget debe tener autorizado el dominio
+  `podcastdelmigrante.com`.
+- **Siteverify con tokens inválidos**: en Functions → *Real-time logs*
+  aparece «Turnstile rechazó el token (motivo): código». El motivo es uno de
+  estos:
+  - `timeout-or-duplicate`: token vencido o usado. El formulario lo renueva
+    solo.
+  - `invalid-input-secret`: la clave secreta no es válida.
+  - `invalid-input-response`: token rechazado. Si pasa con tokens recién
+    resueltos, la clave secreta es de otro widget.
+
+El formulario se cierra solo (`/registro/config` → `ready:false`) si la
+clave secreta no tiene formato de clave, o si una de las dos claves es de
+prueba y la otra real. El motivo queda en los registros, sin el valor.
+
 ## 4. Resend (correos) — remitente verificado
 
 1. Crear cuenta gratuita en resend.com.

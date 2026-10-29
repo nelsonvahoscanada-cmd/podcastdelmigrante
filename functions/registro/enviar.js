@@ -20,7 +20,7 @@
 */
 import { normalize, validate, validateImage, newRequestId, LIMITS } from "../../js/directorio/solicitud-core.js";
 import { internalEmail, confirmationEmail, sendEmail, toBase64 } from "../_lib/correos.js";
-import { registrationStatus, closedReason, jsonResponse } from "../_lib/registro-env.js";
+import { registrationStatus, closedReason, jsonResponse, turnstileSecret } from "../_lib/registro-env.js";
 import { recordEvent } from "../_lib/historial.js";
 
 /* Versión del texto de consentimiento y del aviso de privacidad del formulario
@@ -67,7 +67,7 @@ export async function verifyTurnstile(env, token, ip) {
     console.warn("Turnstile: la solicitud llegó sin token");
     return { ok: false, reason: "missing" };
   }
-  const body = new URLSearchParams({ secret: env.TURNSTILE_SECRET_KEY, response: token });
+  const body = new URLSearchParams({ secret: turnstileSecret(env), response: token });
   if (ip) body.set("remoteip", ip);
   let res;
   try {
@@ -85,6 +85,9 @@ export async function verifyTurnstile(env, token, ip) {
     const codes = (Array.isArray(out["error-codes"]) ? out["error-codes"] : []).map((c) => String(c).replace(/[^a-z0-9-]/gi, "").slice(0, 40));
     const reason = codes.some((c) => TURNSTILE_CONFIG.includes(c)) ? "config" : codes.some((c) => TURNSTILE_EXPIRED.includes(c)) ? "expired" : "invalid";
     (reason === "config" ? console.error : console.warn)(`Turnstile rechazó el token (${reason}): ${codes.join(",") || "sin códigos"}`);
+    /* Un token recién emitido que Siteverify no reconoce suele indicar que la clave secreta es de otro widget
+       (en ese caso, el panel de Turnstile del widget del formulario muestra 0 llamadas a Siteverify). */
+    if (reason === "invalid" && codes.includes("invalid-input-response")) console.error("Turnstile: si los tokens recién resueltos se rechazan como «invalid-input-response», revisa que TURNSTILE_SECRET_KEY sea la Secret Key del mismo widget que TURNSTILE_SITE_KEY");
     return { ok: false, reason };
   }
   /* Un token válido obtenido en otro sitio (p. ej. copiado por un robot desde
