@@ -30,3 +30,9 @@ jobs:
           BASE: https://b8c8d21b.podcastdelmigrante.pages.dev
           NODE_PATH: /tmp/pw/node_modules
           NODE_OPTIONS: --require /tmp/pw/vistas.cjs
+  enlaces:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install playwright==1.48.0 && python3 -m playwright install --with-deps chromium
+      - run: python3 scripts/canada-en-datos/obtener-sk-enlaces.py
