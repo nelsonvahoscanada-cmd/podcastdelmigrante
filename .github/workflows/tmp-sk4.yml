@@ -1,0 +1,17 @@
+name: tmp SK 4
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-saskatchewan]
+    paths: [".github/workflows/tmp-sk4.yml", "scripts/canada-en-datos/obtener-sk-ficha4.py"]
+permissions:
+  contents: read
+jobs:
+  ficha4:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [dic, urbano]
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/canada-en-datos/obtener-sk-ficha4.py ${{ matrix.parte }}
