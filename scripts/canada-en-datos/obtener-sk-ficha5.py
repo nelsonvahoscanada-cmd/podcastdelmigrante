@@ -58,9 +58,8 @@ from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
     nav = p.chromium.launch()
     ctx = nav.new_context(locale="en-CA", user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 (verificacion de datos; podcastdelmigrante.com)")
-    pg = ctx.new_page()
-
     def abrir(u, pat_texto, pat_enl=None, maximo=40):
+        pg = ctx.new_page()  # una pestaña nueva por página: un error no arrastra a la siguiente
         try:
             r = pg.goto(u, wait_until="domcontentloaded", timeout=60000)
             pg.wait_for_timeout(3000)
@@ -77,8 +76,30 @@ with sync_playwright() as p:
                         print("   enlace:", tx[:70], "→", full)
         except Exception as e:
             print("ERROR", type(e).__name__, str(e)[:150])
+        finally:
+            pg.close()
 
-    if PARTE in ("ciudades", "todo"):
+    if PARTE in ("segunda", "todo"):
+        for u, pt, pe in [
+            ("https://www.saskatchewan.ca/residents/moving-to-saskatchewan/live-in-saskatchewan/language-training-and-settlement-services/settlement-services", r"Gateway|Newcomer|Settlement|Regina|Saskatoon|Prince Albert|Moose Jaw|Swift Current|Yorkton|Battleford|Lloydminster", r"newcomer|gateway|open door|multicultural|immigrant|welcome|settlement|fransaskoise|centre"),
+            ("https://www.saskatchewan.ca/residents/moving-to-saskatchewan/live-in-saskatchewan/find-immigration-services-near-you", r"Prince Albert|Moose Jaw|Swift Current|Yorkton|Battleford|Lloydminster|Regina|Saskatoon|Gateway|Newcomer", r"newcomer|gateway|open door|multicultural|immigrant|welcome|settlement|centre|council|society"),
+            ("https://www.cityofnb.ca/roads-parking-transportation/", r"transit|bus", r"transit|bus"),
+            ("https://www.lloydminster.ca/home-property-utilities/roads-sidewalks-and-transportation/", r"transit|bus", r"transit|bus"),
+            ("https://web.archive.org/web/2026/https://www.swiftcurrent.ca/", r"transit|bus|newcomer", r"transit|bus|newcomer|garbage|utilit|tax|contact|report"),
+            ("https://moosejaw.ca/immigration-education/", r"immigra|newcomer|settlement|Multicultural|school|college", r"immigra|newcomer|multicultural|college|polytech"),
+            ("https://www.yorkton.ca/living-in-yorkton/transit/", r"transit|bus|route|fare", None),
+            ("https://www.citypa.ca/parking-streets-and-transportation/transit/", r"transit|bus|route|fare", None),
+            ("https://moosejaw.ca/transit/", r"transit|bus|route|fare", None),
+            ("https://greatplainscollege.ca/", r"Swift Current|campus|program", r"campus|swift"),
+            ("https://www.suncrestcollege.ca/", r"Yorkton|campus|program", r"campus|yorkton"),
+            ("https://www.northwestcollege.ca/", r"Battleford|campus|program", r"campus|battleford"),
+            ("https://www.lakelandcollege.ca/", r"Lloydminster|campus|program", r"lloydminster|campus"),
+            ("https://saskpolytech.ca/", r"Prince Albert|Moose Jaw|Regina|Saskatoon|campus", r"campus|prince albert|moose jaw"),
+        ]:
+            paso(f"Segunda: {u}")
+            abrir(u, pt, pe, 50)
+
+    if PARTE in ("ciudades",):
         for nombre, u in CIUDADES.items():
             paso(f"Ciudad: {nombre} — {u}")
             abrir(u, r"transit|bus|newcomer|immigra|population|welcome", ENLACES)

@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        parte: [ciudades, hora]
+        parte: [segunda]
     steps:
       - uses: actions/checkout@v4
       - run: pip install playwright==1.48.0 pypdf==5.1.0 && python3 -m playwright install --with-deps chromium
