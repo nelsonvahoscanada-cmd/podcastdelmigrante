@@ -45,7 +45,7 @@ if PARTE in ("dic", "todo"):
             for l in t.split("\n"):
                 l = l.strip()
                 if len(l) > 2 and re.search(pat, l):
-                    print("  >", l[:600])
+                    print("  >", l[:3000])
                     n += 1
                     if n > 60:
                         break
@@ -73,14 +73,20 @@ if PARTE in ("urbano", "todo"):
     print("centros (partes) de Saskatchewan:", len(dg), list(dg)[:3])
     zf = zipfile.ZipFile(io.BytesIO(get("https://www150.statcan.gc.ca/n1/tbl/csv/98100011-eng.zip", 900)[0]))
     n = [x for x in zf.namelist() if x.endswith(".csv") and "MetaData" not in x][0]
-    suma, cuenta, filas = 0, 0, []
+    # Las partes por provincia (2021S0511) solo existen en la tabla para los centros que cruzan un límite
+    # provincial; los demás figuran con el código del centro completo (2021S0510 + PCUID)
+    alt = {"2021S0510" + a["PCUID"]: k for k, a in dg.items()}
+    valores = {}
     for r in csv.DictReader(io.TextIOWrapper(zf.open(n), encoding="utf-8-sig")):
-        if r["DGUID"] in dg:
-            v = r.get("Population and dwelling counts (7): Population, 2021 [1]")
-            if v:
-                suma += int(v)
-                cuenta += 1
-                filas.append((r["GEO"], int(v)))
+        if (r["DGUID"] in dg or r["DGUID"] in alt) and r.get("Population and dwelling counts (7): Population, 2021 [1]"):
+            valores[r["DGUID"]] = (r["GEO"], int(r["Population and dwelling counts (7): Population, 2021 [1]"]))
+    suma, cuenta, filas = 0, 0, []
+    for k, at in dg.items():
+        v = valores.get(k) or valores.get("2021S0510" + at["PCUID"])
+        if v:
+            suma += v[1]
+            cuenta += 1
+            filas.append(v)
     print("con cifra:", cuenta, "| población en centros de población (urbana):", suma)
     for g, v in sorted(filas, key=lambda x: -x[1])[:12]:
         print("  ", g, v)
