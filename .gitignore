@@ -2,3 +2,4 @@ dist/
 .wrangler/
 scripts/canada-en-datos/bc-fuentes.json
 scripts/canada-en-datos/pei-fuentes.json
+scripts/canada-en-datos/sk-fuentes.json
