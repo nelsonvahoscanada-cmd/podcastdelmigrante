@@ -17,12 +17,27 @@ export const REQUIRED = ["DIRECTORIO_DB", "SOLICITUDES", "RESEND_API_KEY", "TURN
 /* Clave pública de Turnstile: «0x…» (o las claves de prueba «1x…», «2x…»,
    «3x…»). Evita abrir el formulario con el nombre del widget por error. */
 const SITE_KEY_RE = /^[0-3]x[A-Za-z0-9_-]{16,}$/;
+/* Clave secreta: «0x…» (o las de prueba «1x…», «2x…», «3x…»). */
+const SECRET_KEY_RE = /^[0-3]x[A-Za-z0-9_-]{16,}$/;
+
+/* Clave secreta tal como se envía a Siteverify: sin espacios, saltos de línea
+   ni comillas que se cuelan al pegarla en el panel de Cloudflare. */
+export function turnstileSecret(env) {
+  return String((env && env.TURNSTILE_SECRET_KEY) || "").trim().replace(/^(["'])(.*)\1$/, "$2").trim();
+}
 
 /* Nombres (nunca valores) de lo que falta o está mal configurado. */
 export function missingConfig(env) {
   const missing = REQUIRED.filter((k) => !env || !env[k]);
   if (env && env.TURNSTILE_SITE_KEY && !SITE_KEY_RE.test(String(env.TURNSTILE_SITE_KEY))) {
     missing.push("TURNSTILE_SITE_KEY (formato no válido: debe ser la Site Key, no el nombre del widget)");
+  }
+  const secret = turnstileSecret(env);
+  if (env && env.TURNSTILE_SECRET_KEY && !SECRET_KEY_RE.test(secret)) {
+    missing.push("TURNSTILE_SECRET_KEY (formato no válido: debe ser la Secret Key del widget)");
+  } else if (env && SITE_KEY_RE.test(String(env.TURNSTILE_SITE_KEY || "")) && SECRET_KEY_RE.test(secret) && (String(env.TURNSTILE_SITE_KEY)[0] === "0") !== (secret[0] === "0")) {
+    /* Una clave real con una de prueba nunca valida: Siteverify rechaza todos los tokens */
+    missing.push("TURNSTILE_SECRET_KEY (no corresponde a la Site Key: una es de prueba y la otra real)");
   }
   return missing;
 }

@@ -9,6 +9,7 @@
        RESEND_API_URL       = "http://127.0.0.1:9999/resend"
        REGISTRO_ABIERTO     = "1"
        TURNSTILE_SITE_KEY   = "1x00000000000000000000AA"   (clave de prueba)
+     y en .dev.vars TURNSTILE_SECRET_KEY = "1x0000000000000000000000000000000AA" (secreta de prueba)
      npx wrangler d1 execute <db> --local --file=db/directorio/0001_solicitudes.sql
      npx wrangler d1 execute <db> --local --file=db/directorio/0002_historial.sql
      npx wrangler d1 execute <db> --local --file=db/directorio/0003_eliminaciones.sql
@@ -24,7 +25,8 @@ const BASE = process.env.BASE || "http://127.0.0.1:8788";
 const SHOTS = process.env.SHOTS || "";
 const ROOT = path.join(__dirname, "..");
 const ID_RE = /^SOL-\d{8}-[A-Z2-9]{6}$/;
-const FAKE_TURNSTILE = `window.turnstile={render(box){const i=document.createElement('input');i.type='hidden';i.name='cf-turnstile-response';i.value='token-ok';box.appendChild(i);return 'w1';},reset(){}};`;
+/* Turnstile simulado con la misma interfaz que el real: render con callback, getResponse, isExpired y reset */
+const FAKE_TURNSTILE = `window.turnstile={o:null,t:'',render(box,o){this.o=o;const i=document.createElement('input');i.type='hidden';i.name='cf-turnstile-response';box.appendChild(i);this.i=i;setTimeout(()=>this.ok(),50);return 'w1';},ok(){this.t='token-ok';this.i.value=this.t;this.o.callback&&this.o.callback(this.t);},getResponse(){return this.t;},isExpired(){return false;},reset(){this.t='';this.i.value='';setTimeout(()=>this.ok(),50);}};`;
 
 async function open(browser, profile) {
   const ctx = await browser.newContext(profile);

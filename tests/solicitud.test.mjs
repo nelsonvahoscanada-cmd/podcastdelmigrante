@@ -285,7 +285,43 @@ test("con el interruptor cerrado no se procesa ni se guarda nada", async () => {
 test("clave pública de Turnstile mal puesta (nombre del widget): cerrado", async () => {
   const cfg = await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "Directorio empresarial" }) })).json();
   assert.deepEqual(cfg, { ready: false, turnstileSiteKey: "" });
-  assert.equal((await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "0x4AAAAAAAabcdefghijklmn" }) })).json()).ready, true);
+  assert.equal((await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: "0x4AAAAAAAabcdefghijklmn", TURNSTILE_SECRET_KEY: "0x4AAAAAAAsecretoDePrueba12345" }) })).json()).ready, true);
+});
+
+test("clave secreta de Turnstile mal puesta: cerrado y con el motivo en los registros, sin revelarla", async () => {
+  const REAL = "0x4AAAAAAAabcdefghijklmn";
+  for (const [secreto, motivo] of [
+    ["mi clave secreta", /TURNSTILE_SECRET_KEY \(formato no válido/],
+    ["1x0000000000000000000000000000000AA", /TURNSTILE_SECRET_KEY \(no corresponde a la Site Key/],
+  ]) {
+    const env = fakeEnv({ TURNSTILE_SITE_KEY: REAL, TURNSTILE_SECRET_KEY: secreto });
+    const log = await captureWarn(() => configGet({ env }));
+    assert.deepEqual(await (await configGet({ env })).json(), { ready: false, turnstileSiteKey: "" }, secreto);
+    assert.match(log, motivo);
+    assert.ok(!log.includes(secreto), "no revela la clave");
+  }
+  /* Espacios, saltos de línea o comillas al pegarla: se limpian y funciona */
+  for (const secreto of [" 0x4AAAAAAAsecretoDePrueba12345\n", '"0x4AAAAAAAsecretoDePrueba12345"']) {
+    assert.equal((await (await configGet({ env: fakeEnv({ TURNSTILE_SITE_KEY: REAL, TURNSTILE_SECRET_KEY: secreto }) })).json()).ready, true, JSON.stringify(secreto));
+  }
+});
+
+test("Siteverify recibe la clave secreta limpia (sin espacios ni comillas)", async () => {
+  const net = installFetch();
+  const original = globalThis.fetch;
+  let enviada = null;
+  globalThis.fetch = async (url, init = {}) => {
+    if (String(url).startsWith("https://turnstile.test/")) enviada = new URLSearchParams(String(init.body)).get("secret");
+    return original(url, init);
+  };
+  try {
+    const r = await send(fakeEnv({ TURNSTILE_SECRET_KEY: "  1x0000000000000000000000000000000AA\n" }), VALID);
+    assert.equal(r.res.status, 201);
+    assert.equal(enviada, "1x0000000000000000000000000000000AA");
+  } finally {
+    globalThis.fetch = original;
+    net.restore();
+  }
 });
 
 test("los registros nombran lo que falta, nunca los valores secretos", async () => {
@@ -329,7 +365,8 @@ test("servicios caídos: Turnstile sin respuesta → 503 claro; D1 caída → 50
     const env = fakeEnv();
     const r = await send(env, VALID);
     assert.equal(r.res.status, 503);
-    assert.match(r.body.error, /Tus datos siguen en el formulario/);
+    assert.match(r.body.error, /Tus datos y fotografías siguen en el formulario/);
+    assert.equal(r.body.code, "turnstile_unavailable");
     assert.equal(rows(env).length, 0);
     assert.equal(net.sent.length, 0);
   } finally { net.restore(); }
@@ -452,4 +489,52 @@ test("migración 0004: se aplica sobre una base con solicitudes y no pierde ni c
   assert.equal(after[0].extra_images, null);
   assert.throws(() => db.exec(readFileSync(new URL("0004_perfil_premium.sql", dir), "utf8")), /duplicate column/, "repetirla no cambia nada");
   assert.equal(db.prepare("SELECT COUNT(*) AS n FROM business_applications").get().n, 1);
+});
+
+test("Turnstile: token vencido o ya usado, clave secreta errónea e inválido se distinguen, sin pedir recargar la página", async () => {
+  const net = installFetch();
+  const log = [];
+  const orig = { warn: console.warn, error: console.error };
+  console.warn = (...a) => log.push(a.join(" "));
+  console.error = (...a) => log.push(a.join(" "));
+  try {
+    const env = fakeEnv();
+    /* Vencido (más de 5 minutos, p. ej., en el iPhone al elegir fotografías) o ya usado */
+    let r = await send(env, { ...VALID, "cf-turnstile-response": "token-vencido" });
+    assert.equal(r.res.status, 403);
+    assert.equal(r.body.code, "turnstile_expired");
+    assert.match(r.body.error, /venció/);
+    /* Sin token */
+    r = await send(env, { ...VALID, "cf-turnstile-response": "" });
+    assert.equal(r.body.code, "turnstile_expired");
+    /* Inválido */
+    r = await send(env, { ...VALID, "cf-turnstile-response": "falso" });
+    assert.equal(r.res.status, 403);
+    assert.equal(r.body.code, "turnstile_invalid");
+    /* Clave secreta errónea: es un problema del sitio, no de la persona */
+    r = await send(fakeEnv({ TURNSTILE_SITE_KEY: "0x4AAAAAAAabcdefghijklmn", TURNSTILE_SECRET_KEY: "0xMAL_SECRETO_DE_OTRO_WIDGET" }), VALID);
+    assert.equal(r.res.status, 503);
+    assert.equal(r.body.code, "turnstile_config");
+    assert.doesNotMatch(r.body.error, /robot/);
+    for (const x of [r]) assert.doesNotMatch(x.body.error, /[Rr]ecarga/);
+    assert.equal(rows(env).length, 0, "nada se guarda");
+    assert.equal(net.sent.length, 0, "no salen correos");
+    /* Los registros dicen el motivo, sin el token ni el secreto */
+    const texto = log.join("\n");
+    assert.match(texto, /timeout-or-duplicate/);
+    assert.match(texto, /invalid-input-secret/);
+    assert.match(texto, /sin token/);
+    assert.match(texto, /Secret Key del mismo widget que TURNSTILE_SITE_KEY/, "pista para una clave secreta de otro widget");
+    for (const s of ["token-vencido", "0xMAL_SECRETO_DE_OTRO_WIDGET", "falso"]) assert.ok(!texto.includes(s), "no revela " + s);
+    /* Después del rechazo, el reintento con un token nuevo registra la solicitud una sola vez */
+    r = await send(env, { ...VALID, idempotencyKey: "6f1c2b3a-4d5e-4f60-8a9b-0c1d2e3f4a5b" });
+    assert.equal(r.res.status, 201);
+    const again = await send(env, { ...VALID, idempotencyKey: "6f1c2b3a-4d5e-4f60-8a9b-0c1d2e3f4a5b" });
+    assert.equal(again.body.requestId, r.body.requestId, "mismo número: sin duplicados");
+    assert.equal(rows(env).length, 1);
+  } finally {
+    console.warn = orig.warn;
+    console.error = orig.error;
+    net.restore();
+  }
 });

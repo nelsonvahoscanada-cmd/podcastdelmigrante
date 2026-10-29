@@ -6,7 +6,11 @@
     hasta 3 fotografías adicionales a 1600 px) y las vuelve a codificar:
     pesan menos y se eliminan sus metadatos (EXIF, ubicación GPS, etc.).
     El servidor las vuelve a validar.
-  - Protección antispam: Cloudflare Turnstile + campo trampa.
+  - Protección antispam: Cloudflare Turnstile + campo trampa. El token de
+    Turnstile vale 5 minutos y una sola vez: antes de enviar se comprueba
+    que siga vigente y, si caducó (p. ej., la persona tardó en llenar el
+    formulario o salió a la galería del celular), se renueva sin perder los
+    datos ni las fotografías.
   - Envía a POST /registro/enviar (Cloudflare Pages Function). La
     confirmación solo aparece cuando el servidor responde que la solicitud
     quedó REGISTRADA (D1 + R2).
@@ -91,11 +95,54 @@ async function prepareImage(file, kind) {
 }
 
 /* ---------- Turnstile ---------- */
-function loadTurnstile(siteKey, box) {
+/* Un token vale 300 s (Cloudflare). Se renueva antes, con margen, porque
+   Safari en iPhone pausa los temporizadores de la página mientras la persona
+   está en otra aplicación (p. ej., eligiendo fotografías) y la casilla puede
+   seguir en verde con un token ya vencido. */
+const TOKEN_MAX_MS = 240000;
+const NEW_TOKEN_WAIT_MS = 45000;
+
+function createVerifier() {
+  let token = "";
+  let issuedAt = 0;
+  let waiting = [];
+  const settle = (value) => { const w = waiting; waiting = []; w.forEach((fn) => fn(value)); };
+  return {
+    options: {
+      callback: (t) => { token = t; issuedAt = Date.now(); settle(t); },
+      "expired-callback": () => { token = ""; },
+      "timeout-callback": () => { token = ""; },
+      "error-callback": () => { token = ""; settle(""); },
+    },
+    /* Token vigente o "" si hay que volver a verificar */
+    current(id) {
+      const ts = window.turnstile;
+      const t = ts && id !== null && typeof ts.getResponse === "function" ? (ts.getResponse(id) || "") : token;
+      const expired = ts && id !== null && typeof ts.isExpired === "function" && ts.isExpired(id);
+      if (!t || expired || Date.now() - issuedAt > TOKEN_MAX_MS) return "";
+      return t;
+    },
+    /* Pide un token nuevo; si la verificación necesita que la persona marque
+       la casilla, resuelve "" al agotarse la espera. */
+    renew(id) {
+      token = "";
+      issuedAt = 0;
+      return new Promise((resolve) => {
+        const timer = setTimeout(() => { waiting = waiting.filter((fn) => fn !== done); resolve(""); }, NEW_TOKEN_WAIT_MS);
+        const done = (v) => { clearTimeout(timer); resolve(v); };
+        waiting.push(done);
+        try { window.turnstile.reset(id); } catch (e) { clearTimeout(timer); resolve(""); }
+      });
+    },
+    get age() { return issuedAt ? Date.now() - issuedAt : Infinity; },
+  };
+}
+
+function loadTurnstile(siteKey, box, options) {
   return new Promise((resolve) => {
     const render = () => {
       try {
-        const id = window.turnstile.render(box, { sitekey: siteKey, language: "es", theme: "light", size: "flexible" });
+        const id = window.turnstile.render(box, Object.assign({ sitekey: siteKey, language: "es", theme: "light", size: "flexible", "refresh-expired": "auto" }, options));
         resolve(id);
       } catch (e) {
         resolve(null);
@@ -122,6 +169,8 @@ async function init() {
   const button = $("[type=submit]", form);
   const idempotencyKey = uuid();
   let turnstileId = null;
+  const verifier = createVerifier();
+  let sending = false;
   let prepared = null;   /* imagen ya procesada */
 
   CATEGORIES.forEach((c) => $("#fCategory").insertAdjacentHTML("beforeend", `<option value="${c.id}">${c.label}</option>`));
@@ -208,7 +257,12 @@ async function init() {
     const res = await fetch(CONFIG, { headers: { Accept: "application/json" } });
     const cfg = res.ok ? await res.json() : { ready: false };
     if (!cfg.ready) throw new Error("no listo");
-    turnstileId = await loadTurnstile(cfg.turnstileSiteKey, $("#turnstileBox"));
+    turnstileId = await loadTurnstile(cfg.turnstileSiteKey, $("#turnstileBox"), verifier.options);
+    /* Al volver a la página (p. ej., desde la galería del iPhone), si el token
+       ya es viejo se renueva enseguida, sin tocar los datos del formulario. */
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible" && turnstileId !== null && !sending && verifier.age > TOKEN_MAX_MS) verifier.renew(turnstileId);
+    });
   } catch (e) {
     unavailable.hidden = false;
     button.disabled = true;
@@ -251,8 +305,20 @@ async function init() {
     status.hidden = false;
   }
 
+  /* Un solo envío a la vez: el bloqueo empieza con el primer toque, antes de
+     preparar las fotografías, para que un doble toque no mande dos solicitudes */
   form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
+    if (sending) return;
+    sending = true;
+    try {
+      await enviarSolicitud();
+    } finally {
+      sending = false;
+    }
+  });
+
+  async function enviarSolicitud() {
     clearErrors();
     status.hidden = true;
 
@@ -289,15 +355,42 @@ async function init() {
 
     button.disabled = true;
     const label = button.textContent;
-    button.textContent = "Enviando…";
     let result = null;
     let httpStatus = 0;
     try {
-      const res = await fetch(ENDPOINT, { method: "POST", body, headers: { Accept: "application/json" } });
-      httpStatus = res.status;
-      result = await res.json().catch(() => null);
-    } catch (e) {
-      result = null;
+      /* Token vigente: si caducó, se renueva antes de enviar */
+      let token = verifier.current(turnstileId);
+      if (!token && turnstileId !== null) {
+        button.textContent = "Verificando…";
+        token = await verifier.renew(turnstileId);
+      }
+      if (!token) {
+        setStatus("Completa la verificación de seguridad (la casilla de Cloudflare, arriba del botón) y vuelve a pulsar «Enviar solicitud». Tus datos y fotografías siguen en el formulario.");
+        $("#turnstileBox").scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+      button.textContent = "Enviando…";
+      const post = async (t) => {
+        body.set("cf-turnstile-response", t);
+        const res = await fetch(ENDPOINT, { method: "POST", body, headers: { Accept: "application/json" } });
+        httpStatus = res.status;
+        return res.json().catch(() => null);
+      };
+      try {
+        result = await post(token);
+        /* El servidor dice que el token venció o ya se usó: se renueva y se
+           reintenta una sola vez. La clave de idempotencia evita duplicados. */
+        if (result && result.code === "turnstile_expired" && turnstileId !== null) {
+          button.textContent = "Verificando…";
+          const again = await verifier.renew(turnstileId);
+          if (again) {
+            button.textContent = "Enviando…";
+            result = await post(again);
+          }
+        }
+      } catch (e) {
+        result = null;
+      }
     } finally {
       button.disabled = false;
       button.textContent = label;
@@ -318,12 +411,11 @@ async function init() {
       const first = showErrors(result.errors);
       if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
     }
-    if (window.turnstile && turnstileId !== null && httpStatus !== 429) {
-      try { window.turnstile.reset(turnstileId); } catch (e) { /* opcional */ }
-    }
+    /* Un token ya enviado no sirve otra vez: se pide uno nuevo para el reintento */
+    if (window.turnstile && turnstileId !== null && httpStatus !== 429) verifier.renew(turnstileId);
     setStatus((result && result.error) || "No pudimos registrar tu solicitud. Tus datos siguen en el formulario: inténtalo de nuevo en unos minutos.");
     status.scrollIntoView({ behavior: "smooth", block: "center" });
-  });
+  }
 }
 
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

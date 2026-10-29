@@ -68,9 +68,11 @@ export function installFetch({ turnstileOk = true, turnstileDown = false, resend
     if (u.startsWith("https://turnstile.test/")) {
       if (turnstileDown) throw new TypeError("fetch failed");
       const params = new URLSearchParams(String(init.body));
+      /* Como siteverify: códigos de error de Cloudflare y el dominio donde se resolvió el desafío */
+      if (/MAL/.test(params.get("secret") || "")) return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-secret"] }), { status: 200 });
+      if (params.get("response") === "token-vencido") return new Response(JSON.stringify({ success: false, "error-codes": ["timeout-or-duplicate"] }), { status: 200 });
       const success = turnstileOk && params.get("response") === "token-ok";
-      /* Como siteverify: el dominio donde se resolvió el desafío */
-      return new Response(JSON.stringify(success ? { success, hostname: turnstileHostname } : { success }), { status: 200 });
+      return new Response(JSON.stringify(success ? { success, hostname: turnstileHostname } : { success, "error-codes": ["invalid-input-response"] }), { status: 200 });
     }
     if (u.startsWith("https://resend.test/")) {
       sent.push({ headers: init.headers, body: JSON.parse(init.body) });
@@ -88,7 +90,7 @@ export function fakeEnv(over = {}) {
       SOLICITUDES: fakeR2(),
       RESEND_API_KEY: "re_test",
       RESEND_API_URL: "https://resend.test/emails",
-      TURNSTILE_SECRET_KEY: "secret",
+      TURNSTILE_SECRET_KEY: "1x0000000000000000000000000000000AA", /* clave secreta de prueba de Cloudflare */
       TURNSTILE_SITE_KEY: "1x00000000000000000000AA", /* clave de prueba pública de Cloudflare */
       TURNSTILE_VERIFY_URL: "https://turnstile.test/siteverify",
       IP_HASH_SALT: "sal",
