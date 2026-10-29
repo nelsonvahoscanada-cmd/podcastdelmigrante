@@ -197,10 +197,11 @@ const RECURSOS = {
 };
 
 /* ---------- Utilidades ---------- */
-/* Variantes de escritura para el buscador: sin apóstrofo, sin punto, con «Saint», con «and» en lugar de «&» y sin
-   «No.» en los municipios rurales (Moose Jaw No. 161 → Moose Jaw 161). No son nombres oficiales. */
+/* Variantes de escritura para el buscador: sin apóstrofo, sin punto, sin guiones (Île-à-la-Crosse → Île à la Crosse),
+   con «Saint», con «and» en lugar de «&» y sin «No.» en los municipios rurales (Moose Jaw No. 161 → Moose Jaw 161).
+   No son nombres oficiales. */
 const variantes = (n) =>
-  [...new Set([n.replace(/['’]/g, ""), n.replace(/['’]/g, " "), n.replace(/\./g, ""), n.replace(/\bSt\.\s*/g, "Saint "), n.replace(/&/g, "and"), n.replace(/\bNo\.\s*/g, "")])].filter((v) => v !== n);
+  [...new Set([n.replace(/['’]/g, ""), n.replace(/['’]/g, " "), n.replace(/\./g, ""), n.replace(/-/g, " "), n.replace(/\bSt\.\s*/g, "Saint "), n.replace(/&/g, "and"), n.replace(/\bNo\.\s*/g, "")])].filter((v) => v !== n);
 const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, "").replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim();
 /* Números de una reserva («96 & 97-A» → «96,97a»): sirven para reconocer la misma reserva escrita de otra forma */
 const numeros = (s) => (s.toLowerCase().replace(/(\d+)\s*-\s*([a-z])\b/g, "$1$2").match(/\d+[a-z]?\b/g) || []).sort().join(",");
