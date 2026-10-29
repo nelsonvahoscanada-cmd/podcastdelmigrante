@@ -6,14 +6,14 @@ on:
 permissions:
   contents: read
 jobs:
-  ficha2:
+  ficha3:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        parte: [statcan, buscar, sgi, dic]
+        parte: [paginas, hora, censo, dic]
     steps:
       - uses: actions/checkout@v4
-      - if: matrix.parte == 'sgi'
+      - if: matrix.parte == 'paginas' || matrix.parte == 'dic'
         run: pip install playwright==1.48.0 && python3 -m playwright install --with-deps chromium
-      - run: python3 scripts/canada-en-datos/obtener-sk-ficha2.py ${{ matrix.parte }}
+      - run: python3 scripts/canada-en-datos/obtener-sk-ficha3.py ${{ matrix.parte }}
