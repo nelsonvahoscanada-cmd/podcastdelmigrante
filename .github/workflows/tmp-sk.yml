@@ -6,20 +6,14 @@ on:
 permissions:
   contents: read
 jobs:
-  localidades:
+  ficha2:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [statcan, buscar, sgi, dic]
     steps:
       - uses: actions/checkout@v4
-      - run: pip install openpyxl==3.1.5 pyproj==3.7.1 shapely==2.0.7
-      - run: python3 scripts/canada-en-datos/obtener-sk-localidades.py
-  ficha:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: pip install playwright==1.48.0 && python3 -m playwright install --with-deps chromium
-      - run: python3 scripts/canada-en-datos/obtener-sk-ficha.py statcan
-        continue-on-error: true
-      - run: python3 scripts/canada-en-datos/obtener-sk-ficha.py paginas
-        continue-on-error: true
-      - run: python3 scripts/canada-en-datos/obtener-sk-ficha.py salario
-        continue-on-error: true
+      - if: matrix.parte == 'sgi'
+        run: pip install playwright==1.48.0 && python3 -m playwright install --with-deps chromium
+      - run: python3 scripts/canada-en-datos/obtener-sk-ficha2.py ${{ matrix.parte }}
