@@ -23,7 +23,7 @@
   <!-- canada-en-datos: generado por scripts/build-canada-datos.mjs -->
   <url>
     <loc>https://podcastdelmigrante.com/canada-en-datos/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -162,6 +162,60 @@
   <url>
     <loc>https://podcastdelmigrante.com/canada-en-datos/alberta/red-deer</loc>
     <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/regina</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/moose-jaw</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/swift-current</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/yorkton</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/saskatoon</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/prince-albert</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/north-battleford</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/lloydminster</loc>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
