@@ -390,7 +390,13 @@ ${chrome.cabecera}
       <aside class="cd-panel" id="resumen" aria-label="Datos rápidos de ${esc(r.n)}">
         <dl class="cd-facts">
           ${f.datos}
-        </dl>
+        </dl>${f.reloj ? `
+        <div class="cd-clock" data-reloj-localidad data-zona="${esc(f.reloj.timeZone)}" data-lat="${f.reloj.lat}" data-lon="${f.reloj.lon}">
+          <span class="cd-clock__label" data-reloj-etiqueta>${esc(f.reloj.etiqueta)}</span>
+          <time class="cd-clock__time" data-reloj-hora role="timer" aria-live="off">—</time>
+          <span class="cd-clock__date" data-reloj-fecha></span>
+          <span class="cd-clock__phase" data-reloj-fase></span>
+        </div>` : ""}
       </aside>
     </div>
 
@@ -435,7 +441,7 @@ ${f.servicios ? `
 
 ${chrome.pie}
 
-${scriptsBase(["/js/canada-compartir.js"])}`;
+${scriptsBase(["/js/canada-compartir.js", ...(f.reloj ? ["/js/canada-reloj.js", "/js/canada-reloj-localidad.js"] : [])])}`;
   }
   return out;
 }
