@@ -25,11 +25,13 @@ test("portada: Santa Latino sigue primero y la noticia de Alberta es la segunda,
   const slugs = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.equal(new Set(slugs).size, slugs.length, "ninguna noticia aparece dos veces en el bloque principal");
   assert.deepEqual(Array.from(ctx.H.secondary.slice(1), (s) => s.slug), [
+    "multas-representantes-migratorios-canada-2026",
     "referendum-alberta-octubre-2026-inmigrantes",
     "alberta-energy-rebate-plazo-octubre",
-    "subvenciones-etnoculturales-antirracismo-alberta",
   ], "las demás destacadas conservan su orden");
-  assert.ok(ctx.A.some((a) => a.slug === "premios-impacto-inmigrante-alberta-2026" && !a.draft), "la noticia que sale de las destacadas sigue publicada");
+  for (const s of ["premios-impacto-inmigrante-alberta-2026", "subvenciones-etnoculturales-antirracismo-alberta"]) {
+    assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: la noticia que sale de las destacadas sigue publicada`);
+  }
 });
 
 test("artículo: datos de la oferta oficial, sin promesas de patrocinio ni requisitos inventados", () => {

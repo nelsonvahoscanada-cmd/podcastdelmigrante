@@ -44,10 +44,10 @@ async function total(env, id = HECTOR) {
 }
 
 /* ---------- Cobertura ---------- */
-test("lista generada: las 18 noticias y 8 guías publicadas, y nada más", () => {
+test("lista generada: las 19 noticias y 8 guías publicadas, y nada más", () => {
   const esperados = ARTS.filter((a) => ["Noticia", "Guía"].includes(a.contentType) && !a.draft && a.demo !== true).map((a) => a.id);
   assert.deepEqual([...ARTICULOS_CON_CONTADOR].sort(), [...esperados].sort());
-  assert.equal(ARTS.filter((a) => a.contentType === "Noticia" && ARTICULOS_CON_CONTADOR.has(a.id)).length, 18);
+  assert.equal(ARTS.filter((a) => a.contentType === "Noticia" && ARTICULOS_CON_CONTADOR.has(a.id)).length, 19);
   assert.equal(ARTS.filter((a) => a.contentType === "Guía" && ARTICULOS_CON_CONTADOR.has(a.id)).length, 8);
   assert.ok(ARTICULOS_CON_CONTADOR.has(HECTOR), "la entrevista de Héctor Rivero, clasificada como Noticia");
   for (const a of ARTS.filter((x) => !["Noticia", "Guía"].includes(x.contentType))) assert.ok(!ARTICULOS_CON_CONTADOR.has(a.id), `${a.id} (${a.contentType}) sin contador`);
@@ -58,7 +58,7 @@ test("misma regla en el generador y en js/article.js; el hueco y el script está
   assert.match(read("js/article.js"), /const TIPOS_CON_CONTADOR = \["Noticia", "Guía"\];/);
   assert.match(read("articulo.html"), /<script src="js\/article\.js"><\/script>\n<script src="js\/vistas\.js"><\/script>/);
   const paginas = readdirSync(new URL(".", ROOT)).filter((f) => /^articulo-.+\.html$/.test(f));
-  assert.equal(paginas.length, 30);
+  assert.equal(paginas.length, 31);
   for (const f of paginas) assert.match(read(f), /<script src="js\/vistas\.js"><\/script>/, f);
 });
 
@@ -257,8 +257,12 @@ async function presentar(publicado, respuesta) {
 const INICIO_REAL = "2026-10-26T03:17:04.778Z"; /* vistas_config.inicio en producción */
 
 test("las 26 piezas medidas, publicadas antes de la activación, muestran «Artículo del Magazine» y no la cifra", async () => {
-  const medidas = ARTS.filter((a) => ARTICULOS_CON_CONTADOR.has(a.id));
+  const medidas = ARTS.filter((a) => ARTICULOS_CON_CONTADOR.has(a.id) && Date.parse(a.publishedAt) < Date.parse(INICIO_REAL));
   assert.equal(medidas.length, 26);
+  /* Las publicadas después de la activación muestran su cifra real */
+  const multas = ARTS.find((a) => a.id === "ART-2026-031");
+  assert.ok(ARTICULOS_CON_CONTADOR.has(multas.id) && Date.parse(multas.publishedAt) > Date.parse(INICIO_REAL));
+  assert.match(await presentar(multas.publishedAt, { id: multas.id, vistas: 7, inicio: INICIO_REAL }), /article-views__n/);
   for (const a of medidas) {
     assert.ok(Date.parse(a.publishedAt) < Date.parse(INICIO_REAL), `${a.id} anterior a la activación`);
     const html = await presentar(a.publishedAt, { id: a.id, vistas: 7, inicio: INICIO_REAL });

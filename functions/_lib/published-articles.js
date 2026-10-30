@@ -1,5 +1,6 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "multas-representantes-migratorios-canada-2026",
   "alberta-bomberos-forestales-2027",
   "hector-rivero-santa-latino-canada",
   "referendum-alberta-octubre-2026-inmigrantes",
@@ -34,6 +35,7 @@ export const PUBLISHED_ARTICLES = new Set([
 
 /* Noticias y guías publicadas con contador público de visualizaciones. */
 export const ARTICULOS_CON_CONTADOR = new Set([
+  "ART-2026-031",
   "ART-2026-030",
   "ART-2026-029",
   "ART-2026-028",
