@@ -247,6 +247,7 @@ const ARTICLES = [
     },
     sources: [
       { label: "IRCC — New penalties for fraudulent and unauthorized immigration and citizenship representatives (comunicado del 28 de octubre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html" },
+      { label: "IRCC — What happens if you break the rules when giving advice or representation (plazos de 30 días, representantes fuera de Canadá)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/partners-service-providers/break-rules-advice-representation.html" },
     ],
     correctionNote: null,
     disclaimerCategory: null,

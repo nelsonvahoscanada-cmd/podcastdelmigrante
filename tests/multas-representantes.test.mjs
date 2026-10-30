@@ -40,7 +40,7 @@ test("artículo: texto de la redacción con las cifras y precisiones del comunic
   for (const dato of ["28 de octubre de 2026", "$5.000 CAD", "$15.000 CAD", "$1.500.000 CAD", "no significa que cada infracción genere automáticamente esa sanción", "previsto para 2027", "30 días", "College of Immigration and Citizenship Consultants (CICC)", "Notarios de Quebec", "familiar o amigo que ayuda gratuitamente"]) {
     assert.ok(texto.includes(dato), dato);
   }
-  assert.deepEqual(Array.from(art.sources, (f) => f.href), [IRCC], "fuente oficial de IRCC al final");
+  assert.deepEqual(Array.from(art.sources, (f) => f.href), [IRCC, "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/partners-service-providers/break-rules-advice-representation.html"], "fuentes oficiales de IRCC al final");
   assert.doesNotMatch(art.bodyHtml, /canada\.ca|Fuentes oficiales/, "las fuentes no se repiten en el cuerpo");
 });
 
