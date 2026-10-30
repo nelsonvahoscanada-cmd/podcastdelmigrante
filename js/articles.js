@@ -160,6 +160,109 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Régimen de sanciones administrativas (AMPS) de IRCC contra representantes
+       migratorios remunerados que incumplan la ley, en vigor desde el 28 de
+       octubre de 2026. Texto periodístico de la redacción, verificado con el
+       comunicado de IRCC del 28 de octubre de 2026: $5.000 por asesoría
+       remunerada sin autorización, $15.000 por información falsa o engañosa,
+       tope acumulado de $1,5 millones, publicación de nombres (registro
+       previsto para 2027) y 30 días para pagar o pedir revisión. No menciona
+       sanciones ya impuestas ni personas sancionadas. Imagen: gráfico
+       editorial propio, sin fotografías de terceros. */
+    id: "ART-2026-031",
+    slug: "multas-representantes-migratorios-canada-2026",
+    category: "Inmigración",
+    contentType: "Noticia",
+    title: "Canadá activa multas de hasta $1,5 millones contra representantes migratorios que incumplan la ley",
+    dek: "El Gobierno canadiense puso en vigor nuevas sanciones contra quienes cobran por asesoría migratoria sin autorización o participan deliberadamente en prácticas engañosas. Las medidas también alcanzan a profesionales autorizados que incumplan las normas.",
+    excerpt: "Desde el 28 de octubre de 2026, IRCC puede multar a representantes migratorios remunerados que infrinjan la ley: $5.000 por asesorar sin autorización, $15.000 por información falsa y hasta $1,5 millones acumulados.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-29T10:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: null },
+    demo: false,
+    heroImage: {
+      background: "url('assets/multas-representantes-migratorios-canada-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Imagen editorial de El Podcast del Migrante: la bandera de Canadá, el Parlamento en Ottawa, un mazo de juez, carpetas de «Inmigración» y «Sanciones», un documento con el sello «No autorizado» y un pasaporte canadiense, con el titular «Canadá: multas de hasta $1,5 millones» y el subtítulo «Nuevas sanciones contra el fraude migratorio».",
+      credit: "Imagen editorial ilustrativa de El Podcast del Migrante. Las personas que aparecen no son reales ni están vinculadas a ninguna sanción.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p><strong>Ottawa, Canadá.</strong> Desde el 28 de octubre de 2026, Canadá cuenta con un nuevo régimen de sanciones administrativas para combatir el fraude y las irregularidades en los servicios de inmigración y ciudadanía.</p>
+      <p>La medida, anunciada por Immigration, Refugees and Citizenship Canada (IRCC), permite imponer multas económicas a representantes remunerados que infrinjan la legislación, tanto dentro como fuera del territorio canadiense.</p>
+      <p>El objetivo es fortalecer la protección de quienes buscan obtener permisos de trabajo, visas, residencia permanente o ciudadanía y necesitan orientación durante sus trámites.</p>
+      <h2>¿Cuánto pueden costar las infracciones?</h2>
+      <p>El Gobierno estableció importes de referencia para distintas conductas:</p>
+      <ul>
+        <li><strong>$5.000 CAD:</strong> por proporcionar asesoría o representación remunerada sin contar con la autorización necesaria.</li>
+        <li><strong>$15.000 CAD:</strong> por proporcionar deliberadamente información falsa o engañosa en nombre de un solicitante, o ayudar a presentarla.</li>
+        <li><strong>Hasta $1.500.000 CAD:</strong> como límite de sanciones administrativas acumuladas por múltiples infracciones, conforme a las reglas aplicables.</li>
+      </ul>
+      <p>Las multas no son necesariamente iguales en todos los casos. Su cálculo depende de factores como la conducta, sus consecuencias, el beneficio económico obtenido y los antecedentes de incumplimiento.</p>
+      <p>El máximo de $1,5 millones no significa que cada infracción genere automáticamente esa sanción.</p>
+      <h2>¿Quiénes pueden ser sancionados?</h2>
+      <p>Las medidas abarcan a las personas que reciben pagos u otras compensaciones por prestar servicios de asesoría o representación migratoria.</p>
+      <p>Entre ellas se encuentran los consultores de inmigración, abogados y otros profesionales autorizados, así como quienes ofrecen esos servicios sin tener autorización.</p>
+      <p>Las disposiciones también pueden alcanzar a representantes que operan desde otros países y prestan servicios relacionados con solicitudes canadienses.</p>
+      <p>Es importante distinguir entre un representante remunerado y un familiar o amigo que ayuda gratuitamente. No toda ayuda con un trámite constituye una actividad profesional remunerada.</p>
+      <h2>Canadá publicará los nombres de los sancionados</h2>
+      <p>Una de las medidas más relevantes es la divulgación pública de las infracciones.</p>
+      <p>IRCC anunció que publicará información sobre los representantes sancionados, incluidos sus nombres, las conductas identificadas y los montos de las multas.</p>
+      <p>El registro público está previsto para 2027, después de que se impongan las primeras sanciones.</p>
+      <p>Esta información permitirá a los solicitantes conocer antecedentes de incumplimiento antes de contratar servicios.</p>
+      <h2>¿Qué sucede si una persona recibe una sanción?</h2>
+      <p>El régimen contempla un procedimiento administrativo.</p>
+      <p>Cuando se determina una infracción, el representante puede recibir una notificación con los hechos, el importe de la sanción y las opciones disponibles para solicitar una revisión.</p>
+      <p>De acuerdo con la información oficial, existe un plazo de 30 días después de recibir la notificación de infracción para pagar la multa o solicitar su revisión, según corresponda.</p>
+      <p>Este sistema administrativo funciona junto a otros mecanismos de supervisión profesional y de investigación de posibles delitos.</p>
+      <h2>¿Cómo verificar que un asesor migratorio está autorizado?</h2>
+      <p>Antes de pagar por asesoría migratoria, conviene comprobar la condición profesional de la persona que ofrece el servicio.</p>
+      <p>En Canadá, los representantes remunerados autorizados incluyen:</p>
+      <ul>
+        <li>Consultores de inmigración o ciudadanía que sean miembros habilitados del College of Immigration and Citizenship Consultants (CICC).</li>
+        <li>Abogados y profesionales jurídicos habilitados por los organismos reguladores provinciales o territoriales correspondientes.</li>
+        <li>Notarios de Quebec habilitados por su organismo profesional.</li>
+      </ul>
+      <p>También es recomendable solicitar un contrato escrito, conocer los honorarios y conservar los comprobantes de pago.</p>
+      <p>Hay que desconfiar de cualquier persona que garantice la aprobación de una visa, un permiso de trabajo o una residencia permanente.</p>
+      <h2>¿Qué significa esta medida para los inmigrantes latinoamericanos?</h2>
+      <p>Para las familias latinoamericanas que viven en Canadá o desean llegar al país, el nuevo régimen representa una herramienta adicional de protección.</p>
+      <p>Las personas que buscan asesoría deben saber que pagar por un servicio no garantiza que el representante esté autorizado ni que la solicitud vaya a ser aprobada.</p>
+      <p>Además, cada solicitante sigue siendo responsable de la información presentada ante las autoridades, incluso cuando otra persona prepare los documentos.</p>
+      <p>La recomendación es verificar credenciales, exigir transparencia y consultar siempre fuentes oficiales antes de entregar dinero o documentos personales.</p>
+      <p>El Podcast del Migrante continuará siguiendo las decisiones que puedan afectar a quienes trabajan, estudian o buscan establecerse en Canadá.</p>
+    `,
+    /* Video propio en TikTok (cuenta @podcastdelmigrante), enlace corto
+       https://vt.tiktok.com/ZSgnRG1af/ resuelto el 30-10-2026. No se descarga
+       ni se aloja: se carga desde TikTok solo al pulsar «Reproducir». */
+    video: {
+      tiktokId: "7702249778343628052",
+      tiktokUser: "podcastdelmigrante",
+      title: "Informe de Nelson Vahos: multas de hasta $1,5 millones a representantes migratorios en Canadá",
+      heading: "🎥 Mira el informe de Nelson Vahos",
+      cover: "assets/multas-representantes-migratorios-canada-2026-video.jpg",
+      position: "intro",
+    },
+    sources: [
+      { label: "IRCC — New penalties for fraudulent and unauthorized immigration and citizenship representatives (comunicado del 28 de octubre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html" },
+      { label: "IRCC — What happens if you break the rules when giving advice or representation (plazos de 30 días, representantes fuera de Canadá)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/partners-service-providers/break-rules-advice-representation.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["carney-aumento-controlado-inmigracion-canada", "documentos-tramite-migratorio-alberta"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Canadá: multas de hasta $1,5 millones a representantes migratorios",
+      description: "Desde el 28 de octubre de 2026, IRCC multa a representantes migratorios que incumplan la ley: $5.000, $15.000 y hasta $1,5 millones acumulados.",
+      canonicalPath: "/inmigracion/multas-representantes-migratorios-canada-2026/",
+    },
+  },
+  {
     /* Convocatoria «Wildfire Crew Member» del Gobierno de Alberta (Forestry
        and Parks) para la temporada de incendios de 2027. Datos verificados el
        25 de octubre de 2026 en la oferta oficial (requisición 88017, publicada

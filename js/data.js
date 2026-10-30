@@ -90,6 +90,16 @@ const HERO = {
       slug: "alberta-bomberos-forestales-2027",
     },
     {
+      category: "Inmigración",
+      title: "Canadá activa multas de hasta $1,5 millones contra representantes migratorios que incumplan la ley",
+      date: "29 de octubre",
+      image: "url('assets/multas-representantes-migratorios-canada-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Imagen editorial de El Podcast del Migrante con la bandera de Canadá, el Parlamento, un mazo de juez y un documento sellado «No autorizado», y el titular «Canadá: multas de hasta $1,5 millones».",
+      demo: false,
+      slug: "multas-representantes-migratorios-canada-2026",
+    },
+    {
       category: "Alberta",
       title: "Alberta votó por permanecer en Canadá: cerca del 75 % rechazó iniciar el proceso separatista",
       date: "20 de octubre",
@@ -108,16 +118,6 @@ const HERO = {
       alt: "Ilustración editorial asistida por inteligencia artificial: una pareja revisa facturas con una calculadora en la cocina de su casa, con el centro de Calgary al fondo.",
       demo: false,
       slug: "alberta-energy-rebate-plazo-octubre",
-    },
-    {
-      category: "Comunidad",
-      title: "Alberta abre $2.5 millones en subvenciones para proyectos culturales y contra el racismo",
-      date: "12 de octubre",
-      image: "url('assets/subvenciones-etnoculturales-antirracismo-alberta.jpg')",
-      aspectRatio: "16/9",
-      alt: "Ilustración editorial asistida por inteligencia artificial: una bailarina con traje folclórico baila en un festival cultural al aire libre en Calgary.",
-      demo: false,
-      slug: "subvenciones-etnoculturales-antirracismo-alberta",
     },
   ],
 };

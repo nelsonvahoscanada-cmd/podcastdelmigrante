@@ -246,8 +246,62 @@
     `;
   }
 
+  /* Video vertical de TikTok (propio). Al abrir la página no se contacta a
+     TikTok: se muestra una portada local con «Reproducir» y el reproductor
+     oficial (tiktok.com/player/v1) solo se crea cuando la persona lo pulsa.
+     El enlace «Ver video en TikTok» queda siempre visible por si el
+     reproductor no carga. Con video.position = "intro" se coloca antes del
+     primer subtítulo del cuerpo. */
+  function tiktokBlockHtml(article) {
+    const v = article.video;
+    const url = `https://www.tiktok.com/@${v.tiktokUser}/video/${v.tiktokId}`;
+    const portada = v.cover ? ` style="background-image:url('${v.cover}')"` : "";
+    return `
+      <section class="article-video article-video--tiktok" aria-labelledby="videoTiktokTitulo">
+        <h2 class="article-video__heading" id="videoTiktokTitulo">${v.heading || "Esta historia también puedes verla en video"}</h2>
+        <div class="article-tiktok" data-tiktok-id="${v.tiktokId}" data-tiktok-title="${v.title.replace(/"/g, "&quot;")}">
+          <button type="button" class="article-tiktok__play"${portada}>
+            <span class="article-video__play-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><polygon points="7,4 20,12 7,20" fill="currentColor"/></svg>
+            </span>
+            <span class="article-video__play-label">Reproducir video</span>
+            <span class="sr-only">: ${v.title}</span>
+          </button>
+        </div>
+        <p class="article-video__note">Al reproducirlo, el video se carga desde TikTok. <a class="article-tiktok__link" href="${url}" target="_blank" rel="noopener">Ver video en TikTok</a></p>
+      </section>
+    `;
+  }
+
+  function bindTiktok(root) {
+    root.querySelectorAll(".article-tiktok[data-tiktok-id]").forEach((box) => {
+      const btn = box.querySelector(".article-tiktok__play");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.tiktok.com/player/v1/${box.dataset.tiktokId}?autoplay=1&rel=0&description=1&music_info=1`;
+        iframe.title = box.dataset.tiktokTitle;
+        iframe.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        box.replaceChildren(iframe);
+        box.classList.add("article-tiktok--activo");
+        iframe.focus();
+      });
+    });
+  }
+
+  function bodyWithVideoHtml(article) {
+    const v = article.video;
+    if (!(v && v.tiktokId && v.position === "intro")) return article.bodyHtml;
+    const i = article.bodyHtml.indexOf("<h2");
+    if (i < 0) return article.bodyHtml + tiktokBlockHtml(article);
+    return article.bodyHtml.slice(0, i) + tiktokBlockHtml(article) + article.bodyHtml.slice(i);
+  }
+
   function videoBlockHtml(article) {
     if (!article.video) return "";
+    if (article.video.tiktokId) return article.video.position === "intro" ? "" : tiktokBlockHtml(article);
     if (article.video.youtubeId) {
       /* El video de YouTube solo se carga cuando la persona pulsa
          «Reproducir» (antes se cargaba al llegar a la sección). */
@@ -529,7 +583,7 @@
       <p class="article-meta">${metaLineHtml(article)}</p>
       ${locationHtml(article)}
       ${heroImageHtml(article)}
-      <div class="article-body">${article.bodyHtml}</div>
+      <div class="article-body">${bodyWithVideoHtml(article)}</div>
       ${isAuthorColumn ? originalNoteHtml(article) + authorCardHtml(article) : ""}
       ${videoBlockHtml(article)}
       ${guideModuleHtml(article)}
@@ -542,6 +596,7 @@
     `;
 
     VideoCover.bind(root);
+    bindTiktok(root);
     const copyBtn = document.getElementById("copyLinkBtn");
     if (copyBtn) {
       copyBtn.addEventListener("click", () => {
