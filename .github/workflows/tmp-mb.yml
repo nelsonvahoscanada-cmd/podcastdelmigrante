@@ -1,0 +1,27 @@
+name: tmp MB
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-manitoba]
+    paths: [".github/workflows/tmp-mb.yml", "scripts/canada-en-datos/obtener-localidades-censo.py", "scripts/canada-en-datos/obtener-ficha-provincia.py", "scripts/canada-en-datos/mb-paginas.py"]
+permissions:
+  contents: read
+jobs:
+  localidades:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install openpyxl==3.1.5 pyproj==3.7.1 shapely==2.0.7
+      - run: python3 scripts/canada-en-datos/obtener-localidades-censo.py mb
+  statcan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/canada-en-datos/obtener-ficha-provincia.py Manitoba statcan
+  paginas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install playwright==1.48.0 && python3 -m playwright install --with-deps chromium
+      - run: python3 scripts/canada-en-datos/obtener-ficha-provincia.py Manitoba paginas scripts/canada-en-datos/mb-paginas.py
+      - run: python3 scripts/canada-en-datos/obtener-ficha-provincia.py Manitoba salario
+        continue-on-error: true
