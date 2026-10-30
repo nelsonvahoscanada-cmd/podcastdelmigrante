@@ -1,0 +1,53 @@
+name: tmp multas verificacion
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-multas]
+    paths: [".github/workflows/tmp-multas.yml"]
+permissions:
+  contents: read
+jobs:
+  fuente:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comunicado de IRCC (solo lectura)
+        run: |
+          U="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html"
+          curl -sL -A "Mozilla/5.0" -w "\nHTTP %{http_code}\n" "$U" -o /tmp/ircc.html; tail -c 200 /tmp/ircc.html >/dev/null
+          python3 - <<'PY'
+          import re,html
+          t=open("/tmp/ircc.html",encoding="utf-8",errors="ignore").read()
+          t=html.unescape(re.sub(r"<[^>]+>"," ",re.sub(r"(?s)<(script|style).*?</\1>","",t)))
+          t=re.sub(r"\s+"," ",t)
+          for pat in [r"October \d+, 2026",r"Ottawa",r"\$5,000",r"\$15,000",r"\$1\.5 million",r"30 days",r"2027",r"outside Canada|abroad",r"notar",r"CICC|College of Immigration",r"publish|names",r"factors|history|economic benefit"]:
+              for m in list(re.finditer(pat,t))[:2]:
+                  print(f"[{pat}]", t[max(0,m.start()-220):m.end()+220]); print()
+          PY
+  e2e:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        prueba: [e2e-multas-representantes, e2e-alberta-bomberos, e2e-hector-rivero, e2e-noticias, e2e-menu, e2e-canada-datos]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+      - name: Simulador del contador (no genera visitas)
+        run: |
+          cat > /tmp/pw/vistas.cjs <<'JS'
+          const pw = require("/tmp/pw/node_modules/playwright");
+          const orig = pw.chromium.launch.bind(pw.chromium);
+          pw.chromium.launch = async (...a) => {
+            const b = await orig(...a);
+            const nc = b.newContext.bind(b);
+            b.newContext = async (...o) => { const c = await nc(...o); await c.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true,"vistas":0}' })); return c; };
+            b.newPage = async (...o) => { const c = await b.newContext(...o); return c.newPage(); };
+            return b;
+          };
+          JS
+      - run: node tests/${{ matrix.prueba }}.cjs
+        env:
+          BASE: https://42e0276f.podcastdelmigrante.pages.dev
+          NODE_PATH: /tmp/pw/node_modules
+          NODE_OPTIONS: --require /tmp/pw/vistas.cjs
