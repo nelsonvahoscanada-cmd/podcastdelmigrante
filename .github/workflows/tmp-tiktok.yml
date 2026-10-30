@@ -1,0 +1,22 @@
+name: tmp tiktok
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-multas]
+    paths: [".github/workflows/tmp-tiktok.yml"]
+permissions:
+  contents: read
+jobs:
+  resolver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolver enlace corto y oEmbed (solo lectura)
+        run: |
+          curl -s -o /dev/null -A "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)" -w "final: %{url_effective}\nhttp: %{http_code}\n" -L "https://vt.tiktok.com/ZSgnRG1af/" | tee /tmp/r.txt
+          curl -sI -A "Mozilla/5.0" "https://vt.tiktok.com/ZSgnRG1af/" | grep -i "^location" || true
+          U=$(grep final /tmp/r.txt | cut -d' ' -f2 | cut -d'?' -f1)
+          echo "canónica: $U"
+          curl -s "https://www.tiktok.com/oembed?url=$U" | python3 -m json.tool | grep -v '"html"' | cut -c1-400
+          ID=$(echo "$U" | grep -o 'video/[0-9]*' | cut -d/ -f2)
+          echo "ID=$ID"
+          curl -s -o /dev/null -w "player v1: %{http_code}\n" "https://www.tiktok.com/player/v1/$ID"
+          curl -s -o /dev/null -w "embed v2: %{http_code}\n" "https://www.tiktok.com/embed/v2/$ID"
