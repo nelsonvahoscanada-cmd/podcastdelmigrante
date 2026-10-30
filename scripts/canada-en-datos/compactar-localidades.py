@@ -59,7 +59,7 @@ salida = {
     "cgn_campos": ["id", "nombre", "tipo", "csd", "x", "y", "lat", "lon"],
     "epa": F["epa"],
     "cmhc": F["cmhc"],
-    "salud": [[h["facility_name"], h.get("city"), h.get("source_facility_type"), h.get("provider"), h["csd"], h["lat"], h["lon"]] for h in F.get("salud", []) if h.get("odhf_facility_type") == "Hospitals"],
+    "salud": [[h["facility_name"], h.get("city"), h.get("source_facility_type"), h.get("provider"), h["csd"], h["lat"], h["lon"]] for h in F.get("salud", []) if h.get("odhf_facility_type") == "Hospitals" or "regional health centre" in h["facility_name"]],
     "salud_campos": ["nombre", "localidad", "tipo_fuente", "proveedor", "csd", "lat", "lon"],
     "escuelas": [
         [e.get("Facility_Name"), e.get("Facility_Type"), e.get("Authority_Name"), "".join("1" if e.get(k) == "1" else "0" for k in ("ISCED010", "ISCED020", "ISCED1", "ISCED2", "ISCED3", "ISCED4Plus")), e.get("csd")]

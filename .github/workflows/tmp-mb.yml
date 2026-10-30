@@ -6,12 +6,6 @@ on:
 permissions:
   contents: read
 jobs:
-  paginas:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: pip install playwright==1.48.0 && python3 -m playwright install --with-deps chromium
-      - run: python3 scripts/canada-en-datos/obtener-ficha-provincia.py Manitoba paginas scripts/canada-en-datos/mb-paginas4.py
   clima:
     runs-on: ubuntu-latest
     steps:
