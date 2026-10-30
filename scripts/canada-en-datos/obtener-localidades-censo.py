@@ -36,6 +36,7 @@ import base64, csv, datetime, gzip, io, json, re, sys, urllib.parse, urllib.requ
 
 import openpyxl
 from pyproj import Transformer
+from shapely import make_valid
 from shapely.geometry import shape, Point
 from shapely.strtree import STRtree
 
@@ -114,9 +115,9 @@ print("CD:", [(c["CDUID"], c["CDNAME"], c["CDTYPE"]) for c in salida["cd"]], "by
 paso("Regiones económicas")
 er = capa(2, offset=500)
 salida["er"] = {f["properties"]["ERUID"]: f["properties"]["ERNAME"] for f in er}
-geom_er = [(f["properties"]["ERUID"], shape(f["geometry"])) for f in er]
+geom_er = [(f["properties"]["ERUID"], make_valid(shape(f["geometry"]))) for f in er]
 def er_de(g):
-    p = g.representative_point()
+    p = make_valid(g).representative_point()
     for k, ge in geom_er:
         if ge.contains(p):
             return k

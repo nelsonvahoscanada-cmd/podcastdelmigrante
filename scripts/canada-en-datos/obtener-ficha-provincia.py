@@ -63,66 +63,95 @@ def tabla(pid):
 
 
 if PARTE in ("statcan", "todo"):
-    paso("17-10-0009-01 Población estimada (últimos 8 trimestres)")
-    filas = [r for r in tabla("17100009") if r["GEO"] == PROV]
-    for r in filas[-8:]:
-        print(" ", r["REF_DATE"], r["VALUE"])
-
-    paso("36-10-0222-01 PIB a precios de mercado, dólares corrientes")
-    for r in tabla("36100222"):
-        if r["GEO"] == PROV and r["Prices"] == "Current prices" and r["Estimates"] == "Gross domestic product at market prices" and r["REF_DATE"] >= "2021":
-            print(" ", r["REF_DATE"], r["VALUE"], r["SCALAR_FACTOR"])
-
-    paso("14-10-0287-01 EPA mensual, desestacionalizada (últimos 4 meses)")
-    sel = {}
-    for r in tabla("14100287"):
-        if r["GEO"] == PROV and r["Sex"] == "Both sexes" and r["Age group"] == "15 years and over" and r["Statistics"] == "Estimate" and r["Data type"] == "Seasonally adjusted" and r["Labour force characteristics"] in ("Unemployment rate", "Participation rate", "Employment rate", "Employment", "Population"):
-            sel.setdefault(r["REF_DATE"], {})[r["Labour force characteristics"]] = r["VALUE"]
-    for k in sorted(sel)[-4:]:
-        print(" ", k, sel[k])
-
-    paso("14-10-0327-01 EPA anual")
-    sel = {}
-    for r in tabla("14100327"):
-        if r["GEO"] == PROV and r["Gender"] == "Total - Gender" and r["Age group"] == "15 years and over" and r["Labour force characteristics"] in ("Unemployment rate", "Participation rate", "Employment rate") and r["REF_DATE"] >= "2023":
-            sel.setdefault(r["REF_DATE"], {})[r["Labour force characteristics"]] = r["VALUE"]
-    print(" ", sel)
-
-    paso("14-10-0064-01 Salarios por hora, todas las industrias")
-    for r in tabla("14100064"):
-        if r["GEO"] == PROV and r["REF_DATE"] >= "2024" and r["Type of work"] == "Both full- and part-time employees" and r["North American Industry Classification System (NAICS)"].startswith("Total employees, all industries") and r["Gender"] == "Total - Gender" and r["Age group"] == "15 years and over" and "hourly" in r["Wages"].lower():
-            print(" ", r["REF_DATE"], r["Wages"], r["VALUE"])
-
-    for pid, nombre in (("98100222", "conocimiento de idiomas oficiales"), ("98100218", "lengua materna")):
-        paso(f"{pid[:2]}-{pid[2:4]}-{pid[4:]} Censo 2021: {nombre} (total de edades)")
-        for r in tabla(pid):
-            if r["GEO"] == PROV and r.get("Age (13B)") == "Total - Age":
-                k = [c for c in r if c.startswith("Knowledge") or c.startswith("Mother tongue")][0]
-                print(" ", r[k], "|", r.get("Statistics (6A):2021 Counts[1]"), "|", r.get("Statistics (6A):% distribution (2021)[2]"))
-
-    paso("98-10-0307-01 Censo 2021: estatus de inmigrante (provincia)")
-    for r in tabla("98100307"):
-        if r["GEO"] == PROV and r["Age (8D)"] == "Total - Age" and r["Gender (3)"] == "Total - Gender":
-            pob = r["Place of birth (290)"]
-            if pob in ("Total – Place of birth", "Philippines", "India", "Nigeria", "China", "Pakistan", "Ukraine", "Mexico", "Colombia", "Americas", "Central America", "South America"):
-                print(" ", pob, {k.split(":")[1].split("[")[0]: v for k, v in r.items() if k.startswith("Immigrant status") and k.split(":")[1].split("[")[0] in ("Total - Immigrant status and period of immigration", "Immigrants", "2016 to 2021", "Non-permanent residents")})
-            if pob == "Total – Place of birth":
-                pass
-
-    paso("98-10-0352-01 Censo 2021: minorías visibles")
-    for r in tabla("98100352"):
-        if r["GEO"] == PROV and r["Age (15C)"] == "Total - Age" and r["Gender (3)"] == "Total - Gender" and r["Statistics (2)"] == "2021 Counts":
-            print(" ", {k.split(":")[1].split("[")[0]: v for k, v in r.items() if k.startswith("Visible minority")})
-
-    paso("98-10-0011-01 Censo 2021: centros de población y zonas rurales")
     try:
-        cols = None
-        for r in tabla("98100011"):
-            if cols is None:
-                cols = list(r.keys())
-                print("columnas:", cols[:12])
-            if r["GEO"].startswith(PROV) or r["GEO"].endswith(PROV) or "(Man.)" in r["GEO"]:
-                print(" ", r["GEO"][:70], "|", " | ".join(f"{k[:40]}={v}" for k, v in r.items() if v and k not in ("REF_DATE", "GEO", "DGUID", "COORDINATE") and not k.startswith("Symbol"))[:400])
+        paso("17-10-0009-01 Población estimada (últimos 8 trimestres)")
+        filas = [r for r in tabla("17100009") if r["GEO"] == PROV]
+        for r in filas[-8:]:
+            print(" ", r["REF_DATE"], r["VALUE"])
+
+    except Exception as e:
+        print("ERROR", type(e).__name__, str(e)[:200])
+    try:
+        paso("36-10-0222-01 PIB a precios de mercado, dólares corrientes")
+        for r in tabla("36100222"):
+            if r["GEO"] == PROV and r["Prices"] == "Current prices" and r["Estimates"] == "Gross domestic product at market prices" and r["REF_DATE"] >= "2021":
+                print(" ", r["REF_DATE"], r["VALUE"], r["SCALAR_FACTOR"])
+
+    except Exception as e:
+        print("ERROR", type(e).__name__, str(e)[:200])
+    try:
+        paso("14-10-0287-01 EPA mensual, desestacionalizada (últimos 4 meses)")
+        sel = {}
+        for r in tabla("14100287"):
+            if r["GEO"] == PROV and r.get("Gender", r.get("Sex")) in ("Both sexes", "Total - Gender") and r["Age group"] == "15 years and over" and r["Statistics"] == "Estimate" and r["Data type"] == "Seasonally adjusted" and r["Labour force characteristics"] in ("Unemployment rate", "Participation rate", "Employment rate", "Employment", "Population"):
+                sel.setdefault(r["REF_DATE"], {})[r["Labour force characteristics"]] = r["VALUE"]
+        for k in sorted(sel)[-4:]:
+            print(" ", k, sel[k])
+
+    except Exception as e:
+        print("ERROR", type(e).__name__, str(e)[:200])
+    try:
+        paso("14-10-0327-01 EPA anual")
+        sel = {}
+        for r in tabla("14100327"):
+            if r["GEO"] == PROV and r.get("Gender", r.get("Sex")) in ("Both sexes", "Total - Gender") and r["Age group"] == "15 years and over" and r["Labour force characteristics"] in ("Unemployment rate", "Participation rate", "Employment rate") and r["REF_DATE"] >= "2023":
+                sel.setdefault(r["REF_DATE"], {})[r["Labour force characteristics"]] = r["VALUE"]
+        print(" ", sel)
+
+    except Exception as e:
+        print("ERROR", type(e).__name__, str(e)[:200])
+    try:
+        paso("14-10-0064-01 Salarios por hora, todas las industrias")
+        for r in tabla("14100064"):
+            if r["GEO"] == PROV and r["REF_DATE"] >= "2024" and r["Type of work"] == "Both full- and part-time employees" and r["North American Industry Classification System (NAICS)"].startswith("Total employees, all industries") and r["Gender"] == "Total - Gender" and r["Age group"] == "15 years and over" and "hourly" in r["Wages"].lower():
+                print(" ", r["REF_DATE"], r["Wages"], r["VALUE"])
+
+    except Exception as e:
+        print("ERROR", type(e).__name__, str(e)[:200])
+    try:
+        for pid, nombre in (("98100222", "conocimiento de idiomas oficiales"), ("98100218", "lengua materna")):
+            paso(f"{pid[:2]}-{pid[2:4]}-{pid[4:]} Censo 2021: {nombre} (total de edades)")
+            for r in tabla(pid):
+                if r["GEO"] == PROV and r.get("Age (13B)") == "Total - Age":
+                    k = [c for c in r if c.startswith("Knowledge") or c.startswith("Mother tongue")][0]
+                    print(" ", r[k], "|", r.get("Statistics (6A):2021 Counts[1]"), "|", r.get("Statistics (6A):% distribution (2021)[2]"))
+
+    except Exception as e:
+        print("ERROR", type(e).__name__, str(e)[:200])
+    try:
+        paso("98-10-0307-01 Censo 2021: estatus de inmigrante (provincia)")
+        for r in tabla("98100307"):
+            if r["GEO"] == PROV and r["Age (8D)"] == "Total - Age" and r["Gender (3)"] == "Total - Gender":
+                pob = r["Place of birth (290)"]
+                if pob in ("Total – Place of birth", "Philippines", "India", "Nigeria", "China", "Pakistan", "Ukraine", "Mexico", "Colombia", "Americas", "Central America", "South America"):
+                    print(" ", pob, {k.split(":")[1].split("[")[0]: v for k, v in r.items() if k.startswith("Immigrant status") and k.split(":")[1].split("[")[0] in ("Total - Immigrant status and period of immigration", "Immigrants", "2016 to 2021", "Non-permanent residents")})
+                if pob == "Total – Place of birth":
+                    pass
+
+    except Exception as e:
+        print("ERROR", type(e).__name__, str(e)[:200])
+    try:
+        paso("98-10-0352-01 Censo 2021: minorías visibles")
+        for r in tabla("98100352"):
+            if r["GEO"] == PROV and r["Age (15C)"] == "Total - Age" and r["Gender (3)"] == "Total - Gender" and r["Statistics (2)"] == "2021 Counts":
+                print(" ", {k.split(":")[1].split("[")[0]: v for k, v in r.items() if k.startswith("Visible minority")})
+
+    except Exception as e:
+        print("ERROR", type(e).__name__, str(e)[:200])
+    try:
+        paso("98-10-0011-01 Censo 2021: centros de población y zonas rurales")
+        try:
+            cols = None
+            for r in tabla("98100011"):
+                if cols is None:
+                    cols = list(r.keys())
+                    print("columnas:", cols[:12])
+                if r["GEO"].startswith(PROV) or r["GEO"].endswith(PROV) or "(Man.)" in r["GEO"]:
+                    print(" ", r["GEO"][:70], "|", " | ".join(f"{k[:40]}={v}" for k, v in r.items() if v and k not in ("REF_DATE", "GEO", "DGUID", "COORDINATE") and not k.startswith("Symbol"))[:400])
+        except Exception as e:
+            print("ERROR", type(e).__name__, str(e)[:200])
+
+
     except Exception as e:
         print("ERROR", type(e).__name__, str(e)[:200])
 
