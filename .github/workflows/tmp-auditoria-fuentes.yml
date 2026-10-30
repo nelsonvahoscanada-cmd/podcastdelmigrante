@@ -1,0 +1,42 @@
+name: tmp auditoria fuentes
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-manitoba]
+    paths: [".github/workflows/tmp-auditoria-fuentes.yml"]
+permissions:
+  contents: read
+jobs:
+  fuentes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Leer fuentes oficiales (solo lectura)
+        run: |
+          cat > /tmp/l.py <<'PY'
+          import re,html,sys,urllib.request
+          def get(u):
+              try:
+                  r=urllib.request.urlopen(urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"}),timeout=60); return r.status,r.read().decode("utf-8","ignore")
+              except Exception as e: return str(e),""
+          def txt(h): return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",re.sub(r"(?s)<(script|style).*?</\1>","",h))))
+          def show(u,pats=None,full=0,links=None):
+              s,h=get(u); t=txt(h); print("\n#####",u,"->",s,len(t))
+              if links:
+                  for m in sorted(set(re.findall(r'href="([^"]+)"',h))):
+                      if re.search(links,m): print("  LINK",m)
+              if full: 
+                  i=t.find(full[0]) if isinstance(full,tuple) else 0
+                  print(t[max(0,i):max(0,i)+full[1]] if isinstance(full,tuple) else t[:full])
+              for p in pats or []:
+                  for m in list(re.finditer(p,t))[:3]: print(f"  [{p}]",t[max(0,m.start()-300):m.end()+500]); print()
+          N="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html"
+          show(N,full=("October 28, 2026",4000),links=r"backgrounder|regulation|gazette|representative|penalt|laws-lois")
+          show("https://laws-lois.justice.gc.ca/eng/acts/i-2.5/section-91.html",full=("91 (1)",5000))
+          show("https://laws-lois.justice.gc.ca/eng/acts/i-2.5/page-14.html",pats=[r"91 \(1\)",r"91\.1",r"administrative monetary penalt[^.]{0,200}representat"])
+          show("https://laws-lois.justice.gc.ca/eng/acts/c-29/section-21.1.html",full=("21.1 (1)",3000))
+          show("https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/learn-about-representatives.html",full=("Paid representatives",3500),pats=[r"[Uu]npaid",r"consideration",r"advertis"])
+          show("https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/choose.html",pats=[r"[Uu]npaid representatives",r"free"])
+          show("https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/acts-regulations/forward-regulatory-plan/list/governor-council-regulations-system-administrative-penalties-immigration-representation-advice.html",full=2500)
+          show("https://college-ic.ca/protecting-the-public/find-an-immigration-consultant",full=1200)
+          show("https://www.gazette.gc.ca/rp-pr/p2/2026/index-eng.html",pats=[r"[^.]{0,200}(Representation|Administrative Monetary Penalties)[^.]{0,200}[Ii]mmigration[^.]{0,200}"])
+          PY
+          python3 /tmp/l.py
