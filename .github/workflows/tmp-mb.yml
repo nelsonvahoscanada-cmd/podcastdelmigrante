@@ -2,7 +2,7 @@ name: tmp MB
 on:
   push:
     branches: [claude/laughing-albattani-1rvkc1-manitoba]
-    paths: [".github/workflows/tmp-mb.yml", "scripts/canada-en-datos/obtener-localidades-censo.py", "scripts/canada-en-datos/obtener-ficha-provincia.py", "scripts/canada-en-datos/mb-paginas.py", "scripts/canada-en-datos/mb-paginas2.py"]
+    paths: [".github/workflows/tmp-mb.yml", "scripts/canada-en-datos/mb-paginas3.py", "scripts/canada-en-datos/obtener-mb-municipios.py"]
 permissions:
   contents: read
 jobs:
@@ -11,4 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install playwright==1.48.0 && python3 -m playwright install --with-deps chromium
-      - run: python3 scripts/canada-en-datos/obtener-ficha-provincia.py Manitoba paginas scripts/canada-en-datos/mb-paginas2.py
+      - run: python3 scripts/canada-en-datos/obtener-ficha-provincia.py Manitoba paginas scripts/canada-en-datos/mb-paginas3.py
+  municipios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pypdf==5.1.0
+      - run: python3 scripts/canada-en-datos/obtener-mb-municipios.py
