@@ -6,33 +6,17 @@ on:
 permissions:
   contents: read
 jobs:
-  fuente:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Comunicado de IRCC (solo lectura)
-        run: |
-          U="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/partners-service-providers/break-rules-advice-representation.html"
-          curl -sL -A "Mozilla/5.0" -w "\nHTTP %{http_code}\n" "$U" -o /tmp/ircc.html; tail -c 200 /tmp/ircc.html >/dev/null
-          python3 - <<'PY'
-          import re,html
-          t=open("/tmp/ircc.html",encoding="utf-8",errors="ignore").read()
-          t=html.unescape(re.sub(r"<[^>]+>"," ",re.sub(r"(?s)<(script|style).*?</\1>","",t)))
-          t=re.sub(r"\s+"," ",t)
-          for pat in [r"\$1\.5 million",r"30 days",r"2027",r"outside Canada|abroad",r"notar",r"CICC|College of Immigration",r"publish|names",r"factors|history|economic benefit"]:
-              for m in list(re.finditer(pat,t))[:2]:
-                  print(f"[{pat}]", t[max(0,m.start()-220):m.end()+220]); print()
-          PY
   e2e:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        prueba: [e2e-multas-representantes, e2e-alberta-bomberos, e2e-hector-rivero, e2e-noticias, e2e-menu, e2e-canada-datos]
+        prueba: [e2e-multas-representantes]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium >/dev/null && npx playwright install chrome >/dev/null
       - name: Simulador del contador (no genera visitas)
         run: |
           cat > /tmp/pw/vistas.cjs <<'JS'
@@ -50,5 +34,6 @@ jobs:
         env:
           BASE: https://e19cf760.podcastdelmigrante.pages.dev
           TIKTOK_REAL: "1"
+          CHANNEL: chrome
           NODE_PATH: /tmp/pw/node_modules
           NODE_OPTIONS: --require /tmp/pw/vistas.cjs

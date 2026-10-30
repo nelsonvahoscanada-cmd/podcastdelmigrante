@@ -43,7 +43,8 @@ async function sinDesborde(page, ruta) {
 }
 
 (async () => {
-  const browser = await chromium.launch();
+  /* CHANNEL=chrome usa Google Chrome (con los códecs H.264 de TikTok) */
+  const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: Santa Latino principal, bomberos y luego IRCC ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
@@ -85,6 +86,7 @@ async function sinDesborde(page, ruta) {
     const fuentesDespues = await page.evaluate(() => { const v = document.querySelector(".article-video--tiktok"); const f = document.querySelector(".article-sources"); return !!(f && v.compareDocumentPosition(f) & Node.DOCUMENT_POSITION_FOLLOWING); });
     assert.ok(fuentesDespues, "las fuentes de IRCC quedan debajo del video");
     if (SHOTS) await video.screenshot({ path: path.join(SHOTS, `video-${perfil}.png`) });
+    assert.deepEqual(errores, [], "sin errores antes de cargar el reproductor de TikTok");
     await page.locator(".article-tiktok__play").click();
     const marco = page.locator('.article-tiktok iframe[src^="https://www.tiktok.com/player/v1/7702249778343628052"]');
     assert.equal(await marco.count(), 1, "reproductor oficial al pulsar");
@@ -92,7 +94,17 @@ async function sinDesborde(page, ruta) {
       const f = await (await marco.elementHandle()).contentFrame();
       await f.waitForLoadState("domcontentloaded");
       await f.waitForSelector("video", { timeout: 30000 });
-      console.log(`  ${perfil}: reproductor de TikTok cargado con <video>`);
+      await page.waitForTimeout(3000);
+      const estado = await f.evaluate(async () => {
+        const v = document.querySelector("video");
+        if (v.paused) { v.muted = true; await v.play().catch(() => {}); }
+        const t0 = v.currentTime;
+        await new Promise((r) => setTimeout(r, 3000));
+        return { readyState: v.readyState, avanza: v.currentTime > t0, ancho: v.videoWidth, alto: v.videoHeight };
+      });
+      console.log(`  ${perfil}: reproductor de TikTok`, JSON.stringify(estado));
+      if (process.env.CHANNEL) assert.ok(estado.avanza && estado.alto > estado.ancho, "el video se reproduce y es vertical");
+      errores.length = 0; /* lo que pase dentro del reproductor de TikTok es de TikTok */
       if (SHOTS) { await page.waitForTimeout(4000); await page.locator(".article-video--tiktok").screenshot({ path: path.join(SHOTS, `video-activo-${perfil}.png`) }); }
     }
     assert.match(await page.locator("main").innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")));
