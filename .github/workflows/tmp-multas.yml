@@ -11,14 +11,14 @@ jobs:
     steps:
       - name: Comunicado de IRCC (solo lectura)
         run: |
-          U="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html"
+          U="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/partners-service-providers/break-rules-advice-representation.html"
           curl -sL -A "Mozilla/5.0" -w "\nHTTP %{http_code}\n" "$U" -o /tmp/ircc.html; tail -c 200 /tmp/ircc.html >/dev/null
           python3 - <<'PY'
           import re,html
           t=open("/tmp/ircc.html",encoding="utf-8",errors="ignore").read()
           t=html.unescape(re.sub(r"<[^>]+>"," ",re.sub(r"(?s)<(script|style).*?</\1>","",t)))
           t=re.sub(r"\s+"," ",t)
-          for pat in [r"October \d+, 2026",r"Ottawa",r"\$5,000",r"\$15,000",r"\$1\.5 million",r"30 days",r"2027",r"outside Canada|abroad",r"notar",r"CICC|College of Immigration",r"publish|names",r"factors|history|economic benefit"]:
+          for pat in [r"\$1\.5 million",r"30 days",r"2027",r"outside Canada|abroad",r"notar",r"CICC|College of Immigration",r"publish|names",r"factors|history|economic benefit"]:
               for m in list(re.finditer(pat,t))[:2]:
                   print(f"[{pat}]", t[max(0,m.start()-220):m.end()+220]); print()
           PY
@@ -48,6 +48,7 @@ jobs:
           JS
       - run: node tests/${{ matrix.prueba }}.cjs
         env:
-          BASE: https://42e0276f.podcastdelmigrante.pages.dev
+          BASE: https://e19cf760.podcastdelmigrante.pages.dev
+          TIKTOK_REAL: "1"
           NODE_PATH: /tmp/pw/node_modules
           NODE_OPTIONS: --require /tmp/pw/vistas.cjs
