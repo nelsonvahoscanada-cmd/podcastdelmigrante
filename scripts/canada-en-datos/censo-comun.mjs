@@ -113,14 +113,15 @@ export function cargarCenso(root, cfg) {
     if (!t) throw new Error(`${cfg.provincia}: tipo de subdivisión censal sin clasificar: ${c.tipo} (${c.nombre})`);
     const dv = divisiones[c.cd];
     if (!dv) throw new Error(`${cfg.provincia}: subdivisión sin división censal: ${c.nombre}`);
-    if (dv.er !== c.er) throw new Error(`${cfg.provincia}: ${c.nombre}: región económica distinta de la de su división censal`);
+    /* La región económica es la de su división censal (Statistics Canada define cada región económica como un
+       conjunto de divisiones censales completas); el cálculo por punto de c.er puede caer en un lago vecino. */
     const d = censo(c.censo);
     const [xx, yy] = a(c.x, c.y);
     const [visible, s, extra] = (cfg.nombreVisible || {})[c.id] || [c.nombre, null, []];
     items.push({
       c: c.id, n: visible, censoNombre: c.nombre, sFija: s,
       alias: [...new Set([...variantes(c.nombre), ...extra, ...(visible !== c.nombre ? [c.nombre] : [])])],
-      t, r: c.er, cd: c.cd, sup: dv.n, division: dv.n, cma: c.ca || null,
+      t, r: dv.er, cd: c.cd, sup: dv.n, division: dv.n, cma: c.ca || null,
       x: xx, y: yy, lat: c.lat, lon: c.lon,
       p: d.p, p16: d.p16, cambio: d.cambio, viviendas: d.viviendas, superficie: d.superficie, densidad: d.densidad,
     });

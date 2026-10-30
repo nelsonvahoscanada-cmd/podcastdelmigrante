@@ -28,7 +28,7 @@
   <!-- canada-en-datos: generado por scripts/build-canada-datos.mjs -->
   <url>
     <loc>https://podcastdelmigrante.com/canada-en-datos/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -221,6 +221,90 @@
   <url>
     <loc>https://podcastdelmigrante.com/canada-en-datos/saskatchewan/lloydminster</loc>
     <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/steinbach</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/winkler</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/morden</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/brandon</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/portage-la-prairie</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/winnipeg</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/selkirk</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/neepawa</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/dauphin</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/swan-river</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/the-pas</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/flin-flon</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/manitoba/thompson</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

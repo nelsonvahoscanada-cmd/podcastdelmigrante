@@ -297,6 +297,6 @@ test("portada de Canadá en Datos: Saskatchewan marcada como ficha disponible, s
   const idx = read("canada-en-datos/index.html");
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="SK"/);
   assert.match(idx, /aria-label="Saskatchewan \(ficha disponible\)"/);
-  for (const code of ["AB", "ON", "BC", "PE"]) assert.match(idx, new RegExp(`class="cd-region cd-region--ficha" data-code="${code}"`), code);
-  for (const code of ["NS", "NB", "NL", "QC", "MB", "YT", "NT", "NU"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
+  for (const code of ["AB", "ON", "BC", "PE", "MB"]) assert.match(idx, new RegExp(`class="cd-region cd-region--ficha" data-code="${code}"`), code);
+  for (const code of ["NS", "NB", "NL", "QC", "YT", "NT", "NU"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
 });
