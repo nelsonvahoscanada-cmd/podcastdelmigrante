@@ -1,0 +1,51 @@
+name: tmp multas produccion
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-verif-multas]
+    paths: [".github/workflows/tmp-multas-prod.yml"]
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        prueba: [e2e-multas-representantes, e2e-alberta-bomberos, e2e-hector-rivero, e2e-noticias, e2e-menu, e2e-canada-datos, e2e-saskatchewan-localidades]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium >/dev/null && npx playwright install chrome >/dev/null
+      - name: Simulador del contador (no genera visitas en producción)
+        run: |
+          cat > /tmp/pw/vistas.cjs <<'JS'
+          const pw = require("/tmp/pw/node_modules/playwright");
+          const orig = pw.chromium.launch.bind(pw.chromium);
+          pw.chromium.launch = async (...a) => {
+            const b = await orig(...a);
+            const nc = b.newContext.bind(b);
+            b.newContext = async (...o) => { const c = await nc(...o); await c.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true,"vistas":0}' })); return c; };
+            b.newPage = async (...o) => { const c = await b.newContext(...o); return c.newPage(); };
+            return b;
+          };
+          JS
+      - run: node tests/${{ matrix.prueba }}.cjs
+        env:
+          BASE: https://podcastdelmigrante.com
+          TIKTOK_REAL: "1"
+          CHANNEL: ${{ matrix.prueba == 'e2e-multas-representantes' && 'chrome' || '' }}
+          NODE_PATH: /tmp/pw/node_modules
+          NODE_OPTIONS: --require /tmp/pw/vistas.cjs
+  meta:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Metadatos sociales y rutas (solo lectura)
+        run: |
+          B=https://podcastdelmigrante.com; A=$B/articulo-multas-representantes-migratorios-canada-2026
+          echo "$(curl -s -o /dev/null -w '%{http_code}' $A) artículo"
+          curl -s -A "facebookexternalhit/1.1" $A | grep -o '<meta [^>]*\(og:\|twitter:\)[^>]*>' | head -14
+          curl -s -A "WhatsApp/2.23" $A | grep -c 'og:image" content="https://podcastdelmigrante.com/assets/social/multas'
+          for r in /assets/social/multas-representantes-migratorios-canada-2026.jpg /assets/multas-representantes-migratorios-canada-2026.jpg /assets/multas-representantes-migratorios-canada-2026-video.jpg /registra-tu-empresa /noticias /canada-en-datos/ /canada-en-datos/saskatchewan; do echo "$(curl -s -o /dev/null -w '%{http_code}' $B$r) $r"; done
+          echo "$(curl -s -o /dev/null -w '%{http_code} -> %{redirect_url}' "$B/articulo.html?slug=multas-representantes-migratorios-canada-2026") redirección"
+          curl -s $B/sitemap.xml | grep -c multas-representantes
