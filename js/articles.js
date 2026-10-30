@@ -185,8 +185,8 @@ const ARTICLES = [
     heroImage: {
       background: "url('assets/multas-representantes-migratorios-canada-2026.jpg')",
       aspectRatio: "16/9",
-      alt: "Gráfico editorial de El Podcast del Migrante en verde, negro y blanco: el titular «Canadá: multas de hasta $1,5 millones», el subtítulo «Nuevas sanciones contra el fraude migratorio» y dos documentos con un sello de «No autorizado».",
-      credit: "Gráfico editorial de El Podcast del Migrante. No contiene fotografías ni representa a personas reales.",
+      alt: "Imagen editorial de El Podcast del Migrante: la bandera de Canadá, el Parlamento en Ottawa, un mazo de juez, carpetas de «Inmigración» y «Sanciones», un documento con el sello «No autorizado» y un pasaporte canadiense, con el titular «Canadá: multas de hasta $1,5 millones» y el subtítulo «Nuevas sanciones contra el fraude migratorio».",
+      credit: "Imagen editorial ilustrativa de El Podcast del Migrante. Las personas que aparecen no son reales ni están vinculadas a ninguna sanción.",
       socialArea: "0% 100%",
     },
     bodyHtml: `
@@ -234,7 +234,17 @@ const ARTICLES = [
       <p>La recomendación es verificar credenciales, exigir transparencia y consultar siempre fuentes oficiales antes de entregar dinero o documentos personales.</p>
       <p>El Podcast del Migrante continuará siguiendo las decisiones que puedan afectar a quienes trabajan, estudian o buscan establecerse en Canadá.</p>
     `,
-    video: null,
+    /* Video propio en TikTok (cuenta @podcastdelmigrante), enlace corto
+       https://vt.tiktok.com/ZSgnRG1af/ resuelto el 30-10-2026. No se descarga
+       ni se aloja: se carga desde TikTok solo al pulsar «Reproducir». */
+    video: {
+      tiktokId: "7702249778343628052",
+      tiktokUser: "podcastdelmigrante",
+      title: "Informe de Nelson Vahos: multas de hasta $1,5 millones a representantes migratorios en Canadá",
+      heading: "🎥 Mira el informe de Nelson Vahos",
+      cover: "assets/multas-representantes-migratorios-canada-2026-video.jpg",
+      position: "intro",
+    },
     sources: [
       { label: "IRCC — New penalties for fraudulent and unauthorized immigration and citizenship representatives (comunicado del 28 de octubre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html" },
     ],

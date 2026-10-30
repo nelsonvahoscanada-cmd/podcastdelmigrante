@@ -95,7 +95,7 @@ const HERO = {
       date: "29 de octubre",
       image: "url('assets/multas-representantes-migratorios-canada-2026.jpg')",
       aspectRatio: "16/9",
-      alt: "Gráfico editorial de El Podcast del Migrante en verde, negro y blanco con el titular «Canadá: multas de hasta $1,5 millones» y el subtítulo «Nuevas sanciones contra el fraude migratorio».",
+      alt: "Imagen editorial de El Podcast del Migrante con la bandera de Canadá, el Parlamento, un mazo de juez y un documento sellado «No autorizado», y el titular «Canadá: multas de hasta $1,5 millones».",
       demo: false,
       slug: "multas-representantes-migratorios-canada-2026",
     },

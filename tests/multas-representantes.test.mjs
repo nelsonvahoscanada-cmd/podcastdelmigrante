@@ -44,9 +44,9 @@ test("artículo: texto de la redacción con las cifras y precisiones del comunic
   assert.doesNotMatch(art.bodyHtml, /canada\.ca|Fuentes oficiales/, "las fuentes no se repiten en el cuerpo");
 });
 
-test("imagen: gráfico propio verde, negro y blanco, completo en la vista previa social", () => {
+test("imagen: imagen editorial original de la noticia, completa en la vista previa social", () => {
   assert.equal(art.heroImage.background, `url('${IMG}')`);
-  assert.match(art.heroImage.credit, /No contiene fotografías ni representa a personas reales/);
+  assert.match(art.heroImage.credit, /no son reales ni están vinculadas a ninguna sanción/);
   assert.equal(art.heroImage.socialArea, "0% 100%");
   const foto = readFileSync(join(ROOT, IMG));
   assert.equal(foto.readUInt16BE(0), 0xffd8);
@@ -71,4 +71,22 @@ test("página: canonical, Open Graph, Twitter, metadescripción y una entrada en
   assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)));
   assert.equal(read("sitemap.xml").split(`<loc>${URL_ART}</loc>`).length - 1, 1);
   assert.ok(read("functions/_lib/published-articles.js").includes(`"${SLUG}"`));
+});
+
+test("video: TikTok propio tras la introducción, con portada local, sin alojar el video", () => {
+  assert.deepEqual({ ...art.video }, {
+    tiktokId: "7702249778343628052",
+    tiktokUser: "podcastdelmigrante",
+    title: "Informe de Nelson Vahos: multas de hasta $1,5 millones a representantes migratorios en Canadá",
+    heading: "🎥 Mira el informe de Nelson Vahos",
+    cover: "assets/multas-representantes-migratorios-canada-2026-video.jpg",
+    position: "intro",
+  });
+  const portada = readFileSync(join(ROOT, art.video.cover));
+  assert.equal(portada.readUInt16BE(0), 0xffd8);
+  assert.ok(portada.length < 150 * 1024);
+  const js = read("js/article.js");
+  assert.match(js, /https:\/\/www\.tiktok\.com\/player\/v1\/\$\{box\.dataset\.tiktokId\}/, "reproductor oficial");
+  assert.match(js, /Ver video en TikTok/);
+  assert.doesNotMatch(art.bodyHtml, /tiktok/i, "el video no se copia en el cuerpo");
 });

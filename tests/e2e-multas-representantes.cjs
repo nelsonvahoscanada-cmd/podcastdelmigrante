@@ -71,8 +71,30 @@ async function sinDesborde(page, ruta) {
     ({ ctx, page, errores } = await abrir(browser, perfil, `/articulo-${SLUG}`));
     assert.equal((await page.locator("h1").first().innerText()).trim(), TITULO);
     const texto = await page.locator("main").innerText();
-    for (const d of ["$5.000 CAD", "$15.000 CAD", "$1.500.000 CAD", "28 de octubre de 2026", "30 días", "CICC", "No contiene fotografías", "Inmigración"]) assert.ok(texto.includes(d), d);
+    for (const d of ["$5.000 CAD", "$15.000 CAD", "$1.500.000 CAD", "28 de octubre de 2026", "30 días", "CICC", "no son reales", "Inmigración", "Mira el informe de Nelson Vahos", "Ver video en TikTok"]) assert.ok(texto.includes(d), d);
     assert.equal(await page.locator(`main a[href="${IRCC}"]`).count() >= 1, true, "fuente oficial de IRCC");
+    /* Video de TikTok: tras la introducción, sin contactar a TikTok hasta pulsar */
+    const video = page.locator(".article-video--tiktok");
+    assert.equal(await video.count(), 1);
+    assert.equal(await page.evaluate(() => { const v = document.querySelector(".article-video--tiktok"); const h = document.querySelector(".article-body h2"); return !!(v && h && v.compareDocumentPosition(h) & Node.DOCUMENT_POSITION_FOLLOWING) && !!v.previousElementSibling && v.previousElementSibling.tagName === "P"; }), true, "antes del primer subtítulo, después de la introducción");
+    assert.equal(await page.locator('iframe[src*="tiktok.com"]').count(), 0, "sin reproductor antes de pulsar");
+    assert.equal(await page.locator(`a.article-tiktok__link[href="https://www.tiktok.com/@podcastdelmigrante/video/7702249778343628052"]`).count(), 1, "alternativa visible");
+    assert.ok(await page.locator("a.article-tiktok__link").isVisible());
+    const caja = await page.locator(".article-tiktok").boundingBox();
+    assert.ok(Math.abs(caja.height / caja.width - 16 / 9) < 0.03, `formato vertical 9:16 (${caja.width}×${caja.height})`);
+    const fuentesDespues = await page.evaluate(() => { const v = document.querySelector(".article-video--tiktok"); const f = document.querySelector(".article-sources"); return !!(f && v.compareDocumentPosition(f) & Node.DOCUMENT_POSITION_FOLLOWING); });
+    assert.ok(fuentesDespues, "las fuentes de IRCC quedan debajo del video");
+    if (SHOTS) await video.screenshot({ path: path.join(SHOTS, `video-${perfil}.png`) });
+    await page.locator(".article-tiktok__play").click();
+    const marco = page.locator('.article-tiktok iframe[src^="https://www.tiktok.com/player/v1/7702249778343628052"]');
+    assert.equal(await marco.count(), 1, "reproductor oficial al pulsar");
+    if (process.env.TIKTOK_REAL) {
+      const f = await (await marco.elementHandle()).contentFrame();
+      await f.waitForLoadState("domcontentloaded");
+      await f.waitForSelector("video", { timeout: 30000 });
+      console.log(`  ${perfil}: reproductor de TikTok cargado con <video>`);
+      if (SHOTS) { await page.waitForTimeout(4000); await page.locator(".article-video--tiktok").screenshot({ path: path.join(SHOTS, `video-activo-${perfil}.png`) }); }
+    }
     assert.match(await page.locator("main").innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), `https://podcastdelmigrante.com/articulo-${SLUG}`);
     const crudo = await (await fetch(`${BASE}/articulo-${SLUG}`)).text();
