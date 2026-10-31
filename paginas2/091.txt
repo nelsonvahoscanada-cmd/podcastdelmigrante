@@ -1,0 +1,17 @@
+NOMBRE: Santé Québec: établissements
+URL: https://www.santequebec.ca/a-propos/etablissements
+ESTADO: NAV 403
+FINAL: https://www.santequebec.ca/a-propos/etablissements
+TITULO: Un instant…
+FECHA: 
+
+Un instant… www.santequebec.ca
+ Vérification de sécurité en cours
+ Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.
+ Vérification réussie. En attente de la réponse de www.santequebec.ca.
+ Ray ID: a52fa56b7d78a670 
+ Performances et sécurité par Cloudflare Confidentialité
+
+=== ENLACES ===
+https://www.cloudflare.com?utm_source=challenge&utm_campaign=m | Cloudflare
+https://www.cloudflare.com/fr-fr/privacypolicy/ | Confidentialité

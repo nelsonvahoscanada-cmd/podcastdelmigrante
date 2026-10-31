@@ -1,0 +1,2335 @@
+NOMBRE: Hôpitaux: index urgences
+URL: https://www.indexsante.ca/urgences/
+ESTADO: 200
+FINAL: https://www.indexsante.ca/urgences/
+TITULO: Taux d'occupation et temps d'attente dans les urgences du Québec - Index Santé
+FECHA: complète des données et des taux : 
+
+Taux d'occupation et temps d'attente dans les urgences du Québec - Index Santé 
+ L'humain avant tout.
+ Le répertoire 
+ Cliniques médicales 
+ Médecins de famille et GMF 
+ Soins à domicile 
+ Télémédecine 
+ CLSC 
+ Dermatologues 
+ Psychologues 
+ Physiothérapeutes 
+ + 
+ Publications 
+ Dernières publications 
+ Actualité santé 
+ Chroniques santé 
+ Outils 
+ Infographies santé 
+ Taux d'occupation dans les urgences du Québec 
+ Liste d'attente des chirurgies 
+ Téléconsultation 
+ Infolettre Index Santé 
+ Calcul de votre poids santé (IMC) 
+ Vidéos santé 
+ Demander un rendez-vous 
+ + 
+ Emplois santé 
+ Inscrire un service 
+ Accueil 
+ Le répertoire 
+ Publications 
+ Outils 
+ Emplois santé 
+ À propos 
+ Inscrire un service 
+ Cliniques médicales Acupuncteurs 
+ Audiologistes 
+ Audioprothésistes 
+ Chiropraticiens 
+ Chirurgiens plastique, médecine esthétique 
+ CHSLD 
+ Cliniques médicales 
+ CLSC 
+ Conseillers d'orientation 
+ Dentistes 
+ Denturologistes 
+ Dermatologues 
+ Diététistes-nutritionnistes 
+ Éducateurs spécialisés 
+ Entraînement 
+ Ergothérapeutes 
+ Fondations, ONG, OSBL 
+ GMF 
+ Gynécologues, obstétriciens 
+ Hôpitaux 
+ Hygiénistes dentaires 
+ Kinésiologues 
+ Massothérapeutes 
+ Médecine alternative 
+ Médecine familiale 
+ Médecins, spécialistes 
+ Naturopathes 
+ Ophtalmologistes 
+ Optométristes, opticiens 
+ Organismes communautaires 
+ Ordres, associations 
+ Orthésistes, prothésistes 
+ Orthophonistes 
+ Ostéopathes 
+ Pédiatres 
+ Pharmaciens, pharmacies 
+ Phlébologues 
+ Physiothérapeutes 
+ Podiatres 
+ Produits de santé 
+ Psychiatres 
+ Psychoéducateurs 
+ Psychologues 
+ Psychothérapeutes 
+ Radiologues, radiologie 
+ Références santé 
+ Résidences privées 
+ Santé Québec 
+ Services pour professionnels 
+ Sexologues 
+ Soins à domicile 
+ Soins capillaires 
+ Soins esthétiques, beauté 
+ Soins infirmiers 
+ Spa, détente, relaxation 
+ Télémédecine 
+ Thérapeutes, thérapies 
+ Travailleurs sociaux 
+ Répertoire 
+ Soins à distance 
+ Infographies 
+ Accueil 
+ »
+ Outils santé 
+ »
+ Taux d'occupation et temps d'attente dans les urgences du Québec
+ Taux d'occupation et temps d'attente dans les urgences du Québec*
+ Abitibi-Témiscamingue 
+ Bas-Saint-Laurent 
+ Capitale-Nationale 
+ Chaudière-Appalaches 
+ Côte-Nord 
+ Estrie 
+ Gaspésie-Îles-de-la-Madeleine 
+ Lanaudière 
+ Laurentides 
+ Laval 
+ Mauricie et Centre-du-Québec 
+ Montérégie 
+ Montréal 
+ Nord-du-Québec 
+ Outaouais 
+ Saguenay-Lac-Saint-Jean 
+ Dernière mise à jour : 30 octobre 2026 à 21:45 
+ Situation générale au Québec en ce moment :
+ 114 %
+ Tendance 10 derniers jours :
+ 133 %
+ 20-10
+ 127 %
+ 21-10
+ 129 %
+ 22-10
+ 119 %
+ 23-10
+ 117 %
+ 24-10
+ 112 %
+ 25-10
+ 121 %
+ 26-10
+ 129 %
+ 27-10
+ 111 %
+ 28-10
+ 121 %
+ 29-10
+ Taux d'occupation et temps d'attente dans les urgences du Québec en fonction du nombre de personnes sur place qui attendent pour voir un médecin et du nombre de patients sur civière. Les résultats sont présentés pour chaque établissement dans l'ensemble des régions du Québec et mis à jour chaque heure.
+ Attention - Le temps d\'attente varie d\'un établissement à l\'autre en fonction d\'une multitude de facteurs, il n\'est donc pas recommandé de consulter cette page afin de choisir une urgence plutôt qu\'une autre.
+-->
+ Normal
+ Élevé
+ Très élevé
+-->
+ Situation dans l'ensemble des urgences du Québec
+ Nombre total de personnes à l'urgence : 4138 
+ Nombre de personnes qui attendent de voir un médecin : 1702 
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille) : 5h36 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille) : 20h26 
+ Civières fonctionnelles : 1795 
+ Civières occupées : 2042 
+ Taux d'occupation des civières : 114 % 
+ Patients sur civière depuis plus de 24 heures : 505 
+ Patients sur civière depuis plus de 48 heures : 157 
+ Pour quels motifs doit-on se rendre à l'urgence? 
+ Alternatives aux urgences des hôpitaux du Québec 
+ Portrait de la liste d'attente des chirurgies au Québec 
+ Abitibi-Témiscamingue
+ 92 %
+ Plus de données pour Abitibi-Témiscamingue 
+ Tendance 10 derniers jours 
+ 54 %
+-->
+ 20
+ 57 %
+-->
+ 21
+ 46 %
+-->
+ 22
+ 51 %
+-->
+ 23
+ 81 %
+-->
+ 24
+ 92 %
+-->
+ 25
+ 70 %
+-->
+ 26
+ 73 %
+-->
+ 27
+ 59 %
+-->
+ 28
+ 108 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL DE VAL-D'OR 
+ 12
+ 0
+ 4h48-->
+ 18h32-->
+ 11
+ 7
+ 64 %
+ 4
+ 0
+ HÔPITAL D'AMOS 
+ 27
+ 15
+ 4h30-->
+ 13h48-->
+ 7
+ 12
+ 171 %
+ 2
+ 0
+ HÔPITAL DE ROUYN-NORANDA 
+ 36
+ 26
+ 8h16-->
+ 13h18-->
+ 8
+ 5
+ 63 %
+ 0
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE TÉMISCAMING-KIPAWA 
+ 0
+ 0
+ 1h27-->
+ 0h00-->
+ 1
+ 0
+ 0 %
+ 0
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE VILLE-MARIE 
+ 13
+ 6
+ 4h13-->
+ 7h38-->
+ 5
+ 4
+ 80 %
+ 0
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE LA SARRE 
+ 13
+ 3
+ 6h47-->
+ 10h29-->
+ 5
+ 6
+ 120 %
+ 0
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Bas-Saint-Laurent
+ 63 %
+ Plus de données pour Bas-Saint-Laurent 
+ Tendance 10 derniers jours 
+ 67 %
+-->
+ 20
+ 62 %
+-->
+ 21
+ 48 %
+-->
+ 22
+ 73 %
+-->
+ 23
+ 81 %
+-->
+ 24
+ 67 %
+-->
+ 25
+ 67 %
+-->
+ 26
+ 67 %
+-->
+ 27
+ 71 %
+-->
+ 28
+ 83 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ CENTRE HOSPITALIER RÉGIONAL DU GRAND-PORTAGE 
+ 12
+ 4
+ 3h12-->
+ 11h03-->
+ 9
+ 5
+ 56 %
+ 0
+ 0
+ HÔPITAL DE MATANE 
+ 18
+ 15
+ 4h20-->
+ 7h16-->
+ 7
+ 1
+ 14 %
+ 0
+ 0
+ CLSC DE POHÉNÉGAMOOK 
+ 3
+ 1
+ 0h45-->
+ 3h53-->
+ 3
+ 1
+ 33 %
+ 1
+ 0
+ HÔPITAL NOTRE-DAME-DE-FATIMA 
+ 2
+ 0
+ 3h30-->
+ 6h04-->
+ 7
+ 2
+ 29 %
+ 0
+ 0
+ HÔPITAL DE NOTRE-DAME-DU-LAC 
+ 3
+ 1
+ 3h04-->
+ 10h11-->
+ 5
+ 1
+ 20 %
+ 0
+ 0
+ HÔPITAL D'AMQUI 
+ 15
+ 11
+ 4h06-->
+ 11h37-->
+ 6
+ 3
+ 50 %
+ 0
+ 0
+ HÔPITAL RÉGIONAL DE RIMOUSKI 
+ 36
+ 19
+ 3h55-->
+ 12h09-->
+ 12
+ 17
+ 142 %
+ 0
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE TROIS-PISTOLES 
+ 8
+ 4
+ 2h46-->
+ 5h44-->
+ 3
+ 3
+ 100 %
+ 1
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Capitale-Nationale
+ 103 %
+ Plus de données pour Capitale-Nationale 
+ Tendance 10 derniers jours 
+ 110 %
+-->
+ 20
+ 121 %
+-->
+ 21
+ 105 %
+-->
+ 22
+ 107 %
+-->
+ 23
+ 93 %
+-->
+ 24
+ 83 %
+-->
+ 25
+ 99 %
+-->
+ 26
+ 104 %
+-->
+ 27
+ 92 %
+-->
+ 28
+ 99 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL CHAUVEAU 
+ 33
+ 21
+ 3h49-->
+ 5h41-->
+ 5
+ 1
+ 20 %
+ 0
+ 0
+ HÔPITAL DE SAINTE-ANNE-DE-BEAUPRÉ 
+ 11
+ 6
+ 2h43-->
+ 8h39-->
+ 4
+ 3
+ 75 %
+ 0
+ 0
+ HÔPITAL DE LA MALBAIE 
+ 9
+ 3
+ 3h26-->
+ 18h03-->
+ 9
+ 4
+ 44 %
+ 0
+ 0
+ HÔPITAL DE BAIE-SAINT-PAUL 
+ 8
+ 0
+ 2h48-->
+ 17h07-->
+ 8
+ 6
+ 75 %
+ 1
+ 0
+ HÔPITAL RÉGIONAL DE PORTNEUF 
+ 14
+ 10
+ 3h00-->
+ 4h27-->
+ 7
+ 5
+ 71 %
+ 0
+ 0
+ CLSC DE SAINT-MARC-DES-CARRIÈRES (L'URGENCE EST DU CÔTÉ DU CLSCL)
+ 7
+ 4
+ 2h50-->
+ 3h15-->
+ 3
+ 1
+ 33 %
+ 0
+ 0
+ HÔPITAL DU SAINT-SACREMENT 
+ 47
+ 21
+ 3h06-->
+ 11h54-->
+ 22
+ 24
+ 109 %
+ 0
+ 0
+ L'HÔTEL-DIEU DE QUÉBEC 
+ 27
+ 15
+ 3h19-->
+ 15h24-->
+ 15
+ 15
+ 100 %
+ 1
+ 0
+ CENTRE HOSPITALIER DE L'UNIVERSITÉ LAVAL 
+ 84
+ 31
+ 4h22-->
+ 11h21-->
+ 43
+ 50
+ 116 %
+ 4
+ 2
+ HÔPITAL SAINT-FRANÇOIS D'ASSISE 
+ 53
+ 13
+ 4h43-->
+ 14h27-->
+ 34
+ 37
+ 109 %
+ 2
+ 0
+ HÔPITAL DE L'ENFANT-JÉSUS 
+ 100
+ 40
+ 4h55-->
+ 18h21-->
+ 48
+ 59
+ 123 %
+ 9
+ 4
+ INSTITUT UNIVERSITAIRE DE CARDIOLOGIE ET DE PNEUMOLOGIE DE QUÉBEC 
+ 32
+ 16
+ 3h00-->
+ 11h28-->
+ 20
+ 19
+ 95 %
+ 0
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Chaudière-Appalaches
+ 130 %
+ Plus de données pour Chaudière-Appalaches 
+ Tendance 10 derniers jours 
+ 148 %
+-->
+ 20
+ 163 %
+-->
+ 21
+ 144 %
+-->
+ 22
+ 144 %
+-->
+ 23
+ 116 %
+-->
+ 24
+ 96 %
+-->
+ 25
+ 111 %
+-->
+ 26
+ 147 %
+-->
+ 27
+ 131 %
+-->
+ 28
+ 140 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔTEL-DIEU DE LÉVIS 
+ 96
+ 22
+ 4h48-->
+ 16h33-->
+ 43
+ 56
+ 130 %
+ 11
+ 5
+ HÔPITAL DE SAINT-GEORGES 
+ 43
+ 9
+ 4h51-->
+ 26h52-->
+ 21
+ 33
+ 157 %
+ 11
+ 2
+ CHSLD ET HÔPITAL PAUL-GILBERT 
+ 23
+ 12
+ 2h52-->
+ 0h00-->
+ 0
+ 0
+ 0
+ 0
+ HÔPITAL DE MONTMAGNY 
+ 31
+ 14
+ 2h45-->
+ 14h28-->
+ 10
+ 12
+ 120 %
+ 2
+ 1
+ HÔPITAL DE THETFORD 
+ 34
+ 13
+ 6h28-->
+ 17h02-->
+ 15
+ 15
+ 100 %
+ 4
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Côte-Nord
+ 88 %
+ Plus de données pour Côte-Nord 
+ Tendance 10 derniers jours 
+ 115 %
+-->
+ 20
+ 122 %
+-->
+ 21
+ 134 %
+-->
+ 22
+ 102 %
+-->
+ 23
+ 107 %
+-->
+ 24
+ 110 %
+-->
+ 25
+ 95 %
+-->
+ 26
+ 105 %
+-->
+ 27
+ 85 %
+-->
+ 28
+ 117 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DES ESCOUMINS 
+ 10
+ 6
+ 1h09-->
+ 20h05-->
+ 3
+ 2
+ 67 %
+ 0
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE FORESTVILLE 
+ 4
+ 1
+ 2h15-->
+ 5h09-->
+ 5
+ 2
+ 40 %
+ 0
+ 0
+ CLSC ET HÔPITAL LE ROYER 
+ 32
+ 24
+ 6h35-->
+ 23h24-->
+ 10
+ 10
+ 100 %
+ 6
+ 1
+ HÔPITAL ET CLSC DE SEPT-ÎLES 
+ 38
+ 19
+ 8h45-->
+ 28h32-->
+ 10
+ 17
+ 170 %
+ 11
+ 1
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE FERMONT 
+ 2
+ 2
+ 9h46-->
+ 3h02-->
+ 2
+ 0
+ 0 %
+ 0
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE LA MINGANIE 
+ 1
+ 0
+ 3h10-->
+ 5h54-->
+ 2
+ 1
+ 50 %
+ 0
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE PORT-CARTIER 
+ 8
+ 1
+ 7h05-->
+ 17h20-->
+ 5
+ 4
+ 80 %
+ 4
+ 1
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE LA BASSE-CÔTE-NORD 
+ 1
+ 1
+ 2h20-->
+ 4h01-->
+ 4
+ 0
+ 0 %
+ 0
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Estrie
+ 58 %
+ Plus de données pour Estrie 
+ Tendance 10 derniers jours 
+ 99 %
+-->
+ 20
+ 97 %
+-->
+ 21
+ 102 %
+-->
+ 22
+ 85 %
+-->
+ 23
+ 97 %
+-->
+ 24
+ 81 %
+-->
+ 25
+ 86 %
+-->
+ 26
+ 73 %
+-->
+ 27
+ 80 %
+-->
+ 28
+ 81 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ CHUS - HÔPITAL FLEURIMONT 
+ 55
+ 20
+ 6h37-->
+ 10h57-->
+ 36
+ 26
+ 72 %
+ 1
+ 0
+ CHUS - HÔTEL-DIEU DE SHERBROOKE 
+ 36
+ 11
+ 7h15-->
+ 18h06-->
+ 44
+ 27
+ 61 %
+ 4
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE MEMPHRÉMAGOG 
+ 12
+ 6
+ 3h53-->
+ 11h08-->
+ 11
+ 2
+ 18 %
+ 0
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DU GRANIT 
+ 7
+ 1
+ 2h30-->
+ 7h07-->
+ 5
+ 4
+ 80 %
+ 0
+ 0
+ HÔPITAL DE GRANBY 
+ 47
+ 21
+ 8h03-->
+ 15h18-->
+ 20
+ 14
+ 70 %
+ 3
+ 0
+ HÔPITAL BROME-MISSISQUOI-PERKINS 
+ 33
+ 19
+ 5h23-->
+ 13h22-->
+ 16
+ 11
+ 69 %
+ 1
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DES SOURCES 
+ 13
+ 10
+ 2h54-->
+ 6h26-->
+ 7
+ 0
+ 0 %
+ 0
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Gaspésie-Îles-de-la-Madeleine
+ 75 %
+ Plus de données pour Gaspésie-Îles-de-la-Madeleine 
+ Tendance 10 derniers jours 
+ 66 %
+-->
+ 20
+ 64 %
+-->
+ 21
+ 68 %
+-->
+ 22
+ 59 %
+-->
+ 23
+ 68 %
+-->
+ 24
+ 57 %
+-->
+ 25
+ 57 %
+-->
+ 26
+ 64 %
+-->
+ 27
+ 64 %
+-->
+ 28
+ 70 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL DE L'ARCHIPEL 
+ 5
+ 0
+ 2h00-->
+ 15h48-->
+ 6
+ 4
+ 67 %
+ 0
+ 0
+ HÔPITAL DE GASPÉ 
+ 14
+ 6
+ 5h46-->
+ 16h02-->
+ 6
+ 7
+ 117 %
+ 0
+ 0
+ CLSC ET CENTRE DE SERVICES AMBULATOIRES DE PASPÉBIAC 
+ 9
+ 7
+ 4h16-->
+ 6h46-->
+ 4
+ 2
+ 50 %
+ 0
+ 0
+ CLSC ET CENTRE DE SERVICES AMBULATOIRES DE MURDOCHVILLE 
+ 0
+ 0
+ 4h06-->
+ 0h00-->
+ 2
+ 0
+ 0 %
+ 0
+ 0
+ HÔPITAL DE CHANDLER 
+ 9
+ 1
+ 2h29-->
+ 14h36-->
+ 8
+ 4
+ 50 %
+ 0
+ 0
+ HÔPITAL ET GROUPE DE MÉDECINE DE FAMILLE UNIVERSITAIRE DE MARIA 
+ 15
+ 6
+ 6h21-->
+ 18h03-->
+ 10
+ 10
+ 100 %
+ 1
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE GRANDE-VALLÉE 
+ 1
+ 1
+ 4h33-->
+ 3h12-->
+ 2
+ 0
+ 0 %
+ 0
+ 0
+ HÔPITAL ET CLSC DE SAINTE-ANNE-DES-MONTS 
+ 10
+ 3
+ 3h12-->
+ 29h18-->
+ 6
+ 6
+ 100 %
+ 1
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Lanaudière
+ 117 %
+ Plus de données pour Lanaudière 
+ Tendance 10 derniers jours 
+ 145 %
+-->
+ 21
+ 135 %
+-->
+ 22
+ 119 %
+-->
+ 23
+ 131 %
+-->
+ 24
+ 125 %
+-->
+ 25
+ 111 %
+-->
+ 26
+ 130 %
+-->
+ 27
+ 110 %
+-->
+ 28
+ 128 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL PIERRE-LE GARDEUR 
+ 130
+ 62
+ 5h22-->
+ 23h13-->
+ 47
+ 52
+ 111 %
+ 12
+ 1
+ HÔPITAL DE LANAUDIÈRE ET CENTRE D'HÉBERGEMENT PARPHILIA-FERLAND 
+ 108
+ 52
+ 4h00-->
+ 19h12-->
+ 42
+ 52
+ 124 %
+ 9
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Laurentides
+ 147 %
+ Plus de données pour Laurentides 
+ Tendance 10 derniers jours 
+ 140 %
+-->
+ 21
+ 145 %
+-->
+ 22
+ 145 %
+-->
+ 23
+ 139 %
+-->
+ 24
+ 147 %
+-->
+ 25
+ 161 %
+-->
+ 26
+ 168 %
+-->
+ 27
+ 136 %
+-->
+ 28
+ 142 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL DE MONT-LAURIER 
+ 19
+ 6
+ 4h52-->
+ 21h51-->
+ 8
+ 11
+ 138 %
+ 4
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE RIVIÈRE-ROUGE 
+ 16
+ 11
+ 4h49-->
+ 10h39-->
+ 5
+ 5
+ 100 %
+ 0
+ 0
+ HÔPITAL DE SAINT-EUSTACHE 
+ 108
+ 42
+ 6h40-->
+ 19h52-->
+ 35
+ 50
+ 143 %
+ 6
+ 0
+ HÔPITAL DE SAINT-JÉRÔME 
+ 130
+ 36
+ 5h39-->
+ 21h13-->
+ 47
+ 80
+ 170 %
+ 27
+ 14
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX D'ARGENTEUIL 
+ 23
+ 13
+ 4h08-->
+ 22h05-->
+ 8
+ 11
+ 138 %
+ 1
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE SAINTE-AGATHE 
+ 50
+ 29
+ 6h36-->
+ 18h14-->
+ 18
+ 21
+ 117 %
+ 1
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Laval
+ 151 %
+ Plus de données pour Laval 
+ Tendance 10 derniers jours 
+ 149 %
+-->
+ 21
+ 188 %
+-->
+ 22
+ 135 %
+-->
+ 23
+ 145 %
+-->
+ 24
+ 184 %
+-->
+ 25
+ 178 %
+-->
+ 26
+ 161 %
+-->
+ 27
+ 133 %
+-->
+ 28
+ 137 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL DE LA CITÉ-DE-LA-SANTÉ 
+ 146
+ 48
+ 6h45-->
+ 18h04-->
+ 49
+ 74
+ 151 %
+ 15
+ 1
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Mauricie et Centre-du-Québec
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE FORTIERVILLE 
+ ND
+ ND
+ 0h00-->
+ 0h00-->
+ ND
+ ND
+ --
+ ND
+ ND
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DU HAUT-SAINT-MAURICE 
+ ND
+ ND
+ 3h13-->
+ 9h52-->
+ ND
+ ND
+ --
+ ND
+ ND
+ HÔPITAL DU CENTRE-DE-LA-MAURICIE 
+ ND
+ ND
+ 2h43-->
+ 12h49-->
+ ND
+ ND
+ --
+ ND
+ ND
+ PAVILLON SAINTE-MARIE 
+ ND
+ ND
+ 2h54-->
+ 15h41-->
+ ND
+ ND
+ --
+ ND
+ ND
+ HÔTEL-DIEU D'ARTHABASKA 
+ ND
+ ND
+ 4h27-->
+ 5h39-->
+ ND
+ ND
+ --
+ ND
+ ND
+ HÔPITAL SAINTE-CROIX 
+ ND
+ ND
+ 2h25-->
+ 9h06-->
+ ND
+ ND
+ --
+ ND
+ ND
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX AVELLIN-DALCOURT 
+ ND
+ ND
+ 2h15-->
+ 13h57-->
+ ND
+ ND
+ --
+ ND
+ ND
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX CHRIST-ROI 
+ ND
+ ND
+ 5h56-->
+ 14h30-->
+ ND
+ ND
+ --
+ ND
+ ND
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Montérégie
+ 126 %
+ Plus de données pour Montérégie 
+ Tendance 10 derniers jours 
+ 149 %
+-->
+ 21
+ 152 %
+-->
+ 22
+ 134 %
+-->
+ 23
+ 138 %
+-->
+ 24
+ 133 %
+-->
+ 25
+ 145 %
+-->
+ 26
+ 156 %
+-->
+ 27
+ 129 %
+-->
+ 28
+ 148 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL CHARLES-LE MOYNE 
+ ND
+ ND
+ -->
+ -->
+ ND
+ ND
+ --
+ ND
+ ND
+ HÔPITAL CHARLES-LE MOYNE 
+ ND
+ ND
+ -->
+ -->
+ ND
+ ND
+ --
+ ND
+ ND
+ HÔPITAL DU HAUT-RICHELIEU 
+ 81
+ 37
+ 6h14-->
+ 19h35-->
+ 37
+ 45
+ 122 %
+ 10
+ 0
+ HÔPITAL CHARLES-LE MOYNE 
+ 141
+ 80
+ 8h47-->
+ 24h43-->
+ 43
+ 51
+ 119 %
+ 23
+ 3
+ HÔPITAL PIERRE-BOUCHER 
+ 133
+ 62
+ 8h11-->
+ 25h54-->
+ 47
+ 64
+ 136 %
+ 31
+ 15
+ HÔTEL-DIEU DE SOREL 
+ 48
+ 19
+ 5h52-->
+ 17h57-->
+ 17
+ 23
+ 135 %
+ 7
+ 3
+ HÔPITAL HONORÉ-MERCIER 
+ 92
+ 61
+ 4h14-->
+ 14h01-->
+ 26
+ 31
+ 119 %
+ 8
+ 1
+ HÔPITAL BARRIE MEMORIAL / BARRIE MEMORIAL HOSPITAL Il est possible que le service d'urgence de cette installation n'offre pas l'ensemble des services spécialisés (échographie, IRM, tomodensitométrie (scan), médecins spécialistes, etc.). Veuillez vous renseigner auprès de celui-ci avant de vous y déplacer.
+ 26
+ 11
+ 3h42-->
+ 9h34-->
+ 5
+ 3
+ 60 %
+ 2
+ 0
+ HÔPITAL DU SUROÎT 
+ 82
+ 22
+ 4h04-->
+ 23h16-->
+ 32
+ 40
+ 125 %
+ 26
+ 15
+ HÔPITAL ANNA-LABERGE 
+ 70
+ 22
+ 5h18-->
+ 22h13-->
+ 32
+ 44
+ 138 %
+ 17
+ 9
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Montréal
+ 136 %
+ Plus de données pour Montréal 
+ Tendance 10 derniers jours 
+ 141 %
+-->
+ 21
+ 155 %
+-->
+ 22
+ 145 %
+-->
+ 23
+ 139 %
+-->
+ 24
+ 127 %
+-->
+ 25
+ 148 %
+-->
+ 26
+ 162 %
+-->
+ 27
+ 137 %
+-->
+ 28
+ 142 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL DU SACRÉ-COEUR-DE-MONTRÉAL 
+ ND
+ ND
+ 5h37-->
+ 25h30-->
+ ND
+ ND
+ --
+ ND
+ ND
+ HÔPITAL FLEURY 
+ ND
+ ND
+ 2h50-->
+ 13h43-->
+ ND
+ ND
+ --
+ ND
+ ND
+ HÔPITAL JEAN-TALON 
+ ND
+ ND
+ 4h37-->
+ 18h45-->
+ ND
+ ND
+ --
+ ND
+ ND
+ HÔPITAL EN SANTÉ MENTALE ALBERT-PRÉVOST 
+ ND
+ ND
+ 0h00-->
+ 0h00-->
+ ND
+ ND
+ --
+ ND
+ ND
+ CENTRE HOSPITALIER DE L'UNIVERSITÉ DE MONTRÉAL 
+ 124
+ 44
+ 6h48-->
+ 19h54-->
+ 51
+ 67
+ 131 %
+ 12
+ 1
+ CHU SAINTE-JUSTINE 
+ 63
+ 23
+ 5h25-->
+ 6h36-->
+ 16
+ 15
+ 94 %
+ 0
+ 0
+ L'HÔPITAL DE MONTRÉAL POUR ENFANTS 
+ 55
+ 14
+ 4h57-->
+ 9h26-->
+ 12
+ 16
+ 133 %
+ 1
+ 0
+ Hôpital Royal Victoria (Centre universitaire de santé McGill - Site Glen) 
+ 106
+ 43
+ 9h08-->
+ 26h02-->
+ 33
+ 54
+ 164 %
+ 23
+ 14
+ HÔPITAL DE LACHINE 
+ 29
+ 9
+ 5h19-->
+ 27h27-->
+ 14
+ 19
+ 136 %
+ 8
+ 3
+ HÔPITAL GÉNÉRAL DE MONTRÉAL 
+ 62
+ 14
+ 5h22-->
+ 34h49-->
+ 31
+ 38
+ 123 %
+ 16
+ 8
+ INSTITUT DE CARDIOLOGIE DE MONTRÉAL (Urgence cardiologique adulte seulement) 
+ 12
+ 6
+ 2h33-->
+ 17h52-->
+ 22
+ 10
+ 45 %
+ 1
+ 0
+ HÔPITAL GÉNÉRAL JUIF 
+ 159
+ 48
+ 3h55-->
+ 14h08-->
+ 53
+ 117
+ 221 %
+ 26
+ 4
+ HÔPITAL DE VERDUN 
+ 46
+ 15
+ 5h34-->
+ 13h17-->
+ 26
+ 12
+ 46 %
+ 1
+ 0
+ HÔPITAL NOTRE-DAME 
+ 66
+ 25
+ 4h35-->
+ 21h03-->
+ 35
+ 35
+ 100 %
+ 10
+ 6
+ HÔPITAL MAISONNEUVE-ROSEMONT 
+ 128
+ 53
+ 4h19-->
+ 25h18-->
+ 54
+ 75
+ 139 %
+ 28
+ 7
+ INSTITUT UNIVERSITAIRE EN SANTÉ MENTALE DE MONTRÉAL 
+ 5
+ 0
+ 3h13-->
+ 20h06-->
+ 12
+ 5
+ 42 %
+ 1
+ 1
+ HÔPITAL DE LASALLE 
+ 56
+ 28
+ 5h24-->
+ 30h41-->
+ 15
+ 26
+ 173 %
+ 13
+ 7
+ HÔPITAL GÉNÉRAL DU LAKESHORE 
+ 71
+ 15
+ 8h12-->
+ 31h54-->
+ 31
+ 54
+ 174 %
+ 33
+ 20
+ INSTITUT UNIVERSITAIRE EN SANTÉ MENTALE DOUGLAS 
+ 4
+ 0
+ 4h01-->
+ 12h58-->
+ 8
+ 2
+ 25 %
+ 0
+ 0
+ CENTRE HOSPITALIER DE ST. MARY 
+ 56
+ 16
+ 6h01-->
+ 15h57-->
+ 22
+ 33
+ 150 %
+ 5
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Nord-du-Québec
+ 9 %
+ Plus de données pour Nord-du-Québec 
+ Tendance 10 derniers jours 
+ 109 %
+-->
+ 21
+ 55 %
+-->
+ 22
+ 55 %
+-->
+ 23
+ 64 %
+-->
+ 24
+ 36 %
+-->
+ 25
+ 27 %
+-->
+ 26
+ 36 %
+-->
+ 27
+ 36 %
+-->
+ 28
+ 55 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ CENTRE DE SANTÉ DE CHIBOUGAMAU 
+ 5
+ 2
+ 2h39-->
+ 10h02-->
+ 6
+ 1
+ 17 %
+ 0
+ 0
+ CENTRE DE SANTÉ RENÉ-RICARD 
+ 0
+ 0
+ 0h52-->
+ 0h00-->
+ 1
+ 0
+ 0 %
+ 0
+ 0
+ CENTRE DE SANTÉ LEBEL 
+ 0
+ 0
+ 1h01-->
+ 0h00-->
+ 2
+ 0
+ 0 %
+ 0
+ 0
+ CENTRE DE SANTÉ ISLE-DIEU 
+ 1
+ 0
+ 1h24-->
+ 0h00-->
+ 1
+ 0
+ 0 %
+ 0
+ 0
+ CENTRE DE SANTÉ DE RADISSON 
+ 0
+ 0
+ 1h31-->
+ 0h00-->
+ 1
+ 0
+ 0 %
+ 0
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Outaouais
+ 120 %
+ Plus de données pour Outaouais 
+ Tendance 10 derniers jours 
+ 143 %
+-->
+ 21
+ 137 %
+-->
+ 22
+ 123 %
+-->
+ 23
+ 112 %
+-->
+ 24
+ 135 %
+-->
+ 25
+ 146 %
+-->
+ 26
+ 125 %
+-->
+ 27
+ 100 %
+-->
+ 28
+ 120 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL ET CHSLD DU PONTIAC 
+ 14
+ 5
+ 3h51-->
+ 18h55-->
+ 4
+ 6
+ 150 %
+ 0
+ 0
+ CLSC ET CENTRE D'HÉBERGEMENT DE LA PETITE-NATION 
+ 0
+ 0
+ 4h46-->
+ 7h33-->
+ 2
+ 0
+ 0 %
+ 0
+ 0
+ HÔPITAL DE GATINEAU 
+ 63
+ 36
+ 7h39-->
+ 19h09-->
+ 28
+ 39
+ 139 %
+ 8
+ 2
+ HÔPITAL DE HULL 
+ 74
+ 33
+ 8h09-->
+ 21h31-->
+ 25
+ 28
+ 112 %
+ 5
+ 0
+ HÔPITAL DE MANIWAKI 
+ 12
+ 3
+ 5h15-->
+ 12h12-->
+ 6
+ 10
+ 167 %
+ 1
+ 0
+ HÔPITAL ET CHSLD MÉMORIAL DE WAKEFIELD / WAKEFIELD MEMORIAL HOSPITAL 
+ 15
+ 10
+ 3h21-->
+ 6h09-->
+ 4
+ 2
+ 50 %
+ 1
+ 0
+ HÔPITAL ET CHSLD DE PAPINEAU 
+ 38
+ 27
+ 4h41-->
+ 17h16-->
+ 12
+ 14
+ 117 %
+ 1
+ 0
+ CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE MANSFIELD-ET-PONTEFRACT 
+ 5
+ 2
+ 2h10-->
+ 0h00-->
+ 2
+ 1
+ 50 %
+ 0
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ Saguenay-Lac-Saint-Jean
+ 77 %
+ Plus de données pour Saguenay-Lac-Saint-Jean 
+ Tendance 10 derniers jours 
+ 74 %
+-->
+ 21
+ 74 %
+-->
+ 22
+ 64 %
+-->
+ 23
+ 67 %
+-->
+ 24
+ 72 %
+-->
+ 25
+ 61 %
+-->
+ 26
+ 70 %
+-->
+ 27
+ 62 %
+-->
+ 28
+ 62 %
+-->
+ 29
+ Attention - Le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est donc pas recommandé de consulter ces données afin de choisir une urgence plutôt qu'une autre.
+-->
+ Nom de l'installation
+ Nombre total de personnes à l'urgence
+ Nombre de personnes qui attendent de voir un médecin
+ Durée moyenne de séjour des personnes dans la salle d'attente (de la veille)
+-->
+ ** 
+ Durée moyenne de séjour des personnes en attente sur une civière (de la veille)
+-->
+ Civières fonctionnelles
+ Civières occupées
+ Taux d'occupation des civières
+ Patients sur civière depuis plus de 24 heures
+ Patients sur civière depuis plus de 48 heures
+ HÔPITAL DE CHICOUTIMI 
+ 59
+ 15
+ 3h40-->
+ 15h19-->
+ 41
+ 42
+ 102 %
+ 6
+ 0
+ HÔPITAL DE DOLBEAU-MISTASSINI 
+ 22
+ 9
+ 3h22-->
+ 7h01-->
+ 10
+ 7
+ 70 %
+ 0
+ 0
+ HÔPITAL D'ALMA 
+ 22
+ 12
+ 3h14-->
+ 10h09-->
+ 17
+ 4
+ 24 %
+ 0
+ 0
+ HÔPITAL DE LA BAIE 
+ 21
+ 15
+ 4h54-->
+ 10h28-->
+ 7
+ 5
+ 71 %
+ 0
+ 0
+ HÔPITAL ET CENTRE DE RÉADAPTATION DE JONQUIÈRE 
+ 28
+ 17
+ 4h36-->
+ 14h09-->
+ 16
+ 13
+ 81 %
+ 0
+ 0
+ HÔPITAL ET CENTRE D'HÉBERGEMENT DE ROBERVAL 
+ 13
+ 3
+ 5h07-->
+ 7h48-->
+ 13
+ 9
+ 69 %
+ 1
+ 0
+ Besoin de voir un médecin rapidement?
+ Index Santé peut vous aider. En plus d'effectuer une recherche de médecins de famille et de groupes de médecine de famille ( GMF ) par ville ou région, Index Santé met à votre disposition une carte interactive pour trouver rapidement un GMF près chez vous.
+ Trouver un GMF 
+ * L'outil Taux d'occupation dans les urgences du Québec du répertoire Index Santé permet d'estimer le temps d'attente dans certains établissements du Québec en fonction des taux d'occupation des civières. À noter que puisque le temps d'attente varie d'un établissement à l'autre en fonction d'une multitude de facteurs, il n'est pas recommandé de consulter cette page afin de choisir une urgence plutôt qu'une autre. Cette liste n'est pas exhaustive. La Situation générale au Québec affichée représente le taux d'occupation de toutes les civières fonctionnelles disponibles dans la province. Les données sont issues de la Console provinciale des urgences (CPU).
+ Dernière mise à jour complète des données et des taux : 30 octobre 2026 à 21:45 
+ Répertoire santé 
+ L'humain avant tout. Pour trouver gratuitement des services en santé partout au Québec dans les secteurs public, privé et communautaire. 
+ Inscrire un service 
+ Propriétaire ou gestionnaire d'un service en santé au Québec? Cliquez ici pour ajouter votre service au répertoire Index Santé. 
+ Taux d'occupation 
+ Taux d'occupation et estimation du temps d'attente dans les urgences du Québec. Pour chaque établissement des différentes régions du Québec. 
+﻿ 
+ Médecins de famille 
+ Télémédecine 
+ Soins à domicile 
+ Cliniques 
+ CLSC 
+ Dermatologues 
+ L'humain avant tout.
+ Le répertoire Index Santé permet de trouver gratuitement des services en santé au Québec et regroupe des milliers de services dans les secteurs public, privé et communautaire.
+ À propos 
+ Le répertoire 
+ Publications 
+ Outils 
+ Emplois en santé 
+ Zone Annonceur 
+ Contactez-nous 
+ Infolettre
+ Conseils, publications et ressources en santé au Québec pour vous et votre famille.
+ Je m'abonne 
+ Inscrire un service 
+ Les informations du site Index Santé ne peuvent être interprétées comme un diagnostic et ne remplacent pas les informations que pourrait vous fournir un professionnel de la santé .
+ Index Santé © 2026 - Tous droits réservés
+ Index Santé ne recueille aucun de vos renseignements personnels. Seuls des cookies sont utilisés pour mesurer l'achalandage et afficher certaines publicités. Consultez notre politique de confidentialité .
+ Développé au Québec ESG Média inc.
+ x 
+ Index Santé ne recueille aucun de vos renseignements personnels.
+ Seuls des cookies sont utilisés pour mesurer
+ l'achalandage et afficher certaines publicités.
+ Consultez notre
+ politique de confidentialité
+ .
+ J'accepte
+
+=== ENLACES ===
+https://www.indexsante.ca/ | 
+https://www.indexsante.ca/repertoire-sante.php | Le répertoire
+https://www.indexsante.ca/cliniques-medicales/ | Cliniques médicales
+https://www.indexsante.ca/medecine-familiale/ | Médecins de famille et GMF
+https://www.indexsante.ca/soins-a-domicile/ | Soins à domicile
+https://www.indexsante.ca/telemedecine/ | Télémédecine
+https://www.indexsante.ca/clsc/ | CLSC
+https://www.indexsante.ca/dermatologues/ | Dermatologues
+https://www.indexsante.ca/psychologues/ | Psychologues
+https://www.indexsante.ca/physiotherapeutes/ | Physiothérapeutes
+https://www.indexsante.ca/publications/ | Publications
+https://www.indexsante.ca/nouvelles/ | Actualité santé
+https://www.indexsante.ca/chroniques/ | Chroniques santé
+https://www.indexsante.ca/outils/ | Outils
+https://www.indexsante.ca/infographies/ | Infographies santé
+https://www.indexsante.ca/urgences/ | Taux d'occupation dans les urgences du Québec
+https://www.indexsante.ca/chirurgies/ | Liste d'attente des chirurgies
+https://www.indexsante.ca/teleconsultation/ | Téléconsultation
+https://www.indexsante.ca/infolettre/ | Infolettre Index Santé
+https://www.indexsante.ca/outils/calcul-poids-sante-imc.php | Calcul de votre poids santé (IMC)
+https://www.indexsante.ca/videos/ | Vidéos santé
+https://www.indexsante.ca/rendez-vous/ | Demander un rendez-vous
+https://www.indexsante.ca/emplois/ | Emplois santé
+https://www.indexsante.ca/inscription.php | Inscrire un service
+https://www.indexsante.ca/a-propos/ | À propos
+https://www.indexsante.ca/chroniques/537/pour-quels-motifs-se-rendre-a-urgence.php | Pour quels motifs doit-on se rendre à l'urgence?
+https://www.indexsante.ca/chroniques/310/alternatives-aux-urgences-des-hopitaux.php | Alternatives aux urgences des hôpitaux du Québec
+https://www.indexsante.ca/urgences/abitibi-temiscamingue.php | Plus de données pour Abitibi-Témiscamingue
+https://www.indexsante.ca/hopitaux/abitibi-temiscamingue/389/hopital-de-val-d-or.php | HÔPITAL DE VAL-D'OR
+https://www.indexsante.ca/hopitaux/abitibi-temiscamingue/4076/hopital-amos.php | HÔPITAL D'AMOS
+https://www.indexsante.ca/hopitaux/abitibi-temiscamingue/390/hopital-de-rouyn-noranda.php | HÔPITAL DE ROUYN-NORANDA
+https://www.indexsante.ca/medecine-familiale/abitibi-temiscamingue/ | Trouver un GMF
+https://www.indexsante.ca/urgences/bas-saint-laurent.php | Plus de données pour Bas-Saint-Laurent
+https://www.indexsante.ca/hopitaux/bas-saint-laurent/321/centre-hospitalier-regional-du-grand-portage.php | CENTRE HOSPITALIER RÉGIONAL DU GRAND-PORTAGE
+https://www.indexsante.ca/hopitaux/bas-saint-laurent/319/hopital-de-matane.php | HÔPITAL DE MATANE
+https://www.indexsante.ca/clsc/bas-saint-laurent/2372/clsc-de-pohenegamook.php | CLSC DE POHÉNÉGAMOOK
+https://www.indexsante.ca/hopitaux/bas-saint-laurent/11839/hopital-notre-dame-de-fatima.php | HÔPITAL NOTRE-DAME-DE-FATIMA
+https://www.indexsante.ca/hopitaux/bas-saint-laurent/4037/hopital-notre-dame-du-lac.php | HÔPITAL DE NOTRE-DAME-DU-LAC
+https://www.indexsante.ca/hopitaux/bas-saint-laurent/4036/hopital-amqui.php | HÔPITAL D'AMQUI
+https://www.indexsante.ca/hopitaux/bas-saint-laurent/320/hopital-regional-de-rimouski.php | HÔPITAL RÉGIONAL DE RIMOUSKI
+https://www.indexsante.ca/medecine-familiale/bas-saint-laurent/ | Trouver un GMF
+https://www.indexsante.ca/urgences/capitale-nationale.php | Plus de données pour Capitale-Nationale
+https://www.indexsante.ca/hopitaux/capitale-nationale/21/hopital-chauveau.php | HÔPITAL CHAUVEAU
+https://www.indexsante.ca/hopitaux/capitale-nationale/4054/hopital-sainte-anne-de-beaupre.php | HÔPITAL DE SAINTE-ANNE-DE-BEAUPRÉ
+https://www.indexsante.ca/hopitaux/capitale-nationale/4052/hopital-de-la-malbaie.php | HÔPITAL DE LA MALBAIE
+https://www.indexsante.ca/hopitaux/capitale-nationale/4051/hopital-baie-saint-paul.php | HÔPITAL DE BAIE-SAINT-PAUL
+https://www.indexsante.ca/hopitaux/capitale-nationale/333/hopital-regional-de-portneuf.php | HÔPITAL RÉGIONAL DE PORTNEUF
+https://www.indexsante.ca/clsc/capitale-nationale/1115/clsc-de-saint-marc-des-carrieres.php | CLSC DE SAINT-MARC-DES-CARRIÈRES (L'URGENCE EST DU CÔTÉ DU CLSCL)
+https://www.indexsante.ca/hopitaux/capitale-nationale/4045/hopital-du-saint-sacrement.php | HÔPITAL DU SAINT-SACREMENT
+https://www.indexsante.ca/hopitaux/capitale-nationale/4049/hotel-dieu-de-quebec.php | L'HÔTEL-DIEU DE QUÉBEC
+https://www.indexsante.ca/hopitaux/capitale-nationale/4048/centre-mere-enfant-soleil.php | CENTRE HOSPITALIER DE L'UNIVERSITÉ LAVAL
+https://www.indexsante.ca/hopitaux/capitale-nationale/4050/hopital-saint-francois-d-assise.php | HÔPITAL SAINT-FRANÇOIS D'ASSISE
+https://www.indexsante.ca/hopitaux/capitale-nationale/4044/hopital-enfant-jesus.php | HÔPITAL DE L'ENFANT-JÉSUS
+https://www.indexsante.ca/medecins-specialistes/capitale-nationale/284/institut-universitaire-cardiologie-pneumologie.php | INSTITUT UNIVERSITAIRE DE CARDIOLOGIE ET DE PNEUMOLOGIE DE QUÉBEC
+https://www.indexsante.ca/medecine-familiale/capitale-nationale/ | Trouver un GMF
+https://www.indexsante.ca/urgences/chaudiere-appalaches.php | Plus de données pour Chaudière-Appalaches
+https://www.indexsante.ca/hopitaux/chaudiere-appalaches/413/hotel-dieu-de-levis.php | HÔTEL-DIEU DE LÉVIS
+https://www.indexsante.ca/hopitaux/chaudiere-appalaches/412/hopital-de-saint-georges.php | HÔPITAL DE SAINT-GEORGES
+https://www.indexsante.ca/hopitaux/chaudiere-appalaches/411/hopital-de-montmagny.php | HÔPITAL DE MONTMAGNY
+https://www.indexsante.ca/hopitaux/chaudiere-appalaches/410/hopital-de-thetford-mines.php | HÔPITAL DE THETFORD
+https://www.indexsante.ca/medecine-familiale/chaudiere-appalaches/ | Trouver un GMF
+https://www.indexsante.ca/urgences/cote-nord.php | Plus de données pour Côte-Nord
+https://www.indexsante.ca/hopitaux/cote-nord/4077/hopital-le-royer.php | CLSC ET HÔPITAL LE ROYER
+https://www.indexsante.ca/hopitaux/cote-nord/134/hopital-de-sept-iles.php | HÔPITAL ET CLSC DE SEPT-ÎLES
+https://www.indexsante.ca/medecine-familiale/cote-nord/ | Trouver un GMF
+https://www.indexsante.ca/urgences/estrie.php | Plus de données pour Estrie
+https://www.indexsante.ca/hopitaux/estrie/350/hopital-fleurimont-chus.php | CHUS - HÔPITAL FLEURIMONT
+https://www.indexsante.ca/hopitaux/estrie/4058/hotel-dieu-chus.php | CHUS - HÔTEL-DIEU DE SHERBROOKE
+https://www.indexsante.ca/hopitaux/monteregie/424/hopital-de-granby.php | HÔPITAL DE GRANBY
+https://www.indexsante.ca/hopitaux/monteregie/430/hopital-brome-missisquoi-perkins.php | HÔPITAL BROME-MISSISQUOI-PERKINS
+https://www.indexsante.ca/medecine-familiale/estrie/ | Trouver un GMF
+https://www.indexsante.ca/urgences/gaspesie-iles-de-la-madeleine.php | Plus de données pour Gaspésie-Îles-de-la-Madeleine
+https://www.indexsante.ca/hopitaux/gaspesie-iles-de-la-madeleine/407/hopital-de-l-archipel.php | HÔPITAL DE L'ARCHIPEL
+https://www.indexsante.ca/hopitaux/gaspesie-iles-de-la-madeleine/405/hopital-hotel-dieu-de-gaspe.php | HÔPITAL DE GASPÉ
+https://www.indexsante.ca/clsc/gaspesie-iles-de-la-madeleine/142/clsc-de-paspebiac.php | CLSC ET CENTRE DE SERVICES AMBULATOIRES DE PASPÉBIAC
+https://www.indexsante.ca/clsc/gaspesie-iles-de-la-madeleine/2426/clsc-de-murdochville.php | CLSC ET CENTRE DE SERVICES AMBULATOIRES DE MURDOCHVILLE
+https://www.indexsante.ca/hopitaux/gaspesie-iles-de-la-madeleine/408/hopital-de-chandler.php | HÔPITAL DE CHANDLER
+https://www.indexsante.ca/hopitaux/gaspesie-iles-de-la-madeleine/136/hopital-de-maria.php | HÔPITAL ET GROUPE DE MÉDECINE DE FAMILLE UNIVERSITAIRE DE MARIA
+https://www.indexsante.ca/medecine-familiale/gaspesie-iles-de-la-madeleine/ | Trouver un GMF
+https://www.indexsante.ca/urgences/lanaudiere.php | Plus de données pour Lanaudière
+https://www.indexsante.ca/hopitaux/lanaudiere/417/hopital-pierre-le-gardeur.php | HÔPITAL PIERRE-LE GARDEUR
+https://www.indexsante.ca/medecine-familiale/lanaudiere/ | Trouver un GMF
+https://www.indexsante.ca/urgences/laurentides.php | Plus de données pour Laurentides
+https://www.indexsante.ca/hopitaux/laurentides/418/hopital-de-mont-laurier.php | HÔPITAL DE MONT-LAURIER
+https://www.indexsante.ca/hopitaux/laurentides/422/hopital-de-saint-eustache.php | HÔPITAL DE SAINT-EUSTACHE
+https://www.indexsante.ca/hopitaux/laurentides/420/hopital-regional-de-saint-jerome.php | HÔPITAL DE SAINT-JÉRÔME
+https://www.indexsante.ca/medecine-familiale/laurentides/ | Trouver un GMF
+https://www.indexsante.ca/urgences/laval.php | Plus de données pour Laval
+https://www.indexsante.ca/hopitaux/laval/414/hopital-de-la-cite-de-la-sante.php | HÔPITAL DE LA CITÉ-DE-LA-SANTÉ
+https://www.indexsante.ca/medecine-familiale/laval/ | Trouver un GMF
+https://www.indexsante.ca/clsc/centre-du-quebec/2395/centre-multiservices-de-sante-et-de-services-sociaux-de-fortierville.php | CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE FORTIERVILLE
+https://www.indexsante.ca/hopitaux/mauricie/4056/hopital-du-centre-de-la-mauricie.php | HÔPITAL DU CENTRE-DE-LA-MAURICIE
+https://www.indexsante.ca/hopitaux/mauricie/337/centre-hospitalier-affilie-universitaire-regional.php | PAVILLON SAINTE-MARIE
+https://www.indexsante.ca/hopitaux/centre-du-quebec/338/hotel-dieu-arthabaska.php | HÔTEL-DIEU D'ARTHABASKA
+https://www.indexsante.ca/hopitaux/centre-du-quebec/343/hopital-sainte-croix.php | HÔPITAL SAINTE-CROIX
+https://www.indexsante.ca/urgences/monteregie.php | Plus de données pour Montérégie
+https://www.indexsante.ca/hopitaux/monteregie/428/hopital-du-haut-richelieu.php | HÔPITAL DU HAUT-RICHELIEU
+https://www.indexsante.ca/hopitaux/monteregie/433/hopital-charles-le-moyne.php | HÔPITAL CHARLES-LE MOYNE
+https://www.indexsante.ca/hopitaux/monteregie/431/hopital-pierre-boucher.php | HÔPITAL PIERRE-BOUCHER
+https://www.indexsante.ca/hopitaux/monteregie/425/hotel-dieu-de-sorel.php | HÔTEL-DIEU DE SOREL
+https://www.indexsante.ca/hopitaux/monteregie/432/hopital-honore-mercier.php | HÔPITAL HONORÉ-MERCIER
+https://www.indexsante.ca/hopitaux/monteregie/426/hopital-barrie-memorial.php | HÔPITAL BARRIE MEMORIAL / BARRIE MEMORIAL HOSPITAL
+https://www.indexsante.ca/hopitaux/monteregie/427/hopital-du-suroit.php | HÔPITAL DU SUROÎT
+https://www.indexsante.ca/hopitaux/monteregie/9693/hopital-anna-laberge.php | HÔPITAL ANNA-LABERGE
+https://www.indexsante.ca/medecine-familiale/monteregie/ | Trouver un GMF
+https://www.indexsante.ca/urgences/montreal.php | Plus de données pour Montréal
+https://www.indexsante.ca/hopitaux/montreal/372/hopital-du-sacre-coeur-de-montreal.php | HÔPITAL DU SACRÉ-COEUR-DE-MONTRÉAL
+https://www.indexsante.ca/hopitaux/montreal/4069/hopital-fleury.php | HÔPITAL FLEURY
+https://www.indexsante.ca/hopitaux/montreal/4071/hopital-jean-talon.php | HÔPITAL JEAN-TALON
+https://www.indexsante.ca/hopitaux/montreal/4064/centre-hospitalier-universite-de-montreal-chum.php | CENTRE HOSPITALIER DE L'UNIVERSITÉ DE MONTRÉAL
+https://www.indexsante.ca/hopitaux/montreal/272/chu-sainte-justine.php | CHU SAINTE-JUSTINE
+https://www.indexsante.ca/hopitaux/montreal/4067/hopital-de-montreal-pour-enfants.php | L'HÔPITAL DE MONTRÉAL POUR ENFANTS
+https://www.indexsante.ca/hopitaux/montreal/4066/centre-universitaire-de-sante-mcgill-cusm.php | Hôpital Royal Victoria (Centre universitaire de santé McGill - Site Glen)
+https://www.indexsante.ca/hopitaux/montreal/363/hopital-de-lachine.php | HÔPITAL DE LACHINE
+https://www.indexsante.ca/hopitaux/montreal/359/hopital-general-de-montreal.php | HÔPITAL GÉNÉRAL DE MONTRÉAL
+https://www.indexsante.ca/medecins-specialistes/montreal/285/icm-mhi.php | INSTITUT DE CARDIOLOGIE DE MONTRÉAL (Urgence cardiologique adulte seulement)
+https://www.indexsante.ca/hopitaux/montreal/382/hopital-general-juif.php | HÔPITAL GÉNÉRAL JUIF
+https://www.indexsante.ca/hopitaux/montreal/366/hopital-de-verdun.php | HÔPITAL DE VERDUN
+https://www.indexsante.ca/hopitaux/montreal/374/hopital-maisonneuve-rosemont.php | HÔPITAL MAISONNEUVE-ROSEMONT
+https://www.indexsante.ca/hopitaux/montreal/373/institut-universitaire-en-sante-mentale-de-montreal.php | INSTITUT UNIVERSITAIRE EN SANTÉ MENTALE DE MONTRÉAL
+https://www.indexsante.ca/hopitaux/montreal/4070/hopital-de-lasalle.php | HÔPITAL DE LASALLE
+https://www.indexsante.ca/hopitaux/montreal/364/hopital-general-du-lakeshore.php | HÔPITAL GÉNÉRAL DU LAKESHORE
+https://www.indexsante.ca/hopitaux/montreal/371/institut-universitaire-en-sante-mentale-douglas.php | INSTITUT UNIVERSITAIRE EN SANTÉ MENTALE DOUGLAS
+https://www.indexsante.ca/hopitaux/montreal/358/centre-hospitalier-st-mary.php | CENTRE HOSPITALIER DE ST. MARY
+https://www.indexsante.ca/medecine-familiale/montreal/ | Trouver un GMF
+https://www.indexsante.ca/urgences/nord-du-quebec.php | Plus de données pour Nord-du-Québec
+https://www.indexsante.ca/medecine-familiale/nord-du-quebec/ | Trouver un GMF
+https://www.indexsante.ca/urgences/outaouais.php | Plus de données pour Outaouais
+https://www.indexsante.ca/hopitaux/outaouais/388/centre-hospitalier-du-pontiac.php | HÔPITAL ET CHSLD DU PONTIAC
+https://www.indexsante.ca/clsc/outaouais/113/clsc-de-petite-nation.php | CLSC ET CENTRE D'HÉBERGEMENT DE LA PETITE-NATION
+https://www.indexsante.ca/hopitaux/outaouais/384/hopital-de-gatineau.php | HÔPITAL DE GATINEAU
+https://www.indexsante.ca/hopitaux/outaouais/4073/hopital-de-hull.php | HÔPITAL DE HULL
+https://www.indexsante.ca/hopitaux/outaouais/385/hopital-de-maniwaki.php | HÔPITAL DE MANIWAKI
+https://www.indexsante.ca/hopitaux/outaouais/387/hopital-memorial-de-wakefield.php | HÔPITAL ET CHSLD MÉMORIAL DE WAKEFIELD / WAKEFIELD MEMORIAL HOSPITAL
+https://www.indexsante.ca/hopitaux/outaouais/386/hopital-de-papineau.php | HÔPITAL ET CHSLD DE PAPINEAU
+https://www.indexsante.ca/medecine-familiale/outaouais/ | Trouver un GMF
+https://www.indexsante.ca/urgences/saguenay-lac-saint-jean.php | Plus de données pour Saguenay-Lac-Saint-Jean
+https://www.indexsante.ca/hopitaux/saguenay-lac-saint-jean/325/hopital-de-chicoutimi.php | HÔPITAL DE CHICOUTIMI
+https://www.indexsante.ca/hopitaux/saguenay-lac-saint-jean/4042/hopital-dolbeau-mistassini.php | HÔPITAL DE DOLBEAU-MISTASSINI
+https://www.indexsante.ca/hopitaux/saguenay-lac-saint-jean/4040/hopital-alma.php | HÔPITAL D'ALMA
+https://www.indexsante.ca/hopitaux/saguenay-lac-saint-jean/4039/hopital-de-la-baie.php | HÔPITAL DE LA BAIE
+https://www.indexsante.ca/hopitaux/saguenay-lac-saint-jean/326/hopital-jonquiere.php | HÔPITAL ET CENTRE DE RÉADAPTATION DE JONQUIÈRE
+https://www.indexsante.ca/hopitaux/saguenay-lac-saint-jean/4041/hopital-hotel-dieu-de-roberval.php | HÔPITAL ET CENTRE D'HÉBERGEMENT DE ROBERVAL
+https://www.indexsante.ca/medecine-familiale/saguenay-lac-saint-jean/ | Trouver un GMF
+https://www.indexsante.ca/annonceur/ | Zone Annonceur
+https://www.indexsante.ca/a-propos/contact.php | Contactez-nous
+https://www.instagram.com/indexsante | 
+https://www.facebook.com/indexsante | 
+https://www.youtube.com/c/indexsanteca | 
+https://www.indexsante.ca/a-propos/regles-de-confidentialite.php | politique de confidentialité

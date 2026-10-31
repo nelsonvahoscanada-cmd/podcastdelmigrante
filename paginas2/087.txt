@@ -1,0 +1,120 @@
+NOMBRE: ISQ: superficie y regiones
+URL: https://statistique.quebec.ca/fr/vitrine/region
+ESTADO: 200
+FINAL: https://statistique.quebec.ca/fr/vitrine/region
+TITULO: Principaux indicateurs sur le Québec et ses régions
+FECHA: des coordonnées","lienRetour":"/fr/enque
+
+Principaux indicateurs sur le Québec et ses régions Institut de la statistique du Québec 
+ English 
+ Nous joindre 
+ Institut de la statistique du Québec 
+ Chargement 
+ Institut de la statistique du Québec
+ Principaux indicateurs sur le Québec et ses régions
+ Le Québec et ses régions administratives Le Québec Abitibi-Témiscamingue Bas-Saint-Laurent Capitale-Nationale Centre-du-Québec Chaudière-Appalaches Côte-Nord Estrie Gaspésie–Îles-de-la-Madeleine Lanaudière Laurentides Laval Mauricie Montérégie Montréal Nord-du-Québec Outaouais Saguenay–Lac-Saint-Jean 
+ Municipalités régionales de comté (MRC) Toutes les MRC 
+ Chargement 
+ Les limites territoriales de deux régions administratives ont été modifiées le 28 juillet 2021. À cette date, les MRC de La Haute-Yamaska et de Brome-Missisquoi ont changé officiellement de région administrative, passant de la Montérégie à l’Estrie. Pour plus d’information, vous pouvez consulter le bulletin Modifications aux municipalités du Québec de septembre 2021 (PDF, 630 ko) .
+ Le Québec
+ Population totale (2025) 
+ 9 058 297 hab.
+ 0-19 ans (2025) 
+ 20,6 %
+ 20-64 ans (2025) 
+ 57,7 %
+ 65 ans et plus (2025) 
+ 21,7 %
+ Perspectives démographiques (variation de la population 2021-2051) 
+ +7,3 %
+ Emploi (septembre 2026) 1 
+ 4 578,4 k
+ Taux d'emploi (septembre 2026) 1 
+ 60,4 %
+ Taux de chômage (septembre 2026) 1 
+ 5,7 %
+ Salaire horaire moyen (2025) 
+ 35,05 $
+ Taux de postes vacants (2 e trimestre 2026) 
+ 3,1 %
+ Taux de faible revenu des familles (2023) 
+ 8,4 %
+ Revenu disponible par habitant (2024 p ) 
+ 38 426 $
+ PIB aux prix de base (variation 2024/2023) 
+ +6,1 %
+ Dépenses en immobilisation non résidentielle (variation 2026 i /2025 p ) 
+ +3,1 %
+ Revenus des biens fabriqués (2023 p ) 
+ 219 906 300 k$
+ Part de la population desservie par un service de bibliothèque publique (2024) 
+ 96,7 %
+ Taux d'artificialisation des terres (variation Années 2000/Années 2010) 
+ +6,1 %
+ 1 
+ Données désaisonnalisées en moyennes mobiles de trois mois.
+ À consulter aussi
+ Le Québec chiffres en main, édition 2026 ( PDF , 5,32 Mo ) 
+ Faits saillants économiques 
+ Panorama des régions du Québec – Édition 2025 ( PDF , 16,59 Mo ) 
+ Coups d’œil sur les régions du Québec 
+ Évaluation de page
+ L'information sur cette page vous a-t-elle été utile? Oui Non 
+ Statistiques 
+ Services à la recherche 
+ Enquêtes 
+ Notre organisation 
+ Services statistiques 
+ Centre d’information et de documentation 
+ Méthodologie 
+ Calendrier de diffusion 
+ Salle de nouvelles 
+ Carrières 
+ Nous joindre 
+ Nous joindre 
+ 418 691-2401
+ 1 800 463-4090
+ Suivez-nous 
+ S'abonner aux infolettres et aux avis de mise à jour 
+ Accessibilité 
+ Accès à l'information 
+ Nétiquette 
+ Politique de confidentialité 
+ Québec.ca 
+ © Gouvernement du Québec, 2025
+
+=== ENLACES ===
+https://statistique.quebec.ca/fr | 
+https://statistique.quebec.ca/en/vitrine/region | English
+https://statistique.quebec.ca/fr/institut/nous-joindre | Nous joindre
+https://statistique.quebec.ca/fr/produit/tableau/estimations-population-regions-administratives | Population totale (2025)
+https://statistique.quebec.ca/fr/document/projections-de-population-le-quebec | Perspectives démographiques (variation de la population 2021-2051)
+https://statistique.quebec.ca/fr/produit/tableau/remuneration-hebdomadaire-horaire-employes-regions-administratives-ensemble-du-quebec | Salaire horaire moyen (2025)
+https://statistique.quebec.ca/fr/produit/tableau/revenu-disponible-habitant-regions-administratives-et-ensemble-du-quebec | Revenu disponible par habitant (2024 p )
+https://statistique.quebec.ca/fr/produit/tableau/depenses-en-immobilisation-et-reparation-corporelle-non-residentielle-par-industrie-scian-regions-administratives-et-ensemble-du-quebec | Dépenses en immobilisation non résidentielle (variation 2026 i /2025 p )
+https://statistique.quebec.ca/fr/produit/tableau/statistiques-principales-du-secteur-de-la-fabrication-quebec-et-regions-administratives | Revenus des biens fabriqués (2023 p )
+https://statistique.quebec.ca/fr/fichier/le-quebec-chiffres-en-main-edition-2026.pdf | Le Québec chiffres en main, édition 2026 ( PDF , 5,32 Mo )
+https://statistique.quebec.ca/fr/produit/publication/faits-saillants-economiques | Faits saillants économiques
+https://statistique.quebec.ca/fr/fichier/panorama-des-regions-du-quebec-edition-2025.pdf | Panorama des régions du Québec – Édition 2025 ( PDF , 16,59 Mo )
+https://statistique.quebec.ca/fr/document/coups-oeil-regions-quebec | Coups d’œil sur les régions du Québec
+https://statistique.quebec.ca/fr/statistiques/par-themes | Statistiques
+https://statistique.quebec.ca/fr/services-recherche/sad-accueil | Services à la recherche
+https://statistique.quebec.ca/fr/enquetes/information-pour-les-participants | Enquêtes
+https://statistique.quebec.ca/fr/institut/notre-organisation | Notre organisation
+https://statistique.quebec.ca/fr/institut/services-offerts | Services statistiques
+https://statistique.quebec.ca/fr/institut/centre-dinformation-et-de-documentation | Centre d’information et de documentation
+https://statistique.quebec.ca/fr/institut/methodologie | Méthodologie
+https://statistique.quebec.ca/fr/statistiques/calendrier-diffusion | Calendrier de diffusion
+https://statistique.quebec.ca/fr/institut/salle-de-presse | Salle de nouvelles
+https://statistique.quebec.ca/fr/institut/carrieres | Carrières
+https://www.facebook.com/statquebec | 
+http://twitter.com/statquebec | 
+https://www.youtube.com/channel/UCv6d1ORBM-H-013ZcHfF3eA | 
+https://www.linkedin.com/company/institut-de-la-statistique-du-quebec | 
+https://statistique.quebec.ca/fr/abonnements | S'abonner aux infolettres et aux avis de mise à jour
+https://statistique.quebec.ca/fr/produit/publication/accessibilite | Accessibilité
+https://statistique.quebec.ca/fr/institut/notre-organisation/acces-information | Accès à l'information
+https://statistique.quebec.ca/fr/produit/publication/netiquette | Nétiquette
+https://statistique.quebec.ca/fr/enquetes/information-pour-les-participants/confidentialite-et-protection-des-renseignements-personnels | Politique de confidentialité
+https://www.quebec.ca | Québec.ca
+https://www.quebec.ca/droit-auteur | © Gouvernement du Québec, 2025

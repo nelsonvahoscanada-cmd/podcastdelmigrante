@@ -1,0 +1,740 @@
+NOMBRE: Climat: Environnement Canada
+URL: https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=QC&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&stnID=5415&dispBack=0
+ESTADO: 200
+FINAL: https://climate.weather.gc.ca/climate_normals/index_e.html
+TITULO: Canadian Climate Normals - Climate - Environment and Climate Change Canada
+FECHA: 2026-08-10
+
+Canadian Climate Normals - Climate - Environment and Climate Change Canada 
+ Skip to main content 
+ Skip to About this site 
+ Language selection
+ Français 
+ fr 
+ / Gouvernement du Canada 
+ Search
+ Search Canada.ca 
+ Search 
+ Menu
+ Main Menu 
+ Jobs and the workplace 
+ Immigration and citizenship 
+ Travel and tourism 
+ Business and industry 
+ Benefits 
+ Health 
+ Taxes 
+ Environment and natural resources 
+ National security and defence 
+ Culture, history and sport 
+ Policing, justice and emergencies 
+ Transport and infrastructure 
+ Canada and the world 
+ Money and finances 
+ Science and innovation 
+ You are here:
+ Home 
+ Environment and natural resources 
+ Weather, Climate and Hazard 
+ Past weather and climate 
+ Canadian Climate Normals
+ 1991-2020 
+ 1991-2020 Climate Normals & Averages
+ Climate Normals and Averages are used to summarize or describe the average climatic conditions of a particular location.
+ At the completion of each decade, Environment and Climate Change Canada updates its Climate Normals for as many locations and as many climatic characteristics as possible. The Climate Normals, Averages and Extremes offered here are based on Canadian climate composite stations with at least 15 years of data between 1991 to 2020.
+ For more information, please see the 1991-2020 Calculation Information document.
+ To view a list of locations for which Climate Normals have been calculated, please download the Composite Station Inventory , or select and submit one of the following searches:
+ Search by Location Name 
+ Enter the name of the location.
+ For example: "Toronto" or "Tor"
+ Location: 
+ Location Name 
+ Contains 
+ Begins with 
+ Search by Province or Territory 
+ Select a Province/Territory and click "Go".
+ Province/Territory: 
+ All Provinces/Territories 
+ Alberta 
+ British Columbia 
+ Manitoba 
+ New Brunswick 
+ Newfoundland and Labrador 
+ Northwest Territories 
+ Nova Scotia 
+ Nunavut 
+ Ontario 
+ Prince Edward Island 
+ Quebec 
+ Saskatchewan 
+ Yukon 
+ Search by Proximity 
+ Select a distance, city or National Park, or enter location coordinates and click "Go".
+ 25 
+ 50 
+ 100 
+ 200 
+ kilometres away from: 
+ a city, 
+ Select City 
+ Select City 
+ Brampton 
+ Burnaby 
+ Calgary 
+ Charlottetown 
+ Edmonton 
+ Fredericton 
+ Halifax 
+ Hamilton 
+ Iqaluit 
+ Kitchener 
+ Laval 
+ London 
+ Markham 
+ Mississauga 
+ Montréal 
+ Ottawa 
+ Québec 
+ Regina 
+ Saskatoon 
+ St. John's 
+ Surrey 
+ Toronto 
+ Vancouver 
+ Vaughan 
+ Victoria 
+ Whitehorse 
+ Windsor 
+ Winnipeg 
+ Yellowknife 
+ a National Park, 
+ Select Park 
+ Select Park 
+ Aulavik National Park 
+ Auyuittuq National Park 
+ Banff National Park 
+ Cape Breton Highlands National Park 
+ Elk Island National Park 
+ Fathom Five National Marine Park 
+ Forillon National Park 
+ Fundy National Park 
+ Georgian Bay Islands National Park 
+ Glacier National Park 
+ Grasslands National Park 
+ Gros Morne National Park 
+ Gwaii Haanas National Park 
+ Ivvavik National Park 
+ Jasper National Park 
+ Kejimkujik National Park 
+ Kluane National Park 
+ Kootenay National Park 
+ Kouchibouguac National Park 
+ La Mauricie National Park 
+ Mingan Archipelago National Park 
+ Mount Revelstoke National Park 
+ Nahanni National Park 
+ Pacific Rim National Park 
+ Point Pelee National Park 
+ Prince Albert National Park 
+ Prince Edward Island National Park 
+ Pukaskwa National Park 
+ Quttinirpaaq National Park 
+ Riding Mountain National Park 
+ Saguenay-St. Lawrence Marine Park 
+ Sirmilik National Park 
+ St. Lawrence Islands National Park 
+ Terra Nova National Park 
+ Tuktut Nogait National Park 
+ Vuntut National Park 
+ Wapusk National Park 
+ Waterton Lakes National Park 
+ Wood Buffalo National Park 
+ Yoho National Park 
+ location coordinates: 
+ Latitude ( e.g. 48°49'27.010" N ): 
+ Latitude Degrees 
+ ° 
+ Latitude Minutes 
+ ' 
+ Latitude Seconds 
+ " 
+ North 
+ Longitude ( e.g. 123°43'08.009" W ): 
+ Longitude Degrees 
+ ° 
+ Longitude Minutes 
+ ' 
+ Longitude Seconds 
+ " 
+ West 
+ location coordinates in Decimal Degrees: 
+ latitude ( e.g. 61.3701°): 
+ Latitude Decimal 
+ ° 
+ longitude ( e.g. -139.0317°): 
+ Longitude Decimal 
+ ° 
+ Bulk Data Download of the 1991-2020 Climate Normals & Averages 
+ The Canadian Climate Normals data and composite station inventories can be downloaded in bulk.
+ Downloaded files are in comma-separated value (CSV) format, in a zipped (compressed) folder.
+ Two areas of interest can be selected:
+ " Canada-wide " downloads all available data for the whole country in a single file, for the product selected.
+ " By Province or Territory " generates separate files based on the selection of one or more province or territory, for the product selected.
+ Select the area of interest, select the product, and click "Download": 
+ Select Area 
+ Canada-wide 
+ By Province or Territory 
+ Select all 
+ Alberta 
+ British Columbia 
+ Manitoba 
+ New Brunswick 
+ Newfoundland and Labrador 
+ Northwest Territories 
+ Nova Scotia 
+ Nunavut 
+ Ontario 
+ Prince Edward Island 
+ Quebec 
+ Saskatchewan 
+ Yukon 
+ Select Product 
+ Climate Normals Data ( CSV )
+ Composite Station Inventory ( CSV )
+ Note: 
+Both products ( CSV ) can be downloaded together.
+ 1981-2010 
+ 1981-2010 Climate Normals & Averages
+ Climate Normals and Averages are used to summarize or describe the average climatic conditions of a particular location.
+ At the completion of each decade, Environment and Climate Change Canada updates its Climate Normals for as many locations and as many climatic characteristics as possible. The Climate Normals, Averages and Extremes offered here are based on Canadian climate stations with at least 15 years of data between 1981 to 2010.
+ For more information, please see the 1981-2010 Calculation Information document.
+ To view a list of locations for which Climate Normals have been calculated, please download Normals Station Inventory , or select and submit one of the following searches:
+ Search by Station Name 
+ Enter the name of the location.
+ For example: "Toronto" or "Tor"
+ Location: 
+ Station Name 
+ Contains 
+ Begins with 
+ Search by Province or Territory 
+ Select a Province / Territory from the drop down menu "Province/Territory" from drop down and click "Go".
+ Province/Territory: 
+ All Provinces/Territories 
+ Alberta 
+ British Columbia 
+ Manitoba 
+ New Brunswick 
+ Newfoundland and Labrador 
+ Northwest Territories 
+ Nova Scotia 
+ Nunavut 
+ Ontario 
+ Prince Edward Island 
+ Quebec 
+ Saskatchewan 
+ Yukon 
+ Search by Proximity 
+ Select a distance, city or National Park, or enter location coordinates and click "Go".
+ 25 
+ 50 
+ 100 
+ 200 
+ kilometres away from: 
+ a city, 
+ Select City 
+ Select City 
+ Brampton 
+ Burnaby 
+ Calgary 
+ Charlottetown 
+ Edmonton 
+ Fredericton 
+ Halifax 
+ Hamilton 
+ Iqaluit 
+ Kitchener 
+ Laval 
+ London 
+ Markham 
+ Mississauga 
+ Montréal 
+ Ottawa 
+ Québec 
+ Regina 
+ Saskatoon 
+ St. John's 
+ Surrey 
+ Toronto 
+ Vancouver 
+ Vaughan 
+ Victoria 
+ Whitehorse 
+ Windsor 
+ Winnipeg 
+ Yellowknife 
+ a National Park, 
+ Select Park 
+ Select Park 
+ Aulavik National Park 
+ Auyuittuq National Park 
+ Banff National Park 
+ Cape Breton Highlands National Park 
+ Elk Island National Park 
+ Fathom Five National Marine Park 
+ Forillon National Park 
+ Fundy National Park 
+ Georgian Bay Islands National Park 
+ Glacier National Park 
+ Grasslands National Park 
+ Gros Morne National Park 
+ Gwaii Haanas National Park 
+ Ivvavik National Park 
+ Jasper National Park 
+ Kejimkujik National Park 
+ Kluane National Park 
+ Kootenay National Park 
+ Kouchibouguac National Park 
+ La Mauricie National Park 
+ Mingan Archipelago National Park 
+ Mount Revelstoke National Park 
+ Nahanni National Park 
+ Pacific Rim National Park 
+ Point Pelee National Park 
+ Prince Albert National Park 
+ Prince Edward Island National Park 
+ Pukaskwa National Park 
+ Quttinirpaaq National Park 
+ Riding Mountain National Park 
+ Saguenay-St. Lawrence Marine Park 
+ Sirmilik National Park 
+ St. Lawrence Islands National Park 
+ Terra Nova National Park 
+ Tuktut Nogait National Park 
+ Vuntut National Park 
+ Wapusk National Park 
+ Waterton Lakes National Park 
+ Wood Buffalo National Park 
+ Yoho National Park 
+ location coordinates: 
+ Latitude ( e.g. 48°49'27.010" N ): 
+ Latitude Degrees 
+ ° 
+ Latitude Minutes 
+ ' 
+ Latitude Seconds 
+ " 
+ North 
+ Longitude ( e.g. 123°43'08.009" W ): 
+ Longitude Degrees 
+ ° 
+ Longitude Minutes 
+ ' 
+ Longitude Seconds 
+ " 
+ West 
+ location coordinates in Decimal Degrees: 
+ latitude ( e.g. 61.3701°): 
+ Latitude Decimal 
+ ° 
+ longitude ( e.g. -139.0317°): 
+ Longitude Decimal 
+ ° 
+ For a bulk/multiple station download option, a subset of stations with the latest Climate Normals (1981-2010) are available for download in CSV and GeoJSON format from the Canadian Centre for Climate Services website . This tool also displays the available Normals stations on a map.
+ 1971-2000 
+ 1971-2000 Climate Normals & Averages
+ Climate Normals and Averages are used to summarize or describe the average climatic conditions of a particular location.
+ At the completion of each decade, Environment and Climate Change Canada updates its Climate Normals for as many locations and as many climatic characteristics as possible. The Climate Normals, Averages and Extremes offered here are based on Canadian climate stations with at least 15 years of data between 1971 to 2000.
+ For more information, please see the 1971-2000 Calculation Information document.
+ To view a list of locations for which Climate Normals have been calculated, please download Normals Station Inventory , or select and submit one of the following searches:
+ Search by Station Name 
+ Enter the name of the location.
+ For example: "Toronto" or "Tor"
+ Location: 
+ Station Name 
+ Contains 
+ Begins with 
+ Search by Province or Territory 
+ Select a Province / Territory from the drop down menu "Province/Territory" from drop down and click "Go".
+ Province/Territory: 
+ All Provinces/Territories 
+ Alberta 
+ British Columbia 
+ Manitoba 
+ New Brunswick 
+ Newfoundland and Labrador 
+ Northwest Territories 
+ Nova Scotia 
+ Nunavut 
+ Ontario 
+ Prince Edward Island 
+ Quebec 
+ Saskatchewan 
+ Yukon 
+ Search by Proximity 
+ Select a distance, city or National Park, or enter location coordinates and click "Go".
+ 25 
+ 50 
+ 100 
+ 200 
+ kilometres away from: 
+ a city, 
+ Select City 
+ Select City 
+ Brampton 
+ Burnaby 
+ Calgary 
+ Charlottetown 
+ Edmonton 
+ Fredericton 
+ Halifax 
+ Hamilton 
+ Iqaluit 
+ Kitchener 
+ Laval 
+ London 
+ Markham 
+ Mississauga 
+ Montréal 
+ Ottawa 
+ Québec 
+ Regina 
+ Saskatoon 
+ St. John's 
+ Surrey 
+ Toronto 
+ Vancouver 
+ Vaughan 
+ Victoria 
+ Whitehorse 
+ Windsor 
+ Winnipeg 
+ Yellowknife 
+ a National Park, 
+ Select Park 
+ Select Park 
+ Aulavik National Park 
+ Auyuittuq National Park 
+ Banff National Park 
+ Cape Breton Highlands National Park 
+ Elk Island National Park 
+ Fathom Five National Marine Park 
+ Forillon National Park 
+ Fundy National Park 
+ Georgian Bay Islands National Park 
+ Glacier National Park 
+ Grasslands National Park 
+ Gros Morne National Park 
+ Gwaii Haanas National Park 
+ Ivvavik National Park 
+ Jasper National Park 
+ Kejimkujik National Park 
+ Kluane National Park 
+ Kootenay National Park 
+ Kouchibouguac National Park 
+ La Mauricie National Park 
+ Mingan Archipelago National Park 
+ Mount Revelstoke National Park 
+ Nahanni National Park 
+ Pacific Rim National Park 
+ Point Pelee National Park 
+ Prince Albert National Park 
+ Prince Edward Island National Park 
+ Pukaskwa National Park 
+ Quttinirpaaq National Park 
+ Riding Mountain National Park 
+ Saguenay-St. Lawrence Marine Park 
+ Sirmilik National Park 
+ St. Lawrence Islands National Park 
+ Terra Nova National Park 
+ Tuktut Nogait National Park 
+ Vuntut National Park 
+ Wapusk National Park 
+ Waterton Lakes National Park 
+ Wood Buffalo National Park 
+ Yoho National Park 
+ location coordinates: 
+ Latitude ( e.g. 48°49'27.010" N ): 
+ Latitude Degrees 
+ ° 
+ Latitude Minutes 
+ ' 
+ Latitude Seconds 
+ " 
+ North 
+ Longitude ( e.g. 123°43'08.009" W ): 
+ Longitude Degrees 
+ ° 
+ Longitude Minutes 
+ ' 
+ Longitude Seconds 
+ " 
+ West 
+ location coordinates in Decimal Degrees: 
+ latitude ( e.g. 61.3701°): 
+ Latitude Decimal 
+ ° 
+ longitude ( e.g. -139.0317°): 
+ Longitude Decimal 
+ ° 
+ 1961-1990 
+ 1961-1990 Climate Normals & Averages
+ Climate Normals and Averages are used to summarize or describe the average climatic conditions of a particular location.
+ At the completion of each decade, Environment and Climate Change Canada updates its Climate Normals for as many locations and as many climatic characteristics as possible. The Climate Normals, Averages and Extremes offered here are based on Canadian climate stations with at least 15 years of data between 1961 to 1990.
+ For more information, please see the 1961-1990 Calculation Information document.
+ To view a list of locations for which Climate Normals have been calculated, please download Normals Station Inventory , or select and submit one of the following searches:
+ Search by Station Name 
+ Enter the name of the location.
+ For example: "Toronto" or "Tor"
+ Location: 
+ Station Name 
+ Contains 
+ Begins with 
+ Search by Province or Territory 
+ Select a Province / Territory from the drop down menu "Province/Territory" from drop down and click "Go". Please note that Nunavut was part of Northwest Territories until April 1, 1999.
+ Province/Territory: 
+ All Provinces/Territories 
+ Alberta 
+ British Columbia 
+ Manitoba 
+ New Brunswick 
+ Newfoundland and Labrador 
+ Northwest Territories 
+ Nova Scotia 
+ Ontario 
+ Prince Edward Island 
+ Quebec 
+ Saskatchewan 
+ Yukon 
+ Search by Proximity 
+ Select a distance, city or National Park, or enter location coordinates and click "Go".
+ 25 
+ 50 
+ 100 
+ 200 
+ kilometres away from: 
+ a city, 
+ Select City 
+ Select City 
+ Brampton 
+ Burnaby 
+ Calgary 
+ Charlottetown 
+ Edmonton 
+ Fredericton 
+ Halifax 
+ Hamilton 
+ Iqaluit 
+ Kitchener 
+ Laval 
+ London 
+ Markham 
+ Mississauga 
+ Montréal 
+ Ottawa 
+ Québec 
+ Regina 
+ Saskatoon 
+ St. John's 
+ Surrey 
+ Toronto 
+ Vancouver 
+ Vaughan 
+ Victoria 
+ Whitehorse 
+ Windsor 
+ Winnipeg 
+ Yellowknife 
+ a National Park, 
+ Select Park 
+ Select Park 
+ Aulavik National Park 
+ Auyuittuq National Park 
+ Banff National Park 
+ Cape Breton Highlands National Park 
+ Elk Island National Park 
+ Fathom Five National Marine Park 
+ Forillon National Park 
+ Fundy National Park 
+ Georgian Bay Islands National Park 
+ Glacier National Park 
+ Grasslands National Park 
+ Gros Morne National Park 
+ Gwaii Haanas National Park 
+ Ivvavik National Park 
+ Jasper National Park 
+ Kejimkujik National Park 
+ Kluane National Park 
+ Kootenay National Park 
+ Kouchibouguac National Park 
+ La Mauricie National Park 
+ Mingan Archipelago National Park 
+ Mount Revelstoke National Park 
+ Nahanni National Park 
+ Pacific Rim National Park 
+ Point Pelee National Park 
+ Prince Albert National Park 
+ Prince Edward Island National Park 
+ Pukaskwa National Park 
+ Quttinirpaaq National Park 
+ Riding Mountain National Park 
+ Saguenay-St. Lawrence Marine Park 
+ Sirmilik National Park 
+ St. Lawrence Islands National Park 
+ Terra Nova National Park 
+ Tuktut Nogait National Park 
+ Vuntut National Park 
+ Wapusk National Park 
+ Waterton Lakes National Park 
+ Wood Buffalo National Park 
+ Yoho National Park 
+ location coordinates: 
+ Latitude ( e.g. 48°49'27.010" N ): 
+ Latitude Degrees 
+ ° 
+ Latitude Minutes 
+ ' 
+ Latitude Seconds 
+ " 
+ North 
+ Longitude ( e.g. 123°43'08.009" W ): 
+ Longitude Degrees 
+ ° 
+ Longitude Minutes 
+ ' 
+ Longitude Seconds 
+ " 
+ West 
+ location coordinates in Decimal Degrees: 
+ latitude ( e.g. 61.3701°): 
+ Latitude Decimal 
+ ° 
+ longitude ( e.g. -139.0317°): 
+ Longitude Decimal 
+ ° 
+ 1951-1980 
+ 1951-1980 Climate Normals & Averages
+ Climate Normals and Averages are used to summarize or describe the average climatic conditions of a particular location.
+ At the completion of each decade, Environment and Climate Change Canada updates its Climate Normals for as many locations and as many climatic characteristics as possible. The Climate Normals, Averages and Extremes offered here are based on Canadian climate stations between 1951 to 1980.
+ For solar radiation and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 1 Solar Radiation .
+ For temperature and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 2 Temperature .
+ For precipitation and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 3 Precipitation .
+ For degree days and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 4 Degree Days .
+ For wind and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 5 Wind .
+ For frost and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 6 Frost .
+ For bright sunshine and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 7 Bright Sunshine .
+ For atmospheric pressure, temperature, humidity and their calculation information, please see the Canadian Climate Normals 1951-1980 Volume 8 Atmospheric Pressure, Temperature, And Humidity .
+ For soil temperature, lake evaporation, days with blowing snow, hail, fog, smoke/haze, frost and their calculation information, please see the Canadian Climate Normals 1951-1980 Volume 9 Soil Temperature, Lake Evaporation, Days with Blowing Snow, Hail, Fog, Smoke/Haze, Frost .
+ 1941-1970 
+ 1941-1970 Climate Normals & Averages
+ Climate Normals and Averages are used to summarize or describe the average climatic conditions of a particular location.
+ At the completion of each decade, Environment and Climate Change Canada updates its Climate Normals for as many locations and as many climatic characteristics as possible. The Climate Normals, Averages and Extremes offered here are based on Canadian climate stations between 1941 to 1970.
+ For temperature records and its calculation information, please see the Canadian Normals Volume 1 1941-1970 . Please note that the temperatures are provided in degrees Fahrenheit.
+ For precipitation records and its calculation information, please see the Canadian Normals Volume 2 1941-1970 . Please note that the precipitation amounts are provided in inches.
+ 1931-1960 
+ 1931-1960 Climate Normals & Averages
+ Climate Normals and Averages are used to summarize or describe the average climatic conditions of a particular location.
+ At the completion of each decade, Environment and Climate Change Canada updates its Climate Normals for as many locations and as many climatic characteristics as possible. The Climate Normals, Averages and Extremes offered here are based on Canadian climate stations between 1931 to 1960.
+ For temperature records and its calculation information, please see the Canadian Climatic Normals 1931-1960 Volume 1 Temperature . Please note that the temperatures are provided in degrees Fahrenheit.
+ For precipitation records and its calculation information, please see the Canadian Climatic Normals 1931-1960 Volume 2 Precipitation . Please note that the precipitation amounts are provided in inches.
+ For bright sunshine, cloudiness, sea levels pressure, thunderstorm days and their calculation information, please see the Canadian Climatic Normals 1931-1960 Volume 3 Sunshine, Cloud, Pressure and Thunderstorms .
+ For humidity and its calculation information, please see the Canadian Climatic Normals 1931-1960 Volume 4 Humidity .
+ For wind and its calculation information, please see the Canadian Climate Normals 1931-1960 Volume 5 Wind .
+ Page details
+ Feedback about this web site 
+ Date modified:
+ 2026-08-10 
+ About this site
+ Environment and natural resources
+ Contact us 
+ Our environment 
+ Nature-based climate solutions 
+ Government of Canada
+ All contacts 
+ Departments and agencies 
+ About government 
+ Themes and topics 
+ Jobs 
+ Immigration and citizenship 
+ Travel and tourism 
+ Business 
+ Benefits 
+ Health 
+ Taxes 
+ Environment and natural resources 
+ National security and defence 
+ Culture, history and sport 
+ Policing, justice and emergencies 
+ Transport and infrastructure 
+ Canada and the world 
+ Money and finance 
+ Science and innovation 
+ Indigenous peoples 
+ Veterans and military 
+ Youth 
+ Government of Canada Corporate
+ Social media 
+ Mobile applications 
+ About Canada.ca 
+ Terms and conditions 
+ Privacy
+
+=== ENLACES ===
+https://climat.meteo.gc.ca/climate_normals/index_f.html | Français fr
+https://www.canada.ca/en.html | / Gouvernement du Canada
+https://www.canada.ca/en/services/jobs.html | Jobs and the workplace
+https://www.canada.ca/en/services/immigration-citizenship.html | Immigration and citizenship
+https://travel.gc.ca/ | Travel and tourism
+https://www.canada.ca/en/services/business.html | Business and industry
+https://www.canada.ca/en/services/benefits.html | Benefits
+https://www.canada.ca/en/services/health.html | Health
+https://www.canada.ca/en/services/taxes.html | Taxes
+https://www.canada.ca/en/services/environment.html | Environment and natural resources
+https://www.canada.ca/en/services/defence.html | National security and defence
+https://www.canada.ca/en/services/culture.html | Culture, history and sport
+https://www.canada.ca/en/services/policing.html | Policing, justice and emergencies
+https://www.canada.ca/en/services/transport.html | Transport and infrastructure
+https://international.gc.ca/world-monde/index.aspx?lang=eng | Canada and the world
+https://www.canada.ca/en/services/finance.html | Money and finances
+https://www.canada.ca/en/services/science.html | Science and innovation
+http://www.canada.ca/en/index.html | Home
+http://www.canada.ca/en/services/environment/index.html | Environment and natural resources
+http://www.canada.ca/en/services/environment/weather/index.html | Weather, Climate and Hazard
+https://climate.weather.gc.ca/index_e.html | Past weather and climate
+https://collaboration.cmc.ec.gc.ca/cmc/climate/Normals/Canadian_Climate_Normals_1991_2020_Calculation_Information.pdf | 1991-2020 Calculation Information
+https://climate.weather.gc.ca/climate_normals/station_inventory_e.html?yr=1991 | Composite Station Inventory
+https://collaboration.cmc.ec.gc.ca/cmc/climate/Normals/Canadian_Climate_Normals_1981_2010_Calculation_Information.pdf | 1981-2010 Calculation Information
+https://climate.weather.gc.ca/climate_normals/station_inventory_e.html?yr=1981 | Normals Station Inventory
+https://collaboration.cmc.ec.gc.ca/cmc/climate/Normals/Canadian_Climate_Normals_1971_2000_Calculation_Information.pdf | 1971-2000 Calculation Information
+https://climate.weather.gc.ca/climate_normals/station_inventory_e.html?yr=1971 | Normals Station Inventory
+https://collaboration.cmc.ec.gc.ca/cmc/climate/Normals/Canadian_Climate_Normals_1961_1990_Calculation_Information.pdf | 1961-1990 Calculation Information
+https://climate.weather.gc.ca/climate_normals/station_inventory_e.html?yr=1961 | Normals Station Inventory
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-1-1982.pdf | Canadian Climate Normals 1951-1980 Volume 1 Solar Radiation
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-2-1982.pdf | Canadian Climate Normals 1951-1980 Volume 2 Temperature
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-3-1982.pdf | Canadian Climate Normals 1951-1980 Volume 3 Precipitation
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-4-1982.pdf | Canadian Climate Normals 1951-1980 Volume 4 Degree Days
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-5-1982.pdf | Canadian Climate Normals 1951-1980 Volume 5 Wind
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-6-1982.pdf | Canadian Climate Normals 1951-1980 Volume 6 Frost
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-7-1982.pdf | Canadian Climate Normals 1951-1980 Volume 7 Bright Sunshine
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-8-1984.pdf | Canadian Climate Normals 1951-1980 Volume 8 Atmospheric Pressure, Temperature, And Humidit
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1951-80Normals/En56-60-9-1984.pdf | Canadian Climate Normals 1951-1980 Volume 9 Soil Temperature, Lake Evaporation, Days with 
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1941-70Normals/Canadian Normals Volume 1_1941-1970.pdf | Canadian Normals Volume 1 1941-1970
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1941-70Normals/Canadian Normals Volume 2_1941-1970.pdf | Canadian Normals Volume 2 1941-1970
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1931-60Normals/ClimaticNormals1931-1960Volume1Temperature.pdf | Canadian Climatic Normals 1931-1960 Volume 1 Temperature
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1931-60Normals/ClimaticNormals1931-1960Volume2Precipitation.pdf | Canadian Climatic Normals 1931-1960 Volume 2 Precipitation
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1931-60Normals/ClimaticNormals1931-1960Volume3SunshineCloudPressureThunderstorms.pdf | Canadian Climatic Normals 1931-1960 Volume 3 Sunshine, Cloud, Pressure and Thunderstorms
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1931-60Normals/ClimaticNormals1931-1960Volume4Humidity.pdf | Canadian Climatic Normals 1931-1960 Volume 4 Humidity
+https://collaboration.cmc.ec.gc.ca/cmc/climate/1931-60Normals/ClimaticNormals1931-1960Volume5Wind.pdf | Canadian Climate Normals 1931-1960 Volume 5 Wind
+https://weather.gc.ca/mainmenu/climate_contact_us_e.html | Feedback about this web site
+https://www.canada.ca/en/services/environment/our-environment.html | Our environment
+https://www.canada.ca/en/services/environment/our-environment/nature-based-climate-solutions.html | Nature-based climate solutions
+https://www.canada.ca/en/contact.html | All contacts
+https://www.canada.ca/en/government/dept.html | Departments and agencies
+https://www.canada.ca/en/government/system.html | About government
+https://www.canada.ca/en/services/indigenous-peoples.html | Indigenous peoples
+https://www.canada.ca/en/services/veterans-military.html | Veterans and military
+https://www.canada.ca/en/services/youth.html | Youth
+https://www.canada.ca/en/social.html | Social media
+https://www.canada.ca/en/mobile.html | Mobile applications
+https://www.canada.ca/en/government/about.html | About Canada.ca
+https://www.canada.ca/en/transparency/terms.html | Terms and conditions
+https://www.canada.ca/en/transparency/privacy.html | Privacy

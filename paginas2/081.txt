@@ -1,0 +1,532 @@
+NOMBRE: Légis: Règlement assurance maladie
+URL: https://www.legisquebec.gouv.qc.ca/fr/document/rc/A-29,%20r.%201
+ESTADO: 200
+FINAL: https://www.legisquebec.gouv.qc.ca/fr/document/rc/A-29,%20r.%201
+TITULO: Légis Québec
+FECHA: 
+
+Légis Québec 
+ Les Publications du Québec
+ Ministère de l'Emploi et de la Solidarité sociale
+ Accueil 
+ FAQ 
+ Nous joindre 
+ Recherche avancée 
+ Lois et règlements codifiés 
+ Lois codifiées 
+ Règlements codifiés 
+ Lois et règlements annuels 
+ Lois annuelles 
+ Règlements annuels 
+ Information complémentaire 
+ L’Éditeur officiel du Québec 
+ Quoi de neuf? 
+ Note d’information 
+ Politique du ministre de la Justice 
+ Lois : Modifications 
+ Lois : Dispositions non en vigueur 
+ Lois : Entrées en vigueur 
+ Lois annuelles : Versions PDF depuis 1996 
+ Règlements : Modifications 
+ Règlements annuels : Versions PDF depuis 1996 
+ Décisions des tribunaux 
+ >"> 
+ A-29, r. 1 - Règlement sur l’admissibilité et l’inscription des personnes auprès de la Régie de l’assurance maladie du Québec
+ English 
+ Table des matières 
+ Loi habilitante 1 
+ Alphanumérique
+ Titre
+ A-29
+ Loi sur l’assurance maladie 
+ Occurrences 0 
+ Texte complet 
+ À jour au 1 er juillet 2026
+ Ce document a valeur officielle.
+ chapitre A-29, r. 1 
+ Règlement sur l’admissibilité et l’inscription des personnes auprès de la Régie de l’assurance maladie du Québec
+ ASSURANCE MALADIE — ADMISSIBILITÉ ET INSCRIPTION Loi sur l’assurance maladie
+ (chapitre A-29, a. 9 et 69) . 
+ A-29 
+ 01 1 er 09 septembre 2012 
+ SECTION I DÉFINITIONS
+ 1 . Dans ce règlement, les expressions et mots suivants signifient ou désignent: « Canadien rapatrié » : un citoyen canadien indigent qui est ramené de l’étranger au Canada aux frais de l’État; 
+ « conjoint d’une personne » : 1 ° l’homme ou la femme qui est marié avec cette personne et cohabite avec elle; 
+ 2 ° l’homme ou la femme qui vit maritalement avec cette personne, qu’elle soit de sexe différent ou de même sexe, si ces personnes vivent ainsi depuis au moins 1 an ou si elles se trouvent dans l’une des situations suivantes: a ) un enfant est né de leur union; 
+ b ) elles ont conjointement adopté un enfant; 
+ c ) l’une d’elles a adopté un enfant de l’autre; 
+ « établissement » : un établissement visé par la Loi sur la gouvernance du système de santé et de services sociaux ( chapitre G-1.021 ) ou la Loi sur les services de santé et les services sociaux pour les Inuit et les Naskapis ( chapitre S-4.2 ) et la Loi sur les services de santé et les services sociaux pour les autochtones cris ( chapitre S-5 ); 
+ « établissement d’enseignement » : une personne morale ou un organisme dispensant un enseignement de l’ordre primaire, secondaire, collégial ou universitaire; 
+ « Loi » : la Loi sur l’assurance maladie ( chapitre A-29 ); 
+ « personne assurée » : la personne assurée visée dans le paragraphe g .1 du premier alinéa de l’article 1 de la Loi; 
+ « personne qui réside au Québec » ou « personne qui séjourne au Québec » : toute personne déclarée être telle en vertu des articles 5 à 8 de la Loi et de la section II du règlement; 
+ « province » : une province canadienne, le Territoire du Yukon, les Territoires du Nord-Ouest et le Nunavut. 
+ D. 1470-92, a. 1 ; D. 67-94, a. 1 ; D. 833-98, a. 1 ; D. 552-2001, a. 1 et 25 ; 106-2026 D. 106-2026 , a.  1 1 . 
+ 1.1 . Pour l’application du présent règlement, on entend par « personne à charge » : toute personne âgée de moins de 18 ans domiciliée chez une personne qui réside ou qui séjourne au Québec au sens des articles 5 à 8 de la Loi ou de la section II du présent règlement et qui exerce l’autorité parentale à son égard. 
+ Pour l’application des articles 3 et 7 du présent règlement, l’expression « personne à charge » vise également: 1 ° toute personne, sans conjoint, âgée de 25 ans ou moins, qui fréquente à temps complet, à titre d’étudiant dûment inscrit, un établissement d’enseignement, domiciliée chez une personne qui réside ou qui séjourne au Québec au sens des articles 5 à 8 de la Loi ou de la section II du présent règlement et qui exercerait l’autorité parentale à son égard si elle était mineure; 
+ 2 ° toute personne majeure, sans conjoint, atteinte d’une déficience fonctionnelle énumérée dans un règlement du gouvernement édicté en vertu du paragraphe 6 du premier alinéa de l’article 78 de la Loi sur l’assurance médicaments ( chapitre A-29.01 ) survenue avant qu’elle n’ait atteint l’âge de 18 ans, qui ne reçoit aucune prestation en vertu d’un programme d’assistance sociale prévu au titre II de la Loi sur l’aide aux personnes et aux familles ( chapitre A-13.1.1 ), domiciliée chez une personne qui réside ou qui séjourne au Québec au sens des articles 5 à 8 de la Loi ou de la section II du présent règlement et qui exercerait l’autorité parentale à son égard si elle était mineure. 
+ Toute personne, sans conjoint, âgée de 25 ans ou moins et domiciliée chez une personne qui réside ou qui séjourne au Québec au sens des articles 5 à 8 de la Loi ou de la section II du présent règlement et qui exercerait l’autorité parentale à son égard si elle était mineure, est réputée fréquenter à temps complet un établissement d’enseignement si elle est atteinte de l’une des déficiences visées aux paragraphes 1 à 4 de l’article 11.1 du Règlement sur le régime général d’assurance médicaments ( chapitre A-29.01, r. 4 ) et, pour ce motif, fréquente à temps partiel, à titre d’étudiant dûment inscrit, un tel établissement. 
+ D. 833-98, a. 2 ; D. 552-2001, a. 2 ; 106-2026 D. 106-2026 , a.  2 1 . 
+ SECTION I.1 DOCUMENTS ET RENSEIGNEMENTS
+ 106-2026 D. 106-2026 , a.  3 1 . 
+ 1.1.1 . Pour l’application des sections III et IV du présent règlement, lorsqu’un document est exigé, une personne peut transmettre l’original, une copie certifiée conforme délivrée par l’autorité compétente ou toute autre reproduction. 
+ Lorsque la personne transmet une reproduction d’un document autre qu’une copie certifiée conforme, elle doit en conserver l’original ou la copie certifié conforme pour une période d’au moins 5 ans suivant sa transmission à la Régie et le lui fournir sur demande. 
+ 106-2026 D. 106-2026 , a.  3 1 . 
+ 1.1.2 . La Régie ne rend pas les documents qui lui sont transmis en application du présent règlement. 
+ Toutefois, lorsqu’il s’agit d’un document original ou certifié conforme, la Régie rend le document sur demande, après l’avoir reproduit. 
+ 106-2026 D. 106-2026 , a.  3 1 . 
+ 1.1.3 . La Régie peut vérifier, auprès de leur émetteur ou de leur signataire, l’exactitude des renseignements ou des documents qui sont transmis par une personne en application du présent règlement. 
+ 106-2026 D. 106-2026 , a.  3 1 . 
+ 1.1.4 . La Régie peut, lorsqu’elle détient des renseignements contradictoires ou inconciliables avec les renseignements et documents transmis par une personne ou que ceux-ci sont incomplets, exiger de celle-ci qu’elle transmette tout document nécessaire permettant de démontrer l’exactitude des renseignements ou des documents exigés en vertu du présent règlement. 
+ 106-2026 D. 106-2026 , a.  3 1 . 
+ SECTION II ADMISSIBILITÉ
+ 1.2 . (Abrogé). 
+ D. 552-2001, a. 3 ; 106-2026 D. 106-2026 , a.  4 1 . 
+ 2 . Est visée au paragraphe 5 de l’article 5 de la Loi: 1 ° la personne qui détient un permis de séjour temporaire délivré par les autorités canadiennes de l’immigration en vertu de la Loi sur l’immigration et la protection des réfugiés (L.C. 2001, c. 27) en vue de l’octroi éventuel du droit d’établissement et identifié par un numéro de code 86, 87, 88, 89, 90, 91 ou 92 ainsi qu’un certificat de sélection du Québec ou la personne qui détient un permis de séjour temporaire délivré par les autorités canadiennes de l’immigration en vertu de la Loi sur l’immigration et la protection des réfugiés en vue de l’octroi éventuel du droit d’établissement et identifié par un numéro de code 93, 94 ou 95; 
+ 2 ° la personne qui, alors qu’elle se trouve sur le territoire canadien, est autorisée à soumettre une demande de droit d’établissement en vertu de la Loi sur l’immigration et la protection des réfugiés et qui détient une autorisation de séjour délivrée par les autorités canadiennes de l’immigration ainsi qu’un certificat de sélection du Québec; 
+ 3 ° l’enfant mineur qui se trouve au Québec alors qu’une personne qui réside au Québec a l’intention de l’adopter et qu’elle est apte à l’adopter en vertu du Code civil; 
+ 4 ° l’enfant né hors du Québec si le parent, mère ou père, avec lequel il demeure en permanence, est une personne qui réside au Québec; 
+ 5 ° le ressortissant étranger mineur sans statut légal auprès des autorités canadiennes de l’immigration qui démontre son intention de demeurer au Québec pour une période de plus de 6 mois dans l’année suivant la date de son inscription. 
+ D. 1470-92, a. 2 ; D. 67-94, a. 2 ; D. 552-2001, a. 3 et 23 ; 1164-2020 D. 1164-2020 , a.  1 1 ; L.Q. 2021, c. 23, a. 10 . 
+ 2.1 . Aux fins de l’application du deuxième alinéa de l’article 5 de la Loi, l’enfant mineur qui n’est pas déjà domicilié au Québec en application de l’article 80 du Code civil y est considéré domicilié s’il démontre son intention de demeurer au Québec pour une période de plus de 6 mois dans l’année suivant la date de son inscription. 
+ L.Q. 2021, c. 23, a. 11 . 
+ 3 . Est une personne qui séjourne au Québec au sens de l’article 5.0.1 de la Loi: 1 ° un ressortissant étranger dont le but principal de la présence au Québec est d’y travailler, qui occupe une charge ou un emploi pour une période de plus de 6 mois et qui détient une autorisation d’emploi délivrée par les autorités canadiennes de l’immigration valide pour une période de plus de 6 mois et indiquant le nom de l’employeur et le lieu de l’emploi, à l’exception d’un boursier d’Affaires mondiales Canada à moins qu’il ne reçoive qu’un complément de bourse. N’est toutefois pas visée la personne qui peut prendre ou conserver un emploi sans une autorisation d’emploi en application des articles 8 et 186 du Règlement sur l’immigration et la protection des réfugiés (DORS/2002-227); 
+ 2 ° un ressortissant étranger qui détient une attestation de séjour au Québec à titre de boursier d’études ou de stages dans le cadre d’un programme officiel du ministère de l’Éducation, du Loisir et du Sport ou du ministère de l’Enseignement supérieur, de la Recherche, de la Science et de la Technologie; 
+ 3 ° un ressortissant étranger qui détient une autorisation d’emploi délivrée par les autorités canadiennes de l’immigration à titre de travailleur saisonnier dans le cadre du Programme fédéral des travailleurs agricoles saisonniers des Antilles ou du Programme fédéral des travailleurs agricoles saisonniers du Mexique ou à titre de travailleur agricole en provenance du Honduras, du Salvador ou du Guatemala dans le cadre du Programme des travailleurs étrangers temporaires-Volet agricole; 
+ 4 ° un ressortissant étranger visé au paragraphe l de l’article 186 du Règlement sur l’immigration et la protection des réfugiés qui détient une autorisation de séjour délivrée par les autorités canadiennes de l’immigration et dont le but principal de la présence au Québec est d’y occuper une charge liturgique et qui occupe une telle charge pour une période de plus de 6 mois; 
+ 4.1 ° un ressortissant étranger qui détient une autorisation d’emploi délivrée par les autorités canadiennes de l’immigration à titre de travailleur vulnérable en vertu de l’article 207.1 du Règlement sur l’immigration et la protection des réfugiés; 
+ 5 ° un citoyen canadien établi dans un autre pays, dont le but principal de la présence au Québec est d’y travailler et qui occupe une charge ou un emploi pour une période de plus de 6 mois; 
+ 6 ° le conjoint ou toute personne à charge âgée de 18 ans ou plus accompagnant dans son séjour une personne visée à l’un ou l’autre des paragraphes 1 à 5 qui détient une autorisation de séjour délivrée par les autorités canadiennes de l’immigration pour une période de plus de 6 mois dans le cas d’un ressortissant étranger ou, dans le cas d’un citoyen canadien, qui démontre son intention de séjourner au Québec pour une période de plus de 6 mois; 
+ 7 ° un ressortissant étranger mineur qui détient une autorisation de séjour délivrée par les autorités canadiennes de l’immigration pour une période de plus de 6 mois; 
+ 8 ° un enfant qui naît au Québec dont le parent, mère ou père, avec lequel il demeure en permanence détient une autorisation de séjour délivrée par les autorités canadiennes de l’immigration pour une période de plus de 6 mois, même si cette autorisation est valide pour moins de 6 mois à la date de naissance de cet enfant. 
+ D. 1470-92, a. 3 ; D. 67-94, a. 3 ; D. 505-96, a. 1 ; D. 552-2001, a. 3 et 24 ; L.Q. 2013, c. 28, a. 205 ; 1164-2020 D. 1164-2020 , a.  2 1 1 ; L.Q. 2021, c. 23, a. 12 ; 106-2026 D. 106-2026 , a.  5 1 . 
+ 4 . À moins qu’il en soit autrement prévu au présent règlement, une personne devient une personne qui réside ou qui séjourne au Québec: a ) le premier jour du 3 e mois suivant la date de son inscription, dans le cas d’une personne majeure; 
+ b ) à la date de son inscription, dans le cas d’un enfant mineur. 
+ D. 1470-92, a. 4 ; D. 552-2001, a. 3 et 27 ; L.Q. 2021, c. 23, a. 13 ; 106-2026 D. 106-2026 , a.  6 1 . 
+ 4.1 . Une personne qui s’établit au Québec après avoir quitté une province où existe un régime équivalent devient une personne qui réside au Québec lorsqu’elle cesse d’avoir droit aux bénéfices de ce régime. 
+ Malgré le premier alinéa, un membre des Forces armées canadiennes, son conjoint ou une personne à sa charge qui s’établit au Québec après avoir quitté une province où existe un régime équivalent devient une personne qui réside au Québec à la date de son établissement au Québec. 
+ D. 552-2001, a. 3 ; 1164-2020 D. 1164-2020 , a.  3 1 . 
+ 4.2 . Devient une personne qui réside ou qui séjourne au Québec, selon le cas, à la date de son inscription: 1 ° la personne à qui le statut de réfugié au sens de la Convention de Genève a été accordé au Canada, par l’autorité compétente; 
+ 2 ° le Canadien rapatrié; 
+ 3 ° le ressortissant étranger qui détient une attestation de séjour au Québec en vigueur à titre de boursier d’études ou de stages, dans le cadre d’un programme officiel du ministère de l’Éducation, du Loisir et du Sport ou du ministère de l’Enseignement supérieur, de la Recherche, de la Science et de la Technologie; 
+ 4 ° le ressortissant étranger qui détient une autorisation d’emploi en vigueur délivrée par les autorités canadiennes de l’immigration à titre de travailleur saisonnier dans le cadre du Programme fédéral des travailleurs agricoles saisonniers des Antilles ou du Programme fédéral des travailleurs agricoles saisonniers du Mexique ou à titre de travailleur agricole en provenance du Honduras, du Salvador ou du Guatemala dans le cadre du Programme des travailleurs étrangers temporaires-Volet agricole; 
+ 5 ° la personne protégée au Canada au sens de l’article 95 de la Loi sur l’immigration et la protection des réfugiés (L.C. 2001, c. 27) qui détient un certificat de sélection du Québec; 
+ 5.1 ° le ressortissant étranger qui détient un certificat de sélection du Québec démontrant qu’il est visé par le paragraphe 1 ou 2 de l’article 64 ou par le sous-paragraphe d du paragraphe 1 de l’article 65 du Règlement sur l’immigration au Québec ( chapitre I-0.2.1, r. 3 ); 
+ 6 ° (paragraphe abrogé). 
+ D. 552-2001, a. 3 et 27 ; L.Q. 2013, c. 28, a. 205 ; 1164-2020 D. 1164-2020 , a.  4 1 1 ; L.Q. 2021, c. 23, a. 14 ; 106-2026 D. 106-2026 , a.  6 1 . 
+ 4.3 . Devient une personne qui réside au Québec, à la date de sa libération: 1 ° (paragraphe abrogé); 
+ 2 ° la personne incarcérée dans un pénitencier fédéral, visée à l’article 5 de la Loi, qui s’établit au Québec et qui n’avait pas acquis la qualité de personne qui réside au Québec avant cette date. 
+ D. 552-2001, a. 3 ; 1164-2020 D. 1164-2020 , a.  5 1 . 
+ 4.4 . Devient une personne qui réside au Québec, à la date de son incarcération dans un établissement de détention provincial, la personne visée à l’article 5 de la Loi et qui n’a pas acquis la qualité de personne qui réside au Québec avant cette date. 
+ D. 552-2001, a. 3 . 
+ 4.5 . Devient une personne qui réside au Québec à compter de la date de sa naissance: 1 ° l’enfant qui naît au Québec; 
+ 2 ° l’enfant qui naît hors du Québec, si le parent, mère ou père, avec lequel il demeure en permanence est, au moment de la naissance, une personne qui réside au Québec; 
+ 3 ° (paragraphe abrogé); 
+ 4 ° (paragraphe abrogé). 
+ D. 552-2001, a. 3 ; L.Q. 2021, c. 23, a. 15 . 
+ 4.6 . Devient une personne qui séjourne au Québec à compter de la date de sa naissance: 1 ° le ressortissant étranger mineur visé au paragraphe 7 de l’article 3, si le parent, mère ou père, avec lequel il demeure en permanence depuis sa naissance est une personne qui séjourne au Québec à ce moment, et ce, pour la durée de l’autorisation de séjour qui lui est délivrée par les autorités canadiennes de l’immigration à la suite de sa naissance; 
+ 2 ° l’enfant visé au paragraphe 8 de l’article 3, et ce, pour la durée restante de l’autorisation de séjour délivrée par les autorités canadiennes de l’immigration au parent, mère ou père, avec qui il demeure en permanence depuis sa naissance. 
+ D. 552-2001, a. 3 ; L.Q. 2021, c. 23, a. 16 . 
+ 4.7 . L’enfant né hors du Québec d’un parent, mère ou père, avec lequel il demeure en permanence et dont ce parent, au moment de la naissance, avait cessé d’être une personne qui réside au Québec en application du premier alinéa de l’article 6, devient une personne qui réside au Québec à la date de son arrivée au Québec ou à la date à laquelle ce parent recouvre la qualité de personne qui réside au Québec, selon la première éventualité. 
+ D. 552-2001, a. 3 . 
+ 4.8 . Devient une personne qui réside au Québec à la date de son arrivée au Québec, l’enfant mineur qui se trouve au Québec alors qu’une personne qui réside au Québec a l’intention de l’adopter et qu’elle est apte à l’adopter en vertu du Code civil; 
+ Devient une personne qui réside au Québec à la date de son adoption, l’enfant mineur qui est domicilié dans une autre province et qui est adopté par une personne qui réside au Québec. 
+ D. 552-2001, a. 3 . 
+ 4.9 . Une personne visée à l’article 4 qui, à la date de son inscription, reçoit des prestations en vertu d’un programme d’assistance sociale prévu au titre II de la Loi sur l’aide aux personnes et aux familles ( chapitre A-13.1.1 ), devient une personne qui réside au Québec, à compter de cette date. 
+ Une personne visée à l’article 4 qui commence à recevoir des prestations en vertu d’un programme d’assistance sociale après la date de son inscription, devient une personne qui réside au Québec à compter de la date du début de ces prestations ou à compter du 1 er jour du troisième mois suivant la date de son inscription, selon la première éventualité. 
+ D. 552-2001, a. 3 et 27 ; 106-2026 D. 106-2026 , a.  7 1 1 . 
+ 4.10 . Aux fins de l’application des articles 4, 4.2 et 4.9, lorsqu’une personne devient dans l’impossibilité physique d’agir ou de donner mandat d’agir en raison de son état de santé après la date de son établissement ou de son arrivée au Québec, selon le cas, mais avant la date d’inscription à la Régie, la date de l’événement à l’origine de cette impossibilité d’agir est présumée être la date d’inscription. 
+ Toutefois, malgré le premier alinéa, la personne qui y est visée doit s’inscrire à la Régie dès que possible et produire un certificat médical attestant de l’impossibilité d’agir visée au premier alinéa. 
+ D. 552-2001, a. 3 ; 106-2026 D. 106-2026 , a.  8 1 . 
+ 5 . Une personne qui s’établit hors du Canada cesse d’être une personne qui réside au Québec à compter du jour de son départ, si elle quitte le Québec dans ce but ou à compter du jour de son établissement hors du Canada, si celui-ci a lieu à l’occasion d’un séjour hors du Québec. 
+ Une personne qui s’établit dans une autre province canadienne cesse d’être une personne qui réside au Québec à compter du premier jour du troisième mois qui suit le mois d’arrivée dans cette autre province, si elle quitte le Québec dans ce but ou à compter du premier jour du troisième mois qui suit le mois de son établissement dans cette autre province, si celui-ci a lieu à l’occasion d’un séjour hors du Québec. 
+ D. 1470-92, a. 5 . 
+ 6 . Une personne qui réside au Québec et qui séjourne hors du Québec 183 jours ou plus dans une année civile, en excluant les séjours d’une durée de 21 jours consécutifs ou moins, cesse d’être une personne qui réside au Québec et ce, pour toute année civile au cours de laquelle elle a été ainsi absente. 
+ Malgré le premier alinéa, la personne qui séjourne hors du Québec 183 jours ou plus pendant les 12 premiers mois suivant la date à compter de laquelle elle devient une personne qui réside au Québec, en excluant les séjours d’une durée de 21 jours consécutifs ou moins, est réputée ne pas s’être établie au Québec. 
+ Le calcul de toute période entraînant la perte de la qualité de personne qui réside au Québec est suspendu: 1 ° pour toute la durée pendant laquelle il lui est impossible de retourner au Québec en raison de son état de santé si elle est hospitalisée pendant toute cette période et qu’elle fait parvenir à la Régie un certificat médical démontrant l’impossibilité de son retour au Québec et indiquant la date du début de cette incapacité et sa durée prévue. Il en est de même pour la personne qui lui prête assistance si celle-ci est une personne qui réside au Québec et qu’elle en avise la Régie. Toutefois, le présent paragraphe ne s’applique que dans le cas où cette personne perdrait la qualité de personne qui réside au Québec au cours de cette hospitalisation; 
+ 2 ° pour toute la durée d’un hébergement dans un établissement d’une autre province qui a conclu avec le gouvernement du Québec une entente concernant la mise en disponibilité de lits pour des résidents du Québec nécessitant des soins hospitaliers de longue durée. 
+ D. 1470-92, a. 6 ; D. 67-94, a. 4 ; D. 552-2001, a. 4 . 
+ 7 . Sous réserve des articles 7.0.1 et 7.1, une personne qui réside au Québec et qui séjourne hors du Québec 183 jours ou plus par année, pour l’une ou l’autre des raisons suivantes, conserve sa qualité de personne qui réside au Québec, pourvu qu’elle avise la Régie de son absence: 1 ° elle est inscrite comme étudiant dans un établissement d’enseignement au Québec ou hors du Québec et poursuit un programme d’étude hors du Québec; 
+ 2 ° elle est stagiaire, à temps complet et sans rémunération, dans un établissement universitaire, une institution affiliée à une université, un institut de recherche ou une organisation gouvernementale ou internationale ou dans une entreprise ou un organisme affilié à un tel institut ou une telle organisation; 
+ 3 ° elle est fonctionnaire à l’emploi du gouvernement du Québec en service hors du Québec; 
+ 4 ° elle séjourne dans une autre province pour y occuper un emploi temporaire ou y exécuter un contrat; 
+ 5 ° elle occupe un emploi ou exécute un contrat hors du Québec pour le compte d’une société ou d’une personne morale ayant son siège ou un établissement d’entreprise au Québec dont elle relève directement ou elle est fonctionnaire à l’emploi du Gouvernement du Canada en service hors du Québec, alors que sa famille demeure au Québec ou qu’elle y conserve une habitation; 
+ 6 ° elle travaille à l’étranger à titre d’employée d’un organisme sans but lucratif ayant son siège au Canada, dans le cadre d’un programme d’aide ou de coopération internationale reconnu par le ministre de la Santé et des Services sociaux; 
+ 7 ° elle séjourne hors du Québec pendant 12 mois ou moins au cours d’une année civile, à condition que cette absence n’ait lieu qu’une seule fois à tous les 7 ans; 
+ 8 ° elle exécute un contrat hors du Québec à titre de travailleur autonome alors que son établissement d’entreprise est situé au Québec; 
+ 9 ° elle séjourne à l’étranger dans le cadre d’une entente de réciprocité conclue par le ministre de la Santé et des Services sociaux en vertu de l’article 10 de la Loi sur le ministère de la Santé et des Services sociaux ( chapitre M-19.2 ). 
+ Sauf dans les cas prévus au paragraphe 7, le conjoint et toute personne à charge accompagnant cette personne dans son séjour conservent également leur qualité de personne qui réside au Québec, pourvu qu’ils avisent la Régie de leur absence. 
+ Toutefois, lorsqu’une personne séjourne 183 jours ou plus par année hors du Québec pour la raison visée au paragraphe 1 du premier alinéa, elle peut conserver sa qualité de personne qui réside au Québec pendant au plus 4 années civiles consécutives, et pendant au plus 2 années civiles consécutives lorsqu’elle séjourne ainsi pour l’une ou l’autre des raisons visées aux paragraphes 2 et 4 du premier alinéa. 
+ D. 1470-92, a. 7 ; D. 67-94, a. 5 ; D. 1520-96, a. 1 ; D. 552-2001, a. 5, 28 et 29 . 
+ 7.0.1 . Une personne qui a cessé d’être une personne qui réside au Québec en vertu du premier alinéa de l’article 6, ne peut bénéficier des mesures prévues à l’article 7 qu’après une présence au Québec d’au moins 183 jours au cours d’une année civile. 
+ D. 552-2001, a. 6 et 30 . 
+ 7.1 . Une personne visée à l’article 5 de la Loi qui s’établit pour la première fois ou à nouveau au Québec ne peut bénéficier des mesures prévues à l’article 7 qu’après une période de présence d’au moins 183 jours au Québec au cours de la période de 12 mois suivant la date à compter de laquelle elle devient une personne qui réside au Québec. 
+ Toutefois, le premier alinéa ne s’applique pas: 1 ° à une personne qui quitte le Québec pour effectuer un séjour à l’étranger visé au paragraphe 9 de l’article 7; 
+ 2 ° à une personne visée à l’article 4.1; 
+ 3 ° à un enfant né ou adopté au Québec ou né hors du Québec dont le parent, père ou mère, avec lequel il demeure en permanence est une personne qui réside au Québec au moment de sa naissance ou de son adoption; 
+ 4 ° à un enfant né hors du Québec d’un parent qui a cessé d’être une personne qui réside au Québec en application du premier alinéa de l’article 6. 
+ D. 67-94, a. 6 ; D. 552-2001, a. 7 . 
+ 7.2 . Pour maintenir son statut de personne qui séjourne au Québec au sens de l’article 5.0.1 de la Loi, une telle personne doit être présente au Québec pour toute la durée de son séjour en excluant les séjours hors du Québec d’une durée de 21 jours consécutifs ou moins, à défaut de quoi elle cesse d’être une personne qui séjourne au Québec pour toute la durée de ce séjour hors Québec. 
+ D. 552-2001, a. 7 . 
+ 7.3 . (Abrogé). 
+ D. 944-2013, a. 1 ; 590-2018 D. 590-2018 , a.  1 1 . 
+ SECTION III INSCRIPTION ET RENOUVELLEMENT D’INSCRIPTION
+ § 1 . — Dispositions générales 
+ 8 . Toute personne qui réside au Québec ou qui séjourne au Québec doit inscrire ou renouveler l’inscription auprès de la Régie de toute personne à sa charge. Cependant, une personne à charge de 18 ans ou plus peut s’inscrire par elle-même auprès de la Régie. 
+ Toutefois, dans le cas d’une naissance survenue au Québec, la personne qui déclare au directeur de l’état civil la naissance d’un enfant est réputée avoir fait une demande d’inscription du nouveau-né auprès de la Régie. 
+ D. 1470-92, a. 8 ; D. 505-96, a. 2 ; D. 833-98, a. 3 ; D. 552-2001, a. 8 . 
+ 9 . Toute personne peut inscrire ou renouveler l’inscription auprès de la Régie d’une personne qui réside au Québec ou qui séjourne au Québec et qui est confiée à ses soins ou à sa garde lorsque cette personne refuse, néglige ou omet de s’inscrire ou de renouveler son inscription. 
+ D. 1470-92, a. 9 ; D. 552-2001, a. 8 . 
+ 10 . Toute personne peut également inscrire ou renouveler l’inscription auprès de la Régie d’une personne qui réside au Québec ou qui séjourne au Québec et qui est confiée à ses soins ou à sa garde lorsque, par suite d’incapacité mentale ou physique, cette personne ne peut le faire par elle-même. 
+ D. 1470-92, a. 10 ; D. 552-2001, a. 8 . 
+ 11 . Une personne qui soumet à la Régie une demande d’inscription ou une demande de renouvellement d’inscription au nom d’une autre personne doit déclarer sa qualité, ses nom, adresse résidentielle et numéro de téléphone. 
+ D. 1470-92, a. 11 ; D. 505-96, a. 3 . 
+ 12 . Une personne doit être présente au Québec lorsqu’elle contacte la Régie pour soumettre sa demande d’inscription. De même, une personne visée par une demande d’inscription soumise à la Régie par une autre personne doit être présente au Québec au moment où cette autre personne contacte la Régie à cette fin. 
+ Pour être dûment complétée, la demande d’inscription doit être signée et tous les renseignements et les documents requis par la présente section doivent avoir été transmis à la Régie. 
+ La personne est inscrite à compter de la date la plus tardive entre les suivantes: 1 ° la date où la Régie a été contactée pour soumettre la demande d’inscription; 
+ 2 ° la date où sont satisfaites les conditions d’admissibilité prévues à la Loi et au présent règlement; 
+ 3 ° la date où la demande d’inscription est dûment complétée si elle survient plus d’un an après la date où la Régie a été contactée pour soumettre la demande d’inscription. 
+ Malgré le deuxième alinéa de l’article 8, la personne qui a un nouveau-né à sa charge doit, sur demande de la Régie, fournir les renseignements et les documents exigés par le présent règlement pour l’inscription du nouveau-né. 
+ D. 1470-92, a. 12 ; D. 505-96, a. 4 ; 106-2026 D. 106-2026 , a.  9 1 . 
+ 12.1 . Pour qu’une demande de renouvellement d’inscription soit dûment complétée, la personne doit fournir tous les renseignements et les documents requis par la présente section et signer la demande. 
+ 106-2026 D. 106-2026 , a.  9 1 . 
+ 13 . (Abrogé). 
+ D. 1470-92, a. 13 ; D. 67-94, a. 7 ; D. 68-96, a. 1 ; 106-2026 D. 106-2026 , a.  10 1 . 
+ 13.1 . (Abrogé). 
+ D. 505-96, a. 5 ; D. 944-2013, a. 2 ; 590-2018 D. 590-2018 , a.  2 1 1 590-2018 D. 590-2018 , a.  2 1 2 ; 106-2026 D. 106-2026 , a.  10 1 . 
+ 13.2 . (Abrogé). 
+ D. 505-96, a. 5 ; 106-2026 D. 106-2026 , a.  10 1 . 
+ 13.3 . (Abrogé). 
+ D. 944-2013, a. 3 ; 106-2026 D. 106-2026 , a.  10 1 . 
+ § 2 . — Inscription 
+ 14 . Pour s’inscrire auprès de la Régie, une personne doit faire une demande d’inscription par écrit, au moyen du formulaire fourni à cette fin par la Régie, et fournir les renseignements suivants: 1 ° son nom de famille à la naissance, son prénom usuel, et ses date de naissance, sexe et état civil; 
+ 1.1 ° une indication précisant si elle est ou non de citoyenneté canadienne; 
+ 2 ° dans le cas d’une femme mariée au Québec avant le 2 avril 1981 ou mariée hors du Québec, le nom de famille de son époux, si elle exerce légalement ses droits civils sous ce nom et qu’elle désire que ce nom soit mentionné sur sa carte d’assurance maladie; 
+ 3 ° son adresse domiciliaire, ou, s’il s’agit d’une personne qui séjourne au Québec, son adresse résidentielle; s’il s’agit d’une personne qui est sans abri, l’adresse d’un centre local d’emploi du ministère de l’Emploi et de la Solidarité sociale ou celle d’un établissement; 
+ 4 ° le cas échéant, son numéro de téléphone; 
+ 5 ° le cas échéant, son numéro d’assurance sociale; 
+ 6 ° le cas échéant, la date d’arrivée au Québec, la date d’établissement du domicile au Québec, le dernier pays ou la dernière province de résidence au Canada ainsi que le numéro d’assurance-santé de la dernière province de résidence, s’il est disponible; 
+ 7 ° dans le cas où elle s’établit à nouveau au Québec, les dates de départ et d’arrivée au Québec, la date d’établissement du domicile au Québec, le dernier pays ou la dernière province de résidence, la date d’arrivée à cette destination, le numéro d’assurance maladie attribué par la Régie et, le cas échéant, le numéro d’assurance-santé de la dernière province de résidence, s’il est disponible; 
+ 8 ° dans le cas où elle effectue un retour au Québec après avoir séjourné à l’extérieur du Québec, les dates de départ et d’arrivée au Québec, le motif et le lieu du séjour et la date d’arrivée à cette destination; 
+ 9 ° dans le cas où elle effectue un séjour au Québec, la raison et la durée prévue de ce séjour; 
+ 10 ° dans le cas de l’inscription d’une personne à charge à la suite de sa naissance ou de son adoption, le nom, dont le prénom usuel et l’adresse domiciliaire ou s’il s’agit d’une personne qui séjourne au Québec, l’adresse résidentielle, le numéro de téléphone, la date de naissance, le sexe et l’état civil de l’un ou l’autre de ses parents ou des deux ainsi que leurs numéro d’assurance maladie et numéro d’assurance sociale si disponibles; 
+ 11 ° une déclaration signée et datée du demandeur ou de son représentant attestant que tous les renseignements fournis sont exacts. 
+ D. 1470-92, a. 14 ; D. 505-96, a. 6 ; D. 552-2001, a. 9 ; D. 944-2013, a. 4 . 
+ 15 . Une personne qui fait une demande d’inscription doit, de plus, fournir les documents suivants: 1 ° sous réserve des articles 8 à 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement ( chapitre A-29, r. 7.2 ), une photographie qui répond aux normes de l’Organisation de l’aviation civile internationale (OACI) concernant les photographies et énumérées dans la sous-section intitulée «Éléments affichés d’identification du titulaire» de la section IV du volume 1 de la partie 3 du doc 9303 de l’OACI intitulé «Documents de voyage lisibles à la machine» et dans l’Appendice 5 de cette même section, sauf en ce qui a trait aux règles suivantes qui prévalent sur les normes de l’OACI: a ) la photographie doit être en couleurs et mesurer 50 mm en largeur × 70 mm en hauteur (2 po en largeur × 2 3/4 po en hauteur); 
+ b ) une personne peut se faire photographier avec une paire de lunettes teintées si elle déclare être non voyante, souffrir de photophobie ou d’intolérance à la lumière et qu’elle présente un certificat médical à cet effet; 
+ 1.1 ° dans le cas d’un ressortissant étranger mineur visé au paragraphe 5 de l’article 2, les documents suivants: a ) une attestation de fréquentation scolaire, lorsqu’il fréquente une école, ou, si ce n’est pas le cas, une déclaration assermentée du parent, mère ou père, avec lequel il demeure en permanence ou de la personne qui en a le soin ou la garde démontrant son intention et celle du ressortissant étranger mineur de demeurer au Québec pour une période de plus de 6 mois dans l’année suivant la date de l’inscription du ressortissant étranger mineur; 
+ b ) son certificat de naissance ou, si ce certificat n’est pas en français ou en anglais ou en son absence, selon l’ordre de priorité suivant: i . un passeport en français ou en anglais; 
+ ii . une autorisation de séjour expirée délivrée par les autorités canadiennes de l’immigration; 
+ iii . une déclaration assermentée du parent, mère ou père, avec lequel il demeure en permanence ou de la personne qui en a le soin ou la garde confirmant son nom officiel ainsi que la date et le lieu de sa naissance; 
+ 1.2 ° dans le cas d’un enfant mineur visé à l’article 2.1, en plus de l’un des documents visés à l’un des paragraphes du présent alinéa s’appliquant à sa situation, l’un des documents suivants, selon l’ordre de priorité suivant: a ) l’autorisation de séjour délivrée par les autorités canadiennes de l’immigration attestant que le parent, mère ou père, avec lequel l’enfant demeure en permanence est autorisé à séjourner au Québec pour une période de plus de 6 mois à compter de la date d’inscription de l’enfant; 
+ b ) une attestation de fréquentation scolaire; 
+ c ) une déclaration assermentée du parent, mère ou père, avec lequel l’enfant demeure en permanence ou de la personne qui en a le soin ou la garde démontrant son intention et celle de cet enfant de demeurer au Québec pour une période de plus de 6 mois dans l’année suivant la date de l’inscription de l’enfant; 
+ 2 ° dans le cas d’une personne qui possède la citoyenneté canadienne, l’un des documents suivants: a ) une copie de son acte de naissance; 
+ b ) son certificat de naissance; 
+ c ) son certificat de citoyenneté canadienne; 
+ d ) son passeport canadien; 
+ 2.1 ° dans le cas d’une personne visée au paragraphe 5 de l’article 3, en plus de l’un des documents visés au paragraphe 2 du premier alinéa, son contrat de travail ou une attestation de l’employeur confirmant les dates de début et de fin du contrat de travail; 
+ 3 ° dans le cas d’une personne qui ne possède pas la citoyenneté canadienne, le ou les documents suivants, selon le cas: a ) s’il s’agit d’une personne qui réside au Québec, à l’exception du ressortissant étranger mineur visé au paragraphe 5 de l’article 2: i . le document délivré par les autorités canadiennes de l’immigration attestant de son statut de résident permanent au Canada, ainsi que le certificat de sélection du Québec; 
+ ii . le document délivré par la Commission de l’immigration et du statut de réfugié du Canada attestant de son statut de réfugié, accompagné du certificat de sélection du Québec; 
+ iii . l’autorisation de séjour délivrée par les autorités canadiennes de l’immigration et le document délivré par les autorités canadiennes de l’immigration démontrant que cette personne est autorisée à déposer sur le territoire canadien une demande de droit d’établissement ainsi que le certificat de sélection du Québec; 
+ iv . le permis de séjour temporaire délivré par les autorités canadiennes de l’immigration en vertu de la Loi sur l’immigration et la protection des réfugiés (L.C. 2001, c. 27) en vue de l’octroi éventuel du droit d’établissement et identifié par un numéro de code 86, 87, 88, 89, 90, 91 ou 92, ainsi que le certificat de sélection du Québec; 
+ v . le permis de séjour temporaire délivré par les autorités canadiennes de l’immigration en vertu de la Loi sur l’immigration et la protection des réfugiés en vue de l’octroi éventuel du droit d’établissement et identifié par un numéro de code 93, 94 ou 95; 
+ b ) s’il s’agit d’une personne qui séjourne au Québec: i . l’attestation de séjour au Québec, à titre de boursier, délivrée par le ministère de l’Éducation, du Loisir et du Sport ou par le ministère de l’Enseignement supérieur, de la Recherche, de la Science et de la Technologie; 
+ ii . l’autorisation d’emploi délivrée par les autorités canadiennes de l’immigration indiquant le nom de l’employeur et le lieu de l’emploi, accompagné, dans le cas d’un boursier d’Affaires mondiales Canada, de l’attestation délivrée par un établissement d’enseignement à l’effet qu’il ne reçoit qu’un complément de bourse; 
+ iii . l’autorisation de séjour délivrée par les autorités canadiennes de l’immigration l’autorisant à être au Canada, accompagné d’un document prouvant qu’il occupe une charge liturgique; 
+ iii.1 . l’autorisation de séjour l’autorisant à être au Canada ainsi que le document indiquant qu’elle est un travailleur vulnérable délivrés par les autorités canadiennes de l’immigration; 
+ iv . l’autorisation de séjour délivrée par les autorités canadiennes de l’immigration pour une période de plus de 6 mois, dans le cas d’un ressortissant étranger mineur visé au paragraphe 7 de l’article 3; 
+ v . l’autorisation de séjour du parent, mère ou père, avec lequel l’enfant demeure en permanence délivrée par les autorités canadiennes de l’immigration pour une période de plus de 6 mois, dans le cas d’un enfant visé au paragraphe 8 de l’article 3; 
+ 4 ° dans le cas d’un conjoint et de toute personne âgée de 18 ans ou plus à la charge d’une personne qui séjourne au Québec, le ou les documents suivants, selon le cas: a ) l’autorisation de séjour délivrée par les autorités canadiennes de l’immigration pour une période de plus de 6 mois, s’il s’agit d’un ressortissant étranger, ou l’un des documents prévus au paragraphe 2 accompagné d’une déclaration assermentée à l’effet que la durée prévue de son séjour au Québec est de plus de 6 mois s’il est citoyen canadien; 
+ b ) dans le cas du conjoint, le certificat de mariage, le certificat d’union civile ou une déclaration assermentée à l’effet: i . qu’il vit en union de fait avec cette personne depuis au moins 1 an ou; 
+ ii . qu’un enfant est né de leur union ou; 
+ iii . qu’ils ont conjointement adopté un enfant ou; 
+ iv . que l’un des conjoints a adopté un enfant de l’autre; 
+ b .1 ) dans le cas où il est impossible de produire le certificat de mariage ou d’union civile, une déclaration assermentée à l’effet qu’il est marié ou uni civilement, ainsi que la date et le lieu du mariage ou de l’union civile; 
+ c ) s’il s’agit d’une personne à charge âgée de 18 ans ou plus, la preuve de fréquentation scolaire, le certificat médical ou ces 2 documents, le cas échéant; 
+ 4.1 ° dans le cas d’une personne qui a le statut d’indien, si elle n’est pas née au Canada, le certificat de statut indien délivré par Relations Couronne-Autochtones et Affaires du Nord Canada accompagné de son certificat de naissance; 
+ 5 ° dans le cas d’une adoption, l’un des documents suivants: a ) l’ordonnance de placement; 
+ b ) le jugement d’adoption; 
+ c ) le certificat de naissance ou la copie d’acte de naissance sous le nouveau nom; 
+ d ) la notification par le greffier du tribunal qui a prononcé l’adoption à l’effet qu’un jugement d’adoption a été rendu; 
+ e ) dans le cas de l’adoption d’un enfant effectuée en République populaire de Chine, le certificat d’inscription de l’adoption; 
+ f ) le certificat de sélection du Québec. 
+ 5.1 ° dans le cas d’une adoption internationale, en plus de l’un des documents visés au paragraphe 5 du présent alinéa, le document délivré par les autorités canadiennes de l’immigration autorisant l’enfant à être au Canada ou attestant de son statut de résident permanent; 
+ 6 ° (paragraphe remplacé); 
+ 7 ° dans le cas d’une personne visée à l’article 5 de la Loi qui s’établit pour la première fois ou qui s’établit à nouveau au Québec, d’une personne qui a perdu la qualité de personne qui réside au Québec en vertu du premier alinéa de l’article 6, d’une personne qui quitte une autre province pour s’établir au Québec, le ou les documents suivants, selon le cas: a ) le bail d’habitation; 
+ b ) l’acte d’achat de la propriété ou l’acte de prêt hypothécaire; 
+ c ) une attestation de l’employeur, où apparaissent notamment le prénom, le nom, l’adresse, le numéro de téléphone, la signature du déclarant et la date de la signature, à l’effet qu’elle occupe un emploi au Québec; 
+ d ) une attestation d’inscription à un programme d’études offert par un établissement d’enseignement au Québec; 
+ e ) la déclaration assermentée du locateur, du représentant du locateur ou du locataire, tel qu’il apparaît au bail de location du lieu d’habitation dont l’adresse est fournie en application du paragraphe 3 de l’article 14, laquelle est à l’effet que la personne qui fait une demande d’inscription y réside; cette déclaration doit de plus comporter le prénom, le nom, l’adresse, le numéro de téléphone, la signature du déclarant et la date de sa signature; 
+ f ) une facture ou un état de compte d’une compagnie de téléphone, d’électricité ou de câblodistribution ou une facture de taxes municipales ou scolaires identifiée au nom de cette personne et où figure son adresse domiciliaire, accompagnée d’une déclaration assermentée de cette personne à l’effet qu’elle demeure à cette adresse; 
+ 8 ° dans le cas d’une personne qui ne peut fournir une adresse domiciliaire parce qu’elle est sans abri, une déclaration signée et datée d’un intervenant d’un centre local d’emploi ou d’un établissement attestant qu’il connaît cette personne et qu’elle demeure au Québec ou le document « Confirmation d’identité et de domicile au Québec » dûment rempli et signé; 
+ 9 ° dans le cas d’un résident permanent, au sens de la Loi sur l’immigration et la protection des réfugiés qui a séjourné en dehors du Canada, un document délivré par les autorités canadiennes de l’immigration attestant qu’il a conservé son statut de résident permanent; 
+ 9.1 ° dans le cas d’une personne visée au deuxième alinéa de l’article 7 de la Loi, une déclaration assermentée qui indique, outre l’adresse de sa résidence et la date de son établissement au Québec, le fait qu’elle demeure de façon habituelle au Québec, que sa résidence au Québec constitue son domicile, c’est-à-dire le lieu de son principal établissement, et qu’elle a l’intention de maintenir son domicile au Québec; 
+ 9.2 ° (paragraphe abrogé); 
+ 10 ° à l’exception d’une demande pour laquelle la Régie délivre une carte d’assurance maladie sans la photographie et la signature de la personne assurée en application des articles 8, 8.0.1 et 8.0.2 ou, le cas échéant, de l’article 8.0.3, du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement, le document d’authentification dûment complété, conformément à la section V; 
+ 11 ° (paragraphe abrogé). 
+ D. 1470-92, a. 15 ; D. 67-94, a. 8 ; D. 505-96, a. 7 ; D. 833-98, a. 4 ; D. 552-2001, a. 10 ; D. 944-2013, a. 5 ; L.Q. 2013, c. 28, a. 205 ; 1164-2020 D. 1164-2020 , a.  6 1 1 a ; L.Q. 2021, c. 23, a. 17 ; 106-2026 D. 106-2026 , a.  11 1 1 a . 
+ 16 . Une personne peut inscrire son conjoint et toute personne à la charge de celui-ci, lorsque, en vertu des articles 8 à 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement ( chapitre A-29, r. 7.2 ) tel qu’il se lit au moment de son application, la carte d’assurance maladie de ce conjoint ou de cette personne à charge ne comporte pas ou peut ne pas comporter sa photographie et sa signature. 
+ D. 1470-92, a. 16 ; D. 552-2001, a. 11 . 
+ 17 . Toute personne qui réside au Québec ou qui séjourne au Québec doit inscrire auprès de la Régie toute personne qui devient à sa charge dans les 3 mois qui suivent cet événement. Toutefois, une personne à charge de 18 ans ou plus peut s’inscrire par elle-même auprès de la Régie. 
+ D. 1470-92, a. 17 ; D. 552-2001, a. 11 . 
+ § 3 . — Renouvellement de l’inscription 
+ 18 . Le renouvellement de l’inscription auprès de la Régie d’une personne qui réside au Québec doit être effectué au moyen d’un avis de renouvellement, conformément à l’article 21. 
+ Toutefois, lorsque la personne qui réside au Québec ne reçoit pas l’avis de renouvellement ou lorsque cet avis n’est pas transmis à la Régie dans un délai de 6 mois suivant la date d’expiration de sa carte d’assurance maladie ou, lorsqu’il s’agit d’une personne visée au paragraphe 1, 2 ou 5 de l’article 2, le renouvellement de l’inscription doit être effectué conformément à l’article 22. 
+ D. 1470-92, a. 18 ; D. 552-2001, a. 12 ; 1164-2020 D. 1164-2020 , a.  7 1 ; L.Q. 2021, c. 23, a. 18 . 
+ 19 . Une personne qui séjourne au Québec doit s’inscrire de nouveau auprès de la Régie au moyen d’une demande d’inscription, conformément aux articles 14 et 15. 
+ D. 1470-92, a. 19 ; D. 552-2001, a. 13 ; 1164-2020 D. 1164-2020 , a.  8 1 . 
+ 19.01 . Malgré les articles 4 et 4.2, une personne visée à l’article 19 devient une personne qui séjourne au Québec à la date du début de la période visée au premier alinéa de l’article 23, selon le paragraphe applicable à sa situation, s’il s’est écoulé 45 jours ou moins entre cette date et celle du jour où elle a cessé d’être une personne qui séjourne au Québec dans le cadre de son inscription précédente. 
+ 1164-2020 D. 1164-2020 , a.  9 1 ; 106-2026 D. 106-2026 , a.  12 1 . 
+ 19.02 . Malgré les articles 4 et 4.2, une personne visée à l’article 19 devient une personne qui réside au Québec, selon le cas, à la date du début de la période visée au sous-paragraphe a du paragraphe 3 du premier alinéa de l’article 23 ou à la date à laquelle elle a acquis un statut visé au premier ou au deuxième alinéa de l’article 5 de la Loi s’il s’est écoulé 45 jours ou moins entre cette date et celle du jour où elle a cessé d’être une personne qui séjourne au Québec dans le cadre de son inscription précédente. 
+ 1164-2020 D. 1164-2020 , a.  9 1 ; 106-2026 D. 106-2026 , a.  12 1 . 
+ 19.1 . La Régie émet un avis de renouvellement à une personne qui réside au Québec à l’exception des personnes visées au paragraphe 1, 2 ou 5 de l’article 2. 
+ D. 552-2001, a. 13 ; L.Q. 2021, c. 23, a. 19 . 
+ 20 . Le défaut de recevoir l’avis de renouvellement ne libère pas la personne qui réside au Québec de l’obligation de renouveler son inscription. 
+ D. 1470-92, a. 20 . 
+ 21 . Une personne qui réside au Québec doit remplir l’avis de renouvellement et fournir les renseignements et les documents suivants: 1 ° sous réserve des articles 8 à 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement ( chapitre A-29, r. 7.2 ), une photographie qui répond aux normes de l’Organisation de l’aviation civile internationale (OACI) concernant les photographies et énumérées dans la sous-section intitulée «Éléments affichés d’identification du titulaire» de la section IV du volume 1 de la partie 3 du doc 9303 de l’OACI intitulé «Documents de voyage lisibles à la machine» et dans l’Appendice 5 de cette même section, sauf en ce qui a trait aux règles suivantes qui prévalent sur les normes de l’OACI: a ) la photographie doit être en couleurs et mesurer 50 mm en largeur × 70 mm en hauteur (2 po en largeur × 2 3/4 po en hauteur); 
+ b ) une personne peut se faire photographier avec une paire de lunettes teintées si elle déclare être non voyante, souffrir de photophobie ou d’intolérance à la lumière et qu’elle présente un certificat médical à cet effet; 
+ 2 ° si elle a effectué, depuis le dernier renouvellement ou depuis sa naissance ou son adoption, selon le cas, des séjours à l’extérieur du Québec qui totalisent 183 jours ou plus au cours d’une année civile, en excluant les séjours d’une durée de 21 jours consécutifs ou moins, les dates de départ et de retour au Québec, les lieux et les motifs de ces séjours; 
+ 2.1 ° s’il s’agit du renouvellement d’une carte visée au paragraphe 1 du premier alinéa de l’article 23, et si elle a effectué dans la période de 12 mois précédant l’expiration de sa carte des séjours à l’extérieur du Québec qui totalisent 183 jours ou plus, en excluant les séjours d’une durée de 21 jours consécutifs ou moins, les dates de départ et de retour au Québec, les lieux et les motifs de ces séjours; 
+ 2.2 ° (paragraphe abrogé); 
+ 2.3 ° dans le cas d’une personne visée au sous-paragraphe a du paragraphe 1 du premier alinéa de l’article 23, sauf dans le cas du renouvellement d’une carte pour un enfant mineur ou une personne hébergée et assujettie au régime de contribution des adultes hébergés dans une installation maintenue par un établissement public ou privé conventionné, tout document permettant de démontrer à la Régie qu’elle a conservé sa qualité de personne qui réside au Québec pour la période de 12 mois suivant la date à compter de laquelle elle devient une personne qui réside au Québec; 
+ 3 ° tout changement intervenu relativement aux renseignements et aux documents fournis en application des articles 14 et 15; 
+ 4 ° dans le cas d’une personne qui a perdu la qualité de personne qui réside au Québec en vertu de l’article 6, une preuve de résidence au Québec, telle que prévue au paragraphe 7 de l’article 15, compte tenu des adaptations nécessaires; 
+ 4.1 ° dans le cas d’une personne visée au deuxième alinéa de l’article 7 de la Loi, une déclaration assermentée telle que prévue au paragraphe 9.1 du premier alinéa de l’article 15; 
+ 4.2 ° dans le cas d’un résident permanent au sens de la Loi sur l’immigration et la protection des réfugiés (L.C. 2001, c. 27) qui a séjourné en dehors du Canada, le document délivré par les autorités canadiennes de l’immigration attestant qu’il a conservé son statut de résident permanent; 
+ 5 ° à l’exception d’une demande pour laquelle la Régie délivre une carte d’assurance maladie sans la photographie et la signature de la personne assurée en application des articles 8, 8.0.1 et 8.0.2 ou, le cas échéant, de l’article 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement, le document d’authentification dûment complété, conformément à la section V; 
+ 6 ° une déclaration signée et datée du demandeur ou de son représentant attestant l’exactitude et la véracité des renseignements inscrits sur l’avis de renouvellement et des informations fournies. 
+ Toutefois, lorsqu’une personne assurée fait authentifier sa demande de renouvellement d’inscription selon l’une des méthodes prévues à l’article 32.1, le document visé au paragraphe 1 du premier alinéa n’a pas à être fourni. 
+ L’avis de renouvellement doit être retourné à la Régie par une personne visée à l’article 31 lorsque le document prévu au paragraphe 5 est requis. 
+ D. 1470-92, a. 21 ; D. 505-96, a. 8 ; D. 552-2001, a. 14 ; D. 944-2013, a. 6 ; D. 581-2014, a. 1 ; 590-2018 D. 590-2018 , a.  3 1 ; 1164-2020 D. 1164-2020 , a.  10 1 1 1164-2020 D. 1164-2020 , a.  10 1 2 ; 106-2026 D. 106-2026 , a.  13 1 . 
+ 22 . Une personne qui réside au Québec doit faire une demande de renouvellement de l’inscription, au moyen du formulaire fourni à cette fin par la Régie, lorsqu’elle ne reçoit pas l’avis de renouvellement, lorsque l’avis n’est pas transmis à la Régie dans un délai de 6 mois suivant la date d’expiration de sa carte d’assurance maladie ou lorsqu’il s’agit d’une personne visée au paragraphe 1, 2 ou 5 de l’article 2. Elle doit également acquitter les frais exigibles, le cas échéant, et fournir les renseignements et les documents suivants: 1 ° les renseignements prévus aux paragraphes 1 à 5 de l’article 14; 
+ 2 ° son numéro d’assurance maladie, s’il est disponible; 
+ 2.1 ° s’il s’agit d’une personne visée aux paragraphes 1 ou 2 de l’article 2, l’un des documents prévus au paragraphe 3 du premier alinéa de l’article 15, selon le cas; 
+ 2.1.1 ° s’il s’agit d’un ressortissant étranger mineur visé au paragraphe 5 de l’article 2, les documents prévus au paragraphe 1.1 du premier alinéa de l’article 15; 
+ 2.2 ° si un changement a été apporté à son statut de citoyen canadien ou de résident permanent au sens de la Loi sur l’immigration et la protection des réfugiés (L.C. 2001, c. 27) depuis son inscription ou son dernier renouvellement, la date de ce changement ainsi qu’un des documents parmi ceux visés au sous-paragraphe c du paragraphe 2 et au paragraphe 3 du premier alinéa de l’article 15 attestant de ce changement; 
+ 3 ° si elle a effectué, depuis le dernier renouvellement ou depuis sa naissance ou son adoption, selon le cas, des séjours à l’extérieur du Québec qui totalisent 183 jours ou plus au cours d’une année civile, en excluant les séjours d’une durée de 21 jours consécutifs ou moins, les dates de départ et de retour au Québec, les lieux et les motifs de ces séjours; 
+ 3.1 ° s’il s’agit du renouvellement d’une carte visée au paragraphe 1 du premier alinéa de l’article 23, et si elle a effectué dans la période de 12 mois précédant l’expiration de sa carte, des séjours à l’extérieur du Québec qui totalisent 183 jours ou plus, en excluant les séjours d’une durée de 21 jours consécutifs ou moins, les dates de départ et de retour au Québec, les lieux et les motifs de ces séjours; le cas échéant, elle doit fournir les mêmes renseignements pour la période écoulée depuis l’expiration de sa carte pour chaque année civile pendant laquelle ses séjours à l’extérieur du Québec ont totalisé 183 jours ou plus; 
+ 3.2 ° (paragraphe abrogé); 
+ 4 ° sous réserve des articles 8 à 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement ( chapitre A-29, r. 7.2 ), une photographie qui répond aux normes de l’Organisation de l’aviation civile internationale (OACI) concernant les photographies et énumérées dans la sous-section intitulée «Éléments affichés d’identification du titulaire» de la section IV du volume 1 de la partie 3 du doc 9303 de l’OACI intitulé «Documents de voyage lisibles à la machine» et dans l’Appendice 5 de cette même section, sauf en ce qui a trait aux règles suivantes qui prévalent sur les normes de l’OACI: a ) la photographie doit être en couleurs et mesurer 50 mm en largeur × 70 mm en hauteur (2 po en largeur × 2 3/4 po en hauteur); 
+ b ) une personne peut se faire photographier avec une paire de lunettes teintées si elle déclare être non voyante, souffrir de photophobie ou d’intolérance à la lumière et qu’elle présente un certificat médical à cet effet; 
+ 5 ° une preuve de résidence au Québec, telle que prévue au paragraphe 7 de l’article 15, compte tenu des adaptations nécessaires; 
+ 5.1 ° dans le cas d’une personne visée au deuxième alinéa de l’article 7 de la Loi, une déclaration assermentée telle que prévue au paragraphe 9.1 de l’article 15; 
+ 5.2 ° dans le cas d’un résident permanent au sens de la Loi sur l’immigration et la protection des réfugiés qui a séjourné en dehors du Canada, un document délivré par les autorités canadiennes de l’immigration attestant qu’il a conservé son statut de résident permanent; 
+ 5.3 ° tout document permettant de démontrer sa présence au Québec; 
+ 6 ° à l’exception d’une demande pour laquelle la Régie délivre une carte d’assurance maladie sans la photographie et la signature de la personne assurée en application des articles 8, 8.0.1 et 8.0.2 ou, le cas échéant, de l’article 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement, le document d’authentification dûment complété, conformément à la section V; 
+ 7 ° une déclaration signée et datée du demandeur ou de son représentant attestant que tous les renseignements fournis sont exacts. 
+ Les frais exigibles d’une personne assurée qui renouvelle son inscription à la Régie plus de 6 mois après la date d’expiration de la carte sont ceux prévus par le Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement tel qu’il se lit au moment de son application. 
+ D. 1470-92, a. 22 ; D. 552-2001, a. 15 et 31 ; D. 944-2013, a. 7 ; 590-2018 D. 590-2018 , a.  4 1 ; L.Q. 2021, c. 23, a. 20 . 
+ SECTION IV CARTE D’ASSURANCE MALADIE ET ATTESTATION TEMPORAIRE D’INSCRIPTION
+ D. 1470-92, sec. IV ; L.Q. 2021, c. 23, a. 21 . 
+ 22.1 . (Abrogé). 
+ D. 505-96, a. 9 ; 106-2026 D. 106-2026 , a.  14 1 . 
+ 23 . La Régie délivre une carte d’assurance maladie à une personne assurée: 1 ° pour une durée d’un an: a ) (sous-paragraphe abrogé); 
+ b ) à la suite du renouvellement de l’inscription d’une personne qui a perdu la qualité de personne qui réside au Québec en vertu du premier alinéa de l’article 6, à compter de la date d’expiration de sa carte d’assurance maladie ou de la date de sa demande de renouvellement de l’inscription, selon le cas; 
+ c ) à la suite du renouvellement de l’inscription d’une personne qui ne peut fournir une adresse résidentielle parce qu’elle est sans abri, à compter de la date d’expiration de sa carte d’assurance maladie; 
+ d ) à la suite de l’inscription ou du renouvellement de l’inscription d’une personne exemptée de fournir sa photographie, d’apposer sa signature sur le document d’authentification ou de remplir ces 2 obligations, en application du paragraphe a de l’article 8.0.2 ou de l’article 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement ( chapitre A-29, r. 7.2 ) tel qu’il se lit au moment de son application, si l’incapacité est d’une durée d’un an ou moins; 
+ e ) à la suite de l’inscription ou du renouvellement de l’inscription d’un ressortissant étranger mineur visé au paragraphe 5 de l’article 2; 
+ 2 ° pour la durée du séjour indiquée sur l’attestation de séjour au Québec délivrée par le ministère de l’Éducation, du Loisir et du Sport ou par le ministère de l’Enseignement supérieur, de la Recherche, de la Science et de la Technologie, à la suite de l’inscription d’une personne visée au paragraphe 2 de l’article 3; 
+ 3 ° pour la durée de validité indiquée sur le document délivré par les autorités canadiennes de l’immigration: a ) à la suite de l’inscription ou du renouvellement de l’inscription d’une personne visée au paragraphe 1 ou 2 de l’article 2; 
+ b ) à la suite de l’inscription d’une personne visée au paragraphe 1, 3, 4.1 ou 7 de l’article 3; 
+ c ) à la suite de l’inscription d’une personne visée au paragraphe 6 de l’article 3. Toutefois, cette carte ne peut être émise pour une durée supérieure à celle de la personne qu’elle accompagne; 
+ 4 ° pour la durée du contrat de travail à la suite de l’inscription d’une personne visée au paragraphe 4 de l’article 3. Toutefois, cette carte ne peut être émise pour une durée supérieure à celle du document délivré par les autorités canadiennes de l’immigration; 
+ 5 ° pour la durée du contrat de travail à la suite de l’inscription d’une personne visée au paragraphe 5 de l’article 3; 
+ 5.0.1 ° pour la durée de validité indiquée sur le document délivré par les autorités canadiennes de l’immigration au parent, mère ou père, avec qui l’enfant demeure en permanence, à la suite de l’inscription d’un enfant visé au paragraphe 8 de l’article 3; 
+ 5.1 ° pour la durée établie selon la règle prévue à l’article 23.0.1: a ) à la suite du renouvellement de l’inscription d’une personne dont la carte d’assurance maladie lui a été délivrée en vertu du sous-paragraphe a du paragraphe 1 du premier alinéa; 
+ b ) à la suite du renouvellement de l’inscription d’une personne qui a obtenu le statut de résident permanent au sens de la Loi sur l’immigration et la protection des réfugiés (L.C. 2001, c. 27) dont la carte d’assurance maladie lui a été délivrée à la suite de l’inscription ou du renouvellement de l’inscription visé au sous-paragraphe a du paragraphe 3 du premier alinéa; 
+ c ) à la suite de l’inscription d’une personne qui réside au Québec, qui s’y établit pour la première fois ou qui s’y établit à nouveau, à compter de la date prévue aux articles 4 à 4.9, selon le cas, à l’exception: i . d’une personne visée au paragraphe 5° de l’article 2; 
+ ii . d’une personne exemptée de fournir sa photographie, d’apposer sa signature sur le document d’authentification ou de remplir ces 2 obligations, en application du paragraphe a de l’article 8.0.2 ou de l’article 8.0.3 du Règlement sur les modalités d’émission de la carte d’assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement; 
+ 6 ° pour la durée établie selon la règle prévue à l’article 23.1: a ) dans le cas de l’inscription d’un nouveau-né, d’un enfant placé pour adoption ou d’un enfant adopté qui a le statut de personne qui réside au Québec; 
+ b ) dans le cas d’une personne dont la carte d’assurance maladie lui a été délivrée en vertu du sous-paragraphe d du paragraphe 1 du premier alinéa et qui n’est pas visée par l’un ou l’autre des paragraphes 2 à 5 de cet alinéa; 
+ c ) dans tous les autres cas, à la suite d’un renouvellement d’inscription. 
+ Toutefois, sous réserve des articles 19.01 et 19.02, les cartes visées aux paragraphes 2 à 5 du premier alinéa ne peuvent être délivrées pour une période antérieure à la date prévue aux articles 4 à 4.9 et leur durée ne peut excéder 4 ans. 
+ De même, la Régie ne peut délivrer au ressortissant étranger mineur visé au paragraphe 5 de l’article 2 ou au paragraphe 7 de l’article 3 une carte d’assurance maladie dont la date d’expiration est postérieure au jour précédant la date de son 18 e anniversaire. 
+ D. 1470-92, a. 23 ; D. 67-94, a. 9 ; D. 533-95, a. 1 ; D. 505-96, a. 10 ; D. 552-2001, a. 16 et 26 ; L.Q. 2013, c. 28, a. 205 ; D. 581-2014, a. 2 ; 1164-2020 D. 1164-2020 , a.  11 1 ; L.Q. 2021, c. 23, a. 22 ; 106-2026 D. 106-2026 , a.  15 1 1 . 
+ 23.0.1 . La durée d’une carte d’assurance maladie délivrée dans les cas mentionnés au paragraphe 5.1 du premier alinéa de l’article 23 est d’au moins 27 mois et d’au plus 75 mois. Cette durée se calcule à compter du mois et de l’année d’expiration inscrits sur la carte d’assurance maladie en vigueur d’une personne assurée jusqu’au mois et à l’année durant lesquels l’âge de la personne assurée devient un multiple de 4. 
+ D. 581-2014, a. 3 . 
+ 23.1 . La durée d’une carte d’assurance maladie délivrée dans les cas mentionnés au paragraphe 6 du premier alinéa de l’article 23 est d’au moins 27 mois et d’au plus 99 mois. Cette durée se calcule à compter, selon le cas, du mois et de l’année d’expiration inscrits sur la carte d’assurance maladie en vigueur d’une personne assurée, de la date d’inscription d’un nouveau-né, d’un enfant placé pour adoption ou d’un enfant adopté qui a le statut de personne qui réside au Québec jusqu’au mois et à l’année durant lesquels l’âge de la personne assurée devient un multiple de 8. 
+ Toutefois, lorsque l’âge de la personne assurée ne peut devenir un multiple de 8 à l’intérieur de la durée d’une carte prévue au premier alinéa, cette durée se calcule alors jusqu’au mois et à l’année durant lesquels l’âge de la personne assurée devient un multiple de 4. 
+ D. 552-2001, a. 17 ; D. 581-2014, a. 4 . 
+ 23.2 . Une carte d’assurance maladie expire dans tous les cas, le dernier jour du mois qui y est inscrit. 
+ Malgré le premier alinéa, la carte d’assurance maladie du ressortissant étranger mineur visé au paragraphe 5 de l’article 2 et au paragraphe 7 de l’article 3 expire le dernier jour du mois qui y est inscrit ou le jour précédant la date du 18 e anniversaire de ce ressortissant étranger mineur, selon la première éventualité. 
+ D. 552-2001, a. 17 ; L.Q. 2021, c. 23, a. 23 . 
+ 24 . Pour obtenir le remplacement de sa carte d’assurance maladie lorsque celle-ci est perdue, endommagée ou volée, la personne assurée ou son représentant doit en faire la demande au moyen du formulaire fourni à cette fin par la Régie, acquitter les frais exigibles, le cas échéant, et fournir les renseignements et les documents suivants: 1 ° les renseignements prévus aux paragraphes 1 à 5 de l’article 14; 
+ 2 ° son numéro d’assurance maladie, s’il est disponible; 
+ 3 ° le motif de la demande de remplacement de la carte; 
+ 4 ° sous réserve des articles 8 à 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement ( chapitre A-29, r. 7.2 ), une photographie qui répond aux normes de l’Organisation de l’aviation civile internationale (OACI) concernant les photographies et énumérées dans la sous-section intitulée «Éléments affichés d’identification du titulaire» de la section IV du volume 1 de la partie 3 du doc 9303 de l’OACI intitulé «Documents de voyage lisibles à la machine» et dans l’Appendice 5 de cette même section, sauf en ce qui a trait aux règles suivantes qui prévalent sur les normes de l’OACI : a ) la photographie doit être en couleurs et mesurer 50 mm en largeur × 70 mm en hauteur (2 po en largeur × 2 3/4 po en hauteur); 
+ b ) une personne peut se faire photographier avec une paire de lunettes teintées si elle déclare être non voyante, souffrir de photophobie ou d’intolérance à la lumière et qu’elle présente un certificat médical à cet effet; 
+ 5 ° à l’exception d’une demande pour laquelle la Régie délivre une carte d’assurance maladie sans la photographie et la signature de la personne assurée en application des articles 8, 8.0.1 et 8.0.2 ou, le cas échéant, de l’article 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement, le document d’authentification dûment complété, conformément à la section V; 
+ 6 ° dans le cas d’une personne qui ne peut fournir une adresse domiciliaire parce qu’elle est sans abri, une déclaration signée et datée d’un intervenant d’un centre local d’emploi ou d’un établissement attestant qu’il connaît cette personne et qu’elle demeure au Québec ou le document « Confirmation d’identité et de domicile au Québec » dûment rempli et signé; 
+ 7 ° une déclaration signée et datée du demandeur ou de son représentant attestant que tous les renseignements fournis sont exacts. 
+ Toutefois, dans le cas où une personne assurée fait authentifier sa demande de remplacement de carte selon l’une des méthodes prévues à l’article 32.1, le document visé au paragraphe 4 du premier alinéa n’a pas à être fourni. 
+ Dans le cas où la carte d’assurance maladie est endommagée, la carte doit être retournée à la Régie. 
+ Les frais exigibles pour le remplacement de la carte sont ceux prévus par le Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement. 
+ D. 1470-92, a. 24 ; D. 552-2001, a. 18 ; D. 944-2013, a. 8 ; 1164-2020 D. 1164-2020 , a.  12 1 1 1164-2020 D. 1164-2020 , a.  12 1 2 . 
+ 24.1 . La Régie peut délivrer une attestation temporaire d’inscription à une personne assurée dont la carte d’assurance maladie a été perdue, endommagée ou volée. Cette attestation est valide pour une durée d’au plus 45 jours. 
+ La Régie délivre également une telle attestation à l’enfant né au Québec dont aucun des parents n’est admissible à l’assurance maladie dès qu’elle est informée de sa naissance. Cette attestation est valide pour une durée de 45 jours. 
+ L.Q. 2021, c. 23, a. 24 . 
+ 25 . Le professionnel de la santé qui fournit des services assurés sur présentation par la personne assurée d’une carte d’assurance maladie est réputé agir de bonne foi pour les fins de l’article 3 de la Loi. 
+ D. 1470-92, a. 25 . 
+ 26 . Toute personne assurée doit aviser la Régie: 1 ° de tout changement d’adresse, d’état civil ou, dans le cas d’une personne assurée inscrite à la Régie à titre de résident permanent, de l’acquisition de sa citoyenneté canadienne, le cas échéant ou de toute correction ou de tout autre changement relatif aux renseignements ou aux documents transmis au soutien d’une demande d’inscription ou d’une demande de renouvellement d’inscription, dans les 30 jours de la date d’un tel changement; 
+ 2 ° des séjours qu’elle effectue à l’extérieur du Québec s’ils totalisent 183 jours ou plus par année, en excluant les séjours de 21 jours consécutifs ou moins, des dates de départ et de retour au Québec, du lieu et des motifs de ces séjours; 
+ 2.1 ° s’il s’agit d’une personne qui séjourne au Québec, des séjours de 22 jours consécutifs ou plus qu’elle effectue à l’extérieur du Québec; 
+ 3 ° de tout départ du Québec pour s’établir ailleurs, de la date du départ, du lieu de destination et de la date prévue d’arrivée à destination. 
+ Dans le cas où une personne assurée demande qu’une correction ou qu’un changement soit apporté à son identité, elle doit mentionner, sur le formulaire prévu à cette fin, l’information à corriger et fournir l’un des documents suivants à l’appui de sa demande: 1 ° copie de l’acte de naissance; 
+ 2 ° certificat de naissance; 
+ 3 ° certificat de citoyenneté canadienne; 
+ 4 ° certificat de changement de nom; 
+ 5 ° certificat de changement de mention du sexe; 
+ 6 ° le document délivré par les autorités canadiennes de l’immigration l’autorisant à être ou à demeurer au Canada. 
+ Toute personne qui a la charge de la personne assurée ou à qui on en a confié les soins ou la garde peut également fournir ces renseignements à la Régie. Dans ce cas, elle doit déclarer sa qualité et son nom. 
+ D. 1470-92, a. 26 ; D. 505-96, a. 11 ; D. 552-2001, a. 19 ; 106-2026 D. 106-2026 , a.  16 1 . 
+ 27 . L’héritier ou le légataire du défunt doit aviser la Régie, dans un délai de 3 mois, du décès de la personne assurée, retourner la carte d’assurance maladie et fournir les renseignements suivants: 1 ° les nom, dont le prénom usuel, état civil, date de naissance, sexe et adresse de la personne décédée ainsi que ses numéro d’assurance maladie et numéro d’assurance sociale si disponibles; 
+ 2 ° la date du décès; 
+ 3 ° ses nom, dont son prénom usuel, adresse, numéro de téléphone et qualité. 
+ Dans le cas d’un décès survenu au Québec, la personne qui déclare au directeur de l’état civil le décès d’une personne assurée est réputée avoir avisé la Régie. 
+ Malgré le deuxième alinéa, l’héritier ou le légataire du défunt doit, sur demande de la Régie, fournir les renseignements prévus au premier alinéa. 
+ D. 1470-92, a. 27 ; D. 505-96, a. 12 ; D. 552-2001, a. 20 . 
+ 28 . Toute personne assurée doit retourner à la Régie sa carte d’assurance maladie, dans un délai de 3 mois, lorsqu’elle ne réside plus au Québec ou ne séjourne plus au Québec au sens de la Loi et des règlements. 
+ D. 1470-92, a. 28 ; D. 552-2001, a. 21 . 
+ 29 . Toute personne assurée doit aviser la Régie par écrit, sans délai, de la perte ou du vol de sa carte d’assurance maladie. 
+ D. 1470-92, a. 29 . 
+ SECTION V AUTHENTIFICATION
+ 29.1 . Pour l’application des dispositions de la présente section, lorsque l’original d’un document est exigé, une personne peut y substituer une copie certifiée conforme lorsque l’autorité compétente délivre une telle copie. 
+ D. 505-96, a. 13 . 
+ 30 . Nul ne peut détenir plus d’une carte d’assurance maladie délivrée par la Régie. Lorsqu’une carte d’assurance maladie est renouvelée, la personne doit détruire la carte encore en vigueur qu’elle détenait. 
+ D. 1470-92, a. 30 . 
+ 31 . À l’exception d’une demande pour laquelle la Régie délivre une carte d’assurance maladie sans la photographie et la signature de la personne assurée en vertu des articles 8, 8.0.1 et 8.0.2 ou, le cas échéant, de l’article 8.0.3 du Règlement sur les modalités d'émission de la carte d'assurance maladie et de transmission des relevés d’honoraires et des demandes de paiement ( chapitre A-29, r. 7.2 ), toute demande d’inscription, de renouvellement d’inscription ou de remplacement de la carte d’assurance maladie doit être authentifiée selon le cas, par un établissement, la Régie, un établissement de détention au sens de la Loi sur le système correctionnel du Québec ( chapitre S-40.1 ) dans le cas d’une personne incarcérée, un pénitencier au sens de la Loi sur le système correctionnel et la mise en liberté sous condition (L.C. 1992, c. 20) dans le cas d’une personne détenue et par le ministère de l’Immigration, de la Francisation et de l’Intégration dans le cas d’un réfugié qui reçoit des prestations en vertu d’un programme d’assistance sociale prévu au titre II de la Loi sur l’aide aux personnes et aux familles ( chapitre A-13.1.1 ). 
+ En outre, une demande de renouvellement d’inscription ou de remplacement d’une carte d’assurance maladie peut également être authentifiée par la Société de l’assurance automobile du Québec et les personnes qu’elle désigne conformément à l’article 69.1 du Code de la sécurité routière ( chapitre C-24.2 ). 
+ De plus, dans le cas des citoyens étrangers travaillant au Québec au service d’un gouvernement autre que celui du Canada ou du Québec ou travaillant au service d’un organisme reconnu par le gouvernement du Québec et relevant d’un gouvernement autre que celui du Canada ou du Québec et ayant signé un accord avec le ministre de la Santé et des Services sociaux tel que prévu à l’article 10.1 de la Loi sur le ministère de la Santé et des Services sociaux ( chapitre M-19.2 ), une demande d’inscription ou de remplacement d’une carte d’assurance maladie peut également être authentifiée par le ministre des Relations internationales. 
+ D. 1470-92, a. 31 ; D. 67-94, a. 10 ; D. 533-95, a. 2 ; D. 505-96, a. 14 ; D. 944-2013, a. 9 ; 1164-2020 D. 1164-2020 , a.  13 1 1 ; 106-2026 D. 106-2026 , a.  17 1 . 
+ 32 . Pour faire authentifier sa demande, dûment complétée et signée, une personne doit se présenter personnellement auprès d’une personne visée à l’article 31, fournir une photographie répondant aux normes prescrites au présent règlement et présenter 2 preuves d’identité parmi les suivantes dont au moins une prévue à l’un ou l’autre des paragraphes 1 à 7.2: 1 ° l’original de la copie de son acte de naissance ou de son certificat de naissance; 
+ 2 ° l’original de son certificat de citoyenneté canadienne; 
+ 3 ° son permis de conduire du Québec ou d’une autre province; 
+ 4 ° son passeport; 
+ 5 ° sa carte d’assurance maladie du Québec ou d’une autre province; 
+ 6 ° (paragraphe abrogé); 
+ 7 ° l’original d’un document délivré par les autorités canadiennes ou québécoises de l’immigration; 
+ 7.1 ° l’original du certificat de changement de nom; 
+ 7.2 ° l’original du certificat de changement de mention du sexe; 
+ 8 ° tout autre document d’identité comportant une photographie émis par un ministère ou un organisme, une compagnie, une institution financière ou un établissement d’enseignement. 
+ La personne visée à l’article 31 doit attester, à l’endroit prévu à cette fin sur le document d’authentification, que les modalités d’authentification prévues au premier alinéa ont été respectées, que la photographie correspond à la personne qui fait la demande, que celle-ci a signé en sa présence le document d’authentification à l’endroit prévu à cette fin et transmettre à la Régie la demande et les documents qui l’accompagnent. 
+ D. 1470-92, a. 32 ; D. 67-94, a. 11 ; D. 533-95, a. 3 ; D. 505-96, a. 15 ; D. 552-2001, a. 22 ; D. 944-2013, a. 10 . 
+ 32.0.1 . Une personne qui ne peut fournir les preuves d’identité prévues au premier alinéa de l’article 32 et qui est sans abri peut fournir une déclaration signée et datée d’un intervenant d’un centre local d’emploi ou d’un établissement attestant qu’il connaît cette personne et qu’elle demeure au Québec ou le document « Confirmation d’identité et de domicile au Québec » dûment rempli et signé en lieu et place de ces preuves d’identité. 
+ 1164-2020 D. 1164-2020 , a.  14 1 . 
+ 32.1 . Malgré les articles 31 et 32, pour une demande de renouvellement de l’inscription d’une personne visée au paragraphe 3 de l’article 3 ou d’une personne visée au sous-paragraphe a du paragraphe 1 du premier alinéa de l’article 23 ou pour une demande de remplacement de carte d’assurance maladie, dans le cas où la Régie détient déjà une photographie et la signature de la personne assurée qui fait la demande, l’authentification peut aussi se faire par l’une des méthodes suivantes: a ) par le service d’authentification en ligne sur le site Internet de la Régie; 
+ b ) par la transmission à la Régie d’un formulaire fourni par cette dernière à cet effet, dûment complété et signé par la personne assurée qui fait la demande et par une personne assurée qui la connaît depuis au moins 2 ans et qui atteste de sa signature, cette dernière devant par ailleurs inscrire son nom en lettres moulées, son numéro de téléphone et son adresse; 
+ c ) par la méthode prévue à l’article 32, sans toutefois que la personne assurée qui fait la demande n’ait à fournir une photographie et sans que la personne visée à l’article 31 n’ait à attester que la photographie correspond à la personne qui fait la demande. 
+ D. 944-2013, a. 11 ; 1164-2020 D. 1164-2020 , a.  15 1 . 
+ SECTION VI DISPOSITIONS TRANSITOIRES ET FINALES
+ 33 . (Périmé). 
+ D. 1470-92, a. 33 . 
+ 34 . (Périmé). 
+ D. 1470-92, a. 34 . 
+ 35 . (Périmé). 
+ D. 1470-92, a. 35 . 
+ 36 . (Périmé). 
+ D. 1470-92, a. 36 . 
+ 36.1 . (Périmé). 
+ D. 505-96, a. 16 . 
+ 37 . Le présent règlement remplace les sections II, III et IV du Règlement d’application de la Loi sur l’assurance-maladie (R.R.Q., 1981, c. A-29, r. 1). 
+ D. 1470-92, a. 37 . 
+ 38 . (Omis). 
+ D. 1470-92, a. 38 . 
+ RÉFÉRENCES 
+ D. 1470-92, 1992 G.O. 2, 6236 
+ D. 67-94, 1994 G.O. 2, 845 
+ D. 533-95, 1995 G.O. 2, 1827 
+ D. 68-96, 1996 G.O. 2, 1193 
+ D. 505-96, 1996 G.O. 2, 2789 
+ D. 1520-96, 1996 G.O. 2, 6739 
+ D. 833-98, 1998 G.O. 2, 3481 
+ L.Q. 1999, c. 89, a. 53 
+ D. 552-2001, 2001 G.O. 2, 2934 
+ L.Q. 2007, c. 21, a. 14 
+ D. 944-2013, 2013 G.O. 2, 4210 
+ L.Q. 2013, c. 28, a. 205 
+ D. 581-2014, 2014 G.O. 2, 2280 
+ D. 590-2018, 2018 G.O. 2, 3408 
+ D. 1164-2020, 2020 G.O. 2, 4796 
+ L.Q. 2021, c. 23, a. 10 à 24 
+ L.Q. 2022, c. 14, a. 215 
+ L.Q. 2023, c. 34, a. 1293 et 1634 
+ 106-2026, 2026 G.O. 2, 684 D. 106-2026, 2026 G.O. 2, 684 
+ Copier 
+ Sélectionner cet élément 
+ Sélectionner l'élément parent 
+ Désélectionner tous les éléments 
+ Copier vers Rédaction 
+ Copier vers LAW 
+ Copier vers le presse-papier
+ × 
+ Pour copier : Ctrl+C
+ OK 
+ >"/>
+ >"/>
+ 0 
+ Nous joindre 
+ Plan du site 
+ Québec.ca 
+ Accessibilité 
+ Politique de confidentialité 
+ Accès à l'information 
+ © Gouvernement du Québec 
+ Sélections
+ × 
+ Afficher 
+ Les sélections du document courant 
+ Toutes les sélections de la collection 
+ Fragments sélectionnés 
+ Supprimer toutes les sélections 
+ Afficher les sélections 
+ Fermer 
+ Cyberlex
+ × 
+ Version 2.2.13.0
+ >">
+ >">
+
+=== ENLACES ===
+https://www.quebec.ca/ | 
+https://boutique.publicationsduquebec.gouv.qc.ca/ | Les Publications du Québec Ministère de l'Emploi et de la Solidarité sociale
+https://www.legisquebec.gouv.qc.ca/fr/ | Accueil
+https://www.legisquebec.gouv.qc.ca/fr/contenu/FAQ | FAQ
+https://www.legisquebec.gouv.qc.ca/fr/contenu/joindre | Nous joindre
+https://www.legisquebec.gouv.qc.ca/fr/recherche?t=a | Recherche avancée
+https://www.legisquebec.gouv.qc.ca/fr/chapitres?corpus=lois | Lois codifiées
+https://www.legisquebec.gouv.qc.ca/fr/chapitres?corpus=regs | Règlements codifiés
+https://www.legisquebec.gouv.qc.ca/fr/annuels?filtre=lois | Lois annuelles
+https://www.legisquebec.gouv.qc.ca/fr/annuels?filtre=regs | Règlements annuels
+https://www.legisquebec.gouv.qc.ca/fr/contenu/editeurofficiel | L’Éditeur officiel du Québec
+https://www.legisquebec.gouv.qc.ca/fr/contenu/neuf | Quoi de neuf?
+https://www.legisquebec.gouv.qc.ca/fr/contenu/noteinfo | Note d’information
+https://www.legisquebec.gouv.qc.ca/fr/contenu/mjqpol | Politique du ministre de la Justice
+https://www.legisquebec.gouv.qc.ca/fr/contenu/modlois | Lois : Modifications
+https://www.legisquebec.gouv.qc.ca/fr/contenu/nevlois | Lois : Dispositions non en vigueur
+https://www.legisquebec.gouv.qc.ca/fr/contenu/eevlois | Lois : Entrées en vigueur
+https://www.legisquebec.gouv.qc.ca/fr/contenu/loisann | Lois annuelles : Versions PDF depuis 1996
+https://www.legisquebec.gouv.qc.ca/fr/contenu/modreg | Règlements : Modifications
+https://www.legisquebec.gouv.qc.ca/fr/contenu/regann | Règlements annuels : Versions PDF depuis 1996
+https://www.legisquebec.gouv.qc.ca/fr/contenu/decision | Décisions des tribunaux
+https://www.legisquebec.gouv.qc.ca/fr/document/rc/A-29,%20r.%201?langCont=en | English
+https://www.legisquebec.gouv.qc.ca/fr/tdm/rc/A-29,%20r.%201 | Table des matières
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/A-29 | Loi sur l’assurance maladie
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/G-1.021?&cible= | chapitre G-1.021
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/S-4.2?&cible= | chapitre S-4.2
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/S-5?&cible= | chapitre S-5
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/A-29?&cible= | chapitre A-29
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/A-29.01?&cible= | chapitre A-29.01
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/A-13.1.1?&cible= | chapitre A-13.1.1
+https://www.legisquebec.gouv.qc.ca/fr/document/rc/A-29.01, r. 4?&cible= | chapitre A-29.01, r. 4
+https://www.legisquebec.gouv.qc.ca/fr/document/rc/I-0.2.1, r. 3?&cible= | chapitre I-0.2.1, r. 3
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/M-19.2?&cible= | chapitre M-19.2
+https://www.legisquebec.gouv.qc.ca/fr/document/rc/A-29, r. 7.2?&cible= | chapitre A-29, r. 7.2
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/S-40.1?&cible= | chapitre S-40.1
+https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-24.2?&cible= | chapitre C-24.2
+https://www.legisquebec.gouv.qc.ca/fr/contenu/joindre/ | Nous joindre
+https://www.legisquebec.gouv.qc.ca/fr/contenu/plan/ | Plan du site
+https://www.legisquebec.gouv.qc.ca/fr/contenu/access/ | Accessibilité
+https://www.legisquebec.gouv.qc.ca/fr/contenu/confid/ | Politique de confidentialité
+https://www.quebec.ca/gouvernement/ministeres-organismes/emploi-solidarite-sociale/cadre-legal-transparence/acces-information | Accès à l'information
+http://www.droitauteur.gouv.qc.ca/copyright.php | © Gouvernement du Québec

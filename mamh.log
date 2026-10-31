@@ -1,0 +1,88 @@
+ok MUN.csv ﻿Liste des municipalités (csv)
+ok MRC_CM_Arg.csv Liste des MRC_CM_Arg (csv)
+ok ARR.csv Liste des arrondissements (csv)
+ok ress.csv Liste des ressources (csv)
+{
+ "titulo": "Répertoire des municipalités du Québec",
+ "licencia": "Attribution (CC-BY 4.0)",
+ "modificado": "2026-10-30T11:04:50.034691",
+ "recursos": [
+  {
+   "name": "﻿Liste des municipalités (csv)",
+   "format": "CSV",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/MUN.csv",
+   "last_modified": "2026-10-30T11:00:17",
+   "created": "2016-04-01T15:52:44.343477"
+  },
+  {
+   "name": "Liste des MRC_CM_Arg (csv)",
+   "format": "CSV",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/MRC_CM_Arg.csv",
+   "last_modified": "2026-10-30T11:00:53",
+   "created": "2024-03-26T14:10:34.552944"
+  },
+  {
+   "name": "Liste des arrondissements (csv)",
+   "format": "CSV",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/ARR.csv",
+   "last_modified": "2026-10-30T11:00:37",
+   "created": "2016-03-31T14:39:31.076066"
+  },
+  {
+   "name": "Liste des ressources (csv)",
+   "format": "CSV",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/ress.csv",
+   "last_modified": "2026-10-30T11:01:10",
+   "created": "2024-03-26T14:18:11.349521"
+  },
+  {
+   "name": "Liste des organisations municipales",
+   "format": "XML",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/A01_CONVERT_XML_CORPO_MUN.xml",
+   "last_modified": "2026-10-30T11:02:09",
+   "created": "2016-02-15T08:38:16.350663"
+  },
+  {
+   "name": "Population des organisations municipales",
+   "format": "XML",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/A01_CONVERT_XML_POP.xml",
+   "last_modified": "2026-10-30T11:04:34",
+   "created": "2016-02-15T09:23:03.200084"
+  },
+  {
+   "name": "Lien entre les organisations municipales",
+   "format": "XML",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/A01_CONVERT_XML_STRC.xml",
+   "last_modified": "2026-10-30T11:04:49",
+   "created": "2016-02-15T10:30:48.674486"
+  },
+  {
+   "name": "﻿Liste des circonscriptions électorales",
+   "format": "XML",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/A01_CONVERT_XML_CIRC_ELEC.xml",
+   "last_modified": "2026-10-30T11:01:39",
+   "created": "2016-02-22T09:18:56.106586"
+  },
+  {
+   "name": "﻿Lien entre les municipalités et les circonscriptions électorales",
+   "format": "XML",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/A01_CONVERT_XML_CORPO_CIRC.xml",
+   "last_modified": "2026-10-30T11:01:54",
+   "created": "2016-02-22T09:19:51.215916"
+  },
+  {
+   "name": "Historique des liens entre les organisations municipales",
+   "format": "XML",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/A01_CONVERT_XML_NIV_SUPR.xml",
+   "last_modified": "2026-10-30T11:03:51",
+   "created": "2016-02-22T09:32:17.305422"
+  },
+  {
+   "name": "Information complémentaire sur les organisations municipales inactives",
+   "format": "XML",
+   "url": "https://donneesouvertes.affmunqc.net/repertoire/A01_CONVERT_XML_ENTI_MUN_I.xml",
+   "last_modified": "2026-10-30T11:03:07",
+   "created": "2016-02-22T09:41:29.041913"
+  },
+  {
+   "name": "﻿Liste des mouvements des muni
