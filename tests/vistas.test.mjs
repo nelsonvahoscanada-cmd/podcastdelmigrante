@@ -44,10 +44,10 @@ async function total(env, id = HECTOR) {
 }
 
 /* ---------- Cobertura ---------- */
-test("lista generada: las 19 noticias y 8 guías publicadas, y nada más", () => {
+test("lista generada: las 20 noticias y 8 guías publicadas, y nada más", () => {
   const esperados = ARTS.filter((a) => ["Noticia", "Guía"].includes(a.contentType) && !a.draft && a.demo !== true).map((a) => a.id);
   assert.deepEqual([...ARTICULOS_CON_CONTADOR].sort(), [...esperados].sort());
-  assert.equal(ARTS.filter((a) => a.contentType === "Noticia" && ARTICULOS_CON_CONTADOR.has(a.id)).length, 19);
+  assert.equal(ARTS.filter((a) => a.contentType === "Noticia" && ARTICULOS_CON_CONTADOR.has(a.id)).length, 20);
   assert.equal(ARTS.filter((a) => a.contentType === "Guía" && ARTICULOS_CON_CONTADOR.has(a.id)).length, 8);
   assert.ok(ARTICULOS_CON_CONTADOR.has(HECTOR), "la entrevista de Héctor Rivero, clasificada como Noticia");
   for (const a of ARTS.filter((x) => !["Noticia", "Guía"].includes(x.contentType))) assert.ok(!ARTICULOS_CON_CONTADOR.has(a.id), `${a.id} (${a.contentType}) sin contador`);
@@ -58,7 +58,7 @@ test("misma regla en el generador y en js/article.js; el hueco y el script está
   assert.match(read("js/article.js"), /const TIPOS_CON_CONTADOR = \["Noticia", "Guía"\];/);
   assert.match(read("articulo.html"), /<script src="js\/article\.js"><\/script>\n<script src="js\/vistas\.js"><\/script>/);
   const paginas = readdirSync(new URL(".", ROOT)).filter((f) => /^articulo-.+\.html$/.test(f));
-  assert.equal(paginas.length, 31);
+  assert.equal(paginas.length, 32);
   for (const f of paginas) assert.match(read(f), /<script src="js\/vistas\.js"><\/script>/, f);
 });
 

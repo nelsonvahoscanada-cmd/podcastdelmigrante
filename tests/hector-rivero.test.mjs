@@ -41,13 +41,14 @@ test("artículo: noticia completa con su estructura periodística y sin afirmaci
   assert.equal(art.video.youtubeId, VIDEO);
 });
 
-test("noticia principal de la portada; la anterior sigue en el bloque principal y nada se borra", () => {
-  assert.equal(ctx.H.main.slug, SLUG);
-  assert.equal(ctx.H.main.title, art.title);
-  assert.equal(ctx.H.main.dek, art.dek);
-  assert.equal(ctx.H.main.image, `url('assets/yt/${VIDEO}.jpg')`);
-  assert.equal(ctx.H.main.demo, false);
-  assert.ok(ctx.H.main.alt.length > 40, "texto alternativo");
+test("portada: Santa Latino pasa a la primera tarjeta secundaria tras la noticia de empleo; nada se borra", () => {
+  assert.equal(ctx.H.main.slug, "alberta-empleo-desde-casa-program-eligibility-assessor-2026");
+  const santa = ctx.H.secondary[0];
+  assert.equal(santa.slug, SLUG);
+  assert.equal(santa.title, art.title);
+  assert.equal(santa.image, `url('assets/yt/${VIDEO}.jpg')`);
+  assert.equal(santa.demo, false);
+  assert.ok(santa.alt.length > 40, "texto alternativo");
   assert.ok(ctx.H.secondary.some((x) => x.slug === "referendum-alberta-octubre-2026-inmigrantes"), "la noticia principal anterior sigue entre las secundarias");
   assert.equal(ctx.H.secondary.length, 4);
   for (const s of ["referendum-alberta-octubre-2026-inmigrantes", "rocky-ridge-athletic-park-calgary", "alberta-energy-rebate-plazo-octubre"]) {

@@ -60,14 +60,13 @@ async function reproduce(page, contenedor) {
 (async () => {
   const browser = await chromium.launch();
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: noticia principal ---------- */
+    /* ---------- Portada: primera tarjeta secundaria (tras la noticia de empleo) ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    const hero = page.locator("#heroMain");
-    assert.equal((await hero.locator("h1").innerText()).trim(), TITULO);
-    assert.match(await hero.locator(".hero-main__dek").innerText(), /^De Venezuela a Niagara Falls/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Gobierno de Alberta ofrece empleo desde casa/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.match(await hero.innerText(), new RegExp(TITULO.slice(0, 40)));
     assert.equal(await hero.locator(".demo-badge").count(), 0);
-    const fondo = await hero.locator(".hero-main__media").getAttribute("style");
-    assert.match(fondo, new RegExp(`assets/yt/${VIDEO}\\.jpg`));
+    assert.match(await hero.innerHTML(), new RegExp(`assets/yt/${VIDEO}\\.jpg`));
     assert.equal((await fetch(`${BASE}/assets/yt/${VIDEO}.jpg`)).status, 200);
     assert.match(await page.locator("#heroSecondary").innerText(), /Alberta votó por permanecer en Canadá/, "la noticia principal anterior sigue en la portada");
 
@@ -88,12 +87,12 @@ async function reproduce(page, contenedor) {
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
 
-    /* El titular de la portada abre el artículo completo (una sola URL: /articulo-<slug>).
+    /* La tarjeta de la portada abre el artículo completo (una sola URL: /articulo-<slug>).
        En una página recién cargada: el reproductor creado arriba conserva el foco. */
     const portada = await ctx.newPage();
     await portada.goto(BASE + "/", { waitUntil: "networkidle" });
     await portada.addStyleTag({ content: "html{scroll-behavior:auto!important}" });
-    await portada.locator("#heroMain h1 a").click();
+    await portada.locator(`#heroSecondary .hero-sec-card a[href*="${SLUG}"]`).first().click();
     await portada.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 

@@ -241,7 +241,7 @@ const esperar = (ms) => new Promise((r) => setTimeout(r, ms));
     await esperar(ruta === "/" ? 1500 : 6000);
     assert.equal(s.gets.length + s.posts.length, 0, `${ruta}: no consulta el contador`);
     assert.equal(await s.page.locator(".article-views").count(), 0, ruta);
-    if (ruta === "/") assert.match(await s.page.locator("#heroMain h1").innerText(), /^Héctor Rivero, el Santa Latino/);
+    if (ruta === "/") assert.match(await s.page.locator("#heroMain h1").innerText(), /^Gobierno de Alberta ofrece empleo desde casa/);
     assert.deepEqual(s.errores, []);
     await s.ctx.close();
   }
