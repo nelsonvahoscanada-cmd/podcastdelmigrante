@@ -1,0 +1,12 @@
+﻿TYPE,DESCR,LABEL,ID_SITE,WKT
+Privé,Gaz naturel,Gaz Propane Monin,10,POINT  ( 293000.60000000 5053742.30000000)
+Privé,Gaz naturel,Supérieur Propane,8,POINT  ( 287673.40000000 5049975.50000000)
+Public,Station eau potable,Usine de filtration Sainte-Rose,5,POINT  ( 282472.67600000 5053032.84440000)
+Public,Station eau potable,Usine de filtration Pont-Viau,9,POINT  ( 290849.04830000 5046752.44660000)
+Public,Station eau potable,Usine de filtration Chomedey,4,POINT  ( 286221.84890000 5043767.15670000)
+Station d'épuration,Station d'épuration des eaux usées,Auteuil,2,POINT  ( 285484.45900000 5057745.00730000)
+Station d'épuration,Station d'épuration des eaux usées,Lapinière,3,POINT  ( 293529.45480000 5054382.83230000)
+Privé,Industriel,Les produits alimentaires Viau,11,POINT  ( 293053.40000000 5054682.70000000)
+Privé,Industriel,Mapei Inc,7,POINT  ( 286398.30000000 5050119.10000000)
+Privé,Industriel,"Dyne-a-pak Inc,",6,POINT  ( 286206.90000000 5050612.20000000)
+Public,Station d'épuration des eaux usées,Fabreville,1,POINT  ( 278639.24400000 5048558.87620000)

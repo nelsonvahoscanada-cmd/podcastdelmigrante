@@ -1,0 +1,50 @@
+PAQUETE desserte-des-centres-durgences-9-1-1 | Desserte des centres d'urgences 9-1-1 | Ministère de la Sécurité intérieure | 2026-10-27T12:20:27.420890
+  RECURSO Site internet concernant la certification des centres d'urgence 9-1-1 HTML https://www.securitepublique.gouv.qc.ca/securite-civile/urgence/urgence-9-1-1.html None
+  RECURSO Carte interactive (IGO) HTML https://geoegl.msp.gouv.qc.ca/igo2/apercu-qc/?context=qc911&zoom=7 None
+  RECURSO SHP - Desserte Entente SHP https://geoegl.msp.gouv.qc.ca/apis/wss/911.fcgi?service=wfs&request=getfeature&version=1.1.0&typename=msp_desserte_mun_911&outputformat=shp 2026-10-27T12:20:20
+  RECURSO GeoJSON - Desserte Entente GeoJSON https://geoegl.msp.gouv.qc.ca/apis/wss/911.fcgi?service=wfs&request=getfeature&version=1.1.0&typename=msp_desserte_mun_911&outputformat=geojson 2026-10-27T12:20:22
+  RECURSO Desserte 9-1-1 (wms) WMS https://geoegl.msp.gouv.qc.ca/apis/wss/911.fcgi?request=getcapabilities&service=wms&version=1.3.0 None
+  RECURSO Desserte 9-1-1 (wfs) WFS https://geoegl.msp.gouv.qc.ca/apis/wss/911.fcgi?service=wfs&request=getcapabilities&version=1.1.0 None
+  RECURSO SHP - Desserte 9-1-1 (couverture cellulaire) SHP https://geoegl.msp.gouv.qc.ca/apis/wss/911.fcgi?service=wfs&request=getfeature&version=1.1.0&typename=msp_v_couverture_cellulaire_s&outputformat=shp 2026-10-27T12:20:24
+  RECURSO GeoJSON - Desserte 9-1-1 (couverture cellulaire) GeoJSON https://geoegl.msp.gouv.qc.ca/apis/wss/911.fcgi?service=wfs&request=getfeature&version=1.1.0&typename=msp_v_couverture_cellulaire_s&outputformat=geojson 2026-10-27T12:20:26
+PAQUETE telephone-durgence | Téléphone d'urgence | Ministère des Transports et de la Mobilité durable | 2026-05-19T19:46:46.439874
+  RECURSO Téléphone d'urgence HTML https://geoegl.msp.gouv.qc.ca/igo2/apercu-qc/?context=mtq&visiblelayers=telephone_urg 2026-05-14T20:51:00
+  RECURSO Téléphone d'urgence CSV https://ws.mapserver.transports.gouv.qc.ca/swtq?service=wfs&version=2.0.0&request=getfeature&typename=ms:telephone_urg&outfile=TelephoneUrgence&outputformat=csv 2026-05-14T20:51:00
+    ok 5682
+  RECURSO Téléphone d'urgence GeoJSON https://ws.mapserver.transports.gouv.qc.ca/swtq?service=wfs&version=2.0.0&request=getfeature&typename=ms:telephone_urg&outfile=TelephoneUrgence&srsname=EPSG:4326&outputformat=geojson 2026-05-14T20:51:00
+  RECURSO Téléphone d'urgence SHP https://ws.mapserver.transports.gouv.qc.ca/swtq?service=wfs&version=2.0.0&request=getfeature&typename=ms:telephone_urg&outfile=TelephoneUrgence&srsname=EPSG:4326&outputformat=shp 2026-05-14T20:51:00
+  RECURSO Téléphone d'urgence GPKG https://ws.mapserver.transports.gouv.qc.ca/swtq?service=wfs&version=2.0.0&request=getfeature&typename=ms:telephone_urg&outfile=TelephoneUrgence&srsname=EPSG:4326&outputformat=geopackage 2026-05-14T20:51:00
+  RECURSO Téléphone d'urgence WMS https://ws.mapserver.transports.gouv.qc.ca/swtq?service=wms&request=getcapabilities 2026-05-14T20:51:00
+  RECURSO Téléphone d'urgence WFS https://ws.mapserver.transports.gouv.qc.ca/swtq?service=wfs&request=getcapabilities 2026-05-14T20:51:00
+PAQUETE fichier-cumulatif-des-donnees-des-urgences | Fichier cumulatif des données des urgences | Ministère de la Santé et des services sociaux | 2026-09-13T17:40:22.652076
+  RECURSO Fichier cumulatif des données des urgences CSV https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Donnees_cumulatives_Urgence.csv 2026-09-13T13:36:04.910000
+    ERROR HTTP Error 403: Forbidden
+  RECURSO Liste des variables et des notes méthodologiques PDF https://www.donneesquebec.ca/recherche/dataset/b7e297c3-ff0f-4e11-bc0f-2add3cffdd76/resource/84aa0e43-2890-4ce8-92bb-bfc00ad05456/download/listevariables_notesmetho_urgencecumul_20231221.pdf 2023-12-21T21:01:33.971593
+PAQUETE fichier-horaire-des-donnees-de-la-situation-a-l-urgence | Fichier horaire des données de la situation à l'urgence | Ministère de la Santé et des services sociaux | 2026-10-31T03:45:50.039264
+  RECURSO Fichier horaire des données de la situation à l'urgence CSV https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv 2026-10-30T23:45:48.140000
+    ERROR HTTP Error 403: Forbidden
+  RECURSO Fichier horaire de la situation à l'urgence avec le nombre de personnes présentes CSV https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours_nbpers.csv 2026-10-30T23:45:48.480000
+    ERROR HTTP Error 403: Forbidden
+  RECURSO Liste des variables et notes méthodologiques PDF https://www.donneesquebec.ca/recherche/dataset/d4541afe-9391-44bf-a78f-dae3c9cf1217/resource/968af2e2-8c0f-43d4-9f34-100bd8d295a7/download/listevariables_notesmetho_relevehoraireurgence_20230202.pdf 2023-02-03T15:18:47.447351
+PAQUETE sag_numeros-d-urgence | Numéros d'urgence | Ville de Saguenay | 2024-08-14T18:01:57.907985
+  RECURSO Numéros d'urgence CSV https://www.donneesquebec.ca/recherche/dataset/42f554ef-e66c-4625-80ad-9cd9988db7b0/resource/df785a6a-110b-49a7-9b13-16152bbe525e/download/numerosurgences.csv 2020-08-12T17:07:10.737109
+    ok 2833
+  RECURSO Numéros d'urgence PDF https://www.donneesquebec.ca/recherche/dataset/42f554ef-e66c-4625-80ad-9cd9988db7b0/resource/6faf9778-1fc9-4825-89e6-a2e6e17a9fb3/download/sagnumerosurgencesmeta.pdf 2020-08-12T17:13:12.136778
+PAQUETE localisation-des-sites-assujettis-au-reglement-sur-les-urgences-environnementales | Localisation des sites assujettis au règlement sur les urgences environnementales | Ville de Laval | 2023-06-26T20:02:59.514928
+  RECURSO sad-site-assujetti-aux-urgences-environnementales.csv CSV https://www.donneesquebec.ca/recherche/dataset/d834e1c2-cccd-4ef7-a3ba-cf8d4bf00cda/resource/7d098200-2769-4003-93df-84f406042599/download/sad-site-assujetti-aux-urgences-environnementales.csv 2019-05-10T19:59:06.470522
+    ok 1091
+  RECURSO sad-site-assujetti-aux-urgences-environnementales.geojson GeoJSON https://www.donneesquebec.ca/recherche/dataset/d834e1c2-cccd-4ef7-a3ba-cf8d4bf00cda/resource/f04876cf-164d-43c8-908a-8a9bfeb45879/download/sad-site-assujetti-aux-urgences-environnementales.geojson 2019-05-10T19:58:57.701946
+  RECURSO sad-site-assujetti-aux-urgences-environnementales.kml KML https://www.donneesquebec.ca/recherche/dataset/d834e1c2-cccd-4ef7-a3ba-cf8d4bf00cda/resource/30152999-353f-47ba-a061-e44894122859/download/sad-site-assujetti-aux-urgences-environnementales.kml 2019-05-10T19:58:39.538199
+  RECURSO sad-site-assujetti-aux-urgences-environnementales.zip SHP https://www.donneesquebec.ca/recherche/dataset/d834e1c2-cccd-4ef7-a3ba-cf8d4bf00cda/resource/5983d0f3-ab20-45fe-98d9-c4e9aa288063/download/sad-site-assujetti-aux-urgences-environnementales.zip 2019-05-10T19:58:28.610015
+PAQUETE covid-19-portrait-quotidien-des-hospitalisations | COVID-19 - Portrait quotidien des hospitalisations | Ministère de la Santé et des services sociaux | 2026-10-30T15:00:25.016374
+PAQUETE vmtl-avis-alertes | Avis et alertes | Ville de Montréal | 2026-10-31T01:00:46.144976
+PAQUETE med-echo-rapport-s16-sommaire-des-departs-selon-le-diagnostic-principal-par-groupe-de-rubrique | MED-ÉCHO – Rapport S16 - Sommaire des départs selon le diagnostic principal par groupe de rubriques | Ministère de la Santé et des services sociaux | 2026-10-21T17:22:52.353575
+PAQUETE points-de-rencontre-d-ambulance | Point de rencontre d'ambulance | Ministère des Ressources naturelles et des Forêts | 2026-06-04T13:46:12.381742
+PAQUETE mesures_preventives_feux_foret | Mesures préventives en lien avec les feux de forêt | Ministère de la Sécurité intérieure | 2026-08-17T19:56:57.103133
+PAQUETE historique-publique-d-embacles-repertories-au-msp | Historique (publique) d'embâcles répertoriés au MSP | Ministère de la Sécurité intérieure | 2026-07-16T18:21:06.413427
+PAQUETE cartographie-des-inondations-du-printemps-2026 | Cartographie des inondations du printemps 2026 | Ministère de la Sécurité intérieure | 2026-10-29T18:40:33.273371
+PAQUETE perimetres-de-laccident-de-train-du-lac-megantic-6-juillet-2013 | Périmètres de l'accident de train du Lac-Mégantic 6 juillet 2013 | Ministère de la Sécurité intérieure | 2025-11-06T15:34:15.359119
+PAQUETE cartographie-des-inondations-du-printemps-2023 | Cartographie des inondations du printemps 2023 | Ministère de la Sécurité intérieure | 2026-04-21T20:25:21.047519
+PAQUETE interventions-des-pompiers | Interventions des pompiers | Ville de Laval | 2023-06-26T19:40:03.277000
+PAQUETE observations-terrain-historiques-devenements-archives | Historique des événements de sécurité civile - Archives | Ministère de la Sécurité intérieure | 2024-09-12T16:24:21.954373
+PAQUETE cartographie-des-inondations-printemps-2019 | Cartographie des inondations du printemps 2019 | Ministère de la Sécurité intérieure | 2025-10-29T14:35:44.995231
