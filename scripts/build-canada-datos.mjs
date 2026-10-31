@@ -292,7 +292,7 @@ function paginaIndice(d, geo, comun) {
   const conFicha = regiones.filter((r) => r.profile).map((r) => r.name);
   const fichas = conFicha.length > 1 ? `${conFicha.slice(0, -1).join(", ")} y ${conFicha.at(-1)}` : conFicha[0];
   const description = conFicha.length > 1
-    ? `Mapa interactivo de las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial para inmigrantes y recién llegados. Fichas completas: ${fichas}.`
+    ? `Herramienta gratuita y en español para descubrir Canadá: mapa de las 10 provincias y los 3 territorios, ciudades y localidades, hora local e información oficial para inmigrantes. Guías completas: ${fichas}.`
     : `Mapa interactivo de las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial para inmigrantes y recién llegados. Empezamos por ${fichas}.`;
   const revision = [meta.lastReview, ...Object.values(perfiles).map((p) => p.lastReview).filter(Boolean)].sort().at(-1);
   const path = `${BASE_PATH}/`;
