@@ -33,9 +33,10 @@ import BritishColumbia from "./canada-en-datos/provincias/british-columbia.mjs";
 import PrinceEdwardIsland from "./canada-en-datos/provincias/prince-edward-island.mjs";
 import Saskatchewan from "./canada-en-datos/provincias/saskatchewan.mjs";
 import Manitoba from "./canada-en-datos/provincias/manitoba.mjs";
+import Quebec from "./canada-en-datos/provincias/quebec.mjs";
 
 /* Provincias y territorios con directorio de localidades (ver docs del estándar en el repositorio interno) */
-export const PROVINCIAS = { alberta: Alberta, ontario: Ontario, "british-columbia": BritishColumbia, "prince-edward-island": PrinceEdwardIsland, saskatchewan: Saskatchewan, manitoba: Manitoba };
+export const PROVINCIAS = { alberta: Alberta, ontario: Ontario, "british-columbia": BritishColumbia, "prince-edward-island": PrinceEdwardIsland, saskatchewan: Saskatchewan, manitoba: Manitoba, quebec: Quebec };
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";

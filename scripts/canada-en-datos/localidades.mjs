@@ -145,6 +145,8 @@ export function nombresVisibles(P, L) {
   for (const g of grupos.values()) {
     if (g.length < 2) continue;
     for (const r of g) nv.set(r, `${r.n} (${P.TIPOS[r.t].es.toLowerCase()})`);
+    /* Mismo nombre y mismo tipo (p. ej., dos municipios Saint-Elzéar en Quebec): se añade la división censal */
+    if (new Set(g.map((r) => nv.get(r))).size < g.length) for (const r of g) nv.set(r, `${r.n} (${P.TIPOS[r.t].es.toLowerCase()}, ${r.division})`);
     if (new Set(g.map((r) => nv.get(r))).size < g.length) throw new Error(`${P.nombre}: nombres repetidos sin distinguir: ${g[0].n}`);
   }
   return (r) => nv.get(r) || r.n;
