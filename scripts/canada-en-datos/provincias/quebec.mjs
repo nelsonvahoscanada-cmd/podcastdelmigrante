@@ -729,7 +729,11 @@ function filaCmhc(L, archivo, centro, hoja_) {
 }
 const decimal = (v) => { const [e, d] = String(v).split("."); return miles(e) + (d ? `.${d}` : ""); };
 const fechaIso = (s) => (/^\d{4}-\d\d-\d\d$/.test(s || "") ? fechaEs(s) : s);
-const web = (u) => (/^https?:\/\//.test(u) ? u : `https://${u}`);
+/* Sitio del répertoire: sin espacios, y con punto donde el répertoire tiene una coma (p. ej., «msvalere.qc,ca») */
+const web = (u) => {
+  const s = u.trim().replace(/,/g, ".");
+  return /^https?:\/\//.test(s) ? s : `https://${s}`;
+};
 
 function pagina(r, L, { esc }) {
   const tipo = TIPOS[r.t];
