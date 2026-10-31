@@ -42,6 +42,8 @@
   max-width: 20ch;
 }
 .cd-lead { font-size: 1.08rem; color: var(--gris-800); max-width: 62ch; }
+.cd-como { margin: 10px 0 0; padding-left: 12px; border-left: 3px solid var(--verde); font-size: 0.98rem; color: var(--gris-800); max-width: 62ch; }
+.cd-como strong { color: var(--negro); }
 .cd-meta { margin-top: 14px; font-size: 0.82rem; color: var(--gris-texto); }
 
 .cd-breadcrumb { font-size: 0.82rem; color: var(--gris-texto); margin-bottom: 6px; }

@@ -219,7 +219,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     data = load_data()
     geo = json.loads((ROOT / "scripts" / "canada-en-datos" / "mapa-canada.json").read_text())
-    guardar(tarjeta_canada(geo, None, "Canadá en Datos", "Provincias y territorios de Canadá", "Guías con datos oficiales para inmigrantes y recién llegados.", "Hora local, capitales, empleo, vivienda y más", "podcastdelmigrante.com/canada-en-datos"), OUT / "social-canada-en-datos.jpg")
+    guardar(tarjeta_canada(geo, None, "Canadá en Datos · Descubre tu Canadá", "Provincias y territorios de Canadá", "Herramienta gratuita y en español, con datos oficiales para inmigrantes.", "Ciudades, empleo, vivienda, clima y más", "podcastdelmigrante.com/canada-en-datos"), OUT / "social-canada-en-datos.jpg")
     print("escrito    assets/canada-en-datos/social-canada-en-datos.jpg")
     for r in data["CD_REGIONS"]:
         if r.get("profile"):

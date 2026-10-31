@@ -8,6 +8,10 @@
     canada-en-datos/index.html      → /canada-en-datos/
     canada-en-datos/<perfil>.html   → /canada-en-datos/<perfil>  (una por
                                       región con ficha; hoy: alberta)
+    js/canada-datos-disponibles.js  → regiones publicadas, para el módulo
+                                      «Descubre tu Canadá» de la portada
+    assets/canada-en-datos/descubre-mapa.svg → mapa de ese módulo, con
+                                      las regiones publicadas en verde
 
   Por qué páginas estáticas: Facebook, WhatsApp y los buscadores leen el
   HTML tal como llega (sin JavaScript). Aquí van ya escritos el título,
@@ -288,7 +292,7 @@ function paginaIndice(d, geo, comun) {
   const conFicha = regiones.filter((r) => r.profile).map((r) => r.name);
   const fichas = conFicha.length > 1 ? `${conFicha.slice(0, -1).join(", ")} y ${conFicha.at(-1)}` : conFicha[0];
   const description = conFicha.length > 1
-    ? `Mapa interactivo de las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial para inmigrantes y recién llegados. Fichas completas: ${fichas}.`
+    ? `Herramienta gratuita y en español para descubrir Canadá: mapa de las 10 provincias y los 3 territorios, ciudades y localidades, hora local e información oficial para inmigrantes. Guías completas: ${fichas}.`
     : `Mapa interactivo de las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial para inmigrantes y recién llegados. Empezamos por ${fichas}.`;
   const revision = [meta.lastReview, ...Object.values(perfiles).map((p) => p.lastReview).filter(Boolean)].sort().at(-1);
   const path = `${BASE_PATH}/`;
@@ -317,6 +321,7 @@ ${comun.cabecera}
       <p class="cd-kicker">El Podcast del Migrante</p>
       <h1>Canadá en Datos</h1>
       <p class="cd-lead">Explora las 10 provincias y los 3 territorios de Canadá: capital, hora local e información oficial útil para inmigrantes y recién llegados. ${conFicha.length > 1 ? `Ya están disponibles las fichas completas de ${esc(fichas)}; las demás llegarán pronto` : `Empezamos por ${esc(fichas)}; las demás fichas llegarán pronto`}.</p>
+      <p class="cd-como"><strong>${conFicha.length} de ${regiones.length}</strong> provincias y territorios con guía completa. Cómo empezar: elige una región en el mapa o en la lista; en las que tienen guía, abre la ficha y busca tu ciudad o localidad.</p>
       <p class="cd-meta">Última revisión: ${esc(fechaLarga(revision))}</p>
     </div>
   </section>
@@ -526,6 +531,48 @@ export function manifiestoImagenes(root = ROOT) {
     .map(([k]) => Localidades.imagenes(PROVINCIAS[k], PROVINCIAS[k].cargar(root)));
 }
 
+/* ---------- «Descubre tu Canadá» (portada): disponibilidad y mapa ----------
+   Una región está disponible si tiene ficha en CD_REGIONS (profile) y su
+   página existe: la misma regla que pinta el mapa de /canada-en-datos/.
+   Al publicar una provincia nueva, estos dos archivos cambian solos al
+   regenerar, y las pruebas fallan si no se regeneraron. */
+export function disponibilidad(d) {
+  const regiones = d.CD_REGIONS.map((r) => ({
+    code: r.code,
+    name: r.name,
+    type: r.type,
+    url: r.profile ? `${BASE_PATH}/${r.profile}` : null,
+  }));
+  const disp = regiones.filter((r) => r.url);
+  return {
+    total: regiones.length,
+    disponibles: disp.length,
+    provincias: { total: regiones.filter((r) => r.type === "provincia").length, disponibles: disp.filter((r) => r.type === "provincia").length },
+    territorios: { total: regiones.filter((r) => r.type === "territorio").length, disponibles: disp.filter((r) => r.type === "territorio").length },
+    regiones,
+  };
+}
+
+function disponiblesJs(d) {
+  return `/* Generado por scripts/build-canada-datos.mjs a partir de CD_REGIONS (js/canada-datos.js). No editar a mano:
+   una región aparece como disponible cuando tiene ficha publicada en Canadá en Datos. */
+window.CD_DISPONIBLES = ${JSON.stringify(disponibilidad(d), null, 2)};
+`;
+}
+
+function descubreMapaSvg(d, geo) {
+  const trazos = d.CD_REGIONS.map((r) => {
+    const camino = geo.paths[r.code];
+    if (!camino) throw new Error(`Falta la geometría de ${r.code}`);
+    return `<path class="${r.profile ? "si" : "no"}" d="${camino}"/>`;
+  }).join("\n  ");
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${geo.width} ${geo.height}" width="${geo.width}" height="${geo.height}" role="img" aria-label="Mapa de Canadá: en verde, las provincias y territorios con guía disponible en Canadá en Datos">
+<style>path{stroke:#0b0b0b;stroke-width:1.6;stroke-linejoin:round}.si{fill:#6f9a03}.no{fill:#3a3a38}</style>
+  ${trazos}
+</svg>
+`;
+}
+
 /* ---------- Generación ---------- */
 export function render(root = ROOT) {
   const d = loadData(root);
@@ -552,6 +599,9 @@ export function render(root = ROOT) {
     if (L[region.profile]) for (const r of L[region.profile].items.filter((x) => x.ficha)) rutas.push([`${BASE_PATH}/${region.profile}/${r.s}`, L[region.profile].meta.consultado, "0.7"]);
   }
   files["/sitemap.xml"] = sitemapCanada(readFileSync(join(root, "sitemap.xml"), "utf8"), rutas);
+  /* Módulo «Descubre tu Canadá» de la portada */
+  files["/js/canada-datos-disponibles.js"] = disponiblesJs(d);
+  files["/assets/canada-en-datos/descubre-mapa.svg"] = descubreMapaSvg(d, geo);
   for (const [k, l] of Object.entries(L)) {
     const P = PROVINCIAS[k];
     Object.assign(files, Localidades.paginas(P, l, { esc, head, chrome: comun, scriptsBase: (extra) => scripts(extra, { soloSitio: true }), meta: d.CD_META }));
