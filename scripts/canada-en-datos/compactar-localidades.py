@@ -36,6 +36,45 @@ CAMPOS_DPL = {
     "superficie": D + "Land area in square kilometres, 2021 [6]",
     "densidad": D + "Population density per square kilometre, 2021 [7]",
 }
+def simplifica(anillo, tol):
+    """Douglas-Peucker en metros (EPSG:3347): solo reduce el contorno de las divisiones censales del mapa."""
+    if len(anillo) < 5:
+        return anillo
+    marca = [False] * len(anillo)
+    marca[0] = marca[-1] = True
+    pila = [(0, len(anillo) - 1)]
+    while pila:
+        i, j = pila.pop()
+        (ax, ay), (bx, by) = anillo[i], anillo[j]
+        dx, dy = bx - ax, by - ay
+        l = dx * dx + dy * dy
+        dmax, k = 0, -1
+        for x in range(i + 1, j):
+            px, py = anillo[x]
+            t_ = max(0, min(1, ((px - ax) * dx + (py - ay) * dy) / l)) if l else 0
+            d = ((px - ax - t_ * dx) ** 2 + (py - ay - t_ * dy) ** 2) ** 0.5
+            if d > dmax:
+                dmax, k = d, x
+        if dmax > tol:
+            marca[k] = True
+            pila += [(i, k), (k, j)]
+    return [p for p, m in zip(anillo, marca) if m]
+
+
+def geo_simple(geo, tol):
+    if not tol:
+        return geo
+    polis = [geo["coordinates"]] if geo["type"] == "Polygon" else geo["coordinates"]
+    salida = []
+    for p in polis:
+        tam = lambda a: max(max(x for x, _ in a) - min(x for x, _ in a), max(y for _, y in a) - min(y for _, y in a))
+        anillos = [simplifica(a, tol) for a in p if tam(a) >= 4 * tol]
+        if anillos and tam(p[0]) >= 4 * tol and len(anillos[0]) >= 4:  # islas, islotes y lagos de menos de 4 veces la tolerancia no se dibujan
+            salida.append([a for a in anillos if len(a) >= 4])
+    return {"type": "MultiPolygon", "coordinates": salida}
+
+
+TOL = {"qc": 1500}.get(AB, 0)  # Quebec: contorno de 98 divisiones censales, tolerancia de 1,5 km (el mapa mide 600 px)
 censo = lambda dguid: [F["censo"].get(dguid, {}).get(v) for v in CAMPOS.values()]
 censo_dpl = lambda dguid: [F["censo_dpl"].get(dguid, {}).get(v) for v in CAMPOS_DPL.values()]
 ca_de = {c: m["CMANAME"] for m in F["cma"] for c in m["csd"]}
@@ -45,7 +84,7 @@ salida = {
     "fuentes": F["fuentes"],
     "provincia": censo("2021A0002" + PR),
     "divisiones": [[c["CDUID"], c["CDNAME"], c["ERUID"], censo("2021A0003" + c["CDUID"])] for c in F["cd"]],
-    "cd_geo": {c["CDUID"]: c["geo"] for c in F["cd"]},
+    "cd_geo": {c["CDUID"]: geo_simple(c["geo"], TOL) for c in F["cd"]},
     "er": F["er"],
     "censo_campos": list(CAMPOS),
     "csd": [
@@ -67,6 +106,18 @@ salida = {
     ],
     "escuelas_campos": ["nombre", "tipo", "autoridad", "niveles", "csd"],
 }
+# Quebec: Répertoire des municipalités du Québec (MAMH, Données Québec, CC BY 4.0), descargado con
+# obtener-qc-municipios.py. Se conservan solo los campos que usa la guía, sin cambiar valores.
+mamh = BASE / f"{AB}-mamh-MUN.csv"
+if mamh.exists():
+    import csv
+    meta = json.loads((BASE / f"{AB}-mamh-meta.json").read_text(encoding="utf-8"))
+    filas = list(csv.DictReader(mamh.open(encoding="utf-8-sig")))
+    salida["mamh"] = {
+        "modificado": meta.get("modificado"), "licencia": meta.get("licencia"),
+        "campos": ["nombre", "designacion", "region", "mrc", "web", "poblacion", "constitucion"],
+        "filas": {f["mcode"]: [f["munnom"], f["mdes"], f["regadm"], f["mrc"], f["mweb"], f["mpopul"], f["mdatcons"]] for f in filas},
+    }
 texto = json.dumps(salida, ensure_ascii=False, separators=(",", ":"))
 (BASE / f"{AB}-localidades.json").write_text(texto, encoding="utf-8")
 print(f"{AB}-localidades.json:", len(texto), "bytes")

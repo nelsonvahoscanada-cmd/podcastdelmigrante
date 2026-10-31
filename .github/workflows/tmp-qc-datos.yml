@@ -14,11 +14,11 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -q openpyxl pyproj shapely playwright && python -m playwright install --with-deps chromium >/dev/null
-      - name: Páginas oficiales (tercera ronda)
+      - name: Urgencias (MSSS) y páginas (cuarta ronda)
         continue-on-error: true
-        run: mkdir -p /tmp/out && python3 scripts/canada-en-datos/obtener-paginas-texto.py scripts/canada-en-datos/qc-paginas3.py /tmp/out/paginas3 > /tmp/out/paginas3.log 2>&1; tail -3 /tmp/out/paginas3.log
+        run: mkdir -p /tmp/out && python3 scripts/canada-en-datos/obtener-qc-urgencias.py /tmp/out/urgencias > /tmp/out/urgencias.log 2>&1; python3 scripts/canada-en-datos/obtener-paginas-texto.py scripts/canada-en-datos/qc-paginas4.py /tmp/out/paginas4 > /tmp/out/paginas4.log 2>&1; tail -5 /tmp/out/urgencias.log
       - name: Publicar en la rama de datos
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
           git add -A && git commit -qm "Datos de Quebec (solo lectura) [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-qc-datos3
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-qc-datos4
