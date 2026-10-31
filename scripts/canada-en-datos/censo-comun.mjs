@@ -84,6 +84,7 @@ function trazo(geo, a, tol = 0.6) {
     tiposFicha     tipos que pueden tener ficha completa
     hospitales     { nombre en la base ODHF (minúsculas): nombre oficial }
     escuelasNombres{ nombre dañado en la base ODEF: nombre correcto } — correcciones explícitas de acentos
+    gnExcluir      [opcional] tipos de la CGNDB que no son localidades (estaciones, pistas de esquí…): no se incluyen
 */
 export function cargarCenso(root, cfg) {
   const { TIPOS } = cfg;
@@ -176,6 +177,7 @@ export function cargarCenso(root, cfg) {
   const cgn = J.cgn.map((f) => objeto(J.cgn_campos, f));
   cgn.sort((x, y) => (ORDEN.indexOf(x.tipo) + 1 || 99) - (ORDEN.indexOf(y.tipo) + 1 || 99));
   for (const g of cgn) {
+    if (cfg.gnExcluir && cfg.gnExcluir.has(g.tipo)) continue;
     const padre = porCodigo.get(g.csd);
     let t = POR_GN[g.tipo];
     if (cfg.gnMunicipal.has(g.tipo)) {
@@ -226,9 +228,10 @@ export function cargarCenso(root, cfg) {
   const escuelas = J.escuelas.map((f) => objeto(J.escuelas_campos, f)).map((e) => {
     if (!e.nombre || !e.nombre.includes("?")) return e;
     const bueno = (cfg.escuelasNombres || {})[e.nombre];
+    if (bueno === null) return null; /* nombre irrecuperable: no se muestra */
     if (!bueno) throw new Error(`${cfg.provincia}: nombre de escuela con caracteres dañados sin corrección: ${e.nombre}`);
     return { ...e, nombre: bueno };
-  });
+  }).filter(Boolean);
 
   return {
     meta: { consultado: J.consultado },
@@ -242,5 +245,6 @@ export function cargarCenso(root, cfg) {
     divisiones,
     escuelas,
     hospitales,
+    mamh: J.mamh || null,
   };
 }

@@ -74,8 +74,8 @@ async function sinScrollHorizontal(page) {
     assert.match(await page.locator(".cd-panel__note").textContent(), /más de una zona horaria/);
     assert.equal(new URL(page.url()).hash, "#ontario");
 
-    // Una provincia sin ficha (Quebec) sigue en «Próximamente», sin enlaces
-    await page.locator('.cd-chip[data-code="QC"]').click();
+    // Una provincia sin ficha (Nueva Escocia) sigue en «Próximamente», sin enlaces
+    await page.locator('.cd-chip[data-code="NS"]').click();
     assert.match(await page.locator(".cd-panel").textContent(), /Ficha completa: próximamente/);
     assert.equal(await page.locator('.cd-panel a[href*="/canada-en-datos/"]').count(), 0, "sin enlaces a fichas inexistentes");
 
@@ -212,7 +212,7 @@ async function sinScrollHorizontal(page) {
   }
 
   /* ---------- Rutas ---------- */
-  for (const [ruta, estado] of [["/canada-en-datos/ontario", 200], ["/canada-en-datos/quebec", 404], ["/canada-en-datos/alberta.html", 308], ["/canada-en-datos/ontario.html", 308]]) {
+  for (const [ruta, estado] of [["/canada-en-datos/ontario", 200], ["/canada-en-datos/quebec", 200], ["/canada-en-datos/nueva-escocia", 404], ["/canada-en-datos/alberta.html", 308], ["/canada-en-datos/ontario.html", 308]]) {
     const r = await fetch(BASE + ruta, { redirect: "manual" });
     assert.equal(r.status, estado, ruta);
   }
