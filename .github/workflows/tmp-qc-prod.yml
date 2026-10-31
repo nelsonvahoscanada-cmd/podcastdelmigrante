@@ -1,0 +1,66 @@
+name: tmp QC produccion
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-quebec]
+    paths: [".github/workflows/tmp-qc-prod.yml"]
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        prueba: [e2e-quebec-localidades, e2e-manitoba-localidades, e2e-canada-datos, e2e-saskatchewan-localidades, e2e-alberta-localidades, e2e-ontario-localidades, e2e-british-columbia-localidades, e2e-prince-edward-island-localidades, e2e-menu, e2e-noticias, e2e-hector-rivero, e2e-alberta-bomberos, e2e-empleo-remoto-alberta]
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue de produccion (Quebec y el texto del PEQ)
+        run: for i in $(seq 1 60); do curl -s https://podcastdelmigrante.com/canada-en-datos/quebec | grep -q 'ese período está cerrado' && echo listo && exit 0; sleep 20; done; exit 1
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+      - name: Simulador del contador (solo lectura; no genera visitas en producción)
+        run: |
+          cat > /tmp/pw/vistas.cjs <<'JS'
+          const pw = require("/tmp/pw/node_modules/playwright");
+          const orig = pw.chromium.launch.bind(pw.chromium);
+          pw.chromium.launch = async (...a) => {
+            const b = await orig(...a);
+            const nc = b.newContext.bind(b);
+            b.newContext = async (...o) => { const c = await nc(...o); await c.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true,"vistas":0}' })); return c; };
+            const np = b.newPage.bind(b);
+            b.newPage = async (...o) => { const c = await b.newContext(...o); return c.newPage(); };
+            return b;
+          };
+          JS
+      - run: node tests/${{ matrix.prueba }}.cjs
+        env:
+          BASE: https://podcastdelmigrante.com
+          NODE_PATH: /tmp/pw/node_modules
+          NODE_OPTIONS: --require /tmp/pw/vistas.cjs
+  sitio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - name: Esperar el despliegue de produccion (Quebec y el texto del PEQ)
+        run: for i in $(seq 1 60); do curl -s https://podcastdelmigrante.com/canada-en-datos/quebec | grep -q 'ese período está cerrado' && echo listo && exit 0; sleep 20; done; exit 1
+      - name: Archivos publicados identicos a main y rutas principales
+        run: |
+          B=https://podcastdelmigrante.com
+          for f in css/canada-datos.css js/canada-datos.js js/quebec-localidades.js js/manitoba-localidades.js js/canada-reloj.js js/canada-reloj-localidad.js js/saskatchewan-localidades.js js/alberta-localidades.js js/ontario-localidades.js js/british-columbia-localidades.js js/prince-edward-island-localidades.js js/canada-directorio.js js/articles.js js/directorio/solicitud-form.js registra-tu-empresa.html sitemap.xml; do
+            curl -sf "$B/$f" -o /tmp/x; if cmp -s /tmp/x "$f"; then echo "IGUAL $f"; else echo "DISTINTO $f"; fi
+          done
+          for r in /canada-en-datos/ /canada-en-datos/quebec /canada-en-datos/quebec/montreal /canada-en-datos/quebec/blanc-sablon /canada-en-datos/quebec/saint-guy /canada-en-datos/manitoba /canada-en-datos/manitoba/winnipeg /canada-en-datos/saskatchewan /canada-en-datos/alberta /canada-en-datos/ontario /canada-en-datos/british-columbia /canada-en-datos/prince-edward-island / /noticias.html /registra-tu-empresa.html /admin/ /assets/canada-en-datos/social-quebec.jpg /assets/canada-en-datos/quebec-regiones.svg; do
+            echo "$(curl -s -o /dev/null -w '%{http_code}' "$B$r") $r"
+          done
+          echo "mapa principal (provincias con ficha):"
+          curl -s "$B/canada-en-datos/" | grep -o 'class="cd-region cd-region--ficha" data-code="[A-Z]*"' | sort
+          curl -s "$B/canada-en-datos/quebec" | grep -o '<meta property="og:[a-z:]*" content="[^"]*"'
+          echo "PEQ cierre: $(curl -s "$B/canada-en-datos/quebec" | grep -c '31 de octubre de 2026 a las 23:59, hora de Montreal')  cerrado: $(curl -s "$B/canada-en-datos/quebec" | grep -c 'Desde el 1 de noviembre de 2026, ese período está cerrado')  sin nuevos: $(curl -s "$B/canada-en-datos/quebec" | grep -c 'Esta guía no anuncia nuevos períodos')"
+          echo "sitemap QC: $(curl -s "$B/sitemap.xml" | grep -c 'canada-en-datos/quebec')"
+          echo "todas las paginas de QC ($(ls canada-en-datos/quebec | wc -l)):"
+          ls canada-en-datos/quebec | sed 's/\.html$//' | xargs -P 16 -I{} curl -s -o /dev/null -w '%{http_code}\n' "$B/canada-en-datos/quebec/{}" | sort | uniq -c
+          echo "fichas completas (reloj local):"
+          for s in montreal quebec laval gatineau longueuil sherbrooke saguenay levis trois-rivieres terrebonne saint-jean-sur-richelieu repentigny brossard drummondville saint-jerome granby rimouski victoriaville rouyn-noranda val-d-or alma chibougamau gaspe joliette riviere-du-loup saint-hyacinthe sept-iles shawinigan; do echo "$s $(curl -s -o /dev/null -w '%{http_code}' "$B/canada-en-datos/quebec/$s") reloj=$(curl -s "$B/canada-en-datos/quebec/$s" | grep -c 'data-reloj-localidad')"; done
