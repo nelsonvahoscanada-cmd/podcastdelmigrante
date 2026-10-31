@@ -14,17 +14,11 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -q openpyxl pyproj shapely playwright && python -m playwright install --with-deps chromium >/dev/null
-      - name: Localidades (Censo, CGNDB, EPA, CMHC, ODHF, ODEF)
+      - name: Páginas oficiales (tercera ronda)
         continue-on-error: true
-        run: mkdir -p /tmp/out && python3 scripts/canada-en-datos/obtener-localidades-censo.py qc > /tmp/out/localidades.log 2>&1; cp scripts/canada-en-datos/qc-fuentes.json /tmp/out/ || true; grep -v "^D|" /tmp/out/localidades.log > /tmp/out/localidades-resumen.log; tail -5 /tmp/out/localidades-resumen.log
-      - name: Répertoire des municipalités (MAMH)
-        continue-on-error: true
-        run: python3 scripts/canada-en-datos/obtener-qc-municipios.py /tmp/out/mamh > /tmp/out/mamh.log 2>&1; tail -3 /tmp/out/mamh.log
-      - name: Páginas oficiales (segunda ronda)
-        continue-on-error: true
-        run: python3 scripts/canada-en-datos/obtener-paginas-texto.py scripts/canada-en-datos/qc-paginas2.py /tmp/out/paginas2 > /tmp/out/paginas2.log 2>&1; tail -3 /tmp/out/paginas2.log
+        run: mkdir -p /tmp/out && python3 scripts/canada-en-datos/obtener-paginas-texto.py scripts/canada-en-datos/qc-paginas3.py /tmp/out/paginas3 > /tmp/out/paginas3.log 2>&1; tail -3 /tmp/out/paginas3.log
       - name: Publicar en la rama de datos
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
           git add -A && git commit -qm "Datos de Quebec (solo lectura) [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-qc-datos2
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-qc-datos3
