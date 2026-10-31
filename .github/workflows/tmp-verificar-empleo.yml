@@ -1,0 +1,30 @@
+name: tmp verificar empleo
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-empleo-remoto-alberta]
+    paths: [".github/workflows/tmp-verificar-empleo.yml"]
+permissions:
+  contents: read
+jobs:
+  fuente:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Convocatoria oficial y TikTok (solo lectura)
+        run: |
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
+          U="https://jobpostings.alberta.ca/job/Edmonton-Program-Eligibility-Assessor/607379317/"
+          curl -sL -A "$UA" -w "\nHTTP %{http_code} %{url_effective}\n" "$U" -o /tmp/job.html | tail -1; tail -c 0 /tmp/job.html
+          python3 - <<'PY'
+          import re,html
+          t=open("/tmp/job.html",encoding="utf-8",errors="ignore").read()
+          print("TITLE", re.findall(r"<title>(.*?)</title>",t,re.S)[:1])
+          t=html.unescape(re.sub(r"<[^>]+>"," ",re.sub(r"(?s)<(script|style).*?</\1>","",t))); t=re.sub(r"\s+"," ",t)
+          i=t.find("Job Information"); print(t[max(0,i-200):i+9000])
+          PY
+          echo "== TikTok"
+          curl -sI -A "$UA" "https://vt.tiktok.com/ZSg7tu5FD/" | grep -i -E "^(HTTP|location)"
+          L=$(curl -sIL -A "$UA" -o /dev/null -w "%{url_effective}" "https://vt.tiktok.com/ZSg7tu5FD/"); echo "FINAL $L"
+          V=$(echo "$L" | grep -oE "/video/[0-9]+" | grep -oE "[0-9]+"); U2=$(echo "$L" | grep -oE "@[^/]+")
+          echo "ID $V USER $U2"
+          curl -s "https://www.tiktok.com/oembed?url=https://www.tiktok.com/$U2/video/$V" | python3 -c "import json,sys; d=json.load(sys.stdin); print({k:d.get(k) for k in ['title','author_name','author_unique_id','thumbnail_width','thumbnail_height','embed_product_id']})"
+          curl -s -o /dev/null -w "player HTTP %{http_code}\n" -A "$UA" "https://www.tiktok.com/player/v1/$V"
