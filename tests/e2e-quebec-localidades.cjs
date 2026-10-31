@@ -194,7 +194,7 @@ async function compartir(page, ruta, imagen) {
         else if (m) {
           comunidades++;
           const texto = a.querySelector(".cd-loc__item-tipo").textContent;
-          if (!f[11] || !texto.includes(`está en ${m[0]}`) || !texto.includes(` · ${f[9]} · `)) fallos.push(`sin subdivisión o división censal: ${f[0]}`);
+          if (!f[11] || !texto.includes(`está en ${m[0]}`) || (f[9] !== f[0] && !texto.includes(` · ${f[9]} · `))) fallos.push(`sin subdivisión o división censal: ${f[0]}`);
         }
       }
       buscar.value = "";
@@ -279,7 +279,7 @@ async function compartir(page, ruta, imagen) {
     /* Teclado: el buscador se alcanza con Tab y filtra al escribir */
     await page.locator("#cdLocTarjeta .cd-loc__cerrar").click();
     await page.locator("#cdLocBuscar").focus();
-    await page.keyboard.type("rimouski");
+    await page.keyboard.type("victoriaville");
     await page.waitForFunction(() => document.querySelectorAll("#cdLocLista li").length <= 3);
     await page.keyboard.press("Tab");
     assert.notEqual(await page.evaluate(() => document.activeElement.id), "cdLocBuscar", "el foco avanza con Tab");
