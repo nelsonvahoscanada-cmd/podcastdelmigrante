@@ -160,6 +160,111 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Convocatoria «Program Eligibility Assessor» del Gobierno de Alberta
+       (Assisted Living and Social Services), requisición 88299, publicada el
+       26 de octubre de 2026, cierre el 2 de noviembre de 2026. Datos
+       verificados el 30 de octubre de 2026 en la oferta oficial: salario
+       $2,366.06–$3,079.52 quincenal ($61,754–$80,375 al año), remoto desde
+       casa dentro de Alberta, 36,25 h semanales, temporal hasta el 30 de junio
+       de 2028, diploma de dos años sin experiencia o equivalencia 1 por 1. El
+       anuncio no menciona patrocinio migratorio. Texto de la redacción; se
+       precisó que el anuncio exige (no solo valora) conocimientos de la
+       normativa de AISH, beneficios, inversiones e informática. Imagen:
+       ilustración editorial de El Podcast del Migrante asistida por IA. */
+    id: "ART-2026-032",
+    slug: "alberta-empleo-desde-casa-program-eligibility-assessor-2026",
+    category: "Empleo en Alberta",
+    contentType: "Noticia",
+    title: "Gobierno de Alberta ofrece empleo desde casa con salario de hasta $80.375 al año: solicitudes cierran el 2 de noviembre",
+    dek: "Una convocatoria oficial abre la posibilidad de trabajar de manera remota dentro de Alberta, con un salario anual de entre $61.754 y $80.375 dólares canadienses. El puesto es temporal, de tiempo completo y contempla equivalencias entre estudios y experiencia laboral.",
+    excerpt: "El Gobierno de Alberta busca un Program Eligibility Assessor para trabajar desde casa dentro de Alberta, con salario de $61.754 a $80.375 CAD al año. Las solicitudes cierran el 2 de noviembre de 2026.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-10-30T17:30:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/alberta-empleo-desde-casa-program-eligibility-assessor-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial asistida por inteligencia artificial: un hombre con gafas señala a la cámara junto a la bandera de Alberta y la Legislatura; a la derecha, una mujer trabaja desde su casa frente a una computadora con el texto «Program Eligibility Assessor». Textos: «Salario anual desde $61,754 hasta $80,375 CAD», «Trabajo desde casa si vives en Alberta», «Gobierno de Alberta ofrece empleo bien remunerado con opción de trabajo desde casa», «Diploma de 2 años», «Sin experiencia previa requerida», «Contrato temporal hasta junio de 2028» y «Cierre de solicitudes: 2 de noviembre».",
+      credit: "Ilustración editorial de El Podcast del Migrante asistida por inteligencia artificial. La pantalla y la escena son ilustrativas: no es una imagen ni una captura oficial del Gobierno de Alberta.",
+      socialArea: "0% 100%",
+      socialLabel: "Ilustración editorial asistida por IA",
+      socialLabelPosition: "top-left",
+    },
+    bodyHtml: `
+      <p><strong>Alberta, Canadá.</strong> Para quienes viven en Alberta y buscan nuevas oportunidades laborales, el Gobierno provincial publicó una convocatoria que merece atención: el cargo de <strong>Program Eligibility Assessor</strong> (evaluador de elegibilidad de programas), dentro del Ministerio de Assisted Living and Social Services.</p>
+      <p>El empleo ofrece una remuneración anual de <strong>$61.754 a $80.375 CAD</strong>, equivalente a un rango quincenal de $2.366,06 a $3.079,52, según el anuncio oficial.</p>
+      <p>Uno de los aspectos más atractivos es que actualmente permite trabajar desde casa, siempre que el empleado resida dentro de Alberta y cuente con una conexión confiable de internet de alta velocidad.</p>
+      <p>La fecha límite para presentar solicitudes es el <strong>lunes 2 de noviembre de 2026</strong>.</p>
+      <div class="article-deadline">
+        <p class="article-deadline__fecha"><span class="article-deadline__label">Cierre de solicitudes</span> <strong>Lunes 2 de noviembre de 2026</strong></p>
+        <p class="article-deadline__nota">Trabajo remoto solo desde Alberta. El anuncio no garantiza la contratación ni ofrece patrocinio migratorio.</p>
+        <a class="article-apply" href="https://jobpostings.alberta.ca/job/Edmonton-Program-Eligibility-Assessor/607379317/" target="_blank" rel="noopener">Postularme en el Gobierno de Alberta</a>
+      </div>
+      <h2>¿En qué consiste el trabajo?</h2>
+      <p>La persona seleccionada se encargará de evaluar la elegibilidad financiera inicial de solicitantes de dos programas provinciales: <strong>Alberta Disability Income Assistance Program (ADAP)</strong> y <strong>Assured Income for the Severely Handicapped (AISH)</strong>.</p>
+      <p>Entre sus responsabilidades se encuentran revisar ingresos, bienes y documentos de respaldo; aplicar los criterios de los programas; comunicar decisiones a los solicitantes; atender consultas y mantener registros precisos.</p>
+      <p>Es un trabajo administrativo y de evaluación que requiere responsabilidad, capacidad de análisis y trato respetuoso hacia personas que pueden atravesar situaciones económicas difíciles.</p>
+      <h2>¿Qué estudios y experiencia se necesitan?</h2>
+      <p>El requisito académico mínimo publicado es un diploma de dos años en un campo relacionado, sin experiencia laboral previa obligatoria para quienes cumplen esa vía de acceso.</p>
+      <p>El Gobierno también contempla equivalencias entre educación y experiencia directamente relacionadas, evaluadas con una relación de un año por un año.</p>
+      <p>Aunque no exige experiencia previa en la vía del diploma indicado, el anuncio señala que se dará preferencia a candidatos con experiencia en programas como Income Support, AISH o ADAP. Además, el anuncio exige un conocimiento amplio de la normativa de AISH, de beneficios y programas gubernamentales provinciales y federales, de distintos tipos de inversión (como RRSP, RDSP y anualidades) y de herramientas informáticas.</p>
+      <p>Quienes estudiaron fuera de Canadá encontrarán en la convocatoria una recomendación de obtener una evaluación de credenciales académicas, por ejemplo mediante IQAS o un evaluador canadiense reconocido.</p>
+      <h2>Horario y duración del contrato</h2>
+      <ul>
+        <li><strong>Cargo:</strong> Program Eligibility Assessor.</li>
+        <li><strong>Empleador:</strong> Gobierno de Alberta.</li>
+        <li><strong>Ministerio:</strong> Assisted Living and Social Services.</li>
+        <li><strong>Salario anual:</strong> $61.754–$80.375 CAD.</li>
+        <li><strong>Modalidad actual:</strong> trabajo remoto dentro de Alberta.</li>
+        <li><strong>Jornada:</strong> tiempo completo, 36,25 horas semanales.</li>
+        <li><strong>Horario:</strong> lunes a viernes, de 8:15 a. m. a 4:30 p. m.</li>
+        <li><strong>Duración:</strong> contrato temporal hasta aproximadamente el 30 de junio de 2028.</li>
+        <li><strong>Cierre de solicitudes:</strong> 2 de noviembre de 2026.</li>
+        <li><strong>Identificador de convocatoria:</strong> 88299.</li>
+      </ul>
+      <p>Los candidatos finalistas deberán someterse a una verificación de antecedentes penales.</p>
+      <h2>¿Cómo postularse?</h2>
+      <p>Las solicitudes deben presentarse directamente en el portal oficial de empleos del Gobierno de Alberta.</p>
+      <p>Se recomienda preparar un currículo que detalle claramente la formación académica y la experiencia, incluyendo meses y años, y explicar cómo se cumplen las competencias solicitadas.</p>
+      <p class="article-apply-row"><a class="article-apply" href="https://jobpostings.alberta.ca/job/Edmonton-Program-Eligibility-Assessor/607379317/" target="_blank" rel="noopener">Postularme en el Gobierno de Alberta</a></p>
+      <p>La convocatoria puede cerrarse o cambiar de estado; verifica que siga disponible antes de iniciar el proceso.</p>
+      <h2>Una oportunidad que merece atención</h2>
+      <p>Para la comunidad latina que reside en Alberta, esta convocatoria demuestra la importancia de consultar directamente las ofertas de empleo del sector público.</p>
+      <p>Sin embargo, trabajar de manera remota no significa que la vacante esté abierta para residir en cualquier país. El anuncio exige trabajar desde Alberta y no indica que el empleador ofrezca patrocinio migratorio.</p>
+      <p>Tampoco significa que todas las personas con un diploma de dos años serán contratadas: el Gobierno evaluará los requisitos y las competencias de los candidatos.</p>
+      <p>El Podcast del Migrante comparte esta información con fines periodísticos y de orientación laboral general. No participa en la selección, no recibe solicitudes de empleo y no garantiza contrataciones.</p>
+    `,
+    /* Video propio en TikTok (cuenta @podcastdelmigrante), enlace corto
+       https://vt.tiktok.com/ZSg7tu5FD/ resuelto el 30-10-2026. No se descarga
+       ni se aloja: se carga desde TikTok solo al pulsar «Reproducir». */
+    video: {
+      tiktokId: "7702612054762327348",
+      tiktokUser: "podcastdelmigrante",
+      title: "Informe de Nelson Vahos: el Gobierno de Alberta ofrece empleo desde casa con salario de hasta $80.375 al año",
+      heading: "🎥 Mira el informe de Nelson Vahos",
+      cover: "assets/alberta-empleo-desde-casa-program-eligibility-assessor-2026-video.jpg",
+      position: "intro",
+    },
+    sources: [
+      { label: "Government of Alberta — Program Eligibility Assessor (convocatoria oficial, requisición 88299, publicada el 26 de octubre de 2026, cierre el 2 de noviembre de 2026)", href: "https://jobpostings.alberta.ca/job/Edmonton-Program-Eligibility-Assessor/607379317/" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["alberta-bomberos-forestales-2027", "certificaciones-trabajo-alberta"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Alberta ofrece empleo desde casa: hasta $80.375 al año",
+      description: "El Gobierno de Alberta busca Program Eligibility Assessor con trabajo remoto dentro de Alberta y salario de $61.754 a $80.375 CAD. Cierre: 2 de noviembre.",
+      canonicalPath: "/empleo/alberta-empleo-desde-casa-program-eligibility-assessor-2026/",
+    },
+  },
+  {
     /* Régimen de sanciones administrativas (AMPS) de IRCC contra representantes
        migratorios remunerados que incumplan la ley, en vigor desde el 28 de
        octubre de 2026. Texto periodístico de la redacción, verificado con el

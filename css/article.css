@@ -610,3 +610,32 @@ a.column-masthead__name:hover { color: var(--negro); }
 .article-tiktok__play:focus-visible { outline: 3px solid var(--verde); outline-offset: -6px; }
 .article-video--tiktok .article-video__note { text-align: center; }
 .article-tiktok__link { color: var(--verde-oscuro); font-weight: 700; white-space: nowrap; }
+
+/* Convocatorias con fecha límite: recuadro de cierre y botón que abre la
+   oferta oficial (identidad verde, negro y blanco). */
+.article-deadline {
+  margin: 24px 0 8px; padding: 18px 20px;
+  border: 2px solid var(--verde); border-radius: var(--radius-s);
+  background: var(--blanco);
+}
+.article-body .article-deadline p { margin: 0 0 10px; }
+.article-deadline__fecha { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 1.1rem; }
+.article-deadline__label {
+  font-size: .75rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--verde-oscuro);
+}
+.article-deadline__fecha strong { color: var(--negro); }
+.article-body .article-deadline .article-deadline__nota { font-size: .95rem; margin-bottom: 14px; }
+.article-body a.article-apply {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+  padding: 12px 22px; border-radius: 999px; background: var(--verde-oscuro); color: var(--blanco);
+  font-weight: 800; text-decoration: none; text-align: center; line-height: 1.25;
+}
+.article-body a.article-apply::after { content: "↗"; margin-left: 8px; }
+.article-body a.article-apply:hover,
+.article-body a.article-apply:focus-visible { background: var(--negro); color: var(--blanco); }
+.article-body a.article-apply:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; }
+.article-apply-row { margin: 18px 0; }
+@media (max-width: 520px) {
+  .article-body a.article-apply { display: flex; width: 100%; }
+}

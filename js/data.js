@@ -67,18 +67,28 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Comunidad",
-    title: "Héctor Rivero, el Santa Latino que convirtió su historia migratoria en esperanza para las familias de Canadá",
-    dek: "De Venezuela a Niagara Falls, pasando por Panamá y Estados Unidos, Héctor Rivero transformó una tradición familiar en un proyecto que lleva alegría a niños, inmigrantes y comunidades latinas. Ahora comparte su historia en El Podcast del Migrante.",
+    category: "Empleo en Alberta",
+    title: "Gobierno de Alberta ofrece empleo desde casa con salario de hasta $80.375 al año: solicitudes cierran el 2 de noviembre",
+    dek: "Una convocatoria oficial abre la posibilidad de trabajar de manera remota dentro de Alberta, con un salario anual de entre $61.754 y $80.375 dólares canadienses. El puesto es temporal, de tiempo completo y contempla equivalencias entre estudios y experiencia laboral.",
     author: "Redacción El Podcast del Migrante",
-    date: "24 de octubre, 2026",
-    image: "url('assets/yt/LxTr1Zda3dg.jpg')",
+    date: "30 de octubre, 2026",
+    image: "url('assets/alberta-empleo-desde-casa-program-eligibility-assessor-2026.jpg')",
     aspectRatio: "16/9",
-    alt: "Miniatura oficial del episodio de El Podcast del Migrante: Santa Claus sonriente con las cataratas del Niágara y la bandera de Canadá al fondo, y los textos «De inmigrante a Santa Latino en Canadá» y «Héctor Rivero, invitado especial».",
+    alt: "Ilustración editorial asistida por inteligencia artificial: un hombre con gafas señala a la cámara junto a la bandera de Alberta y la Legislatura, y una mujer trabaja desde casa frente a una computadora, con el titular «Gobierno de Alberta ofrece empleo bien remunerado con opción de trabajo desde casa», el salario de $61,754 a $80,375 CAD y el cierre de solicitudes el 2 de noviembre.",
     demo: false,
-    slug: "hector-rivero-santa-latino-canada",
+    slug: "alberta-empleo-desde-casa-program-eligibility-assessor-2026",
   },
   secondary: [
+    {
+      category: "Comunidad",
+      title: "Héctor Rivero, el Santa Latino que convirtió su historia migratoria en esperanza para las familias de Canadá",
+      date: "24 de octubre",
+      image: "url('assets/yt/LxTr1Zda3dg.jpg')",
+      aspectRatio: "16/9",
+      alt: "Miniatura oficial del episodio de El Podcast del Migrante: Santa Claus sonriente con las cataratas del Niágara y la bandera de Canadá al fondo, y los textos «De inmigrante a Santa Latino en Canadá» y «Héctor Rivero, invitado especial».",
+      demo: false,
+      slug: "hector-rivero-santa-latino-canada",
+    },
     {
       category: "Empleo en Alberta",
       title: "Alberta busca bomberos forestales para 2027 con salarios de hasta $31,02 por hora: convocatoria abierta",
@@ -108,16 +118,6 @@ const HERO = {
       alt: "Ilustración editorial asistida por inteligencia artificial: cinco personas miran hacia la Legislatura de Alberta, con las banderas de Alberta y de Canadá, mientras una mano deposita un voto en una urna con la palabra «Alberta». Titular: «Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?».",
       demo: false,
       slug: "referendum-alberta-octubre-2026-inmigrantes",
-    },
-    {
-      category: "Alberta",
-      title: "Últimas semanas para pedir el pago de $100 de Alberta: el plazo vence el 31 de octubre",
-      date: "12 de octubre",
-      image: "url('assets/alberta-energy-rebate-plazo-octubre.jpg')",
-      aspectRatio: "16/9",
-      alt: "Ilustración editorial asistida por inteligencia artificial: una pareja revisa facturas con una calculadora en la cocina de su casa, con el centro de Calgary al fondo.",
-      demo: false,
-      slug: "alberta-energy-rebate-plazo-octubre",
     },
   ],
 };

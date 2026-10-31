@@ -46,13 +46,14 @@ async function sinDesborde(page, ruta) {
   /* CHANNEL=chrome usa Google Chrome (con los códecs H.264 de TikTok) */
   const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: Santa Latino principal, bomberos y luego IRCC ---------- */
+    /* ---------- Portada: empleo desde casa principal; Santa Latino, bomberos y luego IRCC ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Héctor Rivero, el Santa Latino/, "Santa Latino sigue primero");
-    assert.match(await page.locator("#heroMain").innerHTML(), /assets\/yt\/LxTr1Zda3dg\.jpg/, "imagen de Santa Latino intacta");
-    assert.equal(await page.locator('#heroMain a[href*="hector-rivero-santa-latino-canada"]').count() >= 1, true, "enlace de Santa Latino intacto");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").first().innerText(), /bomberos forestales/, "bomberos conserva la primera tarjeta");
-    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(1);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Gobierno de Alberta ofrece empleo desde casa/, "noticia principal: empleo desde casa");
+    const santa = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.match(await santa.innerHTML(), /assets\/yt\/LxTr1Zda3dg\.jpg/, "imagen de Santa Latino intacta");
+    assert.equal(await santa.locator('a[href*="hector-rivero-santa-latino-canada"]').count() >= 1, true, "enlace de Santa Latino intacto");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(1).innerText(), /bomberos forestales/, "bomberos, después de Santa Latino");
+    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(2);
     assert.equal((await segunda.locator("h3, h2, .hero-sec-card__title").first().innerText()).trim(), TITULO);
     const enlace = segunda.locator(`a[href*="${SLUG}"]`).first();
     assert.equal(await enlace.count(), 1, "la tarjeta enlaza al artículo");

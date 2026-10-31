@@ -42,10 +42,11 @@ async function sinDesborde(page, ruta) {
 (async () => {
   const browser = await chromium.launch();
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: 1.º Santa Latino, 2.º Alberta ---------- */
+    /* ---------- Portada: empleo desde casa principal, Santa Latino y después bomberos ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Héctor Rivero, el Santa Latino/, "Santa Latino sigue primero");
-    const segunda = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Gobierno de Alberta ofrece empleo desde casa/, "noticia principal: empleo desde casa");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").first().innerText(), /Santa Latino/, "Santa Latino, primera tarjeta");
+    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(1);
     assert.equal((await segunda.locator("h3, h2, .hero-sec-card__title").first().innerText()).trim(), TITULO);
     const enlace = segunda.locator(`a[href*="${SLUG}"]`).first();
     assert.equal(await enlace.count(), 1, "la tarjeta enlaza al artículo");
@@ -83,7 +84,7 @@ async function sinDesborde(page, ruta) {
   const r = await fetch(`${BASE}/articulo.html?slug=${SLUG}`, { redirect: "manual" });
   assert.ok([301, 308].includes(r.status), `articulo.html?slug=… redirige (${r.status})`);
   await browser.close();
-  console.log("OK Alberta bomberos forestales: portada (2.ª posición) y artículo");
+  console.log("OK Alberta bomberos forestales: portada (tras la noticia principal y Santa Latino) y artículo");
 })().catch((e) => {
   console.error(e);
   process.exit(1);

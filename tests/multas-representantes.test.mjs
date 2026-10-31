@@ -18,14 +18,14 @@ const IMG = "assets/multas-representantes-migratorios-canada-2026.jpg";
 const IRCC = "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
-test("portada: Santa Latino principal, bomberos 1.ª secundaria y la noticia de IRCC justo después", () => {
-  assert.equal(ctx.H.main.slug, "hector-rivero-santa-latino-canada");
-  assert.equal(ctx.H.main.image, "url('assets/yt/LxTr1Zda3dg.jpg')");
-  assert.equal(ctx.H.secondary[0].slug, "alberta-bomberos-forestales-2027");
-  assert.equal(ctx.H.secondary[1].slug, SLUG);
-  assert.equal(ctx.H.secondary[1].title, art.title);
-  assert.equal(ctx.H.secondary[1].image, `url('${IMG}')`);
-  assert.equal(ctx.H.secondary[1].category, "Inmigración");
+test("portada: empleo desde casa principal; Santa Latino, bomberos y la noticia de IRCC le siguen", () => {
+  assert.equal(ctx.H.main.slug, "alberta-empleo-desde-casa-program-eligibility-assessor-2026");
+  assert.equal(ctx.H.secondary[0].slug, "hector-rivero-santa-latino-canada");
+  assert.equal(ctx.H.secondary[1].slug, "alberta-bomberos-forestales-2027");
+  assert.equal(ctx.H.secondary[2].slug, SLUG);
+  assert.equal(ctx.H.secondary[2].title, art.title);
+  assert.equal(ctx.H.secondary[2].image, `url('${IMG}')`);
+  assert.equal(ctx.H.secondary[2].category, "Inmigración");
   assert.equal(ctx.H.secondary.length, 4);
 });
 

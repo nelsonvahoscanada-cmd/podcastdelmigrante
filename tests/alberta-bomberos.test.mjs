@@ -16,20 +16,21 @@ const URL_ART = `https://podcastdelmigrante.com/articulo-${SLUG}`;
 const IMG = "assets/alberta-bomberos-forestales-2027.jpg";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
-test("portada: Santa Latino sigue primero y la noticia de Alberta es la segunda, sin duplicados", () => {
-  assert.equal(ctx.H.main.slug, "hector-rivero-santa-latino-canada", "Santa Latino permanece como destacado principal hasta que la dirección editorial autorice otra entrevista");
-  assert.equal(ctx.H.secondary[0].slug, SLUG);
-  assert.equal(ctx.H.secondary[0].title, art.title);
-  assert.equal(ctx.H.secondary[0].image, `url('${IMG}')`);
-  assert.equal(ctx.H.secondary[0].demo, false);
+test("portada: tras el empleo desde casa y Santa Latino, la noticia de bomberos sigue en el bloque principal, sin duplicados", () => {
+  assert.equal(ctx.H.main.slug, "alberta-empleo-desde-casa-program-eligibility-assessor-2026", "noticia principal autorizada por la dirección editorial el 30-10-2026");
+  assert.equal(ctx.H.secondary[0].slug, "hector-rivero-santa-latino-canada");
+  const bomberos = ctx.H.secondary[1];
+  assert.equal(bomberos.slug, SLUG);
+  assert.equal(bomberos.title, art.title);
+  assert.equal(bomberos.image, `url('${IMG}')`);
+  assert.equal(bomberos.demo, false);
   const slugs = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.equal(new Set(slugs).size, slugs.length, "ninguna noticia aparece dos veces en el bloque principal");
-  assert.deepEqual(Array.from(ctx.H.secondary.slice(1), (s) => s.slug), [
+  assert.deepEqual(Array.from(ctx.H.secondary.slice(2), (s) => s.slug), [
     "multas-representantes-migratorios-canada-2026",
     "referendum-alberta-octubre-2026-inmigrantes",
-    "alberta-energy-rebate-plazo-octubre",
   ], "las demás destacadas conservan su orden");
-  for (const s of ["premios-impacto-inmigrante-alberta-2026", "subvenciones-etnoculturales-antirracismo-alberta"]) {
+  for (const s of ["premios-impacto-inmigrante-alberta-2026", "subvenciones-etnoculturales-antirracismo-alberta", "alberta-energy-rebate-plazo-octubre"]) {
     assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: la noticia que sale de las destacadas sigue publicada`);
   }
 });
