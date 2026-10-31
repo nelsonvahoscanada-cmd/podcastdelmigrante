@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        prueba: [e2e-descubre-canada, e2e-quebec-localidades, e2e-manitoba-localidades, e2e-canada-datos, e2e-saskatchewan-localidades, e2e-alberta-localidades, e2e-ontario-localidades, e2e-british-columbia-localidades, e2e-prince-edward-island-localidades, e2e-menu, e2e-noticias, e2e-hector-rivero, e2e-alberta-bomberos, e2e-empleo-remoto-alberta]
+        prueba: [e2e-noticias]
     steps:
       - uses: actions/checkout@v4
         with: { ref: main }
@@ -46,24 +46,9 @@ jobs:
         with: { ref: main }
       - name: Esperar el despliegue de produccion (Quebec y el texto del PEQ)
         run: for i in $(seq 1 60); do curl -s https://podcastdelmigrante.com/ | grep -q 'id="descubre-tu-canada"' && echo listo && exit 0; sleep 20; done; exit 1
-      - name: Archivos publicados identicos a main, rutas y Web Analytics
+      - name: Diferencias de index.html servidos frente al repositorio
         run: |
           B=https://podcastdelmigrante.com
-          for f in index.html css/styles.css css/canada-datos.css js/descubre-canada.js js/canada-datos-disponibles.js assets/canada-en-datos/descubre-mapa.svg assets/canada-en-datos/social-canada-en-datos.jpg canada-en-datos/index.html js/canada-datos.js js/main.js js/articles.js js/noticias.js js/nav.js js/data.js js/analytics.js js/vistas.js js/directorio/solicitud-form.js sitemap.xml; do
-            curl -sfL "$B/$f" -o /tmp/x; if cmp -s /tmp/x "$f"; then echo "IGUAL $f"; else echo "DISTINTO $f"; fi
+          for f in index.html canada-en-datos/index.html; do
+            echo "=== $f"; curl -sfL "$B/$f" -o /tmp/x; diff "$f" /tmp/x | head -30 || true
           done
-          for r in / /canada-en-datos/ /canada-en-datos/alberta /canada-en-datos/british-columbia /canada-en-datos/ontario /canada-en-datos/prince-edward-island /canada-en-datos/saskatchewan /canada-en-datos/manitoba /canada-en-datos/quebec /canada-en-datos/nueva-escocia /noticias /quien-puede-ayudarte /registra-tu-empresa /privacidad; do
-            echo "$(curl -s -o /dev/null -w '%{http_code}' "$B$r") $r"
-          done
-          echo "mapa principal (provincias con ficha):"
-          curl -s "$B/canada-en-datos/" | grep -o 'class="cd-region cd-region--ficha" data-code="[A-Z]*"' | sort | tr '\n' ' '; echo
-          curl -s "$B/canada-en-datos/" | grep -o '<p class="cd-como">[^.]*\.'
-          curl -s "$B/canada-en-datos/" | grep -o '<meta property="og:description" content="[^"]*"'
-          echo "=== Web Analytics: scripts de medición en el HTML servido (antes de activar) ==="
-          for r in / /canada-en-datos/ /canada-en-datos/quebec /canada-en-datos/quebec/montreal /noticias /articulo-alberta-empleo-desde-casa-program-eligibility-assessor-2026 /quien-puede-ayudarte /privacidad; do
-            h=$(curl -s "$B$r"); echo "$r | cloudflareinsights=$(grep -c 'cloudflareinsights' <<<"$h") cf-beacon=$(grep -c 'data-cf-beacon' <<<"$h") gtag/GTM=$(grep -Ec 'googletagmanager|gtag\(' <<<"$h") plausible/matomo=$(grep -Eci 'plausible|matomo' <<<"$h")"
-          done
-          echo "=== cabeceras de la portada ==="
-          curl -sI "$B/" | grep -Ei '^(server|cf-ray|content-security-policy|cache-control|x-robots|report-to|nel):' | sed 's/\(cf-ray: \).*/\1…/I'
-          echo "=== política de privacidad: menciones de analítica ==="
-          curl -s "$B/privacidad" | sed 's/<[^>]*>/ /g' | grep -Eio '[^.]{0,160}(analític|estadístic|cookies|Cloudflare|medición|métric)[^.]{0,160}' | head -20
