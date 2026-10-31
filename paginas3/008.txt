@@ -1,0 +1,375 @@
+NOMBRE: Ciudad: Trois-Rivières
+URL: https://www.v3r.net/
+ESTADO: 200
+FINAL: https://www.v3r.net/
+TITULO: Accueil | Site officiel de la Ville de Trois-Rivières
+FECHA: 2026-01-19
+
+Accueil | Site officiel de la Ville de Trois-Rivières 
+ Accueil | Site officiel de la Ville de Trois-Rivières 
+ Passer
+ directement au contenu 
+ Bibliothèques Aline-Piché et Gatien-Lapointe : fermées le 2 novembre. 
+ Le mode contraste élevé a été activé. En savoir plus -->
+ À la une 
+ Carte interactive 
+ Emplois 
+ Infolettre 
+ Nous joindre 
+ Services en ligne 
+ Menu 
+ Services
+ à la population 
+ Activités
+ et loisirs 
+ Culture 
+ Affaires 
+ À
+ propos de la Ville 
+ À la une 
+ Carte interactive 
+ Emplois 
+ Infolettre 
+ Nous joindre 
+ Services en ligne 
+ Services à la population
+ Activités et loisirs
+ Culture
+ Affaires
+ À propos de la Ville
+ Liens rapides
+ Alertes citoyennes 
+ Horaire de collecte des bacs 
+ Police 
+ Sécurité incendie 
+ Stationnement 
+ Tout sur ma propriété 
+ Services à la population
+ Bureau du service client 311 
+ + 
+ Collectes et matières résiduelles 
+ + 
+ Conseils saisonniers 
+ + 
+ Cour municipale 
+ + 
+ Eau 
+ + 
+ Environnement 
+ + 
+ Habitation 
+ + 
+ Permis et certificats 
+ + 
+ Règlements municipaux 
+ + 
+ Réseau routier et transport 
+ + 
+ Sécurité du public 
+ + 
+ Subventions à la population 
+ + 
+ Taxes et évaluation 
+ + 
+ Vie communautaire 
+ + 
+ Liens rapides
+ Carte plein air 
+ Catalogue des Bibliothèques 
+ Patinage libre 
+ Piscines intérieures 
+ Réseau cyclable 
+ Tourisme Trois-Rivières 
+ Activités et loisirs
+ Bibliothèques 
+ + 
+ Calendrier des activités 
+ + 
+ Camp de jour 
+ + 
+ Centre-ville 
+ + 
+ Événements 
+ + 
+ Installations sportives et récréatives 
+ + 
+ Jeux du Québec 2025 
+ + 
+ Location de salles et de gymnases 
+ + 
+ Parcs canins 
+ + 
+ Parcs et espaces verts 
+ + 
+ Liens rapides
+ Inscription à la liste d'envoi d'appels de projets culturels 
+ Amphithéâtre Cogeco 
+ Bibliothèques 
+ Corporation des événements 
+ Culture 3R 
+ Tourisme Trois-Rivières 
+ Vitrine sur la culture en Mauricie - DICI 
+ Culture
+ Activités culturelles 
+ + 
+ Art public et arts visuels 
+ + 
+ Grands Prix culturels de Trois-Rivières 
+ + 
+ Histoire et patrimoine 
+ + 
+ Soutien aux organismes et artistes 
+ + 
+ Vision culturelle 
+ + 
+ Liens rapides
+ Commerces en alerte 
+ Guide du promoteur immobilier 
+ IDE Trois-Rivières 
+ Trois-Rivières Centre 
+ Affaires
+ Acheter un terrain de la Ville 
+ + 
+ Aéroport de Trois-Rivières 
+ + 
+ Certification en développement durable 
+ + 
+ Faire affaire avec la Ville 
+ + 
+ Liste des contrats 
+ + 
+ Portrait socio-économique 
+ + 
+ Ressources d’affaires 
+ + 
+ Subventions aux entreprises 
+ + 
+ Liens rapides
+ Conseil municipal 
+ Participation publique 
+ Quartiers trifluviens 
+ Webdiffusion des séances 
+ À propos de la Ville
+ Administration municipale 
+ + 
+ Avis publics 
+ + 
+ Budget et rapports financiers 
+ + 
+ Communications 
+ + 
+ Engagements sociaux 
+ + 
+ Planification 
+ + 
+ Politiques et plans d’action 
+ + 
+ Portrait de la Ville 
+ + 
+ Prix et distinctions 
+ + 
+ Rapport annuel 
+ + 
+ Vérificateur général 
+ + 
+ Vie démocratique 
+ + 
+ Recherche
+ X
+ Catégories
+ {{cat.Name}} ({{cat.Results}}) 
+ Filtrer par catégorie 
+ {{cat.Name}} ({{cat.Results}})
+ {{ResultsToDisplay.length}} résultat{{(ResultsToDisplay.length > 1 ? 's' : '')}}
+ {{result.Meta}} 
+ {{result.SubInfo}} 
+ = MinCars">
+ Aucun résultat
+ Recherche en cours ...
+ Entrez au moins {{MinCars}} caractères
+ 10"
+ ng-click="SetFacetResults(true);">
+ Voir plus de résultats
+ 10 && ShowAll == false"
+ ng-click="SetShowAll()">
+ Afficher plus de résultats
+ Bienvenue sur le site Web officiel de la
+ Ville de Trois-Rivières
+ Que cherchez-vous? 
+ X
+ {{commonSearch.Name}} 
+ {{result.Name}}
+ {{result.SubInfo}} 
+ Aucun résultat
+ Recherche en cours ...
+ Entrez au moins {{MinCars}} caractères
+ 4" ng-click="openMainSearch();" ng-class="{'active': IsShowMoreActive}">
+ Afficher plus de résultats
+ Patinage libre 
+ Collecte de feuilles 
+ Changement de collecte du bac brun 
+ Candidatures : comités municipaux 
+ À la une
+ 0" class="home-section with-margin">
+ À la une
+ {{ actualiteTypes[item.type] }}
+ {{item.category}}
+ {{item.readTime}} min
+ {{getDate(item.date, null)}}
+ {{item.title}}
+ {{item.description}}
+ 0" class="home-section-bottom">
+ Voir tout 
+ À la une
+ 0" class="home-section with-margin white">
+ Articles
+ {{ actualiteTypes[item.type] }}
+ -->
+ {{item.category}}
+ {{item.readTime}} min
+ {{getDate(item.date, null)}}
+ {{item.title}}
+ {{item.description}}
+ 0" class="home-section-bottom">
+ Voir tout 
+ Activités
+ 0" class="home-section with-background-img" style="background-image: url('https://www.v3r.net/wp-content/themes/v3r/Images/img/fond-activites.jpg')">
+ Activités
+ {{getDate(item.startDate, item.endDate)}}
+ {{item.title}}
+ {{item.description}}
+ Voir toutes les activités 
+ Services en ligne 
+ Tout sur ma propriété Portail citoyen des permis Portail citoyen d’évaluation et de taxation Cartes Al3Rte Paiement d’un constat d’infraction Catalogue des Bibliothèques PayByPhone 
+ Abonnez-vous à l'infolettre
+ Restez à l'affut de l'actualité municipale et des activités offertes.
+ M'abonner 
+ Abonnez-vous à l'infolettre 
+ Facebook 
+ Instagram 
+ LinkedIn 
+ YouTube 
+ Ville de Trois-Rivières
+ 1325, place de l'Hôtel-de-Ville, C.P. 368
+ Trois-Rivières, QC G9A 5H3 
+ Téléphone : 311 ou 819 374-2002 
+ Canada ou États-Unis : 1 833 374-2002 
+ Courriel : 311@v3r.net 
+ › Communications 
+ › FAQ 
+ Abonnez-vous à l'infolettre 
+ Facebook 
+ Instagram 
+ LinkedIn 
+ YouTube 
+ Communications 
+ FAQ 
+ Intranet 
+ Portail d’accès aux organismes 
+ Politique de confidentialité 
+ © Ville de Trois-Rivières. Tous droits réservés.
+
+=== ENLACES ===
+https://www.v3r.net/activites-et-loisirs/bibliotheques/horaire-et-emplacement | Bibliothèques Aline-Piché et Gatien-Lapointe : fermées le 2 novembre.
+https://www.v3r.net | 
+https://www.v3r.net/a-propos-de-la-ville/communications/a-la-une | À la une
+https://www.v3r.net/carte-interactive | Carte interactive
+https://www.v3r.net/emplois | Emplois
+https://www.v3r.net/a-propos-de-la-ville/communications/infolettre | Infolettre
+https://www.v3r.net/nous-joindre | Nous joindre
+https://www.v3r.net/services-en-ligne | Services en ligne
+https://www.v3r.net/services-a-la-population/securite-du-public/mesures-d-urgence/alertes-citoyennes | Alertes citoyennes
+https://www.v3r.net/services-a-la-population/collectes/horaire-des-collectes | Horaire de collecte des bacs
+https://www.v3r.net/services-a-la-population/securite-du-public/police | Police
+https://www.v3r.net/services-a-la-population/securite-du-public/securite-incendie | Sécurité incendie
+https://www.v3r.net/services-a-la-population/reseau-routier-et-transport/stationnement | Stationnement
+https://www.v3r.net/tout-sur-ma-propriete | Tout sur ma propriété
+https://www.v3r.net/services-a-la-population/ligne-d-information-municipale-311 | Bureau du service client 311 +
+https://www.v3r.net/services-a-la-population/collectes | Collectes et matières résiduelles +
+https://www.v3r.net/services-a-la-population/conseils-saisonniers | Conseils saisonniers +
+https://www.v3r.net/services-a-la-population/cour-municipale | Cour municipale +
+https://www.v3r.net/services-a-la-population/eau | Eau +
+https://www.v3r.net/services-a-la-population/environnement | Environnement +
+https://www.v3r.net/services-a-la-population/habitation | Habitation +
+https://www.v3r.net/services-a-la-population/permis-et-certificats | Permis et certificats +
+https://www.v3r.net/services-a-la-population/reglements-municipaux | Règlements municipaux +
+https://www.v3r.net/services-a-la-population/reseau-routier-et-transport | Réseau routier et transport +
+https://www.v3r.net/services-a-la-population/securite-du-public | Sécurité du public +
+https://www.v3r.net/services-a-la-population/subventions-a-la-population | Subventions à la population +
+https://www.v3r.net/services-a-la-population/taxes-et-evaluation | Taxes et évaluation +
+https://www.v3r.net/services-a-la-population/vie-communautaire | Vie communautaire +
+https://www.v3r.net/wp-content/uploads/2026/06/Carte_25-625x17_Plein-Air-Urbain_2026.pdf | Carte plein air
+https://biblio-catalogue.v3r.net/account | Catalogue des Bibliothèques
+https://www.v3r.net/activites-et-loisirs/installations-sportives-et-recreatives/arenas-et-complexe-sportif | Patinage libre
+https://www.v3r.net/activites-et-loisirs/installations-sportives-et-recreatives/piscines-et-jeux-d-eau/piscines-interieures | Piscines intérieures
+https://www.v3r.net/activites-et-loisirs/installations-sportives-et-recreatives/velo/reseau-cyclable | Réseau cyclable
+https://www.tourismetroisrivieres.com/fr | Tourisme Trois-Rivières
+https://www.v3r.net/activites-et-loisirs/bibliotheques | Bibliothèques +
+https://www.v3r.net/activites-et-loisirs/calendrier-des-activites | Calendrier des activités +
+https://www.v3r.net/activites-et-loisirs/camp-de-jour | Camp de jour +
+https://www.v3r.net/activites-et-loisirs/centre-ville | Centre-ville +
+https://www.v3r.net/activites-et-loisirs/organiser-un-evenement | Événements +
+https://www.v3r.net/activites-et-loisirs/installations-sportives-et-recreatives | Installations sportives et récréatives +
+https://www.v3r.net/activites-et-loisirs/jeux-du-quebec-2025 | Jeux du Québec 2025 +
+https://www.v3r.net/activites-et-loisirs/location-de-salles-et-de-gymnases | Location de salles et de gymnases +
+https://www.v3r.net/activites-et-loisirs/parcs-canins | Parcs canins +
+https://www.v3r.net/activites-et-loisirs/parcs | Parcs et espaces verts +
+https://forms.office.com/pages/responsepage.aspx?id=QIGpcspSlEemUSQAx0W3F9l71tIBhoxFodUtRQKA3a9UREY2MjlWMVNLS1MxRzkzWFlSUFo3STlQRy4u&route=shorturl | Inscription à la liste d'envoi d'appels de projets culturels
+https://www.amphitheatrecogeco.com/ | Amphithéâtre Cogeco
+https://ce3r.com/ | Corporation des événements
+https://www.culture3r.com/ | Culture 3R
+https://dici.ca/ | Vitrine sur la culture en Mauricie - DICI
+https://www.v3r.net/culture/activites-culturelles | Activités culturelles +
+https://www.v3r.net/culture/arts-visuels | Art public et arts visuels +
+https://www.v3r.net/culture/grands-prix-culturels-de-trois-rivieres | Grands Prix culturels de Trois-Rivières +
+https://www.v3r.net/culture/histoire-et-patrimoine | Histoire et patrimoine +
+https://www.v3r.net/culture/soutien-aux-organismes-et-artistes | Soutien aux organismes et artistes +
+https://www.v3r.net/culture/vision-culturelle | Vision culturelle +
+https://www.v3r.net/services-a-la-population/securite-du-public/police/programmes-de-prevention | Commerces en alerte
+https://www.v3r.net/services-a-la-population/habitation/redeveloppement-urbain/promoteurs-et-proprietaires-prives/guide-du-promoteur-immobilier | Guide du promoteur immobilier
+https://www.idetr.com/fr | IDE Trois-Rivières
+http://trcentre.ca/ | Trois-Rivières Centre
+https://www.v3r.net/affaires/acheter-un-terrain-de-la-ville | Acheter un terrain de la Ville +
+https://www.v3r.net/affaires/aeroport-de-trois-rivieres | Aéroport de Trois-Rivières +
+https://www.v3r.net/affaires/certification-en-developpement-durable | Certification en développement durable +
+https://www.v3r.net/affaires/faire-affaire-avec-la-ville | Faire affaire avec la Ville +
+https://www.v3r.net/affaires/liste-des-contrats | Liste des contrats +
+https://www.v3r.net/affaires/portrait-socio-economique | Portrait socio-économique +
+https://www.v3r.net/affaires/ressources-d-affaires | Ressources d’affaires +
+https://www.v3r.net/affaires/subventions-aux-entreprises | Subventions aux entreprises +
+https://www.v3r.net/a-propos-de-la-ville/vie-democratique/conseil-municipal | Conseil municipal
+https://www.v3r.net/a-propos-de-la-ville/vie-democratique/participation-publique | Participation publique
+https://www.v3r.net/a-propos-de-la-ville/portrait-de-la-ville/les-quartiers-trifluviens | Quartiers trifluviens
+https://www.v3r.net/a-propos-de-la-ville/vie-democratique/conseil-municipal/webdiffusion-des-seances | Webdiffusion des séances
+https://www.v3r.net/a-propos-de-la-ville/administration-municipale | Administration municipale +
+https://www.v3r.net/a-propos-de-la-ville/avis-publics | Avis publics +
+https://www.v3r.net/a-propos-de-la-ville/budget-et-rapports-financiers | Budget et rapports financiers +
+https://www.v3r.net/a-propos-de-la-ville/communications | Communications +
+https://www.v3r.net/a-propos-de-la-ville/engagements-sociaux | Engagements sociaux +
+https://www.v3r.net/a-propos-de-la-ville/planification | Planification +
+https://www.v3r.net/a-propos-de-la-ville/politiques-et-plans-d-action | Politiques et plans d’action +
+https://www.v3r.net/a-propos-de-la-ville/portrait-de-la-ville | Portrait de la Ville +
+https://www.v3r.net/a-propos-de-la-ville/prix-et-distinctions | Prix et distinctions +
+https://www.v3r.net/a-propos-de-la-ville/rapport-annuel | Rapport annuel +
+https://www.v3r.net/a-propos-de-la-ville/verificateur-general | Vérificateur général +
+https://www.v3r.net/a-propos-de-la-ville/vie-democratique | Vie démocratique +
+https://www.v3r.net/{{result.URL}} | {{result.Meta}} {{result.SubInfo}}
+https://www.v3r.net/services-a-la-population/collectes/collectes-speciales/collecte-de-feuilles | Collecte de feuilles
+https://forms.cloud.microsoft/pages/responsepage.aspx?id=QIGpcspSlEemUSQAx0W3F6_2_ZLNVW9Gs6xxsILPn_5UODZDMzVTVTE5Vkw0NFdDVlhGQlRCSjROUiQlQCNjPTEkJUAjdD1n&route=shorturl | Candidatures : comités municipaux
+https://www.v3r.net/{{item.url}} | {{ actualiteTypes[item.type] }} {{item.category}} {{item.readTime}} min {{getDate(item.dat
+https://services.v3r.net/PortailPermis | Portail citoyen des permis
+https://services.v3r.net/PortailEvaluationTaxation | Portail citoyen d’évaluation et de taxation
+https://www.v3r.net/services-en-ligne/cartes | Cartes
+https://client.somum.com/SomumLogin/default?TroisRivieres | Al3Rte
+http://municipal.acceo.com/constats/trois-rivieres | Paiement d’un constat d’infraction
+https://biblio-catalogue.v3r.net/ | Catalogue des Bibliothèques
+https://www.paybyphone.fr/ | PayByPhone
+https://www.facebook.com/villetroisrivieres | Facebook
+https://www.instagram.com/villedetroisrivieres | Instagram
+https://www.linkedin.com/company/ville-de-trois-rivieres | LinkedIn
+https://www.youtube.com/channel/UC4UyW0CoFiJaFCFaOzoQQ5w | YouTube
+https://www.google.ca/maps/place/H%C3%B4tel+de+ville/@46.3430042,-72.545511,17z/data=!4m12!1m6!3m5!1s0x41aa0c6a9ae1712b:0xc5f7bf52c7282858!2sH%C3%B4tel+de+ville!8m2!3d46.3430005!4d-72.5433223!3m4!1s0x41aa0c6a9ae1712b:0xc5f7bf52c7282858!8m2!3d46.3430005!4d-72.5433223 | 1325, place de l'Hôtel-de-Ville, C.P. 368 Trois-Rivières, QC G9A 5H3
+https://www.v3r.net/faq | › FAQ
+https://v3r.sharepoint.com/ | Intranet
+https://organismesv3r.net/ | Portail d’accès aux organismes
+https://www.v3r.net/politique-de-confidentialite | Politique de confidentialité

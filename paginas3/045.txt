@@ -1,0 +1,22 @@
+NOMBRE: ISQ: modificaciones municipales
+URL: https://statistique.quebec.ca/fr/document/modifications-aux-municipalites-du-quebec
+ESTADO: NAV 500
+FINAL: https://statistique.quebec.ca/fr/document/modifications-aux-municipalites-du-quebec
+TITULO: Institut de la statistique du Québec
+FECHA: 
+
+Institut de la statistique du Québec 
+ SERVICES NON DISPONIBLES 
+ Les services Web de l’Institut sont temporairement inaccessibles en raison de travaux d’entretien. Veuillez essayer de nouveau un peu plus tard. 
+ Merci de votre compréhension. 
+ Pour plus d’informations, veuillez joindre notre Centre d'information et de documentation en composant le 418 691-2401 ou le 1 800 463-4090 (sans frais d'interurbain), du lundi au vendredi, de 8 h 30 à 12 h et de 13 h à 16 h 30 . 
+ Pour les participants aux enquêtes, veuillez joindre notre Service des opérations de collecte en composant le 418 691-2404 ou le 1 800 561-0213 (sans frais pour le Canada et les États-Unis) ou en nous écrivant à l’adresse courriel suivante : collecte@stat.gouv.qc.ca 
+ URL: statistique.quebec.ca/fr/document/modifications-aux-municipalites-du-quebec 
+ IP: 57.154.167.144 
+ Log ID: 20000051 
+ Message ID: 000000000000 
+ ©Gouvernement du Québec
+
+=== ENLACES ===
+https://statistique.quebec.ca | 
+https://www.quebec.ca/droit-auteur | ©Gouvernement du Québec

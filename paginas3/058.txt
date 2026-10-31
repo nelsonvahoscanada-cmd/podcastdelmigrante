@@ -1,0 +1,45 @@
+NOMBRE: STO tarifas
+URL: https://www.sto.ca/en/fares/
+ESTADO: 200
+FINAL: https://www.sto.ca/en/fares/
+TITULO: Fares | STO
+FECHA: 
+
+Fares | STO Go to main menu Go to main content Go to footer 
+ Main menu STO - Link to home page 
+ My profile Reload my card 
+ Home La STO Actualités Carrières Affaires Contact us Français English 
+My profile 
+ Schedules 
+and routes Transit APP System overview Latest developments and service changes Holidays and special events High school transportation System map STO on demand Fares Fares grid Multi Jeunesse U-Pass ECHO program FIDÉLITÉ Program Payment methods Sales and reloading network Loading a Multi card Exchanges and refunds Useful 
+information Intermodality Universal accessibility Information tools Events and partnerships Tips and by-laws The system FAQ Service points Lost and found Paratransit Eligibility and application for paratransit Book or change a trip Information and services Fares Contact us Projects and 
+community Major projects System improvements Completed projects Public consultations All ears for you Reload my card 
+ Search Search Cancel 
+ This content is intended for the public covered by the exceptions of the Charter of the French language and its regulations. If you read on, you confirm that you fall within one of these exceptions .
+ Fares 
+ Fares
+ Fares grid Multi Jeunesse ECHO Program FIDÉLITÉ Program Payment methods Sales and reloading network Loading a Multi card Exchanges and refunds 
+ Points of sale 
+Close to 50 locations for purchasing and loading Multi cards. 
+Find the point of sale nearest you. 
+ Pay with a Multi Card 
+ STO - Link to home page 
+ External link: planibus 
+ Follow us
+ 819 770-3242 
+ Send a comment 
+ Follow us
+ External link: Facebook External link: Instagram External link: Linkedin External link: X External link: Youtube 
+ Schedules and routes Fares Useful information Sales and reloading network Paratransit Projets et communauté 
+ La société
+ Carrières Affaires Subscribe to our newsletter 
+ Your profile
+ My profile Reload my card 
+ © 2026 Société de transport de l’Outaouais all rights reserved
+.
+ Terms of use Cookie settings
+
+=== ENLACES ===
+https://www.planibus.sto.ca/hastinfo/?culture=en | External link: planibus
+http://www.linkedin.com/company/soci-t-de-transport-de-l%27outaouais-sto-?trk=company_name | External link: Linkedin
+https://www.sto.ca/en/fares/' +  | ' + "Learn more" +'

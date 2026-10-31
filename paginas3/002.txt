@@ -1,0 +1,17 @@
+NOMBRE: Ciudad: Laval
+URL: https://www.laval.ca/
+ESTADO: NAV 403
+FINAL: https://www.laval.ca/
+TITULO: Un instant…
+FECHA: 
+
+Un instant… www.laval.ca
+ Vérification de sécurité en cours
+ Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.
+ Vérification réussie. En attente de la réponse de www.laval.ca.
+ Ray ID: a52faecf7e37a43c 
+ Performances et sécurité par Cloudflare Confidentialité
+
+=== ENLACES ===
+https://www.cloudflare.com?utm_source=challenge&utm_campaign=m | Cloudflare
+https://www.cloudflare.com/fr-fr/privacypolicy/ | Confidentialité

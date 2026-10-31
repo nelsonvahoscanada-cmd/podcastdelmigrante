@@ -1,0 +1,11 @@
+NOMBRE: Hospitales: répertoire (fr)
+URL: https://www.sante.gouv.qc.ca/repertoire-ressources/hopitaux/
+ESTADO: NAV 403
+FINAL: https://www.sante.gouv.qc.ca/repertoire-ressources/hopitaux/
+TITULO: 403 Forbidden
+FECHA: 
+
+403 Forbidden 
+ 403 Forbidden
+
+=== ENLACES ===

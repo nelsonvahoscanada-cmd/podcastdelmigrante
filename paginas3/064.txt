@@ -1,0 +1,90 @@
+NOMBRE: exo tarifas
+URL: https://exo.quebec/en/fares-and-tickets
+ESTADO: NAV 404
+FINAL: https://exo.quebec/en/fares-and-tickets
+TITULO: Exo
+FECHA: 
+
+Exo 
+ Skip to the main content Search by keyword Search Search , opens a panel to perform a search 
+ Useful tools 
+ Newsletter 
+ Français 
+ Search Search , opens a panel to perform a search profile Menu 
+ Getting around 
+ Customer Service 
+Plan a trip 
+ Log in 
+ Beginning of the main content. 
+ Oops! This page doesn’t exist or isn’t available.
+ Error 404 
+ The page you’re trying to access doesn’t exist or is currently unavailable. It may have been moved, or the link you used might be incorrect.
+ Try one of the following: 
+ Search using keywords in our search tool 
+ Go back to the homepage 
+ Other suggestions:
+ View schedules 
+ Check fares and rates 
+ Find a sales and service outlets 
+ Visit our FAQ 
+ Follow us
+ Facebook 
+ X 
+ Instagram 
+ Linkedin 
+ Youtube 
+ Service status and notices 
+ FAQ 
+ Français 
+ Terms of use © exo, 2026 
+ Chez exo, respect de la vie privée rime avec expérience personnalisée 
+ La protection de vos informations personnelles est une priorité pour nous, et nous nous engageons à être transparents quant à l’utilisation de vos données. Pour en savoir plus, consultez l'énoncé de confidentialité exo 
+ Personnaliser Tout accepter 
+ Centre de préférences de la confidentialité
+ Lorsque vous consultez un site Web, des données peuvent être stockées dans votre navigateur ou récupérées à partir de celui-ci, généralement sous la forme de cookies. Ces informations peuvent porter sur vous, sur vos préférences ou sur votre appareil et sont principalement utilisées pour s'assurer que le site Web fonctionne correctement. Les informations ne permettent généralement pas de vous identifier directement, mais peuvent vous permettre de bénéficier d'une expérience Web personnalisée. Parce que nous respectons votre droit à la vie privée, nous vous donnons la possibilité de ne pas autoriser certains types de cookies. Cliquez sur les différentes catégories pour obtenir plus de détails sur chacune d'entre elles, et modifier les paramètres par défaut. Toutefois, si vous bloquez certains types de cookies, votre expérience de navigation et les services que nous sommes en mesure de vous offrir peuvent être impactés.
+ Plus d’informations 
+ Tout autoriser Gérer les préférences de consentement
+ Cookies strictement nécessaires
+ Toujours actif
+ Ces témoins et autres technologies sont essentiels au bon fonctionnement et à la sécurité de notre site web. Ils nous permettent de protéger vos données clients (comme vos réservations et votre compte), et de mémoriser vos préférences en matière de collecte de données. Cette utilisation est nécessaire pour le fonctionnement normal de notre site et ne peut être désactivée. 
+ Cookies de fonctionnalité
+ Cookies de fonctionnalité 
+ Ces témoins et autres technologies vous permettent de localiser les lignes les plus proches de vous et de personnaliser votre interface (telle que la langue d'affichage). Ils fournissent des informations liées à vos préférences. 
+ Cookies de performance
+ Cookies de performance 
+ Ces témoins nous permettent d'améliorer en continu votre expérience sur notre site web. Ils nous aident à comprendre comment vous utilisez nos services en ligne, donc à corriger les erreurs, d'optimiser notre site, et de vous offrir de nouvelles fonctionnalités.
+ Cookies pour une publicité ciblée
+ Cookies pour une publicité ciblée 
+ Ces derniers sont les témoins qui nous permettent de personnaliser le contenu éditorial et marketing. Nous utilisons ces informations pour rendre notre site web et la publicité qui y est affichée plus pertinents par rapport à vos intérêts.
+ Liste des cookies
+ Clear checkbox label label 
+ Apply Cancel 
+ Consent Leg.Interest 
+ checkbox label label 
+ checkbox label label 
+ checkbox label label 
+ Tout refuser Confirmer la sélection
+
+=== ENLACES ===
+https://exo.quebec/en | 
+https://exo.quebec/en/customer-service/tutorials/useful-tools | Useful tools
+https://exo.quebec/en/newsletter | Newsletter
+https://exo.quebec/en/my-account | profile
+https://exo.quebec/en/customer-service | Customer Service
+https://exo.quebec/en/trip-planner | Plan a trip
+https://exo.quebec/en/search | search tool
+https://exo.quebec/en/ | homepage
+https://exo.quebec/en/bus-schedule | View schedules
+https://exo.quebec/en/tickets-fares | Check fares and rates
+https://exo.quebec/en/customer-service/sales-locations/search | Find a sales and service outlets
+https://exo.quebec/en/customer-service/faq | Visit our FAQ
+https://www.facebook.com/alloexo/ | Facebook Follow exo on Facebook
+https://x.com/allo_exo | X Follow exo on X
+https://www.instagram.com/alloexo | Instagram Follow exo on Instagram
+https://www.linkedin.com/company/reseaudetransportmetropolitain/ | Linkedin Follow exo on Linkedin
+https://www.youtube.com/c/exoreseaudetransportmetropolitain | Youtube Follow exo on Youtube
+https://exo.quebec/en/service-status | Service status and notices
+https://exo.quebec/en/terms-of-use | Terms of use
+https://exo.quebec/fr/confidentialite | l'énoncé de confidentialité exo
+https://cookiepedia.co.uk/giving-consent-to-cookies | Plus d’informations
+https://www.onetrust.com/products/cookie-consent/ | 

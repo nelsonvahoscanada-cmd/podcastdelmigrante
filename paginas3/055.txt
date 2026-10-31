@@ -1,0 +1,351 @@
+NOMBRE: ARTM tarifas zonas
+URL: https://www.artm.quebec/en/fares/
+ESTADO: 200
+FINAL: https://www.artm.quebec/en/fares/
+TITULO: Transit Fares – ARTM
+FECHA: 2026-08-27
+
+Transit Fares – ARTM 
+ À propos 
+ Mission 
+ Le transport collectif de demain 
+ Gouvernance 
+ Conseil d’administration 
+ Équipe de direction 
+ Documents corporatifs 
+ Politiques et règlements 
+ Enquêtes et panel de l’ARTM 
+ COVID-19 
+ Mandats 
+ Planifier 
+ Enquête Origine-Destination 
+ Plan stratégique de développement 
+ Projet de refonte tarifaire 
+ Plan des initiatives de développement du transport collectif 
+ Plan de relance 
+ Organiser 
+ Signalétique métropolitaine 
+ Mesures d’atténuation liées au REM 
+ Financer 
+ Redevances REM 
+ Promouvoir 
+ Centres de gestion des déplacements 
+ Grands projets 
+ Service rapide par bus Pie-IX (SRB) 
+ Prolongement de la ligne bleue du métro 
+ Projet structurant de transport collectif sur la Rive-Sud 
+ Réseau express métropolitain (REM) 
+ Moving toward new mobility solutions 
+ Fares 
+ Fare selector 
+ Fare schedule 
+ Transit fares 
+ All Modes 
+ Bus 
+ Unlimited Fares 
+ Occasional fares 
+ Fare zones 
+ Park and ride 
+ Buy a fare 
+ Virtual fares Android 
+ Points of sale 
+ Fare cards 
+ OPUS Card 
+ Which card to use 
+ Free and Reduced Fares 
+ For students 
+ For seniors 
+ For families 
+ Paratransit 
+ Fare schedule 
+ Transit fares 
+ All Modes 
+ Fares for paratransit services only 
+ Fare Selector 
+ Fare zones 
+ Fare cards 
+ Which card to use 
+ Nous joindre 
+ Infolettre 
+ Nouvelles 
+ Salle de presse 
+ Application mobile Chrono 
+ Back 
+ Back 
+ Nous joindre 
+ Infolettre 
+ Nouvelles 
+ Salle de presse 
+ + 
+ - 
+ -->
+ -->
+ -->
+ Recherche...
+ X 
+ À propos 
+ Mission 
+ Le transport collectif de demain 
+ Gouvernance 
+ Conseil d’administration 
+ Équipe de direction 
+ Documents corporatifs 
+ Politiques et règlements 
+ Enquêtes et panel de l’ARTM 
+ COVID-19 
+ What are you looking for today?
+ Choose the right fare with the fare selector 
+ Discover all the transit fares 
+ Plan an itinerary and get a fare with Chrono 
+ Find a point of sale 
+ Mandats 
+ Planifier 
+ Enquête Origine-Destination 
+ Plan stratégique de développement 
+ Projet de refonte tarifaire 
+ Plan des initiatives de développement du transport collectif 
+ Plan de relance 
+ Organiser 
+ Signalétique métropolitaine 
+ Mesures d’atténuation liées au REM 
+ Financer 
+ Redevances REM 
+ Promouvoir 
+ Centres de gestion des déplacements 
+ What are you looking for today?
+ Choose the right fare with the fare selector 
+ Discover all the transit fares 
+ Plan an itinerary and get a fare with Chrono 
+ Find a point of sale 
+ Grands projets 
+ Service rapide par bus Pie-IX (SRB) 
+ Prolongement de la ligne bleue du métro 
+ Projet structurant de transport collectif sur la Rive-Sud 
+ Réseau express métropolitain (REM) 
+ Moving toward new mobility solutions 
+ What are you looking for today?
+ Choose the right fare with the fare selector 
+ Discover all the transit fares 
+ Plan an itinerary and get a fare with Chrono 
+ Find a point of sale 
+ Fares 
+ Fare selector 
+ Fare schedule 
+ Transit fares 
+ All Modes 
+ Bus 
+ Unlimited Fares 
+ Occasional fares 
+ Fare zones 
+ Park and ride 
+ Buy a fare 
+ Virtual fares Android 
+ Points of sale 
+ Fare cards 
+ OPUS Card 
+ Which card to use 
+ Free and Reduced Fares 
+ For students 
+ For seniors 
+ For families 
+ What are you looking for today?
+ Choose the right fare with the fare selector 
+ Discover all the transit fares 
+ Plan an itinerary and get a fare with Chrono 
+ Find a point of sale 
+ Paratransit 
+ Fare schedule 
+ Transit fares 
+ All Modes 
+ Fares for paratransit services only 
+ Fare Selector 
+ Fare zones 
+ Fare cards 
+ Which card to use 
+ What are you looking for today?
+ Choose the right fare with the fare selector 
+ Discover all the transit fares 
+ Plan an itinerary and get a fare with Chrono 
+ Find a point of sale 
+ Chrono app 
+ The Charter of the French language and its regulations govern the consultation of English-language content.
+ Accueil 
+ Transit Fares 
+ Transit fares 
+ Paratransit 
+ FR 
+ Fare selector 
+ Fare schedule 
+ All Modes 
+ Bus 
+ Unlimited Evening and Unlimited Weekend 
+ Points of sale 
+ Discover the fare types that cover most trip needs: the All Modes fare, the Bus fare, as well as Unlimited Evening and Unlimited Weekend passes. 
+ Other fares will remain available. Refer to the fare schedule to see all fares available. 
+ Select your fare
+ Based on your trip
+ Your fare must be valid in the zone you are departing from, the zones you will travel through and the zone you will arrive in. Not sure which zone you’ll be travelling through? Find out more about zones A, B, C and D . 
+ Based on your mode of transportation
+ Choose between the following fares to access the public transit services you use: bus, train, metro or the REM. 
+ Fare Selector
+ Current fares
+ * The age 6-11 fare applies to children traveling alone. These children can travel for free on public transit if they are accompanied . Conditions apply.
+ This tool presents transit fares for a trip between selected municipalities. Other transit fares may be suitable under certain conditions. 
+ Please remember that this is not a trip planner. 
+ Fare schedule
+ Current fare schedule 
+ An accessible version of the fare schedule is also available in Word format: Accessible fare schedule (Word, 118 KB) 
+ All Modes
+ The All Modes fare allows you to take the metro, REM, train and bus. You may choose between All Modes A, AB, ABC and ABCD fares. 
+ Learn more 
+ Bus
+ Bus fares give you access to bus services only. You may choose between the Bus fare and the Out-of-Territory Bus fare. 
+ Learn more 
+ Unlimited Evening and Unlimited Weekend
+ The Unlimited Evening and Unlimited Weekend passes allow unlimited travel in zones A, B, C and D, regardless of the public transit mode you choose. The more you use your pass, the more you save! 
+ Learn more 
+ Free at all times for children
+ Children aged 11 and under can travel anywhere for free at all times on Public transit services while under the supervision of a person aged 14 and up. 
+ This person must have a valid and validated transit pass and may not accompany more than five children aged 6 to 11. 
+ Compare transit fares and choose the one that meets your travelling needs
+ Scroll to consult
+ Monthly
+ Multi-trip
+ Unlimited
+ Your trip frequency 
+ Approximately 25 times per month or more
+ Less than 25 times per month
+ On occasion
+ Examples of available fares
+ All Modes fares, Bus fares and special bus fares related to the launch of the REM
+ All Modes fares and Bus fares
+ Unlimited Evening, Unlimited Weekend, All Modes (24-hour, 3-day and weekly*) and Bus (24-hour and 3-days). *The weekly is only available for the All modes A.
+ You need it...
+ ...to make an unlimited number of hassle-free trips during the month.
+ …to travel in a flexible manner.
+ ...to make an unlimited number of trips in a short period of time.
+ Reduced fare for children aged 6 to 17 or seniors aged 65 and up
+ (except for the weekly All Modes A fare)
+ Reduced fare for students aged 18 and up
+ Unlimited number of trips
+ Subscription available
+ Possibility of purchasing in advance
+ As of the 20th day of the previous month
+ Fare expiry date (before activation)
+ The last day of the month for which it is valid
+ Never
+ Never
+ Fare expiry date (once activated)
+ The last day of the month for which it is valid
+ 120 minutes
+ Until the end of the period for which it is valid
+ Points of sale and customer service
+ There are more than a hundred points of sale in Greater Montréal. Inquire about passes before travelling, as some are not available everywhere. 
+ Use our points of sale locator to find a point of sale near you.
+ Consult the Contact us page to contact your transit agency’s customer service department.
+ See also
+ Find out more about the fare reform
+ Learn more
+ More information about zones A, B, C and D
+ Learn more
+ Appearance -> Widgets -->
+ Pour nous joindre
+ 514 409-2786 
+Du lundi au vendredi
+De 8 h 30 à 12 h et de 13 h à 17 h
+ Contactez-nous 
+ PLAN DU SITE
+ Accueil 
+ À propos 
+ Enquêtes et panel 
+ Fare reform 
+ Fares 
+ Grands projets 
+ Salle de presse 
+ Emplois 
+ Chrono 
+ Approvisionnement et contrats 
+ Restez informé
+ Recevez par courriel l’actualité de l’ARTM et du transport collectif de la région métropolitaine de Montréal.
+ S’abonner à l’infolettre 
+ Suivez-nous
+ Nétiquette 
+ ©
+ 2026 Autorité régionale de transport métropolitain | ARTM
+
+=== ENLACES ===
+https://www.artm.quebec/en/ | 
+https://www.artm.quebec/a-propos-de-l-artm/ | À propos
+https://www.artm.quebec/a-propos-de-l-artm/mission/ | Mission
+https://www.artm.quebec/le-transport-collectif-de-demain/ | Le transport collectif de demain
+https://www.artm.quebec/a-propos-de-l-artm/gouvernance/ | Gouvernance
+https://www.artm.quebec/conseil-administration/ | Conseil d’administration
+https://www.artm.quebec/equipe-direction/ | Équipe de direction
+https://www.artm.quebec/a-propos-de-l-artm/documents-corporatifs/ | Documents corporatifs
+https://www.artm.quebec/politiques-reglements/ | Politiques et règlements
+https://www.artm.quebec/a-propos-de-l-artm/enquetes-et-panel/ | Enquêtes et panel de l’ARTM
+https://www.artm.quebec/covid-19-et-transport-collectif/ | COVID-19
+https://www.artm.quebec/planification/ | Planifier
+https://www.artm.quebec/planification/enqueteod/ | Enquête Origine-Destination
+https://www.artm.quebec/planification/plan-strategique-de-developpement/ | Plan stratégique de développement
+https://www.artm.quebec/planification/projet-refonte-tarifaire/ | Projet de refonte tarifaire
+https://www.artm.quebec/planification/plan-des-initiatives-de-developpement-du-transport-collectif/ | Plan des initiatives de développement du transport collectif
+https://www.artm.quebec/planification/plan-relance-economique-quebec/ | Plan de relance
+https://www.artm.quebec/organiser/ | Organiser
+https://www.artm.quebec/organiser/signaletique-metropolitaine/ | Signalétique métropolitaine
+https://www.artm.quebec/organiser/mesures-dattenuation-rem/ | Mesures d’atténuation liées au REM
+https://www.artm.quebec/financer/ | Financer
+https://www.artm.quebec/financer/redevances-rem/ | Redevances REM
+https://www.artm.quebec/promouvoir/ | Promouvoir
+https://www.artm.quebec/promouvoir/centres-de-gestion-des-deplacements/ | Centres de gestion des déplacements
+https://www.artm.quebec/grands-projets/ | Grands projets
+https://www.artm.quebec/grands-projets/service-rapide-par-bus-pie-ix-srb/ | Service rapide par bus Pie-IX (SRB)
+https://www.artm.quebec/grands-projets/prolongement-de-la-ligne-bleue-du-metro/ | Prolongement de la ligne bleue du métro
+https://www.artm.quebec/grands-projets/projet-structurant-de-transport-collectif-sur-la-rive-sud/ | Projet structurant de transport collectif sur la Rive-Sud
+https://www.artm.quebec/grands-projets/reseau-express-metropolitain-rem/ | Réseau express métropolitain (REM)
+https://www.artm.quebec/en/grands-projets/mobility-solutions/ | Moving toward new mobility solutions
+https://www.artm.quebec/en/fares/ | Fares
+https://www.artm.quebec/en/fare-selector/ | Fare selector
+https://www.artm.quebec/en/fare-schedule/ | Fare schedule
+https://www.artm.quebec/en/fares/all-modes/ | All Modes
+https://www.artm.quebec/en/fares/bus/ | Bus
+https://www.artm.quebec/en/fares/unlimited-fares/ | Unlimited Fares
+https://www.artm.quebec/en/fares/occasional-fares/ | Occasional fares
+https://www.artm.quebec/en/fare-zones/ | Fare zones
+https://www.artm.quebec/en/park-and-ride/ | Park and ride
+https://www.artm.quebec/en/virtual-fares-for-android/ | Virtual fares Android
+https://www.artm.quebec/en/points-of-sale/ | Points of sale
+https://www.artm.quebec/en/fares/fare-platform/ | Fare cards
+https://www.artm.quebec/en/fares/fare-platform/opus/ | OPUS Card
+https://www.artm.quebec/en/fares/fare-platform/which-card-to-use/ | Which card to use
+https://www.artm.quebec/en/promotionalfares/students/ | For students
+https://www.artm.quebec/en/promotionalfares/seniors/ | For seniors
+https://www.artm.quebec/en/promotionalfares/family/ | For families
+https://www.artm.quebec/en/fares-paratransit/ | Paratransit
+https://www.artm.quebec/en/fare-schedule-paratransit/ | Fare schedule
+https://www.artm.quebec/en/fares-paratransit/all-modes/ | All Modes
+https://www.artm.quebec/en/fares-paratransit/fares-for-paratransit-services-only/ | Fares for paratransit services only
+https://www.artm.quebec/en/zones-paratransit/ | Fare zones
+https://www.artm.quebec/en/fare-platform-paratransit/ | Fare cards
+https://www.artm.quebec/en/paratransit/which-card-to-use/ | Which card to use
+https://www.artm.quebec/nous-joindre/ | Nous joindre
+https://www.artm.quebec/infolettre/ | Infolettre
+https://www.artm.quebec/category/nouvelles/ | Nouvelles
+https://www.artm.quebec/salle-de-presse/ | Salle de presse
+https://www.artm.quebec/application-mobile-chrono | Application mobile Chrono
+https://www.artm.quebec/en/chrono-mobile-application/ | Plan an itinerary and get a fare with Chrono
+https://www.quebec.ca/en/government/policies-orientations/french-language/modernization-charter-french-language | regulations
+https://www.artm.quebec/tarification/ | FR
+https://www.artm.quebec/wp-content/uploads/2026/06/ARTM_Grille_tarifaire_TC_EN_VF_WEB_Version-accessible.docx | Accessible fare schedule (Word, 118 KB)
+https://www.artm.quebec/en/fare-reform/ | Learn more
+https://www.artm.quebec/nous-joindre | Contactez-nous
+https://www.artm.quebec/ | Accueil
+https://www.artm.quebec/en/?page_id=43194 | Fare reform
+https://www.artm.quebec/emplois/ | Emplois
+https://www.artm.quebec/approvisionnement-et-fournisseurs-de-l-artm/ | Approvisionnement et contrats
+https://www.artm.quebec/infolettre | S’abonner à l’infolettre
+https://www.linkedin.com/company/autorit%C3%A9r%C3%A9gionaledetransportm%C3%A9tropolitain/ | 
+https://www.facebook.com/artm.quebec/?modal=admin_todo_tour | 
+https://twitter.com/artm_quebec | 
+https://www.youtube.com/channel/UCldaSxyKkQFiHXCvXzptuHQ | 
+https://www.artm.quebec/netiquette/ | Nétiquette

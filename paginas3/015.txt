@@ -1,0 +1,421 @@
+NOMBRE: Ciudad: Granby
+URL: https://www.granby.ca/
+ESTADO: 200
+FINAL: https://www.granby.ca/fr
+TITULO: Granby ville rayonnante | Ville de Granby
+FECHA: 
+
+Granby ville rayonnante | Ville de Granby 
+ 5) ? true : false; "
+ x-init="
+ const handleScrollLock = () => {
+ const shouldLock = menuIsOpen && window.innerWidth 
+ Actualités
+ Cartes interactives
+ Carrières
+ Nous joindre
+ FAQ
+ MENU 
+ {
+ this.resetSubmenuState(this.getAlpineData(element));
+ });
+ if (openTrigger) {
+ this.$nextTick(() => openTrigger.focus());
+ }
+ },
+ }"
+ @menu-closing.window="resetSubmenus()"
+ @keydown.escape.window="resetSubmenus(true); if (window.innerWidth 
+ Ville 
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Ville
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Mot de la mairesse
+ Comités citoyens
+ Conseil municipal de Granby
+ Une page d'histoire
+ Participation citoyenne
+ Planification stratégique
+ Rapport annuel de la Ville de Granby
+ Séances du conseil municipal
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Gestion municipale
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Accessibilité universelle
+ Avis publics
+ Budget et rapports financiers
+ Grands projets
+ Itinérance
+ Mesures d'urgence
+ Norme ISO 37001
+ Parcs et espaces verts
+ Plan de mobilité active
+ Politiques et plans d'action
+ Règlements municipaux
+ Rôle d'évaluation foncière
+ Sommaire des rapports de dépenses électorales
+ Travaux de voirie 2026
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Affaires et économie
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Faire affaire avec la Ville
+ Programme d'aide à la relocalisation
+ Stratégie de développement économique
+ Tarifs douaniers
+ Terrains à vendre
+ Liens rapides 
+ Appels d’offres et contrats 
+ Budget 2026 
+ Organismes paramunicipaux 
+ Règlements municipaux 
+ Séances du conseil municipal 
+ Services 
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Vie quotidienne
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Animaux
+ Eau potable
+ Bulletin municipal
+ Comité d'embellissement
+ Demandes d'accès aux documents
+ Demande relative à la circulation
+ Faire une réclamation
+ Service d'aide à la recherche de logement
+ Transport urbain Granby
+ Ventes de garage
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Service municipaux
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Collectes des matières résiduelles
+ Cour municipale
+ Environnement
+ Finances
+ Ressources humaines
+ Service de l'aménagement et de la protection du territoire
+ Service de sécurité incendie
+ Service de police
+ Taxes municipales
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Services numériques
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Alertes citoyennes
+ Panneaux et totems numériques
+ Outils de promotion
+ Permis en ligne et formulaires
+ Subventions et programmes d'aide
+ Liens rapides 
+ Alertes citoyennes 
+ Demandes d’accès à l’information 
+ Demande de permis en ligne 
+ Déneigement 
+ Fiches de règlementation simplifiées 
+ Règlements municipaux 
+ Suivi de permis en ligne 
+ Taxes en ligne 
+ Loisirs 
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Arts, culture et patrimoine
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Bibliothèque Paul-O.-Trépanier
+ Culture et patrimoine
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Sports et loisirs
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Accès-loisirs
+ Calendrier des événements
+ Centre aquatique Desjardins
+ Déclaration d'utilisation d'un espace public
+ Carte-loisirs
+ Inscriptions aux activités de loisirs
+ Installations extérieures
+ Je porte plainte
+ Terrain multisports
+ = 1024) ? 'true' : 'false'"
+ :class="{ 'tw-text-primary': showLevelTwo }"
+ @click="if (window.innerWidth 
+ Vie communautaire
+ = 1024"
+ x-collapse.duration.300ms
+ class="tw-pl-4 lg:tw-pl-0 tw-my-0 lg:tw-my-5 tw-flex tw-flex-col tw-gap-y-6 lg:tw-gap-y-4">
+ Communauté nourricière
+ Égalité
+ Familles
+ Gala Rayonnement
+ Immigration
+ Jeunesse
+ Personnes aînées
+ Programme de soutien semi-annuel
+ Ressources communautaires
+ Soutien aux organismes
+ Liens rapides 
+ Bains libres 
+ Camps de jour, édition 2026 
+ Inscriptions aux activités de loisirs 
+ Printemps culturel 
+ Renouveler une carte-loisirs 
+ Actualités
+ Cartes interactives
+ Carrières
+ Nous joindre
+ FAQ
+ $refs.searchInput?.querySelector('input')?.focus(), 350)" aria-label="Ouvrir la recherche">
+ Rechercher
+ Rechercher sur le site
+ Rechercher 
+ Les plus recherchés
+ Séances du conseil municipal 
+ Permis en ligne 
+ Règlements municipaux 
+ Arrosage 
+ Bibliothèque Paul-O.-Trépanier 
+ Carte-loisirs 
+ Accès aux documents 
+ Granby ville rayonnante
+ Granby ville rayonnante
+ Granby ville rayonnante
+ Granby ville rayonnante
+ Vidéo
+ Les plus populaires
+ div]:tw-grid [&>div]:tw-grid-cols-1 [&>div]:md:tw-grid-cols-2 [&>div]:xl:tw-grid-cols-4 [&>div]:tw-gap-4 [&>div]:xl:tw-gap-6">
+ Faire une demande d'accès aux documents 
+ Itinérance 
+ FAQ par rubrique 
+ Services en ligne : carte-loisirs de Granby 
+ Bibliothèque Paul-O.-Trépanier 
+ Séances du conseil municipal 2026-2027 
+ Transport urbain Granby 
+ Permis en ligne et formulaires 
+ Nouvelles
+ Voir toutes les nouvelles
+ Taxibus : la Ville annonce le retour de l’ensemble des arrêts
+ Dès le lundi 26 octobre, plus de 250 arrêts de taxibus seront remis en service dans les huit zones, en plus de nouvelles options de suivi du véhicule en direct et de réservation plus flexible.
+ 23 octobre 2026
+ Halloween : une halte sucrée au poste de police le 31 octobre
+ La population est conviée au poste de police de Granby (125, rue Simonds Sud) le 31 octobre, de 16 h 30 à 19 h 30, pour une halte festive de l’Halloween. Policiers et pompiers accueilleront les familles avec des friandises et feront découvrir leurs véhicules et leur équipement. Les mascottes Shérif et Burny seront aussi de la fête. L’accès se fait par la rue Léon-Harmel.
+ 21 octobre 2026
+ Granby célèbre la richesse des rencontres interculturelles
+ La Ville de Granby dévoile la programmation de la Semaine québécoise des rencontres interculturelles, qui se tiendra du 2 au 8 novembre sous le thème Le Québec en commun. Tout au long de la semaine, des activités favoriseront les échanges et le rapprochement entre les Granbyennes et les Granbyens de toutes origines.
+ 19 octobre 2026
+ Politique jeunesse 2026-2030 : Granby s'engage aux côtés de ses jeunes
+ La Ville de Granby a dévoilé sa Politique jeunesse 2026-2030, destinée aux jeunes de 12 à 17 ans. Fruit d'une vaste consultation, elle guidera les actions municipales pour renforcer la participation des adolescentes et des adolescents à la vie collective et favoriser leur épanouissement. Plusieurs mesures sont déjà en cours de réalisation.
+ 7 octobre 2026
+ Voir toutes les nouvelles
+ Nouvel horaire
+ La chute à livres change d’heure
+ À partir du mois de novembre, la chute à livres de la bibliothèque Paul-O.-Trépanier sera ouverte tous les jours de 7 h à 20 h. Prenez note de ce nouvel horaire pour planifier vos retours.
+ Voir les heures d’ouverture
+ (s'ouvre dans une nouvelle fenêtre) 
+ Événements
+ Voir tous les événements
+ *]:tw-h-full ">
+ Loisirs 
+ Bain libre pour les personnes vivant avec une déficience (physique et/ou intellectuelle) et leur famille
+ 27 septembre 2026, 20 septembre 2026, 4 octobre 2026 +5 dates 
+ *]:tw-h-full ">
+ Conseil et affaires municipales 
+ Séance du conseil municipal
+ Lundi 2 novembre 2026, à 19 heures
+Séance ordinaire du conseil municipal tenue dans la salle du conseil municipal à l'hôtel de ville de Granby.
+ 2 novembre 2026
+ *]:tw-h-full ">
+ Sports et plein air 
+ Wibit à l'eau
+ 13 novembre 2026, 14 novembre 2026, 15 novembre 2026
+ *]:tw-h-full ">
+ Conseil et affaires municipales 
+ Séance du conseil municipal
+ Lundi 16 novembre 2026, à 19 heures
+Séance ordinaire du conseil municipal tenue dans la salle du conseil municipal à l'hôtel de ville de Granby.
+ 16 novembre 2026
+ *]:tw-h-full ">
+ Loisirs 
+ Bain libre Desjardins
+ Profitez gratuitement des installations du centre aquatique Desjardins de Granby.
+ 27 novembre 2026
+ *]:tw-h-full ">
+ Sports et plein air 
+ Slackline à l'eau
+ 23 octobre 2026, 27 novembre 2026, 18 décembre 2026
+ *]:tw-h-full ">
+ Conseil et affaires municipales 
+ Séances du conseil municipal
+ Lundi 30 novembre 2026, à 19 heures
+Séances extraordinaire et ordinaire du conseil municipal tenue dans la salle du conseil municipal à l'hôtel de ville de Granby.
+ 30 novembre 2026
+ *]:tw-h-full ">
+ Sports et plein air 
+ Wibit à l'eau
+ 11 décembre 2026, 12 décembre 2026, 13 décembre 2026
+ *]:tw-h-full ">
+ Conseil et affaires municipales 
+ Séance du conseil municipal
+ Lundi 14 décembre 2026, à 19 heures
+Séance ordinaire du conseil municipal tenue dans la salle du conseil municipal à l'hôtel de ville de Granby.
+ 14 décembre 2026
+ Voir tous les événements
+ 87, rue Principale
+Granby (Québec), J2G 2T8
+450 776-8282
+ [email protected] 
+ Restez à l'affût !
+ Pour tout savoir sur les actualités de votre ville, abonnez-vous à notre infolettre.
+ Je m'abonne
+ Accessibilité
+ Conditions d’utilisation
+ Politique relative aux fichiers témoins
+ Gestion des témoins
+ Politique de confidentialité
+ Copyright ©
+ 2026
+ Ville de Granby
+
+=== ENLACES ===
+https://www.granby.ca/fr/actualites | Actualités
+https://www.granby.ca/fr/cartes-et-plans-interactifs | Cartes interactives
+https://www.granby.ca/fr/services/ressources-humaines | Carrières
+https://www.granby.ca/fr/nous-joindre | Nous joindre
+https://www.granby.ca/fr/faq-par-rubrique | FAQ
+https://www.granby.ca/fr | 
+https://www.granby.ca/fr/ville/mot-de-la-mairesse | Mot de la mairesse
+https://www.granby.ca/fr/ville/comites-citoyens | Comités citoyens
+https://www.granby.ca/fr/ville/conseil-municipal | Conseil municipal de Granby
+https://www.granby.ca/fr/ville/une-page-dhistoire | Une page d'histoire
+https://www.granby.ca/fr/ville/participation-citoyenne | Participation citoyenne
+https://www.granby.ca/fr/ville/planification-strategique-2022-2026 | Planification stratégique
+https://www.granby.ca/fr/ville/ville/rapport-annuel-de-la-ville-de-granby | Rapport annuel de la Ville de Granby
+https://www.granby.ca/fr/ville/seances-du-conseil-municipal-2026-2027 | Séances du conseil municipal
+https://www.granby.ca/fr/ville/accessibilite-universelle | Accessibilité universelle
+https://www.granby.ca/fr/ville/avis-publics | Avis publics
+https://www.granby.ca/fr/services/finances/budget-et-rapports-financiers | Budget et rapports financiers
+https://www.granby.ca/fr/ville/grands-projets | Grands projets
+https://www.granby.ca/fr/ville/itinerance | Itinérance
+https://www.granby.ca/fr/mesures-urgence | Mesures d'urgence
+https://www.granby.ca/fr/ville/premiere-ville-au-quebec-etre-certifiee-iso-37001 | Norme ISO 37001
+https://www.granby.ca/fr/ville/parcs-et-espaces-verts | Parcs et espaces verts
+https://www.granby.ca/fr/mobiliteactive | Plan de mobilité active
+https://www.granby.ca/fr/ville/politiques-et-plans-daction | Politiques et plans d'action
+https://www.granby.ca/fr/ville/reglements-municipaux | Règlements municipaux
+https://www.granby.ca/fr/services/finances/role-devaluation-fonciere | Rôle d'évaluation foncière
+https://www.granby.ca/fr/ville/depenses-electorales | Sommaire des rapports de dépenses électorales
+https://www.granby.ca/fr/travaux-voirie | Travaux de voirie 2026
+https://www.granby.ca/fr/ville/faire-affaire-avec-la-ville | Faire affaire avec la Ville
+https://www.granby.ca/fr/ville/programme-daide-financiere-de-la-ville-de-granby | Programme d'aide à la relocalisation
+https://www.granby.ca/fr/ville/strategie-de-developpement-economique | Stratégie de développement économique
+https://www.granby.ca/fr/ville/tarifs-douaniers | Tarifs douaniers
+https://www.granby.ca/fr/ville/terrains-vendre | Terrains à vendre
+https://www.granby.ca/fr/ville/faire-affaire-avec-la-ville/appels-doffres-et-contrats | Appels d’offres et contrats
+https://www.granby.ca/fr/services/finances/budget-et-rapports-financiers/budget-2026 | Budget 2026
+https://www.granby.ca/fr/loisirs/organismes-paramunicipaux | Organismes paramunicipaux
+https://www.granby.ca/fr/services/animaux | Animaux
+https://www.granby.ca/fr/services/eau-potable | Eau potable
+https://www.granby.ca/fr/services/bulletin-municipal | Bulletin municipal
+https://www.granby.ca/fr/comite-embellissement | Comité d'embellissement
+https://www.granby.ca/fr/services/demandes-dacces-aux-documents | Demandes d'accès aux documents
+https://www.granby.ca/fr/services/demande-relative-la-circulation | Demande relative à la circulation
+https://www.granby.ca/fr/services/faire-une-reclamation | Faire une réclamation
+https://www.granby.ca/fr/services/service-daide-la-recherche-de-logement | Service d'aide à la recherche de logement
+https://www.granby.ca/fr/services/transport-urbain-granby | Transport urbain Granby
+https://www.granby.ca/fr/services/ventes-de-garage | Ventes de garage
+https://genedejeter.com | Collectes des matières résiduelles
+https://www.granby.ca/fr/services/cour-municipale | Cour municipale
+https://www.granby.ca/fr/services/environnement | Environnement
+https://www.granby.ca/fr/services/finances | Finances
+https://www.granby.ca/fr/sapt | Service de l'aménagement et de la protection du territoire
+https://www.granby.ca/fr/services/service-de-securite-incendie | Service de sécurité incendie
+https://www.granby.ca/fr/services/service-de-police | Service de police
+https://www.granby.ca/fr/services/taxes-municipales | Taxes municipales
+https://www.granby.ca/fr/services/alertes-citoyennes | Alertes citoyennes
+https://www.granby.ca/fr/services/panneaux-et-totems-numeriques | Panneaux et totems numériques
+https://www.granby.ca/fr/services/outils-de-promotion-pour-les-evenements | Outils de promotion
+https://www.granby.ca/fr/services/permis-en-ligne-et-formulaires | Permis en ligne et formulaires
+https://www.granby.ca/fr/subventions | Subventions et programmes d'aide
+https://www.granby.ca/fr/services/service-de-lamenagement-et-de-la-protection-du-territoire/permis-certificats-dautorisation-et-declarations | Demande de permis en ligne
+https://www.granby.ca/fr/deneigement | Déneigement
+https://www.granby.ca/fr/fiches-sapt | Fiches de règlementation simplifiées
+https://granby.edemandes.com/fr/request | Suivi de permis en ligne
+https://www.granby.ca/fr/services/taxes-municipales/compte-de-taxes-en-ligne | Taxes en ligne
+https://www.granby.ca/fr/loisirs/bibliotheque-paul-o-trepanier | Bibliothèque Paul-O.-Trépanier
+https://www.granby.ca/fr/loisirs/culture-et-patrimoine | Culture et patrimoine
+https://www.granby.ca/fr/acces-loisirs | Accès-loisirs
+https://www.granby.ca/fr/calendrier-evenements | Calendrier des événements
+https://www.granby.ca/fr/loisirs/centre-aquatique-desjardins | Centre aquatique Desjardins
+https://www.granby.ca/fr/loisirs/formulaire-de-declaration | Déclaration d'utilisation d'un espace public
+https://www.granby.ca/fr/loisirs/carte-loisirs | Carte-loisirs
+https://www.granby.ca/fr/loisirs/inscriptions-aux-activites-de-loisirs | Inscriptions aux activités de loisirs
+https://www.granby.ca/fr/loisirs/installations-exterieures | Installations extérieures
+https://www.granby.ca/fr/loisirs/je-porte-plainte | Je porte plainte
+https://www.granby.ca/fr/loisirs/terrain-multisports | Terrain multisports
+https://www.granby.ca/fr/loisirs/communaute-nourriciere | Communauté nourricière
+https://www.granby.ca/fr/loisirs/egalite | Égalité
+https://www.granby.ca/fr/loisirs/familles | Familles
+https://www.granby.ca/fr/loisirs/gala-rayonnement-granby | Gala Rayonnement
+https://www.granby.ca/fr/loisirs/immigration | Immigration
+https://www.granby.ca/fr/loisirs/jeunesse | Jeunesse
+https://www.granby.ca/fr/loisirs/personnes-ainees | Personnes aînées
+https://www.granby.ca/fr/programme-de-soutien-semi-annuel | Programme de soutien semi-annuel
+https://www.granby.ca/fr/loisirs/ressources-communautaires | Ressources communautaires
+https://www.granby.ca/fr/loisirs/soutien-aux-organismes | Soutien aux organismes
+https://www.granby.ca/fr/loisirs/centre-aquatique-desjardins/bains-libres | Bains libres
+https://www.granby.ca/fr/loisirs/familles/camps-de-jour | Camps de jour, édition 2026
+https://www.granby.ca/fr/loisirs/culture-et-patrimoine/printemps-culturel | Printemps culturel
+https://www.granby.ca/fr/loisirs/carte-loisirs/renouveler-une-carte-loisirs | Renouveler une carte-loisirs
+https://www.granby.ca/fr/services/eau-potable/arroser-au-bon-moment | Arrosage
+https://www.granby.ca/fr/loisirs/carte-loisirs/services-en-ligne-carte-loisirs | Carte-loisirs
+https://www.granby.ca/fr/services/demandes-dacces-aux-documents/faire-une-demande-dacces-aux-documents | Accès aux documents
+https://www.granby.ca/fr/services/service-de-lamenagement-et-de-la-protection-du-territoire/permis-en-ligne-et-formulaires | Permis en ligne et formulaires
+https://www.granby.ca/fr/actualites/nouvelles | Voir toutes les nouvelles
+https://www.granby.ca/fr/actualites/nouvelles/taxibus-la-ville-annonce-le-retour-de-lensemble-des-arrets | Taxibus : la Ville annonce le retour de l’ensemble des arrêts Dès le lundi 26 octobre, plu
+https://www.granby.ca/fr/actualites/nouvelles/halloween-une-halte-sucree-au-poste-de-police-le-31-octobre | Halloween : une halte sucrée au poste de police le 31 octobre La population est conviée au
+https://www.granby.ca/fr/actualites/nouvelles/granby-celebre-la-richesse-des-rencontres-interculturelles | Granby célèbre la richesse des rencontres interculturelles La Ville de Granby dévoile la p
+https://www.granby.ca/fr/actualites/nouvelles/politique-jeunesse-2026-2030-granby-sengage-aux-cotes-de-ses-jeunes | Politique jeunesse 2026-2030 : Granby s'engage aux côtés de ses jeunes La Ville de Granby 
+https://www.granby.ca/fr/actualites/evenements | Voir tous les événements
+https://www.granby.ca/fr/actualites/evenements/bain-libre-pour-les-personnes-vivant-avec-une-deficience-physique-etou-intellectuelle-et-leur | Loisirs Bain libre pour les personnes vivant avec une déficience (physique et/ou intellect
+https://www.granby.ca/fr/actualites/evenements/seance-du-conseil-municipal-15 | Conseil et affaires municipales Séance du conseil municipal Lundi 2 novembre 2026, à 19 he
+https://www.granby.ca/fr/actualites/evenements/wibit-leau-7 | Sports et plein air Wibit à l'eau 13 novembre 2026, 14 novembre 2026, 15 novembre 2026
+https://www.granby.ca/fr/actualites/evenements/seance-du-conseil-municipal-16 | Conseil et affaires municipales Séance du conseil municipal Lundi 16 novembre 2026, à 19 h
+https://www.granby.ca/fr/actualites/evenements/bain-libre-desjardins-3 | Loisirs Bain libre Desjardins Profitez gratuitement des installations du centre aquatique 
+https://www.granby.ca/fr/actualites/evenements/slackline-leau-0 | Sports et plein air Slackline à l'eau 23 octobre 2026, 27 novembre 2026, 18 décembre 2026
+https://www.granby.ca/fr/actualites/evenements/seances-du-conseil-municipal | Conseil et affaires municipales Séances du conseil municipal Lundi 30 novembre 2026, à 19 
+https://www.granby.ca/fr/actualites/evenements/wibit-leau-8 | Sports et plein air Wibit à l'eau 11 décembre 2026, 12 décembre 2026, 13 décembre 2026
+https://www.granby.ca/fr/actualites/evenements/seance-du-conseil-municipal-17 | Conseil et affaires municipales Séance du conseil municipal Lundi 14 décembre 2026, à 19 h
+https://app.cyberimpact.com/clients/41893/subscribe-forms/B07259A4-41FF-45B8-A669-4EFE0CA8C7E7 | Je m'abonne
+https://www.granby.ca/fr/accessibilite | Accessibilité
+https://www.granby.ca/fr/politique-dutilisation | Conditions d’utilisation
+https://www.granby.ca/fr/politique-relatives-aux-fichiers-temoins | Politique relative aux fichiers témoins
+https://www.granby.ca/sites/default/files/2026-05/politique_confidentialite_v4.pdf | Politique de confidentialité
+https://www.facebook.com/VilleGranby | 
+https://www.instagram.com/ville_granby/ | 
+https://www.youtube.com/channel/UCt3A5xLuG291Mvn0l0smLGA/featured | 
+https://fr.linkedin.com/company/ville-de-granby | 

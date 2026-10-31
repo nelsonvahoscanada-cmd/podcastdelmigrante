@@ -1,0 +1,465 @@
+NOMBRE: RQCI: encontrar consultor
+URL: https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant
+ESTADO: 200
+FINAL: https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant
+TITULO: Trouver un consultant en immigration | Gouvernement du Québec
+FECHA: 12 novembre 2025
+
+Trouver un consultant en immigration | Gouvernement du Québec 
+ Nous joindre 
+ -->
+ Accueil 
+ Immigration 
+ Consultants en immigration 
+ Trouver un consultant en immigration
+ Trouver un consultant en immigration
+ Pour agir à titre de consultant en immigration, une personne physique doit être reconnue comme tel par le ministre.
+ Lorsqu'un consultant en immigration obtient la reconnaissance, son nom est inscrit au Registre québécois des consultants en immigration. Utilisez le module de recherche ci-dessous pour trouver le nom d'une personne reconnue à titre de consultant en immigration.
+ Vous pouvez aussi consulter la liste des consultantes et consultants en immigration dont la reconnaissance de titre a été suspendue ou révoquée .
+ Pour savoir comment confier un mandat de représentation à un consultant à l'aide du formulaire, consultez la page Se faire représenter dans ses démarches d’immigration .
+ Veuillez noter que si vous êtes une personne ressortissante étrangère qui présente une demande de sélection à titre temporaire pour études, vous n’avez pas à déclarer avoir été conseillée, assistée ou représentée par une conseillère ou un conseiller réglementé en immigration pour étudiantes et étudiants étrangers (CRIEE) puisque ces derniers ne sont pas visés par la définition de consultant en immigration prévue dans la réglementation québécoise. 
+ Les CRIEE sont encadrés par le gouvernement du Canada par l’entremise du Collège des consultants en immigration et en citoyenneté. 
+ Filtres
+ Effacer les filtres
+ Nom ou prénom
+ sélection s 
+ Municipalité
+ 0 sélection s 
+ Afficher les filtres 
+ Masquer les filtres 
+ Filtre « Municipalité » 
+ Aucun élément
+ Anjou
+ 2 
+ Baie-Comeau
+ 1 
+ Beaconsfield
+ 2 
+ Beaumont
+ 1 
+ Blainville
+ 6 
+ Bois-des-Filion
+ 1 
+ Boucherville
+ 1 
+ Brossard
+ 26 
+ Candiac
+ 1 
+ Chambly
+ 1 
+ Chateauguay
+ 2 
+ Chelsea
+ 1 
+ Châteauguay
+ 3 
+ Cote-Saint-Luc
+ 1 
+ Cowansville
+ 1 
+ Côte Saint-Lu
+ 1 
+ Côte Saint-Luc
+ 1 
+ Côte-Saint-Luc
+ 5 
+ Côte-St-Luc
+ 1 
+ Delson
+ 1 
+ Dollard-des-Ormeaux
+ 1 
+ Donnacona
+ 1 
+ Dorval
+ 2 
+ Drummondville
+ 10 
+ Gatineau
+ 22 
+ Hampstead
+ 1 
+ Joliette
+ 1 
+ Kirkland
+ 1 
+ L'Ange-Gardien
+ 1 
+ L'Assomption
+ 2 
+ La Prairie
+ 4 
+ Lac-Beauport
+ 2 
+ Lac-Brome
+ 1 
+ Lachine
+ 1 
+ Laval
+ 63 
+ Les Îles-de-la-Madeleine
+ 1 
+ Longeuil
+ 1 
+ Longueil
+ 1 
+ Longueuil
+ 20 
+ Lévis
+ 10 
+ Magog
+ 2 
+ Mascouche
+ 1 
+ McMasterville
+ 1 
+ Mercier
+ 1 
+ Mirabel
+ 4 
+ Mont-Blanc
+ 2 
+ Mont-Royal
+ 5 
+ Mont-Saint-Hilaire
+ 1 
+ Mont-Tremblant
+ 1 
+ Montmagny
+ 1 
+ Montreal
+ 1 
+ Montréal
+ 315 
+ Montréal-Nord
+ 3 
+ Montréal-Ouest
+ 2 
+ Notre-Dame-des-Prairies
+ 1 
+ Orford
+ 1 
+ Outremont
+ 2 
+ Pierrefonds
+ 3 
+ Pincourt
+ 1 
+ Pointe-Claire
+ 3 
+ Québec
+ 31 
+ Repentigny
+ 5 
+ Rimouski
+ 1 
+ Rivière-du-Loup
+ 1 
+ Rosemère
+ 2 
+ Rouyan-Noranada
+ 1 
+ Rouyn-Noranda
+ 1 
+ Saguenay
+ 2 
+ Saint Laurent
+ 1 
+ Saint Sauveur
+ 1 
+ Saint-Amable
+ 1 
+ Saint-Augustin-de-Desmaures
+ 1 
+ Saint-Basile-le-Grand
+ 2 
+ Saint-Charles-Borromée
+ 1 
+ Saint-Constant
+ 3 
+ Saint-Eustache
+ 4 
+ Saint-Georges
+ 1 
+ Saint-Hubert
+ 2 
+ Saint-Hyacinthe
+ 1 
+ Saint-Jean-Sur-Richelieu
+ 1 
+ Saint-Jerôme
+ 1 
+ Saint-Jérôme
+ 1 
+ Saint-Lambert
+ 1 
+ Saint-Laurent
+ 22 
+ Saint-Léonard
+ 7 
+ Saint-Mathieu-du-Parc
+ 1 
+ Saint-Philippe
+ 1 
+ Saint-Polycarpe
+ 1 
+ Saint-Sauveur
+ 1 
+ Saint-Zotique
+ 2 
+ Sainte-Catherine
+ 4 
+ Sainte-Marie
+ 3 
+ Sainte-Marthe-sur-le-Lac
+ 1 
+ Sainte-Martine
+ 1 
+ Sainte-Perpétue
+ 1 
+ Sainte-Thérèse
+ 1 
+ Scott
+ 1 
+ Shawinigan
+ 1 
+ Sherbrooke
+ 12 
+ St-Mathias-sur-Richelieu
+ 1 
+ St-Sauveur
+ 1 
+ Ste-Clotilde-de-Horton
+ 1 
+ Terrebonne
+ 12 
+ Thetford Mines
+ 1 
+ Trois-Rivières
+ 8 
+ Val-des-Sources
+ 1 
+ Vaudreuil-Dorion
+ 1 
+ Venise-en-Québec
+ 1 
+ Verdun
+ 10 
+ Victoriaville
+ 2 
+ Villeroy
+ 1 
+ Wendake
+ 1 
+ Westmount
+ 6 
+ 0 sélection s 
+ Afficher uniquement les consultants dont la reconnaissance est valide 
+ 683 
+ Nombre de résultats: 
+ 729 éléments
+ Index des résultats: 
+ Éléments 1 à 10
+ Trier par
+ Ordre alphabétique (A à Z)
+ Ordre alphabétique (Z à A)
+ Nombre par page
+ 10 
+ 25 
+ Rafraîchissement de la liste…
+ Résultats de la recherche
+ . Hortence Kamga
+ 211-3901, rue Bannantyne 
+ Montréal (Québec) H4G 1C2
+ Courriel : contact@santagaimmigration.com
+ No d'inscription : 12205
+ Reconnaissance : 2024-06-13
+ Abdallah El Ahmad El Merhabi
+ 1700-2001, boul. Robert-Bourassa 
+ Montréal (Québec) H3A 2A6
+ Courriel : abdallah@mscg.ca
+ No d'inscription : 11487
+ Reconnaissance : 2014-09-16
+ Abdelaziz Ammari
+ 2-3215, av. Appleton 
+ Montréal (Québec) H3S 1L6
+ Courriel : abdelaziz.ammari@firmament-immigration.ca
+ No d'inscription : 12260
+ Reconnaissance : 2025-06-11
+ Abdelaziz El Hammaoui
+ 9-6720, 25e Avenue 
+ Montréal (Québec) H1T 3L9
+ Courriel : hammaoui10@yahoo.fr
+ No d'inscription : 12073
+ Reconnaissance : 2022-09-12
+ Abdelghani El Hafydy
+ 200-4388, rue Saint-Denis 
+ Montréal (Québec) H2J 2L1
+ Courriel : hafydy@gmail.com
+ No d'inscription : 12133
+ Reconnaissance : 2023-03-07
+ Abdelghani Hanaty
+ 9035 rue Émile Nelligan 
+ Montréal (Québec) H1R 3C5
+ Courriel : haimmigrationcanada@hotmail.com
+ No d'inscription : 12013
+ Reconnaissance : 2022-03-10
+ Abdelilah Tanji
+ 2-3212, rue Monselet 
+ Montréal (Québec) H1H 1Z3
+ Courriel : contact@visacanadamavwa.com
+ No d'inscription : 12247
+ Reconnaissance : 2024-12-10
+ Abdeljalil Lahlal
+ 306-2660, av. De Kent 
+ Montréal (Québec) H3S 1M7
+ Courriel : vecteurcanimmigration@gmail.com
+ No d'inscription : 12218
+ Reconnaissance : 2024-03-14
+ Abdelkarim Hadji
+ 145, rue Boivin 
+ Châteauguay (Québec) J6J 2Z3
+ Courriel : hadjiabdelkarim@gmail.com
+ No d'inscription : 12155
+ Reconnaissance : 2023-09-15
+ Abdellah El Mzem
+ 3262, rue Hector-Lussier 
+ Laval (Québec) H7C 2S7
+ Courriel : info@attractionimmigration.ca
+ No d'inscription : 11935
+ Reconnaissance : 2021-09-08
+ Pagination
+ page n°0 sur 0
+ Page 1 
+ 1 
+ Page 2 
+ 2 
+ Page 3 
+ 3 
+ Page 4 
+ 4 
+ Page 5 
+ 5 
+ Page 73 
+ 73 
+ . 
+ Dernière mise à jour : 
+ 12 novembre 2025
+ Évaluation de la page
+ Votre avis a été envoyé. Merci de nous aider à améliorer Québec.ca.
+ L’information sur cette page vous a-t-elle été utile?
+ Veuillez compléter la vérification reCAPTCHA.
+ L’information sur cette page vous a-t-elle été utile?
+ Oui L’information a été utile. Envoyer le formulaire 
+ Non L’information n'a pas été utile. Donner plus de détails 
+ Signaler un problème 
+ Votre avis a été envoyé. Merci de nous aider à améliorer Québec.ca.
+ Les champs suivis d’un * sont obligatoires. 
+ Pourquoi l’information n’a pas été utile? * 
+ Je ne trouve pas ce que je cherche 
+ L’information présentée porte à confusion 
+ L’information n’est plus à jour, est erronée ou incomplète 
+ Autre 
+ Vous devez sélectionner une option 
+ Veuillez ajouter des précisions * 
+ N’inscrivez pas de renseignements personnels (ex. : numéro d’assurance sociale (NAS), courriel, téléphone, adresse, etc.). Vos commentaires serviront à bonifier Québec.ca et pourraient servir à des fins statistiques. Vous ne recevrez aucune réponse. 
+ Quel est le problème? * 
+ Il y a un problème avec l’affichage de la page 
+ Un lien ne fonctionne pas ou n’est plus à jour 
+ Il y a une erreur d’orthographe ou de grammaire 
+ Il y a un problème avec le service en ligne 
+ Autre 
+ Vous devez sélectionner une option 
+ Précisez la nature du problème * 
+ N’inscrivez pas de renseignements personnels (ex. : numéro d’assurance sociale (NAS), courriel, téléphone, adresse, etc.). Vos commentaires serviront à bonifier Québec.ca et pourraient servir à des fins statistiques. Vous ne recevrez aucune réponse. 
+ Pourquoi l’information a été utile? 
+ Le contenu est clair et complet 
+ Les renseignements sont à jour 
+ L’information et les documents sont faciles d’accès 
+ Autre 
+ Voulez-vous ajouter des précisions?
+ N’inscrivez pas de renseignements personnels (ex. : numéro d’assurance sociale (NAS), courriel, téléphone, adresse, etc.). Vos commentaires serviront à bonifier Québec.ca et pourraient servir à des fins statistiques. Vous ne recevrez aucune réponse. 
+ Veuillez préciser la nature du problème
+ Don't fill this field!
+ Gouvernement du Québec
+ Navigation de pied de page de Québec.ca
+ Informations et services 
+ Agriculture, environnement et ressources naturelles 
+ Culture et langue française 
+ Éducation 
+ Emploi 
+ Entreprises 
+ Famille et soutien aux personnes 
+ Finances, impôts et taxes 
+ Habitation et territoire 
+ Immigration 
+ Justice et état civil 
+ Santé 
+ Sécurité et situations d'urgence 
+ Tourisme, loisirs et sport 
+ Transports 
+ Gouvernement
+ Ministères et organismes 
+ Services Québec 
+ Gouvernement ouvert 
+ Travailler au gouvernement 
+ Salle de nouvelles 
+ Lois et règlements 
+ Signaler une vulnérabilité informatique 
+ Droit d’auteur et demande d’autorisation de reproduction 
+ Nous joindre 
+ Renseignements généraux
+ Bureaux de services 
+ Accessibilité 
+ Plan du site 
+ Accès à l'information 
+ Politique de confidentialité 
+ Conditions d'utilisation 
+ À propos
+
+=== ENLACES ===
+https://www.quebec.ca/nous-joindre/renseignements-generaux | Nous joindre
+https://www.quebec.ca/ | Accueil
+https://www.quebec.ca/immigration | Immigration
+https://www.quebec.ca/immigration/consultants-immigration | Consultants en immigration
+https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant/liste-des-consultantes-et-consultants-en-immigration-dont-la-reconnaissance-de-titre-a-ete-revoquee | liste des consultantes et consultants en immigration dont la reconnaissance de titre a été
+https://www.quebec.ca/immigration/se-faire-representer | Se faire représenter dans ses démarches d’immigration
+https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant | Effacer les filtres
+https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant?tx_solr%5Bpage%5D=1 | Page 1 1
+https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant?tx_solr%5Bpage%5D=2 | Page 2 2
+https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant?tx_solr%5Bpage%5D=3 | Page 3 3
+https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant?tx_solr%5Bpage%5D=4 | Page 4 4
+https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant?tx_solr%5Bpage%5D=5 | Page 5 5
+https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant?tx_solr%5Bpage%5D=73 | Page 73 73
+https://www.quebec.ca/informations-et-services | Informations et services
+https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles | Agriculture, environnement et ressources naturelles
+https://www.quebec.ca/culture | Culture et langue française
+https://www.quebec.ca/education | Éducation
+https://www.quebec.ca/emploi | Emploi
+https://www.quebec.ca/entreprises-et-travailleurs-autonomes | Entreprises
+https://www.quebec.ca/famille-et-soutien-aux-personnes | Famille et soutien aux personnes
+https://www.quebec.ca/finances-impots-et-taxes | Finances, impôts et taxes
+https://www.quebec.ca/habitation-territoire | Habitation et territoire
+https://www.quebec.ca/justice-et-etat-civil | Justice et état civil
+https://www.quebec.ca/sante | Santé
+https://www.quebec.ca/securite-situations-urgence | Sécurité et situations d'urgence
+https://www.quebec.ca/tourisme-loisirs-sport | Tourisme, loisirs et sport
+https://www.quebec.ca/transports | Transports
+https://www.quebec.ca/gouvernement | Gouvernement
+https://www.quebec.ca/gouvernement/ministeres-organismes | Ministères et organismes
+https://www.quebec.ca/services-quebec | Services Québec
+https://www.quebec.ca/gouvernement/gouvernement-ouvert | Gouvernement ouvert
+https://www.quebec.ca/gouvernement/travailler-gouvernement | Travailler au gouvernement
+https://www.quebec.ca/nouvelles | Salle de nouvelles
+http://www.publicationsduquebec.gouv.qc.ca/lois-et-reglements/ | Lois et règlements
+https://www.cyber.gouv.qc.ca/signalements/signalement-vulnerabilites/formulaire | Signaler une vulnérabilité informatique
+https://www.quebec.ca/droit-auteur | Droit d’auteur et demande d’autorisation de reproduction
+https://www.localisateur.servicesquebec.gouv.qc.ca/ | Bureaux de services
+https://www.quebec.ca/accessibilite | Accessibilité
+https://www.quebec.ca/plan-du-site | Plan du site
+https://www.quebec.ca/acces-information | Accès à l'information
+https://www.quebec.ca/politique-confidentialite | Politique de confidentialité
+https://www.quebec.ca/conditions-utilisation | Conditions d'utilisation
+https://www.quebec.ca/a-propos | À propos

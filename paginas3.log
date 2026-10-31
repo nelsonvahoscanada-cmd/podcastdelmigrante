@@ -1,0 +1,83 @@
+200 0 https://montreal.ca/
+200 1 https://www.ville.quebec.qc.ca/
+PENDIENTE 2 https://www.laval.ca/ HTTPError HTTP Error 403: Forbidden
+200 3 https://www.gatineau.ca/
+200 4 https://www.longueuil.quebec/
+PENDIENTE 5 https://www.sherbrooke.ca/ ValueError texto corto
+200 6 https://ville.saguenay.ca/
+200 7 https://www.ville.levis.qc.ca/
+200 8 https://www.v3r.net/
+200 9 https://terrebonne.ca/
+200 10 https://www.sjsr.ca/
+200 11 https://repentigny.ca/
+200 12 https://www.brossard.ca/
+200 13 https://www.drummondville.ca/
+200 14 https://www.vsj.ca/
+200 15 https://www.granby.ca/
+200 16 https://rimouski.ca/
+200 17 https://www.victoriaville.ca/
+200 18 https://www.rouyn-noranda.ca/
+200 19 https://www.ville.valdor.qc.ca/
+PENDIENTE 20 https://www.st-hyacinthe.ca/ URLError <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unabl
+200 21 https://www.shawinigan.ca/
+200 22 https://www.septiles.ca/
+200 23 https://www.villerdl.ca/
+200 24 https://www.ville.gaspe.qc.ca/
+200 25 https://www.ville.alma.qc.ca/
+200 26 https://www.joliette.ca/
+PENDIENTE 27 https://www.ville.chibougamau.qc.ca/ ValueError texto corto
+200 28 https://www.quebec.ca/en/immigration/partners
+200 29 https://www.quebec.ca/immigration/partenaires
+PENDIENTE 30 https://www.quebec.ca/nouvelles/actualites/details/le-gouvernement-du-quebec-souhaite-mettre-fin-au-changement-dheure-72823 ValueError texto corto
+200 31 https://www.quebec.ca/en/gouvernement/ministeres-organismes/immigration/cadre-legal-transparence/exemplarity-french-language
+200 32 https://www.quebec.ca/immigration/consultants-immigration/trouver-consultant
+200 33 https://www.quebec.ca/en/immigration/reconnaissance-etudes-experience/faire-reconnaitre-competences-acquises-etranger/by-regulatory-body
+200 34 https://www.qualificationsquebec.com/reconnaissance-competences/english/
+200 35 https://www.quebec.ca/en/immigration/settle-and-integrate-in-quebec/first-steps-settling-in
+200 36 https://www.quebec.ca/en/immigration/settle-and-integrate-in-quebec/objectif-integration
+200 37 https://www.quebec.ca/en/immigration/settle-and-integrate-in-quebec/key-values
+200 38 https://www.quebec.ca/en/transports/traffic-road-safety/winter-road-safety/requirements-for-winter-tires
+200 39 https://www.quebec.ca/en/family-and-support-for-individuals/childhood/childcare-centres/registration-portal/
+PENDIENTE 40 https://www.sante.gouv.qc.ca/en/repertoire-ressources/ HTTPError HTTP Error 403: Forbidden
+PENDIENTE 41 https://www.sante.gouv.qc.ca/repertoire-ressources/hopitaux/ HTTPError HTTP Error 403: Forbidden
+200 42 https://www.santequebec.ca/
+PENDIENTE 43 https://www.quebec.ca/nouvelles/actualites/details/saint-bruno-hebertville-et-hebertville-station-se-regroupent-et-consolident-leurs-services-67814 ValueError texto corto
+PENDIENTE 44 https://www.quebec.ca/nouvelles/actualites/details/les-municipalites-de-lac-des-aigles-et-de-saint-guy-formeront-la-nouvelle-ville-de-lac-des-aigles-des-le-31-juillet-2024-57379 ValueError texto corto
+PENDIENTE 45 https://statistique.quebec.ca/fr/document/modifications-aux-municipalites-du-quebec HTTPError HTTP Error 404: Not Found
+PENDIENTE 46 https://www.quebec.ca/gouvernement/conseil-des-ministres HTTPError HTTP Error 404: Not Found
+200 47 https://www.quebec.ca/gouvernement/ministeres-organismes/immigration
+PENDIENTE 48 https://www.quebec.ca/gouvernement/politiques-orientations/planification-immigration HTTPError HTTP Error 404: Not Found
+PENDIENTE 49 https://www.quebec.ca/nouvelles/rechercher?q=planification%20immigration ValueError texto corto
+PENDIENTE 50 https://www.quebec.ca/en/transports/drivers-licences HTTPError HTTP Error 404: Not Found
+200 51 https://www.finances.gouv.qc.ca/Budget_and_update/
+PENDIENTE 52 https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/ HTTPError HTTP Error 403: Forbidden
+200 53 https://www.indexsante.ca/urgences/
+200 54 https://www.stm.info/en/info/fares/transit-fares
+200 55 https://www.artm.quebec/en/fares/
+200 56 https://www.rtcquebec.ca/en/fares
+200 57 https://stlaval.ca/en/fares
+200 58 https://www.sto.ca/en/fares/
+200 59 https://www.rtl-longueuil.qc.ca/en-CA/fares/
+200 60 https://www.sts.qc.ca/
+PENDIENTE 61 https://www.stsaguenay.ca/ ValueError texto corto
+200 62 https://www.stlevis.ca/
+200 63 https://www.sttr.qc.ca/
+PENDIENTE 64 https://exo.quebec/en/fares-and-tickets HTTPError HTTP Error 404: Not Found
+200 65 https://emploisenregions.ca/
+NAV 403 2 https://www.laval.ca/
+NAV 200 5 https://www.sherbrooke.ca/
+NAV 200 20 https://www.st-hyacinthe.ca/
+NAV 200 27 https://www.ville.chibougamau.qc.ca/
+NAV 202 30 https://www.quebec.ca/nouvelles/actualites/details/le-gouvernement-du-quebec-souhaite-mettre-fin-au-changement-dheure-72823
+NAV 403 40 https://www.sante.gouv.qc.ca/en/repertoire-ressources/
+NAV 403 41 https://www.sante.gouv.qc.ca/repertoire-ressources/hopitaux/
+NAV 200 43 https://www.quebec.ca/nouvelles/actualites/details/saint-bruno-hebertville-et-hebertville-station-se-regroupent-et-consolident-leurs-services-67814
+NAV 200 44 https://www.quebec.ca/nouvelles/actualites/details/les-municipalites-de-lac-des-aigles-et-de-saint-guy-formeront-la-nouvelle-ville-de-lac-des-aigles-des-le-31-juillet-2024-57379
+NAV 500 45 https://statistique.quebec.ca/fr/document/modifications-aux-municipalites-du-quebec
+NAV 404 46 https://www.quebec.ca/gouvernement/conseil-des-ministres
+NAV 404 48 https://www.quebec.ca/gouvernement/politiques-orientations/planification-immigration
+NAV 200 49 https://www.quebec.ca/nouvelles/rechercher?q=planification%20immigration
+NAV 404 50 https://www.quebec.ca/en/transports/drivers-licences
+NAV 403 52 https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/
+NAV 200 61 https://www.stsaguenay.ca/
+NAV 404 64 https://exo.quebec/en/fares-and-tickets
