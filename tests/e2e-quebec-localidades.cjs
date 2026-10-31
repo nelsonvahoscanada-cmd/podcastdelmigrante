@@ -93,6 +93,8 @@ async function compartir(page, ruta, imagen) {
     assert.match(await page.locator("#geografia").textContent(), /Loi sur le temps légal/);
     assert.match(await page.locator("#empleo").textContent(), /\$16\.60/);
     assert.match(await page.locator("#inmigracion").textContent(), /Un CSQ no es la residencia permanente/);
+    /* PEQ: cierre del período de recepción con fecha y hora, cerrado desde el 1-11-2026, sin anunciar otro */
+    assert.match(await page.locator("#inmigracion").textContent(), /31 de octubre de 2026 a las 23:59, hora de Montreal[\s\S]*Desde el 1 de noviembre de 2026, ese período está cerrado[\s\S]*Esta guía no anuncia nuevos períodos de recepción/);
     assert.match(await page.locator("#frances").textContent(), /No hay garantía de atención en español/);
     /* Otras zonas de la provincia (Îles-de-la-Madeleine y Basse-Côte-Nord) con su hora */
     assert.match(await page.locator(".cd-zones").textContent(), /Îles-de-la-Madeleine[\s\S]*Blanc-Sablon/);

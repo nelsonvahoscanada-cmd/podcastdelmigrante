@@ -226,6 +226,20 @@ test("la guía provincial: secciones, cifras verificadas, inmigración y francé
   assert.deepEqual(hojas(html), hojas(PAGES["alberta.html"]), "mismas hojas de estilo que Alberta");
 });
 
+test("PEQ: período de recepción con fecha y hora de cierre, cerrado desde el 1-11-2026, distinto de la vigencia del programa y sin anunciar nuevos períodos", () => {
+  const html = PAGES["quebec.html"];
+  const peq = html.match(/<p>Programa de la experiencia quebequense \(PEQ\):[^\n]*?<\/p>/)[0];
+  assert.match(peq, /del 2 de julio de 2026 al 31 de octubre de 2026 a las 23:59, hora de Montreal/);
+  assert.match(peq, /al 19 de noviembre de 2025/);
+  assert.match(peq, /Desde el 1 de noviembre de 2026, ese período está cerrado: ya no se reciben solicitudes en él/);
+  assert.match(peq, /El período de recepción no es lo mismo que la vigencia del programa/);
+  assert.match(peq, /Esta guía no anuncia nuevos períodos de recepción: solo el Gobierno de Quebec puede abrirlos/);
+  /* Nada que presente el período como abierto ni que prometa otro */
+  assert.doesNotMatch(peq, /est[áa] abiert[oa]|sigue abiert|reabiert|todavía puedes|aún puedes|nueva ventana|próxim[oa] (período|ventana|apertura)|volverá a abrir/i);
+  for (const href of ["https://www.quebec.ca/immigration/permanente/travailleurs-qualifies/programme-experience-quebecoise", "https://www.quebec.ca/nouvelles/actualites/details/ouverture-de-la-reception-des-demandes-dans-le-programme-de-lexperience-quebecoise-peq"]) assert.ok(html.includes(`href="${href}"`), href);
+  assert.match(html, /Última revisión: 31 de octubre de 2026/);
+});
+
 test("datos del navegador: directorio extendido, MRC como filtro y las demás provincias sin cambios", () => {
   const d = datos();
   assert.equal(d.provincia.slug, "quebec");
