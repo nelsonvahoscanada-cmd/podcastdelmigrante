@@ -34,6 +34,32 @@ jobs:
             return b;
           };
           JS
+      - name: Diagnostico de red en /noticias (solicitudes que no terminan)
+        run: |
+          cat > /tmp/diag.cjs <<'JS'
+          const { chromium } = require("playwright");
+          (async () => {
+            const b = await chromium.launch();
+            for (const ruta of ["/noticias", "/noticias?pagina=2", "/"]) {
+              const p = await b.newPage();
+              const pend = new Map(); const todas = [];
+              p.on("request", (r) => { pend.set(r, Date.now()); todas.push(r.url()); });
+              p.on("requestfinished", (r) => pend.delete(r));
+              p.on("requestfailed", (r) => { console.log("  FALLA", r.url().slice(0, 120), r.failure() && r.failure().errorText); pend.delete(r); });
+              await p.goto("https://podcastdelmigrante.com" + ruta, { waitUntil: "load" });
+              await p.waitForTimeout(12000);
+              console.log(ruta, "solicitudes:", todas.length, "pendientes tras 12 s:", pend.size);
+              for (const [r] of pend) console.log("  PENDIENTE", r.method(), r.url().slice(0, 160));
+              const hosts = {}; for (const u of todas) { const h = new URL(u).host; hosts[h] = (hosts[h] || 0) + 1; } console.log("  hosts:", JSON.stringify(hosts));
+              await p.close();
+            }
+            await b.close();
+          })();
+          JS
+          node /tmp/diag.cjs
+        env:
+          NODE_PATH: /tmp/pw/node_modules
+          NODE_OPTIONS: --require /tmp/pw/vistas.cjs
       - run: node tests/${{ matrix.prueba }}.cjs
         env:
           BASE: https://podcastdelmigrante.com
