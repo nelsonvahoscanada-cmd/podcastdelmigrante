@@ -1,0 +1,59 @@
+name: tmp prod empleo
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-empleo-remoto-alberta]
+    paths: [".github/workflows/tmp-prod-empleo.yml"]
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        prueba: [e2e-empleo-remoto-alberta, e2e-hector-rivero, e2e-alberta-bomberos, e2e-multas-representantes, e2e-noticias, e2e-canada-datos, e2e-manitoba-localidades, e2e-menu]
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium chrome >/dev/null
+      - name: Simulador del contador (no genera visitas en producción)
+        run: |
+          cat > /tmp/pw/vistas.cjs <<'JS'
+          const pw = require("/tmp/pw/node_modules/playwright");
+          const orig = pw.chromium.launch.bind(pw.chromium);
+          pw.chromium.launch = async (...a) => {
+            const b = await orig(...a);
+            const nc = b.newContext.bind(b);
+            b.newContext = async (...o) => { const c = await nc(...o); await c.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true,"vistas":0}' })); return c; };
+            b.newPage = async (...o) => { const c = await b.newContext(...o); return c.newPage(); };
+            return b;
+          };
+          JS
+      - run: |
+          if [ "${{ matrix.prueba }}" = "e2e-empleo-remoto-alberta" ]; then export TIKTOK_REAL=1 CHANNEL=chrome; fi
+          node tests/${{ matrix.prueba }}.cjs
+        env:
+          BASE: https://podcastdelmigrante.com
+          NODE_PATH: /tmp/pw/node_modules
+          NODE_OPTIONS: --require /tmp/pw/vistas.cjs
+  sitio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - run: |
+          B=https://podcastdelmigrante.com
+          S=alberta-empleo-desde-casa-program-eligibility-assessor-2026
+          for f in js/articles.js js/data.js css/article.css js/canada-datos.js js/businesses.js js/directorio/solicitud-form.js js/vistas.js sitemap.xml; do
+            curl -sf "$B/$f" -o /tmp/x; if cmp -s /tmp/x "$f"; then echo "IGUAL $f"; else echo "DISTINTO $f"; fi
+          done
+          for r in / /articulo-$S /assets/social/$S.jpg /assets/$S.jpg /assets/$S-video.jpg /canada-en-datos/ /canada-en-datos/manitoba /perfil-carlos-d-castillo /perfil-tomas-velazquez /registra-tu-empresa /articulo-alberta-energy-rebate-plazo-octubre /articulo-hector-rivero-santa-latino-canada; do
+            echo "$(curl -s -o /dev/null -w '%{http_code}' "$B$r") $r"
+          done
+          curl -s "$B/articulo-$S" | grep -o -E '<meta (property|name)="(og|twitter):(title|image|url|card)" content="[^"]*"'
+          echo "sitemap: $(curl -s $B/sitemap.xml | grep -c "articulo-$S")"
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"
+          curl -sL -A "$UA" "https://jobpostings.alberta.ca/job/Edmonton-Program-Eligibility-Assessor/607379317/" -o /tmp/j.html -w "oferta HTTP %{http_code}\n"
+          grep -o -E "Closing Date: [A-Za-z]+ [0-9]+, 2026|Apply now" /tmp/j.html | sort -u
