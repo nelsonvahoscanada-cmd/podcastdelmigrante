@@ -1,0 +1,223 @@
+403 https://cavac.qc.ca/en/
+ERR https://longuepointedemingan.ca URLError
+ERR https://marsoui-village.ca URLError
+ERR https://municipalitedecloridorme.ca URLError
+403 https://saint-bernard.quebec
+ERR https://saintgabrieldebrandon.com TimeoutError
+ERR https://services.v3r.net/PortailEvaluationTaxation URLError
+ERR https://st-jean.iledorleans.com/ URLError
+403 https://st-leonard.com/
+ERR https://stfrancoisdesales.qc.ca URLError
+ERR https://villagestpierre.org URLError
+ERR https://www.bonsecours.ca URLError
+ERR https://www.bromont.com URLError
+403 https://www.brownsburgchatham.ca
+ERR https://www.cantondebedford.ca URLError
+403 https://www.cnesst.gouv.qc.ca/en
+ERR https://www.deschambault-grondines.com URLError
+ERR https://www.ferlandetboilleau.ca URLError
+ERR https://www.grande-vallee.ca URLError
+ERR https://www.grandespiles.qc.ca URLError
+301 https://www.greibj.ca
+ERR https://www.henryville.ca URLError
+ERR https://www.ileauxnoix.com URLError
+ERR https://www.ilecadieux.ca URLError
+ERR https://www.kipawa.ca URLError
+403 https://www.lac-bouchette.com
+403 https://www.laval.ca/
+ERR https://www.lislet.com URLError
+ERR https://www.lochaber-ouest.ca URLError
+ERR https://www.mayo.ca URLError
+ERR https://www.mistissini.ca URLError
+ERR https://www.mont-saint-pierre.ca URLError
+403 https://www.msjb.qc.ca
+200 https://www.msvalere.qc.ca → https://www.msvalere.qc.ca
+ERR https://www.mun-sldl.ca URLError
+ERR https://www.munantes.qc.ca URLError
+ERR https://www.municipalite-berry.org URLError
+ERR https://www.municipalite.baiedessables.ca URLError
+400 https://www.municipalite.laredemption.qc.ca
+ERR https://www.municipalite.ragueneau.qc.ca URLError
+500 https://www.municipalitedehope.ca
+ERR https://www.municipalitehopetown.com URLError
+403 https://www.municipalites-du-quebec.org/municipalites/st-eugene-argentenay
+ERR https://www.munpontmain.qc.ca URLError
+522 https://www.munsaintfortunat.ca
+ERR https://www.nvakulivik.ca URLError
+ERR https://www.nvaupaluk.ca URLError
+ERR https://www.nvinukjuak.ca URLError
+ERR https://www.nvivujivik.ca URLError
+ERR https://www.nvkangiqsualujjuaq.ca URLError
+ERR https://www.nvkangiqsujuaq.ca URLError
+ERR https://www.nvkangirsuk.ca URLError
+ERR https://www.nvkuujjuaq.ca URLError
+ERR https://www.nvpuvirnituq.ca/ URLError
+ERR https://www.nvquaqtaq.ca URLError
+ERR https://www.nvsalluit.ca URLError
+ERR https://www.nvtasiujaq.ca/ URLError
+ERR https://www.nvumiujaq.ca URLError
+503 https://www.papineauville.ca
+ERR https://www.paroissendbc.ca URLError
+403 https://www.ramq.gouv.qc.ca/en/citizens/health-insurance
+403 https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/register
+ERR https://www.rapides-des-joachims.org URLError
+403 https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/special-cases-gsthst-and-qst/suppliers-outside-quebec/
+403 https://www.revenuquebec.ca/en/online-services/forms-and-publications/current-details/in-119-v/
+ERR https://www.rivieresaintjean-magpie.com URLError
+403 https://www.saint-fabien.ca
+ERR https://www.saint-hippolyte.ca URLError
+526 https://www.saint-mathieu-de-beloeil.com
+ERR https://www.saint-norbert-darthabaska.ca URLError
+ERR https://www.sainte-helene-de-chester.ca URLError
+ERR https://www.saintemariedeblandford.org URLError
+403 https://www.saintirenee.ca
+ERR https://www.saintjeanportjoli.com URLError
+ERR https://www.saintpamphile.ca URLError
+ERR https://www.st-cleophas.qc.ca URLError
+ERR https://www.st-dominique-du-rosaire.org URLError
+ERR https://www.st-edouard-de-fabre.ca URLError
+ERR https://www.st-edouard-de-maskinonge.ca URLError
+403 https://www.st-elphege.ca
+ERR https://www.st-eugene-de-guigues.qc.ca URLError
+ERR https://www.st-jacques-le-majeur-de-wolfestown.ca URLError
+ERR https://www.st-marcellin.qc.ca URLError
+ERR https://www.st-martin.qc.ca URLError
+ERR https://www.st-mathias.org URLError
+ERR https://www.st-maxime.qc.ca URLError
+ERR https://www.st-severe.ca URLError
+403 https://www.st-victor.qc.ca
+ERR https://www.stanbridge-station.ca URLError
+ERR https://www.standredulac.qc.ca URLError
+500 https://www.stcomeliniere.com
+ERR https://www.stcyrille.qc.ca URLError
+ERR https://www.ste-hedwidge.qc.ca URLError
+ERR https://www.ste-rita.ca URLError
+ERR https://www.stlucdevincennes.com URLError
+ERR https://www.stubalde.com URLError
+404 https://www.thornequebec.ca
+ERR https://www.tres-st-sacrement.ca URLError
+ERR https://www.villagehowick.com URLError
+403 https://www.ville.boisbriand.qc.ca
+ERR https://www.ville.cowansville.qc.ca URLError
+ERR https://www.ville.ddo.qc.ca URLError
+ERR https://www.ville.lamarche.qc.ca URLError
+ERR https://www.ville.perce.qc.ca URLError
+ERR https://www.ville.richelieu.qc.ca URLError
+ERR https://www.ville.rosemere.qc.ca URLError
+ERR https://www.ville.saint-eustache.qc.ca URLError
+ERR https://www.ville.saint-remi.qc.ca URLError
+ERR https://www.villethetford.ca URLError
+ERR https://www.whapmagoostuifn.ca URLError
+ERR https://www.wotton.ca URLError
+
+=== Navegador para los 110 restantes ===
+NAV 403 https://cavac.qc.ca/en/ | título: Just a moment...
+NAV ERR https://longuepointedemingan.ca Error
+NAV ERR https://marsoui-village.ca Error
+NAV ERR https://municipalitedecloridorme.ca Error
+NAV 403 https://saint-bernard.quebec | título: Just a moment...
+NAV 200 https://saintgabrieldebrandon.com | título: Municipalité de Saint-Gabriel-de-Brandon
+NAV ERR https://services.v3r.net/PortailEvaluationTaxation TimeoutError
+NAV ERR https://st-jean.iledorleans.com/ TimeoutError
+NAV 403 https://st-leonard.com/ | título: Just a moment...
+NAV ERR https://stfrancoisdesales.qc.ca Error
+NAV ERR https://villagestpierre.org Error
+NAV ERR https://www.bonsecours.ca Error
+NAV ERR https://www.bromont.com Error
+NAV 403 https://www.brownsburgchatham.ca | título: Just a moment...
+NAV ERR https://www.cantondebedford.ca Error
+NAV 403 https://www.cnesst.gouv.qc.ca/en | título: Just a moment...
+NAV ERR https://www.deschambault-grondines.com Error
+NAV ERR https://www.ferlandetboilleau.ca Error
+NAV ERR https://www.grande-vallee.ca Error
+NAV ERR https://www.grandespiles.qc.ca Error
+NAV ERR https://www.greibj.ca Error
+NAV ERR https://www.henryville.ca Error
+NAV ERR https://www.ileauxnoix.com Error
+NAV ERR https://www.ilecadieux.ca Error
+NAV ERR https://www.kipawa.ca Error
+NAV 403 https://www.lac-bouchette.com | título: Just a moment...
+NAV 403 https://www.laval.ca/ | título: Just a moment...
+NAV ERR https://www.lislet.com TimeoutError
+NAV ERR https://www.lochaber-ouest.ca Error
+NAV ERR https://www.mayo.ca TimeoutError
+NAV ERR https://www.mistissini.ca Error
+NAV ERR https://www.mont-saint-pierre.ca Error
+NAV 403 https://www.msjb.qc.ca | título: Just a moment...
+NAV ERR https://www.mun-sldl.ca TimeoutError
+NAV ERR https://www.munantes.qc.ca Error
+NAV ERR https://www.municipalite-berry.org Error
+NAV ERR https://www.municipalite.baiedessables.ca Error
+NAV 400 https://www.municipalite.laredemption.qc.ca | título: 
+NAV ERR https://www.municipalite.ragueneau.qc.ca TimeoutError
+NAV 500 https://www.municipalitedehope.ca | título: WordPress » Erreur
+NAV ERR https://www.municipalitehopetown.com Error
+NAV 403 https://www.municipalites-du-quebec.org/municipalites/st-eugene-argentenay | título: Just a moment...
+NAV ERR https://www.munpontmain.qc.ca Error
+NAV 522 https://www.munsaintfortunat.ca | título: munsaintfortunat.ca | 522: Connection timed out
+NAV ERR https://www.nvakulivik.ca TimeoutError
+NAV ERR https://www.nvaupaluk.ca TimeoutError
+NAV ERR https://www.nvinukjuak.ca TimeoutError
+NAV ERR https://www.nvivujivik.ca TimeoutError
+NAV ERR https://www.nvkangiqsualujjuaq.ca TimeoutError
+NAV ERR https://www.nvkangiqsujuaq.ca Error
+NAV ERR https://www.nvkangirsuk.ca TimeoutError
+NAV ERR https://www.nvkuujjuaq.ca Error
+NAV ERR https://www.nvpuvirnituq.ca/ TimeoutError
+NAV ERR https://www.nvquaqtaq.ca TimeoutError
+NAV ERR https://www.nvsalluit.ca TimeoutError
+NAV ERR https://www.nvtasiujaq.ca/ TimeoutError
+NAV ERR https://www.nvumiujaq.ca TimeoutError
+NAV 503 https://www.papineauville.ca | título: Site en maintenance | Municipalité de Papineauville
+NAV ERR https://www.paroissendbc.ca TimeoutError
+NAV 403 https://www.ramq.gouv.qc.ca/en/citizens/health-insurance | título: Just a moment...
+NAV 403 https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/register | título: Just a moment...
+NAV ERR https://www.rapides-des-joachims.org Error
+NAV 403 https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/special-cases-gsthst-and-qst/suppliers-outside-quebec/ | título: Error message
+NAV 403 https://www.revenuquebec.ca/en/online-services/forms-and-publications/current-details/in-119-v/ | título: Error message
+NAV ERR https://www.rivieresaintjean-magpie.com Error
+NAV 403 https://www.saint-fabien.ca | título: Just a moment...
+NAV ERR https://www.saint-hippolyte.ca Error
+NAV 526 https://www.saint-mathieu-de-beloeil.com | título: saint-mathieu-de-beloeil.com | 526: Invalid SSL certificate
+NAV ERR https://www.saint-norbert-darthabaska.ca Error
+NAV ERR https://www.sainte-helene-de-chester.ca Error
+NAV ERR https://www.saintemariedeblandford.org Error
+NAV 403 https://www.saintirenee.ca | título: Just a moment...
+NAV ERR https://www.saintjeanportjoli.com Error
+NAV ERR https://www.saintpamphile.ca Error
+NAV ERR https://www.st-cleophas.qc.ca Error
+NAV ERR https://www.st-dominique-du-rosaire.org Error
+NAV ERR https://www.st-edouard-de-fabre.ca Error
+NAV ERR https://www.st-edouard-de-maskinonge.ca Error
+NAV 403 https://www.st-elphege.ca | título: Just a moment...
+NAV ERR https://www.st-eugene-de-guigues.qc.ca Error
+NAV ERR https://www.st-jacques-le-majeur-de-wolfestown.ca Error
+NAV ERR https://www.st-marcellin.qc.ca Error
+NAV ERR https://www.st-martin.qc.ca Error
+NAV ERR https://www.st-mathias.org Error
+NAV ERR https://www.st-maxime.qc.ca Error
+NAV ERR https://www.st-severe.ca Error
+NAV 403 https://www.st-victor.qc.ca | título: Just a moment...
+NAV ERR https://www.stanbridge-station.ca Error
+NAV ERR https://www.standredulac.qc.ca Error
+NAV 500 https://www.stcomeliniere.com | título: 509 Bandwidth Limit Exceeded
+NAV ERR https://www.stcyrille.qc.ca Error
+NAV ERR https://www.ste-hedwidge.qc.ca Error
+NAV ERR https://www.ste-rita.ca Error
+NAV ERR https://www.stlucdevincennes.com Error
+NAV ERR https://www.stubalde.com Error
+NAV 404 https://www.thornequebec.ca | título: Reconnect Your Domain | Wix.com
+NAV ERR https://www.tres-st-sacrement.ca Error
+NAV ERR https://www.villagehowick.com Error
+NAV 403 https://www.ville.boisbriand.qc.ca | título: Azure WAF
+NAV ERR https://www.ville.cowansville.qc.ca Error
+NAV ERR https://www.ville.ddo.qc.ca Error
+NAV ERR https://www.ville.lamarche.qc.ca Error
+NAV ERR https://www.ville.perce.qc.ca Error
+NAV ERR https://www.ville.richelieu.qc.ca Error
+NAV ERR https://www.ville.rosemere.qc.ca TimeoutError
+NAV ERR https://www.ville.saint-eustache.qc.ca Error
+NAV ERR https://www.ville.saint-remi.qc.ca TimeoutError
+NAV 500 https://www.villethetford.ca | título: Url demandé bloqué
+NAV ERR https://www.whapmagoostuifn.ca Error
+NAV ERR https://www.wotton.ca Error
