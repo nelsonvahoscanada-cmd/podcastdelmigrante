@@ -730,6 +730,8 @@ function filaCmhc(L, archivo, centro, hoja_) {
 const decimal = (v) => { const [e, d] = String(v).split("."); return miles(e) + (d ? `.${d}` : ""); };
 const fechaIso = (s) => (/^\d{4}-\d\d-\d\d$/.test(s || "") ? fechaEs(s) : s);
 /* Sitio del répertoire: sin espacios, y con punto donde el répertoire tiene una coma (p. ej., «msvalere.qc,ca») */
+/* Sitios del répertoire que no existen (comprobado el 31-10-2026): no se enlazan */
+const SITIOS_CAIDOS = new Set(["https://www.thornequebec.ca"]);
 const web = (u) => {
   const s = u.trim().replace(/,/g, ".");
   return /^https?:\/\//.test(s) ? s : `https://${s}`;
@@ -875,7 +877,7 @@ function pagina(r, L, { esc }) {
 
   const perfilCenso = `https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A0005${r.c}`;
   const oficiales = [
-    ...(f ? [{ label: `Sitio oficial de ${nombre}`, href: f.web }] : m && m.web && !r.fusion ? [{ label: `Sitio oficial de ${m.nombre} (según el répertoire del Gobierno de Quebec)`, href: web(m.web) }] : []),
+    ...(f ? [{ label: `Sitio oficial de ${nombre}`, href: f.web }] : m && m.web && !r.fusion && !SITIOS_CAIDOS.has(web(m.web)) ? [{ label: `Sitio oficial de ${m.nombre} (según el répertoire del Gobierno de Quebec)`, href: web(m.web) }] : []),
     { label: `Statistics Canada — Perfil del Censo 2021 de ${r.censoNombre} (en inglés)`, href: perfilCenso },
   ];
   const fuentes = [FUENTES.csd, FUENTES.censo, ...(m || r.fusion ? [FUENTES.municipios] : []), ...(r.fusion && r.fusion.fuente ? [FUENTES_FUSION[r.fusion.fuente]] : []), ...(lista.length ? [FUENTES.dpl, FUENTES.nombres] : []), ...(epa ? [FUENTES.epa, FUENTES.industrias] : []), ...(f && f.cmhc ? [FUENTES.cmhc] : []), FUENTES.escuelas, ...(f ? [FUENTES.hospitales, FUENTES.partners] : []), FUENTES.hora, FUENTES.horaAnuncio];
