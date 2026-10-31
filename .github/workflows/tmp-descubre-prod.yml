@@ -34,29 +34,28 @@ jobs:
             return b;
           };
           JS
-      - name: Diagnostico de red en /noticias (solicitudes que no terminan)
+      - name: Web Analytics en el navegador (cuantas veces y como)
         run: |
           cat > /tmp/diag.cjs <<'JS'
           const { chromium } = require("playwright");
           (async () => {
             const b = await chromium.launch();
-            for (const ruta of ["/noticias", "/noticias?pagina=2", "/"]) {
+            for (const ruta of ["/", "/canada-en-datos/", "/canada-en-datos/quebec/montreal", "/noticias", "/articulo-alberta-empleo-desde-casa-program-eligibility-assessor-2026", "/quien-puede-ayudarte", "/perfil-carlos-d-castillo"]) {
               const p = await b.newPage();
-              const pend = new Map(); const todas = [];
-              p.on("request", (r) => { pend.set(r, Date.now()); todas.push(r.url()); });
-              p.on("requestfinished", (r) => pend.delete(r));
-              p.on("requestfailed", (r) => { console.log("  FALLA", r.url().slice(0, 120), r.failure() && r.failure().errorText); pend.delete(r); });
+              const rum = []; const beacon = [];
+              p.on("request", (r) => { const u = r.url(); if (/cloudflareinsights|\/cdn-cgi\/rum/.test(u)) (u.includes("/rum") ? rum : beacon).push(r.method() + " " + u.replace(/\?.*/, "")); });
               await p.goto("https://podcastdelmigrante.com" + ruta, { waitUntil: "load" });
-              await p.waitForTimeout(12000);
-              console.log(ruta, "solicitudes:", todas.length, "pendientes tras 12 s:", pend.size);
-              for (const [r] of pend) console.log("  PENDIENTE", r.method(), r.url().slice(0, 160));
-              const hosts = {}; for (const u of todas) { const h = new URL(u).host; hosts[h] = (hosts[h] || 0) + 1; } console.log("  hosts:", JSON.stringify(hosts));
+              await p.waitForTimeout(6000);
+              const info = await p.evaluate(() => [...document.querySelectorAll("script[src*='cloudflareinsights'], script[data-cf-beacon]")].map((s) => ({ src: s.src.replace(/\?.*/, ""), beacon: (s.getAttribute("data-cf-beacon") || "").replace(/"token":"[^"]{6}([^"]*)"/, '"token":"…$1"') })));
+              console.log(ruta, "| scripts en el DOM:", info.length, JSON.stringify(info), "| cargas del script:", beacon.length, "| envios RUM:", rum.length, rum.slice(0, 2).join(" "));
               await p.close();
             }
             await b.close();
           })();
           JS
           node /tmp/diag.cjs
+          echo "=== HTML pedido como navegador (Accept: text/html) ==="
+          curl -s -H 'Accept: text/html' -A 'Mozilla/5.0 (X11; Linux x86_64) Chrome/130' https://podcastdelmigrante.com/ | grep -o '<script[^>]*cloudflareinsights[^>]*>' | sed 's/"token":"[^"]*"/"token":"(oculto)"/' 
         env:
           NODE_PATH: /tmp/pw/node_modules
           NODE_OPTIONS: --require /tmp/pw/vistas.cjs
