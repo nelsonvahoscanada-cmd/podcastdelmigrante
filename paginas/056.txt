@@ -1,0 +1,362 @@
+NOMBRE: Données Québec: répertoire municipalités
+URL: https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec
+ESTADO: 200
+FINAL: https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec
+TITULO: Répertoire des municipalités du Québec - Jeu de données - Données Québec
+FECHA: 2026-10-30
+
+Répertoire des municipalités du Québec - Jeu de données - Données Québec 
+ Skip to main content 
+ Passer au contenu 
+ Partenariat Données Québec
+ JEUX DE DONNÉES 
+ ORGANISATIONS 
+ APPLICATIONS 
+ CARTE INTERACTIVE 
+ GUIDES ET INFORMATIONS 
+ EXPLORER les données 
+ EXPLOITER les données 
+ DIFFUSER des données 
+ Nous joindre 
+ Partenariat Données Québec
+ JEUX DE DONNÉES 
+ ORGANISATIONS 
+ APPLICATIONS 
+ CARTE INTERACTIVE 
+ GUIDES ET INFORMATIONS
+ EXPLORER les données 
+ EXPLOITER les données 
+ DIFFUSER des données 
+ Accueil 
+ Organisations 
+ Gouvernement du Québec 
+ Ministère des Affaires... 
+ Répertoire des... 
+ Organisation
+ Tous les jeux de données pour Gouvernement du Québec 
+ Partager
+ (X- Twitter) 
+ Facebook 
+ Linkedin 
+ Responsabilité
+ Les diffuseurs ne peuvent garantir l'exactitude, la précision ou l'intégralité des données mises à votre disposition sur ce site.
+ Jeu de données 
+ Catégories 
+ Applications 
+ Répertoire des municipalités du Québec
+ ⚠ Avis important concernant la liste des élues et élus 
+ Veuillez noter que le répertoire des municipalités n'a pas de valeur légale et que les élus y sont présentés à titre informatif. Un élu est proclamé comme tel au moyen d'un écrit signé par le président d'élection de la municipalité.
+ Le Répertoire des municipalités contient l'information suivante pour chaque municipalité du Québec :
+ les coordonnées de la municipalité;
+ la liste des membres du conseil et la liste des responsables de l'organisation municipale;
+ des renseignements généraux comme la désignation, la date de constitution, la superficie, la population, la région administrative, la MRC, la division de recensement du Canada, la circonscription électorale du Québec, la date des prochaines élections, le mode d'élection, la division territoriale et la liste des arrondissements au besoin.
+ Le Répertoire fournit aussi :
+ pour chaque MRC ou territoire hors MRC, pour chacune des deux communautés métropolitaines et pour l'Administration régionale Kativik; en plus des coordonnées et des renseignements généraux, la liste des municipalités qui forment cette administration ainsi que leur population et leur superficie respectives;
+ pour chaque arrondissement; les coordonnées, les renseignements généraux ainsi que la liste des membres du conseil et la liste des responsables de l’organisation municipale.
+ Veuillez prendre note des ajustements suivants (en date du 26 mars 2024): 
+ Le fichier "Liste des MRC" sera remplacé par "Liste des MRC_CM_Arg" 
+ Ajout du fichier "Liste des ressources" 
+ De nouvelles colonnes ont été ajoutées aux fichiers "Liste des municipalités" et "Liste des arrondissements" 
+ Pour plus de précisions, bien vouloir accéder à la page du jeu de données. 
+ Données et ressources (19)
+ Données
+ ﻿Liste des municipalités (csv) CSV 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient plusieurs renseignements sur les municipalités du Québec. Les nouvelles colonnes seront en gras....
+ Explorer
+ Aperçu
+ Télécharger
+ Liste des MRC_CM_Arg (csv) CSV 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient plusieurs renseignements sur les municipalités régionales de comté (MRC). Les nouvelles colonnes...
+ Explorer
+ Aperçu
+ Télécharger
+ Liste des arrondissements (csv) CSV 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient plusieurs renseignements sur les arrondissements. Les nouvelles colonnes seront en gras. ARRCOD :...
+ Explorer
+ Aperçu
+ Télécharger
+ Liste des ressources (csv) CSV 
+ (2 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient plusieurs renseignements sur les ressources. Les nouvelles colonnes seront en gras. RESCODE :...
+ Explorer
+ Aperçu
+ Télécharger
+ Liste des organisations municipales XML 
+ (4 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient plusieurs renseignements sur les organisations municipales (municipalités, municipalités...
+ Explorer
+ Plus d'information
+ Télécharger
+ Population des organisations municipales XML 
+ (11 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient la population décrétée des municipalités et des arrondissements du Québec. Il contient aussi, à...
+ Explorer
+ Plus d'information
+ Télécharger
+ Lien entre les organisations municipales XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient les liens entre les organisations municipales actives, par exemple entre une municipalité et la...
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Liste des circonscriptions électorales XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient la liste des circonscriptions électorales provinciales du Québec. Elle inclut aussi les...
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Lien entre les municipalités et les circonscriptions électorales XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier fournit la liste à jour des circonscriptions électorales provinciales de chaque municipalité active du...
+ Explorer
+ Plus d'information
+ Télécharger
+ Historique des liens entre les organisations municipales XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient les liens entre les organisations municipales dont au moins une est inactive, par exemple entre...
+ Explorer
+ Plus d'information
+ Télécharger
+ Information complémentaire sur les organisations municipales inactives XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient les derniers découpages statistiques et administratifs des organisations municipales inactives....
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Liste des mouvements des municipalités XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient divers renseignements sur les annexions, les regroupements, les changements de MRC et les...
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Domaines de valeurs de certains paramètres du Répertoire XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient le code et la description de certains paramètres du Répertoire. Les apostrophes sont codés par...
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Liste des directions régionales du MAMH XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient la liste des directions régionales du ministère des Affaires municipales et de l'Habitation. Les...
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Liste des organismes périmunicipaux XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient plusieurs renseignements sur les organismes périmunicipaux (régies intermunicipales, sociétés de...
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Liens entre les organisations municipales et les organismes périmunicipaux XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient la liste des organisations municipales qui constituent chacun des organismes périmunicipaux....
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Fonctions des organismes périmunicipaux XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Fonctions des organismes périmunicipaux FONCT : code de fonction de l'organisme NO_ORG_P : code à 5 positions de...
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Liste des élues et élus de certains responsables des organisations municipales XML 
+ (8 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient le nom et le prénom des élus et de certains responsables des organisations municipales. Il ne...
+ Explorer
+ Plus d'information
+ Télécharger
+ ﻿Liste de certains responsables des organismes périmunicipaux XML 
+ (1 Mo) 
+ Dernière modification : 
+ 2026-10-30
+ Le fichier contient le nom et le prénom de certains responsables des organismes périmunicipaux. Il ne contient aucune...
+ Explorer
+ Plus d'information
+ Télécharger
+ Montrer plus de ressources 
+ Afficher moins de ressources 
+ Fiche descriptive du jeu de données
+ Organisation
+ Ministère des Affaires municipales et de l'Habitation
+ Catégories
+ Gouvernement et finances
+ Étiquettes
+ Administration régionale
+ Arrondissement
+ Communauté métropolitaine
+ Coordonnée
+ Mrc
+ Municipalité
+ Municipalité régionale de comté
+ Répertoire
+ Licence
+ Attribution (CC-BY 4.0)
+ Citation recommandée
+ MINISTÈRE DES AFFAIRES MUNICIPALES ET DE L'HABITATION. Répertoire des municipalités du Québec, [Jeu de données], dans Données Québec, 2016, mis à jour le 30 octobre 2026. [https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec], (consulté le 31 octobre 2026).
+ Responsable
+ Direction des communications du MAMH
+ Courriel
+ repertoire-maj@mamh.gouv.qc.ca 
+ Fréquence de mise à jour
+ Quotidien
+ Couverture géographique
+ Tout le Québec
+ Couverture temporelle
+ Informations complémentaires
+ Les données sont continuellement mises à jour, à l'exception de celles relatives à la population, laquelle est établie par décret du gouvernement sur la base de l'estimation faite par l'Institut de la statistique du Québec.
+ Les valeurs de superficie ont été calculées à partir des données du Système sur les découpages administratifs (SDA) diffusées par le ministère des Ressources naturelles en juillet 2018. Les valeurs sont mises à jour une fois l’an pour les entités dont les délimitations ont été modifiées et sont effectuées selon les changements répertoriés dans la Gazette officielle du Québec ou dans le Recueil des lois et des règlements du Québec.
+ Les superficies sont exprimées en kilomètre carré (km2) Les calculs de valeurs de superficies ont été réalisés avec la projection conique équivalente d'Albers (CÉA), le système de référence nord-américain de 1983 (NAD83) et l’ellipsoïde GRS80.
+ La superficie totale correspond à la valeur calculée pour l’ensemble du territoire et elle inclut les plans d’eau cartographiés à l’échelle 1/20 000 (partie sud du Québec) et ceux cartographiés à l’échelle 1/50 0000 (pour la partie nord du Québec). Quant à la valeur de superficie terrestre, celle-ci exclut les plans d'eau cartographiés selon les mêmes échelles, c’est-à-dire 1/20 000 pour la partie sud du Québec et 1/50 0000 pour la partie nord du Québec.
+ Site internet de l'organisation ou de référence
+ https://www.quebec.ca/gouvernement/portrait-quebec/repertoire-municipalites 
+ Respect des lignes directrices 
+ 100.0%
+ Dernière modification (métadonnées ou ressources)
+ 2026-10-30 07:04 EDT
+ Diffusion initiale
+ 2016-02-14 19:00 EST 
+ Identifiant numérique d'objet (DOI)
+ Identifiant
+ a8a678b0-875f-4607-b347-009a5096ff45
+ Utilisation des témoins de connexion
+ Nous utilisons des témoins de connexion (cookies) qui permettent d’assurer le bon fonctionnement de notre site Web, d’améliorer votre expérience de navigation et d’évaluer la performance de notre site.
+ Pour plus d’information, vous pouvez consulter notre Politique de confidentialité .
+ Je comprends
+ En savoir plus
+ Licence d'utilisation 
+ Statistiques 
+ Interface de programmation d'application (API) 
+ Quoi de neuf? 
+ Foire aux questions (FAQ) 
+ Partenariat
+ Lignes directrices 
+ Normalisation des données 
+ Données ouvertes de référence 
+ Politique-cadre municipale 
+ HackQC 
+ Nous joindre
+ Nous suivre
+ À propos 
+ Accessibilité 
+ Plan du site 
+ Consignes de sécurité 
+ Politique de confidentialité 
+ © Gouvernement du Québec, 
+ Sondage Données Québec 
+ Vous utilisez des données? Vous avez des idées pour améliorer Données Québec? Prenez 5 minutes pour vous exprimer sur Consultation Québec.
+ J'y vais! 
+ Non, merci 
+ L'URL du service Web a été copié dans le presse-papier
+
+=== ENLACES ===
+https://www.donneesquebec.ca/ | 
+https://www.donneesquebec.ca/recherche/dataset/ | JEUX DE DONNÉES
+https://www.donneesquebec.ca/recherche/organization/ | ORGANISATIONS
+https://www.donneesquebec.ca/recherche/showcase | APPLICATIONS
+https://www.carte-igo.donneesquebec.ca/ | CARTE INTERACTIVE
+https://www.donneesquebec.ca/explorer | EXPLORER les données
+https://www.donneesquebec.ca/exploiter | EXPLOITER les données
+https://www.donneesquebec.ca/diffusion | DIFFUSER des données
+https://www.donneesquebec.ca/nous-joindre-renseignements-generaux | Nous joindre
+https://www.donneesquebec.ca/recherche/dataset?sort=metadata_created+desc | JEUX DE DONNÉES
+https://www.donneesquebec.ca/recherche/organization | ORGANISATIONS
+https://www.donneesquebec.ca/recherche/applications/ | APPLICATIONS
+https://www.donneesquebec.ca/recherche/dataset?q=&extras_organisation_principale=gouvernement-du-quebec | Gouvernement du Québec
+https://www.donneesquebec.ca/recherche/organization/affaires-municipales-et-occupation-du-territoire | Ministère des Affaires...
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec | Répertoire des...
+https://twitter.com/share?url=https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec | (X- Twitter)
+https://www.facebook.com/sharer.php?u=https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec | Facebook
+https://www.linkedin.com/shareArticle?mini=true&url=https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec&title=shared from Données Québec | Linkedin
+https://www.donneesquebec.ca/recherche/dataset/groups/repertoire-des-municipalites-du-quebec | Catégories
+https://www.donneesquebec.ca/recherche/dataset/showcases/repertoire-des-municipalites-du-quebec | Applications
+https://www.donneesquebec.ca/donnees-ouvertes-de-reference | 
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/19385b4e-5503-4330-9e59-f998f5918363 | ﻿Liste des municipalités (csv) CSV
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/bc4e0842-3fe0-4e46-b23f-8218bcff6f72 | Liste des MRC_CM_Arg (csv) CSV
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/999d9702-cdfc-4c2c-9120-af75fbdcc1cc | Liste des arrondissements (csv) CSV
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/1935e599-a541-485c-8eff-714ca08ac0ea | Liste des ressources (csv) CSV
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/fad04899-abd8-4d3f-a841-4f8b11edac57 | Liste des organisations municipales XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/c27b1830-2b46-4e80-819b-6238ff7c3b03 | Population des organisations municipales XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/84f47c71-657d-444b-b555-2baf58415405 | Lien entre les organisations municipales XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/8317ba7c-4764-4ee1-9790-36ff513b4d93 | ﻿Liste des circonscriptions électorales XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/c91cf2f0-2643-4927-a081-12dfd5a5c605 | ﻿Lien entre les municipalités et les circonscriptions électorales XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/8cbff725-87ad-43f1-aefc-89982f1976c1 | Historique des liens entre les organisations municipales XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/d5a5840c-3ade-48a4-8d3d-246cb246b949 | Information complémentaire sur les organisations municipales inactives XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/5f9e699f-5df3-4d10-8e72-fd81e2b56a27 | ﻿Liste des mouvements des municipalités XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/0a4ac40e-7cfa-40b1-9a0d-b767e309d0a7 | ﻿Domaines de valeurs de certains paramètres du Répertoire XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/6dd9e101-a450-4977-af28-0f9887efc7c5 | ﻿Liste des directions régionales du MAMH XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/b8ad19c5-3ac7-4a9a-b964-6d9b3fa25f73 | ﻿Liste des organismes périmunicipaux XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/e74823a4-477b-4932-9431-041df22d1208 | ﻿Liens entre les organisations municipales et les organismes périmunicipaux XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/14ebfdbd-2a61-4d7e-9f14-be6ab2ec16b9 | ﻿Fonctions des organismes périmunicipaux XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/d361707e-52f3-4554-9b9e-8d4249e9918f | ﻿Liste des élues et élus de certains responsables des organisations municipales XML
+https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec/resource/cb6fcf56-6097-4c1f-b837-5c9e65f5c78e | ﻿Liste de certains responsables des organismes périmunicipaux XML
+https://www.donneesquebec.ca/recherche/dataset/?organization=affaires-municipales-et-occupation-du-territoire | Ministère des Affaires municipales et de l'Habitation
+https://www.donneesquebec.ca/recherche/group/gouvernement-finances | Gouvernement et finances
+https://www.donneesquebec.ca/recherche/dataset/?tags=Administration+r%C3%A9gionale | Administration régionale
+https://www.donneesquebec.ca/recherche/dataset/?tags=Arrondissement | Arrondissement
+https://www.donneesquebec.ca/recherche/dataset/?tags=Communaut%C3%A9+m%C3%A9tropolitaine | Communauté métropolitaine
+https://www.donneesquebec.ca/recherche/dataset/?tags=Coordonn%C3%A9e | Coordonnée
+https://www.donneesquebec.ca/recherche/dataset/?tags=Mrc | Mrc
+https://www.donneesquebec.ca/recherche/dataset/?tags=Municipalit%C3%A9 | Municipalité
+https://www.donneesquebec.ca/recherche/dataset/?tags=Municipalit%C3%A9+r%C3%A9gionale+de+comt%C3%A9 | Municipalité régionale de comté
+https://www.donneesquebec.ca/recherche/dataset/?tags=R%C3%A9pertoire | Répertoire
+https://www.quebec.ca/gouvernement/portrait-quebec/repertoire-municipalites | https://www.quebec.ca/gouvernement/portrait-quebec/repertoire-municipalites
+https://www.donneesquebec.ca/lignes-directrices-sur-la-diffusion-de-donnees-ouvertes/ | Respect des lignes directrices
+https://www.donneesquebec.ca/politique-de-confidentialite/ | Politique de confidentialité
+https://www.donneesquebec.ca/licence/ | Licence d'utilisation
+https://www.donneesquebec.ca/recherche/stats/ | Statistiques
+https://www.donneesquebec.ca/page-api/ | Interface de programmation d'application (API)
+https://www.donneesquebec.ca/actualites/ | Quoi de neuf?
+https://www.donneesquebec.ca/foire-aux-questions/ | Foire aux questions (FAQ)
+https://www.donneesquebec.ca/normalisation-des-donnees/ | Normalisation des données
+https://www.donneesquebec.ca/politique-cadre/ | Politique-cadre municipale
+https://hackqc.donneesquebec.ca/ | HackQC
+https://www.donneesquebec.ca/nous-joindre-renseignements-generaux/ | 
+https://twitter.com/GouvOuvertQc | 
+https://www.donneesquebec.ca/recherche/feeds/dataset.atom | 
+https://www.linkedin.com/groups/12703445/ | 
+https://www.youtube.com/channel/UC5IDqxFhKrBKDZXHID7cyEw | 
+https://www.donneesquebec.ca/a-propos/ | À propos
+https://www.donneesquebec.ca/accessibilite/ | Accessibilité
+https://www.donneesquebec.ca/plan-du-site/ | Plan du site
+https://www.donneesquebec.ca/consignes-de-securite/ | Consignes de sécurité
+https://quebec.ca | 
+https://www.quebec.ca/droit-auteur | © Gouvernement du Québec, document.write(new Date().getFullYear())

@@ -1,0 +1,69 @@
+
+=== 17-10-0009-01 Población estimada (últimos 8 trimestres) ===
+  2024-10-01 9026416
+  2025-01-01 9029220
+  2025-04-01 9028682
+  2025-07-01 9051022
+  2025-10-01 9071310
+  2026-01-01 9057967
+  2026-04-01 9053814
+  2026-07-01 9067114
+
+=== 36-10-0222-01 PIB a precios de mercado, dólares corrientes ===
+  2021 507464 millions
+  2022 556139 millions
+  2023 582495 millions
+  2024 616771 millions
+
+=== 14-10-0287-01 EPA mensual, desestacionalizada (últimos 4 meses) ===
+  2026-06 {'Population': '7582.1', 'Employment': '4606.5', 'Unemployment rate': '5.4', 'Participation rate': '64.2', 'Employment rate': '60.8'}
+  2026-07 {'Population': '7578.3', 'Employment': '4607.2', 'Unemployment rate': '5.6', 'Participation rate': '64.4', 'Employment rate': '60.8'}
+  2026-08 {'Population': '7575.4', 'Employment': '4588.7', 'Unemployment rate': '5.6', 'Participation rate': '64.2', 'Employment rate': '60.6'}
+  2026-09 {'Population': '7577.2', 'Employment': '4539.3', 'Unemployment rate': '6.0', 'Participation rate': '63.7', 'Employment rate': '59.9'}
+
+=== 14-10-0327-01 EPA anual ===
+  {'2023': {'Unemployment rate': '4.5', 'Participation rate': '65.3', 'Employment rate': '62.4'}, '2024': {'Unemployment rate': '5.3', 'Participation rate': '64.9', 'Employment rate': '61.4'}, '2025': {'Unemployment rate': '5.6', 'Participation rate': '64.9', 'Employment rate': '61.3'}}
+
+=== 14-10-0064-01 Salarios por hora, todas las industrias ===
+  2024 Average hourly wage rate 33.84
+  2024 Median hourly wage rate 29.50
+  2025 Average hourly wage rate 35.05
+  2025 Median hourly wage rate 30.00
+
+=== 98-10-0222 Censo 2021: conocimiento de idiomas oficiales (total de edades) ===
+  Total - Knowledge of official languages | 8406905 | 100.0
+  English only | 445575 | 5.3
+  French only | 3980280 | 47.3
+  English and French | 3898980 | 46.4
+  Neither English nor French | 82075 | 1.0
+
+=== 98-10-0218 Censo 2021: lengua materna (total de edades) ===
+  Total - Mother tongue | 8406905 | 100.0
+  English | 639365 | 7.6
+  French | 6291440 | 74.8
+  Non-official language | 1177320 | 14.0
+  English and French | 126405 | 1.5
+  English and non-official language | 49485 | 0.6
+  French and non-official language | 94205 | 1.1
+  English, French and non-official language | 28685 | 0.3
+
+=== 98-10-0307-01 Censo 2021: estatus de inmigrante (provincia) ===
+  Total – Place of birth {'Total - Immigrant status and period of immigration': '8308480', 'Immigrants': '1210595', '2016 to 2021': '202740', 'Non-permanent residents': '205775'}
+  Americas {'Total - Immigrant status and period of immigration': '333165', 'Immigrants': '264495', '2016 to 2021': '30820', 'Non-permanent residents': '48685'}
+  Central America {'Total - Immigrant status and period of immigration': '55790', 'Immigrants': '41530', '2016 to 2021': '4085', 'Non-permanent residents': '12525'}
+  Mexico {'Total - Immigrant status and period of immigration': '27765', 'Immigrants': '17390', '2016 to 2021': '2520', 'Non-permanent residents': '9315'}
+  South America {'Total - Immigrant status and period of immigration': '100270', 'Immigrants': '81005', '2016 to 2021': '10225', 'Non-permanent residents': '17240'}
+  Colombia {'Total - Immigrant status and period of immigration': '37150', 'Immigrants': '29665', '2016 to 2021': '4295', 'Non-permanent residents': '6955'}
+  Ukraine {'Total - Immigrant status and period of immigration': '10400', 'Immigrants': '9660', '2016 to 2021': '1655', 'Non-permanent residents': '485'}
+  Nigeria {'Total - Immigrant status and period of immigration': '5330', 'Immigrants': '2210', '2016 to 2021': '995', 'Non-permanent residents': '3075'}
+  China {'Total - Immigrant status and period of immigration': '69770', 'Immigrants': '52500', '2016 to 2021': '10735', 'Non-permanent residents': '11350'}
+  Philippines {'Total - Immigrant status and period of immigration': '34440', 'Immigrants': '31350', '2016 to 2021': '8480', 'Non-permanent residents': '2575'}
+  India {'Total - Immigrant status and period of immigration': '47780', 'Immigrants': '24990', '2016 to 2021': '8460', 'Non-permanent residents': '22500'}
+  Pakistan {'Total - Immigrant status and period of immigration': '12430', 'Immigrants': '11250', '2016 to 2021': '2155', 'Non-permanent residents': '950'}
+
+=== 98-10-0352-01 Censo 2021: minorías visibles ===
+  {'Total - Visible minority': '8308480', 'Total visible minority population': '1340735', 'South Asian': '127995', 'Chinese': '115235', 'Black': '422405', 'Filipino': '44880', 'Arab': '280080', 'Latin American': '172920', 'Southeast Asian': '70460', 'West Asian': '43990', 'Korean': '10360', 'Japanese': '5305', 'Visible minority, n.i.e.': '12145', 'Multiple visible minorities': '34960', 'Not a visible minority': '6967745'}
+
+=== 98-10-0011-01 Censo 2021: centros de población y zonas rurales ===
+columnas: ['REF_DATE', 'GEO', 'DGUID', 'Coordinate', 'Population and dwelling counts (7): Population, 2021 [1]', 'Symbols', 'Population and dwelling counts (7): Population, 2016 [2]', 'Population and dwelling counts (7): Population percentage change, 2016 to 2021 [3]', 'Population and dwelling counts (7): Total private dwellings, 2021 [4]', 'Population and dwelling counts (7): Private dwellings occupied by usual residents, 2021 [5]', 'Population and dwelling counts (7): Land area in square kilometres, 2021 [6]', 'Population and dwelling counts (7): Population density per square kilometre, 2021 [7]']
+  Quebec | Coordinate=105 | Population and dwelling counts (7): Popu=8501833 | Population and dwelling counts (7): Popu=8164361 | Population and dwelling counts (7): Popu=4.1 | Population and dwelling counts (7): Tota=4050164 | Population and dwelling counts (7): Priv=3749035 | Population and dwelling counts (7): Land=1298599.75 | Population and dwelling counts (7): Popu=6.5

@@ -1,0 +1,85 @@
+estaciones con normales: 99
+
+### MONTREAL/PIERRE: [('MONTREAL/PIERRE ELLIOTT TRUDEAU INTL A', '7025250', '1941', '2013')]
+ == MONTREAL/PIERRE ELLIOTT TRUDEAU INTL A (7025250) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 29, 'MAX_DURATION_MISSING_YEARS': 1}
+   Mean daily temperature deg C {1: -9.69, 2: -7.7, 3: -2.02, 4: 6.38, 5: 13.42, 6: 18.58, 7: 21.21, 8: 20.07, 9: 15.46, 10: 8.48, 11: 2.13, 12: -5.38, 13: 6.75}
+   Mean daily max temperature deg C {1: -5.29, 2: -3.17, 3: 2.51, 4: 11.55, 5: 18.92, 6: 23.85, 7: 26.29, 8: 25.25, 9: 20.6, 10: 12.98, 11: 5.91, 12: -1.43, 13: 11.5}
+   Mean daily min temperature deg C {1: -14.04, 2: -12.19, 3: -6.54, 4: 1.17, 5: 7.88, 6: 13.23, 7: 16.08, 8: 14.83, 9: 10.26, 10: 3.93, 11: -1.68, 12: -9.29, 13: 1.97}
+   Total snowfall cm {1: 49.54, 2: 41.24, 3: 36.16, 4: 12.91, 5: 0.02, 6: 0, 7: 0, 8: 0, 9: 0, 10: 1.83, 11: 18.98, 12: 48.86, 13: 209.54}
+   Total precipitation mm {1: 77.2, 2: 62.66, 3: 69.08, 4: 82.2, 5: 81.22, 6: 86.98, 7: 89.31, 8: 94.11, 9: 83.11, 10: 91.26, 11: 96.38, 12: 86.75, 13: 1000.26}
+
+### QUEBEC/JEAN LESAGE: [('QUEBEC/JEAN LESAGE INTL A', '7016294', '1943', '2017')]
+ == QUEBEC/JEAN LESAGE INTL A (7016294) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'D', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 1995, 'YEAR_COUNT_NORMAL_PERIOD': 15, 'MAX_DURATION_MISSING_YEARS': 0}
+   Mean daily temperature deg C {1: -12.82, 2: -10.6, 3: -4.64, 4: 3.67, 5: 11.23, 6: 16.4, 7: 19.28, 8: 18.07, 9: 12.71, 10: 6.6, 11: -0.66, 12: -8.55, 13: 4.22}
+   Mean daily max temperature deg C {1: -7.88, 2: -5.58, 3: 0.17, 4: 8.29, 5: 17.02, 6: 22.26, 7: 25.03, 8: 23.62, 9: 17.91, 10: 11.14, 11: 2.93, 12: -4.24, 13: 9.22}
+   Mean daily min temperature deg C {1: -17.71, 2: -15.59, 3: -9.42, 4: -0.99, 5: 5.39, 6: 10.49, 7: 13.52, 8: 12.48, 9: 7.46, 10: 2.02, 11: -4.24, 12: -12.82, 13: -0.78}
+   Total snowfall cm {1: 71.94, 2: 63.58, 3: 46.38, 4: 13.17, 5: 0.04, 6: 0, 7: 0, 8: 0, 9: 0, 10: 3.18, 11: 32.65, 12: 72.41, 13: 303.35}
+   Total precipitation mm {1: 86.62, 2: 74.51, 3: 76.05, 4: 83.51, 5: 115.91, 6: 111.36, 7: 121.39, 8: 104.23, 9: 115.51, 10: 98.29, 11: 102.49, 12: 99.85, 13: 1189.72}
+
+### SHERBROOKE: []
+
+### BAGOTVILLE: [('BAGOTVILLE A', '7060400', '1942', '2026')]
+ == BAGOTVILLE A (7060400) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 30, 'MAX_DURATION_MISSING_YEARS': 0}
+   Mean daily temperature deg C {1: -15.65, 2: -13.03, 3: -6.33, 4: 2.55, 5: 9.88, 6: 15.64, 7: 18.35, 8: 17.08, 9: 12.05, 10: 5.3, 11: -1.95, 12: -10.38, 13: 2.79}
+   Mean daily max temperature deg C {1: -10.13, 2: -7.36, 3: -0.64, 4: 7.85, 5: 16.32, 6: 22, 7: 24.2, 8: 23.02, 9: 17.51, 10: 9.59, 11: 1.84, 12: -5.71, 13: 8.21}
+   Mean daily min temperature deg C {1: -21.11, 2: -18.66, 3: -12, 4: -2.78, 5: 3.4, 6: 9.24, 7: 12.44, 8: 11.08, 9: 6.53, 10: 0.97, 11: -5.72, 12: -15, 13: -2.63}
+   Total snowfall cm {1: 64.75, 2: 55.32, 3: 45.64, 4: 24.07, 5: 3.43, 6: 0, 7: 0, 8: 0, 9: 0.11, 10: 8.29, 11: 46.64, 12: 73.42, 13: 321.67}
+   Total precipitation mm {1: 57.87, 2: 50.81, 3: 52.21, 4: 62.21, 5: 80.75, 6: 87.96, 7: 111.81, 8: 91.23, 9: 102.72, 10: 85.18, 11: 78, 12: 69.8, 13: 930.55}
+
+### TROIS-RIVIERES: []
+
+### GATINEAU: []
+
+### OTTAWA CDA: []
+
+### ROUYN: []
+
+### VAL-D'OR: []
+
+### MONT-JOLI: [('MONT-JOLI A', '7055120', '1943', '2013')]
+ == MONT-JOLI A (7055120) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2005, 'YEAR_COUNT_NORMAL_PERIOD': 25, 'MAX_DURATION_MISSING_YEARS': 0}
+   Total snowfall cm {1: 76.17, 2: 60.03, 3: 52.57, 4: 23.26, 5: 1.95, 6: 0, 7: 0, 8: 0, 9: 0, 10: 4.33, 11: 36.43, 12: 69.81, 13: 324.55}
+   Total precipitation mm {1: 76.01, 2: 60.11, 3: 62.22, 4: 59.68, 5: 84.35, 6: 81.88, 7: 88.34, 8: 89.88, 9: 78.59, 10: 86.61, 11: 83.33, 12: 82.16, 13: 933.16}
+   Mean daily temperature deg C {1: -12.23, 2: -10.51, 3: -4.93, 4: 1.97, 5: 8.59, 6: 14.39, 7: 17.47, 8: 16.53, 9: 12.1, 10: 5.75, 11: -0.4, 12: -7.29, 13: 3.45}
+   Mean daily max temperature deg C {1: -7.87, 2: -6.09, 3: -0.92, 4: 5.91, 5: 13.62, 6: 19.78, 7: 22.58, 8: 21.55, 9: 16.74, 10: 9.5, 11: 2.69, 12: -3.74, 13: 7.81}
+   Mean daily min temperature deg C {1: -16.54, 2: -14.88, 3: -8.92, 4: -1.99, 5: 3.52, 6: 8.95, 7: 12.31, 8: 11.45, 9: 7.42, 10: 1.96, 11: -3.49, 12: -10.79, 13: -0.92}
+
+### RIMOUSKI: [('RIMOUSKI', '7056480', '1952', '2025')]
+ == RIMOUSKI (7056480) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 28, 'MAX_DURATION_MISSING_YEARS': 1}
+   Total snowfall cm {1: 63.11, 2: 56.43, 3: 45.83, 4: 16.08, 5: 1.31, 6: 0, 7: 0, 8: 0, 9: 0, 10: 1.8, 11: 26.79, 12: 62.16, 13: 273.51}
+   Total precipitation mm {1: 71.1, 2: 64.65, 3: 60.39, 4: 65.37, 5: 84.77, 6: 84.92, 7: 91.29, 8: 85.53, 9: 87.91, 10: 91.51, 11: 83.52, 12: 87.55, 13: 958.51}
+   Mean daily temperature deg C {1: -11.39, 2: -9.41, 3: -4.08, 4: 3.29, 5: 9.88, 6: 15.41, 7: 18.34, 8: 17.32, 9: 12.86, 10: 6.56, 11: 0.31, 12: -6.67, 13: 4.37}
+   Mean daily max temperature deg C {1: -7.35, 2: -5.31, 3: -0.03, 4: 7.33, 5: 14.78, 6: 20.57, 7: 23.32, 8: 22.06, 9: 17.15, 10: 9.95, 11: 3.17, 12: -3.31, 13: 8.53}
+   Mean daily min temperature deg C {1: -15.37, 2: -13.48, 3: -8.1, 4: -0.79, 5: 4.94, 6: 10.2, 7: 13.31, 8: 12.57, 9: 8.53, 10: 3.14, 11: -2.55, 12: -9.99, 13: 0.2}
+
+### SEPT-ILES: [('SEPT-ILES A', '7047910', '1944', '2014')]
+ == SEPT-ILES A (7047910) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'C', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2001, 'YEAR_COUNT_NORMAL_PERIOD': 21, 'MAX_DURATION_MISSING_YEARS': 0}
+   Mean daily temperature deg C {1: -15.32, 2: -13.62, 3: -6.83, 4: 0.15, 5: 6.22, 6: 11.77, 7: 15.2, 8: 14.43, 9: 9.76, 10: 3.71, 11: -2.85, 12: -10.53, 13: 1.01}
+   Mean daily max temperature deg C {1: -9.76, 2: -7.86, 3: -1.9, 4: 3.99, 5: 10.73, 6: 16.52, 7: 19.53, 8: 19.06, 9: 14.16, 10: 7.75, 11: 0.98, 12: -5.76, 13: 5.62}
+   Mean daily min temperature deg C {1: -20.82, 2: -19.32, 3: -11.72, 4: -3.69, 5: 1.66, 6: 6.97, 7: 10.82, 8: 9.75, 9: 5.32, 10: -0.36, 11: -6.67, 12: -15.26, 13: -3.61}
+   Total snowfall cm {1: 84.05, 2: 59.71, 3: 57.82, 4: 36.44, 5: 8.12, 6: 0, 7: 0, 8: 0, 9: 0.05, 10: 5.25, 11: 45.99, 12: 87.2, 13: 384.63}
+   Total precipitation mm {1: 81.72, 2: 68.6, 3: 81.31, 4: 92.12, 5: 86.9, 6: 99.11, 7: 104.37, 8: 84.36, 9: 108.69, 10: 104.09, 11: 109.24, 12: 99.37, 13: 1119.88}
+
+### KUUJJUAQ: [('KUUJJUAQ A', '7113534', '1947', '2014')]
+ == KUUJJUAQ A (7113534) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'C', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2005, 'YEAR_COUNT_NORMAL_PERIOD': 22, 'MAX_DURATION_MISSING_YEARS': 2}
+   Total snowfall cm {1: 32.63, 2: 29.26, 3: 32.32, 4: 24.77, 5: 14.5, 6: 6.52, 7: 0.08, 8: 0.03, 9: 4.28, 10: 26.1, 11: 45.01, 12: 36.2, 13: 251.7}
+   Total precipitation mm {1: 31.66, 2: 28.91, 3: 31.76, 4: 27.29, 5: 28.95, 6: 49.62, 7: 59.63, 8: 71.38, 9: 73.78, 10: 54.59, 11: 47.77, 12: 36.24, 13: 541.58}
+   Mean daily temperature deg C {1: -24.71, 2: -24.11, 3: -17.86, 4: -8.68, 5: 0.7, 6: 7.51, 7: 11.78, 8: 10.99, 9: 6.37, 10: -0.02, 11: -8.16, 12: -18.32, 13: -5.38}
+   Mean daily max temperature deg C {1: -20.12, 2: -19.12, 3: -12.39, 4: -3.54, 5: 5.04, 6: 12.67, 7: 17.42, 8: 16.04, 9: 10.14, 10: 2.83, 11: -4.7, 12: -14.07, 13: -0.82}
+   Mean daily min temperature deg C {1: -29.26, 2: -29.05, 3: -23.29, 4: -13.79, 5: -3.64, 6: 2.3, 7: 6.09, 8: 5.89, 9: 2.55, 10: -2.87, 11: -11.57, 12: -22.52, 13: -9.93}
+
+### DRUMMONDVILLE: [('DRUMMONDVILLE', '7022160', '1913', '2025')]
+ == DRUMMONDVILLE (7022160) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2009, 'YEAR_COUNT_NORMAL_PERIOD': 26, 'MAX_DURATION_MISSING_YEARS': 2}
+   Total snowfall cm {1: 59.6, 2: 52.54, 3: 35.94, 4: 11.21, 5: 0.26, 6: 0, 7: 0, 8: 0, 9: 0, 10: 1.28, 11: 19.66, 12: 61.18, 13: 241.67}
+   Total precipitation mm {1: 85.66, 2: 71.91, 3: 69.75, 4: 79.76, 5: 94.22, 6: 102.27, 7: 106.17, 8: 105.99, 9: 94.92, 10: 101.54, 11: 103.7, 12: 97.59, 13: 1113.48}
+   Mean daily temperature deg C {1: -10.17, 2: -8.3, 3: -2.55, 4: 6.05, 5: 13.08, 6: 18.39, 7: 20.85, 8: 19.7, 9: 15.1, 10: 8.3, 11: 1.77, 12: -6, 13: 6.35}
+   Mean daily max temperature deg C {1: -5.36, 2: -3.44, 3: 2.23, 4: 11.04, 5: 18.62, 6: 23.64, 7: 25.82, 8: 24.72, 9: 19.95, 10: 12.54, 11: 5.37, 12: -2.02, 13: 11.09}
+   Mean daily min temperature deg C {1: -14.94, 2: -13.14, 3: -7.32, 4: 1.03, 5: 7.5, 6: 13.1, 7: 15.83, 8: 14.64, 9: 10.2, 10: 4, 11: -1.85, 12: -9.93, 13: 1.59}
+
+### GRANBY: [('GRANBY', '7022800', '1948', '2025')]
+ == GRANBY (7022800) período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 30, 'MAX_DURATION_MISSING_YEARS': 0}
+   Total snowfall cm {1: 64.96, 2: 51.48, 3: 47.44, 4: 16.93, 5: 0.9, 6: 0, 7: 0, 8: 0, 9: 0, 10: 3.43, 11: 25.46, 12: 60.74, 13: 271.34}
+   Total precipitation mm {1: 97.36, 2: 73.13, 3: 86.88, 4: 89.91, 5: 97.06, 6: 115.63, 7: 118.11, 8: 122.81, 9: 104.74, 10: 102.51, 11: 104.84, 12: 102.39, 13: 1215.37}
+   Mean daily temperature deg C {1: -9.75, 2: -7.76, 3: -2.15, 4: 6, 5: 12.83, 6: 17.81, 7: 20.23, 8: 19.2, 9: 14.83, 10: 8.05, 11: 1.77, 12: -5.67, 13: 6.28}
+   Mean daily max temperature deg C {1: -5.32, 2: -3.27, 3: 2.23, 4: 10.85, 5: 18.04, 6: 22.86, 7: 25.15, 8: 24.05, 9: 19.56, 10: 12.21, 11: 5.38, 12: -1.81, 13: 10.83}
+   Mean daily min temperature deg C {1: -14.15, 2: -12.21, 3: -6.54, 4: 1.11, 5: 7.58, 6: 12.71, 7: 15.25, 8: 14.32, 9: 10.04, 10: 3.86, 11: -1.85, 12: -9.5, 13: 1.72}

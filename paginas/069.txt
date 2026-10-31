@@ -1,0 +1,35 @@
+NOMBRE: Québec emploi
+URL: https://www.quebecemploi.gouv.qc.ca/
+ESTADO: NAV 503
+FINAL: https://www.quebecemploi.gouv.qc.ca/
+TITULO: Site en maintenance | Québec emploi
+FECHA: \"},\"form\":{\"buttons\":{\"cancel\":\"
+
+Site en maintenance | Québec emploi 
+ Passer au contenu principal Cet hyperlien s'ouvrira dans une nouvelle fenêtre. Québec emploi 
+ English 
+ Nous joindre 
+ Québec emploi 
+ Des travaux d'optimisation sont en cours sur la plateforme Québec emploi, de sorte que des ajustements sont faits en continu. Merci de votre compréhension.
+ Maintenance du site
+ Site en maintenance
+ Le site sera de nouveau accessible le 2 novembre 2026 à 09 h 30.
+ Le portail est temporairement fermé pour une maintenance planifiée. Nous travaillons à améliorer votre expérience et le service sera rétabli sous peu.
+ Vos renseignements et vos candidatures sont conservés en toute sécurité. Aucune action n’est requise de votre part.
+ Merci de votre patience et de votre compréhension. Veuillez revenir un peu plus tard.
+ Accessibilité 
+ Politique de confidentialité 
+ Conditions d'utilisation 
+ Propulsé par Relevance Studio Cet hyperlien s'ouvrira dans une nouvelle fenêtre. 
+ Cet hyperlien s'ouvrira dans une nouvelle fenêtre. © Gouvernement du Québec, 2026
+
+=== ENLACES ===
+https://www.quebec.ca/ | Cet hyperlien s'ouvrira dans une nouvelle fenêtre.
+https://www.quebecemploi.gouv.qc.ca/ | Québec emploi
+https://www.quebecemploi.gouv.qc.ca/en | English
+https://www.quebecemploi.gouv.qc.ca/nous-joindre | Nous joindre
+https://www.quebecemploi.gouv.qc.ca/accessibilite | Accessibilité
+https://www.quebecemploi.gouv.qc.ca/politique-de-confidentialite | Politique de confidentialité
+https://www.quebecemploi.gouv.qc.ca/conditions-d-utilisation | Conditions d'utilisation
+https://relevance.studio/ | Propulsé par Relevance Studio Cet hyperlien s'ouvrira dans une nouvelle fenêtre.
+https://www.quebec.ca/droit-auteur | © Gouvernement du Québec, 2026

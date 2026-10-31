@@ -1,0 +1,17 @@
+NOMBRE: RAMQ elegibilidad
+URL: https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/eligibility
+ESTADO: NAV 403
+FINAL: https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/eligibility
+TITULO: Un instant…
+FECHA: 
+
+Un instant… www.ramq.gouv.qc.ca
+ Vérification de sécurité en cours
+ Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.
+ Vérification réussie. En attente de la réponse de www.ramq.gouv.qc.ca.
+ Ray ID: a52f9b7bca2cb32d 
+ Performances et sécurité par Cloudflare Confidentialité
+
+=== ENLACES ===
+https://www.cloudflare.com?utm_source=challenge&utm_campaign=m | Cloudflare
+https://www.cloudflare.com/fr-fr/privacypolicy/ | Confidentialité

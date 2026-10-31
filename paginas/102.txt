@@ -1,0 +1,25 @@
+NOMBRE: SAAQ: nuevos residentes
+URL: https://saaq.gouv.qc.ca/en/drivers-licences/new-residents
+ESTADO: NAV 200
+FINAL: https://validate.perfdrive.com/14b7cd854382893c3913787e756b7a52/?ssa=c0a7b481-b154-4492-a5b7-d194b36a340f&ssb=03654248571&ssc=https%3A%2F%2Fsaaq.gouv.qc.ca%2Fen%2Fdrivers-licences%2Fnew-residents&ssi=5356d5dc-co3r-4d83-851a-d4c486d1eace&ssk=botmanager_support@radware.com&ssm=12789843775199283135542004274272&ssn=b63a10f926ea6b7f2c67bd0da6e2cfec84b2a6c8945b-f82f-4f85-87f812&sso=596d72e4-ae604ff1344d92a71d5640f6f9edb837ca5c7b3854407d50&ssp=06956134451793412631179345206321338&ssq=96833321774205485030917739107810006663715&ssr=MjAuODAuOTQuMjQy&sst=Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20HeadlessChrome/156.0.8078.4%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDBhNmM4OTQ1Yi1mODJmLTRmODUtODJlNC1hZTYwNGZmMTM0NGQxLTE3OTM0MTc3MzkzMzMzMTMxLTAwNTQwMThhZTY5NWU5NDgzZWQxMyIsInV6bXgiOiI3ZmMwMDA2MDdjODBjMC04N2ZhLTRlZTMtODQ4ZS0xMWI3MDJkMGVlNzUxLTE3OTM0MTc3MzkzMzMzMTMxLTAwYjQzNzNlZTE2MjYxZGU4MDIxMyIsInJkIjoiZ291di5xYy5jYSJ9
+TITULO: Radware Bot Manager Captcha
+FECHA: 
+
+Radware Bot Manager Captcha 
+ Société de l'assurance automobile du Québec 
+ Passer au contenu 
+ Société de l'assurance automobile du Québec 
+ English 
+ Nous joindre 
+ Société de l'assurance automobile du Québec 
+ Vérification nécessaire
+ Pour continuer, veuillez confirmer que vous êtes bien un humain en cochant la case ci-dessous. Cela nous aide à nous protéger contre les abus.
+ Merci de signaler tout problème technique .
+ © Gouvernement du Québec, 2025
+
+=== ENLACES ===
+https://validate.perfdrive.com/ | Société de l'assurance automobile du Québec
+https://saaq.gouv.qc.ca/en/ | English
+https://saaq.gouv.qc.ca/nous-joindre/ | Nous joindre
+https://saaq.gouv.qc.ca/droits-auteur/ | © Gouvernement du Québec, 2025
+https://saaq.gouv.qc.ca/en/reach-us | reporting any technical issues

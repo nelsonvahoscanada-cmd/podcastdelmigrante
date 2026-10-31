@@ -1,0 +1,390 @@
+NOMBRE: STO Gatineau
+URL: https://www.sto.ca/en/
+ESTADO: 200
+FINAL: https://www.sto.ca/en/
+TITULO: Société de transport de l’Outaouais | STO
+FECHA: 
+
+Société de transport de l’Outaouais | STO Go to main menu Go to main content Go to footer 
+ Main menu STO - Link to home page 
+ My profile Reload my card 
+ Home La STO Actualités Carrières Affaires Contact us Français English 
+My profile 
+ Schedules 
+and routes Transit APP System overview Latest developments and service changes Holidays and special events High school transportation System map STO on demand Fares Fares grid Multi Jeunesse U-Pass ECHO program FIDÉLITÉ Program Payment methods Sales and reloading network Loading a Multi card Exchanges and refunds Useful 
+information Intermodality Universal accessibility Information tools Events and partnerships Tips and by-laws The system FAQ Service points Lost and found Paratransit Eligibility and application for paratransit Book or change a trip Information and services Fares Contact us Projects and 
+community Major projects System improvements Completed projects Public consultations All ears for you Reload my card 
+ Search Search Cancel 
+ This content is intended for the public covered by the exceptions of the Charter of the French language and its regulations. If you read on, you confirm that you fall within one of these exceptions .
+ Home
+ Plan, schedule, and get on board!
+ Rediscover public transit
+ Welcome aboard! 
+ Detour on Promenade du Portage towards Ottawa
+ Starting September 28
+ Learn more 
+ New pedestrian crossing lights
+ De la Cité and Labrosse stations
+ Learn more 
+ Let's go see the Olympiques by bus!
+ Transportation is included with your ticket :)
+ Learn more 
+ Free access during the school year
+ Offered at specific times starting September 1
+ Learn more 
+ Plan a trip
+ External link: planibus 
+ Trip plans Route schedules Next departures 
+ Visualize your route in a few clicks on an interactive map
+ Open the Plani-bus 
+ System overview
+ Stay informed on your routes status with alerts and detours or service disruptions notices.
+ System-Info alerts General notices 
+ Subscribe to Alerts STO_direct 
+ By route Affected routes 
+ Search for a route to see its service status Select a route 
+ 18 PRÉ TUNNEY
+ 1 20 FREEMAN
+ 2 23 LE PLATEAU
+ 2 25 DE L'AMÉRIQUE-FRANÇAISE
+ 3 26 LE PLATEAU
+ 2 27 HAUTES-PLAINES
+ 3 28 LE PLATEAU/PRÉ TUNNEY
+ 1 29 DES TREMBLES
+ 2 31 PARC DE LA MONTAGNE
+ 2 32 PLATEAU
+ 3 33 FREEMAN/G-ROY/OTTAWA
+ 3 34 PLATEAU/DES TREMBLES
+ 3 36 CÉGEP GABRIELLE-ROY
+ 2 37 CÉGEP G-ROY/ST-JOSEPH
+ 2 38 FREEMAN
+ 3 40 JARDINS LAVIGNE
+ 2 41 DES CÈDRES
+ 3 45 WYCHWOOD
+ 4 47 GLENWOOD
+ 3 49 CÉGEP G-ROY/RIVERMEAD
+ 1 52 LAVIGNE/WYCHWOOD/VANIER
+ 2 55 OTTAWA
+ 2 56 DES TREMBLES
+ 2 59 OTTAWA
+ 4 62 GRÉBER nord
+ 1 63 POINTE-GATINEAU
+ 2 64 LIMBOUR/FREEMAN
+ 1 65 CÔTE-DES-NEIGES
+ 2 66 MONT-LUC/DU BARRY
+ 1 67 FOURNIER/GRÉBER
+ 2 68 CGP G-ROY/GARAGE GAT.
+ 2 69 ST-LOUIS
+ 1 71 DAVIDSON
+ 2 72 SAINT-RENÉ
+ 1 73 MAGNUS
+ 2 74 MALONEY
+ 1 75 NOTRE-DAME
+ 3 76 LA VÉRENDRYE
+ 2 77 CHEVAL-BLANC
+ 1 78 ATMEC/DE l'AÉROPORT
+ 2 79 ZONE BLANCHE
+ 2 85 CÔTE-DES-NEIGES
+ 1 87 STATION LA CITÉ
+ 2 93 MASSON
+ 2 94 MASSON-ANGERS
+ 1 95 BUCKINGHAM
+ 1 97 MASSON-ANGERS/BUCKINGHAM
+ 2 100 RAPIBUS 100
+ 2 200 RAPIBUS 200
+ 1 297 HORMISDAS-GAMELIN
+ 1 325 LE PLATEAU/ST-ALEXANDRE
+ 1 326 LE PLATEAU/ST-ALEXANDRE
+ 2 329 LE MANOIR/ST-ALEXANDRE
+ 2 331 PARC DE LA MONTAGNE/ST-ALEXANDRE
+ 1 371 CGP G-ROY/MUTCHMORE
+ 2 400 RAPIBUS 400
+ 3 425 DE l'AMÉRIQUE FRANÇAISE / MONT-BLEU
+ 1 433 CITÉ DES JEUNES/MONT-BLEU
+ 1 437 ST-JOSEPH/MONT-BLEU
+ 1 449 RIVERMEAD / MONT-BLEU
+ 1 549 GALERIES AYLMER / NV FRONTIÈRES
+ 1 550 JARDINS LAVIGNE/NV FRONTIÈRES
+ 1 554 PARC CHAMPLAIN/DES TREMBLES
+ 1 566 MONT-LUC/LIMBOUR/NV FRONTIÈRES
+ 2 569 DES GRANDS JARDINS/NV FRONTIÈRES
+ 2 571 RAVINS BOISÉS/NV FRONTIÈRES
+ 3 576 LA VERENDRYE/NV FRONTIÈRES
+ 1 641 DES CÈDRES/GRANDE-RIVIÈRE
+ 1 645 WYCHWOOD/GRANDE-RIVIÈRE
+ 2 655 CHEMIN AYLMER/TACHÉ/GRANDE-RIVIÈRE
+ 1 725 AMÉRIQUE-FRANÇAISE/ST-JO
+ 2 726 LE PLATEAU/DE LA CITÉ
+ 1 729 PINK/DES TREMBLES/ST-JO
+ 1 740 JARDINS LAVIGNE/STJO
+ 1 752 DESCHENES/ÉCOLE NOUVELLE-ÈRE (040)
+ 2 800 RAPIBUS 800
+ 3 825 AMÉRIQUE FRANÇAISE / DE L'ÎLE
+ 1 826 LE PLATEAU / DE L'ÎLE
+ 2 827 HAUTES-PLAINES / DE L'ÎLE
+ 2 829 LE MANOIR / DE L'ÎLE
+ 1 831 SECTEUR MONT-BLEU/DE L`ÎLE
+ 1 833 CITÉ DES JEUNES / DE L'ÎLE
+ 1 
+ 18 20 23 25 26 27 28 29 31 32 33 34 36 37 38 40 41 45 47 49 52 55 56 59 62 63 64 65 66 67 68 69 71 72 73 74 75 76 77 78 79 85 87 93 94 95 97 100 200 297 325 326 329 331 371 400 425 433 437 449 549 550 554 566 569 571 576 641 645 655 725 726 729 740 752 800 825 826 827 829 831 833 
+ In effect
+October 30, 2026
+ Nov. 02 - Detour notice on Lucerne Blvd between Garden and Fraser roads
+ Details 
+ 45
+ 47
+ 52
+ 56
+ 645
+ 752
+ From November 2 to 6, 2026
+ Nov. 2 to 6 - No service for the school routes of Nouvelles Frontières College
+ Details 
+ 549
+ 550
+ 554
+ 566
+ 569
+ 571
+ 576
+ October 29, 2026
+ Oct. 30 - Detour notice on Wellington St. between Eddy and Montcalm Streets.
+ Details 
+ 20
+ 23
+ 25
+ 38
+ 100
+ 400
+ 725
+ In effect
+October 28, 2026
+ Oct. 29 - Sacré-Coeur/Kent (#2657) stop not serviced
+ Details 
+ 31
+ In effect
+October 30, 2026
+ UPDATE - Oct. 30 - Return to normal route on Park St. between Principale and Court St.
+ Details 
+ 59
+ In effect
+October 27, 2026
+ Oct. 27 - Monclair/de la Carrière (#2523) stop not serviced
+ Details 
+ 27
+ 31
+ 33
+ 571
+ 826
+ 827
+ 831
+ 833
+ In effect
+October 27, 2026
+ Oct. 28 - Detour notice on du Barry St. between la Vérendrye Blvd. and du Brome St.
+ Details 
+ 66
+ In effect
+October 27, 2026
+ Oct 27 - Stops not serviced on Maloney Est Blvd. between Lorrain Blvd. and des Sables St.
+ Details 
+ 74
+ 75
+ 77
+ 78
+ In effect
+October 30, 2026
+ UPDATE - Oct. 30 - Stops back in service on Alexandre-Taché Blvd. between Saint-Raymond Blvd. and des Orchidées St.
+ Details 
+ 26
+ 28
+ 29
+ 32
+ 34
+ 40
+ 41
+ 45
+ 47
+ 55
+ 59
+ 329
+ 655
+ 729
+ 740
+ 800
+ 829
+ In effect
+October 20, 2026
+ New signage at Cité and Labrosse stations
+ Details 
+ 18
+ 62
+ 63
+ 65
+ 67
+ 68
+ 71
+ 72
+ 73
+ 75
+ 76
+ 79
+ 87
+ 93
+ 95
+ 97
+ 100
+ 200
+ 400
+ 800
+ In effect
+October 30, 2026
+ UPDATE - Oct 30 - Return to normal route on Lucerne Blvd at the Garden/Coté intersection and Victor-Beaudry St.
+ Details 
+ 45
+ 52
+ 56
+ 645
+ 752
+ In effect
+October 19, 2026
+ Oct. 14 - Stops relocation to comply with safety and accessibility standards in Buckingham/Masson-Angers sector
+ Details 
+ 93
+ 94
+ 97
+ 297
+ In effect
+October 19, 2026
+ Oct. 8 - Stops relocation to comply with safety and accessibility standards in Aylmer/Plateau/Hull sector
+ Details 
+ 25
+ 27
+ 33
+ 36
+ 37
+ 38
+ 41
+ 49
+ 59
+ 64
+ 68
+ 325
+ 326
+ 329
+ 331
+ 371
+ 425
+ 433
+ 437
+ 566
+ 641
+ 725
+ 800
+ 825
+ 827
+ In effect
+October 19, 2026
+ Oct. 6 - Stops relocation to comply with safety and accessibility standards in Gatineau sector
+ Details 
+ 63
+ 65
+ 67
+ 69
+ 71
+ 73
+ 76
+ 78
+ 79
+ 85
+ 87
+ 569
+ 571
+ In effect
+September 28, 2026
+ Sept. 28 - Detour notice on Promenade du Portage/Hôtel-de-Ville between Laval and Laurier St. towards Ottawa
+ Details 
+ 20
+ 23
+ 25
+ 26
+ 27
+ 29
+ 32
+ 33
+ 34
+ 36
+ 37
+ 38
+ 40
+ 41
+ 45
+ 47
+ 55
+ 59
+ 371
+ 400
+ In effect
+September 15, 2026
+ Sept. 15 - du Plateau/de l'Automne (#2790-#2791) stops not serviced
+ Details 
+ 32
+ 34
+ 326
+ 449
+ 726
+ 826
+ In effect
+June 5, 2026
+ Detour Notice on Notre-Dame St. between Doré St. and Charpentier St.
+ Details 
+ 75
+ See all alerts 
+ News
+ October 29, 2026
+ Le conseil d'administration du 29 octobre 2026
+ October 29, 2026
+ Budget 2027 : des choix difficiles permettent au conseil d’administration d’adopter un budget équilibré et responsable
+ September 24, 2026
+ Le conseil d'administration du 24 septembre 2026
+ August 28, 2026
+ Le conseil d'administration du 27 août 2026
+ View all news 
+ Don't miss out
+ Consult our current public notices 
+ Plan stratégique 2026-2035 
+ Build a career with us 
+Travailler à la STO, c’est faire une réelle différence dans le quotidien des gens de Gatineau et contribuer à la réalisation de projets majeurs qui transforment la région et ceux qui l’habitent. 
+ STO
+ Société de transport de l’Outaouais
+ Our mission is to offer efficient sustainable public transit solutions that help people get around Gatineau and allows them to travel to where they live, work, study and play.
+ Discover the organization 
+ 377
+ buses
+ 1020
+ employees
+ 15 M
+ trips
+ 65
+ points of sales
+ Discover the organization 
+ STO - Link to home page 
+ External link: planibus 
+ Follow us
+ 819 770-3242 
+ Send a comment 
+ Follow us
+ External link: Facebook External link: Instagram External link: Linkedin External link: X External link: Youtube 
+ Schedules and routes Fares Useful information Sales and reloading network Paratransit Projets et communauté 
+ La société
+ Carrières Affaires Subscribe to our newsletter 
+ Your profile
+ My profile Reload my card 
+ © 2026 Société de transport de l’Outaouais all rights reserved
+.
+ Terms of use Cookie settings
+
+=== ENLACES ===
+https://www.planibus.sto.ca/hastinfo/?culture=en | External link: planibus
+http://www.linkedin.com/company/soci-t-de-transport-de-l%27outaouais-sto-?trk=company_name | External link: Linkedin
+https://www.sto.ca/en/' +  | ' + "Learn more" +'

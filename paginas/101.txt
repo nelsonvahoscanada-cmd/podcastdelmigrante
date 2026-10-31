@@ -1,0 +1,25 @@
+NOMBRE: SAAQ: cambio de licencia
+URL: https://saaq.gouv.qc.ca/en/drivers-licences/obtaining-licence/exchange-licence-issued-outside-quebec
+ESTADO: NAV 200
+FINAL: https://validate.perfdrive.com/14b7cd854382893c3913787e756b7a52/?ssa=86c80cbb-305a-47b2-83d3-d2ec53b9ae09&ssb=83562242603&ssc=https%3A%2F%2Fsaaq.gouv.qc.ca%2Fen%2Fdrivers-licences%2Fobtaining-licence%2Fexchange-licence-issued-outside-quebec&ssi=9b6a4d7e-co3r-4e3f-b1cd-713493fb41eb&ssk=botmanager_support@radware.com&ssm=82767632929758736106800888458410&ssn=44cdca390ca13c415c387835bb8260b57a74a6c8945b-f82f-4f85-8e0c69&sso=9e18a2e4-ae604ff1344de554d70f2f605081bef62bdfcd5121eb5961&ssp=69123011111793481205179343632047684&ssq=62261601773943746743317739289087083791597&ssr=MjAuODAuOTQuMjQy&sst=Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20HeadlessChrome/156.0.8078.4%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDBhNmM4OTQ1Yi1mODJmLTRmODUtODJlNC1hZTYwNGZmMTM0NGQxLTE3OTM0MTc3MzkzMzMwLTAwNTQ5MTY1YjIzN2JlYzJmNjkxMCIsInV6bXgiOiI3ZmMwMDA2MDdjODBjMC04N2ZhLTRlZTMtODQ4ZS0xMWI3MDJkMGVlNzUxLTE3OTM0MTc3MzkzMzMwLTAwYjAxMDgwMjFjN2Y1MjBlNzMxMCIsInJkIjoiZ291di5xYy5jYSJ9
+TITULO: Radware Bot Manager Captcha
+FECHA: 
+
+Radware Bot Manager Captcha 
+ Société de l'assurance automobile du Québec 
+ Passer au contenu 
+ Société de l'assurance automobile du Québec 
+ English 
+ Nous joindre 
+ Société de l'assurance automobile du Québec 
+ Vérification nécessaire
+ Pour continuer, veuillez confirmer que vous êtes bien un humain en cochant la case ci-dessous. Cela nous aide à nous protéger contre les abus.
+ Merci de signaler tout problème technique .
+ © Gouvernement du Québec, 2025
+
+=== ENLACES ===
+https://validate.perfdrive.com/ | Société de l'assurance automobile du Québec
+https://saaq.gouv.qc.ca/en/ | English
+https://saaq.gouv.qc.ca/nous-joindre/ | Nous joindre
+https://saaq.gouv.qc.ca/droits-auteur/ | © Gouvernement du Québec, 2025
+https://saaq.gouv.qc.ca/en/reach-us | reporting any technical issues

@@ -1,0 +1,25 @@
+NOMBRE: SAAQ inicio
+URL: https://saaq.gouv.qc.ca/en/
+ESTADO: NAV 200
+FINAL: https://validate.perfdrive.com/14b7cd854382893c3913787e756b7a52/?ssa=d453d6e9-715e-4d00-9b79-cca5122025b5&ssb=80747232114&ssc=https%3A%2F%2Fsaaq.gouv.qc.ca%2Fen%2F&ssi=55a478fa-co3r-49b0-acec-5acb6b2e00e8&ssk=botmanager_support@radware.com&ssm=21954196877216916169814918782488&ssn=98a7f9f51b570ac641b2d89207cefc722ecfa6c8945b-f82f-4f85-8ac387&sso=5f4252e4-ae604ff1344d09298690b68030de819dea8a4f8ec40418a1&ssp=91651510791793474247179343689270629&ssq=81833241774572886151217739442887913068100&ssr=MjAuODAuOTQuMjQy&sst=Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20HeadlessChrome/156.0.8078.4%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDBhNmM4OTQ1Yi1mODJmLTRmODUtODJlNC1hZTYwNGZmMTM0NGQxLTE3OTM0MTc3MzkzMzM2MTMwLTAwNWE4OGVlNGM3OWYyOTRiMDExNiIsInV6bXgiOiI3ZmMwMDA2MDdjODBjMC04N2ZhLTRlZTMtODQ4ZS0xMWI3MDJkMGVlNzUxLTE3OTM0MTc3MzkzMzM2MTMwLTAwYmEzMjgzYjg1YmQxYjAzNzkxNiIsInJkIjoiZ291di5xYy5jYSJ9
+TITULO: Radware Bot Manager Captcha
+FECHA: 
+
+Radware Bot Manager Captcha 
+ Société de l'assurance automobile du Québec 
+ Passer au contenu 
+ Société de l'assurance automobile du Québec 
+ English 
+ Nous joindre 
+ Société de l'assurance automobile du Québec 
+ Vérification nécessaire
+ Pour continuer, veuillez confirmer que vous êtes bien un humain en cochant la case ci-dessous. Cela nous aide à nous protéger contre les abus.
+ Merci de signaler tout problème technique .
+ © Gouvernement du Québec, 2025
+
+=== ENLACES ===
+https://validate.perfdrive.com/ | Société de l'assurance automobile du Québec
+https://saaq.gouv.qc.ca/en/ | English
+https://saaq.gouv.qc.ca/nous-joindre/ | Nous joindre
+https://saaq.gouv.qc.ca/droits-auteur/ | © Gouvernement du Québec, 2025
+https://saaq.gouv.qc.ca/en/reach-us | reporting any technical issues

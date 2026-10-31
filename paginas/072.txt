@@ -1,0 +1,110 @@
+NOMBRE: Job Bank: Quebec
+URL: https://www.jobbank.gc.ca/trend-analysis/search-wages
+ESTADO: 200
+FINAL: https://www.jobbank.gc.ca/trend-analysis/search-wages
+TITULO: Search wages - Job Bank
+FECHA: 2026-09-24
+
+Search wages - Job Bank
+ Skip to main content 
+ Skip to "About this Web application" 
+ Language selection
+ Français 
+ fr 
+ Government of Canada / Gouvernement du Canada 
+ Search
+ Search website 
+ Search 
+ Job Bank
+ Job Bank 
+ Account menu
+ Sign in 
+ Job seekers 
+ Employers 
+ Menu and search
+ Menu Menu
+ Account menu
+ Sign in 
+ Job seekers 
+ Employers 
+ Main navigation menu
+ Job search 
+ Training and careers 
+ Labour market information 
+ Hiring 
+ Help 
+ About 
+ You are here:
+ Job Bank 
+ Labour market information 
+ Wage reports Compare wages
+ Compare how much you could make in different parts of the country or between occupations.
+ Search 
+ Search by 
+ Job title City or postal code 
+ Job title 
+ City or postal code 
+ Search Search 
+ FAQs 
+ |
+ Historical wage data and more statistics 
+ Labour market tools and resources 
+ Tool 
+ Job profiles 
+ Research an occupation and find out what duties are involved, the typical hourly wages, and what skills and education are required.
+ Tool 
+ Outlook reports 
+ Look into an occupation and compare its job prospects in different parts of the country.
+ Resource 
+ Sectoral profiles 
+ Learn about the history and the outlook for an industry in different parts of the country.
+ Resource 
+ Job market snapshots 
+ Learn about the working population, the unemployment rate, changes in the number of jobs, and other statistics about the job market.
+ Resource 
+ Economic scans 
+ Review the state of the labour market and economic conditions to learn about potential risks and opportunities for the future.
+ Resource 
+ Labour market news 
+ Browse through news articles about job creation and layoffs in your industry or region.
+ Page details
+ Report a problem or mistake on this page 
+ Date modified: 
+ 2026-09-24 
+ Related links
+ Job Bank Support 
+ About us 
+ Our network 
+ Terms of use - Job seekers 
+ Terms of use - Employers 
+ Government of Canada Corporate
+ Terms and conditions This link will open in a new window 
+ Privacy This link will open in a new window 
+ Top of Page
+
+=== ENLACES ===
+https://www.guichetemplois.gc.ca/analyse-tendances/recherche-salaires | Français fr
+https://www.jobbank.gc.ca/home | Job Bank
+https://www.jobbank.gc.ca/login | Job seekers
+https://employer.jobbank.gc.ca/employer/dashboard | Employers
+https://www.jobbank.gc.ca/findajob | Job search
+https://www.jobbank.gc.ca/career-planning | Training and careers
+https://www.jobbank.gc.ca/trend-analysis | Labour market information
+https://www.jobbank.gc.ca/employers | Hiring
+https://www.jobbank.gc.ca/aboutus | Help
+https://www.jobbank.gc.ca/helpsupport | About
+https://www.jobbank.gc.ca/ | Job Bank
+https://www.jobbank.gc.ca/trend-analysis/search-wages/wage-methodology | FAQs
+https://open.canada.ca/data/en/dataset/adad580f-76b0-4502-bd05-20c125de9116 | Historical wage data and more statistics
+https://www.jobbank.gc.ca/trend-analysis/search-occupations | Job profiles
+https://www.jobbank.gc.ca/trend-analysis/search-job-outlooks | Outlook reports
+https://www.jobbank.gc.ca/trend-analysis/job-market-reports/sectoral-profile | Sectoral profiles
+https://www.jobbank.gc.ca/trend-analysis/job-market-reports/job-market-snapshot | Job market snapshots
+https://www.jobbank.gc.ca/trend-analysis/job-market-reports/economic-scan | Economic scans
+https://www.jobbank.gc.ca/trend-analysis/labour-market-news | Labour market news
+https://www.canada.ca/en/report-problem.html | Report a problem or mistake on this page
+https://www.jobbank.gc.ca/network | Our network
+https://www.jobbank.gc.ca/termsofuseseeker | Terms of use - Job seekers
+https://www.jobbank.gc.ca/termsofuseemployer | Terms of use - Employers
+https://www.canada.ca/en/transparency/terms.html | Terms and conditions This link will open in a new window
+https://www.canada.ca/en/transparency/privacy.html | Privacy This link will open in a new window

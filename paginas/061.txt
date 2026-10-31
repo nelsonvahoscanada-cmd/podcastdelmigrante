@@ -1,0 +1,17 @@
+NOMBRE: CNESST: salario mínimo
+URL: https://www.cnesst.gouv.qc.ca/en/working-conditions/wages-and-pay/minimum-wage-rates
+ESTADO: NAV 403
+FINAL: https://www.cnesst.gouv.qc.ca/en/working-conditions/wages-and-pay/minimum-wage-rates
+TITULO: Un instant…
+FECHA: 
+
+Un instant… www.cnesst.gouv.qc.ca
+ Vérification de sécurité en cours
+ Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.
+ Vérification réussie. En attente de la réponse de www.cnesst.gouv.qc.ca.
+ Ray ID: a52f9a7b2b854ca8 
+ Performances et sécurité par Cloudflare Confidentialité
+
+=== ENLACES ===
+https://www.cloudflare.com?utm_source=challenge&utm_campaign=m | Cloudflare
+https://www.cloudflare.com/fr-fr/privacypolicy/ | Confidentialité

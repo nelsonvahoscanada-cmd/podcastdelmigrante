@@ -1,0 +1,126 @@
+NOMBRE: MAMH: organisation territoriale
+URL: https://www.mamh.gouv.qc.ca/organisation-municipale/organisation-territoriale/
+ESTADO: 200
+FINAL: https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale
+TITULO: Organisation municipale | Gouvernement du Québec
+FECHA: 7 avril 2025
+
+Organisation municipale | Gouvernement du Québec 
+ Nous joindre 
+ -->
+ Accueil 
+ Gouvernement 
+ Gestion municipale 
+ Organisation municipale
+ Organisation municipale
+ Structure, fonctions et gouvernance des entités locales qui assurent la gestion et fournissent les services aux citoyens des municipalités.
+ Démocratie 
+ municipale 
+ La démocratie municipale au Québec se caractérise par des élections régulières et la participation citoyenne dans de nombreux volets de la vie municipale.
+ Voir plus
+ Coopération 
+ intermunicipale 
+ La coopération intermunicipale est une collaboration entre municipalités pour partager ressources, services et expertise, renforçant ainsi le développement local.
+ Voir plus
+ Organisation 
+ territoriale 
+ S'informer sur les différents paliers du milieu municipal et les changements qui peuvent modifier l’organisation territoriale, ainsi que sur la Métropole et sa région.
+ Voir plus
+ Conventions 
+ collectives 
+ et 
+ règlement 
+ des 
+ différends 
+ Accès à de l’information utile reliée au processus de négociation des conventions collectives et de règlement des différends dans le secteur municipal.
+ Voir plus
+ Décret 
+ de 
+ population 
+ Les données de population décrétées sont la référence pour l’application des lois et des règlements ainsi que pour la gestion des programmes gouvernementaux.
+ Voir plus
+ Renforcer 
+ la 
+ gouvernance 
+ municipale 
+ Accompagner et soutenir financièrement les municipalités pour renforcer la gouvernance municipale.
+ Voir plus
+ Dernière mise à jour : 
+ 7 avril 2025
+ Gouvernement du Québec
+ Navigation de pied de page de Québec.ca
+ Informations et services 
+ Agriculture, environnement et ressources naturelles 
+ Culture et langue française 
+ Éducation 
+ Emploi 
+ Entreprises 
+ Famille et soutien aux personnes 
+ Finances, impôts et taxes 
+ Habitation et territoire 
+ Immigration 
+ Justice et état civil 
+ Santé 
+ Sécurité et situations d'urgence 
+ Tourisme, loisirs et sport 
+ Transports 
+ Gouvernement
+ Ministères et organismes 
+ Services Québec 
+ Gouvernement ouvert 
+ Travailler au gouvernement 
+ Salle de nouvelles 
+ Lois et règlements 
+ Signaler une vulnérabilité informatique 
+ Droit d’auteur et demande d’autorisation de reproduction 
+ Nous joindre 
+ Renseignements généraux
+ Bureaux de services 
+ Accessibilité 
+ Plan du site 
+ Accès à l'information 
+ Politique de confidentialité 
+ Conditions d'utilisation 
+ À propos
+
+=== ENLACES ===
+https://www.quebec.ca/nous-joindre/renseignements-generaux | Nous joindre
+https://www.quebec.ca/ | Accueil
+https://www.quebec.ca/gouvernement | Gouvernement
+https://www.quebec.ca/gouvernement/gestion-municipale | Gestion municipale
+https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale/democratie-municipale | Démocratie municipale La démocratie municipale au Québec se caractérise par des élections 
+https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale/cooperation-intermunicipale | Coopération intermunicipale La coopération intermunicipale est une collaboration entre mun
+https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale/organisation-territoriale | Organisation territoriale S'informer sur les différents paliers du milieu municipal et les
+https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale/negociation-conventions-collectives-reglement-differends | Conventions collectives et règlement des différends Accès à de l’information utile reliée 
+https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale/decret-population | Décret de population Les données de population décrétées sont la référence pour l’applicat
+https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale/gouvernance-municipale | Renforcer la gouvernance municipale Accompagner et soutenir financièrement les municipalit
+https://www.quebec.ca/informations-et-services | Informations et services
+https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles | Agriculture, environnement et ressources naturelles
+https://www.quebec.ca/culture | Culture et langue française
+https://www.quebec.ca/education | Éducation
+https://www.quebec.ca/emploi | Emploi
+https://www.quebec.ca/entreprises-et-travailleurs-autonomes | Entreprises
+https://www.quebec.ca/famille-et-soutien-aux-personnes | Famille et soutien aux personnes
+https://www.quebec.ca/finances-impots-et-taxes | Finances, impôts et taxes
+https://www.quebec.ca/habitation-territoire | Habitation et territoire
+https://www.quebec.ca/immigration | Immigration
+https://www.quebec.ca/justice-et-etat-civil | Justice et état civil
+https://www.quebec.ca/sante | Santé
+https://www.quebec.ca/securite-situations-urgence | Sécurité et situations d'urgence
+https://www.quebec.ca/tourisme-loisirs-sport | Tourisme, loisirs et sport
+https://www.quebec.ca/transports | Transports
+https://www.quebec.ca/gouvernement/ministeres-organismes | Ministères et organismes
+https://www.quebec.ca/services-quebec | Services Québec
+https://www.quebec.ca/gouvernement/gouvernement-ouvert | Gouvernement ouvert
+https://www.quebec.ca/gouvernement/travailler-gouvernement | Travailler au gouvernement
+https://www.quebec.ca/nouvelles | Salle de nouvelles
+http://www.publicationsduquebec.gouv.qc.ca/lois-et-reglements/ | Lois et règlements
+https://www.cyber.gouv.qc.ca/signalements/signalement-vulnerabilites/formulaire | Signaler une vulnérabilité informatique
+https://www.quebec.ca/droit-auteur | Droit d’auteur et demande d’autorisation de reproduction
+https://www.localisateur.servicesquebec.gouv.qc.ca/ | Bureaux de services
+https://www.quebec.ca/accessibilite | Accessibilité
+https://www.quebec.ca/plan-du-site | Plan du site
+https://www.quebec.ca/acces-information | Accès à l'information
+https://www.quebec.ca/politique-confidentialite | Politique de confidentialité
+https://www.quebec.ca/conditions-utilisation | Conditions d'utilisation
+https://www.quebec.ca/a-propos | À propos

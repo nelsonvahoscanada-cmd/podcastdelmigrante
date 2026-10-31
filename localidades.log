@@ -1,0 +1,40 @@
+
+=== Provincia (contorno del mapa) ===
+polígonos: 1 propiedades: {'OBJECTID': 5, 'PRUID': '24', 'DGUID': '2021A000224', 'PRNAME': 'Quebec / Québec', 'PRENAME': 'Quebec', 'PRFNAME': 'Québec', 'PREABBR': 'Que.', 'PRFABBR': 'Qc', 'LANDAREA': 1298599.7477, 'SHAPE_Length': 40986493.96562755, 'SHAPE_Area': 1475448636930.3696}
+
+=== Divisiones censales ===
+CD: [('2401', 'Communauté maritime des Îles-de-la-Madeleine', 'TÉ'), ('2402', 'Le Rocher-Percé', 'MRC'), ('2403', 'La Côte-de-Gaspé', 'MRC'), ('2404', 'La Haute-Gaspésie', 'MRC'), ('2405', 'Bonaventure', 'MRC'), ('2406', 'Avignon', 'MRC'), ('2407', 'La Matapédia', 'MRC'), ('2408', 'La Matanie', 'MRC'), ('2409', 'La Mitis', 'MRC'), ('2410', 'Rimouski-Neigette', 'MRC'), ('2411', 'Les Basques', 'MRC'), ('2412', 'Rivière-du-Loup', 'MRC'), ('2413', 'Témiscouata', 'MRC'), ('2414', 'Kamouraska', 'MRC'), ('2415', 'Charlevoix-Est', 'MRC'), ('2416', 'Charlevoix', 'MRC'), ('2417', "L'Islet", 'MRC'), ('2418', 'Montmagny', 'MRC'), ('2419', 'Bellechasse', 'MRC'), ('2420', "L'Île-d'Orléans", 'MRC'), ('2421', 'La Côte-de-Beaupré', 'MRC'), ('2422', 'La Jacques-Cartier', 'MRC'), ('2423', 'Québec', 'TÉ'), ('2425', 'Lévis', 'TÉ'), ('2426', 'La Nouvelle-Beauce', 'MRC'), ('2427', 'Robert-Cliche', 'MRC'), ('2428', 'Les Etchemins', 'MRC'), ('2429', 'Beauce-Sartigan', 'MRC'), ('2430', 'Le Granit', 'MRC'), ('2431', 'Les Appalaches', 'MRC'), ('2432', "L'Érable", 'MRC'), ('2433', 'Lotbinière', 'MRC'), ('2434', 'Portneuf', 'MRC'), ('2435', 'Mékinac', 'MRC'), ('2436', 'Shawinigan', 'TÉ'), ('2437', 'Francheville', 'CDR'), ('2438', 'Bécancour', 'MRC'), ('2439', 'Arthabaska', 'MRC'), ('2440', 'Les Sources', 'MRC'), ('2441', 'Le Haut-Saint-François', 'MRC'), ('2442', 'Le Val-Saint-François', 'MRC'), ('2443', 'Sherbrooke', 'TÉ'), ('2444', 'Coaticook', 'MRC'), ('2445', 'Memphrémagog', 'MRC'), ('2446', 'Brome-Missisquoi', 'MRC'), ('2447', 'La Haute-Yamaska', 'MRC'), ('2448', 'Acton', 'MRC'), ('2449', 'Drummond', 'MRC'), ('2450', 'Nicolet-Yamaska', 'MRC'), ('2451', 'Maskinongé', 'MRC'), ('2452', "D'Autray", 'MRC'), ('2453', 'Pierre-De Saurel', 'MRC'), ('2454', 'Les Maskoutains', 'MRC'), ('2455', 'Rouville', 'MRC'), ('2456', 'Le Haut-Richelieu', 'MRC'), ('2457', 'La Vallée-du-Richelieu', 'MRC'), ('2458', 'Longueuil', 'TÉ'), ('2459', "Marguerite-D'Youville", 'MRC'), ('2460', "L'Assomption", 'MRC'), ('2461', 'Joliette', 'MRC'), ('2462', 'Matawinie', 'MRC'), ('2463', 'Montcalm', 'MRC'), ('2464', 'Les Moulins', 'MRC'), ('2465', 'Laval', 'TÉ'), ('2466', 'Montréal', 'TÉ'), ('2467', 'Roussillon', 'MRC'), ('2468', 'Les Jardins-de-Napierville', 'MRC'), ('2469', 'Le Haut-Saint-Laurent', 'MRC'), ('2470', 'Beauharnois-Salaberry', 'MRC'), ('2471', 'Vaudreuil-Soulanges', 'MRC'), ('2472', 'Deux-Montagnes', 'MRC'), ('2473', 'Thérèse-De Blainville', 'MRC'), ('2474', 'Mirabel', 'TÉ'), ('2475', 'La Rivière-du-Nord', 'MRC'), ('2476', 'Argenteuil', 'MRC'), ('2477', "Les Pays-d'en-Haut", 'MRC'), ('2478', 'Les Laurentides', 'MRC'), ('2479', 'Antoine-Labelle', 'MRC'), ('2480', 'Papineau', 'MRC'), ('2481', 'Gatineau', 'TÉ'), ('2482', "Les Collines-de-l'Outaouais", 'MRC'), ('2483', 'La Vallée-de-la-Gatineau', 'MRC'), ('2484', 'Pontiac', 'MRC'), ('2485', 'Témiscamingue', 'MRC'), ('2486', 'Rouyn-Noranda', 'TÉ'), ('2487', 'Abitibi-Ouest', 'MRC'), ('2488', 'Abitibi', 'MRC'), ('2489', "La Vallée-de-l'Or", 'MRC'), ('2490', 'La Tuque', 'TÉ'), ('2491', 'Le Domaine-du-Roy', 'MRC'), ('2492', 'Maria-Chapdelaine', 'MRC'), ('2493', 'Lac-Saint-Jean-Est', 'MRC'), ('2494', 'Le Saguenay-et-son-Fjord', 'CDR'), ('2495', 'La Haute-Côte-Nord', 'MRC'), ('2496', 'Manicouagan', 'MRC'), ('2497', 'Sept-Rivières--Caniapiscau', 'CDR'), ('2498', 'Minganie--Le Golfe-du-Saint-Laurent', 'CDR'), ('2499', 'Nord-du-Québec', 'CDR')] bytes: 3252595
+
+=== Regiones económicas ===
+ER: {'2410': 'Gaspésie--Îles-de-la-Madeleine', '2415': 'Bas-Saint-Laurent', '2420': 'Capitale-Nationale', '2425': 'Chaudière-Appalaches', '2430': 'Estrie', '2433': 'Centre-du-Québec', '2435': 'Montérégie', '2440': 'Montréal', '2445': 'Laval', '2450': 'Lanaudière', '2455': 'Laurentides', '2460': 'Outaouais', '2465': 'Abitibi-Témiscamingue', '2470': 'Mauricie', '2475': 'Saguenay--Lac-Saint-Jean', '2480': 'Côte-Nord', '2490': 'Nord-du-Québec'}
+CD→ER: [('2401', '2410'), ('2402', '2410'), ('2403', '2410'), ('2404', '2410'), ('2405', '2410'), ('2406', '2410'), ('2407', '2415'), ('2408', '2415'), ('2409', '2415'), ('2410', '2415'), ('2411', '2415'), ('2412', '2415'), ('2413', '2415'), ('2414', '2415'), ('2415', '2420'), ('2416', '2420'), ('2417', '2425'), ('2418', '2425'), ('2419', '2425'), ('2420', '2420'), ('2421', '2420'), ('2422', '2420'), ('2423', '2420'), ('2425', '2425'), ('2426', '2425'), ('2427', '2425'), ('2428', '2425'), ('2429', '2425'), ('2430', '2430'), ('2431', '2425'), ('2432', '2433'), ('2433', '2425'), ('2434', '2420'), ('2435', '2470'), ('2436', '2470'), ('2437', '2470'), ('2438', '2433'), ('2439', '2433'), ('2440', '2430'), ('2441', '2430'), ('2442', '2430'), ('2443', '2430'), ('2444', '2430'), ('2445', '2430'), ('2446', '2435'), ('2447', '2435'), ('2448', '2435'), ('2449', '2433'), ('2450', '2433'), ('2451', '2470'), ('2452', '2450'), ('2453', '2435'), ('2454', '2435'), ('2455', '2435'), ('2456', '2435'), ('2457', '2435'), ('2458', '2435'), ('2459', '2435'), ('2460', '2450'), ('2461', '2450'), ('2462', '2450'), ('2463', '2450'), ('2464', '2450'), ('2465', '2445'), ('2466', '2440'), ('2467', '2435'), ('2468', '2435'), ('2469', '2435'), ('2470', '2435'), ('2471', '2435'), ('2472', '2455'), ('2473', '2455'), ('2474', '2455'), ('2475', '2455'), ('2476', '2455'), ('2477', '2455'), ('2478', '2455'), ('2479', '2455'), ('2480', '2460'), ('2481', '2460'), ('2482', '2460'), ('2483', '2460'), ('2484', '2460'), ('2485', '2465'), ('2486', '2465'), ('2487', '2465'), ('2488', '2465'), ('2489', '2465'), ('2490', '2470'), ('2491', '2475'), ('2492', '2475'), ('2493', '2475'), ('2494', '2475'), ('2495', '2480'), ('2496', '2480'), ('2497', '2480'), ('2498', '2480'), ('2499', '2490')]
+
+=== Subdivisiones censales (CSD) ===
+Traceback (most recent call last):
+  File "/home/runner/work/podcastdelmigrante/podcastdelmigrante/scripts/canada-en-datos/obtener-localidades-censo.py", line 132, in <module>
+    csd = capa(9)
+          ^^^^^^^
+  File "/home/runner/work/podcastdelmigrante/podcastdelmigrante/scripts/canada-en-datos/obtener-localidades-censo.py", line 84, in capa
+    d = json.loads(get(f"{GEO}/{n}/query?" + urllib.parse.urlencode(q), 900))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/podcastdelmigrante/podcastdelmigrante/scripts/canada-en-datos/obtener-localidades-censo.py", line 63, in get
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=t) as r:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 500: Internal Server Error

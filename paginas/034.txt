@@ -1,0 +1,12 @@
+NOMBRE: Carta de la lengua francesa (OQLF)
+URL: https://www.oqlf.gouv.qc.ca/charte/
+ESTADO: NAV 403
+FINAL: https://www.oqlf.gouv.qc.ca/charte/
+TITULO: 403 Forbidden
+FECHA: 
+
+403 Forbidden 
+ 403 Forbidden
+ Microsoft-Azure-Application-Gateway/v2
+
+=== ENLACES ===
