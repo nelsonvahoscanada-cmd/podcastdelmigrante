@@ -17,17 +17,14 @@ jobs:
       - name: Localidades (Censo, CGNDB, EPA, CMHC, ODHF, ODEF)
         continue-on-error: true
         run: mkdir -p /tmp/out && python3 scripts/canada-en-datos/obtener-localidades-censo.py qc > /tmp/out/localidades.log 2>&1; cp scripts/canada-en-datos/qc-fuentes.json /tmp/out/ || true; grep -v "^D|" /tmp/out/localidades.log > /tmp/out/localidades-resumen.log; tail -5 /tmp/out/localidades-resumen.log
-      - name: Statistics Canada
+      - name: Répertoire des municipalités (MAMH)
         continue-on-error: true
-        run: python3 scripts/canada-en-datos/obtener-ficha-provincia.py Quebec statcan > /tmp/out/statcan.log 2>&1; tail -3 /tmp/out/statcan.log
-      - name: Páginas oficiales
+        run: python3 scripts/canada-en-datos/obtener-qc-municipios.py /tmp/out/mamh > /tmp/out/mamh.log 2>&1; tail -3 /tmp/out/mamh.log
+      - name: Páginas oficiales (segunda ronda)
         continue-on-error: true
-        run: python3 scripts/canada-en-datos/obtener-paginas-texto.py scripts/canada-en-datos/qc-paginas.py /tmp/out/paginas > /tmp/out/paginas.log 2>&1; tail -3 /tmp/out/paginas.log
-      - name: Clima
-        continue-on-error: true
-        run: python3 scripts/canada-en-datos/obtener-clima.py QC "MONTREAL/PIERRE" "QUEBEC/JEAN LESAGE" "SHERBROOKE" "BAGOTVILLE" "TROIS-RIVIERES" "GATINEAU" "OTTAWA CDA" "ROUYN" "VAL-D'OR" "MONT-JOLI" "RIMOUSKI" "SEPT-ILES" "KUUJJUAQ" "DRUMMONDVILLE" "GRANBY" > /tmp/out/clima.log 2>&1; tail -3 /tmp/out/clima.log
+        run: python3 scripts/canada-en-datos/obtener-paginas-texto.py scripts/canada-en-datos/qc-paginas2.py /tmp/out/paginas2 > /tmp/out/paginas2.log 2>&1; tail -3 /tmp/out/paginas2.log
       - name: Publicar en la rama de datos
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
           git add -A && git commit -qm "Datos de Quebec (solo lectura) [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-qc-datos
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-qc-datos2

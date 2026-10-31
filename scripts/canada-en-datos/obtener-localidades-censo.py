@@ -32,7 +32,7 @@ Fuentes:
 
 No se rellena ningún dato: lo que falta queda en null.
 """
-import base64, csv, datetime, gzip, io, json, re, sys, urllib.parse, urllib.request, zipfile
+import base64, csv, datetime, gzip, io, json, re, sys, time, urllib.parse, urllib.request, zipfile
 
 import openpyxl
 from pyproj import Transformer
@@ -42,7 +42,7 @@ from shapely.strtree import STRtree
 
 PROVINCIAS = {
     "mb": {"pr": "46", "nombre": "Manitoba", "cgn": "mb", "cmhc": ["manitoba", "winnipeg"], "odhf": ("mb", "manitoba"), "odef": ("MB", "MANITOBA")},
-    "qc": {"pr": "24", "nombre": "Quebec", "cgn": "qc", "cmhc": ["quebec", "montreal", "quebec-cma", "quebec-city", "gatineau", "ottawa-gatineau", "sherbrooke", "saguenay", "trois-rivieres"], "odhf": ("qc", "quebec"), "odef": ("QC", "QUEBEC")},
+    "qc": {"pr": "24", "nombre": "Quebec", "cgn": "qc", "cmhc": ["quebec", "montreal", "quebec-cma", "quebec-city", "gatineau", "ottawa-gatineau", "sherbrooke", "saguenay", "trois-rivieres"], "odhf": ("qc", "quebec"), "odef": ("QC", "QUEBEC"), "offset_csd": 25, "lote_csd": 100},
 }
 AB = sys.argv[1]
 P = PROVINCIAS[AB]
@@ -74,19 +74,28 @@ def redondea(geo, dec=0):
     return {"type": geo["type"], "coordinates": r(geo["coordinates"])}
 
 
-def capa(n, where=f"PRUID='{PR}'", offset=None):
-    """Capa del servicio de límites del Censo 2021, en EPSG:3347."""
+def capa(n, where=f"PRUID='{PR}'", offset=None, lote_max=500):
+    """Capa del servicio de límites del Censo 2021, en EPSG:3347. Con lotes más pequeños y
+    reintentos si el servidor no puede servir un lote grande (Quebec: 1,282 subdivisiones)."""
     feats, desde = [], 0
     while True:
-        q = {"where": where, "outFields": "*", "returnGeometry": "true", "outSR": "3347", "f": "geojson", "resultOffset": desde, "resultRecordCount": 500}
+        q = {"where": where, "outFields": "*", "returnGeometry": "true", "outSR": "3347", "f": "geojson", "resultOffset": desde, "resultRecordCount": lote_max}
         if offset:
             q["maxAllowableOffset"] = offset
-        d = json.loads(get(f"{GEO}/{n}/query?" + urllib.parse.urlencode(q), 900))
+        for intento in range(4):
+            try:
+                d = json.loads(get(f"{GEO}/{n}/query?" + urllib.parse.urlencode(q), 900))
+                break
+            except Exception as e:
+                print("  reintento", n, desde, type(e).__name__, flush=True)
+                time.sleep(10 * (intento + 1))
+        else:
+            raise RuntimeError(f"capa {n}: sin respuesta en el lote {desde}")
         lote = d.get("features", [])
         feats += lote
-        if len(lote) < 500:
+        if len(lote) < lote_max:
             break
-        desde += 500
+        desde += lote_max
     return feats
 
 
@@ -129,7 +138,7 @@ print("ER:", salida["er"])
 print("CD→ER:", [(c["CDUID"], c["ERUID"]) for c in salida["cd"]])
 
 paso("Subdivisiones censales (CSD)")
-csd = capa(9)
+csd = capa(9, offset=P.get("offset_csd"), lote_max=P.get("lote_csd", 500))
 geom_csd = [shape(f["geometry"]) for f in csd]
 arbol = STRtree(geom_csd)
 salida["csd"] = []
@@ -161,7 +170,7 @@ for f in cma:
 print("CMA/CA:", [(c["CMAUID"], c["CMANAME"], c["CMATYPE"], len(c["csd"])) for c in salida["cma"]])
 
 paso("Lugares designados (DPL)")
-dpl = capa(8)
+dpl = capa(8, offset=P.get("offset_csd"), lote_max=P.get("lote_csd", 500))
 salida["dpl"] = []
 for f in dpl:
     g = shape(f["geometry"])
