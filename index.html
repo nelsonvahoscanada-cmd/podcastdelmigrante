@@ -138,6 +138,37 @@
     <p class="latest-more"><a class="section-link" href="noticias">Ver todas las noticias</a></p>
   </section>
 
+  <!-- ================= DESCUBRE TU CANADÁ (campaña de Canadá en Datos) =================
+       Las regiones disponibles y el contador salen de js/canada-datos-disponibles.js, que
+       genera scripts/build-canada-datos.mjs a partir de CD_REGIONS: no se escriben a mano. -->
+  <section class="section wrap descubre" id="descubre-tu-canada" aria-labelledby="descubreTitulo">
+    <div class="descubre__panel">
+      <div class="descubre__texto">
+        <p class="descubre__kicker">Descubre tu Canadá</p>
+        <h2 class="descubre__titulo" id="descubreTitulo">¿En qué ciudad de Canadá está tu próxima <span class="descubre__acento">oportunidad</span>?</h2>
+        <p class="descubre__sub">Explora provincias, descubre ciudades y encuentra información sobre empleo, vivienda, clima, educación y servicios.</p>
+        <p class="descubre__apoyo">Una herramienta gratuita, en español y con información respaldada por fuentes oficiales.</p>
+        <div class="descubre__acciones">
+          <a class="descubre__btn" href="/canada-en-datos/" data-descubre="portada">Explorar Canadá en Datos</a>
+          <p class="descubre__conteo" id="descubreConteo" hidden></p>
+        </div>
+        <ol class="descubre__pasos">
+          <li>Elige una provincia en el mapa.</li>
+          <li>Busca tu ciudad o localidad.</li>
+          <li>Consulta su ficha y los enlaces oficiales.</li>
+        </ol>
+      </div>
+      <figure class="descubre__mapa">
+        <img src="/assets/canada-en-datos/descubre-mapa.svg" width="1000" height="865" alt="Mapa de Canadá: en verde, las provincias y territorios con guía disponible en Canadá en Datos." loading="lazy" decoding="async">
+      </figure>
+      <div class="descubre__regiones" id="descubreRegiones" hidden>
+        <h3 class="descubre__regiones-titulo">Ya disponibles</h3>
+        <ul class="descubre__lista" id="descubreLista"></ul>
+        <p class="descubre__proximas" id="descubreProximas" hidden></p>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= INFORMACIÓN ÚTIL ================= -->
   <section class="section useful-section">
     <div class="wrap">
@@ -365,5 +396,7 @@
 <script src="js/nav.js"></script>
 <script src="js/video-cover.js"></script>
 <script src="js/main.js"></script>
+<script src="js/canada-datos-disponibles.js"></script>
+<script src="js/descubre-canada.js"></script>
 </body>
 </html>

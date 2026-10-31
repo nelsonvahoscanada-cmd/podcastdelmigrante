@@ -275,8 +275,10 @@ test("publicación: menú «Canadá» activo, sitemap con las dos páginas y sin
   for (const r of D.CD_REGIONS) assert.equal(Boolean(r.profile), fichas.has(r.profile || r.slug), r.name);
   const portada = read("canada-en-datos/index.html");
   for (const [, destino] of portada.matchAll(/href="\/canada-en-datos\/([a-z-]+)"/g)) assert.ok(fichas.has(destino), destino);
-  // Fuera del módulo, solo el menú (data.js) y el sitemap lo enlazan
-  for (const f of readdirSync(ROOT).filter((f) => f.endsWith(".html"))) assert.doesNotMatch(read(f), /canada-en-datos/, f);
+  // Fuera del módulo, solo el menú (data.js), el sitemap y el módulo «Descubre tu Canadá» de la portada lo enlazan
+  for (const f of readdirSync(ROOT).filter((f) => f.endsWith(".html") && f !== "index.html")) assert.doesNotMatch(read(f), /canada-en-datos/, f);
+  const enPortada = [...read("index.html").matchAll(/canada-en-datos[^"]*/g)].map((m) => m[0]);
+  assert.deepEqual(enPortada, ["canada-en-datos/", "canada-en-datos/descubre-mapa.svg"]);
 });
 
 test("la carpeta pública incluye el módulo y sigue limpia", () => {
