@@ -4,7 +4,7 @@ obtener-localidades-censo.py — Fuentes oficiales del directorio de localidades
 Versión general de obtener-sk-localidades.py (la de Saskatchewan se conserva
 tal como se usó). Uso:
   python3 scripts/canada-en-datos/obtener-localidades-censo.py <abrev>
-con <abrev> en PROVINCIAS (abajo): mb, …
+con <abrev> en PROVINCIAS (abajo): mb, qc, …
 
 Solo lectura. Se ejecuta en GitHub Actions (el entorno de desarrollo no
 tiene acceso a estos servidores). Guarda los datos casi sin procesar en
@@ -42,6 +42,7 @@ from shapely.strtree import STRtree
 
 PROVINCIAS = {
     "mb": {"pr": "46", "nombre": "Manitoba", "cgn": "mb", "cmhc": ["manitoba", "winnipeg"], "odhf": ("mb", "manitoba"), "odef": ("MB", "MANITOBA")},
+    "qc": {"pr": "24", "nombre": "Quebec", "cgn": "qc", "cmhc": ["quebec", "montreal", "quebec-cma", "quebec-city", "gatineau", "ottawa-gatineau", "sherbrooke", "saguenay", "trois-rivieres"], "odhf": ("qc", "quebec"), "odef": ("QC", "QUEBEC")},
 }
 AB = sys.argv[1]
 P = PROVINCIAS[AB]

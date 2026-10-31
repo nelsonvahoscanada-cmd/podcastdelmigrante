@@ -14,7 +14,7 @@ USO:
 import json, pathlib, sys
 
 AB = sys.argv[1]
-PR = {"mb": "46"}[AB]
+PR = {"mb": "46", "qc": "24"}[AB]
 BASE = pathlib.Path(__file__).parent
 F = json.loads((BASE / f"{AB}-fuentes.json").read_text(encoding="utf-8"))
 
