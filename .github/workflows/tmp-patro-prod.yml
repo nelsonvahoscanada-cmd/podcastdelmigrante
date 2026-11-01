@@ -38,16 +38,15 @@ jobs:
       - name: E2E en produccion
         env:
           BASE: https://podcastdelmigrante.com
-          SHOTS: /tmp/out
           NODE_PATH: /tmp/pw/node_modules
           NODE_OPTIONS: --require /tmp/pw/vistas.cjs
         run: |
           mkdir -p /tmp/out; r=0
-          for t in noticias alberta-bomberos; do echo "=== $t"; node tests/e2e-$t.cjs 2>&1 | tail -12 | tee -a /tmp/out/resultado.txt || r=1; done
+          for t in alberta-bomberos; do echo "=== $t"; node tests/e2e-$t.cjs 2>&1 | tail -12 | tee -a /tmp/out/resultado.txt || r=1; done
           ls /tmp/out
       - name: Publicar capturas en la rama de datos
         if: always()
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
           git add -A && git commit -qm "Capturas de patrocinadores en produccion [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-patro-capturas3
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-patro-capturas4
