@@ -48,6 +48,7 @@ const DIRS = {
   "guia-carlos": ["html", ...MEDIA],
   "canada-en-datos": ["html"], /* Canadá en Datos: páginas generadas por scripts/build-canada-datos.mjs */
   "desafio-100-empresas": ["html"], /* Desafío 100 Empresas: páginas generadas por scripts/build-desafio.mjs */
+  magazine: ["html"], /* Ediciones mensuales y hemeroteca: páginas generadas por scripts/build-ediciones.mjs (nunca borradores) */
 };
 /* Material de origen dentro de carpetas públicas que el sitio no usa
    (p. ej. fotos originales en alta resolución de clientes). */
