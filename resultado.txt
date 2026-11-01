@@ -1,0 +1,36 @@
+ok computador
+ok tableta
+ok celular
+OK ediciones (fase 1): hemeroteca, rutas sin ediciones publicadas y portada sin cambios
+ok computador: logo 600×300 px, centrado, sin enlace
+ok tableta: logo 600×300 px, centrado, sin enlace
+ok celular: logo 372×186 px, centrado, sin enlace
+OK patrocinadores: solo Country Hills Toyota, completo y centrado
+ok tableta
+  celular: módulo en la 3.ª sección, 7/13 disponibles, 3 archivos (35120 bytes), hero (5) y noticias (5) en el mismo orden
+ok celular
+OK Descubre tu Canadá: módulo, disponibilidad automática, recorrido completo, orden de noticias, accesibilidad y peso
+ok hoja en caché
+ok tableta
+ok celular
+OK menú con Desafío 100 Empresas
+ok computador
+ok tableta
+ok celular
+OK noticias (20 enlaces permanentes)
+ok computador
+ok tableta
+ok celular
+OK Canadá en Datos
+ok computador
+ok tableta
+ok celular
+OK Héctor Rivero: portada, Play, video y artículo
+ok computador
+ok tableta
+ok celular
+OK empleo desde casa en Alberta: portada (principal) y artículo
+ok computador
+ok tableta
+ok celular
+OK Alberta bomberos forestales: portada (tras la noticia principal y Santa Latino) y artículo
