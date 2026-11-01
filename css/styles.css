@@ -1301,28 +1301,20 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
   .section-head--sponsors .section-note { white-space: normal; }
   .sponsor-row { gap: 10px; }
 }
-.sponsor-card {
+/* Logo oficial del patrocinador: completo, sin efectos, sobre el blanco del
+   propio archivo. Nunca más ancho que 600 px (la mitad de su resolución). */
+.sponsor-logo {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: var(--blanco);
   border: 1px solid var(--gris-200);
-  border-top: 3px solid var(--verde);
   border-radius: var(--radius-s);
-  padding: 22px 20px;
-  text-align: center;
-  background: var(--gris-100);
 }
-@media (max-width: 639px) {
-  .sponsor-card { padding: 14px 16px; }
-}
-.sponsor-card__kind {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--negro);
-  margin-bottom: 8px;
-}
-@media (max-width: 639px) {
-  .sponsor-card__kind { margin-bottom: 5px; }
-}
-.sponsor-card__name { font-size: 0.92rem; color: var(--gris-600); font-style: italic; }
+.sponsor-logo img { display: block; width: 100%; height: auto; max-width: 600px; }
+.sponsor-row--single { grid-template-columns: minmax(0, 640px); justify-content: center; }
 
 /* =========================================================
    Newsletter

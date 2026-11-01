@@ -279,16 +279,22 @@
   }
 
   /* ---------- Patrocinadores ---------- */
+  /* Logos oficiales, tal como los entrega cada patrocinador. Con un solo
+     patrocinador, el logo va centrado; con más, se reparten en la fila. */
   function buildSponsors() {
     const row = document.getElementById("sponsorRow");
-    SPONSORS.forEach((s) => {
-      const card = el(
-        "div",
-        "sponsor-card",
-        `<span class="sponsor-card__kind">${s.kind}</span>
-         <span class="sponsor-card__name">${s.name}</span>`
-      );
-      row.appendChild(card);
+    const logos = SPONSORS.filter((s) => s.logo);
+    if (!logos.length) {
+      row.closest("section").hidden = true;
+      return;
+    }
+    row.classList.toggle("sponsor-row--single", logos.length === 1);
+    logos.forEach((s) => {
+      const img = `<img src="${s.logo}" alt="${s.name}" width="${s.width}" height="${s.height}" loading="lazy" decoding="async">`;
+      const inner = s.url
+        ? `<a href="${s.url}" target="_blank" rel="sponsored noopener">${img}</a>`
+        : img;
+      row.appendChild(el("figure", "sponsor-logo", inner));
     });
   }
 

@@ -253,10 +253,19 @@ const RECOMMENDED_READS = [
   { category: "Vivienda", title: "Tu primer arriendo en Alberta: qué revisar antes de firmar el contrato", slug: "primer-arriendo-alberta" },
 ];
 
+/* Socios y patrocinadores de la portada. Se muestra cada entrada tal cual:
+   no se completan espacios vacíos. Para sumar otro patrocinador, se agrega
+   un objeto con su logo oficial (sin modificar) y su tamaño en píxeles.
+   `url` solo con un destino confirmado por el patrocinador; mientras sea
+   null, el logo se muestra sin enlace. */
 const SPONSORS = [
-  { kind: "Patrocinador principal", name: "Espacio disponible" },
-  { kind: "Socio del medio", name: "Espacio disponible" },
-  { kind: "Patrocinado", name: "Espacio disponible" },
+  {
+    name: "Country Hills Toyota",
+    logo: "assets/patrocinadores/country-hills-toyota.png", // archivo original «CHT LOGO.png», sin cambios
+    width: 1200,
+    height: 600,
+    url: null,
+  },
 ];
 
 /* Meses de 2026: solo octubre está activo (Edición 01, primera
