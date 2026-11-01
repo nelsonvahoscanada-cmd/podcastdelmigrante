@@ -1,0 +1,8 @@
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+    at /home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-alberta-bomberos.cjs:61:18 {
+  name: 'TimeoutError'
+}
