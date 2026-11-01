@@ -1,0 +1,16 @@
+ok computador
+ok tableta
+ok celular
+OK noticias (20 enlaces permanentes)
+  -   waiting for element to be visible, enabled and stable
+  -   element is not stable
+  - retrying click action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is not stable
+  - retrying click action, attempt #60
+  -   waiting 500ms
+
+    at /home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-alberta-bomberos.cjs:61:18 {
+  name: 'TimeoutError'
+}
