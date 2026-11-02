@@ -30,8 +30,8 @@ jobs:
             return b;
           };
           JS
-      - name: Archivos publicados
-        continue-on-error: true y logo identico al original
+      - name: Archivos publicados identicos al repositorio
+        continue-on-error: true
         run: |
           B=https://podcastdelmigrante.com
           for f in magazine/ediciones/index.html magazine/2026-10/index.html magazine/index.html js/ediciones.js index.html js/data.js js/main.js js/articles.js css/styles.css sitemap.xml articulo-referendum-alberta-octubre-2026-inmigrantes.html assets/ediciones/2026-10/portada.jpg assets/ediciones/2026-10/portada-social.jpg; do curl -sfL "$B/$f" -o /tmp/x; if cmp -s /tmp/x "$f"; then echo "IGUAL $f"; else echo "DISTINTO $f"; fi; done
