@@ -1102,6 +1102,10 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .edition-cover__brand { font-size: 0.92rem; }
 }
 .edition-cover__brand em { font-style: normal; opacity: 0.8; font-size: 0.85em; }
+/* Portada real de la edición publicada (imagen 1200 × 1600, 3:4) */
+.edition-cover--portada { display: block; padding: 0; background: var(--negro); overflow: hidden; }
+.edition-cover--portada img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.edition-cover--portada:focus-visible { outline: 2px solid var(--verde); outline-offset: 4px; }
 
 .edition-kicker {
   font-size: 0.76rem;

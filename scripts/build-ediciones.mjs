@@ -154,6 +154,8 @@ export function validar(ediciones) {
       if (!ISO_ZONA_RE.test(ed.publicadaEn || "")) err.push(`${q}: publicadaEn debe ser una fecha ISO con zona horaria`);
       else if (m && new Date(ed.publicadaEn) < new Date(Date.UTC(p.anio, p.mes - 1, 1))) err.push(`${q}: la publicación no puede ser anterior al período de la edición`);
       if (!ed.portada || !ed.portada.imagen || !ed.portada.alt || !ed.portada.ancho || !ed.portada.alto) err.push(`${q}: falta la portada (imagen, alt, ancho y alto)`);
+      const so = ed.portada && ed.portada.social;
+      if (so && (!so.imagen || !so.alt || !so.ancho || !so.alto)) err.push(`${q}: portada.social necesita imagen, alt, ancho y alto`);
       if (!ed.editorial || !ed.editorial.titulo || !ed.editorial.html) err.push(`${q}: falta el editorial`);
       if (!ed.instantanea || !ed.huella) err.push(`${q}: una edición publicada debe estar congelada (--congelar=${ed.slug})`);
       else {
@@ -254,7 +256,9 @@ export function paginaEdicion(ed, comun, { vigente = false, borrador = false } =
     ? `<aside class="ed-correcciones"><h2>Correcciones</h2><ul>${ed.correcciones.map((c) => `<li><time datetime="${esc(c.fecha)}">${esc(fechaTexto(c.fecha + "T12:00:00Z"))}</time>: ${esc(c.nota)}</li>`).join("")}</ul></aside>`
     : "";
   const jsonLd = { "@context": "https://schema.org", "@type": "PublicationIssue", issueNumber: String(ed.numero), name: ed.titulo, url: SITE + permanente, ...(ed.publicadaEn ? { datePublished: ed.publicadaEn } : {}), image: SITE + ed.portada.imagen, inLanguage: "es", isPartOf: { "@type": "Periodical", name: "El Podcast del Migrante Magazine", url: SITE + "/" } };
-  return `${head({ title: `${rotulo(ed)}: ${ed.titulo} — El Podcast del Migrante Magazine`, description: ed.bajada || ed.titulo, path: vigente ? `${BASE}/` : permanente, canonical: permanente, image: ed.portada.imagen, imageAlt: ed.portada.alt, imageType: /\.png$/i.test(ed.portada.imagen) ? "image/png" : "image/jpeg", imageW: ed.portada.ancho, imageH: ed.portada.alto, jsonLd, noindex: borrador })}
+  /* Para compartir: la imagen horizontal (portada.social) si existe; si no, la portada */
+  const social = ed.portada.social || ed.portada;
+  return `${head({ title: `${rotulo(ed)}: ${ed.titulo} — El Podcast del Migrante Magazine`, description: ed.bajada || ed.titulo, path: vigente ? `${BASE}/` : permanente, canonical: permanente, image: social.imagen, imageAlt: social.alt, imageType: /\.png$/i.test(social.imagen) ? "image/png" : "image/jpeg", imageW: social.ancho, imageH: social.alto, jsonLd, noindex: borrador })}
 <body class="ed-pagina">
 ${comun.cabecera}
 

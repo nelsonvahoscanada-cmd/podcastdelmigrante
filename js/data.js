@@ -23,8 +23,9 @@ const EDITION = {
   number: 1,
   monthLabel: "Octubre",
   year: 2026,
-  headline: "Nuestra primera edición sigue creciendo: cada semana se suman nuevas historias, columnas y videos.",
+  headline: "Nace una nueva voz para los migrantes en Canadá",
   cta: "Ver edición",
+  href: "/magazine/2026-10/",
 };
 
 const BREAKING = [
@@ -281,7 +282,7 @@ const EDITION_MONTHS = [
   { label: "Jul", active: false },
   { label: "Ago", active: false },
   { label: "Sep", active: false },
-  { label: "Oct", active: true },
+  { label: "Oct", active: true, href: "/magazine/2026-10/" },
   { label: "Nov", active: false },
   { label: "Dic", active: false },
 ];

@@ -537,11 +537,11 @@ const ARTICLES = [
     category: "Alberta",
     contentType: "Noticia",
     title: "Alberta votó por permanecer en Canadá: cerca del 75 % rechazó iniciar el proceso separatista",
-    dek: "Los resultados preliminares del referéndum del 19 de octubre muestran una amplia ventaja para la permanencia en Canadá. Te explicamos las cifras, qué significa para los inmigrantes y qué falta por conocer de las otras nueve preguntas.",
-    excerpt: "Con el 84 % de las zonas de votación contadas, cerca del 75 % votó por que Alberta siga en Canadá, según resultados preliminares. Qué significa para los inmigrantes y qué falta por conocer.",
+    dek: "Los resultados oficiales del referéndum del 19 de octubre confirman una amplia ventaja para la permanencia en Canadá. Te explicamos las cifras de las diez preguntas y qué significan para los inmigrantes.",
+    excerpt: "Según los resultados oficiales de Elections Alberta, el 74,95 % votó por que Alberta siga en Canadá, y el «sí» ganó en las cinco preguntas sobre inmigración. Qué significa para los inmigrantes.",
     author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
     publishedAt: "2026-10-20T05:00:00-06:00",
-    updatedAt: "2026-10-20T17:09:00-06:00",
+    updatedAt: "2026-11-02T17:23:00-06:00",
     readingTimeOverride: null,
     location: { country: "Canadá", province: "Alberta" },
     demo: false,
@@ -556,37 +556,39 @@ const ARTICLES = [
       socialLabelPosition: "top-right",
     },
     bodyHtml: `
-      <p class="article-update"><strong>Actualizada el 20 de octubre de 2026, a las 5:09 p. m. (hora de Alberta),</strong> con los resultados preliminares de la pregunta 10 y los primeros datos de las preguntas sobre inmigración. Publicada originalmente a las 5:00 a. m. como nota explicativa, antes de que hubiera resultados.</p>
-      <p>Los electores de Alberta votaron el <strong>lunes 19 de octubre de 2026</strong> en un referéndum provincial con <strong>diez preguntas</strong>, y la mayoría optó por que la provincia <strong>siga siendo parte de Canadá</strong>. Según los resultados preliminares, aproximadamente <strong>tres de cada cuatro votos contados</strong> favorecieron la permanencia, frente a cerca de uno de cada cuatro que apoyó iniciar el proceso legal hacia un futuro referéndum vinculante sobre la separación.</p>
-      <p>Para la comunidad inmigrante, lo esencial no cambia: <strong>el referéndum, por sí mismo, no modifica las leyes migratorias ni las reglas de acceso a los servicios</strong>. Las cinco preguntas sobre inmigración tampoco son vinculantes, y cualquier cambio necesitaría nuevas leyes o políticas que todavía no existen.</p>
+      <p class="article-update"><strong>Nota editorial: actualizada el 2 de noviembre de 2026</strong> con los resultados oficiales que Elections Alberta publicó el 29 de octubre de 2026. La versión anterior, del 20 de octubre, se basaba en resultados preliminares y no oficiales difundidos por medios de comunicación. Reemplazamos todas esas cifras por las oficiales. El cambio más importante está en las cuatro preguntas constitucionales: en los datos preliminares el «sí» iba adelante en tres, pero en los resultados oficiales ganó el «no» en las cuatro. El título y la fecha de publicación original (20 de octubre de 2026) se mantienen.</p>
+      <p>Los electores de Alberta votaron el <strong>lunes 19 de octubre de 2026</strong> en un referéndum provincial con <strong>diez preguntas</strong>, y la mayoría optó por que la provincia <strong>siga siendo parte de Canadá</strong>. Según los <strong>resultados oficiales</strong> que Elections Alberta publicó el 29 de octubre, el <strong>74,95 %</strong> de los votos válidos favoreció la permanencia, frente al <strong>25,05 %</strong> que apoyó iniciar el proceso legal hacia un futuro referéndum vinculante sobre la separación.</p>
+      <p>Para la comunidad inmigrante, lo esencial no cambia: <strong>el referéndum, por sí mismo, no modifica las leyes migratorias ni las reglas de acceso a los servicios</strong>. El «sí» ganó en las cinco preguntas sobre inmigración, pero esas preguntas <strong>no son vinculantes</strong>, y cualquier cambio necesitaría nuevas leyes o políticas.</p>
       <aside class="article-highlight">
         <h2 class="article-highlight__title">Lo esencial</h2>
         <ul>
-          <li><strong>Pregunta 10:</strong> cerca del <strong>75 %</strong> votó por permanecer en Canadá y el <strong>25 %</strong> por iniciar el proceso hacia un referéndum vinculante, con el 84 % de las zonas de votación contadas (NPR, con datos no oficiales de Elections Alberta).</li>
-          <li><strong>Preguntas de inmigración:</strong> en los resultados preliminares, el «sí» iba adelante en las preguntas 1 a 4, con entre el 54 % y el 57 % (CP24, 3:15 p. m.). Los porcentajes de cada pregunta aún pueden cambiar.</li>
-          <li><strong>Son resultados preliminares.</strong> Elections Alberta anunciará los oficiales el <strong>jueves 29 de octubre</strong> a las 10:00 a. m.</li>
+          <li><strong>Pregunta 10:</strong> el <strong>74,95 %</strong> (1.556.316 votos) eligió que Alberta siga siendo una provincia de Canadá y el <strong>25,05 %</strong> (520.233 votos), iniciar el proceso hacia un referéndum vinculante sobre la separación.</li>
+          <li><strong>Preguntas de inmigración (1 a 5):</strong> ganó el «sí» en las cinco, con entre el <strong>51,78 %</strong> (pregunta 4) y el <strong>58,06 %</strong> (pregunta 5).</li>
+          <li><strong>Preguntas constitucionales (6 a 9):</strong> ganó el «no» en las cuatro, con entre el <strong>52,72 %</strong> y el <strong>57,56 %</strong>.</li>
+          <li><strong>Participación:</strong> la más alta fue del <strong>70,4 %</strong>, en las preguntas 5 y 10, según Elections Alberta.</li>
           <li><strong>No hubo una declaración de independencia.</strong> La pregunta 10 solo consultaba si iniciar un proceso legal hacia otro referéndum, y su resultado no es vinculante.</li>
           <li><strong>Para los inmigrantes no cambia nada automáticamente:</strong> permisos de trabajo y de estudio, residencia permanente, ciudadanía, trámites ante IRCC y servicios provinciales siguen con las mismas reglas.</li>
         </ul>
       </aside>
       <h2>Los resultados de la pregunta 10</h2>
-      <p>El tablero oficial de Elections Alberta no pudo consultarse directamente desde nuestra redacción. Por eso publicamos las cifras que difundieron medios reconocidos, que citan los <strong>resultados no oficiales de Elections Alberta</strong>, indicando la fuente y el momento del conteo. No mezclamos cifras de cortes distintos.</p>
+      <p>Estas son las cifras oficiales que publicó Elections Alberta el 29 de octubre de 2026. Los porcentajes se calculan sobre los votos válidos.</p>
       <table>
-        <caption>Pregunta 10 — resultados preliminares, con el 84 % de las zonas de votación contadas (fuente: NPR, 20 de octubre de 2026, con datos no oficiales de Elections Alberta)</caption>
+        <caption>Pregunta 10: resultados oficiales (fuente: Elections Alberta, 29 de octubre de 2026)</caption>
         <thead>
-          <tr><th scope="col">Opción</th><th scope="col">Porcentaje</th></tr>
+          <tr><th scope="col">Opción</th><th scope="col">Votos</th><th scope="col">Porcentaje</th></tr>
         </thead>
         <tbody>
-          <tr><td>Alberta debe seguir siendo una provincia de Canadá</td><td>75 %</td></tr>
-          <tr><td>Iniciar el proceso legal hacia un referéndum vinculante sobre la separación</td><td>25 %</td></tr>
+          <tr><td>Alberta debe seguir siendo una provincia de Canadá</td><td>1.556.316</td><td>74,95 %</td></tr>
+          <tr><td>Iniciar el proceso legal hacia un referéndum vinculante sobre la separación</td><td>520.233</td><td>25,05 %</td></tr>
         </tbody>
         <tfoot>
-          <tr><td colspan="2">Votos contados en ese corte: más de 1,8 millones. NPR no detalló los votos de cada opción.</td></tr>
+          <tr><td colspan="3">Votos emitidos en la pregunta 10, incluidos los rechazados y los declinados: 2.216.505. Participación: 70,4 % de los 3.148.205 electores habilitados.</td></tr>
         </tfoot>
       </table>
       <h2>Qué significa y qué no significa</h2>
-      <p>La pregunta 10 ofrecía dos opciones: que <strong>Alberta siga siendo una provincia de Canadá</strong>, o que el gobierno provincial <strong>inicie el proceso legal que exige la Constitución canadiense para celebrar un referéndum provincial vinculante</strong> sobre la separación. No era una votación sobre la independencia inmediata, y la orden del Gobierno de Alberta que la convocó establece que su resultado <strong>no es vinculante</strong>. Con la permanencia en clara ventaja, no hay ningún proceso de separación en marcha.</p>
+      <p>La pregunta 10 ofrecía dos opciones: que <strong>Alberta siga siendo una provincia de Canadá</strong>, o que el gobierno provincial <strong>inicie el proceso legal que exige la Constitución canadiense para celebrar un referéndum provincial vinculante</strong> sobre la separación. No era una votación sobre la independencia inmediata, y la orden del Gobierno de Alberta que la convocó establece que su resultado <strong>no es vinculante</strong>. Con la permanencia como opción ganadora, no hay ningún proceso de separación en marcha.</p>
       <h2>Las reacciones</h2>
+      <p>Estas declaraciones se dieron el 20 de octubre, tras conocerse los resultados preliminares:</p>
       <ul>
         <li><strong>Gobierno federal:</strong> el primer ministro Mark Carney dijo el martes, antes de una reunión de su gabinete en Ottawa, que el resultado es muy bueno para Canadá y que los habitantes de Alberta eligieron la unidad (NPR).</li>
         <li><strong>Gobierno de Alberta:</strong> la primera ministra Danielle Smith celebró los primeros resultados y escribió que la provincia votó por «una Alberta más fuerte en un Canadá unido» (NPR).</li>
@@ -594,11 +596,20 @@ const ARTICLES = [
         <li><strong>Partidarios de la permanencia:</strong> el movimiento Forever Canadian anunció que seguirá dialogando con quienes votaron por la separación (CTV News).</li>
       </ul>
       <h2>Las cinco preguntas sobre inmigración</h2>
-      <p>El conteo de las preguntas 1 a 9 empezó después de la pregunta 10 y seguía en curso. Elections Alberta tiene hasta 48 horas desde el cierre de la votación para publicar los resultados no oficiales completos. Lo que se sabía al cierre de esta actualización:</p>
-      <ul>
-        <li>Con el 84 % de las zonas de votación contadas, el <strong>55 %</strong> respondió «sí» a la pregunta 1, sobre un mayor control provincial de la inmigración (The Globe and Mail).</li>
-        <li>A las 3:15 p. m., el «sí» iba adelante en las <strong>preguntas 1 a 4</strong>, con entre el <strong>54 % y el 57 %</strong> (CP24). Aún no hay cifras individuales verificadas de cada pregunta ni de la pregunta 5, sobre la prueba de ciudadanía para votar; actualizaremos esta nota cuando las haya.</li>
-      </ul>
+      <p>El «sí» ganó en las cinco preguntas que el Gobierno de Alberta planteó sobre inmigración y ciudadanía. Estos son los resultados oficiales:</p>
+      <table>
+        <caption>Preguntas 1 a 5: resultados oficiales (fuente: Elections Alberta, 29 de octubre de 2026)</caption>
+        <thead>
+          <tr><th scope="col">Pregunta</th><th scope="col">Sí</th><th scope="col">No</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. Más control sobre la inmigración</td><td>54,86 % (1.127.729)</td><td>45,14 % (927.783)</td></tr>
+          <tr><td>2. Quién puede usar los programas provinciales</td><td>52,46 % (1.078.681)</td><td>47,54 % (977.384)</td></tr>
+          <tr><td>3. 12 meses de residencia para ayudas sociales</td><td>53,12 % (1.096.546)</td><td>46,88 % (967.754)</td></tr>
+          <tr><td>4. Cuota por salud y educación</td><td>51,78 % (1.067.383)</td><td>48,22 % (994.065)</td></tr>
+          <tr><td>5. Prueba de ciudadanía para votar</td><td>58,06 % (1.200.838)</td><td>41,94 % (867.525)</td></tr>
+        </tbody>
+      </table>
       <p>Estas fueron las cinco preguntas (traducción no oficial; el texto original está en la <a href="https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_110.html" target="_blank" rel="noopener">orden O.C. 110/2026 del Gobierno de Alberta</a>):</p>
       <ul>
         <li><strong>Pregunta 1 — Más control sobre la inmigración.</strong> Si Alberta debe tener más control sobre la inmigración para reducirla a niveles más sostenibles, dar prioridad a la inmigración económica y dar a los habitantes de Alberta la primera opción a los empleos nuevos.</li>
@@ -609,7 +620,7 @@ const ARTICLES = [
       </ul>
       <p>Las preguntas 3 y 4 parten de que los ciudadanos y residentes permanentes conservarían el acceso que tienen hoy. Las cinco <strong>no son vinculantes</strong>: un «sí» mayoritario no cambia ninguna regla por sí solo.</p>
       <h2>¿Qué significa para los inmigrantes?</h2>
-      <p>Ni el resultado de la pregunta 10 ni el de las preguntas sobre inmigración <strong>modifica automáticamente</strong> los permisos de trabajo, los permisos de estudio, la residencia permanente, la ciudadanía, los procedimientos ante IRCC ni el acceso a los servicios provinciales. Lo que podría pasar después depende de decisiones del Gobierno de Alberta que todavía no se han tomado:</p>
+      <p>Ni el resultado de la pregunta 10 ni el de las preguntas sobre inmigración <strong>modifica automáticamente</strong> los permisos de trabajo, los permisos de estudio, la residencia permanente, la ciudadanía, los procedimientos ante IRCC ni el acceso a los servicios provinciales. Lo que podría pasar después depende de que el Gobierno de Alberta decida proponer leyes o políticas, y de que estas se aprueben:</p>
       <ul>
         <li><strong>Trabajadores temporales:</strong> son el grupo más mencionado en las preguntas 2, 3 y 4. Si el gobierno llegara a convertir esas propuestas en leyes, podrían enfrentar una espera de 12 meses para recibir ayudas sociales provinciales, el pago de una cuota por salud o educación, o la necesidad de un estatus aprobado por la provincia para usar algunos programas.</li>
         <li><strong>Estudiantes internacionales:</strong> también tienen estatus temporal, así que les afectarían las mismas propuestas si se aprobaran. La pregunta 4 menciona además a sus familias, por ejemplo, hijos en escuelas públicas.</li>
@@ -618,11 +629,24 @@ const ARTICLES = [
         <li><strong>Niveles de inmigración:</strong> los fija el Gobierno de Canadá. Para tener más control, como plantea la pregunta 1, Alberta tendría que negociar con Ottawa.</li>
       </ul>
       <h2>Las cuatro preguntas constitucionales</h2>
-      <p>Las preguntas 6 a 9 consultan si Alberta debe trabajar con otras provincias dispuestas para <strong>reformar la Constitución de Canadá</strong>: que las provincias elijan a los jueces de sus tribunales del Rey y de Apelación; abolir el Senado; permitir que las provincias se retiren de programas federales en áreas provinciales sin perder los fondos correspondientes; y que las leyes provinciales prevalezcan sobre las federales cuando entren en conflicto en áreas de competencia provincial o compartida. Según los resultados preliminares, el «sí» iba adelante en tres de las cuatro, con un apoyo de entre el 49 % y el 53 % (The Globe and Mail y CP24). Cualquier reforma constitucional necesitaría, además, el acuerdo del Parlamento federal y de otras provincias.</p>
+      <p>Las preguntas 6 a 9 consultaban si Alberta debe trabajar con otras provincias dispuestas para <strong>reformar la Constitución de Canadá</strong>. En los resultados oficiales, <strong>el «no» ganó en las cuatro</strong>:</p>
+      <table>
+        <caption>Preguntas 6 a 9: resultados oficiales (fuente: Elections Alberta, 29 de octubre de 2026)</caption>
+        <thead>
+          <tr><th scope="col">Pregunta</th><th scope="col">Sí</th><th scope="col">No</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>6. Que las provincias elijan a los jueces de sus tribunales del Rey y de Apelación</td><td>45,36 %</td><td>54,64 %</td></tr>
+          <tr><td>7. Abolir el Senado</td><td>47,28 %</td><td>52,72 %</td></tr>
+          <tr><td>8. Retirarse de programas federales en áreas provinciales sin perder los fondos</td><td>42,44 %</td><td>57,56 %</td></tr>
+          <tr><td>9. Que las leyes provinciales prevalezcan sobre las federales en áreas provinciales o compartidas</td><td>44,17 %</td><td>55,83 %</td></tr>
+        </tbody>
+      </table>
+      <p>Cualquier reforma constitucional necesitaría, además, el acuerdo del Parlamento federal y de otras provincias.</p>
       <h2>Preliminares, oficiales y lo que viene después</h2>
       <ul>
-        <li><strong>Resultados preliminares (no oficiales):</strong> los que publica Elections Alberta en su <a href="https://results.elections.ab.ca/" target="_blank" rel="noopener">sitio de resultados</a> durante el conteo. Pueden cambiar.</li>
-        <li><strong>Resultados oficiales:</strong> Elections Alberta los anunciará el <strong>29 de octubre de 2026 a las 10:00 a. m.</strong></li>
+        <li><strong>Resultados preliminares (no oficiales):</strong> son los que Elections Alberta fue publicando durante el conteo, a partir de la noche del 19 de octubre. Podían cambiar, y algunos cambiaron.</li>
+        <li><strong>Resultados oficiales:</strong> Elections Alberta los publicó el <strong>29 de octubre de 2026</strong>. El detalle por pregunta y por distrito electoral está en su <a href="https://officialresults.elections.ab.ca/orEDResultsReferendum2026.cfm?EventId=202610" target="_blank" rel="noopener">sitio de resultados oficiales</a>.</li>
         <li><strong>Decisiones posteriores:</strong> el gobierno provincial decidirá qué hacer con los resultados. Si propone leyes, tendrán que presentarse y aprobarse en la Asamblea Legislativa de Alberta, y los cambios constitucionales requerirían acuerdos con el Gobierno federal y otras provincias.</li>
       </ul>
       <h2>Recomendaciones prácticas</h2>
@@ -633,17 +657,15 @@ const ARTICLES = [
         <li><strong>Mantente atento</strong> a las decisiones que anuncie el Gobierno de Alberta después de los resultados oficiales.</li>
         <li><strong>Si tienes dudas sobre tu caso,</strong> consulta a un consultor de inmigración regulado (RCIC) o a un abogado autorizado.</li>
       </ul>
-      <p><strong>Importante:</strong> todas las cifras de esta nota son preliminares y no oficiales. Los resultados oficiales los anunciará Elections Alberta el 29 de octubre de 2026.</p>
-    `,
+      <p><strong>Importante:</strong> todas las cifras de esta nota son los resultados oficiales publicados por Elections Alberta el 29 de octubre de 2026.</p>
+`,
     video: null,
     sources: [
-      { label: "Elections Alberta — Resultados no oficiales del referéndum de 2026", href: "https://results.elections.ab.ca/" },
+      { label: "Elections Alberta — Referendum Official Results (comunicado, 29 de octubre de 2026)", href: "https://www.elections.ab.ca/resources/media/news-releases/2026-10-29-2/" },
+      { label: "Elections Alberta — Resultados oficiales del referéndum de 2026, por pregunta y por distrito electoral", href: "https://officialresults.elections.ab.ca/orEDResultsReferendum2026.cfm?EventId=202610" },
       { label: "Elections Alberta — Unofficial Referendum Results Reporting Process (19 de octubre de 2026)", href: "https://www.elections.ab.ca/resources/media/news-releases/2026-10-19-2/" },
-      { label: "Elections Alberta — Referendum (preguntas, votación y anuncio oficial de resultados)", href: "https://www.elections.ab.ca/elections/referendum/" },
+      { label: "Elections Alberta — Referendum (preguntas, votación y resultados)", href: "https://www.elections.ab.ca/elections/referendum/" },
       { label: "NPR — Alberta voters reject a move toward independence in referendum backing Canadian unity (20 de octubre de 2026)", href: "https://www.npr.org/2026/10/20/nx-s1-6008832/alberta-referendum-canada" },
-      { label: "The Globe and Mail — Alberta referendum results: Province's urban-rural divide on full display (20 de octubre de 2026)", href: "https://www.theglobeandmail.com/canada/article-alberta-referendum-vote-2026-live-updates/" },
-      { label: "The Globe and Mail — Albertans largely support measures aimed at reducing immigration, split on constitutional questions (20 de octubre de 2026)", href: "https://www.theglobeandmail.com/canada/article-alberta-referendum-nine-questions-immigration-constitution/" },
-      { label: "CP24 — Albertans divided on immigration questions after rejecting separation (20 de octubre de 2026)", href: "https://www.cp24.com/news/canada/2026/10/20/albertans-divided-on-immigration-questions-after-rejecting-separation-live-updates/" },
       { label: "CTV News — Separatist leader says Alberta referendum has promoted 'serious, adult discussion' (20 de octubre de 2026)", href: "https://www.ctvnews.ca/calgary/article/i-think-weve-won-separatist-leader-says-alberta-referendum-has-promoted-serious-adult-discussion/" },
       { label: "Gobierno de Alberta — O.C. 110/2026 (preguntas 1 a 5, inmigración)", href: "https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_110.html" },
       { label: "Gobierno de Alberta — O.C. 109/2026 (preguntas 6 a 9, Constitución)", href: "https://kings-printer.alberta.ca/Documents/Orders/Orders_in_Council/2026/2026_109.html" },
@@ -658,7 +680,7 @@ const ARTICLES = [
     lang: "es",
     seo: {
       fullTitle: "Alberta votó por permanecer en Canadá: cerca del 75 % rechazó iniciar el proceso separatista",
-      description: "Resultados preliminares del referéndum del 19 de octubre: cerca del 75 % votó por que Alberta siga en Canadá. Qué significa para los inmigrantes y qué falta por conocer.",
+      description: "Resultados oficiales del referéndum del 19 de octubre: el 74,95 % votó por que Alberta siga en Canadá. Las cifras de las diez preguntas y qué significan para los inmigrantes.",
       canonicalPath: "/alberta/referendum-alberta-octubre-2026-inmigrantes/",
     },
   },
