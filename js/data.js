@@ -258,14 +258,21 @@ const RECOMMENDED_READS = [
    no se completan espacios vacíos. Para sumar otro patrocinador, se agrega
    un objeto con su logo oficial (sin modificar) y su tamaño en píxeles.
    `url` solo con un destino confirmado por el patrocinador; mientras sea
-   null, el logo se muestra sin enlace. */
+   null, el logo se muestra sin enlace. `interno: true` = página del propio
+   sitio (misma pestaña, sin rel="sponsored"); los UTM del enlace permiten
+   medir en el panel las visitas que llegan desde el patrocinio. */
 const SPONSORS = [
   {
     name: "Country Hills Toyota",
     logo: "assets/patrocinadores/country-hills-toyota.png", // archivo original «CHT LOGO.png», sin cambios
     width: 1200,
     height: 600,
-    url: null,
+    /* Miniweb Premium de Tomás Velázquez (Country Hills Toyota) en el
+       Directorio Empresarial. Medición: profile_view con
+       utm_source=podcastdelmigrante y utm_campaign=country-hills-toyota. */
+    url: "perfil-tomas-velazquez.html?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=country-hills-toyota&utm_content=logo-portada",
+    interno: true,
+    etiqueta: "Country Hills Toyota: ver el perfil de Tomás Velázquez en el Directorio Empresarial",
   },
 ];
 
