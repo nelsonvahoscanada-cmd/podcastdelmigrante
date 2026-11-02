@@ -43,33 +43,43 @@ function publicada(extra = {}) {
   return congelar(ed, fuentes, { fecha: "2026-11-03T16:00:00.000Z" });
 }
 
-test("hoy: EDICIONES es válida y no tiene ninguna edición publicada (la 01 está en borrador hasta su aprobación)", () => {
+test("hoy: la Edición 01 (octubre de 2026) está publicada, congelada e íntegra; las demás son borradores", () => {
   assert.deepEqual(validar(ediciones), []);
-  assert.deepEqual(ediciones.filter((e) => e.estado === "publicada"), []);
-  const oct = ediciones.find((e) => e.slug === "2026-10");
-  if (oct) {
-    assert.equal(oct.estado, "borrador");
-    assert.equal(oct.publicadaEn, null, "la fecha real se fija solo al autorizar la publicación");
-    /* Todas las piezas son de octubre de 2026 y existen publicadas */
-    const v = congelar({ ...oct, huella: null }, fuentes);
-    for (const s of Object.values(v.instantanea.piezas)) assert.equal(s.fecha.slice(0, 7), "2026-10", s.url);
+  const pub = ediciones.filter((e) => e.estado === "publicada");
+  assert.deepEqual(pub.map((e) => e.slug), ["2026-10"]);
+  const oct = pub[0];
+  assert.equal(oct.numero, 1);
+  assert.match(oct.publicadaEn, /^2026-11-\d{2}T\d{2}:\d{2}:\d{2}-0[67]:00$/, "fecha real de publicación, en noviembre, con zona");
+  assert.equal(oct.huella, huellaDe(oct), "la huella coincide: la edición no se tocó después de congelarse");
+  const piezas = Object.values(oct.instantanea.piezas);
+  assert.equal(piezas.length, 11);
+  for (const s of piezas) {
+    assert.equal(s.fecha.slice(0, 7), "2026-10", s.url);
+    assert.ok(existsSync(join(ROOT, `${s.url.slice(1)}.html`)), `${s.url} existe con su URL original`);
+    assert.ok(existsSync(join(ROOT, s.imagen.slice(1))), s.imagen);
+  }
+  for (const img of [oct.portada.imagen, oct.portada.social.imagen]) assert.ok(existsSync(join(ROOT, img.slice(1))), img);
+  for (const e of ediciones.filter((x) => x.estado !== "publicada")) {
+    assert.equal(e.estado, "borrador", e.slug);
+    assert.equal(e.publicadaEn, null, e.slug);
   }
 });
 
-test("las páginas generadas están al día y el sitemap no cambia mientras no haya ediciones publicadas", () => {
+test("las páginas generadas están al día: edición 01, /magazine/ vigente, hemeroteca y sitemap", () => {
   const files = render(ediciones);
-  assert.deepEqual(Object.keys(files).sort(), ["magazine/ediciones/index.html", "sitemap.xml"]);
+  assert.deepEqual(Object.keys(files).sort(), ["magazine/2026-10/index.html", "magazine/ediciones/index.html", "magazine/index.html", "sitemap.xml"]);
   for (const [nombre, html] of Object.entries(files)) assert.equal(read(nombre), html, `${nombre} desactualizado`);
-  assert.doesNotMatch(read("sitemap.xml"), /magazine/);
-  assert.deepEqual(readdirSync(join(ROOT, "magazine")), ["ediciones"], "solo la hemeroteca: ninguna edición ni /magazine/ vigente");
+  assert.deepEqual(readdirSync(join(ROOT, "magazine")).sort(), ["2026-10", "ediciones", "index.html"], "solo ediciones publicadas: ningún borrador");
+  assert.match(read("magazine/index.html"), /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/magazine\/2026-10\/">/, "la vigente apunta a su ruta permanente");
   execFileSync("node", ["scripts/build-ediciones.mjs", "--check"], { cwd: ROOT, stdio: "pipe" });
 });
 
-test("hemeroteca vacía: noindex, canonical, sin ediciones y con la cabecera y el pie del sitio", () => {
+test("hemeroteca: canonical, la Edición 01 enlazada y con la cabecera y el pie del sitio", () => {
   const h = read("magazine/ediciones/index.html");
-  assert.match(h, /<meta name="robots" content="noindex">/);
+  assert.doesNotMatch(h, /noindex/);
   assert.match(h, /<link rel="canonical" href="https:\/\/podcastdelmigrante\.com\/magazine\/ediciones\/">/);
-  assert.match(h, /Todavía no hay ediciones publicadas en la hemeroteca\./);
+  assert.doesNotMatch(h, /Todavía no hay ediciones publicadas/);
+  assert.match(h, /href="\/magazine\/2026-10\/"/);
   assert.match(h, /<h1 class="ed-titulo">Ediciones<\/h1>/);
   assert.ok(h.includes('id="siteHeader"') && h.includes('class="site-footer"'), "cabecera y pie del sitio");
   assert.match(h, /<link rel="stylesheet" href="\/css\/ediciones\.css">/);
@@ -85,8 +95,9 @@ test("borradores: nunca se generan en el sitio, ni en la hemeroteca ni en el sit
 });
 
 test("la publicación del sitio nunca incluye borradores: solo los archivos de magazine/ que genera el script", () => {
-  const pub = publicFiles(ROOT).filter((f) => f.startsWith("magazine/"));
-  assert.deepEqual(pub, ["magazine/ediciones/index.html"]);
+  const pub = publicFiles(ROOT).filter((f) => f.startsWith("magazine/")).sort();
+  assert.deepEqual(pub, Object.keys(render(ediciones)).filter((f) => f.startsWith("magazine/")).sort());
+  assert.deepEqual(pub, ["magazine/2026-10/index.html", "magazine/ediciones/index.html", "magazine/index.html"]);
 });
 
 test("publicar exige portada, editorial, fecha con zona y edición congelada", () => {
@@ -183,8 +194,8 @@ test("SEO: ruta permanente, canonical, datos estructurados y enlaces a los artí
   const sm = files["sitemap.xml"];
   assert.match(sm, /<!-- magazine-ediciones: generado[\s\S]*<loc>https:\/\/podcastdelmigrante\.com\/magazine\/ediciones\/<\/loc>[\s\S]*<loc>https:\/\/podcastdelmigrante\.com\/magazine\/2026-10\/<\/loc>[\s\S]*<!-- \/magazine-ediciones -->\n<\/urlset>/);
   assert.doesNotMatch(sm, /<loc>https:\/\/podcastdelmigrante\.com\/magazine\/<\/loc>/, "la vigente no se indexa aparte (canonical a la permanente)");
-  assert.equal(render([])["sitemap.xml"], render([], { sitemap: sm })["sitemap.xml"], "al no haber ediciones el bloque se quita sin dejar rastro");
-  assert.equal(render([])["sitemap.xml"], read("sitemap.xml"));
+  assert.doesNotMatch(render([], { sitemap: sm })["sitemap.xml"], /magazine/, "al no haber ediciones el bloque se quita sin dejar rastro");
+  assert.equal(render(ediciones)["sitemap.xml"], read("sitemap.xml"));
 });
 
 test("portada.social: la imagen horizontal se usa para compartir; sin ella, la portada", () => {
@@ -208,7 +219,18 @@ test("la vista previa de un borrador lleva noindex y el aviso de borrador", () =
   assert.match(html, /<span>Sin publicar<\/span>/);
 });
 
-test("aislamiento: la portada, las noticias y el resto del sitio no usan todavía las ediciones", () => {
-  for (const f of ["index.html", "noticias.html", "404.html"]) assert.doesNotMatch(read(f), /ediciones\.js|\/magazine\//, f);
-  for (const f of ["js/main.js", "js/noticias.js", "js/data.js", "js/nav.js", "js/articles.js"]) assert.doesNotMatch(read(f), /EDICIONES|\/magazine\//, f);
+test("aislamiento: las noticias y el resto del sitio no dependen de las ediciones; la portada solo enlaza a páginas publicadas", () => {
+  for (const f of ["index.html", "noticias.html", "404.html"]) assert.doesNotMatch(read(f), /ediciones\.js/, f);
+  for (const f of ["noticias.html", "404.html"]) assert.doesNotMatch(read(f), /\/magazine\//, f);
+  for (const f of ["js/main.js", "js/noticias.js", "js/data.js", "js/nav.js", "js/articles.js"]) assert.doesNotMatch(read(f), /EDICIONES/, f);
+  for (const f of ["js/noticias.js", "js/nav.js", "js/articles.js", "js/main.js"]) assert.doesNotMatch(read(f), /\/magazine\//, f);
+  /* La portada del sitio solo enlaza a ediciones publicadas y a la hemeroteca */
+  const publicadas = new Set(ediciones.filter((e) => e.estado === "publicada").map((e) => `/magazine/${e.slug}/`));
+  for (const f of ["index.html", "js/data.js"]) {
+    for (const [ruta] of read(f).matchAll(/\/magazine\/[^"'\s]*/g)) {
+      assert.ok(ruta === "/magazine/ediciones/" || publicadas.has(ruta), `${f}: ${ruta}`);
+    }
+  }
+  assert.doesNotMatch(read("index.html"), /Portada en preparación/);
+  assert.match(read("index.html"), /<img src="\/assets\/ediciones\/2026-10\/portada\.jpg"/);
 });

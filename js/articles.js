@@ -541,7 +541,7 @@ const ARTICLES = [
     excerpt: "Según los resultados oficiales de Elections Alberta, el 74,95 % votó por que Alberta siga en Canadá, y el «sí» ganó en las cinco preguntas sobre inmigración. Qué significa para los inmigrantes.",
     author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
     publishedAt: "2026-10-20T05:00:00-06:00",
-    updatedAt: "2026-11-02T17:30:00-06:00",
+    updatedAt: "2026-11-02T17:23:00-06:00",
     readingTimeOverride: null,
     location: { country: "Canadá", province: "Alberta" },
     demo: false,

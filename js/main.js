@@ -42,7 +42,7 @@
         const item = m.active
           ? el("a", "edition-month is-active", m.label)
           : el("span", "edition-month is-disabled", m.label);
-        if (m.active) item.href = "#";
+        if (m.active) item.href = m.href || EDITION.href || "#";
         monthsWrap.appendChild(item);
       });
     }
