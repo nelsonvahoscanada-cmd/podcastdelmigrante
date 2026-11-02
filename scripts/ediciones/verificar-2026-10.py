@@ -1,12 +1,10 @@
-# Páginas oficiales para verificar las piezas de Express Entry y del referéndum de Alberta
+# Páginas oficiales para verificar el artículo del referéndum de Alberta (ART-2026-028)
 # de la Edición 01 (octubre de 2026). Solo lectura; se ejecuta en GitHub Actions.
-I = "https://www.canada.ca/en/immigration-refugees-citizenship"
+E = "https://www.elections.ab.ca"
+R = "https://officialresults.elections.ab.ca/orEDResultsReferendum2026.cfm?EventId="
 PAGINAS = [
-    ("IRCC: comunicado 16-10-2026 Express Entry", I + "/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html"),
-    ("IRCC: cambios 2026 Express Entry", I + "/services/immigrate-canada/express-entry/changes.html"),
-    ("IRCC: antecedentes ocupaciones de salarios altos", I + "/news/2026/10/changes-to-express-entry-for-high-wage-occupations.html"),
-    ("IRCC: aviso a medios 15-10-2026", I + "/news/2026/10/minister-metlege-diab-to-make-an-announcement-in-kitchener.html"),
-    ("Elections Alberta: referéndum", "https://www.elections.ab.ca/elections/referendum/"),
-    ("Elections Alberta: resultados", "https://results.elections.ab.ca/"),
-    ("Elections Alberta: comunicados", "https://www.elections.ab.ca/resources/media/news-releases/"),
-]
+    ("Elections Alberta: comunicado resultados oficiales 29-10-2026", E + "/resources/media/news-releases/2026-10-29-2/"),
+    ("Elections Alberta: página de resultados del referéndum", E + "/elections/referendum/referendum-results/"),
+    ("Elections Alberta: actualización conteo no oficial 24-10-2026", E + "/resources/media/news-releases/2026-10-24/"),
+    ("Elections Alberta: proceso de resultados no oficiales 19-10-2026", E + "/resources/media/news-releases/2026-10-19-2/"),
+] + [("Resultados oficiales EventId 2026%02d" % i, R + "2026%02d" % i) for i in range(1, 11)]
