@@ -112,6 +112,26 @@ test("publicar exige portada, editorial, fecha con zona y edición congelada", (
   assert.deepEqual(validar([publicada()]), []);
 });
 
+test("Edición 02 (noviembre de 2026): borrador vacío, sin página pública ni vista previa hasta tener portada e índice", () => {
+  const nov = ediciones.find((e) => e.slug === "2026-11");
+  assert.ok(nov, "la Edición 02 existe como borrador");
+  assert.equal(nov.numero, 2);
+  assert.equal(nov.estado, "borrador");
+  assert.equal(nov.publicadaEn, null);
+  assert.deepEqual(nov.secciones, []);
+  assert.ok(!existsSync(join(ROOT, "magazine/2026-11")), "noviembre no tiene página pública");
+  assert.doesNotMatch(read("sitemap.xml"), /magazine\/2026-11/);
+  assert.doesNotMatch(read("magazine/ediciones/index.html"), /2026-11/);
+  /* Un borrador puede no tener piezas todavía; publicarlo vacío no es posible */
+  assert.deepEqual(validar([ejemplo({ secciones: [] })]), []);
+  assert.match(validar([publicada({ secciones: [] })]).join("\n"), /falta el índice/);
+  const dir = mkdtempSync(join(tmpdir(), "ed-nov-"));
+  const out = execFileSync("node", ["scripts/build-ediciones.mjs", `--borradores=${dir}`], { cwd: ROOT, encoding: "utf8" });
+  assert.match(out, /borrador 2026-11: sin vista previa todavía/);
+  assert.ok(!existsSync(join(dir, "2026-11")));
+  rmSync(dir, { recursive: true });
+});
+
 test("congelar: rechaza piezas inexistentes o sin publicar y no duplica el texto de los artículos", () => {
   assert.throws(() => congelar(ejemplo({ secciones: [{ titulo: "x", piezas: [{ tipo: "articulo", id: "ART-1999-999" }] }] }), fuentes), /No existe el artículo/);
   const borradorArt = fuentes.articulos.find((a) => a.draft);

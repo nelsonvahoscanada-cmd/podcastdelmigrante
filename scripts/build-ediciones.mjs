@@ -141,7 +141,9 @@ export function validar(ediciones) {
     if (m && (p.anio !== +m[1] || p.mes !== +m[2])) err.push(`${q}: el período no coincide con el slug`);
     if (!["borrador", "publicada"].includes(ed.estado)) err.push(`${q}: estado debe ser «borrador» o «publicada»`);
     if (!ed.titulo) err.push(`${q}: falta el titular`);
-    if (!Array.isArray(ed.secciones) || !ed.secciones.length) err.push(`${q}: falta el índice (secciones)`);
+    /* Un borrador puede empezar vacío (aún no hay piezas del mes); publicar exige el índice */
+    if (!Array.isArray(ed.secciones)) err.push(`${q}: secciones debe ser una lista`);
+    else if (!ed.secciones.length && ed.estado === "publicada") err.push(`${q}: falta el índice (secciones)`);
     for (const s of ed.secciones || []) {
       if (!s.titulo || !Array.isArray(s.piezas) || !s.piezas.length) err.push(`${q}: sección sin título o sin piezas`);
       for (const pz of s.piezas || []) if (!["articulo", "historia", "video"].includes(pz.tipo) || !(pz.id || pz.slug || pz.videoId)) err.push(`${q}: pieza inválida ${JSON.stringify(pz)}`);
@@ -399,6 +401,10 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     if (!rel.startsWith("..") && !isAbsolute(rel)) throw new Error("La vista previa de borradores debe escribirse FUERA del proyecto, nunca dentro del sitio");
     const comun = chrome(ROOT);
     for (const ed of ediciones.filter((e) => e.estado === "borrador")) {
+      if (!ed.portada || !(ed.secciones || []).length) {
+        console.log(`borrador ${ed.slug}: sin vista previa todavía (falta la portada o el índice)`);
+        continue;
+      }
       const vista = congelar({ ...ed, huella: null }, fuentes);
       mkdirSync(join(destino, ed.slug), { recursive: true });
       writeFileSync(join(destino, ed.slug, "index.html"), paginaEdicion(vista, comun, { borrador: true }));
