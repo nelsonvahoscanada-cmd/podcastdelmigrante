@@ -1,0 +1,28 @@
+name: tmp edicion 01 verificar
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-edicion-01]
+    paths: [".github/workflows/tmp-ed-verificar.yml"]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: claude/laughing-albattani-1rvkc1-quebec }
+        continue-on-error: true
+      - uses: actions/checkout@v4
+        with: { path: actual }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null
+      - name: Paginas oficiales
+        continue-on-error: true
+        run: mkdir -p /tmp/out && python3 scripts/canada-en-datos/obtener-paginas-texto.py actual/scripts/ediciones/verificar-2026-10.py /tmp/out/paginas > /tmp/out/log.txt 2>&1; tail -5 /tmp/out/log.txt
+      - name: Publicar en la rama de datos
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
+          git add -A && git commit -qm "Verificacion edicion 01 (solo lectura) [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-ed01-datos
