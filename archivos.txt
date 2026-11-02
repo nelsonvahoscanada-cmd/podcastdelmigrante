@@ -1,0 +1,24 @@
+DISTINTO magazine/ediciones/index.html
+DISTINTO magazine/2026-10/index.html
+DISTINTO magazine/index.html
+IGUAL js/ediciones.js
+DISTINTO index.html
+IGUAL js/data.js
+IGUAL js/main.js
+IGUAL js/articles.js
+IGUAL css/styles.css
+IGUAL sitemap.xml
+DISTINTO articulo-referendum-alberta-octubre-2026-inmigrantes.html
+IGUAL assets/ediciones/2026-10/portada.jpg
+IGUAL assets/ediciones/2026-10/portada-social.jpg
+200 /
+200 /noticias
+200 /magazine/ediciones/
+200 /magazine/
+200 /magazine/2026-10/
+404 /magazine/2026-11/
+200 /canada-en-datos/
+200 /articulo-referendum-alberta-octubre-2026-inmigrantes
+200 /sitemap.xml
+enlaces a /magazine/ en la portada: 3
+1
