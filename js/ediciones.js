@@ -270,5 +270,22 @@ const EDICIONES = [
       }
     },
     "huella": "d434c15a58b85e15188dc3eb39d7c6294cc4a1b360769b1d778519f50b11e2a2"
+  },
+  {
+    "numero": 2,
+    "slug": "2026-11",
+    "periodo": {
+      "anio": 2026,
+      "mes": 11
+    },
+    "estado": "borrador",
+    "publicadaEn": null,
+    "titulo": "Edición 02 · Noviembre 2026 (en preparación)",
+    "bajada": "",
+    "portada": null,
+    "editorial": null,
+    "secciones": [],
+    "instantanea": null,
+    "huella": null
   }
 ];
