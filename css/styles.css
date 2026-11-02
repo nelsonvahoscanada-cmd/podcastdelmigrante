@@ -1318,6 +1318,9 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
   border-radius: var(--radius-s);
 }
 .sponsor-logo img { display: block; width: 100%; height: auto; max-width: 600px; }
+/* Logo con enlace: mismo tamaño y posición que sin enlace */
+.sponsor-logo a { display: block; width: 100%; max-width: 600px; }
+.sponsor-logo a:focus-visible { outline: 2px solid var(--verde); outline-offset: 4px; }
 .sponsor-row--single { grid-template-columns: minmax(0, 640px); justify-content: center; }
 
 /* =========================================================

@@ -291,9 +291,11 @@
     row.classList.toggle("sponsor-row--single", logos.length === 1);
     logos.forEach((s) => {
       const img = `<img src="${s.logo}" alt="${s.name}" width="${s.width}" height="${s.height}" loading="lazy" decoding="async">`;
-      const inner = s.url
-        ? `<a href="${s.url}" target="_blank" rel="sponsored noopener">${img}</a>`
-        : img;
+      const inner = !s.url
+        ? img
+        : s.interno
+          ? `<a href="${s.url}"${s.etiqueta ? ` aria-label="${s.etiqueta}"` : ""}>${img}</a>`
+          : `<a href="${s.url}" target="_blank" rel="sponsored noopener">${img}</a>`;
       row.appendChild(el("figure", "sponsor-logo", inner));
     });
   }

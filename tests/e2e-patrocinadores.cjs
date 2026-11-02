@@ -1,9 +1,10 @@
 /*
   Prueba de extremo a extremo de «Socios y patrocinadores» en la portada:
-  solo el logo oficial de Country Hills Toyota, completo, centrado y sin
-  enlace mientras no haya un destino confirmado; sin espacios vacíos ni
-  «próximamente»; sin imágenes rotas; computador, tableta y celular.
-  Solo lee páginas.
+  solo el logo oficial de Country Hills Toyota, completo y centrado, con
+  enlace a la miniweb de Tomás Velázquez (con UTM de patrocinio, medidos
+  en profile_view); sin espacios vacíos ni «próximamente»; sin imágenes
+  rotas; computador, tableta y celular. Solo lee páginas: /api/events se
+  intercepta y no llega a ningún servidor.
 
   1. node scripts/build-public.mjs --out=/tmp/dist
   2. npx wrangler pages dev /tmp/dist --port 8890
@@ -13,6 +14,7 @@ const { chromium } = require("playwright");
 const assert = require("node:assert/strict");
 const path = require("node:path");
 
+const DESTINO = "perfil-tomas-velazquez.html?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=country-hills-toyota&utm_content=logo-portada";
 const BASE = process.env.BASE || "http://127.0.0.1:8890";
 const SHOTS = process.env.SHOTS || "";
 const PERFILES = {
@@ -42,7 +44,13 @@ const PERFILES = {
     const img = row.locator(".sponsor-logo img");
     assert.equal(await img.getAttribute("src"), "assets/patrocinadores/country-hills-toyota.png");
     assert.equal(await img.getAttribute("alt"), "Country Hills Toyota");
-    assert.equal(await row.locator("a").count(), 0, "sin enlace hasta confirmar el destino");
+    /* El logo enlaza a la miniweb de Tomás Velázquez (misma pestaña, con UTM de patrocinio) */
+    const enlace = row.locator(".sponsor-logo a");
+    assert.equal(await row.locator("a").count(), 1);
+    assert.equal(await enlace.getAttribute("href"), DESTINO);
+    assert.equal(await enlace.getAttribute("target"), null);
+    assert.equal(await enlace.getAttribute("rel"), null);
+    assert.match(await enlace.getAttribute("aria-label"), /Tomás Velázquez/);
     await page.waitForFunction(() => { const i = document.querySelector("#sponsorRow img"); return i.complete && i.naturalWidth > 0; });
     const g = await page.evaluate(() => {
       const i = document.querySelector("#sponsorRow img"), r = i.getBoundingClientRect();
@@ -64,10 +72,20 @@ const PERFILES = {
       await page.evaluate(() => { document.getElementById("siteHeader").style.position = "static"; });
       await seccion.screenshot({ path: path.join(SHOTS, `patrocinadores-${perfil}.png`) });
     }
+    /* Clic (o toque) en el logo: abre la miniweb y la visita queda medida con los UTM */
+    const eventos = [];
+    await ctx.route(/\/api\/events/, (r) => { try { eventos.push(JSON.parse(r.request().postData() || "{}")); } catch (e) {} r.fulfill({ status: 204, body: "" }); });
+    await Promise.all([page.waitForURL(/\/perfil-tomas-velazquez/), opts.hasTouch ? enlace.tap() : enlace.click()]);
+    await page.waitForLoadState("networkidle");
+    assert.match(await page.locator("h1").first().textContent(), /Tomás Velázquez/);
+    await page.waitForTimeout(500);
+    const vista = eventos.find((e) => e.event === "profile_view");
+    assert.ok(vista, `${perfil}: se registra profile_view (${JSON.stringify(eventos)})`);
+    assert.deepEqual([vista.business, vista.utm_source, vista.utm_medium, vista.utm_campaign, vista.utm_content], ["tomas-velazquez", "podcastdelmigrante", "patrocinio", "country-hills-toyota", "logo-portada"]);
     assert.deepEqual(errores, []);
-    console.log(`ok ${perfil}: logo ${Math.round(g.w)}×${Math.round(g.h)} px, centrado, sin enlace`);
+    console.log(`ok ${perfil}: logo ${Math.round(g.w)}×${Math.round(g.h)} px, centrado, enlaza a la miniweb y mide la visita`);
     await ctx.close();
   }
   await browser.close();
-  console.log("OK patrocinadores: solo Country Hills Toyota, completo y centrado");
+  console.log("OK patrocinadores: solo Country Hills Toyota, completo, centrado y enlazado a la miniweb de Tomás Velázquez");
 })().catch((e) => { console.error(e); process.exit(1); });
