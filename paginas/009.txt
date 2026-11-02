@@ -1,0 +1,815 @@
+NOMBRE: Resultados oficiales EventId 202606
+URL: https://officialresults.elections.ab.ca/orEDResultsReferendum2026.cfm?EventId=202606
+ESTADO: 200
+FINAL: https://officialresults.elections.ab.ca/orEDResultsReferendum2026.cfm?EventId=202606
+TITULO: Referendum Results | Elections Alberta
+FECHA: 
+
+Referendum Results | Elections Alberta 
+ A named link for anchors. 
+ Mobile menu icon. 
+ Resize screen font. 
+ Search for 
+ Election Results 
+ Elections Alberta 
+ Secure Login 
+ Elections Alberta home page. 
+ Elections Alberta home page. 
+ Resize screen font. 
+ Election Results 
+ Elections Alberta 
+ Search for 
+ Home >
+ Election Results >
+ Referendum Results 
+ Election Results 
+ Provincial Results 
+ Winning Candidates 
+ Referendum Results 
+ Home >
+ Election Results >
+ Referendum Results 
+ 2026 Referendum Results
+ Question 6: Do you support the Government of Alberta working with the governments of other willing provinces to amend the Canadian Constitution to have provincial governments, and not the federal government, select the justices appointed to provincial King's Bench and Appeal courts? 
+ Event: 
+ Select Event 
+ Provincial Referendum - Question 10 - October 19, 2026 
+ Provincial Referendum - Question 1 - October 19, 2026 
+ Provincial Referendum - Question 2 - October 19, 2026 
+ Provincial Referendum - Question 3 - October 19, 2026 
+ Provincial Referendum - Question 4 - October 19, 2026 
+ Provincial Referendum - Question 5 - October 19, 2026 
+ Provincial Referendum - Question 6 - October 19, 2026 
+ Provincial Referendum - Question 7 - October 19, 2026 
+ Provincial Referendum - Question 8 - October 19, 2026 
+ Provincial Referendum - Question 9 - October 19, 2026 
+ ———————————————————— 
+ By-Election September 14, 2026 
+ By-Election June 23, 2025 
+ By-Election December 18, 2024 
+ Provincial General Election May 29, 2023 
+ By-Election November 8, 2022 
+ By-Election March 15, 2022 
+ Provincial General Election April 16, 2019 
+ By-Election July 12, 2018 
+ By-Election December 14, 2017 
+ By-Election March 22, 2016 
+ By-Election September 3, 2015 
+ Provincial General Election May 5, 2015 
+ By-Election October 27, 2014 
+ Provincial General Election April 23, 2012 
+ By-Election September 14, 2009 
+ Provincial General Election March 3, 2008 
+ ———————————————————— 
+ Alberta Senate Election - October 18, 2021 
+ Provincial Referendum - Equalization - October 18, 2021 
+ Provincial Referendum - Daylight Saving Time - October 18, 2021 
+ Provincial Senate Nominee Election - April 23, 2012 
+ Provincial Senate Nominee Election - November 22, 2004 
+ On October 19, several voting places across the province used one set of ballot boxes for all voting areas, rather one set for each voting area to facilitate voting area reporting. Due to this, results for 14 locations where voting area votes could not be reliably separated from each other are reported at the voting place level, rather than the voting area level. This combined result is shown against the first of those voting areas and other voting areas in that location will show zero. Voter turnout for these voting areas should be read at the electoral division level. 
+ Download as Excel 
+ 87 Electoral Divisions 
+ ELECTORAL DIVISION NAME
+ Voting Place / Voting Area
+ Number of Electors
+ Yes 
+ No 
+ Voter Turnout (%)
+ Total Valid Vote
+Count Percentage
+ 5,536
+ 3,286,778
+ 933,310
+45.4%
+ 1,124,131
+54.6%
+ 67.4
+ 01 
+ CALGARY-ACADIA
+ 57
+ 35,825
+ 9,349
+ 14,191
+ 70.8
+ 02 
+ CALGARY-BEDDINGTON
+ 53
+ 36,443
+ 8,140
+ 13,849
+ 64.8
+ 03 
+ CALGARY-BOW
+ 69
+ 44,607
+ 11,360
+ 18,681
+ 73.3
+ 04 
+ CALGARY-BUFFALO
+ 78
+ 42,143
+ 7,300
+ 16,926
+ 63.8
+ 05 
+ CALGARY-CROSS
+ 48
+ 31,179
+ 5,734
+ 9,651
+ 53.2
+ 06 
+ CALGARY-CURRIE
+ 56
+ 39,485
+ 8,127
+ 17,794
+ 71.6
+ 07 
+ CALGARY-EAST
+ 74
+ 34,443
+ 7,043
+ 9,321
+ 51.0
+ 08 
+ CALGARY-EDGEMONT
+ 57
+ 38,264
+ 8,972
+ 16,317
+ 70.7
+ 09 
+ CALGARY-ELBOW
+ 60
+ 40,207
+ 9,242
+ 17,622
+ 74.0
+ 10 
+ CALGARY-FALCONRIDGE
+ 51
+ 30,213
+ 4,965
+ 10,125
+ 54.0
+ 11 
+ CALGARY-FISH CREEK
+ 59
+ 38,847
+ 11,436
+ 15,608
+ 75.5
+ 12 
+ CALGARY-FOOTHILLS
+ 62
+ 42,338
+ 9,979
+ 16,190
+ 67.5
+ 13 
+ CALGARY-GLENMORE
+ 59
+ 39,170
+ 10,401
+ 16,616
+ 74.5
+ 14 
+ CALGARY-HAYS
+ 58
+ 39,180
+ 11,186
+ 13,801
+ 69.0
+ 15 
+ CALGARY-KLEIN
+ 53
+ 35,492
+ 8,045
+ 14,352
+ 68.1
+ 16 
+ CALGARY-LOUGHEED
+ 45
+ 31,408
+ 9,095
+ 11,698
+ 71.0
+ 17 
+ CALGARY-BHULLAR-MCCALL
+ 39
+ 25,837
+ 3,462
+ 9,658
+ 55.2
+ 18 
+ CALGARY-MOUNTAIN VIEW
+ 90
+ 43,364
+ 7,322
+ 21,108
+ 72.3
+ 19 
+ CALGARY-NORTH
+ 52
+ 33,200
+ 7,438
+ 12,886
+ 66.1
+ 20 
+ CALGARY-NORTH EAST
+ 65
+ 43,004
+ 8,925
+ 16,895
+ 65.2
+ 21 
+ CALGARY-NORTH WEST
+ 58
+ 40,004
+ 10,225
+ 17,403
+ 74.7
+ 22 
+ CALGARY-PEIGAN
+ 52
+ 36,686
+ 10,244
+ 13,370
+ 69.7
+ 23 
+ CALGARY-SHAW
+ 71
+ 46,204
+ 13,765
+ 18,171
+ 74.8
+ 24 
+ CALGARY-SOUTH EAST
+ 76
+ 45,183
+ 14,669
+ 16,728
+ 76.0
+ 25 
+ CALGARY-VARSITY
+ 51
+ 36,200
+ 7,651
+ 17,231
+ 75.0
+ 26 
+ CALGARY-WEST
+ 54
+ 37,553
+ 10,285
+ 14,868
+ 72.7
+ 27 
+ EDMONTON-BEVERLY-CLAREVIEW
+ 49
+ 32,974
+ 7,870
+ 9,711
+ 57.2
+ 28 
+ EDMONTON-CASTLE DOWNS
+ 57
+ 37,544
+ 7,727
+ 14,133
+ 62.7
+ 29 
+ EDMONTON-CITY CENTRE
+ 75
+ 36,311
+ 4,482
+ 15,287
+ 60.4
+ 30 
+ EDMONTON-DECORE
+ 56
+ 34,464
+ 6,927
+ 11,320
+ 56.9
+ 31 
+ EDMONTON-ELLERSLIE
+ 52
+ 38,453
+ 7,579
+ 15,910
+ 66.1
+ 32 
+ EDMONTON-GLENORA
+ 52
+ 35,143
+ 5,747
+ 15,423
+ 65.6
+ 33 
+ EDMONTON-GOLD BAR
+ 58
+ 38,558
+ 6,892
+ 18,868
+ 72.5
+ 34 
+ EDMONTON-HIGHLANDS-NORWOOD
+ 48
+ 30,349
+ 4,564
+ 11,779
+ 58.7
+ 35 
+ EDMONTON-MANNING
+ 59
+ 39,842
+ 8,466
+ 14,726
+ 62.5
+ 36 
+ EDMONTON-MCCLUNG
+ 51
+ 30,410
+ 6,489
+ 12,134
+ 66.2
+ 37 
+ EDMONTON-MEADOWS
+ 61
+ 34,980
+ 6,545
+ 14,314
+ 65.0
+ 38 
+ EDMONTON-MILL WOODS
+ 53
+ 33,499
+ 7,401
+ 13,146
+ 66.4
+ 39 
+ EDMONTON-NORTH WEST
+ 64
+ 35,644
+ 6,600
+ 13,780
+ 61.8
+ 40 
+ EDMONTON-RIVERVIEW
+ 53
+ 32,844
+ 5,989
+ 15,747
+ 72.3
+ 41 
+ EDMONTON-RUTHERFORD
+ 50
+ 33,441
+ 6,206
+ 15,933
+ 72.0
+ 42 
+ EDMONTON-SOUTH
+ 88
+ 48,841
+ 10,745
+ 20,658
+ 69.7
+ 43 
+ EDMONTON-SOUTH WEST
+ 76
+ 52,482
+ 12,812
+ 22,151
+ 72.2
+ 44 
+ EDMONTON-STRATHCONA
+ 50
+ 33,052
+ 4,086
+ 16,870
+ 69.7
+ 45 
+ EDMONTON-WEST HENDAY
+ 59
+ 39,150
+ 9,677
+ 16,554
+ 72.1
+ 46 
+ EDMONTON-WHITEMUD
+ 51
+ 34,844
+ 7,065
+ 16,705
+ 74.2
+ 47 
+ AIRDRIE-COCHRANE
+ 92
+ 56,814
+ 19,630
+ 18,661
+ 73.2
+ 48 
+ AIRDRIE-EAST
+ 73
+ 46,014
+ 15,825
+ 14,340
+ 70.8
+ 49 
+ ATHABASCA-BARRHEAD-WESTLOCK
+ 62
+ 37,131
+ 14,800
+ 8,127
+ 65.6
+ 50 
+ BANFF-KANANASKIS
+ 64
+ 40,974
+ 10,736
+ 17,546
+ 75.2
+ 51 
+ BONNYVILLE-COLD LAKE-ST. PAUL
+ 74
+ 38,174
+ 12,922
+ 8,355
+ 58.5
+ 52 
+ BROOKS-MEDICINE HAT
+ 71
+ 37,683
+ 12,967
+ 9,338
+ 62.3
+ 53 
+ CAMROSE
+ 64
+ 34,464
+ 13,583
+ 8,687
+ 68.5
+ 54 
+ CARDSTON-SIKSIKA
+ 68
+ 28,738
+ 10,947
+ 6,700
+ 64.3
+ 55 
+ CENTRAL PEACE-NOTLEY
+ 60
+ 20,180
+ 8,924
+ 3,748
+ 66.1
+ 56 
+ CHESTERMERE-STRATHMORE
+ 69
+ 42,303
+ 15,373
+ 12,546
+ 70.8
+ 57 
+ CYPRESS-MEDICINE HAT
+ 59
+ 41,333
+ 13,291
+ 11,215
+ 63.0
+ 58 
+ DRAYTON VALLEY-DEVON
+ 68
+ 39,540
+ 17,063
+ 8,334
+ 68.1
+ 59 
+ DRUMHELLER-STETTLER
+ 71
+ 31,826
+ 14,450
+ 5,211
+ 64.9
+ 60 
+ FORT MCMURRAY-LAC LA BICHE
+ 63
+ 26,126
+ 8,633
+ 5,674
+ 57.5
+ 61 
+ FORT MCMURRAY-WOOD BUFFALO
+ 40
+ 25,350
+ 9,571
+ 4,939
+ 60.2
+ 62 
+ FORT SASKATCHEWAN-VEGREVILLE
+ 82
+ 44,821
+ 15,716
+ 11,863
+ 65.6
+ 63 
+ GRANDE PRAIRIE
+ 51
+ 36,074
+ 11,513
+ 7,813
+ 56.7
+ 64 
+ GRANDE PRAIRIE-WAPITI
+ 80
+ 41,467
+ 16,007
+ 6,945
+ 58.0
+ 65 
+ HIGHWOOD
+ 112
+ 45,145
+ 18,198
+ 13,069
+ 74.3
+ 66 
+ INNISFAIL-SYLVAN LAKE
+ 73
+ 41,486
+ 17,248
+ 8,815
+ 66.4
+ 67 
+ LAC STE. ANNE-PARKLAND
+ 75
+ 39,005
+ 15,864
+ 10,018
+ 71.0
+ 68 
+ LACOMBE-PONOKA
+ 72
+ 38,505
+ 15,709
+ 8,554
+ 66.6
+ 69 
+ LEDUC-BEAUMONT
+ 68
+ 46,271
+ 15,178
+ 14,438
+ 68.8
+ 70 
+ LESSER SLAVE LAKE
+ 45
+ 19,682
+ 4,846
+ 5,024
+ 52.2
+ 71 
+ LETHBRIDGE-EAST
+ 69
+ 38,892
+ 10,135
+ 13,940
+ 66.4
+ 72 
+ LETHBRIDGE-WEST
+ 67
+ 40,493
+ 10,162
+ 16,147
+ 70.0
+ 73 
+ LIVINGSTONE-MACLEOD
+ 94
+ 42,580
+ 16,231
+ 11,255
+ 67.8
+ 74 
+ MASKWACIS-WETASKIWIN
+ 56
+ 34,878
+ 11,986
+ 9,268
+ 64.9
+ 75 
+ MORINVILLE-ST. ALBERT
+ 64
+ 44,574
+ 13,876
+ 15,479
+ 71.0
+ 76 
+ OLDS-DIDSBURY-THREE HILLS
+ 71
+ 42,576
+ 18,677
+ 8,584
+ 67.9
+ 77 
+ PEACE RIVER
+ 69
+ 26,528
+ 8,143
+ 6,405
+ 57.3
+ 78 
+ RED DEER-NORTH
+ 64
+ 36,984
+ 11,219
+ 10,025
+ 61.3
+ 79 
+ RED DEER-SOUTH
+ 73
+ 42,182
+ 13,493
+ 12,848
+ 67.3
+ 80 
+ RIMBEY-ROCKY MOUNTAIN HOUSE-SUNDRE
+ 85
+ 38,634
+ 19,075
+ 6,514
+ 69.7
+ 81 
+ SHERWOOD PARK
+ 61
+ 40,262
+ 12,182
+ 17,626
+ 80.4
+ 82 
+ SPRUCE GROVE-STONY PLAIN
+ 66
+ 45,919
+ 15,553
+ 15,297
+ 72.3
+ 83 
+ ST. ALBERT
+ 60
+ 46,406
+ 10,369
+ 19,247
+ 69.3
+ 84 
+ STRATHCONA-SHERWOOD PARK
+ 63
+ 41,358
+ 14,294
+ 15,186
+ 76.2
+ 85 
+ TABER-WARNER
+ 70
+ 31,331
+ 12,624
+ 5,620
+ 61.3
+ 86 
+ VERMILION-LLOYDMINSTER-WAINWRIGHT
+ 66
+ 35,673
+ 14,029
+ 6,065
+ 59.0
+ 87 
+ WEST YELLOWHEAD
+ 73
+ 39,098
+ 14,039
+ 8,456
+ 60.5
+ Total Valid Vote
+Count Percentage
+ 5,536
+ 3,286,778
+ 933,310
+45.4%
+ 1,124,131
+54.6%
+ 67.4
+ A Mark That Matters
+ © Elections Alberta 
+ Privacy & Security 
+ Terms & Conditions 
+ Site Map 
+ Facebook 
+ Twitter 
+ LinkedIn 
+ Back to top
+
+=== ENLACES ===
+https://officialresults.elections.ab.ca | Election Results
+http://www.elections.ab.ca | Elections Alberta
+https://ofs.elections.ab.ca/ofsLogin.cfm | Secure Login
+http://www.elections.ab.ca/ | Elections Alberta home page.
+http://www.elections.ab.ca/election-results/ | Election Results
+https://officialresults.elections.ab.ca/orEDResultsReferendum2026.cfm?EventId=202606&MODE=exED | Download as Excel
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=01 | 01
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=02 | 02
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=03 | 03
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=04 | 04
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=05 | 05
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=06 | 06
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=07 | 07
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=08 | 08
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=09 | 09
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=10 | 10
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=11 | 11
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=12 | 12
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=13 | 13
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=14 | 14
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=15 | 15
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=16 | 16
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=17 | 17
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=18 | 18
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=19 | 19
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=20 | 20
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=21 | 21
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=22 | 22
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=23 | 23
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=24 | 24
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=25 | 25
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=26 | 26
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=27 | 27
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=28 | 28
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=29 | 29
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=30 | 30
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=31 | 31
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=32 | 32
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=33 | 33
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=34 | 34
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=35 | 35
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=36 | 36
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=37 | 37
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=38 | 38
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=39 | 39
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=40 | 40
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=41 | 41
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=42 | 42
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=43 | 43
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=44 | 44
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=45 | 45
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=46 | 46
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=47 | 47
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=48 | 48
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=49 | 49
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=50 | 50
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=51 | 51
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=52 | 52
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=53 | 53
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=54 | 54
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=55 | 55
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=56 | 56
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=57 | 57
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=58 | 58
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=59 | 59
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=60 | 60
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=61 | 61
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=62 | 62
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=63 | 63
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=64 | 64
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=65 | 65
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=66 | 66
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=67 | 67
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=68 | 68
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=69 | 69
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=70 | 70
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=71 | 71
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=72 | 72
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=73 | 73
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=74 | 74
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=75 | 75
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=76 | 76
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=77 | 77
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=78 | 78
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=79 | 79
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=80 | 80
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=81 | 81
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=82 | 82
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=83 | 83
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=84 | 84
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=85 | 85
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=86 | 86
+https://officialresults.elections.ab.ca/orPollResultsReferendum2026.cfm?EventID=202606&ED=87 | 87
+https://www.elections.ab.ca/ | 
+https://www.elections.ab.ca/privacy-security/ | Privacy & Security
+https://www.elections.ab.ca/terms-conditions/ | Terms & Conditions
+https://www.elections.ab.ca/site-map/ | Site Map
+https://www.facebook.com/electionsAB | Facebook
+https://twitter.com/ElectionsAB | Twitter
+https://ca.linkedin.com/company/electionsab | LinkedIn
