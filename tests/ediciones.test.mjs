@@ -43,9 +43,17 @@ function publicada(extra = {}) {
   return congelar(ed, fuentes, { fecha: "2026-11-03T16:00:00.000Z" });
 }
 
-test("hoy: EDICIONES está vacía y es válida; la selección de octubre la define la dirección editorial", () => {
-  assert.deepEqual(ediciones, []);
+test("hoy: EDICIONES es válida y no tiene ninguna edición publicada (la 01 está en borrador hasta su aprobación)", () => {
   assert.deepEqual(validar(ediciones), []);
+  assert.deepEqual(ediciones.filter((e) => e.estado === "publicada"), []);
+  const oct = ediciones.find((e) => e.slug === "2026-10");
+  if (oct) {
+    assert.equal(oct.estado, "borrador");
+    assert.equal(oct.publicadaEn, null, "la fecha real se fija solo al autorizar la publicación");
+    /* Todas las piezas son de octubre de 2026 y existen publicadas */
+    const v = congelar({ ...oct, huella: null }, fuentes);
+    for (const s of Object.values(v.instantanea.piezas)) assert.equal(s.fecha.slice(0, 7), "2026-10", s.url);
+  }
 });
 
 test("las páginas generadas están al día y el sitemap no cambia mientras no haya ediciones publicadas", () => {
@@ -177,6 +185,18 @@ test("SEO: ruta permanente, canonical, datos estructurados y enlaces a los artí
   assert.doesNotMatch(sm, /<loc>https:\/\/podcastdelmigrante\.com\/magazine\/<\/loc>/, "la vigente no se indexa aparte (canonical a la permanente)");
   assert.equal(render([])["sitemap.xml"], render([], { sitemap: sm })["sitemap.xml"], "al no haber ediciones el bloque se quita sin dejar rastro");
   assert.equal(render([])["sitemap.xml"], read("sitemap.xml"));
+});
+
+test("portada.social: la imagen horizontal se usa para compartir; sin ella, la portada", () => {
+  const social = { imagen: "/assets/canada-en-datos/social-canada-en-datos.jpg", alt: "Imagen para compartir", ancho: 1200, alto: 630 };
+  const con = render([publicada({ portada: { imagen: "/assets/logo.png", alt: "Portada de prueba", ancho: 500, alto: 500, social } })])["magazine/2026-10/index.html"];
+  assert.match(con, /<meta property="og:image" content="https:\/\/podcastdelmigrante\.com\/assets\/canada-en-datos\/social-canada-en-datos\.jpg">/);
+  assert.match(con, /<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">/);
+  assert.match(con, /<meta name="twitter:image" content="https:\/\/podcastdelmigrante\.com\/assets\/canada-en-datos\/social-canada-en-datos\.jpg">/);
+  assert.match(con, /<img src="\/assets\/logo\.png" alt="Portada de prueba" width="500" height="500" fetchpriority="high">/, "en la página se ve la portada vertical");
+  const sin = render([publicada()])["magazine/2026-10/index.html"];
+  assert.match(sin, /<meta property="og:image" content="https:\/\/podcastdelmigrante\.com\/assets\/logo\.png">/);
+  assert.match(validar([ejemplo({ portada: { imagen: "/assets/logo.png", alt: "x", ancho: 500, alto: 500, social: { imagen: "/x.jpg" } }, estado: "publicada", publicadaEn: "2026-11-03T09:00:00-07:00" })]).join("\n"), /portada\.social necesita/);
 });
 
 test("la vista previa de un borrador lleva noindex y el aviso de borrador", () => {

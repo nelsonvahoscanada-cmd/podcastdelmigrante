@@ -49,7 +49,10 @@
   titulo        String  — titular de la edición.
   bajada        String  — una o dos frases.
   portada       Object  — { imagen: "/assets/ediciones/AAAA-MM/portada.jpg",
-                          alt, ancho, alto } imagen original de la portada.
+                          alt, ancho, alto } imagen original de la portada
+                          (vertical). [OPCIONAL] social: { imagen, alt, ancho,
+                          alto } versión horizontal (1200 × 630) para
+                          compartir en redes; sin ella se usa la portada.
   editorial     Object  — { titulo, autor, html } texto del editorial
                           (HTML simple: <p>, <strong>, <em>, <a>).
   secciones     Array   — [{ titulo, piezas: [...] }] en el orden del índice.
@@ -67,4 +70,102 @@
   su autorización.
 ========================================================================= */
 
-const EDICIONES = [];
+const EDICIONES = [
+  {
+    "numero": 1,
+    "slug": "2026-10",
+    "periodo": {
+      "anio": 2026,
+      "mes": 10
+    },
+    "estado": "borrador",
+    "publicadaEn": null,
+    "titulo": "Nace una nueva voz para los migrantes en Canadá",
+    "bajada": "Edición inaugural: una selección retrospectiva de lo que publicamos en octubre de 2026, con historias, entrevistas y la información que cambió la vida de los migrantes en Canadá.",
+    "portada": {
+      "imagen": "/assets/ediciones/2026-10/portada.jpg",
+      "alt": "Portada de la Edición 01 de El Podcast del Migrante Magazine, octubre de 2026: «Nace una nueva voz para los migrantes en Canadá», con el logotipo y cinco titulares de la edición.",
+      "ancho": 1200,
+      "alto": 1600,
+      "social": {
+        "imagen": "/assets/ediciones/2026-10/portada-social.jpg",
+        "alt": "Edición 01 de El Podcast del Migrante Magazine, octubre de 2026: «Nace una nueva voz para los migrantes en Canadá».",
+        "ancho": 1200,
+        "alto": 630
+      }
+    },
+    "editorial": {
+      "titulo": "Nace una nueva voz para los migrantes en Canadá",
+      "autor": "Nelson Vahos, director",
+      "html": "<p>Octubre de 2026 marca el comienzo de El Podcast del Migrante Magazine. Nacimos de una convicción sencilla: quienes llegamos a Canadá merecemos información clara, en nuestro idioma, y también historias que nos recuerden que no estamos solos.</p><p>Esta primera edición reúne lo que fuimos durante este mes. Abre con mi columna, «El frío no pudo apagar mi señal», un relato sobre empezar de cero que explica por qué existe este proyecto. Le siguen las historias de Héctor Rivero, Diana Cardona y el Dr. Eddy Valverde Narvaez, y el reconocimiento de Alberta a inmigrantes que transforman sus comunidades.</p><p>También explicamos lo que cambió para quienes planean su futuro aquí: los nuevos puntos de Express Entry, las multas contra representantes que actúan sin autorización y el debate sobre los niveles de inmigración. Cerramos con Alberta: el resultado del referéndum, tus derechos con la luz y el gas en invierno, y una convocatoria de empleo para 2027.</p><p>Esta edición es una selección retrospectiva: reúne piezas que publicamos a lo largo de octubre y que siguen disponibles en sus enlaces originales, con sus fechas de entonces. No reescribimos su contenido; la presentamos tal como la cerramos, para que quede en nuestra hemeroteca.</p><p>Gracias por leernos. Esto apenas empieza.</p>"
+    },
+    "secciones": [
+      {
+        "titulo": "La voz que nace",
+        "piezas": [
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-016"
+          }
+        ]
+      },
+      {
+        "titulo": "Historias que inspiran",
+        "piezas": [
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-029"
+          },
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-024"
+          },
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-017"
+          },
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-021"
+          }
+        ]
+      },
+      {
+        "titulo": "Migración: lo que cambió",
+        "piezas": [
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-027"
+          },
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-031"
+          },
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-015"
+          }
+        ]
+      },
+      {
+        "titulo": "Vivir en Alberta",
+        "piezas": [
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-028"
+          },
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-025"
+          },
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-030"
+          }
+        ]
+      }
+    ],
+    "instantanea": null,
+    "huella": null
+  }
+];
