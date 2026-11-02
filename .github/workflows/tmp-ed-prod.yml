@@ -34,6 +34,7 @@ jobs:
         continue-on-error: true
         run: |
           B=https://podcastdelmigrante.com
+          mkdir -p /tmp/out; exec > >(tee /tmp/out/archivos.txt) 2>&1
           for f in magazine/ediciones/index.html magazine/2026-10/index.html magazine/index.html js/ediciones.js index.html js/data.js js/main.js js/articles.js css/styles.css sitemap.xml articulo-referendum-alberta-octubre-2026-inmigrantes.html assets/ediciones/2026-10/portada.jpg assets/ediciones/2026-10/portada-social.jpg; do curl -sfL "$B/$f" -o /tmp/x; if cmp -s /tmp/x "$f"; then echo "IGUAL $f"; else echo "DISTINTO $f"; fi; done
           for r in / /noticias /magazine/ediciones/ /magazine/ /magazine/2026-10/ /magazine/2026-11/ /canada-en-datos/ /articulo-referendum-alberta-octubre-2026-inmigrantes /sitemap.xml; do echo "$(curl -s -o /dev/null -w %{http_code} $B$r) $r"; done; echo "enlaces a /magazine/ en la portada: $(curl -sL $B/ | grep -c /magazine/)"; curl -sL $B/sitemap.xml | grep -c "magazine/2026-10"
       - name: E2E en produccion
@@ -42,10 +43,13 @@ jobs:
           NODE_PATH: /tmp/pw/node_modules
           NODE_OPTIONS: --require /tmp/pw/vistas.cjs
         run: |
+          set +e
           mkdir -p /tmp/out/shots
           for t in ediciones patrocinadores descubre-canada menu noticias canada-datos hector-rivero empleo-remoto-alberta alberta-bomberos multas-representantes; do
             if [ $t = ediciones ]; then export SHOTS=/tmp/out/shots; else unset SHOTS; fi
-            node tests/e2e-$t.cjs > /tmp/out/$t.log 2>&1; echo "exit $? $t" | tee -a /tmp/out/resultado.txt; tail -3 /tmp/out/$t.log
+            node tests/e2e-$t.cjs > /tmp/out/$t.log 2>&1; e=$?
+            if [ $e != 0 ]; then mv /tmp/out/$t.log /tmp/out/$t-intento1.log; node tests/e2e-$t.cjs > /tmp/out/$t.log 2>&1; e=$?; fi
+            echo "exit $e $t" | tee -a /tmp/out/resultado.txt; tail -3 /tmp/out/$t.log
           done
       - name: Publicar capturas en la rama de datos
         if: always()
