@@ -1,0 +1,19 @@
+IGUAL js/data.js
+IGUAL js/articles.js
+IGUAL sitemap.xml
+IGUAL assets/canada-groceries-essentials-benefit-cgeb-2026.jpg
+IGUAL assets/social/canada-groceries-essentials-benefit-cgeb-2026.jpg
+200 /
+200 /articulo-canada-groceries-essentials-benefit-cgeb-2026
+200 /guia.html?categoria=migracion
+200 /noticias
+200 /magazine/2026-10/
+<title>Canada Groceries and Essentials Benefit: quién lo recibe y cómo
+property="og:title" content="¿Trabajas en Canadá? Podrías recibir dinero del Gobierno para tus compras de mercado"
+property="og:image" content="https://podcastdelmigrante.com/assets/social/canada-groceries-essentials-benefit-cgeb-2026.jpg"
+name="twitter:card" content="summary_large_image"
+name="twitter:image" content="https://podcastdelmigrante.com/assets/social/canada-groceries-essentials-benefit-cgeb-2026.jpg"
+200 https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html
+200 https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html
+200 https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html
+tiktok 200
