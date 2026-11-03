@@ -1,0 +1,11 @@
+200 https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html | <title>Canada Groceries and Essentials Benefit (CGEB) - Canada.ca
+200 https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html | <title>How to get the benefit - Canada Groceries and Essentials Benefit - Canada.ca
+200 https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/who-eligible.html | <title>Who is eligible – Canada Groceries and Essentials Benefit - Canada.ca
+200 https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/how-much.html | <title>How much you can get - Canada Groceries and Essentials Benefit - Canada.ca
+200 https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/how-much/payments-chart.html | <title>Payments chart: Period from July 2026 to June 2027 (2025 base year) - Canada.ca
+200 https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/payment-dates.html | <title>Payment dates - Canada Groceries and Essentials Benefit - Canada.ca
+200 https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html | <title>Sign in to your CRA account - Canada.ca
+200 https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html | <title>RC151 Canada Groceries and Essentials Benefit Application for Individuals Who Become Residents of Canada - Canada.ca
+href="/en/revenue-agency/services/e-services/cra-login-services.html"
+href="/en/revenue-agency/services/forms-publications/forms/rc151.html"
+href="https://apps.cra-arc.gc.ca/ebci/uisp/rc151/ntr"
