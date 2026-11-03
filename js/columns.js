@@ -63,7 +63,7 @@ const COLUMNS = [
     entries: [
       { monthLabel: "Septiembre 2026", title: "El error financiero que muchos inmigrantes descubren demasiado tarde", slug: "el-error-financiero-inmigrantes-canada", published: true },
       { monthLabel: "Octubre 2026", title: "Llegaste a Canadá. ¿Tu dinero también?", published: false },
-      { monthLabel: "Noviembre 2026", title: "Trabajas, pagas y ahorras… ¿pero realmente estás avanzando?", published: false },
+      { monthLabel: "Noviembre 2026", title: "Trabajas, pagas y ahorras… ¿pero realmente estás avanzando?", slug: "trabajas-pagas-ahorras-realmente-avanzando", published: true },
       { monthLabel: "Diciembre 2026", title: "Una emergencia puede borrar años de esfuerzo", published: false },
       { monthLabel: "Enero 2027", title: "Tu TFSA puede estar abierto y seguir dormido", published: false },
       { monthLabel: "Febrero 2027", title: "El RRSP no es dinero gratis", published: false },

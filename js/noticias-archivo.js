@@ -1,8 +1,8 @@
 /*
   noticias-archivo.js — Archivo de noticias (noticias.html)
   ======================================================================
-  Lista todas las noticias publicadas de ARTICLES, de la más reciente a
-  la más antigua, en páginas de PDM_NOTICIAS.POR_PAGINA:
+  Lista todas las noticias y columnas publicadas de ARTICLES, de la más
+  reciente a la más antigua, en páginas de PDM_NOTICIAS.POR_PAGINA:
   noticias (página 1), noticias?pagina=2, noticias?pagina=3…
   Cada fila enlaza a la página permanente del artículo
   (articulo-<slug>), la misma que se comparte en redes.
@@ -20,7 +20,7 @@
 
   const N = window.PDM_NOTICIAS;
   const pedida = new URLSearchParams(location.search).get("pagina");
-  const todas = N.publicadas(ARTICLES);
+  const todas = N.archivo ? N.archivo(ARTICLES) : N.publicadas(ARTICLES);
   const actual = N.pagina(todas, pedida === null ? 1 : Number(pedida));
   const hrefPagina = (n) => (n === 1 ? "noticias" : "noticias?pagina=" + n);
 
@@ -47,7 +47,7 @@
     .join("");
 
   resumen.textContent =
-    `${todas.length} noticias, de la más reciente a la más antigua.` +
+    `${todas.length} publicaciones, de la más reciente a la más antigua.` +
     (actual.total > 1 ? ` Página ${actual.numero} de ${actual.total}.` : "");
 
   if (actual.total > 1) {

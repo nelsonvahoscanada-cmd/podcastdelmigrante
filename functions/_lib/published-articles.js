@@ -1,5 +1,6 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "trabajas-pagas-ahorras-realmente-avanzando",
   "canada-groceries-essentials-benefit-cgeb-2026",
   "canada-cambios-express-entry-3-noviembre-2026",
   "alberta-empleo-desde-casa-program-eligibility-assessor-2026",
