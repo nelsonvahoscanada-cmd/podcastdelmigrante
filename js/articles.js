@@ -106,6 +106,9 @@
                               "Por [autor]"), nota de publicación original
                               y ficha del autor (esta última se toma de la
                               columna, ver columns.js).
+  chapter           Number  — [OPCIONAL] número de capítulo dentro de la
+                              columna de autor; se muestra en la cabecera
+                              («Entre dos mundos · Capítulo 2»).
   edition           String  — [OPCIONAL] ej. "Octubre 2026"; se muestra
                               en la línea de metadatos.
   originalNote      String  — [OPCIONAL] nota discreta al final cuando el
@@ -159,6 +162,163 @@ const DISCLAIMERS = {
    describe hechos, cifras ni declaraciones reales.
 ========================================================= */
 const ARTICLES = [
+  {
+    /* ENTRE DOS MUNDOS — capítulo 2 (Nelson Vahos), edición de noviembre de
+       2026. Versión revisada y resumida aprobada por el autor; publicación
+       autorizada por la dirección el 3-11-2026. Andrés y Claudia son nombres
+       ficticios (lo explica la nota editorial): no agregar nombres reales,
+       datos que identifiquen a la familia, cifras de donaciones, enlaces
+       comerciales ni atribuciones de responsabilidad por el accidente. */
+    id: "ART-2026-038",
+    slug: "canada-tambien-puede-convertirse-en-un-infierno",
+    layout: "columna-autor",
+    category: "Comunidad",
+    contentType: "Columna",
+    columnName: "Entre dos mundos",
+    chapter: 2,
+    title: "Canadá también puede convertirse en un infierno",
+    dek: "El sueño de Andrés: llegó con 22 años buscando un futuro mejor, pero su familia terminó luchando para llevarlo de regreso a Colombia.",
+    excerpt: "El sueño de Andrés: llegó con 22 años buscando un futuro mejor, pero su familia terminó luchando para llevarlo de regreso a Colombia.",
+    author: { mode: "colaborador", name: "Nelson Vahos" },
+    edition: "Noviembre 2026",
+    publishedAt: "2026-11-03T05:51:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: null,
+    demo: false,
+    heroImage: {
+      background: "url('assets/canada-tambien-puede-convertirse-en-un-infierno.jpg')",
+      aspectRatio: "3/2",
+      alt: "Ilustración editorial: un joven, de espaldas y con gorro de lana, arrastra una maleta roja por un campo nevado de noche, frente a una ciudad canadiense iluminada a lo lejos; un avión se aleja en el cielo.",
+      credit: "Ilustración editorial de El Podcast del Migrante. Imagen simbólica: no representa a las personas de esta historia.",
+      socialFocus: "50% 62%",
+    },
+    bodyHtml: `
+      <p class="article-update"><em>Nota editorial: Algunos nombres de esta historia han sido modificados para proteger la identidad y privacidad de sus protagonistas. El relato se basa en un testimonio real compartido durante una transmisión de El Podcast del Migrante.</em></p>
+      <p>Hay viajes que comienzan con una maleta llena de ropa, un pasaporte y la esperanza de encontrar una vida mejor.</p>
+      <p>Y hay viajes de regreso que ninguna madre debería tener que esperar.</p>
+      <p>Andrés tenía apenas 22 años cuando llegó a Canadá desde Colombia. Como tantos jóvenes inmigrantes, venía buscando oportunidades, un trabajo estable y la posibilidad de ayudar económicamente a su familia.</p>
+      <p>Su mayor motivación era su madre, que permanecía en Colombia y atravesaba dificultades de salud que le impedían trabajar con normalidad.</p>
+      <p>Andrés quería convertirse en su apoyo.</p>
+      <p>Pero lo que comenzó como un sueño terminó en una tragedia que ninguna familia había imaginado.</p>
+      <p>Un accidente laboral en Edmonton, Alberta, le arrebató la vida.</p>
+      <p>Y su familia, que esperaba verlo regresar algún día de visita, terminó buscando los recursos necesarios para llevar su cuerpo de regreso a Colombia.</p>
+      <h2>Una historia que llegó a nuestros micrófonos</h2>
+      <p>Una noche, durante una transmisión de El Podcast del Migrante, recibí el mensaje de Claudia, una colombiana que necesitaba compartir una situación dolorosa.</p>
+      <p>Su sobrino había fallecido en un accidente de trabajo en Canadá.</p>
+      <p>Cuando Claudia entró a nuestra transmisión desde Colombia, comprendí que aquella conversación sería diferente. No buscaba información sobre permisos de trabajo, residencia permanente ni oportunidades laborales.</p>
+      <p>Necesitaba ayuda para enfrentar una tragedia familiar.</p>
+      <p>Mientras hablábamos, un fuerte aguacero afectaba su conexión a internet. Su voz llegaba entre interrupciones, pero había algo que se escuchaba con absoluta claridad: el dolor de una familia que no sabía cómo afrontar lo sucedido.</p>
+      <p>Andrés había llegado a Canadá el 20 de diciembre de 2022. Tenía familiares establecidos aquí y uno de sus tíos lo había recibido y orientado en labores relacionadas con la electricidad.</p>
+      <p>Era un joven alegre, trabajador y entusiasmado por construir su futuro.</p>
+      <p>Cuando obtuvo autorización para trabajar, comenzó a enviar dinero para ayudar a su madre.</p>
+      <p>Estaba empezando a cumplir su sueño.</p>
+      <h2>El día en que todo cambió</h2>
+      <p>Según el testimonio de Claudia, Andrés trabajaba en construcción cuando ocurrió el accidente.</p>
+      <p>Al parecer, realizaba una labor relacionada con la instalación de un ventilador utilizando un equipo elevador. Durante el trabajo, el equipo se volcó y Andrés sufrió una caída que le causó lesiones mortales.</p>
+      <p>No conocemos las conclusiones de una investigación oficial ni los factores técnicos que pudieron intervenir. Por respeto a la familia, sería irresponsable atribuir responsabilidades sin contar con esa información.</p>
+      <p>Lo que sí conocemos es el resultado.</p>
+      <p>Un joven colombiano de 22 años había salido de su país buscando un futuro mejor.</p>
+      <p>Y ya no regresaría con vida.</p>
+      <p>Claudia nos contó que la familia estaba intentando reunir dinero para trasladar su cuerpo a Colombia.</p>
+      <p>No estaban buscando recursos para unas vacaciones, una celebración o un nuevo proyecto.</p>
+      <p>Querían que una madre pudiera despedirse de su hijo.</p>
+      <p>Durante la transmisión hablamos de la posibilidad de colaborar con pequeñas donaciones. Intentamos compartir el enlace de la campaña y encontramos dificultades para hacerlo desde los comentarios de la plataforma.</p>
+      <p>Finalmente, conseguimos facilitar el acceso a través de mi perfil.</p>
+      <p>No puedo afirmar cómo terminó el proceso de repatriación, porque no contamos con esa confirmación.</p>
+      <p>Pero aquella noche comprendí algo que nunca olvidaré: <strong>un micrófono también puede convertirse en un puente entre el dolor de una familia y la solidaridad de personas que ni siquiera la conocen.</strong></p>
+      <h2>La seguridad laboral no puede ser una formalidad</h2>
+      <p>Hubo un momento de la conversación que me impactó especialmente.</p>
+      <p>Claudia nos contó que trabajaba en seguridad industrial.</p>
+      <p>Su profesión consistía precisamente en prevenir accidentes y proteger la vida de los trabajadores.</p>
+      <p>Conocía los riesgos, los procedimientos y la importancia de la prevención.</p>
+      <p>Y, sin embargo, estaba hablando de la muerte de su propio sobrino en un accidente laboral.</p>
+      <p>Aquella revelación me hizo reflexionar sobre algo que muchas veces olvidamos.</p>
+      <p>Los inmigrantes llegamos a Canadá dispuestos a trabajar duro. Aceptamos turnos difíciles, aprendemos nuevos oficios y hacemos grandes sacrificios para salir adelante.</p>
+      <p>Pero ninguna oportunidad laboral debería hacernos olvidar que nuestra vida es más importante que cualquier salario.</p>
+      <p>La seguridad no puede depender de la costumbre.</p>
+      <p>No basta con haber realizado una tarea cien veces para asumir que la siguiente estará libre de riesgos.</p>
+      <p>La prevención debe ser una responsabilidad compartida entre empleadores, trabajadores y quienes supervisan las labores.</p>
+      <p>La historia de Andrés no nos permite determinar qué falló en su accidente. Pero sí nos recuerda por qué debemos tomar en serio la seguridad laboral.</p>
+      <h2>El Canadá del que también debemos hablar</h2>
+      <p>Quienes me conocen saben que estoy profundamente agradecido con Canadá.</p>
+      <p>Este país me abrió las puertas cuando mi familia y yo necesitábamos comenzar de nuevo.</p>
+      <p>Aquí he trabajado, aprendido y reconstruido una parte importante de mi vida.</p>
+      <p>Pero agradecerle a un país no significa ignorar sus dificultades.</p>
+      <p>Canadá puede ofrecernos oportunidades extraordinarias. También puede convertirse en un escenario profundamente doloroso cuando ocurre una enfermedad, una pérdida de empleo o una tragedia inesperada.</p>
+      <p>Y de esa realidad también debemos hablar.</p>
+      <p>Muchos inmigrantes concentramos nuestros esfuerzos en conseguir trabajo, pagar el arriendo, comprar un vehículo, ahorrar para una vivienda o enviar dinero a nuestros familiares.</p>
+      <p>Pero pocas veces nos detenemos a pensar qué sucedería si mañana no pudiéramos continuar trabajando.</p>
+      <p>¿Quién depende de nuestros ingresos? ¿Conocemos nuestros derechos laborales? ¿Tenemos alguna preparación para enfrentar una emergencia?</p>
+      <p>Durante aquella transmisión, mi compañero Carlos D. Castillo y yo conversamos sobre la importancia de la protección financiera y los seguros de vida.</p>
+      <p>Recordé una pregunta que Carlos me había hecho tiempo atrás: ¿qué pasaría con la estabilidad económica de nuestra familia si faltara uno de los adultos que sostiene el hogar?</p>
+      <p>Aquella noche, frente a la historia de Andrés, esa reflexión adquirió un significado diferente.</p>
+      <p>No porque una póliza hubiera podido impedir el accidente.</p>
+      <p>Tampoco porque sepamos qué coberturas o prestaciones podrían corresponderle a su familia.</p>
+      <p>Y mucho menos porque una tragedia humana pueda reducirse a una cuestión económica.</p>
+      <p>Sino porque comprendí que <strong>cuidar a quienes amamos también significa prepararnos para situaciones que nunca quisiéramos enfrentar.</strong></p>
+      <p>Ningún seguro reemplaza un abrazo. Ninguna indemnización devuelve una vida.</p>
+      <p>Pero conocer nuestros derechos, exigir condiciones de trabajo seguras y revisar las protecciones disponibles también forma parte de nuestra responsabilidad familiar.</p>
+      <h2>Lo más valioso no siempre se puede enviar por dinero</h2>
+      <p>Hacia el final de la conversación, Claudia compartió una reflexión que todavía permanece conmigo.</p>
+      <p>Habló de la importancia de la unión familiar, de acompañarnos en los momentos difíciles y de valorar a las personas mientras están con nosotros.</p>
+      <p>Sus palabras me hicieron pensar en algo que vivimos muchos inmigrantes.</p>
+      <p>Trabajamos tanto para ofrecerles un futuro mejor a nuestros seres queridos que, a veces, terminamos sacrificando el tiempo que podríamos compartir con ellos.</p>
+      <p>Hacemos horas extras.</p>
+      <p>Aceptamos turnos difíciles.</p>
+      <p>Postergamos llamadas.</p>
+      <p>Nos decimos que más adelante habrá tiempo.</p>
+      <p>Cuando compremos una casa.</p>
+      <p>Cuando paguemos las deudas.</p>
+      <p>Cuando consigamos la residencia permanente.</p>
+      <p>Cuando podamos regresar de visita.</p>
+      <p>Pero la vida no siempre espera a que terminemos nuestros planes.</p>
+      <p>Andrés trabajaba para ayudar a su madre. Su esfuerzo era una expresión de amor.</p>
+      <p>Sin embargo, su historia también nos recuerda que el amor necesita algo más que sacrificio económico.</p>
+      <p>Necesita presencia.</p>
+      <p>Una llamada.</p>
+      <p>Una conversación.</p>
+      <p>Un abrazo.</p>
+      <p>El tiempo que todavía podemos compartir.</p>
+      <h2>El regreso que nadie había imaginado</h2>
+      <p>Cuando terminó aquella transmisión, me quedé pensando en Andrés.</p>
+      <p>En aquel joven colombiano que llegó a Canadá con apenas 22 años, dispuesto a trabajar y ayudar a su mamá.</p>
+      <p>Imagino las recomendaciones que recibió antes de viajar, las llamadas para saber si había llegado bien y la ilusión de su familia de volver a verlo algún día.</p>
+      <p>Son escenas que conocemos quienes hemos emigrado.</p>
+      <p>Pero su historia tuvo un desenlace que nadie esperaba.</p>
+      <p>Su familia terminó luchando para conseguir los recursos necesarios para devolverlo a Colombia.</p>
+      <p>Y su madre, que lo había visto partir lleno de sueños, enfrentaba ahora la posibilidad de recibirlo sin vida.</p>
+      <p>Hay dolores que no necesitan adornos.</p>
+      <p>Necesitan respeto.</p>
+      <p>Necesitan compañía.</p>
+      <p>Y, cuando sea posible, necesitan que alguien tienda la mano.</p>
+      <p>Aquella noche confirmé por qué nació El Podcast del Migrante.</p>
+      <p>No solamente para hablar de oportunidades, trámites o historias de éxito.</p>
+      <p>También para escuchar las experiencias difíciles que muchas veces permanecen en silencio.</p>
+      <p>Porque detrás de cada trabajador inmigrante hay una familia, alguien esperando una llamada y personas que sueñan con volver a abrazarse.</p>
+      <p>Andrés llegó a Canadá buscando un futuro.</p>
+      <p>Su familia luchaba por devolverlo a casa.</p>
+      <p>Y yo me quedé pensando en algo que jamás deberíamos olvidar:</p>
+      <p><strong>A veces cruzamos un océano para darles una vida mejor a quienes amamos, sin imaginar que lo más valioso que esperan de nosotros no cabe en una remesa ni en una maleta: es la posibilidad de volver a vernos.</strong></p>
+      <p><strong>Porque el verdadero sueño de emigrar no debería ser solamente llegar lejos, sino conseguir que la distancia nunca nos haga olvidar por quiénes emprendimos el viaje.</strong></p>
+      <p><em>Entre dos mundos es una columna de Nelson Vahos para El Podcast del Migrante. Historias reales sobre las decisiones, los sacrificios y las experiencias que transforman la vida de quienes emigran.</em></p>
+    `,
+    originalNote: null,
+    video: null,
+    sources: [],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: [],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Canadá también puede convertirse en un infierno | Entre dos mundos — Nelson Vahos",
+      description: "Andrés llegó a Canadá con 22 años y murió en un accidente laboral en Edmonton. Nelson Vahos reflexiona sobre seguridad laboral, protección y familia.",
+      canonicalPath: "/columnas/entre-dos-mundos/canada-tambien-puede-convertirse-en-un-infierno/",
+    },
+  },
   {
     /* «Rural vs Urban Healthcare: A High-Level Review», de Elmy Castillo
        (texto original en inglés recibido el 1-11-2026). Traducción de la

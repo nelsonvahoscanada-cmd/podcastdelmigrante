@@ -284,7 +284,17 @@ const EDICIONES = [
     "bajada": "",
     "portada": null,
     "editorial": null,
-    "secciones": [],
+    "secciones": [
+      {
+        "titulo": "Entre dos mundos",
+        "piezas": [
+          {
+            "tipo": "articulo",
+            "id": "ART-2026-038"
+          }
+        ]
+      }
+    ],
     "instantanea": null,
     "huella": null
   }

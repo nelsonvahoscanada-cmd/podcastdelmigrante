@@ -522,7 +522,7 @@
       : `<span class="column-masthead__name">${article.columnName}</span>`;
     return `
       <div class="column-masthead">
-        ${name}
+        ${name}${article.chapter ? `<span class="column-masthead__chapter">Capítulo ${article.chapter}</span>` : ""}
         <span class="column-masthead__by">Por ${article.author.name}</span>
       </div>
     `;

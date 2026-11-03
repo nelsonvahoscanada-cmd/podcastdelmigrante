@@ -1,0 +1,97 @@
+/* Entre dos mundos, capítulo 2: «Canadá también puede convertirse en un
+   infierno» (Nelson Vahos, edición de noviembre de 2026). Texto aprobado por
+   el autor, privacidad (nombres ficticios), sin cifras de donaciones ni
+   enlaces comerciales, ilustración editorial, columna, edición y SEO. */
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { readFileSync, existsSync } from "node:fs";
+import { join } from "node:path";
+import vm from "node:vm";
+
+const ROOT = new URL("..", import.meta.url).pathname;
+const read = (p) => readFileSync(join(ROOT, p), "utf8");
+const ctx = {};
+vm.runInNewContext(read("js/articles.js") + ";" + read("js/data.js") + ";" + read("js/columns.js") + ";" + read("js/ediciones.js") + ";globalThis.A = ARTICLES; globalThis.H = HERO; globalThis.COL = COLUMNS; globalThis.ED = EDICIONES;", ctx);
+const SLUG = "canada-tambien-puede-convertirse-en-un-infierno";
+const art = ctx.A.find((a) => a.slug === SLUG);
+const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+
+test("capítulo 2 de Entre dos mundos, una sola vez, con autor, edición y fecha real", () => {
+  assert.ok(art && !art.draft && art.demo === false);
+  assert.equal(ctx.A.filter((a) => a.slug === SLUG || a.title === art.title).length, 1, "sin duplicados");
+  assert.equal(ctx.A.filter((a) => a.id === "ART-2026-038").length, 1);
+  assert.equal(art.title, "Canadá también puede convertirse en un infierno");
+  assert.equal(art.dek, "El sueño de Andrés: llegó con 22 años buscando un futuro mejor, pero su familia terminó luchando para llevarlo de regreso a Colombia.");
+  assert.equal(art.layout, "columna-autor");
+  assert.equal(art.contentType, "Columna");
+  assert.equal(art.columnName, "Entre dos mundos");
+  assert.equal(art.chapter, 2);
+  assert.equal(art.author.name, "Nelson Vahos");
+  assert.equal(art.edition, "Noviembre 2026");
+  assert.match(art.publishedAt, /^2026-11-03T\d{2}:\d{2}:00-06:00$/);
+  const cap1 = ctx.A.find((a) => a.slug === "el-frio-no-pudo-apagar-mi-senal");
+  assert.equal(cap1.chapter, undefined, "el capítulo 1 no se modifica");
+  assert.equal(cap1.edition, "Octubre 2026");
+  for (const f of [`articulo-${SLUG}.html`, `assets/${SLUG}.jpg`, `assets/social/${SLUG}.jpg`]) assert.ok(existsSync(join(ROOT, f)), f);
+});
+
+test("texto aprobado completo: nota editorial al inicio, cierre y firma de la columna", () => {
+  assert.match(art.bodyHtml, /^\s*<p class="article-update"><em>Nota editorial: Algunos nombres de esta historia han sido modificados para proteger la identidad y privacidad de sus protagonistas\./);
+  assert.match(texto, /Hay viajes que comienzan con una maleta llena de ropa/);
+  for (const h of ["Una historia que llegó a nuestros micrófonos", "El día en que todo cambió", "La seguridad laboral no puede ser una formalidad", "El Canadá del que también debemos hablar", "Lo más valioso no siempre se puede enviar por dinero", "El regreso que nadie había imaginado"]) assert.ok(art.bodyHtml.includes(`<h2>${h}</h2>`), h);
+  assert.match(art.bodyHtml, /<strong>un micrófono también puede convertirse en un puente entre el dolor de una familia y la solidaridad de personas que ni siquiera la conocen\.<\/strong>/);
+  assert.match(art.bodyHtml, /<strong>Porque el verdadero sueño de emigrar no debería ser solamente llegar lejos, sino conseguir que la distancia nunca nos haga olvidar por quiénes emprendimos el viaje\.<\/strong>/);
+  assert.match(texto, /Entre dos mundos es una columna de Nelson Vahos para El Podcast del Migrante\./);
+  assert.doesNotMatch(texto, /Estado editorial|pendiente de aprobación/, "sin marcas internas de revisión");
+});
+
+test("privacidad y responsabilidad: nombres ficticios, sin culpables, sin cifras ni repatriación confirmada, sin enlaces", () => {
+  assert.match(texto, /Andrés/);
+  assert.match(texto, /Claudia/);
+  assert.match(texto, /sería irresponsable atribuir responsabilidades sin contar con esa información/);
+  assert.match(texto, /No puedo afirmar cómo terminó el proceso de repatriación, porque no contamos con esa confirmación\./);
+  assert.doesNotMatch(texto, /\$\s?\d|\d\s?(dólares|pesos|CAD)/, "sin cifras de donaciones");
+  assert.doesNotMatch(art.bodyHtml, /<a\s/, "sin enlaces en la historia");
+  assert.deepEqual(Array.from(art.sources), []);
+  assert.equal(art.sponsored, false);
+});
+
+test("ilustración editorial simbólica, identificada como tal", () => {
+  assert.equal(art.heroImage.background, `url('assets/${SLUG}.jpg')`);
+  assert.match(art.heroImage.alt, /^Ilustración editorial:/);
+  assert.match(art.heroImage.credit, /Ilustración editorial.*no representa a las personas de esta historia/);
+});
+
+test("columna Entre dos mundos: capítulo 1 en octubre y capítulo 2 en noviembre, en orden", () => {
+  const col = ctx.COL.find((c) => c.id === "entre-dos-mundos");
+  assert.deepEqual(JSON.parse(JSON.stringify(col.entries.map((e) => [e.monthLabel, e.slug, e.published]))), [
+    ["Octubre 2026", "el-frio-no-pudo-apagar-mi-senal", true],
+    ["Noviembre 2026", SLUG, true],
+  ]);
+  assert.equal(col.entries[1].title, art.title);
+});
+
+test("edición de noviembre (borrador): incluye el capítulo; la de octubre no cambia", () => {
+  const nov = ctx.ED.find((e) => e.slug === "2026-11");
+  assert.equal(nov.estado, "borrador");
+  assert.ok(nov.secciones.some((s) => s.piezas.some((p) => p.id === "ART-2026-038")));
+  const oct = ctx.ED.find((e) => e.slug === "2026-10");
+  assert.equal(oct.huella, "d434c15a58b85e15188dc3eb39d7c6294cc4a1b360769b1d778519f50b11e2a2");
+  assert.ok(!Object.keys(oct.instantanea.piezas).includes("articulo:ART-2026-038"));
+});
+
+test("portada: la noticia principal y las destacadas no cambian", () => {
+  assert.equal(ctx.H.main.slug, "canada-cambios-express-entry-3-noviembre-2026");
+  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026", "alberta-bomberos-forestales-2027", "multas-representantes-migratorios-canada-2026"]);
+});
+
+test("SEO: título, descripción, Open Graph, Twitter, canónica y sitemap", () => {
+  const h = read(`articulo-${SLUG}.html`);
+  assert.match(h, /<title>Canadá también puede convertirse en un infierno \| Entre dos mundos — Nelson Vahos/);
+  assert.match(h, new RegExp(`property="og:image" content="https://podcastdelmigrante\\.com/assets/social/${SLUG}\\.jpg"`));
+  assert.match(h, new RegExp(`name="twitter:image" content="https://podcastdelmigrante\\.com/assets/social/${SLUG}\\.jpg"`));
+  assert.match(h, /name="twitter:card" content="summary_large_image"/);
+  assert.match(h, new RegExp(`rel="canonical" href="https://podcastdelmigrante\\.com/articulo-${SLUG}"`));
+  assert.ok(art.seo.description.length <= 160);
+  assert.match(read("sitemap.xml"), new RegExp(`<loc>https://podcastdelmigrante\\.com/articulo-${SLUG}</loc>\\s*<lastmod>2026-11-03</lastmod>`));
+});
