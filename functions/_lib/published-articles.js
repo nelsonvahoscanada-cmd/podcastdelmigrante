@@ -1,5 +1,6 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "canada-tambien-puede-convertirse-en-un-infierno",
   "salud-rural-urbana-alberta-atencion-medica",
   "rural-vs-urban-healthcare-high-level-review",
   "trabajas-pagas-ahorras-realmente-avanzando",

@@ -112,13 +112,14 @@ test("publicar exige portada, editorial, fecha con zona y edición congelada", (
   assert.deepEqual(validar([publicada()]), []);
 });
 
-test("Edición 02 (noviembre de 2026): borrador vacío, sin página pública ni vista previa hasta tener portada e índice", () => {
+test("Edición 02 (noviembre de 2026): borrador con el capítulo 2 de Entre dos mundos, sin página pública ni vista previa hasta tener portada", () => {
   const nov = ediciones.find((e) => e.slug === "2026-11");
   assert.ok(nov, "la Edición 02 existe como borrador");
   assert.equal(nov.numero, 2);
   assert.equal(nov.estado, "borrador");
   assert.equal(nov.publicadaEn, null);
-  assert.deepEqual(nov.secciones, []);
+  assert.deepEqual(JSON.parse(JSON.stringify(nov.secciones)), [{ titulo: "Entre dos mundos", piezas: [{ tipo: "articulo", id: "ART-2026-038" }] }]);
+  assert.equal(nov.portada, null);
   assert.ok(!existsSync(join(ROOT, "magazine/2026-11")), "noviembre no tiene página pública");
   assert.doesNotMatch(read("sitemap.xml"), /magazine\/2026-11/);
   assert.doesNotMatch(read("magazine/ediciones/index.html"), /2026-11/);

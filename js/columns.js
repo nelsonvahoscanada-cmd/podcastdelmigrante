@@ -99,6 +99,7 @@ const COLUMNS = [
     },
     entries: [
       { monthLabel: "Octubre 2026", title: "El frío no pudo apagar mi señal", slug: "el-frio-no-pudo-apagar-mi-senal", published: true },
+      { monthLabel: "Noviembre 2026", title: "Canadá también puede convertirse en un infierno", slug: "canada-tambien-puede-convertirse-en-un-infierno", published: true },
     ],
   },
 ];

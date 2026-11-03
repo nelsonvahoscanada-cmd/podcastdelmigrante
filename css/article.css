@@ -476,6 +476,7 @@ a.article-column-badge:hover { background: #82b204; }
   color: var(--verde-oscuro);
 }
 a.column-masthead__name:hover { color: var(--negro); }
+.column-masthead__chapter { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gris-600); }
 .column-masthead__by { display: block; margin-top: 4px; font-size: 0.96rem; color: var(--gris-600); }
 
 .article-page--autor-columna .article-title { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.12; }
