@@ -25,9 +25,9 @@ test("portada: la noticia de empleo (convocatoria cerrada el 2-11-2026) deja el 
   assert.ok(!destacadas.includes(SLUG), "ya no aparece entre las destacadas");
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
     "hector-rivero-santa-latino-canada",
+    "canada-groceries-essentials-benefit-cgeb-2026",
     "alberta-bomberos-forestales-2027",
     "multas-representantes-migratorios-canada-2026",
-    "referendum-alberta-octubre-2026-inmigrantes",
   ]);
   assert.ok(art && !art.draft, "sigue publicada");
   assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)), "y conserva su URL");

@@ -91,6 +91,16 @@ const HERO = {
       slug: "hector-rivero-santa-latino-canada",
     },
     {
+      category: "Finanzas",
+      title: "¿Trabajas en Canadá? Podrías recibir dinero del Gobierno para tus compras de mercado",
+      date: "2 de noviembre",
+      image: "url('assets/canada-groceries-essentials-benefit-cgeb-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Imagen editorial de El Podcast del Migrante: una familia sonriente con un carrito de supermercado lleno de alimentos junto a la bandera de Canadá, con el titular «¿Trabajas en Canadá? Podrías recibir dinero del Gobierno para tus compras de mercado» y el recuadro «Canada Groceries and Essentials Benefit».",
+      demo: false,
+      slug: "canada-groceries-essentials-benefit-cgeb-2026",
+    },
+    {
       category: "Empleo en Alberta",
       title: "Alberta busca bomberos forestales para 2027 con salarios de hasta $31,02 por hora: convocatoria abierta",
       date: "25 de octubre",
@@ -109,16 +119,6 @@ const HERO = {
       alt: "Imagen editorial de El Podcast del Migrante con la bandera de Canadá, el Parlamento, un mazo de juez y un documento sellado «No autorizado», y el titular «Canadá: multas de hasta $1,5 millones».",
       demo: false,
       slug: "multas-representantes-migratorios-canada-2026",
-    },
-    {
-      category: "Alberta",
-      title: "Alberta votó por permanecer en Canadá: cerca del 75 % rechazó iniciar el proceso separatista",
-      date: "20 de octubre",
-      image: "url('assets/referendum-alberta-octubre-2026-inmigrantes.jpg')",
-      aspectRatio: "16/9",
-      alt: "Ilustración editorial asistida por inteligencia artificial: cinco personas miran hacia la Legislatura de Alberta, con las banderas de Alberta y de Canadá, mientras una mano deposita un voto en una urna con la palabra «Alberta». Titular: «Referéndum en Alberta: ¿qué pasó y qué significa para los inmigrantes?».",
-      demo: false,
-      slug: "referendum-alberta-octubre-2026-inmigrantes",
     },
   ],
 };

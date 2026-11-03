@@ -52,8 +52,9 @@ async function sinDesborde(page, ruta) {
     const santa = page.locator("#heroSecondary .hero-sec-card").first();
     assert.match(await santa.innerHTML(), /assets\/yt\/LxTr1Zda3dg\.jpg/, "imagen de Santa Latino intacta");
     assert.equal(await santa.locator('a[href*="hector-rivero-santa-latino-canada"]').count() >= 1, true, "enlace de Santa Latino intacto");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(1).innerText(), /bomberos forestales/, "bomberos, después de Santa Latino");
-    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(2);
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(1).innerText(), /¿Trabajas en Canadá\?/, "CGEB, segunda tarjeta");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(2).innerText(), /bomberos forestales/, "bomberos, después del CGEB");
+    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(3);
     assert.equal((await segunda.locator("h3, h2, .hero-sec-card__title").first().innerText()).trim(), TITULO);
     const enlace = segunda.locator(`a[href*="${SLUG}"]`).first();
     assert.equal(await enlace.count(), 1, "la tarjeta enlaza al artículo");

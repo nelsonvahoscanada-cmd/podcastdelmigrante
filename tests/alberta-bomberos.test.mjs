@@ -16,21 +16,21 @@ const URL_ART = `https://podcastdelmigrante.com/articulo-${SLUG}`;
 const IMG = "assets/alberta-bomberos-forestales-2027.jpg";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
-test("portada: tras la noticia principal y Santa Latino, la noticia de bomberos sigue en el bloque principal, sin duplicados", () => {
+test("portada: tras la noticia principal, Santa Latino y el CGEB, la noticia de bomberos sigue en el bloque principal, sin duplicados", () => {
   assert.equal(ctx.H.main.slug, "canada-cambios-express-entry-3-noviembre-2026", "noticia principal autorizada por la dirección editorial el 2-11-2026");
   assert.equal(ctx.H.secondary[0].slug, "hector-rivero-santa-latino-canada");
-  const bomberos = ctx.H.secondary[1];
+  assert.equal(ctx.H.secondary[1].slug, "canada-groceries-essentials-benefit-cgeb-2026");
+  const bomberos = ctx.H.secondary[2];
   assert.equal(bomberos.slug, SLUG);
   assert.equal(bomberos.title, art.title);
   assert.equal(bomberos.image, `url('${IMG}')`);
   assert.equal(bomberos.demo, false);
   const slugs = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.equal(new Set(slugs).size, slugs.length, "ninguna noticia aparece dos veces en el bloque principal");
-  assert.deepEqual(Array.from(ctx.H.secondary.slice(2), (s) => s.slug), [
+  assert.deepEqual(Array.from(ctx.H.secondary.slice(3), (s) => s.slug), [
     "multas-representantes-migratorios-canada-2026",
-    "referendum-alberta-octubre-2026-inmigrantes",
   ], "las demás destacadas conservan su orden");
-  for (const s of ["premios-impacto-inmigrante-alberta-2026", "subvenciones-etnoculturales-antirracismo-alberta", "alberta-energy-rebate-plazo-octubre"]) {
+  for (const s of ["referendum-alberta-octubre-2026-inmigrantes", "premios-impacto-inmigrante-alberta-2026", "subvenciones-etnoculturales-antirracismo-alberta", "alberta-energy-rebate-plazo-octubre"]) {
     assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: la noticia que sale de las destacadas sigue publicada`);
   }
 });
