@@ -1,0 +1,21 @@
+IGUAL js/colaborador.js
+IGUAL js/article.js
+IGUAL js/articles.js
+IGUAL sitemap.xml
+IGUAL assets/salud-rural-urbana-alberta-atencion-medica.jpg
+IGUAL assets/social/salud-rural-urbana-alberta-atencion-medica.jpg
+200 /
+200 /articulo-salud-rural-urbana-alberta-atencion-medica
+200 /colaborador-elmy-castillo
+200 /articulo-rural-vs-urban-healthcare-high-level-review
+200 /noticias
+200 /magazine/2026-10/
+<title>Salud rural en Alberta: ¿es más difícil recibir atención médica?
+property="og:title" content="Salud en Canadá: ¿es más difícil recibir atención médica en las comunidades rurales?"
+property="og:image" content="https://podcastdelmigrante.com/assets/social/salud-rural-urbana-alberta-atencion-medica.jpg"
+name="twitter:card" content="summary_large_image"
+name="twitter:image" content="https://podcastdelmigrante.com/assets/social/salud-rural-urbana-alberta-atencion-medica.jpg"
+200 https://www.primarycarealberta.ca/page14176.aspx
+200 https://albertafindaprovider.ca/
+200 https://www.albertahealthservices.ca/waittimes/waittimes.aspx
+tiktok 200
