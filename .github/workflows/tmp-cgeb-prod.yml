@@ -1,0 +1,60 @@
+name: tmp cgeb produccion
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-cgeb-prod]
+    paths: [".github/workflows/tmp-cgeb-prod.yml"]
+permissions:
+  contents: write
+jobs:
+  produccion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue de produccion
+        run: for i in $(seq 1 60); do curl -s -o /dev/null -w '%{http_code}' https://podcastdelmigrante.com/articulo-canada-groceries-essentials-benefit-cgeb-2026 | grep -q 200 && curl -sL https://podcastdelmigrante.com/js/data.js | grep -q canada-groceries-essentials-benefit && echo listo && exit 0; sleep 20; done; exit 1
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+      - name: Simulador del contador y sin Web Analytics (no genera visitas)
+        run: |
+          cat > /tmp/pw/vistas.cjs <<'JS'
+          const pw = require("/tmp/pw/node_modules/playwright");
+          const orig = pw.chromium.launch.bind(pw.chromium);
+          pw.chromium.launch = async (...a) => {
+            const b = await orig(...a);
+            const nc = b.newContext.bind(b);
+            b.newContext = async (...o) => { const c = await nc(...o); await c.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true,"vistas":0}' })); return c; };
+            b.newPage = async (...o) => { const c = await b.newContext(...o); return c.newPage(); };
+            return b;
+          };
+          JS
+      - name: Archivos y rutas
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/out; B=https://podcastdelmigrante.com
+          { for f in js/data.js js/articles.js sitemap.xml assets/canada-groceries-essentials-benefit-cgeb-2026.jpg assets/social/canada-groceries-essentials-benefit-cgeb-2026.jpg; do curl -sfL "$B/$f" -o /tmp/x; if cmp -s /tmp/x "$f"; then echo "IGUAL $f"; else echo "DISTINTO $f"; fi; done
+            for r in / /articulo-canada-groceries-essentials-benefit-cgeb-2026 "/guia.html?categoria=migracion" /noticias /magazine/2026-10/; do echo "$(curl -s -o /dev/null -w %{http_code} -L "$B$r") $r"; done
+            curl -sL $B/articulo-canada-groceries-essentials-benefit-cgeb-2026 | grep -o -E 'property="og:(title|image)" content="[^"]*"|name="twitter:(card|image)" content="[^"]*"|<title>[^<]*'
+            for u in https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html; do echo "$(curl -sL -A Mozilla/5.0 -o /dev/null -w %{http_code} $u) $u"; done
+            echo "tiktok $(curl -s -o /dev/null -w %{http_code} -A Mozilla/5.0 https://www.tiktok.com/player/v1/7703308267048488213)"; } | tee /tmp/out/archivos.txt
+      - name: E2E en produccion
+        env:
+          BASE: https://podcastdelmigrante.com
+          NODE_PATH: /tmp/pw/node_modules
+          NODE_OPTIONS: --require /tmp/pw/vistas.cjs
+        run: |
+          set +e; mkdir -p /tmp/out/shots
+          for t in cgeb express-entry-150 noticias menu ediciones patrocinadores; do
+            if [ $t = cgeb ]; then export SHOTS=/tmp/out/shots; else unset SHOTS; fi
+            node tests/e2e-$t.cjs > /tmp/out/$t.log 2>&1; e=$?
+            if [ $e != 0 ]; then mv /tmp/out/$t.log /tmp/out/$t-intento1.log; node tests/e2e-$t.cjs > /tmp/out/$t.log 2>&1; e=$?; fi
+            echo "exit $e $t" | tee -a /tmp/out/resultado.txt; tail -5 /tmp/out/$t.log
+          done
+      - name: Publicar capturas en la rama de datos
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
+          git add -A && git commit -qm "Verificacion CGEB en produccion [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-cgeb-prod-datos
