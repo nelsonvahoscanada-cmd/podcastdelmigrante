@@ -42,9 +42,9 @@ async function sinDesborde(page, ruta) {
 (async () => {
   const browser = await chromium.launch();
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: empleo desde casa principal, Santa Latino y después bomberos ---------- */
+    /* ---------- Portada: noticia principal de Express Entry, Santa Latino y después bomberos ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Gobierno de Alberta ofrece empleo desde casa/, "noticia principal: empleo desde casa");
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia Express Entry desde el 3 de noviembre/, "noticia principal: Express Entry");
     assert.match(await page.locator("#heroSecondary .hero-sec-card").first().innerText(), /Santa Latino/, "Santa Latino, primera tarjeta");
     const segunda = page.locator("#heroSecondary .hero-sec-card").nth(1);
     assert.equal((await segunda.locator("h3, h2, .hero-sec-card__title").first().innerText()).trim(), TITULO);

@@ -46,9 +46,9 @@ async function sinDesborde(page, ruta) {
   /* CHANNEL=chrome usa Google Chrome (con los códecs H.264 de TikTok) */
   const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: empleo desde casa principal; Santa Latino, bomberos y luego IRCC ---------- */
+    /* ---------- Portada: noticia principal de Express Entry; Santa Latino, bomberos y luego IRCC ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Gobierno de Alberta ofrece empleo desde casa/, "noticia principal: empleo desde casa");
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia Express Entry desde el 3 de noviembre/, "noticia principal: Express Entry");
     const santa = page.locator("#heroSecondary .hero-sec-card").first();
     assert.match(await santa.innerHTML(), /assets\/yt\/LxTr1Zda3dg\.jpg/, "imagen de Santa Latino intacta");
     assert.equal(await santa.locator('a[href*="hector-rivero-santa-latino-canada"]').count() >= 1, true, "enlace de Santa Latino intacto");

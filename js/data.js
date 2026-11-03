@@ -68,16 +68,16 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Empleo en Alberta",
-    title: "Gobierno de Alberta ofrece empleo desde casa con salario de hasta $80.375 al año: solicitudes cierran el 2 de noviembre",
-    dek: "Una convocatoria oficial abre la posibilidad de trabajar de manera remota dentro de Alberta, con un salario anual de entre $61.754 y $80.375 dólares canadienses. El puesto es temporal, de tiempo completo y contempla equivalencias entre estudios y experiencia laboral.",
+    category: "Migración",
+    title: "Canadá cambia Express Entry desde el 3 de noviembre: algunos inmigrantes podrán obtener hasta 150 puntos",
+    dek: "El Gobierno federal modificará el sistema de puntuación para la residencia permanente. La experiencia laboral canadiense y determinadas ofertas de empleo tendrán un nuevo peso en la selección de candidatos.",
     author: "Redacción El Podcast del Migrante",
-    date: "30 de octubre, 2026",
-    image: "url('assets/alberta-empleo-desde-casa-program-eligibility-assessor-2026.jpg')",
+    date: "2 de noviembre, 2026",
+    image: "url('assets/canada-cambios-express-entry-3-noviembre-2026.jpg')",
     aspectRatio: "16/9",
-    alt: "Ilustración editorial asistida por inteligencia artificial: un hombre con gafas señala a la cámara junto a la bandera de Alberta y la Legislatura, y una mujer trabaja desde casa frente a una computadora, con el titular «Gobierno de Alberta ofrece empleo bien remunerado con opción de trabajo desde casa», el salario de $61,754 a $80,375 CAD y el cierre de solicitudes el 2 de noviembre.",
+    alt: "Imagen editorial de El Podcast del Migrante: la bandera de Canadá sobre el horizonte de Calgary, un pasaporte canadiense y un documento de Express Entry, con el titular «Cambios en Express Entry desde el 3 de noviembre» y «Hasta 150 puntos por experiencia laboral y ofertas de empleo».",
     demo: false,
-    slug: "alberta-empleo-desde-casa-program-eligibility-assessor-2026",
+    slug: "canada-cambios-express-entry-3-noviembre-2026",
   },
   secondary: [
     {

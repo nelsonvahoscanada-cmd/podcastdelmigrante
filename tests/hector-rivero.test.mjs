@@ -41,8 +41,8 @@ test("artículo: noticia completa con su estructura periodística y sin afirmaci
   assert.equal(art.video.youtubeId, VIDEO);
 });
 
-test("portada: Santa Latino pasa a la primera tarjeta secundaria tras la noticia de empleo; nada se borra", () => {
-  assert.equal(ctx.H.main.slug, "alberta-empleo-desde-casa-program-eligibility-assessor-2026");
+test("portada: Santa Latino sigue en la primera tarjeta secundaria tras la noticia principal; nada se borra", () => {
+  assert.equal(ctx.H.main.slug, "canada-cambios-express-entry-3-noviembre-2026", "noticia principal autorizada por la dirección editorial el 2-11-2026");
   const santa = ctx.H.secondary[0];
   assert.equal(santa.slug, SLUG);
   assert.equal(santa.title, art.title);

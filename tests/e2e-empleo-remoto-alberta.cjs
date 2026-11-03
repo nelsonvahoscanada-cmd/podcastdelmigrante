@@ -1,8 +1,8 @@
 /*
   Prueba de extremo a extremo (navegador) de la noticia «Gobierno de Alberta
   ofrece empleo desde casa con salario de hasta $80.375 al año»: noticia
-  principal de la portada (Santa Latino pasa a la primera tarjeta), enlace al
-  artículo, imagen, recuadro de cierre, botón de postulación a la oferta
+  principal de la portada hasta el cierre de la convocatoria (2-11-2026; hoy
+  ya no está entre las destacadas, pero sigue publicada), artículo, imagen, recuadro de cierre, botón de postulación a la oferta
   oficial, video de TikTok tras la introducción, metadatos y ausencia de
   desbordes, en computador, tableta y celular. Solo lee páginas.
 
@@ -47,28 +47,15 @@ async function sinDesborde(page, ruta) {
   /* CHANNEL=chrome usa Google Chrome (con los códecs H.264 de TikTok) */
   const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: noticia principal ---------- */
+    /* ---------- Portada: la convocatoria cerró el 2-11-2026; la noticia deja las destacadas ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
     const hero = page.locator("#heroMain");
-    assert.equal((await hero.locator("h1").innerText()).trim(), TITULO);
-    assert.match(await hero.locator(".hero-main__dek").innerText(), /^Una convocatoria oficial abre la posibilidad de trabajar de manera remota dentro de Alberta/);
-    assert.equal(await hero.locator(".demo-badge").count(), 0);
-    assert.match(await hero.locator(".hero-main__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
-    assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
+    assert.match(await hero.locator("h1").innerText(), /^Canadá cambia Express Entry desde el 3 de noviembre/, "noticia principal actual");
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 4);
-    assert.match(tarjetas[0], /Santa Latino/, "Santa Latino pasa a la primera tarjeta");
-    assert.match(tarjetas[1], /bomberos forestales/);
-    assert.match(tarjetas[2], /representantes migratorios/);
-    assert.match(tarjetas[3], /Alberta votó por permanecer/);
-    assert.equal(tarjetas.filter((x) => x.includes("empleo desde casa")).length, 0, "sin duplicados en el bloque principal");
-    if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
+    assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    /* El titular abre el artículo (clic programático: la portada anima su fondo) */
-    assert.match(await hero.locator("h1 a").getAttribute("href"), new RegExp(`articulo(-|\\.html\\?slug=)${SLUG}$`));
-    await hero.locator("h1 a").evaluate((a) => a.click());
-    await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 
     /* ---------- Artículo ---------- */
@@ -141,7 +128,7 @@ async function sinDesborde(page, ruta) {
   const r = await fetch(`${BASE}/articulo.html?slug=${SLUG}`, { redirect: "manual" });
   assert.ok([301, 308].includes(r.status), `articulo.html?slug=… redirige (${r.status})`);
   await browser.close();
-  console.log("OK empleo desde casa en Alberta: portada (principal) y artículo");
+  console.log("OK empleo desde casa en Alberta: fuera de las destacadas y artículo publicado");
 })().catch((e) => {
   console.error(e);
   process.exit(1);
