@@ -35,10 +35,10 @@ jobs:
               u=cola.pop(0).split("#")[0]
               if u in vistos: continue
               vistos.add(u)
-              try:
-                  r=urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=30); t=r.read().decode("utf-8","ignore"); code=r.status; final=r.geturl()
-              except Exception as e:
-                  out.write(f"\n===== {u} ERROR {e}\n"); continue
+              import subprocess
+              r=subprocess.run(["curl","-sL","--max-time","60","-A","Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36","-w","\n%{http_code} %{url_effective}",u],capture_output=True)
+              raw=r.stdout.decode("utf-8","ignore"); t,_,meta=raw.rpartition("\n"); code,_,final=meta.partition(" ")
+              if code!="200": out.write(f"\n===== {u} ERROR {meta}\n"); continue
               n+=1
               m=re.search(r'<meta name="dcterms.modified"[^>]*content="([^"]+)"',t)
               out.write(f"\n===== {code} {final} modificado={m.group(1) if m else '?'}\n")
