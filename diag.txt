@@ -1,0 +1,6 @@
+curl 200 0.169355s /
+curl 200 0.120952s /planes-directorio
+curl 200 0.254754s /articulo-canada-tambien-puede-convertirse-en-un-infierno
+/ 200 646ms El Podcast del Migrante Magazine — Información real para migrantes en Canadá
+/planes-directorio 200 329ms Planes del Directorio Empresarial: Gratuito y Premium | El Podcast del Migrante
+
