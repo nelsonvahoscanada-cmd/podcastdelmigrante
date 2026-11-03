@@ -30,6 +30,26 @@ jobs:
             return b;
           };
           JS
+      - name: Diagnostico de carga
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/out
+          for r in / /planes-directorio /articulo-canada-tambien-puede-convertirse-en-un-infierno; do curl -s -o /dev/null -w "curl %{http_code} %{time_total}s $r\n" https://podcastdelmigrante.com$r; done | tee /tmp/out/diag.txt
+          cat > /tmp/diag.cjs <<'JS'
+          const { chromium } = require("playwright");
+          (async () => {
+            const b = await chromium.launch(); const p = await b.newPage();
+            const lentos = []; p.on("requestfinished", async (r) => { const t = r.timing(); if (t.responseEnd > 3000) lentos.push(`${Math.round(t.responseEnd)}ms ${r.url()}`); });
+            p.on("requestfailed", (r) => lentos.push(`FALLA ${r.failure() && r.failure().errorText} ${r.url()}`));
+            for (const u of ["/", "/planes-directorio"]) {
+              const t0 = Date.now();
+              try { const res = await p.goto("https://podcastdelmigrante.com" + u, { waitUntil: "load", timeout: 90000 }); console.log(u, res.status(), (Date.now() - t0) + "ms", await p.title()); }
+              catch (e) { console.log(u, "ERROR", e.message.split("\n")[0]); }
+            }
+            console.log(lentos.slice(0, 30).join("\n")); await b.close();
+          })();
+          JS
+          NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require /tmp/pw/vistas.cjs" node /tmp/diag.cjs | tee -a /tmp/out/diag.txt
       - name: Archivos y rutas
         continue-on-error: true
         run: |
@@ -57,4 +77,5 @@ jobs:
         if: always()
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "Verificacion planes [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-planes-prod-datos
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-planes-prod-datos2
+# reintento
