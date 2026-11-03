@@ -15,22 +15,14 @@ jobs:
           mkdir -p /tmp/out; cd /tmp/out
           UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
           for u in \
-            https://www.albertahealthservices.ca/healthlink/healthlink.aspx \
-            https://www.alberta.ca/health-link \
-            https://albertafindadoctor.ca/ \
-            https://www.alberta.ca/find-a-family-doctor \
+            https://www.albertahealthservices.ca/info/Page12630.aspx \
+            https://albertahealthservices.ca/info/Page12630.aspx \
+            https://ahs.ca/811 \
+            https://primarycarealberta.ca/ \
+            https://albertafindaprovider.ca/ \
             https://www.albertahealthservices.ca/waittimes/waittimes.aspx \
-            https://www.albertahealthservices.ca/findhealth/ \
-            https://www.albertahealthservices.ca/info/page13096.aspx \
-            https://www.alberta.ca/pharmacy-services \
-            https://www.albertapharmacy.ca/ \
-            https://cma.ca/quick-facts-canadas-physicians \
-            https://www.cmaj.ca/content/cmaj/188/6/e100.full.pdf \
-            https://www.annfammed.org/content/22/3/223 \
-            https://www.cmaj.ca/content/157/3/265 \
-            https://www150.statcan.gc.ca/n1/pub/82-570-x/2024001/section4-eng.htm \
-            https://www.albertahealthservices.ca/news/Page19531.aspx \
-            https://globalnews.ca/news/8834950/fort-macleod-alberta-doctor-shortage-incentives/ ; do
+            https://www.cmaj.ca/content/188/6/E100 \
+            https://pmc.ncbi.nlm.nih.gov/articles/PMC1227945/ ; do
             n=$(echo "$u" | md5sum | cut -c1-6)
             echo "$(curl -sL --max-time 60 -A "$UA" -o p-$n.html -w '%{http_code} %{url_effective}' "$u") | $(grep -o '<title>[^<]*' p-$n.html | head -1 | tr -s ' \n' ' ')"
           done | tee enlaces.txt
@@ -48,5 +40,5 @@ jobs:
       - name: Publicar en la rama de datos
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
-          git add -A && git commit -qm "Enlaces Elmy [CF-Pages-Skip]"
+          git add -A && git commit -qm "Enlaces Elmy 2 [CF-Pages-Skip]"
           git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-elmy-datos
