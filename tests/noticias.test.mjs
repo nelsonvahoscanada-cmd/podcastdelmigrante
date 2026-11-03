@@ -29,6 +29,21 @@ test("solo noticias publicadas, ordenadas por fecha de publicación (más recien
   assert.deepEqual(lista.map((a) => a.slug), ["nueva", "media", "vieja"]);
 });
 
+test("archivo cronológico: noticias y columnas publicadas, por fecha; la portada sigue solo con noticias", () => {
+  const datos = [
+    art("vieja", "2026-09-01T08:00:00-06:00"),
+    art("columna", "2026-11-02T08:00:00-06:00", { contentType: "Columna" }),
+    art("guia", "2026-12-01T08:00:00-06:00", { contentType: "Guía" }),
+    art("col-borrador", "2026-12-01T08:00:00-06:00", { contentType: "Columna", draft: true }),
+    art("nueva", "2026-10-20T05:00:00-06:00"),
+  ];
+  assert.deepEqual(N.archivo(datos).map((a) => a.slug), ["columna", "nueva", "vieja"]);
+  assert.ok(!N.portada(datos, null).some((a) => a.contentType === "Columna"));
+  const reales = N.archivo(ARTICLES);
+  assert.equal(reales[0].slug, "trabajas-pagas-ahorras-realmente-avanzando", "la columna de noviembre de Carlos D. Castillo, primera del archivo");
+  assert.ok(reales.some((a) => a.slug === "el-error-financiero-inmigrantes-canada"));
+});
+
 test("portada: 5 noticias, sin repetir las del bloque principal; una noticia nueva desplaza a la más antigua", () => {
   const base = Array.from({ length: 8 }, (_, i) => art(`n${i}`, `2026-10-${String(10 + i).padStart(2, "0")}T08:00:00-06:00`));
   const hero = { main: { slug: "n7" }, secondary: [{ slug: "n6" }, { title: "sin enlace" }] };

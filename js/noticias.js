@@ -10,7 +10,10 @@
     más antigua.
   - Portada («Últimas noticias»): las 5 más recientes que no estén ya
     en el bloque principal (HERO), para no repetir titulares.
-  - Archivo (noticias.html): todas, en páginas de POR_PAGINA.
+  - Archivo (noticias.html): el listado cronológico completo, en páginas
+    de POR_PAGINA: las noticias y también las columnas publicadas
+    (contentType "Columna"), con el mismo orden por publishedAt. La
+    portada sigue mostrando solo noticias.
   Se carga en el navegador (window.PDM_NOTICIAS) y en Node (pruebas).
 */
 (function (raiz) {
@@ -23,6 +26,14 @@
   function publicadas(articulos) {
     return articulos
       .filter((a) => a.contentType === "Noticia" && a.demo === false && !a.draft && (a.lang || "es") === "es")
+      .slice()
+      .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  }
+
+  /* Listado cronológico del archivo: noticias y columnas publicadas */
+  function archivo(articulos) {
+    return articulos
+      .filter((a) => ["Noticia", "Columna"].includes(a.contentType) && a.demo === false && !a.draft && (a.lang || "es") === "es")
       .slice()
       .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   }
@@ -57,7 +68,7 @@
     return m ? m[1] : "";
   }
 
-  const api = { EN_PORTADA, POR_PAGINA, publicadas, portada, pagina, fechaCorta, imagen };
+  const api = { EN_PORTADA, POR_PAGINA, publicadas, archivo, portada, pagina, fechaCorta, imagen };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else raiz.PDM_NOTICIAS = api;
 })(typeof window !== "undefined" ? window : globalThis);

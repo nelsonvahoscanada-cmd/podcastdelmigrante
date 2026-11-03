@@ -58,7 +58,7 @@ test("misma regla en el generador y en js/article.js; el hueco y el script está
   assert.match(read("js/article.js"), /const TIPOS_CON_CONTADOR = \["Noticia", "Guía"\];/);
   assert.match(read("articulo.html"), /<script src="js\/article\.js"><\/script>\n<script src="js\/vistas\.js"><\/script>/);
   const paginas = readdirSync(new URL(".", ROOT)).filter((f) => /^articulo-.+\.html$/.test(f));
-  assert.equal(paginas.length, 34);
+  assert.equal(paginas.length, 35);
   for (const f of paginas) assert.match(read(f), /<script src="js\/vistas\.js"><\/script>/, f);
 });
 

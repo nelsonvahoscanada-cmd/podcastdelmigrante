@@ -160,6 +160,75 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Columna «Tu dinero en Canadá» de Carlos D. Castillo, entrega de
+       noviembre de 2026. Texto original del autor (correo del 31-10-2026),
+       solo con ajustes menores de presentación; publicación autorizada por la
+       dirección el 2-11-2026 (la fecha es la de publicación en el Magazine,
+       no la del correo). Imagen tipográfica de la redacción con el retrato
+       real del autor (solo recorte y escala). */
+    id: "ART-2026-035",
+    slug: "trabajas-pagas-ahorras-realmente-avanzando",
+    category: "Educación Financiera",
+    contentType: "Columna",
+    columnName: "Tu dinero en Canadá",
+    title: "Trabajas, pagas y ahorras… ¿pero realmente estás avanzando?",
+    dek: "Muchos inmigrantes trabajan duro para establecerse en Canadá, pero sin una estrategia clara para administrar sus ingresos, ese esfuerzo no siempre se convierte en estabilidad financiera.",
+    excerpt: "Un flujo de caja no es solo una lista de gastos: es un mapa de cuánto entra, cuánto se necesita para vivir y cuánto se está construyendo para el futuro.",
+    author: {
+      mode: "colaborador",
+      name: "Carlos D. Castillo",
+      specialty: "Estratega en arquitectura financiera y asesor licenciado en seguros de vida y salud en Canadá",
+      profileHref: "colaborador.html?id=carlos-castillo",
+      authorId: "carlos-castillo",
+    },
+    publishedAt: "2026-11-02T18:58:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: null,
+    demo: false,
+    heroImage: {
+      background: "url('assets/trabajas-pagas-ahorras-realmente-avanzando.jpg')",
+      aspectRatio: "16/9",
+      alt: "Retrato de Carlos D. Castillo, sonriente, de traje azul y corbata granate, junto al título de su columna «Trabajas, pagas y ahorras… ¿pero realmente estás avanzando?», de la serie «Tu dinero en Canadá» de El Podcast del Migrante Magazine.",
+      credit: "Imagen de El Podcast del Migrante con el retrato de Carlos D. Castillo.",
+    },
+    bodyHtml: `
+      <p>El salario llega a la cuenta. Inmediatamente comienzan a salir la renta o la hipoteca, el automóvil, el teléfono, los alimentos, las tarjetas y, en muchos casos, el dinero que enviamos para ayudar a nuestra familia en el país de origen.</p>
+      <p>Trabajamos, pagamos y volvemos a trabajar. Sin embargo, pasan los meses y el patrimonio no refleja todo ese esfuerzo.</p>
+      <p>Entonces aparece una pregunta incómoda: ¿realmente estamos avanzando o simplemente estamos manteniendo el movimiento?</p>
+      <p>El problema no siempre es cuánto dinero entra. Muchas veces es que cada dólar sale sin una función definida. Pagamos primero y esperamos ahorrar lo que quede. Pero casi nunca queda suficiente.</p>
+      <p>Un flujo de caja no es solamente una lista de gastos. Es un mapa que muestra cuánto recibe la familia, cuánto necesita para vivir, cuánto destina a sus obligaciones y cuánto está construyendo para el futuro.</p>
+      <p>El primer paso es separar los gastos esenciales de los opcionales. Vivienda, alimentación y transporte no ocupan el mismo lugar que las compras impulsivas o las suscripciones olvidadas. También deben incluirse gastos previsibles que no aparecen cada mes: reparaciones, matrículas, impuestos, regalos y ropa de invierno. No son emergencias; deben prepararse durante el año.</p>
+      <p>Una emergencia es diferente: una reducción de horas, una enfermedad, una pérdida de empleo o una reparación inesperada. Por eso, el fondo de emergencia debe mantenerse separado, accesible y protegido del gasto cotidiano.</p>
+      <p>Después debemos observar las deudas. Si pagamos únicamente el mínimo de las tarjetas, estamos utilizando ingresos futuros para financiar el presente. Antes de buscar una inversión extraordinaria, puede ser más urgente detener una deuda que cobra intereses elevados cada mes.</p>
+      <p>Ahorrar tampoco significa enviar todo el dinero al mismo lugar. El dinero para emergencias debe permanecer disponible. El destinado a comprar vivienda dentro de tres años necesita estabilidad. El dinero para el retiro dentro de veinte o treinta años puede seguir una estrategia de crecimiento diferente.</p>
+      <p>El tiempo también transforma los resultados. Una contribución mensual pequeña puede crecer considerablemente cuando se mantiene durante años y comienza a generar rendimientos sobre rendimientos. En la versión digital, utilice nuestra Calculadora de Interés Compuesto para modificar la inversión inicial, la contribución mensual, el horizonte y la tasa estimada, y comparar escenarios.</p>
+      <p>Recuerde: una proyección no es una garantía. Las inversiones fluctúan, pueden tener años positivos y negativos, y la diversificación ayuda a distribuir riesgos, pero no elimina la posibilidad de pérdidas.</p>
+      <p>El progreso financiero no se mide únicamente por el salario. También se mide por la capacidad de enfrentar una emergencia sin endeudarse, reducir obligaciones y explicar con claridad para qué sirve cada dólar.</p>
+      <p>Trabajar duro fue parte del camino para establecerse en Canadá. Ahora debemos asegurarnos de que ese esfuerzo no solo pague el presente, sino que también construya el futuro.</p>
+      <aside class="article-highlight article-calculadora">
+        <h2 class="article-highlight__title">Calcula cómo podría crecer tu dinero</h2>
+        <p>Explora distintos escenarios modificando tu inversión inicial, aportes mensuales, plazo y tasa de rendimiento estimada.</p>
+        <p class="article-apply-row"><a class="article-apply" href="https://carlosdcastillo.com/calculadora.html" target="_blank" rel="noopener noreferrer">UTILIZA GRATIS LA CALCULADORA</a></p>
+        <p><em>Información educativa y general. Las proyecciones no garantizan resultados futuros. Las decisiones financieras dependen de las circunstancias personales.</em></p>
+      </aside>
+    `,
+    video: null,
+    sources: [],
+    correctionNote: null,
+    disclaimerCategory: "Finanzas",
+    relatedSlugs: ["el-error-financiero-inmigrantes-canada"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Trabajas, pagas y ahorras… ¿realmente estás avanzando? | Carlos D. Castillo",
+      description: "Sin una estrategia clara para administrar los ingresos, el esfuerzo no siempre se convierte en estabilidad financiera. Columna de Carlos D. Castillo.",
+      canonicalPath: "/finanzas/trabajas-pagas-ahorras-realmente-avanzando/",
+    },
+  },
+  {
     /* Canada Groceries and Essentials Benefit (CGEB), antes crédito GST/HST.
        Texto original de la redacción (orden del 2-11-2026), verificado ese día
        en las páginas oficiales de la CRA (Canada.ca): página principal,
