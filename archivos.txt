@@ -1,0 +1,22 @@
+IGUAL js/articles.js
+DISTINTO articulo-canada-tambien-puede-convertirse-en-un-infierno.html
+IGUAL assets/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg
+IGUAL assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg
+200 /
+200 /articulo-canada-tambien-puede-convertirse-en-un-infierno
+200 /articulo-el-frio-no-pudo-apagar-mi-senal
+200 /columna?slug=entre-dos-mundos
+200 /noticias
+200 /magazine/2026-10/
+404 /magazine/2026-11/
+<title>Canadá también puede convertirse en un infierno | Entre dos mundos — Nelson Vahos
+property="og:title" content="Canadá también puede convertirse en un infierno"
+property="og:image" content="https://podcastdelmigrante.com/assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg"
+name="twitter:card" content="summary_large_image"
+name="twitter:image" content="https://podcastdelmigrante.com/assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg"
+facebookexternalhit/1.1: property="og:image" content="https://podcastdelmigrante.com/assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg" name="twitter:image" content="https://podcastdelmigrante.com/assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg" 
+WhatsApp/2.23: property="og:image" content="https://podcastdelmigrante.com/assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg" name="twitter:image" content="https://podcastdelmigrante.com/assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg" 
+Twitterbot/1.0: property="og:image" content="https://podcastdelmigrante.com/assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg" name="twitter:image" content="https://podcastdelmigrante.com/assets/social/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg" 
+social nueva 200 image/jpeg
+social anterior 404
+tiktok 200
