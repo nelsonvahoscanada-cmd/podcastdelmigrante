@@ -1,0 +1,10 @@
+config: {"ready":true,"turnstileSiteKey":"(presente)"}
+200 /registra-tu-empresa.html
+200 /registra-tu-empresa
+200 /quien-puede-ayudarte.html
+200 /quien-puede-ayudarte
+200 /perfil-tomas-velazquez
+200 /perfil-carlos-d-castillo
+404 /directorio
+404 /planes
+enviar GET: 404
