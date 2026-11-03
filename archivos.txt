@@ -1,0 +1,19 @@
+IGUAL assets/carlos-castillo-avatar.jpg
+IGUAL js/columns.js
+IGUAL js/noticias.js
+IGUAL js/articles.js
+IGUAL sitemap.xml
+IGUAL assets/trabajas-pagas-ahorras-realmente-avanzando.jpg
+IGUAL assets/social/trabajas-pagas-ahorras-realmente-avanzando.jpg
+200 /
+200 /articulo-trabajas-pagas-ahorras-realmente-avanzando
+200 /colaborador-carlos-castillo
+200 /noticias
+200 /magazine/2026-10/
+<title>Trabajas, pagas y ahorras… ¿realmente estás avanzando? | Carlos D. Castillo
+property="og:title" content="Trabajas, pagas y ahorras… ¿pero realmente estás avanzando?"
+property="og:image" content="https://podcastdelmigrante.com/assets/social/trabajas-pagas-ahorras-realmente-avanzando.jpg"
+name="twitter:card" content="summary_large_image"
+name="twitter:image" content="https://podcastdelmigrante.com/assets/social/trabajas-pagas-ahorras-realmente-avanzando.jpg"
+200 https://carlosdcastillo.com/calculadora.html
+tiktok 200

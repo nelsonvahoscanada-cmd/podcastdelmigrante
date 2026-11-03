@@ -1,0 +1,10 @@
+ok computador
+ok tableta
+ok celular
+page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://podcastdelmigrante.com/noticias?pagina=2", waiting until "networkidle"
+
+    at /home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-noticias.cjs:99:16 {
+  name: 'TimeoutError'
+}
