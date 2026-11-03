@@ -77,7 +77,7 @@ test("número de solicitud", () => {
 test("correo interno: organizado, sin código, con datos escapados", () => {
   const { data } = core.validate(core.normalize({ ...VALID, name: 'Pan <script>alert("x")</script>\nBcc: otro@x.com' }));
   const m = internalEmail(data, { id: "SOL-20261009-ABCDEF", receivedLabel: "9 oct 2026", panelUrl: "https://admin.podcastdelmigrante.com" });
-  assert.match(m.subject, /^Nueva solicitud empresarial — .+ — SOL-20261009-ABCDEF$/);
+  assert.match(m.subject, /^Nueva solicitud empresarial \[PREMIUM\] — .+ — SOL-20261009-ABCDEF$/);
   assert.doesNotMatch(m.subject, /[\r\n]/);
   assert.doesNotMatch(m.html, /<script>/);
   assert.doesNotMatch(m.html + m.text, /BUSINESSES|published:|=>|function\s*\(/);
@@ -198,7 +198,7 @@ test("consentimiento: se guarda la versión vigente del aviso de privacidad", as
   try {
     const env = fakeEnv();
     assert.equal((await send(env, VALID)).res.status, 201);
-    assert.equal(rows(env)[0].consent_version, "directorio-2026-10-v3");
+    assert.equal(rows(env)[0].consent_version, "directorio-2026-11-v4");
   } finally { net.restore(); }
 });
 
@@ -414,7 +414,7 @@ test("Premium: hasta 3 fotografías adicionales quedan en R2 privado, en D1 y ad
     assert.equal(res.status, 201);
     const [row] = rows(env);
     assert.equal(row.services, VALID.services);
-    assert.equal(row.notes, "Solo para preparar el perfil.");
+    assert.equal(row.notes, "Plan solicitado: Plan Premium ($24.99 CAD al mes + impuestos aplicables).\n\nSolo para preparar el perfil.");
     const extras = JSON.parse(row.extra_images);
     assert.deepEqual(extras.map((x) => x.key), [`solicitudes/${body.requestId}/adicional-1.jpg`, `solicitudes/${body.requestId}/adicional-2.webp`]);
     for (const x of extras) assert.ok(env.SOLICITUDES.store.has(x.key), x.key);
@@ -465,7 +465,8 @@ test("Premium: la Function nunca crea ni publica una miniweb", () => {
 test("Política de privacidad: describe el formulario Premium y separa lo público de lo privado", () => {
   const html = readFileSync(new URL("privacidad.html", ROOT), "utf8");
   const c = html.slice(html.indexOf("<h3>c)"), html.indexOf("<h3>d)"));
-  assert.match(c, /«Solicita tu Perfil Empresarial Premium» \(antes llamado «Registra tu empresa»/);
+  assert.match(c, /formulario «Registra tu empresa» para una ficha del plan Gratuito o para solicitar un Perfil Empresarial Premium/);
+  assert.match(c, /plan Gratuito<\/strong> pedimos solo/);
   for (const t of ["productos o servicios principales", "fotografías adicionales", "logotipo", "información adicional", "Información destinada a publicarse", "Información privada", "tu correo electrónico"]) assert.ok(c.toLowerCase().includes(t.toLowerCase()), t);
   assert.match(html, /Documento pendiente de revisión jurídica/);
   assert.doesNotMatch(readFileSync(new URL("cookies.html", ROOT), "utf8"), /«Registra tu empresa»/);

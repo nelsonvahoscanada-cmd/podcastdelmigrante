@@ -414,3 +414,8 @@
    Los perfiles con fotografía (Tomás, Carlos…) no cambian. */
 .biz-hero__photo--logo { object-fit: contain; background: var(--blanco); padding: 24px; border: 1px solid var(--gris-200); }
 .biz-card__photo--logo { object-fit: contain; object-position: center; padding: 8px; background: var(--blanco); border: 1px solid var(--gris-200); }
+
+/* Ficha del plan Gratuito (tarjeta sin miniweb) */
+.biz-card__desc { font-size: 0.86rem; line-height: 1.45; color: #2a2a2a; margin: 0 0 12px; }
+.biz-card__upsell { display: inline-block; margin-top: 10px; font-size: 0.78rem; color: var(--gris-600); text-decoration: underline; text-underline-offset: 2px; }
+.biz-card__upsell:hover { color: var(--verde-oscuro); }

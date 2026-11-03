@@ -1,6 +1,11 @@
 /*
-  solicitud-form.js — Formulario «Solicita tu Perfil Empresarial Premium»
+  solicitud-form.js — Formulario «Registra tu empresa» (Gratuito o Premium)
   ======================================================================
+  - Plan: «gratuito» (ficha en el directorio: imagen, nombre, categoría,
+    ciudad, descripción ≤ 200 y teléfono) o «premium» (miniweb completa).
+    Se puede preseleccionar con ?plan=gratuito|premium. Los campos que
+    solo usa Premium se ocultan en el plan gratuito y el servidor los
+    descarta. Una solicitud Premium NO es un pago: no hay cobro en línea.
   - Valida con las MISMAS reglas que el servidor (solicitud-core.js).
   - Reduce las imágenes en el navegador (máx. 1600 px foto / 1000 px logo;
     hasta 3 fotografías adicionales a 1600 px) y las vuelve a codificar:
@@ -17,7 +22,7 @@
   - No guarda nada en el navegador.
 ========================================================================= */
 
-import { CATEGORIES, PROVINCES, LIMITS, normalize, validate } from "./solicitud-core.js?v=20261018";
+import { CATEGORIES, PROVINCES, LIMITS, PLANS, normalize, validate } from "./solicitud-core.js?v=20261103";
 
 const ENDPOINT = "/registro/enviar";
 const CONFIG = "/registro/config";
@@ -176,6 +181,26 @@ async function init() {
   CATEGORIES.forEach((c) => $("#fCategory").insertAdjacentHTML("beforeend", `<option value="${c.id}">${c.label}</option>`));
   PROVINCES.forEach((p) => $("#fProvince").insertAdjacentHTML("beforeend", `<option value="${p}">${p}</option>`));
 
+  /* ---------- Plan ---------- */
+  const currentPlan = () => (form.querySelector("[name=plan]:checked") || {}).value || "";
+  function applyPlan() {
+    const plan = currentPlan();
+    document.querySelectorAll("[data-plan-only]").forEach((el) => { el.hidden = !!plan && el.dataset.planOnly !== plan; });
+    document.querySelectorAll("[data-plan-text]").forEach((el) => {
+      /* Sin plan elegido: las notas del selector se ocultan y el resto muestra el texto Premium */
+      el.hidden = plan ? el.dataset.planText !== plan : !!el.closest("[role=radiogroup]") || el.dataset.planText !== "premium";
+    });
+    const max = plan === "gratuito" ? LIMITS.summaryFree : LIMITS.summary;
+    $("#fSummary").maxLength = max;
+    $("#summaryMax").textContent = String(max);
+    $("#fPhone").required = plan === "gratuito";
+    if (plan === "gratuito" && extraInput.files && extraInput.files.length) { extraInput.value = ""; extrasPending = refreshExtras(); }
+    clearError("plan");
+  }
+  form.querySelectorAll("[name=plan]").forEach((r) => r.addEventListener("change", applyPlan));
+  const wanted = new URLSearchParams(location.search).get("plan");
+  if (PLANS[wanted]) form.querySelector(`[name=plan][value="${wanted}"]`).checked = true;
+
   const toggle = () => { $("[data-show-if='category-otra']").hidden = $("#fCategory").value !== "otra"; };
   $("#fCategory").addEventListener("change", toggle);
   toggle();
@@ -250,6 +275,7 @@ async function init() {
     extraInfo.textContent = `${extras.length} lista${extras.length > 1 ? "s" : ""} para enviar.`;
   }
   extraInput.addEventListener("change", () => { extrasPending = refreshExtras(); });
+  applyPlan();
   form.querySelectorAll("[name=imageKind]").forEach((r) => r.addEventListener("change", () => fileInput.files.length && refreshImage()));
 
   /* ¿Está listo el servidor? (si no, se avisa antes de llenar nada) */
@@ -325,12 +351,14 @@ async function init() {
     const raw = {};
     new FormData(form).forEach((v, k) => { if (typeof v === "string") raw[k] = v; });
     const { errors } = validate(normalize(raw));
+    if (!currentPlan()) errors.plan = "Elige el plan Gratuito o Premium.";
+    const free = currentPlan() === "gratuito";
     if (!prepared) {
       if (fileInput.files && fileInput.files[0]) await refreshImage();
       if (!prepared) errors.image = errors.image || "Adjunta una fotografía o un logotipo.";
     }
     if (extrasPending) await extrasPending;
-    const extraCount = (extraInput.files || []).length;
+    const extraCount = free ? 0 : (extraInput.files || []).length;
     if (extraCount && extras.length !== extraCount) {
       errors.extraImages = extrasError || "Revisa las fotografías adicionales.";
     }
@@ -350,7 +378,7 @@ async function init() {
     const ext = prepared.blob.type === "image/png" ? "png" : prepared.blob.type === "image/webp" ? "webp" : "jpg";
     body.append("image", prepared.blob, `imagen.${ext}`);
     body.delete("extraImages");
-    extras.forEach((x, i) => body.append("extraImages", x.blob, `adicional-${i + 1}.${x.blob.type === "image/png" ? "png" : x.blob.type === "image/webp" ? "webp" : "jpg"}`));
+    if (!free) extras.forEach((x, i) => body.append("extraImages", x.blob, `adicional-${i + 1}.${x.blob.type === "image/png" ? "png" : x.blob.type === "image/webp" ? "webp" : "jpg"}`));
     body.set("idempotencyKey", idempotencyKey);
 
     button.disabled = true;

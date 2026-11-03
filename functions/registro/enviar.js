@@ -18,14 +18,14 @@
        al empresario con Resend y registra el resultado. Un fallo de
        correo NO pierde la solicitud: queda marcada en el panel.
 */
-import { normalize, validate, validateImage, newRequestId, LIMITS } from "../../js/directorio/solicitud-core.js";
+import { normalize, validate, validateImage, newRequestId, LIMITS, planLine, PLANS } from "../../js/directorio/solicitud-core.js";
 import { internalEmail, confirmationEmail, sendEmail, toBase64 } from "../_lib/correos.js";
 import { registrationStatus, closedReason, jsonResponse, turnstileSecret } from "../_lib/registro-env.js";
 import { recordEvent } from "../_lib/historial.js";
 
 /* Versión del texto de consentimiento y del aviso de privacidad del formulario
    (registra-tu-empresa.html). Cambiarla cada vez que cambie ese texto. */
-export const CONSENT_VERSION = "directorio-2026-10-v3";
+export const CONSENT_VERSION = "directorio-2026-11-v4";
 /* Imagen principal + hasta 3 adicionales (≤ 5 MB cada una) + texto */
 const MAX_BODY = (1 + LIMITS.extraImagesMax) * LIMITS.imageMaxBytes + 512 * 1024;
 /* Adjuntos del aviso interno: tope para no superar el límite de Gmail
@@ -165,7 +165,9 @@ async function handlePost(context) {
   /* Fotografías adicionales (opcionales): se ignoran los campos vacíos */
   const extraFiles = form.getAll("extraImages").filter((f) => f && typeof f !== "string" && f.size > 0);
   const extras = [];
-  if (extraFiles.length > LIMITS.extraImagesMax) {
+  if (data.plan === "gratuito" && extraFiles.length) {
+    errors.extraImages = "El plan gratuito incluye una sola imagen. Para enviar más fotografías, elige el plan Premium.";
+  } else if (extraFiles.length > LIMITS.extraImagesMax) {
     errors.extraImages = `Puedes enviar como máximo ${LIMITS.extraImagesMax} fotografías adicionales.`;
   } else {
     for (const f of extraFiles) {
@@ -214,6 +216,11 @@ async function handlePost(context) {
   const r2 = await db.prepare("SELECT COUNT(*) AS n FROM business_applications WHERE email = ? AND created_at > ?").bind(data.email, dayAgo).first();
   if (r2 && r2.n >= LIMIT_PER_EMAIL_DAY) return jsonResponse({ ok: false, error: "Ya recibimos varias solicitudes con este correo hoy. Te contactaremos pronto." }, 429);
 
+  /* El plan elegido queda al inicio de la información privada (la ven el
+     panel y el aviso interno; nunca se publica). Así no hace falta cambiar
+     el esquema de D1 para distinguir las solicitudes Gratuitas y Premium. */
+  const privateNotes = planLine(data.plan) + (data.notes ? "\n\n" + data.notes : "");
+
   /* Guardar: primero la imagen, luego la fila (si la fila falla, se borra la imagen) */
   let id = "";
   for (let attempt = 0; attempt < 3 && !id; attempt++) {
@@ -251,7 +258,7 @@ async function handlePost(context) {
         data.representative, data.title || null, data.summary, data.email, data.phone || null, data.whatsapp || null, data.website || null,
         data.address || null, data.instagram || null, data.facebook || null, data.tiktok || null, data.linkedin || null,
         data.imageKind, imageKey, image.type, image.size, image.width, image.height, CONSENT_VERSION, nowIso, ipHash,
-        data.services, data.notes || null, extraMeta.length ? JSON.stringify(extraMeta) : null)
+        data.services || null, privateNotes, extraMeta.length ? JSON.stringify(extraMeta) : null)
       .run();
   } catch (e) {
     console.error("No se pudo guardar la solicitud", id, e && e.message);
@@ -259,10 +266,10 @@ async function handlePost(context) {
     return jsonResponse({ ok: false, error: "No pudimos registrar la solicitud. Inténtalo de nuevo en unos minutos." }, 500);
   }
 
-  await recordEvent(db, { id, at: nowIso, actor: "formulario", action: "recibida", to: "pendiente", detail: `Consentimientos ${CONSENT_VERSION} · ${data.imageKind}${extras.length ? ` + ${extras.length} fotografía(s) adicional(es)` : ""}` });
+  await recordEvent(db, { id, at: nowIso, actor: "formulario", action: "recibida", to: "pendiente", detail: `${PLANS[data.plan].label} · Consentimientos ${CONSENT_VERSION} · ${data.imageKind}${extras.length ? ` + ${extras.length} fotografía(s) adicional(es)` : ""}` });
 
   /* Correos en segundo plano: la solicitud ya está registrada */
-  const meta = { id, receivedLabel: receivedLabel(now), panelUrl: (env.PANEL_URL || "").replace(/\/+$/, "") };
+  const meta = { plan: data.plan, id, receivedLabel: receivedLabel(now), panelUrl: (env.PANEL_URL || "").replace(/\/+$/, "") };
   const work = sendNotifications(env, data, image, meta, extras);
   if (context.waitUntil) context.waitUntil(work);
   else await work;

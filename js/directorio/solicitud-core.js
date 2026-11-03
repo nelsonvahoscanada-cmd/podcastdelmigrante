@@ -28,10 +28,34 @@ export const PROVINCES = [
   "Northwest Territories", "Nunavut", "Yukon",
 ];
 
+/* Planes del Directorio Empresarial (ver planes-directorio.html).
+   - gratuito: ficha en el directorio (sin miniweb): imagen, nombre,
+     categoría, ciudad y provincia, descripción ≤ 200 y teléfono.
+   - premium: miniweb completa. Precio: $24.99 CAD al mes más impuestos
+     aplicables. Hoy NO hay cobro en línea: la solicitud no es un pago.
+   Una solicitud sin plan (formulario anterior en caché) se trata como
+   premium, que era el único plan antes de existir este campo. */
+export const PLANS = {
+  gratuito: { id: "gratuito", label: "Plan Gratuito", price: "$0 CAD" },
+  premium: { id: "premium", label: "Plan Premium", price: "$24.99 CAD al mes + impuestos aplicables" },
+};
+export const PREMIUM_PRICE = "$24.99 CAD";
+
+/* Línea que identifica el plan en la información privada de la solicitud
+   (la ven el panel y el aviso interno; no se publica). */
+export function planLine(plan) {
+  const p = PLANS[plan] || PLANS.premium;
+  return `Plan solicitado: ${p.label} (${p.price}).`;
+}
+
+/* Campos públicos que el plan gratuito no usa (se descartan) */
+export const PREMIUM_ONLY = ["title", "services", "whatsapp", "website", "address", "instagram", "facebook", "tiktok", "linkedin", "notes"];
+
 export const LIMITS = {
   text: 120,          /* nombres, ciudad, cargo */
   categoryOther: 80,
-  summary: 300,       /* reseña corta */
+  summary: 300,       /* reseña corta (Premium) */
+  summaryFree: 200,   /* descripción de la ficha gratuita */
   services: 500,      /* productos o servicios principales */
   notes: 1000,        /* información adicional (privada) */
   extraImagesMax: 3,  /* fotografías adicionales, opcionales */
@@ -92,6 +116,7 @@ export const EMAIL_RE = /^[^\s@<>"'(),;:\\[\]]+@[^\s@<>"'(),;:\\[\]]+\.[A-Za-z]{
 export function normalize(raw) {
   const g = (k) => raw[k];
   return {
+    plan: one(g("plan")) || "premium",
     name: one(g("name")),
     category: one(g("category")),
     categoryOther: one(g("categoryOther")),
@@ -128,18 +153,23 @@ export function validate(input) {
   const need = (k, msg) => { if (!d[k]) e[k] = msg; };
   const max = (k, n) => { if (d[k] && d[k].length > n) e[k] = `Máximo ${n} caracteres.`; };
 
+  if (!PLANS[d.plan]) e.plan = "Elige el plan Gratuito o Premium.";
+  const free = d.plan === "gratuito";
+  if (free) PREMIUM_ONLY.forEach((k) => { d[k] = ""; });
+
   need("name", "Escribe el nombre de la empresa o del profesional.");
   if (!CATEGORIES.some((c) => c.id === d.category)) e.category = "Elige una categoría.";
   if (d.category === "otra") need("categoryOther", "Indica a qué se dedica tu negocio.");
   else d.categoryOther = "";
   need("city", "Escribe la ciudad.");
   if (!PROVINCES.includes(d.province)) e.province = "Elige la provincia o territorio.";
-  need("representative", "Escribe el nombre del representante.");
-  need("summary", "Escribe una reseña corta de tu negocio.");
-  need("services", "Indica tus productos o servicios principales.");
+  if (!free) need("representative", "Escribe el nombre del representante.");
+  need("summary", free ? "Escribe una descripción corta de tu negocio." : "Escribe una reseña corta de tu negocio.");
+  if (!free) need("services", "Indica tus productos o servicios principales.");
+  if (free) need("phone", "Escribe el teléfono de tu negocio: es el contacto de tu ficha.");
   ["name", "city", "representative", "title"].forEach((k) => max(k, LIMITS.text));
   max("categoryOther", LIMITS.categoryOther);
-  max("summary", LIMITS.summary);
+  max("summary", free ? LIMITS.summaryFree : LIMITS.summary);
   max("services", LIMITS.services);
   max("notes", LIMITS.notes);
   max("address", LIMITS.address);

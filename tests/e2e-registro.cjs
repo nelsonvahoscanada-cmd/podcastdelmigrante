@@ -40,14 +40,22 @@ async function open(browser, profile) {
 }
 
 async function fill(pg, d) {
+  const free = d.plan === "gratuito";
+  await pg.check(`input[name=plan][value=${d.plan || "premium"}]`);
+  if (free) {
+    /* Plan Gratuito: los campos de Premium se ocultan y el teléfono es obligatorio */
+    for (const id of ["#fRepresentative", "#fServices", "#fWhatsapp", "#fWebsite", "#fExtraImages", "#fNotes"]) assert.ok(await pg.isHidden(id), `${id} oculto en el plan gratuito`);
+    assert.equal(await pg.getAttribute("#fSummary", "maxlength"), "200");
+  }
   await pg.fill("#fName", d.name);
   await pg.selectOption("#fCategory", d.category);
   if (d.categoryOther) await pg.fill("#fCategoryOther", d.categoryOther);
   await pg.fill("#fCity", d.city);
   await pg.selectOption("#fProvince", "Alberta");
-  await pg.fill("#fRepresentative", d.rep);
+  if (!free) await pg.fill("#fRepresentative", d.rep);
   await pg.fill("#fSummary", d.summary);
-  await pg.fill("#fServices", d.services);
+  if (!free) await pg.fill("#fServices", d.services);
+  if (d.phone) await pg.fill("#fPhone", d.phone);
   if (d.notes) await pg.fill("#fNotes", d.notes);
   await pg.fill("#fEmail", d.email);
   if (d.whatsapp) await pg.fill("#fWhatsapp", d.whatsapp);
@@ -66,6 +74,7 @@ async function fill(pg, d) {
 const RUNS = [
   ["escritorio", { viewport: { width: 1366, height: 900 } }, { name: "Panadería La Esquina", category: "otra", categoryOther: "Panadería", city: "Edmonton", rep: "Ana María Pérez", summary: "Pan artesanal latino hecho a diario.", services: "Pan dulce, tortas por encargo y catering.", notes: "Atendemos en español e inglés.", email: "ana@example.com", whatsapp: "1 780 555 1234", kind: "foto", file: "assets/tomas-velazquez.jpg", extras: ["assets/carlos-d-castillo-card.jpg", "assets/directorio/vitrina-720.webp"] }],
   ["iphone", devices["iPhone 13"], { name: "Transportes Andes", category: "automoviles", city: "Calgary", rep: "Luis Rojas", summary: "Mudanzas en Alberta.", services: "Mudanzas locales y de larga distancia.", email: "luis@example.com", netFail: true, website: "transportesandes.ca", kind: "logo", file: "assets/logo.png" }],
+  ["gratuito-iphone", devices["iPhone 13"], { plan: "gratuito", name: "Taquería Don Pepe", category: "otra", categoryOther: "Restaurante", city: "Calgary", summary: "Tacos al pastor y comida mexicana casera en Calgary.", email: "pepe@example.com", phone: "+1 403 555 7788", kind: "logo", file: "assets/logo.png" }],
   ["android", devices["Pixel 7"], { name: "Salud Integral María", category: "salud", city: "Red Deer", rep: "María Gómez", summary: "Acompañamiento en salud.", services: "Consultas de bienestar a domicilio.", email: "maria@example.com", whatsapp: "14035550000", kind: "foto", file: "assets/carlos-d-castillo-card.jpg", extras: ["assets/tomas-velazquez.jpg"] }],
 ];
 

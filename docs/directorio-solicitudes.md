@@ -263,6 +263,8 @@ privado `podcastdelmigrante-interno`, `directorio/conservacion-propuesta.md`).
 
 ## 11. Suscripciones futuras
 
+Planes Gratuito y Premium y pasos para activar cobros: ver `docs/planes-y-pagos-directorio.md`.
+
 No hay pagos ni Stripe. El esquema está listo para añadir, en una migración
 nueva (`0004_…sql`), tablas `memberships` / `payments` que referencien
 `business_applications.business_id`, sin cambiar el flujo actual.

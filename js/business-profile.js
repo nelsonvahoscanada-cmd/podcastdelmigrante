@@ -25,7 +25,7 @@
   }
 
   function findBusiness(slug) {
-    return BUSINESSES.find((b) => b.slug === slug && b.published) || null;
+    return BUSINESSES.find((b) => b.slug === slug && b.published && b.plan !== "gratuito") || null;
   }
 
   /* URL pública de cada perfil: una página estática por empresa
