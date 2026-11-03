@@ -1,0 +1,9 @@
+== TikTok
+FINAL https://www.tiktok.com/@podcastdelmigrante/video/7703729347294661908?_r=1&_t=ZS-9B5A9vJdi53
+ID 7703729347294661908 USER @podcastdelmigrante
+{'title': None, 'author_name': None, 'author_unique_id': None, 'thumbnail_url': None, 'thumbnail_width': None, 'thumbnail_height': None, 'embed_product_id': '7703729347294661908'}
+player HTTP 200
+== IRCC
+200 https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html
+200 https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html
+ENLACE /en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/high-wage.html#list | Find out which jobs are eligible for these points under the Express Entry system
