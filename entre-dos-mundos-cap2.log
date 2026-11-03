@@ -1,0 +1,8 @@
+page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://podcastdelmigrante.com/articulo-canada-tambien-puede-convertirse-en-un-infierno", waiting until "networkidle"
+
+    at abrir (/home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-entre-dos-mundos-cap2.cjs:33:14)
+    at /home/runner/work/podcastdelmigrante/podcastdelmigrante/async /home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-entre-dos-mundos-cap2.cjs:45:34 {
+  name: 'TimeoutError'
+}

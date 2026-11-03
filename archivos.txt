@@ -1,0 +1,24 @@
+DISTINTO planes-directorio.html
+DISTINTO registra-tu-empresa.html
+DISTINTO quien-puede-ayudarte.html
+IGUAL css/planes.css
+IGUAL css/registro.css
+IGUAL js/directorio/solicitud-core.js
+IGUAL js/directorio/solicitud-form.js
+IGUAL js/business-directory.js
+IGUAL js/businesses.js
+IGUAL sitemap.xml
+DISTINTO privacidad.html
+200 /planes-directorio
+200 /registra-tu-empresa
+200 /registra-tu-empresa?plan=gratuito
+200 /quien-puede-ayudarte
+200 /perfil-tomas-velazquez
+200 /perfil-carlos-d-castillo
+200 /
+200 /privacidad
+config: {"ready":true,"turnstileSiteKey":"(presente)"}
+<title>Planes del Directorio Empresarial: Gratuito y Premium | El Podcast del Migrante
+rel="canonical" href="https://podcastdelmigrante.com/planes-directorio"
+property="og:title" content="Haz crecer tu negocio en Canadá | Directorio Empresarial"
+precio 24.99: 8  precio 25 sin decimales: 0

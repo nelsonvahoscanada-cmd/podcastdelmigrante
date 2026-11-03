@@ -1,0 +1,8 @@
+page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://podcastdelmigrante.com/", waiting until "domcontentloaded"
+
+    at abrir (/home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-menu.cjs:25:14)
+    at /home/runner/work/podcastdelmigrante/podcastdelmigrante/async /home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-menu.cjs:36:38 {
+  name: 'TimeoutError'
+}

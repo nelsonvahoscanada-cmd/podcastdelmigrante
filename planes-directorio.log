@@ -1,0 +1,8 @@
+page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://podcastdelmigrante.com/", waiting until "networkidle"
+
+    at abrir (/home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-planes-directorio.cjs:33:14)
+    at /home/runner/work/podcastdelmigrante/podcastdelmigrante/async /home/runner/work/podcastdelmigrante/podcastdelmigrante/tests/e2e-planes-directorio.cjs:97:31 {
+  name: 'TimeoutError'
+}
