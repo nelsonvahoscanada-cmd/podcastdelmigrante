@@ -1,0 +1,8 @@
+200 https://www.primarycarealberta.ca/page14176.aspx | <title>Health Link 811 | Primary Care Alberta 
+200 https://www.primarycarealberta.ca/page14176.aspx | <title>Health Link 811 | Primary Care Alberta 
+200 https://www.primarycarealberta.ca/page14176.aspx | <title>Health Link 811 | Primary Care Alberta 
+200 https://www.primarycarealberta.ca/ | <title>Home | Primary Care Alberta 
+200 https://albertafindaprovider.ca/ | <title>Home | Alberta Find a Provider 
+200 https://www.albertahealthservices.ca/waittimes/waittimes.aspx | <title>Access Estimated Emergency Department Wait Times | Alberta Health Services 
+403 https://www.cmaj.ca/content/188/6/E100 | <title>Just a moment... 
+200 https://pmc.ncbi.nlm.nih.gov/articles/PMC1227945/ | <title> 
