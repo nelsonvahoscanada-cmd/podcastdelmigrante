@@ -1,0 +1,19 @@
+IGUAL js/data.js
+IGUAL js/articles.js
+IGUAL sitemap.xml
+IGUAL assets/canada-cambios-express-entry-3-noviembre-2026.jpg
+IGUAL assets/social/canada-cambios-express-entry-3-noviembre-2026.jpg
+200 /
+200 /articulo-canada-cambios-express-entry-3-noviembre-2026
+200 /guia.html?categoria=migracion
+200 /noticias
+200 /magazine/2026-10/
+<title>Canadá cambia Express Entry desde el 3 de noviembre de 2026
+property="og:title" content="Canadá cambia Express Entry desde el 3 de noviembre: algunos inmigrantes podrán obtener hasta 150 puntos"
+property="og:image" content="https://podcastdelmigrante.com/assets/social/canada-cambios-express-entry-3-noviembre-2026.jpg"
+name="twitter:card" content="summary_large_image"
+name="twitter:image" content="https://podcastdelmigrante.com/assets/social/canada-cambios-express-entry-3-noviembre-2026.jpg"
+200 https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html
+200 https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html
+200 https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/high-wage.html
+tiktok 200
