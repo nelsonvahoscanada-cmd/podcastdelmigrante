@@ -45,7 +45,7 @@ jobs:
           NODE_OPTIONS: --require /tmp/pw/vistas.cjs
         run: |
           set +e; mkdir -p /tmp/out/shots
-          for t in entre-dos-mundos-cap2 elmy-salud-rural carlos-noviembre express-entry-150 noticias menu ediciones; do
+          for t in ediciones; do
             if [ $t = entre-dos-mundos-cap2 ]; then export SHOTS=/tmp/out/shots; else unset SHOTS; fi
             node tests/e2e-$t.cjs > /tmp/out/$t.log 2>&1; e=$?
             if [ $e != 0 ]; then mv /tmp/out/$t.log /tmp/out/$t-intento1.log; node tests/e2e-$t.cjs > /tmp/out/$t.log 2>&1; e=$?; fi
@@ -56,4 +56,5 @@ jobs:
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
           git add -A && git commit -qm "Verificacion Entre dos mundos cap 2 en produccion [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-cap2-prod-datos
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-cap2-prod-datos2
+# reintento
