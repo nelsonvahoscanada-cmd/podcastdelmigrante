@@ -658,3 +658,45 @@ a.column-masthead__name:hover { color: var(--negro); }
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-texto, #555);
 }
 .article-patrocinio__enlace { font-weight: 700; color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Recuadro de patrocinio después del texto (article.sponsorBlock):
+   editorial y discreto, con identificación visible del patrocinador. */
+.article-sponsor {
+  margin: 40px 0 8px;
+  padding: 22px 20px 20px;
+  background: var(--blanco, #fff);
+  border: 1px solid var(--gris-200, #e2e2de);
+  border-top: 3px solid var(--verde-oscuro);
+  border-radius: var(--radius-s);
+  text-align: center;
+}
+.article-sponsor__label {
+  margin: 0 0 14px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-texto, #555);
+}
+.article-sponsor__brand {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--negro);
+}
+.article-sponsor__logo { display: block; max-width: 220px; max-height: 80px; margin: 0 auto 12px; }
+.article-sponsor__title { margin: 0 0 8px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; line-height: 1.3; }
+.article-sponsor__text { margin: 0 auto 18px; max-width: 56ch; font-size: 0.97rem; line-height: 1.6; color: #2a2a2a; }
+.article-sponsor__cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 26px;
+  background: var(--verde); color: var(--negro);
+  border-radius: var(--radius-s);
+  font-size: 0.86rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+}
+.article-sponsor__cta:hover { background: #82b204; color: var(--negro); }
+.article-sponsor__cta:focus-visible { outline: 2px solid var(--negro); outline-offset: 3px; }
+.article-sponsor__note { margin: 14px 0 0; font-size: 0.8rem; color: var(--gris-texto, #555); }
+@media (max-width: 520px) {
+  .article-sponsor { padding: 20px 16px 18px; }
+  .article-sponsor__cta { display: flex; width: 100%; }
+}

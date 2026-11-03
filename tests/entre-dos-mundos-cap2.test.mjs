@@ -104,3 +104,31 @@ test("SEO: título, descripción, Open Graph, Twitter, canónica y sitemap", () 
   assert.ok(art.seo.description.length <= 160);
   assert.match(read("sitemap.xml"), new RegExp(`<loc>https://podcastdelmigrante\\.com/articulo-${SLUG}</loc>\\s*<lastmod>2026-11-03</lastmod>`));
 });
+
+/* ---------- Patrocinio de Roca Financial (3-11-2026) ---------- */
+test("patrocinio de Roca Financial: recuadro aparte, después de la crónica, sin tocar el texto", () => {
+  const s = art.sponsorBlock;
+  assert.equal(s.sponsor, "Roca Financial");
+  assert.equal(s.label, "Contenido patrocinado por Roca Financial");
+  assert.equal(s.title, "Protege hoy el futuro de quienes más amas.");
+  assert.equal(s.text, "La vida de un migrante está llena de sueños, esfuerzos y responsabilidades. Conocer las opciones de protección financiera y seguros de vida puede ayudarte a tomar decisiones informadas para el bienestar de tu familia.");
+  assert.equal(s.ctaLabel, "Conoce Roca Financial");
+  assert.equal(s.logo, undefined, "no hay logo oficial de Roca Financial en el proyecto: nombre en texto");
+  assert.doesNotMatch(art.bodyHtml, /Roca|patrocin/i, "la crónica no menciona el patrocinio");
+  assert.equal(art.sponsored, false, "el artículo no es contenido patrocinado");
+  assert.doesNotMatch(s.title + s.text + s.note, /garantiza|cobertura de|emitimos|póliza gratis|\$\d/i, "sin promesas ni coberturas específicas");
+});
+
+test("patrocinio: enlaza a la miniweb Premium de Carlos D. Castillo dentro del sitio, con utm_* medibles", () => {
+  const u = new URL(art.sponsorBlock.href, "https://podcastdelmigrante.com/");
+  assert.equal(u.origin, "https://podcastdelmigrante.com");
+  assert.equal(u.pathname, "/perfil-carlos-d-castillo");
+  assert.ok(existsSync(join(ROOT, "perfil-carlos-d-castillo.html")));
+  const biz = vm.runInNewContext(read("js/businesses.js") + ";BUSINESSES", {}).find((b) => b.slug === "carlos-d-castillo");
+  assert.ok(biz && biz.published && biz.plan !== "gratuito" && /Roca Financial/.test(biz.company), "perfil Premium publicado de Roca Financial");
+  assert.deepEqual(Object.fromEntries(u.searchParams), { utm_source: "podcastdelmigrante", utm_medium: "patrocinio", utm_campaign: "roca-financial", utm_content: "articulo-entre-dos-mundos-cap2" });
+  assert.match(read("js/analytics.js"), /const UTM_KEYS = \["utm_source", "utm_medium", "utm_campaign", "utm_content"\];/);
+  /* Solo este artículo lleva el recuadro */
+  assert.deepEqual(JSON.parse(JSON.stringify(ctx.A.filter((a) => a.sponsorBlock).map((a) => a.slug))), [SLUG]);
+  assert.match(read("js/article.js"), /<div class="article-body">\$\{bodyWithVideoHtml\(article\)\}<\/div>\s*\$\{sponsorBlockHtml\(article\)\}/);
+});
