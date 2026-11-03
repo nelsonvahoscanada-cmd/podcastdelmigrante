@@ -95,7 +95,7 @@ function socialImage(a, problems) {
   const hero = heroSrc(a);
   if (!hero) return { src: DEFAULT_IMAGE, alt: SITE_NAME };
   if (!existsSync(join(ROOT, hero))) throw new Error(`${a.slug}: no existe la foto ${hero}`);
-  const social = `assets/social/${a.slug}.jpg`;
+  const social = `assets/social/${a.heroImage.socialName || a.slug}.jpg`;
   if (existsSync(join(ROOT, social))) return { src: social, alt: plain(a.heroImage.alt) || plain(a.title) };
   problems.push(`falta ${social} (python3 scripts/build-social-images.py)`);
   return { src: hero, alt: plain(a.heroImage.alt) || plain(a.title) };

@@ -13,6 +13,7 @@ const read = (p) => readFileSync(join(ROOT, p), "utf8");
 const ctx = {};
 vm.runInNewContext(read("js/articles.js") + ";" + read("js/data.js") + ";" + read("js/columns.js") + ";" + read("js/ediciones.js") + ";globalThis.A = ARTICLES; globalThis.H = HERO; globalThis.COL = COLUMNS; globalThis.ED = EDICIONES;", ctx);
 const SLUG = "canada-tambien-puede-convertirse-en-un-infierno";
+const IMG = `${SLUG}-portada`; /* portada aprobada el 3-11-2026: nombre nuevo para evitar la caché */
 const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
@@ -32,7 +33,7 @@ test("capítulo 2 de Entre dos mundos, una sola vez, con autor, edición y fecha
   const cap1 = ctx.A.find((a) => a.slug === "el-frio-no-pudo-apagar-mi-senal");
   assert.equal(cap1.chapter, undefined, "el capítulo 1 no se modifica");
   assert.equal(cap1.edition, "Octubre 2026");
-  for (const f of [`articulo-${SLUG}.html`, `assets/${SLUG}.jpg`, `assets/social/${SLUG}.jpg`]) assert.ok(existsSync(join(ROOT, f)), f);
+  for (const f of [`articulo-${SLUG}.html`, `assets/${IMG}.jpg`, `assets/social/${IMG}.jpg`]) assert.ok(existsSync(join(ROOT, f)), f);
 });
 
 test("texto aprobado completo: nota editorial al inicio, cierre y firma de la columna", () => {
@@ -56,10 +57,18 @@ test("privacidad y responsabilidad: nombres ficticios, sin culpables, sin cifras
   assert.equal(art.sponsored, false);
 });
 
-test("ilustración editorial simbólica, identificada como tal", () => {
-  assert.equal(art.heroImage.background, `url('assets/${SLUG}.jpg')`);
+test("portada editorial aprobada, identificada como ilustración; la anterior ya no se publica", () => {
+  assert.equal(art.heroImage.background, `url('assets/${IMG}.jpg')`);
+  assert.equal(art.heroImage.socialName, IMG);
+  assert.equal(art.heroImage.socialLabel, "Ilustración editorial");
+  for (const f of [`assets/${SLUG}.jpg`, `assets/social/${SLUG}.jpg`]) assert.ok(!existsSync(join(ROOT, f)), `${f} retirada`);
+  const jpg = readFileSync(join(ROOT, `assets/${IMG}.jpg`));
+  let i = 2, w = 0, h = 0;
+  while (i < jpg.length) { const m = jpg[i + 1]; if (m >= 0xc0 && m <= 0xc2) { h = jpg.readUInt16BE(i + 5); w = jpg.readUInt16BE(i + 7); break; } i += 2 + jpg.readUInt16BE(i + 2); }
+  assert.deepEqual([w, h], [1672, 941]);
+  assert.equal(art.heroImage.aspectRatio, "1672/941");
   assert.match(art.heroImage.alt, /^Ilustración editorial:/);
-  assert.match(art.heroImage.credit, /Ilustración editorial.*no representa a las personas de esta historia/);
+  assert.match(art.heroImage.credit, /Ilustración editorial.*no corresponde a Andrés/);
 });
 
 test("columna Entre dos mundos: capítulo 1 en octubre y capítulo 2 en noviembre, en orden", () => {
@@ -88,8 +97,8 @@ test("portada: la noticia principal y las destacadas no cambian", () => {
 test("SEO: título, descripción, Open Graph, Twitter, canónica y sitemap", () => {
   const h = read(`articulo-${SLUG}.html`);
   assert.match(h, /<title>Canadá también puede convertirse en un infierno \| Entre dos mundos — Nelson Vahos/);
-  assert.match(h, new RegExp(`property="og:image" content="https://podcastdelmigrante\\.com/assets/social/${SLUG}\\.jpg"`));
-  assert.match(h, new RegExp(`name="twitter:image" content="https://podcastdelmigrante\\.com/assets/social/${SLUG}\\.jpg"`));
+  assert.match(h, new RegExp(`property="og:image" content="https://podcastdelmigrante\\.com/assets/social/${IMG}\\.jpg"`));
+  assert.match(h, new RegExp(`name="twitter:image" content="https://podcastdelmigrante\\.com/assets/social/${IMG}\\.jpg"`));
   assert.match(h, /name="twitter:card" content="summary_large_image"/);
   assert.match(h, new RegExp(`rel="canonical" href="https://podcastdelmigrante\\.com/articulo-${SLUG}"`));
   assert.ok(art.seo.description.length <= 160);

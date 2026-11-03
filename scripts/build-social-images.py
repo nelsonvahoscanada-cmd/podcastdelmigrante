@@ -8,6 +8,8 @@ de js/articles.js con fotografía principal (heroImage.background con
 url(...)), una versión social:
 
   assets/social/<slug>.jpg     1200 × 630 px, JPEG, < 300 KB
+  (o assets/social/<heroImage.socialName>.jpg si el artículo lo define:
+  nombre nuevo al reemplazar la foto, para evitar la caché de las redes)
 
 - NO modifica la fotografía original (assets/...).
 - NO deforma: escala proporcionalmente y recorta el sobrante.
@@ -271,7 +273,7 @@ def main():
         if not path.exists():
             sys.exit(f"No existe la fotografía {src} del artículo {a['slug']}")
         focus = parse_focus((a.get("heroImage") or {}).get("socialFocus"))
-        out = OUT / f"{a['slug']}.jpg"
+        out = OUT / f"{(a.get('heroImage') or {}).get('socialName') or a['slug']}.jpg"
         area = (a.get("heroImage") or {}).get("socialArea")
         img = social_area(Image.open(path), parse_area(area), focus) if area else social_crop(Image.open(path), focus)
         label = (a.get("heroImage") or {}).get("socialLabel")
