@@ -1,0 +1,107 @@
+/* =========================================================
+   Planes del Directorio Empresarial — planes-directorio.html
+   ---------------------------------------------------------
+   Se apoya en css/registro.css (encabezado, botones, pasos) y en
+   los tokens de css/styles.css. Solo añade las tarjetas de planes,
+   la tabla comparativa, las preguntas frecuentes y el cierre.
+========================================================= */
+
+.pl-btn--light { background: var(--blanco); border-color: var(--blanco); color: var(--negro); }
+.pl-btn--light:hover { background: transparent; color: var(--blanco); }
+.pl-hero__note { margin-top: 18px; }
+.pl-hero__note a { color: var(--blanco); text-decoration: underline; text-underline-offset: 3px; }
+
+.pl-ico { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: var(--verde-oscuro); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.pl-ico--no { stroke: #a3a39d; stroke-width: 2; }
+
+/* ---------- Tarjetas ---------- */
+.pl-grid { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: stretch; }
+@media (min-width: 820px) { .pl-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+.pl-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 22px 26px;
+  border: 1px solid var(--gris-200);
+  border-radius: var(--radius-s);
+  background: var(--blanco);
+}
+@media (min-width: 760px) { .pl-card { padding: 34px 32px 30px; } }
+.pl-card--premium { border: 2px solid var(--verde-oscuro); background: linear-gradient(180deg, var(--verde-suave) 0, var(--blanco) 180px); }
+.pl-card__badge {
+  position: absolute;
+  top: -13px;
+  right: 20px;
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--negro);
+  color: var(--blanco);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pl-card__kicker { margin: 0 0 6px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-oscuro); }
+.pl-card__title { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1.15; margin: 0 0 14px; }
+.pl-card__price { margin: 0; display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.pl-card__amount { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 2rem + 1.6vw, 3.1rem); line-height: 1; letter-spacing: -0.02em; }
+.pl-card__unit { font-size: 1rem; font-weight: 700; color: var(--gris-600); }
+.pl-card__tax { margin: 4px 0 0; font-size: 0.9rem; color: var(--gris-600); }
+.pl-card__lead { margin: 14px 0 18px; font-size: 0.98rem; line-height: 1.5; }
+.pl-list { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 10px; }
+.pl-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.95rem; line-height: 1.4; }
+.pl-list li.is-no { color: #6b6b6b; }
+.pl-card__cta { margin-top: auto; width: 100%; }
+.pl-card__note { margin: 14px 0 0; font-size: 0.86rem; line-height: 1.45; color: var(--gris-600); }
+.pl-examples { margin: 18px 0 0; font-size: 0.92rem; color: var(--gris-600); }
+.pl-examples a { color: var(--verde-oscuro); font-weight: 700; }
+
+/* ---------- Tabla comparativa ---------- */
+.pl-table-wrap { border: 1px solid var(--gris-200); border-radius: var(--radius-s); }
+.pl-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; table-layout: fixed; }
+.pl-table th, .pl-table td { padding: 12px 10px; border-bottom: 1px solid var(--gris-200); text-align: left; vertical-align: top; line-height: 1.4; }
+.pl-table tbody tr:last-child th, .pl-table tbody tr:last-child td { border-bottom: 0; font-weight: 700; }
+.pl-table thead th { background: var(--negro); color: var(--blanco); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.pl-table thead th:last-child { background: var(--verde-oscuro); }
+.pl-table tbody th { font-weight: 600; width: 40%; }
+.pl-table td { width: 30%; }
+.pl-table td .pl-ico { display: block; }
+@media (min-width: 640px) { .pl-table th, .pl-table td { padding: 14px 18px; } .pl-table { font-size: 0.96rem; } }
+
+/* ---------- Preguntas frecuentes ---------- */
+.pl-faq { border-top: 1px solid var(--gris-200); }
+.pl-faq__item { border-bottom: 1px solid var(--gris-200); }
+.pl-faq__item summary {
+  position: relative;
+  padding: 18px 40px 18px 0;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.35;
+  cursor: pointer;
+  list-style: none;
+}
+.pl-faq__item summary::-webkit-details-marker { display: none; }
+.pl-faq__item summary::after { content: "+"; position: absolute; right: 6px; top: 14px; font-size: 1.5rem; font-weight: 400; color: var(--verde-oscuro); }
+.pl-faq__item[open] summary::after { content: "−"; }
+.pl-faq__item summary:focus-visible { outline: 2px solid var(--negro); outline-offset: 2px; }
+.pl-faq__item p { margin: 0 0 18px; font-size: 0.95rem; line-height: 1.6; color: #2a2a2a; max-width: 70ch; }
+.pl-faq__item a { color: var(--verde-oscuro); font-weight: 700; }
+
+/* ---------- Cierre ---------- */
+.pl-final {
+  margin-top: 64px;
+  display: grid;
+  gap: 18px;
+  padding: 28px 22px;
+  border-radius: var(--radius-s);
+  background: var(--verde-suave);
+  border-left: 4px solid var(--verde-oscuro);
+}
+.pl-final__title { margin: 0 0 6px; font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; line-height: 1.2; }
+.pl-final p { margin: 0; }
+.pl-final__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.pl-final__help { font-size: 0.9rem; color: var(--gris-600); }
+.pl-final__help a { color: var(--verde-oscuro); font-weight: 700; }
+@media (max-width: 480px) { .pl-final__actions { flex-direction: column; } .pl-final__actions .reg-btn { width: 100%; } }
+@media (min-width: 760px) { .pl-final { padding: 34px 36px; } }

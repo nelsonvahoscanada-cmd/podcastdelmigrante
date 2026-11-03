@@ -63,6 +63,7 @@ async function abrir(browser, perfil) {
 }
 
 async function llenar(pg) {
+  await pg.check("input[name=plan][value=premium]");
   await pg.fill("#fName", "Panadería La Esquina");
   await pg.selectOption("#fCategory", "otra");
   await pg.fill("#fCategoryOther", "Panadería");

@@ -171,7 +171,9 @@ function buildVcard(b) {
 }
 
 const template = readFileSync(join(ROOT, "business-profile.html"), "utf8");
-const published = loadBusinesses().filter((b) => b.published);
+/* Las fichas del plan gratuito (plan: "gratuito") no tienen miniweb: se muestran
+   solo como tarjeta en el directorio (js/business-directory.js). */
+const published = loadBusinesses().filter((b) => b.published && b.plan !== "gratuito");
 const expected = new Map();
 for (const b of published) {
   if (!SLUG_RE.test(b.slug || "")) throw new Error(`Slug no válido para ${b.id}: "${b.slug}" (solo minúsculas, números y guiones)`);

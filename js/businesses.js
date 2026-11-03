@@ -21,6 +21,13 @@
     id, slug            identificadores (slug = perfil-<slug>.html; solo
                         minúsculas, números y guiones)
     published           true = aparece en el directorio y su perfil abre
+    plan                [OPCIONAL] "gratuito" = ficha del plan Gratuito: SIN
+                        miniweb ni página propia; se muestra solo como
+                        tarjeta en el directorio con imagen (profileImage
+                        o cardImage; profileImageKind "logo" si es un
+                        logotipo), nombre, categoría, ciudad y provincia,
+                        shortDescription (≤ 200) y phone. Sin este campo
+                        el registro es un Perfil Premium (miniweb).
     featured            true = se ordena primero en el directorio
     foundingProfile     marca interna de perfil piloto/fundador (no se
                         muestra públicamente)
@@ -106,6 +113,12 @@
                           python3 scripts/build-qr-images.py
                               → assets/qr/perfil-<slug>.svg/.png y
                                 assets/qr/contacto-<slug>.svg/.png
+
+  FICHA GRATUITA (solicitud con «Plan solicitado: Plan Gratuito»)
+    Solo estos campos: id, slug, published: true, plan: "gratuito",
+    name, category, city, province, country, shortDescription, phone,
+    profileImage (y profileImageKind: "logo" si corresponde). El
+    generador de perfiles la omite: no se crea perfil-<slug>.html.
 
   DESDE UNA SOLICITUD DEL FORMULARIO (registra-tu-empresa.html)
     Panel privado → Solicitudes → (aprobada) → «Preparar publicación»:

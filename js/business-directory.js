@@ -50,7 +50,36 @@
 
   const LANG_NATIVE = { es: "Español", en: "English", fr: "Français" };
 
+  const isFree = (b) => b.plan === "gratuito";
+  const categoryLabel = (id) => ((typeof BUSINESS_CATEGORIES !== "undefined" ? BUSINESS_CATEGORIES : []).find((c) => c.id === id) || {}).label || "";
+
+  /* Ficha del plan Gratuito: plantilla compartida y ligera, sin miniweb.
+     Imagen, nombre, categoría, ciudad y provincia, descripción breve y
+     teléfono, más una invitación discreta a conocer el plan Premium. */
+  function freeCardHtml(b) {
+    const img = b.cardImage || b.profileImage;
+    const photo = img
+      ? `<img class="biz-card__photo${b.profileImageKind === "logo" && !b.cardImage ? " biz-card__photo--logo" : ""}" src="${esc(img)}" alt="${esc(b.name)}" width="84" height="84" loading="lazy">`
+      : `<div class="biz-card__photo biz-card__photo--initials" aria-hidden="true">${esc(initials(b.name))}</div>`;
+    const place = [b.city, b.province].filter(Boolean).join(", ");
+    const tel = String(b.phone || "").replace(/[^\d+]/g, "");
+    return `
+      <article class="biz-card biz-card--free">
+        ${photo}
+        <div class="biz-card__body">
+          <h2 class="biz-card__name">${esc(b.name)}</h2>
+          ${categoryLabel(b.category) ? `<p class="biz-card__title">${esc(categoryLabel(b.category))}</p>` : ""}
+          ${place ? `<p class="biz-card__place">${esc(place)}</p>` : ""}
+          ${b.shortDescription ? `<p class="biz-card__desc">${esc(b.shortDescription)}</p>` : ""}
+          ${tel ? `<a class="biz-btn biz-btn--primary biz-card__cta" href="tel:${esc(tel)}">Llamar: ${esc(b.phone)}</a>` : ""}
+          <a class="biz-card__upsell" href="planes-directorio">¿Es tu negocio? Conoce el Perfil Premium</a>
+        </div>
+      </article>
+    `;
+  }
+
   function cardHtml(b) {
+    if (isFree(b)) return freeCardHtml(b);
     const img = b.cardImage || b.profileImage;
     const photo = img
       ? `<img class="biz-card__photo${b.profileImageKind === "logo" && !b.cardImage ? " biz-card__photo--logo" : ""}" src="${esc(img)}" alt="${esc(b.name)}" width="84" height="84" loading="lazy">`
@@ -77,10 +106,11 @@
     const category = document.getElementById("fCategory").value;
     const province = document.getElementById("fProvince").value;
     const city = document.getElementById("fCity").value;
-    /* Orden: destacados primero; después, orden de alta en businesses.js */
+    /* Orden: destacados primero; después, Perfiles Premium antes que las
+       fichas gratuitas; dentro de cada grupo, orden de alta en businesses.js */
     const results = published()
       .filter((b) => (!category || b.category === category) && (!province || provincesOf(b).includes(province)) && (!city || b.city === city))
-      .sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
+      .sort((a, b) => Number(!!b.featured) - Number(!!a.featured) || Number(isFree(a)) - Number(isFree(b)));
     const box = document.getElementById("bizResults");
     if (!results.length) {
       box.innerHTML = `<p class="biz-empty">Todavía no hay perfiles para esta búsqueda. Estamos sumando profesionales poco a poco.</p>`;

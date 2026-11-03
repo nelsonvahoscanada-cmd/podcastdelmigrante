@@ -14,7 +14,7 @@
   saltos de línea.
 ========================================================================= */
 
-import { categoryLabel, IMAGE_KINDS } from "../../js/directorio/solicitud-core.js";
+import { categoryLabel, IMAGE_KINDS, PLANS } from "../../js/directorio/solicitud-core.js";
 
 const BRAND = "El Podcast del Migrante";
 const TAGLINE = "Conectando latinos, construyendo futuro";
@@ -37,6 +37,7 @@ ${inner}
 /* ---------- A. Aviso interno ---------- */
 export function internalEmail(d, meta) {
   const rows = [
+    ["Plan solicitado", `${(PLANS[d.plan] || PLANS.premium).label} (${(PLANS[d.plan] || PLANS.premium).price})`],
     ["Número de solicitud", meta.id],
     ["Fecha de recepción", meta.receivedLabel],
     ["Empresa o profesional", d.name],
@@ -85,7 +86,7 @@ ${panel ? `<tr><td style="padding:22px 28px 6px;"><a href="${esc(panel)}" style=
   ].join("\n");
 
   return {
-    subject: oneLine(`Nueva solicitud empresarial — ${d.name} — ${meta.id}`).slice(0, 180),
+    subject: oneLine(`Nueva solicitud empresarial [${d.plan === "gratuito" ? "GRATUITO" : "PREMIUM"}] — ${d.name} — ${meta.id}`).slice(0, 180),
     html,
     text,
   };
@@ -93,29 +94,33 @@ ${panel ? `<tr><td style="padding:22px 28px 6px;"><a href="${esc(panel)}" style=
 
 /* ---------- B. Confirmación al empresario ---------- */
 export function confirmationEmail(meta) {
+  const free = meta.plan === "gratuito";
+  const paras = free
+    ? [
+        "Hemos recibido correctamente la solicitud de tu ficha gratuita en el Directorio Empresarial de El Podcast del Migrante.",
+        `Número de solicitud: ${meta.id}`,
+        "Nuestro equipo revisará la información antes de publicarla y se comunicará contigo si necesita aclarar algún dato.",
+        "La ficha gratuita no tiene costo.",
+        "Tu ficha no será publicada sin la revisión de nuestro equipo.",
+      ]
+    : [
+        "Hemos recibido correctamente tu solicitud de Perfil Empresarial Premium en El Podcast del Migrante.",
+        `Número de solicitud: ${meta.id}`,
+        "Nuestro equipo revisará la información y se comunicará contigo para explicarte los siguientes pasos.",
+        "Enviar esta solicitud no implica contratar ni pagar ningún servicio.",
+        "El Perfil Premium cuesta $24.99 CAD al mes más impuestos aplicables. Por ahora no realizamos cobros en línea: te contactaremos para confirmar el servicio y la forma de pago antes de cualquier cobro.",
+        "Tu perfil no será publicado sin tu aprobación.",
+      ];
+  const last = paras.length - 1;
   const html = layout(`
 <tr><td style="padding:4px 28px 0;"><h1 style="margin:0 0 14px;font-family:Georgia,serif;font-size:24px;">Recibimos tu solicitud</h1>
-<p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Hemos recibido correctamente tu solicitud de Perfil Empresarial Premium en El Podcast del Migrante.</p>
-<p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Número de solicitud: <strong>${esc(meta.id)}</strong></p>
-<p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Nuestro equipo revisará la información y se comunicará contigo para explicarte los siguientes pasos.</p>
-<p style="margin:0 0 12px;font-size:15px;line-height:1.6;">Enviar esta solicitud no implica contratar ni pagar ningún servicio.</p>
-<p style="margin:0 0 20px;font-size:15px;line-height:1.6;"><strong>Tu perfil no será publicado sin tu aprobación.</strong></p></td></tr>`);
-  const text = [
-    "Recibimos tu solicitud",
-    "",
-    "Hemos recibido correctamente tu solicitud de Perfil Empresarial Premium en El Podcast del Migrante.",
-    "",
-    `Número de solicitud: ${meta.id}`,
-    "",
-    "Nuestro equipo revisará la información y se comunicará contigo para explicarte los siguientes pasos.",
-    "",
-    "Enviar esta solicitud no implica contratar ni pagar ningún servicio.",
-    "",
-    "Tu perfil no será publicado sin tu aprobación.",
-    "",
-    BRAND,
-    TAGLINE,
-  ].join("\n");
+${paras
+  .map((p, i) => {
+    const body = p.startsWith("Número de solicitud: ") ? `Número de solicitud: <strong>${esc(meta.id)}</strong>` : i === last ? `<strong>${esc(p)}</strong>` : esc(p);
+    return `<p style="margin:0 0 ${i === last ? 20 : 12}px;font-size:15px;line-height:1.6;">${body}</p>`;
+  })
+  .join("\n")}</td></tr>`);
+  const text = ["Recibimos tu solicitud", "", ...paras.flatMap((p) => [p, ""]), BRAND, TAGLINE].join("\n");
   return { subject: "Recibimos tu solicitud — El Podcast del Migrante", html, text };
 }
 
