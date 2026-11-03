@@ -1,0 +1,22 @@
+name: tmp sonda registro
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-planes-sonda]
+    paths: [".github/workflows/tmp-planes-sonda.yml"]
+permissions:
+  contents: write
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Estado del registro en produccion (solo lectura)
+        run: |
+          mkdir -p /tmp/out; B=https://podcastdelmigrante.com
+          { echo "config: $(curl -s $B/registro/config | sed -E 's/"turnstileSiteKey":"[^"]+"/"turnstileSiteKey":"(presente)"/')"
+            for r in /registra-tu-empresa.html /registra-tu-empresa /quien-puede-ayudarte.html /quien-puede-ayudarte /perfil-tomas-velazquez /perfil-carlos-d-castillo /directorio /planes; do echo "$(curl -s -o /dev/null -w %{http_code} -L $B$r) $r"; done
+            echo "enviar GET: $(curl -s -o /dev/null -w %{http_code} $B/registro/enviar)"
+          } | tee /tmp/out/sonda.txt
+      - name: Publicar
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "sonda [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-planes-sonda-datos
