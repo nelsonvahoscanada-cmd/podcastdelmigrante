@@ -78,7 +78,7 @@ for (const a of ARTICLES) {
 
     const hero = ((a.heroImage && a.heroImage.background) || "").match(/url\(['"]?([^'")]+)/);
     if (hero) {
-      assert.equal(local, `assets/social/${a.slug}.jpg`, "usa la versión social de SU propia foto");
+      assert.equal(local, `assets/social/${(a.heroImage && a.heroImage.socialName) || a.slug}.jpg`, "usa la versión social de SU propia foto");
       assert.deepEqual(jpegSize(local), [1200, 630]);
       assert.equal(one(html, "property", "og:image:width"), "1200");
       assert.equal(one(html, "property", "og:image:height"), "630");

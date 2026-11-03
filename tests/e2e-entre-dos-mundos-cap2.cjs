@@ -16,6 +16,7 @@ const path = require("node:path");
 const BASE = process.env.BASE || "http://127.0.0.1:8890";
 const SHOTS = process.env.SHOTS || "";
 const SLUG = "canada-tambien-puede-convertirse-en-un-infierno";
+const IMG = `${"canada-tambien-puede-convertirse-en-un-infierno"}-portada`;
 const CAP1 = "el-frio-no-pudo-apagar-mi-senal";
 const PERFILES = {
   computador: { viewport: { width: 1440, height: 900 } },
@@ -53,15 +54,15 @@ async function sinDesborde(page, ruta) {
     assert.match(t, /^\s*Nota editorial: Algunos nombres de esta historia han sido modificados/);
     assert.match(t, /es la posibilidad de volver a vernos\./);
     assert.equal(await page.locator(".article-body a").count(), 0, "sin enlaces en la historia");
-    assert.match(await page.locator(".article-hero-media").getAttribute("style"), new RegExp(`assets/${SLUG}\\.jpg`), "ilustración principal");
+    assert.match(await page.locator(".article-hero-media").getAttribute("style"), new RegExp(`assets/${IMG}\\.jpg`), "ilustración principal");
     assert.match(await page.locator(".article-hero-media").getAttribute("aria-label"), /^Ilustración editorial:/);
-    assert.match((await page.locator("main").textContent()).replace(/\s+/g, " "), /Ilustración editorial de El Podcast del Migrante/);
-    const ok = await page.evaluate(async (src) => { const i = new Image(); i.src = src; await i.decode(); return i.naturalWidth; }, `assets/${SLUG}.jpg`);
-    assert.equal(ok, 1600);
+    assert.match((await page.locator("main").textContent()).replace(/\s+/g, " "), /Ilustración editorial de El Podcast del Migrante\. El personaje es una representación simbólica y no corresponde a Andrés/);
+    const ok = await page.evaluate(async (src) => { const i = new Image(); i.src = src; await i.decode(); return i.naturalWidth; }, `assets/${IMG}.jpg`);
+    assert.equal(ok, 1672);
     assert.match(await page.locator(".article-author-card").textContent(), /Nelson Vahos/);
     assert.equal(await page.locator(".article-author-card a.btn").getAttribute("href"), "columna.html?slug=entre-dos-mundos");
     /* Lo que leen Facebook y WhatsApp: el HTML servido, sin ejecutar JavaScript */
-    assert.ok((await (await page.request.get(`${BASE}/articulo-${SLUG}`)).text()).includes(`property="og:image" content="https://podcastdelmigrante.com/assets/social/${SLUG}.jpg"`));
+    assert.ok((await (await page.request.get(`${BASE}/articulo-${SLUG}`)).text()).includes(`property="og:image" content="https://podcastdelmigrante.com/assets/social/${IMG}.jpg"`));
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `articulo-${perfil}.png`), fullPage: true });
     await sinDesborde(page, `/articulo-${SLUG}`);
     assert.deepEqual(errores, []);

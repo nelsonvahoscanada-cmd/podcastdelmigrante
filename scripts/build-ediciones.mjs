@@ -92,7 +92,7 @@ export function resolverPieza(p, fuentes) {
     const a = fuentes.articulos.find((x) => x.id === p.id);
     if (!a) throw new Error(`No existe el artículo ${p.id}`);
     if (a.draft || a.demo === true) throw new Error(`El artículo ${p.id} no está publicado`);
-    return { tipo: "articulo", titulo: a.title, bajada: a.dek || a.excerpt || "", categoria: a.category || "", fecha: a.publishedAt, url: `/articulo-${a.slug}`, imagen: img(`/assets/social/${a.slug}.jpg`) };
+    return { tipo: "articulo", titulo: a.title, bajada: a.dek || a.excerpt || "", categoria: a.category || "", fecha: a.publishedAt, url: `/articulo-${a.slug}`, imagen: img(`/assets/social/${(a.heroImage && a.heroImage.socialName) || a.slug}.jpg`) };
   }
   if (p.tipo === "historia") {
     const h = fuentes.historias.find((x) => (x.href || "").endsWith(`slug=${p.slug}`));

@@ -74,7 +74,13 @@
                               sobre la imagen social (p. ej. imagen con IA),
                               socialLabelPosition?: "bottom" | "top-left"
                               [OPCIONAL] franja inferior (por defecto) o
-                              pastilla discreta arriba a la izquierda }
+                              pastilla discreta arriba a la izquierda,
+                              socialName?: String [OPCIONAL] nombre del
+                              archivo social (assets/social/<socialName>.jpg;
+                              por defecto, el slug). Al reemplazar la foto
+                              de un artículo publicado se usa un nombre nuevo
+                              para que las redes no muestren la anterior
+                              guardada en caché }
                               La foto de url(...) es la que se muestra al
                               compartir; sin foto se usa el logotipo.
   bodyHtml          String  — cuerpo completo, HTML simple (párrafos,
@@ -187,11 +193,13 @@ const ARTICLES = [
     location: null,
     demo: false,
     heroImage: {
-      background: "url('assets/canada-tambien-puede-convertirse-en-un-infierno.jpg')",
-      aspectRatio: "3/2",
-      alt: "Ilustración editorial: un joven, de espaldas y con gorro de lana, arrastra una maleta roja por un campo nevado de noche, frente a una ciudad canadiense iluminada a lo lejos; un avión se aleja en el cielo.",
-      credit: "Ilustración editorial de El Podcast del Migrante. Imagen simbólica: no representa a las personas de esta historia.",
-      socialFocus: "50% 62%",
+      background: "url('assets/canada-tambien-puede-convertirse-en-un-infierno-portada.jpg')",
+      aspectRatio: "1672/941",
+      alt: "Ilustración editorial: un joven con chaqueta de invierno y una bandera de Canadá en la manga mira al cielo al atardecer, frente al horizonte nevado de una ciudad canadiense; a la derecha, un casco de construcción y unos guantes sobre la nieve. Texto: «Entre dos mundos | Capítulo 2. Canadá también puede convertirse en un infierno».",
+      credit: "Ilustración editorial de El Podcast del Migrante. El personaje es una representación simbólica y no corresponde a Andrés ni a ninguna persona de esta historia.",
+      socialLabel: "Ilustración editorial",
+      socialLabelPosition: "top-left",
+      socialName: "canada-tambien-puede-convertirse-en-un-infierno-portada",
     },
     bodyHtml: `
       <p class="article-update"><em>Nota editorial: Algunos nombres de esta historia han sido modificados para proteger la identidad y privacidad de sus protagonistas. El relato se basa en un testimonio real compartido durante una transmisión de El Podcast del Migrante.</em></p>
