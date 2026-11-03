@@ -528,6 +528,27 @@
     `;
   }
 
+  /* Recuadro de patrocinio (article.sponsorBlock), separado del texto y
+     con identificación visible. Sin logo oficial, el nombre va en texto. */
+  function sponsorBlockHtml(article) {
+    const s = article.sponsorBlock;
+    if (!s || !s.href) return "";
+    const esc = (t) => String(t == null ? "" : t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    const brand = s.logo && s.logo.src
+      ? `<img class="article-sponsor__logo" src="${esc(s.logo.src)}" alt="${esc(s.logo.alt || s.sponsor)}" loading="lazy">`
+      : `<p class="article-sponsor__brand">${esc(s.sponsor)}</p>`;
+    return `
+      <aside class="article-sponsor" aria-label="${esc(s.label)}">
+        <p class="article-sponsor__label">${esc(s.label)}</p>
+        ${brand}
+        ${s.title ? `<p class="article-sponsor__title">${esc(s.title)}</p>` : ""}
+        ${s.text ? `<p class="article-sponsor__text">${esc(s.text)}</p>` : ""}
+        <a class="article-sponsor__cta" href="${esc(s.href)}">${esc(s.ctaLabel)}</a>
+        ${s.note ? `<p class="article-sponsor__note">${esc(s.note)}</p>` : ""}
+      </aside>
+    `;
+  }
+
   function originalNoteHtml(article) {
     if (!article.originalNote) return "";
     return `<p class="article-original-note">${article.originalNote}</p>`;
@@ -584,6 +605,7 @@
       ${locationHtml(article)}
       ${heroImageHtml(article)}
       <div class="article-body">${bodyWithVideoHtml(article)}</div>
+      ${sponsorBlockHtml(article)}
       ${isAuthorColumn ? originalNoteHtml(article) + authorCardHtml(article) : ""}
       ${videoBlockHtml(article)}
       ${guideModuleHtml(article)}

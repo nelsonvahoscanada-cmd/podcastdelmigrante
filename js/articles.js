@@ -119,6 +119,13 @@
                               en la línea de metadatos.
   originalNote      String  — [OPCIONAL] nota discreta al final cuando el
                               texto se publicó antes en otro medio.
+  sponsorBlock      Object  — [OPCIONAL] recuadro de patrocinio que se
+                              muestra DESPUÉS del texto (nunca dentro de
+                              bodyHtml): { sponsor, label, title, text,
+                              ctaLabel, href, logo?: { src, alt } }. Sin
+                              logo oficial se muestra el nombre en texto.
+                              No convierte el artículo en contenido
+                              patrocinado (eso es `sponsored`).
   seo               Object  — { title?, fullTitle?, description?, canonicalPath }
                               fullTitle (opcional) se usa tal cual como
                               <title>, sin añadir el sufijo del sitio.
@@ -311,6 +318,20 @@ const ARTICLES = [
       <p><strong>Porque el verdadero sueño de emigrar no debería ser solamente llegar lejos, sino conseguir que la distancia nunca nos haga olvidar por quiénes emprendimos el viaje.</strong></p>
       <p><em>Entre dos mundos es una columna de Nelson Vahos para El Podcast del Migrante. Historias reales sobre las decisiones, los sacrificios y las experiencias que transforman la vida de quienes emigran.</em></p>
     `,
+    /* Patrocinio de Roca Financial (autorizado por la dirección el
+       3-11-2026): recuadro aparte, después de la crónica. Enlaza a la
+       miniweb Premium de Carlos D. Castillo (Roca Financial Group Ltd.)
+       dentro del sitio, con utm_* que registra js/analytics.js. No hay logo
+       oficial de Roca Financial en el proyecto: nombre en texto. */
+    sponsorBlock: {
+      sponsor: "Roca Financial",
+      label: "Contenido patrocinado por Roca Financial",
+      title: "Protege hoy el futuro de quienes más amas.",
+      text: "La vida de un migrante está llena de sueños, esfuerzos y responsabilidades. Conocer las opciones de protección financiera y seguros de vida puede ayudarte a tomar decisiones informadas para el bienestar de tu familia.",
+      note: "Este espacio es publicidad y no forma parte de la crónica.",
+      ctaLabel: "Conoce Roca Financial",
+      href: "perfil-carlos-d-castillo?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=roca-financial&utm_content=articulo-entre-dos-mundos-cap2",
+    },
     originalNote: null,
     video: null,
     sources: [],

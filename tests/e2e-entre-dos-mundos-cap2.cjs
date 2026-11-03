@@ -59,12 +59,38 @@ async function sinDesborde(page, ruta) {
     assert.match((await page.locator("main").textContent()).replace(/\s+/g, " "), /Ilustración editorial de El Podcast del Migrante\. El personaje es una representación simbólica y no corresponde a Andrés/);
     const ok = await page.evaluate(async (src) => { const i = new Image(); i.src = src; await i.decode(); return i.naturalWidth; }, `assets/${IMG}.jpg`);
     assert.equal(ok, 1672);
+    /* Patrocinio de Roca Financial: después de la crónica, antes de la ficha del autor */
+    const patrocinio = page.locator("aside.article-sponsor");
+    assert.equal(await patrocinio.count(), 1);
+    assert.equal(await page.locator(".article-body .article-sponsor").count(), 0, "fuera del texto de la crónica");
+    assert.ok(await page.evaluate(() => {
+      const body = document.querySelector(".article-body"), ad = document.querySelector(".article-sponsor"), card = document.querySelector(".article-author-card");
+      return body.compareDocumentPosition(ad) & Node.DOCUMENT_POSITION_FOLLOWING && ad.compareDocumentPosition(card) & Node.DOCUMENT_POSITION_FOLLOWING;
+    }), "después de la crónica y antes de la ficha del autor");
+    assert.equal((await patrocinio.locator(".article-sponsor__label").innerText()).trim(), "CONTENIDO PATROCINADO POR ROCA FINANCIAL");
+    assert.equal((await patrocinio.locator(".article-sponsor__brand").innerText()).trim(), "ROCA FINANCIAL");
+    assert.match(await patrocinio.textContent(), /Protege hoy el futuro de quienes más amas\./);
+    const cta = patrocinio.locator("a.article-sponsor__cta");
+    assert.equal((await cta.innerText()).trim(), "CONOCE ROCA FINANCIAL");
+    assert.equal(await cta.getAttribute("href"), "perfil-carlos-d-castillo?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=roca-financial&utm_content=articulo-entre-dos-mundos-cap2");
+    const caja = await cta.boundingBox();
+    assert.ok(caja.height >= 44, "botón cómodo de tocar");
+    if (SHOTS) await patrocinio.screenshot({ path: path.join(SHOTS, `patrocinio-${perfil}.png`) });
     assert.match(await page.locator(".article-author-card").textContent(), /Nelson Vahos/);
     assert.equal(await page.locator(".article-author-card a.btn").getAttribute("href"), "columna.html?slug=entre-dos-mundos");
     /* Lo que leen Facebook y WhatsApp: el HTML servido, sin ejecutar JavaScript */
     assert.ok((await (await page.request.get(`${BASE}/articulo-${SLUG}`)).text()).includes(`property="og:image" content="https://podcastdelmigrante.com/assets/social/${IMG}.jpg"`));
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `articulo-${perfil}.png`), fullPage: true });
     await sinDesborde(page, `/articulo-${SLUG}`);
+    assert.deepEqual(errores, []);
+    await ctx.close();
+
+    /* El botón abre la miniweb Premium de Carlos D. Castillo con los utm_* */
+    ({ ctx, page, errores } = await abrir(browser, perfil, `/articulo-${SLUG}`));
+    await page.locator("a.article-sponsor__cta").click();
+    await page.waitForURL(/\/perfil-carlos-d-castillo(\.html)?\?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=roca-financial&utm_content=articulo-entre-dos-mundos-cap2$/);
+    await page.waitForLoadState("networkidle");
+    assert.match(await page.locator("h1").first().textContent(), /Carlos D\. Castillo/);
     assert.deepEqual(errores, []);
     await ctx.close();
 
