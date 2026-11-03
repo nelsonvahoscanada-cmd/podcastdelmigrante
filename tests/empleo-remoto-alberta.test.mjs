@@ -19,22 +19,18 @@ const IMG = `assets/${SLUG}.jpg`;
 const OFERTA = "https://jobpostings.alberta.ca/job/Edmonton-Program-Eligibility-Assessor/607379317/";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
-test("portada: noticia principal; Santa Latino pasa a la primera tarjeta y el orden sigue, sin borrar nada", () => {
-  assert.equal(ctx.H.main.slug, SLUG);
-  assert.equal(ctx.H.main.title, art.title);
-  assert.equal(ctx.H.main.dek, art.dek);
-  assert.equal(ctx.H.main.image, `url('${IMG}')`);
-  assert.equal(ctx.H.main.demo, false);
+test("portada: la noticia de empleo (convocatoria cerrada el 2-11-2026) deja el bloque destacado, sigue publicada y conserva su URL", () => {
+  assert.equal(ctx.H.main.slug, "canada-cambios-express-entry-3-noviembre-2026");
+  const destacadas = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
+  assert.ok(!destacadas.includes(SLUG), "ya no aparece entre las destacadas");
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
     "hector-rivero-santa-latino-canada",
     "alberta-bomberos-forestales-2027",
     "multas-representantes-migratorios-canada-2026",
     "referendum-alberta-octubre-2026-inmigrantes",
   ]);
-  assert.equal(ctx.H.secondary[0].image, "url('assets/yt/LxTr1Zda3dg.jpg')", "Santa Latino conserva su imagen");
-  const sale = ctx.A.find((a) => a.slug === "alberta-energy-rebate-plazo-octubre");
-  assert.ok(sale && !sale.draft, "la noticia que sale de las destacadas sigue publicada");
-  assert.ok(existsSync(join(ROOT, "articulo-alberta-energy-rebate-plazo-octubre.html")), "y conserva su URL");
+  assert.ok(art && !art.draft, "sigue publicada");
+  assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)), "y conserva su URL");
 });
 
 test("artículo: datos de la convocatoria oficial, sin promesas de contratación ni de patrocinio", () => {

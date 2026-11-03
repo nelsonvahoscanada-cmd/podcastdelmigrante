@@ -16,8 +16,8 @@ const URL_ART = `https://podcastdelmigrante.com/articulo-${SLUG}`;
 const IMG = "assets/alberta-bomberos-forestales-2027.jpg";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
-test("portada: tras el empleo desde casa y Santa Latino, la noticia de bomberos sigue en el bloque principal, sin duplicados", () => {
-  assert.equal(ctx.H.main.slug, "alberta-empleo-desde-casa-program-eligibility-assessor-2026", "noticia principal autorizada por la dirección editorial el 30-10-2026");
+test("portada: tras la noticia principal y Santa Latino, la noticia de bomberos sigue en el bloque principal, sin duplicados", () => {
+  assert.equal(ctx.H.main.slug, "canada-cambios-express-entry-3-noviembre-2026", "noticia principal autorizada por la dirección editorial el 2-11-2026");
   assert.equal(ctx.H.secondary[0].slug, "hector-rivero-santa-latino-canada");
   const bomberos = ctx.H.secondary[1];
   assert.equal(bomberos.slug, SLUG);

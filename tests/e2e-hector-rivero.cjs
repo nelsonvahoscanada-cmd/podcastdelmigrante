@@ -62,7 +62,7 @@ async function reproduce(page, contenedor) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: primera tarjeta secundaria (tras la noticia de empleo) ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Gobierno de Alberta ofrece empleo desde casa/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia Express Entry desde el 3 de noviembre/);
     const hero = page.locator("#heroSecondary .hero-sec-card").first();
     assert.match(await hero.innerText(), new RegExp(TITULO.slice(0, 40)));
     assert.equal(await hero.locator(".demo-badge").count(), 0);

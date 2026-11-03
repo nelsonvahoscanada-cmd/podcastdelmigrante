@@ -160,6 +160,118 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Cambios de Express Entry del 3 de noviembre de 2026 (factor de
+       integración laboral, hasta 150 puntos). Texto editorial aprobado por la
+       dirección (orden del 2-11-2026), verificado ese día con IRCC: comunicado
+       del 16-10-2026, página «2026 changes» y lista oficial de ocupaciones de
+       salarios altos (en vigor el 3-11-2026). Máximos 150 / 140 puntos;
+       oferta 100 / 70 / 50; experiencia y oferta no se suman (se usa la mayor);
+       sin LMIA desde el 3-11; recálculo de hasta dos semanas con pausa de
+       rondas. Video propio en TikTok (enlace corto vt.tiktok.com/ZSpJ54oy5
+       resuelto el 2-11-2026). Imagen horizontal aprobada por la dirección. */
+    id: "ART-2026-033",
+    slug: "canada-cambios-express-entry-3-noviembre-2026",
+    category: "Migración",
+    contentType: "Noticia",
+    title: "Canadá cambia Express Entry desde el 3 de noviembre: algunos inmigrantes podrán obtener hasta 150 puntos",
+    dek: "El Gobierno federal modificará el sistema de puntuación para la residencia permanente. La experiencia laboral canadiense y determinadas ofertas de empleo tendrán un nuevo peso en la selección de candidatos.",
+    excerpt: "Desde el 3 de noviembre de 2026, Express Entry otorga hasta 150 puntos por experiencia laboral canadiense u ofertas de empleo en ocupaciones de salarios altos. Qué cambia, a quién beneficia y qué hacer con tu perfil.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-11-02T18:13:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: null },
+    demo: false,
+    heroImage: {
+      background: "url('assets/canada-cambios-express-entry-3-noviembre-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Imagen editorial de El Podcast del Migrante: la bandera de Canadá ondea sobre el horizonte de Calgary y las montañas, junto a un pasaporte canadiense y un documento con el título «Express Entry». Textos: «¡Atención, inmigrantes!», «Cambios en Express Entry desde el 3 de noviembre», «Hasta 150 puntos por experiencia laboral y ofertas de empleo» y «Tu perfil podría verse afectado. ¡Revísalo hoy mismo!».",
+      credit: "Imagen editorial de El Podcast del Migrante. El pasaporte y el documento son ilustrativos: no es una imagen ni un documento oficial del Gobierno de Canadá.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <h2>Un cambio importante para quienes buscan la residencia permanente</h2>
+      <p>Miles de trabajadores extranjeros que buscan establecerse definitivamente en Canadá deberán prestar atención a las nuevas reglas de Express Entry que entrarán en vigor este <strong>martes 3 de noviembre de 2026</strong>.</p>
+      <p>El Gobierno canadiense anunció modificaciones al Sistema de Clasificación Integral, conocido como CRS por sus siglas en inglés, que determina la posición de los candidatos dentro del grupo de Express Entry.</p>
+      <p>La reforma dará mayor importancia a la experiencia laboral adquirida en Canadá y a las ofertas de empleo válidas en determinadas ocupaciones de salarios altos.</p>
+      <p>Algunos candidatos podrán alcanzar <strong>hasta 150 puntos</strong> dentro del nuevo factor de integración laboral, dependiendo de su experiencia, ocupación y situación familiar.</p>
+      <p>Sin embargo, esta puntuación máxima <strong>no corresponde a todos los solicitantes</strong>.</p>
+      <h2>¿Quiénes podrán beneficiarse?</h2>
+      <p>El nuevo sistema contempla dos alternativas para calcular el factor de integración laboral:</p>
+      <h3>1. Experiencia laboral canadiense</h3>
+      <p>Los candidatos podrán recibir puntos según el tiempo de experiencia laboral elegible acumulado en Canadá.</p>
+      <p>Además, quienes hayan trabajado durante al menos 12 meses en determinadas ocupaciones de salarios altos podrán obtener puntos adicionales.</p>
+      <p>En conjunto, este factor podrá alcanzar un máximo de <strong>150 puntos para candidatos sin cónyuge acompañante</strong> y <strong>140 puntos para quienes tengan cónyuge o pareja acompañante</strong>.</p>
+      <h3>2. Ofertas de empleo calificadas</h3>
+      <p>Las ofertas laborales válidas en ocupaciones de salarios altos podrán otorgar:</p>
+      <ul>
+        <li><strong>50 puntos:</strong> para determinadas ocupaciones cuyo salario mediano alcance al menos 1,3 veces el salario mediano general de la fuerza laboral canadiense.</li>
+        <li><strong>70 puntos:</strong> para ocupaciones que alcancen al menos 1,5 veces ese valor.</li>
+        <li><strong>100 puntos:</strong> para ocupaciones que alcancen al menos el doble de ese valor.</li>
+      </ul>
+      <p>La clasificación depende de la ocupación y de los criterios oficiales, no simplemente del salario individual que recibe el trabajador.</p>
+      <p><strong>Importante:</strong> los puntos por experiencia laboral y los correspondientes a una oferta de empleo no se acumulan entre sí dentro de este factor. El sistema utiliza la alternativa que produzca la puntuación más alta.</p>
+      <h2>¿Qué pasa con la LMIA?</h2>
+      <p>Otro de los cambios importantes es que, a partir del 3 de noviembre, una oferta laboral no necesitará contar con una evaluación de impacto en el mercado laboral, conocida como LMIA, para cumplir los nuevos requisitos de Express Entry relacionados con ofertas de empleo.</p>
+      <p>Esto <strong>no significa que cualquier oferta laboral otorgue puntos</strong>.</p>
+      <p>La oferta deberá cumplir las condiciones establecidas por IRCC y podrá ser revisada por un funcionario de inmigración para comprobar que sea genuina.</p>
+      <p>Tener una LMIA tampoco otorgará automáticamente puntos adicionales ni prioridad en el sistema.</p>
+      <h2>¿Qué deben hacer quienes ya tienen un perfil en Express Entry?</h2>
+      <p>Las autoridades anunciaron que las puntuaciones de los perfiles existentes se recalcularán automáticamente conforme a las nuevas reglas.</p>
+      <p>El proceso de actualización podría tardar <strong>hasta dos semanas</strong>.</p>
+      <p>Durante ese período, IRCC pausará temporalmente las rondas de invitaciones y las reanudará una vez finalizada la actualización.</p>
+      <p>Sin embargo, las personas que tengan una oferta laboral que pueda calificar bajo las nuevas condiciones deben revisar la información registrada en su perfil.</p>
+      <p>El Gobierno indicó que quienes deseen obtener puntos por una oferta laboral calificada deben incorporar los datos necesarios antes del 3 de noviembre.</p>
+      <h2>¿Cómo saber si tu ocupación califica?</h2>
+      <p>No todas las profesiones y oficios recibirán puntos adicionales.</p>
+      <p>IRCC utilizará una <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/high-wage.html#list" target="_blank" rel="noopener">lista oficial de ocupaciones de salarios altos</a>, identificadas mediante los códigos de la Clasificación Nacional de Ocupaciones de Canadá, conocida como NOC.</p>
+      <p>Entre los sectores que pueden incluir ocupaciones elegibles se encuentran salud, oficios especializados, ingeniería, tecnología y educación.</p>
+      <p>La recomendación es consultar la lista oficial y comprobar el código NOC correspondiente antes de asumir que una ocupación cumple los requisitos.</p>
+      <h2>¿Estos cambios garantizan la residencia permanente?</h2>
+      <p><strong>No.</strong></p>
+      <p>Una puntuación más alta puede mejorar la posición de un candidato dentro de Express Entry, pero no garantiza una invitación ni la aprobación de una solicitud de residencia permanente.</p>
+      <p>La elegibilidad dependerá del programa migratorio, la puntuación del candidato, las rondas de invitación y los requisitos establecidos por el Gobierno federal.</p>
+      <h2>Consulta la información oficial</h2>
+      <ul>
+        <li>Comunicado del Gobierno de Canadá — 16 de octubre de 2026: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener">Canada refocusing Express Entry on top talent that drives economic growth</a>.</li>
+        <li>Explicación oficial de los cambios, puntuaciones y requisitos: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" target="_blank" rel="noopener">2026 changes to points for Canadian work experience and job offers</a>.</li>
+      </ul>
+      <h2>El Podcast del Migrante te mantiene informado</h2>
+      <p>En nuestro video de hoy explicamos los principales cambios y por qué las personas que tienen un perfil activo en Express Entry deben revisar su situación.</p>
+      <p class="article-apply-row"><a class="article-apply" href="https://www.tiktok.com/@podcastdelmigrante/video/7703729347294661908" target="_blank" rel="noopener">▶ Ver la noticia en TikTok</a></p>
+      <p>Desde El Podcast del Migrante continuaremos siguiendo las actualizaciones de las autoridades migratorias canadienses para ofrecer información clara, verificable y útil para nuestra comunidad.</p>
+      <p><strong>El Podcast del Migrante — Información que conecta a nuestra comunidad.</strong></p>
+      <p><em>Nota editorial: este artículo tiene fines informativos y no constituye asesoría migratoria individual.</em></p>
+    `,
+    /* Video propio en TikTok (@podcastdelmigrante). No se descarga ni se
+       aloja: el reproductor oficial se carga desde TikTok solo al pulsar. */
+    video: {
+      tiktokId: "7703729347294661908",
+      tiktokUser: "podcastdelmigrante",
+      title: "Canadá cambia Express Entry desde el 3 de noviembre: hasta 150 puntos por experiencia laboral y ofertas de empleo",
+      heading: "🎥 Mira la noticia en video",
+      cover: "assets/canada-cambios-express-entry-3-noviembre-2026-video.jpg",
+      position: "intro",
+    },
+    sources: [
+      { label: "IRCC — Canada refocusing Express Entry on top talent that drives economic growth (comunicado, 16 de octubre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" },
+      { label: "IRCC — 2026 changes to points for Canadian work experience and job offers (cambios y tabla oficial)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" },
+      { label: "IRCC — High-wage occupations and how we assess them (lista oficial, en vigor el 3 de noviembre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/high-wage.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["express-entry-nuevos-puntos-noviembre-2026", "express-entry-anuncio-cambios-octubre-2026"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Canadá cambia Express Entry desde el 3 de noviembre de 2026",
+      description: "Canadá modifica Express Entry: hasta 150 puntos por experiencia laboral, nuevas reglas para ofertas de empleo y cambios en la LMIA.",
+      canonicalPath: "/migracion/canada-cambios-express-entry-3-noviembre-2026/",
+    },
+  },
+  {
     /* Convocatoria «Program Eligibility Assessor» del Gobierno de Alberta
        (Assisted Living and Social Services), requisición 88299, publicada el
        26 de octubre de 2026, cierre el 2 de noviembre de 2026. Datos
