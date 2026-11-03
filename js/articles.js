@@ -160,6 +160,136 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Canada Groceries and Essentials Benefit (CGEB), antes crédito GST/HST.
+       Texto original de la redacción (orden del 2-11-2026), verificado ese día
+       en las páginas oficiales de la CRA (Canada.ca): página principal,
+       «How to get the benefit», «Who is eligible», «How much you can get»,
+       tabla de pagos jul. 2026–jun. 2027 y fechas de pago. Reemplazó el crédito
+       GST/HST en julio de 2026, aumento del 25 % de 2026 a 2031; máximos de
+       $679 / $890 / $234 por hijo (año base 2025). Video propio en TikTok
+       (vt.tiktok.com/ZSpJHxU71 resuelto el 2-11-2026). Recuadro publicitario de
+       Country Hills Toyota separado del contenido informativo; la promoción
+       es la comunicada por el patrocinador. Imagen aprobada por la dirección. */
+    id: "ART-2026-034",
+    slug: "canada-groceries-essentials-benefit-cgeb-2026",
+    category: "Finanzas",
+    contentType: "Noticia",
+    title: "¿Trabajas en Canadá? Podrías recibir dinero del Gobierno para tus compras de mercado",
+    dek: "El Canada Groceries and Essentials Benefit reemplazó al crédito GST/HST y aumentó un 25 % durante cinco años. Son pagos trimestrales libres de impuestos para personas y familias con ingresos bajos o moderados, también si tienen empleo.",
+    excerpt: "El Canada Groceries and Essentials Benefit (CGEB) entrega pagos trimestrales libres de impuestos de hasta $679 por persona, $890 por pareja y $234 por hijo. Quién puede recibirlo, cuánto y cómo.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-11-02T18:41:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: null },
+    demo: false,
+    heroImage: {
+      background: "url('assets/canada-groceries-essentials-benefit-cgeb-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Imagen editorial de El Podcast del Migrante: una familia sonriente con un carrito de supermercado lleno de alimentos, junto a la bandera de Canadá. Textos: «¿Trabajas en Canadá? Podrías recibir dinero del Gobierno para tus compras de mercado», «Canada Groceries and Essentials Benefit: pagos trimestrales, libres de impuestos, para familias con ingresos bajos o moderados, también si tienes empleo» y «Consulta aquí cómo recibir el beneficio».",
+      credit: "Imagen editorial de El Podcast del Migrante. Las personas y la escena son ilustrativas: no es una imagen oficial del Gobierno de Canadá.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p>Si vives y trabajas en Canadá con ingresos bajos o moderados, es posible que el Gobierno federal te esté depositando dinero cada tres meses, o que tengas derecho a recibirlo sin saberlo. Se trata del <strong>Canada Groceries and Essentials Benefit (CGEB)</strong>, un beneficio que administra la Agencia de Ingresos de Canadá (CRA) para ayudar a cubrir el costo de los alimentos y de los gastos esenciales.</p>
+      <p>El CGEB <strong>reemplazó al crédito GST/HST en julio de 2026</strong>. Según la CRA, cambió el nombre, pero la elegibilidad, el cálculo y la estructura de los pagos siguen siendo los mismos. Lo nuevo es el monto: desde julio de 2026 el beneficio tiene un <strong>aumento del 25 %</strong>, que se mantendrá durante cinco años, de 2026 a 2031.</p>
+      <h2>¿Qué es el Canada Groceries and Essentials Benefit?</h2>
+      <p>Es un pago <strong>libre de impuestos</strong> que se entrega <strong>cada trimestre</strong> a personas y familias con ingresos bajos o moderados. No tienes que declararlo como ingreso en tu declaración de impuestos y puede incluir, además, montos de programas provinciales o territoriales relacionados.</p>
+      <p>Aunque su nombre habla de compras de mercado, el dinero se deposita directamente y está pensado para ayudar con el costo de la vida diaria.</p>
+      <h2>¿Tener empleo te excluye? No</h2>
+      <p>El beneficio <strong>no depende de que estés desempleado</strong>. Lo que cuenta es tu <strong>ingreso familiar neto ajustado</strong> (el de tu declaración de impuestos y, si tienes pareja, también el suyo), tu estado civil y el número de hijos menores de 19 años.</p>
+      <p>Por ejemplo, según la tabla oficial de la CRA para el período de julio de 2026 a junio de 2027, una persona soltera sin hijos con un ingreso familiar neto ajustado de $45.000 puede recibir hasta <strong>$679 al año</strong>. Una pareja con dos hijos y un ingreso de $60.000 puede recibir alrededor de <strong>$679,60 al año</strong>. Muchas personas que trabajan a tiempo completo están dentro de estos rangos.</p>
+      <h2>¿Quién puede recibirlo?</h2>
+      <p>Según la CRA, debes cumplir todas estas condiciones:</p>
+      <ul>
+        <li><strong>Ser residente de Canadá para efectos fiscales</strong> en el mes anterior al pago y al comienzo del mes en que se hace el pago. En general, eres residente si vives normalmente en Canadá y tienes vínculos importantes, como una vivienda, tu cónyuge o personas a tu cargo en el país.</li>
+        <li><strong>Tener al menos 19 años</strong>, o ser menor de 19 y tener (o haber tenido) cónyuge o pareja de hecho, o ser (o haber sido) padre o madre y vivir con tu hijo.</li>
+        <li><strong>Tener un ingreso familiar neto ajustado por debajo del límite</strong> que corresponde a tu situación.</li>
+      </ul>
+      <p>Estos son los límites máximos de ingreso para el período de pagos de julio de 2026 a junio de 2027 (año base 2025):</p>
+      <table>
+        <caption>Ingreso familiar neto ajustado máximo para recibir el CGEB (año base 2025; fuente: CRA)</caption>
+        <thead>
+          <tr><th scope="col">Hijos</th><th scope="col">Sin pareja</th><th scope="col">Con pareja</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sin hijos</td><td>$60.012</td><td>$64.232</td></tr>
+          <tr><td>1 hijo</td><td>$68.912</td><td>$68.912</td></tr>
+          <tr><td>2 hijos</td><td>$73.592</td><td>$73.592</td></tr>
+          <tr><td>3 hijos</td><td>$78.272</td><td>$78.272</td></tr>
+          <tr><td>4 o más</td><td>$82.952</td><td>$82.952</td></tr>
+        </tbody>
+      </table>
+      <p><em>Sin pareja: persona soltera o familia monoparental. Con pareja: casados o en unión de hecho. Hijos: menores de 19 años.</em></p>
+      <p>Si tu ingreso está por debajo de esos límites, puedes tener derecho al beneficio; cuanto más cerca estés del límite, menor es el monto.</p>
+      <h2>¿Cuánto puedes recibir?</h2>
+      <p>Para el período de <strong>julio de 2026 a junio de 2027</strong>, que se calcula con la declaración de impuestos de 2025, puedes recibir hasta:</p>
+      <ul>
+        <li><strong>$679</strong> al año si eres una persona soltera.</li>
+        <li><strong>$890</strong> al año si estás casado o en unión de hecho.</li>
+        <li><strong>$234</strong> al año por cada hijo elegible menor de 19 años.</li>
+      </ul>
+      <p>El monto exacto depende de tu ingreso, tu estado civil y tus hijos. La CRA ofrece una <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/how-much/payments-chart.html" target="_blank" rel="noopener">tabla oficial de pagos</a> para estimarlo.</p>
+      <h2>¿Cuándo se paga?</h2>
+      <p>El beneficio se paga <strong>cuatro veces al año</strong>. En 2026, los pagos del CGEB fueron el <strong>3 de julio</strong> y el <strong>5 de octubre</strong>; los dos siguientes del mismo período llegan en <strong>enero y abril de 2027</strong>.</p>
+      <p>El monto se recalcula <strong>cada julio</strong> con la información de tu declaración del año anterior. Si te corresponde menos de $50 por trimestre, la CRA te paga el total en un solo depósito en julio.</p>
+      <h2>¿Cómo solicitar o recibir este beneficio?</h2>
+      <p class="article-apply-row"><a class="article-apply" href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html" target="_blank" rel="noopener">CONSULTA AQUÍ CÓMO RECIBIR EL BENEFICIO</a></p>
+      <ul>
+        <li><strong>Para muchas personas es automático.</strong> En la mayoría de los casos no hay que solicitarlo: la CRA revisa tu elegibilidad cuando procesa tu declaración de impuestos. Presenta tu declaración <strong>cada año</strong>, aunque no hayas tenido ingresos, y hazlo antes del <strong>30 de abril</strong> para que tus pagos no se interrumpan. Si la presentas tarde, la CRA te pagará después los montos que te correspondan.</li>
+        <li><strong>No necesitas estar desempleado.</strong> El beneficio depende de tu ingreso familiar neto ajustado, no de si trabajas o no.</li>
+        <li><strong>Los recién llegados pueden necesitar un paso adicional.</strong> Si te convertiste en residente de Canadá, puedes solicitar el beneficio para tu primer año antes de presentar tu primera declaración, con el <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html" target="_blank" rel="noopener">formulario RC151</a>. Si no tienes hijos, puedes enviarlo en línea. Si tienes hijos menores de 19 años, debes enviar por correo el RC151 y el formulario RC66 (Canada Child Benefit), con prueba de nacimiento de cada hijo. Basta con una solicitud por hogar.</li>
+        <li><strong>Consulta tu información en tu cuenta de la CRA.</strong> En tu <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html" target="_blank" rel="noopener">CRA account</a> puedes ver la fecha y el monto de tu próximo pago, el estado de cada pago y tu estado de cuenta. Mantén actualizados tu dirección, tu cuenta bancaria y tu estado civil para evitar interrupciones.</li>
+        <li><strong>Cuidado con los intermediarios.</strong> No pagues a nadie por una supuesta inscripción: el beneficio se gestiona directamente con la CRA. No entregues tus datos personales, tu número de seguro social (SIN) ni tus datos bancarios en páginas que no sean oficiales del Gobierno de Canadá.</li>
+      </ul>
+      <h2>Fuentes oficiales</h2>
+      <ul>
+        <li><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html" target="_blank" rel="noopener">Canada Groceries and Essentials Benefit (CGEB)</a> — Canada Revenue Agency.</li>
+        <li><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html" target="_blank" rel="noopener">How to get the benefit</a> — cómo recibirlo y solicitud para nuevos residentes.</li>
+        <li><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/who-eligible.html" target="_blank" rel="noopener">Who is eligible</a> — requisitos y límites de ingreso.</li>
+        <li><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/how-much.html" target="_blank" rel="noopener">How much you can get</a> — montos máximos y cálculo.</li>
+        <li><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/payment-dates.html" target="_blank" rel="noopener">Payment dates</a> — fechas de pago.</li>
+      </ul>
+      <p><em>Nota editorial: este artículo tiene fines informativos y no constituye asesoría fiscal individual. Los montos y requisitos pueden cambiar; consulta siempre la información oficial de la CRA.</em></p>
+      <aside class="article-patrocinio" aria-label="Publicidad">
+        <p class="article-patrocinio__etiqueta">Publicidad · Reconocimiento a nuestro patrocinador</p>
+        <p><strong>Country Hills Toyota</strong> acompaña a El Podcast del Migrante y ofrece <strong>atención en español</strong>.</p>
+        <p>Promoción comunicada por el patrocinador: al comprar un vehículo <strong>nuevo</strong> y mencionar a El Podcast del Migrante, recibes una <strong>tarjeta de gasolina de $200 CAD</strong>. Es una promoción del concesionario, no un beneficio del Gobierno de Canadá, y no tiene relación con el CGEB. Consulta las condiciones directamente con el concesionario.</p>
+        <p><a class="article-patrocinio__enlace" href="perfil-tomas-velazquez.html?utm_source=podcastdelmigrante&amp;utm_medium=patrocinio&amp;utm_campaign=country-hills-toyota&amp;utm_content=articulo-cgeb">Contacta a Tomás Velázquez en Country Hills Toyota →</a></p>
+      </aside>
+    `,
+    /* Video propio en TikTok (@podcastdelmigrante). No se descarga ni se
+       aloja: el reproductor oficial se carga desde TikTok solo al pulsar. */
+    video: {
+      tiktokId: "7703308267048488213",
+      tiktokUser: "podcastdelmigrante",
+      title: "¿Trabajas en Canadá? Podrías recibir dinero del Gobierno para tus compras de mercado: el Canada Groceries and Essentials Benefit",
+      heading: "🎥 Mira la noticia en video",
+      cover: "assets/canada-groceries-essentials-benefit-cgeb-2026-video.jpg",
+      position: "intro",
+    },
+    sources: [
+      { label: "Canada Revenue Agency — Canada Groceries and Essentials Benefit (CGEB)", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html" },
+      { label: "Canada Revenue Agency — How to get the benefit", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html" },
+      { label: "Canada Revenue Agency — Who is eligible", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/who-eligible.html" },
+      { label: "Canada Revenue Agency — How much you can get", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/how-much.html" },
+      { label: "Canada Revenue Agency — Payments chart: July 2026 to June 2027 (2025 base year)", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/how-much/payments-chart.html" },
+      { label: "Canada Revenue Agency — Payment dates", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/payment-dates.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["canada-limite-cargos-nsf-10-dolares", "el-error-financiero-inmigrantes-canada"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Canada Groceries and Essentials Benefit: quién lo recibe y cómo",
+      description: "El CGEB reemplazó al crédito GST/HST: pagos trimestrales libres de impuestos de hasta $679, $890 por pareja y $234 por hijo, también si tienes empleo.",
+      canonicalPath: "/finanzas/canada-groceries-essentials-benefit-cgeb-2026/",
+    },
+  },
+  {
     /* Cambios de Express Entry del 3 de noviembre de 2026 (factor de
        integración laboral, hasta 150 puntos). Texto editorial aprobado por la
        dirección (orden del 2-11-2026), verificado ese día con IRCC: comunicado

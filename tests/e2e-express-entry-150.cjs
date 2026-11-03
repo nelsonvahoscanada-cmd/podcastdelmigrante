@@ -60,9 +60,9 @@ async function sinDesborde(page, ruta) {
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 4);
     assert.match(tarjetas[0], /Santa Latino/);
-    assert.match(tarjetas[1], /bomberos forestales/);
-    assert.match(tarjetas[2], /representantes migratorios/);
-    assert.match(tarjetas[3], /Alberta votó por permanecer/);
+    assert.match(tarjetas[1], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/);
+    assert.match(tarjetas[2], /bomberos forestales/);
+    assert.match(tarjetas[3], /representantes migratorios/);
     assert.equal(tarjetas.filter((x) => x.includes("Express Entry desde el 3")).length, 0, "sin duplicados en el bloque principal");
     /* La portada de la Edición 01 sigue en su bloque */
     assert.equal(await page.locator('#edicion img[src="/assets/ediciones/2026-10/portada.jpg"]').count(), 1);

@@ -19,7 +19,7 @@ const CAMBIOS = "https://www.canada.ca/en/immigration-refugees-citizenship/servi
 const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-test("portada: noticia principal con la imagen aprobada; las destacadas siguen en su orden", () => {
+test("portada: noticia principal con la imagen aprobada; el CGEB en la segunda tarjeta y las demás en su orden", () => {
   assert.equal(ctx.H.main.slug, SLUG);
   assert.equal(ctx.H.main.title, art.title);
   assert.equal(ctx.H.main.dek, art.dek);
@@ -28,9 +28,9 @@ test("portada: noticia principal con la imagen aprobada; las destacadas siguen e
   assert.equal(ctx.H.main.demo, false);
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
     "hector-rivero-santa-latino-canada",
+    "canada-groceries-essentials-benefit-cgeb-2026",
     "alberta-bomberos-forestales-2027",
     "multas-representantes-migratorios-canada-2026",
-    "referendum-alberta-octubre-2026-inmigrantes",
   ]);
 });
 
@@ -41,7 +41,7 @@ test("artículo: sección Migración, fecha del 2 de noviembre en Alberta, una s
   assert.equal(art.category, "Migración");
   assert.equal(art.contentType, "Noticia");
   assert.match(art.publishedAt, /^2026-11-02T\d{2}:\d{2}:00-06:00$/);
-  assert.equal(ctx.A[0].slug, SLUG, "primera de la lista: encabeza Migración y las últimas noticias");
+  assert.equal(ctx.A.filter((a) => a.category === "Migración" && !a.draft && a.demo === false)[0].slug, SLUG, "encabeza la sección Migración");
   assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)));
   assert.ok(existsSync(join(ROOT, IMG)));
   assert.ok(existsSync(join(ROOT, `assets/social/${SLUG}.jpg`)));

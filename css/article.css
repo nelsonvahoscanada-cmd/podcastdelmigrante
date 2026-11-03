@@ -639,3 +639,21 @@ a.column-masthead__name:hover { color: var(--negro); }
 @media (max-width: 520px) {
   .article-body a.article-apply { display: flex; width: 100%; }
 }
+
+/* Recuadro publicitario dentro de un artículo informativo: separado del
+   contenido, con etiqueta visible «Publicidad» (identidad negro y blanco). */
+.article-patrocinio {
+  margin: 36px 0 8px;
+  padding: 16px 18px;
+  background: var(--gris-100, #f4f4f2);
+  border: 1px solid var(--gris-200, #e2e2de);
+  border-top: 3px solid var(--negro);
+  border-radius: var(--radius-s);
+  font-size: 0.95rem;
+}
+.article-patrocinio p { margin: 0 0 10px; }
+.article-patrocinio p:last-child { margin-bottom: 0; }
+.article-patrocinio__etiqueta {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-texto, #555);
+}
+.article-patrocinio__enlace { font-weight: 700; color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 3px; }

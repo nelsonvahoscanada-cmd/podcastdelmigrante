@@ -49,7 +49,7 @@ test("portada: Santa Latino sigue en la primera tarjeta secundaria tras la notic
   assert.equal(santa.image, `url('assets/yt/${VIDEO}.jpg')`);
   assert.equal(santa.demo, false);
   assert.ok(santa.alt.length > 40, "texto alternativo");
-  assert.ok(ctx.H.secondary.some((x) => x.slug === "referendum-alberta-octubre-2026-inmigrantes"), "la noticia principal anterior sigue entre las secundarias");
+  assert.equal(ctx.H.secondary[1].slug, "canada-groceries-essentials-benefit-cgeb-2026", "el CGEB, segunda tarjeta (orden de la dirección del 2-11-2026)");
   assert.equal(ctx.H.secondary.length, 4);
   for (const s of ["referendum-alberta-octubre-2026-inmigrantes", "rocky-ridge-athletic-park-calgary", "alberta-energy-rebate-plazo-octubre"]) {
     assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: sigue publicado`);
