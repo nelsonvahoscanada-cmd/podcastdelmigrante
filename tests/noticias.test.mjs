@@ -40,7 +40,8 @@ test("archivo cronológico: noticias y columnas publicadas, por fecha; la portad
   assert.deepEqual(N.archivo(datos).map((a) => a.slug), ["columna", "nueva", "vieja"]);
   assert.ok(!N.portada(datos, null).some((a) => a.contentType === "Columna"));
   const reales = N.archivo(ARTICLES);
-  assert.equal(reales[0].slug, "trabajas-pagas-ahorras-realmente-avanzando", "la columna de noviembre de Carlos D. Castillo, primera del archivo");
+  assert.ok(reales.some((a) => a.slug === "trabajas-pagas-ahorras-realmente-avanzando"), "la columna de noviembre de Carlos D. Castillo está en el archivo");
+  assert.ok(!reales.some((a) => a.lang === "en"), "solo publicaciones en español");
   assert.ok(reales.some((a) => a.slug === "el-error-financiero-inmigrantes-canada"));
 });
 

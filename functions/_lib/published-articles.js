@@ -1,5 +1,7 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "salud-rural-urbana-alberta-atencion-medica",
+  "rural-vs-urban-healthcare-high-level-review",
   "trabajas-pagas-ahorras-realmente-avanzando",
   "canada-groceries-essentials-benefit-cgeb-2026",
   "canada-cambios-express-entry-3-noviembre-2026",
@@ -39,6 +41,8 @@ export const PUBLISHED_ARTICLES = new Set([
 
 /* Noticias y guías publicadas con contador público de visualizaciones. */
 export const ARTICULOS_CON_CONTADOR = new Set([
+  "ART-2026-036",
+  "ART-2026-037",
   "ART-2026-034",
   "ART-2026-033",
   "ART-2026-032",

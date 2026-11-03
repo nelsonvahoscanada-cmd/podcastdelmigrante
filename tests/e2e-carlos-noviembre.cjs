@@ -93,7 +93,7 @@ async function retrato(page, selector) {
 
     /* ---------- Archivo cronológico ---------- */
     ({ ctx, page, errores } = await abrir(browser, perfil, "/noticias"));
-    assert.match(await page.locator("#archivoLista a").first().getAttribute("href"), new RegExp(`articulo-${SLUG}$`), "primera del archivo");
+    assert.equal(await page.locator(`#archivoLista a[href="articulo-${SLUG}"]`).count(), 1, "en el archivo cronológico");
     assert.equal(await page.locator('#archivoLista a[href="articulo-el-error-financiero-inmigrantes-canada"]').count() >= 0, true);
     assert.deepEqual(errores, []);
     await ctx.close();
