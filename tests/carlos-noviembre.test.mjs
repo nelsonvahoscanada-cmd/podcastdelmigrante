@@ -5,7 +5,6 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { execFileSync } from "node:child_process";
 import vm from "node:vm";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -62,7 +61,13 @@ test("retrato circular del autor: mismo archivo y mismo tamaño (300 × 300), JP
   assert.equal(carlos.photo, "assets/carlos-castillo-avatar.jpg");
   const b = readFileSync(join(ROOT, carlos.photo));
   assert.deepEqual([b[0], b[1]], [0xff, 0xd8], "JPEG");
-  const dims = execFileSync("python3", ["-c", "from PIL import Image;import sys;print(*Image.open(sys.argv[1]).size)", join(ROOT, carlos.photo)], { encoding: "utf8" }).trim();
+  /* Dimensiones leídas del marcador SOF del JPEG (sin dependencias) */
+  let i = 2, dims = null;
+  while (i < b.length) {
+    const marca = b[i + 1], largo = b.readUInt16BE(i + 2);
+    if (marca >= 0xc0 && marca <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marca)) { dims = `${b.readUInt16BE(i + 7)} ${b.readUInt16BE(i + 5)}`; break; }
+    i += 2 + largo;
+  }
   assert.equal(dims, "300 300");
   assert.ok(b.length < 40 * 1024, `${b.length} bytes`);
 });
