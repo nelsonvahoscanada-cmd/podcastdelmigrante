@@ -1,0 +1,59 @@
+name: tmp cgeb fuentes
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-cgeb]
+    paths: [".github/workflows/tmp-cgeb.yml"]
+permissions:
+  contents: write
+jobs:
+  fuentes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Paginas oficiales CGEB y TikTok (solo lectura)
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/out/p; cd /tmp/out
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
+          {
+          echo "== TikTok"
+          L=$(curl -sIL -A "$UA" -o /dev/null -w "%{url_effective}" "https://vt.tiktok.com/ZSpJHxU71/"); echo "FINAL $L"
+          V=$(echo "$L" | grep -oE "/video/[0-9]+" | grep -oE "[0-9]+"); U2=$(echo "$L" | grep -oE "@[^/?]+"); echo "ID $V USER $U2"
+          curl -s -o /dev/null -w "player HTTP %{http_code}\n" -A "$UA" "https://www.tiktok.com/player/v1/$V"
+          } 2>&1 | tee log.txt
+          B=https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit
+          python3 - "$B" <<'PY'
+          import re, html, sys, urllib.request, urllib.parse
+          base=sys.argv[1]; UA={"User-Agent":"Mozilla/5.0 Chrome/130"}
+          vistos=set(); cola=[base+".html", base+"/get-benefit.html"]
+          extra=["https://www.canada.ca/en/department-finance/news.html"]
+          out=open("paginas.txt","w",encoding="utf-8")
+          def texto(t):
+              t=re.sub(r"(?s)<(script|style|nav|header|footer)[^>]*>.*?</\1>","",t)
+              t=html.unescape(re.sub(r"<[^>]+>"," ",t)); return re.sub(r"\s+"," ",t)
+          n=0
+          while cola and n<14:
+              u=cola.pop(0).split("#")[0]
+              if u in vistos: continue
+              vistos.add(u)
+              try:
+                  r=urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=30); t=r.read().decode("utf-8","ignore"); code=r.status; final=r.geturl()
+              except Exception as e:
+                  out.write(f"\n===== {u} ERROR {e}\n"); continue
+              n+=1
+              m=re.search(r'<meta name="dcterms.modified"[^>]*content="([^"]+)"',t)
+              out.write(f"\n===== {code} {final} modificado={m.group(1) if m else '?'}\n")
+              i=t.find("<main"); body=t[i:] if i>=0 else t
+              out.write(texto(body)[:14000]+"\n")
+              for h in re.findall(r'href="([^"]+)"',body):
+                  h=urllib.parse.urljoin(u,h)
+                  if "canada-groceries-essentials-benefit" in h and h.endswith(".html") and h.split("#")[0] not in vistos: cola.append(h)
+                  if ("gst" in h.lower() or "groceries" in h.lower()) and "news" in h and h not in vistos and n<14: cola.append(h)
+                  if "my-account" in h.lower() or "myaccount" in h.lower(): out.write(f"ENLACE_MYACCOUNT {h}\n")
+          out.close()
+          PY
+          grep "^=====" paginas.txt | tee -a log.txt
+      - name: Publicar en la rama de datos
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name "datos" && git config user.email "datos@users.noreply.github.com"
+          git add -A && git commit -qm "Fuentes CGEB [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-cgeb-datos
