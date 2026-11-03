@@ -64,6 +64,7 @@
       photoOf: "Fotografía de ",
       proSite: "Visitar sitio profesional",
       licensedIn: "Licenciado en:",
+      articles: "Artículos",
     },
     en: {
       langLabel: { en: "English interview", es: "Spanish interview" },
@@ -81,6 +82,7 @@
       photoOf: "Photograph of ",
       proSite: "Visit professional website",
       licensedIn: "Licensed in:",
+      articles: "Articles",
     },
   };
 
@@ -220,6 +222,26 @@
     `;
   }
 
+  /* Artículos del autor que no pertenecen a ninguna de sus columnas (las
+     columnas ya se listan aparte). Si un artículo tiene traducción, se
+     muestra una sola vez: la versión en el idioma del perfil. */
+  function standaloneArticlesHtml(contributor, columns, t) {
+    const enColumna = new Set(columns.flatMap((c) => c.entries.filter((e) => e.slug).map((e) => e.slug)));
+    const idioma = contributor.lang || "es";
+    const lista = articlesByAuthor(contributor.id).filter((a) => !a.draft && a.demo !== true && !enColumna.has(a.slug));
+    const visibles = lista.filter((a) => {
+      const otra = a.translationSlug && lista.find((b) => b.slug === a.translationSlug);
+      return !otra || (a.lang || "es") === idioma;
+    });
+    if (!visibles.length) return "";
+    return `
+      <section class="profile-column">
+        <h2 class="section-title">${t.articles}</h2>
+        <div class="related-grid">${visibles.map(articleCardHtml).join("")}</div>
+      </section>
+    `;
+  }
+
   function renderProfile(contributor) {
     document.title = contributor.name + " — El Podcast del Migrante Magazine";
     const t = ui(contributor);
@@ -259,6 +281,7 @@
       ${shareHtml(contributor)}
 
       ${columnsHtml}
+      ${standaloneArticlesHtml(contributor, columns, t)}
       ${interviewsHtml(contributor)}
       ${englishHtml(contributor)}
     `;

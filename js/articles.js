@@ -160,6 +160,159 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* «Rural vs Urban Healthcare: A High-Level Review», de Elmy Castillo
+       (texto original en inglés recibido el 1-11-2026). Traducción de la
+       redacción; publicación autorizada por la dirección el 2-11-2026.
+       Cifras revisadas el 2-11-2026: 18 % / 8 % (CMA 2019, CMAJ 2012),
+       continuidad y emergencias (Annals of Family Medicine 2024, Alberta),
+       derivaciones (CMAJ 1997, evidencia no uniforme), cierres de emergencias
+       rurales (AHS) e incentivos municipales (p. ej., Fort Macleod). No
+       confirmadas: el 77 % de vinculación rural «8 puntos por debajo» de la
+       urbana (Statistics Canada 2023 indica lo contrario: 84,2 % rural y
+       82,5 % centros poblados) y el «doble de tiempo» de viaje (las fuentes
+       hablan de distancias del doble o más); se señalan en una nota visible.
+       Versión original en inglés: rural-vs-urban-healthcare-high-level-review. */
+    id: "ART-2026-036",
+    slug: "salud-rural-urbana-alberta-atencion-medica",
+    category: "Salud",
+    contentType: "Noticia",
+    title: "Salud en Canadá: ¿es más difícil recibir atención médica en las comunidades rurales?",
+    dek: "La escasez de médicos de familia, las distancias y los cierres temporales de emergencias afectan especialmente a las comunidades rurales de Alberta. Conoce las diferencias y los recursos disponibles.",
+    excerpt: "Solo alrededor del 8 % de los médicos ejerce en zonas rurales, donde vive cerca del 18 % de la población. Qué significa para el acceso a la salud en Alberta y qué recursos conviene conocer.",
+    author: {
+      mode: "colaborador",
+      name: "Elmy Castillo",
+      specialty: "Corresponsal de salud rural, County of Newell, Alberta",
+      profileHref: "colaborador.html?id=elmy-castillo",
+      authorId: "elmy-castillo",
+    },
+    publishedAt: "2026-11-02T21:55:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/salud-rural-urbana-alberta-atencion-medica.jpg')",
+      aspectRatio: "16/9",
+      alt: "Retrato de Elmy Castillo, sonriente, junto al título «Salud en Canadá: ¿es más difícil recibir atención médica en las comunidades rurales?», con la etiqueta «Salud rural · Alberta» de El Podcast del Migrante Magazine.",
+      credit: "Imagen de El Podcast del Migrante con el retrato de Elmy Castillo.",
+    },
+    bodyHtml: `
+      <p><em>Título original: «Rural vs Urban Healthcare: A High-Level Review», por Elmy Castillo. Traducción de la redacción de El Podcast del Migrante; la <a href="articulo-rural-vs-urban-healthcare-high-level-review">versión original en inglés</a> también está publicada.</em></p>
+      <p>Muchos canadienses interactúan con el sistema de salud todos los días. Puede tratarse de visitar a un médico de familia para el chequeo anual, buscar atención en una clínica sin cita (<em>walk-in</em>) o acudir a un centro de atención urgente o a un servicio de emergencias. Sin embargo, la forma en que accedemos a la atención médica suele depender de la comunidad en la que vivimos. Entonces, ¿cómo es la relación con el sistema de salud en las comunidades rurales en comparación con los centros urbanos? ¿Y qué recursos de salud debería conocer todo habitante de Alberta?</p>
+      <h2>Menos médicos donde vive casi uno de cada cinco canadienses</h2>
+      <p>En Canadá, la atención primaria es el primer punto de contacto de los pacientes que buscan servicios de salud. Sin embargo, las comunidades rurales enfrentan con frecuencia escasez de proveedores de atención primaria. Aunque aproximadamente el <strong>18 %</strong> de los canadienses vive en zonas rurales, solo el <strong>8 %</strong> de los médicos ejerce en estas comunidades. Además, los residentes rurales suelen enfrentar el doble de tiempo de viaje que los urbanos para llegar a un médico o a un hospital.</p>
+      <p>Actualmente, alrededor del 77 % de los residentes rurales está vinculado a un proveedor de atención primaria, casi 8 puntos porcentuales menos que la proporción de residentes urbanos. Lo ideal sería que estas cifras fueran más altas, ya que la continuidad de la atención con un médico de familia se asocia con un menor uso de los servicios de emergencia. Por el contrario, una continuidad limitada o nula con un proveedor de atención primaria se asocia con más visitas a emergencias.</p>
+      <p class="article-update"><strong>Nota de la redacción sobre las cifras.</strong> La proporción de 18 % de la población rural frente a 8 % de los médicos coincide con los datos de la Canadian Medical Association (2019) y de CMAJ, y la relación entre continuidad de la atención y menor uso de emergencias está respaldada por un estudio de 2024 realizado en Alberta. En cambio, <strong>no hemos podido confirmar en una fuente oficial el dato del 77 %</strong>: según Statistics Canada, en 2023 la proporción de personas con un proveedor de salud habitual era del 84,2 % en las comunidades rurales y del 82,5 % en los centros poblados, es decir, ligeramente mayor en las zonas rurales, aunque las encuestas usan definiciones distintas. Sobre los desplazamientos, las fuentes disponibles indican que en las zonas rurales las distancias hasta un médico o un hospital son del doble o más; el dato exacto de tiempo de viaje queda pendiente de respaldo.</p>
+      <h2>Más allá de la atención primaria: los especialistas</h2>
+      <p>Las diferencias en el acceso a la salud entre zonas rurales y urbanas van más allá de la atención primaria. Algunos estudios han encontrado que los proveedores de atención primaria de zonas rurales derivan a los pacientes a especialistas con menos frecuencia que sus colegas urbanos. Esto puede reflejar barreras geográficas, como la distancia que los pacientes deben recorrer para recibir atención especializada, así como la menor disponibilidad de especialistas en las comunidades rurales. Teniendo en cuenta que los tiempos de espera para ver a un especialista ya son largos en todo el sistema de salud, estas barreras adicionales pueden hacer que el acceso a la atención especializada sea particularmente difícil para los residentes rurales.</p>
+      <h2>Alberta: cierres temporales de emergencias rurales</h2>
+      <p>En Alberta, los cierres temporales de servicios de emergencias en zonas rurales han afectado aún más el acceso a la atención médica. Estos cierres suelen ocurrir cuando los centros de salud no logran conseguir médicos de reemplazo para cubrir ausencias planificadas o imprevistas. Si a esto se suman las menores tasas de vinculación con la atención primaria entre los residentes rurales, estas interrupciones dibujan un panorama preocupante sobre el acceso a la salud en la Alberta rural.</p>
+      <h2>Qué se puede hacer</h2>
+      <p>Enfrentar estos desafíos requiere esfuerzos tanto del sistema de salud como de las comunidades. Algunos gobiernos locales han creado paquetes de incentivos para atraer y, idealmente, retener a médicos en las comunidades rurales. Sin embargo, mejorar el acceso no es responsabilidad exclusiva de los profesionales de la salud y de quienes diseñan las políticas. Como pacientes, conocer la variedad de recursos de salud disponibles y cómo acceder a ellos también puede ayudarnos a movernos por el sistema con más eficacia. Por ejemplo, los residentes pueden llamar a Health Link 811 para hablar con una enfermera o un enfermero registrado y recibir orientación de salud; consultar a los farmacéuticos, que pueden evaluar y recetar tratamientos para ciertas afecciones menores; y vigilar de forma preventiva sus enfermedades crónicas para ayudar a evitar complicaciones que, de otro modo, podrían requerir atención aguda u hospitalaria.</p>
+      <p>En definitiva, estas estrategias son útiles tanto para los residentes rurales como para los urbanos. Sin embargo, en las comunidades donde el acceso a los servicios de salud tradicionales puede ser limitado, saber qué recursos existen y cómo usarlos puede marcar una diferencia importante.</p>
+      <h2>Recursos de salud que debes conocer en Alberta</h2>
+      <ul>
+        <li><strong>Health Link 811:</strong> llama al <strong>811</strong>, las 24 horas, para recibir orientación de salud gratuita de una enfermera o un enfermero registrado. Más información en <a href="https://www.primarycarealberta.ca/page14176.aspx" target="_blank" rel="noopener">Health Link 811 (Primary Care Alberta)</a>.</li>
+        <li><strong>Buscar un médico de familia u otro proveedor:</strong> el directorio oficial <a href="https://albertafindaprovider.ca/" target="_blank" rel="noopener">Alberta Find a Provider</a> muestra los proveedores que aceptan pacientes nuevos en tu zona.</li>
+        <li><strong>Servicios de urgencias:</strong> consulta los <a href="https://www.albertahealthservices.ca/waittimes/waittimes.aspx" target="_blank" rel="noopener">tiempos de espera estimados de las emergencias</a> de Alberta Health Services. Antes de viajar a una emergencia rural, revisa si hay avisos de cierre temporal en tu comunidad.</li>
+        <li><strong>Farmacias:</strong> en Alberta, los farmacéuticos pueden evaluar y recetar tratamientos para ciertas afecciones menores; pregunta en tu farmacia si ofrece este servicio.</li>
+      </ul>
+      <p class="article-update"><strong>Importante:</strong> el 811 ofrece orientación sanitaria, pero <strong>no reemplaza los servicios de emergencia</strong>. Ante una emergencia médica, llama al <strong>911</strong>.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Canadian Medical Association — Canadian Physician Resources, 2019 basic facts", href: "https://cma.ca/quick-facts-canadas-physicians" },
+      { label: "Statistics Canada — Health of Canadians 2024: Access to health care", href: "https://www150.statcan.gc.ca/n1/pub/82-570-x/2024001/section4-eng.htm" },
+      { label: "Annals of Family Medicine (2024) — The Impact of Primary Care Clinic and Family Physician Continuity on Patient Health Outcomes: A Retrospective Analysis From Alberta, Canada", href: "https://www.annfammed.org/content/22/3/223" },
+      { label: "CMAJ (1997) — Estudio sobre las derivaciones a especialistas de médicos rurales y urbanos en Nueva Escocia", href: "https://www.cmaj.ca/content/157/3/265" },
+      { label: "Alberta Health Services — Aviso de cierre temporal de la emergencia de Ponoka por falta de cobertura médica (ejemplo)", href: "https://www.albertahealthservices.ca/news/Page19531.aspx" },
+      { label: "Global News — Incentivos de Fort Macleod para atraer médicos (ejemplo de incentivo municipal)", href: "https://globalnews.ca/news/8834950/fort-macleod-alberta-doctor-shortage-incentives/" },
+      { label: "Primary Care Alberta — Health Link 811", href: "https://www.primarycarealberta.ca/page14176.aspx" },
+      { label: "Alberta Find a Provider", href: "https://albertafindaprovider.ca/" },
+      { label: "Alberta Health Services — Estimated Emergency Department Wait Times", href: "https://www.albertahealthservices.ca/waittimes/waittimes.aspx" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Salud",
+    relatedSlugs: ["medico-familia-latino-brooks-alberta"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: "rural-vs-urban-healthcare-high-level-review",
+    lang: "es",
+    seo: {
+      fullTitle: "Salud rural en Alberta: ¿es más difícil recibir atención médica?",
+      description: "Escasez de médicos de familia, distancias y cierres temporales de emergencias: diferencias entre la salud rural y urbana en Alberta y recursos útiles.",
+      canonicalPath: "/salud/salud-rural-urbana-alberta-atencion-medica/",
+    },
+  },
+  {
+    /* Versión original en inglés del artículo de Elmy Castillo (texto
+       íntegro de la autora). Traducción: salud-rural-urbana-alberta-atencion-medica. */
+    id: "ART-2026-037",
+    slug: "rural-vs-urban-healthcare-high-level-review",
+    category: "Health",
+    contentType: "Noticia",
+    title: "Rural vs Urban Healthcare: A High-Level Review",
+    dek: "Physician shortages, longer distances and temporary emergency department closures particularly affect rural communities in Alberta. What the differences are and which resources can help.",
+    excerpt: "About 8% of physicians practise in rural areas, where roughly 18% of Canadians live. What this means for healthcare access in Alberta and which resources every Albertan should know.",
+    author: {
+      mode: "colaborador",
+      name: "Elmy Castillo",
+      specialty: "Rural Health Correspondent, County of Newell, Alberta",
+      profileHref: "colaborador.html?id=elmy-castillo",
+      authorId: "elmy-castillo",
+    },
+    publishedAt: "2026-11-02T21:55:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canada", province: "Alberta" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/rural-vs-urban-healthcare-high-level-review.jpg')",
+      aspectRatio: "16/9",
+      alt: "Portrait of Elmy Castillo, smiling, next to the title «Rural vs Urban Healthcare: A High-Level Review» and the label «Rural health · Alberta», El Podcast del Migrante Magazine.",
+      credit: "El Podcast del Migrante image with Elmy Castillo's portrait.",
+    },
+    bodyHtml: `
+      <p><em>Original English version. <a href="articulo-salud-rural-urbana-alberta-atencion-medica">Leer en español</a>.</em></p>
+      <p>Many Canadians interact with the healthcare system every day. This may involve visiting a family physician for an annual checkup, seeking care at a walk-in clinic, or attending an urgent care centre or emergency department. However, how we access healthcare is often shaped by the communities in which we live. So, what does healthcare engagement look like in rural communities compared with urban centres, and what are some useful healthcare resources every Albertan should know?</p>
+      <p>In Canada, primary care serves as the first point of contact for patients seeking health services. Yet, rural communities frequently face shortages of primary care providers. Although approximately 18% of Canadians live in rural areas, only 8% of physicians practise in these communities. Rural residents also often face twice the travel time of their urban counterparts when accessing a physician or hospital. Currently, approximately 77% of rural residents are attached to a primary care provider, nearly 8 percentage points lower than the proportion of urban residents. Ideally, these numbers would be higher, as continuity of care with a family physician is associated with lower emergency department use. Conversely, limited or no continuity with a primary care provider is associated with increased emergency department visits.</p>
+      <p class="article-update"><strong>Editor's note on the figures.</strong> The 18% rural population versus 8% of physicians matches Canadian Medical Association (2019) and CMAJ data, and the link between continuity of care and lower emergency department use is supported by a 2024 Alberta study. <strong>We could not confirm the 77% figure in an official source</strong>: according to Statistics Canada, in 2023 the share of people with a regular health care provider was 84.2% in rural communities and 82.5% in population centres, slightly higher in rural areas, although surveys use different definitions. On travel, available sources indicate rural distances to a physician or hospital are double or more; the exact travel-time figure remains to be confirmed.</p>
+      <p>Differences between rural and urban healthcare access extend beyond primary care. Studies have found that rural primary care providers (PCPs) make specialist referrals less frequently than their urban counterparts. This may reflect geographical barriers, including the distance patients must travel to receive specialist care, as well as limited specialist availability in rural communities. Given that specialist wait times are already lengthy across the healthcare system, these additional barriers can make accessing specialized care particularly challenging for rural residents.</p>
+      <p>In Alberta, temporary rural emergency department closures have further disrupted access to healthcare. These closures often occur when health facilities are unable to secure replacement physicians to cover planned or unexpected absences. When considered alongside the lower rates of primary care attachment among rural residents, these disruptions paint a concerning picture of healthcare accessibility in rural Alberta.</p>
+      <p>Addressing these challenges requires efforts at both the healthcare system and community levels. Local governments have introduced incentive packages to attract and, ideally, retain physicians in rural communities. However, improving access is not solely the responsibility of healthcare providers and policymakers. As patients, understanding the range of available healthcare resources and how to access them can also help us navigate the system more effectively. For example, residents can call 811 Health Link to speak with a registered nurse for health advice, consult pharmacists who can assess and prescribe treatments for eligible minor ailments, and proactively monitor chronic conditions to help prevent complications that may otherwise require acute or hospital-based care.</p>
+      <p>Ultimately, these strategies are relevant to both rural and urban residents. However, in communities where access to traditional healthcare services may be limited, knowing what resources are available and how to use them can make a meaningful difference.</p>
+      <h2>Health resources in Alberta</h2>
+      <ul>
+        <li><a href="https://www.primarycarealberta.ca/page14176.aspx" target="_blank" rel="noopener">Health Link 811 (Primary Care Alberta)</a>: free 24/7 health advice from a registered nurse.</li>
+        <li><a href="https://albertafindaprovider.ca/" target="_blank" rel="noopener">Alberta Find a Provider</a>: providers accepting new patients.</li>
+        <li><a href="https://www.albertahealthservices.ca/waittimes/waittimes.aspx" target="_blank" rel="noopener">Estimated emergency department wait times</a> (Alberta Health Services).</li>
+      </ul>
+      <p class="article-update"><strong>Important:</strong> 811 provides health advice but <strong>does not replace emergency services</strong>. In a medical emergency, call <strong>911</strong>.</p>
+    `,
+    video: null,
+    sources: [
+      { label: "Canadian Medical Association — Canadian Physician Resources, 2019 basic facts", href: "https://cma.ca/quick-facts-canadas-physicians" },
+      { label: "Statistics Canada — Health of Canadians 2024: Access to health care", href: "https://www150.statcan.gc.ca/n1/pub/82-570-x/2024001/section4-eng.htm" },
+      { label: "Annals of Family Medicine (2024) — Primary care clinic and family physician continuity, Alberta", href: "https://www.annfammed.org/content/22/3/223" },
+      { label: "CMAJ (1997) — Rural and urban specialist referral patterns, Nova Scotia", href: "https://www.cmaj.ca/content/157/3/265" },
+      { label: "Alberta Health Services — Temporary closure at Ponoka emergency department (example)", href: "https://www.albertahealthservices.ca/news/Page19531.aspx" },
+      { label: "Global News — Fort Macleod physician incentives (example)", href: "https://globalnews.ca/news/8834950/fort-macleod-alberta-doctor-shortage-incentives/" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: [],
+    showNewsletter: false,
+    sponsored: false,
+    translationSlug: "salud-rural-urbana-alberta-atencion-medica",
+    lang: "en",
+    seo: {
+      fullTitle: "Rural vs Urban Healthcare in Alberta: A High-Level Review",
+      description: "Physician shortages, distance and temporary emergency closures: how rural and urban healthcare access differ in Alberta, and useful resources.",
+      canonicalPath: "/health/rural-vs-urban-healthcare-high-level-review/",
+    },
+  },
+  {
     /* Columna «Tu dinero en Canadá» de Carlos D. Castillo, entrega de
        noviembre de 2026. Texto original del autor (correo del 31-10-2026),
        solo con ajustes menores de presentación; publicación autorizada por la

@@ -445,7 +445,7 @@
     const esActive = article.lang === "es";
     const esNode = esActive
       ? `<span class="lang-pill is-active">ES</span>`
-      : `<a class="lang-pill" href="articulo.html?slug=${encodeURIComponent(article.slug)}">ES</a>`;
+      : `<a class="lang-pill" href="articulo.html?slug=${encodeURIComponent(article.translationSlug || article.slug)}">ES</a>`;
     let enNode;
     if (article.lang === "en") {
       enNode = `<span class="lang-pill is-active">EN</span>`;
