@@ -1,0 +1,360 @@
+# https://www.afnunavut.ca/ → https://www.afnunavut.ca/
+# estado 200
+Accueil - Afnunavut.ca (Association des francophones du Nunavut) 
+ [#content] Aller au contenu 
+ [https://www.facebook.com/AFNunavut] 
+ Facebook 
+ [https://www.instagram.com/afnunavut/?hl=fr] 
+ Instagram 
+ [https://www.afnunavut.ca] Français 
+ Menu 
+ [https://www.afnunavut.ca] Français 
+ [https://www.afnunavut.ca/login/] Se connecter 
+ Menu 
+ [https://www.afnunavut.ca/login/] Se connecter 
+ [https://www.afnunavut.ca/devenir-membre/] 
+ Devenir membre 
+ [https://www.afnunavut.ca/] 
+ [#] L’AFN [https://www.afnunavut.ca/notre-mission-et-vision/] Ce que nous faisons 
+ [https://www.afnunavut.ca/conseil-dadministration/] Conseil d’administration 
+ [https://www.afnunavut.ca/notre-equipe/] Notre équipe 
+ [https://www.afnunavut.ca/histoire/] Histoire 
+ [https://www.afnunavut.ca/offres-demploi/] Offres d’emploi 
+ [https://www.afnunavut.ca/opportunites/] Opportunités 
+ [https://www.afnunavut.ca/planification-strategique/] Planification stratégique 
+ [#] Services [https://www.afnunavut.ca/acces-a-la-justice/] Accès à la justice 
+ [https://www.afnunavut.ca/accueil-orientation-et-integration/] Accueil, orientation et intégration 
+ [https://www.afnunavut.ca/culture-et-patrimoine/] Culture et patrimoine 
+ [https://www.afnunavut.ca/expertise-en-innovation-et-developpement-communautaire/] Expertise en innovation et développement communautaire 
+ [https://www.afnunavut.ca/formation-aux-adultes/] Formation aux adultes 
+ [https://www.afnunavut.ca/francisation/] Francisation 
+ [https://www.afnunavut.ca/jeunesse-francophone/] Jeunesse francophone 
+ [https://www.afnunavut.ca/parents-francophones/] Parents francophones 
+ [https://www.afnunavut.ca/politique-et-representation/] Politique et représentation 
+ [#] La francophonie au Nunavut [https://www.afnunavut.ca/la-francophonie-au-nunavut/#partenaires] Partenaires et organismes franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#aspirations] Aspirations de la communauté franco-nunavoise à l’horizon 2025 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#identite] Identité et indices franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#repertoire] Répertoire des services en français 
+ [#] Médias [https://www.afnunavut.ca/nunavoix/] Le Nunavoix 
+ [https://www.afnunavut.ca/cfrt-1073-fm/] CFRT 107,3 FM 
+ [#] Le Franco-centre [https://www.afnunavut.ca/le-franco-centre] Partenaire culturel 
+ [https://www.afnunavut.ca/le-franco-centre/#ludotheque] Ludothèque 
+ [https://www.afnunavut.ca/location-du-franco-centre/] Location du Franco-Centre 
+ [https://www.afnunavut.ca/le-franco-centre/programmation-et-billeterie/] Programmation et billeterie 
+ [https://www.afnunavut.ca/actualites/] Actualités 
+ [#] Ressources [https://www.afnunavut.ca/publications-2/] Publications 
+ [https://www.afnunavut.ca/ressources-graphiques/] Ressources graphiques 
+ [https://www.afnunavut.ca/liens-utiles/] Liens utiles 
+ Menu 
+ [#] L’AFN [https://www.afnunavut.ca/notre-mission-et-vision/] Ce que nous faisons 
+ [https://www.afnunavut.ca/conseil-dadministration/] Conseil d’administration 
+ [https://www.afnunavut.ca/notre-equipe/] Notre équipe 
+ [https://www.afnunavut.ca/histoire/] Histoire 
+ [https://www.afnunavut.ca/offres-demploi/] Offres d’emploi 
+ [https://www.afnunavut.ca/opportunites/] Opportunités 
+ [https://www.afnunavut.ca/planification-strategique/] Planification stratégique 
+ [#] Services [https://www.afnunavut.ca/acces-a-la-justice/] Accès à la justice 
+ [https://www.afnunavut.ca/accueil-orientation-et-integration/] Accueil, orientation et intégration 
+ [https://www.afnunavut.ca/culture-et-patrimoine/] Culture et patrimoine 
+ [https://www.afnunavut.ca/expertise-en-innovation-et-developpement-communautaire/] Expertise en innovation et développement communautaire 
+ [https://www.afnunavut.ca/formation-aux-adultes/] Formation aux adultes 
+ [https://www.afnunavut.ca/francisation/] Francisation 
+ [https://www.afnunavut.ca/jeunesse-francophone/] Jeunesse francophone 
+ [https://www.afnunavut.ca/parents-francophones/] Parents francophones 
+ [https://www.afnunavut.ca/politique-et-representation/] Politique et représentation 
+ [#] La francophonie au Nunavut [https://www.afnunavut.ca/la-francophonie-au-nunavut/#partenaires] Partenaires et organismes franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#aspirations] Aspirations de la communauté franco-nunavoise à l’horizon 2025 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#identite] Identité et indices franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#repertoire] Répertoire des services en français 
+ [#] Médias [https://www.afnunavut.ca/nunavoix/] Le Nunavoix 
+ [https://www.afnunavut.ca/cfrt-1073-fm/] CFRT 107,3 FM 
+ [#] Le Franco-centre [https://www.afnunavut.ca/le-franco-centre] Partenaire culturel 
+ [https://www.afnunavut.ca/le-franco-centre/#ludotheque] Ludothèque 
+ [https://www.afnunavut.ca/location-du-franco-centre/] Location du Franco-Centre 
+ [https://www.afnunavut.ca/le-franco-centre/programmation-et-billeterie/] Programmation et billeterie 
+ [https://www.afnunavut.ca/actualites/] Actualités 
+ [#] Ressources [https://www.afnunavut.ca/publications-2/] Publications 
+ [https://www.afnunavut.ca/ressources-graphiques/] Ressources graphiques 
+ [https://www.afnunavut.ca/liens-utiles/] Liens utiles 
+ [https://www.afnunavut.ca/] 
+ [#] L’AFN [https://www.afnunavut.ca/notre-mission-et-vision/] Ce que nous faisons 
+ [https://www.afnunavut.ca/conseil-dadministration/] Conseil d’administration 
+ [https://www.afnunavut.ca/notre-equipe/] Notre équipe 
+ [https://www.afnunavut.ca/histoire/] Histoire 
+ [https://www.afnunavut.ca/offres-demploi/] Offres d’emploi 
+ [https://www.afnunavut.ca/opportunites/] Opportunités 
+ [https://www.afnunavut.ca/planification-strategique/] Planification stratégique 
+ [#] Services [https://www.afnunavut.ca/acces-a-la-justice/] Accès à la justice 
+ [https://www.afnunavut.ca/accueil-orientation-et-integration/] Accueil, orientation et intégration 
+ [https://www.afnunavut.ca/culture-et-patrimoine/] Culture et patrimoine 
+ [https://www.afnunavut.ca/expertise-en-innovation-et-developpement-communautaire/] Expertise en innovation et développement communautaire 
+ [https://www.afnunavut.ca/formation-aux-adultes/] Formation aux adultes 
+ [https://www.afnunavut.ca/francisation/] Francisation 
+ [https://www.afnunavut.ca/jeunesse-francophone/] Jeunesse francophone 
+ [https://www.afnunavut.ca/parents-francophones/] Parents francophones 
+ [https://www.afnunavut.ca/politique-et-representation/] Politique et représentation 
+ [#] La francophonie au Nunavut [https://www.afnunavut.ca/la-francophonie-au-nunavut/#partenaires] Partenaires et organismes franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#aspirations] Aspirations de la communauté franco-nunavoise à l’horizon 2025 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#identite] Identité et indices franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#repertoire] Répertoire des services en français 
+ [#] Médias [https://www.afnunavut.ca/nunavoix/] Le Nunavoix 
+ [https://www.afnunavut.ca/cfrt-1073-fm/] CFRT 107,3 FM 
+ [#] Le Franco-centre [https://www.afnunavut.ca/le-franco-centre] Partenaire culturel 
+ [https://www.afnunavut.ca/le-franco-centre/#ludotheque] Ludothèque 
+ [https://www.afnunavut.ca/location-du-franco-centre/] Location du Franco-Centre 
+ [https://www.afnunavut.ca/le-franco-centre/programmation-et-billeterie/] Programmation et billeterie 
+ [https://www.afnunavut.ca/actualites/] Actualités 
+ [#] Ressources [https://www.afnunavut.ca/publications-2/] Publications 
+ [https://www.afnunavut.ca/ressources-graphiques/] Ressources graphiques 
+ [https://www.afnunavut.ca/liens-utiles/] Liens utiles 
+ Menu 
+ [#] L’AFN [https://www.afnunavut.ca/notre-mission-et-vision/] Ce que nous faisons 
+ [https://www.afnunavut.ca/conseil-dadministration/] Conseil d’administration 
+ [https://www.afnunavut.ca/notre-equipe/] Notre équipe 
+ [https://www.afnunavut.ca/histoire/] Histoire 
+ [https://www.afnunavut.ca/offres-demploi/] Offres d’emploi 
+ [https://www.afnunavut.ca/opportunites/] Opportunités 
+ [https://www.afnunavut.ca/planification-strategique/] Planification stratégique 
+ [#] Services [https://www.afnunavut.ca/acces-a-la-justice/] Accès à la justice 
+ [https://www.afnunavut.ca/accueil-orientation-et-integration/] Accueil, orientation et intégration 
+ [https://www.afnunavut.ca/culture-et-patrimoine/] Culture et patrimoine 
+ [https://www.afnunavut.ca/expertise-en-innovation-et-developpement-communautaire/] Expertise en innovation et développement communautaire 
+ [https://www.afnunavut.ca/formation-aux-adultes/] Formation aux adultes 
+ [https://www.afnunavut.ca/francisation/] Francisation 
+ [https://www.afnunavut.ca/jeunesse-francophone/] Jeunesse francophone 
+ [https://www.afnunavut.ca/parents-francophones/] Parents francophones 
+ [https://www.afnunavut.ca/politique-et-representation/] Politique et représentation 
+ [#] La francophonie au Nunavut [https://www.afnunavut.ca/la-francophonie-au-nunavut/#partenaires] Partenaires et organismes franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#aspirations] Aspirations de la communauté franco-nunavoise à l’horizon 2025 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#identite] Identité et indices franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#repertoire] Répertoire des services en français 
+ [#] Médias [https://www.afnunavut.ca/nunavoix/] Le Nunavoix 
+ [https://www.afnunavut.ca/cfrt-1073-fm/] CFRT 107,3 FM 
+ [#] Le Franco-centre [https://www.afnunavut.ca/le-franco-centre] Partenaire culturel 
+ [https://www.afnunavut.ca/le-franco-centre/#ludotheque] Ludothèque 
+ [https://www.afnunavut.ca/location-du-franco-centre/] Location du Franco-Centre 
+ [https://www.afnunavut.ca/le-franco-centre/programmation-et-billeterie/] Programmation et billeterie 
+ [https://www.afnunavut.ca/actualites/] Actualités 
+ [#] Ressources [https://www.afnunavut.ca/publications-2/] Publications 
+ [https://www.afnunavut.ca/ressources-graphiques/] Ressources graphiques 
+ [https://www.afnunavut.ca/liens-utiles/] Liens utiles 
+ [#] L’AFN [https://www.afnunavut.ca/notre-mission-et-vision/] Ce que nous faisons 
+ [https://www.afnunavut.ca/conseil-dadministration/] Conseil d’administration 
+ [https://www.afnunavut.ca/notre-equipe/] Notre équipe 
+ [https://www.afnunavut.ca/histoire/] Histoire 
+ [https://www.afnunavut.ca/offres-demploi/] Offres d’emploi 
+ [https://www.afnunavut.ca/opportunites/] Opportunités 
+ [https://www.afnunavut.ca/planification-strategique/] Planification stratégique 
+ [#] Services [https://www.afnunavut.ca/politique-et-representation/] Politique et représentation 
+ [https://www.afnunavut.ca/accueil-orientation-et-integration/] Accueil, orientation et intégration 
+ [https://www.afnunavut.ca/culture-et-patrimoine/] Culture et patrimoine 
+ [https://www.afnunavut.ca/parents-francophones/] Parents francophones 
+ [https://www.afnunavut.ca/jeunesse-francophone/] Jeunesse francophone 
+ [https://www.afnunavut.ca/formation-aux-adultes/] Formation aux adultes 
+ [https://www.afnunavut.ca/francisation/] Francisation 
+ [https://www.afnunavut.ca/expertise-en-innovation-et-developpement-communautaire/] Expertise en innovation et développement communautaire 
+ [#] La francophonie au Nunavut [https://www.afnunavut.ca/partenaires-et-organismes-franco-nunavois/] Partenaires et organismes franco-nunavois 
+ [https://www.afnunavut.ca/aspirations-de-la-communaute-franco-nunavoise-a-lhorizon-2025/] Aspirations de la communauté franco-nunavoise à l’horizon 2025 
+ [https://www.afnunavut.ca/identite-et-indices-franco-nunavois/] Identité et indices franco-nunavois 
+ [https://www.afnunavut.ca/repertoire-des-services-en-francais/] Répertoire des services en français 
+ [#] Médias [https://www.afnunavut.ca/nunavoix/] Le Nunavoix 
+ [https://www.afnunavut.ca/cfrt-1073-fm/] CFRT 107,3 FM 
+ [#] Le Franco-centre [https://www.afnunavut.ca/partenaire-culturel-sous-onglet/] Partenaire culturel 
+ [https://www.afnunavut.ca/ludotheque/] Ludothèque 
+ [https://www.afnunavut.ca/?page_id=22009] Programmation et billeterie-old 
+ [https://www.afnunavut.ca/location-du-franco-centre/] Location du Franco-Centre 
+ [https://www.afnunavut.ca/actualites/] Actualités 
+ [#] Ressources [https://www.afnunavut.ca/ressources-graphiques/] Ressources graphiques 
+ [https://www.afnunavut.ca/liens-utiles/] Liens utiles 
+ [https://www.afnunavut.ca/membership-account/] Mon compte 
+ Menu 
+ [#] L’AFN [https://www.afnunavut.ca/notre-mission-et-vision/] Ce que nous faisons 
+ [https://www.afnunavut.ca/conseil-dadministration/] Conseil d’administration 
+ [https://www.afnunavut.ca/notre-equipe/] Notre équipe 
+ [https://www.afnunavut.ca/histoire/] Histoire 
+ [https://www.afnunavut.ca/offres-demploi/] Offres d’emploi 
+ [https://www.afnunavut.ca/opportunites/] Opportunités 
+ [https://www.afnunavut.ca/planification-strategique/] Planification stratégique 
+ [#] Services [https://www.afnunavut.ca/politique-et-representation/] Politique et représentation 
+ [https://www.afnunavut.ca/accueil-orientation-et-integration/] Accueil, orientation et intégration 
+ [https://www.afnunavut.ca/culture-et-patrimoine/] Culture et patrimoine 
+ [https://www.afnunavut.ca/parents-francophones/] Parents francophones 
+ [https://www.afnunavut.ca/jeunesse-francophone/] Jeunesse francophone 
+ [https://www.afnunavut.ca/formation-aux-adultes/] Formation aux adultes 
+ [https://www.afnunavut.ca/francisation/] Francisation 
+ [https://www.afnunavut.ca/expertise-en-innovation-et-developpement-communautaire/] Expertise en innovation et développement communautaire 
+ [#] La francophonie au Nunavut [https://www.afnunavut.ca/partenaires-et-organismes-franco-nunavois/] Partenaires et organismes franco-nunavois 
+ [https://www.afnunavut.ca/aspirations-de-la-communaute-franco-nunavoise-a-lhorizon-2025/] Aspirations de la communauté franco-nunavoise à l’horizon 2025 
+ [https://www.afnunavut.ca/identite-et-indices-franco-nunavois/] Identité et indices franco-nunavois 
+ [https://www.afnunavut.ca/repertoire-des-services-en-francais/] Répertoire des services en français 
+ [#] Médias [https://www.afnunavut.ca/nunavoix/] Le Nunavoix 
+ [https://www.afnunavut.ca/cfrt-1073-fm/] CFRT 107,3 FM 
+ [#] Le Franco-centre [https://www.afnunavut.ca/partenaire-culturel-sous-onglet/] Partenaire culturel 
+ [https://www.afnunavut.ca/ludotheque/] Ludothèque 
+ [https://www.afnunavut.ca/?page_id=22009] Programmation et billeterie-old 
+ [https://www.afnunavut.ca/location-du-franco-centre/] Location du Franco-Centre 
+ [https://www.afnunavut.ca/actualites/] Actualités 
+ [#] Ressources [https://www.afnunavut.ca/ressources-graphiques/] Ressources graphiques 
+ [https://www.afnunavut.ca/liens-utiles/] Liens utiles 
+ [https://www.afnunavut.ca/membership-account/] Mon compte 
+ [https://www.afnunavut.ca] Français 
+ Menu 
+ [https://www.afnunavut.ca] Français 
+ [https://www.afnunavut.ca/login/] Se connecter 
+ Menu 
+ [https://www.afnunavut.ca/login/] Se connecter 
+ [https://www.afnunavut.ca/devenir-membre/] 
+ Devenir membre 
+ [https://www.afnunavut.ca/] 
+ [#] L’AFN [https://www.afnunavut.ca/notre-mission-et-vision/] Ce que nous faisons 
+ [https://www.afnunavut.ca/conseil-dadministration/] Conseil d’administration 
+ [https://www.afnunavut.ca/notre-equipe/] Notre équipe 
+ [https://www.afnunavut.ca/histoire/] Histoire 
+ [https://www.afnunavut.ca/offres-demploi/] Offres d’emploi 
+ [https://www.afnunavut.ca/opportunites/] Opportunités 
+ [https://www.afnunavut.ca/planification-strategique/] Planification stratégique 
+ [#] Services [https://www.afnunavut.ca/acces-a-la-justice/] Accès à la justice 
+ [https://www.afnunavut.ca/accueil-orientation-et-integration/] Accueil, orientation et intégration 
+ [https://www.afnunavut.ca/culture-et-patrimoine/] Culture et patrimoine 
+ [https://www.afnunavut.ca/expertise-en-innovation-et-developpement-communautaire/] Expertise en innovation et développement communautaire 
+ [https://www.afnunavut.ca/formation-aux-adultes/] Formation aux adultes 
+ [https://www.afnunavut.ca/francisation/] Francisation 
+ [https://www.afnunavut.ca/jeunesse-francophone/] Jeunesse francophone 
+ [https://www.afnunavut.ca/parents-francophones/] Parents francophones 
+ [https://www.afnunavut.ca/politique-et-representation/] Politique et représentation 
+ [#] La francophonie au Nunavut [https://www.afnunavut.ca/la-francophonie-au-nunavut/#partenaires] Partenaires et organismes franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#aspirations] Aspirations de la communauté franco-nunavoise à l’horizon 2025 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#identite] Identité et indices franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#repertoire] Répertoire des services en français 
+ [#] Médias [https://www.afnunavut.ca/nunavoix/] Le Nunavoix 
+ [https://www.afnunavut.ca/cfrt-1073-fm/] CFRT 107,3 FM 
+ [#] Le Franco-centre [https://www.afnunavut.ca/le-franco-centre] Partenaire culturel 
+ [https://www.afnunavut.ca/le-franco-centre/#ludotheque] Ludothèque 
+ [https://www.afnunavut.ca/location-du-franco-centre/] Location du Franco-Centre 
+ [https://www.afnunavut.ca/le-franco-centre/programmation-et-billeterie/] Programmation et billeterie 
+ [https://www.afnunavut.ca/actualites/] Actualités 
+ [#] Ressources [https://www.afnunavut.ca/publications-2/] Publications 
+ [https://www.afnunavut.ca/ressources-graphiques/] Ressources graphiques 
+ [https://www.afnunavut.ca/liens-utiles/] Liens utiles 
+ Menu 
+ [#] L’AFN [https://www.afnunavut.ca/notre-mission-et-vision/] Ce que nous faisons 
+ [https://www.afnunavut.ca/conseil-dadministration/] Conseil d’administration 
+ [https://www.afnunavut.ca/notre-equipe/] Notre équipe 
+ [https://www.afnunavut.ca/histoire/] Histoire 
+ [https://www.afnunavut.ca/offres-demploi/] Offres d’emploi 
+ [https://www.afnunavut.ca/opportunites/] Opportunités 
+ [https://www.afnunavut.ca/planification-strategique/] Planification stratégique 
+ [#] Services [https://www.afnunavut.ca/acces-a-la-justice/] Accès à la justice 
+ [https://www.afnunavut.ca/accueil-orientation-et-integration/] Accueil, orientation et intégration 
+ [https://www.afnunavut.ca/culture-et-patrimoine/] Culture et patrimoine 
+ [https://www.afnunavut.ca/expertise-en-innovation-et-developpement-communautaire/] Expertise en innovation et développement communautaire 
+ [https://www.afnunavut.ca/formation-aux-adultes/] Formation aux adultes 
+ [https://www.afnunavut.ca/francisation/] Francisation 
+ [https://www.afnunavut.ca/jeunesse-francophone/] Jeunesse francophone 
+ [https://www.afnunavut.ca/parents-francophones/] Parents francophones 
+ [https://www.afnunavut.ca/politique-et-representation/] Politique et représentation 
+ [#] La francophonie au Nunavut [https://www.afnunavut.ca/la-francophonie-au-nunavut/#partenaires] Partenaires et organismes franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#aspirations] Aspirations de la communauté franco-nunavoise à l’horizon 2025 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#identite] Identité et indices franco-nunavois 
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/#repertoire] Répertoire des services en français 
+ [#] Médias [https://www.afnunavut.ca/nunavoix/] Le Nunavoix 
+ [https://www.afnunavut.ca/cfrt-1073-fm/] CFRT 107,3 FM 
+ [#] Le Franco-centre [https://www.afnunavut.ca/le-franco-centre] Partenaire culturel 
+ [https://www.afnunavut.ca/le-franco-centre/#ludotheque] Ludothèque 
+ [https://www.afnunavut.ca/location-du-franco-centre/] Location du Franco-Centre 
+ [https://www.afnunavut.ca/le-franco-centre/programmation-et-billeterie/] Programmation et billeterie 
+ [https://www.afnunavut.ca/actualites/] Actualités 
+ [#] Ressources [https://www.afnunavut.ca/publications-2/] Publications 
+ [https://www.afnunavut.ca/ressources-graphiques/] Ressources graphiques 
+ [https://www.afnunavut.ca/liens-utiles/] Liens utiles 
+ [https://www.afnunavut.ca] Français 
+ Menu 
+ [https://www.afnunavut.ca] Français 
+ [https://www.afnunavut.ca/login/] Se connecter 
+ Menu 
+ [https://www.afnunavut.ca/login/] Se connecter 
+ [https://www.afnunavut.ca/devenir-membre/] 
+ Devenir membre 
+ BIENVENUE
+ La francophonie nunavoise forte, fière, ouverte et dynamique !
+ L’ Association des francophones du Nunavut (AFN) est l’organisme politique porte-parole de la francophonie nunavoise, depuis 1981.
+ [https://www.afnunavut.ca/notre-mission-et-vision/] 
+ En savoir plus 
+ [https://www.afnunavut.ca/a-propos/notre-mission-et-vision/] 
+ Notre mission 
+ Œuvrer à l’affirmation et à l’épanouissement de la francophonie au Nunavut
+ [https://www.afnunavut.ca/a-propos/notre-mission-et-vision/] 
+ Notre vision 
+Celle d’une francophonie nunavoise forte, fière, ouverte et dynamique.
+ [https://www.afnunavut.ca/a-propos/notre-mission-et-vision/] 
+ Nos valeurs 
+Visionnaire, Accueillante, Solidaire, Engagée.
+ Reconnaissance du territoire
+ L’Association des francophones du Nunavut reconnaît avec grand respect et humilité qu’elle se trouve en territoire inuit. Elle remercie la communauté inuite pour son accueil et son inclusion.
+ [https://www.afnunavut.ca/la-francophonie-au-nunavut/] 
+ En savoir plus 
+ 0 
+ membres
+ 0 
+ + 
+ bénévoles
+ 0 
+ + 
+ activités depuis 2015
+ 0 
+ ans d’existence
+ Les événements à ne pas manquer
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] 
+ 11 octobre 
+ 2026
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] Les délices du dimanche 
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] 
+ 08 novembre 
+ 2026
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] Les délices du dimanche 
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] 
+ 13 décembre 
+ 2026
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] Les délices du dimanche 
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] 
+ 10 janvier 
+ 2027
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] Les délices du dimanche 
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] 
+ 14 février 
+ 2027
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] Les délices du dimanche 
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] 
+ 14 mars 
+ 2027
+ [https://www.afnunavut.ca/events/les-delices-du-dimanche/] Les délices du dimanche 
+ Partenaires
+ [https://fcfa.ca/] 
+ [https://cpf.ca/fr/] 
+ [http://fondationdialogue.ca/] 
+ [https://rccfc.ca/] 
+ [https://www.agendrix.com/] 
+ [https://jc-legal.ca/] 
+ Ne ratez pas tous les avantages pour les francophones et francophiles du Nunavut
+ [https://www.afnunavut.ca/devenir-membre/] 
+ Devenir membre 
+ Liste d'envoi
+ Pour joindre la liste de distribution de l’AFN et être au courant de nos activités, merci de vous inscrire ci-dessous :
+ Prénom 
+ Nom 
+ Courriel 
+ Leave this field empty if you're human: 
+ [https://www.facebook.com/AFNunavut] 
+ Facebook 
+ [https://www.instagram.com/afnunavut/?hl=fr] 
+ Instagram 
+ Contact
+ Nos heures d’ouverture de
+ bureau sont du lundi au vendredi de 9 h à 17 h
+ 981, promenade Nunavut, Boite postale 880 
+Iqaluit, Nunavut X0A 0H0
+ 867-979-4606
+ [javascript:;] 
+ Soutiens financiers
+ TOUS DROITS RÉSERVÉS Ⓒ 2024 
+ PROPULSÉ PAR KB MÉDIA

@@ -1,0 +1,171 @@
+# https://www.arcticcollege.com/campuses → https://www.arcticcollege.com/campuses
+# estado 200
+Locations 1 — Nunavut Arctic College 
+ [/] 
+ [/search] 
+ About 
+ Locations 
+ Programs 
+ Students 
+ [/registrar-services] 
+ Registrar
+ [/careers] 
+ Careers
+ [/staff-resources] 
+ Staff Resources
+ [/corporate-documents] 
+ Policies & Procedures
+ Login 
+ [/contact-1] 
+ Contact
+ [/piqqusilirivvik] 
+ Piqqusilirivvik
+ [https://app.cloudpano.com/tours/9ebmFrHGY ] 
+ Kivalliq Campus Virtual Tour
+ [http://nacmedia.ca/] 
+ NAC Media
+ [https://www.nri.nu.ca/] 
+ NRI
+ [/newsletter] 
+ Newsletter
+ Back 
+ [/about] 
+ About Us
+ [/copy-of-about] 
+ President's Message
+ [/board-of-governos] 
+ Board of Governors
+ [/iep] 
+ NAC's Inuit Employment Plan
+ Back 
+ [/location] 
+ All Campuses
+ [https://www.nri.nu.ca/nunavut-research-institute-nri] 
+ Nunavut Research Institute
+ [/piqqusilirivvik] 
+ Piqqusilirivvik (Cultural School)
+ Back 
+ [/programs] 
+ All programs
+ [/health] 
+ Health and Wellness
+ [/education] 
+ Education
+ [/business] 
+ Business
+ [/law] 
+ Law
+ [/arts] 
+ Arts
+ [/culture] 
+ Inuit Culture & Language
+ [/trades-and-technology] 
+ Trades and Technology
+ Back 
+ [/learners] 
+ All Student Services
+ [/admissions] 
+ Admissions
+ [https://www.gov.nu.ca/en/education-and-schools/financial-assistance-nunavut-students-fans] 
+ FANS
+ [/scholarships] 
+ Scholarships
+ [/learner-accomodations] 
+ Student Accommodations
+ [/food-services] 
+ Food Services
+ [/library-services] 
+ Library Services
+ [/other-services] 
+ Other Services
+ Back 
+ [https://www.microsoft365.com] 
+ Microsoft Login
+ [https://campus.arcticcollege.ca] 
+ Self-Service Login
+ [https://naccampus.sharepoint.com] 
+ SharePoint Login
+ [https://brightspace.arcticcollege.com] 
+ Brightspace Login
+ [https://www.facebook.com/NunavutArcticCollege/] 
+ [https://x.com/nuarcticcollege] 
+ [https://www.linkedin.com/company/nunavut-arctic-college/] 
+ [https://www.youtube.com/channel/UCn2rgiKDPTv--5fZq5Kqq_Q] 
+ [https://vimeo.com/nunavutarcticcollege] 
+ [https://www.instagram.com/arcticcollege/] 
+ [/about-2] About 
+ [/about] About Us 
+ [/copy-of-about] President's Message 
+ [/board-of-governos] Board of Governors 
+ [/iep] NAC's Inuit Employment Plan 
+ [/locations] Locations 
+ [/location] All Campuses 
+ [https://www.nri.nu.ca/nunavut-research-institute-nri] Nunavut Research Institute 
+ [/piqqusilirivvik] Piqqusilirivvik (Cultural School) 
+ [/programs-1] Programs 
+ [/programs] All programs 
+ [/health] Health and Wellness 
+ [/education] Education 
+ [/business] Business 
+ [/law] Law 
+ [/arts] Arts 
+ [/culture] Inuit Culture & Language 
+ [/trades-and-technology] Trades and Technology 
+ [/students] Students 
+ [/learners] All Student Services 
+ [/admissions] Admissions 
+ [https://www.gov.nu.ca/en/education-and-schools/financial-assistance-nunavut-students-fans] FANS 
+ [/scholarships] Scholarships 
+ [/learner-accomodations] Student Accommodations 
+ [/food-services] Food Services 
+ [/library-services] Library Services 
+ [/other-services] Other Services 
+ [/registrar-services] Registrar [/careers] Careers [/staff-resources] Staff Resources [/corporate-documents] Policies & Procedures 
+ [/login] Login 
+ [https://www.microsoft365.com] Microsoft Login 
+ [https://campus.arcticcollege.ca] Self-Service Login 
+ [https://naccampus.sharepoint.com] SharePoint Login 
+ [https://brightspace.arcticcollege.com] Brightspace Login 
+ [/contact-1] Contact 
+ [/] 
+ [/piqqusilirivvik] Piqqusilirivvik [https://app.cloudpano.com/tours/9ebmFrHGY ] Kivalliq Campus Virtual Tour [http://nacmedia.ca/] NAC Media [https://www.nri.nu.ca/] NRI [/newsletter] Newsletter 
+ Nunavut Arctic College has five campuses and Community Learning Centers located in all 25 communities of Nunavut which bring our programs home to people throughout the territory. These Centres are a doorway to a wider world of learning opportunities. Each Community Learning Centre is staffed by an Adult Educator who can provide information and guidance to anyone seeking further education.
+ nUNATTA cAMPUS
+ Arctic College's Nunatta Campus supports the Nunavut communities of Arctic Bay, Cape Dorset, Clyde River, Grise Fiord, Hall Beach, Igloolik, Iqaluit, Kimmirut, Pangnirtung, Pond Inlet, Qikiqtarjuaq, Resolute and Sanikiluaq. 
+ For more information:
+ Phone: 867-979-7200
+ Toll-Free: 1-866-979-7200
+ E-Mail: [mailto:nunatta@arcticcollege.ca] nunatta@arcticcollege.ca 
+ kIVALLIQ cAMPUS- [https://app.cloudpano.com/tours/9ebmFrHGY?sceneId=-mzVsavnOwL] VIrtual tour! 
+ Kivalliq Campus serves the Kivalliq Region of Nunavut and supports the communities of Arviat, Baker Lake, Chesterfield Inlet, Coral Harbour, Rankin Inlet, Repulse Bay and Whale Cove. In Rankin Inlet, Kivalliq Campus is home to Kivalliq Hall and the Sanatuliqsarvik Nunavut Trades Training Centre. 
+ For more information:
+ Phone: 867-645-4170
+ E-Mail: [mailto:kivalliq@arcticcollege.ca] kivalliq@arcticcollege.ca 
+ KITIKMEOT cAMPUS- [https://app.cloudpano.com/tours/oJVANpYNp] VIrtual tour! 
+ Kitikmeot Campus of Nunavut Arctic College supports the Nunavut communities of Kugluktuk, Gjoa Haven, Kuugaruk, Taloyoak and Cambridge Bay.
+ For more information:
+ Phone: 867-983-4111
+ Toll-Free: 1-866-383-4533
+ E-Mail: [mailto:kitikmeot@arcticcollege.ca] kitikmeot@arcticcollege.ca .
+ [/s/Notice-of-Disclosure-of-Personal-Information.pdf] CLICK HERE FOR Notification of disclosure of personal information to Statistics Canada 
+ [/location] KiVALLIQ CAMPUS 
+ Phone: 867-645-4170
+ P.O. Box 876, Rankin Inlet, NU, Canada, 
+ X0C 0G0
+ [/location] KITIKMEOT CAMPUS 
+ Phone: 867-983-7000
+ Toll-Free: 1-866-383-4533
+ P.O. Box 54, Cambridge Bay, NU, Canada, X0B 0C0
+ [/location] Nunatta campus 
+ Phone: 867-979-7200
+ 502 Niaqunngusiariaq Road, Iqaluit, NU
+ Canada, X0A 2H0
+ Action
+ [/admissions] Apply now 
+ Newsletter Block
+ This newsletter signup form needs a storage option. Edit the block and enter a storage location via the Storage tab.
+ Sign up to receive news and updates.
+ Email Address 
+ Sign Up 
+ Thank you!
+ [/news] News

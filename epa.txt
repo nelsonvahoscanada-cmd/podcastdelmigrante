@@ -1,0 +1,221 @@
+2025-09 | Population | Seasonally adjusted | 27.1
+2025-09 | Population | Unadjusted | 27.1
+2025-09 | Labour force | Seasonally adjusted | 16.1
+2025-09 | Labour force | Unadjusted | 16.1
+2025-09 | Employment | Seasonally adjusted | 14.7
+2025-09 | Employment | Unadjusted | 14.7
+2025-09 | Full-time employment | Unadjusted | 13.0
+2025-09 | Part-time employment | Unadjusted | 1.6
+2025-09 | Unemployment | Seasonally adjusted | 1.4
+2025-09 | Unemployment | Unadjusted | 1.4
+2025-09 | Not in labour force | Unadjusted | 11.0
+2025-09 | Unemployment rate | Seasonally adjusted | 8.8
+2025-09 | Unemployment rate | Unadjusted | 8.8
+2025-09 | Participation rate | Seasonally adjusted | 59.4
+2025-09 | Participation rate | Unadjusted | 59.4
+2025-09 | Employment rate | Seasonally adjusted | 54.2
+2025-09 | Employment rate | Unadjusted | 54.2
+2025-10 | Population | Seasonally adjusted | 27.1
+2025-10 | Population | Unadjusted | 27.1
+2025-10 | Labour force | Seasonally adjusted | 16.8
+2025-10 | Labour force | Unadjusted | 16.8
+2025-10 | Employment | Seasonally adjusted | 15.1
+2025-10 | Employment | Unadjusted | 15.1
+2025-10 | Full-time employment | Unadjusted | 13.4
+2025-10 | Part-time employment | Unadjusted | 1.7
+2025-10 | Unemployment | Seasonally adjusted | 1.7
+2025-10 | Unemployment | Unadjusted | 1.7
+2025-10 | Not in labour force | Unadjusted | 10.3
+2025-10 | Unemployment rate | Seasonally adjusted | 9.9
+2025-10 | Unemployment rate | Unadjusted | 9.9
+2025-10 | Participation rate | Seasonally adjusted | 62.0
+2025-10 | Participation rate | Unadjusted | 62.0
+2025-10 | Employment rate | Seasonally adjusted | 55.9
+2025-10 | Employment rate | Unadjusted | 55.9
+2025-11 | Population | Seasonally adjusted | 27.1
+2025-11 | Population | Unadjusted | 27.1
+2025-11 | Labour force | Seasonally adjusted | 17.1
+2025-11 | Labour force | Unadjusted | 17.1
+2025-11 | Employment | Seasonally adjusted | 14.9
+2025-11 | Employment | Unadjusted | 14.9
+2025-11 | Full-time employment | Unadjusted | 13.0
+2025-11 | Part-time employment | Unadjusted | 1.9
+2025-11 | Unemployment | Seasonally adjusted | 2.2
+2025-11 | Unemployment | Unadjusted | 2.2
+2025-11 | Not in labour force | Unadjusted | 10.1
+2025-11 | Unemployment rate | Seasonally adjusted | 12.7
+2025-11 | Unemployment rate | Unadjusted | 12.7
+2025-11 | Participation rate | Seasonally adjusted | 63.0
+2025-11 | Participation rate | Unadjusted | 63.0
+2025-11 | Employment rate | Seasonally adjusted | 55.0
+2025-11 | Employment rate | Unadjusted | 55.0
+2025-12 | Population | Seasonally adjusted | 27.2
+2025-12 | Population | Unadjusted | 27.2
+2025-12 | Labour force | Seasonally adjusted | 17.3
+2025-12 | Labour force | Unadjusted | 17.3
+2025-12 | Employment | Seasonally adjusted | 14.6
+2025-12 | Employment | Unadjusted | 14.6
+2025-12 | Full-time employment | Unadjusted | 12.8
+2025-12 | Part-time employment | Unadjusted | 1.8
+2025-12 | Unemployment | Seasonally adjusted | 2.7
+2025-12 | Unemployment | Unadjusted | 2.7
+2025-12 | Not in labour force | Unadjusted | 9.9
+2025-12 | Unemployment rate | Seasonally adjusted | 15.4
+2025-12 | Unemployment rate | Unadjusted | 15.4
+2025-12 | Participation rate | Seasonally adjusted | 63.5
+2025-12 | Participation rate | Unadjusted | 63.5
+2025-12 | Employment rate | Seasonally adjusted | 53.7
+2025-12 | Employment rate | Unadjusted | 53.7
+2026-01 | Population | Seasonally adjusted | 27.2
+2026-01 | Population | Unadjusted | 27.2
+2026-01 | Labour force | Seasonally adjusted | 16.7
+2026-01 | Labour force | Unadjusted | 16.7
+2026-01 | Employment | Seasonally adjusted | 14.4
+2026-01 | Employment | Unadjusted | 14.4
+2026-01 | Full-time employment | Unadjusted | 12.7
+2026-01 | Part-time employment | Unadjusted | 1.7
+2026-01 | Unemployment | Seasonally adjusted | 2.3
+2026-01 | Unemployment | Unadjusted | 2.3
+2026-01 | Not in labour force | Unadjusted | 10.5
+2026-01 | Unemployment rate | Seasonally adjusted | 13.8
+2026-01 | Unemployment rate | Unadjusted | 13.8
+2026-01 | Participation rate | Seasonally adjusted | 61.5
+2026-01 | Participation rate | Unadjusted | 61.5
+2026-01 | Employment rate | Seasonally adjusted | 53.1
+2026-01 | Employment rate | Unadjusted | 53.1
+2026-02 | Population | Seasonally adjusted | 27.2
+2026-02 | Population | Unadjusted | 27.2
+2026-02 | Labour force | Seasonally adjusted | 16.4
+2026-02 | Labour force | Unadjusted | 16.4
+2026-02 | Employment | Seasonally adjusted | 14.6
+2026-02 | Employment | Unadjusted | 14.6
+2026-02 | Full-time employment | Unadjusted | 12.9
+2026-02 | Part-time employment | Unadjusted | 1.7
+2026-02 | Unemployment | Seasonally adjusted | 1.8
+2026-02 | Unemployment | Unadjusted | 1.8
+2026-02 | Not in labour force | Unadjusted | 10.8
+2026-02 | Unemployment rate | Seasonally adjusted | 10.8
+2026-02 | Unemployment rate | Unadjusted | 10.8
+2026-02 | Participation rate | Seasonally adjusted | 60.2
+2026-02 | Participation rate | Unadjusted | 60.2
+2026-02 | Employment rate | Seasonally adjusted | 53.7
+2026-02 | Employment rate | Unadjusted | 53.7
+2026-03 | Population | Seasonally adjusted | 27.3
+2026-03 | Population | Unadjusted | 27.3
+2026-03 | Labour force | Seasonally adjusted | 16.8
+2026-03 | Labour force | Unadjusted | 16.8
+2026-03 | Employment | Seasonally adjusted | 14.8
+2026-03 | Employment | Unadjusted | 14.8
+2026-03 | Full-time employment | Unadjusted | 12.8
+2026-03 | Part-time employment | Unadjusted | 1.9
+2026-03 | Unemployment | Seasonally adjusted | 2.0
+2026-03 | Unemployment | Unadjusted | 2.0
+2026-03 | Not in labour force | Unadjusted | 10.4
+2026-03 | Unemployment rate | Seasonally adjusted | 12.1
+2026-03 | Unemployment rate | Unadjusted | 12.1
+2026-03 | Participation rate | Seasonally adjusted | 61.7
+2026-03 | Participation rate | Unadjusted | 61.7
+2026-03 | Employment rate | Seasonally adjusted | 54.2
+2026-03 | Employment rate | Unadjusted | 54.2
+2026-04 | Population | Seasonally adjusted | 27.3
+2026-04 | Population | Unadjusted | 27.3
+2026-04 | Labour force | Seasonally adjusted | 17.1
+2026-04 | Labour force | Unadjusted | 17.1
+2026-04 | Employment | Seasonally adjusted | 15.0
+2026-04 | Employment | Unadjusted | 15.0
+2026-04 | Full-time employment | Unadjusted | 13.0
+2026-04 | Part-time employment | Unadjusted | 2.0
+2026-04 | Unemployment | Seasonally adjusted | 2.0
+2026-04 | Unemployment | Unadjusted | 2.0
+2026-04 | Not in labour force | Unadjusted | 10.2
+2026-04 | Unemployment rate | Seasonally adjusted | 12.0
+2026-04 | Unemployment rate | Unadjusted | 12.0
+2026-04 | Participation rate | Seasonally adjusted | 62.5
+2026-04 | Participation rate | Unadjusted | 62.5
+2026-04 | Employment rate | Seasonally adjusted | 55.0
+2026-04 | Employment rate | Unadjusted | 55.0
+2026-05 | Population | Seasonally adjusted | 27.4
+2026-05 | Population | Unadjusted | 27.4
+2026-05 | Labour force | Seasonally adjusted | 17.8
+2026-05 | Labour force | Unadjusted | 17.8
+2026-05 | Employment | Seasonally adjusted | 15.6
+2026-05 | Employment | Unadjusted | 15.6
+2026-05 | Full-time employment | Unadjusted | 13.6
+2026-05 | Part-time employment | Unadjusted | 2.0
+2026-05 | Unemployment | Seasonally adjusted | 2.2
+2026-05 | Unemployment | Unadjusted | 2.2
+2026-05 | Not in labour force | Unadjusted | 9.6
+2026-05 | Unemployment rate | Seasonally adjusted | 12.5
+2026-05 | Unemployment rate | Unadjusted | 12.5
+2026-05 | Participation rate | Seasonally adjusted | 65.0
+2026-05 | Participation rate | Unadjusted | 65.0
+2026-05 | Employment rate | Seasonally adjusted | 56.9
+2026-05 | Employment rate | Unadjusted | 56.9
+2026-06 | Population | Seasonally adjusted | 27.5
+2026-06 | Population | Unadjusted | 27.5
+2026-06 | Labour force | Seasonally adjusted | 18.0
+2026-06 | Labour force | Unadjusted | 18.0
+2026-06 | Employment | Seasonally adjusted | 15.9
+2026-06 | Employment | Unadjusted | 15.9
+2026-06 | Full-time employment | Unadjusted | 14.0
+2026-06 | Part-time employment | Unadjusted | 1.9
+2026-06 | Unemployment | Seasonally adjusted | 2.1
+2026-06 | Unemployment | Unadjusted | 2.1
+2026-06 | Not in labour force | Unadjusted | 9.5
+2026-06 | Unemployment rate | Seasonally adjusted | 11.6
+2026-06 | Unemployment rate | Unadjusted | 11.6
+2026-06 | Participation rate | Seasonally adjusted | 65.3
+2026-06 | Participation rate | Unadjusted | 65.3
+2026-06 | Employment rate | Seasonally adjusted | 57.8
+2026-06 | Employment rate | Unadjusted | 57.8
+2026-07 | Population | Seasonally adjusted | 27.6
+2026-07 | Population | Unadjusted | 27.6
+2026-07 | Labour force | Seasonally adjusted | 17.8
+2026-07 | Labour force | Unadjusted | 17.8
+2026-07 | Employment | Seasonally adjusted | 15.8
+2026-07 | Employment | Unadjusted | 15.8
+2026-07 | Full-time employment | Unadjusted | 13.5
+2026-07 | Part-time employment | Unadjusted | 2.3
+2026-07 | Unemployment | Seasonally adjusted | 2.0
+2026-07 | Unemployment | Unadjusted | 2.0
+2026-07 | Not in labour force | Unadjusted | 9.8
+2026-07 | Unemployment rate | Seasonally adjusted | 11.3
+2026-07 | Unemployment rate | Unadjusted | 11.3
+2026-07 | Participation rate | Seasonally adjusted | 64.6
+2026-07 | Participation rate | Unadjusted | 64.6
+2026-07 | Employment rate | Seasonally adjusted | 57.3
+2026-07 | Employment rate | Unadjusted | 57.3
+2026-08 | Population | Seasonally adjusted | 27.7
+2026-08 | Population | Unadjusted | 27.7
+2026-08 | Labour force | Seasonally adjusted | 17.6
+2026-08 | Labour force | Unadjusted | 17.6
+2026-08 | Employment | Seasonally adjusted | 15.6
+2026-08 | Employment | Unadjusted | 15.6
+2026-08 | Full-time employment | Unadjusted | 13.1
+2026-08 | Part-time employment | Unadjusted | 2.5
+2026-08 | Unemployment | Seasonally adjusted | 2.0
+2026-08 | Unemployment | Unadjusted | 2.0
+2026-08 | Not in labour force | Unadjusted | 10.2
+2026-08 | Unemployment rate | Seasonally adjusted | 11.3
+2026-08 | Unemployment rate | Unadjusted | 11.3
+2026-08 | Participation rate | Seasonally adjusted | 63.4
+2026-08 | Participation rate | Unadjusted | 63.4
+2026-08 | Employment rate | Seasonally adjusted | 56.2
+2026-08 | Employment rate | Unadjusted | 56.2
+2026-09 | Population | Seasonally adjusted | 27.8
+2026-09 | Population | Unadjusted | 27.8
+2026-09 | Labour force | Seasonally adjusted | 17.3
+2026-09 | Labour force | Unadjusted | 17.3
+2026-09 | Employment | Seasonally adjusted | 15.4
+2026-09 | Employment | Unadjusted | 15.4
+2026-09 | Full-time employment | Unadjusted | 12.8
+2026-09 | Part-time employment | Unadjusted | 2.6
+2026-09 | Unemployment | Seasonally adjusted | 1.9
+2026-09 | Unemployment | Unadjusted | 1.9
+2026-09 | Not in labour force | Unadjusted | 10.5
+2026-09 | Unemployment rate | Seasonally adjusted | 11.0
+2026-09 | Unemployment rate | Unadjusted | 11.0
+2026-09 | Participation rate | Seasonally adjusted | 62.4
+2026-09 | Participation rate | Unadjusted | 62.4
+2026-09 | Employment rate | Seasonally adjusted | 55.5
+2026-09 | Employment rate | Unadjusted | 55.5

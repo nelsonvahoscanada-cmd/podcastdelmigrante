@@ -1,0 +1,14 @@
+# https://canadiannorth.com/route-map/ → https://canadiannorth.com/route-map/?ki-cf-botcl=1
+# estado 403 | Just a moment...
+canadiannorth.com
+Performing security verification
+
+This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.
+
+Ray ID: a5538bd44e790a90
+Performance and Security by Cloudflare
+Privacy
+
+# ENLACES
+Cloudflare -> https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m
+Privacy -> https://www.cloudflare.com/privacypolicy/
