@@ -26,6 +26,7 @@ const FAKE_TURNSTILE = "window.turnstile={render(){return 'w1';},getResponse(){r
 async function abrir(browser, perfil, ruta) {
   const ctx = await browser.newContext({ ...PERFILES[perfil], locale: "es-CA", timezoneId: "America/Edmonton" });
   await ctx.route("https://challenges.cloudflare.com/**", (r) => r.fulfill({ contentType: "text/javascript", body: FAKE_TURNSTILE }));
+  await ctx.route("**/registro/config", (r) => r.fulfill({ contentType: "application/json", body: JSON.stringify({ ready: true, turnstileSiteKey: "1x00000000000000000000AA" }) }));
   const page = await ctx.newPage();
   const errores = [];
   page.on("pageerror", (e) => errores.push(e.message));
@@ -47,8 +48,13 @@ async function sinDesborde(page, ruta) {
     assert.match(await page.locator(".reg-hero__lead").textContent(), /Comienza gratis o destaca tu negocio con un Perfil Premium\./);
     const tarjetas = page.locator(".pl-card");
     assert.equal(await tarjetas.count(), 2);
-    assert.match((await tarjetas.nth(0).textContent()).replace(/\s+/g, " "), /Plan Gratuito.*\$0 CAD/);
-    assert.match((await tarjetas.nth(1).textContent()).replace(/\s+/g, " "), /Plan Premium.*\$24\.99 CAD\/mes \+ impuestos aplicables/);
+    assert.match((await tarjetas.nth(0).textContent()).replace(/\s+/g, " "), /Gratis.*\$0 CAD.*Crear ficha gratis/);
+    assert.equal((await page.locator("#planesTitle").textContent()).trim(), "Haz visible tu negocio en Canadá");
+    /* «Conocer Premium» lleva a la comparación (sin pasarela de pagos no hay «Elegir Premium») */
+    assert.equal((await tarjetas.nth(1).locator("a.pl-card__cta").textContent()).trim(), "Conocer Premium");
+    await tarjetas.nth(1).locator("a.pl-card__cta").click();
+    await page.waitForFunction(() => location.hash === "#comparar");
+    assert.match((await tarjetas.nth(1).textContent()).replace(/\s+/g, " "), /Premium.*\$25 CAD\/mes \+ impuestos aplicables/);
     assert.match(await tarjetas.nth(1).textContent(), /Todavía no hay pago en línea/);
     assert.equal(await page.locator("table.pl-table tbody tr").count(), 14);
     /* Preguntas frecuentes: se abren y cierran */
@@ -79,7 +85,7 @@ async function sinDesborde(page, ruta) {
 
     /* Botón Premium → formulario con Premium elegido */
     ({ ctx, page, errores } = await abrir(browser, perfil, "/planes-directorio"));
-    await page.locator(".pl-card--premium a.pl-card__cta").click();
+    await page.locator(".reg-hero a[href*=\"plan=premium\"]").click();
     await page.waitForURL(/registra-tu-empresa\?plan=premium#solicitud$/);
     await page.waitForFunction(() => document.querySelector("[name=plan][value=premium]").checked);
     await ctx.close();

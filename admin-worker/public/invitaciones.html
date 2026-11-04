@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Invitaciones empresariales</title>
+<link rel="icon" href="/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="panel">
+<header class="topbar">
+  <img src="/img/logo.png" alt="" width="44" height="44">
+  <div>
+    <p class="topbar__kicker">El Podcast del Migrante · eRadio Global Corp.</p>
+    <h1 class="topbar__title">Invitaciones empresariales</h1>
+  </div>
+  <nav class="topbar__nav" aria-label="Secciones del panel">
+    <a href="/">Estadísticas</a>
+    <a href="/solicitudes">Solicitudes</a>
+    <a href="/invitaciones" aria-current="page">Invitaciones</a>
+  </nav>
+  <span class="topbar__badge">Privado</span>
+</header>
+
+<main class="wrap">
+  <section class="card inv-setup" id="setup" hidden aria-labelledby="setupTitle">
+    <h2 id="setupTitle" class="sol-h2">Preparar tablas</h2>
+    <p>Las invitaciones necesitan tres tablas nuevas en la base del directorio (migración <code>0005_membresias.sql</code>). Solo se crean tablas nuevas: no se modifica ninguna solicitud, miniweb ni estadística existente. Mientras no estén, el sitio rechaza cualquier invitación.</p>
+    <button class="btn btn--primary" type="button" id="setupBtn">Preparar tablas</button>
+  </section>
+
+  <section class="card" aria-labelledby="newTitle">
+    <h2 id="newTitle" class="sol-h2">Nueva invitación</h2>
+    <p class="card__hint">Cada invitación es individual y de un solo uso. El enlace se muestra una única vez: cópialo y envíalo tú mismo. El panel no envía nada a nadie.</p>
+    <form class="sol-form" id="newForm" novalidate>
+      <div class="sol-form__row">
+        <label>Tipo
+          <select name="kind" required>
+            <option value="PREMIUM_GIFT">Premium de cortesía — $0 CAD, sin vencimiento</option>
+            <option value="PREMIUM_PAID">Premium pagada — $25 CAD al mes + impuestos</option>
+            <option value="FREE">Ficha gratuita — $0 CAD</option>
+          </select>
+        </label>
+        <label>Negocio o empresario
+          <input name="businessName" maxlength="120" required autocomplete="off">
+        </label>
+      </div>
+      <div class="sol-form__row">
+        <label>Persona de contacto (opcional)
+          <input name="contactName" maxlength="80" autocomplete="off">
+        </label>
+        <div class="inv-prefill">
+          <span class="inv-prefill__label">Atajo</span>
+          <button class="btn btn--outline btn--small" type="button" id="prefillSanta">Rellenar: Santa Latino · Héctor (cortesía)</button>
+        </div>
+      </div>
+      <p class="inv-warning" id="paidWarning" hidden>La Premium pagada todavía no tiene cobro en línea: la invitación solo abre una solicitud Premium. El cobro se acuerda por separado hasta que exista una pasarela de pagos.</p>
+      <div class="sol-form__actions">
+        <button class="btn btn--primary" type="submit">Generar invitación</button>
+      </div>
+    </form>
+    <div class="inv-result" id="result" hidden aria-live="polite">
+      <p class="inv-result__title" id="resultTitle"></p>
+      <label class="sol-code">Enlace de la invitación (solo se muestra ahora)
+        <input id="resultLink" readonly spellcheck="false">
+      </label>
+      <div class="sol-form__actions">
+        <button class="btn btn--primary" type="button" id="copyBtn">Copiar invitación</button>
+        <button class="btn btn--outline" type="button" id="hideBtn">Ocultar enlace</button>
+      </div>
+      <p class="card__hint">Si lo pierdes, usa «Renovar enlace»: se genera uno nuevo y el anterior deja de funcionar.</p>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="memTitle">
+    <div class="sol-list__head">
+      <h2 id="memTitle" class="sol-h2">Membresías</h2>
+      <label class="sol-filter">Mes de las estadísticas
+        <input type="month" id="month">
+      </label>
+    </div>
+    <p class="card__hint">Una membresía nace al enviarse el formulario con la invitación y queda «En revisión». La miniweb se publica a mano, como siempre; después se activa aquí con su BIZ-id.</p>
+    <div id="memberships"><p class="empty">Cargando…</p></div>
+  </section>
+
+  <section class="card" aria-labelledby="invTitle">
+    <h2 id="invTitle" class="sol-h2">Invitaciones</h2>
+    <div id="invitations"><p class="empty">Cargando…</p></div>
+  </section>
+
+  <p class="status" id="status" role="status"></p>
+  <p class="footnote">Los códigos nunca se guardan completos: en la base solo queda su huella. Ninguna acción de este panel crea cobros, envía correos a terceros ni publica miniwebs.</p>
+</main>
+
+<script src="/js/invitaciones.js"></script>
+</body>
+</html>

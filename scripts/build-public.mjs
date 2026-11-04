@@ -53,6 +53,9 @@ const DIRS = {
 /* Material de origen dentro de carpetas públicas que el sitio no usa
    (p. ej. fotos originales en alta resolución de clientes). */
 const EXCLUDE_DIRS = ["assets/originals"];
+/* Módulos que solo usan el servidor (Pages Functions y el panel privado):
+   viven junto al resto del directorio, pero no se publican. */
+const SERVER_ONLY = ["js/directorio/membresias-core.js"];
 /* Licencias que deben acompañar a las tipografías (OFL) */
 const LICENSE_FILE = /^LICENSE[-A-Za-z0-9]*\.txt$/;
 
@@ -96,7 +99,7 @@ export function publicFiles(root = ROOT) {
     if (!existsSync(base)) continue;
     for (const f of walk(base)) {
       const rel = toPosix(relative(root, f));
-      if (EXCLUDE_DIRS.some((d) => rel.startsWith(d + "/"))) continue;
+      if (EXCLUDE_DIRS.some((d) => rel.startsWith(d + "/")) || SERVER_ONLY.includes(rel)) continue;
       const name = posix.basename(rel);
       const ext = extname(name).slice(1).toLowerCase();
       if (exts.includes(ext) || (dir === "assets" && LICENSE_FILE.test(name))) files.push(rel);
@@ -111,7 +114,7 @@ function isAllowed(rel) {
   if (parts.some((s) => s.startsWith("."))) return false;
   if (parts.length === 1) return ROOT_FILES.includes(rel) || ROOT_PAGE.test(rel);
   const exts = DIRS[parts[0]];
-  if (!exts || EXCLUDE_DIRS.some((d) => rel.startsWith(d + "/"))) return false;
+  if (!exts || EXCLUDE_DIRS.some((d) => rel.startsWith(d + "/")) || SERVER_ONLY.includes(rel)) return false;
   const name = parts[parts.length - 1];
   return exts.includes(extname(name).slice(1).toLowerCase()) || (parts[0] === "assets" && LICENSE_FILE.test(name));
 }

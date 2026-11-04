@@ -1,0 +1,23 @@
+/* Página /invitacion del Directorio Empresarial: tarjeta central, sobria. */
+.inv { padding: clamp(28px, 6vw, 72px) 16px clamp(40px, 8vw, 96px); display: flex; justify-content: center; }
+.inv-card {
+  width: 100%; max-width: 620px; text-align: center;
+  background: var(--blanco, #fff); border: 1px solid var(--gris-200, #e4e4e0); border-radius: 22px;
+  padding: clamp(28px, 5vw, 56px) clamp(20px, 5vw, 56px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+}
+.inv-kicker { margin: 0 0 10px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-oscuro, #557902); }
+.inv-title { margin: 0 0 18px; font-family: var(--font-display, Georgia, serif); font-weight: 600; font-size: clamp(2rem, 1.4rem + 3vw, 3rem); line-height: 1.08; letter-spacing: -0.01em; }
+.inv-for { margin: 0 0 12px; font-weight: 700; }
+.inv-lead { margin: 0 auto 22px; max-width: 40ch; font-size: clamp(1.05rem, 1rem + 0.35vw, 1.2rem); line-height: 1.5; }
+.inv-price { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 0 auto 22px; padding: 18px 12px; border-radius: 16px; background: var(--gris-100, #f4f4f1); }
+.inv-price__label { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-600, #5b5b5b); }
+.inv-price__amount { font-family: var(--font-display, Georgia, serif); font-weight: 600; font-size: clamp(3rem, 2.4rem + 3vw, 4.2rem); line-height: 1; letter-spacing: -0.02em; }
+.inv-price__unit { font-size: 0.95rem; font-weight: 700; color: var(--gris-600, #5b5b5b); }
+.inv-points { list-style: none; margin: 0 auto 18px; padding: 0; max-width: 40ch; display: grid; gap: 8px; text-align: left; }
+.inv-points li { position: relative; padding-left: 26px; line-height: 1.45; }
+.inv-points li::before { content: ""; position: absolute; left: 4px; top: 0.45em; width: 10px; height: 6px; border-left: 2px solid var(--verde-oscuro, #557902); border-bottom: 2px solid var(--verde-oscuro, #557902); transform: rotate(-45deg); }
+.inv-small { margin: 12px auto 0; max-width: 46ch; font-size: 0.88rem; line-height: 1.5; color: var(--gris-600, #5b5b5b); }
+.inv-actions { margin-top: 26px; }
+.inv-cta { width: 100%; max-width: 360px; min-height: 52px; font-size: 1.05rem; }
+.inv-state[data-state="error"] .reg-btn { margin-top: 18px; }
