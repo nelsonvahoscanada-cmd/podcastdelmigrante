@@ -39,7 +39,8 @@ crear invitaciones. El registro normal (sin invitación) sigue igual.
 ## 3. Crear y entregar una invitación
 
 1. Panel → **Invitaciones** → «Nueva invitación»: tipo, negocio, contacto.
-   (Atajo «Rellenar: Santa Latino · Héctor (cortesía)»; no envía nada.)
+   (El campo «Atajo» es texto libre para tus apuntes: empieza vacío, no se
+   envía ni se guarda y se limpia al generar la invitación.)
 2. «Generar invitación» (con confirmación). El enlace se muestra **una sola
    vez**: `https://podcastdelmigrante.com/invitacion#c=CÓDIGO`.
 3. «Copiar invitación» y enviarlo **personalmente** (el panel no envía correos

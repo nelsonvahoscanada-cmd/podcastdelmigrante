@@ -215,15 +215,6 @@
   }
   $("#newForm").kind.addEventListener("change", togglePaidWarning);
 
-  $("#prefillSanta").addEventListener("click", () => {
-    const f = $("#newForm");
-    f.kind.value = "PREMIUM_GIFT";
-    f.businessName.value = "Santa Latino";
-    f.contactName.value = "Héctor";
-    togglePaidWarning();
-    setStatus("Datos rellenados. Revisa y pulsa «Generar invitación»: nada se envía automáticamente.");
-  });
-
   $("#copyBtn").addEventListener("click", async () => {
     const input = $("#resultLink");
     try {
