@@ -1,0 +1,186 @@
+
+=== IANA tzdata: archivo northamerica (Nunavut) ===
+versión: 2026f
+  zone1970.tab: CA	+6344-06828	America/Iqaluit	Eastern - NU (most areas)
+  zone1970.tab: CA	+744144-0944945	America/Resolute	Central - NU (Resolute)
+  zone1970.tab: CA	+624900-0920459	America/Rankin_Inlet	Central - NU (central)
+  zone1970.tab: CA	+690650-1050310	America/Cambridge_Bay	Mountain - NU (west)
+  zone1970.tab: PA,CA,KY	+0858-07932	America/Panama	EST - ON (Atikokan), NU (Coral H)
+  | # Nunavut
+  | # time and daylight saving time arrangements in Canada circa 1998.
+  | # National Research Council Canada maintains info about time zones and DST.
+  | # For now, assume all of DST-observing Canada will fall into line with the
+  | # new US DST rules,
+  | # '... The daylight saving scheme was dropped all over Canada at the same time,'
+  | # These statements refer to a transition from daylight time to standard time
+  | Rule	Canada	1918	only	-	Apr	14	2:00	1:00	D
+  | Rule	Canada	1918	only	-	Oct	27	2:00	0	S
+  | Rule	Canada	1942	only	-	Feb	 9	2:00	1:00	W # War
+  | Rule	Canada	1945	only	-	Aug	14	23:00u	1:00	P # Peace
+  | Rule	Canada	1945	only	-	Sep	30	2:00	0	S
+  | Rule	Canada	1974	1986	-	Apr	lastSun	2:00	1:00	D
+  | Rule	Canada	1974	2006	-	Oct	lastSun	2:00	0	S
+  | Rule	Canada	1987	2006	-	Apr	Sun>=1	2:00	1:00	D
+  | Rule	Canada	2007	max	-	Mar	Sun>=8	2:00	1:00	D
+  | Rule	Canada	2007	max	-	Nov	Sun>=1	2:00	0	S
+  | Rule	StJohns	1917	only	-	Apr	 8	2:00	1:00	D
+  | Rule	StJohns	1917	only	-	Sep	17	2:00	0	S
+  | Rule	StJohns	1919	only	-	May	 5	23:00	1:00	D
+  | Rule	StJohns	1919	only	-	Aug	12	23:00	0	S
+  | Rule	StJohns	1920	1935	-	May	Sun>=1	23:00	1:00	D
+  | Rule	StJohns	1920	1935	-	Oct	lastSun	23:00	0	S
+  | Rule	StJohns	1936	1941	-	May	Mon>=9	0:00	1:00	D
+  | Rule	StJohns	1936	1941	-	Oct	Mon>=2	0:00	0	S
+  | Rule	StJohns	1946	1950	-	May	Sun>=8	2:00	1:00	D
+  | Rule	StJohns	1946	1950	-	Oct	Sun>=2	2:00	0	S
+  | Rule	StJohns	1951	1986	-	Apr	lastSun	2:00	1:00	D
+  | Rule	StJohns	1951	1959	-	Sep	lastSun	2:00	0	S
+  | Rule	StJohns	1960	1986	-	Oct	lastSun	2:00	0	S
+  | Rule	StJohns	1987	only	-	Apr	Sun>=1	0:01	1:00	D
+  | Rule	StJohns	1987	2006	-	Oct	lastSun	0:01	0	S
+  | Rule	StJohns	1988	only	-	Apr	Sun>=1	0:01	2:00	DD
+  | Rule	StJohns	1989	2006	-	Apr	Sun>=1	0:01	1:00	D
+  | Rule	StJohns	2007	2011	-	Mar	Sun>=8	0:01	1:00	D
+  | Rule	StJohns	2007	2010	-	Nov	Sun>=1	0:01	0	S
+  | Zone America/St_Johns	-3:30:52 -	LMT	1884
+  | Zone America/Goose_Bay	-4:01:40 -	LMT	1884 # Happy Valley-Goose Bay
+  | # Halifax.  Many locales did not observe peacetime DST until 1972;
+  | # in Canada to observe DST in 1971 but not 1970; for now we'll assume
+  | Rule	Halifax	1916	only	-	Apr	 1	0:00	1:00	D
+  | Rule	Halifax	1916	only	-	Oct	 1	0:00	0	S
+  | Rule	Halifax	1920	only	-	May	 9	0:00	1:00	D
+  | Rule	Halifax	1920	only	-	Aug	29	0:00	0	S
+  | Rule	Halifax	1921	only	-	May	 6	0:00	1:00	D
+  | Rule	Halifax	1921	1922	-	Sep	 5	0:00	0	S
+  | Rule	Halifax	1922	only	-	Apr	30	0:00	1:00	D
+  | Rule	Halifax	1923	1925	-	May	Sun>=1	0:00	1:00	D
+  | Rule	Halifax	1923	only	-	Sep	 4	0:00	0	S
+  | Rule	Halifax	1924	only	-	Sep	15	0:00	0	S
+  | Rule	Halifax	1925	only	-	Sep	28	0:00	0	S
+  | Rule	Halifax	1926	only	-	May	16	0:00	1:00	D
+  | Rule	Halifax	1926	only	-	Sep	13	0:00	0	S
+  | Rule	Halifax	1927	only	-	May	 1	0:00	1:00	D
+  | Rule	Halifax	1927	only	-	Sep	26	0:00	0	S
+  | Rule	Halifax	1928	1931	-	May	Sun>=8	0:00	1:00	D
+  | Rule	Halifax	1928	only	-	Sep	 9	0:00	0	S
+  | Rule	Halifax	1929	only	-	Sep	 3	0:00	0	S
+  | Rule	Halifax	1930	only	-	Sep	15	0:00	0	S
+  | Rule	Halifax	1931	1932	-	Sep	Mon>=24	0:00	0	S
+  | Rule	Halifax	1932	only	-	May	 1	0:00	1:00	D
+  | Rule	Halifax	1933	only	-	Apr	30	0:00	1:00	D
+  | Rule	Halifax	1933	only	-	Oct	 2	0:00	0	S
+  | Rule	Halifax	1934	only	-	May	20	0:00	1:00	D
+  | Rule	Halifax	1934	only	-	Sep	16	0:00	0	S
+  | Rule	Halifax	1935	only	-	Jun	 2	0:00	1:00	D
+  | Rule	Halifax	1935	only	-	Sep	30	0:00	0	S
+  | Rule	Halifax	1936	only	-	Jun	 1	0:00	1:00	D
+  | Rule	Halifax	1936	only	-	Sep	14	0:00	0	S
+  | Rule	Halifax	1937	1938	-	May	Sun>=1	0:00	1:00	D
+  | Rule	Halifax	1937	1941	-	Sep	Mon>=24	0:00	0	S
+  | Rule	Halifax	1939	only	-	May	28	0:00	1:00	D
+  | Rule	Halifax	1940	1941	-	May	Sun>=1	0:00	1:00	D
+  | Rule	Halifax	1946	1949	-	Apr	lastSun	2:00	1:00	D
+  | Rule	Halifax	1946	1949	-	Sep	lastSun	2:00	0	S
+  | Rule	Halifax	1951	1954	-	Apr	lastSun	2:00	1:00	D
+  | Rule	Halifax	1951	1954	-	Sep	lastSun	2:00	0	S
+  | Rule	Halifax	1956	1959	-	Apr	lastSun	2:00	1:00	D
+  | Rule	Halifax	1956	1959	-	Sep	lastSun	2:00	0	S
+  | Rule	Halifax	1962	1973	-	Apr	lastSun	2:00	1:00	D
+  | Rule	Halifax	1962	1973	-	Oct	lastSun	2:00	0	S
+  | Zone America/Halifax	-4:14:24 -	LMT	1902 Jun 15
+  | Zone America/Glace_Bay	-3:59:48 -	LMT	1902 Jun 15
+  | Rule	Moncton	1933	1935	-	Jun	Sun>=8	1:00	1:00	D
+  | Rule	Moncton	1933	1935	-	Sep	Sun>=8	1:00	0	S
+  | Rule	Moncton	1936	1938	-	Jun	Sun>=1	1:00	1:00	D
+  | Rule	Moncton	1936	1938	-	Sep	Sun>=1	1:00	0	S
+  | Rule	Moncton	1939	only	-	May	27	1:00	1:00	D
+  | Rule	Moncton	1939	1941	-	Sep	Sat>=21	1:00	0	S
+  | Rule	Moncton	1940	only	-	May	19	1:00	1:00	D
+  | Rule	Moncton	1941	only	-	May	 4	1:00	1:00	D
+  | Rule	Moncton	1946	1972	-	Apr	lastSun	2:00	1:00	D
+  | Rule	Moncton	1946	1956	-	Sep	lastSun	2:00	0	S
+  | Rule	Moncton	1957	1972	-	Oct	lastSun	2:00	0	S
+  | Rule	Moncton	1993	2006	-	Apr	Sun>=1	0:01	1:00	D
+  | Rule	Moncton	1993	2006	-	Oct	lastSun	0:01	0	S
+  | Zone America/Moncton	-4:19:08 -	LMT	1883 Dec  9
+  | # [According to the Toronto Star] Orillia, Ontario, adopted DST
+  | # have already done so.  In Orillia DST was to run until Saturday,
+  | # Kenora, Ontario, was to abandon DST on 1914-06-01 (-05-21).
+  | # For more on Orillia, see: Daubs K. Bold attempt at daylight saving
+  | # https://www.thestar.com/news/insight/2017/07/08/bold-attempt-at-daylight-saving-time-became-a-comic-failure-in-orillia.html
+  | # "The first Sunday after the switch was made, [DST proponent and
+  | # This became a symbol of the downfall of daylight saving in Orillia."
+  | # https://www.orilliamatters.com/local-news/column-daylight-saving-was-a-confusing-time-in-orillia-10377529
+  | # ... I don't know if Windsor began observing DST when Detroit did,
+  | #     three weeks and will change over from daylight saving in October.
+  | #   A list of the places in Canada using daylight saving time would
+  | # and towns, it is found that the following places used daylight sav-
+  | #   With some exceptions, the use of daylight saving may be said to be limited
+  | Rule	Toronto	1919	only	-	Mar	30	23:30	1:00	D
+  | Rule	Toronto	1919	only	-	Oct	26	0:00	0	S
+  | Rule	Toronto	1920	only	-	May	 2	2:00	1:00	D
+  | Rule	Toronto	1920	only	-	Sep	26	0:00	0	S
+  | Rule	Toronto	1921	only	-	May	15	2:00	1:00	D
+  | Rule	Toronto	1921	only	-	Sep	15	2:00	0	S
+  | Rule	Toronto	1922	1923	-	May	Sun>=8	2:00	1:00	D
+  | Rule	Toronto	1922	1926	-	Sep	Sun>=15	2:00	0	S
+  | Rule	Toronto	1924	1927	-	May	Sun>=1	2:00	1:00	D
+  | Rule	Toronto	1927	1937	-	Sep	Sun>=25	2:00	0	S
+  | Rule	Toronto	1928	1937	-	Apr	Sun>=25	2:00	1:00	D
+  | Rule	Toronto	1938	1940	-	Apr	lastSun	2:00	1:00	D
+  | Rule	Toronto	1938	1939	-	Sep	lastSun	
+
+=== CDX www.gov.nu.ca/ ===
+ERROR IncompleteRead IncompleteRead(1299381 bytes read)
+
+=== CDX nu-lsco.ca/ ===
+direcciones: 370
+
+=== Tema: 911 — 0 direcciones ===
+
+=== Tema: licencia: solicitar — 0 direcciones ===
+
+=== Tema: alquileres — 0 direcciones ===
+
+=== Tema: símbolos y bandera — 0 direcciones ===
+
+=== Tema: hora — 0 direcciones ===
+
+=== Tema: centros de salud — 0 direcciones ===
+
+=== Tema: viajes médicos — 0 direcciones ===
+
+=== Tema: salario mínimo LSCO — 3 direcciones ===
+    20240110 nu-lsco.ca
+    20250616 nu-lsco.ca/en
+    20260117 nu-lsco.ca/en/recherche
+
+=== Copia archivada 20240110: nu-lsco.ca ===
+estado: 200 | caracteres: 2008
+
+=== Copia archivada 20250616: nu-lsco.ca/en ===
+estado: 200 | caracteres: 75
+
+=== Copia archivada 20260117: nu-lsco.ca/en/recherche ===
+estado: 200 | caracteres: 75
+
+=== Tema: encuesta de vivienda — 0 direcciones ===
+
+=== Tema: lenguas oficiales — 0 direcciones ===
+
+=== Tema: recién llegados — 0 direcciones ===
+
+=== Tema: costos de alimentos — 0 direcciones ===
+
+=== Normales de Iqaluit: https://climate.weather.gc.ca/climate_normals/results_1981_2010_e.html?searchType=stnName&txtStationName=iqalu ===
+estado: 200 | final: https://climate.weather.gc.ca/climate_normals/index_e.html | caracteres: 19458
+  > Hamilton | Iqaluit | Kitchener
+  > Hamilton | Iqaluit | Kitchener
+  > Hamilton | Iqaluit | Kitchener
+  > Hamilton | Iqaluit | Kitchener
+  > For temperature and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 2 Temperature . | For precipitation and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 3 Precipitation . | For degree days and its calculation information, please see the Canadian Climate Normals 1951-1980 Volume 4 Degree Days .
+  > For temperature records and its calculation information, please see the Canadian Normals Volume 1 1941-1970 . Please note that the temperatures are provided in degrees Fahrenheit. | For precipitation records and its calculation information, please see the Canadian Normals Volume 2 1941-1970 . Please note that the precipitation amounts are provided in inches. | 1931-1960
+  > For temperature records and its calculation information, please see the Canadian Climatic Normals 1931-1960 Volume 1 Temperature . Please note that the temperatures are provided in degrees Fahrenheit. | For precipitation records and its calculation information, please see the Canadian Climatic Normals 1931-1960 Volume 2 Precipitation . Please note that the precipitation amounts are provided in inches. | For bright sunshine, cloudiness, sea levels pressure, thunderstorm days and their calculation information, please see the Canadian Climatic Normals 1931-1960 Volume 3 Sunshine, Cloud, Pressure and Thunderstorms .
+
+=== Normales de Iqaluit: http://web.archive.org/web/2025/https://climate.weather.gc.ca/climate_normals/results_1981_2010_e.html?stnID=1 ===
+ERROR URLError <urlopen error [Errno 111] Connection refused>
