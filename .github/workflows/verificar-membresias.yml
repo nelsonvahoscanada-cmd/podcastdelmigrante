@@ -1,0 +1,73 @@
+# TEMPORAL: verificación de PRODUCCIÓN tras fusionar el PR #103 (solo lectura). Se elimina después.
+name: verificar-membresias
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-membresias-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    env:
+      BASE: https://podcastdelmigrante.com
+    steps:
+      - uses: actions/checkout@v4
+      - name: esperar el despliegue (planes con $25)
+        run: |
+          for i in $(seq 1 40); do
+            if curl -s "$BASE/planes-directorio" | grep -q 'Haz visible tu negocio en Canadá'; then echo "desplegado tras $i intentos"; break; fi
+            sleep 15
+          done
+      - name: páginas, precios y rutas
+        run: |
+          p=$(curl -s "$BASE/planes-directorio")
+          echo "planes: $(curl -s -o /dev/null -w '%{http_code}' $BASE/planes-directorio) | sección: $(echo "$p" | grep -c 'Haz visible tu negocio en Canadá') | \$25: $(echo "$p" | grep -c '\$25') | 24.99: $(echo "$p" | grep -c '24\.99') | Crear ficha gratis: $(echo "$p" | grep -c 'Crear ficha gratis') | Conocer Premium: $(echo "$p" | grep -c 'Conocer Premium') | cortesía: $(echo "$p" | grep -ci 'cortes')"
+          i=$(curl -s "$BASE/invitacion")
+          echo "invitacion: $(curl -s -o /dev/null -w '%{http_code}' $BASE/invitacion) | noindex: $(echo "$i" | grep -c 'noindex, nofollow') | script: $(echo "$i" | grep -c 'js/directorio/invitacion.js')"
+          echo "invitacion.js: $(curl -s -o /dev/null -w '%{http_code}' $BASE/js/directorio/invitacion.js) | membresias-core.js (debe ser 404): $(curl -s -o /dev/null -w '%{http_code}' $BASE/js/directorio/membresias-core.js)"
+          r=$(curl -s "$BASE/registra-tu-empresa")
+          echo "registro: aviso invitación: $(echo "$r" | grep -c 'id="invitationBanner"') | \$25: $(echo "$r" | grep -c '\$25 CAD') | 24.99: $(echo "$r" | grep -c '24\.99') | form v: $(echo "$r" | grep -o 'solicitud-form.js?v=[0-9]*')"
+          echo "quien-puede-ayudarte \$25: $(curl -s $BASE/quien-puede-ayudarte | grep -c '\$25 CAD')"
+          echo "--- /registro/invitacion (código aleatorio de prueba; se espera 503 hasta preparar las tablas)"
+          curl -s -D h.txt -X POST -H 'Content-Type: application/json' --data '{"code":"PRUEBAprueba0123456789abcdefABCD"}' "$BASE/registro/invitacion"; echo
+          grep -i '^HTTP\|^cache-control\|^x-robots-tag' h.txt
+          echo "GET /registro/invitacion: $(curl -s -o /dev/null -w '%{http_code}' $BASE/registro/invitacion)"
+          echo "--- /registro/config"; curl -s "$BASE/registro/config"; echo
+          echo "panel /invitaciones sin Access: $(curl -s -o /dev/null -w '%{http_code} → %{redirect_url}' https://admin.podcastdelmigrante.com/invitaciones)"
+          echo "panel /api/invitaciones sin Access: $(curl -s -o /dev/null -w '%{http_code}' https://admin.podcastdelmigrante.com/api/invitaciones)"
+          for r in / /perfil-carlos-d-castillo /perfil-tomas-velazquez /quien-puede-ayudarte /canada-en-datos/ /magazine/; do echo "$r → $(curl -s -o /dev/null -w '%{http_code}' $BASE$r)"; done
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium >/dev/null
+      - name: navegador (computador, tableta, celular), sin analítica
+        env:
+          NODE_PATH: ${{ github.workspace }}/node_modules
+        shell: node {0}
+        run: |
+          const { chromium, devices } = require("playwright");
+          const BASE = process.env.BASE;
+          (async () => {
+            const b = await chromium.launch(); let fallos = 0;
+            for (const [perfil, opc] of [["computador", { viewport: { width: 1440, height: 900 } }], ["tableta", { ...devices["iPad Mini"] }], ["celular", { ...devices["iPhone 13"] }]]) {
+              const ctx = await b.newContext({ ...opc, locale: "es-CA" });
+              await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ contentType: "application/json", body: "{}" }));
+              for (const [ruta, espera] of [["/planes-directorio", "Haz visible tu negocio en Canadá"], ["/invitacion", "Esta invitación no es válida"], ["/invitacion#c=PRUEBAprueba0123456789abcdefABCD", "no están disponibles en este momento"], ["/registra-tu-empresa?plan=premium", "Registra tu empresa"]]) {
+                const p = await ctx.newPage(); const err = []; const urls = [];
+                p.on("pageerror", (e) => err.push(e.message));
+                p.on("request", (x) => urls.push(x.url()));
+                const resp = await p.goto(BASE + ruta, { waitUntil: "load", timeout: 60000 });
+                await p.waitForTimeout(3000);
+                const txt = await p.locator("main").innerText();
+                const [sw, cw] = await p.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+                const hash = await p.evaluate(() => location.hash);
+                const fuga = urls.some((u) => u.includes("PRUEBAprueba0123456789"));
+                const ok = resp.status() === 200 && err.length === 0 && sw <= cw + 1 && txt.includes(espera) && !fuga && !(ruta.includes("#c=") && hash);
+                if (!ok) fallos++;
+                console.log(`${ok ? "ok " : "MAL"} ${perfil} ${ruta} → ${resp.status()} contiene «${espera}»: ${txt.includes(espera)} | desborde: ${sw > cw + 1} | código en URL: ${fuga} | hash restante: «${hash}» ${err.join(" | ")}`);
+                await p.close();
+              }
+              await ctx.close();
+            }
+            await b.close(); console.log("fallos:", fallos);
+          })();
