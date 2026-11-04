@@ -219,7 +219,7 @@ test("portada de Canadá en Datos: PEI marcada como ficha disponible, sin tocar 
   const idx = read("canada-en-datos/index.html");
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="PE"/);
   assert.match(idx, /aria-label="Isla del Príncipe Eduardo \(ficha disponible\)"/);
-  for (const code of ["AB", "ON", "BC", "SK", "MB"]) assert.match(idx, new RegExp(`class="cd-region cd-region--ficha" data-code="${code}"`), code);
-  for (const code of ["NS", "NB", "NL", "YT", "NT", "NU"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
+  for (const code of ["AB", "ON", "BC", "SK", "MB", "NU"]) assert.match(idx, new RegExp(`class="cd-region cd-region--ficha" data-code="${code}"`), code);
+  for (const code of ["NS", "NB", "NL", "YT", "NT"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="QC"/, "Quebec, ficha añadida después");
 });
