@@ -57,7 +57,7 @@ test("carrusel Podcast del Migrante Play: videos con reproducción en la portada
   assert.equal(en.tag, "Entrevista en inglés");
   assert.match(en.title + " " + en.desc, /Medicina familiar|entrevista en inglés/, "títulos y descripciones en español");
   assert.ok(ctx.V.some((v) => v.videoId === "M7JFiyvPDT8" && !v.published), "Tomás Velázquez: retirado, no borrado");
-  assert.match(read("index.html"), /<script src="js\/video-cover\.js"><\/script>\s*<script src="js\/main\.js">/);
+  assert.match(read("index.html"), /<script src="js\/video-cover\.js"><\/script>\s*<script src="js\/main\.js(\?v=[0-9a-f]+)?">/);
 });
 
 test("Desafío 100 Empresas: tres videos destacados en orden, desde el inicio, sin borrar el catálogo", () => {

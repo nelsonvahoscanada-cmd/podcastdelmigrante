@@ -27,10 +27,19 @@
     python3 scripts/build-social-images.py
     node scripts/build-article-pages.mjs
   El chequeo de GitHub «Artículos: vistas previas» falla si se olvida.
+
+  Portada (index.html): Cloudflare entrega index.html revalidándolo en cada
+  visita, pero los archivos .js con max-age de 4 horas. Para que la portada,
+  y su barra «Última hora», muestren una noticia nueva en cuanto se publica,
+  este script pone en index.html, junto a js/data.js, js/articles.js,
+  js/noticias.js y js/main.js, una versión calculada con su contenido
+  (?v=<huella>): si el archivo cambia, cambia la URL y el navegador lo pide
+  de nuevo.
 ========================================================================= */
 
 import { readFileSync, writeFileSync, readdirSync, unlinkSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
@@ -190,6 +199,17 @@ expected.set(
     "export const ARTICULOS_CON_CONTADOR = new Set(" + JSON.stringify(conContador, null, 2) + ");\n"
 );
 
+/* Portada: versión de los scripts que dependen de los artículos publicados */
+const VERSIONADOS = ["js/data.js", "js/articles.js", "js/noticias.js", "js/main.js"];
+const huella = (f) => createHash("sha256").update(readFileSync(join(ROOT, f))).digest("hex").slice(0, 10);
+let portada = readFileSync(join(ROOT, "index.html"), "utf8");
+for (const f of VERSIONADOS) {
+  const re = new RegExp(`<script src="${f.replace(/[.]/g, "\\.")}(\\?v=[0-9a-f]+)?"></script>`);
+  if (!re.test(portada)) problems.push(`index.html no carga ${f}`);
+  portada = portada.replace(re, `<script src="${f}?v=${huella(f)}"></script>`);
+}
+expected.set("index.html", portada);
+
 const stale = readdirSync(ROOT).filter(
   (f) => /^articulo-.+\.html$/.test(f) && !expected.has(f) && readFileSync(join(ROOT, f), "utf8").includes(GENERATED_MARK)
 );
@@ -213,4 +233,4 @@ if (problems.length) {
     process.exit(1);
   }
 }
-console.log(`${expected.size - 1} artículo(s) ${CHECK ? "verificados" : "al día"}.`);
+console.log(`${expected.size - 2} artículo(s) y la portada ${CHECK ? "verificados" : "al día"}.`);
