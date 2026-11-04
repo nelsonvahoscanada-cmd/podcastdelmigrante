@@ -1,0 +1,17 @@
+canada-en-datos-nunavut-mobile performance:82 accessibility:97 best-practices:100 seo:100 | LCP 4.6 s | CLS 0 | TBT 50 ms | peso Total size was 690 KiB
+    first-contentful-paint 0.86 1.9 s
+    largest-contentful-paint 0.34 4.6 s
+    color-contrast 0 
+canada-en-datos-nunavut-desktop performance:98 accessibility:97 best-practices:100 seo:100 | LCP 1.1 s | CLS 0.01 | TBT 0 ms | peso Total size was 690 KiB
+    color-contrast 0 
+canada-en-datos-nunavut-iqaluit-mobile performance:89 accessibility:96 best-practices:100 seo:100 | LCP 3.6 s | CLS 0 | TBT 0 ms | peso Total size was 535 KiB
+    largest-contentful-paint 0.6 3.6 s
+    color-contrast 0 
+canada-en-datos-nunavut-iqaluit-desktop performance:99 accessibility:96 best-practices:100 seo:100 | LCP 0.8 s | CLS 0.002 | TBT 0 ms | peso Total size was 535 KiB
+    color-contrast 0 
+canada-en-datos-alberta-mobile performance:83 accessibility:97 best-practices:100 seo:100 | LCP 4.6 s | CLS 0 | TBT 40 ms | peso Total size was 685 KiB
+    first-contentful-paint 0.86 1.9 s
+    largest-contentful-paint 0.36 4.6 s
+    color-contrast 0 
+canada-en-datos-alberta-desktop performance:98 accessibility:97 best-practices:100 seo:100 | LCP 1.0 s | CLS 0.012 | TBT 0 ms | peso Total size was 685 KiB
+    color-contrast 0 

@@ -1,0 +1,122 @@
+200 https://assembly.nu.ca/
+200 https://climate.weather.gc.ca/climate_normals/index_e.html
+307 https://college-ic.ca/protecting-the-public/find-an-immigration-consultant
+200 https://commons.wikimedia.org/wiki/File:Flag_of_Nunavut.svg
+200 https://ircc.canada.ca/english/newcomers/services/index.asp
+200 https://itk.ca/
+200 https://langcom.nu.ca/
+200 https://minwage-salairemin.service.canada.ca/en/general.html
+200 https://natural-resources.canada.ca/earth-sciences/geography/download-geographical-names-data/9245
+200 https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/time-zones-daylight-saving-time
+200 https://rcmp.ca/en
+307 https://tunngavik.com/
+200 https://www.arcticcollege.com/
+200 https://www.calmair.com/
+The read operation timed out https://www.canada.ca/en/employment-social-development/services/sin/apply.html | navegador: 200 «Social Insurance Number: Apply - Canada.ca»
+The read operation timed out https://www.canada.ca/en/financial-consumer-agency/services/banking/opening-bank-account.html | navegador: 200 «Opening a bank account - Canada.ca»
+The read operation timed out https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html | navegador: 200 «Immigrate through Express Entry - Canada.ca»
+The read operation timed out https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html | navegador: 200 «Immigrate as a provincial nominee - Canada.ca»
+The read operation timed out https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html | navegador: 200 «Provinces and territories - Intergovernmental Affairs - Canada.ca»
+The read operation timed out https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html | navegador: 200 «How to apply - Canada child benefit (CCB) - Canada.ca»
+403 https://www.gov.nu.ca/en/education-and-schools | navegador: 403 «Just a moment...» | archivo: ['20261026053533', '200'] (verificación de Cloudflare)
+403 https://www.gov.nu.ca/en/education-and-schools/financial-assistance-nunavut-students-fans | navegador: 403 «Just a moment...» | archivo: ['20260422145859', '200'] (verificación de Cloudflare)
+403 https://www.gov.nu.ca/en/health/medical-travel | navegador: 403 «Just a moment...» | archivo: ['20260903014936', '200'] (verificación de Cloudflare)
+403 https://www.gov.nu.ca/en/health/nunavut-health-care-plan | navegador: 403 «Just a moment...» | archivo: ['20260730004441', '200'] (verificación de Cloudflare)
+403 https://www.gov.nu.ca/en/health/third-party-health-insurance | navegador: 403 «Just a moment...» | archivo: ['20260921165214', '200'] (verificación de Cloudflare)
+403 https://www.gov.nu.ca/en/immigration/immigrate-nunavut | navegador: 403 «Just a moment...» | archivo: ['20260731015748', '403'] (verificación de Cloudflare)
+403 https://www.gov.nu.ca/en/justice-and-individual-protection/labour-and-employment-standards | navegador: 403 «Just a moment...» | archivo: ['20250815105053', '403'] (verificación de Cloudflare)
+403 https://www.gov.nu.ca/en/social-supports/income-assistance | navegador: 403 «Just a moment...» | archivo: ['20250120061600', '200'] (verificación de Cloudflare)
+403 https://www.gov.nu.ca/en/transportation/drivers-licences | navegador: 403 «Just a moment...» | archivo: ['20250806073822', '403'] (verificación de Cloudflare)
+200 https://www.iana.org/time-zones
+200 https://www.iqaluit.ca/
+200 https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=Nunavut
+200 https://www.jobbank.gc.ca/trend-analysis/job-market-reports/nunavut/environmental-scan
+200 https://www.nunavuthousing.ca/
+200 https://www.nutritionnorthcanada.gc.ca/eng/1415538638170/1415538670874
+200 https://www.nutritionnorthcanada.gc.ca/eng/1415540731169/1415540791407
+200 https://www.qec.nu.ca/
+200 https://www.qiniq.com/
+200 https://www.rcaanc-cirnac.gc.ca/eng/1100100014187/1534785248701
+200 https://www.rcaanc-cirnac.gc.ca/eng/1100100030601/1542738744002
+200 https://www.statcan.gc.ca/en/lode/databases/odef
+200 https://www.statcan.gc.ca/en/lode/databases/odhf
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204001 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204003 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204005 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204007 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204009 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204010 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204011 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204012 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204015 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204018 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204019 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204020 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204022 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204025 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204030 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205014 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205015 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205016 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205017 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205019 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205023 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205027 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205033 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208047 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208059 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208065 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208068 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208073 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208081 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208087 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208098 | navegador: 403 «Just a moment...»
+403 https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21 | navegador: 403 «Just a moment...»
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410022301
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410029201
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710000501
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710000901
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610022201
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610040201
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810021601
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810022201
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810026401
+200 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810030701
+86 enlaces; 35 con problemas
+PROBLEMA https://www.gov.nu.ca/en/immigration/immigrate-nunavut
+PROBLEMA https://www.gov.nu.ca/en/justice-and-individual-protection/labour-and-employment-standards
+PROBLEMA https://www.gov.nu.ca/en/transportation/drivers-licences
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204001
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204003
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204005
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204007
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204009
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204010
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204011
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204012
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204015
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204018
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204019
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204020
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204022
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204025
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056204030
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205014
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205015
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205016
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205017
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205019
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205023
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205027
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056205033
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208047
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208059
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208065
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208068
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208073
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208081
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208087
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056208098
+PROBLEMA https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21

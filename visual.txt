@@ -1,0 +1,40 @@
+computador nu-guia Cargando el directorio… 1046ms 623 KB desborde: false errores: 0 toques<24: 0 letra<13: 73
+computador nu-iqaluit undefined 861ms 469 KB desborde: false errores: 0 toques<24: 2 letra<13: 22
+computador nu-rankin undefined 777ms 469 KB desborde: false errores: 0 toques<24: 1 letra<13: 20
+computador nu-kinngait undefined 762ms 465 KB desborde: false errores: 0 toques<24: 1 letra<13: 20
+computador nu-grise undefined 775ms 465 KB desborde: false errores: 0 toques<24: 1 letra<13: 19
+computador ab-guia Cargando el directorio… 822ms 618 KB desborde: false errores: 0 toques<24: 0 letra<13: 79
+computador ab-calgary undefined 817ms 447 KB desborde: false errores: 0 toques<24: 3 letra<13: 26
+tableta nu-guia Cargando el directorio… 821ms 623 KB desborde: false errores: 0 toques<24: 0 letra<13: 73
+tableta nu-iqaluit undefined 726ms 469 KB desborde: false errores: 0 toques<24: 2 letra<13: 22
+tableta nu-rankin undefined 747ms 469 KB desborde: false errores: 0 toques<24: 1 letra<13: 20
+tableta nu-kinngait undefined 713ms 465 KB desborde: false errores: 0 toques<24: 1 letra<13: 20
+tableta nu-grise undefined 723ms 465 KB desborde: false errores: 0 toques<24: 1 letra<13: 19
+tableta ab-guia Cargando el directorio… 785ms 618 KB desborde: false errores: 0 toques<24: 0 letra<13: 79
+tableta ab-calgary undefined 694ms 447 KB desborde: false errores: 0 toques<24: 3 letra<13: 26
+celular nu-guia Cargando el directorio… 854ms 623 KB desborde: false errores: 0 toques<24: 0 letra<13: 73
+celular nu-iqaluit undefined 749ms 469 KB desborde: false errores: 0 toques<24: 1 letra<13: 22
+celular nu-rankin undefined 753ms 469 KB desborde: false errores: 0 toques<24: 0 letra<13: 20
+celular nu-kinngait undefined 736ms 465 KB desborde: false errores: 0 toques<24: 0 letra<13: 20
+celular nu-grise undefined 687ms 465 KB desborde: false errores: 0 toques<24: 0 letra<13: 19
+celular ab-guia Cargando el directorio… 769ms 618 KB desborde: false errores: 0 toques<24: 0 letra<13: 79
+celular ab-calgary undefined 693ms 447 KB desborde: false errores: 0 toques<24: 2 letra<13: 26
+pequeno nu-guia Cargando el directorio… 856ms 623 KB desborde: false errores: 0 toques<24: 0 letra<13: 73
+pequeno nu-iqaluit undefined 719ms 469 KB desborde: false errores: 0 toques<24: 1 letra<13: 22
+pequeno nu-rankin undefined 719ms 469 KB desborde: false errores: 0 toques<24: 0 letra<13: 20
+pequeno nu-kinngait undefined 702ms 465 KB desborde: false errores: 0 toques<24: 0 letra<13: 20
+pequeno nu-grise undefined 725ms 465 KB desborde: false errores: 0 toques<24: 0 letra<13: 19
+axe computador nu-guia color-contrast(serious) x1, landmark-complementary-is-top-level(moderate) x1
+axe computador nu-iqaluit color-contrast(serious) x1
+axe computador nu-rankin color-contrast(serious) x1
+axe computador nu-kinngait color-contrast(serious) x1
+axe computador nu-grise color-contrast(serious) x1
+axe computador ab-guia color-contrast(serious) x1, landmark-complementary-is-top-level(moderate) x1
+axe computador ab-calgary color-contrast(serious) x1
+axe celular nu-guia color-contrast(serious) x1, image-redundant-alt(minor) x1, landmark-complementary-is-top-level(moderate) x1
+axe celular nu-iqaluit color-contrast(serious) x1
+axe celular nu-rankin color-contrast(serious) x1
+axe celular nu-kinngait color-contrast(serious) x1
+axe celular nu-grise color-contrast(serious) x1
+axe celular ab-guia color-contrast(serious) x1, image-redundant-alt(minor) x1, landmark-complementary-is-top-level(moderate) x1
+axe celular ab-calgary color-contrast(serious) x1

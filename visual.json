@@ -1,0 +1,2439 @@
+{
+ "paginas": {
+  "computador nu-guia": {
+   "estado": "Cargando el directorio…",
+   "ms": 1046,
+   "metricas": {
+    "dcl": 456,
+    "load": 484,
+    "transfer": "623 KB",
+    "recursos": 18
+   },
+   "err": [],
+   "titulo": "Nunavut en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Nunavut",
+   "sw": 1440,
+   "cw": 1440,
+   "alto": 16816,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-panel__note 12.48px",
+    "SMALL.cd-zone__note 12.16px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__unit 12.8px",
+    "P.cd-indicator__note 12.8px",
+    "P.cd-indicator__src 12.16px"
+   ],
+   "nletra": 73,
+   "relojes": [
+    "cdClock: Hora local en Iqaluit 3:29:23a. m. Miércoles, 4 de noviembre de 2026 De noche",
+    ": 2:29 a. m.",
+    ": 1:29 a. m.",
+    ": 3:29 a. m."
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "74x74",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/bandera-nunavut.svg",
+     "nat": "1200x675",
+     "vis": "92x53",
+     "alt": "Bandera de Nunavut: mitad izquierda amarilla y mit",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": {
+    "paths": 0,
+    "circulos": 0,
+    "alto": 0,
+    "ancho": 440
+   },
+   "lista": 0,
+   "tarjetas": 0,
+   "noticias": "Noticias de Nunavut\n\nLo más reciente de El Podcast del Migrante sobre Nunavut.\n\nTodavía no hay noticias publicadas sobre esta región.",
+   "secciones": [
+    "poblacion:1200",
+    "idiomas:1049",
+    "geografia:1407",
+    "economia:1063",
+    "empleo:1515",
+    "inmigracion:885",
+    "vivienda:816",
+    "salud:728",
+    "educacion:645",
+    "transporte:630",
+    "vida:596",
+    "ciudades:911",
+    "localidades:1363",
+    "recien-llegado:1252",
+    "noticias:203",
+    "fuentes:938"
+   ],
+   "directorio": {
+    "igloolik": 1,
+    "iqaluit": [
+     "Iqaluit Ficha completa Ciudad (City) · Qikiqtaaluk · región Nunavut 7,429 hab."
+    ],
+    "vacio": "No encontramos localidades con esos criterios. Prueba con otro nombre o quita un filtro.",
+    "pob1": {
+     "opcion": "100,000 o más",
+     "estado": "No encontramos localidades con esos criterios. Prueba con otro nombre o quita un filtro."
+    },
+    "opcionesPob": [
+     "Cualquier tamaño",
+     "100,000 o más",
+     "10,000 a 99,999",
+     "1,000 a 9,999",
+     "1 a 999",
+     "0 habitantes",
+     "Con dato de población",
+     "Sin dato de población"
+    ],
+    "opcionesRegionEco": [
+     "Todas las regiones",
+     "Nunavut"
+    ],
+    "opcionesSub": [
+     "Todos",
+     "Kitikmeot",
+     "Kivalliq",
+     "Qikiqtaaluk"
+    ],
+    "inicial": "71 localidades encontradas de 71."
+   }
+  },
+  "computador nu-iqaluit": {
+   "ms": 861,
+   "metricas": {
+    "dcl": 274,
+    "load": 279,
+    "transfer": "469 KB",
+    "recursos": 15
+   },
+   "err": [],
+   "titulo": "Iqaluit, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Iqaluit",
+   "sw": 1440,
+   "cw": 1440,
+   "alto": 5498,
+   "anchos": [],
+   "peq": [
+    "Sitio oficial de Iqaluit 1280x21",
+    "Statistics Canada — Perfil del 1280x21"
+   ],
+   "npeq": 2,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px",
+    "P.cd-indicator__label 12.8px"
+   ],
+   "nletra": 22,
+   "relojes": [
+    "America/Iqaluit: Hora local en Iqaluit 3:29:32a. m. Miércoles, 4 de noviembre de 2026 De noche"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "74x74",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "360x478",
+     "alt": "Mapa de Nunavut con la ubicación de Iqaluit",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:692",
+    "comunidades:332",
+    "economia-empleo:586",
+    "vivienda:297",
+    "educacion:413",
+    "salud:401",
+    "transporte:271",
+    "recien-llegados:283",
+    "familias:248",
+    "enlaces:527"
+   ]
+  },
+  "computador nu-rankin": {
+   "ms": 777,
+   "metricas": {
+    "dcl": 231,
+    "load": 241,
+    "transfer": "469 KB",
+    "recursos": 15
+   },
+   "err": [],
+   "titulo": "Rankin Inlet, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Rankin Inlet",
+   "sw": 1440,
+   "cw": 1440,
+   "alto": 5017,
+   "anchos": [],
+   "peq": [
+    "Statistics Canada — Perfil del 1280x21"
+   ],
+   "npeq": 1,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 20,
+   "relojes": [
+    "America/Rankin_Inlet: Hora local en Rankin Inlet 2:29:35a. m. Miércoles, 4 de noviembre de 2026 De noc"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "74x74",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "360x478",
+     "alt": "Mapa de Nunavut con la ubicación de Rankin Inlet",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:692",
+    "economia-empleo:586",
+    "vivienda:297",
+    "educacion:326",
+    "salud:401",
+    "transporte:271",
+    "recien-llegados:283",
+    "familias:248",
+    "enlaces:448"
+   ]
+  },
+  "computador nu-kinngait": {
+   "ms": 762,
+   "metricas": {
+    "dcl": 202,
+    "load": 231,
+    "transfer": "465 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Kinngait, Nunavut: información básica — El Podcast del Migrante",
+   "h1": "Kinngait",
+   "sw": 1440,
+   "cw": 1440,
+   "alto": 4992,
+   "anchos": [],
+   "peq": [
+    "Statistics Canada — Perfil del 1280x21"
+   ],
+   "npeq": 1,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 20,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "74x74",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "360x478",
+     "alt": "Mapa de Nunavut con la ubicación de Kinngait",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:692",
+    "economia-empleo:586",
+    "vivienda:297",
+    "educacion:413",
+    "salud:349",
+    "transporte:271",
+    "recien-llegados:283",
+    "familias:248",
+    "enlaces:448"
+   ]
+  },
+  "computador nu-grise": {
+   "ms": 775,
+   "metricas": {
+    "dcl": 215,
+    "load": 244,
+    "transfer": "465 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Grise Fiord, Nunavut: información básica — El Podcast del Migrante",
+   "h1": "Grise Fiord",
+   "sw": 1440,
+   "cw": 1440,
+   "alto": 4825,
+   "anchos": [],
+   "peq": [
+    "Statistics Canada — Perfil del 1280x21"
+   ],
+   "npeq": 1,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 19,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "74x74",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "360x478",
+     "alt": "Mapa de Nunavut con la ubicación de Grise Fiord",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:692",
+    "economia-empleo:586",
+    "vivienda:297",
+    "educacion:326",
+    "salud:349",
+    "transporte:271",
+    "recien-llegados:283",
+    "familias:248",
+    "enlaces:448"
+   ]
+  },
+  "computador ab-guia": {
+   "estado": "Cargando el directorio…",
+   "ms": 822,
+   "metricas": {
+    "dcl": 292,
+    "load": 300,
+    "transfer": "618 KB",
+    "recursos": 17
+   },
+   "err": [],
+   "titulo": "Alberta en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Alberta",
+   "sw": 1440,
+   "cw": 1440,
+   "alto": 13577,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-panel__note 12.48px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__unit 12.8px",
+    "P.cd-indicator__note 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 79,
+   "relojes": [
+    "cdClock: Hora local en Edmonton 1:29:43a. m. Miércoles, 4 de noviembre de 2026 De noche"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "74x74",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": {
+    "paths": 0,
+    "circulos": 0,
+    "alto": 0,
+    "ancho": 440
+   },
+   "lista": 0,
+   "tarjetas": 0,
+   "noticias": "Noticias de Alberta\n\nLo más reciente de El Podcast del Migrante sobre Alberta.\n\n2 de noviembre de 2026\n\nSalud en Canadá: ¿es más difícil recibir atención médica en las comunidades rurales?\n\n2 de novie",
+   "secciones": [
+    "poblacion:857",
+    "economia:601",
+    "empleo:1434",
+    "vivienda:1058",
+    "salud:835",
+    "educacion:452",
+    "inmigracion:1187",
+    "beneficios:626",
+    "integracion:487",
+    "seguridad:879",
+    "localidades:814",
+    "recien-llegado:1390",
+    "noticias:575",
+    "fuentes:1094"
+   ]
+  },
+  "computador ab-calgary": {
+   "ms": 817,
+   "metricas": {
+    "dcl": 231,
+    "load": 260,
+    "transfer": "447 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Calgary, Alberta: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Calgary",
+   "sw": 1440,
+   "cw": 1440,
+   "alto": 5926,
+   "anchos": [],
+   "peq": [
+    "Sitio oficial de Calgary 1280x21",
+    "Gobierno de Alberta — Perfiles 1280x21",
+    "Gobierno de Alberta — Tipos de 1280x21"
+   ],
+   "npeq": 3,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 26,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "74x74",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/alberta-regiones.svg",
+     "nat": "581x1025",
+     "vis": "360x635",
+     "alt": "Mapa de Alberta con la ubicación de Calgary",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:829",
+    "economia-empleo:770",
+    "vivienda:445",
+    "educacion:729",
+    "salud:626",
+    "transporte:191",
+    "recien-llegados:286",
+    "familias:346",
+    "enlaces:569"
+   ]
+  },
+  "tableta nu-guia": {
+   "estado": "Cargando el directorio…",
+   "ms": 821,
+   "metricas": {
+    "dcl": 291,
+    "load": 298,
+    "transfer": "623 KB",
+    "recursos": 18
+   },
+   "err": [],
+   "titulo": "Nunavut en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Nunavut",
+   "sw": 768,
+   "cw": 768,
+   "alto": 18961,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-panel__note 12.48px",
+    "SMALL.cd-zone__note 12.16px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__unit 12.8px",
+    "P.cd-indicator__note 12.8px",
+    "P.cd-indicator__src 12.16px"
+   ],
+   "nletra": 73,
+   "relojes": [
+    "cdClock: Hora local en Iqaluit 3:29:53a. m. Miércoles, 4 de noviembre de 2026 De noche",
+    ": 2:29 a. m.",
+    ": 1:29 a. m.",
+    ": 3:29 a. m."
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "66x66",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/bandera-nunavut.svg",
+     "nat": "1200x675",
+     "vis": "74x42",
+     "alt": "Bandera de Nunavut: mitad izquierda amarilla y mit",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": {
+    "paths": 0,
+    "circulos": 0,
+    "alto": 0,
+    "ancho": 440
+   },
+   "lista": 0,
+   "tarjetas": 0,
+   "noticias": "Noticias de Nunavut\n\nLo más reciente de El Podcast del Migrante sobre Nunavut.\n\nTodavía no hay noticias publicadas sobre esta región.",
+   "secciones": [
+    "poblacion:1605",
+    "idiomas:1041",
+    "geografia:1399",
+    "economia:1055",
+    "empleo:2106",
+    "inmigracion:878",
+    "vivienda:809",
+    "salud:720",
+    "educacion:637",
+    "transporte:623",
+    "vida:588",
+    "ciudades:903",
+    "localidades:1528",
+    "recien-llegado:1906",
+    "noticias:195",
+    "fuentes:938"
+   ],
+   "directorio": {
+    "igloolik": 1,
+    "iqaluit": [
+     "Iqaluit Ficha completa Ciudad (City) · Qikiqtaaluk · región Nunavut 7,429 hab."
+    ],
+    "vacio": "No encontramos localidades con esos criterios. Prueba con otro nombre o quita un filtro.",
+    "pob1": {
+     "opcion": "100,000 o más",
+     "estado": "No encontramos localidades con esos criterios. Prueba con otro nombre o quita un filtro."
+    },
+    "opcionesPob": [
+     "Cualquier tamaño",
+     "100,000 o más",
+     "10,000 a 99,999",
+     "1,000 a 9,999",
+     "1 a 999",
+     "0 habitantes",
+     "Con dato de población",
+     "Sin dato de población"
+    ],
+    "opcionesRegionEco": [
+     "Todas las regiones",
+     "Nunavut"
+    ],
+    "opcionesSub": [
+     "Todos",
+     "Kitikmeot",
+     "Kivalliq",
+     "Qikiqtaaluk"
+    ],
+    "inicial": "71 localidades encontradas de 71."
+   }
+  },
+  "tableta nu-iqaluit": {
+   "ms": 726,
+   "metricas": {
+    "dcl": 183,
+    "load": 188,
+    "transfer": "469 KB",
+    "recursos": 15
+   },
+   "err": [],
+   "titulo": "Iqaluit, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Iqaluit",
+   "sw": 768,
+   "cw": 768,
+   "alto": 5877,
+   "anchos": [],
+   "peq": [
+    "Sitio oficial de Iqaluit 728x21",
+    "Statistics Canada — Perfil del 728x21"
+   ],
+   "npeq": 2,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px",
+    "P.cd-indicator__label 12.8px"
+   ],
+   "nletra": 22,
+   "relojes": [
+    "America/Iqaluit: Hora local en Iqaluit 3:30:02a. m. Miércoles, 4 de noviembre de 2026 De noche"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "66x66",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "360x478",
+     "alt": "Mapa de Nunavut con la ubicación de Iqaluit",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:684",
+    "comunidades:325",
+    "economia-empleo:598",
+    "vivienda:313",
+    "educacion:405",
+    "salud:393",
+    "transporte:263",
+    "recien-llegados:275",
+    "familias:240",
+    "enlaces:527"
+   ]
+  },
+  "tableta nu-rankin": {
+   "ms": 747,
+   "metricas": {
+    "dcl": 194,
+    "load": 199,
+    "transfer": "469 KB",
+    "recursos": 15
+   },
+   "err": [],
+   "titulo": "Rankin Inlet, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Rankin Inlet",
+   "sw": 768,
+   "cw": 768,
+   "alto": 5386,
+   "anchos": [],
+   "peq": [
+    "Statistics Canada — Perfil del 728x21"
+   ],
+   "npeq": 1,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 20,
+   "relojes": [
+    "America/Rankin_Inlet: Hora local en Rankin Inlet 2:30:04a. m. Miércoles, 4 de noviembre de 2026 De noc"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "66x66",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "360x478",
+     "alt": "Mapa de Nunavut con la ubicación de Rankin Inlet",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:684",
+    "economia-empleo:598",
+    "vivienda:313",
+    "educacion:319",
+    "salud:393",
+    "transporte:263",
+    "recien-llegados:275",
+    "familias:240",
+    "enlaces:448"
+   ]
+  },
+  "tableta nu-kinngait": {
+   "ms": 713,
+   "metricas": {
+    "dcl": 167,
+    "load": 182,
+    "transfer": "465 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Kinngait, Nunavut: información básica — El Podcast del Migrante",
+   "h1": "Kinngait",
+   "sw": 768,
+   "cw": 768,
+   "alto": 5389,
+   "anchos": [],
+   "peq": [
+    "Statistics Canada — Perfil del 728x21"
+   ],
+   "npeq": 1,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 20,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "66x66",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "360x478",
+     "alt": "Mapa de Nunavut con la ubicación de Kinngait",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:684",
+    "economia-empleo:598",
+    "vivienda:313",
+    "educacion:405",
+    "salud:341",
+    "transporte:263",
+    "recien-llegados:275",
+    "familias:240",
+    "enlaces:448"
+   ]
+  },
+  "tableta nu-grise": {
+   "ms": 723,
+   "metricas": {
+    "dcl": 170,
+    "load": 189,
+    "transfer": "465 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Grise Fiord, Nunavut: información básica — El Podcast del Migrante",
+   "h1": "Grise Fiord",
+   "sw": 768,
+   "cw": 768,
+   "alto": 5214,
+   "anchos": [],
+   "peq": [
+    "Statistics Canada — Perfil del 728x21"
+   ],
+   "npeq": 1,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 19,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "66x66",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "360x478",
+     "alt": "Mapa de Nunavut con la ubicación de Grise Fiord",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:684",
+    "economia-empleo:598",
+    "vivienda:313",
+    "educacion:319",
+    "salud:341",
+    "transporte:263",
+    "recien-llegados:275",
+    "familias:240",
+    "enlaces:448"
+   ]
+  },
+  "tableta ab-guia": {
+   "estado": "Cargando el directorio…",
+   "ms": 785,
+   "metricas": {
+    "dcl": 257,
+    "load": 264,
+    "transfer": "618 KB",
+    "recursos": 17
+   },
+   "err": [],
+   "titulo": "Alberta en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Alberta",
+   "sw": 768,
+   "cw": 768,
+   "alto": 16126,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-panel__note 12.48px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__unit 12.8px",
+    "P.cd-indicator__note 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 79,
+   "relojes": [
+    "cdClock: Hora local en Edmonton 1:30:11a. m. Miércoles, 4 de noviembre de 2026 De noche"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "66x66",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": {
+    "paths": 0,
+    "circulos": 0,
+    "alto": 0,
+    "ancho": 440
+   },
+   "lista": 0,
+   "tarjetas": 0,
+   "noticias": "Noticias de Alberta\n\nLo más reciente de El Podcast del Migrante sobre Alberta.\n\n2 de noviembre de 2026\n\nSalud en Canadá: ¿es más difícil recibir atención médica en las comunidades rurales?\n\n2 de novie",
+   "secciones": [
+    "poblacion:849",
+    "economia:614",
+    "empleo:1928",
+    "vivienda:1568",
+    "salud:828",
+    "educacion:444",
+    "inmigracion:1179",
+    "beneficios:618",
+    "integracion:479",
+    "seguridad:891",
+    "localidades:931",
+    "recien-llegado:2227",
+    "noticias:679",
+    "fuentes:1094"
+   ]
+  },
+  "tableta ab-calgary": {
+   "ms": 694,
+   "metricas": {
+    "dcl": 143,
+    "load": 161,
+    "transfer": "447 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Calgary, Alberta: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Calgary",
+   "sw": 768,
+   "cw": 768,
+   "alto": 6255,
+   "anchos": [],
+   "peq": [
+    "Sitio oficial de Calgary 728x21",
+    "Gobierno de Alberta — Perfiles 728x21",
+    "Gobierno de Alberta — Tipos de 728x21"
+   ],
+   "npeq": 3,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 26,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "66x66",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/alberta-regiones.svg",
+     "nat": "581x1025",
+     "vis": "360x635",
+     "alt": "Mapa de Alberta con la ubicación de Calgary",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:821",
+    "economia-empleo:762",
+    "vivienda:459",
+    "educacion:722",
+    "salud:618",
+    "transporte:184",
+    "recien-llegados:278",
+    "familias:338",
+    "enlaces:569"
+   ]
+  },
+  "celular nu-guia": {
+   "estado": "Cargando el directorio…",
+   "ms": 854,
+   "metricas": {
+    "dcl": 269,
+    "load": 281,
+    "transfer": "623 KB",
+    "recursos": 18
+   },
+   "err": [],
+   "titulo": "Nunavut en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Nunavut",
+   "sw": 390,
+   "cw": 390,
+   "alto": 29572,
+   "anchos": [
+    "TABLE. 396",
+    "THEAD. 396",
+    "TR. 396",
+    "TH. 396",
+    "TBODY. 396",
+    "TR. 396",
+    "TD. 396",
+    "TR. 396"
+   ],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-panel__note 12.48px",
+    "SMALL.cd-zone__note 12.16px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__unit 12.8px",
+    "P.cd-indicator__note 12.8px",
+    "P.cd-indicator__src 12.16px"
+   ],
+   "nletra": 73,
+   "relojes": [
+    "cdClock: Hora local en Iqaluit 3:30:18a. m. Miércoles, 4 de noviembre de 2026 De noche",
+    ": 2:30 a. m.",
+    ": 1:30 a. m.",
+    ": 3:30 a. m."
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/bandera-nunavut.svg",
+     "nat": "1200x675",
+     "vis": "56x33",
+     "alt": "Bandera de Nunavut: mitad izquierda amarilla y mit",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": {
+    "paths": 0,
+    "circulos": 0,
+    "alto": 0,
+    "ancho": 350
+   },
+   "lista": 0,
+   "tarjetas": 0,
+   "noticias": "Noticias de Nunavut\n\nLo más reciente de El Podcast del Migrante sobre Nunavut.\n\nTodavía no hay noticias publicadas sobre esta región.",
+   "secciones": [
+    "poblacion:2621",
+    "idiomas:1372",
+    "geografia:2016",
+    "economia:1384",
+    "empleo:3234",
+    "inmigracion:1457",
+    "vivienda:1375",
+    "salud:1157",
+    "educacion:1024",
+    "transporte:1060",
+    "vida:924",
+    "ciudades:1188",
+    "localidades:2462",
+    "recien-llegado:3210",
+    "noticias:241",
+    "fuentes:1576"
+   ],
+   "directorio": {
+    "igloolik": 1,
+    "iqaluit": [
+     "Iqaluit Ficha completa Ciudad (City) · Qikiqtaaluk · región Nunavut 7,429 hab."
+    ],
+    "vacio": "No encontramos localidades con esos criterios. Prueba con otro nombre o quita un filtro.",
+    "pob1": {
+     "opcion": "100,000 o más",
+     "estado": "No encontramos localidades con esos criterios. Prueba con otro nombre o quita un filtro."
+    },
+    "opcionesPob": [
+     "Cualquier tamaño",
+     "100,000 o más",
+     "10,000 a 99,999",
+     "1,000 a 9,999",
+     "1 a 999",
+     "0 habitantes",
+     "Con dato de población",
+     "Sin dato de población"
+    ],
+    "opcionesRegionEco": [
+     "Todas las regiones",
+     "Nunavut"
+    ],
+    "opcionesSub": [
+     "Todos",
+     "Kitikmeot",
+     "Kivalliq",
+     "Qikiqtaaluk"
+    ],
+    "inicial": "71 localidades encontradas de 71."
+   }
+  },
+  "celular nu-iqaluit": {
+   "ms": 749,
+   "metricas": {
+    "dcl": 197,
+    "load": 226,
+    "transfer": "469 KB",
+    "recursos": 15
+   },
+   "err": [],
+   "titulo": "Iqaluit, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Iqaluit",
+   "sw": 390,
+   "cw": 390,
+   "alto": 8022,
+   "anchos": [],
+   "peq": [
+    "Sitio oficial de Iqaluit 350x21"
+   ],
+   "npeq": 1,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px",
+    "P.cd-indicator__label 12.8px"
+   ],
+   "nletra": 22,
+   "relojes": [
+    "America/Iqaluit: Hora local en Iqaluit 3:30:29a. m. Miércoles, 4 de noviembre de 2026 De noche"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "350x465",
+     "alt": "Mapa de Nunavut con la ubicación de Iqaluit",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:667",
+    "comunidades:367",
+    "economia-empleo:801",
+    "vivienda:465",
+    "educacion:516",
+    "salud:574",
+    "transporte:388",
+    "recien-llegados:436",
+    "familias:337",
+    "enlaces:767"
+   ]
+  },
+  "celular nu-rankin": {
+   "ms": 753,
+   "metricas": {
+    "dcl": 198,
+    "load": 217,
+    "transfer": "469 KB",
+    "recursos": 15
+   },
+   "err": [],
+   "titulo": "Rankin Inlet, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Rankin Inlet",
+   "sw": 390,
+   "cw": 390,
+   "alto": 7528,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 20,
+   "relojes": [
+    "America/Rankin_Inlet: Hora local en Rankin Inlet 2:30:32a. m. Miércoles, 4 de noviembre de 2026 De noc"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "350x465",
+     "alt": "Mapa de Nunavut con la ubicación de Rankin Inlet",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:667",
+    "economia-empleo:801",
+    "vivienda:465",
+    "educacion:415",
+    "salud:574",
+    "transporte:388",
+    "recien-llegados:436",
+    "familias:337",
+    "enlaces:667"
+   ]
+  },
+  "celular nu-kinngait": {
+   "ms": 736,
+   "metricas": {
+    "dcl": 183,
+    "load": 204,
+    "transfer": "465 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Kinngait, Nunavut: información básica — El Podcast del Migrante",
+   "h1": "Kinngait",
+   "sw": 390,
+   "cw": 390,
+   "alto": 7595,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 20,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "350x465",
+     "alt": "Mapa de Nunavut con la ubicación de Kinngait",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:667",
+    "economia-empleo:801",
+    "vivienda:465",
+    "educacion:516",
+    "salud:549",
+    "transporte:388",
+    "recien-llegados:436",
+    "familias:337",
+    "enlaces:667"
+   ]
+  },
+  "celular nu-grise": {
+   "ms": 687,
+   "metricas": {
+    "dcl": 143,
+    "load": 159,
+    "transfer": "465 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Grise Fiord, Nunavut: información básica — El Podcast del Migrante",
+   "h1": "Grise Fiord",
+   "sw": 390,
+   "cw": 390,
+   "alto": 7363,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 19,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "350x465",
+     "alt": "Mapa de Nunavut con la ubicación de Grise Fiord",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:667",
+    "economia-empleo:801",
+    "vivienda:465",
+    "educacion:415",
+    "salud:549",
+    "transporte:388",
+    "recien-llegados:436",
+    "familias:337",
+    "enlaces:667"
+   ]
+  },
+  "celular ab-guia": {
+   "estado": "Cargando el directorio…",
+   "ms": 769,
+   "metricas": {
+    "dcl": 242,
+    "load": 249,
+    "transfer": "618 KB",
+    "recursos": 17
+   },
+   "err": [],
+   "titulo": "Alberta en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Alberta",
+   "sw": 390,
+   "cw": 390,
+   "alto": 24952,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-panel__note 12.48px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__unit 12.8px",
+    "P.cd-indicator__note 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 79,
+   "relojes": [
+    "cdClock: Hora local en Edmonton 1:30:40a. m. Miércoles, 4 de noviembre de 2026 De noche"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": {
+    "paths": 0,
+    "circulos": 0,
+    "alto": 0,
+    "ancho": 350
+   },
+   "lista": 0,
+   "tarjetas": 0,
+   "noticias": "Noticias de Alberta\n\nLo más reciente de El Podcast del Migrante sobre Alberta.\n\n2 de noviembre de 2026\n\nSalud en Canadá: ¿es más difícil recibir atención médica en las comunidades rurales?\n\n2 de novie",
+   "secciones": [
+    "poblacion:1468",
+    "economia:692",
+    "empleo:2927",
+    "vivienda:2464",
+    "salud:1411",
+    "educacion:756",
+    "inmigracion:1523",
+    "beneficios:1089",
+    "integracion:734",
+    "seguridad:979",
+    "localidades:1416",
+    "recien-llegado:3723",
+    "noticias:1174",
+    "fuentes:1820"
+   ]
+  },
+  "celular ab-calgary": {
+   "ms": 693,
+   "metricas": {
+    "dcl": 145,
+    "load": 164,
+    "transfer": "447 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Calgary, Alberta: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Calgary",
+   "sw": 390,
+   "cw": 390,
+   "alto": 8914,
+   "anchos": [],
+   "peq": [
+    "Sitio oficial de Calgary 350x21",
+    "Gobierno de Alberta — Tipos de 350x21"
+   ],
+   "npeq": 2,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 26,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/alberta-regiones.svg",
+     "nat": "581x1025",
+     "vis": "350x617",
+     "alt": "Mapa de Alberta con la ubicación de Calgary",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:800",
+    "economia-empleo:1132",
+    "vivienda:782",
+    "educacion:1150",
+    "salud:770",
+    "transporte:179",
+    "recien-llegados:437",
+    "familias:509",
+    "enlaces:832"
+   ]
+  },
+  "pequeno nu-guia": {
+   "estado": "Cargando el directorio…",
+   "ms": 856,
+   "metricas": {
+    "dcl": 329,
+    "load": 336,
+    "transfer": "623 KB",
+    "recursos": 18
+   },
+   "err": [],
+   "titulo": "Nunavut en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Nunavut",
+   "sw": 360,
+   "cw": 360,
+   "alto": 31568,
+   "anchos": [
+    "TABLE. 396",
+    "THEAD. 396",
+    "TR. 396",
+    "TH. 396",
+    "TBODY. 396",
+    "TR. 396",
+    "TD. 396",
+    "TR. 396"
+   ],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-panel__note 12.48px",
+    "SMALL.cd-zone__note 12.16px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__unit 12.8px",
+    "P.cd-indicator__note 12.8px",
+    "P.cd-indicator__src 12.16px"
+   ],
+   "nletra": 73,
+   "relojes": [
+    "cdClock: Hora local en Iqaluit 3:30:51a. m. Miércoles, 4 de noviembre de 2026 De noche",
+    ": 2:30 a. m.",
+    ": 1:30 a. m.",
+    ": 3:30 a. m."
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/bandera-nunavut.svg",
+     "nat": "1200x675",
+     "vis": "56x33",
+     "alt": "Bandera de Nunavut: mitad izquierda amarilla y mit",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": {
+    "paths": 0,
+    "circulos": 0,
+    "alto": 0,
+    "ancho": 320
+   },
+   "lista": 0,
+   "tarjetas": 0,
+   "noticias": "Noticias de Nunavut\n\nLo más reciente de El Podcast del Migrante sobre Nunavut.\n\nTodavía no hay noticias publicadas sobre esta región.",
+   "secciones": [
+    "poblacion:2848",
+    "idiomas:1495",
+    "geografia:2213",
+    "economia:1463",
+    "empleo:3396",
+    "inmigracion:1611",
+    "vivienda:1531",
+    "salud:1263",
+    "educacion:1103",
+    "transporte:1113",
+    "vida:951",
+    "ciudades:1293",
+    "localidades:2561",
+    "recien-llegado:3426",
+    "noticias:241",
+    "fuentes:1708"
+   ],
+   "directorio": {
+    "igloolik": 1,
+    "iqaluit": [
+     "Iqaluit Ficha completa Ciudad (City) · Qikiqtaaluk · región Nunavut 7,429 hab."
+    ],
+    "vacio": "No encontramos localidades con esos criterios. Prueba con otro nombre o quita un filtro.",
+    "pob1": {
+     "opcion": "100,000 o más",
+     "estado": "No encontramos localidades con esos criterios. Prueba con otro nombre o quita un filtro."
+    },
+    "opcionesPob": [
+     "Cualquier tamaño",
+     "100,000 o más",
+     "10,000 a 99,999",
+     "1,000 a 9,999",
+     "1 a 999",
+     "0 habitantes",
+     "Con dato de población",
+     "Sin dato de población"
+    ],
+    "opcionesRegionEco": [
+     "Todas las regiones",
+     "Nunavut"
+    ],
+    "opcionesSub": [
+     "Todos",
+     "Kitikmeot",
+     "Kivalliq",
+     "Qikiqtaaluk"
+    ],
+    "inicial": "71 localidades encontradas de 71."
+   }
+  },
+  "pequeno nu-iqaluit": {
+   "ms": 719,
+   "metricas": {
+    "dcl": 173,
+    "load": 177,
+    "transfer": "469 KB",
+    "recursos": 15
+   },
+   "err": [],
+   "titulo": "Iqaluit, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Iqaluit",
+   "sw": 360,
+   "cw": 360,
+   "alto": 8326,
+   "anchos": [],
+   "peq": [
+    "Sitio oficial de Iqaluit 320x21"
+   ],
+   "npeq": 1,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px",
+    "P.cd-indicator__label 12.8px"
+   ],
+   "nletra": 22,
+   "relojes": [
+    "America/Iqaluit: Hora local en Iqaluit 3:31:01a. m. Miércoles, 4 de noviembre de 2026 De noche"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "320x425",
+     "alt": "Mapa de Nunavut con la ubicación de Iqaluit",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:627",
+    "comunidades:387",
+    "economia-empleo:821",
+    "vivienda:491",
+    "educacion:516",
+    "salud:621",
+    "transporte:415",
+    "recien-llegados:463",
+    "familias:363",
+    "enlaces:789"
+   ]
+  },
+  "pequeno nu-rankin": {
+   "ms": 719,
+   "metricas": {
+    "dcl": 167,
+    "load": 185,
+    "transfer": "469 KB",
+    "recursos": 15
+   },
+   "err": [],
+   "titulo": "Rankin Inlet, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante",
+   "h1": "Rankin Inlet",
+   "sw": 360,
+   "cw": 360,
+   "alto": 7817,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "SPAN.cd-clock__label 11.52px",
+    "SPAN. 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 20,
+   "relojes": [
+    "America/Rankin_Inlet: Hora local en Rankin Inlet 2:31:03a. m. Miércoles, 4 de noviembre de 2026 De noc"
+   ],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "320x425",
+     "alt": "Mapa de Nunavut con la ubicación de Rankin Inlet",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:627",
+    "economia-empleo:821",
+    "vivienda:491",
+    "educacion:441",
+    "salud:647",
+    "transporte:415",
+    "recien-llegados:463",
+    "familias:363",
+    "enlaces:689"
+   ]
+  },
+  "pequeno nu-kinngait": {
+   "ms": 702,
+   "metricas": {
+    "dcl": 146,
+    "load": 172,
+    "transfer": "465 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Kinngait, Nunavut: información básica — El Podcast del Migrante",
+   "h1": "Kinngait",
+   "sw": 360,
+   "cw": 360,
+   "alto": 7850,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 20,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "320x425",
+     "alt": "Mapa de Nunavut con la ubicación de Kinngait",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:627",
+    "economia-empleo:821",
+    "vivienda:491",
+    "educacion:516",
+    "salud:575",
+    "transporte:415",
+    "recien-llegados:463",
+    "familias:363",
+    "enlaces:689"
+   ]
+  },
+  "pequeno nu-grise": {
+   "ms": 725,
+   "metricas": {
+    "dcl": 158,
+    "load": 194,
+    "transfer": "465 KB",
+    "recursos": 13
+   },
+   "err": [],
+   "titulo": "Grise Fiord, Nunavut: información básica — El Podcast del Migrante",
+   "h1": "Grise Fiord",
+   "sw": 360,
+   "cw": 360,
+   "alto": 7671,
+   "anchos": [],
+   "peq": [],
+   "npeq": 0,
+   "letra": [
+    "P.cd-kicker 12.48px",
+    "SPAN. 12.48px",
+    "A. 12.48px",
+    "SMALL.cd-fact__period 11.52px",
+    "P.cd-indicator__label 12.8px",
+    "P.cd-indicator__src 12.16px",
+    "A. 12.16px"
+   ],
+   "nletra": 19,
+   "relojes": [],
+   "imgs": [
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "42x42",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "0x0",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    },
+    {
+     "src": "/assets/canada-en-datos/nunavut-regiones.svg",
+     "nat": "600x797",
+     "vis": "320x425",
+     "alt": "Mapa de Nunavut con la ubicación de Grise Fiord",
+     "lazy": "lazy"
+    },
+    {
+     "src": "/assets/logo.png",
+     "nat": "500x500",
+     "vis": "40x40",
+     "alt": "El Podcast del Migrante",
+     "lazy": "auto"
+    }
+   ],
+   "mapa": null,
+   "lista": 0,
+   "tarjetas": 0,
+   "secciones": [
+    "ubicacion:627",
+    "economia-empleo:821",
+    "vivienda:491",
+    "educacion:441",
+    "salud:602",
+    "transporte:415",
+    "recien-llegados:463",
+    "familias:363",
+    "enlaces:689"
+   ]
+  }
+ },
+ "axe": {
+  "computador nu-guia": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   },
+   {
+    "id": "landmark-complementary-is-top-level",
+    "impact": "moderate",
+    "n": 1,
+    "ej": [
+     ".cd-explainer —   The complementary landmark is contained in another landmark."
+    ]
+   }
+  ],
+  "computador nu-iqaluit": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "computador nu-rankin": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "computador nu-kinngait": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "computador nu-grise": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "computador ab-guia": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   },
+   {
+    "id": "landmark-complementary-is-top-level",
+    "impact": "moderate",
+    "n": 1,
+    "ej": [
+     ".cd-explainer —   The complementary landmark is contained in another landmark."
+    ]
+   }
+  ],
+  "computador ab-calgary": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "celular nu-guia": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   },
+   {
+    "id": "image-redundant-alt",
+    "impact": "minor",
+    "n": 1,
+    "ej": [
+     ".masthead-brand > img[src$=\"logo.png\"][alt=\"El Podcast del Migrante\"] —   Element contains <img> element with alt text that duplicates existing text"
+    ]
+   },
+   {
+    "id": "landmark-complementary-is-top-level",
+    "impact": "moderate",
+    "n": 1,
+    "ej": [
+     ".cd-explainer —   The complementary landmark is contained in another landmark."
+    ]
+   }
+  ],
+  "celular nu-iqaluit": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "celular nu-rankin": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "celular nu-kinngait": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "celular nu-grise": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ],
+  "celular ab-guia": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   },
+   {
+    "id": "image-redundant-alt",
+    "impact": "minor",
+    "n": 1,
+    "ej": [
+     ".masthead-brand > img —   Element contains <img> element with alt text that duplicates existing text"
+    ]
+   },
+   {
+    "id": "landmark-complementary-is-top-level",
+    "impact": "moderate",
+    "n": 1,
+    "ej": [
+     ".cd-explainer —   The complementary landmark is contained in another landmark."
+    ]
+   }
+  ],
+  "celular ab-calgary": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "ej": [
+     ".cd-share__btn--principal > span —   Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #6f9a03, font size: 11.0pt (14.72px), font weight: bold). Expect"
+    ]
+   }
+  ]
+ }
+}

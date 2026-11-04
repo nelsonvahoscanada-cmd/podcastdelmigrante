@@ -1,0 +1,195 @@
+
+=== StatCan: últimas publicaciones ===
+  17100009: Population estimates, quarterly | inicio 1946-01-01 fin 2026-07-01 | publicado 2026-09-23T08:30
+  17100005: Population estimates on July 1, by age and gender | inicio 1971-01-01 fin 2026-01-01 | publicado 2026-09-23T08:30
+  14100292: Labour force characteristics by territory, three-month moving average, | inicio 1992-03-01 fin 2026-09-01 | publicado 2026-10-09T08:30
+  14100223: Employment and average weekly earnings (including overtime) for all em | inicio 2001-01-01 fin 2026-08-01 | publicado 2026-10-29T08:30
+  36100222: Gross domestic product, expenditure-based, provincial and territorial, | inicio 1981-01-01 fin 2024-01-01 | publicado 2025-11-06T08:30
+  36100402: Gross domestic product (GDP) at basic prices, by industry, provinces a | inicio 1997-01-01 fin 2024-01-01 | publicado 2025-05-01T08:30
+  18100004: Consumer Price Index, monthly, not seasonally adjusted | inicio 1914-01-01 fin 2026-09-01 | publicado 2026-10-19T08:30
+  17100008: Estimates of the components of demographic growth, annual | inicio 1971-01-01 fin 2025-01-01 | publicado 2026-09-23T08:30
+  17100040: Estimates of the components of international migration, quarterly | inicio 1946-01-01 fin 2026-04-01 | publicado 2026-09-23T08:30
+
+=== 17-10-0009 población Nunavut ===
+   2025-04-01 | Nunavut | Persons | 41987
+   2025-07-01 | Nunavut | Persons | 42108
+   2025-10-01 | Nunavut | Persons | 42233
+   2026-01-01 | Nunavut | Persons | 42317
+   2026-04-01 | Nunavut | Persons | 42642
+   2026-07-01 | Nunavut | Persons | 43091
+
+=== 14-10-0292 desempleo Nunavut (desestacionalizado) ===
+   2026-09 | Nunavut | Unemployment rate | Women+ | 15 years and over | Standard error of month-to-month change | Seasonally adjusted | Percent | 1.2
+   2026-09 | Nunavut | Unemployment rate | Women+ | 15 years and over | Standard error of year-over-year change | Seasonally adjusted | Percent | 2.0
+   2026-09 | Nunavut | Unemployment rate | Women+ | 25 years and over | Estimate | Seasonally adjusted | Percent | 9.3
+   2026-09 | Nunavut | Unemployment rate | Women+ | 25 years and over | Standard error of estimate | Seasonally adjusted | Percent | 1.6
+   2026-09 | Nunavut | Unemployment rate | Women+ | 25 years and over | Standard error of month-to-month change | Seasonally adjusted | Percent | 1.2
+   2026-09 | Nunavut | Unemployment rate | Women+ | 25 years and over | Standard error of year-over-year change | Seasonally adjusted | Percent | 2.2
+
+=== 14-10-0223 ganancias semanales Nunavut ===
+   2026-05 | Nunavut | Average weekly earnings including overtime for all employees | Industrial aggregate excluding unclassified businesses [11-91N] | Dollars | 1861.19
+   2026-06 | Nunavut | Average weekly earnings including overtime for all employees | Industrial aggregate excluding unclassified businesses [11-91N] | Dollars | 1872.02
+   2026-07 | Nunavut | Average weekly earnings including overtime for all employees | Industrial aggregate excluding unclassified businesses [11-91N] | Dollars | 1843.73
+   2026-08 | Nunavut | Average weekly earnings including overtime for all employees | Industrial aggregate excluding unclassified businesses [11-91N] | Dollars | 1889.22
+
+=== 18-10-0004 IPC Iqaluit, todos los artículos ===
+   2025-06 | Iqaluit, Nunavut | All-items | 2002=100 | 145.3
+   2025-07 | Iqaluit, Nunavut | All-items | 2002=100 | 145.6
+   2025-08 | Iqaluit, Nunavut | All-items | 2002=100 | 145.6
+   2025-09 | Iqaluit, Nunavut | All-items | 2002=100 | 145.2
+   2025-10 | Iqaluit, Nunavut | All-items | 2002=100 | 145.1
+   2025-11 | Iqaluit, Nunavut | All-items | 2002=100 | 146.1
+   2025-12 | Iqaluit, Nunavut | All-items | 2002=100 | 147.0
+   2026-01 | Iqaluit, Nunavut | All-items | 2002=100 | 145.9
+   2026-02 | Iqaluit, Nunavut | All-items | 2002=100 | 145.8
+   2026-03 | Iqaluit, Nunavut | All-items | 2002=100 | 146.0
+   2026-04 | Iqaluit, Nunavut | All-items | 2002=100 | 146.6
+   2026-05 | Iqaluit, Nunavut | All-items | 2002=100 | 147.5
+   2026-06 | Iqaluit, Nunavut | All-items | 2002=100 | 149.3
+   2026-07 | Iqaluit, Nunavut | All-items | 2002=100 | 150.6
+   2026-08 | Iqaluit, Nunavut | All-items | 2002=100 | 150.6
+   2026-09 | Iqaluit, Nunavut | All-items | 2002=100 | 149.6
+
+=== Salarios mínimos (tabla federal) ===
+estado: 200 2556
+  > The federal jurisdiction includes labour market sectors coming under federal authority by virtue of the Constitution, such as international and interprovincial transportation, | telecommunication and banking. | Return to footnote 1 referrer
+
+=== CRA deducción para residentes del norte — https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-25500-northern-residents-deductions.html ===
+estado: error | caracteres: 28 | título: 
+  (sin coincidencias)
+
+=== CRA zonas prescritas — https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-25500-northern-residents-deductions/places-prescribed-zones.html ===
+estado: error | caracteres: 28 | título: 
+  (sin coincidencias)
+
+=== CRA Nunavut child benefit — https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/nunavut.html ===
+estado: error | caracteres: 28 | título: 
+  (sin coincidencias)
+
+=== CRA Canada Child Benefit — https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html ===
+estado: error | caracteres: 28 | título: 
+  (sin coincidencias)
+
+=== Guarderías Nunavut (acuerdo federal) — https://www.canada.ca/en/early-learning-child-care-agreement/agreements-provinces-territories/nunavut.html ===
+estado: error | caracteres: 28 | título: 
+  (sin coincidencias)
+
+=== IRCC PNP — https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html ===
+estado: error | caracteres: 28 | título: 
+  (sin coincidencias)
+
+=== IRCC Rural Community Immigration Pilot — https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/rural-franco-pilots/rural-immigration.html ===
+estado: error | caracteres: 28 | título: 
+  (sin coincidencias)
+
+=== IRCC Francophone Community Immigration Pilot — https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/rural-franco-pilots/francophone-immigration.html ===
+estado: error | caracteres: 28 | título: 
+  (sin coincidencias)
+
+=== Nutrition North — https://www.nutritionnorthcanada.gc.ca/eng/1415385762263/1415385790537 ===
+estado: 200 | caracteres: 3936 | título: Nutrition North Canada
+  > Nutrition North Canada programs include: the NNC subsidy, the Harvesters Support Grant and the Community Food Programs Fund, Nutrition Education Initiatives and the Food Security Research Grant. | Nutrition North Canada programs include: the NNC subsidy, the Harvesters Support Grant and the Community Food Programs Fund, Nutrition Education Initiatives and the Food Security Research Grant.
+  > Nutrition North Canada programs include: the NNC subsidy, the Harvesters Support Grant and the Community Food Programs Fund, Nutrition Education Initiatives and the Food Security Research Grant. | -->
+  > Expansions to Nutrition North Canada (NNC) have been co-developed with Indigenous and northern partners to further support food security priorities in NNC communities. | Enhancements to food security programs in isolated northern communities
+  > Enhancements to food security programs in isolated northern communities | Services and information
+  > Eligible communities | There are 124 isolated northern communities eligible for the Nutrition North Canada subsidy and Nutrition Education Initiatives. 112 of these communities are eligible for the Harvesters Support Grant.
+  > There are 124 isolated northern communities eligible for the Nutrition North Canada subsidy and Nutrition Education Initiatives. 112 of these communities are eligible for the Harvesters Support Grant. | Eligible food and non-food items
+  > Learn more about the Harvesters Support Grant and Community Food Programs Fund | Nutrition education initiatives
+  > To help bring access to healthy food in northern and isolated communities, a historic alliance has been formed: Wiiche'iwaymagon. | Supporting local food priorities in the North
+  > Partnership between Harvesters Support Grant recipients in Ontario and Manitoba, food banks and charities will bring food bank operations to 43 isolated, northern communities | Did you find what you were looking for?
+  > 2026-06-29
+
+=== Nutrition North comunidades NU — https://www.nutritionnorthcanada.gc.ca/eng/1415540731169/1415540791407 ===
+estado: 200 | caracteres: 3718 | título: Eligible communities
+  > There are currently 124 isolated northern communities benefiting from the Nutrition North Canada program. These communities are located in Yukon, Northwest Territories, Nunavut, Alberta, Saskatchewan, Manitoba, Ontario, Quebec, and Labrador. | To be eligible for the Nutrition North Canada subsidy, a community must be considered isolated and meet these requirements:
+
+=== Canadian North — https://www.canadiannorth.com/ ===
+estado: 403 | caracteres: 0 | título: 
+  (sin coincidencias)
+
+=== Calm Air — https://www.calmair.com/ ===
+estado: 200 | caracteres: 1793 | título: Welcome | Calm Air International LP
+  (sin coincidencias)
+
+=== NULC alcohol — https://www.nulc.ca/ ===
+estado: error | caracteres: 0 | título: 
+  (sin coincidencias)
+
+=== Qiniq — https://www.qiniq.com/ ===
+estado: 200 | caracteres: 892 | título: Qiniq
+  > Plans! | Sign up today
+  > Choose your plan | Bring your device or buy a new one
+  > Configure your plan | Enjoy your ride
+  > In your community | Let’s Go
+
+=== Northwestel Nunavut — https://www.nwtel.ca/ ===
+estado: 302 | caracteres: 0 | título: 
+  (sin coincidencias)
+
+=== CRTC 911 — https://crtc.gc.ca/eng/phone/911/ ===
+estado: 403 | caracteres: 0 | título: 
+  (sin coincidencias)
+
+=== Job Bank salario y perspectivas NU — https://www.jobbank.gc.ca/trend-analysis/job-market-reports/nunavut/environmental-scan ===
+estado: 200 | caracteres: 9489 | título: Economic Scan - Yukon, Northwest Territories and Nunavut - Job Bank
+  > Economic Scan - Yukon, Northwest Territories and Nunavut - Job Bank | M27SDC6AQSPF-190679442-78277
+  > Economic Scan - Yukon, Northwest Territories and Nunavut: 2026 | Demographics
+  > Nunavut's population grew 1.0% (+420) to | 41,830 from 2024 to 2025. The territory has the youngest population in Canada, with a median age of 27.1 years.
+  > Indigenous . Labour force participation among the territories' Indigenous population was lower than in the non-Indigenous population. Indigenous labour force participation was 64% in the Yukon and 59.1% in the NWT. Nunavut had the lowest labour force Indigenous participation rate in Canada in 2021, at 52.3%. | Black, Indigenous, and people of colour made up
+  > immigrants that arrived in the territories increased modestly from 2023/2024 to 2024/2025. The Yukon received 826 newcomers, down 7.7% year-over-year. The Northwest Territories recorded a significant increase of immigrant inflows, up 24.6% to 456 in 2024/2025. Nunavut also recorded a 28.1% increase in immigration, with 73 immigrants arriving. | About
+  > 26% of the territories' population aged 15 years and over self-identified as a person with disability in 2022, a lower proportion than the national average (27%). The Yukon had a higher rate of persons with disabilities than the NWT and Nunavut. These differences may reflect variations in age structure across the territorial populations. For example, Nunavut had the highest proportion of youth of all the provinces and territories but had the lowest rate of persons with disabilities in the country. | Source : Statistics Canada - Canadian Survey on Disability (CSD) 2022.
+  > no change Unemployment rate remained unchanged (0.0 pp) | Territories Unemployment Rate
+  > Territories Unemployment Rate | Yukon
+  > Nunavut | Show data table
+  > Unemployment Rate (%) | Year
+  > Nunavut | 2015
+  > Year-over-year, the unemployment rate for the combined territories remained unchanged at 5.8%. The Yukon's unemployment rate dropped slightly by 0.1 percentage points to 4.2%, while the NWT's rate fell by 0.8 percentage points to 5.0%. | Nunavut was the only territory to record an increase in its unemployment rate, up 2.0 percentage points to 10.3%, the highest rate in Canada.
+  > Nunavut was the only territory to record an increase in its unemployment rate, up 2.0 percentage points to 10.3%, the highest rate in Canada. | Economic Conditions
+  > Vast mineral potential | Forecasted GDP Growth Rate in Yukon, Northwest Territories and Nunavut
+
+=== CMHC alquiler (Rental Market Report) — https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-markets ===
+estado: 404 | caracteres: 0 | título: 
+  (sin coincidencias)
+
+=== Service Canada en Nunavut — https://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng ===
+estado: error | caracteres: 0 | título: 
+  (sin coincidencias)
+
+=== ECCC normales 1991-2020 (estaciones NU) — https://climate.weather.gc.ca/climate_normals/station_select_1991_2020_e.html?searchType=stnProv&lstProvince=NU ===
+estado: 200 | caracteres: 1315 | título: Search Results - 1991-2020 Climate Normals and Averages - Climate - Environment and Climate Change C
+  > * CAMBRIDGE BAY | NUNAVUT
+  > IQALUIT | NUNAVUT
+  > RANKIN INLET | NUNAVUT
+
+=== API normales ECCC — Iqaluit ===
+  CLIMATE_IDENTIFIER=2402590 → 0 resultados; []
+  STATION_NAME=IQALUIT%20A → 0 resultados; []
+  PROVINCE_CODE=NU&MONTH=1&NORMAL_ID=1 → 13 resultados; [('BAKER LAKE A', '2300500', 'NORM'), ('CAMBRIDGE BAY A', '2400600', 'NORM'), ('CLYDE A', '2400800', 'NORM'), ('EUREKA A', '2401200', 'NORM'), ('HALL BEACH A', '2402350', 'NORM'), ('KUGAARUK A', '2303092', 'NORM'), ('KUGLUKTUK A', '2300902', 'NORM'), ('LUPIN A', '23026HN', 'NORM'), ('POND INLET A', '2403201', 'NORM'), ('RANKIN INLET A', '2303401', 'NORM'), ('RESOLUTE CARS', '2403500', 'NORM'), ('TALOYOAK A', '2403854', 'NORM'), ('WHALE COVE A', '2303986', 'NORM')]
+     {'STATION_NAME': 'CAMBRIDGE BAY A', 'MONTH': 1, 'E_NORMAL_ELEMENT_NAME': 'Mean daily temperature deg C', 'VALUE': -31.98, 'FIRST_YEAR': None, 'LAST_YEAR': None, 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010}
+     {'STATION_NAME': 'HALL BEACH A', 'MONTH': 1, 'E_NORMAL_ELEMENT_NAME': 'Mean daily temperature deg C', 'VALUE': -31.86, 'FIRST_YEAR': None, 'LAST_YEAR': None, 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010}
+     {'STATION_NAME': 'KUGAARUK A', 'MONTH': 1, 'E_NORMAL_ELEMENT_NAME': 'Mean daily temperature deg C', 'VALUE': -33.53, 'FIRST_YEAR': None, 'LAST_YEAR': None, 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010}
+     {'STATION_NAME': 'WHALE COVE A', 'MONTH': 1, 'E_NORMAL_ELEMENT_NAME': 'Mean daily temperature deg C', 'VALUE': -30.6, 'FIRST_YEAR': None, 'LAST_YEAR': None, 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010}
+     {'STATION_NAME': 'CLYDE A', 'MONTH': 1, 'E_NORMAL_ELEMENT_NAME': 'Mean daily temperature deg C', 'VALUE': -29.11, 'FIRST_YEAR': None, 'LAST_YEAR': None, 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010}
+     {'STATION_NAME': 'RANKIN INLET A', 'MONTH': 1, 'E_NORMAL_ELEMENT_NAME': 'Mean daily temperature deg C', 'VALUE': -30.83, 'FIRST_YEAR': None, 'LAST_YEAR': None, 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010}
+
+=== Internet Archive: páginas del Gobierno de Nunavut ===
+ERROR CDX error b'IncompleteRead(263408 bytes read)'
+direcciones archivadas desde 2025: 0
+
+=== Tema 911: 0 direcciones ===
+
+=== Tema precios de alimentos: 0 direcciones ===
+
+=== Tema alcohol: 0 direcciones ===
+
+=== Tema guarderías: 0 direcciones ===
+
+=== Tema licencias de conducir: 0 direcciones ===
+
+=== Tema vivienda personal GN: 0 direcciones ===
+
+=== Tema asignación del norte: 0 direcciones ===
+
+=== Tema inmigración: 0 direcciones ===
+
+=== Tema estadísticas: 0 direcciones ===
