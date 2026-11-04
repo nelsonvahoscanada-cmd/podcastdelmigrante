@@ -52,11 +52,12 @@ async function sinDesborde(page, ruta) {
     const tarjetas = page.locator("#heroSecondary .hero-sec-card");
     assert.equal(await tarjetas.count(), 5);
     const textos = await tarjetas.evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.match(textos[0], /Santa Latino/);
-    assert.match(textos[1], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/, "segunda tarjeta pequeña");
-    assert.match(textos[1], /2 de noviembre/);
-    assert.match(textos[2], /bomberos forestales/);
-    assert.match(textos[3], /representantes migratorios/);
+    assert.match(textos[0], /Express Entry desde el 3 de noviembre/);
+    assert.match(textos[1], /Santa Latino/);
+    assert.match(textos[2], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/, "segunda tarjeta pequeña");
+    assert.match(textos[2], /2 de noviembre/);
+    assert.match(textos[3], /bomberos forestales/);
+    assert.match(textos[4], /representantes migratorios/);
     assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"]`).count(), 0, "no es el titular grande");
     const t2 = tarjetas.nth(2);
     assert.match(await t2.innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")));
