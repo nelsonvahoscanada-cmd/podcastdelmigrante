@@ -141,12 +141,30 @@ async function compartir(page, ruta, imagen) {
     await page.locator("#cdLocBuscar").fill("apex");
     await page.waitForFunction(() => document.querySelector('#cdLocLista a[href="/canada-en-datos/nunavut/iqaluit#lugar-apex"]'));
     await page.locator("#cdLocBuscar").fill("");
-    /* Filtro por región (Kivalliq): solo comunidades de esa región */
-    await page.locator("#cdLocSub").selectOption("Kivalliq");
+    /* Filtro por región (Kivalliq): solo comunidades de esa región; la descripción nombra la región, no «región Nunavut» */
+    assert.equal(await page.locator("#cdLocSub").count(), 0, "sin filtro duplicado de subregión");
+    await page.locator("#cdLocRegion").selectOption({ label: "Kivalliq" });
     await page.waitForFunction(() => document.querySelector('#cdLocLista a[href$="/nunavut/rankin-inlet"]'));
     const kiv = await page.locator("#cdLocLista li a").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
     assert.ok(kiv.every((h) => !/\/(iqaluit|cambridge-bay|pangnirtung)(#|$)/.test(h)), "solo Kivalliq");
-    await page.locator("#cdLocSub").selectOption("");
+    assert.match(await page.locator("#cdLocLista li").first().textContent(), /región Kivalliq/);
+    assert.doesNotMatch(await page.locator("#cdLocLista").textContent(), /región Nunavut/);
+    await page.locator("#cdLocRegion").selectOption("");
+    /* Rangos de población de Nunavut: «2,000 o más» devuelve las comunidades grandes */
+    await page.locator("#cdLocPob").selectOption("2000-");
+    await page.waitForFunction(() => document.querySelectorAll("#cdLocLista li").length === 5);
+    await page.locator("#cdLocPob").selectOption("");
+    /* Recuadro de las islas del sur en el mapa, con Sanikiluaq dentro */
+    const marco = await page.evaluate(() => {
+      const r = document.querySelector("#cdLocMapa rect.cd-loc__marco");
+      if (!r) return null;
+      const b = r.getBoundingClientRect();
+      return { w: b.width, h: b.height, titulo: r.querySelector("title").textContent };
+    });
+    assert.ok(marco && marco.w > 10 && marco.h > 5, "recuadro visible");
+    assert.match(marco.titulo, /Islas Belcher/);
+    /* Noticias: texto propio y enlaces cuando todavía no hay publicaciones */
+    assert.match(await page.locator("#noticias").textContent(), /Todavía no hemos publicado noticias sobre Nunavut[\s\S]*Últimas noticias/);
     if (SHOTS) await page.locator("#localidades").screenshot({ path: path.join(SHOTS, `nu-directorio-${perfil}.png`) });
     await sinScrollHorizontal(page);
     assert.deepEqual(errores, []);
@@ -160,6 +178,11 @@ async function compartir(page, ruta, imagen) {
       if (s === "iqaluit") {
         assert.equal((await page.locator("h1").textContent()).trim(), "Iqaluit");
         assert.match(await page.locator(".cd-panel").textContent(), /7,429/);
+        assert.match(await page.locator(".cd-panel").textContent(), /Emergencias: policía \(RCMP\)\s*867-979-1111/);
+        assert.match(await page.locator("#educacion").textContent(), /Nakasuk School[\s\S]*Nanook School/);
+        assert.match(await page.locator("#ubicacion").textContent(), /Temperatura media de enero\s*−26\.0 °C/);
+        assert.match(await page.locator("#vivienda").textContent(), /Índice de precios al consumidor de Iqaluit/);
+        assert.match(await page.locator("#transporte").textContent(), /Canadian North/);
         await compartir(page, `${GUIA}/iqaluit`, "/assets/canada-en-datos/nunavut/iqaluit.jpg");
         if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `nu-iqaluit-${perfil}.png`), fullPage: true });
       }

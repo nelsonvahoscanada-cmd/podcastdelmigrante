@@ -22,6 +22,7 @@ que usan las páginas. Sin fotografías: no hay derechos de terceros.
 Uso (requiere Pillow, igual que build-social-images.py):
     python3 scripts/build-canada-datos-images.py            todas
     python3 scripts/build-canada-datos-images.py --solo-provincias
+    python3 scripts/build-canada-datos-images.py --solo=nunavut   solo las localidades de esa provincia
 """
 
 import json
@@ -232,7 +233,10 @@ def main():
             print(f"escrito    assets/canada-en-datos/social-{r['profile']}.jpg")
     if "--solo-provincias" in sys.argv:
         return
+    solo = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--solo=")), None)
     for m in load_localidades():
+        if solo and m["provincia"] != solo:
+            continue
         prov = Provincia(m)
         destino = OUT / m["provincia"]
         validos = set()
