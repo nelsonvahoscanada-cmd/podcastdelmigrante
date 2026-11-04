@@ -195,5 +195,7 @@ test("la página del panel enlaza Invitaciones y no usa scripts ni estilos en l�
   }
   const js = readFileSync(new URL("../public/js/invitaciones.js", import.meta.url), "utf8");
   assert.doesNotMatch(js, /localStorage|sessionStorage/, "el enlace nunca se guarda en el navegador");
-  assert.match(js, /Santa Latino/);
+  /* «Atajo»: campo de texto libre y vacío, sin datos fijos de ningún empresario */
+  assert.match(html, /<label>Atajo\s*<textarea name="notes" id="invNotes"[^>]*placeholder="Escribe aquí los datos de la invitación"[^>]*><\/textarea>/);
+  assert.doesNotMatch(html + js, /Santa Latino|Héctor|prefillSanta/);
 });

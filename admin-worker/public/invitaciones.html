@@ -51,10 +51,9 @@
         <label>Persona de contacto (opcional)
           <input name="contactName" maxlength="80" autocomplete="off">
         </label>
-        <div class="inv-prefill">
-          <span class="inv-prefill__label">Atajo</span>
-          <button class="btn btn--outline btn--small" type="button" id="prefillSanta">Rellenar: Santa Latino · Héctor (cortesía)</button>
-        </div>
+        <label>Atajo
+          <textarea name="notes" id="invNotes" rows="2" maxlength="500" placeholder="Escribe aquí los datos de la invitación" autocomplete="off"></textarea>
+        </label>
       </div>
       <p class="inv-warning" id="paidWarning" hidden>La Premium pagada todavía no tiene cobro en línea: la invitación solo abre una solicitud Premium. El cobro se acuerda por separado hasta que exista una pasarela de pagos.</p>
       <div class="sol-form__actions">
