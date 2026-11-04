@@ -77,6 +77,35 @@ CAMPOS = {
 censo = lambda dguid: [F["censo"].get(dguid, {}).get(v) for v in CAMPOS.values()]
 er = next(iter(F["er"]))
 
+# ------------------------------------------------------------ Escuelas (ODEF 2022)
+# La mayoría de las filas de Nunavut en la ODEF no tienen coordenadas ni código
+# de subdivisión: se asignan por el campo «City», que siempre trae la comunidad.
+# Apex es un barrio de Iqaluit (CGNDB). Nunavut Arctic College es postsecundaria
+# y se presenta aparte. Los nombres se corrigen solo con la grafía del Gobierno
+# de Nunavut (calendario escolar territorial 2025-26).
+CIUDAD = {"iqaluit": "Iqaluit", "iqaluit (csfn)": "Iqaluit", "apex": "Iqaluit", "resolute bay": "Resolute", "qikiqtaruaq": "Qikiqtarjuaq",
+          "kinngait": "Cape Dorset", "sanirajak": "Hall Beach", "naujaat": "Naujaat"}
+NOMBRE_OFICIAL = json.loads((BASE / "nu-escuelas-nombres.json").read_text(encoding="utf-8")) if (BASE / "nu-escuelas-nombres.json").exists() else {}
+
+
+def escuelas():
+    por_nombre = {c["CSDNAME"].lower(): c["CSDUID"] for c in F["csd"]}
+    filas = []
+    for e in F.get("educacion", []):
+        if (e.get("Facility_Type") or "").startswith("Private Institution") or e.get("Facility_Name") == "Nunavut Arctic College":
+            continue
+        ciudad = (e.get("City") or "").strip()
+        nombre_csd = CIUDAD.get(ciudad.lower(), ciudad)
+        csd = e.get("CSDUID") or por_nombre.get(nombre_csd.lower())
+        if not csd:
+            raise SystemExit(f"Escuela sin comunidad: {e.get('Facility_Name')} ({ciudad})")
+        if e.get("csd") and e["csd"] != csd:
+            raise SystemExit(f"Escuela con comunidad contradictoria: {e.get('Facility_Name')} {e['csd']} ≠ {csd}")
+        nombre = e.get("Facility_Name").strip()
+        filas.append([NOMBRE_OFICIAL.get(nombre, nombre), nombre, e.get("Authority_Name"), ciudad, csd])
+    return filas
+
+
 salida = {
     "consultado": F["consultado"],
     "fuentes": F["fuentes"],
@@ -94,11 +123,8 @@ salida = {
     "cgn_campos": ["id", "nombre", "tipo", "csd", "x", "y", "lat", "lon", "fecha"],
     "hospitales": [[h["facility_name"], h.get("city"), h["csd"], h["lat"], h["lon"]] for h in F.get("salud", []) if h.get("odhf_facility_type") == "Hospitals"],
     "hospitales_campos": ["nombre", "localidad", "csd", "lat", "lon"],
-    "escuelas": [
-        [e.get("Facility_Name"), e.get("Facility_Type"), e.get("Authority_Name"), "".join("1" if e.get(k) == "1" else "0" for k in ("ISCED010", "ISCED020", "ISCED1", "ISCED2", "ISCED3", "ISCED4Plus")), e.get("csd")]
-        for e in F.get("educacion", [])
-    ],
-    "escuelas_campos": ["nombre", "tipo", "autoridad", "niveles", "csd"],
+    "escuelas": escuelas(),
+    "escuelas_campos": ["nombre", "nombre_odef", "autoridad", "ciudad_odef", "csd"],
 }
 texto = json.dumps(salida, ensure_ascii=False, separators=(",", ":"))
 (BASE / "nu-localidades.json").write_text(texto, encoding="utf-8")

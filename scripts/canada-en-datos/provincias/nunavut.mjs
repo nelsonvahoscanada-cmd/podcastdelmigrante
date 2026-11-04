@@ -197,23 +197,40 @@ function trazo(geo, a, tol = 0.6) {
     .join("");
 }
 
+/* Desplazamiento en metros (EPSG:3347) de las islas del sur y recuadro que las rodea: [xmín, ymín, xmáx, ymáx] */
+const RECUADRO = { belcher: [0, 0.5e6], james: [0.2e6, 0.89e6], marco: [6.865e6, 2.69e6, 7.29e6, 2.875e6] };
+
 /* ---------- Carga y preparación de datos ---------- */
 export function cargar(root) {
   const base = join(root, "scripts/canada-en-datos");
   const J = JSON.parse(readFileSync(join(base, "nu-localidades.json"), "utf8"));
   const censo = (v) => Object.fromEntries(J.censo_campos.map((k, i) => [k, num(v[i])]));
   const csd = J.csd.map((f) => objeto(J.csd_campos, f));
-  const er = Object.keys(J.er)[0];
+
+  /* Recuadro: las islas Belcher (Sanikiluaq) y las de la bahía James (Akimiski, Charlton) quedan muy al sur del
+     resto del territorio y dejaban casi una cuarta parte del mapa vacía en el celular. Se dibujan desplazadas
+     dentro de un recuadro, en la bahía de Hudson, como es habitual en los mapas de ubicación. Las coordenadas
+     reales (latitud y longitud) no cambian: solo cambia su posición en el dibujo. */
+  const desplaza = (x, y) => (y < 2.0e6 ? [x + RECUADRO.james[0], y + RECUADRO.james[1]] : y < 2.45e6 && x > 6.8e6 ? [x + RECUADRO.belcher[0], y + RECUADRO.belcher[1]] : [x, y]);
+  const geo = Object.fromEntries(Object.entries(J.cd_geo).map(([id, g]) => [id, { type: "MultiPolygon", coordinates: (g.type === "Polygon" ? [g.coordinates] : g.coordinates).map((p) => p.map((q) => q.map(([x, y]) => desplaza(x, y)))) }]));
 
   /* Encuadre del mapa (metros, EPSG:3347) */
   let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
-  const recorre = (geo, fn) => (geo.type === "Polygon" ? [geo.coordinates] : geo.coordinates).forEach((p) => p.forEach((q) => q.forEach(([x, y]) => fn(x, y))));
-  for (const g of Object.values(J.cd_geo)) recorre(g, (x, y) => ((x0 = Math.min(x0, x)), (x1 = Math.max(x1, x)), (y0 = Math.min(y0, y)), (y1 = Math.max(y1, y))));
+  const recorre = (g, fn) => g.coordinates.forEach((p) => p.forEach((q) => q.forEach(([x, y]) => fn(x, y))));
+  for (const g of Object.values(geo)) recorre(g, (x, y) => ((x0 = Math.min(x0, x)), (x1 = Math.max(x1, x)), (y0 = Math.min(y0, y)), (y1 = Math.max(y1, y))));
   const ANCHO = 600, MARGEN = 6;
   const escala = (ANCHO - 2 * MARGEN) / (x1 - x0);
   const alto = Math.ceil((y1 - y0) * escala + 2 * MARGEN);
-  const a = (x, y) => [Math.round(((x - x0) * escala + MARGEN) * 10) / 10, Math.round(((y1 - y) * escala + MARGEN) * 10) / 10];
-  const mapa = { ancho: ANCHO, alto, regiones: J.regiones.map(([id, n]) => ({ r: er, n, d: trazo(J.cd_geo[id], a, 0.8) })) };
+  const a0 = (x, y) => [Math.round(((x - x0) * escala + MARGEN) * 10) / 10, Math.round(((y1 - y) * escala + MARGEN) * 10) / 10];
+  const a = (x, y) => a0(...desplaza(x, y));
+  const [mx, my] = a0(RECUADRO.marco[0], RECUADRO.marco[3]);
+  const [mx2, my2] = a0(RECUADRO.marco[2], RECUADRO.marco[1]);
+  const mapa = {
+    ancho: ANCHO,
+    alto,
+    regiones: J.regiones.map(([id, n]) => ({ r: id, n, d: trazo(geo[id], a0, 0.8) })),
+    marcos: [{ x: mx, y: my, w: Math.round((mx2 - mx) * 10) / 10, h: Math.round((my2 - my) * 10) / 10, etiqueta: "Islas Belcher (Sanikiluaq) y de la bahía James, desplazadas hacia el norte en el dibujo" }],
+  };
 
   /* --- Subdivisiones censales: una página cada una --- */
   const items = [];
@@ -231,14 +248,14 @@ export function cargar(root) {
       antes: actual ? actual.antes : null,
       alias: [...(actual ? [actual.antes] : []), ...(ALIAS[c.id] || [])],
       t,
-      r: c.er,
+      r: c.cd,
       cd: c.cd,
-      sup: REGIONES[c.cd],
       region: REGIONES[c.cd],
       x: xx,
       y: yy,
       lat: c.lat,
       lon: c.lon,
+      desplazado: desplaza(c.x, c.y)[1] !== c.y,
       p: d.p,
       p16: d.p16,
       cambio: d.cambio,
@@ -272,7 +289,7 @@ export function cargar(root) {
     if (!padre || vistos.has(k)) continue;
     vistos.add(k);
     const [xx, yy] = a(g.x, g.y);
-    comunidades.push({ n: g.nombre, alias: [], t, m: g.csd, r: padre.r, sup: padre.sup, x: xx, y: yy, lat: g.lat, lon: g.lon, p: null, p16: null, id: `cgn-${g.id}` });
+    comunidades.push({ n: g.nombre, alias: [], t, m: g.csd, r: padre.r, x: xx, y: yy, lat: g.lat, lon: g.lon, p: null, p16: null, id: `cgn-${g.id}` });
   }
   for (const o of comunidades) {
     const hermanos = (porCodigo.get(o.m).comunidades ||= []);
@@ -292,7 +309,9 @@ export function cargar(root) {
 
   return {
     meta: { consultado: J.consultado },
-    regiones: Object.fromEntries(Object.entries(J.er).map(([k, v]) => [k, v.split(" / ")[0]])),
+    /* Las tres regiones (divisiones censales). Todo Nunavut es una sola región económica, así que el filtro usa las regiones. */
+    regiones: { ...REGIONES },
+    regionEconomica: Object.values(J.er)[0].split(" / ")[0],
     mapa,
     items: [...items, ...comunidades],
     porCodigo,
@@ -308,9 +327,10 @@ const directorio = {
   titulo: "Explora las comunidades de Nunavut",
   origen: "Statistics Canada: Censo 2021 (subdivisiones censales y regiones); Recursos Naturales Canadá: Base de datos de nombres geográficos de Canadá",
   poblacion: "Censo 2021",
-  regiones: "1 región económica",
-  regionEtiqueta: "Región económica",
-  subregion: "Región",
+  regiones: "3 regiones",
+  regionEtiqueta: "Región",
+  /* Ninguna comunidad llega a 10,000 habitantes (Iqaluit: 7,429 en el Censo 2021) */
+  rangosPoblacion: [["2000-", "2,000 o más"], ["1000-1999", "1,000 a 1,999"], ["500-999", "500 a 999"], ["1-499", "1 a 499"], ["0-0", "0 habitantes"]],
   tipoEtiqueta: "Tipo de comunidad",
   ejemplo: "Pangnirtung",
   extendido: true,
@@ -324,7 +344,7 @@ const directorio = {
         <li><strong>Lugares con nombre oficial</strong>: barrios (como Apex, en Iqaluit), estaciones científicas o meteorológicas (como Alert y Eureka) y antiguos asentamientos. No son comunidades aparte: aparecen dentro de la subdivisión en la que están.</li>
       </ul>`;
   },
-  nota: () => "Statistics Canada considera todo Nunavut una sola región económica, y la Encuesta de Población Activa da cifras para todo el territorio, no por comunidad. Para filtrar por zona, usa la región (Qikiqtaaluk, Kivalliq o Kitikmeot), que es la división censal. Kinngait y Sanirajak aparecen en el Censo 2021 con sus nombres anteriores, Cape Dorset y Hall Beach. Los lugares con nombre oficial provienen de la Base de datos de nombres geográficos de Canadá y no tienen cifras de población propias.",
+  nota: () => "El filtro «Región» usa las tres regiones del territorio (Qikiqtaaluk, Kivalliq y Kitikmeot), que son sus divisiones censales; Statistics Canada considera todo Nunavut una sola región económica, y la Encuesta de Población Activa da cifras para todo el territorio, no por comunidad. En el mapa, las islas Belcher (Sanikiluaq) y las de la bahía James aparecen desplazadas hacia el norte, dentro de un recuadro, para ahorrar espacio. Kinngait y Sanirajak aparecen en el Censo 2021 con sus nombres anteriores, Cape Dorset y Hall Beach. Los lugares con nombre oficial provienen de la Base de datos de nombres geográficos de Canadá y no tienen cifras de población propias.",
   fuentes: (L, esc) => `Fuentes: ${fuente(FUENTES.csd, esc)}; ${fuente(FUENTES.censo, esc)}; ${fuente(FUENTES.nombres, esc)}. Consultado el ${esc(fechaEs(L.meta.consultado))}.`,
 };
 
@@ -457,7 +477,7 @@ function pagina(r, L, { esc }) {
     intro: intro + cierre,
     datos,
     reloj: zona ? { timeZone: zona.timeZone, lat: r.lat, lon: r.lon, etiqueta: `Hora local en ${nombre}` } : null,
-    ubicacion: `Ubicación aproximada en la región de ${esc(r.region)}. Mapa elaborado con los límites de las divisiones censales del Censo 2021 de Statistics Canada (solo las islas más grandes).`,
+    ubicacion: `Ubicación aproximada en la región de ${esc(r.region)}.${r.desplazado ? ` ${esc(nombre)} está en las islas del sur de la bahía de Hudson y de la bahía James, que el mapa muestra desplazadas hacia el norte, dentro del recuadro, para ahorrar espacio.` : ""} Mapa elaborado con los límites de las divisiones censales del Censo 2021 de Statistics Canada (solo las islas más grandes).`,
     comunidades,
     empleo,
     busqueda: RECURSOS.empleo,

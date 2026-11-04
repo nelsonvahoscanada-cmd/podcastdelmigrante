@@ -471,7 +471,7 @@
           <li><strong>Otras subdivisiones del censo: 6</strong> — 3 asentamientos (settlements) sin población en el Censo 2021, 3 zonas no organizadas (una por región)</li>
           <li><strong>Lugares con nombre oficial (sin página propia): 40</strong> — 33 localidades (localities), 2 barrios (neighbourhoods), 1 asentamiento (nombre geográfico) (settlement), 2 desembarcaderos (landings), 1 estación meteorológica (weather station), 1 antigua localidad (former locality)</li>
         </ul>
-        <p class="cd-loc__nota">Statistics Canada considera todo Nunavut una sola región económica, y la Encuesta de Población Activa da cifras para todo el territorio, no por comunidad. Para filtrar por zona, usa la región (Qikiqtaaluk, Kivalliq o Kitikmeot), que es la división censal. Kinngait y Sanirajak aparecen en el Censo 2021 con sus nombres anteriores, Cape Dorset y Hall Beach. Los lugares con nombre oficial provienen de la Base de datos de nombres geográficos de Canadá y no tienen cifras de población propias.</p>
+        <p class="cd-loc__nota">El filtro «Región» usa las tres regiones del territorio (Qikiqtaaluk, Kivalliq y Kitikmeot), que son sus divisiones censales; Statistics Canada considera todo Nunavut una sola región económica, y la Encuesta de Población Activa da cifras para todo el territorio, no por comunidad. En el mapa, las islas Belcher (Sanikiluaq) y las de la bahía James aparecen desplazadas hacia el norte, dentro de un recuadro, para ahorrar espacio. Kinngait y Sanirajak aparecen en el Censo 2021 con sus nombres anteriores, Cape Dorset y Hall Beach. Los lugares con nombre oficial provienen de la Base de datos de nombres geográficos de Canadá y no tienen cifras de población propias.</p>
       </div>
       <div class="cd-loc__fichas">
         <h3>Fichas completas</h3>
@@ -515,29 +515,22 @@
             </select>
           </div>
           <div class="cd-loc__campo">
-            <label for="cdLocRegion">Región económica</label>
+            <label for="cdLocRegion">Región</label>
             <select id="cdLocRegion" disabled>
               <option value="">Todas las regiones</option>
-            <option value="6210">Nunavut</option>
-            </select>
-          </div>
-          <div class="cd-loc__campo">
-            <label for="cdLocSub">Región</label>
-            <select id="cdLocSub" disabled>
-              <option value="">Todos</option>
-              <option value="Kitikmeot">Kitikmeot</option>
-              <option value="Kivalliq">Kivalliq</option>
-              <option value="Qikiqtaaluk">Qikiqtaaluk</option>
+            <option value="6208">Kitikmeot</option>
+            <option value="6205">Kivalliq</option>
+            <option value="6204">Qikiqtaaluk</option>
             </select>
           </div>
           <div class="cd-loc__campo">
             <label for="cdLocPob">Población (Censo 2021)</label>
             <select id="cdLocPob" disabled>
               <option value="">Cualquier tamaño</option>
-              <option value="100000-">100,000 o más</option>
-              <option value="10000-99999">10,000 a 99,999</option>
-              <option value="1000-9999">1,000 a 9,999</option>
-              <option value="1-999">1 a 999</option>
+              <option value="2000-">2,000 o más</option>
+              <option value="1000-1999">1,000 a 1,999</option>
+              <option value="500-999">500 a 999</option>
+              <option value="1-499">1 a 499</option>
               <option value="0-0">0 habitantes</option>
               <option value="con">Con dato de población</option>
               <option value="sin">Sin dato de población</option>

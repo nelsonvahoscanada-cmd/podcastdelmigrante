@@ -198,6 +198,9 @@ class Provincia:
         draw = ImageDraw.Draw(self.base)
         for r in mapa["regiones"]:
             dibuja_anillos(draw, anillos_absolutos(r["d"]), self.s, self.ox, self.oy, VERDE_SUAVE, BLANCO)
+        for mc in mapa.get("marcos", []):  # recuadro de islas desplazadas (solo si la provincia lo define)
+            x0, y0 = self.ox + mc["x"] * self.s, self.oy + mc["y"] * self.s
+            draw.rectangle((x0, y0, x0 + mc["w"] * self.s, y0 + mc["h"] * self.s), outline=(107, 114, 128), width=2)
 
     def tarjeta(self, loc):
         img = self.base.copy()

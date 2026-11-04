@@ -258,6 +258,7 @@
 .cd-loc__region { fill: #f2f1ed; stroke: #9aa58a; stroke-width: 1.2; cursor: pointer; }
 .cd-loc__region:hover { fill: var(--verde-suave); }
 .cd-loc__region.es-activa { fill: #dcecc4; stroke: var(--verde-oscuro); stroke-width: 2; }
+.cd-loc__marco { fill: none; stroke: #6b7280; stroke-width: 1; stroke-dasharray: 4 3; pointer-events: none; }
 .cd-loc__punto { fill: #9aa58a; cursor: pointer; }
 .cd-loc__punto.es-municipio { fill: var(--verde); stroke: #fff; stroke-width: 0.8; }
 .cd-loc__punto.es-ficha { fill: var(--verde-oscuro); stroke: #fff; stroke-width: 1.5; }

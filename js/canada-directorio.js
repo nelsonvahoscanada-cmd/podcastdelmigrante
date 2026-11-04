@@ -144,6 +144,18 @@
       });
       regiones.appendChild(p);
     }
+    /* Recuadros de islas desplazadas para ahorrar espacio (solo en las provincias que los definen) */
+    for (const mc of m.marcos || []) {
+      const r = document.createElementNS(SVG, "rect");
+      ["x", "y"].forEach((k) => r.setAttribute(k, mc[k]));
+      r.setAttribute("width", mc.w);
+      r.setAttribute("height", mc.h);
+      r.setAttribute("class", "cd-loc__marco");
+      const t = document.createElementNS(SVG, "title");
+      t.textContent = mc.etiqueta;
+      r.appendChild(t);
+      regiones.appendChild(r);
+    }
     puntos = document.createElementNS(SVG, "g");
     puntos.setAttribute("class", "cd-loc__puntos");
     svg.append(regiones, puntos);

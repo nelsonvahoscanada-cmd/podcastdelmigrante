@@ -50,6 +50,21 @@
     .slice(0, limit);
 
   if (!noticias.length) {
+    /* Texto propio de la región cuando todavía no hay noticias (opcional), con enlaces a las noticias generales */
+    const v = perfil.news.vacio;
+    if (v) {
+      const p = document.createElement("p");
+      p.className = "cd-news-empty";
+      p.textContent = v.texto + " ";
+      (v.enlaces || []).forEach((e, i) => {
+        const a = document.createElement("a");
+        a.href = e.href;
+        a.textContent = e.label;
+        p.append(i ? " · " : "", a);
+      });
+      lista.replaceWith(p);
+      return;
+    }
     lista.outerHTML = '<p class="cd-news-empty">Todavía no hay noticias publicadas sobre esta región.</p>';
     return;
   }
