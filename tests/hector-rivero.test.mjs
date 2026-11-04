@@ -42,15 +42,15 @@ test("artículo: noticia completa con su estructura periodística y sin afirmaci
 });
 
 test("portada: Santa Latino sigue en la primera tarjeta secundaria tras la noticia principal; nada se borra", () => {
-  assert.equal(ctx.H.main.slug, "canada-cambios-express-entry-3-noviembre-2026", "noticia principal autorizada por la dirección editorial el 2-11-2026");
-  const santa = ctx.H.secondary[0];
+  assert.equal(ctx.H.main.slug, "canada-cambios-proceso-refugio-3-noviembre-2026", "noticia principal autorizada por la dirección editorial el 4-11-2026");
+  const santa = ctx.H.secondary[1];
   assert.equal(santa.slug, SLUG);
   assert.equal(santa.title, art.title);
   assert.equal(santa.image, `url('assets/yt/${VIDEO}.jpg')`);
   assert.equal(santa.demo, false);
   assert.ok(santa.alt.length > 40, "texto alternativo");
-  assert.equal(ctx.H.secondary[1].slug, "canada-groceries-essentials-benefit-cgeb-2026", "el CGEB, segunda tarjeta (orden de la dirección del 2-11-2026)");
-  assert.equal(ctx.H.secondary.length, 4);
+  assert.equal(ctx.H.secondary[2].slug, "canada-groceries-essentials-benefit-cgeb-2026", "el CGEB, segunda tarjeta (orden de la dirección del 2-11-2026)");
+  assert.equal(ctx.H.secondary.length, 5);
   for (const s of ["referendum-alberta-octubre-2026-inmigrantes", "rocky-ridge-athletic-park-calgary", "alberta-energy-rebate-plazo-octubre"]) {
     assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: sigue publicado`);
   }

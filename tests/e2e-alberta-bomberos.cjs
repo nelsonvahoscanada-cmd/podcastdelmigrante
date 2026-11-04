@@ -44,10 +44,10 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: noticia principal de Express Entry, Santa Latino, CGEB y después bomberos ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia Express Entry desde el 3 de noviembre/, "noticia principal: Express Entry");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").first().innerText(), /Santa Latino/, "Santa Latino, primera tarjeta");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(1).innerText(), /¿Trabajas en Canadá\?/, "CGEB, segunda tarjeta");
-    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(2);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia el proceso para solicitar refugio/, "noticia principal: refugio");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(1).innerText(), /Santa Latino/, "Santa Latino, primera tarjeta");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(2).innerText(), /¿Trabajas en Canadá\?/, "CGEB, segunda tarjeta");
+    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(3);
     assert.equal((await segunda.locator("h3, h2, .hero-sec-card__title").first().innerText()).trim(), TITULO);
     const enlace = segunda.locator(`a[href*="${SLUG}"]`).first();
     assert.equal(await enlace.count(), 1, "la tarjeta enlaza al artículo");

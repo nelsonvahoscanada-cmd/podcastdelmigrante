@@ -90,8 +90,8 @@ test("edición de noviembre (borrador): incluye el capítulo; la de octubre no c
 });
 
 test("portada: la noticia principal y las destacadas no cambian", () => {
-  assert.equal(ctx.H.main.slug, "canada-cambios-express-entry-3-noviembre-2026");
-  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026", "alberta-bomberos-forestales-2027", "multas-representantes-migratorios-canada-2026"]);
+  assert.equal(ctx.H.main.slug, "canada-cambios-proceso-refugio-3-noviembre-2026");
+  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026", "alberta-bomberos-forestales-2027", "multas-representantes-migratorios-canada-2026"]);
 });
 
 test("SEO: título, descripción, Open Graph, Twitter, canónica y sitemap", () => {

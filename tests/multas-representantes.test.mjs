@@ -19,15 +19,15 @@ const IRCC = "https://www.canada.ca/en/immigration-refugees-citizenship/news/202
 const art = ctx.A.find((a) => a.slug === SLUG);
 
 test("portada: tras la noticia principal, Santa Latino, el CGEB, bomberos y la noticia de IRCC le siguen", () => {
-  assert.equal(ctx.H.main.slug, "canada-cambios-express-entry-3-noviembre-2026");
-  assert.equal(ctx.H.secondary[0].slug, "hector-rivero-santa-latino-canada");
-  assert.equal(ctx.H.secondary[1].slug, "canada-groceries-essentials-benefit-cgeb-2026");
-  assert.equal(ctx.H.secondary[2].slug, "alberta-bomberos-forestales-2027");
-  assert.equal(ctx.H.secondary[3].slug, SLUG);
-  assert.equal(ctx.H.secondary[3].title, art.title);
-  assert.equal(ctx.H.secondary[3].image, `url('${IMG}')`);
-  assert.equal(ctx.H.secondary[3].category, "Inmigración");
-  assert.equal(ctx.H.secondary.length, 4);
+  assert.equal(ctx.H.main.slug, "canada-cambios-proceso-refugio-3-noviembre-2026");
+  assert.equal(ctx.H.secondary[1].slug, "hector-rivero-santa-latino-canada");
+  assert.equal(ctx.H.secondary[2].slug, "canada-groceries-essentials-benefit-cgeb-2026");
+  assert.equal(ctx.H.secondary[3].slug, "alberta-bomberos-forestales-2027");
+  assert.equal(ctx.H.secondary[4].slug, SLUG);
+  assert.equal(ctx.H.secondary[4].title, art.title);
+  assert.equal(ctx.H.secondary[4].image, `url('${IMG}')`);
+  assert.equal(ctx.H.secondary[4].category, "Inmigración");
+  assert.equal(ctx.H.secondary.length, 5);
 });
 
 test("artículo: texto de la redacción con las cifras y precisiones del comunicado", () => {

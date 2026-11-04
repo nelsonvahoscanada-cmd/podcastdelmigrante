@@ -48,13 +48,13 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: noticia principal de Express Entry; Santa Latino, bomberos y luego IRCC ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia Express Entry desde el 3 de noviembre/, "noticia principal: Express Entry");
-    const santa = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia el proceso para solicitar refugio/, "noticia principal: refugio");
+    const santa = page.locator("#heroSecondary .hero-sec-card").nth(1);
     assert.match(await santa.innerHTML(), /assets\/yt\/LxTr1Zda3dg\.jpg/, "imagen de Santa Latino intacta");
     assert.equal(await santa.locator('a[href*="hector-rivero-santa-latino-canada"]').count() >= 1, true, "enlace de Santa Latino intacto");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(1).innerText(), /¿Trabajas en Canadá\?/, "CGEB, segunda tarjeta");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(2).innerText(), /bomberos forestales/, "bomberos, después del CGEB");
-    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(3);
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(2).innerText(), /¿Trabajas en Canadá\?/, "CGEB, segunda tarjeta");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(3).innerText(), /bomberos forestales/, "bomberos, después del CGEB");
+    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(4);
     assert.equal((await segunda.locator("h3, h2, .hero-sec-card__title").first().innerText()).trim(), TITULO);
     const enlace = segunda.locator(`a[href*="${SLUG}"]`).first();
     assert.equal(await enlace.count(), 1, "la tarjeta enlaza al artículo");

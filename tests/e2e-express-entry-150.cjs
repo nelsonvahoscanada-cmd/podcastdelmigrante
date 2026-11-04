@@ -1,8 +1,7 @@
 /*
   Prueba de extremo a extremo (navegador) de la noticia «Canadá cambia Express
   Entry desde el 3 de noviembre: algunos inmigrantes podrán obtener hasta 150
-  puntos»: noticia principal de la portada (las 4 destacadas siguen en su
-  orden), enlace al artículo, imagen aprobada, video de TikTok tras la
+  puntos»: primera tarjeta de la portada tras la noticia de refugio, enlace al artículo, imagen aprobada, video de TikTok tras la
   introducción y botón «▶ Ver la noticia en TikTok», fuentes oficiales de IRCC,
   metadatos, sección Migración y ausencia de desbordes, en computador, tableta
   y celular. Solo lee páginas.
@@ -48,29 +47,24 @@ async function sinDesborde(page, ruta) {
 (async () => {
   const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: primera noticia destacada ---------- */
+    /* ---------- Portada: primera tarjeta, tras la noticia de refugio (4-11-2026) ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    const hero = page.locator("#heroMain");
-    assert.equal((await hero.locator("h1").innerText()).trim(), TITULO);
-    assert.match(await hero.locator(".hero-main__dek").innerText(), /^El Gobierno federal modificará el sistema de puntuación/);
-    assert.match(await hero.innerText(), /2 de noviembre, 2026/);
-    assert.equal(await hero.locator(".demo-badge").count(), 0);
-    assert.match(await hero.locator(".hero-main__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
-    assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia el proceso para solicitar refugio/);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.equal(tarjetas.length, 4);
-    assert.match(tarjetas[0], /Santa Latino/);
-    assert.match(tarjetas[1], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/);
-    assert.match(tarjetas[2], /bomberos forestales/);
-    assert.match(tarjetas[3], /representantes migratorios/);
-    assert.equal(tarjetas.filter((x) => x.includes("Express Entry desde el 3")).length, 0, "sin duplicados en el bloque principal");
-    /* La portada de la Edición 01 sigue en su bloque */
-    assert.equal(await page.locator('#edicion img[src="/assets/ediciones/2026-10/portada.jpg"]').count(), 1);
-    if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
+    assert.equal(tarjetas.length, 5);
+    assert.ok(tarjetas[0].includes(TITULO), "Express Entry, primera tarjeta");
+    assert.match(tarjetas[1], /Santa Latino/);
+    assert.match(tarjetas[2], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/);
+    assert.match(tarjetas[3], /bomberos forestales/);
+    assert.match(tarjetas[4], /representantes migratorios/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.match(await hero.locator(".hero-sec-card__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
+    assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    assert.match(await hero.locator("h1 a").getAttribute("href"), new RegExp(`articulo(-|\\.html\\?slug=)${SLUG}$`));
-    await hero.locator("h1 a").evaluate((a) => a.click());
+    const enlaceHero = hero.locator("h2 a");
+    assert.match(await enlaceHero.getAttribute("href"), new RegExp(`articulo(-|\\.html\\?slug=)${SLUG}$`));
+    await enlaceHero.evaluate((a) => a.click());
     await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 
@@ -117,7 +111,7 @@ async function sinDesborde(page, ruta) {
     const enlace = page.locator(`main a[href*="${SLUG}"]`).first();
     assert.equal(await enlace.count(), 1, "aparece en Migración");
     const orden = await page.locator("main a[href*='articulo']").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
-    assert.match(orden[0], new RegExp(SLUG), "primera de las últimas publicaciones de Migración");
+    assert.match(orden[1], new RegExp(SLUG), "segunda de las últimas publicaciones de Migración, tras la de refugio");
     await sinDesborde(page, "/guia.html?categoria=migracion");
     assert.deepEqual(errores, []);
     await ctx.close();

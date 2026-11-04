@@ -176,6 +176,132 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Cambios al proceso de refugio en Canadá del 3 de noviembre de 2026 y
+       restricciones de la Ley C-12. Texto editorial de Nelson Vahos aprobado
+       por la dirección (orden del 4-11-2026), publicado completo con sus
+       títulos, fechas, advertencias y enlaces oficiales de IRCC. Video propio
+       en TikTok (enlace corto vt.tiktok.com/ZSpLttjdT resuelto el 4-11-2026).
+       Ilustración editorial aprobada por la dirección. Recuadro publicitario de
+       Country Hills Toyota separado del contenido periodístico; la promoción es
+       la comunicada por el patrocinador. */
+    id: "ART-2026-039",
+    slug: "canada-cambios-proceso-refugio-3-noviembre-2026",
+    category: "Migración",
+    contentType: "Noticia",
+    title: "Canadá cambia el proceso para solicitar refugio: estas son las nuevas reglas desde el 3 de noviembre de 2026",
+    dek: "El Gobierno canadiense puso en marcha un procedimiento modernizado para las solicitudes de asilo, con nuevas etapas digitales, plazos más claros y revisiones de elegibilidad. Las personas que buscan protección deben conocer también las restricciones que entraron en vigor en marzo de 2026.",
+    excerpt: "Desde el 3 de noviembre de 2026, Canadá aplica un procedimiento modernizado para solicitar refugio: etapas digitales, entrevista presencial, revisiones anticipadas y plazos más definidos. Además, la Ley C-12 trae restricciones de elegibilidad.",
+    author: { mode: "colaborador", name: "Nelson Vahos" },
+    publishedAt: "2026-11-04T08:30:00-07:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: null, city: "Ottawa" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/canada-cambios-proceso-refugio-3-noviembre-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial de El Podcast del Migrante: una familia latina —madre, padre e hijo— mira hacia el horizonte junto a la bandera de Canadá y el Parlamento en Ottawa; al lado, un documento titulado «Refugee Claim» con el sello «New Rules». Textos: «Noticia de última hora», «Canadá cambia las reglas para solicitar refugio», «Nuevo proceso digital desde el 3 de noviembre de 2026», «Proceso digital», «Plazos más claros», «Nuevas restricciones» y «Apoyo para personas vulnerables».",
+      credit: "Ilustración editorial de El Podcast del Migrante. Las personas, la escena y el documento son ilustrativos: no es una imagen ni un documento oficial del Gobierno de Canadá.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p><strong>Ottawa, Canadá | 4 de noviembre de 2026.</strong></p>
+      <p>Canadá introdujo el <strong>martes 3 de noviembre de 2026</strong> importantes modificaciones en el procedimiento para solicitar refugio. Las nuevas disposiciones, anunciadas por Inmigración, Refugiados y Ciudadanía de Canadá (IRCC), buscan simplificar los trámites, mejorar las revisiones iniciales y reducir los retrasos en el sistema de asilo.</p>
+      <p>Sin embargo, estos cambios también exigen que los solicitantes presten especial atención a los documentos, los plazos y las condiciones de elegibilidad.</p>
+      <h2>¿Qué cambió desde el 3 de noviembre de 2026?</h2>
+      <p>El Gobierno canadiense modernizó el procedimiento de solicitud de refugio mediante nuevas reglas administrativas y el uso del portal digital de IRCC.</p>
+      <p>Entre las principales modificaciones se encuentran:</p>
+      <ul>
+        <li><strong>Solicitudes simplificadas:</strong> reducción de preguntas duplicadas y formularios innecesarios.</li>
+        <li><strong>Proceso digital:</strong> presentación inicial de información y documentos a través del portal correspondiente.</li>
+        <li><strong>Entrevista presencial:</strong> quienes solicitan refugio desde el interior de Canadá deben comparecer ante un funcionario para formalizar su solicitud.</li>
+        <li><strong>Revisiones anticipadas:</strong> las autoridades realizan verificaciones de elegibilidad, seguridad y otros requisitos antes de remitir los casos al tribunal de refugio.</li>
+        <li><strong>Plazos más definidos:</strong> nuevas disposiciones para presentar información y responder a los requerimientos oficiales.</li>
+        <li><strong>Protección de personas vulnerables:</strong> medidas específicas para determinadas situaciones, incluidos menores no acompañados.</li>
+      </ul>
+      <p>El Gobierno sostiene que estas modificaciones permitirán una tramitación más ordenada y decisiones oportunas.</p>
+      <h2>Atención: también existen nuevas restricciones para solicitar refugio</h2>
+      <p>Aunque el procedimiento digital comenzó a aplicarse el 3 de noviembre de 2026, las restricciones adicionales de elegibilidad tienen una fecha anterior.</p>
+      <p>El <strong>26 de marzo de 2026</strong>, Canadá aprobó la <strong>Ley C-12</strong>, que incorporó dos importantes restricciones aplicables a solicitudes presentadas desde el <strong>3 de junio de 2025</strong>.</p>
+      <h3>Primera restricción: el plazo de un año</h3>
+      <p>Las personas cuya primera entrada a Canadá ocurrió después del <strong>24 de junio de 2020</strong> pueden quedar excluidas de la remisión de su solicitud a la Junta de Inmigración y Refugiados (IRB) si solicitan refugio <strong>más de un año</strong> después de esa primera entrada.</p>
+      <p>Esta regla puede aplicarse incluso cuando la persona haya salido de Canadá y posteriormente regresado.</p>
+      <h3>Segunda restricción: ingreso desde Estados Unidos entre pasos fronterizos oficiales</h3>
+      <p>Las personas que ingresaron a Canadá desde Estados Unidos entre puntos fronterizos oficiales pueden quedar sujetas a una restricción adicional si presentan su solicitud de refugio después de <strong>14 días</strong>.</p>
+      <p>Estas disposiciones tienen excepciones y deben interpretarse junto con las reglas del Acuerdo de Tercer País Seguro entre Canadá y Estados Unidos.</p>
+      <h2>¿Existen excepciones?</h2>
+      <p><strong>Sí.</strong></p>
+      <p>Las autoridades contemplan excepciones para menores de edad no acompañados y determinadas personas que registraron oportunamente su intención de solicitar refugio mediante el portal digital.</p>
+      <p>Es importante comprender que una solicitud considerada no elegible para ser remitida a la IRB no significa necesariamente que las autoridades puedan devolver inmediatamente a la persona a un país donde enfrenta peligro.</p>
+      <p>Dependiendo de las circunstancias, pueden existir otros mecanismos de evaluación del riesgo, como la evaluación de riesgo previa a la expulsión (PRRA).</p>
+      <h2>¿Qué ocurre si comenzaste tu solicitud antes del 3 de noviembre?</h2>
+      <p>IRCC informó que las solicitudes enviadas antes de la implementación del nuevo procedimiento continuarán siendo procesadas.</p>
+      <p>Sin embargo, las personas que comenzaron una solicitud en el portal antes del 3 de noviembre de 2026, pero todavía no la habían enviado, deberán:</p>
+      <ul>
+        <li>Responder las nuevas preguntas incorporadas al sistema.</li>
+        <li>Revisar las respuestas que habían registrado anteriormente.</li>
+        <li>Completar y enviar la información conforme a las instrucciones actualizadas.</li>
+      </ul>
+      <p>Los datos personales previamente guardados permanecerán disponibles en el portal.</p>
+      <h2>¿Qué deben hacer las personas que están considerando solicitar refugio?</h2>
+      <p>Antes de iniciar una solicitud, es fundamental comprender que el refugio es un mecanismo de protección para quienes enfrentan persecución o determinados riesgos graves, y <strong>no una alternativa automática para prolongar una estadía temporal en Canadá</strong>.</p>
+      <p>Las autoridades recomiendan consultar las instrucciones oficiales, proporcionar información verdadera, mantener actualizados los datos de contacto y cumplir los plazos establecidos.</p>
+      <p>También es importante recordar que cada caso migratorio es diferente. La fecha de entrada al país, la forma de ingreso, los antecedentes de solicitudes anteriores y las excepciones legales pueden modificar la evaluación.</p>
+      <p>Las personas que tengan dudas sobre su elegibilidad deberían buscar orientación de un abogado o consultor de inmigración canadiense autorizado y competente para su situación.</p>
+      <h2>El Podcast del Migrante te mantiene informado</h2>
+      <p>Estos cambios representan una actualización importante para las personas que buscan protección en Canadá.</p>
+      <p>Conocer las fechas, los requisitos y las excepciones puede marcar una diferencia al momento de tomar decisiones sobre una solicitud de refugio.</p>
+      <p>Desde El Podcast del Migrante continuaremos siguiendo las disposiciones oficiales para ofrecer información clara, responsable y útil a nuestra comunidad.</p>
+      <p><strong>Nelson Vahos | El Podcast del Migrante Magazine</strong></p>
+      <h2>Mira el informe en video</h2>
+      <p>Nelson Vahos explica los cambios en este video publicado en TikTok:</p>
+      <p class="article-apply-row"><a class="article-apply" href="https://www.tiktok.com/@podcastdelmigrante/video/7704144243954060565" target="_blank" rel="noopener">▶ Ver el informe en TikTok</a></p>
+      <h2>Fuentes oficiales</h2>
+      <p><strong>Gobierno de Canadá — IRCC</strong></p>
+      <ol>
+        <li>Cambios al proceso de asilo en 2026: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/asylum/asylum-process-changes.html" target="_blank" rel="noopener">canada.ca — Asylum process changes</a></li>
+        <li>Comunicado oficial del 3 de noviembre de 2026: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/canada-modernizes-the-asylum-system-to-support-timely-decisions.html" target="_blank" rel="noopener">canada.ca — Canada modernizes the asylum system to support timely decisions</a></li>
+        <li>Requisitos de elegibilidad para solicitar refugio: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/asylum/eligibility.html" target="_blank" rel="noopener">canada.ca — Eligibility to claim asylum</a></li>
+        <li>Cómo iniciar una solicitud desde Canadá: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/asylum/start/in-canada.html" target="_blank" rel="noopener">canada.ca — Claim asylum from inside Canada</a></li>
+      </ol>
+      <p><em>Nota editorial: Este contenido es informativo y no sustituye la asesoría legal o migratoria individualizada.</em></p>
+      <aside class="article-patrocinio" aria-label="Publicidad">
+        <p class="article-patrocinio__etiqueta">Publicidad · Reconocimiento a nuestro patrocinador</p>
+        <p><strong>Country Hills Toyota</strong> acompaña a El Podcast del Migrante y ofrece <strong>atención en español</strong>.</p>
+        <p>Promoción comunicada por el patrocinador: al comprar un vehículo <strong>nuevo</strong> y mencionar a El Podcast del Migrante, recibes una <strong>tarjeta de gasolina de $200 CAD</strong>. La promoción aplica exclusivamente a la compra de vehículos nuevos. Es una promoción del concesionario, sin relación con el proceso de refugio ni con el Gobierno de Canadá. Consulta las condiciones directamente con el concesionario.</p>
+        <p><a class="article-patrocinio__enlace" href="perfil-tomas-velazquez.html?utm_source=podcastdelmigrante&amp;utm_medium=patrocinio&amp;utm_campaign=country-hills-toyota&amp;utm_content=articulo-refugio">Contacta a Tomás Velázquez en Country Hills Toyota →</a></p>
+      </aside>
+    `,
+    /* Video propio en TikTok (@podcastdelmigrante). No se descarga ni se
+       aloja: el reproductor oficial se carga desde TikTok solo al pulsar. */
+    video: {
+      tiktokId: "7704144243954060565",
+      tiktokUser: "podcastdelmigrante",
+      title: "Canadá cambia el proceso para solicitar refugio desde el 3 de noviembre de 2026: Nelson Vahos explica las nuevas reglas",
+      heading: "🎥 Mira el informe en video",
+      cover: "assets/canada-cambios-proceso-refugio-3-noviembre-2026-video.jpg",
+      position: "intro",
+    },
+    sources: [
+      { label: "IRCC — Cambios al proceso de asilo en 2026 (Asylum process changes)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/asylum/asylum-process-changes.html" },
+      { label: "IRCC — Canada modernizes the asylum system to support timely decisions (comunicado, 3 de noviembre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/canada-modernizes-the-asylum-system-to-support-timely-decisions.html" },
+      { label: "IRCC — Requisitos de elegibilidad para solicitar refugio", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/asylum/eligibility.html" },
+      { label: "IRCC — Cómo iniciar una solicitud de refugio desde Canadá", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/asylum/start/in-canada.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["canada-cambios-express-entry-3-noviembre-2026", "multas-representantes-migratorios-canada-2026"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Canadá cambia el proceso de refugio desde el 3 de noviembre de 2026",
+      description: "Nuevo proceso digital de asilo en Canadá desde el 3 de noviembre de 2026: entrevista presencial, revisiones anticipadas, plazos y restricciones de la Ley C-12.",
+      canonicalPath: "/migracion/canada-cambios-proceso-refugio-3-noviembre-2026/",
+    },
+  },
+  {
     /* ENTRE DOS MUNDOS — capítulo 2 (Nelson Vahos), edición de noviembre de
        2026. Versión revisada y resumida aprobada por el autor; publicación
        autorizada por la dirección el 3-11-2026. Andrés y Claudia son nombres
