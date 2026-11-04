@@ -14,12 +14,20 @@
     de POR_PAGINA: las noticias y también las columnas publicadas
     (contentType "Columna"), con el mismo orden por publishedAt. La
     portada sigue mostrando solo noticias.
+  - Barra «Última hora» (ticker): las 5 noticias publicadas más recientes,
+    incluidas las del bloque principal. Solo las ya publicadas: se omiten
+    los borradores (`draft`), las programadas (publishedAt posterior al
+    momento de la visita) y las retiradas (`retirada: true`). Orden:
+    publishedAt, de la más reciente a la más antigua; si dos coinciden,
+    el identificador (ART-AAAA-NNN) más alto primero y, después, el slug,
+    para que el orden no cambie entre visitas.
   Se carga en el navegador (window.PDM_NOTICIAS) y en Node (pruebas).
 */
 (function (raiz) {
   "use strict";
 
   const EN_PORTADA = 5;
+  const EN_TICKER = 5;
   const POR_PAGINA = 12;
   const MESES = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
 
@@ -36,6 +44,20 @@
       .filter((a) => ["Noticia", "Columna"].includes(a.contentType) && a.demo === false && !a.draft && (a.lang || "es") === "es")
       .slice()
       .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  }
+
+  function ordenEstable(a, b) {
+    return Date.parse(b.publishedAt) - Date.parse(a.publishedAt) || String(b.id || "").localeCompare(String(a.id || "")) || String(a.slug).localeCompare(String(b.slug));
+  }
+
+  /* Barra «Última hora»: `ahora` (milisegundos) permite probar la regla de las programadas */
+  function ticker(articulos, ahora = Date.now(), cantidad = EN_TICKER) {
+    return articulos
+      .filter((a) => a.contentType === "Noticia" && a.demo === false && !a.draft && a.retirada !== true && (a.lang || "es") === "es" && a.slug)
+      .filter((a) => Number.isFinite(Date.parse(a.publishedAt)) && Date.parse(a.publishedAt) <= ahora)
+      .slice()
+      .sort(ordenEstable)
+      .slice(0, cantidad);
   }
 
   function slugsDelHero(hero) {
@@ -68,7 +90,7 @@
     return m ? m[1] : "";
   }
 
-  const api = { EN_PORTADA, POR_PAGINA, publicadas, archivo, portada, pagina, fechaCorta, imagen };
+  const api = { EN_PORTADA, EN_TICKER, POR_PAGINA, publicadas, archivo, portada, ticker, pagina, fechaCorta, imagen };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else raiz.PDM_NOTICIAS = api;
 })(typeof window !== "undefined" ? window : globalThis);

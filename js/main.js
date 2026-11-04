@@ -15,13 +15,45 @@
 
   const { el, initials, prefersReducedMotion } = window.PDM;
 
-  /* ---------- Breaking / última hora ---------- */
+  /* ---------- Breaking / última hora ----------
+     Las 5 noticias publicadas más recientes de ARTICLES (PDM_NOTICIAS.ticker),
+     cada una enlazada a su artículo. Para que el movimiento sea continuo se
+     dibuja una segunda copia, oculta para lectores de pantalla y fuera del
+     orden del teclado: cada titular se anuncia y se recorre una sola vez.
+     Con movimiento reducido no hay copia ni animación. */
   function buildBreaking() {
     const track = document.getElementById("breakingTrack");
-    const items = BREAKING.concat(BREAKING); // loop
-    items.forEach((text) => {
-      track.appendChild(el("span", "breaking-item", text));
-    });
+    if (!track || !window.PDM_NOTICIAS || typeof ARTICLES === "undefined") return;
+    const lista = window.PDM_NOTICIAS.ticker(ARTICLES);
+    const barra = track.closest(".breaking");
+    if (!lista.length) {
+      if (barra) barra.hidden = true;
+      return;
+    }
+    const grupo = (copia) => {
+      const ul = el("ul", "breaking__list");
+      if (copia) ul.setAttribute("aria-hidden", "true");
+      lista.forEach((a) => {
+        const li = el("li", "breaking-item");
+        const enlace = el("a", "breaking-link");
+        enlace.textContent = a.title;
+        enlace.href = "articulo-" + encodeURIComponent(a.slug);
+        if (copia) enlace.tabIndex = -1;
+        li.appendChild(enlace);
+        ul.appendChild(li);
+      });
+      return ul;
+    };
+    track.textContent = "";
+    track.appendChild(grupo(false));
+    if (prefersReducedMotion) {
+      track.classList.add("is-static");
+      return;
+    }
+    track.appendChild(grupo(true));
+    /* Velocidad constante (unos 50 px por segundo), sea cual sea el largo de los titulares */
+    const ancho = track.firstElementChild.getBoundingClientRect().width;
+    if (ancho > 0) track.style.animationDuration = `${Math.max(20, Math.round(ancho / 50))}s`;
   }
 
   /* ---------- Edición del mes (para header y módulo) ---------- */

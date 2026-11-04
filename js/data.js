@@ -28,11 +28,9 @@ const EDITION = {
   href: "/magazine/2026-10/",
 };
 
-const BREAKING = [
-  "Servicio de Ciudadanía e Inmigración amplía horarios de atención en Alberta",
-  "Nueva guía práctica para arrendar vivienda por primera vez en Canadá",
-  "Feria de empleo para nuevos residentes se realizará este mes en Calgary",
-];
+/* La barra «Última hora» de la portada ya no tiene una lista propia: muestra
+   automáticamente las 5 noticias publicadas más recientes de ARTICLES
+   (js/articles.js), con la regla de PDM_NOTICIAS.ticker (js/noticias.js). */
 
 /* pending: true → la sección aún no tiene página propia; el menú la oculta
    hasta que exista (no se elimina). Al publicarla, poner su href y quitar
