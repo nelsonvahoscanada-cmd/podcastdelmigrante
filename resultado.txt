@@ -1,0 +1,5 @@
+exit 0 nunavut-localidades
+exit 0 canada-datos
+exit 0 alberta-localidades
+exit 0 quebec-localidades
+exit 0 descubre-canada
