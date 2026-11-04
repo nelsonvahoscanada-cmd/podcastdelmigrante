@@ -18,12 +18,8 @@ jobs:
         continue-on-error: true
         timeout-minutes: 20
         run: mkdir -p /tmp/out && python .github/nu-corr/navegador.py
-      - name: Fuentes
-        continue-on-error: true
-        timeout-minutes: 25
-        run: python .github/nu-corr/fuentes.py
       - name: Publicar
         if: always()
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "Datos correcciones nunavut [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-nunavut-corr-datos-out
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-nunavut-corr-datos-out2
