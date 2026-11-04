@@ -506,8 +506,8 @@ function pagina(r, L, { esc }) {
 
   const recien = `<p>Los servicios para recién llegados financiados por el Gobierno de Canadá son gratuitos para quienes cumplen sus requisitos. En Nunavut hay pocos proveedores: usa el buscador oficial para ver cuáles atienden en el territorio o en línea.</p>
       ${enlaces(RECURSOS.recienLlegados, esc)}
-      <p>Consulta también la <a href="/canada-en-datos/nunavut#recien-llegado">guía de primeros pasos en Nunavut</a>.</p>`;
-  const familias = `<p>Estos son recursos territoriales y federales: se aplican en todo Nunavut, no solo en ${esc(nombre)}. La elegibilidad depende de tu estatus migratorio, tus ingresos y tu residencia.</p>
+      <p>Consulta también la sección <a href="/canada-en-datos/nunavut#integracion">Asentamiento e integración</a> y la <a href="/canada-en-datos/nunavut#recien-llegado">guía de primeros pasos en Nunavut</a>.</p>`;
+  const familias = `<p>Estos son recursos territoriales y federales: se aplican en todo Nunavut, no solo en ${esc(nombre)}. La elegibilidad depende de tu estatus migratorio, tus ingresos y tu residencia. La Nunavut Child Benefit se paga junto con la Canada Child Benefit; quien vive en Nunavut al menos seis meses seguidos puede pedir las deducciones fiscales para residentes del norte; y las guarderías con licencia cuestan $10 al día, donde hay cupo. Más detalles en la sección <a href="/canada-en-datos/nunavut#beneficios">Beneficios familiares y ayudas</a> de la guía.</p>
       ${enlaces(RECURSOS.familias, esc)}`;
 
   const perfilCenso = `https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A0005${r.c}`;
