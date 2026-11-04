@@ -19,14 +19,15 @@ const CAMBIOS = "https://www.canada.ca/en/immigration-refugees-citizenship/servi
 const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-test("portada: noticia principal con la imagen aprobada; el CGEB en la segunda tarjeta y las demás en su orden", () => {
-  assert.equal(ctx.H.main.slug, SLUG);
-  assert.equal(ctx.H.main.title, art.title);
-  assert.equal(ctx.H.main.dek, art.dek);
-  assert.equal(ctx.H.main.image, `url('${IMG}')`);
-  assert.equal(ctx.H.main.date, "2 de noviembre, 2026");
-  assert.equal(ctx.H.main.demo, false);
+test("portada: deja la noticia principal (refugio, 4-11-2026) y pasa a la primera tarjeta, con su imagen; las demás en su orden", () => {
+  assert.equal(ctx.H.main.slug, "canada-cambios-proceso-refugio-3-noviembre-2026");
+  const t = ctx.H.secondary[0];
+  assert.equal(t.slug, SLUG);
+  assert.equal(t.title, art.title);
+  assert.equal(t.image, `url('${IMG}')`);
+  assert.equal(t.demo, false);
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    SLUG,
     "hector-rivero-santa-latino-canada",
     "canada-groceries-essentials-benefit-cgeb-2026",
     "alberta-bomberos-forestales-2027",
@@ -41,7 +42,7 @@ test("artículo: sección Migración, fecha del 2 de noviembre en Alberta, una s
   assert.equal(art.category, "Migración");
   assert.equal(art.contentType, "Noticia");
   assert.match(art.publishedAt, /^2026-11-02T\d{2}:\d{2}:00-06:00$/);
-  assert.equal(ctx.A.filter((a) => a.category === "Migración" && !a.draft && a.demo === false)[0].slug, SLUG, "encabeza la sección Migración");
+  assert.equal(ctx.A.filter((a) => a.category === "Migración" && !a.draft && a.demo === false)[1].slug, SLUG, "segunda de la sección Migración, tras la noticia de refugio");
   assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)));
   assert.ok(existsSync(join(ROOT, IMG)));
   assert.ok(existsSync(join(ROOT, `assets/social/${SLUG}.jpg`)));

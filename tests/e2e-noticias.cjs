@@ -66,7 +66,6 @@ function ordenadas(lista) {
     const p1 = await filas(page, "#archivoLista");
     assert.equal(p1.length, 12, "12 por página");
     ordenadas(p1);
-    for (const f of portada) assert.ok(p1.some((g) => g.titulo === f.titulo), "las de la portada también están en el archivo");
     for (const f of p1) assert.match(f.href, /^articulo-[a-z0-9-]+$/);
     assert.equal(await page.locator('.news-pager a[aria-current="page"]').textContent(), "1");
     assert.match(await page.locator("#navPrimary").textContent(), /Canadá/);
@@ -79,6 +78,8 @@ function ordenadas(lista) {
     assert.ok(p2.length >= 1 && p2.length <= 12);
     assert.ok(Date.parse(p1[p1.length - 1].fecha) >= Date.parse(p2[0].fecha), "la página 2 sigue a la 1");
     assert.ok(!p2.some((f) => p1.some((g) => g.href === f.href)), "sin duplicados entre páginas");
+    /* Con 6 noticias destacadas, alguna de «Últimas noticias» puede quedar en la página 2 del archivo */
+    for (const f of portada) assert.ok([...p1, ...p2].some((g) => g.titulo === f.titulo), "las de la portada también están en el archivo");
     assert.match(await page.title(), /página 2/);
     assert.equal(await page.locator("#canonicalLink").getAttribute("href"), "https://podcastdelmigrante.com/noticias?pagina=2");
     assert.deepEqual(errores, []);
