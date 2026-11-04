@@ -223,8 +223,9 @@ def main():
     print("escrito    assets/canada-en-datos/social-canada-en-datos.jpg")
     for r in data["CD_REGIONS"]:
         if r.get("profile"):
-            tipo = "provincia" if r["type"] == "provincia" else "territorio"
-            guardar(tarjeta_canada(geo, r["code"], "Canadá en Datos", f"Conoce {r['name']}", f"Guía de la {tipo} para inmigrantes y recién llegados.", "Empleo, vivienda, salud, inmigración y ciudades", f"podcastdelmigrante.com/canada-en-datos/{r['profile']}"), OUT / f"social-{r['profile']}.jpg")
+            tipo = "de la provincia" if r["type"] == "provincia" else "del territorio"
+            lugares = "ciudades" if r["type"] == "provincia" else "comunidades"
+            guardar(tarjeta_canada(geo, r["code"], "Canadá en Datos", f"Conoce {r['name']}", f"Guía {tipo} para inmigrantes y recién llegados.", f"Empleo, vivienda, salud, inmigración y {lugares}", f"podcastdelmigrante.com/canada-en-datos/{r['profile']}"), OUT / f"social-{r['profile']}.jpg")
             print(f"escrito    assets/canada-en-datos/social-{r['profile']}.jpg")
     if "--solo-provincias" in sys.argv:
         return

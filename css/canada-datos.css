@@ -355,3 +355,6 @@
 .cd-share__url { margin-top: 6px; font-size: 0.78rem; color: var(--gris-texto); overflow-wrap: anywhere; }
 .cd-share__url a { color: var(--gris-800); }
 .cd-share__estado { margin-top: 6px; font-size: 0.86rem; font-weight: 700; color: var(--verde-oscuro); min-height: 1.2em; overflow-wrap: anywhere; }
+
+/* Bandera oficial junto al nombre de la región (perfil.flag, opcional) */
+.cd-flag { display: inline-block; width: 1.6em; height: auto; margin-right: 0.35em; vertical-align: -0.08em; border: 1px solid rgba(0, 0, 0, 0.15); }

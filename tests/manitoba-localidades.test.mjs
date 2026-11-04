@@ -261,7 +261,7 @@ test("portada de Canadá en Datos: Manitoba marcada como ficha disponible, sin t
   const idx = read("canada-en-datos/index.html");
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="MB"/);
   assert.match(idx, /aria-label="Manitoba \(ficha disponible\)"/);
-  for (const code of ["AB", "ON", "BC", "PE", "SK"]) assert.match(idx, new RegExp(`class="cd-region cd-region--ficha" data-code="${code}"`), code);
-  for (const code of ["NS", "NB", "NL", "YT", "NT", "NU"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
+  for (const code of ["AB", "ON", "BC", "PE", "SK", "NU"]) assert.match(idx, new RegExp(`class="cd-region cd-region--ficha" data-code="${code}"`), code);
+  for (const code of ["NS", "NB", "NL", "YT", "NT"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="QC"/, "Quebec, ficha añadida después");
 });

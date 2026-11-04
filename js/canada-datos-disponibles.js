@@ -2,14 +2,14 @@
    una región aparece como disponible cuando tiene ficha publicada en Canadá en Datos. */
 window.CD_DISPONIBLES = {
   "total": 13,
-  "disponibles": 7,
+  "disponibles": 8,
   "provincias": {
     "total": 10,
     "disponibles": 7
   },
   "territorios": {
     "total": 3,
-    "disponibles": 0
+    "disponibles": 1
   },
   "regiones": [
     {
@@ -88,7 +88,7 @@ window.CD_DISPONIBLES = {
       "code": "NU",
       "name": "Nunavut",
       "type": "territorio",
-      "url": null
+      "url": "/canada-en-datos/nunavut"
     }
   ]
 };
