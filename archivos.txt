@@ -1,0 +1,14 @@
+IGUAL js/data.js
+IGUAL js/articles.js
+DISTINTO articulo-canada-cambios-proceso-refugio-3-noviembre-2026.html
+IGUAL assets/canada-cambios-proceso-refugio-3-noviembre-2026.jpg
+IGUAL assets/canada-cambios-proceso-refugio-3-noviembre-2026-video.jpg
+IGUAL assets/social/canada-cambios-proceso-refugio-3-noviembre-2026.jpg
+IGUAL sitemap.xml
+<meta property="og:site_name" content="El Podcast del Migrante Magazine"
+<meta property="og:image:secure_url" content="https://podcastdelmigrante.com/assets/social/canada-cambios-proceso-refugio-3-noviembre-2026.jpg"
+<meta property="og:image:type" content="image/jpeg"
+<meta property="og:image:width" content="1200"
+<meta property="og:image:height" content="630"
+og:image 200 image/jpeg 204202 B
+articulo 200
