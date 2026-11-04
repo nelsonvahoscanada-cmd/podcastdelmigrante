@@ -3252,7 +3252,7 @@ const CD_PROFILES = {
         ],
         indicators: [],
         links: [
-          { label: "Gobierno de Nunavut — Asistencia de ingresos", href: "https://www.gov.nu.ca/en/social-supports/income-assistance-0" },
+          { label: "Gobierno de Nunavut — Asistencia de ingresos", href: "https://www.gov.nu.ca/en/social-supports/income-assistance" },
           { label: "RCMP", href: "https://rcmp.ca/en" },
           { label: "Ciudad de Iqaluit", href: "https://www.iqaluit.ca/" },
           { label: "Asamblea Legislativa de Nunavut", href: "https://assembly.nu.ca/" },
