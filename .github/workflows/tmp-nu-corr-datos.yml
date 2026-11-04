@@ -14,12 +14,13 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -q pypdf playwright==1.48.0 && python -m playwright install --with-deps chromium >/dev/null
-      - name: Navegador
+      - uses: actions/checkout@v4
+        with: { ref: claude/laughing-albattani-1rvkc1-nunavut-correcciones, path: sitio }
+      - name: Enlaces
         continue-on-error: true
-        timeout-minutes: 20
-        run: mkdir -p /tmp/out && python .github/nu-corr/navegador.py
+        run: mkdir -p /tmp/out && cd sitio && python ../.github/nu-corr/enlaces.py > /tmp/out/enlaces.txt 2>&1; tail -20 /tmp/out/enlaces.txt
       - name: Publicar
         if: always()
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "Datos correcciones nunavut [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-nunavut-corr-datos-out2
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-nunavut-corr-datos-out3
