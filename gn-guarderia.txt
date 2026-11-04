@@ -1,0 +1,14 @@
+# https://www.gov.nu.ca/en/families-parenting-elders-and-youth/early-learning-and-child-care → https://www.gov.nu.ca/en/families-parenting-elders-and-youth/early-learning-and-child-care
+# estado 403 | Just a moment...
+www.gov.nu.ca
+Performing security verification
+
+This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.
+
+Ray ID: a553b1ca38d1cf11
+Performance and Security by Cloudflare
+Privacy
+
+# ENLACES
+Cloudflare -> https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m
+Privacy -> https://www.cloudflare.com/privacypolicy/
