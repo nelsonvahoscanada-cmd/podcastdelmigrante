@@ -1,0 +1,57 @@
+name: tmp ticker produccion
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-ticker-prod]
+    paths: [".github/workflows/tmp-ticker-prod.yml"]
+permissions:
+  contents: write
+jobs:
+  produccion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue
+        run: for i in $(seq 1 60); do curl -sL https://podcastdelmigrante.com/js/noticias.js | grep -q "function ticker" && echo listo && exit 0; sleep 20; done; exit 1
+      - run: mkdir -p /tmp/pw /tmp/out/shots && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+      - name: Simulador del contador (no genera visitas)
+        run: |
+          cat > /tmp/pw/vistas.cjs <<'JS'
+          const pw = require("/tmp/pw/node_modules/playwright");
+          const orig = pw.chromium.launch.bind(pw.chromium);
+          pw.chromium.launch = async (...a) => {
+            const b = await orig(...a);
+            const nc = b.newContext.bind(b);
+            b.newContext = async (...o) => { const c = await nc(...o); await c.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true,"vistas":0}' })); return c; };
+            return b;
+          };
+          JS
+      - name: Archivos y caché
+        continue-on-error: true
+        run: |
+          B=https://podcastdelmigrante.com
+          { for f in index.html js/main.js js/noticias.js js/data.js js/articles.js css/styles.css; do curl -sfL "$B/$f" -o /tmp/x; if cmp -s /tmp/x "$f"; then echo "IGUAL $f"; else echo "DISTINTO $f"; fi; done
+            for f in / /js/articles.js /js/noticias.js /js/main.js; do echo "$f → $(curl -sI "$B$f" | grep -i '^cache-control\|^cf-cache-status\|^etag' | tr -d '\r' | tr '\n' ' ')"; done
+          } | tee /tmp/out/archivos.txt
+      - name: E2E del ticker en producción
+        env:
+          BASE: https://podcastdelmigrante.com
+          NODE_PATH: /tmp/pw/node_modules
+          NODE_OPTIONS: --require /tmp/pw/vistas.cjs
+          SHOTS: /tmp/out/shots
+        run: |
+          set +e
+          node tests/e2e-ticker.cjs > /tmp/out/ticker.log 2>&1; e=$?
+          if [ $e != 0 ]; then mv /tmp/out/ticker.log /tmp/out/ticker-intento1.log; node tests/e2e-ticker.cjs > /tmp/out/ticker.log 2>&1; e=$?; fi
+          echo "exit $e ticker" | tee /tmp/out/resultado.txt
+          node -e '
+          const {chromium}=require("playwright");(async()=>{const b=await chromium.launch();const c=await b.newContext();const p=await c.newPage();await p.goto("https://podcastdelmigrante.com/",{waitUntil:"networkidle"});
+          const t=await p.$$eval(".breaking__list:not([aria-hidden]) a",as=>as.map(a=>a.textContent.trim()+" → "+a.href));console.log(t.join("\n"));await b.close()})()' | tee /tmp/out/titulares.txt
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "Ticker produccion [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-ticker-prod-datos
