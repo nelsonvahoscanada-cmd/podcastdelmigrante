@@ -1,0 +1,10 @@
+DISTINTO index.html
+IGUAL js/main.js
+IGUAL js/noticias.js
+IGUAL js/data.js
+IGUAL js/articles.js
+IGUAL css/styles.css
+/ → cache-control: public, max-age=0, must-revalidate cf-cache-status: DYNAMIC 
+/js/articles.js → cache-control: public, max-age=14400, must-revalidate etag: W/"9de0fde657e8a1c89d1bda00b22678b3" cf-cache-status: REVALIDATED 
+/js/noticias.js → cache-control: public, max-age=14400, must-revalidate etag: "4466c935f018eaf8490b14bf72681628" cf-cache-status: REVALIDATED 
+/js/main.js → cache-control: public, max-age=14400, must-revalidate etag: "53cd3f78fe941b6c02a881ef49d0dbbf" cf-cache-status: EXPIRED 
