@@ -1,0 +1,7 @@
+archivos idénticos: 39, distintos: 0
+páginas 200: 35, con problemas: 0
+/canada-en-datos/nunavut → HTTP/2 200  | <title>Nunavut en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante | noindex=0
+/canada-en-datos/nunavut/iqaluit → HTTP/2 200  | <title>Iqaluit, Nunavut: guía para inmigrantes y recién llegados — El Podcast del Migrante | noindex=0
+/canada-en-datos/nunavut/kinngait → HTTP/2 200  | <title>Kinngait, Nunavut: información básica — El Podcast del Migrante | noindex=1
+/canada-en-datos/alberta → HTTP/2 200  | <title>Alberta en datos: guía para inmigrantes y recién llegados — El Podcast del Migrante | noindex=0
+/ → HTTP/2 200  | <title>El Podcast del Migrante Magazine — Información real para migrantes en Canadá | noindex=0
