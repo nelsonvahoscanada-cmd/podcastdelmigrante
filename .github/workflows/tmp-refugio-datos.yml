@@ -6,19 +6,42 @@ on:
 permissions:
   contents: write
 jobs:
-  datos:
+  video:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - run: pip install -q playwright==1.48.0 && python -m playwright install --with-deps chromium >/dev/null
-      - name: Datos
-        continue-on-error: true
-        run: mkdir -p /tmp/out && python .github/refugio/datos.py 2>&1 | tee /tmp/out/log.txt
+        with: { ref: claude/laughing-albattani-1rvkc1-refugio }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: mkdir -p /tmp/pw /tmp/out/shots && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium chrome >/dev/null
+      - name: Simulador del contador (no genera visitas)
+        run: |
+          cat > /tmp/pw/vistas.cjs <<'JS'
+          const pw = require("/tmp/pw/node_modules/playwright");
+          const orig = pw.chromium.launch.bind(pw.chromium);
+          pw.chromium.launch = async (...a) => {
+            const b = await orig(...a);
+            const nc = b.newContext.bind(b);
+            b.newContext = async (...o) => { const c = await nc(...o); await c.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true,"vistas":0}' })); return c; };
+            return b;
+          };
+          JS
+      - name: E2E en la vista previa con reproducción real del TikTok (Google Chrome)
+        env:
+          BASE: https://4c7a3b04.podcastdelmigrante.pages.dev
+          NODE_PATH: /tmp/pw/node_modules
+          NODE_OPTIONS: --require /tmp/pw/vistas.cjs
+          TIKTOK_REAL: "1"
+          CHANNEL: chrome
+          SHOTS: /tmp/out/shots
+        run: |
+          set +e
+          node tests/e2e-refugio-2026.cjs > /tmp/out/e2e.log 2>&1; e=$?
+          if [ $e != 0 ]; then mv /tmp/out/e2e.log /tmp/out/e2e-intento1.log; node tests/e2e-refugio-2026.cjs > /tmp/out/e2e.log 2>&1; e=$?; fi
+          echo "exit $e" | tee /tmp/out/resultado.txt; tail -12 /tmp/out/e2e.log
       - name: Publicar
         if: always()
         run: |
-          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "Datos refugio [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-refugio-datos-out2
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "Video refugio [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-refugio-datos-out3
