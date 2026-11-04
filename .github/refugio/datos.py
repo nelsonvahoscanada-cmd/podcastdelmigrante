@@ -12,8 +12,8 @@ canon = final.split("?")[0]
 o = json.loads(urllib.request.urlopen(urllib.request.Request("https://www.tiktok.com/oembed?url=" + urllib.parse.quote(canon, safe=""), headers=UA), timeout=60).read())
 json.dump(o, open(f"{OUT}/tiktok-oembed.json", "w"), ensure_ascii=False, indent=1)
 print("oembed:", o.get("title"), o.get("author_unique_id"), o.get("embed_product_id"))
-img = urllib.request.urlopen(urllib.request.Request(o["thumbnail_url"], headers=UA), timeout=60).read()
-open(f"{OUT}/tiktok-thumb.jpg", "wb").write(img)
+if o.get("thumbnail_url"):
+    open(f"{OUT}/tiktok-thumb.jpg", "wb").write(urllib.request.urlopen(urllib.request.Request(o["thumbnail_url"], headers=UA), timeout=60).read())
 # 2. Fuentes oficiales y reproductor embebido
 P = [("asylum-changes", "https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/asylum/asylum-process-changes.html"),
      ("news-2026-11", "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/canada-modernizes-the-asylum-system-to-support-timely-decisions.html"),
@@ -34,6 +34,11 @@ with sync_playwright() as p:
     vid = o.get("embed_product_id")
     pg = ctx.new_page()
     resp = pg.goto(f"https://www.tiktok.com/player/v1/{vid}", wait_until="domcontentloaded", timeout=90000); pg.wait_for_timeout(6000)
+    pg.wait_for_timeout(4000)
     pg.screenshot(path=f"{OUT}/player.png")
+    try:
+        open(f"{OUT}/video-page.txt", "w").write(urllib.request.urlopen(urllib.request.Request(canon, headers=UA), timeout=60).read().decode("utf-8", "ignore")[:400000])
+    except Exception as e:
+        print("pagina", e)
     open(f"{OUT}/player.txt", "w").write(f"estado {resp.status if resp else None}; video: {pg.evaluate('() => document.querySelectorAll(\"video\").length')}")
     b.close()
