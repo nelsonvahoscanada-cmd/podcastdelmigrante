@@ -1,0 +1,165 @@
+
+=== 17-10-0009-01 Población estimada (últimos 10 trimestres) ===
+  2024-04-01 41170
+  2024-07-01 41444
+  2024-10-01 41617
+  2025-01-01 41794
+  2025-04-01 41987
+  2025-07-01 42108
+  2025-10-01 42233
+  2026-01-01 42317
+  2026-04-01 42642
+  2026-07-01 43091
+
+=== 17-10-0005-01 Población estimada por edad (1 de julio, total y mediana) ===
+  2024 All ages 41444
+  2024 Median age 26.7
+  2025 All ages 42108
+  2025 Median age 27.2
+  2026 All ages 43091
+  2026 Median age 27.6
+
+=== 17-10-0008-01 Componentes del crecimiento (inmigrantes, emigración interprovincial) ===
+  2022/2023 Births 860
+  2022/2023 Deaths 231
+  2022/2023 Immigrants 45
+  2022/2023 Net emigration 12
+  2022/2023 Emigrants 19
+  2022/2023 Returning emigrants 7
+  2022/2023 Net non-permanent residents 59
+  2022/2023 Non-permanent residents, inflows 89
+  2022/2023 Non-permanent residents, outflows 30
+  2022/2023 Net interprovincial migration -386
+  2023/2024 Births 764
+  2023/2024 Deaths 253
+  2023/2024 Immigrants 57
+  2023/2024 Net emigration 0
+  2023/2024 Emigrants 0
+  2023/2024 Returning emigrants 0
+  2023/2024 Net non-permanent residents 100
+  2023/2024 Non-permanent residents, inflows 196
+  2023/2024 Non-permanent residents, outflows 96
+  2023/2024 Net interprovincial migration -163
+  2024/2025 Births 784
+  2024/2025 Deaths 237
+  2024/2025 Immigrants 73
+  2024/2025 Net emigration 0
+  2024/2025 Emigrants 0
+  2024/2025 Returning emigrants 0
+  2024/2025 Net non-permanent residents 89
+  2024/2025 Non-permanent residents, inflows 162
+  2024/2025 Non-permanent residents, outflows 73
+  2024/2025 Net interprovincial migration -45
+  2025/2026 Births 793
+  2025/2026 Deaths 246
+  2025/2026 Immigrants 102
+  2025/2026 Net emigration 0
+  2025/2026 Emigrants 0
+  2025/2026 Returning emigrants 0
+  2025/2026 Net non-permanent residents 36
+  2025/2026 Non-permanent residents, inflows 92
+  2025/2026 Non-permanent residents, outflows 56
+  2025/2026 Net interprovincial migration 298
+
+=== 36-10-0222-01 PIB a precios de mercado, dólares corrientes ===
+  2020 4066 millions
+  2021 4418 millions
+  2022 4402 millions
+  2023 4899 millions
+  2024 5668 millions
+
+=== 36-10-0402-01 PIB por industria (dólares encadenados de 2017), último año: sectores de 2 dígitos ===
+columnas: ['REF_DATE', 'GEO', 'DGUID', 'Prices', 'North American Industry Classification System (NAICS)', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE', 'STATUS', 'SYMBOL', 'TERMINATED', 'DECIMALS']
+
+=== 14-10-0292 EPA de los territorios, media móvil de 3 meses: series con Nunavut ===
+filas Nunavut: 6930 | columnas: ['REF_DATE', 'GEO', 'DGUID', 'Labour force characteristics', 'Gender', 'Age group', 'Statistics', 'Data type', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE']
+  2026-06 Seasonally adjusted {'Population': '27.5', 'Employment': '15.9', 'Unemployment rate': '11.6', 'Participation rate': '65.3', 'Employment rate': '57.8'}
+  2026-06 Unadjusted {'Population': '27.5', 'Employment': '15.9', 'Unemployment rate': '11.6', 'Participation rate': '65.3', 'Employment rate': '57.8'}
+  2026-07 Seasonally adjusted {'Population': '27.6', 'Employment': '15.8', 'Unemployment rate': '11.3', 'Participation rate': '64.6', 'Employment rate': '57.3'}
+  2026-07 Unadjusted {'Population': '27.6', 'Employment': '15.8', 'Unemployment rate': '11.3', 'Participation rate': '64.6', 'Employment rate': '57.3'}
+  2026-08 Seasonally adjusted {'Population': '27.7', 'Employment': '15.6', 'Unemployment rate': '11.3', 'Participation rate': '63.4', 'Employment rate': '56.2'}
+  2026-08 Unadjusted {'Population': '27.7', 'Employment': '15.6', 'Unemployment rate': '11.3', 'Participation rate': '63.4', 'Employment rate': '56.2'}
+  2026-09 Seasonally adjusted {'Population': '27.8', 'Employment': '15.4', 'Unemployment rate': '11.0', 'Participation rate': '62.4', 'Employment rate': '55.5'}
+  2026-09 Unadjusted {'Population': '27.8', 'Employment': '15.4', 'Unemployment rate': '11.0', 'Participation rate': '62.4', 'Employment rate': '55.5'}
+
+=== 14-10-0393 EPA por región económica, anual: series con Nunavut ===
+filas Nunavut: 10 | columnas: ['REF_DATE', 'GEO', 'DGUID', 'Labour force characteristics', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE', 'STATUS', 'SYMBOL', 'TERMINATED']
+  2024  {'Population': '26.7', 'Employment': '14.6', 'Unemployment rate': '8.4', 'Participation rate': '59.8', 'Employment rate': '54.8'}
+
+=== 14-10-0327 EPA anual por provincia: series con Nunavut ===
+filas Nunavut: 0 | columnas: -
+
+=== 14-10-0287 EPA mensual por provincia: series con Nunavut ===
+filas Nunavut: 0 | columnas: -
+
+=== 14-10-0064-01 Salarios por hora, todas las industrias ===
+
+=== 14-10-0223-01 SEPH: ganancias semanales promedio, todas las industrias ===
+  2025-01 Average weekly earnings including overtime for all employees 1724.69
+  2025-02 Average weekly earnings including overtime for all employees 1732.82
+  2025-03 Average weekly earnings including overtime for all employees 1739.39
+  2025-04 Average weekly earnings including overtime for all employees 1746.96
+  2025-05 Average weekly earnings including overtime for all employees 1747.62
+  2025-06 Average weekly earnings including overtime for all employees 1774.94
+  2025-07 Average weekly earnings including overtime for all employees 1803.53
+  2025-08 Average weekly earnings including overtime for all employees 1821.03
+  2025-09 Average weekly earnings including overtime for all employees 1773.29
+  2025-10 Average weekly earnings including overtime for all employees 1776.45
+  2025-11 Average weekly earnings including overtime for all employees 1810.84
+  2025-12 Average weekly earnings including overtime for all employees 1930.43
+  2026-01 Average weekly earnings including overtime for all employees 1892.86
+  2026-02 Average weekly earnings including overtime for all employees 1876.10
+  2026-03 Average weekly earnings including overtime for all employees 1871.24
+  2026-04 Average weekly earnings including overtime for all employees 1863.57
+  2026-05 Average weekly earnings including overtime for all employees 1861.19
+  2026-06 Average weekly earnings including overtime for all employees 1872.02
+  2026-07 Average weekly earnings including overtime for all employees 1843.73
+  2026-08 Average weekly earnings including overtime for all employees 1889.22
+
+=== 18-10-0004-01 IPC (Iqaluit), último dato ===
+  2026-01 All-items 145.9
+  2026-02 All-items 145.8
+  2026-03 All-items 146.0
+  2026-04 All-items 146.6
+  2026-05 All-items 147.5
+  2026-06 All-items 149.3
+  2026-07 All-items 150.6
+  2026-08 All-items 150.6
+  2026-09 All-items 149.6
+
+=== 98-10-0307-01 Censo 2021: estatus de inmigrante (Nunavut) ===
+  Total – Place of birth {'Total - Immigrant status and period of immigration': '36605', 'Non-immigrants': '35360', 'Immigrants': '1165', '2016 to 2021': '240', 'Non-permanent residents': '75'}
+  Americas {'Total - Immigrant status and period of immigration': '235', 'Non-immigrants': '20', 'Immigrants': '195', '2016 to 2021': '50', 'Non-permanent residents': '15'}
+  United States of America {'Total - Immigrant status and period of immigration': '90', 'Non-immigrants': '20', 'Immigrants': '65', '2016 to 2021': '20', 'Non-permanent residents': '10'}
+  Central America {'Total - Immigrant status and period of immigration': '15', 'Non-immigrants': '0', 'Immigrants': '15', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Mexico {'Total - Immigrant status and period of immigration': '15', 'Non-immigrants': '0', 'Immigrants': '10', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  South America {'Total - Immigrant status and period of immigration': '35', 'Non-immigrants': '0', 'Immigrants': '35', '2016 to 2021': '10', 'Non-permanent residents': '0'}
+  Colombia {'Total - Immigrant status and period of immigration': '10', 'Non-immigrants': '0', 'Immigrants': '10', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  United Kingdom {'Total - Immigrant status and period of immigration': '65', 'Non-immigrants': '10', 'Immigrants': '55', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Nigeria {'Total - Immigrant status and period of immigration': '75', 'Non-immigrants': '0', 'Immigrants': '65', '2016 to 2021': '20', 'Non-permanent residents': '15'}
+  Philippines {'Total - Immigrant status and period of immigration': '275', 'Non-immigrants': '0', 'Immigrants': '260', '2016 to 2021': '55', 'Non-permanent residents': '15'}
+  India {'Total - Immigrant status and period of immigration': '65', 'Non-immigrants': '0', 'Immigrants': '60', '2016 to 2021': '25', 'Non-permanent residents': '0'}
+
+=== 98-10-0222 Censo 2021: conocimiento de idiomas oficiales (Nunavut) ===
+  Total - Knowledge of official languages | 36640 | 100.0
+  English only | 33100 | 90.3
+  French only | 60 | 0.2
+  English and French | 1390 | 3.8
+  Neither English nor French | 2085 | 5.7
+
+=== 98-10-0218 Censo 2021: lengua materna (Nunavut) ===
+  Total - Mother tongue | 36645 | 100.0
+  English | 12100 | 33.0
+  French | 520 | 1.4
+  Non-official language | 20150 | 55.0
+  English and French | 110 | 0.3
+  English and non-official language | 3730 | 10.2
+  French and non-official language | 25 | 0.1
+  English, French and non-official language | 10 | 0.0
+
+=== 98-10-0264-01 Censo 2021: identidad indígena (Nunavut) ===
+  {"Registered or Treaty Indian status (3)": "Total - Registered or Treaty Indian status", "Age (20)": "Total - Age", "Gender (3)": "Total - Gender", "Statistics (3)": "Count", "Residence by Indigenous geography (10)": "Total - Residence on or off reserve", "Coordinate": "14.1.1.1.1.1", "Indigenous identity (9):Total - Indigenous identity[1]": "36605", "Indigenous identity (9):Indigenous identity[2]": "31385", "Indigenous identity (9):Single Indigenous responses[3]": "31160", "Indigenous identity (9):First Nations (North American Indian)[4]": "180", "Indigenous identity (9):Métis[5]": "120", "In
+
+=== 34-10-0133-01 / 34-10-0127-01 CMHC (alquiler y desocupación): ¿hay Iqaluit o Nunavut? ===
+34100133 sin filas de Nunavut
+34100127 sin filas de Nunavut

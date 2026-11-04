@@ -1,0 +1,41 @@
+
+=== Provincia (contorno del mapa) ===
+polígonos: 1 propiedades: {'OBJECTID': 13, 'PRUID': '62', 'DGUID': '2021A000262', 'PRNAME': 'Nunavut', 'PRENAME': 'Nunavut', 'PRFNAME': 'Nunavut', 'PREABBR': 'Nvt.', 'PRFABBR': 'Nt', 'LANDAREA': 1836993.7767, 'SHAPE_Length': 190692362.96841285, 'SHAPE_Area': 2009082521293.6172}
+
+=== Divisiones censales (regiones) ===
+CD: [('6204', 'Qikiqtaaluk', 'REG'), ('6205', 'Kivalliq', 'REG'), ('6208', 'Kitikmeot', 'REG')] bytes: 6432026
+
+=== Regiones económicas ===
+ER: {'6210': 'Nunavut'}
+
+=== Subdivisiones censales (CSD) ===
+CSD: 31 tipos: {'HAM': 24, 'CY': 1, 'SET': 3, 'NO': 3} campos: ['OBJECTID', 'CSDUID', 'DGUID', 'CSDNAME', 'CSDTYPE', 'LANDAREA', 'PRUID', 'SHAPE_Length', 'SHAPE_Area']
+
+=== Aglomeraciones censales (CA) ===
+CMA/CA: []
+
+=== Lugares designados (DPL) ===
+DPL: 1 tipos: ['RPC']
+
+=== Censo 2021 (98-10-0002-01): territorio, CD y CSD de Nunavut ===
+columnas: ['REF_DATE', 'GEO', 'DGUID', 'Coordinate', 'Population and dwelling counts (13): Population, 2021 [1]', 'Symbols', 'Population and dwelling counts (13): Population, 2016 [2]', 'Symbols', 'Population and dwelling counts (13): Population percentage change, 2016 to 2021 [3]', 'Symbols', 'Population and dwelling counts (13): Total private dwellings, 2021 [4]', 'Symbols', 'Population and dwelling counts (13): Total private dwellings, 2016 [5]', 'Symbols', 'Population and dwelling counts (13): Total private dwellings percentage change, 2016 to 2021 [6]', 'Symbols', 'Population and dwelling counts (13): Private dwellings occupied by usual residents, 2021 [7]', 'Symbols', 'Population and dwelling counts (13): Private dwellings occupied by usual residents, 2016 [8]', 'Symbols', 'Population and dwelling counts (13): Private dwellings occupied by usual residents percentage change, 2016 to 2021 [9]', 'Symbols', 'Population and dwelling counts (13): Land area in square kilometres, 2021 [10]', 'Symbols', 'Population and dwelling counts (13): Population density per square kilometre, 2021 [11]', 'Symbols', 'Population and dwelling counts (13): National population rank, 2021 [12]', 'Symbols', 'Population and dwelling counts (13): Province/territory population rank, 2021 [13]', 'Symbols']
+filas: 35
+
+=== Censo 2021 (98-10-0012-01): lugares designados de Nunavut ===
+filas: 1
+
+=== CGNDB (Recursos Naturales Canadá): lugares poblados de Nunavut ===
+nombres: 68 [(('Locality', 'Populated Place'), 34), (('Hamlet', 'Populated Place'), 24), (('Settlement', 'Populated Place'), 3), (('Neighbourhood', 'Populated Place'), 2), (('Landing', 'Populated Place'), 2), (('Weather Station', 'Populated Place'), 1), (('City', 'Populated Place'), 1), (('Former Locality', 'Populated Place'), 1)]
+fuera de una CSD (más de 0 m): 22
+ejemplos: [('Alert', 'Settlement', '6204030'), ('Alexandra Fiord', 'Locality', '6204030'), ('Amadjuak', 'Locality', '6204030'), ('Apex', 'Neighbourhood', '6204003'), ('Arctic Bay', 'Hamlet', '6204018'), ('Arviat', 'Hamlet', '6205015'), ('Baker Lake', 'Hamlet', '6205023'), ('Bathurst Inlet', 'Locality', '6208098'), ('Cambridge Bay', 'Hamlet', '6208073'), ('Cape Dyer', 'Locality', '6204030'), ('Cape Smith', 'Locality', '6204030'), ('Charlton Depot', 'Locality', '6204030'), ('Chesterfield Inlet', 'Hamlet', '6205019'), ('Clyde River', 'Hamlet', '6204015'), ('Coral Harbour', 'Hamlet', '6205014'), ('Craig Harbour', 'Locality', '6204030'), ('Dundas Harbour', 'Locality', '6204030'), ('Ennadai', 'Locality', '6205033'), ('Eureka', 'Weather Station', '6204030'), ('Fort Conger', 'Locality', '6204030'), ('Fort Hope', 'Locality', '6205027'), ('Fort Ross', 'Locality', '6208098'), ('Fullerton', 'Locality', '6205033'), ('Gjoa Haven', 'Hamlet', '6208081'), ('Grise Fiord', 'Hamlet', '6204025'), ('Hazen Camp', 'Locality', '6204030'), ('Igloolik', 'Hamlet', '6204012'), ('Ikaaqtalik', 'Landing', '6204030'), ('Ikaluit', 'Neighbourhood', '6204003'), ('Iqaluit', 'City', '6204003'), ('Isachsen', 'Locality', '6204030'), ('Kekerten', 'Locality', '6204030'), ('Kimmirut', 'Hamlet', '6204005'), ('Kinngait', 'Hamlet', '6204007'), ('Kipisa', 'Locality', '6204030'), ('Kivitoo', 'Locality', '6204030'), ('Kugaaruk', 'Hamlet', '6208047'), ('Kugluktuk', 'Hamlet', '6208059'), ('Lupin', 'Locality', '6208098'), ('Maguse River', 'Locality', '6205033'), ('Nanisivik', 'Settlement', '6204019'), ('Naujaat', 'Hamlet', '6205027'), ('Nottingham Island', 'Locality', '6204030'), ('Nutarasungniq', 'Locality', '6204020'), ('Nuwata', 'Locality', '6204030'), ('Padlei', 'Locality', '6205033'), ('Padloping Island', 'Locality', '6204030'), ('Pangnirtung', 'Hamlet', '6204009'), ('Perry Island', 'Locality', '6208098'), ('Polaris', 'Locality', '6204030'), ('Pond Inlet', 'Hamlet', '6204020'), ('Port Burwell', 'Locality', '6204030'), ('Qajalinga', 'Landing', '6204030'), ('Qikiqtarjuaq', 'Hamlet', '6204010'), ('Rankin Inlet', 'Hamlet', '6205017'), ('Read Island', 'Locality', '6208098'), ('Resolute', 'Hamlet', '6204022'), ('Resolution Island', 'Locality', '6204030'), ('Sanikiluaq', 'Hamlet', '6204001'), ('Sanirajak', 'Hamlet', '6204011'), ('Taloyoak', 'Hamlet', '6208087'), ('Tanquary Camp', 'Locality', '6204030'), ('Tavani', 'Locality', '6205033'), ('Thom Bay', 'Locality', '6208098'), ('Tuniit', 'Former Locality', '6204030'), ('Umingmaktok', 'Settlement', '6208068'), ('Wager Bay', 'Locality', '6205033'), ('Whale Cove', 'Hamlet', '6205016')]
+
+=== ODHF 2020: centros de salud de Nunavut ===
+archivo: odhf_v1.csv columnas: ['index', 'facility_name', 'source_facility_type', 'odhf_facility_type', 'provider', 'unit', 'street_no', 'street_name', 'postal_code', 'city', 'province', 'source_format_str_address', 'CSDname', 'CSDuid', 'Pruid', 'latitude', 'longitude']
+ejemplos: [('kitikmeot regional health centre', 'Hospitals', 'cambridge bay', '6208073'), ('kivalliq health centre', 'Hospitals', 'rankin inlet', '6205017'), ('qikiqtani general hospital', 'Hospitals', 'iqaluit', '6204003')]
+centros: 3 tipos: ['Hospitals']
+
+=== ODEF v2.1 (2022): establecimientos educativos de Nunavut ===
+archivo: ODEF_v2.1_EN/ODEF_v2_1.csv columnas: ['Index', 'Source_ID', 'Facility_Name', 'Facility_Type', 'Authority_Name', 'ISCED010', 'ISCED020', 'ISCED1', 'ISCED2', 'ISCED3', 'ISCED4Plus', 'OLMS_Status', 'Full_Addr', 'Unit', 'Street_No', 'Street_Name', 'City', 'Prov_Terr', 'Postal_Code', 'PRUID', 'CSDNAME', 'CSDUID', 'Longitude', 'Latitude', 'Geo_Source', 'Provider', 'CMANAME', 'CMAUID']
+establecimientos: 45 ejemplo: [{'Index': '0affa8a2701f724cea13', 'Facility_Name': 'École des trois soleil', 'Authority_Name': 'Commission scolaire francophone du Nuanvut', 'OLMS_Status': '1', 'Full_Addr': '2802 Niaqunngusiariaq, Iqaluit, NU X0A 0H0', 'Street_No': '2802', 'Street_Name': 'niaqunngusiariaq', 'City': 'Iqaluit (CSFN)', 'Prov_Terr': 'NU', 'Postal_Code': 'X0A0H0', 'PRUID': '62', 'CSDNAME': 'Iqaluit', 'CSDUID': '6204003', 'Longitude': '-68.479988', 'Latitude': '63.740339', 'Geo_Source': 'OpenRouteService', 'Provider': 'Nunavut', 'CMAUID': '...', 'csd': '6204003', 'dist': 0}, {'Index': 'f983a5ee3d10b02f6a97', 'Source_ID': 'WPAA', 'Facility_Name': 'Nunavut Arctic College', 'Facility_Type': 'Private Institution', 'ISCED4Plus': '1', 'OLMS_Status': '0', 'Full_Addr': 'PO Box 600 Iqualuit Nunavut X0A0H0 Canada', 'City': 'Iqualuit', 'Prov_Terr': 'NU', 'Postal_Code': 'X0A0H0', 'PRUID': '62', 'Provider': 'Employment and Social Development Canada'}]
+
+bytes JSON: 18354073

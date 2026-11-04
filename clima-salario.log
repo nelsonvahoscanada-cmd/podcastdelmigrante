@@ -1,0 +1,105 @@
+
+=== Estaciones de Nunavut con normales ===
+  2300902 KUGLUKTUK A Y 1977-01-01 2014-12-04
+  23026HN LUPIN A Y 1982-01-01 2006-10-31
+  2300MKF ARVIAT A N 1973-01-01 2016-12-30
+  2300500 BAKER LAKE A Y 1946-01-01 2013-11-14
+  2303092 KUGAARUK A Y 1984-01-01 2015-02-12
+  2303400 RANKIN INLET N 1954-01-01 1962-06-30
+  2303401 RANKIN INLET A Y 1981-01-01 2013-03-14
+  2303403 RANKIN INLET ARTC N 1976-01-01 1976-12-31
+  2303986 WHALE COVE A Y 1984-10-03 2014-11-30
+  2400635 CAPE DORSET A N 1963-01-01 2014-11-27
+  2400800 CLYDE A Y 1933-01-01 2013-01-10
+  2401200 EUREKA A Y 1947-01-01 2016-02-25
+  2402350 HALL BEACH A Y 1956-01-01 2014-12-31
+  2402540 IGLOOLIK N 1977-01-01 2003-10-31
+  2402543 IGLOOLIK A N 1984-01-01 2015-01-15
+  2402590 IQALUIT A N 1946-01-01 2014-02-06
+  2403050 PANGNIRTUNG 1925 CLIMATE N 1925-10-01 1983-12-01
+  2403200 POND INLET N 1922-10-01 1965-12-01
+  2403201 POND INLET A Y 1975-01-01 2014-12-24
+  2403500 RESOLUTE CARS Y 1947-01-01 2014-11-30
+  2403854 TALOYOAK A Y 1984-01-01 2015-01-15
+  2400600 CAMBRIDGE BAY A Y 1929-01-01 2015-02-12
+  2403053 PANGNIRTUNG A N 1987-12-01 2014-12-30
+  2402594 IQALUIT UA N 1997-04-01 2016-02-18
+  2403049 PANGNIRTUNG N 1994-02-01 2026-11-01
+  2403505 RESOLUTE CS N 2002-10-01 2026-11-01
+  2400602 CAMBRIDGE BAY GSN N 2002-12-01 2026-11-01
+  2301153 ARVIAT CLIMATE N 2004-06-21 2026-11-01
+  2402592 IQALUIT CLIMATE N 2004-05-25 2026-11-01
+  2300501 BAKER LAKE CLIMATE N 2004-06-02 2026-11-01
+  2300904 KUGLUKTUK CLIMATE N 2004-09-17 2026-11-01
+  2400636 KINNGAIT N 2005-03-01 2026-11-01
+  2403204 POND INLET CLIMATE N 2004-09-18 2026-11-01
+  2402591 IQALUIT AWOS N 2008-07-03 2015-06-24
+  2300426 ARVIAT AWOS N 2008-07-02 2012-07-26
+  2400634 CAPE DORSET AWOS N 2008-07-02 2012-06-14
+  2403052 PANGNIRTUNG AWOS N 2008-07-02 2013-03-07
+  2403202 POND INLET AWOS N 2008-07-02 2013-01-10
+  2400633 KINNGAIT AIRPORT N 2012-07-18 2026-11-01
+  2400637 KINNGAIT AIRPORT N 2012-06-11 2026-11-01
+  2300427 ARVIAT A N 2006-12-31 2026-11-01
+  2300428 ARVIAT A N 2012-10-09 2026-11-01
+  2403206 POND INLET A N 2013-01-10 2026-11-01
+  2403205 POND INLET A N 2013-01-10 2026-10-31
+  2403051 PANGNIRTUNG A N 2013-03-05 2026-11-01
+  2403054 PANGNIRTUNG A N 2013-03-05 2026-11-01
+  2303405 RANKIN INLET A N 2013-03-12 2026-11-01
+  2300503 BAKER LAKE A N 2013-11-12 2026-11-01
+  2402596 IQALUIT A N 2014-02-06 2026-11-01
+  2403498 RESOLUTE BAY A N 2014-11-04 2026-11-01
+  2402546 IGLOOLIK A N 2015-01-15 2026-11-01
+  2402541 IGLOOLIK A N 2015-01-15 2026-11-01
+  2300903 KUGLUKTUK A N 2014-12-02 2026-11-01
+  2400601 CAMBRIDGE BAY A N 2015-02-10 2026-11-01
+  2300504 BAKER LAKE A N 2016-01-13 2026-11-01
+  2400603 CAMBRIDGE BAY A N 2016-01-13 2026-11-01
+  2300905 KUGLUKTUK A N 2016-01-13 2026-11-01
+  2403497 RESOLUTE BAY A N 2016-01-13 2026-11-01
+
+=== Normales: 2300902 ===
+estación: KUGLUKTUK A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'F', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2004, 'YEAR_COUNT_NORMAL_PERIOD': 24, 'MAX_DURATION_MISSING_YEARS': 2}
+  Mean daily temperature deg C {1: -27.3, 2: -27.71, 3: -25.25, 4: -16.34, 5: -5.28, 6: 5.5, 7: 10.88, 8: 8.97, 9: 3.26, 10: -6.64, 11: -18.72, 12: -24.46, 13: -10.26}
+  Mean daily max temperature deg C {1: -23.17, 2: -23.41, 3: -20.66, 4: -11.43, 5: -1.32, 6: 9.94, 7: 15.6, 8: 13.11, 9: 6.45, 10: -3.48, 11: -14.82, 12: -20.3, 13: -6.12}
+  Mean daily min temperature deg C {1: -31.39, 2: -31.96, 3: -29.79, 4: -21.2, 5: -9.22, 6: 1.03, 7: 6.11, 8: 4.78, 9: 0.05, 10: -9.76, 11: -22.57, 12: -28.58, 13: -14.38}
+  Total snowfall cm {1: 19.56, 2: 16.28, 3: 19.38, 4: 18.24, 5: 16.15, 6: 2.13, 7: 0.02, 8: 0.22, 9: 7.74, 10: 35.03, 11: 25.49, 12: 21.85, 13: 182.09}
+  Total precipitation mm {1: 10.42, 2: 8.39, 3: 9.9, 4: 10.04, 5: 14.62, 6: 16.55, 7: 44.46, 8: 45.07, 9: 37.84, 10: 26.52, 11: 13.02, 12: 10.39, 13: 247.22}
+
+=== Normales: 2300500 ===
+estación: BAKER LAKE A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2007, 'YEAR_COUNT_NORMAL_PERIOD': 25, 'MAX_DURATION_MISSING_YEARS': 1}
+  Total snowfall cm {1: 7.37, 2: 8.81, 3: 13.79, 4: 15.97, 5: 11.05, 6: 2.62, 7: 0.01, 8: 0.87, 9: 7.74, 10: 24.43, 11: 20.28, 12: 13.52, 13: 126.46}
+  Total precipitation mm {1: 6.16, 2: 7.47, 3: 11.44, 4: 14, 5: 14.45, 6: 23.06, 7: 41.1, 8: 52.03, 9: 48.66, 10: 26.97, 11: 16.03, 12: 11.08, 13: 272.45}
+  Mean daily temperature deg C {1: -31.3, 2: -31.11, 3: -26.34, 4: -16.97, 5: -6.38, 6: 4.88, 7: 11.57, 8: 9.82, 9: 3.13, 10: -6.46, 11: -19.31, 12: -26.81, 13: -11.27}
+  Mean daily max temperature deg C {1: -27.73, 2: -27.42, 3: -22.04, 4: -12.31, 5: -2.96, 6: 9.26, 7: 17, 8: 14.33, 9: 6.43, 10: -3.39, 11: -15.51, 12: -23.1, 13: -7.29}
+  Mean daily min temperature deg C {1: -34.82, 2: -34.75, 3: -30.58, 4: -21.54, 5: -9.77, 6: 0.47, 7: 6.08, 8: 5.25, 9: -0.19, 10: -9.48, 11: -23.06, 12: -30.47, 13: -15.24}
+
+=== Normales: 2303401 ===
+estación: RANKIN INLET A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1982, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 29, 'MAX_DURATION_MISSING_YEARS': 0}
+  Mean daily temperature deg C {1: -30.83, 2: -29.89, 3: -24.95, 4: -15.61, 5: -5.75, 6: 4.19, 7: 10.5, 8: 9.72, 9: 3.8, 10: -4.61, 11: -16.99, 12: -25.66, 13: -10.51}
+  Mean daily max temperature deg C {1: -27.25, 2: -26.13, 3: -20.64, 4: -11.12, 5: -2.43, 6: 7.9, 7: 14.88, 8: 13.14, 9: 6.27, 10: -1.86, 11: -13.04, 12: -21.87, 13: -6.85}
+  Mean daily min temperature deg C {1: -34.36, 2: -33.59, 3: -29.2, 4: -20.06, 5: -9.03, 6: 0.45, 7: 6.08, 8: 6.24, 9: 1.28, 10: -7.33, 11: -20.9, 12: -29.41, 13: -14.15}
+  Total snowfall cm {1: 8.87, 2: 8.53, 3: 12.51, 4: 19.15, 5: 13, 6: 4.6, 7: 0.09, 8: 0.17, 9: 3.79, 10: 25.5, 11: 22.42, 12: 13.27, 13: 131.9}
+  Total precipitation mm {1: 8.73, 2: 8.23, 3: 12.32, 4: 19.86, 5: 19.5, 6: 26.61, 7: 42.03, 8: 57.36, 9: 42.89, 10: 38, 11: 21.74, 12: 12.8, 13: 310.07}
+
+=== Normales: 2400600 ===
+estación: CAMBRIDGE BAY A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 30, 'MAX_DURATION_MISSING_YEARS': 0}
+  Mean daily temperature deg C {1: -31.98, 2: -32.51, 3: -29.26, 4: -20.79, 5: -9.31, 6: 2.73, 7: 8.88, 8: 6.8, 9: 0.29, 10: -10.4, 11: -22.31, 12: -28.34, 13: -13.85}
+  Mean daily max temperature deg C {1: -28.49, 2: -28.93, 3: -25.31, 4: -16.27, 5: -5.6, 6: 5.76, 7: 12.8, 8: 9.77, 9: 2.46, 10: -7.28, 11: -18.84, 12: -24.87, 13: -10.4}
+  Mean daily min temperature deg C {1: -35.41, 2: -36.05, 3: -33.16, 4: -25.25, 5: -12.97, 6: -0.33, 7: 4.91, 8: 3.78, 9: -1.88, 10: -13.48, 11: -25.74, 12: -31.76, 13: -17.28}
+  Total snowfall cm {1: 6.67, 2: 5.93, 3: 8.42, 4: 6.88, 5: 7.2, 6: 3.77, 7: 0.14, 8: 1.81, 9: 6.84, 10: 15.93, 11: 9.77, 12: 6.8, 13: 80.16}
+  Total precipitation mm {1: 5.83, 2: 4.92, 3: 7.09, 4: 5.7, 5: 7.01, 6: 13.63, 7: 24.07, 8: 25.66, 9: 19.05, 10: 14.71, 11: 8.02, 12: 6.05, 13: 141.74}
+
+=== Salario mínimo: https://minwage-salairemin.service.canada.ca/en/general.html ===
+URL: https://minwage-salairemin.service.canada.ca/en/general.html | estado: 500 | caracteres: 247
+
+=== Salario mínimo: https://web.archive.org/web/2026/https://minwage-salairemin.service.canada.ca/en/general.html ===
+URL: https://web.archive.org/web/20261007032509/https://minwage-salairemin.service.canada.ca/en/general.html | estado: 200 | caracteres: 2328
+  > Jurisdiction	Effective Date	Wage Rate	Note | Federal | Footnote
+  > Footnote | 1	01-Apr-2026	$18.15	An employee should be paid at least the federal minimum wage. If the minimum wage of the province or territory where the employee usually works is higher than the federal minimum wage, the employer is to pay the higher minimum wage. | Alberta	26-Jun-2019	$15.00
+  > Newfoundland and Labrador	01-Apr-2026	$16.35 | Northwest Territories	01-Sep-2026	$17.20 | Nova Scotia	01-Apr-2026	$16.75
+  > Nova Scotia	01-Oct-2026	$17.00 | Nunavut	01-Sep-2026	$20.17 | Ontario	01-Oct-2026	$17.95
+  > Saskatchewan	01-Oct-2025	$15.35 | Yukon	01-Apr-2026	$18.51 | Note: In most jurisdictions, these rates also apply to young workers. More information is available on special rates for young workers under "Current and Forthcoming Minimum Wage Rates in Canada for Young Workers and Specific Occupations".
+  > The federal jurisdiction includes labour market sectors coming under federal authority by virtue of the Constitution, such as international and interprovincial transportation, telecommunication and banking.
+  > Report a problem on this page | Date modified: 2026-10-07 | About this site
