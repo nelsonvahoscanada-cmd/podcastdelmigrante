@@ -22,6 +22,14 @@
     POST /api/eliminaciones/N/pasos            pasos manuales: correos borrados en Gmail, respuesta enviada
     GET  /api/reportes/correo                  ¿está activado el envío del reporte por correo?
     POST /api/reportes/enviar                  envía el PDF del reporte por correo (desactivado por defecto)
+    GET  /invitaciones                         invitaciones y membresías (public/invitaciones.html)
+    GET  /api/invitaciones?month=AAAA-MM       invitaciones, membresías y sus estadísticas del mes
+    POST /api/invitaciones                     crea una invitación (el enlace se muestra UNA vez)
+    POST /api/invitaciones/instalar            «Preparar tablas»: migración 0005 (solo tablas nuevas)
+    POST /api/invitaciones/INV-…/revocar       revoca una invitación pendiente
+    POST /api/invitaciones/INV-…/renovar       enlace nuevo (el anterior deja de funcionar)
+    GET  /api/membresias/MEM-…                 historial de una membresía
+    POST /api/membresias/MEM-…/accion          activar | suspender | reactivar | retirar (con confirmación)
 */
 
 import { verifyAccess, localDevIdentity, canViewBusiness } from "./auth.js";
@@ -30,6 +38,7 @@ import { listBusinesses, businessStats, BUSINESS_ID_RE } from "./stats.js";
 import { listApplications, getApplication, applicationImage, applicationExtraImage, updateApplication, publicationPackage, applicationHistory } from "./solicitudes.js";
 import { deletionState, scheduleDeletion, cancelDeletion, executeDeletion, listDeletions, markDeletionStep } from "./eliminaciones.js";
 import { emailConfig, sendReportEmail, MAX_BODY_BYTES } from "./reportes.js";
+import { overview, createInvitation, revokeInvitation, renewInvitation, prepareSchema, membershipAction, membershipHistory } from "./membresias.js";
 
 const SITE_ORIGIN = "https://podcastdelmigrante.com";
 
@@ -65,9 +74,14 @@ function json(data, status = 200) {
 }
 
 const deny = (status, error) => json({ error }, status);
+/* Las respuestas con un enlace de invitación no se guardan en ninguna caché */
+function withNoStore(res) {
+  res.headers.set("Cache-Control", "no-store");
+  return res;
+}
 
 /* Únicas rutas que aceptan POST (todas JSON y del mismo origen). */
-const POST_ROUTES = [/^\/api\/solicitudes\/[^/]+\/(?:estado|eliminacion)$/, /^\/api\/eliminaciones\/[^/]+\/pasos$/, /^\/api\/reportes\/enviar$/];
+const POST_ROUTES = [/^\/api\/solicitudes\/[^/]+\/(?:estado|eliminacion)$/, /^\/api\/eliminaciones\/[^/]+\/pasos$/, /^\/api\/reportes\/enviar$/, /^\/api\/invitaciones(?:\/instalar|\/[^/]+\/(?:revocar|renovar))?$/, /^\/api\/membresias\/[^/]+\/accion$/];
 
 /* Defensa contra CSRF además de Access: mismo origen y JSON.
    Devuelve { input } o { error: Response }. */
@@ -168,6 +182,36 @@ export default {
       if (!row) return deny(404, "Solicitud no encontrada");
       if (action === "paquete") return json(publicationPackage(row));
       return json({ application: row, history: await applicationHistory(env.DIRECTORIO_DB, id), deletion: await deletionState(env.DIRECTORIO_DB, id) });
+    }
+
+    /* ---------- Invitaciones empresariales y membresías ---------- */
+    if (url.pathname === "/api/invitaciones" || url.pathname.startsWith("/api/invitaciones/") || url.pathname.startsWith("/api/membresias/")) {
+      if (identity.role !== "admin") return deny(403, "Solo administradores");
+      if (!env.DIRECTORIO_DB) return deny(503, "Falta configurar DIRECTORIO_DB en wrangler.toml");
+      const db = env.DIRECTORIO_DB;
+      if (url.pathname === "/api/invitaciones" && !isPost) {
+        const tz = env.REPORT_TIMEZONE || DEFAULT_TIMEZONE;
+        const month = url.searchParams.get("month") || new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit" }).format(new Date()).slice(0, 7);
+        const period = parseMonth(month, tz);
+        if (!period) return deny(400, "Mes inválido (formato AAAA-MM)");
+        return json(await overview(env, period));
+      }
+      const hist = url.pathname.match(/^\/api\/membresias\/([^/]+)$/);
+      if (hist && !isPost) return json({ history: await membershipHistory(db, hist[1]) });
+      if (!isPost) return deny(405, "Método no permitido");
+      const { input, error } = await readJson(request, url);
+      if (error) return error;
+      let out;
+      const inv = url.pathname.match(/^\/api\/invitaciones\/([^/]+)\/(revocar|renovar)$/);
+      const mem = url.pathname.match(/^\/api\/membresias\/([^/]+)\/accion$/);
+      if (url.pathname === "/api/invitaciones") out = await createInvitation(db, input, identity);
+      else if (url.pathname === "/api/invitaciones/instalar") out = await prepareSchema(db, input, identity);
+      else if (inv) out = inv[2] === "revocar" ? await revokeInvitation(db, inv[1], input, identity) : await renewInvitation(db, inv[1], input, identity);
+      else if (mem) out = await membershipAction(db, mem[1], input, identity);
+      else return deny(404, "No encontrado");
+      if (!out.ok) return json({ error: out.error, errors: out.errors || undefined }, out.status);
+      const { ok, status, ...rest } = out;
+      return withNoStore(json(Object.assign({ ok: true }, rest)));
     }
 
     if (url.pathname.startsWith("/api/")) return deny(404, "No encontrado");

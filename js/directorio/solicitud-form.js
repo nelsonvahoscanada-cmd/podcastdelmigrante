@@ -22,7 +22,7 @@
   - No guarda nada en el navegador.
 ========================================================================= */
 
-import { CATEGORIES, PROVINCES, LIMITS, PLANS, normalize, validate } from "./solicitud-core.js?v=20261103";
+import { CATEGORIES, PROVINCES, LIMITS, PLANS, normalize, validate } from "./solicitud-core.js?v=20261104";
 
 const ENDPOINT = "/registro/enviar";
 const CONFIG = "/registro/config";
@@ -164,6 +164,16 @@ function loadTurnstile(siteKey, box, options) {
   });
 }
 
+/* ---------- Invitación guardada por /invitacion ---------- */
+const INVITATION_KEY = "pdm-invitacion";
+function readInvitation() {
+  try {
+    const v = JSON.parse(sessionStorage.getItem(INVITATION_KEY) || "null");
+    if (v && /^[A-Za-z0-9_-]{32}$/.test(v.code || "") && PLANS[v.plan] && ["FREE", "PREMIUM_PAID", "PREMIUM_GIFT"].includes(v.kind)) return v;
+  } catch (e) { /* sin almacenamiento */ }
+  return null;
+}
+
 /* ---------- Formulario ---------- */
 async function init() {
   if (window.PDM && window.PDM.initSiteChrome) window.PDM.initSiteChrome();
@@ -194,12 +204,46 @@ async function init() {
     $("#fSummary").maxLength = max;
     $("#summaryMax").textContent = String(max);
     $("#fPhone").required = plan === "gratuito";
+    /* Con una invitación de cortesía no aplica la nota de forma de pago */
+    if (invitation && invitation.kind === "PREMIUM_GIFT") document.querySelectorAll("[role=radiogroup] [data-plan-text]").forEach((el) => { el.hidden = true; });
     if (plan === "gratuito" && extraInput.files && extraInput.files.length) { extraInput.value = ""; extrasPending = refreshExtras(); }
     clearError("plan");
   }
   form.querySelectorAll("[name=plan]").forEach((r) => r.addEventListener("change", applyPlan));
   const wanted = new URLSearchParams(location.search).get("plan");
   if (PLANS[wanted]) form.querySelector(`[name=plan][value="${wanted}"]`).checked = true;
+
+  /* ---------- Invitación (desde /invitacion) ----------
+     El código solo vive en sessionStorage de esta pestaña. El servidor lo
+     vuelve a comprobar y lo canjea al recibir el formulario completo. */
+  let invitation = readInvitation();
+  const banner = $("#invitationBanner");
+  function showInvitation() {
+    const radios = form.querySelectorAll("[name=plan]");
+    if (!invitation) {
+      if (banner) banner.hidden = true;
+      radios.forEach((r) => { r.disabled = false; });
+      return;
+    }
+    radios.forEach((r) => { r.checked = r.value === invitation.plan; r.disabled = r.value !== invitation.plan; });
+    if (banner) {
+      $("[data-invite-title]", banner).textContent = `Invitación: ${invitation.label}${invitation.businessName ? ` · ${invitation.businessName}` : ""}`;
+      $("[data-invite-text]", banner).textContent = invitation.kind === "PREMIUM_GIFT"
+        ? `Tu membresía: ${invitation.price}. Sin cobros automáticos. Completa los datos de tu negocio: revisaremos tu solicitud antes de publicar tu miniweb.`
+        : `${invitation.price}. Completa los datos de tu negocio: revisaremos tu solicitud antes de publicarla.`;
+      banner.hidden = false;
+    }
+    const name = $("#fName");
+    if (name && !name.value && invitation.businessName) name.value = invitation.businessName;
+  }
+  function dropInvitation() {
+    invitation = null;
+    try { sessionStorage.removeItem(INVITATION_KEY); } catch (e) { /* sin almacenamiento */ }
+    showInvitation();
+    applyPlan();
+  }
+  if ($("#invitationRemove")) $("#invitationRemove").addEventListener("click", dropInvitation);
+  showInvitation();
 
   const toggle = () => { $("[data-show-if='category-otra']").hidden = $("#fCategory").value !== "otra"; };
   $("#fCategory").addEventListener("change", toggle);
@@ -380,6 +424,8 @@ async function init() {
     body.delete("extraImages");
     if (!free) extras.forEach((x, i) => body.append("extraImages", x.blob, `adicional-${i + 1}.${x.blob.type === "image/png" ? "png" : x.blob.type === "image/webp" ? "webp" : "jpg"}`));
     body.set("idempotencyKey", idempotencyKey);
+    if (invitation) body.set("invitationCode", invitation.code);
+    else body.delete("invitationCode");
 
     button.disabled = true;
     const label = button.textContent;
@@ -425,6 +471,9 @@ async function init() {
     }
 
     if (result && result.ok && /^SOL-\d{8}-[A-Z2-9]{6}$/.test(result.requestId || "")) {
+      if (invitation) {
+        try { sessionStorage.removeItem(INVITATION_KEY); } catch (e) { /* sin almacenamiento */ }
+      }
       const done = $("#intakeDone");
       $("[data-done-id]", done).textContent = result.requestId;
       form.hidden = true;
@@ -432,6 +481,16 @@ async function init() {
       done.hidden = false;
       done.focus();
       done.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    /* Invitación rechazada por el servidor: se quita y el formulario sigue
+       disponible como una solicitud normal, con los datos intactos. */
+    if (result && invitation && ["invitation_invalid", "invitation_used", "invitation_plan"].includes(result.code)) {
+      dropInvitation();
+      setStatus(`${result.error} Tus datos siguen en el formulario: puedes enviarlo como una solicitud normal o escribirnos.`);
+      status.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (window.turnstile && turnstileId !== null) verifier.renew(turnstileId);
       return;
     }
 

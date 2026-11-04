@@ -1,7 +1,7 @@
 /*
   Planes del Directorio Empresarial (Gratuito y Premium): página comercial,
   formulario, reglas compartidas, Function /registro/enviar y ficha gratuita
-  en el directorio. Precio Premium: $24.99 CAD al mes + impuestos aplicables.
+  en el directorio. Precio Premium: $25 CAD al mes + impuestos aplicables.
   Hoy NO hay cobro en línea: nada debe anunciar un pago habilitado.
 */
 import { test } from "node:test";
@@ -47,9 +47,9 @@ test("página de planes: título, subtítulo, dos planes, precios exactos y boto
   const t = texto(planes);
   assert.match(planes, /<h1 class="reg-hero__title">Haz crecer tu negocio en Canadá<\/h1>/);
   assert.ok(t.includes("Únete al Directorio Empresarial de El Podcast del Migrante. Comienza gratis o destaca tu negocio con un Perfil Premium."));
-  assert.match(t, /Plan Gratuito .*\$0 CAD/);
-  assert.match(t, /Plan Premium .*\$24\.99 CAD\/mes \+ impuestos aplicables/);
-  assert.doesNotMatch(planes, /\$\s?25(?![.\d])|25 CAD|\$25\.00/, "nunca $25");
+  assert.match(t, /Gratis .*\$0 CAD/);
+  assert.match(t, /Premium .*\$25 CAD\/mes \+ impuestos aplicables/);
+  assert.doesNotMatch(planes, /24[.,]99/, "el precio anterior ya no aparece");
   for (const c of ["Registrar mi empresa gratis", "Quiero mi Perfil Premium"]) assert.ok(t.includes(c), c);
   assert.ok((planes.match(/href="registra-tu-empresa\?plan=gratuito#solicitud"/g) || []).length >= 2);
   assert.ok((planes.match(/href="registra-tu-empresa\?plan=premium#solicitud"/g) || []).length >= 2);
@@ -87,7 +87,7 @@ test("SEO y accesibilidad básica de la página de planes", () => {
   assert.equal((planes.match(/<h1[\s>]/g) || []).length, 1);
   assert.match(planes, /<caption class="sr-only">/);
   const ld = JSON.parse(planes.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
-  assert.deepEqual(ld.offers.map((o) => [o.name, o.price, o.priceCurrency]), [["Plan Gratuito", "0", "CAD"], ["Plan Premium", "24.99", "CAD"]]);
+  assert.deepEqual(ld.offers.map((o) => [o.name, o.price, o.priceCurrency]), [["Plan Gratuito", "0", "CAD"], ["Plan Premium", "25", "CAD"]]);
   assert.match(read("sitemap.xml"), /<loc>https:\/\/podcastdelmigrante\.com\/planes-directorio<\/loc>/);
 });
 
@@ -107,7 +107,7 @@ test("formulario: selector de plan; los campos exclusivos de Premium se marcan y
   }
   assert.match(registro, /<fieldset class="intake-fieldset" data-plan-only="premium">\s*<legend class="intake-legend"><span class="intake-step">04<\/span> Información adicional/);
   assert.match(registro, /<span class="intake-req" data-plan-text="gratuito" hidden>\*<\/span>/);
-  assert.match(registro, /\$24\.99 CAD al mes más impuestos aplicables/);
+  assert.match(registro, /\$25 CAD al mes más impuestos aplicables/);
   assert.doesNotMatch(registro, /se informa de forma personalizada/, "el precio ya no es «personalizado»");
   const js = read("js/directorio/solicitud-form.js");
   assert.match(js, /new URLSearchParams\(location\.search\)\.get\("plan"\)/);
@@ -129,7 +129,7 @@ test("reglas: plan Gratuito con teléfono obligatorio, descripción ≤ 200 y si
   const legacy = core.validate(core.normalize({ ...FREE, plan: "" }));
   assert.equal(legacy.data.plan, "premium");
   assert.ok(legacy.errors.services && legacy.errors.representative);
-  assert.equal(core.PLANS.premium.price, "$24.99 CAD al mes + impuestos aplicables");
+  assert.equal(core.PLANS.premium.price, "$25 CAD al mes + impuestos aplicables");
 });
 
 /* ---------- Function /registro/enviar ---------- */
@@ -178,11 +178,11 @@ test("Function: una solicitud Premium muestra el precio y deja claro que no hubo
     const premium = { ...FREE, plan: "premium", representative: "Ana Pérez", services: "Pan dulce y tortas.", imageKind: "foto" };
     const { res } = await send(env, premium, PHOTO, [], "203.0.113.51");
     assert.equal(res.status, 201);
-    assert.match(rows(env)[0].notes, /^Plan solicitado: Plan Premium \(\$24\.99 CAD al mes \+ impuestos aplicables\)\.$/);
+    assert.match(rows(env)[0].notes, /^Plan solicitado: Plan Premium \(\$25 CAD al mes \+ impuestos aplicables\)\.$/);
     const [internal, confirm] = net.sent.map((s) => s.body);
     assert.match(internal.subject, /\[PREMIUM\]/);
     assert.match(confirm.text, /Enviar esta solicitud no implica contratar ni pagar ningún servicio\./);
-    assert.match(confirm.text, /\$24\.99 CAD al mes más impuestos aplicables\. Por ahora no realizamos cobros en línea/);
+    assert.match(confirm.text, /\$25 CAD al mes más impuestos aplicables\. Por ahora no realizamos cobros en línea/);
   } finally { net.restore(); }
 });
 
@@ -223,4 +223,21 @@ test("directorio: la ficha gratuita es una tarjeta sin miniweb, con teléfono, d
 test("generador de perfiles y plantilla: una ficha gratuita nunca crea ni abre una miniweb", () => {
   assert.match(read("scripts/build-profile-pages.mjs"), /filter\(\(b\) => b\.published && b\.plan !== "gratuito"\)/);
   assert.match(read("js/business-profile.js"), /b\.published && b\.plan !== "gratuito"/);
+});
+
+test("«Haz visible tu negocio en Canadá»: solo dos opciones públicas, sin cortesía ni pago simulado", () => {
+  const sec = planes.match(/<section class="reg-section" aria-labelledby="planesTitle">[\s\S]*?<\/section>/)[0];
+  const t = texto(sec);
+  assert.match(sec, /<h2 class="reg-h2" id="planesTitle">Haz visible tu negocio en Canadá<\/h2>/);
+  assert.equal((sec.match(/<article class="pl-card/g) || []).length, 2);
+  assert.match(t, /Gratis .*\$0 CAD .*Crear ficha gratis/);
+  assert.match(t, /Premium .*\$25 CAD\/mes \+ impuestos aplicables .*Conocer Premium/);
+  assert.match(sec, /href="registra-tu-empresa\?plan=gratuito#solicitud">Crear ficha gratis<\/a>/);
+  /* Sin pasarela de pagos: «Conocer Premium» (no «Elegir/Pagar»), y lleva a la comparación */
+  assert.match(sec, /href="#comparar">Conocer Premium<\/a>/);
+  assert.match(planes, /<section class="reg-section" id="comparar"/);
+  assert.doesNotMatch(sec, /Elegir Premium|Pagar|Suscribirme|checkout|stripe/i);
+  assert.match(t, /Todavía no hay pago en línea/);
+  /* La cortesía nunca aparece en público */
+  for (const html of [planes, read("registra-tu-empresa.html"), read("quien-puede-ayudarte.html")]) assert.doesNotMatch(html, /cortes[íi]a|PREMIUM_GIFT|regalo/i);
 });

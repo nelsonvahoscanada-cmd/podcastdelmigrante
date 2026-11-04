@@ -14,6 +14,12 @@
        «pendiente». Solo si todo queda guardado responde «ok»; si algo
        falla, borra lo que alcanzó a subir.
     Nunca crea ni publica una miniweb: el perfil se prepara a mano.
+    Invitaciones (campo invitationCode, opcional): se comprueba en el servidor
+    (existe, está pendiente y corresponde al plan elegido) y se canjea en la
+    MISMA transacción (D1 batch) que guarda la solicitud: crea la membresía
+    «en_revision» (UNIQUE por invitación) y marca la invitación «usada». Si
+    otra solicitud la canjeó antes, esta no se guarda. Sin invitación, el
+    registro funciona exactamente igual que antes.
     5. Después envía (en segundo plano) el aviso interno y la confirmación
        al empresario con Resend y registra el resultado. Un fallo de
        correo NO pierde la solicitud: queda marcada en el panel.
@@ -22,6 +28,7 @@ import { normalize, validate, validateImage, newRequestId, LIMITS, planLine, PLA
 import { internalEmail, confirmationEmail, sendEmail, toBase64 } from "../_lib/correos.js";
 import { registrationStatus, closedReason, jsonResponse, turnstileSecret } from "../_lib/registro-env.js";
 import { recordEvent } from "../_lib/historial.js";
+import { KINDS, findInvitationByCode, schemaReady, planForKind, newMembershipId } from "../../js/directorio/membresias-core.js";
 
 /* Versión del texto de consentimiento y del aviso de privacidad del formulario
    (registra-tu-empresa.html). Cambiarla cada vez que cambie ese texto. */
@@ -191,20 +198,64 @@ async function handlePost(context) {
 
   const db = env.DIRECTORIO_DB;
   const now = new Date();
+
+  /* Invitación (opcional): verificada en el servidor; nunca se confía en el navegador */
+  let invitation = null;
+  const invitationCode = typeof raw.invitationCode === "string" ? raw.invitationCode.trim() : "";
+  if (invitationCode) {
+    if (!(await schemaReady(db))) return jsonResponse({ ok: false, code: "invitation_unavailable", error: "Las invitaciones no están disponibles en este momento. Tus datos siguen en el formulario: inténtalo más tarde o escríbenos." }, 503);
+    invitation = await findInvitationByCode(db, invitationCode);
+    if (!invitation) return jsonResponse({ ok: false, code: "invitation_invalid", error: "La invitación no es válida. Abre de nuevo el enlace completo que recibiste." }, 404);
+    if (invitation.status !== "pendiente") return jsonResponse({ ok: false, code: "invitation_used", error: invitation.status === "usada" ? "Esta invitación ya fue utilizada." : "Esta invitación ya no está disponible." }, 409);
+    if (planForKind(invitation.kind) !== data.plan) return jsonResponse({ ok: false, code: "invitation_plan", error: `Esta invitación corresponde a: ${KINDS[invitation.kind].label}.` }, 400);
+  }
+  /* Canje: membresía «en_revision» + invitación «usada», condicionado a que siga pendiente */
+  const redeemStatements = (applicationId) => [
+    db
+      .prepare(
+        `INSERT INTO business_memberships (id, plan, status, business_name, application_id, invitation_id, created_at, updated_at, updated_by)
+         SELECT ?, kind, 'en_revision', ?, ?, id, ?, ?, 'formulario' FROM business_invitations WHERE id = ? AND status = 'pendiente'`
+      )
+      .bind(newMembershipId(now), data.name, applicationId, now.toISOString(), now.toISOString(), invitation.id),
+    db.prepare("UPDATE business_invitations SET status = 'usada', used_at = ?, application_id = ? WHERE id = ? AND status = 'pendiente'").bind(now.toISOString(), applicationId, invitation.id),
+    db
+      .prepare(
+        `INSERT INTO membership_events (membership_id, invitation_id, at, actor, action, from_status, to_status, detail)
+         SELECT id, invitation_id, ?, 'formulario', 'canje', 'pendiente', 'usada', ? FROM business_memberships WHERE invitation_id = ? AND application_id = ?`
+      )
+      .bind(now.toISOString(), `Solicitud ${applicationId}`, invitation.id, applicationId),
+  ];
+  /* Para una solicitud ya registrada (reintento o duplicado abierto) */
+  async function redeemExisting(applicationId) {
+    try {
+      const out = await db.batch(redeemStatements(applicationId));
+      if (!out[0].meta.changes) return false;
+      await recordEvent(db, { id: applicationId, actor: "formulario", action: "revision", detail: `Invitación ${invitation.id} vinculada (${KINDS[invitation.kind].label})` });
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
   const nowIso = now.toISOString();
   const ipHash = ip ? await sha256(env.IP_HASH_SALT + "|" + ip) : null;
   const idemKey = data.idempotencyKey || (await sha256(`${data.email}|${data.name}|${nowIso.slice(0, 13)}`)).slice(0, 40);
 
   /* Reintento del mismo envío → mismo número */
   const prev = await db.prepare("SELECT id FROM business_applications WHERE idempotency_key = ?").bind(idemKey).first();
-  if (prev) return jsonResponse({ ok: true, requestId: prev.id, duplicate: true });
+  if (prev) {
+    if (invitation && !(await redeemExisting(prev.id))) return jsonResponse({ ok: false, code: "invitation_used", error: "Esta invitación ya fue utilizada." }, 409);
+    return jsonResponse({ ok: true, requestId: prev.id, duplicate: true });
+  }
 
   /* Misma empresa y correo con una solicitud abierta → no se duplica */
   const open = await db
     .prepare("SELECT id FROM business_applications WHERE email = ? AND lower(name) = lower(?) AND status IN ('pendiente','en_revision') ORDER BY created_at DESC LIMIT 1")
     .bind(data.email, data.name)
     .first();
-  if (open) return jsonResponse({ ok: true, requestId: open.id, duplicate: true });
+  if (open) {
+    if (invitation && !(await redeemExisting(open.id))) return jsonResponse({ ok: false, code: "invitation_used", error: "Esta invitación ya fue utilizada." }, 409);
+    return jsonResponse({ ok: true, requestId: open.id, duplicate: true });
+  }
 
   /* Límite de frecuencia */
   const hourAgo = new Date(now.getTime() - 3600e3).toISOString();
@@ -219,7 +270,8 @@ async function handlePost(context) {
   /* El plan elegido queda al inicio de la información privada (la ven el
      panel y el aviso interno; nunca se publica). Así no hace falta cambiar
      el esquema de D1 para distinguir las solicitudes Gratuitas y Premium. */
-  const privateNotes = planLine(data.plan) + (data.notes ? "\n\n" + data.notes : "");
+  const planText = invitation ? `Plan solicitado: ${KINDS[invitation.kind].label} (${KINDS[invitation.kind].price}). Invitación ${invitation.id}.` : planLine(data.plan);
+  const privateNotes = planText + (data.notes ? "\n\n" + data.notes : "");
 
   /* Guardar: primero la imagen, luego la fila (si la fila falla, se borra la imagen) */
   let id = "";
@@ -246,7 +298,7 @@ async function handlePost(context) {
       });
       uploaded.push(extraMeta[i].key);
     }
-    await db
+    const insert = db
       .prepare(
         `INSERT INTO business_applications (id, idempotency_key, created_at, updated_at, status, name, category, category_other, city, province,
           representative, title, summary, email, phone, whatsapp, website, address, instagram, facebook, tiktok, linkedin,
@@ -258,18 +310,29 @@ async function handlePost(context) {
         data.representative, data.title || null, data.summary, data.email, data.phone || null, data.whatsapp || null, data.website || null,
         data.address || null, data.instagram || null, data.facebook || null, data.tiktok || null, data.linkedin || null,
         data.imageKind, imageKey, image.type, image.size, image.width, image.height, CONSENT_VERSION, nowIso, ipHash,
-        data.services || null, privateNotes, extraMeta.length ? JSON.stringify(extraMeta) : null)
-      .run();
+        data.services || null, privateNotes, extraMeta.length ? JSON.stringify(extraMeta) : null);
+    if (!invitation) {
+      await insert.run();
+    } else {
+      /* Una sola transacción: solicitud + membresía + invitación usada */
+      const out = await db.batch([insert, ...redeemStatements(id)]);
+      if (!out[1].meta.changes) {
+        /* Otra solicitud la canjeó o se retiró justo antes: no se guarda esta */
+        await db.prepare("DELETE FROM business_applications WHERE id = ?").bind(id).run().catch(() => {});
+        for (const key of uploaded) await env.SOLICITUDES.delete(key).catch(() => {});
+        return jsonResponse({ ok: false, code: "invitation_used", error: "Esta invitación ya fue utilizada." }, 409);
+      }
+    }
   } catch (e) {
     console.error("No se pudo guardar la solicitud", id, e && e.message);
     for (const key of uploaded) await env.SOLICITUDES.delete(key).catch(() => {});
     return jsonResponse({ ok: false, error: "No pudimos registrar la solicitud. Inténtalo de nuevo en unos minutos." }, 500);
   }
 
-  await recordEvent(db, { id, at: nowIso, actor: "formulario", action: "recibida", to: "pendiente", detail: `${PLANS[data.plan].label} · Consentimientos ${CONSENT_VERSION} · ${data.imageKind}${extras.length ? ` + ${extras.length} fotografía(s) adicional(es)` : ""}` });
+  await recordEvent(db, { id, at: nowIso, actor: "formulario", action: "recibida", to: "pendiente", detail: `${invitation ? `${KINDS[invitation.kind].label} (invitación ${invitation.id})` : PLANS[data.plan].label} · Consentimientos ${CONSENT_VERSION} · ${data.imageKind}${extras.length ? ` + ${extras.length} fotografía(s) adicional(es)` : ""}` });
 
   /* Correos en segundo plano: la solicitud ya está registrada */
-  const meta = { plan: data.plan, id, receivedLabel: receivedLabel(now), panelUrl: (env.PANEL_URL || "").replace(/\/+$/, "") };
+  const meta = { plan: data.plan, id, receivedLabel: receivedLabel(now), panelUrl: (env.PANEL_URL || "").replace(/\/+$/, ""), invitation: invitation ? { id: invitation.id, kind: invitation.kind } : null };
   const work = sendNotifications(env, data, image, meta, extras);
   if (context.waitUntil) context.waitUntil(work);
   else await work;

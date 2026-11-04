@@ -414,7 +414,7 @@ test("Premium: hasta 3 fotografías adicionales quedan en R2 privado, en D1 y ad
     assert.equal(res.status, 201);
     const [row] = rows(env);
     assert.equal(row.services, VALID.services);
-    assert.equal(row.notes, "Plan solicitado: Plan Premium ($24.99 CAD al mes + impuestos aplicables).\n\nSolo para preparar el perfil.");
+    assert.equal(row.notes, "Plan solicitado: Plan Premium ($25 CAD al mes + impuestos aplicables).\n\nSolo para preparar el perfil.");
     const extras = JSON.parse(row.extra_images);
     assert.deepEqual(extras.map((x) => x.key), [`solicitudes/${body.requestId}/adicional-1.jpg`, `solicitudes/${body.requestId}/adicional-2.webp`]);
     for (const x of extras) assert.ok(env.SOLICITUDES.store.has(x.key), x.key);

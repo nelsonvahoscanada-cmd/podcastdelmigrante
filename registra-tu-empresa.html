@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Registra tu empresa: plan Gratuito o Premium | Directorio Empresarial | El Podcast del Migrante</title>
-<meta id="metaDescription" name="description" content="Registra tu negocio en el Directorio Empresarial de El Podcast del Migrante: ficha gratuita o Perfil Premium con miniweb por $24.99 CAD al mes más impuestos. Revisamos cada solicitud antes de publicarla.">
+<meta id="metaDescription" name="description" content="Registra tu negocio en el Directorio Empresarial de El Podcast del Migrante: ficha gratuita o Perfil Premium con miniweb por $25 CAD al mes más impuestos. Revisamos cada solicitud antes de publicarla.">
 <link id="canonicalLink" rel="canonical" href="https://podcastdelmigrante.com/registra-tu-empresa.html">
 
 <!-- Open Graph (fijos para la página de registro) -->
 <meta id="ogType" property="og:type" content="website">
 <meta property="og:site_name" content="El Podcast del Migrante Magazine">
 <meta id="ogTitle" property="og:title" content="Registra tu empresa: plan Gratuito o Premium | Directorio Empresarial | El Podcast del Migrante">
-<meta id="ogDescription" property="og:description" content="Registra tu negocio en el Directorio Empresarial de El Podcast del Migrante: ficha gratuita o Perfil Premium con miniweb por $24.99 CAD al mes más impuestos. Revisamos cada solicitud antes de publicarla.">
+<meta id="ogDescription" property="og:description" content="Registra tu negocio en el Directorio Empresarial de El Podcast del Migrante: ficha gratuita o Perfil Premium con miniweb por $25 CAD al mes más impuestos. Revisamos cada solicitud antes de publicarla.">
 <meta id="ogUrl" property="og:url" content="https://podcastdelmigrante.com/registra-tu-empresa.html">
 <meta id="ogImage" property="og:image" content="https://podcastdelmigrante.com/assets/logo.png">
 <meta id="ogLocale" property="og:locale" content="es_CA">
@@ -19,7 +19,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta id="twitterTitle" name="twitter:title" content="Registra tu empresa: plan Gratuito o Premium | Directorio Empresarial | El Podcast del Migrante">
-<meta id="twitterDescription" name="twitter:description" content="Registra tu negocio en el Directorio Empresarial de El Podcast del Migrante: ficha gratuita o Perfil Premium con miniweb por $24.99 CAD al mes más impuestos. Revisamos cada solicitud antes de publicarla.">
+<meta id="twitterDescription" name="twitter:description" content="Registra tu negocio en el Directorio Empresarial de El Podcast del Migrante: ficha gratuita o Perfil Premium con miniweb por $25 CAD al mes más impuestos. Revisamos cada solicitud antes de publicarla.">
 <meta id="twitterImage" name="twitter:image" content="https://podcastdelmigrante.com/assets/logo.png">
 
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="css/styles.css?v=20261009">
 <!-- Estilos propios de esta página (archivo separado y versionado: evita que
      el navegador o Cloudflare sirvan una copia vieja sin estos estilos) -->
-<link rel="stylesheet" href="css/registro.css?v=20261103">
+<link rel="stylesheet" href="css/registro.css?v=20261104">
 
 <!-- Formulario de solicitud: js/directorio/solicitud-form.js → POST /registro/enviar (Cloudflare Pages Function) -->
 </head>
@@ -115,7 +115,7 @@
     <!-- ===== Perfil Empresarial Premium ===== -->
     <section class="reg-section" aria-labelledby="beneficiosTitle">
       <div class="reg-section__head">
-        <p class="reg-kicker reg-kicker--dark">Perfil Empresarial Premium · $24.99 CAD al mes + impuestos aplicables</p>
+        <p class="reg-kicker reg-kicker--dark">Perfil Empresarial Premium · $25 CAD al mes + impuestos aplicables</p>
         <h2 class="reg-h2" id="beneficiosTitle">Lo que incluye el Perfil Premium</h2>
         <p class="reg-apply__intro">¿Prefieres empezar sin costo? La ficha gratuita incluye tu imagen o logotipo, nombre, categoría, ciudad, una descripción breve y tu teléfono en el directorio. <a href="planes-directorio">Compara los dos planes</a>.</p>
       </div>
@@ -159,7 +159,7 @@
         <li><span class="reg-steps__num">03</span><strong>Preparación</strong><span>Si avanzamos, nuestro equipo prepara tu perfil de forma personalizada: miniweb, códigos QR y tarjeta digital de contacto.</span></li>
         <li><span class="reg-steps__num">04</span><strong>Aprobación</strong><span>Te mostramos una vista previa. Nada se publica sin tu aprobación final.</span></li>
       </ol>
-      <p class="reg-price">Plan Gratuito: $0 CAD. Plan Premium: $24.99 CAD al mes más impuestos aplicables. Por ahora no realizamos cobros en línea: enviar una solicitud Premium no es un pago ni una contratación. Te contactaremos para confirmar el servicio y la forma de pago antes de cualquier cobro.</p>
+      <p class="reg-price">Plan Gratuito: $0 CAD. Plan Premium: $25 CAD al mes más impuestos aplicables. Por ahora no realizamos cobros en línea: enviar una solicitud Premium no es un pago ni una contratación. Te contactaremos para confirmar el servicio y la forma de pago antes de cualquier cobro.</p>
     </section>
 
     <!-- ===== Formulario de inscripción ===== -->
@@ -186,11 +186,16 @@
         <!-- 0 -->
         <fieldset class="intake-fieldset">
           <legend class="intake-legend"><span class="intake-step">00</span> Elige tu plan</legend>
+          <div class="intake-invite" id="invitationBanner" role="status" hidden>
+            <p class="intake-invite__title" data-invite-title></p>
+            <p class="intake-invite__text" data-invite-text></p>
+            <button class="intake-invite__remove" type="button" id="invitationRemove">No usar esta invitación</button>
+          </div>
           <div class="intake-field" data-field role="radiogroup" aria-labelledby="planLabel">
             <p class="intake-label" id="planLabel">Plan <span class="intake-req">*</span></p>
             <div class="intake-options intake-plans">
               <label class="intake-check intake-option intake-plan"><input type="radio" name="plan" value="gratuito"> <span><strong>Gratuito · $0 CAD</strong><small>Ficha en el directorio con imagen, descripción breve y teléfono.</small></span></label>
-              <label class="intake-check intake-option intake-plan"><input type="radio" name="plan" value="premium"> <span><strong>Premium · $24.99 CAD/mes + impuestos</strong><small>Miniweb personalizada, WhatsApp, vCard, códigos QR, video y estadísticas.</small></span></label>
+              <label class="intake-check intake-option intake-plan"><input type="radio" name="plan" value="premium"> <span><strong>Premium · $25 CAD/mes + impuestos</strong><small>Miniweb personalizada, WhatsApp, vCard, códigos QR, video y estadísticas.</small></span></label>
             </div>
             <p class="intake-hint" data-plan-text="premium" hidden>Esta es una <strong>solicitud</strong>: no se realiza ningún cobro en línea. Te contactaremos para confirmar el servicio y la forma de pago antes de cualquier cobro.</p>
             <p class="intake-hint" data-plan-text="gratuito" hidden>La ficha gratuita no tiene costo. Podrás pasar a Premium cuando quieras.</p>
@@ -445,6 +450,6 @@
 
 <script src="js/data.js"></script>
 <script src="js/nav.js"></script>
-<script type="module" src="js/directorio/solicitud-form.js?v=20261103"></script>
+<script type="module" src="js/directorio/solicitud-form.js?v=20261104"></script>
 </body>
 </html>

@@ -105,3 +105,5 @@
 .pl-final__help a { color: var(--verde-oscuro); font-weight: 700; }
 @media (max-width: 480px) { .pl-final__actions { flex-direction: column; } .pl-final__actions .reg-btn { width: 100%; } }
 @media (min-width: 760px) { .pl-final { padding: 34px 36px; } }
+.pl-sub { margin: 10px 0 0; max-width: 46ch; font-size: 1.05rem; line-height: 1.5; color: var(--gris-600); }
+#comparar { scroll-margin-top: 90px; }

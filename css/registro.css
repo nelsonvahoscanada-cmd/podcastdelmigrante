@@ -223,7 +223,7 @@
   line-height: 1.25;
   color: var(--negro);
 }
-.intake-legend + * { clear: both; }
+.intake-legend + *, .intake-legend + [hidden] + * { clear: both; }
 .intake-step { font-family: var(--font-display); font-size: 0.95em; font-weight: 600; color: var(--verde-oscuro); }
 .intake-fs-desc { margin: 0 0 22px; font-size: 0.92rem; line-height: 1.55; color: var(--gris-600); max-width: 70ch; }
 
@@ -434,3 +434,9 @@
 .intake-plan input { margin-top: 3px; }
 .intake-plan strong { display: block; font-size: 0.98rem; }
 .intake-plan small { display: block; margin-top: 3px; font-size: 0.86rem; line-height: 1.4; color: var(--gris-600); }
+/* Aviso de invitación (desde /invitacion) */
+.intake-invite { clear: both; margin: 0 0 16px; padding: 14px 16px; border: 1px solid var(--verde-oscuro); border-radius: 10px; background: var(--verde-suave); }
+.intake-invite__title { margin: 0 0 4px; font-weight: 700; }
+.intake-invite__text { margin: 0; font-size: 0.92rem; line-height: 1.45; }
+.intake-invite__remove { margin-top: 10px; padding: 0; border: 0; background: none; font: inherit; font-size: 0.85rem; color: var(--gris-800); text-decoration: underline; cursor: pointer; }
+.intake-invite__remove:focus-visible { outline: 2px solid var(--negro); outline-offset: 2px; }

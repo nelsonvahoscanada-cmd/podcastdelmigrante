@@ -15,6 +15,7 @@
 ========================================================================= */
 
 import { categoryLabel, IMAGE_KINDS, PLANS } from "../../js/directorio/solicitud-core.js";
+import { KINDS } from "../../js/directorio/membresias-core.js";
 
 const BRAND = "El Podcast del Migrante";
 const TAGLINE = "Conectando latinos, construyendo futuro";
@@ -37,7 +38,8 @@ ${inner}
 /* ---------- A. Aviso interno ---------- */
 export function internalEmail(d, meta) {
   const rows = [
-    ["Plan solicitado", `${(PLANS[d.plan] || PLANS.premium).label} (${(PLANS[d.plan] || PLANS.premium).price})`],
+    ["Plan solicitado", meta.invitation ? `${KINDS[meta.invitation.kind].label} (${KINDS[meta.invitation.kind].price})` : `${(PLANS[d.plan] || PLANS.premium).label} (${(PLANS[d.plan] || PLANS.premium).price})`],
+    ["Invitación", meta.invitation ? `${meta.invitation.id} (canjeada y vinculada a esta solicitud)` : ""],
     ["Número de solicitud", meta.id],
     ["Fecha de recepción", meta.receivedLabel],
     ["Empresa o profesional", d.name],
@@ -86,7 +88,7 @@ ${panel ? `<tr><td style="padding:22px 28px 6px;"><a href="${esc(panel)}" style=
   ].join("\n");
 
   return {
-    subject: oneLine(`Nueva solicitud empresarial [${d.plan === "gratuito" ? "GRATUITO" : "PREMIUM"}] — ${d.name} — ${meta.id}`).slice(0, 180),
+    subject: oneLine(`Nueva solicitud empresarial [${meta.invitation && meta.invitation.kind === "PREMIUM_GIFT" ? "PREMIUM DE CORTESÍA" : d.plan === "gratuito" ? "GRATUITO" : "PREMIUM"}] — ${d.name} — ${meta.id}`).slice(0, 180),
     html,
     text,
   };
@@ -95,7 +97,16 @@ ${panel ? `<tr><td style="padding:22px 28px 6px;"><a href="${esc(panel)}" style=
 /* ---------- B. Confirmación al empresario ---------- */
 export function confirmationEmail(meta) {
   const free = meta.plan === "gratuito";
-  const paras = free
+  const gift = Boolean(meta.invitation && meta.invitation.kind === "PREMIUM_GIFT");
+  const paras = gift
+    ? [
+        "Hemos recibido correctamente la activación de tu membresía Premium de cortesía en el Directorio Empresarial de El Podcast del Migrante.",
+        `Número de solicitud: ${meta.id}`,
+        "Tu membresía no tiene costo: $0 CAD, sin cobros automáticos y sin vencimiento programado. La cortesía permanece vigente mientras El Podcast del Migrante la mantenga activa.",
+        "Nuestro equipo revisará la información y preparará tu Perfil Empresarial Premium. Te contactaremos si necesitamos aclarar algún dato.",
+        "Tu perfil no será publicado sin tu aprobación.",
+      ]
+    : free
     ? [
         "Hemos recibido correctamente la solicitud de tu ficha gratuita en el Directorio Empresarial de El Podcast del Migrante.",
         `Número de solicitud: ${meta.id}`,
@@ -108,7 +119,7 @@ export function confirmationEmail(meta) {
         `Número de solicitud: ${meta.id}`,
         "Nuestro equipo revisará la información y se comunicará contigo para explicarte los siguientes pasos.",
         "Enviar esta solicitud no implica contratar ni pagar ningún servicio.",
-        "El Perfil Premium cuesta $24.99 CAD al mes más impuestos aplicables. Por ahora no realizamos cobros en línea: te contactaremos para confirmar el servicio y la forma de pago antes de cualquier cobro.",
+        "El Perfil Premium cuesta $25 CAD al mes más impuestos aplicables. Por ahora no realizamos cobros en línea: te contactaremos para confirmar el servicio y la forma de pago antes de cualquier cobro.",
         "Tu perfil no será publicado sin tu aprobación.",
       ];
   const last = paras.length - 1;

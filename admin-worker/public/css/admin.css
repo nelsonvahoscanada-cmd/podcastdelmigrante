@@ -177,3 +177,20 @@ summary { cursor: pointer; color: var(--verde-oscuro); font-weight: 600; font-si
 .sol-deletions { margin-top: 20px; overflow-x: auto; }
 .sol-deletions .sol-table th { width: auto; }
 .sol-deletions .sol-table td { font-size: 13px; vertical-align: top; }
+
+/* Invitaciones empresariales y membresías */
+.inv-setup { border-left: 4px solid var(--verde); }
+.inv-prefill { display: flex; flex-direction: column; gap: 4px; justify-content: flex-end; }
+.inv-prefill__label { font-size: 13px; font-weight: 600; color: var(--gris-600); }
+.inv-warning { margin: 0; padding: 8px 12px; border-left: 3px solid #b88a00; background: #fff8e1; font-size: 14px; }
+.inv-result { margin-top: 16px; padding: 14px; border: 1px solid var(--verde); border-radius: 6px; background: var(--verde-suave); }
+.inv-result__title { margin: 0 0 8px; font-weight: 700; }
+.inv-result input { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; padding: 8px 10px; border: 1px solid var(--gris-400); border-radius: 4px; background: var(--blanco); color: var(--negro); }
+.inv-table-wrap { overflow-x: auto; }
+.inv-table { min-width: 760px; }
+.inv-table td:last-child { text-align: left; font-weight: 400; }
+.inv-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge--gift { background: #f3e8ff; color: #5b2a86; }
+.badge--activa, .badge--inv-usada { background: var(--verde-suave); color: var(--verde-oscuro); }
+.badge--suspendida, .badge--inv-pendiente { background: #fff4d6; color: #7a5600; }
+.badge--retirada, .badge--inv-revocada { background: #fdecea; color: var(--rojo); }
