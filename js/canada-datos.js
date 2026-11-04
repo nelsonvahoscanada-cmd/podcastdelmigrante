@@ -3266,7 +3266,6 @@ const CD_PROFILES = {
         links: [
           { label: "Gobierno de Nunavut — Solicitar la licencia de conducir", href: "https://www.gov.nu.ca/en/transportation/apply-drivers-licence" },
           { label: "Gobierno de Nunavut — Oficinas de vehículos motorizados", href: "https://www.gov.nu.ca/en/transportation/motor-vehicles-offices" },
-          { label: "Gobierno de Nunavut — Manuales para conductores", href: "https://www.gov.nu.ca/en/transportation/drivers-manuals" },
         ],
       },
       {
