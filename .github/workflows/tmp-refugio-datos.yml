@@ -11,7 +11,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-        with: { ref: claude/laughing-albattani-1rvkc1-refugio }
+        with: { ref: main }
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: mkdir -p /tmp/pw /tmp/out/shots && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.0 >/dev/null && npx playwright install --with-deps chromium chrome >/dev/null
@@ -27,9 +27,20 @@ jobs:
             return b;
           };
           JS
-      - name: E2E en la vista previa con reproducción real del TikTok (Google Chrome)
+      - name: Esperar el despliegue
+        run: for i in $(seq 1 60); do curl -sL https://podcastdelmigrante.com/js/data.js | grep -q canada-cambios-proceso-refugio && curl -sfL -o /dev/null https://podcastdelmigrante.com/articulo-canada-cambios-proceso-refugio-3-noviembre-2026 && echo listo && exit 0; sleep 20; done; exit 1
+      - name: Archivos e imagen social
+        continue-on-error: true
+        run: |
+          B=https://podcastdelmigrante.com; S=canada-cambios-proceso-refugio-3-noviembre-2026
+          { for f in js/data.js js/articles.js articulo-$S.html assets/$S.jpg assets/$S-video.jpg assets/social/$S.jpg sitemap.xml; do curl -sfL "$B/$f" -o /tmp/x; if cmp -s /tmp/x "$f"; then echo "IGUAL $f"; else echo "DISTINTO $f"; fi; done
+            curl -s -A "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)" "$B/articulo-$S" | grep -o '<meta property="og:[a-z:_]*" content="[^"]*"' | head -12
+            curl -s -o /dev/null -w "og:image %{http_code} %{content_type} %{size_download} B\n" "$B/assets/social/$S.jpg"
+            curl -s -o /dev/null -w "articulo %{http_code}\n" "$B/articulo-$S"
+          } | tee /tmp/out/archivos.txt
+      - name: E2E en producción con reproducción real del TikTok (Google Chrome)
         env:
-          BASE: https://4c7a3b04.podcastdelmigrante.pages.dev
+          BASE: https://podcastdelmigrante.com
           NODE_PATH: /tmp/pw/node_modules
           NODE_OPTIONS: --require /tmp/pw/vistas.cjs
           TIKTOK_REAL: "1"
@@ -44,4 +55,4 @@ jobs:
         if: always()
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "Video refugio [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-refugio-datos-out3
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-refugio-datos-out4
