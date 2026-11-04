@@ -14,33 +14,13 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -q pyproj shapely openpyxl playwright && python -m playwright install --with-deps chromium >/dev/null
-      - name: Localidades
-        continue-on-error: true
-        run: mkdir -p /tmp/out && python scripts/canada-en-datos/obtener-nu-localidades.py > /tmp/out/localidades.log 2>&1; tail -5 /tmp/out/localidades.log; cp scripts/canada-en-datos/nu-fuentes.json /tmp/out/ || true
-      - name: StatCan
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-nu-ficha.py statcan > /tmp/out/statcan.log 2>&1; tail -3 /tmp/out/statcan.log
-      - name: Perfil censo
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-nu-ficha.py perfil > /tmp/out/perfil.log 2>&1; tail -3 /tmp/out/perfil.log
-      - name: Sitemaps
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-nu-ficha.py mapa > /tmp/out/mapa.log 2>&1; tail -3 /tmp/out/mapa.log
-      - name: Paginas
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-nu-ficha.py paginas > /tmp/out/paginas.log 2>&1; tail -3 /tmp/out/paginas.log
-      - name: Clima y salario
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-nu-ficha.py clima salario > /tmp/out/clima-salario.log 2>&1; tail -3 /tmp/out/clima-salario.log
-      - name: Bandera (Wikimedia Commons)
+      - name: Ronda 2
         continue-on-error: true
         run: |
-          UA="Mozilla/5.0 (verificacion de datos; podcastdelmigrante.com)"
-          curl -sSL -A "$UA" -o /tmp/out/Flag_of_Nunavut.svg "https://upload.wikimedia.org/wikipedia/commons/9/90/Flag_of_Nunavut.svg"
-          curl -sSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Flag_of_Nunavut.svg&prop=imageinfo&iiprop=url|extmetadata|sha1|size&format=json" > /tmp/out/bandera-licencia.json
-          ls -la /tmp/out/Flag_of_Nunavut.svg; head -c 600 /tmp/out/bandera-licencia.json
+          mkdir -p /tmp/out
+          for p in archivo statcan clima paginas; do python scripts/canada-en-datos/obtener-nu-ficha2.py $p > /tmp/out/r2-$p.log 2>&1; tail -2 /tmp/out/r2-$p.log; done
       - name: Publicar
         if: always()
         run: |
-          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "datos Nunavut [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-nu-datos
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "datos Nunavut ronda 2 [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/laughing-albattani-1rvkc1-nu-datos2
