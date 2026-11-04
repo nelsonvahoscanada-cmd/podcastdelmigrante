@@ -38,9 +38,10 @@ import PrinceEdwardIsland from "./canada-en-datos/provincias/prince-edward-islan
 import Saskatchewan from "./canada-en-datos/provincias/saskatchewan.mjs";
 import Manitoba from "./canada-en-datos/provincias/manitoba.mjs";
 import Quebec from "./canada-en-datos/provincias/quebec.mjs";
+import Nunavut from "./canada-en-datos/provincias/nunavut.mjs";
 
 /* Provincias y territorios con directorio de localidades (ver docs del estándar en el repositorio interno) */
-export const PROVINCIAS = { alberta: Alberta, ontario: Ontario, "british-columbia": BritishColumbia, "prince-edward-island": PrinceEdwardIsland, saskatchewan: Saskatchewan, manitoba: Manitoba, quebec: Quebec };
+export const PROVINCIAS = { alberta: Alberta, ontario: Ontario, "british-columbia": BritishColumbia, "prince-edward-island": PrinceEdwardIsland, saskatchewan: Saskatchewan, manitoba: Manitoba, quebec: Quebec, nunavut: Nunavut };
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
@@ -388,7 +389,7 @@ function paginaRegion(d, region, comun, L) {
       ],
     },
   };
-  const toc = [...perfil.sections.map((s) => [s.id, s.title]), ...(perfil.localidades ? [["localidades", "Ciudades y pueblos"]] : []), ["recien-llegado", "Recién llegado"], ...(perfil.scams && perfil.scams.length ? [["estafas", "Estafas"]] : []), ["noticias", "Noticias"], ["fuentes", "Fuentes"]]
+  const toc = [...perfil.sections.map((s) => [s.id, s.title]), ...(perfil.localidades ? [["localidades", perfil.localidadesEtiqueta || "Ciudades y pueblos"]] : []), ["recien-llegado", "Recién llegado"], ...(perfil.scams && perfil.scams.length ? [["estafas", "Estafas"]] : []), ["noticias", "Noticias"], ["fuentes", "Fuentes"]]
     .map(([id, t]) => `<a href="#${id}">${esc(t)}</a>`)
     .join("\n      ");
   const secciones = perfil.sections
@@ -453,9 +454,9 @@ ${comun.cabecera}
       <div>
         <nav class="cd-breadcrumb" aria-label="Ruta de navegación"><a href="/index.html">Inicio</a> › <a href="${BASE_PATH}/">${esc(meta.title)}</a> › <span aria-current="page">${esc(region.name)}</span></nav>
         <p class="cd-kicker">Canadá en Datos · ${tipo}</p>
-        <h1>${esc(region.name)}</h1>
+        <h1>${perfil.flag ? `<img class="cd-flag" src="${esc(perfil.flag.src)}" alt="${esc(perfil.flag.alt)}" width="64" height="36">` : ""}${esc(region.name)}</h1>
         <p class="cd-lead">${esc(perfil.intro)}</p>
-        <p class="cd-meta">Última revisión: ${esc(fechaLarga(perfil.lastReview || meta.lastReview))}</p>
+        <p class="cd-meta">Última revisión: ${esc(fechaLarga(perfil.lastReview || meta.lastReview))}${perfil.flag ? ` · <a href="${esc(perfil.flag.href)}" target="_blank" rel="noopener">${esc(perfil.flag.credit)}</a>` : ""}</p>
         ${compartirHtml({ url: SITE + path, titulo: perfil.seo.title, texto: `${region.name} en datos: guía para migrantes con cifras y enlaces oficiales, en Canadá en Datos de El Podcast del Migrante.`, lugar: region.name })}
       </div>
       <aside class="cd-panel" aria-label="Datos rápidos de ${esc(region.name)}">

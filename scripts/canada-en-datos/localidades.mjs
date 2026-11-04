@@ -267,7 +267,7 @@ export function seccionDirectorio(P, L, esc) {
           </div>`
     : "";
   return `<section class="cd-section cd-loc" id="localidades" aria-labelledby="localidades-titulo">
-      <h2 id="localidades-titulo">Explora las ciudades y pueblos de ${esc(P.nombre)}</h2>
+      <h2 id="localidades-titulo">${esc(D.titulo || `Explora las ciudades y pueblos de ${P.nombre}`)}</h2>
       ${D.intro(L, esc)}
       <div class="cd-loc__resumen">
         <h3>Qué incluye</h3>

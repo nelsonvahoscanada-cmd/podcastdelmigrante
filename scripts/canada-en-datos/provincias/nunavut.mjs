@@ -82,7 +82,13 @@ const Z = {
   montana: { timeZone: "America/Cambridge_Bay", texto: "Hora de la Montaña: UTC−7 en invierno (MST) y UTC−6 con el horario de verano (MDT), de marzo a noviembre" },
   southampton: { timeZone: "America/Atikokan", texto: "Hora del Este todo el año (UTC−5), sin cambio de hora: igual que Iqaluit en invierno y una hora menos en verano" },
 };
-export const ZONAS = {};
+export const ZONAS = {
+  6204003: "este", /* Iqaluit: America/Iqaluit, «Eastern - NU (most areas)» */
+  6204022: "resolute", /* Resolute: America/Resolute, «Central - NU (Resolute)» */
+  6205017: "centro", /* Rankin Inlet: America/Rankin_Inlet, «Central - NU (central)» */
+  6208073: "montana", /* Cambridge Bay: America/Cambridge_Bay, «Mountain - NU (west)» */
+  6205014: "southampton", /* Coral Harbour: «EST - NU (Coral H)»; NRC: isla Southampton, hora del Este todo el año */
+};
 
 /* ---------- Fichas completas ----------
    La capital y los dos centros regionales con hospital (Statistics Canada,
@@ -353,7 +359,7 @@ function pagina(r, L, { esc }) {
     r.superficie != null ? fila("Superficie terrestre", `${decimal(r.superficie)} km²${r.densidad != null && habitada ? ` <small class="cd-fact__period">Densidad: ${decimal(r.densidad)} hab./km² (Censo 2021)</small>` : ""}`) : "",
     r.viviendas != null && habitada ? fila("Viviendas privadas", `${miles(r.viviendas)} <small class="cd-fact__period">Censo 2021</small>`) : "",
     fila("Coordenadas", `${r.lat.toFixed(4)}, ${r.lon.toFixed(4)} <small class="cd-fact__period">Punto de referencia dentro de la subdivisión censal</small>`),
-    fila("Zona horaria", zona ? esc(zona.texto) : `${NO_DISPONIBLE} <small class="cd-fact__period">La base de datos de zonas horarias de la IANA no identifica la zona de este lugar. Nunavut tiene tres zonas horarias: confirma la hora local.</small>`),
+    fila("Zona horaria", zona ? esc(zona.texto) : `${NO_DISPONIBLE} <small class="cd-fact__period">La base de datos de zonas horarias de la IANA no identifica la zona de esta comunidad. Nunavut tiene tres zonas horarias (del Este, del Centro y de la Montaña): confirma la hora local con la comunidad.</small>`),
   ].filter(Boolean).join("\n          ");
 
   /* --- Lugares dentro de la subdivisión --- */
@@ -370,7 +376,7 @@ function pagina(r, L, { esc }) {
     : "";
 
   /* --- Empleo (todo el territorio) --- */
-  const empleo = `<p>Statistics Canada publica las cifras de empleo de Nunavut para todo el territorio, no por comunidad. En comunidades pequeñas, buena parte del empleo está en el gobierno, la salud, la educación, la vivienda y los servicios municipales; las minas y la construcción contratan sobre todo por proyectos y con rotación.</p>
+  const empleo = `<p>Statistics Canada publica las cifras de empleo de Nunavut para todo el territorio, no por comunidad.</p>
       <div class="cd-indicators">
         ${datoBloque("Tasa de desempleo de Nunavut", `${EPA.mensual.desempleo}%`, `${esc(EPA.mensual.periodo)}. Fuente: ${fuente(FUENTES.epa, esc)}. Consultado el ${esc(consultado)}.`)}
         ${datoBloque("Tasa de desempleo, promedio anual", `${EPA.anual.desempleo}%`, `Año ${esc(EPA.anual.periodo)}: la más alta de Canadá. Fuente: ${fuente(EPA.anual.fuente, esc)}.`)}
@@ -417,7 +423,7 @@ function pagina(r, L, { esc }) {
 
   /* --- Transporte --- */
   const transporte = habitada
-    ? `<p>Ninguna comunidad de Nunavut está conectada por carretera con las demás ni con el resto de Canadá: los viajes se hacen en avión durante todo el año, y la carga pesada (vehículos, materiales de construcción y alimentos no perecederos) llega en barco durante el verano. Dentro de la comunidad se usan vehículos, cuatrimotos y motos de nieve. Consulta horarios y tarifas directamente con las aerolíneas.</p>
+    ? `<p>Ninguna comunidad de Nunavut está conectada por carretera con las demás ni con el resto de Canadá: los viajes se hacen en avión durante todo el año, y la carga pesada (vehículos, materiales de construcción y alimentos no perecederos) llega en barco durante el verano. Consulta horarios y tarifas directamente con las aerolíneas.</p>
       ${enlaces(RECURSOS.transporte, esc)}`
     : `<p>${esc(nombre)} no tiene población permanente en el Censo 2021. Solo se llega en avión o por mar.</p>`;
 
