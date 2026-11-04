@@ -106,6 +106,27 @@ const HOSPITALES = {
   "kitikmeot regional health centre": "Kitikmeot Regional Health Centre",
 };
 
+/* Aerolíneas regionales (sitios de las aerolíneas). Calm Air enumera entre sus comunidades las de Kivalliq,
+   Sanikiluaq, Churchill y Winnipeg, con Rankin Inlet como centro de su red; Canadian North publica destinos en
+   Qikiqtaaluk y Kitikmeot (por ejemplo, Iqaluit, Resolute, Kimmirut y Kugluktuk). No se publican rutas ni
+   horarios: cambian y deben consultarse con la aerolínea. */
+const AEROLINEAS = {
+  calm: { label: "Calm Air — Aerolínea de Kivalliq y Sanikiluaq, con vuelos hacia Churchill y Winnipeg", href: "https://www.calmair.com/" },
+  north: { label: "Canadian North — Aerolínea de Qikiqtaaluk y Kitikmeot, con vuelos hacia el sur del país", href: "https://canadiannorth.com/" },
+};
+const aerolineas = (r) => (r.cd === "6205" || r.c === "6204001" ? [AEROLINEAS.calm] : [AEROLINEAS.north]);
+
+/* Nunavut Arctic College: campus que atiende a cada región (arcticcollege.com, «Locations») */
+const CAMPUS = {
+  6204: { label: "Nunavut Arctic College — Campus Nunatta (Iqaluit), que atiende a Qikiqtaaluk", href: "https://www.arcticcollege.com/campuses" },
+  6205: { label: "Nunavut Arctic College — Campus Kivalliq (Rankin Inlet)", href: "https://www.arcticcollege.com/campuses" },
+  6208: { label: "Nunavut Arctic College — Campus Kitikmeot (Cambridge Bay)", href: "https://www.arcticcollege.com/campuses" },
+};
+
+/* Índice de precios al consumidor (Statistics Canada, tabla 18-10-0004-01). Mide la variación de los precios,
+   no su nivel: no permite decir cuánto más caro es Iqaluit que otra ciudad. */
+const IPC = { periodo: "septiembre de 2026", anterior: "septiembre de 2025", iqaluit: { indice: "149.6", previo: "145.2", variacion: "3.0" }, canada: { variacion: "3.1" }, publicado: "19 de octubre de 2026" };
+
 /* Encuesta de Población Activa de Nunavut (Statistics Canada). No hay datos por comunidad. */
 const EPA = {
   mensual: { desempleo: "11.0", empleo: "55.5", ocupados: "15,400", periodo: "septiembre de 2026 (promedio móvil de 3 meses, desestacionalizado)" },
@@ -118,7 +139,12 @@ export const FUENTES = {
   censo: { org: "Statistics Canada", title: "Tabla 98-10-0002-01 — Población y viviendas, Censo 2021", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201" },
   nombres: { org: "Recursos Naturales Canadá", title: "Base de datos de nombres geográficos de Canadá (CGNDB) — Nunavut", url: "https://natural-resources.canada.ca/earth-sciences/geography/download-geographical-names-data/9245" },
   epa: { org: "Statistics Canada", title: "Tabla 14-10-0292-01 — Características de la población activa de los territorios, promedio móvil de 3 meses", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410029201" },
-  escuelas: { org: "Statistics Canada", title: "Open Database of Educational Facilities (ODEF), versión 2.1 (2022)", url: "https://www.statcan.gc.ca/en/lode/databases/odef" },
+  escuelas: { org: "Gobierno de Nunavut (Departamento de Educación)", title: "Schools and Colleges — directorio de escuelas (copia del Internet Archive del 22 de abril de 2026)", url: "https://www.gov.nu.ca/en/education-and-schools/schools-and-colleges" },
+  csfn: { org: "Commission scolaire francophone du Nunavut", title: "École des Trois-Soleils (kínder a 12.º grado, en francés)", url: "https://trois-soleils.ca/" },
+  rcmp: { org: "RCMP en Nunavut", title: "Nunavut RCMP detachment locations (números de cada destacamento)", url: "https://rcmp.ca/en/nunavut/detachments" },
+  rcmp911: { org: "RCMP en Nunavut", title: "Tips for calling the Nunavut RCMP for emergencies (12 de diciembre de 2025)", url: "https://rcmp.ca/en/nunavut/news/2025/12/4348432" },
+  clima: { org: "Environment and Climate Change Canada", title: "Normales climáticas de Canadá 1991-2020", url: "https://climate.weather.gc.ca/climate_normals/index_e.html" },
+  ipc: { org: "Statistics Canada", title: "Tabla 18-10-0004-01 — Índice de precios al consumidor, mensual", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401" },
   hospitales: { org: "Statistics Canada", title: "Open Database of Healthcare Facilities (ODHF), versión 1.1 (2020)", url: "https://www.statcan.gc.ca/en/lode/databases/odhf" },
   hora: { org: "IANA", title: "Base de datos de zonas horarias (tzdata): zonas de Nunavut", url: "https://www.iana.org/time-zones" },
   horaNrc: { org: "Consejo Nacional de Investigación de Canadá (NRC)", title: "Time zones and daylight saving time", url: "https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/time-zones-daylight-saving-time" },
@@ -129,24 +155,25 @@ const RECURSOS = {
     { label: "Job Bank — Panorama económico de Nunavut y los territorios (2026)", href: "https://www.jobbank.gc.ca/trend-analysis/job-market-reports/nunavut/environmental-scan" },
   ],
   escuelas: [
-    { label: "Gobierno de Nunavut — Educación y escuelas", href: "https://www.gov.nu.ca/en/education-and-schools" },
-    { label: "Nunavut Arctic College — Campus y centros de aprendizaje", href: "https://www.arcticcollege.com/" },
+    { label: "Gobierno de Nunavut — Directorio de escuelas", href: "https://www.gov.nu.ca/en/education-and-schools/schools-and-colleges" },
   ],
   salud: [
     { label: "Gobierno de Nunavut — Plan de Salud de Nunavut (tarjeta de salud)", href: "https://www.gov.nu.ca/en/health/nunavut-health-care-plan" },
+    { label: "RCMP en Nunavut — Números de emergencia de cada comunidad", href: "https://rcmp.ca/en/nunavut/detachments" },
+    { label: "Kamatsiaqtut Nunavut Helpline — Línea de ayuda emocional de Nunavut", href: "https://nunavuthelpline.ca/" },
+    { label: "9-8-8 — Línea de prevención del suicidio (llamada o mensaje de texto)", href: "https://988.ca/" },
   ],
   recienLlegados: [
     { label: "IRCC — Servicios gratuitos para recién llegados cerca de ti", href: "https://ircc.canada.ca/english/newcomers/services/index.asp" },
   ],
   familias: [
+    { label: "CRA — Canada Child Benefit (CCB): quién puede solicitarla", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-before-you-apply.html" },
+    { label: "CRA — Nunavut Child Benefit (NUCB)", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/nunavut.html" },
+    { label: "CRA — Deducciones para residentes del norte (línea 25500)", href: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-25500-northern-residents-deductions.html" },
     { label: "Gobierno de Nunavut — Asistencia de ingresos (Income Assistance)", href: "https://www.gov.nu.ca/en/social-supports/income-assistance" },
-    { label: "CRA — Cómo solicitar la Canada Child Benefit", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html" },
   ],
   vivienda: [
     { label: "Nunavut Housing Corporation — Vivienda pública, programas y organizaciones locales de vivienda", href: "https://www.nunavuthousing.ca/" },
-  ],
-  transporte: [
-    { label: "Calm Air — Vuelos en Kivalliq y hacia Winnipeg", href: "https://www.calmair.com/" },
   ],
 };
 
@@ -204,6 +231,8 @@ const RECUADRO = { belcher: [0, 0.5e6], james: [0.2e6, 0.89e6], marco: [6.865e6,
 export function cargar(root) {
   const base = join(root, "scripts/canada-en-datos");
   const J = JSON.parse(readFileSync(join(base, "nu-localidades.json"), "utf8"));
+  const E = JSON.parse(readFileSync(join(base, "nu-escuelas.json"), "utf8"));
+  const SV = JSON.parse(readFileSync(join(base, "nu-servicios.json"), "utf8"));
   const censo = (v) => Object.fromEntries(J.censo_campos.map((k, i) => [k, num(v[i])]));
   const csd = J.csd.map((f) => objeto(J.csd_campos, f));
 
@@ -273,6 +302,12 @@ export function cargar(root) {
     r.ficha = true;
   }
   for (const c of Object.keys(ZONAS)) if (!porCodigo.has(c)) throw new Error(`Zona horaria de una subdivisión inexistente: ${c}`);
+  for (const e of E.escuelas) if (!porCodigo.has(e.csd)) throw new Error(`Escuela en una subdivisión inexistente: ${e.nombre}`);
+  for (const c of Object.keys(SV.rcmp)) if (!porCodigo.has(c)) throw new Error(`Destacamento de la RCMP en una subdivisión inexistente: ${c}`);
+  for (const r of items.filter((x) => TIPOS[x.t].grupo === "municipio")) {
+    if (!SV.rcmp[r.c]) throw new Error(`Comunidad sin destacamento de la RCMP: ${r.n}`);
+    if (!E.escuelas.some((e) => e.csd === r.c)) throw new Error(`Comunidad sin escuela en el directorio oficial: ${r.n}`);
+  }
 
   /* --- Lugares con nombre oficial (sin página propia) --- */
   const nombresCsd = new Set(items.flatMap((r) => [norm(r.n), norm(r.censoNombre)]));
@@ -317,7 +352,9 @@ export function cargar(root) {
     porCodigo,
     territorio: censo(J.territorio),
     regionesCenso: J.regiones.map(([id, n, v]) => ({ id, n, ...censo(v) })),
-    escuelas: J.escuelas.map((f) => objeto(J.escuelas_campos, f)),
+    escuelas: E.escuelas,
+    rcmp: SV.rcmp,
+    clima: SV.clima,
     hospitales,
   };
 }
@@ -360,6 +397,8 @@ function pagina(r, L, { esc }) {
   const nombre = r.n;
   const zona = ZONAS[r.c] ? Z[ZONAS[r.c]] : null;
   const habitada = typeof r.p === "number" && r.p > 0;
+  const rc = L.rcmp[r.c] || null;
+  const cl = L.clima[r.c] || null;
 
   const titulo = r.ficha ? `${nombre}, Nunavut: guía para inmigrantes y recién llegados` : `${nombre}, Nunavut: información básica`;
   const que = { city: "la capital de Nunavut", hamlet: "una comunidad (hamlet)", asentamiento: "un asentamiento (settlement) del censo", "no-organizado": "la zona no organizada" }[r.t];
@@ -379,6 +418,7 @@ function pagina(r, L, { esc }) {
     r.superficie != null ? fila("Superficie terrestre", `${decimal(r.superficie)} km²${r.densidad != null && habitada ? ` <small class="cd-fact__period">Densidad: ${decimal(r.densidad)} hab./km² (Censo 2021)</small>` : ""}`) : "",
     r.viviendas != null && habitada ? fila("Viviendas privadas", `${miles(r.viviendas)} <small class="cd-fact__period">Censo 2021</small>`) : "",
     fila("Coordenadas", `${r.lat.toFixed(4)}, ${r.lon.toFixed(4)} <small class="cd-fact__period">Punto de referencia dentro de la subdivisión censal</small>`),
+    rc ? fila("Emergencias: policía (RCMP)", `${esc(rc.emergencia)} <small class="cd-fact__period">Nunavut no tiene 911. Consultas que no son urgentes: ${esc(rc.general)}. Fuente: RCMP en Nunavut</small>`) : "",
     fila("Zona horaria", zona ? esc(zona.texto) : `${NO_DISPONIBLE} <small class="cd-fact__period">La base de datos de zonas horarias de la IANA no identifica la zona de esta comunidad. Nunavut tiene tres zonas horarias (del Este, del Centro y de la Montaña): confirma la hora local con la comunidad.</small>`),
   ].filter(Boolean).join("\n          ");
 
@@ -404,23 +444,28 @@ function pagina(r, L, { esc }) {
 
   /* --- Vivienda --- */
   const vivienda = `<p>${NO_DISPONIBLE}: CMHC no publica alquileres de Nunavut en su encuesta anual, y Statistics Canada no tiene una serie de alquileres por comunidad. En Nunavut la oferta de alquiler privado es muy limitada y la mayoría de las viviendas son públicas o del personal de los empleadores (staff housing): antes de aceptar un empleo, pregunta si incluye vivienda. Consulta la sección de vivienda de la <a href="/canada-en-datos/nunavut#vivienda">guía de Nunavut</a>.</p>
+      ${r.t === "city" ? `<h3>Precios en Iqaluit</h3>
+      <div class="cd-indicators">
+        ${datoBloque("Índice de precios al consumidor de Iqaluit", `+${IPC.iqaluit.variacion}%`, `Variación de ${esc(IPC.anterior)} a ${esc(IPC.periodo)} (índice ${IPC.iqaluit.previo} → ${IPC.iqaluit.indice}; base 2002 = 100). En Canadá fue de +${IPC.canada.variacion}%. El índice mide cuánto cambian los precios, no cuánto cuestan: no sirve para comparar el costo de vida entre ciudades. Fuente: ${fuente(FUENTES.ipc, esc)}, publicada el ${esc(IPC.publicado)}.`)}
+      </div>` : ""}
       ${enlaces(RECURSOS.vivienda, esc)}`;
 
-  /* --- Escuelas (ODEF 2022) --- */
-  const escs = L.escuelas.filter((e) => e.csd === r.c);
-  const consultadoEscuelas = "Base ODEF v2.1 de Statistics Canada (2022)";
+  /* --- Escuelas: directorio oficial del Gobierno de Nunavut y Commission scolaire francophone du Nunavut --- */
+  const escs = L.escuelas.filter((e) => e.csd === r.c).sort((x, y) => x.nombre.localeCompare(y.nombre, "es"));
+  const campus = CAMPUS[r.cd];
   let escuelas;
   if (escs.length) {
-    escuelas = `<p>La ${consultadoEscuelas} ubica en ${esc(nombre)} ${miles(escs.length)} ${escs.length === 1 ? "establecimiento educativo" : "establecimientos educativos"}:</p>
+    escuelas = `<p>${escs.length === 1 ? `${esc(nombre)} tiene 1 escuela` : `${esc(nombre)} tiene ${miles(escs.length)} escuelas`} en el directorio oficial del Gobierno de Nunavut${escs.some((e) => e.web) ? " y de la Commission scolaire francophone du Nunavut" : ""}:</p>
       <ul class="cd-list-items">
-        ${escs.slice().sort((x, y) => x.nombre.localeCompare(y.nombre, "es")).map((e) => `<li>${esc(e.nombre)}</li>`).join("\n        ")}
+        ${escs.map((e) => `<li>${esc(e.nombre)}${e.comunidad === "Apex" ? " (en Apex, barrio de Iqaluit)" : ""}${e.niveles ? ` — en francés, de ${esc(e.niveles)}` : ""}${e.telefono ? ` — teléfono ${esc(e.telefono)}` : ""}</li>`).join("\n        ")}
       </ul>
-      <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.escuelas, esc)}. Es una base de 2022: confirma la escuela y la inscripción con la autoridad educativa de la comunidad (District Education Authority) o, para la educación en francés, con la Commission scolaire francophone du Nunavut.</p>`;
+      <p>Para inscribir a tus hijos, llama a la escuela o a la autoridad educativa de la comunidad (District Education Authority). Las escuelas públicas dependen de ${esc(escs.find((e) => !e.web)?.operaciones || "la oficina regional de escuelas")} del Departamento de Educación.${escs.some((e) => e.web) ? " La École des Trois-Soleils es la escuela en francés de Nunavut." : ""} La educación postsecundaria la ofrece Nunavut Arctic College, que tiene un centro de aprendizaje en cada comunidad.</p>
+      <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.escuelas, esc)}${escs.some((e) => e.web) ? `; ${fuente(FUENTES.csfn, esc)}` : ""}. Consultado el ${esc(consultado)}. El sitio del Gobierno de Nunavut no permite la lectura automática; se usó su copia pública más reciente.</p>`;
   } else if (habitada) {
-    escuelas = `<p>La ${consultadoEscuelas} no ubica escuelas dentro de los límites de ${esc(nombre)}. Para inscribir a tus hijos, consulta a la autoridad educativa de la comunidad (District Education Authority).</p>
+    escuelas = `<p>El directorio oficial del Gobierno de Nunavut no lista escuelas en ${esc(nombre)}. Consulta al Departamento de Educación.</p>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.escuelas, esc)}.</p>`;
   } else {
-    escuelas = `<p>${esc(nombre)} no tiene población permanente en el Censo 2021 ni escuelas en la ${consultadoEscuelas}.</p>`;
+    escuelas = `<p>${esc(nombre)} no tiene población permanente en el Censo 2021 ni escuelas en el directorio oficial del Gobierno de Nunavut.</p>`;
   }
 
   /* --- Salud --- */
@@ -431,20 +476,32 @@ function pagina(r, L, { esc }) {
       <ul class="cd-list-items">
         ${hs.map((h) => `<li>${esc(h.nombre)}</li>`).join("\n        ")}
       </ul>
-      <p>Para la atención especializada que no se ofrece en Nunavut, el Plan de Salud organiza viajes médicos a otras provincias. En una emergencia, acude al centro de salud o al hospital y confirma los números de emergencia de la comunidad apenas llegues.</p>
+      <p>Para la atención especializada que no se ofrece en Nunavut, el Plan de Salud organiza viajes médicos a otras provincias.</p>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.hospitales, esc)}. Confirma servicios y horarios con el Departamento de Salud de Nunavut.</p>`;
   } else if (habitada) {
     const cerca = L.hospitales.map((h) => ({ h, d: km({ lat: r.lat, lon: r.lon }, { lat: h.lat, lon: h.lon }) })).sort((x, y) => x.d - y.d)[0];
-    salud = `<p>La atención de salud diaria en las comunidades de Nunavut se da en el centro de salud (health centre) local, atendido sobre todo por personal de enfermería. No hay un hospital dentro de ${esc(nombre)}: el más cercano es <strong>${esc(cerca.h.nombre)}</strong>, a unos ${DIST(cerca.d)} en línea recta, y el traslado se hace en avión. En una emergencia, acude al centro de salud y confirma los números de emergencia de la comunidad apenas llegues.</p>
+    salud = `<p>La atención de salud diaria en las comunidades de Nunavut se da en el centro de salud (health centre) local, atendido sobre todo por personal de enfermería. No hay un hospital dentro de ${esc(nombre)}: el más cercano es <strong>${esc(cerca.h.nombre)}</strong>, a unos ${DIST(cerca.d)} en línea recta, y el traslado se hace en avión.</p>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.hospitales, esc)}. Distancia calculada con las coordenadas oficiales.</p>`;
   } else {
     salud = `<p>${esc(nombre)} no tiene población permanente en el Censo 2021 ni servicios de salud propios.</p>`;
   }
 
+  /* --- Emergencias y ayuda (se añade a la sección de salud de las comunidades habitadas) --- */
+  if (habitada && rc) {
+    salud += `
+      <h3>Emergencias y líneas de ayuda</h3>
+      <ul class="cd-list-items">
+        <li><strong>Nunavut no tiene servicio 911.</strong> Según la RCMP, para la policía se marcan los tres primeros dígitos del teléfono local seguidos de 1111. En ${esc(nombre)}, la línea de emergencia de la RCMP es el <strong>${esc(rc.emergencia)}</strong>; para consultas que no son urgentes, ${esc(rc.general)}.</li>
+        <li>${r.t === "city" ? "En Iqaluit, la Ciudad publica su número de bomberos y ambulancias: <strong>(867) 979-4422</strong>. En las demás comunidades" : "En todas las comunidades, salvo Iqaluit,"} los bomberos y las ambulancias son voluntarios locales y cada comunidad tiene su propio número. Apréndelo al llegar; si no lo conoces, llama a la línea de emergencia de la RCMP.</li>
+        <li>Si te sientes en crisis o piensas en el suicidio: <strong>9-8-8</strong> (llamada o mensaje de texto, las 24 horas, en todo Canadá). La Kamatsiaqtut Nunavut Helpline atiende de forma anónima las 24 horas en el <strong>1-800-265-3333</strong> (en Iqaluit, 867-979-3333). La línea Hope for Wellness, para personas indígenas, atiende las 24 horas en el <strong>1-855-242-3310</strong>, también en inuktitut si se solicita.</li>
+      </ul>
+      <p class="cd-indicator__src">Fuentes: ${fuente(FUENTES.rcmp911, esc)}; ${fuente(FUENTES.rcmp, esc)}${r.t === "city" ? '; <a href="https://www.iqaluit.ca/" target="_blank" rel="noopener">Ciudad de Iqaluit</a>' : ""}; <a href="https://988.ca/" target="_blank" rel="noopener">9-8-8: Suicide Crisis Helpline</a>; <a href="https://nunavuthelpline.ca/" target="_blank" rel="noopener">Kamatsiaqtut Nunavut Helpline</a>; <a href="https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html" target="_blank" rel="noopener">Gobierno de Canadá — Hope for Wellness Help Line</a>. Consultado el ${esc(consultado)}.</p>`;
+  }
+
   /* --- Transporte --- */
   const transporte = habitada
-    ? `<p>Ninguna comunidad de Nunavut está conectada por carretera con las demás ni con el resto de Canadá: los viajes se hacen en avión durante todo el año, y la carga pesada (vehículos, materiales de construcción y alimentos no perecederos) llega en barco durante el verano. Consulta horarios y tarifas directamente con las aerolíneas.</p>
-      ${enlaces(RECURSOS.transporte, esc)}`
+    ? `<p>Ninguna comunidad de Nunavut está conectada por carretera con las demás ni con el resto de Canadá: los viajes se hacen en avión durante todo el año, y la carga pesada (vehículos, materiales de construcción y alimentos no perecederos) llega en barco durante el verano. ${r.cd === "6205" || r.c === "6204001" ? "En Kivalliq y Sanikiluaq vuela Calm Air, que tiene en Rankin Inlet el centro de su red" : "En Qikiqtaaluk y Kitikmeot vuela Canadian North"}; consulta rutas, horarios y tarifas directamente con la aerolínea, porque cambian con frecuencia.</p>
+      ${enlaces(aerolineas(r), esc)}`
     : `<p>${esc(nombre)} no tiene población permanente en el Censo 2021. Solo se llega en avión o por mar.</p>`;
 
   const recien = `<p>Los servicios para recién llegados financiados por el Gobierno de Canadá son gratuitos para quienes cumplen sus requisitos. En Nunavut hay pocos proveedores: usa el buscador oficial para ver cuáles atienden en el territorio o en línea.</p>
@@ -458,7 +515,7 @@ function pagina(r, L, { esc }) {
     ...(f && f.web ? [{ label: `Sitio oficial de ${f.nombre}`, href: f.web }] : []),
     { label: `Statistics Canada — Perfil del Censo 2021 de ${r.censoNombre} (en inglés)`, href: perfilCenso },
   ];
-  const fuentes = [FUENTES.csd, FUENTES.censo, ...(lista.length ? [FUENTES.nombres] : []), FUENTES.epa, FUENTES.escuelas, FUENTES.hospitales, FUENTES.hora, FUENTES.horaNrc];
+  const fuentes = [FUENTES.csd, FUENTES.censo, ...(lista.length ? [FUENTES.nombres] : []), FUENTES.epa, ...(r.t === "city" ? [FUENTES.ipc] : []), FUENTES.escuelas, ...(escs.some((e) => e.web) ? [FUENTES.csfn] : []), FUENTES.hospitales, ...(rc ? [FUENTES.rcmp, FUENTES.rcmp911] : []), ...(cl ? [FUENTES.clima] : []), FUENTES.hora, FUENTES.horaNrc];
 
   const intro = {
     city: `${nombre} es la capital de Nunavut y su única ciudad, en la isla de Baffin, región de ${r.region}.${habitada ? ` Según el Censo 2021 de Statistics Canada, tenía ${miles(r.p)} habitantes.` : ""}`,
@@ -477,13 +534,21 @@ function pagina(r, L, { esc }) {
     intro: intro + cierre,
     datos,
     reloj: zona ? { timeZone: zona.timeZone, lat: r.lat, lon: r.lon, etiqueta: `Hora local en ${nombre}` } : null,
+    ubicacionExtra: cl ? `
+      <h3>Clima (normales 1991-2020)</h3>
+      <div class="cd-indicators">
+        ${datoBloque("Temperatura media de enero", `${cl.enero.toFixed(1).replace("-", "−")} °C`, `Promedio diario de enero en la estación ${esc(cl.estacion)} de Environment Canada.`)}
+        ${datoBloque("Temperatura media de julio", `${cl.julio.toFixed(1).replace("-", "−")} °C`, `Promedio diario de julio; promedio anual: ${cl.anual.toFixed(1).replace("-", "−")} °C.`)}
+        ${cl.nieve != null ? datoBloque("Nieve al año", `${decimal(cl.nieve.toFixed(1))} cm`, `Nevada anual promedio${cl.precipitacion != null ? `; precipitación total (lluvia y nieve): ${decimal(cl.precipitacion.toFixed(1))} mm` : ""}.`) : ""}
+      </div>
+      <p class="cd-indicator__src">Fuente: <a href="${esc(cl.url)}" target="_blank" rel="noopener">Environment and Climate Change Canada — Normales climáticas 1991-2020, estación ${esc(cl.estacion)}</a>. Consultado el ${esc(consultado)}.</p>` : "",
     ubicacion: `Ubicación aproximada en la región de ${esc(r.region)}.${r.desplazado ? ` ${esc(nombre)} está en las islas del sur de la bahía de Hudson y de la bahía James, que el mapa muestra desplazadas hacia el norte, dentro del recuadro, para ahorrar espacio.` : ""} Mapa elaborado con los límites de las divisiones censales del Censo 2021 de Statistics Canada (solo las islas más grandes).`,
     comunidades,
     empleo,
     busqueda: RECURSOS.empleo,
     vivienda,
     escuelas,
-    escuelasEnlaces: RECURSOS.escuelas,
+    escuelasEnlaces: [...RECURSOS.escuelas, ...(campus ? [campus] : [])],
     salud,
     saludEnlaces: RECURSOS.salud,
     transporte,

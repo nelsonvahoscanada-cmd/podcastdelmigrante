@@ -1,0 +1,336 @@
+{
+ "fuentes": {
+  "gn": {
+   "org": "Gobierno de Nunavut (Departamento de Educación)",
+   "title": "Schools and Colleges — directorio de escuelas",
+   "url": "https://www.gov.nu.ca/en/education-and-schools/schools-and-colleges",
+   "copia": "Internet Archive, 22 de abril de 2026",
+   "copia_url": "http://web.archive.org/web/20260422145900/https://www.gov.nu.ca/en/education-and-schools/schools-and-colleges"
+  },
+  "csfn": {
+   "org": "Commission scolaire francophone du Nunavut",
+   "title": "École des Trois-Soleils (kínder a 12.º grado, en francés)",
+   "url": "https://trois-soleils.ca/"
+  }
+ },
+ "consultado": "2026-11-04",
+ "escuelas": [
+  {
+   "comunidad": "Cambridge Bay",
+   "nombre": "Kiilinik High School",
+   "telefono": "(867) 983-2726",
+   "operaciones": "Kitikmeot School Operations",
+   "csd": "6208073"
+  },
+  {
+   "comunidad": "Cambridge Bay",
+   "nombre": "Kullik Ilihakvik",
+   "telefono": "(867) 983-2510",
+   "operaciones": "Kitikmeot School Operations",
+   "csd": "6208073"
+  },
+  {
+   "comunidad": "Gjoa Haven",
+   "nombre": "Qiqirtaq Ilihakvik",
+   "telefono": "(867) 360-7414",
+   "operaciones": "Kitikmeot School Operations",
+   "csd": "6208081"
+  },
+  {
+   "comunidad": "Gjoa Haven",
+   "nombre": "Quqshuun Ilihakvik",
+   "telefono": "(867) 360-7201",
+   "operaciones": "Kitikmeot School Operations",
+   "csd": "6208081"
+  },
+  {
+   "comunidad": "Kugaaruk",
+   "nombre": "Arviligruaq Ilinniarvik",
+   "telefono": "(867) 769-6211",
+   "operaciones": "Kitikmeot School Operations",
+   "csd": "6208047"
+  },
+  {
+   "comunidad": "Kugluktuk",
+   "nombre": "Kugluktuk High School",
+   "telefono": "(867) 982-4408",
+   "operaciones": "Kitikmeot School Operations",
+   "csd": "6208059"
+  },
+  {
+   "comunidad": "Kugluktuk",
+   "nombre": "Jimmy Hikok Ilihakvik",
+   "telefono": "(867) 982-5001",
+   "operaciones": "Kitikmeot School Operations",
+   "csd": "6208059"
+  },
+  {
+   "comunidad": "Taloyoak",
+   "nombre": "Netsilik Ilihakvik",
+   "telefono": "(867) 561-5181",
+   "operaciones": "Kitikmeot School Operations",
+   "csd": "6208087"
+  },
+  {
+   "comunidad": "Arviat",
+   "nombre": "Qitiqliq Middle School",
+   "telefono": "(867) 857-2778/2982",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205015"
+  },
+  {
+   "comunidad": "Arviat",
+   "nombre": "John Arnalukjuak High School",
+   "telefono": "(867) 857-4223",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205015"
+  },
+  {
+   "comunidad": "Arviat",
+   "nombre": "Levi Angmak Elementary School",
+   "telefono": "(867) 857-2547",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205015"
+  },
+  {
+   "comunidad": "Baker Lake",
+   "nombre": "Jonah Amitnaaq Secondary School",
+   "telefono": "(867) 793-4657",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205023"
+  },
+  {
+   "comunidad": "Baker Lake",
+   "nombre": "Rachel Arngnammaktiq Elementary School",
+   "telefono": "(867) 793-2513",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205023"
+  },
+  {
+   "comunidad": "Chesterfield Inlet",
+   "nombre": "Victor Sammurtok School",
+   "telefono": "(867) 898-9913",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205019"
+  },
+  {
+   "comunidad": "Coral Harbour",
+   "nombre": "Sakku School",
+   "telefono": "(867) 925-9923",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205014"
+  },
+  {
+   "comunidad": "Naujaat",
+   "nombre": "Tuugaalik High School",
+   "telefono": "(867) 462-4900",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205027"
+  },
+  {
+   "comunidad": "Naujaat",
+   "nombre": "Tusarvik Elementary School",
+   "telefono": "(867) 462-9920",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205027"
+  },
+  {
+   "comunidad": "Rankin Inlet",
+   "nombre": "Simon Alaittuq School",
+   "telefono": "(867) 645-2780",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205017"
+  },
+  {
+   "comunidad": "Rankin Inlet",
+   "nombre": "Maani Ulujuk Ilinniarvik",
+   "telefono": "(867) 645-2761",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205017"
+  },
+  {
+   "comunidad": "Rankin Inlet",
+   "nombre": "Leo Ussak Elementary School",
+   "telefono": "(867) 645-2814",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205017"
+  },
+  {
+   "comunidad": "Whale Cove",
+   "nombre": "Inuglak School",
+   "telefono": "(867) 896-9300",
+   "operaciones": "Kivalliq School Operations",
+   "csd": "6205016"
+  },
+  {
+   "comunidad": "Apex",
+   "nombre": "Nanook School",
+   "telefono": "(867) 979-6597",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204003"
+  },
+  {
+   "comunidad": "Arctic Bay",
+   "nombre": "Inuujaq School",
+   "telefono": "(867) 439-8843",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204018"
+  },
+  {
+   "comunidad": "Clyde River",
+   "nombre": "Quluaq School",
+   "telefono": "(867) 924-6313",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204015"
+  },
+  {
+   "comunidad": "Grise Fiord",
+   "nombre": "Umimmak School",
+   "telefono": "(867) 980-9921",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204025"
+  },
+  {
+   "comunidad": "Igloolik",
+   "nombre": "Iglulik High School",
+   "telefono": "(867) 934-4422",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204012"
+  },
+  {
+   "comunidad": "Igloolik",
+   "nombre": "Sivuniit Middle School",
+   "telefono": "(867) 934-8600",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204012"
+  },
+  {
+   "comunidad": "Igloolik",
+   "nombre": "Ataguttaaluk Elementary School (AES)",
+   "telefono": "(867) 934-8996/8969",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204012"
+  },
+  {
+   "comunidad": "Iqaluit",
+   "nombre": "Aqsarniit Ilinniarvik",
+   "telefono": "(867) 979-3900",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204003"
+  },
+  {
+   "comunidad": "Iqaluit",
+   "nombre": "Inuksuk High School",
+   "telefono": "(867) 979-5281",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204003"
+  },
+  {
+   "comunidad": "Iqaluit",
+   "nombre": "Joamie School",
+   "telefono": "(867) 979-6206",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204003"
+  },
+  {
+   "comunidad": "Iqaluit",
+   "nombre": "Nakasuk School",
+   "telefono": "(867) 979-5335",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204003"
+  },
+  {
+   "comunidad": "Kimmirut",
+   "nombre": "Qaqqalik School",
+   "telefono": "(867) 939-2221",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204005"
+  },
+  {
+   "comunidad": "Kinngait",
+   "nombre": "Sam Pudlat School",
+   "telefono": "(867) 897-8332",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204007"
+  },
+  {
+   "comunidad": "Kinngait",
+   "nombre": "Peter Pitseolak School",
+   "telefono": "(867) 897-8826",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204007"
+  },
+  {
+   "comunidad": "Pangnirtung",
+   "nombre": "Attagoyuk Illisavik",
+   "telefono": "(867) 473-8815",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204009"
+  },
+  {
+   "comunidad": "Pangnirtung",
+   "nombre": "Alookie School",
+   "telefono": "(867) 473-8803/8804",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204009"
+  },
+  {
+   "comunidad": "Pond Inlet",
+   "nombre": "Nasivvik High School",
+   "telefono": "(867) 899-8864",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204020"
+  },
+  {
+   "comunidad": "Pond Inlet",
+   "nombre": "Ulaajuk School",
+   "telefono": "(867) 899-8964",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204020"
+  },
+  {
+   "comunidad": "Qikiqtarjuaq",
+   "nombre": "Inuksuit School",
+   "telefono": "(867) 927-8938",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204010"
+  },
+  {
+   "comunidad": "Resolute Bay",
+   "nombre": "Qarmartalik School",
+   "telefono": "(867) 252-3888",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204022"
+  },
+  {
+   "comunidad": "Sanikiluaq",
+   "nombre": "Paatsaali School",
+   "telefono": "(867) 266-8170",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204001"
+  },
+  {
+   "comunidad": "Sanikiluaq",
+   "nombre": "Nuiyak Elementary School",
+   "telefono": "(867) 266-8816",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204001"
+  },
+  {
+   "comunidad": "Sanirajak",
+   "nombre": "Arnaqjuaq School",
+   "telefono": "(867) 928-8855",
+   "operaciones": "Qikiqtani School Operations",
+   "csd": "6204011"
+  },
+  {
+   "comunidad": "Iqaluit",
+   "nombre": "École des Trois-Soleils",
+   "telefono": null,
+   "operaciones": "Commission scolaire francophone du Nunavut",
+   "csd": "6204003",
+   "niveles": "kínder a 12.º grado",
+   "web": "https://trois-soleils.ca/"
+  }
+ ]
+}
