@@ -1,0 +1,7 @@
+final: https://www.tiktok.com/@podcastdelmigrante/video/7704144243954060565?_r=1&_t=ZS-9B7iIuuZ3jw
+oembed: None None 7704144243954060565
+Traceback (most recent call last):
+  File "/home/runner/work/podcastdelmigrante/podcastdelmigrante/.github/refugio/datos.py", line 15, in <module>
+    img = urllib.request.urlopen(urllib.request.Request(o["thumbnail_url"], headers=UA), timeout=60).read()
+                                                        ~^^^^^^^^^^^^^^^^^
+KeyError: 'thumbnail_url'
