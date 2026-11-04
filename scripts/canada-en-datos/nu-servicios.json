@@ -1,0 +1,319 @@
+{
+ "consultado": "2026-11-04",
+ "fuentes": {
+  "rcmp": {
+   "org": "RCMP en Nunavut",
+   "title": "Nunavut RCMP detachment locations",
+   "url": "https://rcmp.ca/en/nunavut/detachments"
+  },
+  "rcmp911": {
+   "org": "RCMP en Nunavut",
+   "title": "Tips for calling the Nunavut RCMP for emergencies (12 de diciembre de 2025)",
+   "url": "https://rcmp.ca/en/nunavut/news/2025/12/4348432"
+  },
+  "clima": {
+   "org": "Environment and Climate Change Canada",
+   "title": "Normales climáticas de Canadá 1991-2020",
+   "url": "https://climate.weather.gc.ca/climate_normals/index_e.html"
+  }
+ },
+ "rcmp": {
+  "6204018": {
+   "destacamento": "Arctic Bay",
+   "emergencia": "867-439-1111",
+   "general": "867-439-0123"
+  },
+  "6205015": {
+   "destacamento": "Arviat",
+   "emergencia": "867-857-1111",
+   "general": "867-857-0123"
+  },
+  "6205023": {
+   "destacamento": "Baker Lake",
+   "emergencia": "867-793-1111",
+   "general": "867-793-0123"
+  },
+  "6208073": {
+   "destacamento": "Cambridge Bay",
+   "emergencia": "867-983-1111",
+   "general": "867-983-0123"
+  },
+  "6204007": {
+   "destacamento": "Kinngait",
+   "emergencia": "867-897-1111",
+   "general": "867-897-0123"
+  },
+  "6205019": {
+   "destacamento": "Chesterfield Inlet",
+   "emergencia": "867-898-1111",
+   "general": "867-898-0123"
+  },
+  "6204015": {
+   "destacamento": "Clyde River",
+   "emergencia": "867-924-1111",
+   "general": "867-924-0123"
+  },
+  "6205014": {
+   "destacamento": "Coral Harbour",
+   "emergencia": "867-925-1111",
+   "general": "867-925-0123"
+  },
+  "6208081": {
+   "destacamento": "Gjoa Haven",
+   "emergencia": "867-360-1111",
+   "general": "867-360-0123"
+  },
+  "6204025": {
+   "destacamento": "Grise Fiord",
+   "emergencia": "867-980-1111",
+   "general": "867-980-0123"
+  },
+  "6204012": {
+   "destacamento": "Igloolik",
+   "emergencia": "867-934-1111",
+   "general": "867-934-0123"
+  },
+  "6204003": {
+   "destacamento": "V Division Headquarters and Iqaluit",
+   "emergencia": "867-979-1111",
+   "general": "867-979-0123"
+  },
+  "6204005": {
+   "destacamento": "Kimmirut",
+   "emergencia": "867-939-1111",
+   "general": "867-939-0123"
+  },
+  "6208047": {
+   "destacamento": "Kugaaruk",
+   "emergencia": "867-769-1111",
+   "general": "867-769-0123"
+  },
+  "6208059": {
+   "destacamento": "Kugluktuk",
+   "emergencia": "867-982-1111",
+   "general": "867-982-0123"
+  },
+  "6205027": {
+   "destacamento": "Naujaat",
+   "emergencia": "867-462-1111",
+   "general": "867-462-0123"
+  },
+  "6204009": {
+   "destacamento": "Pangnirtung",
+   "emergencia": "867-473-1111",
+   "general": "867-473-0123"
+  },
+  "6204020": {
+   "destacamento": "Pond Inlet",
+   "emergencia": "867-899-1111",
+   "general": "867-899-0123"
+  },
+  "6204010": {
+   "destacamento": "Qikiqtarjuaq",
+   "emergencia": "867-927-1111",
+   "general": "867-927-0123"
+  },
+  "6205017": {
+   "destacamento": "Rankin Inlet",
+   "emergencia": "867-645-1111",
+   "general": "867-645-0123"
+  },
+  "6204022": {
+   "destacamento": "Resolute",
+   "emergencia": "867-252-1111",
+   "general": "867-252-0123"
+  },
+  "6204001": {
+   "destacamento": "Sanikiluaq",
+   "emergencia": "867-266-1111",
+   "general": "867-266-0123"
+  },
+  "6204011": {
+   "destacamento": "Sanirajak",
+   "emergencia": "867-928-1111",
+   "general": "867-928-0123"
+  },
+  "6208087": {
+   "destacamento": "Taloyoak",
+   "emergencia": "867-561-1111",
+   "general": "867-561-0123"
+  },
+  "6205016": {
+   "destacamento": "Whale Cove",
+   "emergencia": "867-896-1111",
+   "general": "867-896-0123"
+  }
+ },
+ "clima": {
+  "6205015": {
+   "estacion": "ARVIAT",
+   "climate_id": "2300426",
+   "enero": -28.2,
+   "julio": 11.2,
+   "anual": -8.9,
+   "nieve": 81.4,
+   "precipitacion": 318.0,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2300426&dispBack=0"
+  },
+  "6205023": {
+   "estacion": "BAKER LAKE",
+   "climate_id": "2300500",
+   "enero": -30.5,
+   "julio": 12.1,
+   "anual": -10.8,
+   "nieve": 113.3,
+   "precipitacion": 257.9,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2300500&dispBack=0"
+  },
+  "6208059": {
+   "estacion": "KUGLUKTUK",
+   "climate_id": "2300902",
+   "enero": -26.6,
+   "julio": 11.2,
+   "anual": -9.7,
+   "nieve": 206.5,
+   "precipitacion": 233.1,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2300902&dispBack=0"
+  },
+  "6205014": {
+   "estacion": "CORAL HARBOUR",
+   "climate_id": "2301000",
+   "enero": -29.0,
+   "julio": 10.2,
+   "anual": -10.5,
+   "nieve": null,
+   "precipitacion": null,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2301000&dispBack=0"
+  },
+  "6208081": {
+   "estacion": "GJOA HAVEN",
+   "climate_id": "2302335",
+   "enero": -32.8,
+   "julio": 8.3,
+   "anual": -13.7,
+   "nieve": 147.8,
+   "precipitacion": 190.4,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2302335&dispBack=0"
+  },
+  "6208047": {
+   "estacion": "KUGAARUK",
+   "climate_id": "2303092",
+   "enero": -31.8,
+   "julio": 9.8,
+   "anual": -12.9,
+   "nieve": 145.5,
+   "precipitacion": 239.9,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2303092&dispBack=0"
+  },
+  "6205017": {
+   "estacion": "RANKIN INLET",
+   "climate_id": "2303401",
+   "enero": -30.1,
+   "julio": 10.9,
+   "anual": -10.0,
+   "nieve": 134.5,
+   "precipitacion": 315.9,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2303401&dispBack=0"
+  },
+  "6205016": {
+   "estacion": "WHALE COVE",
+   "climate_id": "2303986",
+   "enero": -29.6,
+   "julio": 10.0,
+   "anual": -9.6,
+   "nieve": 129.4,
+   "precipitacion": 306.3,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2303986&dispBack=0"
+  },
+  "6204010": {
+   "estacion": "QIKIQTARJUAQ",
+   "climate_id": "2400571",
+   "enero": -26.6,
+   "julio": 4.9,
+   "anual": -10.3,
+   "nieve": null,
+   "precipitacion": null,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2400571&dispBack=0"
+  },
+  "6208073": {
+   "estacion": "CAMBRIDGE BAY",
+   "climate_id": "2400600",
+   "enero": -31.2,
+   "julio": 9.4,
+   "anual": -13.3,
+   "nieve": 79.4,
+   "precipitacion": 150.4,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2400600&dispBack=0"
+  },
+  "6204015": {
+   "estacion": "CLYDE RIVER",
+   "climate_id": "2400800",
+   "enero": -28.0,
+   "julio": 5.3,
+   "anual": -11.9,
+   "nieve": null,
+   "precipitacion": 231.9,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2400800&dispBack=0"
+  },
+  "6204012": {
+   "estacion": "IGLOOLIK",
+   "climate_id": "2402543",
+   "enero": -30.9,
+   "julio": 7.9,
+   "anual": -12.6,
+   "nieve": 142.2,
+   "precipitacion": 228.9,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2402543&dispBack=0"
+  },
+  "6204003": {
+   "estacion": "IQALUIT",
+   "climate_id": "2402590",
+   "enero": -26.0,
+   "julio": 8.1,
+   "anual": -8.6,
+   "nieve": 190.0,
+   "precipitacion": 361.2,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2402590&dispBack=0"
+  },
+  "6204009": {
+   "estacion": "PANGNIRTUNG",
+   "climate_id": "2403049",
+   "enero": -24.5,
+   "julio": 8.6,
+   "anual": -7.6,
+   "nieve": null,
+   "precipitacion": null,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2403049&dispBack=0"
+  },
+  "6204020": {
+   "estacion": "POND INLET",
+   "climate_id": "2403201",
+   "enero": -32.2,
+   "julio": 7.2,
+   "anual": -13.7,
+   "nieve": 120.5,
+   "precipitacion": 195.1,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2403201&dispBack=0"
+  },
+  "6204022": {
+   "estacion": "RESOLUTE BAY",
+   "climate_id": "2403498",
+   "enero": -31.4,
+   "julio": 4.9,
+   "anual": -15.1,
+   "nieve": 105.3,
+   "precipitacion": 164.1,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2403498&dispBack=0"
+  },
+  "6208087": {
+   "estacion": "TALOYOAK",
+   "climate_id": "2403854",
+   "enero": -33.2,
+   "julio": 8.6,
+   "anual": -13.9,
+   "nieve": 129.3,
+   "precipitacion": 197.3,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NU&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2403854&dispBack=0"
+  }
+ }
+}

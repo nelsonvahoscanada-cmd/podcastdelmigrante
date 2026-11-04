@@ -22,6 +22,7 @@ que usan las páginas. Sin fotografías: no hay derechos de terceros.
 Uso (requiere Pillow, igual que build-social-images.py):
     python3 scripts/build-canada-datos-images.py            todas
     python3 scripts/build-canada-datos-images.py --solo-provincias
+    python3 scripts/build-canada-datos-images.py --solo=nunavut   solo las localidades de esa provincia
 """
 
 import json
@@ -198,6 +199,9 @@ class Provincia:
         draw = ImageDraw.Draw(self.base)
         for r in mapa["regiones"]:
             dibuja_anillos(draw, anillos_absolutos(r["d"]), self.s, self.ox, self.oy, VERDE_SUAVE, BLANCO)
+        for mc in mapa.get("marcos", []):  # recuadro de islas desplazadas (solo si la provincia lo define)
+            x0, y0 = self.ox + mc["x"] * self.s, self.oy + mc["y"] * self.s
+            draw.rectangle((x0, y0, x0 + mc["w"] * self.s, y0 + mc["h"] * self.s), outline=(107, 114, 128), width=2)
 
     def tarjeta(self, loc):
         img = self.base.copy()
@@ -229,7 +233,10 @@ def main():
             print(f"escrito    assets/canada-en-datos/social-{r['profile']}.jpg")
     if "--solo-provincias" in sys.argv:
         return
+    solo = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--solo=")), None)
     for m in load_localidades():
+        if solo and m["provincia"] != solo:
+            continue
         prov = Provincia(m)
         destino = OUT / m["provincia"]
         validos = set()

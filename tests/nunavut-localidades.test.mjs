@@ -55,8 +55,15 @@ test("contenido para migrantes: sin PNP, Express Entry, vivienda sin cifras inve
     "Qikiqtani General Hospital",
     "Nunavut Arctic College",
     "isla Southampton (Coral Harbour) usa la hora del Este todo el año",
-    "La API de normales de Environment Canada no publica las de Iqaluit",
+    "normales climáticas 1991-2020 de Environment and Climate Change Canada, la temperatura media de enero es de −26.0 °C en Iqaluit",
+    "Nunavut no tiene servicio 911",
+    "En Kivalliq y Sanikiluaq vuela Calm Air",
+    "en Qikiqtaaluk y Kitikmeot, Canadian North",
   ]) assert.ok(t.includes(frase), frase);
+  assert.doesNotMatch(t, /La API de normales de Environment Canada no publica/);
+  assert.doesNotMatch(t, /Express Entry, como en cualquier otra parte del país/);
+  assert.doesNotMatch(t, /El Gobierno de Nunavut es el mayor empleador/);
+  assert.doesNotMatch(t, /Cae poca nieve/);
   assert.doesNotMatch(t, /programa de nominados de Nunavut (abierto|vigente)|garantiza(mos)? (tu |la )?(residencia|empleo)/i);
   assert.doesNotMatch(t, /alquiler promedio[^.]*\$\d/i, "sin alquiler promedio inventado");
 });
@@ -124,4 +131,82 @@ test("portada de Canadá en Datos y módulo «Descubre tu Canadá»: Nunavut dis
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="NU"/);
   for (const code of ["NS", "NB", "NL", "YT", "NT"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
   assert.match(read("js/canada-datos-disponibles.js"), /nunavut/);
+});
+
+test("secciones de las demás fichas: licencias, beneficios, integración y seguridad, con fuentes oficiales", () => {
+  const ids = P.sections.map((x) => x.id);
+  for (const id of ["licencias", "beneficios", "integracion", "seguridad"]) assert.ok(ids.includes(id), id);
+  const sec = (id) => P.sections.find((x) => x.id === id);
+  const t = (id) => sec(id).text.join(" ");
+  assert.match(t("licencias"), /dentro de los 30 días/);
+  assert.match(t("beneficios"), /\$58 al mes por cada hijo/);
+  assert.match(t("beneficios"), /\$22,065/);
+  assert.match(t("beneficios"), /zona norte prescrita \(zona A\)/);
+  assert.match(t("beneficios"), /1 de diciembre de 2022.*\$10 al día/);
+  assert.match(t("seguridad"), /^Nunavut no tiene servicio 911/);
+  for (const id of ["licencias", "beneficios", "integracion", "seguridad"]) for (const l of sec(id).links) assert.match(l.href, /^https:\/\//, l.href);
+  /* Tabla de la RCMP: una fila por comunidad, todas con el formato 867-XXX-1111 y la consulta general 867-XXX-0123 del mismo prefijo */
+  const filas = sec("seguridad").table.rows;
+  assert.equal(filas.length, 25);
+  for (const [c, , e, g] of filas) {
+    assert.match(e, /^867-\d{3}-1111$/, c);
+    assert.equal(g, e.replace(/1111$/, "0123"), c);
+  }
+  assert.deepEqual(filas.find((f) => f[0] === "Iqaluit").slice(2), ["867-979-1111", "867-979-0123"]);
+});
+
+test("costo de vida: IPC de Iqaluit con su período y sin presentarlo como nivel de precios", () => {
+  const i = P.indicators.cpiIqaluit;
+  assert.equal(i.value, 3.0);
+  assert.match(i.refPeriod, /Septiembre de 2026/);
+  assert.match(i.note, /no cuánto cuestan/);
+  assert.ok(P.sections.find((x) => x.id === "vivienda").indicators.includes("cpiIqaluit"));
+  assert.match(read("canada-en-datos/nunavut/iqaluit.html"), /Índice de precios al consumidor de Iqaluit/);
+  assert.doesNotMatch(read("canada-en-datos/nunavut/arviat.html"), /Índice de precios al consumidor de Iqaluit/);
+});
+
+test("escuelas: las 45 del directorio oficial, asignadas a las 25 comunidades por nombre de comunidad", () => {
+  assert.equal(L.escuelas.length, 45);
+  const comunidades = L.items.filter((r) => ["city", "hamlet"].includes(r.t));
+  for (const r of comunidades) assert.ok(L.escuelas.some((e) => e.csd === r.c), r.n);
+  const iq = read("canada-en-datos/nunavut/iqaluit.html");
+  for (const n of ["Aqsarniit Ilinniarvik", "Inuksuk High School", "Joamie School", "Nakasuk School", "Nanook School", "École des Trois-Soleils"]) assert.ok(iq.includes(n), n);
+  const rk = texto(read("canada-en-datos/nunavut/rankin-inlet.html"));
+  for (const n of ["Leo Ussak Elementary School", "Maani Ulujuk Ilinniarvik", "Simon Alaittuq School"]) assert.ok(rk.includes(n), n);
+  assert.doesNotMatch(rk, /no ubica escuelas/);
+  for (const malo of ["trois soleil", "Elemantary", "Elemnetary", "Maani Ulyuk"]) for (const f of readdirSync(join(ROOT, "canada-en-datos/nunavut"))) assert.ok(!read(`canada-en-datos/nunavut/${f}`).includes(malo), `${malo} en ${f}`);
+});
+
+test("comunidades: emergencias de la RCMP, aerolínea de su región y clima 1991-2020 donde hay estación", () => {
+  for (const [s, tel, aerolinea] of [["iqaluit", "867-979-1111", "Canadian North"], ["rankin-inlet", "867-645-1111", "Calm Air"], ["sanikiluaq", "867-266-1111", "Calm Air"], ["cambridge-bay", "867-983-1111", "Canadian North"], ["kinngait", "867-897-1111", "Canadian North"]]) {
+    const t = texto(read(`canada-en-datos/nunavut/${s}.html`));
+    assert.ok(t.includes(`Emergencias: policía (RCMP) ${tel}`), s);
+    assert.ok(t.includes("Nunavut no tiene servicio 911"), s);
+    assert.ok(t.includes(aerolinea), s);
+    assert.ok(!t.includes(aerolinea === "Calm Air" ? "Canadian North —" : "Calm Air —"), s);
+  }
+  assert.match(texto(read("canada-en-datos/nunavut/iqaluit.html")), /Temperatura media de enero −26\.0 °C/);
+  assert.match(texto(read("canada-en-datos/nunavut/cambridge-bay.html")), /Temperatura media de enero −31\.2 °C/);
+  assert.doesNotMatch(read("canada-en-datos/nunavut/kinngait.html"), /Temperatura media de enero/);
+});
+
+test("directorio y mapa: tres regiones como filtro, rangos de población de Nunavut y recuadro de las islas del sur", () => {
+  assert.match(ficha, /<label for="cdLocRegion">Región<\/label>/);
+  for (const r of ["Qikiqtaaluk", "Kivalliq", "Kitikmeot"]) assert.match(ficha, new RegExp(`<option value="\\d{4}">${r}</option>`), r);
+  assert.doesNotMatch(ficha, /id="cdLocSub"/);
+  assert.doesNotMatch(ficha, /100,000 o más/);
+  assert.match(ficha, /<option value="2000-">2,000 o más<\/option>/);
+  assert.equal(L.mapa.marcos.length, 1);
+  assert.ok(L.mapa.alto < 640, `alto ${L.mapa.alto}`);
+  const san = L.items.find((r) => r.s === "sanikiluaq");
+  const m = L.mapa.marcos[0];
+  assert.ok(san.x > m.x && san.x < m.x + m.w && san.y > m.y && san.y < m.y + m.h, "Sanikiluaq dentro del recuadro");
+  assert.match(read("assets/canada-en-datos/nunavut-regiones.svg"), /<rect [^>]*stroke-dasharray/);
+  /* Las demás provincias conservan sus filtros */
+  for (const p of ["british-columbia", "quebec"]) assert.match(read(`canada-en-datos/${p}.html`), /<option value="100000-">100,000 o más<\/option>/, p);
+});
+
+test("noticias: texto propio de Nunavut mientras no haya publicaciones", () => {
+  assert.match(P.news.vacio.texto, /Todavía no hemos publicado noticias sobre Nunavut/);
+  for (const e of P.news.vacio.enlaces) assert.match(e.href, /^\//);
 });

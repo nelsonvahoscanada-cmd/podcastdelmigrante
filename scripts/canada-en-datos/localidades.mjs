@@ -192,7 +192,8 @@ export function mapaSvg(P, L) {
   const { ancho, alto, regiones } = L.mapa;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ancho} ${alto}" width="${ancho}" height="${alto}">
 <title>${P.nombre}: ${P.directorio.regiones.toLowerCase()}</title>
-${regiones.map((r) => `<path d="${r.d}" fill="#f2f1ed" stroke="#9aa58a" stroke-width="1.2" stroke-linejoin="round"/>`).join("\n")}
+${regiones.map((r) => `<path d="${r.d}" fill="#f2f1ed" stroke="#9aa58a" stroke-width="1.2" stroke-linejoin="round"/>`).join("\n")}${(L.mapa.marcos || []).map((m) => `
+<rect x="${m.x}" y="${m.y}" width="${m.w}" height="${m.h}" fill="none" stroke="#6b7280" stroke-width="1" stroke-dasharray="4 3"/>`).join("")}
 </svg>
 `;
 }
@@ -230,24 +231,22 @@ export function seccionDirectorio(P, L, esc) {
   const D = P.directorio;
   /* Directorio extendido (opcional por provincia): distrito, tamaño de población, orden y restablecer */
   const subregiones = [...new Set(L.items.map((r) => r.sup).filter(Boolean))].sort((a, b) => a.localeCompare(b, "es"));
+  /* Rangos de población: los generales, salvo que la provincia defina los suyos (D.rangosPoblacion: [[valor, texto], …]) */
+  const rangos = D.rangosPoblacion || [["100000-", "100,000 o más"], ["10000-99999", "10,000 a 99,999"], ["1000-9999", "1,000 a 9,999"], ["1-999", "1 a 999"], ["0-0", "0 habitantes"]];
   const extra = D.extendido
-    ? `
+    ? `${subregiones.length ? `
           <div class="cd-loc__campo">
             <label for="cdLocSub">${esc(D.subregion || "Subregión")}</label>
             <select id="cdLocSub" disabled>
               <option value="">Todos</option>
               ${subregiones.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join("\n              ")}
             </select>
-          </div>
+          </div>` : ""}
           <div class="cd-loc__campo">
             <label for="cdLocPob">Población (${esc(D.poblacion)})</label>
             <select id="cdLocPob" disabled>
               <option value="">Cualquier tamaño</option>
-              <option value="100000-">100,000 o más</option>
-              <option value="10000-99999">10,000 a 99,999</option>
-              <option value="1000-9999">1,000 a 9,999</option>
-              <option value="1-999">1 a 999</option>
-              <option value="0-0">0 habitantes</option>
+              ${rangos.map(([v, t]) => `<option value="${esc(v)}">${esc(t)}</option>`).join("\n              ")}
               <option value="con">Con dato de población</option>
               <option value="sin">Sin dato de población</option>
             </select>

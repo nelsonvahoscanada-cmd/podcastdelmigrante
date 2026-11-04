@@ -77,6 +77,7 @@ CAMPOS = {
 censo = lambda dguid: [F["censo"].get(dguid, {}).get(v) for v in CAMPOS.values()]
 er = next(iter(F["er"]))
 
+
 salida = {
     "consultado": F["consultado"],
     "fuentes": F["fuentes"],
@@ -94,11 +95,6 @@ salida = {
     "cgn_campos": ["id", "nombre", "tipo", "csd", "x", "y", "lat", "lon", "fecha"],
     "hospitales": [[h["facility_name"], h.get("city"), h["csd"], h["lat"], h["lon"]] for h in F.get("salud", []) if h.get("odhf_facility_type") == "Hospitals"],
     "hospitales_campos": ["nombre", "localidad", "csd", "lat", "lon"],
-    "escuelas": [
-        [e.get("Facility_Name"), e.get("Facility_Type"), e.get("Authority_Name"), "".join("1" if e.get(k) == "1" else "0" for k in ("ISCED010", "ISCED020", "ISCED1", "ISCED2", "ISCED3", "ISCED4Plus")), e.get("csd")]
-        for e in F.get("educacion", [])
-    ],
-    "escuelas_campos": ["nombre", "tipo", "autoridad", "niveles", "csd"],
 }
 texto = json.dumps(salida, ensure_ascii=False, separators=(",", ":"))
 (BASE / "nu-localidades.json").write_text(texto, encoding="utf-8")
