@@ -1,0 +1,35 @@
+# Páginas oficiales para la ficha de Nunavut: nombre<TAB>URL<TAB>patrón de frases clave
+IRCC: Programa de Nominados Provinciales (cómo funciona)	https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees/works.html	Nunavut|Quebec|province|territor|participat
+IRCC: Express Entry	https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html	Express Entry|program|Federal Skilled
+IRCC: servicios para recién llegados	https://ircc.canada.ca/english/newcomers/services/index.asp	Nunavut|services|free
+Job Bank: panorama del mercado laboral de Nunavut	https://www.jobbank.gc.ca/trend-analysis/job-market-reports/nunavut/environmental-scan	population|unemployment|employment|mining|government|public administration|construction|20\d\d|Inuit
+Job Bank: buscar empleo en Nunavut	https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=Nunavut	job|result|Iqaluit
+Nutrition North Canada	https://www.nutritionnorthcanada.gc.ca/eng/1415385762263/1415385790537	subsid|eligible|communit|retail|Harvesters|cost
+Nutrition North: comunidades elegibles	https://www.nutritionnorthcanada.gc.ca/eng/1415540731169/1415540791407	Nunavut|Iqaluit|Rankin|Cambridge|full subsidy|partial
+Gobierno de Nunavut: inicio	https://www.gov.nu.ca/	Nunavut|department|services
+Gobierno de Nunavut: salario mínimo	https://www.gov.nu.ca/en/justice/minimum-wage	minimum wage|\$\d|April|effective
+Oficina de Normas Laborales de Nunavut (LSCO)	https://nu-lsco.ca/	Labour Standards|minimum wage|\$\d|overtime|vacation|holiday|complaint
+Gobierno de Nunavut: plan de salud (tarjeta)	https://www.gov.nu.ca/en/health/health-care-card	health care card|eligib|resident|three months|third month|permit|apply
+Gobierno de Nunavut: Departamento de Salud	https://www.gov.nu.ca/en/health	health|centre|medical travel|Qikiqtani|nurse
+Nunavut Housing Corporation	https://www.nunavuthousing.ca/	housing|public housing|rent|homeownership|staff|waitlist|units
+Nunavut Arctic College	https://arcticcollege.ca/	program|campus|Iqaluit|Rankin|Cambridge|trades|nursing|teacher
+Ciudad de Iqaluit	https://www.iqaluit.ca/	Iqaluit|city|water|services
+Canadian North	https://canadiannorth.com/	Iqaluit|Rankin|Cambridge|Ottawa|Montreal|Edmonton|Yellowknife|Winnipeg|flight
+Calm Air	https://www.calmair.com/	Rankin|Winnipeg|Churchill|Arviat|Baker|flight
+Qulliq Energy Corporation	https://www.qec.nu.ca/	power|diesel|community|plants|rates
+Gobierno de Canadá: provincias y territorios	https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html	Nunavut|Iqaluit|1999
+Gobierno de Canadá: hora (NRC, zonas horarias)	https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/time-zones-daylight-saving-time	Nunavut|Eastern|Central|Mountain|Southampton|Coral Harbour|daylight
+Langues officielles du Nunavut (Commissaire aux langues)	https://langcom.nu.ca/	Inuit Language|Inuktut|Inuktitut|Inuinnaqtun|English|French|official
+Ley de Idiomas Oficiales de Nunavut (CanLII)	https://www.canlii.org/en/nu/laws/stat/snu-2008-c-10/latest/snu-2008-c-10.html	official languages|Inuit Language|English|French
+Inuit Tapiriit Kanatami	https://www.itk.ca/	Inuit|Nunangat|Nunavut
+Nunavut Tunngavik Incorporated	https://www.tunngavik.com/	Nunavut Agreement|Inuit|beneficiar
+Gobierno de Nunavut: bandera y símbolos	https://www.gov.nu.ca/en/culture-language-heritage-and-art/nunavut-symbols	flag|inuksuk|star|colours|blue|gold|red|coat of arms
+Legislative Assembly of Nunavut	https://assembly.nu.ca/	Assembly|consensus|Members|Legislative
+Gobierno de Nunavut: educación (escuelas)	https://www.gov.nu.ca/en/education	school|register|Inuktut|bilingual|district education authority|K-12
+Gobierno de Nunavut: asistencia financiera para estudiantes (FANS)	https://www.gov.nu.ca/en/education/financial-assistance-nunavut-students	FANS|eligib|resident|Inuit|grant|loan
+Gobierno de Nunavut: licencia de conducir	https://www.gov.nu.ca/en/economic-development-and-transportation/motor-vehicles	driver|licen|exchange|road test|vehicle registration
+Gobierno de Nunavut: Departamento de Familias (ingresos)	https://www.gov.nu.ca/en/family-services	income assistance|family|child|benefit
+RCMP en Nunavut (V Division)	https://www.rcmp-grc.gc.ca/en/nu	Nunavut|detachment|emergency|community|911
+Nunavut 911	https://www.gov.nu.ca/en/community-and-government-services/911	911|emergency|communit|launched
+Gobierno de Nunavut: alquileres (Residential Tenancies)	https://www.gov.nu.ca/en/justice/residential-tenancies	tenant|landlord|rent|deposit|Rental Officer|notice
+Nunavut Bureau of Statistics	https://www.gov.nu.ca/en/executive-and-intergovernmental-affairs/bureau-statistics	statistic|population|food price|census|estimate
