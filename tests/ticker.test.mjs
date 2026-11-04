@@ -6,6 +6,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import vm from "node:vm";
 import { createRequire } from "node:module";
+import { createHash } from "node:crypto";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
@@ -76,5 +77,14 @@ test("sin lista manual: la barra no tiene titulares escritos en el código", () 
   const html = read("index.html");
   assert.match(html, /<nav class="breaking__viewport" aria-labelledby="breakingLabel">\s*<div class="breaking__track" id="breakingTrack"><\/div>\s*<\/nav>/);
   /* noticias.js se carga antes que main.js */
-  assert.ok(html.indexOf('src="js/noticias.js"') < html.indexOf('src="js/main.js"'));
+  assert.ok(html.search(/src="js\/noticias\.js[?"]/) < html.search(/src="js\/main\.js[?"]/));
+});
+
+test("caché: la portada pide de nuevo los scripts de noticias en cuanto cambian (versión por contenido)", () => {
+  const html = read("index.html");
+  for (const f of ["js/data.js", "js/articles.js", "js/noticias.js", "js/main.js"]) {
+    const v = createHash("sha256").update(readFileSync(join(ROOT, f))).digest("hex").slice(0, 10);
+    assert.ok(html.includes(`<script src="${f}?v=${v}"></script>`), `${f} con la versión de su contenido`);
+  }
+  assert.match(read("scripts/build-article-pages.mjs"), /expected\.set\("index\.html", portada\)/, "la mantiene el generador de artículos (y su --check en CI)");
 });

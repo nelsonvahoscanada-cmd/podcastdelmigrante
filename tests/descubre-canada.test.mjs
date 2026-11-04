@@ -111,5 +111,5 @@ test("ubicación: después de «Últimas noticias»; el hero, las noticias y el 
   assert.match(portada, /<article id="heroMain" class="hero-main"><\/article>\n      <div id="heroSecondary" class="hero-secondary"><\/div>/);
   assert.match(portada, /<div class="latest-list" id="latestList"><\/div>/);
   /* Los scripts de la portada se cargan como antes; los del módulo van al final */
-  assert.match(portada, /<script src="js\/main\.js"><\/script>\n<script src="js\/canada-datos-disponibles\.js"><\/script>/);
+  assert.match(portada, /<script src="js\/main\.js(\?v=[0-9a-f]+)?"><\/script>\n<script src="js\/canada-datos-disponibles\.js"><\/script>/);
 });
