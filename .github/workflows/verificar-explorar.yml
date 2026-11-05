@@ -1,0 +1,72 @@
+# TEMPORAL: verificación de PRODUCCIÓN tras fusionar el PR #107 (solo lectura). Se elimina después.
+name: verificar-explorar
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-explorar-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    env:
+      BASE: https://podcastdelmigrante.com
+    steps:
+      - name: esperar el despliegue
+        run: |
+          for i in $(seq 1 40); do
+            if curl -s "$BASE/quien-puede-ayudarte" | grep -q 'business-directory.js?v=20261105'; then echo "desplegado tras $i intentos"; break; fi
+            sleep 15
+          done
+          curl -s "$BASE/quien-puede-ayudarte" | grep -o 'js/business[a-z-]*\.js?v=[0-9]*'
+          echo "directorio: $(curl -s -o /dev/null -w '%{http_code}' $BASE/quien-puede-ayudarte) | inicial sin filtros: $(curl -s $BASE/js/business-directory.js?v=20261105 | grep -c 'fillProvinces(provSel, \"\")')"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium >/dev/null
+      - name: navegador (computador y celular), sin analítica real
+        env:
+          NODE_PATH: ${{ github.workspace }}/node_modules
+        shell: node {0}
+        run: |
+          const { chromium, devices } = require("playwright");
+          const BASE = process.env.BASE;
+          (async () => {
+            const b = await chromium.launch(); let fallos = 0;
+            const check = (ok, msg) => { if (!ok) fallos++; console.log(`${ok ? "ok " : "MAL"} ${msg}`); };
+            for (const [perfil, opc] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", { ...devices["iPhone 13"] }]]) {
+              const ctx = await b.newContext({ ...opc, locale: "es-CA" });
+              await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              const p = await ctx.newPage(); const err = [];
+              p.on("pageerror", (e) => err.push(e.message));
+              p.on("response", (x) => x.status() >= 400 && x.url().startsWith(BASE) && err.push(x.status() + " " + x.url()));
+              await p.goto(BASE + "/", { waitUntil: "load", timeout: 60000 });
+              await p.locator("a.biz-showcase__btn", { hasText: "Explorar empresas" }).click();
+              await p.waitForURL(/quien-puede-ayudarte/); await p.waitForSelector(".biz-card");
+              const nombres = () => p.$$eval(".biz-card__name", (n) => n.map((x) => x.textContent.trim()));
+              const ini = await nombres();
+              const filtros = [await p.inputValue("#fCategory"), await p.inputValue("#fProvince"), await p.inputValue("#fCity")];
+              check(ini.join() === "Tomás Velázquez,Carlos D. Castillo,Santa Latino" && filtros.join() === ",,", `${perfil} «Explorar empresas» → ${ini.join(", ")} | filtros iniciales: ${JSON.stringify(filtros)}`);
+              await p.selectOption("#fProvince", "Ontario"); const on = await nombres();
+              check(on.join() === "Carlos D. Castillo,Santa Latino", `${perfil} provincia Ontario → ${on.join(", ")}`);
+              await p.selectOption("#fCity", "Niagara Falls"); const nf = await nombres();
+              check(nf.join() === "Santa Latino", `${perfil} ciudad Niagara Falls → ${nf.join(", ")}`);
+              await p.selectOption("#fProvince", "Alberta"); await p.selectOption("#fCity", "Calgary"); const cal = await nombres();
+              check(cal.join() === "Tomás Velázquez,Carlos D. Castillo", `${perfil} Alberta · Calgary → ${cal.join(", ")}`);
+              await p.selectOption("#fProvince", ""); await p.selectOption("#fCategory", "eventos-celebraciones"); const ev = await nombres();
+              check(ev.join() === "Santa Latino", `${perfil} categoría Eventos y celebraciones → ${ev.join(", ")}`);
+              await p.selectOption("#fCategory", "automoviles"); const au = await nombres();
+              check(au.join() === "Tomás Velázquez", `${perfil} categoría Automóviles → ${au.join(", ")}`);
+              await p.selectOption("#fCategory", "seguros-finanzas"); const se = await nombres();
+              check(se.join() === "Carlos D. Castillo", `${perfil} categoría Seguros → ${se.join(", ")}`);
+              const sw = await p.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
+              check(!sw, `${perfil} directorio sin desplazamiento horizontal`);
+              await p.selectOption("#fCategory", "eventos-celebraciones");
+              await p.locator(".biz-card", { hasText: "Santa Latino" }).locator("a[href='perfil-santa-latino.html']").first().click();
+              await p.waitForURL(/perfil-santa-latino/); await p.waitForSelector("h1.biz-name");
+              const h1 = (await p.locator("h1.biz-name").textContent()).trim();
+              check(h1 === "Santa Latino" && /perfil-santa-latino/.test(p.url()), `${perfil} tarjeta → ${p.url()} «${h1}»`);
+              check(!err.length, `${perfil} sin errores ${err.join(" | ")}`);
+              await ctx.close();
+            }
+            await b.close(); console.log("fallos:", fallos); if (fallos) process.exit(1);
+          })();
