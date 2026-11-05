@@ -1,0 +1,91 @@
+# TEMPORAL: verificación de PRODUCCIÓN tras fusionar el PR #106 (solo lectura). Se elimina después.
+name: verificar-santa-latino
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-santa-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    env:
+      BASE: https://podcastdelmigrante.com
+    steps:
+      - name: esperar el despliegue
+        run: |
+          for i in $(seq 1 40); do
+            if curl -s "$BASE/perfil-santa-latino" | grep -q 'data-profile-theme="navidad"'; then echo "desplegado tras $i intentos"; break; fi
+            sleep 15
+          done
+      - name: archivos, metadatos y perfiles existentes
+        run: |
+          p=$(curl -s "$BASE/perfil-santa-latino")
+          echo "perfil-santa-latino: $(curl -s -o /dev/null -w '%{http_code}' $BASE/perfil-santa-latino) | .html: $(curl -s -o /dev/null -w '%{http_code}' $BASE/perfil-santa-latino.html)"
+          echo "$p" | grep -o '<title>[^<]*</title>'
+          echo "$p" | grep -o 'property="og:image" content="[^"]*"'
+          echo "tema: $(echo "$p" | grep -c 'css/temas/navidad.css')"
+          for f in css/temas/navidad.css assets/directorio/temas/navidad-arbol.webp assets/directorio/perfiles/santa-latino.jpg assets/directorio/perfiles/santa-latino-card.jpg assets/directorio/perfiles/santa-latino-og.jpg assets/directorio/perfiles/santa-latino-navidad-grupo.jpg assets/qr/perfil-santa-latino.svg assets/qr/perfil-santa-latino.png assets/qr/contacto-santa-latino.svg assets/qr/contacto-santa-latino.png vcard/santa-latino.vcf; do echo "$f → $(curl -s -o /dev/null -w '%{http_code} %{content_type} %{size_download}B' $BASE/$f)"; done
+          echo "--- vCard"; curl -s "$BASE/vcard/santa-latino.vcf"
+          echo "--- categoría en businesses.js: $(curl -s $BASE/js/businesses.js | grep -c 'eventos-celebraciones')"
+          echo "--- formulario: $(curl -s $BASE/registra-tu-empresa | grep -o 'solicitud-form.js?v=[0-9]*') | core: $(curl -s $BASE/js/directorio/solicitud-core.js | grep -c 'Eventos y celebraciones')"
+          for r in /perfil-tomas-velazquez /perfil-carlos-d-castillo; do h=$(curl -s "$BASE$r"); echo "$r → $(curl -s -o /dev/null -w '%{http_code}' $BASE$r) | tema: $(echo "$h" | grep -c 'data-profile-theme')"; done
+          echo "vCard Tomás: $(curl -s $BASE/vcard/tomas-velazquez.vcf | grep '^FN')"
+          echo "vCard Carlos: $(curl -s $BASE/vcard/carlos-d-castillo.vcf | grep '^FN')"
+          echo "panel sin Access: $(curl -s -o /dev/null -w '%{http_code}' https://admin.podcastdelmigrante.com/) | /api/solicitudes: $(curl -s -o /dev/null -w '%{http_code}' https://admin.podcastdelmigrante.com/api/solicitudes)"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium >/dev/null
+      - name: navegador (computador, tableta, celular), sin analítica real
+        env:
+          NODE_PATH: ${{ github.workspace }}/node_modules
+        shell: node {0}
+        run: |
+          const { chromium, devices } = require("playwright");
+          const BASE = process.env.BASE;
+          (async () => {
+            const b = await chromium.launch(); let fallos = 0;
+            for (const [perfil, opc] of [["computador", { viewport: { width: 1440, height: 900 } }], ["tableta", { ...devices["iPad Mini"] }], ["celular", { ...devices["iPhone 13"] }]]) {
+              const ctx = await b.newContext({ ...opc, locale: "es-CA" });
+              await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              await ctx.addInitScript(() => { window.__ev = []; document.addEventListener("pdm:analytics", (e) => window.__ev.push(e.detail)); });
+              const p = await ctx.newPage(); const err = [];
+              p.on("pageerror", (e) => err.push(e.message));
+              p.on("response", (x) => x.status() >= 400 && x.url().startsWith(BASE) && err.push(x.status() + " " + x.url()));
+              const resp = await p.goto(BASE + "/perfil-santa-latino", { waitUntil: "load", timeout: 60000 });
+              await p.waitForTimeout(3000);
+              const d = await p.evaluate(() => ({
+                h1: document.querySelector("h1.biz-name")?.textContent.trim(),
+                rep: document.querySelector(".biz-representative")?.textContent.trim(),
+                tagline: document.querySelector(".biz-tagline")?.textContent.trim(),
+                arbol: getComputedStyle(document.querySelector(".biz-hero"), "::after").backgroundImage.includes("navidad-arbol.webp"),
+                foto: (() => { const i = document.querySelector(".biz-hero__photo"); return i && i.complete && i.naturalWidth > 0; })(),
+                galeria: (() => { const i = document.querySelector(".biz-gallery img"); return i && i.complete && i.naturalWidth > 0; })(),
+                wa: document.querySelector('a[data-track="whatsapp_click"]')?.getAttribute("href"),
+                tel: document.querySelector('a[data-track="phone_click"]')?.getAttribute("href"),
+                ld: JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent).mainEntity["@type"],
+                desborde: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
+                vista: window.__ev.find((e) => e.event === "profile_view")?.business_id,
+              }));
+              const ok = resp.status() === 200 && !err.length && d.h1 === "Santa Latino" && d.rep === "Representante: Héctor Rivero" && d.arbol && d.foto && d.galeria && d.wa === "https://wa.me/12896965721" && d.tel === "tel:+12896965721" && d.ld === "Organization" && !d.desborde && d.vista === "BIZ-003";
+              if (!ok) fallos++;
+              console.log(`${ok ? "ok " : "MAL"} ${perfil} perfil-santa-latino ${resp.status()} ${JSON.stringify(d)} ${err.join(" | ")}`);
+              const dir = await ctx.newPage(); const derr = [];
+              dir.on("pageerror", (e) => derr.push(e.message));
+              await dir.goto(BASE + "/quien-puede-ayudarte", { waitUntil: "load" }); await dir.waitForTimeout(2000);
+              await dir.selectOption("#fProvince", ""); await dir.selectOption("#fCategory", "eventos-celebraciones");
+              const nombres = await dir.$$eval(".biz-card__name", (n) => n.map((x) => x.textContent.trim()));
+              const dok = nombres.join() === "Santa Latino" && !derr.length; if (!dok) fallos++;
+              console.log(`${dok ? "ok " : "MAL"} ${perfil} directorio, categoría Eventos y celebraciones → ${nombres.join(", ")}`);
+              for (const [r, nombre] of [["/perfil-tomas-velazquez", "Tomás Velázquez"], ["/perfil-carlos-d-castillo", "Carlos D. Castillo"]]) {
+                const q = await ctx.newPage(); const qe = [];
+                q.on("pageerror", (e) => qe.push(e.message));
+                const rr = await q.goto(BASE + r, { waitUntil: "load" }); await q.waitForTimeout(2000);
+                const x = await q.evaluate(() => ({ h1: document.querySelector("h1.biz-name")?.textContent.trim(), tema: document.documentElement.getAttribute("data-profile-theme"), ld: JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent).mainEntity["@type"] }));
+                const qok = rr.status() === 200 && x.h1 === nombre && x.tema === null && x.ld === "Person" && !qe.length; if (!qok) fallos++;
+                console.log(`${qok ? "ok " : "MAL"} ${perfil} ${r} ${JSON.stringify(x)}`);
+              }
+              await ctx.close();
+            }
+            await b.close(); console.log("fallos:", fallos);
+          })();
