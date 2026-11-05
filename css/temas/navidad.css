@@ -4,8 +4,9 @@
    Solo aplica bajo html[data-profile-theme="navidad"]: los demás perfiles,
    el directorio y el resto del sitio no cambian. La cabecera y el pie del
    sitio conservan su identidad; el tema viste únicamente el contenido del
-   perfil (main). Decoración: assets/directorio/temas/navidad-escena.svg
-   (ilustración propia, sin recursos de terceros). Sin animaciones.
+   perfil (main). Decoración: assets/directorio/temas/navidad-arbol.webp
+   (árbol fotográfico entregado por El Podcast del Migrante, con bordes
+   difuminados para fundirse con el fondo). Sin animaciones.
 ========================================================= */
 html[data-profile-theme="navidad"] {
   --nv-pino: #0d2a1c;
@@ -48,7 +49,7 @@ html[data-profile-theme="navidad"] .biz-hero::after {
   display: block;
   height: 210px;
   margin: 4px -22px 0;
-  background: url("../../assets/directorio/temas/navidad-escena.svg") center bottom / contain no-repeat;
+  background: url("../../assets/directorio/temas/navidad-arbol.webp") center bottom / contain no-repeat;
   pointer-events: none;
 }
 @media (min-width: 720px) {

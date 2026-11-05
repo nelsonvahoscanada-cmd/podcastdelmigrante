@@ -138,9 +138,12 @@ test("tema «navidad»: todas las reglas están limitadas a este perfil y sin re
   assert.ok(selectors.length > 30);
   for (const sel of selectors) for (const part of sel.split(",")) assert.match(part.trim(), /^html\[data-profile-theme="navidad"\]/, part);
   assert.doesNotMatch(css, /https?:\/\/|@import/);
-  const svg = read("assets/directorio/temas/navidad-escena.svg");
-  assert.doesNotMatch(svg, /<script|href=|https?:\/\/(?!www\.w3\.org)/);
-  assert.ok(statSync(new URL("assets/directorio/temas/navidad-escena.svg", ROOT)).size < 8000);
+  /* Árbol fotográfico: WebP optimizado con transparencia en los bordes */
+  const arbol = readFileSync(new URL("assets/directorio/temas/navidad-arbol.webp", ROOT));
+  assert.equal(arbol.toString("latin1", 0, 4) + arbol.toString("latin1", 8, 12), "RIFFWEBP");
+  assert.ok(arbol.length < 80_000, `árbol pesa ${arbol.length} B`);
+  assert.match(css, /url\("\.\.\/\.\.\/assets\/directorio\/temas\/navidad-arbol\.webp"\)/);
+  assert.ok(!existsSync(new URL("assets/directorio/temas/navidad-escena.svg", ROOT)), "el árbol ilustrado anterior ya no se usa");
 });
 
 test("plantilla: los campos nuevos son opcionales (los demás perfiles no los usan)", () => {
