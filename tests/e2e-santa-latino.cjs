@@ -23,6 +23,8 @@ const PERFILES = {
 async function abrir(browser, perfil, ruta) {
   const ctx = await browser.newContext({ ...PERFILES[perfil], locale: "es-CA" });
   await ctx.route(/\/api\/(events|vistas)/, (r) => r.fulfill({ status: 204, body: "" }));
+  await ctx.route("https://challenges.cloudflare.com/**", (r) => r.fulfill({ contentType: "text/javascript", body: "window.turnstile={render(){return 'w1';},getResponse(){return '';},isExpired(){return false;},reset(){}};" }));
+  await ctx.route("**/registro/config", (r) => r.fulfill({ contentType: "application/json", body: JSON.stringify({ ready: true, turnstileSiteKey: "1x00000000000000000000AA" }) }));
   await ctx.addInitScript(() => {
     window.__eventos = [];
     document.addEventListener("pdm:analytics", (e) => window.__eventos.push(e.detail));
@@ -122,8 +124,19 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     assert.equal(await tarjeta.count(), 1);
     assert.ok(await tarjeta.locator("a[href='perfil-santa-latino.html']").count() >= 1);
     assert.equal(await page.getAttribute("html", "data-profile-theme"), null, "el directorio no lleva el tema");
+    /* Categoría «Eventos y celebraciones»: habilitada y filtra a Santa Latino */
+    await page.selectOption("#fProvince", "");
+    await page.selectOption("#fCategory", "eventos-celebraciones");
+    assert.deepEqual(await page.$$eval(".biz-card__name", (n) => n.map((x) => x.textContent.trim())), ["Santa Latino"]);
+    assert.equal(await page.locator(".biz-card", { hasText: "Santa Latino" }).locator(".biz-card__title").first().textContent().then((t) => t.trim()), "Personaje navideño para eventos y celebraciones");
     await sinDesborde(page, `${perfil} directorio`);
     assert.deepEqual(errores, []);
+    await ctx.close();
+
+    /* Formulario de registro: la categoría nueva aparece y las existentes siguen */
+    ({ ctx, page, errores } = await abrir(browser, perfil, "/registra-tu-empresa"));
+    const opciones = await page.$$eval("#fCategory option", (o) => o.map((x) => x.value).filter(Boolean));
+    assert.deepEqual(opciones, ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones", "otra"]);
     await ctx.close();
 
     /* Perfiles existentes: sin tema y con su estructura de siempre */

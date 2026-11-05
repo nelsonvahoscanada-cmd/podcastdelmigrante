@@ -51,6 +51,7 @@ test("identidad: «Santa Latino» es el nombre principal y Héctor Rivero el rep
   assert.match(S.availability, /sujeto a disponibilidad/);
   assert.equal(S.published, true);
   assert.equal(S.plan, undefined, "Perfil Premium (miniweb), no ficha gratuita");
+  assert.equal(S.category, "eventos-celebraciones");
 });
 
 test("contacto público exacto; el correo privado no se publica", () => {
@@ -107,11 +108,11 @@ test("página estática: metadatos propios, tema solo en este perfil", () => {
   }
 });
 
-test("vCard: a nombre de Héctor Rivero con Santa Latino como organización; las demás no cambian", () => {
+test("vCard: se guarda como «Santa Latino» con Héctor Rivero como representante; las demás no cambian", () => {
   const v = read("vcard/santa-latino.vcf");
   assert.match(v, /\r\nN:Rivero;Héctor;;;\r\n/);
-  assert.match(v, /\r\nFN:Héctor Rivero\r\n/);
-  assert.match(v, /\r\nORG:Santa Latino\r\n/);
+  assert.match(v, /\r\nFN:Santa Latino\r\nORG:Santa Latino\r\nX-ABShowAs:COMPANY\r\n/);
+  assert.match(v, /\r\nNOTE:Representante: Héctor Rivero\r\n/);
   assert.match(v, /\r\nTEL;TYPE=WORK,VOICE:\+12896965721\r\n/);
   assert.doesNotMatch(v, /EMAIL/);
   assert.match(read("vcard/tomas-velazquez.vcf"), /\r\nFN:Tomás Velázquez\r\nORG:Country Hills Toyota\r\n/);
@@ -155,4 +156,15 @@ test("plantilla: los campos nuevos son opcionales (los demás perfiles no los us
   const js = read("js/business-profile.js");
   assert.match(js, /b\.representative \? `<p class="biz-representative">/);
   assert.match(js, /if \(!b\.theme \|\| !\/\^\[a-z0-9-\]\+\$\/\.test\(b\.theme\)\) return;/);
+});
+
+test("categoría «Eventos y celebraciones»: nueva al final del directorio y del formulario, sin tocar las existentes", () => {
+  const cats = JSON.parse(JSON.stringify(ctx.C));
+  assert.deepEqual(cats.map((c) => c.id), ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones"]);
+  assert.equal(cats.at(-1).label, "Eventos y celebraciones");
+  const core = read("js/directorio/solicitud-core.js");
+  assert.match(core, /\{ id: "servicios-hogar", label: "Servicios del hogar" \},\n  \{ id: "eventos-celebraciones", label: "Eventos y celebraciones" \},\n  \{ id: "otra", label: "Otra categoría" \},/);
+  /* El formulario pide la versión nueva (la caché del navegador no sirve la lista anterior) */
+  assert.match(read("registra-tu-empresa.html"), /solicitud-form\.js\?v=20261105/);
+  assert.match(read("js/directorio/solicitud-form.js"), /solicitud-core\.js\?v=20261105/);
 });

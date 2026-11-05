@@ -162,11 +162,14 @@ function buildVcard(b) {
     "VERSION:3.0",
     VCARD_MARK,
     `N:${vEsc(card.familyName)};${vEsc(card.givenName)};${vEsc(card.middleName || "")};;`,
-    /* Con representante (negocio o personaje comercial): la tarjeta es de
-       la persona que atiende y el negocio va como organización. */
-    `FN:${vEsc(b.representative || b.name)}`,
+    /* Con representante (negocio o personaje comercial): el contacto se
+       guarda con el nombre principal (ej. «Santa Latino»; X-ABShowAs hace que
+       el iPhone lo muestre así) y la persona figura como representante. */
+    `FN:${vEsc(b.name)}`,
     b.representative ? `ORG:${vEsc(b.name)}` : b.company && `ORG:${vEsc(b.company)}`,
+    b.representative && "X-ABShowAs:COMPANY",
     b.professionalTitle && `TITLE:${vEsc(b.professionalTitle)}`,
+    b.representative && `NOTE:${vEsc(`Representante: ${b.representative}`)}`,
     tel && `TEL;TYPE=WORK,VOICE:${tel}`,
     b.email && `EMAIL;TYPE=INTERNET,WORK:${b.email}`,
     b.website && `URL:${b.website}`,

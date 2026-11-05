@@ -39,8 +39,9 @@
                         Se muestra «Representante: <nombre>» en el perfil;
                         los datos para Google pasan a ser de la
                         organización (con la persona como representante) y
-                        la vCard queda a nombre de la persona con el negocio
-                        como organización. Sin este campo nada cambia.
+                        la vCard se guarda con el nombre principal y la
+                        persona como representante. Sin este campo nada
+                        cambia.
     tagline             [OPCIONAL] frase destacada bajo el nombre
     theme               [OPCIONAL] tema visual propio del perfil (ej.
                         "navidad" → css/temas/navidad.css, que solo aplica a
@@ -162,6 +163,7 @@ const BUSINESS_CATEGORIES = [
   { id: "empleo", label: "Empleo" },
   { id: "salud", label: "Salud" },
   { id: "servicios-hogar", label: "Servicios del hogar" },
+  { id: "eventos-celebraciones", label: "Eventos y celebraciones" },
 ];
 
 const BUSINESSES = [
@@ -379,7 +381,7 @@ const BUSINESSES = [
     theme: "navidad",
     professionalTitle: "Personaje navideño para eventos y celebraciones",
     company: "",
-    category: "",             /* PENDIENTE: no existe una categoría de eventos (ver PR) */
+    category: "eventos-celebraciones",
 
     city: "Niagara Falls",
     province: "Ontario",
