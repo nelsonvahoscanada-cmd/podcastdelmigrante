@@ -19,6 +19,7 @@ export const CATEGORIES = [
   { id: "empleo", label: "Empleo" },
   { id: "salud", label: "Salud" },
   { id: "servicios-hogar", label: "Servicios del hogar" },
+  { id: "eventos-celebraciones", label: "Eventos y celebraciones" },
   { id: "otra", label: "Otra categoría" },
 ];
 

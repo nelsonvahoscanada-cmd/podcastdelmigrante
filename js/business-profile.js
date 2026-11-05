@@ -133,10 +133,12 @@
         <div class="biz-hero__body">
           <span class="biz-label">Perfil empresarial</span>
           <h1 class="biz-name">${esc(b.name)}</h1>
+          ${b.tagline ? `<p class="biz-tagline">${esc(b.tagline)}</p>` : ""}
           ${b.professionalTitle ? `<p class="biz-title">${esc(b.professionalTitle)}</p>` : ""}
           ${b.professionalTitleAlt ? `<p class="biz-title-alt" lang="en">${esc(b.professionalTitleAlt)}</p>` : ""}
           ${b.brandLogo ? `<img class="biz-brand-logo" src="${esc(b.brandLogo)}" alt="${esc(b.brandName || b.name)}" loading="lazy">` : ""}
           ${b.company ? `<p class="biz-company">${esc(b.company)}</p>` : ""}
+          ${b.representative ? `<p class="biz-representative">Representante: <strong>${esc(b.representative)}</strong></p>` : ""}
           ${b.affiliation ? `<p class="biz-affiliation">Afiliación indicada por el profesional: ${esc(b.affiliation)}</p>` : ""}
           ${place ? `<p class="biz-place">${esc(place)}</p>` : ""}
           ${lang ? `<p class="biz-lang">${esc(lang)}</p>` : ""}
@@ -492,6 +494,25 @@
 
     /* Datos estructurados: ProfilePage + Person. Sin reviews ni ratings. */
     const sameAs = socialList(b).map((x) => x.href);
+    if (b.representative) {
+      /* Negocio o personaje comercial con representante (campo opcional
+         «representative»): la entidad principal es la organización y la
+         persona figura como su representante. Los demás perfiles no cambian. */
+      const org = { "@type": "Organization", name: b.name, url };
+      if (b.shortDescription) org.description = b.shortDescription;
+      if (b.profileImage) org.image = toAbsolute(b.profileImage);
+      if (b.phone) org.telephone = b.phone;
+      if (b.city) org.address = Object.assign({ "@type": "PostalAddress", addressLocality: b.city }, b.province ? { addressRegion: b.province } : {}, b.country ? { addressCountry: "CA" } : {});
+      if ((b.languages || []).length) org.knowsLanguage = b.languages;
+      org.employee = { "@type": "Person", name: b.representative, jobTitle: "Representante" };
+      if (sameAs.length) org.sameAs = sameAs;
+      const jsonLdOrg = { "@context": "https://schema.org", "@type": "ProfilePage", url, name: title, description, mainEntity: org };
+      const scriptOrg = document.createElement("script");
+      scriptOrg.type = "application/ld+json";
+      scriptOrg.textContent = JSON.stringify(jsonLdOrg);
+      document.head.appendChild(scriptOrg);
+      return;
+    }
     const person = { "@type": "Person", name: b.name, url };
     if (b.professionalTitle) person.jobTitle = b.professionalTitle;
     if ((b.languages || []).length) person.knowsLanguage = b.languages;
@@ -517,8 +538,26 @@
     document.head.appendChild(script);
   }
 
+  /* ---------- Tema visual propio (opcional) ----------
+     Un perfil con «theme» (ej. "navidad") carga css/temas/<theme>.css, que
+     solo aplica bajo html[data-profile-theme="<theme>"]. La página estática
+     ya trae ambos (scripts/build-profile-pages.mjs); esto cubre el enlace
+     antiguo business-profile.html?slug=... Sin «theme» no cambia nada. */
+  function applyTheme(b) {
+    if (!b.theme || !/^[a-z0-9-]+$/.test(b.theme)) return;
+    document.documentElement.setAttribute("data-profile-theme", b.theme);
+    const href = `css/temas/${b.theme}.css`;
+    if (!document.querySelector('link[href="' + href + '"]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    }
+  }
+
   /* ---------- Render ---------- */
   function renderProfile(b) {
+    applyTheme(b);
     setSEO(b);
     const root = document.getElementById("bizRoot");
     root.innerHTML = `

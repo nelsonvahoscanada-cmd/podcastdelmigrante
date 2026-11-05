@@ -104,6 +104,12 @@ function buildPage(template, b) {
   const seo = seoFor(b);
   let html = template;
   html = html.replace(/<html\b([^>]*)>/, (m, attrs) => `<html${attrs} data-profile-slug="${escAttr(b.slug)}">`);
+  /* Tema visual propio (opcional): solo en el perfil que lo declara */
+  if (b.theme) {
+    if (!/^[a-z0-9-]+$/.test(b.theme) || !existsSync(join(ROOT, `css/temas/${b.theme}.css`))) throw new Error(`${b.id}: tema no válido o sin css/temas/${b.theme}.css`);
+    html = html.replace(/<html\b([^>]*)>/, (m, attrs) => `<html${attrs} data-profile-theme="${escAttr(b.theme)}">`);
+    html = html.replace('<link rel="stylesheet" href="css/business.css">', `<link rel="stylesheet" href="css/business.css">\n<link rel="stylesheet" href="css/temas/${escAttr(b.theme)}.css">`);
+  }
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${escAttr(seo.title)}</title>`);
   html = setById(html, "metaDescription", "content", seo.description);
   html = setById(html, "canonicalLink", "href", seo.url);
@@ -156,9 +162,14 @@ function buildVcard(b) {
     "VERSION:3.0",
     VCARD_MARK,
     `N:${vEsc(card.familyName)};${vEsc(card.givenName)};${vEsc(card.middleName || "")};;`,
+    /* Con representante (negocio o personaje comercial): el contacto se
+       guarda con el nombre principal (ej. «Santa Latino»; X-ABShowAs hace que
+       el iPhone lo muestre así) y la persona figura como representante. */
     `FN:${vEsc(b.name)}`,
-    b.company && `ORG:${vEsc(b.company)}`,
+    b.representative ? `ORG:${vEsc(b.name)}` : b.company && `ORG:${vEsc(b.company)}`,
+    b.representative && "X-ABShowAs:COMPANY",
     b.professionalTitle && `TITLE:${vEsc(b.professionalTitle)}`,
+    b.representative && `NOTE:${vEsc(`Representante: ${b.representative}`)}`,
     tel && `TEL;TYPE=WORK,VOICE:${tel}`,
     b.email && `EMAIL;TYPE=INTERNET,WORK:${b.email}`,
     b.website && `URL:${b.website}`,

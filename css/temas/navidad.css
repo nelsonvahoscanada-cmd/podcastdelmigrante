@@ -1,0 +1,189 @@
+/* =========================================================
+   Tema «navidad» de un Perfil Premium (js/businesses.js → theme: "navidad")
+   ---------------------------------------------------------
+   Solo aplica bajo html[data-profile-theme="navidad"]: los demás perfiles,
+   el directorio y el resto del sitio no cambian. La cabecera y el pie del
+   sitio conservan su identidad; el tema viste únicamente el contenido del
+   perfil (main). Decoración: assets/directorio/temas/navidad-arbol.webp
+   (árbol fotográfico entregado por El Podcast del Migrante, con bordes
+   difuminados para fundirse con el fondo). Sin animaciones.
+========================================================= */
+html[data-profile-theme="navidad"] {
+  --nv-pino: #0d2a1c;
+  --nv-pino-2: #123826;
+  --nv-panel: rgba(255, 255, 255, 0.05);
+  --nv-linea: rgba(217, 178, 92, 0.38);
+  --nv-oro: #d9b25c;
+  --nv-oro-claro: #f1d79a;
+  --nv-vino: #6e1424;
+  --nv-vino-2: #8e1b2e;
+  --nv-marfil: #f7f0e1;
+  --nv-marfil-2: #e3d9c2;
+}
+
+html[data-profile-theme="navidad"] main#main {
+  color: var(--nv-marfil);
+  background:
+    radial-gradient(70% 40% at 78% 6%, rgba(241, 215, 154, 0.16), transparent 70%),
+    radial-gradient(60% 50% at 10% 100%, rgba(142, 27, 46, 0.22), transparent 70%),
+    linear-gradient(180deg, var(--nv-pino-2) 0%, var(--nv-pino) 55%, #0a2115 100%);
+}
+html[data-profile-theme="navidad"] .biz-page { padding-top: 34px; padding-bottom: 64px; }
+
+/* ---------- Portada ---------- */
+html[data-profile-theme="navidad"] .biz-hero {
+  position: relative;
+  padding: 28px 22px 0;
+  border: 1px solid var(--nv-linea);
+  border-radius: 18px;
+  background:
+    radial-gradient(80% 70% at 85% 30%, rgba(241, 215, 154, 0.14), transparent 70%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(241, 215, 154, 0.18);
+  overflow: hidden;
+}
+/* Escena decorativa (árbol, adornos dorados y regalos): debajo del texto en
+   celular, a la derecha en computador */
+html[data-profile-theme="navidad"] .biz-hero::after {
+  content: "";
+  display: block;
+  height: 210px;
+  margin: 4px -22px 0;
+  background: url("../../assets/directorio/temas/navidad-arbol.webp") center bottom / contain no-repeat;
+  pointer-events: none;
+}
+@media (min-width: 720px) {
+  html[data-profile-theme="navidad"] .biz-hero {
+    grid-template-columns: 280px minmax(0, 1fr) 210px;
+    gap: 34px;
+    padding: 36px 34px;
+  }
+  html[data-profile-theme="navidad"] .biz-hero::after { height: 100%; min-height: 300px; margin: 0; align-self: stretch; background-position: center bottom; }
+}
+@media (min-width: 720px) and (max-width: 900px) {
+  html[data-profile-theme="navidad"] .biz-hero { grid-template-columns: 240px minmax(0, 1fr); }
+  html[data-profile-theme="navidad"] .biz-hero__photo { width: 240px; }
+  html[data-profile-theme="navidad"] .biz-hero::after { grid-column: 1 / -1; min-height: 0; height: 200px; }
+}
+
+html[data-profile-theme="navidad"] .biz-hero__media { position: relative; justify-self: center; }
+html[data-profile-theme="navidad"] .biz-hero__photo {
+  border: 3px solid var(--nv-oro);
+  border-radius: 14px;
+  box-shadow: 0 0 0 6px rgba(13, 42, 28, 0.9), 0 0 0 7px var(--nv-linea), 0 18px 46px rgba(0, 0, 0, 0.5);
+}
+html[data-profile-theme="navidad"] .biz-label {
+  background: transparent;
+  color: var(--nv-oro-claro);
+  border: 1px solid var(--nv-linea);
+  border-radius: 999px;
+}
+html[data-profile-theme="navidad"] .biz-name {
+  color: var(--nv-marfil);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 9vw, 3.6rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+html[data-profile-theme="navidad"] .biz-tagline {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 3.6vw, 1.4rem);
+  line-height: 1.35;
+  color: var(--nv-oro-claro);
+}
+html[data-profile-theme="navidad"] .biz-title { color: var(--nv-marfil); }
+html[data-profile-theme="navidad"] .biz-representative { margin: 4px 0 2px; font-size: 1rem; color: var(--nv-marfil-2); }
+html[data-profile-theme="navidad"] .biz-representative strong { color: var(--nv-marfil); font-weight: 700; }
+html[data-profile-theme="navidad"] .biz-place { color: var(--nv-marfil-2); }
+html[data-profile-theme="navidad"] .biz-lang { color: var(--nv-oro-claro); }
+
+/* ---------- Botones ---------- */
+html[data-profile-theme="navidad"] .biz-btn {
+  background: transparent;
+  color: var(--nv-marfil);
+  border-color: var(--nv-marfil-2);
+  border-radius: 999px;
+}
+html[data-profile-theme="navidad"] .biz-btn:hover { background: var(--nv-marfil); color: var(--nv-pino); border-color: var(--nv-marfil); }
+html[data-profile-theme="navidad"] .biz-btn--primary,
+html[data-profile-theme="navidad"] .biz-contact .biz-btn.biz-btn--primary,
+html[data-profile-theme="navidad"] .biz-qr .biz-btn.biz-btn--primary {
+  background: linear-gradient(180deg, var(--nv-oro-claro), var(--nv-oro));
+  color: #1d1406;
+  border-color: var(--nv-oro);
+}
+html[data-profile-theme="navidad"] .biz-btn--primary:hover,
+html[data-profile-theme="navidad"] .biz-contact .biz-btn.biz-btn--primary:hover,
+html[data-profile-theme="navidad"] .biz-qr .biz-btn.biz-btn--primary:hover { background: var(--nv-oro-claro); border-color: var(--nv-oro-claro); color: #1d1406; }
+html[data-profile-theme="navidad"] .biz-btn:focus-visible,
+html[data-profile-theme="navidad"] .biz-social__link:focus-visible,
+html[data-profile-theme="navidad"] .biz-back:focus-visible { outline: 3px solid var(--nv-oro-claro); outline-offset: 3px; }
+
+/* ---------- Redes ---------- */
+html[data-profile-theme="navidad"] .biz-social__link { background: transparent; color: var(--nv-marfil); border-color: var(--nv-linea); }
+html[data-profile-theme="navidad"] .biz-social__link:hover { color: var(--nv-oro-claro); border-color: var(--nv-oro); }
+
+/* ---------- Secciones ---------- */
+html[data-profile-theme="navidad"] .biz-h2 { color: var(--nv-marfil); }
+html[data-profile-theme="navidad"] .biz-h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, var(--nv-oro), transparent);
+}
+html[data-profile-theme="navidad"] .biz-section p,
+html[data-profile-theme="navidad"] .biz-about .biz-long { color: var(--nv-marfil-2); }
+html[data-profile-theme="navidad"] .biz-about { padding: 26px 24px; border-left: 3px solid var(--nv-oro); background: var(--nv-panel); border-radius: 0 14px 14px 0; }
+html[data-profile-theme="navidad"] .biz-about .biz-long { font-size: 1.06rem; line-height: 1.65; }
+html[data-profile-theme="navidad"] .biz-service {
+  border: 1px solid var(--nv-linea);
+  border-left: 3px solid var(--nv-vino-2);
+  border-radius: 12px;
+  background: var(--nv-panel);
+  color: var(--nv-marfil);
+}
+html[data-profile-theme="navidad"] .biz-facts dt { color: var(--nv-oro-claro); }
+html[data-profile-theme="navidad"] .biz-facts dd { color: var(--nv-marfil); }
+
+/* ---------- Galería ---------- */
+html[data-profile-theme="navidad"] .biz-gallery { grid-template-columns: minmax(0, 520px); justify-content: center; }
+html[data-profile-theme="navidad"] .biz-gallery img {
+  border: 3px solid var(--nv-oro);
+  border-radius: 14px;
+  box-shadow: 0 0 0 6px rgba(13, 42, 28, 0.9), 0 0 0 7px var(--nv-linea), 0 18px 46px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Conecta (QR): tarjetas claras para que los códigos se lean bien ---------- */
+html[data-profile-theme="navidad"] .biz-qr { background: var(--nv-marfil); border: 1px solid var(--nv-oro); border-top: 4px solid var(--nv-oro); border-radius: 14px; }
+html[data-profile-theme="navidad"] .biz-section .biz-qr__kicker { color: var(--nv-vino); }
+html[data-profile-theme="navidad"] .biz-qr__caption { color: #1d1406; }
+html[data-profile-theme="navidad"] .biz-section .biz-qr__status { color: #4a4235; }
+html[data-profile-theme="navidad"] .biz-qr .biz-btn { color: #1d1406; border-color: #1d1406; }
+html[data-profile-theme="navidad"] .biz-qr .biz-btn:hover { background: #1d1406; color: var(--nv-marfil); }
+
+/* ---------- Bloque final de contacto (rojo vino) ---------- */
+html[data-profile-theme="navidad"] .biz-contact {
+  background:
+    radial-gradient(60% 80% at 100% 0%, rgba(241, 215, 154, 0.18), transparent 70%),
+    linear-gradient(160deg, var(--nv-vino-2), var(--nv-vino));
+  border: 1px solid var(--nv-linea);
+  border-radius: 18px;
+}
+html[data-profile-theme="navidad"] .biz-contact .biz-btn { color: var(--nv-marfil); border-color: var(--nv-marfil); }
+html[data-profile-theme="navidad"] .biz-contact .biz-btn:hover { background: var(--nv-marfil); color: var(--nv-vino); }
+html[data-profile-theme="navidad"] .biz-contact .biz-social__link { color: var(--nv-marfil); border-color: rgba(247, 240, 225, 0.45); }
+html[data-profile-theme="navidad"] .biz-social--final { border-top-color: rgba(247, 240, 225, 0.25); }
+
+/* ---------- Notas y enlace de regreso ---------- */
+html[data-profile-theme="navidad"] .biz-note { color: var(--nv-marfil-2); opacity: 0.9; }
+html[data-profile-theme="navidad"] .biz-back { color: var(--nv-oro-claro); }
+html[data-profile-theme="navidad"] .biz-back:hover { color: var(--nv-marfil); }
+
+/* ---------- Barra inferior móvil ---------- */
+html[data-profile-theme="navidad"] .biz-sticky { background: rgba(13, 42, 28, 0.97); border-top-color: var(--nv-linea); }
+html[data-profile-theme="navidad"] .biz-sticky__btn { border-color: var(--nv-marfil); color: var(--nv-marfil); border-radius: 999px; }
+html[data-profile-theme="navidad"] .biz-sticky__btn--primary { background: linear-gradient(180deg, var(--nv-oro-claro), var(--nv-oro)); border-color: var(--nv-oro); color: #1d1406; }
