@@ -125,10 +125,12 @@
     const provSel = document.getElementById("fProvince");
     const citySel = document.getElementById("fCity");
 
-    /* Selección inicial: Todas las categorías · Alberta · Calgary */
+    /* Selección inicial: todo el directorio (todas las categorías,
+       provincias y ciudades). Antes abría filtrado en «Alberta · Calgary»,
+       que ocultaba los perfiles de otras provincias. */
     fillCategories(catSel, "");
-    fillProvinces(provSel, "Alberta");
-    fillCities(citySel, "Alberta", "Calgary");
+    fillProvinces(provSel, "");
+    fillCities(citySel, "", "");
     render();
 
     catSel.addEventListener("change", render);

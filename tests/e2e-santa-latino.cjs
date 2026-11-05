@@ -115,21 +115,38 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     assert.deepEqual(errores, []);
     await ctx.close();
 
-    /* Directorio: aparece la tarjeta */
-    ({ ctx, page, errores } = await abrir(browser, perfil, "/quien-puede-ayudarte"));
-    /* El directorio abre en «Alberta · Calgary» (comportamiento actual): se elige Ontario */
+    /* «Explorar empresas» (portada) → directorio: vista general con TODOS los Premium */
+    ({ ctx, page, errores } = await abrir(browser, perfil, "/"));
+    await page.locator("a.biz-showcase__btn", { hasText: "Explorar empresas" }).click();
+    await page.waitForURL(/quien-puede-ayudarte/);
+    await page.waitForSelector(".biz-card");
+    const nombres = () => page.$$eval(".biz-card__name", (n) => n.map((x) => x.textContent.trim()));
+    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo", "Santa Latino"], `${perfil}: vista general`);
+    assert.deepEqual([await page.inputValue("#fCategory"), await page.inputValue("#fProvince"), await page.inputValue("#fCity")], ["", "", ""], "sin filtros al abrir");
+    assert.equal(await page.locator(".biz-card", { hasText: "Santa Latino" }).count(), 1, "sin duplicados");
+    assert.equal(await page.getAttribute("html", "data-profile-theme"), null, "el directorio no lleva el tema");
+    /* Búsquedas: por provincia y ciudad */
     await page.selectOption("#fProvince", "Ontario");
     assert.ok((await page.$$eval("#fCity option", (o) => o.map((x) => x.value))).includes("Niagara Falls"));
-    const tarjeta = page.locator(".biz-card", { hasText: "Santa Latino" });
-    assert.equal(await tarjeta.count(), 1);
-    assert.ok(await tarjeta.locator("a[href='perfil-santa-latino.html']").count() >= 1);
-    assert.equal(await page.getAttribute("html", "data-profile-theme"), null, "el directorio no lleva el tema");
-    /* Categoría «Eventos y celebraciones»: habilitada y filtra a Santa Latino */
+    /* Carlos también aparece en Ontario: indica prestar servicios allí (serviceAreas) */
+    assert.deepEqual(await nombres(), ["Carlos D. Castillo", "Santa Latino"]);
+    await page.selectOption("#fCity", "Niagara Falls");
+    assert.deepEqual(await nombres(), ["Santa Latino"]);
+    await page.selectOption("#fProvince", "Alberta");
+    await page.selectOption("#fCity", "Calgary");
+    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo"], "Calgary sigue igual");
+    /* Categoría «Eventos y celebraciones» */
     await page.selectOption("#fProvince", "");
     await page.selectOption("#fCategory", "eventos-celebraciones");
-    assert.deepEqual(await page.$$eval(".biz-card__name", (n) => n.map((x) => x.textContent.trim())), ["Santa Latino"]);
+    assert.deepEqual(await nombres(), ["Santa Latino"]);
     assert.equal(await page.locator(".biz-card", { hasText: "Santa Latino" }).locator(".biz-card__title").first().textContent().then((t) => t.trim()), "Personaje navideño para eventos y celebraciones");
     await sinDesborde(page, `${perfil} directorio`);
+    /* La tarjeta abre la miniweb publicada */
+    const enlace = page.locator(".biz-card", { hasText: "Santa Latino" }).locator("a[href='perfil-santa-latino.html']").first();
+    await enlace.click();
+    await page.waitForURL(/perfil-santa-latino/);
+    await page.waitForSelector("h1.biz-name");
+    assert.equal((await page.locator("h1.biz-name").textContent()).trim(), "Santa Latino");
     assert.deepEqual(errores, []);
     await ctx.close();
 
