@@ -35,24 +35,19 @@
     <h2 id="newTitle" class="sol-h2">Nueva invitación</h2>
     <p class="card__hint">Cada invitación es individual y de un solo uso. El enlace se muestra una única vez: cópialo y envíalo tú mismo. El panel no envía nada a nadie.</p>
     <form class="sol-form" id="newForm" novalidate>
+      <label>Tipo
+        <select name="kind" required>
+          <option value="PREMIUM_GIFT">Premium de cortesía — $0 CAD, sin vencimiento</option>
+          <option value="PREMIUM_PAID">Premium pagada — $25 CAD al mes + impuestos</option>
+          <option value="FREE">Ficha gratuita — $0 CAD</option>
+        </select>
+      </label>
       <div class="sol-form__row">
-        <label>Tipo
-          <select name="kind" required>
-            <option value="PREMIUM_GIFT">Premium de cortesía — $0 CAD, sin vencimiento</option>
-            <option value="PREMIUM_PAID">Premium pagada — $25 CAD al mes + impuestos</option>
-            <option value="FREE">Ficha gratuita — $0 CAD</option>
-          </select>
-        </label>
         <label>Negocio o empresario
           <input name="businessName" maxlength="120" required autocomplete="off">
         </label>
-      </div>
-      <div class="sol-form__row">
         <label>Persona de contacto (opcional)
           <input name="contactName" maxlength="80" autocomplete="off">
-        </label>
-        <label>Atajo
-          <textarea name="notes" id="invNotes" rows="2" maxlength="500" placeholder="Escribe aquí los datos de la invitación" autocomplete="off"></textarea>
         </label>
       </div>
       <p class="inv-warning" id="paidWarning" hidden>La Premium pagada todavía no tiene cobro en línea: la invitación solo abre una solicitud Premium. El cobro se acuerda por separado hasta que exista una pasarela de pagos.</p>
