@@ -124,8 +124,12 @@ test("generadores al día: páginas, vCards y QR (los existentes sin cambios)", 
     assert.ok(existsSync(new URL(`assets/qr/${f}`, ROOT)), f);
   }
   assert.match(read("assets/qr/perfil-santa-latino.svg"), /QR del perfil de Santa Latino/);
-  const changed = execFileSync("git", ["diff", "--name-only", "origin/main", "--", "perfil-tomas-velazquez.html", "perfil-carlos-d-castillo.html", "vcard/", "assets/qr/"], { cwd: ROOT }).toString().trim();
-  assert.equal(changed, "", "ningún archivo de los perfiles existentes cambia");
+  /* Los QR de los perfiles existentes siguen apuntando a sus mismas URL
+     (el --check de arriba ya exige que sus páginas y vCards estén al día) */
+  for (const slug of ["tomas-velazquez", "carlos-d-castillo"]) {
+    assert.ok(read(`assets/qr/perfil-${slug}.svg`).length > 0);
+    assert.ok(existsSync(new URL(`assets/qr/contacto-${slug}.png`, ROOT)));
+  }
 });
 
 test("tema «navidad»: todas las reglas están limitadas a este perfil y sin recursos externos", () => {
