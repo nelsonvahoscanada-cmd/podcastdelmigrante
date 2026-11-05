@@ -34,6 +34,17 @@
     name, shortName     nombre completo / nombre corto para frases
                         ("Conoce a Tomás")
     professionalTitle, company
+    representative      [OPCIONAL] persona que representa a un negocio o
+                        personaje comercial cuyo nombre (name) es la marca.
+                        Se muestra «Representante: <nombre>» en el perfil;
+                        los datos para Google pasan a ser de la
+                        organización (con la persona como representante) y
+                        la vCard queda a nombre de la persona con el negocio
+                        como organización. Sin este campo nada cambia.
+    tagline             [OPCIONAL] frase destacada bajo el nombre
+    theme               [OPCIONAL] tema visual propio del perfil (ej.
+                        "navidad" → css/temas/navidad.css, que solo aplica a
+                        ese perfil). Sin este campo, diseño estándar.
     professionalTitleAlt  [OPCIONAL] cargo en otro idioma (ej. inglés)
     brandName, brandLogo  [OPCIONAL] marca profesional y su logo
     affiliation         [OPCIONAL] afiliación indicada por el profesional
@@ -350,6 +361,86 @@ const BUSINESSES = [
     seo: {
       title: "Carlos D. Castillo | Seguros de vida y salud en Calgary | El Podcast del Migrante",
       description: "Perfil empresarial de Carlos D. Castillo en Calgary: seguros de vida y salud, protección familiar y estrategias de ahorro y patrimonio. Atención en español e inglés con cita previa.",
+    },
+  },
+  {
+    /* SOL-20261105-CRD9C2 · invitación INV-20261104-GXQCJP (Premium de
+       cortesía). Datos e imágenes entregados por el representante. */
+    id: "BIZ-003",
+    slug: "santa-latino",
+    published: true,
+    featured: false,
+    foundingProfile: false,
+
+    name: "Santa Latino",
+    shortName: "Santa Latino",
+    representative: "Héctor Rivero",
+    tagline: "La magia de la Navidad llega hasta ti.",
+    theme: "navidad",
+    professionalTitle: "Personaje navideño para eventos y celebraciones",
+    company: "",
+    category: "",             /* PENDIENTE: no existe una categoría de eventos (ver PR) */
+
+    city: "Niagara Falls",
+    province: "Ontario",
+    country: "Canadá",
+    address: "",              /* sin dirección pública */
+    postalCode: "",
+    mapUrl: "",
+
+    languages: ["es", "en"],
+    availability: "Desde Niagara Falls, Ontario, a celebraciones y eventos en distintas ciudades de Canadá, sujeto a disponibilidad.",
+
+    shortDescription: "Santa Claus latino para hogares, fiestas, empresas y comunidades en Canadá, en español e inglés.",
+    longDescription: [
+      "Santa Latino lleva la alegría y la magia de la Navidad a familias, empresas y comunidades. Con años de experiencia representando a Santa Claus, ofrece encuentros cercanos y memorables, llenos de sonrisas, ilusión y espíritu navideño.",
+      "Desde Niagara Falls, Ontario, participa en celebraciones y eventos en diferentes lugares de Canadá, ofreciendo experiencias en español e inglés.",
+    ],
+
+    /* Servicios indicados por el representante. Sin precios, horarios ni
+       paquetes: se acuerdan directamente con él. */
+    services: [
+      { id: "hogares", label: "Visitas de Santa a hogares", description: "", active: true },
+      { id: "fiestas", label: "Fiestas infantiles y celebraciones familiares", description: "", active: true },
+      { id: "fotos", label: "Fotografías y encuentros con Santa", description: "", active: true },
+      { id: "empresas", label: "Eventos privados y empresariales", description: "", active: true },
+      { id: "comunidad", label: "Participación en actividades comunitarias", description: "", active: true },
+      { id: "bilingue", label: "Presentaciones navideñas en español e inglés", description: "", active: true },
+    ],
+
+    testimonials: [],
+
+    phone: "+1 289 696 5721",
+    whatsapp: "12896965721",
+    email: "",                /* el correo de la solicitud es PRIVADO */
+    website: "",
+    inventoryUrl: "",
+    bookingUrl: "",
+
+    instagram: "https://www.instagram.com/santalatino_/",
+    tiktok: "https://www.tiktok.com/@santalatino_",
+    facebook: "",
+    linkedin: "",
+
+    youtubeVideoId: "",
+
+    profileImage: "assets/directorio/perfiles/santa-latino.jpg",      /* retrato 4:5 */
+    cardImage: "assets/directorio/perfiles/santa-latino-card.jpg",    /* directorio */
+    ogImage: "assets/directorio/perfiles/santa-latino-og.jpg",        /* al compartir */
+    coverImage: "",
+    gallery: [
+      { src: "assets/directorio/perfiles/santa-latino-navidad-grupo.jpg", alt: "Santa Latino junto a un árbol de Navidad, acompañado de una ayudante vestida de duende y dos invitadas" },
+    ],
+    hours: [],
+
+    connect: {
+      profileQr: true,
+      contactCard: { givenName: "Héctor", familyName: "Rivero" },
+    },
+
+    seo: {
+      title: "Santa Latino | Santa Claus para eventos en Niagara Falls, Ontario | El Podcast del Migrante",
+      description: "Santa Latino lleva la magia de la Navidad a hogares, fiestas, empresas y comunidades en Canadá. Experiencias en español e inglés desde Niagara Falls, Ontario.",
     },
   },
 ];
