@@ -90,6 +90,10 @@
     youtubeVideoId      ID del video (YouTube no listado). Vacío = sin
                         sección de video
     videoText           texto bajo "Conoce a ..."
+    videoTitle          [OPCIONAL] título propio de la sección del video
+                        (sin él: "Conoce a <shortName>")
+    videoLinkLabel      [OPCIONAL] texto de un enlace alternativo para ver
+                        el video en YouTube, bajo el reproductor
     profileImage        foto del PERFIL (vertical 4:5)
     profileImageKind    [OPCIONAL] "logo" = la imagen es un logotipo: se
                         muestra completa (sin recortar) sobre fondo blanco.
@@ -419,12 +423,17 @@ const BUSINESSES = [
     inventoryUrl: "",
     bookingUrl: "",
 
-    instagram: "https://www.instagram.com/santalatino_/",
+    instagram: "https://www.instagram.com/latinsantaon/",
     tiktok: "https://www.tiktok.com/@santalatino_",
     facebook: "",
     linkedin: "",
 
-    youtubeVideoId: "",
+    /* Entrevista de El Podcast del Migrante (la misma del artículo
+       «Héctor Rivero, Santa Latino»). */
+    youtubeVideoId: "LxTr1Zda3dg",
+    videoTitle: "Santa Latino en El Podcast del Migrante",
+    videoText: "Conoce la historia de Héctor Rivero, el hombre detrás de Santa Latino, en esta entrevista especial de El Podcast del Migrante.",
+    videoLinkLabel: "Ver entrevista en YouTube",
 
     profileImage: "assets/directorio/perfiles/santa-latino.jpg",      /* retrato 4:5 */
     cardImage: "assets/directorio/perfiles/santa-latino-card.jpg",    /* directorio */

@@ -64,7 +64,9 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     const has = (track, target, href) => assert.ok(hrefs.some(([a, b, c]) => a === track && b === target && c === href), `${perfil}: falta ${track}/${target} → ${href}`);
     has("whatsapp_click", "whatsapp", "https://wa.me/12896965721");
     has("phone_click", "phone", "tel:+12896965721");
-    has("instagram_click", "instagram-hero", "https://www.instagram.com/santalatino_/");
+    has("instagram_click", "instagram-hero", "https://www.instagram.com/latinsantaon/");
+    has("instagram_click", "instagram-final", "https://www.instagram.com/latinsantaon/");
+    has("video_click", "profile-video-youtube", "https://www.youtube.com/watch?v=LxTr1Zda3dg");
     has("tiktok_click", "tiktok-hero", "https://www.tiktok.com/@santalatino_");
     has("whatsapp_click", "whatsapp-final", "https://wa.me/12896965721");
     has("vcard_download", "vcard-connect", "vcard/santa-latino.vcf");
@@ -84,7 +86,20 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     assert.equal(ld.mainEntity["@type"], "Organization");
     assert.equal(ld.mainEntity.name, "Santa Latino");
     assert.deepEqual(ld.mainEntity.employee, { "@type": "Person", name: "Héctor Rivero", jobTitle: "Representante" });
-    assert.deepEqual(ld.mainEntity.sameAs, ["https://www.instagram.com/santalatino_/", "https://www.tiktok.com/@santalatino_"]);
+    assert.deepEqual(ld.mainEntity.sameAs, ["https://www.instagram.com/latinsantaon/", "https://www.tiktok.com/@santalatino_"]);
+    assert.ok(!(await page.content()).includes("instagram.com/santalatino_"), "sin el enlace antiguo de Instagram");
+    /* Entrevista: sección, texto, 16:9, carga diferida (sin iframe hasta pulsar) y reproductor oficial */
+    assert.equal((await page.locator(".biz-video .biz-h2").textContent()).trim(), "Santa Latino en El Podcast del Migrante");
+    assert.match(await page.locator(".biz-video").textContent(), /Conoce la historia de Héctor Rivero, el hombre detrás de Santa Latino, en esta entrevista especial de El Podcast del Migrante\./);
+    assert.equal(await page.locator(".biz-video iframe").count(), 0, "el reproductor no se carga hasta pulsar");
+    const caja = await page.locator(".biz-video__frame").boundingBox();
+    assert.ok(Math.abs(caja.width / caja.height - 16 / 9) < 0.03, `16:9 (${caja.width}×${caja.height})`);
+    assert.ok(caja.x >= 0 && caja.x + caja.width <= (await page.evaluate(() => document.documentElement.clientWidth)) + 1, "el reproductor cabe en la pantalla");
+    await page.route(/youtube-nocookie\.com/, (r) => r.fulfill({ contentType: "text/html", body: "<html><body>reproductor</body></html>" }));
+    await page.click("#bizVideoPlay");
+    const src = await page.locator(".biz-video iframe").getAttribute("src");
+    assert.match(src, /^https:\/\/www\.youtube-nocookie\.com\/embed\/LxTr1Zda3dg\?autoplay=1/);
+    assert.ok((await page.evaluate(() => window.__eventos)).some((e) => e.event === "video_click" && e.business_id === "BIZ-003"), "video_click medido");
     assert.equal(ld.mainEntity.address.addressLocality, "Niagara Falls");
     /* Estadísticas: mismo evento e identificadores que el resto de perfiles */
     const ev = await page.evaluate(() => window.__eventos);

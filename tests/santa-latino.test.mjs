@@ -57,7 +57,7 @@ test("identidad: «Santa Latino» es el nombre principal y Héctor Rivero el rep
 test("contacto público exacto; el correo privado no se publica", () => {
   assert.equal(S.phone, "+1 289 696 5721");
   assert.equal(S.whatsapp, "12896965721");
-  assert.equal(S.instagram, "https://www.instagram.com/santalatino_/");
+  assert.equal(S.instagram, "https://www.instagram.com/latinsantaon/");
   assert.equal(S.tiktok, "https://www.tiktok.com/@santalatino_");
   assert.equal(S.email, "");
   assert.equal(S.website, "");
@@ -167,4 +167,20 @@ test("categoría «Eventos y celebraciones»: nueva al final del directorio y de
   /* El formulario pide la versión nueva (la caché del navegador no sirve la lista anterior) */
   assert.match(read("registra-tu-empresa.html"), /solicitud-form\.js\?v=20261105/);
   assert.match(read("js/directorio/solicitud-form.js"), /solicitud-core\.js\?v=20261105/);
+});
+
+test("entrevista de El Podcast del Migrante: video de YouTube con título, texto y enlace alternativo", () => {
+  assert.equal(S.youtubeVideoId, "LxTr1Zda3dg");
+  assert.equal(S.videoTitle, "Santa Latino en El Podcast del Migrante");
+  assert.equal(S.videoText, "Conoce la historia de Héctor Rivero, el hombre detrás de Santa Latino, en esta entrevista especial de El Podcast del Migrante.");
+  assert.equal(S.videoLinkLabel, "Ver entrevista en YouTube");
+  /* Portada local del video (sin pedir imágenes a YouTube al cargar la página) */
+  assert.ok(existsSync(new URL("assets/yt/LxTr1Zda3dg.jpg", ROOT)));
+  assert.match(read("js/video-cover.js"), /"LxTr1Zda3dg": \["\/assets\/yt\/LxTr1Zda3dg\.jpg"/);
+  /* Los demás perfiles conservan su título de siempre («Conoce a …») */
+  for (const b of ALL.filter((x) => x.slug !== "santa-latino")) {
+    assert.equal(b.videoTitle, undefined, b.slug);
+    assert.equal(b.videoLinkLabel, undefined, b.slug);
+  }
+  assert.match(read("js/business-profile.js"), /b\.videoTitle \? esc\(b\.videoTitle\) : `Conoce a \$\{esc\(b\.shortName \|\| b\.name\)\}`/);
 });

@@ -175,7 +175,7 @@
     const id = encodeURIComponent(b.youtubeVideoId);
     return `
       <section class="biz-section biz-video">
-        <h2 class="biz-h2">Conoce a ${esc(b.shortName || b.name)}</h2>
+        <h2 class="biz-h2">${b.videoTitle ? esc(b.videoTitle) : `Conoce a ${esc(b.shortName || b.name)}`}</h2>
         ${b.videoText ? `<p>${esc(b.videoText)}</p>` : ""}
         <div class="biz-video__frame" id="bizVideoFrame">
           <button type="button" class="biz-video__play" id="bizVideoPlay" data-track="video_click" data-track-target="profile-video" data-video-id="${id}" aria-label="Reproducir video de presentación">
@@ -184,6 +184,7 @@
             ${VideoCover.noteHtml()}
           </button>
         </div>
+        ${b.videoLinkLabel ? `<p class="biz-video__alt"><a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener" data-track="video_click" data-track-target="profile-video-youtube">${esc(b.videoLinkLabel)} <span aria-hidden="true">↗</span></a></p>` : ""}
       </section>
     `;
   }

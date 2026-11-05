@@ -149,6 +149,22 @@ html[data-profile-theme="navidad"] .biz-service {
 html[data-profile-theme="navidad"] .biz-facts dt { color: var(--nv-oro-claro); }
 html[data-profile-theme="navidad"] .biz-facts dd { color: var(--nv-marfil); }
 
+/* ---------- Entrevista (video de YouTube, clic para reproducir) ---------- */
+html[data-profile-theme="navidad"] .biz-video { border-top: 2px solid var(--nv-oro); padding-top: 26px; }
+html[data-profile-theme="navidad"] .biz-video .biz-h2 { text-transform: none; letter-spacing: -0.005em; }
+html[data-profile-theme="navidad"] .biz-video__frame {
+  border: 3px solid var(--nv-oro);
+  border-radius: 14px;
+  box-shadow: 0 0 0 6px rgba(13, 42, 28, 0.9), 0 0 0 7px var(--nv-linea), 0 18px 46px rgba(0, 0, 0, 0.45);
+}
+html[data-profile-theme="navidad"] .biz-video__icon { background: linear-gradient(180deg, var(--nv-oro-claro), var(--nv-oro)); color: #1d1406; }
+html[data-profile-theme="navidad"] .biz-video__play:hover .biz-video__icon { background: var(--nv-oro-claro); }
+html[data-profile-theme="navidad"] .biz-video__play:focus-visible { outline: 3px solid var(--nv-oro-claro); outline-offset: 3px; }
+html[data-profile-theme="navidad"] .biz-video__alt { margin: 14px 0 0; }
+html[data-profile-theme="navidad"] .biz-video__alt a { color: var(--nv-oro-claro); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+html[data-profile-theme="navidad"] .biz-video__alt a:hover { color: var(--nv-marfil); }
+html[data-profile-theme="navidad"] .biz-video__alt a:focus-visible { outline: 3px solid var(--nv-oro-claro); outline-offset: 3px; }
+
 /* ---------- Galería ---------- */
 html[data-profile-theme="navidad"] .biz-gallery { grid-template-columns: minmax(0, 520px); justify-content: center; }
 html[data-profile-theme="navidad"] .biz-gallery img {
