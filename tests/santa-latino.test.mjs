@@ -160,15 +160,16 @@ test("plantilla: los campos nuevos son opcionales (los demás perfiles no los us
   assert.match(js, /if \(!b\.theme \|\| !\/\^\[a-z0-9-\]\+\$\/\.test\(b\.theme\)\) return;/);
 });
 
-test("categoría «Eventos y celebraciones»: nueva al final del directorio y del formulario, sin tocar las existentes", () => {
+test("categorías «Eventos y celebraciones» y «Producción audiovisual y contenido digital»: al final del directorio y del formulario, sin tocar las existentes", () => {
   const cats = JSON.parse(JSON.stringify(ctx.C));
-  assert.deepEqual(cats.map((c) => c.id), ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones"]);
-  assert.equal(cats.at(-1).label, "Eventos y celebraciones");
+  assert.deepEqual(cats.map((c) => c.id), ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones", "produccion-audiovisual"]);
+  assert.equal(cats.at(-2).label, "Eventos y celebraciones");
+  assert.equal(cats.at(-1).label, "Producción audiovisual y contenido digital");
   const core = read("js/directorio/solicitud-core.js");
-  assert.match(core, /\{ id: "servicios-hogar", label: "Servicios del hogar" \},\n  \{ id: "eventos-celebraciones", label: "Eventos y celebraciones" \},\n  \{ id: "otra", label: "Otra categoría" \},/);
+  assert.match(core, /\{ id: "servicios-hogar", label: "Servicios del hogar" \},\n  \{ id: "eventos-celebraciones", label: "Eventos y celebraciones" \},\n  \{ id: "produccion-audiovisual", label: "Producción audiovisual y contenido digital" \},\n  \{ id: "otra", label: "Otra categoría" \},/);
   /* El formulario pide la versión nueva (la caché del navegador no sirve la lista anterior) */
-  assert.match(read("registra-tu-empresa.html"), /solicitud-form\.js\?v=20261105/);
-  assert.match(read("js/directorio/solicitud-form.js"), /solicitud-core\.js\?v=20261105/);
+  assert.match(read("registra-tu-empresa.html"), /solicitud-form\.js\?v=20261107/);
+  assert.match(read("js/directorio/solicitud-form.js"), /solicitud-core\.js\?v=20261107/);
 });
 
 test("entrevista de El Podcast del Migrante: video de YouTube con título, texto y enlace alternativo", () => {

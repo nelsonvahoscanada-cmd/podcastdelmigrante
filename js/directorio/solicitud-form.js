@@ -22,7 +22,7 @@
   - No guarda nada en el navegador.
 ========================================================================= */
 
-import { CATEGORIES, PROVINCES, LIMITS, PLANS, normalize, validate } from "./solicitud-core.js?v=20261105";
+import { CATEGORIES, PROVINCES, LIMITS, PLANS, normalize, validate } from "./solicitud-core.js?v=20261107";
 
 const ENDPOINT = "/registro/enviar";
 const CONFIG = "/registro/config";

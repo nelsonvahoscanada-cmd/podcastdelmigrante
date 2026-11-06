@@ -161,7 +161,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     /* Categoría «Eventos y celebraciones» */
     await page.selectOption("#fProvince", "");
     await page.selectOption("#fCategory", "eventos-celebraciones");
-    assert.deepEqual(await nombres(), ["Santa Latino", "1JuanRomero1 Inc."]);
+    assert.deepEqual(await nombres(), ["Santa Latino"]);
     assert.equal(await page.locator(".biz-card", { hasText: "Santa Latino" }).locator(".biz-card__title").first().textContent().then((t) => t.trim()), "Personaje navideño para eventos y celebraciones");
     await sinDesborde(page, `${perfil} directorio`);
     /* La tarjeta abre la miniweb publicada */
@@ -176,7 +176,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     /* Formulario de registro: la categoría nueva aparece y las existentes siguen */
     ({ ctx, page, errores } = await abrir(browser, perfil, "/registra-tu-empresa"));
     const opciones = await page.$$eval("#fCategory option", (o) => o.map((x) => x.value).filter(Boolean));
-    assert.deepEqual(opciones, ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones", "otra"]);
+    assert.deepEqual(opciones, ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones", "produccion-audiovisual", "otra"]);
     await ctx.close();
 
     /* Perfiles existentes: sin tema y con su estructura de siempre */

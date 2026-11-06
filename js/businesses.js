@@ -168,6 +168,7 @@ const BUSINESS_CATEGORIES = [
   { id: "salud", label: "Salud" },
   { id: "servicios-hogar", label: "Servicios del hogar" },
   { id: "eventos-celebraciones", label: "Eventos y celebraciones" },
+  { id: "produccion-audiovisual", label: "Producción audiovisual y contenido digital" },
 ];
 
 const BUSINESSES = [
@@ -457,10 +458,12 @@ const BUSINESSES = [
   },
 {
     /* BIZ-004 — 1JuanRomero1 Inc. (solicitud SOL-20261105-G5TQ46).
-       Perfil Premium solicitado: $24.99 CAD/mes más impuestos; NO se asume
-       pagado ni se concede cortesía. Se publica solo tras la aprobación del
-       empresario y la autorización de la dirección. Datos y fotografía
-       entregados por el empresario; sin videos ni enlaces inventados. */
+       Membresía: Premium de cortesía permanente ya registrada en el panel
+       administrativo (la activa la dirección manualmente tras publicar); este
+       archivo no crea membresías ni cobros. Se publica solo tras la
+       aprobación del empresario y la autorización de la dirección. Datos y
+       fotografía entregados por el empresario; sin videos ni enlaces
+       inventados. */
     id: "BIZ-004",
     slug: "1juanromero1",
     published: true,
@@ -473,7 +476,7 @@ const BUSINESSES = [
     theme: "cine",
     professionalTitle: "Fundador, Videógrafo y Editor de Video",
     company: "",
-    category: "eventos-celebraciones", /* «Producción audiovisual» no existe: la más cercana, sin cambiar las categorías globales */
+    category: "produccion-audiovisual",
 
     city: "Calgary",
     province: "Alberta",

@@ -39,8 +39,10 @@ test("datos de la solicitud, sin inventar", () => {
   for (const k of ["whatsapp", "website", "facebook", "linkedin", "youtubeVideoId", "bookingUrl", "address"]) assert.equal(J[k], "", k);
   assert.deepEqual([J.gallery, J.testimonials, J.hours], [[], [], []]);
   assert.equal(J.plan, undefined, "Perfil Premium (sin plan gratuito)");
-  assert.ok(ctx.C.some((c) => c.id === J.category), "categoría existente");
-  assert.equal(ctx.C.length, 7, "sin categorías nuevas");
+  assert.equal(J.category, "produccion-audiovisual");
+  assert.equal(ctx.C.find((c) => c.id === J.category).label, "Producción audiovisual y contenido digital");
+  assert.equal(ctx.B.filter((b) => b.category === "produccion-audiovisual").length, 1, "solo esta empresa");
+  assert.deepEqual(JSON.parse(JSON.stringify(ctx.B.filter((b) => b.slug !== J.slug).map((b) => [b.slug, b.category]))), [["tomas-velazquez", "automoviles"], ["carlos-d-castillo", "seguros-finanzas"], ["santa-latino", "eventos-celebraciones"]], "las demás conservan su categoría");
   assert.ok(J.seo.description.length <= 160);
 });
 

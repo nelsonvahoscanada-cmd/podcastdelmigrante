@@ -42,5 +42,15 @@ const M = "contact1juanromero1@gmail.com", B = process.env.BASE || "http://127.0
   /* Directorio: aparece la tarjeta */
   await pg.goto(B+"/quien-puede-ayudarte.html",{waitUntil:"networkidle"});
   assert.ok((await pg.locator("main").innerText()).includes("1JuanRomero1"),"en el directorio");
+  /* Categoría nueva: filtra solo esta empresa y aparece con su nombre */
+  assert.ok((await pg.$$eval("#fCategory option",o=>o.map(x=>[x.value,x.textContent.trim()]))).some(([v,t])=>v==="produccion-audiovisual"&&t==="Producción audiovisual y contenido digital"),"categoría en el filtro");
+  await pg.selectOption("#fCategory","produccion-audiovisual");
+  assert.deepEqual(await pg.$$eval(".biz-card__name",n=>n.map(x=>x.textContent.trim())),["1JuanRomero1 Inc."]);
+  await pg.selectOption("#fCategory","eventos-celebraciones");
+  assert.deepEqual(await pg.$$eval(".biz-card__name",n=>n.map(x=>x.textContent.trim())),["Santa Latino"],"Santa Latino conserva su categoría");
+  /* Formulario de registro: la categoría nueva está antes de «Otra» */
+  await pg.goto(B+"/registra-tu-empresa",{waitUntil:"networkidle"});
+  const ops = await pg.$$eval("select[name=category] option",o=>o.map(x=>x.value).filter(Boolean));
+  assert.deepEqual(ops.slice(-2),["produccion-audiovisual","otra"],"formulario");
   console.log("ok",n); await c.close(); }
  await br.close(); console.log("OK 1JuanRomero1: perfil Premium, contacto, vCard, QR, estadísticas y directorio"); })().catch(e=>{console.error(e);process.exit(1);});
