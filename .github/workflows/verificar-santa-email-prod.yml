@@ -1,0 +1,54 @@
+# TEMPORAL: verificar en producción el correo de Santa Latino (solo lectura). Se elimina después.
+name: verificar-santa-email-prod
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-santa-email-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Despliegue y vCard
+        run: |
+          B=https://podcastdelmigrante.com
+          for i in $(seq 1 40); do
+            if curl -s "$B/js/businesses.js?t=$RANDOM" | grep -q 'santalatinoon@gmail.com'; then echo "desplegado (intento $i)"; break; fi
+            [ $i = 40 ] && { echo "NO DESPLEGADO"; exit 1; }; sleep 15
+          done
+          curl -s -o v.vcf -w 'vCard: %{http_code} %{content_type}\n' "$B/vcard/santa-latino.vcf?t=$RANDOM"; cat v.vcf
+          grep -q 'EMAIL;TYPE=INTERNET,WORK:santalatinoon@gmail.com' v.vcf && echo "OK vCard con correo"
+          grep -q 'FN:Santa Latino' v.vcf && grep -q 'TEL;TYPE=WORK,VOICE:+12896965721' v.vcf && echo "OK vCard conserva nombre y teléfono"
+      - name: Navegador (computador y celular)
+        run: |
+          mkdir v && cd v && npm init -y >/dev/null && npm i -s playwright@1.49.1 >/dev/null && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > v.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          const M = "santalatinoon@gmail.com";
+          (async () => {
+            const br = await chromium.launch(); let f = 0;
+            const ok = (c, m) => { console.log((c ? "OK   " : "FALLA") + " " + m); if (!c) f++; };
+            for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              const ctx = await br.newContext(p);
+              await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              const pg = await ctx.newPage(); const err = []; pg.on("pageerror", (e) => err.push(e.message));
+              await pg.goto("https://podcastdelmigrante.com/perfil-santa-latino", { waitUntil: "networkidle" });
+              const links = await pg.$$eval("a[data-track]", (as) => as.map((a) => [a.dataset.track, a.dataset.trackTarget, a.getAttribute("href"), a.innerText.trim()]));
+              for (const t of ["email", "email-final", "email-text"]) ok(links.some(([a, b, h]) => a === "email_click" && b === t && h === "mailto:" + M), `${n} mailto ${t}`);
+              const c = pg.locator(".biz-contact__email"); await c.scrollIntoViewIfNeeded();
+              ok(await c.isVisible() && (await c.innerText()).trim() === "Correo: " + M, `${n} correo visible: ${(await c.innerText()).trim()}`);
+              const ld = await pg.evaluate(() => JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent));
+              ok(ld.mainEntity.email === M && ld.mainEntity.name === "Santa Latino", `${n} JSON-LD email ${ld.mainEntity.email}`);
+              for (const [t, b, h] of [["whatsapp_click", "whatsapp", "https://wa.me/12896965721"], ["phone_click", "phone", "tel:+12896965721"], ["instagram_click", "instagram-final", "https://www.instagram.com/latinsantaon/"], ["tiktok_click", "tiktok-hero", "https://www.tiktok.com/@santalatino_"], ["vcard_download", "vcard-connect", "vcard/santa-latino.vcf"]])
+                ok(links.some(([a, x, y]) => a === t && x === b && y === h), `${n} intacto ${t}/${b}`);
+              ok((await pg.getAttribute("html", "data-profile-theme")) === "navidad", `${n} tema navideño`);
+              ok(await pg.locator(".biz-hero__photo").evaluate((i) => i.complete && i.naturalWidth > 0), `${n} foto principal carga`);
+              ok(await pg.locator("iframe[src*='LxTr1Zda3dg'], a[href*='LxTr1Zda3dg'], [data-video-id='LxTr1Zda3dg']").count() > 0, `${n} video de YouTube presente`);
+              ok(err.length === 0, `${n} sin errores JS ${JSON.stringify(err)}`);
+              const [sw, cw] = await pg.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]); ok(sw <= cw + 1, `${n} sin desplazamiento horizontal`);
+              await ctx.close();
+            }
+            await br.close(); process.exit(f ? 1 : 0);
+          })();
+          JS
+          node v.cjs
