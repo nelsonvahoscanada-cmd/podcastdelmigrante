@@ -1,0 +1,18 @@
+# TEMPORAL: comprobar el enlace de inscripción de la masterclass (solo lectura). Se elimina después.
+name: verificar-enlace-masterclass
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-masterclass-enlace]
+permissions:
+  contents: read
+jobs:
+  enlace:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          U=https://eder.aikanreboot.com/masterclass/
+          curl -s -o pagina.html -L -A 'Mozilla/5.0' -w 'estado %{http_code} | final %{url_effective} | tipo %{content_type} | %{size_download} B | redirecciones %{num_redirects}\n' "$U"
+          echo "titulo: $(grep -o '<title>[^<]*</title>' pagina.html | head -1)"
+          echo "og:title: $(grep -o '<meta property="og:title" content="[^"]*"' pagina.html | head -1)"
+          echo "menciona Eder: $(grep -ci 'eder' pagina.html) | Ley Intrínseca: $(grep -ci 'intr[ií]nseca\|intr&iacute;nseca' pagina.html) | formulario: $(grep -ci '<form' pagina.html) | noviembre: $(grep -ci 'noviembre\|november' pagina.html)"
+          echo "certificado:"; echo | openssl s_client -servername eder.aikanreboot.com -connect eder.aikanreboot.com:443 2>/dev/null | openssl x509 -noout -subject -enddate
