@@ -144,7 +144,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     await page.waitForURL(/quien-puede-ayudarte/);
     await page.waitForSelector(".biz-card");
     const nombres = () => page.$$eval(".biz-card__name", (n) => n.map((x) => x.textContent.trim()));
-    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo", "Santa Latino"], `${perfil}: vista general`);
+    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo", "Santa Latino", "1JuanRomero1 Inc."], `${perfil}: vista general`);
     assert.deepEqual([await page.inputValue("#fCategory"), await page.inputValue("#fProvince"), await page.inputValue("#fCity")], ["", "", ""], "sin filtros al abrir");
     assert.equal(await page.locator(".biz-card", { hasText: "Santa Latino" }).count(), 1, "sin duplicados");
     assert.equal(await page.getAttribute("html", "data-profile-theme"), null, "el directorio no lleva el tema");
@@ -157,7 +157,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     assert.deepEqual(await nombres(), ["Santa Latino"]);
     await page.selectOption("#fProvince", "Alberta");
     await page.selectOption("#fCity", "Calgary");
-    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo"], "Calgary sigue igual");
+    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo", "1JuanRomero1 Inc."], "Calgary: los anteriores y 1JuanRomero1 (BIZ-004)");
     /* Categoría «Eventos y celebraciones» */
     await page.selectOption("#fProvince", "");
     await page.selectOption("#fCategory", "eventos-celebraciones");
@@ -176,7 +176,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     /* Formulario de registro: la categoría nueva aparece y las existentes siguen */
     ({ ctx, page, errores } = await abrir(browser, perfil, "/registra-tu-empresa"));
     const opciones = await page.$$eval("#fCategory option", (o) => o.map((x) => x.value).filter(Boolean));
-    assert.deepEqual(opciones, ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones", "otra"]);
+    assert.deepEqual(opciones, ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones", "produccion-audiovisual", "otra"]);
     await ctx.close();
 
     /* Perfiles existentes: sin tema y con su estructura de siempre */

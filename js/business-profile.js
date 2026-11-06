@@ -104,7 +104,7 @@
     if (b.inventoryUrl) list.push({ key: "inventory", label: b.inventoryLabel || "Ver catálogo", href: b.inventoryUrl, ext: true, track: "vehicles_click", target: "inventory" });
     const map = mapsHref(b);
     if (map) list.push({ key: "maps", label: "Cómo llegar", href: map, ext: true, track: "directions_click", target: "directions" });
-    if (b.email) list.push({ key: "email", label: "Enviar email", href: "mailto:" + b.email, ext: false, track: "email_click", target: "email" });
+    if (b.email) list[b.emailFirst ? "unshift" : "push"]({ key: "email", label: b.emailLabel || "Enviar email", href: "mailto:" + b.email, ext: false, track: "email_click", target: "email" });
     return list;
   }
 
@@ -353,7 +353,7 @@
     if (wa) channels.push({ label: "WhatsApp", href: wa, ext: true, track: "whatsapp_click", target: "whatsapp-final" });
     const tel = phoneHref(b);
     if (tel) channels.push({ label: "Llamar", href: tel, ext: false, track: "phone_click", target: "phone-final" });
-    if (b.email) channels.push({ label: "Email", href: "mailto:" + b.email, ext: false, track: "email_click", target: "email-final" });
+    if (b.email) channels[b.emailFirst ? "unshift" : "push"]({ label: b.emailLabel || "Email", href: "mailto:" + b.email, ext: false, track: "email_click", target: "email-final" });
     if (b.website) channels.push({ label: "Visitar sitio web", href: b.website, ext: true, track: "website_click", target: "website" });
     if (!channels.length) return "";
     return `
@@ -451,7 +451,8 @@
 
   /* Barra inferior móvil: Agenda | WhatsApp | Llamar | Ver (solo los disponibles) */
   function stickyBarHtml(b) {
-    const keep = ["booking", "whatsapp", "phone", "inventory"];
+    /* emailFirst (opcional): el correo, medio preferido, también va en la barra */
+    const keep = ["booking", "whatsapp", "phone", "inventory"].concat(b.emailFirst ? ["email"] : []);
     const list = actionList(b)
       .filter((a) => keep.includes(a.key))
       .map((a) => Object.assign({}, a, { target: a.target + "-sticky" }));

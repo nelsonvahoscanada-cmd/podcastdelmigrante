@@ -20,6 +20,7 @@ export const CATEGORIES = [
   { id: "salud", label: "Salud" },
   { id: "servicios-hogar", label: "Servicios del hogar" },
   { id: "eventos-celebraciones", label: "Eventos y celebraciones" },
+  { id: "produccion-audiovisual", label: "Producción audiovisual y contenido digital" },
   { id: "otra", label: "Otra categoría" },
 ];
 

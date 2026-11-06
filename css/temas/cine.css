@@ -1,0 +1,206 @@
+/* =========================================================
+   Tema «cine» de un Perfil Premium (js/businesses.js → theme: "cine")
+   ---------------------------------------------------------
+   Estudio de producción audiovisual: fondo oscuro, detalles luminosos
+   (cian y ámbar de luz de set) y tipografía del sitio. Solo aplica bajo
+   html[data-profile-theme="cine"]: los demás perfiles, el directorio y el
+   resto del sitio no cambian. La fotografía del perfil se muestra completa,
+   sin recortes ni filtros. Sin imágenes decorativas ni animaciones.
+========================================================= */
+html[data-profile-theme="cine"] {
+  --cn-noche: #07090d;
+  --cn-noche-2: #10141c;
+  --cn-panel: rgba(255, 255, 255, 0.04);
+  --cn-linea: rgba(94, 234, 255, 0.30);
+  --cn-luz: #5eeaff;
+  --cn-luz-clara: #b8f6ff;
+  --cn-ambar: #b9741f;
+  --cn-ambar-2: #e0a040;
+  --cn-blanco: #f2f5f8;
+  --cn-gris: #c3cbd6;
+}
+
+html[data-profile-theme="cine"] main#main {
+  color: var(--cn-blanco);
+  background:
+    radial-gradient(70% 40% at 78% 6%, rgba(94, 234, 255, 0.16), transparent 70%),
+    radial-gradient(60% 50% at 10% 100%, rgba(224, 160, 64, 0.22), transparent 70%),
+    linear-gradient(180deg, var(--cn-noche-2) 0%, var(--cn-noche) 55%, #05070a 100%);
+}
+html[data-profile-theme="cine"] .biz-page { padding-top: 34px; padding-bottom: 64px; }
+
+/* ---------- Portada ---------- */
+html[data-profile-theme="cine"] .biz-hero {
+  position: relative;
+  padding: 28px 22px 0;
+  border: 1px solid var(--cn-linea);
+  border-radius: 18px;
+  background:
+    radial-gradient(80% 70% at 85% 30%, rgba(94, 234, 255, 0.14), transparent 70%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(94, 234, 255, 0.18);
+  overflow: hidden;
+}
+@media (min-width: 720px) {
+  html[data-profile-theme="cine"] .biz-hero {
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 34px;
+    padding: 36px 34px;
+  }
+}
+@media (min-width: 720px) and (max-width: 900px) {
+  html[data-profile-theme="cine"] .biz-hero { grid-template-columns: 240px minmax(0, 1fr); }
+  html[data-profile-theme="cine"] .biz-hero__photo { width: 240px; }
+}
+@media (min-width: 901px) {
+  html[data-profile-theme="cine"] .biz-hero__photo { width: 300px; }
+}
+
+html[data-profile-theme="cine"] .biz-hero__media { position: relative; justify-self: center; }
+html[data-profile-theme="cine"] .biz-hero__photo {
+  /* Fotografía entregada por el empresario: completa, sin recorte ni filtros */
+  aspect-ratio: auto;
+  object-fit: contain;
+  height: auto;
+  border: 2px solid var(--cn-luz);
+  border-radius: 14px;
+  box-shadow: 0 0 0 6px rgba(7, 9, 13, 0.9), 0 0 0 7px var(--cn-linea), 0 18px 46px rgba(0, 0, 0, 0.5);
+}
+html[data-profile-theme="cine"] .biz-label {
+  background: transparent;
+  color: var(--cn-luz-clara);
+  border: 1px solid var(--cn-linea);
+  border-radius: 999px;
+}
+html[data-profile-theme="cine"] .biz-name {
+  color: var(--cn-blanco);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 9vw, 3.6rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+html[data-profile-theme="cine"] .biz-tagline {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 3.6vw, 1.4rem);
+  line-height: 1.35;
+  color: var(--cn-luz-clara);
+}
+html[data-profile-theme="cine"] .biz-title { color: var(--cn-blanco); }
+html[data-profile-theme="cine"] .biz-representative { margin: 4px 0 2px; font-size: 1rem; color: var(--cn-gris); }
+html[data-profile-theme="cine"] .biz-representative strong { color: var(--cn-blanco); font-weight: 700; }
+html[data-profile-theme="cine"] .biz-place { color: var(--cn-gris); }
+html[data-profile-theme="cine"] .biz-lang { color: var(--cn-luz-clara); }
+
+/* ---------- Botones ---------- */
+html[data-profile-theme="cine"] .biz-btn {
+  background: transparent;
+  color: var(--cn-blanco);
+  border-color: var(--cn-gris);
+  border-radius: 999px;
+}
+html[data-profile-theme="cine"] .biz-btn:hover { background: var(--cn-blanco); color: var(--cn-noche); border-color: var(--cn-blanco); }
+html[data-profile-theme="cine"] .biz-btn--primary,
+html[data-profile-theme="cine"] .biz-contact .biz-btn.biz-btn--primary,
+html[data-profile-theme="cine"] .biz-qr .biz-btn.biz-btn--primary {
+  background: linear-gradient(180deg, var(--cn-luz-clara), var(--cn-luz));
+  color: #1d1406;
+  border-color: var(--cn-luz);
+}
+html[data-profile-theme="cine"] .biz-btn--primary:hover,
+html[data-profile-theme="cine"] .biz-contact .biz-btn.biz-btn--primary:hover,
+html[data-profile-theme="cine"] .biz-qr .biz-btn.biz-btn--primary:hover { background: var(--cn-luz-clara); border-color: var(--cn-luz-clara); color: #1d1406; }
+html[data-profile-theme="cine"] .biz-btn:focus-visible,
+html[data-profile-theme="cine"] .biz-social__link:focus-visible,
+html[data-profile-theme="cine"] .biz-back:focus-visible { outline: 3px solid var(--cn-luz-clara); outline-offset: 3px; }
+
+/* ---------- Redes ---------- */
+html[data-profile-theme="cine"] .biz-social__link { background: transparent; color: var(--cn-blanco); border-color: var(--cn-linea); }
+html[data-profile-theme="cine"] .biz-social__link:hover { color: var(--cn-luz-clara); border-color: var(--cn-luz); }
+
+/* ---------- Secciones ---------- */
+html[data-profile-theme="cine"] .biz-h2 { color: var(--cn-blanco); }
+html[data-profile-theme="cine"] .biz-h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, var(--cn-luz), transparent);
+}
+html[data-profile-theme="cine"] .biz-section p,
+html[data-profile-theme="cine"] .biz-about .biz-long { color: var(--cn-gris); }
+html[data-profile-theme="cine"] .biz-about { padding: 26px 24px; border-left: 3px solid var(--cn-luz); background: var(--cn-panel); border-radius: 0 14px 14px 0; }
+html[data-profile-theme="cine"] .biz-about .biz-long { font-size: 1.06rem; line-height: 1.65; }
+html[data-profile-theme="cine"] .biz-service {
+  border: 1px solid var(--cn-linea);
+  border-left: 3px solid var(--cn-ambar-2);
+  border-radius: 12px;
+  background: var(--cn-panel);
+  color: var(--cn-blanco);
+}
+html[data-profile-theme="cine"] .biz-facts dt { color: var(--cn-luz-clara); }
+html[data-profile-theme="cine"] .biz-facts dd { color: var(--cn-blanco); }
+
+/* ---------- Entrevista (video de YouTube, clic para reproducir) ---------- */
+html[data-profile-theme="cine"] .biz-video { border-top: 2px solid var(--cn-luz); padding-top: 26px; }
+html[data-profile-theme="cine"] .biz-video .biz-h2 { text-transform: none; letter-spacing: -0.005em; }
+html[data-profile-theme="cine"] .biz-video__frame {
+  border: 2px solid var(--cn-luz);
+  border-radius: 14px;
+  box-shadow: 0 0 0 6px rgba(7, 9, 13, 0.9), 0 0 0 7px var(--cn-linea), 0 18px 46px rgba(0, 0, 0, 0.45);
+}
+html[data-profile-theme="cine"] .biz-video__icon { background: linear-gradient(180deg, var(--cn-luz-clara), var(--cn-luz)); color: #1d1406; }
+html[data-profile-theme="cine"] .biz-video__play:hover .biz-video__icon { background: var(--cn-luz-clara); }
+html[data-profile-theme="cine"] .biz-video__play:focus-visible { outline: 3px solid var(--cn-luz-clara); outline-offset: 3px; }
+html[data-profile-theme="cine"] .biz-video__alt { margin: 14px 0 0; }
+html[data-profile-theme="cine"] .biz-video__alt a { color: var(--cn-luz-clara); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+html[data-profile-theme="cine"] .biz-video__alt a:hover { color: var(--cn-blanco); }
+html[data-profile-theme="cine"] .biz-video__alt a:focus-visible { outline: 3px solid var(--cn-luz-clara); outline-offset: 3px; }
+
+/* ---------- Galería ---------- */
+html[data-profile-theme="cine"] .biz-gallery { grid-template-columns: minmax(0, 520px); justify-content: center; }
+html[data-profile-theme="cine"] .biz-gallery img {
+  /* Fotografía entregada por el empresario: completa, sin recorte ni filtros */
+  aspect-ratio: auto;
+  object-fit: contain;
+  height: auto;
+  border: 2px solid var(--cn-luz);
+  border-radius: 14px;
+  box-shadow: 0 0 0 6px rgba(7, 9, 13, 0.9), 0 0 0 7px var(--cn-linea), 0 18px 46px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Conecta (QR): tarjetas claras para que los códigos se lean bien ---------- */
+html[data-profile-theme="cine"] .biz-qr { background: var(--cn-blanco); border: 1px solid var(--cn-luz); border-top: 4px solid var(--cn-luz); border-radius: 14px; }
+html[data-profile-theme="cine"] .biz-section .biz-qr__kicker { color: var(--cn-ambar); }
+html[data-profile-theme="cine"] .biz-qr__caption { color: #1d1406; }
+html[data-profile-theme="cine"] .biz-section .biz-qr__status { color: #4a4235; }
+html[data-profile-theme="cine"] .biz-qr .biz-btn { color: #1d1406; border-color: #1d1406; }
+html[data-profile-theme="cine"] .biz-qr .biz-btn:hover { background: #1d1406; color: var(--cn-blanco); }
+
+/* ---------- Bloque final de contacto (panel de set iluminado) ---------- */
+html[data-profile-theme="cine"] .biz-contact {
+  background:
+    radial-gradient(60% 80% at 100% 0%, rgba(94, 234, 255, 0.20), transparent 70%),
+    radial-gradient(50% 70% at 0% 100%, rgba(224, 160, 64, 0.16), transparent 70%),
+    linear-gradient(160deg, #141a24, var(--cn-noche));
+  border: 1px solid var(--cn-linea);
+  border-radius: 18px;
+}
+html[data-profile-theme="cine"] .biz-contact .biz-btn { color: var(--cn-blanco); border-color: var(--cn-blanco); }
+html[data-profile-theme="cine"] .biz-contact .biz-btn:hover { background: var(--cn-blanco); color: var(--cn-ambar); }
+html[data-profile-theme="cine"] .biz-contact__email { margin: 14px 0 0; color: var(--cn-blanco); font-size: 1rem; overflow-wrap: anywhere; }
+html[data-profile-theme="cine"] .biz-contact__email a { color: var(--cn-blanco); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+html[data-profile-theme="cine"] .biz-contact .biz-social__link { color: var(--cn-blanco); border-color: rgba(247, 240, 225, 0.45); }
+html[data-profile-theme="cine"] .biz-social--final { border-top-color: rgba(247, 240, 225, 0.25); }
+
+/* ---------- Notas y enlace de regreso ---------- */
+html[data-profile-theme="cine"] .biz-note { color: var(--cn-gris); opacity: 0.9; }
+html[data-profile-theme="cine"] .biz-back { color: var(--cn-luz-clara); }
+html[data-profile-theme="cine"] .biz-back:hover { color: var(--cn-blanco); }
+
+/* ---------- Barra inferior móvil ---------- */
+html[data-profile-theme="cine"] .biz-sticky { background: rgba(7, 9, 13, 0.97); border-top-color: var(--cn-linea); }
+html[data-profile-theme="cine"] .biz-sticky__btn { border-color: var(--cn-blanco); color: var(--cn-blanco); border-radius: 999px; }
+html[data-profile-theme="cine"] .biz-sticky__btn--primary { background: linear-gradient(180deg, var(--cn-luz-clara), var(--cn-luz)); border-color: var(--cn-luz); color: #1d1406; }

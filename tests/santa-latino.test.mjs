@@ -36,7 +36,7 @@ test("BIZ-003 y el slug santa-latino son únicos", () => {
   assert.equal(S.id, "BIZ-003");
   assert.equal(ALL.filter((b) => b.id === "BIZ-003").length, 1);
   assert.equal(ALL.filter((b) => b.slug === "santa-latino").length, 1);
-  assert.deepEqual(ALL.map((b) => b.id), ["BIZ-001", "BIZ-002", "BIZ-003"]);
+  assert.deepEqual(ALL.map((b) => b.id), ["BIZ-001", "BIZ-002", "BIZ-003", "BIZ-004"]);
 });
 
 test("identidad: «Santa Latino» es el nombre principal y Héctor Rivero el representante", () => {
@@ -150,7 +150,7 @@ test("tema «navidad»: todas las reglas están limitadas a este perfil y sin re
 });
 
 test("plantilla: los campos nuevos son opcionales (los demás perfiles no los usan)", () => {
-  for (const b of ALL.filter((x) => x.slug !== "santa-latino")) {
+  for (const b of ALL.filter((x) => x.slug !== "santa-latino" && x.slug !== "1juanromero1")) {
     assert.equal(b.representative, undefined, b.slug);
     assert.equal(b.theme, undefined, b.slug);
     assert.equal(b.tagline, undefined, b.slug);
@@ -160,15 +160,16 @@ test("plantilla: los campos nuevos son opcionales (los demás perfiles no los us
   assert.match(js, /if \(!b\.theme \|\| !\/\^\[a-z0-9-\]\+\$\/\.test\(b\.theme\)\) return;/);
 });
 
-test("categoría «Eventos y celebraciones»: nueva al final del directorio y del formulario, sin tocar las existentes", () => {
+test("categorías «Eventos y celebraciones» y «Producción audiovisual y contenido digital»: al final del directorio y del formulario, sin tocar las existentes", () => {
   const cats = JSON.parse(JSON.stringify(ctx.C));
-  assert.deepEqual(cats.map((c) => c.id), ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones"]);
-  assert.equal(cats.at(-1).label, "Eventos y celebraciones");
+  assert.deepEqual(cats.map((c) => c.id), ["automoviles", "seguros-finanzas", "vivienda", "empleo", "salud", "servicios-hogar", "eventos-celebraciones", "produccion-audiovisual"]);
+  assert.equal(cats.at(-2).label, "Eventos y celebraciones");
+  assert.equal(cats.at(-1).label, "Producción audiovisual y contenido digital");
   const core = read("js/directorio/solicitud-core.js");
-  assert.match(core, /\{ id: "servicios-hogar", label: "Servicios del hogar" \},\n  \{ id: "eventos-celebraciones", label: "Eventos y celebraciones" \},\n  \{ id: "otra", label: "Otra categoría" \},/);
+  assert.match(core, /\{ id: "servicios-hogar", label: "Servicios del hogar" \},\n  \{ id: "eventos-celebraciones", label: "Eventos y celebraciones" \},\n  \{ id: "produccion-audiovisual", label: "Producción audiovisual y contenido digital" \},\n  \{ id: "otra", label: "Otra categoría" \},/);
   /* El formulario pide la versión nueva (la caché del navegador no sirve la lista anterior) */
-  assert.match(read("registra-tu-empresa.html"), /solicitud-form\.js\?v=20261105/);
-  assert.match(read("js/directorio/solicitud-form.js"), /solicitud-core\.js\?v=20261105/);
+  assert.match(read("registra-tu-empresa.html"), /solicitud-form\.js\?v=20261107/);
+  assert.match(read("js/directorio/solicitud-form.js"), /solicitud-core\.js\?v=20261107/);
 });
 
 test("entrevista de El Podcast del Migrante: video de YouTube con título, texto y enlace alternativo", () => {
@@ -182,7 +183,8 @@ test("entrevista de El Podcast del Migrante: video de YouTube con título, texto
   /* Los demás perfiles conservan su título de siempre («Conoce a …») */
   for (const b of ALL.filter((x) => x.slug !== "santa-latino")) {
     assert.equal(b.videoTitle, undefined, b.slug);
-    assert.equal(b.videoLinkLabel, undefined, b.slug);
+    /* 1JuanRomero1 (BIZ-004) usa también el enlace alternativo a YouTube */
+    if (b.slug !== "1juanromero1") assert.equal(b.videoLinkLabel, undefined, b.slug);
   }
   assert.match(read("js/business-profile.js"), /b\.videoTitle \? esc\(b\.videoTitle\) : `Conoce a \$\{esc\(b\.shortName \|\| b\.name\)\}`/);
 });
