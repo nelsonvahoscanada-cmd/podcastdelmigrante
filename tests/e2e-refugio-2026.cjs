@@ -57,27 +57,25 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: noticia principal ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    const hero = page.locator("#heroMain");
-    assert.equal((await hero.locator("h1").innerText()).trim(), TITULO);
-    assert.match(await hero.locator(".hero-main__dek").innerText(), /^El Gobierno canadiense puso en marcha un procedimiento modernizado/);
-    assert.match(await hero.innerText(), /Nelson Vahos · 4 de noviembre, 2026/);
+    /* Desde el 5-11-2026 la masterclass es la principal; refugio, primera tarjeta */
+    assert.match(await page.locator("#heroMain h1").innerText(), /^El Podcast del Migrante invita a una masterclass gratuita/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.equal((await hero.locator("h2").innerText()).trim(), TITULO);
     assert.equal(await hero.locator(".demo-badge").count(), 0);
-    assert.match(await hero.locator(".hero-main__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
-    assert.match(await hero.locator(".hero-main__media").getAttribute("aria-label"), /^Ilustración editorial/);
+    assert.match(await hero.locator(".hero-sec-card__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5, "las demás noticias destacadas se conservan");
-    assert.match(tarjetas[0], /Express Entry desde el 3 de noviembre/);
-    assert.match(tarjetas[1], /Santa Latino/);
-    assert.match(tarjetas[2], /¿Trabajas en Canadá\?/);
-    assert.match(tarjetas[3], /bomberos forestales/);
-    assert.match(tarjetas[4], /representantes migratorios/);
-    assert.equal(tarjetas.filter((x) => x.includes("solicitar refugio")).length, 0, "sin duplicados en el bloque principal");
+    assert.match(tarjetas[1], /Express Entry desde el 3 de noviembre/);
+    assert.match(tarjetas[2], /Santa Latino/);
+    assert.match(tarjetas[3], /¿Trabajas en Canadá\?/);
+    assert.match(tarjetas[4], /bomberos forestales/);
+    assert.equal(tarjetas.filter((x) => x.includes("solicitar refugio")).length, 1, "sin duplicados en el bloque principal");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    assert.match(await hero.locator("h1 a").getAttribute("href"), new RegExp(`articulo(-|\\.html\\?slug=)${SLUG}$`));
-    await hero.locator("h1 a").evaluate((a) => a.click());
+    assert.match(await hero.locator("h2 a").getAttribute("href"), new RegExp(`articulo(-|\\.html\\?slug=)${SLUG}$`));
+    await hero.locator("h2 a").evaluate((a) => a.click());
     await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 

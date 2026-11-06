@@ -48,26 +48,18 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: noticia principal de Express Entry; Santa Latino, bomberos y luego IRCC ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia el proceso para solicitar refugio/, "noticia principal: refugio");
-    const santa = page.locator("#heroSecondary .hero-sec-card").nth(1);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^El Podcast del Migrante invita a una masterclass gratuita/, "noticia principal: masterclass");
+    const santa = page.locator("#heroSecondary .hero-sec-card").nth(2);
     assert.match(await santa.innerHTML(), /assets\/yt\/LxTr1Zda3dg\.jpg/, "imagen de Santa Latino intacta");
     assert.equal(await santa.locator('a[href*="hector-rivero-santa-latino-canada"]').count() >= 1, true, "enlace de Santa Latino intacto");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(2).innerText(), /¿Trabajas en Canadá\?/, "CGEB, segunda tarjeta");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(3).innerText(), /bomberos forestales/, "bomberos, después del CGEB");
-    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(4);
-    assert.equal((await segunda.locator("h3, h2, .hero-sec-card__title").first().innerText()).trim(), TITULO);
-    const enlace = segunda.locator(`a[href*="${SLUG}"]`).first();
-    assert.equal(await enlace.count(), 1, "la tarjeta enlaza al artículo");
-    assert.match(await segunda.innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")), "usa la miniatura nueva");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(3).innerText(), /¿Trabajas en Canadá\?/, "CGEB, cuarta tarjeta");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(4).innerText(), /bomberos forestales/, "bomberos, después del CGEB");
+    /* Con la masterclass (5-11-2026) deja el bloque destacado; sigue publicada */
+    assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
-    assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count() >= 1, true);
-    const enHero = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.equal(enHero.filter((t) => t.includes("representantes migratorios")).length, 1, "sin duplicados en el bloque principal");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    await enlace.click();
-    await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 
     /* ---------- Artículo ---------- */

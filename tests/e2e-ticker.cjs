@@ -18,7 +18,7 @@ const path = require("node:path");
 
 const BASE = process.env.BASE || "http://127.0.0.1:8890";
 const SHOTS = process.env.SHOTS || "";
-const PRIMERA = "canada-cambios-proceso-refugio-3-noviembre-2026";
+const PRIMERA = "masterclass-gratuita-ley-intrinseca-creacion-eder-campos";
 const PERFILES = {
   computador: { viewport: { width: 1440, height: 900 } },
   tableta: { ...devices["iPad Mini"] },
@@ -59,7 +59,7 @@ const leer = (page) =>
     const b = await leer(page);
     assert.equal(b.principal.length, 5, "cinco titulares");
     assert.deepEqual(b.principal.map(({ titulo, href }) => ({ titulo, href })), esperado, "las 5 publicadas más recientes, en orden");
-    assert.equal(b.principal[0].href, `articulo-${PRIMERA}`, "la noticia de refugio, primera");
+    assert.equal(b.principal[0].href, `articulo-${PRIMERA}`, "la noticia de la masterclass, primera");
     assert.equal(new Set(b.principal.map((x) => x.href)).size, 5, "sin titulares repetidos");
     assert.deepEqual(b.copia.map((x) => x.href), b.principal.map((x) => x.href), "la copia del bucle repite la misma lista, una vez");
     assert.equal(b.copiaOculta, "true", "copia oculta a lectores de pantalla");

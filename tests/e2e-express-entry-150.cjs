@@ -47,17 +47,17 @@ async function sinDesborde(page, ruta) {
 (async () => {
   const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: primera tarjeta, tras la noticia de refugio (4-11-2026) ---------- */
+    /* ---------- Portada: segunda tarjeta, tras la noticia de refugio (masterclass principal desde el 5-11-2026) ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia el proceso para solicitar refugio/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^El Podcast del Migrante invita a una masterclass gratuita/);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.ok(tarjetas[0].includes(TITULO), "Express Entry, primera tarjeta");
-    assert.match(tarjetas[1], /Santa Latino/);
-    assert.match(tarjetas[2], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/);
-    assert.match(tarjetas[3], /bomberos forestales/);
-    assert.match(tarjetas[4], /representantes migratorios/);
-    const hero = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.match(tarjetas[0], /solicitar refugio/);
+    assert.ok(tarjetas[1].includes(TITULO), "Express Entry, segunda tarjeta");
+    assert.match(tarjetas[2], /Santa Latino/);
+    assert.match(tarjetas[3], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/);
+    assert.match(tarjetas[4], /bomberos forestales/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").nth(1);
     assert.match(await hero.locator(".hero-sec-card__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     await sinDesborde(page, "/");

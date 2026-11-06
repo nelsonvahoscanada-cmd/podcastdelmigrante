@@ -18,16 +18,12 @@ const IMG = "assets/multas-representantes-migratorios-canada-2026.jpg";
 const IRCC = "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
-test("portada: tras la noticia principal, Santa Latino, el CGEB, bomberos y la noticia de IRCC le siguen", () => {
-  assert.equal(ctx.H.main.slug, "canada-cambios-proceso-refugio-3-noviembre-2026");
-  assert.equal(ctx.H.secondary[1].slug, "hector-rivero-santa-latino-canada");
-  assert.equal(ctx.H.secondary[2].slug, "canada-groceries-essentials-benefit-cgeb-2026");
-  assert.equal(ctx.H.secondary[3].slug, "alberta-bomberos-forestales-2027");
-  assert.equal(ctx.H.secondary[4].slug, SLUG);
-  assert.equal(ctx.H.secondary[4].title, art.title);
-  assert.equal(ctx.H.secondary[4].image, `url('${IMG}')`);
-  assert.equal(ctx.H.secondary[4].category, "Inmigración");
+test("portada: con la masterclass (5-11-2026) deja el bloque destacado, sigue publicada y conserva su URL", () => {
+  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
+  assert.ok(!ctx.H.secondary.some((s) => s.slug === SLUG), "ya no aparece entre las destacadas");
   assert.equal(ctx.H.secondary.length, 5);
+  assert.ok(art && !art.draft, "sigue publicada");
+  assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)), "y conserva su URL");
 });
 
 test("artículo: texto de la redacción con las cifras y precisiones del comunicado", () => {

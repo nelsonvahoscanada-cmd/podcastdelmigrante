@@ -176,6 +176,78 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Invitación a la masterclass gratuita «Ley Intrínseca de Creación» de
+       Eder Campos, PhD (11-11-2026, 7:30 p. m. hora de Calgary, por Zoom).
+       Texto aprobado por la dirección (orden del 5-11-2026), publicado completo.
+       El Podcast del Migrante difunde la invitación; no organiza el evento.
+       La inscripción se hace en la página oficial del evento: el portal no
+       recoge datos de los inscritos. Imagen promocional entregada por la
+       dirección. */
+    id: "ART-2026-040",
+    slug: "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
+    category: "Comunidad",
+    contentType: "Noticia",
+    title: "El Podcast del Migrante invita a una masterclass gratuita sobre crecimiento personal y toma de decisiones",
+    dek: "El próximo 11 de noviembre, la comunidad latina en Canadá tendrá la oportunidad de participar en «Ley Intrínseca de Creación», una conferencia virtual dirigida por Eder Campos, doctor en Filología.",
+    excerpt: "Masterclass gratuita «Ley Intrínseca de Creación» con Eder Campos, PhD: miércoles 11 de noviembre de 2026, 7:30 p. m. hora de Calgary, por Zoom. Reflexión, creencias y toma de decisiones.",
+    author: { mode: "medio", name: "Redacción El Podcast del Migrante" },
+    publishedAt: "2026-11-05T17:00:00-07:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta", city: "Calgary" },
+    demo: false,
+    heroImage: {
+      background: "url('assets/masterclass-ley-intrinseca-creacion-eder-campos.jpg')",
+      aspectRatio: "16/9",
+      alt: "Imagen promocional de la masterclass gratuita «Ley Intrínseca de Creación»: Eder Campos, PhD, doctor en Filología, sonríe con traje oscuro junto al logotipo de El Podcast del Migrante y el horizonte de Calgary. Textos: «Invita a su comunidad a una masterclass gratuita», «Reflexión, creencias y toma de decisiones para afrontar mejor los desafíos de la vida», «Miércoles 11 de noviembre de 2026», «7:30 p. m. (hora de Calgary)», «Vía Zoom», «¡Inscríbete gratis!» y «Cupo abierto para toda la comunidad latina en Canadá».",
+      credit: "Imagen promocional de la masterclass «Ley Intrínseca de Creación».",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p><strong>Calgary, Alberta — 5 de noviembre de 2026.</strong></p>
+      <p>Enfrentar nuevos desafíos, adaptarse a un país diferente y tomar decisiones importantes forman parte de la experiencia de miles de migrantes que han decidido construir una nueva vida en Canadá.</p>
+      <p>En ese proceso, el aprendizaje, la reflexión personal y la capacidad de reconocer nuestras propias creencias pueden convertirse en herramientas valiosas para afrontar los retos cotidianos.</p>
+      <p>Con el propósito de compartir nuevas oportunidades de formación, <strong>El Podcast del Migrante invita a su comunidad a participar en la masterclass gratuita «Ley Intrínseca de Creación»</strong>, presentada por Eder Campos, doctor en Filología.</p>
+      <p>La actividad se realizará el miércoles 11 de noviembre de 2026, a las 7:30 p. m., hora de Calgary, mediante la plataforma Zoom.</p>
+      <h2>Un espacio para reflexionar y aprender</h2>
+      <p>La conferencia propone abordar la relación entre los pensamientos, las emociones, las creencias personales y la manera en que interpretamos nuestras experiencias.</p>
+      <p>Según la información del evento, los participantes podrán explorar temas como el reconocimiento de patrones de pensamiento, la influencia del lenguaje en nuestra percepción y la importancia de cuestionar ideas que damos por ciertas.</p>
+      <p>El encuentro busca ofrecer un espacio de reflexión sobre las decisiones personales y las distintas perspectivas desde las cuales enfrentamos situaciones de la vida cotidiana.</p>
+      <h2>Una oportunidad para la comunidad migrante</h2>
+      <p>Para quienes viven lejos de su país de origen, aprender a enfrentar cambios, reconocer oportunidades y desarrollar nuevas perspectivas puede ser especialmente relevante.</p>
+      <p>Por esta razón, El Podcast del Migrante comparte esta invitación con sus seguidores, como parte de su compromiso de conectar a la comunidad latina con actividades educativas y espacios de conversación.</p>
+      <p>La conferencia es una iniciativa de Eder Campos, quien ha puesto esta oportunidad gratuita a disposición de nuestra audiencia.</p>
+      <h2>¿Cuándo y cómo participar?</h2>
+      <ul>
+        <li><strong>Evento:</strong> Ley Intrínseca de Creación</li>
+        <li><strong>Conferencista:</strong> Eder Campos, PhD, doctor en Filología</li>
+        <li><strong>Fecha:</strong> Miércoles 11 de noviembre de 2026</li>
+        <li><strong>Hora:</strong> 7:30 p. m., hora de Calgary</li>
+        <li><strong>Modalidad:</strong> Virtual, por Zoom</li>
+        <li><strong>Participación:</strong> Gratuita</li>
+      </ul>
+      <p>Los interesados deben completar el registro en la página oficial del evento. Después de inscribirse, recibirán por correo electrónico la confirmación y su enlace personal de acceso.</p>
+      <p><strong>Inscripción gratuita:</strong></p>
+      <p><a href="https://eder.aikanreboot.com/masterclass/" target="_blank" rel="noopener noreferrer">https://eder.aikanreboot.com/masterclass/</a></p>
+      <p class="article-apply-row"><a class="article-apply" href="https://eder.aikanreboot.com/masterclass/" target="_blank" rel="noopener noreferrer">INSCRÍBETE GRATIS</a></p>
+      <p>Desde El Podcast del Migrante continuamos abriendo espacios para compartir información, historias y oportunidades que puedan resultar útiles para nuestra comunidad en Canadá.</p>
+      <p><em>Nota editorial: El contenido y los enfoques presentados durante la conferencia corresponden al ponente. El Podcast del Migrante participa en la difusión de esta invitación gratuita.</em></p>
+    `,
+    sources: [],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["hector-rivero-santa-latino-canada", "canada-cambios-proceso-refugio-3-noviembre-2026"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Masterclass gratuita «Ley Intrínseca de Creación» con Eder Campos",
+      description: "Masterclass gratuita de Eder Campos, PhD, sobre creencias y toma de decisiones: 11 de noviembre de 2026, 7:30 p. m. (hora de Calgary), por Zoom.",
+      canonicalPath: "/comunidad/masterclass-gratuita-ley-intrinseca-creacion-eder-campos/",
+    },
+  },
+  {
     /* Cambios al proceso de refugio en Canadá del 3 de noviembre de 2026 y
        restricciones de la Ley C-12. Texto editorial de Nelson Vahos aprobado
        por la dirección (orden del 4-11-2026), publicado completo con sus

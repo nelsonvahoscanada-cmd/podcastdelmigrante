@@ -62,13 +62,13 @@ async function reproduce(page, contenedor) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: primera tarjeta secundaria (tras la noticia de empleo) ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia el proceso para solicitar refugio/);
-    const hero = page.locator("#heroSecondary .hero-sec-card").nth(1);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^El Podcast del Migrante invita a una masterclass gratuita/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").nth(2);
     assert.match(await hero.innerText(), new RegExp(TITULO.slice(0, 40)));
     assert.equal(await hero.locator(".demo-badge").count(), 0);
     assert.match(await hero.innerHTML(), new RegExp(`assets/yt/${VIDEO}\\.jpg`));
     assert.equal((await fetch(`${BASE}/assets/yt/${VIDEO}.jpg`)).status, 200);
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(2).innerText(), /¿Trabajas en Canadá\?/, "CGEB, segunda tarjeta");
+    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(3).innerText(), /¿Trabajas en Canadá\?/, "CGEB, cuarta tarjeta");
 
     /* ---------- Podcast del Migrante Play (carrusel) ---------- */
     const primera = page.locator("#videoTrack .video-card").first();
