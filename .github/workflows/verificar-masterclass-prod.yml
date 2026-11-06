@@ -20,7 +20,7 @@ jobs:
           B=https://podcastdelmigrante.com; S=masterclass-gratuita-ley-intrinseca-creacion-eder-campos
           curl -s -o a.html -w 'articulo: %{http_code} %{content_type}\n' "$B/articulo-$S"
           grep -o '<title>[^<]*</title>' a.html
-          grep -oE '<meta (property|name)="(og:title|og:description|og:image|og:image:width|og:image:height|og:url|twitter:card|twitter:image|description)" content="[^"]*"' a.html
+          grep -oE '(property|name)="(og:title|og:description|og:image|og:image:width|og:image:height|og:url|twitter:card|twitter:image|description)" content="[^"]*"' a.html
           grep -o '<link id="canonicalLink" rel="canonical" href="[^"]*"' a.html
           curl -s -o s.jpg -w 'imagen social: %{http_code} %{content_type} %{size_download} B\n' "$B/assets/social/$S.jpg"
           curl -s -o /dev/null -w 'imagen principal: %{http_code} %{content_type} %{size_download} B\n' "$B/assets/masterclass-ley-intrinseca-creacion-eder-campos.jpg"
@@ -29,8 +29,8 @@ jobs:
             m=d[i+1];l=struct.unpack('>H',d[i+2:i+4])[0]
             if m in (0xC0,0xC2): h,w=struct.unpack('>HH',d[i+5:i+9]);print('dimensiones imagen social',w,'x',h);break
             i+=2+l"
-          curl -s -A 'facebookexternalhit/1.1' -o fb.html -w 'como Facebook: %{http_code}\n' "$B/articulo-$S"; grep -o '<meta property="og:image" content="[^"]*"' fb.html
-          curl -s -A 'WhatsApp/2.23' -o wa.html -w 'como WhatsApp: %{http_code}\n' "$B/articulo-$S"; grep -o '<meta property="og:title" content="[^"]*"' wa.html
+          curl -s -A 'facebookexternalhit/1.1' -o fb.html -w 'como Facebook: %{http_code}\n' "$B/articulo-$S"; grep -o 'property="og:image" content="[^"]*"' fb.html
+          curl -s -A 'WhatsApp/2.23' -o wa.html -w 'como WhatsApp: %{http_code}\n' "$B/articulo-$S"; grep -o 'property="og:title" content="[^"]*"' wa.html
           grep -c "$S" <(curl -s "$B/sitemap.xml") | sed 's/^/en sitemap: /'
       - name: Navegador (computador y celular)
         run: |
