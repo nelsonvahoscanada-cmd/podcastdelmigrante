@@ -26,22 +26,21 @@ const art = ctx.A.find((a) => a.slug === SLUG);
 const [periodistico, publicidad] = art.bodyHtml.split('<aside class="article-patrocinio"');
 const texto = (h) => h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 
-test("portada: noticia principal con la ilustración aprobada; las demás destacadas se conservan en su orden", () => {
-  assert.equal(ctx.H.main.slug, SLUG);
-  assert.equal(ctx.H.main.title, art.title);
-  assert.equal(ctx.H.main.dek, art.dek);
-  assert.equal(ctx.H.main.author, "Nelson Vahos");
-  assert.equal(ctx.H.main.date, "4 de noviembre, 2026");
-  assert.equal(ctx.H.main.image, `url('${IMG}')`);
-  assert.equal(ctx.H.main.category, "Migración");
-  assert.equal(ctx.H.main.demo, false);
-  assert.match(ctx.H.main.alt, /^Ilustración editorial/);
+test("portada: deja la noticia principal (masterclass, 5-11-2026) y pasa a la primera tarjeta con su ilustración; las demás en su orden", () => {
+  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
+  const t = ctx.H.secondary[0];
+  assert.equal(t.slug, SLUG);
+  assert.equal(t.title, art.title);
+  assert.equal(t.image, `url('${IMG}')`);
+  assert.equal(t.category, "Migración");
+  assert.equal(t.demo, false);
+  assert.match(t.alt, /^Ilustración editorial/);
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    "canada-cambios-proceso-refugio-3-noviembre-2026",
     "canada-cambios-express-entry-3-noviembre-2026",
     "hector-rivero-santa-latino-canada",
     "canada-groceries-essentials-benefit-cgeb-2026",
     "alberta-bomberos-forestales-2027",
-    "multas-representantes-migratorios-canada-2026",
   ]);
 });
 

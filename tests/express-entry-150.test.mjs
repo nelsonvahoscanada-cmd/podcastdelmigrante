@@ -19,19 +19,19 @@ const CAMBIOS = "https://www.canada.ca/en/immigration-refugees-citizenship/servi
 const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-test("portada: deja la noticia principal (refugio, 4-11-2026) y pasa a la primera tarjeta, con su imagen; las demás en su orden", () => {
-  assert.equal(ctx.H.main.slug, "canada-cambios-proceso-refugio-3-noviembre-2026");
-  const t = ctx.H.secondary[0];
+test("portada: segunda tarjeta, tras la noticia de refugio, con su imagen; las demás en su orden", () => {
+  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
+  const t = ctx.H.secondary[1];
   assert.equal(t.slug, SLUG);
   assert.equal(t.title, art.title);
   assert.equal(t.image, `url('${IMG}')`);
   assert.equal(t.demo, false);
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    "canada-cambios-proceso-refugio-3-noviembre-2026",
     SLUG,
     "hector-rivero-santa-latino-canada",
     "canada-groceries-essentials-benefit-cgeb-2026",
     "alberta-bomberos-forestales-2027",
-    "multas-representantes-migratorios-canada-2026",
   ]);
 });
 

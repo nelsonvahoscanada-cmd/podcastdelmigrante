@@ -20,15 +20,15 @@ const OFERTA = "https://jobpostings.alberta.ca/job/Edmonton-Program-Eligibility-
 const art = ctx.A.find((a) => a.slug === SLUG);
 
 test("portada: la noticia de empleo (convocatoria cerrada el 2-11-2026) deja el bloque destacado, sigue publicada y conserva su URL", () => {
-  assert.equal(ctx.H.main.slug, "canada-cambios-proceso-refugio-3-noviembre-2026");
+  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
   const destacadas = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.ok(!destacadas.includes(SLUG), "ya no aparece entre las destacadas");
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    "canada-cambios-proceso-refugio-3-noviembre-2026",
     "canada-cambios-express-entry-3-noviembre-2026",
     "hector-rivero-santa-latino-canada",
     "canada-groceries-essentials-benefit-cgeb-2026",
     "alberta-bomberos-forestales-2027",
-    "multas-representantes-migratorios-canada-2026",
   ]);
   assert.ok(art && !art.draft, "sigue publicada");
   assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)), "y conserva su URL");

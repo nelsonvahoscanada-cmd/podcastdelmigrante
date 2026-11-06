@@ -52,8 +52,8 @@ test("columna «Tu dinero en Canadá»: entrega de noviembre publicada; la de se
 });
 
 test("portada: la noticia principal y las destacadas aprobadas no cambian", () => {
-  assert.equal(ctx.H.main.slug, "canada-cambios-proceso-refugio-3-noviembre-2026");
-  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026", "alberta-bomberos-forestales-2027", "multas-representantes-migratorios-canada-2026"]);
+  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
+  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026", "alberta-bomberos-forestales-2027"]);
 });
 
 test("retrato circular del autor: mismo archivo y mismo tamaño (300 × 300), JPEG optimizado", () => {

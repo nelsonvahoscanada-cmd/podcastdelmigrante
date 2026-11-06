@@ -1,5 +1,6 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
   "canada-cambios-proceso-refugio-3-noviembre-2026",
   "canada-tambien-puede-convertirse-en-un-infierno",
   "salud-rural-urbana-alberta-atencion-medica",
@@ -43,6 +44,7 @@ export const PUBLISHED_ARTICLES = new Set([
 
 /* Noticias y guías publicadas con contador público de visualizaciones. */
 export const ARTICULOS_CON_CONTADOR = new Set([
+  "ART-2026-040",
   "ART-2026-039",
   "ART-2026-036",
   "ART-2026-037",

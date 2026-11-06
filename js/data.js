@@ -66,18 +66,28 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Migración",
-    title: "Canadá cambia el proceso para solicitar refugio: estas son las nuevas reglas desde el 3 de noviembre de 2026",
-    dek: "El Gobierno canadiense puso en marcha un procedimiento modernizado para las solicitudes de asilo, con nuevas etapas digitales, plazos más claros y revisiones de elegibilidad. Las personas que buscan protección deben conocer también las restricciones que entraron en vigor en marzo de 2026.",
-    author: "Nelson Vahos",
-    date: "4 de noviembre, 2026",
-    image: "url('assets/canada-cambios-proceso-refugio-3-noviembre-2026.jpg')",
+    category: "Comunidad",
+    title: "El Podcast del Migrante invita a una masterclass gratuita sobre crecimiento personal y toma de decisiones",
+    dek: "El próximo 11 de noviembre, la comunidad latina en Canadá tendrá la oportunidad de participar en «Ley Intrínseca de Creación», una conferencia virtual dirigida por Eder Campos, doctor en Filología.",
+    author: "Redacción El Podcast del Migrante",
+    date: "5 de noviembre, 2026",
+    image: "url('assets/masterclass-ley-intrinseca-creacion-eder-campos.jpg')",
     aspectRatio: "16/9",
-    alt: "Ilustración editorial de El Podcast del Migrante: una familia latina mira hacia el horizonte junto a la bandera de Canadá y el Parlamento en Ottawa, con un documento «Refugee Claim — New Rules» y el titular «Canadá cambia las reglas para solicitar refugio: nuevo proceso digital desde el 3 de noviembre de 2026».",
+    alt: "Imagen promocional de la masterclass gratuita «Ley Intrínseca de Creación»: Eder Campos, PhD, doctor en Filología, junto al logotipo de El Podcast del Migrante y el horizonte de Calgary, con la fecha (miércoles 11 de noviembre de 2026), la hora (7:30 p. m., hora de Calgary) y la modalidad (vía Zoom).",
     demo: false,
-    slug: "canada-cambios-proceso-refugio-3-noviembre-2026",
+    slug: "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
   },
   secondary: [
+    {
+      category: "Migración",
+      title: "Canadá cambia el proceso para solicitar refugio: estas son las nuevas reglas desde el 3 de noviembre de 2026",
+      date: "4 de noviembre",
+      image: "url('assets/canada-cambios-proceso-refugio-3-noviembre-2026.jpg')",
+      aspectRatio: "16/9",
+      alt: "Ilustración editorial de El Podcast del Migrante: una familia latina mira hacia el horizonte junto a la bandera de Canadá y el Parlamento en Ottawa, con un documento «Refugee Claim — New Rules» y el titular «Canadá cambia las reglas para solicitar refugio: nuevo proceso digital desde el 3 de noviembre de 2026».",
+      demo: false,
+      slug: "canada-cambios-proceso-refugio-3-noviembre-2026",
+    },
     {
       category: "Migración",
       title: "Canadá cambia Express Entry desde el 3 de noviembre: algunos inmigrantes podrán obtener hasta 150 puntos",
@@ -117,16 +127,6 @@ const HERO = {
       alt: "Ilustración editorial creada con inteligencia artificial: un bombero forestal en primer plano, la bandera de Alberta y un helicóptero que descarga agua sobre un incendio forestal, con el titular «Alberta busca bomberos forestales».",
       demo: false,
       slug: "alberta-bomberos-forestales-2027",
-    },
-    {
-      category: "Inmigración",
-      title: "Canadá activa multas de hasta $1,5 millones contra representantes migratorios que incumplan la ley",
-      date: "29 de octubre",
-      image: "url('assets/multas-representantes-migratorios-canada-2026.jpg')",
-      aspectRatio: "16/9",
-      alt: "Imagen editorial de El Podcast del Migrante con la bandera de Canadá, el Parlamento, un mazo de juez y un documento sellado «No autorizado», y el titular «Canadá: multas de hasta $1,5 millones».",
-      demo: false,
-      slug: "multas-representantes-migratorios-canada-2026",
     },
   ],
 };

@@ -48,22 +48,22 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: segunda tarjeta pequeña; la principal no cambia ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá cambia el proceso para solicitar refugio/, "la noticia principal no cambia");
+    assert.match(await page.locator("#heroMain h1").innerText(), /^El Podcast del Migrante invita a una masterclass gratuita/, "noticia principal: masterclass");
     const tarjetas = page.locator("#heroSecondary .hero-sec-card");
     assert.equal(await tarjetas.count(), 5);
     const textos = await tarjetas.evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.match(textos[0], /Express Entry desde el 3 de noviembre/);
-    assert.match(textos[1], /Santa Latino/);
-    assert.match(textos[2], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/, "segunda tarjeta pequeña");
-    assert.match(textos[2], /2 de noviembre/);
-    assert.match(textos[3], /bomberos forestales/);
-    assert.match(textos[4], /representantes migratorios/);
+    assert.match(textos[0], /solicitar refugio/);
+    assert.match(textos[1], /Express Entry desde el 3 de noviembre/);
+    assert.match(textos[2], /Santa Latino/);
+    assert.match(textos[3], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/, "cuarta tarjeta pequeña");
+    assert.match(textos[3], /2 de noviembre/);
+    assert.match(textos[4], /bomberos forestales/);
     assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"]`).count(), 0, "no es el titular grande");
-    const t2 = tarjetas.nth(2);
+    const t2 = tarjetas.nth(3);
     assert.match(await t2.innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     /* Visualmente: en el grupo de tarjetas, debajo de la primera */
-    const [c1, c2] = [await tarjetas.nth(1).boundingBox(), await t2.boundingBox()];
+    const [c1, c2] = [await tarjetas.nth(2).boundingBox(), await t2.boundingBox()];
     assert.ok(c2.y > c1.y, "la segunda tarjeta va debajo de la primera");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
