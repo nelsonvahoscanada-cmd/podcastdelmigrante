@@ -1,0 +1,16 @@
+# TEMPORAL: comprobar el video de YouTube de 1JuanRomero1 (solo lectura). Se elimina después.
+name: verificar-video-juan
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-juan-video]
+permissions:
+  contents: read
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          V=9rg27W1igsY
+          curl -s -w '\noembed: %{http_code}\n' "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=$V&format=json"
+          curl -s -o /dev/null -w 'embed (nocookie): %{http_code}\n' "https://www.youtube-nocookie.com/embed/$V"
+          curl -s -o /dev/null -w 'miniatura hq: %{http_code} %{size_download} B\n' "https://i.ytimg.com/vi/$V/hqdefault.jpg"
