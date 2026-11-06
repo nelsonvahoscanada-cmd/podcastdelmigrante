@@ -418,7 +418,8 @@ const BUSINESSES = [
 
     phone: "+1 289 696 5721",
     whatsapp: "12896965721",
-    email: "",                /* el correo de la solicitud es PRIVADO */
+    email: "santalatinoon@gmail.com", /* correo oficial autorizado (6-11-2026) */
+    showEmail: true,          /* muestra la dirección como texto en el bloque de contacto */
     website: "",
     inventoryUrl: "",
     bookingUrl: "",

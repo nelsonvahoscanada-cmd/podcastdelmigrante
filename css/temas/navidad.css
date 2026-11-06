@@ -191,6 +191,8 @@ html[data-profile-theme="navidad"] .biz-contact {
 }
 html[data-profile-theme="navidad"] .biz-contact .biz-btn { color: var(--nv-marfil); border-color: var(--nv-marfil); }
 html[data-profile-theme="navidad"] .biz-contact .biz-btn:hover { background: var(--nv-marfil); color: var(--nv-vino); }
+html[data-profile-theme="navidad"] .biz-contact__email { margin: 14px 0 0; color: var(--nv-marfil); font-size: 1rem; overflow-wrap: anywhere; }
+html[data-profile-theme="navidad"] .biz-contact__email a { color: var(--nv-marfil); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 html[data-profile-theme="navidad"] .biz-contact .biz-social__link { color: var(--nv-marfil); border-color: rgba(247, 240, 225, 0.45); }
 html[data-profile-theme="navidad"] .biz-social--final { border-top-color: rgba(247, 240, 225, 0.25); }
 

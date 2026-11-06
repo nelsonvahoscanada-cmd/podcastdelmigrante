@@ -362,6 +362,7 @@
         <div class="biz-actions">${channels
           .map((a, i) => `<a class="biz-btn${i === 0 ? " biz-btn--primary" : ""}" ${linkAttrs(a)}>${esc(a.label)}</a>`)
           .join("")}</div>
+        ${b.showEmail && b.email ? `<p class="biz-contact__email">Correo: <a href="mailto:${esc(b.email)}" data-track="email_click" data-track-target="email-text">${esc(b.email)}</a></p>` : ""}
         ${socialHtml(b, "final")}
       </section>
     `;
@@ -503,6 +504,7 @@
       if (b.shortDescription) org.description = b.shortDescription;
       if (b.profileImage) org.image = toAbsolute(b.profileImage);
       if (b.phone) org.telephone = b.phone;
+      if (b.email) org.email = b.email;
       if (b.city) org.address = Object.assign({ "@type": "PostalAddress", addressLocality: b.city }, b.province ? { addressRegion: b.province } : {}, b.country ? { addressCountry: "CA" } : {});
       if ((b.languages || []).length) org.knowsLanguage = b.languages;
       org.employee = { "@type": "Person", name: b.representative, jobTitle: "Representante" };

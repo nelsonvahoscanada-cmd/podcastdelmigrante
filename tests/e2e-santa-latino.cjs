@@ -71,7 +71,14 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     has("whatsapp_click", "whatsapp-final", "https://wa.me/12896965721");
     has("vcard_download", "vcard-connect", "vcard/santa-latino.vcf");
     has("qr_profile_download", "qr-profile", "assets/qr/perfil-santa-latino.png");
-    assert.ok(!hrefs.some(([, , h]) => /^mailto:/.test(h)), "sin correo público");
+    has("email_click", "email", "mailto:santalatinoon@gmail.com");
+    has("email_click", "email-final", "mailto:santalatinoon@gmail.com");
+    has("email_click", "email-text", "mailto:santalatinoon@gmail.com");
+    assert.ok(hrefs.filter(([, , h]) => /^mailto:/.test(h)).every(([, , h]) => h === "mailto:santalatinoon@gmail.com"), "solo el correo oficial");
+    const correo = page.locator(".biz-contact__email");
+    await correo.scrollIntoViewIfNeeded();
+    assert.ok(await correo.isVisible(), `${perfil}: correo visible`);
+    assert.equal((await correo.innerText()).trim(), "Correo: santalatinoon@gmail.com");
     /* Servicios */
     assert.equal(await page.locator(".biz-service").count(), 6);
     /* QR y vCard responden */
@@ -86,6 +93,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     assert.equal(ld.mainEntity["@type"], "Organization");
     assert.equal(ld.mainEntity.name, "Santa Latino");
     assert.deepEqual(ld.mainEntity.employee, { "@type": "Person", name: "Héctor Rivero", jobTitle: "Representante" });
+    assert.equal(ld.mainEntity.email, "santalatinoon@gmail.com");
     assert.deepEqual(ld.mainEntity.sameAs, ["https://www.instagram.com/latinsantaon/", "https://www.tiktok.com/@santalatino_"]);
     assert.ok(!(await page.content()).includes("instagram.com/santalatino_"), "sin el enlace antiguo de Instagram");
     /* Entrevista: sección, texto, 16:9, carga diferida (sin iframe hasta pulsar) y reproductor oficial */

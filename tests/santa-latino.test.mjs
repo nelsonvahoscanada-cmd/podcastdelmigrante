@@ -59,10 +59,11 @@ test("contacto público exacto; el correo privado no se publica", () => {
   assert.equal(S.whatsapp, "12896965721");
   assert.equal(S.instagram, "https://www.instagram.com/latinsantaon/");
   assert.equal(S.tiktok, "https://www.tiktok.com/@santalatino_");
-  assert.equal(S.email, "");
+  assert.equal(S.email, "santalatinoon@gmail.com", "correo oficial autorizado el 6-11-2026");
+  assert.equal(S.showEmail, true);
   assert.equal(S.website, "");
   const record = JSON.stringify(S);
-  assert.doesNotMatch(record, /@(?!santalatino_)[a-z0-9.-]+\.[a-z]{2,}/i, "ningún correo en la ficha");
+  assert.deepEqual(record.match(/[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,}/gi), ["santalatinoon@gmail.com"], "solo el correo oficial");
 });
 
 test("servicios indicados, sin precios, horarios, paquetes ni testimonios inventados", () => {
@@ -114,7 +115,8 @@ test("vCard: se guarda como «Santa Latino» con Héctor Rivero como representan
   assert.match(v, /\r\nFN:Santa Latino\r\nORG:Santa Latino\r\nX-ABShowAs:COMPANY\r\n/);
   assert.match(v, /\r\nNOTE:Representante: Héctor Rivero\r\n/);
   assert.match(v, /\r\nTEL;TYPE=WORK,VOICE:\+12896965721\r\n/);
-  assert.doesNotMatch(v, /EMAIL/);
+  assert.match(v, /\r\nEMAIL;TYPE=INTERNET,WORK:santalatinoon@gmail\.com\r\n/);
+  assert.equal((v.match(/EMAIL/g) || []).length, 1);
   assert.match(read("vcard/tomas-velazquez.vcf"), /\r\nFN:Tomás Velázquez\r\nORG:Country Hills Toyota\r\n/);
   assert.match(read("vcard/carlos-d-castillo.vcf"), /\r\nFN:Carlos D\. Castillo\r\nORG:Roca Financial Group Ltd\.\r\n/);
 });
