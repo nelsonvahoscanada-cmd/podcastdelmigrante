@@ -1,0 +1,72 @@
+# TEMPORAL: verificar en producción la noticia de la masterclass (solo lectura). Se elimina después.
+name: verificar-masterclass-prod
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-masterclass-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Esperar el despliegue
+        run: |
+          for i in $(seq 1 40); do
+            if curl -s "https://podcastdelmigrante.com/js/data.js?t=$RANDOM" | grep -q 'masterclass-gratuita-ley-intrinseca-creacion-eder-campos'; then echo "desplegado (intento $i)"; exit 0; fi
+            sleep 15
+          done; echo "NO DESPLEGADO"; exit 1
+      - name: HTML, imagen social y metadatos
+        run: |
+          B=https://podcastdelmigrante.com; S=masterclass-gratuita-ley-intrinseca-creacion-eder-campos
+          curl -s -o a.html -w 'articulo: %{http_code} %{content_type}\n' "$B/articulo-$S"
+          grep -o '<title>[^<]*</title>' a.html
+          grep -oE '<meta (property|name)="(og:title|og:description|og:image|og:image:width|og:image:height|og:url|twitter:card|twitter:image|description)" content="[^"]*"' a.html
+          grep -o '<link id="canonicalLink" rel="canonical" href="[^"]*"' a.html
+          curl -s -o s.jpg -w 'imagen social: %{http_code} %{content_type} %{size_download} B\n' "$B/assets/social/$S.jpg"
+          curl -s -o /dev/null -w 'imagen principal: %{http_code} %{content_type} %{size_download} B\n' "$B/assets/masterclass-ley-intrinseca-creacion-eder-campos.jpg"
+          python3 -c "import struct;d=open('s.jpg','rb').read();i=2
+          while i<len(d):
+            m=d[i+1];l=struct.unpack('>H',d[i+2:i+4])[0]
+            if m in (0xC0,0xC2): h,w=struct.unpack('>HH',d[i+5:i+9]);print('dimensiones imagen social',w,'x',h);break
+            i+=2+l"
+          curl -s -A 'facebookexternalhit/1.1' -o fb.html -w 'como Facebook: %{http_code}\n' "$B/articulo-$S"; grep -o '<meta property="og:image" content="[^"]*"' fb.html
+          curl -s -A 'WhatsApp/2.23' -o wa.html -w 'como WhatsApp: %{http_code}\n' "$B/articulo-$S"; grep -o '<meta property="og:title" content="[^"]*"' wa.html
+          grep -c "$S" <(curl -s "$B/sitemap.xml") | sed 's/^/en sitemap: /'
+      - name: Navegador (computador y celular)
+        run: |
+          mkdir v && cd v && npm init -y >/dev/null && npm i -s playwright@1.49.1 >/dev/null && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > v.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          const S = "masterclass-gratuita-ley-intrinseca-creacion-eder-campos", B = "https://podcastdelmigrante.com";
+          (async () => {
+            const br = await chromium.launch(); let fallos = 0;
+            const ok = (c, m) => { console.log((c ? "OK   " : "FALLA") + " " + m); if (!c) fallos++; };
+            for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              const ctx = await br.newContext(p);
+              await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              await ctx.route((u) => u.hostname === "eder.aikanreboot.com", (r) => r.abort());
+              const pg = await ctx.newPage(); const err = []; pg.on("pageerror", (e) => err.push(e.message));
+              await pg.goto(B + "/", { waitUntil: "networkidle" });
+              const h1 = (await pg.locator("#heroMain h1").innerText()).trim();
+              ok(h1.startsWith("El Podcast del Migrante invita a una masterclass gratuita"), `${n} portada principal: ${h1}`);
+              ok(/masterclass-ley-intrinseca-creacion-eder-campos\.jpg/.test(await pg.locator("#heroMain .hero-main__media").getAttribute("style")), `${n} imagen en portada`);
+              const t = await pg.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.querySelector("h2,h3").innerText.slice(0, 45)));
+              console.log(`     ${n} tarjetas: ${JSON.stringify(t)}`);
+              await pg.locator("#heroMain h1 a").evaluate((a) => a.click()); await pg.waitForURL(new RegExp(S)); ok(true, `${n} clic en portada abre ${pg.url()}`);
+              await pg.waitForLoadState("networkidle");
+              ok((await pg.locator("h1").first().innerText()).includes("masterclass gratuita"), `${n} título del artículo`);
+              const img = await pg.evaluate(() => { const m = document.querySelector(".article-hero-media"); const u = getComputedStyle(m).backgroundImage.match(/url\("?([^")]+)/)[1]; return new Promise((r) => { const i = new Image(); i.onload = () => r([u, i.naturalWidth, i.naturalHeight, m.getAttribute("aria-label")?.slice(0, 60), m.getBoundingClientRect().height]); i.onerror = () => r([u, 0]); i.src = u; }); });
+              ok(img[1] === 1672 && img[2] === 941 && img[4] > 100, `${n} imagen del artículo carga ${JSON.stringify(img)}`);
+              const b = pg.locator("a.article-apply", { hasText: "INSCRÍBETE GRATIS" }); await b.scrollIntoViewIfNeeded();
+              ok((await b.count()) === 1 && await b.isVisible(), `${n} botón visible`);
+              ok((await b.getAttribute("href")) === "https://eder.aikanreboot.com/masterclass/" && (await b.getAttribute("target")) === "_blank" && (await b.getAttribute("rel")) === "noopener noreferrer", `${n} botón: enlace, pestaña nueva y rel seguro`);
+              const [nueva] = await Promise.all([ctx.waitForEvent("page"), b.click()]);
+              ok((await nueva.evaluate(() => window.opener)) === null, `${n} clic abre pestaña nueva sin opener`); await nueva.close();
+              ok(err.length === 0, `${n} sin errores de JavaScript ${JSON.stringify(err)}`);
+              const [sw, cw] = await pg.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]); ok(sw <= cw + 1, `${n} sin desplazamiento horizontal`);
+              await ctx.close();
+            }
+            await br.close(); process.exit(fallos ? 1 : 0);
+          })();
+          JS
+          node v.cjs
