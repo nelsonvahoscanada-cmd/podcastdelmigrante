@@ -1,0 +1,72 @@
+# TEMPORAL: verificación de PRODUCCIÓN tras fusionar el PR #108 (solo lectura). Se elimina después.
+name: verificar-santa-video
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-santa-video-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    env:
+      BASE: https://podcastdelmigrante.com
+    steps:
+      - name: despliegue, Instagram y video
+        run: |
+          for i in $(seq 1 40); do
+            if curl -s "$BASE/js/businesses.js" | grep -q 'latinsantaon'; then echo "desplegado tras $i intentos"; break; fi
+            sleep 15
+          done
+          echo "businesses.js latinsantaon: $(curl -s $BASE/js/businesses.js | grep -c latinsantaon) | santalatino_ (instagram): $(curl -s $BASE/js/businesses.js | grep -c 'instagram.com/santalatino_')"
+          echo "perfil: $(curl -s -o /dev/null -w '%{http_code}' $BASE/perfil-santa-latino) | portada video: $(curl -s -o /dev/null -w '%{http_code} %{content_type}' $BASE/assets/yt/LxTr1Zda3dg.jpg)"
+          echo "Instagram latinsantaon: $(curl -s -o /dev/null -L -w '%{http_code} → %{url_effective}' -A 'Mozilla/5.0' https://www.instagram.com/latinsantaon/)"
+          echo "Instagram meta: $(curl -s -L -A 'Mozilla/5.0' https://www.instagram.com/latinsantaon/ | grep -o '<meta property="og:title" content="[^"]*"' | head -1)"
+          echo "YouTube oEmbed: $(curl -s 'https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=LxTr1Zda3dg&format=json' | head -c 300)"
+          echo "YouTube embed: $(curl -s -o /dev/null -w '%{http_code}' https://www.youtube-nocookie.com/embed/LxTr1Zda3dg)"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium >/dev/null
+      - name: navegador (computador y celular), sin analítica real
+        env:
+          NODE_PATH: ${{ github.workspace }}/node_modules
+        shell: node {0}
+        run: |
+          const { chromium, devices } = require("playwright");
+          const BASE = process.env.BASE;
+          (async () => {
+            const b = await chromium.launch(); let fallos = 0;
+            const check = (ok, msg) => { if (!ok) fallos++; console.log(`${ok ? "ok " : "MAL"} ${msg}`); };
+            for (const [perfil, opc] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", { ...devices["iPhone 13"] }]]) {
+              const ctx = await b.newContext({ ...opc, locale: "es-CA" });
+              await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              const p = await ctx.newPage(); const err = [];
+              p.on("pageerror", (e) => err.push(e.message));
+              p.on("response", (x) => x.status() >= 400 && x.url().startsWith(BASE) && err.push(x.status() + " " + x.url()));
+              await p.goto(BASE + "/perfil-santa-latino", { waitUntil: "load", timeout: 60000 }); await p.waitForTimeout(2500);
+              const ig = await p.$$eval('a[data-track="instagram_click"]', (a) => a.map((x) => x.getAttribute("href")));
+              check(ig.length === 2 && ig.every((h) => h === "https://www.instagram.com/latinsantaon/"), `${perfil} Instagram → ${ig.join(", ")}`);
+              const titulo = (await p.locator(".biz-video .biz-h2").textContent()).trim();
+              const texto = await p.locator(".biz-video").textContent();
+              check(titulo === "Santa Latino en El Podcast del Migrante" && /Conoce la historia de Héctor Rivero, el hombre detrás de Santa Latino/.test(texto), `${perfil} sección «${titulo}»`);
+              const caja = await p.locator(".biz-video__frame").boundingBox();
+              const cw = await p.evaluate(() => document.documentElement.clientWidth);
+              check(Math.abs(caja.width / caja.height - 16 / 9) < 0.03 && caja.x + caja.width <= cw + 1, `${perfil} reproductor 16:9 ${Math.round(caja.width)}×${Math.round(caja.height)}`);
+              check((await p.locator(".biz-video iframe").count()) === 0, `${perfil} sin iframe antes de pulsar (carga diferida)`);
+              const alt = await p.getAttribute(".biz-video__alt a", "href");
+              check(alt === "https://www.youtube.com/watch?v=LxTr1Zda3dg", `${perfil} enlace alternativo → ${alt}`);
+              await p.click("#bizVideoPlay"); await p.waitForTimeout(4000);
+              const src = await p.locator(".biz-video iframe").getAttribute("src");
+              const fr = p.frames().find((f) => f.url().includes("youtube-nocookie.com/embed/LxTr1Zda3dg"));
+              check(/youtube-nocookie\.com\/embed\/LxTr1Zda3dg\?autoplay=1/.test(src) && !!fr, `${perfil} reproductor oficial cargado → ${src.split("?")[0]}`);
+              const sw = await p.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
+              check(!sw && !err.length, `${perfil} sin desbordes ni errores ${err.join(" | ")}`);
+              for (const [r, nombre, titulo2] of [["/perfil-tomas-velazquez", "Tomás Velázquez", "Conoce a Tomás"], ["/perfil-carlos-d-castillo", "Carlos D. Castillo", "Conoce a Carlos"]]) {
+                const q = await ctx.newPage(); await q.goto(BASE + r, { waitUntil: "load" }); await q.waitForTimeout(2000);
+                const x = await q.evaluate(() => ({ h1: document.querySelector("h1.biz-name")?.textContent.trim(), video: document.querySelector(".biz-video .biz-h2")?.textContent.trim(), alt: !!document.querySelector(".biz-video__alt"), tema: document.documentElement.getAttribute("data-profile-theme") }));
+                check(x.h1 === nombre && x.video === titulo2 && !x.alt && x.tema === null, `${perfil} ${r} ${JSON.stringify(x)}`);
+              }
+              await ctx.close();
+            }
+            await b.close(); console.log("fallos:", fallos); if (fallos) process.exit(1);
+          })();
