@@ -7,7 +7,6 @@ import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import vm from "node:vm";
-import { execFileSync } from "node:child_process";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
@@ -15,6 +14,15 @@ const ctx = {};
 vm.runInNewContext(read("js/businesses.js") + ";globalThis.B = BUSINESSES; globalThis.C = BUSINESS_CATEGORIES;", ctx);
 const J = JSON.parse(JSON.stringify(ctx.B.find((b) => b.slug === "1juanromero1")));
 const M = "contact1juanromero1@gmail.com";
+/* Ancho y alto de un JPEG (marcador SOF), sin dependencias */
+function jpegSize(p) {
+  const d = readFileSync(join(ROOT, p));
+  for (let i = 2; i < d.length; ) {
+    const m = d[i + 1], len = d.readUInt16BE(i + 2);
+    if (m >= 0xc0 && m <= 0xc3) return [d.readUInt16BE(i + 7), d.readUInt16BE(i + 5)];
+    i += 2 + len;
+  }
+}
 
 test("datos de la solicitud, sin inventar", () => {
   assert.equal(J.id, "BIZ-004");
@@ -58,8 +66,8 @@ test("tema «cine»: solo colores sobre la plantilla estándar, sin decoraciones
 
 test("fotografía original, vCard, QR y página generada", () => {
   for (const f of [J.profileImage, J.cardImage, J.ogImage, "assets/qr/perfil-1juanromero1.svg", "assets/qr/perfil-1juanromero1.png", "assets/qr/contacto-1juanromero1.svg", "assets/qr/contacto-1juanromero1.png", "perfil-1juanromero1.html"]) assert.ok(existsSync(join(ROOT, f)), f);
-  const py = execFileSync("python3", ["-c", `from PIL import Image;print(Image.open("${join(ROOT, J.profileImage)}").size, Image.open("${join(ROOT, J.ogImage)}").size)`]).toString().trim();
-  assert.equal(py, "(630, 607) (1200, 630)");
+  assert.deepEqual(jpegSize(J.profileImage), [630, 607], "fotografía original, sin recorte");
+  assert.deepEqual(jpegSize(J.ogImage), [1200, 630]);
   const v = read("vcard/1juanromero1.vcf");
   for (const l of ["N:Vahos Alvarado;Juan Sebastian;;;", "FN:1JuanRomero1 Inc.", "ORG:1JuanRomero1 Inc.", "NOTE:Representante: Juan Sebastian Vahos Alvarado", "TEL;TYPE=WORK,VOICE:+14033637566", `EMAIL;TYPE=INTERNET,WORK:${M}`]) assert.ok(v.includes(`\r\n${l}\r\n`), l);
   const html = read("perfil-1juanromero1.html");
