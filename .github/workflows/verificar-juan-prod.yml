@@ -1,0 +1,83 @@
+# TEMPORAL: verificar en producción la miniweb de 1JuanRomero1 (solo lectura). Se elimina después.
+name: verificar-juan-prod
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-juan-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Despliegue, vCard y recursos
+        run: |
+          B=https://podcastdelmigrante.com
+          for i in $(seq 1 40); do
+            if curl -s "$B/js/businesses.js?t=$RANDOM" | grep -q '9rg27W1igsY'; then echo "desplegado (intento $i)"; break; fi
+            [ $i = 40 ] && { echo "NO DESPLEGADO"; exit 1; }; sleep 15
+          done
+          curl -s -o p.html -w 'perfil: %{http_code}\n' "$B/perfil-1juanromero1"
+          grep -o '<title>[^<]*</title>' p.html; grep -oE 'property="og:image" content="[^"]*"' p.html
+          curl -s "$B/vcard/1juanromero1.vcf?t=$RANDOM" | tee v.vcf
+          for u in assets/qr/perfil-1juanromero1.png assets/qr/contacto-1juanromero1.svg assets/directorio/perfiles/1juanromero1.jpg assets/directorio/perfiles/1juanromero1-og.jpg css/temas/cine.css; do curl -s -o /dev/null -w "$u: %{http_code}\n" "$B/$u"; done
+          grep -q 'produccion-audiovisual' <(curl -s "$B/js/directorio/solicitud-core.js?v=20261107") && echo "OK formulario con la categoría nueva"
+      - name: Navegador (computador y celular)
+        run: |
+          mkdir v && cd v && npm init -y >/dev/null && npm i -s playwright@1.49.1 >/dev/null && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > v.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          const M = "contact1juanromero1@gmail.com", B = "https://podcastdelmigrante.com";
+          (async () => {
+            const br = await chromium.launch(); let f = 0;
+            const ok = (c, m) => { console.log((c ? "OK   " : "FALLA") + " " + m); if (!c) f++; };
+            for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              const ctx = await br.newContext(p); const ev = []; const yt = [];
+              await ctx.route(/\/api\/(vistas|events)/, (r) => { ev.push(r.request().postData() || r.request().url()); r.fulfill({ status: 204, body: "" }); });
+              await ctx.route(/youtube|ytimg|googlevideo/, (r) => { yt.push(r.request().url()); r.abort(); });
+              const pg = await ctx.newPage(); const err = []; pg.on("pageerror", (e) => err.push(e.message));
+              await pg.goto(B + "/perfil-1juanromero1", { waitUntil: "networkidle" });
+              ok((await pg.getAttribute("html", "data-profile-theme")) === "cine", `${n} tema cine`);
+              ok(await pg.locator(".biz-hero__photo").evaluate((i) => i.complete && i.naturalWidth === 630), `${n} fotografía original`);
+              const first = pg.locator(".biz-actions a").first();
+              ok(/cotizaci/i.test(await first.innerText()) && (await first.getAttribute("href")) === "mailto:" + M, `${n} «Solicitar cotización» primero → mailto`);
+              const L = await pg.$$eval("a[data-track]", (as) => as.map((a) => [a.dataset.track, a.dataset.trackTarget, a.getAttribute("href")]));
+              const has = (t, g, h) => L.some(([a, b, x]) => a === t && b === g && x === h);
+              ok(has("email_click", "email-final", "mailto:" + M) && has("email_click", "email-text", "mailto:" + M), `${n} correo en contacto final y visible`);
+              ok(has("phone_click", "phone", "tel:+14033637566"), `${n} teléfono`);
+              ok(L.some(([a, , h]) => a === "instagram_click" && h === "https://www.instagram.com/1juanromero1/") && L.some(([a, , h]) => a === "tiktok_click" && h === "https://www.tiktok.com/@1juanromero1"), `${n} Instagram y TikTok`);
+              ok(has("vcard_download", "vcard-connect", "vcard/1juanromero1.vcf"), `${n} vCard`);
+              ok(has("video_click", "profile-video-youtube", "https://www.youtube.com/watch?v=9rg27W1igsY"), `${n} enlace a YouTube`);
+              if (n === "celular") ok((await pg.locator(".biz-sticky a").first().getAttribute("href")) === "mailto:" + M, "celular barra fija: cotización primero");
+              const vid = pg.locator(".biz-video"); await vid.scrollIntoViewIfNeeded();
+              ok((await pg.locator(".biz-video iframe").count()) === 0 && yt.length === 0, `${n} video sin autoplay ni conexión a YouTube al abrir`);
+              const bx = await pg.locator(".biz-video__frame").boundingBox();
+              ok(Math.abs(bx.width / bx.height - 16 / 9) < 0.05 && bx.width <= pg.viewportSize().width, `${n} video 16:9 ${Math.round(bx.width)}x${Math.round(bx.height)}`);
+              await pg.locator(".biz-video__play").click();
+              ok(/youtube-nocookie\.com\/embed\/9rg27W1igsY\?/.test(await pg.locator(".biz-video iframe").getAttribute("src")), `${n} reproductor al pulsar`);
+              const ld = await pg.evaluate(() => JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent));
+              ok(ld.mainEntity.name === "1JuanRomero1 Inc." && ld.mainEntity.email === M, `${n} JSON-LD`);
+              await pg.waitForTimeout(1500);
+              const conBiz = ev.filter((x) => /BIZ-004/.test(x));
+              ok(conBiz.length > 0 && !ev.some((x) => /BIZ-00[123]/.test(x)), `${n} estadísticas con business_id BIZ-004 (${conBiz.length} eventos)`);
+              console.log("     ejemplo:", (conBiz[0] || "").slice(0, 260));
+              ok(err.length === 0, `${n} sin errores JS ${JSON.stringify(err)}`);
+              const [sw, cw] = await pg.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]); ok(sw <= cw + 1, `${n} sin desplazamiento horizontal`);
+              /* Directorio */
+              await pg.goto(B + "/quien-puede-ayudarte.html", { waitUntil: "networkidle" });
+              const ops = await pg.$$eval("#fCategory option", (o) => o.map((x) => [x.value, x.textContent.trim()]));
+              ok(ops.some(([v, t]) => v === "produccion-audiovisual" && t === "Producción audiovisual y contenido digital"), `${n} categoría en el directorio`);
+              await pg.selectOption("#fCategory", "produccion-audiovisual");
+              const nombres = await pg.$$eval(".biz-card__name", (x) => x.map((y) => y.textContent.trim()));
+              ok(JSON.stringify(nombres) === '["1JuanRomero1 Inc."]', `${n} filtro: ${JSON.stringify(nombres)}`);
+              await pg.selectOption("#fCategory", "");
+              const todos = await pg.$$eval(".biz-card__name", (x) => x.map((y) => y.textContent.trim()));
+              ok(JSON.stringify(todos) === JSON.stringify(["Tomás Velázquez", "Carlos D. Castillo", "Santa Latino", "1JuanRomero1 Inc."]), `${n} directorio completo ${JSON.stringify(todos)}`);
+              const card = pg.locator(".biz-card", { hasText: "1JuanRomero1" }).locator("a[href='perfil-1juanromero1.html']").first();
+              await card.click(); await pg.waitForURL(/perfil-1juanromero1/);
+              ok(true, `${n} la tarjeta abre la miniweb`);
+              await ctx.close();
+            }
+            await br.close(); process.exit(f ? 1 : 0);
+          })();
+          JS
+          node v.cjs
