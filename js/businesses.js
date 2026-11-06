@@ -455,4 +455,87 @@ const BUSINESSES = [
       description: "Santa Latino lleva la magia de la Navidad a hogares, fiestas, empresas y comunidades en Canadá. Experiencias en español e inglés desde Niagara Falls, Ontario.",
     },
   },
+{
+    /* BIZ-004 — 1JuanRomero1 Inc. (solicitud SOL-20261105-G5TQ46).
+       Perfil Premium solicitado: $24.99 CAD/mes más impuestos; NO se asume
+       pagado ni se concede cortesía. Se publica solo tras la aprobación del
+       empresario y la autorización de la dirección. Datos y fotografía
+       entregados por el empresario; sin videos ni enlaces inventados. */
+    id: "BIZ-004",
+    slug: "1juanromero1",
+    published: true,
+    featured: false,
+    foundingProfile: false,
+
+    name: "1JuanRomero1 Inc.",
+    shortName: "1JuanRomero1",
+    representative: "Juan Sebastian Vahos Alvarado",
+    theme: "cine",
+    professionalTitle: "Fundador, Videógrafo y Editor de Video",
+    company: "",
+    category: "eventos-celebraciones", /* «Producción audiovisual» no existe: la más cercana, sin cambiar las categorías globales */
+
+    city: "Calgary",
+    province: "Alberta",
+    country: "Canadá",
+    address: "",              /* sin dirección pública */
+    postalCode: "",
+    mapUrl: "",
+
+    languages: ["es", "en"],
+    availability: "Servicios presenciales y remotos para clientes en Canadá y otros países.",
+
+    shortDescription: "Producción audiovisual y contenido digital: edición profesional, videos para redes sociales, eventos, videografía, animación, efectos visuales e IA.",
+    longDescription: [
+      "Empresa de producción audiovisual y creación de contenido digital especializada en edición profesional, videos para redes sociales, eventos, videografía, animación, efectos visuales e inteligencia artificial.",
+      "Servicios en español e inglés, presenciales y remotos, para clientes en Canadá y otros países.",
+    ],
+
+    /* Servicios indicados en la solicitud. Sin precios ni paquetes. */
+    services: [
+      { id: "edicion", label: "Edición profesional de video", description: "", active: true },
+      { id: "redes", label: "Videos para redes sociales", description: "", active: true },
+      { id: "eventos", label: "Videos de eventos", description: "", active: true },
+      { id: "videografia", label: "Videografía", description: "", active: true },
+      { id: "animacion", label: "Animación", description: "", active: true },
+      { id: "vfx", label: "Efectos visuales", description: "", active: true },
+      { id: "ia", label: "Contenido con inteligencia artificial", description: "", active: true },
+    ],
+
+    testimonials: [],
+
+    phone: "+1 403 363 7566",
+    whatsapp: "",
+    email: "contact1juanromero1@gmail.com", /* correo comercial autorizado para publicarse */
+    showEmail: true,
+    emailFirst: true,         /* medio de contacto preferido: primer botón */
+    emailLabel: "Solicitar cotización",
+    website: "",
+    inventoryUrl: "",
+    bookingUrl: "",
+
+    instagram: "https://www.instagram.com/1juanromero1/",
+    tiktok: "https://www.tiktok.com/@1juanromero1",
+    facebook: "",
+    linkedin: "",
+
+    youtubeVideoId: "",
+
+    profileImage: "assets/directorio/perfiles/1juanromero1.jpg",      /* fotografía original, sin recortes */
+    cardImage: "assets/directorio/perfiles/1juanromero1-card.jpg",    /* directorio */
+    ogImage: "assets/directorio/perfiles/1juanromero1-og.jpg",        /* al compartir (foto completa sobre fondo oscuro) */
+    coverImage: "",
+    gallery: [],
+    hours: [],
+
+    connect: {
+      profileQr: true,
+      contactCard: { givenName: "Juan Sebastian", familyName: "Vahos Alvarado" },
+    },
+
+    seo: {
+      title: "1JuanRomero1 Inc. | Producción audiovisual y edición de video en Calgary, Alberta | El Podcast del Migrante",
+      description: "Edición de video, contenido para redes, eventos, videografía, animación, efectos visuales e IA, en español e inglés. Presencial y remoto desde Calgary.",
+    },
+  },
 ];

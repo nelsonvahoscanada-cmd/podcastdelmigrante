@@ -144,7 +144,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     await page.waitForURL(/quien-puede-ayudarte/);
     await page.waitForSelector(".biz-card");
     const nombres = () => page.$$eval(".biz-card__name", (n) => n.map((x) => x.textContent.trim()));
-    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo", "Santa Latino"], `${perfil}: vista general`);
+    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo", "Santa Latino", "1JuanRomero1 Inc."], `${perfil}: vista general`);
     assert.deepEqual([await page.inputValue("#fCategory"), await page.inputValue("#fProvince"), await page.inputValue("#fCity")], ["", "", ""], "sin filtros al abrir");
     assert.equal(await page.locator(".biz-card", { hasText: "Santa Latino" }).count(), 1, "sin duplicados");
     assert.equal(await page.getAttribute("html", "data-profile-theme"), null, "el directorio no lleva el tema");
@@ -157,11 +157,11 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     assert.deepEqual(await nombres(), ["Santa Latino"]);
     await page.selectOption("#fProvince", "Alberta");
     await page.selectOption("#fCity", "Calgary");
-    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo"], "Calgary sigue igual");
+    assert.deepEqual(await nombres(), ["Tomás Velázquez", "Carlos D. Castillo", "1JuanRomero1 Inc."], "Calgary: los anteriores y 1JuanRomero1 (BIZ-004)");
     /* Categoría «Eventos y celebraciones» */
     await page.selectOption("#fProvince", "");
     await page.selectOption("#fCategory", "eventos-celebraciones");
-    assert.deepEqual(await nombres(), ["Santa Latino"]);
+    assert.deepEqual(await nombres(), ["Santa Latino", "1JuanRomero1 Inc."]);
     assert.equal(await page.locator(".biz-card", { hasText: "Santa Latino" }).locator(".biz-card__title").first().textContent().then((t) => t.trim()), "Personaje navideño para eventos y celebraciones");
     await sinDesborde(page, `${perfil} directorio`);
     /* La tarjeta abre la miniweb publicada */

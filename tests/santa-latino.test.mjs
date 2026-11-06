@@ -36,7 +36,7 @@ test("BIZ-003 y el slug santa-latino son únicos", () => {
   assert.equal(S.id, "BIZ-003");
   assert.equal(ALL.filter((b) => b.id === "BIZ-003").length, 1);
   assert.equal(ALL.filter((b) => b.slug === "santa-latino").length, 1);
-  assert.deepEqual(ALL.map((b) => b.id), ["BIZ-001", "BIZ-002", "BIZ-003"]);
+  assert.deepEqual(ALL.map((b) => b.id), ["BIZ-001", "BIZ-002", "BIZ-003", "BIZ-004"]);
 });
 
 test("identidad: «Santa Latino» es el nombre principal y Héctor Rivero el representante", () => {
@@ -150,7 +150,7 @@ test("tema «navidad»: todas las reglas están limitadas a este perfil y sin re
 });
 
 test("plantilla: los campos nuevos son opcionales (los demás perfiles no los usan)", () => {
-  for (const b of ALL.filter((x) => x.slug !== "santa-latino")) {
+  for (const b of ALL.filter((x) => x.slug !== "santa-latino" && x.slug !== "1juanromero1")) {
     assert.equal(b.representative, undefined, b.slug);
     assert.equal(b.theme, undefined, b.slug);
     assert.equal(b.tagline, undefined, b.slug);
