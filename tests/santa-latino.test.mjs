@@ -183,7 +183,8 @@ test("entrevista de El Podcast del Migrante: video de YouTube con título, texto
   /* Los demás perfiles conservan su título de siempre («Conoce a …») */
   for (const b of ALL.filter((x) => x.slug !== "santa-latino")) {
     assert.equal(b.videoTitle, undefined, b.slug);
-    assert.equal(b.videoLinkLabel, undefined, b.slug);
+    /* 1JuanRomero1 (BIZ-004) usa también el enlace alternativo a YouTube */
+    if (b.slug !== "1juanromero1") assert.equal(b.videoLinkLabel, undefined, b.slug);
   }
   assert.match(read("js/business-profile.js"), /b\.videoTitle \? esc\(b\.videoTitle\) : `Conoce a \$\{esc\(b\.shortName \|\| b\.name\)\}`/);
 });

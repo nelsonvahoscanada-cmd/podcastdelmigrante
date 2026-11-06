@@ -147,10 +147,6 @@ html[data-profile-theme="cine"] .biz-facts dd { color: var(--cn-blanco); }
 html[data-profile-theme="cine"] .biz-video { border-top: 2px solid var(--cn-luz); padding-top: 26px; }
 html[data-profile-theme="cine"] .biz-video .biz-h2 { text-transform: none; letter-spacing: -0.005em; }
 html[data-profile-theme="cine"] .biz-video__frame {
-  /* Fotografía entregada por el empresario: completa, sin recorte ni filtros */
-  aspect-ratio: auto;
-  object-fit: contain;
-  height: auto;
   border: 2px solid var(--cn-luz);
   border-radius: 14px;
   box-shadow: 0 0 0 6px rgba(7, 9, 13, 0.9), 0 0 0 7px var(--cn-linea), 0 18px 46px rgba(0, 0, 0, 0.45);

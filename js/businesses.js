@@ -522,7 +522,10 @@ const BUSINESSES = [
     facebook: "",
     linkedin: "",
 
-    youtubeVideoId: "",
+    /* Video oficial entregado por el empresario (canal propio): portada local
+       neutra (js/video-cover.js), sin autoplay al abrir la página. */
+    youtubeVideoId: "9rg27W1igsY",
+    videoLinkLabel: "Ver en YouTube",
 
     profileImage: "assets/directorio/perfiles/1juanromero1.jpg",      /* fotografía original, sin recortes */
     cardImage: "assets/directorio/perfiles/1juanromero1-card.jpg",    /* directorio */

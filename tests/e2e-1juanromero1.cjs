@@ -17,6 +17,7 @@ const M = "contact1juanromero1@gmail.com", B = process.env.BASE || "http://127.0
  for (const [n,p] of [["computador",{viewport:{width:1440,height:900}}],["tableta",devices["iPad Mini"]],["celular",devices["iPhone 13"]]]) {
   const c = await br.newContext({...p, deviceScaleFactor:1}); const ev=[];
   await c.route(/\/api\/(vistas|events)/, r=>{ev.push(r.request().url());r.fulfill({status:204,body:""});});
+  const yt=[]; await c.route(/youtube|ytimg|googlevideo/, r=>{yt.push(r.request().url());r.abort();});
   const pg = await c.newPage(); const err=[]; pg.on("pageerror",e=>err.push(e.message));
   await pg.goto(B+"/perfil-1juanromero1",{waitUntil:"networkidle"});
   assert.equal(await pg.getAttribute("html","data-profile-theme"),"cine");
@@ -28,7 +29,18 @@ const M = "contact1juanromero1@gmail.com", B = process.env.BASE || "http://127.0
   has("phone_click","phone","tel:+14033637566");
   if (n==="celular") { const sb = pg.locator(".biz-sticky a").first(); assert.equal(await sb.getAttribute("href"),"mailto:"+M); assert.equal(await sb.getAttribute("data-track-target"),"email-sticky"); assert.ok(/cotizaci/i.test(await sb.innerText())); } has("vcard_download","vcard-connect","vcard/1juanromero1.vcf");
   assert.ok(L.some(([a,,h])=>a==="instagram_click"&&h==="https://www.instagram.com/1juanromero1/")); assert.ok(L.some(([a,,h])=>a==="tiktok_click"&&h==="https://www.tiktok.com/@1juanromero1"));
-  assert.ok(!L.some(([a])=>a==="whatsapp_click"),"sin WhatsApp"); assert.equal(await pg.locator(".biz-video, .biz-gallery").count(),0,"sin video ni galería inventados");
+  assert.ok(!L.some(([a])=>a==="whatsapp_click"),"sin WhatsApp"); assert.equal(await pg.locator(".biz-gallery").count(),0,"sin galería inventada");
+  /* Video oficial: sin reproductor ni conexión a YouTube al abrir; se crea al pulsar */
+  has("video_click","profile-video-youtube","https://www.youtube.com/watch?v=9rg27W1igsY");
+  const vid = pg.locator(".biz-video"); await vid.scrollIntoViewIfNeeded();
+  assert.ok(await vid.isVisible(),"sección de video");
+  assert.equal(await pg.locator(".biz-video iframe").count(),0,"sin iframe ni autoplay al cargar");
+  assert.ok(!yt.length,"no contacta a YouTube al abrir: "+yt.join(","));
+  const caja = await pg.locator(".biz-video__frame, .biz-video__play").first().boundingBox();
+  assert.ok(Math.abs(caja.width/caja.height-16/9)<0.05 && caja.width<=pg.viewportSize().width,"16:9 adaptable "+JSON.stringify(caja));
+  await pg.locator(".biz-video__play").first().click();
+  const src = await pg.locator(".biz-video iframe").getAttribute("src");
+  assert.match(src,/youtube-nocookie\.com\/embed\/9rg27W1igsY\?/,"reproductor al pulsar");
   const txt = await pg.locator("main").innerText();
   for (const t of ["1JuanRomero1 Inc.","Juan Sebastian Vahos Alvarado","Fundador, Videógrafo y Editor de Video","Calgary","Correo: "+M]) assert.ok(txt.includes(t),t);
   assert.ok(/videos para redes sociales/i.test(txt));

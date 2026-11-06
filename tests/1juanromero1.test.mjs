@@ -36,7 +36,10 @@ test("datos de la solicitud, sin inventar", () => {
   assert.equal(J.instagram, "https://www.instagram.com/1juanromero1/");
   assert.equal(J.tiktok, "https://www.tiktok.com/@1juanromero1");
   assert.deepEqual(J.languages, ["es", "en"]);
-  for (const k of ["whatsapp", "website", "facebook", "linkedin", "youtubeVideoId", "bookingUrl", "address"]) assert.equal(J[k], "", k);
+  for (const k of ["whatsapp", "website", "facebook", "linkedin", "bookingUrl", "address"]) assert.equal(J[k], "", k);
+  assert.equal(J.youtubeVideoId, "9rg27W1igsY", "video oficial entregado por el empresario");
+  assert.equal(J.videoTitle, undefined, "sin título inventado: la plantilla usa «Conoce a …»");
+  assert.equal(J.videoText, undefined);
   assert.deepEqual([J.gallery, J.testimonials, J.hours], [[], [], []]);
   assert.equal(J.plan, undefined, "Perfil Premium (sin plan gratuito)");
   assert.equal(J.category, "produccion-audiovisual");
@@ -63,7 +66,8 @@ test("tema «cine»: solo colores sobre la plantilla estándar, sin decoraciones
   const selectores = css.replace(/\/\*[\s\S]*?\*\//g, "").split("\n").filter((l) => (/\{\s*$/.test(l) || /^html.*,\s*$/.test(l)) && !/^\s*@/.test(l));
   assert.ok(selectores.length > 20);
   for (const sel of selectores) assert.match(sel, /html\[data-profile-theme="cine"\]/, sel);
-  assert.match(css, /object-fit: contain/, "fotografía completa, sin recorte");
+  assert.match(css, /\.biz-hero__photo \{\n  \/\*[^*]*\*\/\n  aspect-ratio: auto;\n  object-fit: contain;/, "fotografía completa, sin recorte");
+  assert.doesNotMatch(css.match(/\.biz-video__frame \{[^}]*\}/)[0], /aspect-ratio|object-fit|height/, "el video conserva su 16:9");
 });
 
 test("fotografía original, vCard, QR y página generada", () => {
