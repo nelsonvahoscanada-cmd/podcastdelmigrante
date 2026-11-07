@@ -34,7 +34,7 @@ import { PUBLISHED_ARTICLES } from "./_lib/published-articles.js";
 
 const TEMPLATE_PATHS = new Set(["/articulo", "/articulo.html", "/articulo/"]);
 
-const INTERNAL_PATH = /^\/(?:admin-worker|db|docs|tests|scripts|functions|\.github)(?:\/|$)/;
+const INTERNAL_PATH = /^\/(?:admin-worker|analytics-worker|db|docs|tests|scripts|functions|\.github)(?:\/|$)/;
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);

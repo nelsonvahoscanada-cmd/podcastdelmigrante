@@ -8,6 +8,7 @@
     "/api/vistas/*",
     "/registro/*",
     "/admin-worker/*",
+    "/analytics-worker/*",
     "/db/*",
     "/docs/*",
     "/tests/*",
