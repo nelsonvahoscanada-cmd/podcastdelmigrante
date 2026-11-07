@@ -68,11 +68,11 @@ test("la lista de publicados coincide con las páginas generadas", async () => {
 test("_routes.json limita las funciones a la plantilla de artículos, al contador de visualizaciones, al registro y a las carpetas internas", () => {
   const routes = JSON.parse(readFileSync(new URL("_routes.json", ROOT), "utf8"));
   assert.equal(routes.version, 1);
-  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/api/vistas/*", "/registro/*", "/admin-worker/*", "/db/*", "/docs/*", "/tests/*", "/scripts/*", "/functions/*", "/.github/*"].sort());
+  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/api/vistas/*", "/registro/*", "/admin-worker/*", "/analytics-worker/*", "/db/*", "/docs/*", "/tests/*", "/scripts/*", "/functions/*", "/.github/*"].sort());
 });
 
 test("carpetas internas del repositorio → 404 (no forman parte del sitio)", async () => {
-  for (const p of ["/admin-worker/wrangler.toml", "/admin-worker/src/auth.js", "/db/directorio/0001_solicitudes.sql", "/docs/directorio-solicitudes.md", "/tests/solicitud.test.mjs", "/scripts/build-qr-images.py", "/functions/registro/enviar.js", "/.github/workflows/registro-empresas.yml", "/docs"]) {
+  for (const p of ["/admin-worker/wrangler.toml", "/analytics-worker/src/worker.js", "/admin-worker/src/auth.js", "/db/directorio/0001_solicitudes.sql", "/docs/directorio-solicitudes.md", "/tests/solicitud.test.mjs", "/scripts/build-qr-images.py", "/functions/registro/enviar.js", "/.github/workflows/registro-empresas.yml", "/docs"]) {
     const c = ctx(p);
     const r = await onRequest(c);
     assert.equal(r.status, 404, p);
