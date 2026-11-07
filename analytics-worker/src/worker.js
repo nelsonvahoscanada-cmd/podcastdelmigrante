@@ -36,6 +36,8 @@
 const BUSINESSES = {
   "BIZ-001": "tomas-velazquez",
   "BIZ-002": "carlos-d-castillo",
+  "BIZ-003": "santa-latino",
+  "BIZ-004": "1juanromero1",
 };
 
 /* Eventos válidos de los Perfiles Empresariales */
@@ -54,6 +56,10 @@ const ALLOWED_EVENTS = new Set([
   "tiktok_click",
   "facebook_click",
   "linkedin_click",
+  /* «Conecta con …» (QR y vCard), presentes en los perfiles Premium */
+  "vcard_download",
+  "qr_profile_download",
+  "qr_contact_download",
 ]);
 
 /* Orígenes desde los que se aceptan eventos */
