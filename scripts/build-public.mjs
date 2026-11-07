@@ -35,7 +35,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 /* Archivos sueltos de la raíz */
-const ROOT_FILES = ["_routes.json", "_headers", "_redirects", "robots.txt", "sitemap.xml", "favicon.ico"];
+const ROOT_FILES = ["_routes.json", "_headers", "_redirects", "robots.txt", "sitemap.xml", "favicon.ico", "negocios-premium.json"];
 /* Páginas de la raíz: index.html, articulo-….html, perfil-….html, 404.html… */
 const ROOT_PAGE = /^[a-z0-9][a-z0-9-]*\.html$/;
 /* Carpetas públicas y los tipos de archivo que se publican de cada una */
