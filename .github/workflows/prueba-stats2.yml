@@ -1,0 +1,23 @@
+# TEMPORAL: prueba controlada tras PR #113 (1 evento técnico por empresa,
+# qr_profile_download target=prueba-tecnica; no cuenta como visita ni clic). Se elimina después.
+name: prueba-stats2
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-stats-prueba2]
+permissions:
+  contents: read
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          E=https://podcastdelmigrante.com/api/events
+          UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36'
+          s() { curl -s -o r.txt -w "$1: %{http_code} " -X POST "$E" -H 'Origin: https://podcastdelmigrante.com' -H 'Content-Type: text/plain;charset=UTF-8' -H "User-Agent: $UA" --data "$2"; cat r.txt; echo; }
+          curl -s -w ' health %{http_code}\n' "$E/health"
+          for p in "BIZ-001 tomas-velazquez" "BIZ-002 carlos-d-castillo" "BIZ-003 santa-latino" "BIZ-004 1juanromero1"; do
+            set -- $p
+            s "$1 $2" "{\"event\":\"qr_profile_download\",\"business_id\":\"$1\",\"business\":\"$2\",\"target\":\"prueba-tecnica\",\"page\":\"/perfil-$2\"}"
+          done
+          s "inventada BIZ-999999 (debe ser 400)" '{"event":"qr_profile_download","business_id":"BIZ-999999","business":"zz-inventada","target":"prueba-tecnica"}'
+          s "slug cruzado (debe ser 400)" '{"event":"qr_profile_download","business_id":"BIZ-003","business":"1juanromero1","target":"prueba-tecnica"}'
