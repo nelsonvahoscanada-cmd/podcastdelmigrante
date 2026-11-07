@@ -9,7 +9,7 @@
     received_at    hora del SERVIDOR (ISO 8601, UTC). La hora del navegador
                    (`ts`) se ignora.
     event          solo nombres de ALLOWED_EVENTS
-    business_id    solo ids de BUSINESSES
+    business_id    solo ids de la lista pública de empresas autorizadas
     business_slug  slug oficial del negocio (lo pone el Worker, no el navegador)
     target         qué botón y en qué lugar (ej. "whatsapp-sticky")
     page           ruta de la página, sin parámetros
@@ -21,8 +21,14 @@
   QUÉ NO GUARDA: IP, User-Agent, cookies, ni ningún dato personal.
   La IP solo se usa en memoria, unos segundos, para limitar abusos.
 
-  AGREGAR UN NEGOCIO NUEVO: añadir una línea en BUSINESSES con el mismo
-  id y slug que tiene en js/businesses.js, y volver a desplegar.
+  EMPRESAS AUTORIZADAS (sin lista fija): el Worker lee
+  https://podcastdelmigrante.com/negocios-premium.json, que genera
+  scripts/build-profile-pages.mjs a partir de js/businesses.js (perfiles
+  Premium publicados: business_id → slug). Publicar un perfil nuevo basta;
+  este Worker NO se vuelve a desplegar. Un visitante no puede añadir
+  empresas: la lista sale del repositorio, y el id y el slug del evento
+  deben coincidir con ella. Si la lista no se puede leer, se usa la última
+  leída o, en su defecto, FALLBACK_BUSINESSES.
   AGREGAR UN EVENTO NUEVO: añadirlo a ALLOWED_EVENTS.
 
   RUTAS
@@ -32,13 +38,23 @@
 
 /* ---------- Configuración ---------- */
 
-/* Negocios publicados: business_id → slug (igual que js/businesses.js) */
-const BUSINESSES = {
+/* Lista pública de empresas Premium autorizadas (ver cabecera) */
+const AUTHORIZED_URL = "https://podcastdelmigrante.com/negocios-premium.json";
+const AUTHORIZED_TTL_MS = 5 * 60 * 1000;  /* se relee como mucho cada 5 min por instancia */
+const AUTHORIZED_MISS_RETRY_MS = 60 * 1000; /* id desconocido: relee como mucho 1 vez por minuto */
+const AUTHORIZED_EDGE_TTL_S = 60;          /* caché en Cloudflare (bajo costo) */
+
+/* Respaldo si la lista pública no se puede leer y aún no hay ninguna en
+   memoria: las empresas publicadas al desplegar esta versión. */
+const FALLBACK_BUSINESSES = {
   "BIZ-001": "tomas-velazquez",
   "BIZ-002": "carlos-d-castillo",
   "BIZ-003": "santa-latino",
   "BIZ-004": "1juanromero1",
 };
+
+const BIZ_ID_RE = /^BIZ-\d{3,6}$/;
+const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 /* Eventos válidos de los Perfiles Empresariales */
 const ALLOWED_EVENTS = new Set([
@@ -149,16 +165,56 @@ function rateLimited(key) {
   return list.length > RATE_LIMIT_PER_MINUTE;
 }
 
+/* ---------- Empresas autorizadas ---------- */
+
+/* Solo entradas con formato válido; cualquier otra cosa se ignora */
+export function parseAuthorized(data) {
+  if (!data || data.version !== 1 || !data.businesses || typeof data.businesses !== "object" || Array.isArray(data.businesses)) return null;
+  const out = {};
+  for (const [id, slug] of Object.entries(data.businesses)) {
+    if (BIZ_ID_RE.test(id) && typeof slug === "string" && SLUG_RE.test(slug)) out[id] = slug;
+  }
+  return Object.keys(out).length ? out : null;
+}
+
+let authorized = { map: null, loadedAt: 0, triedAt: 0 };
+export function resetAuthorizedCache() {
+  authorized = { map: null, loadedAt: 0, triedAt: 0 };
+}
+
+async function loadAuthorized(env) {
+  authorized.triedAt = Date.now();
+  try {
+    const res = await fetch((env && env.AUTHORIZED_URL) || AUTHORIZED_URL, { cf: { cacheTtl: AUTHORIZED_EDGE_TTL_S, cacheEverything: true } });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const map = parseAuthorized(await res.json());
+    if (!map) throw new Error("lista vacía o con formato no válido");
+    authorized.map = map;
+    authorized.loadedAt = authorized.triedAt;
+  } catch (e) {
+    console.error("negocios-premium.json no disponible:", e && e.message);
+  }
+}
+
+async function authorizedBusinesses(env, businessId) {
+  const now = Date.now();
+  const stale = !authorized.map || now - authorized.loadedAt > AUTHORIZED_TTL_MS;
+  const unknown = authorized.map && businessId && !authorized.map[businessId];
+  /* Como mucho una lectura por minuto, aunque la lista falle o lleguen ids inventados */
+  if ((stale || unknown) && now - authorized.triedAt > AUTHORIZED_MISS_RETRY_MS) await loadAuthorized(env);
+  return authorized.map || FALLBACK_BUSINESSES;
+}
+
 /* ---------- Validación del evento ---------- */
 
-function validate(payload) {
+function validate(payload, businesses) {
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) return { error: "invalid_json" };
 
   const event = typeof payload.event === "string" ? payload.event.trim() : "";
   if (!ALLOWED_EVENTS.has(event)) return { error: "event_not_allowed" };
 
   const businessId = typeof payload.business_id === "string" ? payload.business_id.trim().toUpperCase() : "";
-  const slug = BUSINESSES[businessId];
+  const slug = BIZ_ID_RE.test(businessId) ? businesses[businessId] : undefined;
   if (!slug) return { error: "business_not_allowed" };
 
   /* Si el navegador manda el slug, debe coincidir con el oficial */
@@ -227,7 +283,8 @@ export default {
       return json({ ok: false, error: "invalid_json" }, 400, origin);
     }
 
-    const { row, error } = validate(payload);
+    const businessId = payload && typeof payload.business_id === "string" ? payload.business_id.trim().toUpperCase() : "";
+    const { row, error } = validate(payload, await authorizedBusinesses(env, businessId));
     if (error) return json({ ok: false, error }, 400, origin);
 
     try {

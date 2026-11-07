@@ -193,6 +193,23 @@ for (const b of published) {
   if (b.connect && b.connect.contactCard) expected.set(`vcard/${b.slug}.vcf`, buildVcard(b));
 }
 
+/* Lista pública de empresas Premium autorizadas para estadísticas
+   (negocios-premium.json): business_id → slug de cada perfil Premium
+   PUBLICADO. La lee el Worker podcastdelmigrante-analytics para aceptar
+   eventos sin lista fija en su código: publicar un perfil aquí basta. Solo
+   datos que ya son públicos (id y slug). */
+const BIZ_ID_RE = /^BIZ-\d{3,6}$/;
+const authorized = {};
+for (const b of published) {
+  if (!BIZ_ID_RE.test(b.id || "")) throw new Error(`business_id no válido: "${b.id}" (formato BIZ-001)`);
+  if (authorized[b.id]) throw new Error(`business_id duplicado: ${b.id}`);
+  authorized[b.id] = b.slug;
+}
+expected.set(
+  "negocios-premium.json",
+  JSON.stringify({ version: 1, generated_from: "js/businesses.js", businesses: authorized }, null, 2) + "\n"
+);
+
 /* Archivos generados que ya no corresponden a un perfil publicado */
 const stale = readdirSync(ROOT)
   .filter((f) => /^perfil-.+\.html$/.test(f) && !expected.has(f) && readFileSync(join(ROOT, f), "utf8").includes(GENERATED_MARK))
