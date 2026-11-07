@@ -1,0 +1,20 @@
+# podcastdelmigrante-analytics — recibe POST /api/events (js/analytics.js) y
+# guarda cada evento en D1 (tabla events). Configuración tomada de la versión
+# de producción fd9f4025-2cf5-40b3-ad03-c37f116e3963 (2026-10-05).
+# Sin secretos: este Worker no usa ninguno.
+#
+# La ruta podcastdelmigrante.com/api/events* está configurada en Cloudflare
+# (zona podcastdelmigrante.com) y NO se declara aquí: desplegar una versión
+# nueva no la modifica. Ver README.md (despliegue y vuelta atrás).
+name = "podcastdelmigrante-analytics"
+main = "src/worker.js"
+compatibility_date = "2026-10-05"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[[d1_databases]]
+binding = "DB"
+database_name = "podcastdelmigrante-analytics"
+database_id = "6acee1af-85c4-485c-9fd5-1e2cb9f2066b"
