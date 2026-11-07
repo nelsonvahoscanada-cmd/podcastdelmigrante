@@ -1,0 +1,18 @@
+# TEMPORAL: comprobar negocios-premium.json en producción (solo lectura). Se elimina después.
+name: verificar-json
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-stats-json]
+permissions:
+  contents: read
+jobs:
+  json:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          U=https://podcastdelmigrante.com/negocios-premium.json
+          for i in $(seq 1 40); do
+            code=$(curl -s -o j.json -w '%{http_code}' "$U?t=$RANDOM"); ct=$(curl -s -o /dev/null -w '%{content_type}' "$U")
+            if [ "$code" = 200 ] && grep -q '"BIZ-004": "1juanromero1"' j.json; then echo "OK intento $i: $code $ct"; cat j.json; exit 0; fi
+            sleep 15
+          done; echo "NO DISPONIBLE ($code)"; cat j.json | head -5; exit 1
