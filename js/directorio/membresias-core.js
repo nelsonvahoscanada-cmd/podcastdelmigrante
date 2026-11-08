@@ -6,7 +6,7 @@
 
   Modalidades (internas):
     FREE          Ficha gratuita, $0 CAD.
-    PREMIUM_PAID  Premium pagada, $25 CAD al mes + impuestos aplicables.
+    PREMIUM_PAID  Premium pagada, $24.99 CAD al mes + impuestos aplicables.
                   Hoy NO hay pasarela de pagos: la invitación solo abre una
                   solicitud Premium; ningún cobro se activa desde aquí.
     PREMIUM_GIFT  Premium de cortesía, $0 CAD, sin vencimiento. Solo el
@@ -27,7 +27,7 @@
 
 export const KINDS = {
   FREE: { id: "FREE", label: "Ficha gratuita", price: "$0 CAD", plan: "gratuito" },
-  PREMIUM_PAID: { id: "PREMIUM_PAID", label: "Premium pagada", price: "$25 CAD al mes + impuestos aplicables", plan: "premium" },
+  PREMIUM_PAID: { id: "PREMIUM_PAID", label: "Premium pagada", price: "$24.99 CAD al mes + impuestos aplicables", plan: "premium" },
   PREMIUM_GIFT: { id: "PREMIUM_GIFT", label: "Premium de cortesía", price: "$0 CAD, sin mensualidad y sin vencimiento", plan: "premium" },
 };
 

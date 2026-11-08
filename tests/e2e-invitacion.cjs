@@ -171,11 +171,11 @@ async function llenar(page) {
     await s.ctx.close();
 
     /* 5. Premium pagada: precio real y sin pago simulado */
-    s = await abrir(browser, perfil, [200, { ...GIFT, kind: "PREMIUM_PAID", label: "Premium pagada", price: "$25 CAD al mes + impuestos aplicables" }]);
+    s = await abrir(browser, perfil, [200, { ...GIFT, kind: "PREMIUM_PAID", label: "Premium pagada", price: "$24.99 CAD al mes + impuestos aplicables" }]);
     await s.page.goto(`${BASE}/invitacion#c=${CODE}`, { waitUntil: "networkidle" });
     await s.page.waitForSelector('.inv-state[data-state="PREMIUM_PAID"]:not([hidden])');
     const pagada = (await s.page.textContent("#invCard")).replace(/\s+/g, " ");
-    assert.ok(pagada.includes("$25 CAD/mes + impuestos aplicables") && pagada.includes("Todavía no hay pago en línea."));
+    assert.ok(pagada.includes("$24.99 CAD/mes + impuestos aplicables") && pagada.includes("Todavía no hay pago en línea."));
     assert.equal(await s.page.textContent("#invActivate"), "Solicitar mi Perfil Premium");
     await s.ctx.close();
 

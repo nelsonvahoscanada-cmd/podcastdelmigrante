@@ -33,15 +33,15 @@ export const PROVINCES = [
 /* Planes del Directorio Empresarial (ver planes-directorio.html).
    - gratuito: ficha en el directorio (sin miniweb): imagen, nombre,
      categoría, ciudad y provincia, descripción ≤ 200 y teléfono.
-   - premium: miniweb completa. Precio: $25 CAD al mes más impuestos
+   - premium: miniweb completa. Precio: $24.99 CAD al mes más impuestos
      aplicables. Hoy NO hay cobro en línea: la solicitud no es un pago.
    Una solicitud sin plan (formulario anterior en caché) se trata como
    premium, que era el único plan antes de existir este campo. */
 export const PLANS = {
   gratuito: { id: "gratuito", label: "Plan Gratuito", price: "$0 CAD" },
-  premium: { id: "premium", label: "Plan Premium", price: "$25 CAD al mes + impuestos aplicables" },
+  premium: { id: "premium", label: "Plan Premium", price: "$24.99 CAD al mes + impuestos aplicables" },
 };
-export const PREMIUM_PRICE = "$25 CAD";
+export const PREMIUM_PRICE = "$24.99 CAD";
 
 /* Línea que identifica el plan en la información privada de la solicitud
    (la ven el panel y el aviso interno; no se publica). */

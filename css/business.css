@@ -417,5 +417,7 @@
 
 /* Ficha del plan Gratuito (tarjeta sin miniweb) */
 .biz-card__desc { font-size: 0.86rem; line-height: 1.45; color: #2a2a2a; margin: 0 0 12px; }
+.biz-card__phone { margin: 8px 0 0; font-size: 0.9rem; color: var(--gris-800); }
+.biz-card__phone a { color: inherit; font-weight: 700; text-decoration: none; }
 .biz-card__upsell { display: inline-block; margin-top: 10px; font-size: 0.78rem; color: var(--gris-600); text-decoration: underline; text-underline-offset: 2px; }
 .biz-card__upsell:hover { color: var(--verde-oscuro); }

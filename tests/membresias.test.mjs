@@ -53,10 +53,10 @@ async function send(env, fields, ip) {
 const all = (env, sql, ...a) => env.DIRECTORIO_DB._db.prepare(sql).all(...a);
 
 /* ---------- Núcleo ---------- */
-test("planes internos: gratuita $0, Premium pagada $25 + impuestos, cortesía $0 sin vencimiento", () => {
+test("planes internos: gratuita $0, Premium pagada $24.99 + impuestos, cortesía $0 sin vencimiento", () => {
   assert.deepEqual(Object.keys(m.KINDS), ["FREE", "PREMIUM_PAID", "PREMIUM_GIFT"]);
   assert.equal(m.KINDS.FREE.price, "$0 CAD");
-  assert.equal(m.KINDS.PREMIUM_PAID.price, "$25 CAD al mes + impuestos aplicables");
+  assert.equal(m.KINDS.PREMIUM_PAID.price, "$24.99 CAD al mes + impuestos aplicables");
   assert.match(m.KINDS.PREMIUM_GIFT.price, /^\$0 CAD, sin mensualidad y sin vencimiento$/);
   assert.equal(m.planForKind("PREMIUM_GIFT"), "premium");
   assert.equal(m.planForKind("FREE"), "gratuito");
