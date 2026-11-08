@@ -48,13 +48,13 @@ async function sinDesborde(page, ruta) {
     assert.match(await page.locator(".reg-hero__lead").textContent(), /Comienza gratis o destaca tu negocio con un Perfil Premium\./);
     const tarjetas = page.locator(".pl-card");
     assert.equal(await tarjetas.count(), 2);
-    assert.match((await tarjetas.nth(0).textContent()).replace(/\s+/g, " "), /Gratis.*\$0 CAD.*Crear ficha gratis/);
+    assert.match((await tarjetas.nth(0).textContent()).replace(/\s+/g, " "), /Gratis.*\$0 CAD.*Registrar mi empresa GRATIS/);
     assert.equal((await page.locator("#planesTitle").textContent()).trim(), "Haz visible tu negocio en Canadá");
-    /* «Conocer Premium» lleva a la comparación (sin pasarela de pagos no hay «Elegir Premium») */
-    assert.equal((await tarjetas.nth(1).locator("a.pl-card__cta").textContent()).trim(), "Conocer Premium");
+    /* «Conoce Premium» lleva a la comparación (sin pasarela de pagos no hay «Elegir Premium») */
+    assert.equal((await tarjetas.nth(1).locator("a.pl-card__cta").textContent()).trim(), "Conoce Premium");
     await tarjetas.nth(1).locator("a.pl-card__cta").click();
     await page.waitForFunction(() => location.hash === "#comparar");
-    assert.match((await tarjetas.nth(1).textContent()).replace(/\s+/g, " "), /Premium.*\$25 CAD\/mes \+ impuestos aplicables/);
+    assert.match((await tarjetas.nth(1).textContent()).replace(/\s+/g, " "), /Premium.*\$24\.99 CAD\/mes \+ impuestos aplicables/);
     assert.match(await tarjetas.nth(1).textContent(), /Todavía no hay pago en línea/);
     assert.equal(await page.locator("table.pl-table tbody tr").count(), 14);
     /* Preguntas frecuentes: se abren y cierran */

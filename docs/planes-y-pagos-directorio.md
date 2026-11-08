@@ -6,7 +6,7 @@ Página pública: **https://podcastdelmigrante.com/planes-directorio**
 
 ## 1. Qué está activo hoy (4 de noviembre de 2026)
 
-Precio Premium: **$25 CAD al mes + impuestos aplicables** (antes $24.99).
+Precio Premium: **$24.99 CAD al mes + impuestos aplicables** (de nuevo desde el 8-11-2026; entre medio se publicó $24.99).
 Invitaciones individuales (gratuita, Premium pagada y Premium de cortesía):
 ver `membresias-directorio.md`.
 
@@ -15,12 +15,12 @@ ver `membresias-directorio.md`.
 | Página de planes con comparación, preguntas frecuentes y llamadas a la acción | Publicada |
 | Registro **Gratuito** por el formulario existente (D1 + R2 + Turnstile + correos) | Operativo si `/registro/config` responde `ready:true` |
 | Solicitud **Premium** por el mismo formulario | Operativa, pero es solo una **solicitud**: no hay cobro en línea |
-| Cobro recurrente de $25 CAD/mes | **No existe**: no hay Stripe ni otro procesador configurado |
+| Cobro recurrente de $24.99 CAD/mes | **No existe**: no hay Stripe ni otro procesador configurado |
 
 Cómo se distinguen las solicitudes, sin migración de base de datos:
 - La información privada de cada solicitud (`notes` en D1) empieza con
   `Plan solicitado: Plan Gratuito ($0 CAD).` o
-  `Plan solicitado: Plan Premium ($25 CAD al mes + impuestos aplicables).`
+  `Plan solicitado: Plan Premium ($24.99 CAD al mes + impuestos aplicables).`
   El panel la muestra en «Información adicional (privada)».
 - El asunto del aviso interno lleva `[GRATUITO]` o `[PREMIUM]`, y el
   historial de la solicitud («recibida») nombra el plan.
@@ -56,7 +56,7 @@ Nada de esto se ha hecho. Requiere crear cuentas y aceptar contratos, que son de
 
 **Camino más corto recomendado: Stripe Billing con Payment Links**, sin código de pagos en el sitio:
 1. Crear la cuenta de Stripe de eRadio Global Corp. y completar la verificación del negocio y la cuenta bancaria en CAD.
-2. **Products** → «Perfil Empresarial Premium», precio **recurrente** de 25 CAD al mes.
+2. **Products** → «Perfil Empresarial Premium», precio **recurrente** de 24.99 CAD al mes.
 3. Activar **Stripe Tax** o configurar las tasas de GST/HST. Requiere el número de registro de impuestos.
 4. Crear un **Payment Link** para ese precio:
    - recoger dirección de facturación (para el impuesto) y correo;
@@ -74,6 +74,6 @@ Nunca se piden ni se guardan datos de tarjetas en el sitio: el pago ocurre en St
 
 ## 4. Pruebas
 
-- `tests/planes-directorio.test.mjs`: precio $25 (antes $24.99), sin anuncio de pago habilitado, reglas del plan Gratuito, Function y directorio.
+- `tests/planes-directorio.test.mjs`: precio $24.99, sin anuncio de pago habilitado, reglas del plan Gratuito, Function y directorio.
 - `tests/e2e-planes-directorio.cjs`: página de planes, navegación y formulario en computador, tableta y celular.
 - `tests/e2e-registro.cjs`: envío real contra D1 y R2 locales, con Turnstile y Resend simulados.

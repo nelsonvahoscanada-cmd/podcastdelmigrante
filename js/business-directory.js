@@ -55,7 +55,8 @@
 
   /* Ficha del plan Gratuito: plantilla compartida y ligera, sin miniweb.
      Imagen, nombre, categoría, ciudad y provincia, descripción breve y
-     teléfono, más una invitación discreta a conocer el plan Premium. */
+     teléfono VISIBLE como texto (no es el botón de llamada de Premium),
+     más una invitación discreta a conocer el plan Premium. */
   function freeCardHtml(b) {
     const img = b.cardImage || b.profileImage;
     const photo = img
@@ -71,8 +72,8 @@
           ${categoryLabel(b.category) ? `<p class="biz-card__title">${esc(categoryLabel(b.category))}</p>` : ""}
           ${place ? `<p class="biz-card__place">${esc(place)}</p>` : ""}
           ${b.shortDescription ? `<p class="biz-card__desc">${esc(b.shortDescription)}</p>` : ""}
-          ${tel ? `<a class="biz-btn biz-btn--primary biz-card__cta" href="tel:${esc(tel)}">Llamar: ${esc(b.phone)}</a>` : ""}
-          <a class="biz-card__upsell" href="planes-directorio">¿Es tu negocio? Conoce el Perfil Premium</a>
+          ${tel ? `<p class="biz-card__phone">Teléfono: <a href="tel:${esc(tel)}">${esc(b.phone)}</a></p>` : ""}
+          <a class="biz-card__upsell" href="planes-directorio">¿Es tu negocio? Conoce Premium</a>
         </div>
       </article>
     `;

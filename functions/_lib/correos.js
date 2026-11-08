@@ -119,7 +119,7 @@ export function confirmationEmail(meta) {
         `Número de solicitud: ${meta.id}`,
         "Nuestro equipo revisará la información y se comunicará contigo para explicarte los siguientes pasos.",
         "Enviar esta solicitud no implica contratar ni pagar ningún servicio.",
-        "El Perfil Premium cuesta $25 CAD al mes más impuestos aplicables. Por ahora no realizamos cobros en línea: te contactaremos para confirmar el servicio y la forma de pago antes de cualquier cobro.",
+        "El Perfil Premium cuesta $24.99 CAD al mes más impuestos aplicables. Por ahora no realizamos cobros en línea: te contactaremos para confirmar el servicio y la forma de pago antes de cualquier cobro.",
         "Tu perfil no será publicado sin tu aprobación.",
       ];
   const last = paras.length - 1;

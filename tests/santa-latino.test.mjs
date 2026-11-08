@@ -168,8 +168,8 @@ test("categorías «Eventos y celebraciones» y «Producción audiovisual y cont
   const core = read("js/directorio/solicitud-core.js");
   assert.match(core, /\{ id: "servicios-hogar", label: "Servicios del hogar" \},\n  \{ id: "eventos-celebraciones", label: "Eventos y celebraciones" \},\n  \{ id: "produccion-audiovisual", label: "Producción audiovisual y contenido digital" \},\n  \{ id: "otra", label: "Otra categoría" \},/);
   /* El formulario pide la versión nueva (la caché del navegador no sirve la lista anterior) */
-  assert.match(read("registra-tu-empresa.html"), /solicitud-form\.js\?v=20261107/);
-  assert.match(read("js/directorio/solicitud-form.js"), /solicitud-core\.js\?v=20261107/);
+  assert.match(read("registra-tu-empresa.html"), /solicitud-form\.js\?v=20261108/);
+  assert.match(read("js/directorio/solicitud-form.js"), /solicitud-core\.js\?v=20261108/);
 });
 
 test("entrevista de El Podcast del Migrante: video de YouTube con título, texto y enlace alternativo", () => {

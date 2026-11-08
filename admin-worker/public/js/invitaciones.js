@@ -8,7 +8,7 @@
   "use strict";
 
   const KIND = { FREE: "Ficha gratuita", PREMIUM_PAID: "Premium pagada", PREMIUM_GIFT: "Premium de cortesía" };
-  const PRICE = { FREE: "$0 CAD", PREMIUM_PAID: "$25 CAD al mes + impuestos", PREMIUM_GIFT: "$0 CAD" };
+  const PRICE = { FREE: "$0 CAD", PREMIUM_PAID: "$24.99 CAD al mes + impuestos", PREMIUM_GIFT: "$0 CAD" };
   const INV_STATUS = { pendiente: "Pendiente", usada: "Usada", revocada: "Revocada" };
   const MEM_STATUS = { en_revision: "En revisión", activa: "Activa", suspendida: "Suspendida", retirada: "Retirada" };
   const SITE = "https://podcastdelmigrante.com";

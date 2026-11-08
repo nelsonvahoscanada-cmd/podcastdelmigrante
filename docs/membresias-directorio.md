@@ -10,12 +10,12 @@ Access).
 | Código | Nombre | Precio | Quién la otorga |
 |---|---|---|---|
 | `FREE` | Ficha gratuita | $0 CAD | Formulario público o invitación |
-| `PREMIUM_PAID` | Premium pagada | $25 CAD al mes + impuestos aplicables | Formulario público o invitación. **No hay pasarela de pagos**: es una solicitud y el cobro se acuerda por separado (ver `planes-y-pagos-directorio.md`) |
+| `PREMIUM_PAID` | Premium pagada | $24.99 CAD al mes + impuestos aplicables | Formulario público o invitación. **No hay pasarela de pagos**: es una solicitud y el cobro se acuerda por separado (ver `planes-y-pagos-directorio.md`) |
 | `PREMIUM_GIFT` | Premium de cortesía | $0 CAD, sin mensualidad y sin vencimiento | **Solo** el administrador, con una invitación individual |
 
 En público solo aparecen dos opciones (planes-directorio, «Haz visible tu
-negocio en Canadá»): **Gratis $0** («Crear ficha gratis») y **Premium $25
-CAD/mes + impuestos** («Conocer Premium»; dirá «Elegir Premium» cuando exista
+negocio en Canadá»): **Gratis $0** («Registrar mi empresa GRATIS») y **Premium $24.99
+CAD/mes + impuestos** («Conoce Premium»; dirá «Elegir Premium» cuando exista
 el cobro en línea). La cortesía nunca se muestra en público.
 
 Una cortesía **nunca** se convierte sola en suscripción pagada: no hay fecha de
