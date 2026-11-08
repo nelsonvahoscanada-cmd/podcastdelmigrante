@@ -18,8 +18,8 @@ const IMG = "assets/multas-representantes-migratorios-canada-2026.jpg";
 const IRCC = "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/new-penalties-for-fraudulent-and-unauthorized-immigration-and-citizenship-representatives.html";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
-test("portada: con la masterclass (5-11-2026) deja el bloque destacado, sigue publicada y conserva su URL", () => {
-  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
+test("portada: fuera del bloque destacado (principal: alquiler en Alberta, 8-11-2026), sigue publicada y conserva su URL", () => {
+  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler");
   assert.ok(!ctx.H.secondary.some((s) => s.slug === SLUG), "ya no aparece entre las destacadas");
   assert.equal(ctx.H.secondary.length, 5);
   assert.ok(art && !art.draft, "sigue publicada");

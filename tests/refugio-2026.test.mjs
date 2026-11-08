@@ -26,9 +26,9 @@ const art = ctx.A.find((a) => a.slug === SLUG);
 const [periodistico, publicidad] = art.bodyHtml.split('<aside class="article-patrocinio"');
 const texto = (h) => h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 
-test("portada: deja la noticia principal (masterclass, 5-11-2026) y pasa a la primera tarjeta con su ilustración; las demás en su orden", () => {
-  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
-  const t = ctx.H.secondary[0];
+test("portada: segunda tarjeta (tras la masterclass; principal: alquiler en Alberta, 8-11-2026) con su ilustración; las demás en su orden", () => {
+  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler");
+  const t = ctx.H.secondary[1];
   assert.equal(t.slug, SLUG);
   assert.equal(t.title, art.title);
   assert.equal(t.image, `url('${IMG}')`);
@@ -36,11 +36,11 @@ test("portada: deja la noticia principal (masterclass, 5-11-2026) y pasa a la pr
   assert.equal(t.demo, false);
   assert.match(t.alt, /^Ilustración editorial/);
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
     "canada-cambios-proceso-refugio-3-noviembre-2026",
     "canada-cambios-express-entry-3-noviembre-2026",
     "hector-rivero-santa-latino-canada",
     "canada-groceries-essentials-benefit-cgeb-2026",
-    "alberta-bomberos-forestales-2027",
   ]);
 });
 

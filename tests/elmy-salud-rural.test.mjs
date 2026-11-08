@@ -59,8 +59,8 @@ test("recursos de salud en Alberta con enlaces oficiales y aviso 811 / 911", () 
 });
 
 test("no toca la portada destacada; SEO, redes y sitemap", () => {
-  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
-  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026", "alberta-bomberos-forestales-2027"]);
+  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler");
+  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["masterclass-gratuita-ley-intrinseca-creacion-eder-campos", "canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026"]);
   for (const s of [ES, EN]) {
     const h = read(`articulo-${s}.html`);
     assert.match(h, new RegExp(`property="og:image" content="https://podcastdelmigrante\\.com/assets/social/${s}\\.jpg"`));

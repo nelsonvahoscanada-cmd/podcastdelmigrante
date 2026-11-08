@@ -20,15 +20,15 @@ const art = ctx.A.find((a) => a.slug === SLUG);
 const [informativo, publicidad] = art.bodyHtml.split('<aside class="article-patrocinio"');
 const texto = informativo.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-test("portada: tercera tarjeta pequeña, tras la noticia de refugio", () => {
-  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
+test("portada: quinta tarjeta pequeña, tras Santa Latino", () => {
+  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler");
   assert.equal(ctx.H.secondary.length, 5);
-  const t = ctx.H.secondary[3];
+  const t = ctx.H.secondary[4];
   assert.equal(t.slug, SLUG);
   assert.equal(t.title, art.title);
   assert.equal(t.image, `url('${IMG}')`);
   assert.equal(t.demo, false);
-  assert.equal(ctx.H.secondary[2].slug, "hector-rivero-santa-latino-canada");
+  assert.equal(ctx.H.secondary[3].slug, "hector-rivero-santa-latino-canada");
   const slugs = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.equal(new Set(slugs).size, slugs.length, "sin duplicados");
   assert.ok(ctx.A.some((a) => a.slug === "referendum-alberta-octubre-2026-inmigrantes" && !a.draft), "la que sale de las destacadas sigue publicada");

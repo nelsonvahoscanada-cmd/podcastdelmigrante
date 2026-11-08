@@ -21,21 +21,22 @@ const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 const pagina = read(`articulo-${SLUG}.html`);
 
-test("publicada como noticia, la más reciente, con título y autoría de la redacción", () => {
+test("publicada como noticia (segunda más reciente), con título y autoría de la redacción", () => {
   assert.ok(art && !art.draft);
-  assert.equal(ctx.A[0].slug, SLUG);
+  assert.equal(ctx.A[1].slug, SLUG, "segunda más reciente, tras la del alquiler (8-11-2026)");
   assert.equal(art.contentType, "Noticia");
   assert.equal(art.title, "El Podcast del Migrante invita a una masterclass gratuita sobre crecimiento personal y toma de decisiones");
   assert.equal(art.author.name, "Redacción El Podcast del Migrante");
   assert.equal(new Set(ctx.A.map((a) => a.id)).size, ctx.A.length, "id único");
 });
 
-test("portada: noticia principal destacada con su imagen y texto alternativo", () => {
-  assert.equal(ctx.H.main.slug, SLUG);
-  assert.equal(ctx.H.main.title, art.title);
-  assert.equal(ctx.H.main.image, `url('${IMG}')`);
-  assert.equal(ctx.H.main.demo, false);
-  assert.match(ctx.H.main.alt, /Ley Intrínseca de Creación/);
+test("portada: primera tarjeta destacada (tras la noticia del alquiler, 8-11-2026) con su imagen y texto alternativo", () => {
+  const t = ctx.H.secondary[0];
+  assert.equal(t.slug, SLUG);
+  assert.equal(t.title, art.title);
+  assert.equal(t.image, `url('${IMG}')`);
+  assert.equal(t.demo, false);
+  assert.match(t.alt, /Ley Intrínseca de Creación/);
   assert.equal(ctx.H.secondary.length, 5);
 });
 

@@ -16,20 +16,13 @@ const URL_ART = `https://podcastdelmigrante.com/articulo-${SLUG}`;
 const IMG = "assets/alberta-bomberos-forestales-2027.jpg";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
-test("portada: tras la noticia principal, Santa Latino y el CGEB, la noticia de bomberos sigue en el bloque principal, sin duplicados", () => {
-  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos", "noticia principal autorizada por la dirección editorial el 5-11-2026");
-  assert.equal(ctx.H.secondary[0].slug, "canada-cambios-proceso-refugio-3-noviembre-2026");
-  assert.equal(ctx.H.secondary[2].slug, "hector-rivero-santa-latino-canada");
-  assert.equal(ctx.H.secondary[3].slug, "canada-groceries-essentials-benefit-cgeb-2026");
-  const bomberos = ctx.H.secondary[4];
-  assert.equal(bomberos.slug, SLUG);
-  assert.equal(bomberos.title, art.title);
-  assert.equal(bomberos.image, `url('${IMG}')`);
-  assert.equal(bomberos.demo, false);
+test("portada: con la noticia del alquiler (8-11-2026) la de bomberos deja el bloque destacado; sigue publicada, sin duplicados", () => {
+  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler", "noticia principal autorizada por la dirección editorial el 8-11-2026");
+  assert.ok(!ctx.H.secondary.some((s) => s.slug === SLUG), "ya no aparece entre las destacadas");
   const slugs = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.equal(new Set(slugs).size, slugs.length, "ninguna noticia aparece dos veces en el bloque principal");
-  assert.equal(ctx.H.secondary.length, 5, "bomberos cierra el bloque destacado");
-  for (const s of ["multas-representantes-migratorios-canada-2026", "referendum-alberta-octubre-2026-inmigrantes", "premios-impacto-inmigrante-alberta-2026", "subvenciones-etnoculturales-antirracismo-alberta", "alberta-energy-rebate-plazo-octubre"]) {
+  assert.equal(ctx.H.secondary.length, 5);
+  for (const s of [SLUG, "multas-representantes-migratorios-canada-2026", "referendum-alberta-octubre-2026-inmigrantes", "premios-impacto-inmigrante-alberta-2026", "subvenciones-etnoculturales-antirracismo-alberta", "alberta-energy-rebate-plazo-octubre"]) {
     assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: la noticia que sale de las destacadas sigue publicada`);
   }
 });
