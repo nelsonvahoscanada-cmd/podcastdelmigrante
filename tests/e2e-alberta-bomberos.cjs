@@ -44,24 +44,13 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: noticia principal de Express Entry, Santa Latino, CGEB y después bomberos ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^El Podcast del Migrante invita a una masterclass gratuita/, "noticia principal: masterclass");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(0).innerText(), /solicitar refugio/, "refugio, primera tarjeta");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(2).innerText(), /Santa Latino/, "Santa Latino, tercera tarjeta");
-    assert.match(await page.locator("#heroSecondary .hero-sec-card").nth(3).innerText(), /¿Trabajas en Canadá\?/, "CGEB, cuarta tarjeta");
-    const segunda = page.locator("#heroSecondary .hero-sec-card").nth(4);
-    assert.equal((await segunda.locator("h3, h2, .hero-sec-card__title").first().innerText()).trim(), TITULO);
-    const enlace = segunda.locator(`a[href*="${SLUG}"]`).first();
-    assert.equal(await enlace.count(), 1, "la tarjeta enlaza al artículo");
-    assert.match(await segunda.innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")), "usa la miniatura nueva");
+    assert.match(await page.locator("#heroMain h1").innerText(), /^¿Vives en Alberta y no te alcanza para pagar el alquiler\?/, "noticia principal: alquiler en Alberta");
+    /* Con la noticia del alquiler (8-11-2026) bomberos deja el bloque destacado; sigue publicada */
+    assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
-    assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count() >= 1, true);
-    const enHero = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.equal(enHero.filter((t) => t.includes("bomberos forestales")).length, 1, "sin duplicados en el bloque principal");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    await enlace.click();
-    await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 
     /* ---------- Artículo ---------- */

@@ -51,24 +51,24 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: noticia principal destacada ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    const hero = page.locator("#heroMain");
-    assert.equal((await hero.locator("h1").innerText()).trim(), TITULO);
-    assert.match(await hero.innerText(), /Redacción El Podcast del Migrante · 5 de noviembre, 2026/);
+    /* Desde el 8-11-2026: primera tarjeta destacada, tras la noticia del alquiler */
+    assert.match(await page.locator("#heroMain h1").innerText(), /^¿Vives en Alberta y no te alcanza para pagar el alquiler\?/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.equal((await hero.locator("h2").innerText()).trim(), TITULO);
     assert.equal(await hero.locator(".demo-badge").count(), 0);
-    const media = hero.locator(".hero-main__media");
+    const media = hero.locator(".hero-sec-card__media");
     assert.match(await media.getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
-    assert.match(await media.getAttribute("aria-label"), /Ley Intrínseca de Creación/);
     assert.ok(await media.isVisible());
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5, "las demás noticias destacadas se conservan");
-    assert.match(tarjetas[0], /solicitar refugio/);
-    assert.equal(tarjetas.filter((x) => x.includes("masterclass")).length, 0, "sin duplicados en el bloque principal");
+    assert.match(tarjetas[1], /solicitar refugio/);
+    assert.equal(tarjetas.filter((x) => x.includes("masterclass")).length, 1, "sin duplicados en el bloque principal");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    assert.match(await hero.locator("h1 a").getAttribute("href"), new RegExp(`articulo(-|\\.html\\?slug=)${SLUG}$`));
-    await hero.locator("h1 a").evaluate((a) => a.click());
+    assert.match(await hero.locator("h2 a").getAttribute("href"), new RegExp(`articulo(-|\\.html\\?slug=)${SLUG}$`));
+    await hero.locator("h2 a").evaluate((a) => a.click());
     await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 

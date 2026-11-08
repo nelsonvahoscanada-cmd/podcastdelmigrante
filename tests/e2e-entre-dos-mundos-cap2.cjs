@@ -119,10 +119,10 @@ async function sinDesborde(page, ruta) {
 
     /* ---------- Portada: noticia principal intacta; bloque de la columna ---------- */
     ({ ctx, page, errores } = await abrir(browser, perfil, "/"));
-    assert.match(await page.locator("#heroMain h1").innerText(), /^El Podcast del Migrante invita a una masterclass gratuita/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^¿Vives en Alberta y no te alcanza para pagar el alquiler\?/);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.match(tarjetas[3], /¿Trabajas en Canadá\?/);
+    assert.match(tarjetas[4], /¿Trabajas en Canadá\?/);
     const bloque = page.locator("#columnFeature");
     await bloque.scrollIntoViewIfNeeded();
     assert.equal((await bloque.locator(".column-banner__title a").textContent()).trim(), "Canadá también puede convertirse en un infierno");

@@ -50,7 +50,7 @@ async function sinDesborde(page, ruta) {
     /* ---------- Portada: la convocatoria cerró el 2-11-2026; la noticia deja las destacadas ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
     const hero = page.locator("#heroMain");
-    assert.match(await hero.locator("h1").innerText(), /^El Podcast del Migrante invita a una masterclass gratuita/, "noticia principal actual");
+    assert.match(await hero.locator("h1").innerText(), /^¿Vives en Alberta y no te alcanza para pagar el alquiler\?/, "noticia principal actual");
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
     assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");

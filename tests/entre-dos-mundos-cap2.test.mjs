@@ -90,8 +90,8 @@ test("edición de noviembre (borrador): incluye el capítulo; la de octubre no c
 });
 
 test("portada: la noticia principal y las destacadas no cambian", () => {
-  assert.equal(ctx.H.main.slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
-  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026", "alberta-bomberos-forestales-2027"]);
+  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler");
+  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["masterclass-gratuita-ley-intrinseca-creacion-eder-campos", "canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada", "canada-groceries-essentials-benefit-cgeb-2026"]);
 });
 
 test("SEO: título, descripción, Open Graph, Twitter, canónica y sitemap", () => {

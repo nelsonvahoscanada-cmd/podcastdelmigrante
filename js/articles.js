@@ -176,6 +176,137 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Rent Assistance Benefit de Alberta: texto editorial de Nelson Vahos
+       (8-11-2026), publicado completo. Datos verificados el 8-11-2026 contra
+       https://www.alberta.ca/rent-assistance (elegibilidad migratoria, cálculo, renovación anual
+       sin límite, Temporary Rent Assistance Benefit de 2 años, tres pasos y
+       contacto): sin contradicciones. Video propio en TikTok (enlace corto
+       vt.tiktok.com/ZSpSKd9gG resuelto el 8-11-2026). Imagen editorial
+       entregada por la dirección. */
+    id: "ART-2026-041",
+    slug: "alberta-rent-assistance-benefit-ayuda-alquiler",
+    category: "Vivienda",
+    contentType: "Noticia",
+    title: "¿Vives en Alberta y no te alcanza para pagar el alquiler? Conoce la ayuda mensual que ofrece el Gobierno",
+    dek: "El Gobierno de Alberta cuenta con un programa de asistencia económica que puede ayudar a personas y familias de bajos ingresos a cubrir parte del alquiler de su vivienda. Algunos inmigrantes, residentes permanentes y solicitantes de refugio también pueden cumplir los requisitos.",
+    excerpt: "El Rent Assistance Benefit de Alberta ayuda a hogares de bajos ingresos a pagar parte del alquiler. Quién puede solicitarlo, cómo se calcula, cuánto dura y cómo empezar en Find Housing.",
+    author: { mode: "medio", name: "El Podcast del Migrante" },
+    publishedAt: "2026-11-08T14:00:00-07:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: "Alberta", city: null },
+    demo: false,
+    heroImage: {
+      background: "url('assets/alberta-rent-assistance-benefit-ayuda-alquiler.jpg')",
+      aspectRatio: "3/2",
+      alt: "Imagen editorial de El Podcast del Migrante: una familia latina —padre, madre, hijo e hija— sonríe frente a edificios de apartamentos, con las Montañas Rocosas y el horizonte de Calgary al fondo, la bandera de Canadá y una computadora portátil con la página «Rent Assistance Benefit» de Alberta.ca. Textos: «¿Necesitas ayuda para pagar el alquiler?», «Conoce el programa Rent Assistance Benefit», «Ayuda económica mensual del Gobierno de Alberta», «Personas y familias de bajos ingresos», «Incluye inmigrantes, residentes permanentes y refugiados» y «El monto depende de tus ingresos y situación de vivienda».",
+      credit: "Imagen editorial de El Podcast del Migrante. Las personas y la escena son ilustrativas; no es una publicación oficial del Gobierno de Alberta.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p><strong>8 de noviembre de 2026 | El Podcast del Migrante | Vivienda y ayudas económicas</strong></p>
+      <p>El aumento de los gastos de vivienda representa una preocupación para muchas familias que viven en Alberta, especialmente para quienes están comenzando una nueva vida en Canadá o atraviesan dificultades económicas.</p>
+      <p>Sin embargo, existe una ayuda gubernamental que muchas personas podrían desconocer.</p>
+      <p>Se trata del <strong>Rent Assistance Benefit</strong>, un programa provincial que ofrece subsidios para facilitar el pago del alquiler a hogares de bajos ingresos.</p>
+      <p>La ayuda forma parte del <strong>Rent Supplement Program</strong>, financiado conjuntamente por los gobiernos de Alberta y Canadá mediante el <strong>Canada-Alberta Housing Benefit</strong>.</p>
+      <h2>¿Quiénes pueden solicitar esta ayuda?</h2>
+      <p>Según la información oficial del Gobierno de Alberta, las personas que soliciten asistencia deben cumplir requisitos económicos y de elegibilidad.</p>
+      <p>Entre las categorías migratorias contempladas se encuentran:</p>
+      <ul>
+        <li>Ciudadanos canadienses.</li>
+        <li>Residentes permanentes.</li>
+        <li>Refugiados.</li>
+        <li>Personas que han solicitado el reconocimiento como refugiados o un estatus migratorio.</li>
+        <li>Determinados inmigrantes cuyo patrocinio privado haya dejado de funcionar.</li>
+        <li>Personas evacuadas de Ucrania que cumplan las condiciones específicas del programa CUAET.</li>
+      </ul>
+      <p><strong>Importante para la comunidad migrante:</strong> pertenecer a una de estas categorías no significa que la ayuda sea automática. También es necesario cumplir los límites de ingresos y las demás condiciones del programa.</p>
+      <h2>¿Cuánto dinero puede recibir una familia?</h2>
+      <p>No existe un monto único para todos los beneficiarios.</p>
+      <p>El valor de la asistencia se calcula teniendo en cuenta principalmente:</p>
+      <ul>
+        <li>Los ingresos del hogar.</li>
+        <li>El costo de alquiler de referencia en la comunidad.</li>
+        <li>La situación económica y de vivienda de la familia.</li>
+      </ul>
+      <p>Para establecer las prioridades también pueden considerarse los bienes del hogar, el número de dependientes y las condiciones actuales de vivienda.</p>
+      <p>El beneficio se paga directamente a los inquilinos, quienes pueden utilizarlo para cubrir parte del alquiler.</p>
+      <h2>¿Durante cuánto tiempo se puede recibir?</h2>
+      <p>El Rent Assistance Benefit está diseñado como una ayuda de largo plazo.</p>
+      <p>Las familias que continúen cumpliendo los requisitos pueden solicitar la renovación anual del beneficio.</p>
+      <p>El programa no establece un número máximo de renovaciones anuales para quienes sigan siendo elegibles.</p>
+      <p>Esto significa que no se trata necesariamente de un pago único, sino de un apoyo que puede continuar mientras se mantengan las condiciones exigidas y se aprueben las renovaciones correspondientes.</p>
+      <h2>¿Existe otra ayuda para quienes están trabajando?</h2>
+      <p>Sí. Alberta también dispone del <strong>Temporary Rent Assistance Benefit</strong>, una modalidad de asistencia temporal dirigida principalmente a hogares de bajos ingresos que trabajan o se encuentran entre empleos.</p>
+      <p>Este beneficio tiene condiciones adicionales, entre ellas haber trabajado durante los últimos 24 meses y no recibir determinadas ayudas sociales.</p>
+      <p>Está disponible en comunidades específicas, como Calgary, Edmonton, Fort McMurray, Grande Prairie, Lethbridge, Medicine Hat y Red Deer, además de muchas localidades cercanas.</p>
+      <p>Su duración máxima es de dos años, con una revisión de elegibilidad después del primero.</p>
+      <p>Por eso es importante identificar cuál de los dos programas corresponde a la situación particular de cada familia.</p>
+      <h2>¿Cómo solicitar la ayuda para pagar el alquiler?</h2>
+      <p>El Gobierno de Alberta establece un procedimiento de tres pasos.</p>
+      <h3>Paso 1. Consultar las opciones disponibles.</h3>
+      <p>Ingresa a la herramienta oficial <strong>Find Housing</strong> del Gobierno de Alberta. Allí deberás responder algunas preguntas para identificar las opciones de vivienda y asistencia que pueden corresponder a tu situación.</p>
+      <h3>Paso 2. Identificar el proveedor de vivienda de tu comunidad.</h3>
+      <p>Después de responder las preguntas, la herramienta mostrará las opciones disponibles y los proveedores locales que administran los programas.</p>
+      <h3>Paso 3. Solicitar el formulario correspondiente.</h3>
+      <p>Comunícate con el proveedor de vivienda indicado para obtener la solicitud de asistencia económica y conocer los documentos y requisitos específicos.</p>
+      <h2>Enlace oficial para comenzar tu solicitud</h2>
+      <p><strong>Herramienta Find Housing — Gobierno de Alberta:</strong><br><a href="https://findhousing.alberta.ca/" target="_blank" rel="noopener">https://findhousing.alberta.ca/</a></p>
+      <p class="article-apply-row"><a class="article-apply" href="https://findhousing.alberta.ca/" target="_blank" rel="noopener noreferrer">Ir a Find Housing (Gobierno de Alberta)</a></p>
+      <p>Este enlace lleva directamente a la herramienta oficial para identificar el programa y el proveedor que corresponden a tu localidad.</p>
+      <p><strong>Información completa del programa:</strong><br><a href="https://www.alberta.ca/rent-assistance" target="_blank" rel="noopener">https://www.alberta.ca/rent-assistance</a></p>
+      <p>No es necesario pagar a intermediarios para acceder a estas páginas gubernamentales.</p>
+      <h2>¿Qué ocurre después de presentar la solicitud?</h2>
+      <p>El proveedor de vivienda evaluará si el hogar cumple las condiciones establecidas.</p>
+      <p>En el caso del Rent Assistance Benefit, las solicitudes se priorizan según la necesidad económica y habitacional.</p>
+      <p>Por lo tanto, cumplir los requisitos no garantiza recibir el subsidio inmediatamente.</p>
+      <p>La disponibilidad de recursos y la evaluación del proveedor también pueden influir en el acceso a la asistencia.</p>
+      <h2>¿Dónde pedir información adicional?</h2>
+      <p>Las personas que necesiten orientación pueden comunicarse con <strong>Alberta Supports</strong>:</p>
+      <ul>
+        <li><strong>Teléfono gratuito:</strong> <a href="tel:+18776449992">1-877-644-9992</a></li>
+        <li><strong>Desde Edmonton:</strong> <a href="tel:+17806449992">780-644-9992</a></li>
+        <li><strong>Horario:</strong> lunes a viernes, de 8:15 a. m. a 4:30 p. m.</li>
+      </ul>
+      <p>También pueden consultar directamente la página oficial del Gobierno de Alberta.</p>
+      <h2>Una oportunidad que vale la pena conocer</h2>
+      <p>Para muchas familias migrantes, el alquiler representa uno de los mayores gastos mensuales.</p>
+      <p>Conocer los programas de asistencia disponibles puede marcar una diferencia importante en la economía familiar.</p>
+      <p>El mensaje es claro: si resides en Alberta, tienes ingresos bajos y necesitas ayuda para pagar tu vivienda, vale la pena revisar si cumples los requisitos.</p>
+      <p>Comparte esta noticia con familiares, amigos y personas de tu comunidad que puedan necesitar esta información.</p>
+      <p><strong>El Podcast del Migrante</strong><br>Conectando latinos, construyendo futuro.<br><a href="https://www.podcastdelmigrante.com">www.podcastdelmigrante.com</a></p>
+      <p><strong>Fuente:</strong> Gobierno de Alberta, página oficial <a href="https://www.alberta.ca/rent-assistance" target="_blank" rel="noopener">Rent Assistance</a>, consultada el 8 de noviembre de 2026.</p>
+      <p><em>Nota editorial: Esta publicación tiene fines informativos. La elegibilidad y aprobación de las solicitudes corresponden exclusivamente a las autoridades y proveedores responsables del programa.</em></p>
+    `,
+    /* Video propio en TikTok (@podcastdelmigrante). No se descarga ni se
+       aloja: el reproductor oficial se carga desde TikTok solo al pulsar,
+       antes de «¿Quiénes pueden solicitar esta ayuda?». */
+    video: {
+      tiktokId: "7705912617230945557",
+      tiktokUser: "podcastdelmigrante",
+      title: "¿Necesitas ayuda para pagar el alquiler en Alberta? El Rent Assistance Benefit explicado por El Podcast del Migrante",
+      heading: "🎥 Mira el video",
+      cover: "assets/alberta-rent-assistance-benefit-ayuda-alquiler.jpg",
+      position: "intro",
+    },
+    sources: [
+      { label: "Gobierno de Alberta — Rent assistance (Rent Assistance Benefit y Temporary Rent Assistance Benefit)", href: "https://www.alberta.ca/rent-assistance" },
+      { label: "Gobierno de Alberta — Herramienta Find Housing", href: "https://findhousing.alberta.ca/" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["canada-groceries-essentials-benefit-cgeb-2026", "canada-cambios-proceso-refugio-3-noviembre-2026"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Ayuda para pagar el alquiler en Alberta: Rent Assistance Benefit",
+      description: "Alberta ofrece ayuda mensual para pagar el alquiler a hogares de bajos ingresos, incluidos inmigrantes y refugiados. Requisitos, duración y cómo solicitarla.",
+      canonicalPath: "/vivienda/alberta-rent-assistance-benefit-ayuda-alquiler/",
+    },
+  },
+  {
     /* Invitación a la masterclass gratuita «Ley Intrínseca de Creación» de
        Eder Campos, PhD (11-11-2026, 7:30 p. m. hora de Calgary, por Zoom).
        Texto aprobado por la dirección (orden del 5-11-2026), publicado completo.
