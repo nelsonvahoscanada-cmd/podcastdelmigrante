@@ -1,0 +1,50 @@
+# TEMPORAL: verificar en producción la noticia del alquiler (solo lectura; sin TikTok ni estadísticas). Se elimina después.
+name: verificar-alquiler
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-alquiler-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          B=https://podcastdelmigrante.com; S=alberta-rent-assistance-benefit-ayuda-alquiler
+          for i in $(seq 1 40); do curl -s "$B/js/data.js?t=$RANDOM" | grep -q "$S" && { echo "desplegado (intento $i)"; break; }; if [ $i = 40 ]; then exit 1; fi; sleep 15; done
+          curl -s -o a.html -w "articulo: %{http_code}\n" "$B/articulo-$S"
+          grep -o '<title>[^<]*</title>' a.html; grep -oE '(property|name)="(og:title|og:image|og:url|twitter:image|article:published_time)" content="[^"]*"' a.html
+          curl -s -A 'facebookexternalhit/1.1' "$B/articulo-$S" | grep -o 'property="og:image" content="[^"]*"'
+          curl -s -o /dev/null -w "imagen social: %{http_code} %{content_type} %{size_download}\n" "$B/assets/social/$S.jpg"
+          curl -s "$B/sitemap.xml" | grep -c "$S" | sed 's/^/sitemap: /'
+          mkdir v && cd v && npm init -y >/dev/null && npm i -s playwright@1.49.1 >/dev/null && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > v.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          const B = "https://podcastdelmigrante.com", S = "alberta-rent-assistance-benefit-ayuda-alquiler";
+          (async () => { const br = await chromium.launch(); let f = 0; const ok = (c, m) => { console.log((c ? "OK   " : "FALLA") + " " + m); if (!c) f++; };
+            for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              const ctx = await br.newContext(p); const tk = [];
+              await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              await ctx.route((u) => /tiktok/.test(u.hostname), (r) => { tk.push(r.request().url()); r.abort(); });
+              const pg = await ctx.newPage(); const err = []; pg.on("pageerror", (e) => err.push(e.message));
+              await pg.goto(B + "/", { waitUntil: "networkidle" });
+              ok(/^¿Vives en Alberta y no te alcanza para pagar el alquiler\?/.test((await pg.locator("#heroMain h1").innerText()).trim()), `${n} noticia principal en portada`);
+              const t = await pg.locator("#heroSecondary .hero-sec-card h2").allInnerTexts(); console.log("     tarjetas:", JSON.stringify(t.map((x) => x.slice(0, 40))));
+              await pg.goto(B + "/articulo-" + S, { waitUntil: "networkidle" });
+              const txt = await pg.locator("main").innerText();
+              ok(["Rent Assistance Benefit", "Temporary Rent Assistance Benefit", "Paso 3.", "1-877-644-9992", "Nota editorial", "Vivienda"].every((x) => txt.includes(x)), `${n} artículo completo`);
+              ok(await pg.evaluate(() => { const v = document.querySelector(".article-video--tiktok"); return !!v && v.nextElementSibling && v.nextElementSibling.textContent.includes("¿Quiénes pueden solicitar"); }), `${n} video antes de «¿Quiénes pueden solicitar esta ayuda?»`);
+              ok((await pg.locator(".article-tiktok iframe").count()) === 0 && tk.length === 0, `${n} sin autoplay ni conexión a TikTok al abrir`);
+              ok((await pg.locator(".article-tiktok__link").getAttribute("href")) === "https://www.tiktok.com/@podcastdelmigrante/video/7705912617230945557", `${n} enlace del video`);
+              await pg.locator(".article-tiktok__play").scrollIntoViewIfNeeded(); await pg.locator(".article-tiktok__play").click();
+              ok(/tiktok\.com\/player\/v1\/7705912617230945557/.test(await pg.locator(".article-tiktok iframe").getAttribute("src")), `${n} reproductor oficial al pulsar`);
+              ok(await pg.locator(".article-hero-media").evaluate((m) => /alberta-rent-assistance-benefit-ayuda-alquiler\.jpg/.test(m.getAttribute("style"))), `${n} imagen de portada`);
+              ok((await pg.locator('a.article-apply[href="https://findhousing.alberta.ca/"]').count()) === 1 && (await pg.locator('main a[href="https://www.alberta.ca/rent-assistance"]').count()) >= 2, `${n} enlaces oficiales`);
+              const [sw, cw] = await pg.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]); ok(sw <= cw + 1, `${n} sin desplazamiento horizontal`);
+              ok(err.length === 0, `${n} sin errores JS ${JSON.stringify(err)}`);
+              await pg.goto(B + "/noticias.html", { waitUntil: "networkidle" });
+              ok((await pg.locator(`main a[href*="${S}"]`).count()) > 0, `${n} en el listado de noticias`);
+              await ctx.close();
+            } await br.close(); process.exit(f ? 1 : 0); })();
+          JS
+          node v.cjs
