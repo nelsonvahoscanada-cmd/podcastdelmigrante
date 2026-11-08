@@ -21,7 +21,8 @@ jobs:
             for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
               const ctx = await br.newContext(p); const ev = [];
               await ctx.route(/\/api\/(vistas|events)/, (r) => { ev.push(r.request().postData() || ""); r.fulfill({ status: 204, body: "" }); });
-              await ctx.route(/ytjobs\.co|youtube|ytimg/, (r) => r.abort());
+              const ext = [];
+              await ctx.route(/ytjobs\.co|youtube|ytimg/, (r) => { ext.push(r.request().url()); r.abort(); });
               const pg = await ctx.newPage(); const err = []; pg.on("pageerror", (e) => err.push(e.message));
               await pg.goto(B + "/perfil-1juanromero1", { waitUntil: "networkidle" });
               const orden = await pg.$$eval("#bizRoot > section", (ss) => ss.map((x) => x.className.replace("biz-section ", "")));
@@ -34,7 +35,8 @@ jobs:
               ok((await a.getAttribute("href")) === "https://ytjobs.co/talent/profile/91099" && (await a.getAttribute("target")) === "_blank" && (await a.getAttribute("rel")) === "noopener noreferrer", `${n} enlace y seguridad`);
               ok((await s.locator("iframe").count()) === 0, `${n} sin iframe`);
               const [nueva] = await Promise.all([ctx.waitForEvent("page"), a.click()]);
-              ok((await nueva.evaluate(() => window.opener)) === null && /ytjobs\.co\/talent\/profile\/91099/.test(nueva.url()), `${n} abre ${nueva.url()} sin opener`); await nueva.close();
+              await pg.waitForTimeout(500);
+              ok((await nueva.evaluate(() => window.opener)) === null && ext.includes("https://ytjobs.co/talent/profile/91099"), `${n} la pestaña nueva pide https://ytjobs.co/talent/profile/91099, sin opener`); await nueva.close();
               await pg.waitForTimeout(500);
               ok(ev.some((x) => /"website_click"/.test(x) && /"portfolio"/.test(x) && /BIZ-004/.test(x)), `${n} evento website_click/portfolio (interceptado, no enviado)`);
               ok(err.length === 0, `${n} sin errores JS`);
