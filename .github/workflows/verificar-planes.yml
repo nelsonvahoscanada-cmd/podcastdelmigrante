@@ -2,7 +2,7 @@
 name: verificar-planes
 on:
   push:
-    branches: [claude/laughing-albattani-1rvkc1-planes-prod]
+    branches: [claude/laughing-albattani-1rvkc1-planes-prod2]
 permissions:
   contents: read
 jobs:
