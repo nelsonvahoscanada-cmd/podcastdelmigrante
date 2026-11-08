@@ -189,6 +189,23 @@
     `;
   }
 
+  /* Portafolio externo (campo opcional «portfolio»: { title, text, label, url }).
+     Solo enlace (sin iframe ni contenido copiado), en pestaña nueva con
+     noopener noreferrer. Medición: website_click / target "portfolio"
+     (evento ya aceptado por el Worker). Sin el campo no se muestra nada. */
+  function portfolioHtml(b) {
+    const p = b.portfolio;
+    if (!p || typeof p.url !== "string" || !/^https:\/\//.test(p.url)) return "";
+    return `
+      <section class="biz-section biz-portfolio" aria-labelledby="bizPortfolioTitle">
+        <span class="biz-portfolio__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18M7 7l2-4M12 7l2-4M17 7l2-4"/><polygon points="10,13.5 15,16 10,18.5" fill="currentColor" stroke="none"/></svg></span>
+        <h2 class="biz-h2" id="bizPortfolioTitle">${esc(p.title || "Portafolio")}</h2>
+        ${p.text ? `<p class="biz-portfolio__text">${esc(p.text)}</p>` : ""}
+        <p class="biz-portfolio__cta"><a class="biz-btn biz-btn--primary" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" data-track="website_click" data-track-target="portfolio">${esc(p.label || "Ver portafolio")} <span aria-hidden="true">↗</span></a></p>
+      </section>
+    `;
+  }
+
   /* El reproductor NO se carga hasta que la persona pulsa (carga eficiente,
      sin autoplay al abrir la página). Al pulsar:
        - video_click  → lo emite analytics.js (data-track en el botón)
@@ -570,6 +587,7 @@
       ${callToActionHtml(b)}
       ${aboutHtml(b)}
       ${videoHtml(b)}
+      ${portfolioHtml(b)}
       ${servicesHtml(b)}
       ${serviceGroupsHtml(b)}
       ${galleryHtml(b)}

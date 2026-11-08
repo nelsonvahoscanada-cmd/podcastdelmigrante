@@ -81,3 +81,18 @@ test("fotografía original, vCard, QR y página generada", () => {
   assert.match(html, /css\/temas\/cine\.css/);
   assert.match(html, /og:image" content="https:\/\/podcastdelmigrante\.com\/assets\/directorio\/perfiles\/1juanromero1-og\.jpg"/);
 });
+
+test("portafolio profesional: enlace externo seguro, solo en BIZ-004", () => {
+  assert.deepEqual(J.portfolio, {
+    title: "Mi portafolio profesional",
+    text: "Explora mis proyectos de producción audiovisual, edición de video y creación de contenido. Conoce mi trabajo y descubre cómo puedo ayudarte a llevar tus ideas al siguiente nivel.",
+    label: "Ver portafolio completo",
+    url: "https://ytjobs.co/talent/profile/91099",
+  });
+  for (const b of ctx.B.filter((x) => x.slug !== J.slug)) assert.equal(b.portfolio, undefined, b.slug);
+  const js = read("js/business-profile.js");
+  assert.match(js, /target="_blank" rel="noopener noreferrer" data-track="website_click" data-track-target="portfolio"/);
+  assert.doesNotMatch(js.match(/function portfolioHtml[\s\S]*?\n  }\n/)[0], /<iframe/);
+  assert.match(js, /\$\{videoHtml\(b\)\}\n\s*\$\{portfolioHtml\(b\)\}/, "justo después del video");
+  assert.match(read("css/temas/cine.css"), /html\[data-profile-theme="cine"\] \.biz-portfolio \{/);
+});
