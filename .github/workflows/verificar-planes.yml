@@ -1,0 +1,29 @@
+# TEMPORAL: verificar en producción los planes Gratis/Premium (solo lectura). Se elimina después.
+name: verificar-planes
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-planes-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          B=https://podcastdelmigrante.com
+          for i in $(seq 1 40); do curl -s "$B/planes-directorio?t=$RANDOM" | grep -q '24.99' && { echo "desplegado (intento $i)"; break; }; if [ $i = 40 ]; then exit 1; fi; sleep 15; done
+          f=0
+          for p in planes-directorio registra-tu-empresa quien-puede-ayudarte invitacion; do
+            curl -s "$B/$p?t=$RANDOM" > p.html
+            n25=$(grep -oE '\$25([^.,0-9]|$)|"price": "25"' p.html | wc -l); n99=$(grep -o '24.99' p.html | wc -l)
+            echo "$p: \$24.99 x$n99 | \$25 x$n25"; [ "$n25" = 0 ] || f=1
+          done
+          curl -s "$B/planes-directorio" > pl.html
+          for t in 'Registrar mi empresa GRATIS' 'Conoce Premium' 'Registra tu empresa sin costo y permite que las personas la encuentren en nuestro Directorio Empresarial.' 'Lleva tu negocio al siguiente nivel con una miniweb profesional, tarjeta digital, códigos QR, herramientas de contacto y estadísticas de interacción.' 'Visible en la ficha' 'Con botón de llamada' 'Teléfono visible en tu ficha'; do
+            grep -qF "$t" pl.html && echo "OK  $t" || { echo "FALTA $t"; f=1; }
+          done
+          grep -c 'href="registra-tu-empresa?plan=gratuito#solicitud"' pl.html | sed 's/^/enlaces Gratis: /'; grep -c 'href="registra-tu-empresa?plan=premium#solicitud"' pl.html | sed 's/^/enlaces Premium: /'
+          for u in registra-tu-empresa?plan=gratuito registra-tu-empresa?plan=premium perfil-tomas-velazquez perfil-carlos-d-castillo perfil-santa-latino perfil-1juanromero1 js/business-directory.js?v=20261108 negocios-premium.json; do curl -s -o /dev/null -w "$u: %{http_code}\n" "$B/$u"; done
+          curl -s "$B/js/business-directory.js?v=20261108" | grep -q 'biz-card__phone' && echo "OK ficha gratuita: teléfono como texto"
+          curl -s "$B/api/events/health"; echo
+          exit $f
