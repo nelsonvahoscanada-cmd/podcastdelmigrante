@@ -527,6 +527,14 @@ const BUSINESSES = [
     youtubeVideoId: "9rg27W1igsY",
     videoLinkLabel: "Ver en YouTube",
 
+    /* Portafolio profesional (enlace externo, sin iframe) */
+    portfolio: {
+      title: "Mi portafolio profesional",
+      text: "Explora mis proyectos de producción audiovisual, edición de video y creación de contenido. Conoce mi trabajo y descubre cómo puedo ayudarte a llevar tus ideas al siguiente nivel.",
+      label: "Ver portafolio completo",
+      url: "https://ytjobs.co/talent/profile/91099",
+    },
+
     profileImage: "assets/directorio/perfiles/1juanromero1.jpg",      /* fotografía original, sin recortes */
     cardImage: "assets/directorio/perfiles/1juanromero1-card.jpg",    /* directorio */
     ogImage: "assets/directorio/perfiles/1juanromero1-og.jpg",        /* al compartir (foto completa sobre fondo oscuro) */

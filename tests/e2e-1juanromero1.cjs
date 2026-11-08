@@ -16,8 +16,9 @@ const M = "contact1juanromero1@gmail.com", B = process.env.BASE || "http://127.0
 (async () => { const br = await chromium.launch();
  for (const [n,p] of [["computador",{viewport:{width:1440,height:900}}],["tableta",devices["iPad Mini"]],["celular",devices["iPhone 13"]]]) {
   const c = await br.newContext({...p, deviceScaleFactor:1}); const ev=[];
-  await c.route(/\/api\/(vistas|events)/, r=>{ev.push(r.request().url());r.fulfill({status:204,body:""});});
-  const yt=[]; await c.route(/youtube|ytimg|googlevideo/, r=>{yt.push(r.request().url());r.abort();});
+  await c.route(/\/api\/(vistas|events)/, r=>{ev.push(r.request().url()+" "+(r.request().postData()||""));r.fulfill({status:204,body:""});});
+  const yt=[]; await c.route(/ytjobs\.co/, r=>r.abort());
+  await c.route(/youtube|ytimg|googlevideo/, r=>{yt.push(r.request().url());r.abort();});
   const pg = await c.newPage(); const err=[]; pg.on("pageerror",e=>err.push(e.message));
   await pg.goto(B+"/perfil-1juanromero1",{waitUntil:"networkidle"});
   assert.equal(await pg.getAttribute("html","data-profile-theme"),"cine");
@@ -41,6 +42,27 @@ const M = "contact1juanromero1@gmail.com", B = process.env.BASE || "http://127.0
   await pg.locator(".biz-video__play").first().click();
   const src = await pg.locator(".biz-video iframe").getAttribute("src");
   assert.match(src,/youtube-nocookie\.com\/embed\/9rg27W1igsY\?/,"reproductor al pulsar");
+  /* Portafolio: justo después del video, antes de servicios y del contacto; enlace seguro y medido */
+  const orden = await pg.$$eval("#bizRoot > section", (ss) => ss.map((x) => x.className));
+  const iv = orden.findIndex((c) => /biz-video/.test(c)), ip = orden.findIndex((c) => /biz-portfolio/.test(c)), ic = orden.findIndex((c) => /biz-contact/.test(c));
+  assert.ok(ip === iv + 1 && ip < ic, "orden " + JSON.stringify(orden));
+  const port = pg.locator(".biz-portfolio"); await port.scrollIntoViewIfNeeded();
+  assert.equal((await port.locator("h2").innerText()).trim().toUpperCase(), "MI PORTAFOLIO PROFESIONAL");
+  assert.match(await port.innerText(), /Explora mis proyectos de producción audiovisual/);
+  const pb = port.locator("a.biz-btn");
+  assert.ok(await pb.isVisible());
+  assert.match((await pb.innerText()).toUpperCase(), /VER PORTAFOLIO COMPLETO/);
+  assert.equal(await pb.getAttribute("href"), "https://ytjobs.co/talent/profile/91099");
+  assert.equal(await pb.getAttribute("target"), "_blank");
+  assert.equal(await pb.getAttribute("rel"), "noopener noreferrer");
+  assert.equal(await port.locator("iframe").count(), 0);
+  const pbb = await pb.boundingBox(); assert.ok(pbb.height >= 44 && pbb.x >= 0 && pbb.x + pbb.width <= pg.viewportSize().width, "botón táctil " + JSON.stringify(pbb));
+  const antes = ev.length;
+  const [nueva] = await Promise.all([c.waitForEvent("page"), pb.click()]);
+  assert.equal(await nueva.evaluate(() => window.opener), null); await nueva.close();
+  await pg.waitForTimeout(300);
+  assert.ok(ev.slice(antes).some((u) => /website_click/.test(u) && /portfolio/.test(u) && /BIZ-004/.test(u)), "evento website_click/portfolio");
+  if (SHOTS) await port.screenshot({ path: require("node:path").join(SHOTS, `portafolio-${n}.png`) });
   const txt = await pg.locator("main").innerText();
   for (const t of ["1JuanRomero1 Inc.","Juan Sebastian Vahos Alvarado","Fundador, Videógrafo y Editor de Video","Calgary","Correo: "+M]) assert.ok(txt.includes(t),t);
   assert.ok(/videos para redes sociales/i.test(txt));
