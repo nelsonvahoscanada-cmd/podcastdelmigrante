@@ -1,0 +1,51 @@
+# TEMPORAL: verificar en producción el portafolio de BIZ-004 (solo lectura; eventos interceptados). Se elimina después.
+name: verificar-portafolio
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-portafolio-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for i in $(seq 1 40); do curl -s "https://podcastdelmigrante.com/js/businesses.js?t=$RANDOM" | grep -q 'ytjobs.co/talent/profile/91099' && { echo "desplegado (intento $i)"; break; }; [ $i = 40 ] && exit 1; sleep 15; done
+          mkdir v && cd v && npm init -y >/dev/null && npm i -s playwright@1.49.1 >/dev/null && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > v.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          const B = "https://podcastdelmigrante.com";
+          (async () => {
+            const br = await chromium.launch(); let f = 0;
+            const ok = (c, m) => { console.log((c ? "OK   " : "FALLA") + " " + m); if (!c) f++; };
+            for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              const ctx = await br.newContext(p); const ev = [];
+              await ctx.route(/\/api\/(vistas|events)/, (r) => { ev.push(r.request().postData() || ""); r.fulfill({ status: 204, body: "" }); });
+              await ctx.route(/ytjobs\.co|youtube|ytimg/, (r) => r.abort());
+              const pg = await ctx.newPage(); const err = []; pg.on("pageerror", (e) => err.push(e.message));
+              await pg.goto(B + "/perfil-1juanromero1", { waitUntil: "networkidle" });
+              const orden = await pg.$$eval("#bizRoot > section", (ss) => ss.map((x) => x.className.replace("biz-section ", "")));
+              const iv = orden.indexOf("biz-video"), ip = orden.indexOf("biz-portfolio"), ic = orden.findIndex((c) => /biz-contact/.test(c));
+              ok(ip === iv + 1 && ip < ic, `${n} orden: ${orden.join(" > ")}`);
+              const s = pg.locator(".biz-portfolio"); await s.scrollIntoViewIfNeeded();
+              ok((await s.locator("h2").innerText()).trim() === "MI PORTAFOLIO PROFESIONAL", `${n} título`);
+              const a = s.locator("a.biz-btn");
+              ok(await a.isVisible() && /VER PORTAFOLIO COMPLETO/i.test(await a.innerText()), `${n} botón visible`);
+              ok((await a.getAttribute("href")) === "https://ytjobs.co/talent/profile/91099" && (await a.getAttribute("target")) === "_blank" && (await a.getAttribute("rel")) === "noopener noreferrer", `${n} enlace y seguridad`);
+              ok((await s.locator("iframe").count()) === 0, `${n} sin iframe`);
+              const [nueva] = await Promise.all([ctx.waitForEvent("page"), a.click()]);
+              ok((await nueva.evaluate(() => window.opener)) === null && /ytjobs\.co\/talent\/profile\/91099/.test(nueva.url()), `${n} abre ${nueva.url()} sin opener`); await nueva.close();
+              await pg.waitForTimeout(500);
+              ok(ev.some((x) => /"website_click"/.test(x) && /"portfolio"/.test(x) && /BIZ-004/.test(x)), `${n} evento website_click/portfolio (interceptado, no enviado)`);
+              ok(err.length === 0, `${n} sin errores JS`);
+              const [sw, cw] = await pg.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]); ok(sw <= cw + 1, `${n} sin desplazamiento horizontal`);
+              for (const slug of ["tomas-velazquez", "carlos-d-castillo", "santa-latino"]) {
+                await pg.goto(B + "/perfil-" + slug, { waitUntil: "networkidle" });
+                ok((await pg.locator(".biz-portfolio").count()) === 0 && (await pg.locator("h1.biz-name").count()) === 1, `${n} ${slug}: sin portafolio, perfil intacto`);
+              }
+              await ctx.close();
+            }
+            await br.close(); process.exit(f ? 1 : 0);
+          })();
+          JS
+          node v.cjs
