@@ -95,6 +95,6 @@ test("SEO y redes: título, descripción, Open Graph y Twitter con la imagen apr
 });
 
 test("no toca las ediciones mensuales ni la portada de la Edición 01", () => {
-  assert.match(read("index.html"), /<img src="\/assets\/ediciones\/2026-10\/portada\.jpg"/);
+  assert.match(read("index.html"), /<img src="\/assets\/ediciones\/2026-10\/magazine-portada-octubre-2026\.webp"/);
   assert.doesNotMatch(read("js/ediciones.js"), new RegExp(SLUG));
 });
