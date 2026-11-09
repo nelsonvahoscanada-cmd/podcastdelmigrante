@@ -1,0 +1,43 @@
+# TEMPORAL: verificar en producción la portada de la Edición 01 (solo lectura). Se elimina después.
+name: verificar-portada
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-portada-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          B=https://podcastdelmigrante.com; P=/assets/ediciones/2026-10/magazine-portada-octubre-2026
+          for i in $(seq 1 40); do curl -s "$B/magazine/2026-10/?t=$RANDOM" | grep -q 'magazine-portada-octubre-2026.webp' && { echo "desplegado (intento $i)"; break; }; if [ $i = 40 ]; then exit 1; fi; sleep 15; done
+          curl -s -o /dev/null -w "portada: %{http_code} %{content_type} %{size_download}\n" "$B$P.webp"
+          curl -s -o /dev/null -w "social: %{http_code} %{content_type}\n" "$B$P-social.jpg"
+          curl -s "$B/magazine/2026-10/" | grep -oE '(property|name)="(og:image|twitter:image)" content="[^"]*"'
+          for u in / /magazine/ /magazine/ediciones/ /magazine/2026-10/; do printf "%s: " "$u"; curl -s "$B$u?t=$RANDOM" | grep -c 'magazine-portada-octubre-2026.webp'; done
+          mkdir v && cd v && npm init -y >/dev/null && npm i -s playwright@1.49.1 >/dev/null && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > v.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          const B = "https://podcastdelmigrante.com";
+          (async () => { const br = await chromium.launch(); let f = 0; const ok = (c, m) => { console.log((c ? "OK   " : "FALLA") + " " + m); if (!c) f++; };
+            for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              const ctx = await br.newContext(p); await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              const pg = await ctx.newPage(); const err = []; pg.on("pageerror", (e) => err.push(e.message));
+              const prop = async (sel) => { const el = pg.locator(sel).first(); await el.scrollIntoViewIfNeeded(); await pg.waitForTimeout(400); const r = await el.evaluate((i) => [i.complete && i.naturalWidth, i.getBoundingClientRect().width / i.getBoundingClientRect().height]); return r; };
+              await pg.goto(B + "/", { waitUntil: "networkidle" });
+              let [w, ar] = await prop(".edition-cover--portada img"); ok(w === 1024 && Math.abs(ar - 2 / 3) < 0.01, `${n} portada del sitio completa (${ar.toFixed(3)})`);
+              await pg.locator(".edition-cover--portada").click(); await pg.waitForURL(/\/magazine\/2026-10\/$/); ok(true, `${n} la portada abre ${pg.url()}`);
+              [w, ar] = await prop(".ed-portada img"); ok(w === 1024 && Math.abs(ar - 2 / 3) < 0.01, `${n} portada en la edición (${ar.toFixed(3)})`);
+              const t = await pg.locator("main").innerText(); ok(/Edición 01/.test(t) && /Nace una nueva voz/.test(t) && /Correcciones/.test(t), `${n} rótulo, título y corrección`);
+              ok((await pg.locator("main a[href*='articulo']").count()) > 5, `${n} artículos de la edición enlazados (${await pg.locator("main a[href*='articulo']").count()})`);
+              await pg.goto(B + "/magazine/ediciones/", { waitUntil: "networkidle" });
+              [w, ar] = await prop(".hem-ed img"); ok(w === 1024 && Math.abs(ar - 2 / 3) < 0.01, `${n} hemeroteca: portada vertical completa`);
+              ok((await pg.locator(".hem-ed").count()) === 1, `${n} hemeroteca: solo ediciones publicadas`);
+              await pg.locator(".hem-ed a").first().click(); await pg.waitForURL(/\/magazine\/2026-10\/$/); ok(true, `${n} la hemeroteca abre la edición de octubre`);
+              const [sw, cw] = await pg.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]); ok(sw <= cw + 1, `${n} sin desplazamiento horizontal`);
+              ok(err.length === 0, `${n} sin errores JS`);
+              await ctx.close();
+            } await br.close(); process.exit(f ? 1 : 0); })();
+          JS
+          node v.cjs
