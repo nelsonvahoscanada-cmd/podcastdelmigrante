@@ -56,11 +56,11 @@ async function imagenesCargadas(page) {
     assert.equal(await page.locator(".ed-borrador").count(), 0, "sin aviso de borrador");
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), `${SITE}/magazine/2026-10/`);
     assert.match(await page.locator("h1").textContent(), /Nace una nueva voz para los migrantes en Canadá/);
-    assert.equal(await page.locator('meta[property="og:image"]').getAttribute("content"), `${SITE}/assets/ediciones/2026-10/portada-social.jpg`);
+    assert.equal(await page.locator('meta[property="og:image"]').getAttribute("content"), `${SITE}/assets/ediciones/2026-10/magazine-portada-octubre-2026-social.jpg`);
     assert.equal(await page.locator('meta[property="og:image:width"]').getAttribute("content"), "1200");
     assert.equal(await page.locator('meta[property="og:image:height"]').getAttribute("content"), "630");
-    assert.equal(await page.locator('meta[name="twitter:image"]').getAttribute("content"), `${SITE}/assets/ediciones/2026-10/portada-social.jpg`);
-    assert.equal(await page.locator(".ed-portada img").getAttribute("src"), "/assets/ediciones/2026-10/portada.jpg");
+    assert.equal(await page.locator('meta[name="twitter:image"]').getAttribute("content"), `${SITE}/assets/ediciones/2026-10/magazine-portada-octubre-2026-social.jpg`);
+    assert.equal(await page.locator(".ed-portada img").getAttribute("src"), "/assets/ediciones/2026-10/magazine-portada-octubre-2026.webp");
     assert.match(await page.locator(".ed-editorial").textContent(), /Nelson Vahos, director[\s\S]*Esto apenas empieza\./);
     assert.equal(await page.locator(".ed-seccion").count(), 4);
     const enlaces = await page.locator(".ed-pieza__enlace").evaluateAll((as) => as.map((a) => a.getAttribute("href")));

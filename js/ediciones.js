@@ -83,13 +83,13 @@ const EDICIONES = [
     "titulo": "Nace una nueva voz para los migrantes en Canadá",
     "bajada": "Edición inaugural: una selección retrospectiva de lo que publicamos en octubre de 2026, con historias, entrevistas y la información que cambió la vida de los migrantes en Canadá.",
     "portada": {
-      "imagen": "/assets/ediciones/2026-10/portada.jpg",
-      "alt": "Portada de la Edición 01 de El Podcast del Migrante Magazine, octubre de 2026: «Nace una nueva voz para los migrantes en Canadá», con el logotipo y cinco titulares de la edición.",
-      "ancho": 1200,
-      "alto": 1600,
+      "imagen": "/assets/ediciones/2026-10/magazine-portada-octubre-2026.webp",
+      "alt": "Portada de la Edición N.º 01 de El Podcast del Migrante Magazine, octubre de 2026: Santa Latino (Héctor Rivero), sonriente con traje de Santa Claus y el pulgar arriba, junto a un árbol de Navidad iluminado, el horizonte de Toronto, las cataratas del Niágara y la bandera de Canadá, con el titular «De migrante a Santa Latino: la historia de Héctor Rivero y su transformación en un personaje que lleva alegría a las familias en Canadá». Historia secundaria, «Historias que inspiran»: «Doctor Eddy Valverde: una historia de medicina y comunidad en Brooks», con su retrato. Al pie: Comunidad, Empresas e Información.",
+      "ancho": 1024,
+      "alto": 1536,
       "social": {
-        "imagen": "/assets/ediciones/2026-10/portada-social.jpg",
-        "alt": "Edición 01 de El Podcast del Migrante Magazine, octubre de 2026: «Nace una nueva voz para los migrantes en Canadá».",
+        "imagen": "/assets/ediciones/2026-10/magazine-portada-octubre-2026-social.jpg",
+        "alt": "Portada de la Edición N.º 01 de El Podcast del Migrante Magazine, octubre de 2026: «De migrante a Santa Latino», la historia de Héctor Rivero, y el doctor Eddy Valverde en Brooks.",
         "ancho": 1200,
         "alto": 630
       }
@@ -269,7 +269,13 @@ const EDICIONES = [
         }
       }
     },
-    "huella": "d434c15a58b85e15188dc3eb39d7c6294cc4a1b360769b1d778519f50b11e2a2"
+    "correcciones": [
+      {
+        "fecha": "2026-11-09",
+        "nota": "Se sustituyó la portada institucional por la portada editorial aprobada por la dirección (Santa Latino y el doctor Eddy Valverde). El contenido de la edición no cambió."
+      }
+    ],
+    "huella": "810dd057f46b6f3fce9bcfe8c8f6799caeb0ee218d49a7631ed5a233ff1d8398"
   },
   {
     "numero": 2,

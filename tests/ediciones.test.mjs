@@ -253,5 +253,24 @@ test("aislamiento: las noticias y el resto del sitio no dependen de las edicione
     }
   }
   assert.doesNotMatch(read("index.html"), /Portada en preparación/);
-  assert.match(read("index.html"), /<img src="\/assets\/ediciones\/2026-10\/portada\.jpg"/);
+  assert.match(read("index.html"), /<img src="\/assets\/ediciones\/2026-10\/magazine-portada-octubre-2026\.webp"/);
+});
+
+test("Edición 01: portada editorial aprobada (9-11-2026), completa y vertical; contenido y snapshot sin cambios; corrección registrada", () => {
+  const oct = ediciones.find((e) => e.slug === "2026-10");
+  assert.equal(oct.portada.imagen, "/assets/ediciones/2026-10/magazine-portada-octubre-2026.webp");
+  assert.deepEqual([oct.portada.ancho, oct.portada.alto], [1024, 1536]);
+  assert.match(oct.portada.alt, /Santa Latino \(Héctor Rivero\)/);
+  assert.match(oct.portada.alt, /Eddy Valverde/);
+  assert.equal(oct.portada.social.imagen, "/assets/ediciones/2026-10/magazine-portada-octubre-2026-social.jpg");
+  assert.equal(oct.titulo, "Nace una nueva voz para los migrantes en Canadá", "la frase institucional se conserva");
+  assert.equal(oct.instantanea.congeladaEn, "2026-11-02T23:23:34.010Z", "la instantánea no se regeneró");
+  assert.equal(oct.correcciones.at(-1).fecha, "2026-11-09");
+  assert.match(oct.correcciones.at(-1).nota, /portada/);
+  assert.equal(huellaDe(oct), oct.huella);
+  for (const f of ["magazine-portada-octubre-2026.webp", "magazine-portada-octubre-2026-social.jpg"]) assert.ok(existsSync(join(ROOT, "assets/ediciones/2026-10", f)), f);
+  assert.match(read("magazine/2026-10/index.html"), /magazine-portada-octubre-2026\.webp/);
+  assert.match(read("magazine/ediciones/index.html"), /<a href="\/magazine\/2026-10\/">\s*<img src="\/assets\/ediciones\/2026-10\/magazine-portada-octubre-2026\.webp"/);
+  /* La portada de la página principal se ve completa (sin recorte forzado) */
+  assert.match(read("css/styles.css"), /\.edition-cover--portada img \{ display: block; width: 100%; height: auto; \}/);
 });

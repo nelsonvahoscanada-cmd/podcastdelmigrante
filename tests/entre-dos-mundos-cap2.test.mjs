@@ -85,7 +85,7 @@ test("edición de noviembre (borrador): incluye el capítulo; la de octubre no c
   assert.equal(nov.estado, "borrador");
   assert.ok(nov.secciones.some((s) => s.piezas.some((p) => p.id === "ART-2026-038")));
   const oct = ctx.ED.find((e) => e.slug === "2026-10");
-  assert.equal(oct.huella, "d434c15a58b85e15188dc3eb39d7c6294cc4a1b360769b1d778519f50b11e2a2");
+  assert.equal(oct.huella, "810dd057f46b6f3fce9bcfe8c8f6799caeb0ee218d49a7631ed5a233ff1d8398", "solo cambió la portada (corrección del 9-11-2026)");
   assert.ok(!Object.keys(oct.instantanea.piezas).includes("articulo:ART-2026-038"));
 });
 
