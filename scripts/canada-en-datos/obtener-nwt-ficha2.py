@@ -56,7 +56,12 @@ def pdf_texto(b):
     return "\n".join(p.extract_text() or "" for p in pypdf.PdfReader(io.BytesIO(b)).pages)
 
 
+OMITIR = set(os.environ.get("OMITIR_TABLAS", "").split())
+
+
 def tabla(pid):
+    if pid in OMITIR:
+        raise RuntimeError(f"tabla {pid} omitida en esta ronda")
     b, st, _ = get(f"https://www150.statcan.gc.ca/n1/tbl/csv/{pid}-eng.zip", 900)
     zf = zipfile.ZipFile(io.BytesIO(b))
     n = [x for x in zf.namelist() if x.endswith(".csv") and "MetaData" not in x][0]

@@ -8,7 +8,7 @@ permissions:
 jobs:
   datos:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -16,9 +16,9 @@ jobs:
       - run: pip install -q pypdf playwright && python -m playwright install --with-deps chromium >/dev/null
       - name: Ronda 2
         continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-nwt-ficha2.py > /tmp/ronda2.log 2>&1; tail -20 /tmp/ronda2.log; mkdir -p /tmp/out; cp /tmp/ronda2.log /tmp/out/
+        run: OMITIR_TABLAS="98100216 98100264" python scripts/canada-en-datos/obtener-nwt-ficha2.py > /tmp/ronda2.log 2>&1; tail -20 /tmp/ronda2.log; mkdir -p /tmp/out; cp /tmp/ronda2.log /tmp/out/
       - name: Publicar
         if: always()
         run: |
           cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "datos NWT ronda 2 [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/nwt-canada-en-datos-datos2
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/nwt-canada-en-datos-datos3
