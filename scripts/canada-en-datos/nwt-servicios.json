@@ -1,0 +1,667 @@
+{
+ "escuelas": [
+  {
+   "csd": "6101010",
+   "nombre": "Chief Paul Niditchie School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101014",
+   "nombre": "Angik School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101015",
+   "nombre": "Chief Julius School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101017",
+   "nombre": "Aurora College - Aurora Campus",
+   "niveles": "formación postsecundaria",
+   "autoridad": null,
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101017",
+   "nombre": "East Three Elementary School",
+   "niveles": "preescolar, primaria",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101017",
+   "nombre": "East Three Secondary School",
+   "niveles": "secundaria básica, secundaria superior",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101025",
+   "nombre": "Moose Kerr School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101036",
+   "nombre": "Mangilaluk School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101041",
+   "nombre": "Inualthuyak School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6101095",
+   "nombre": "Helen Kalvak Elihakvik",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "BDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6102003",
+   "nombre": "Ehtseo Ayha School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "SDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6102005",
+   "nombre": "Chief Albert Wright School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "SDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6102007",
+   "nombre": "Mackenzie Mountain School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "SDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6102009",
+   "nombre": "Chief T'Selehye School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "SDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6102012",
+   "nombre": "Colville Lake School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "SDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6103031",
+   "nombre": "Chief Jimmy Bruneau School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "TCSA",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6103031",
+   "nombre": "Elizabeth Mackenzie Elementary School",
+   "niveles": "preescolar, primaria",
+   "autoridad": "TCSA",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6103034",
+   "nombre": "Mezi Community School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "TCSA",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6103049",
+   "nombre": "Jean Wetrade Gamètì School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "TCSA",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6103052",
+   "nombre": "Alexis Arrowmaker School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "TCSA",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104005",
+   "nombre": "Kakisa Lake School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104006",
+   "nombre": "Charles Tetcho School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104009",
+   "nombre": "Echo-Dene School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104010",
+   "nombre": "Charles Yohin School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104013",
+   "nombre": "Louie Norwegian School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104014",
+   "nombre": "Deh Gáh Elementary and Secondary School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104017",
+   "nombre": "Chief Sunrise Education Centre",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "SSDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104038",
+   "nombre": "Escuela primaria de Fort Simpson (en la base, también con su nombre anterior, Bompas Elementary School)",
+   "niveles": "preescolar, primaria",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104038",
+   "nombre": "Escuela secundaria regional de Fort Simpson (en la base, también con su nombre anterior, Thomas Simpson Secondary School)",
+   "niveles": "secundaria básica, secundaria superior",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6104044",
+   "nombre": "Chief Julian Yendo School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "DDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6105001",
+   "nombre": "Aurora College - Thebacha Campus",
+   "niveles": "formación postsecundaria",
+   "autoridad": null,
+   "en_ndilo": false
+  },
+  {
+   "csd": "6105001",
+   "nombre": "Joseph Burr Tyrrell School",
+   "niveles": "preescolar, primaria",
+   "autoridad": "SSDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6105001",
+   "nombre": "P.W. Kaeser High School",
+   "niveles": "secundaria básica, secundaria superior",
+   "autoridad": "SSDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6105016",
+   "nombre": "Harry Camsell School",
+   "niveles": "preescolar, primaria",
+   "autoridad": "SSDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6105016",
+   "nombre": "Princess Alexandra School",
+   "niveles": "primaria, secundaria básica",
+   "autoridad": "SSDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6105016",
+   "nombre": "École Borale",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "CSF",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6105018",
+   "nombre": "Deninu School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "SSDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6105020",
+   "nombre": "Lutsel K'e Dene School",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "SSDEC",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106021",
+   "nombre": "Kaw Tay Whee School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "DDEA",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "Aurora College - Yellowknife Campus",
+   "niveles": "formación postsecundaria",
+   "autoridad": null,
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "Escuela dene de Ndilǫ (K'àlemì Dene School)",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "NDEA",
+   "en_ndilo": true
+  },
+  {
+   "csd": "6106023",
+   "nombre": "Mildred Hall Elementary School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "YK1",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "N.J. Macpherson School",
+   "niveles": "preescolar, primaria",
+   "autoridad": "YK1",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "Range Lake North School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "YK1",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "Weledeh Catholic School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "YCS",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "École Allain St-Cyr",
+   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
+   "autoridad": "CSF",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "École J.H. Sissons School",
+   "niveles": "preescolar, primaria",
+   "autoridad": "YK1",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "École Sir John Franklin High School",
+   "niveles": "secundaria básica, secundaria superior",
+   "autoridad": "YK1",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "École St. Joseph School",
+   "niveles": "preescolar, primaria, secundaria básica",
+   "autoridad": "YCS",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "École St. Patrick High School",
+   "niveles": "secundaria básica, secundaria superior",
+   "autoridad": "YCS",
+   "en_ndilo": false
+  },
+  {
+   "csd": "6106023",
+   "nombre": "École William McDonald School",
+   "niveles": "primaria, secundaria básica",
+   "autoridad": "YK1",
+   "en_ndilo": false
+  }
+ ],
+ "clima": {
+  "6106023": {
+   "estacion": "YELLOWKNIFE (AIRPORT)",
+   "enero": -25.5,
+   "julio": 17.1,
+   "anual": -4.0,
+   "nieve": 155.0,
+   "precipitacion": 293.9,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2204100&dispBack=0"
+  },
+  "6101017": {
+   "estacion": "INUVIK",
+   "enero": -24.9,
+   "julio": 14.2,
+   "anual": -7.0,
+   "nieve": null,
+   "precipitacion": 249.8,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2202570&dispBack=0"
+  },
+  "6105016": {
+   "estacion": "HAY RIVER",
+   "enero": -21.4,
+   "julio": 16.6,
+   "anual": -2.2,
+   "nieve": 145.5,
+   "precipitacion": 320.3,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2202400&dispBack=0"
+  },
+  "6105001": {
+   "estacion": "FORT SMITH",
+   "enero": -21.9,
+   "julio": 17.4,
+   "anual": -1.4,
+   "nieve": 142.2,
+   "precipitacion": 360.1,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2202200&dispBack=0"
+  },
+  "6102007": {
+   "estacion": "NORMAN WELLS",
+   "enero": -25.4,
+   "julio": 16.8,
+   "anual": -4.8,
+   "nieve": 165.8,
+   "precipitacion": 321.6,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2202800&dispBack=0"
+  },
+  "6104038": {
+   "estacion": "FORT SIMPSON",
+   "enero": -23.6,
+   "julio": 17.7,
+   "anual": -2.3,
+   "nieve": 195.2,
+   "precipitacion": 370.5,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2202101&dispBack=0"
+  },
+  "6104009": {
+   "estacion": "FORT LIARD",
+   "enero": -20.8,
+   "julio": 17.6,
+   "anual": -0.6,
+   "nieve": 165.3,
+   "precipitacion": 449.2,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2201575&dispBack=0"
+  },
+  "6101095": {
+   "estacion": "ULUKHAKTOK/HOLMAN",
+   "enero": -27.2,
+   "julio": 9.3,
+   "anual": -10.9,
+   "nieve": 91.8,
+   "precipitacion": 175.7,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2502501&dispBack=0"
+  },
+  "6101036": {
+   "estacion": "TUKTOYAKTUK",
+   "enero": -25.8,
+   "julio": 11.4,
+   "anual": -9.1,
+   "nieve": null,
+   "precipitacion": null,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2203911&dispBack=0"
+  },
+  "6102009": {
+   "estacion": "FORT GOOD HOPE",
+   "enero": -26.5,
+   "julio": 16.9,
+   "anual": -5.5,
+   "nieve": null,
+   "precipitacion": 291.4,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2201400&dispBack=0"
+  },
+  "6101015": {
+   "estacion": "FORT MCPHERSON",
+   "enero": -26.9,
+   "julio": 15.1,
+   "anual": -6.9,
+   "nieve": 138.7,
+   "precipitacion": 294.3,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2201601&dispBack=0"
+  },
+  "6104014": {
+   "estacion": "FORT PROVIDENCE",
+   "enero": -22.9,
+   "julio": 17.1,
+   "anual": -2.4,
+   "nieve": null,
+   "precipitacion": null,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2201799&dispBack=0"
+  },
+  "6102003": {
+   "estacion": "DELINE",
+   "enero": -24.7,
+   "julio": 13.4,
+   "anual": -5.9,
+   "nieve": null,
+   "precipitacion": 269.2,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2201022&dispBack=0"
+  },
+  "6102012": {
+   "estacion": "COLVILLE LAKE",
+   "enero": -26.9,
+   "julio": 14.2,
+   "anual": -7.2,
+   "nieve": null,
+   "precipitacion": null,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2200824&dispBack=0"
+  },
+  "6103034": {
+   "estacion": "WHATI",
+   "enero": -25.1,
+   "julio": 16.4,
+   "anual": -4.6,
+   "nieve": null,
+   "precipitacion": null,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2202678&dispBack=0"
+  },
+  "6101014": {
+   "estacion": "PAULATUK",
+   "enero": -24.7,
+   "julio": 10.3,
+   "anual": -8.8,
+   "nieve": null,
+   "precipitacion": 227.0,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2203055&dispBack=0"
+  },
+  "6101041": {
+   "estacion": "SACHS HARBOUR",
+   "enero": -27.4,
+   "julio": 6.5,
+   "anual": -12.1,
+   "nieve": null,
+   "precipitacion": 139.7,
+   "url": "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2503648&dispBack=0"
+  }
+ },
+ "lcd": {
+  "6106023": [
+   120,
+   125
+  ],
+  "6101025": [
+   160,
+   165
+  ],
+  "6101015": [
+   160,
+   165
+  ],
+  "6101017": [
+   150,
+   155
+  ],
+  "6101014": [
+   185,
+   190
+  ],
+  "6101041": [
+   170,
+   175
+  ],
+  "6101010": null,
+  "6101036": [
+   165,
+   170
+  ],
+  "6101095": [
+   180,
+   185
+  ],
+  "6102012": null,
+  "6102003": [
+   170,
+   175
+  ],
+  "6102009": [
+   180,
+   185
+  ],
+  "6102007": [
+   170,
+   175
+  ],
+  "6102005": [
+   170,
+   175
+  ],
+  "6104009": [
+   125,
+   130
+  ],
+  "6104014": [
+   130,
+   135
+  ],
+  "6104038": [
+   140,
+   145
+  ],
+  "6104013": null,
+  "6104010": [
+   125,
+   130
+  ],
+  "6104006": null,
+  "6104044": null,
+  "6103031": [
+   120,
+   125
+  ],
+  "6103049": null,
+  "6103034": [
+   130,
+   135
+  ],
+  "6105003": [
+   130,
+   135
+  ],
+  "6105018": [
+   135,
+   140
+  ],
+  "6105001": [
+   130,
+   135
+  ],
+  "6105016": [
+   130,
+   135
+  ],
+  "6104005": null,
+  "6105020": [
+   150,
+   155
+  ]
+ },
+ "fpi": {
+  "6101025": 162,
+  "6101015": 163,
+  "6101017": 159,
+  "6101014": 187,
+  "6101041": 197,
+  "6101010": 182,
+  "6101036": 158,
+  "6101095": 180,
+  "6102012": 184,
+  "6102003": 171,
+  "6102009": 183,
+  "6102007": 170,
+  "6102005": 174,
+  "6104009": 145,
+  "6104014": 130,
+  "6104038": 148,
+  "6104017": 121,
+  "6104010": 169,
+  "6104006": 170,
+  "6105018": 146,
+  "6105001": 119,
+  "6105016": 126,
+  "6105020": 169,
+  "6103031": 144,
+  "6103049": 146,
+  "6103052": 140,
+  "6103034": 145
+ },
+ "cmhc": {
+  "periodo": "octubre de 2025",
+  "filas": [
+   [
+    "estudio (bachelor)",
+    1606
+   ],
+   [
+    "1 habitación",
+    1757
+   ],
+   [
+    "2 habitaciones",
+    2109
+   ],
+   [
+    "3 habitaciones",
+    2449
+   ]
+  ]
+ }
+}

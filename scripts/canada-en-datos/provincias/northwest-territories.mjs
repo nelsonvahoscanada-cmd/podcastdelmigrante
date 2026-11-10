@@ -29,8 +29,11 @@
 
   Datos (scripts/canada-en-datos/):
     nwt-localidades.json   obtener-nwt-localidades.py + compactar-nwt.py
-    nwt-servicios.json     normales climáticas 1991-2020 por comunidad y
-                           comunidades del programa Nutrition North Canada
+    nwt-servicios.json     compactar-nwt-servicios.py: escuelas (ODEF 2022),
+                           normales climáticas 1991-2020, diferenciales de costo
+                           de vida 2025 e índice de precios de alimentos 2019 por
+                           comunidad (NWT Bureau of Statistics) y alquileres de
+                           CMHC en Yellowknife
 
   Regla: no se rellena ningún dato. Lo que no tiene fuente oficial
   verificada se muestra como «Dato no disponible».
@@ -140,8 +143,8 @@ const EPA = {
 };
 
 /* Índice de precios al consumidor de Yellowknife (Statistics Canada, tabla 18-10-0004-01).
-   Mide la variación de los precios, no su nivel. Se completa con statcan2 (ronda 2). */
-const IPC = { periodo: "septiembre de 2026", anterior: "septiembre de 2025", yk: { indice: "170.0", previo: null, variacion: "4.7" }, canada: { variacion: "3.1" }, publicado: "21 de octubre de 2026" };
+   Mide la variación de los precios, no su nivel. Publicada el 19 de octubre de 2026. */
+const IPC = { periodo: "septiembre de 2026", anterior: "septiembre de 2025", yk: { indice: "170.0", previo: "162.4", variacion: "4.7" }, canada: { variacion: "3.1" }, publicado: "19 de octubre de 2026" };
 
 /* ---------- Fuentes ---------- */
 export const FUENTES = {
@@ -154,7 +157,8 @@ export const FUENTES = {
   ipc: { org: "Statistics Canada", title: "Tabla 18-10-0004-01 — Índice de precios al consumidor, mensual", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401" },
   cmhc: { org: "Statistics Canada y CMHC", title: "Tabla 34-10-0133-01 — Alquiler promedio de CMHC, por tipo de unidad", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410013301" },
   hospitales: { org: "Statistics Canada", title: "Open Database of Healthcare Facilities (ODHF), versión 1.1 (2020)", url: "https://www.statcan.gc.ca/en/lode/databases/odhf" },
-  nnc: { org: "Nutrition North Canada (Gobierno de Canadá)", title: "Eligible communities", url: "https://www.nutritionnorthcanada.gc.ca/eng/1415540731169/1415540791407" },
+  lcd: { org: "NWT Bureau of Statistics", title: "Federal Isolated Post Living Cost Differentials, by Community (2025)", url: "https://www.statsnwt.ca/en/prices-and-expenditures/living-cost-differentials" },
+  fpi: { org: "NWT Bureau of Statistics", title: "NWT Food Price Index, by Community (2019 Community Price Survey)", url: "https://www.statsnwt.ca/en/prices-and-expenditures/community-price-index" },
   hora: { org: "Gobierno de los Territorios del Noroeste", title: "Interpretation Act — reglamento sobre la hora (R-2), vigente desde el 21 de agosto de 2026", url: "https://www.justice.gov.nt.ca/en/files/legislation/interpretation/interpretation.r2.pdf" },
   horaIana: { org: "IANA", title: "Base de datos de zonas horarias (tzdata 2026d): America/Yellowknife", url: "https://www.iana.org/time-zones" },
 };
@@ -164,7 +168,7 @@ const RECURSOS = {
     { label: "Job Bank — Panorama económico de los territorios (2026)", href: "https://www.jobbank.gc.ca/trend-analysis/job-market-reports/northwest-territories/environmental-scan" },
   ],
   escuelas: [
-    { label: "GNWT (Educación, Cultura y Empleo) — Escuelas de kínder a 12.º grado", href: "https://www.ece.gov.nt.ca/en/services/education-schools" },
+    { label: "GNWT (Educación, Cultura y Empleo) — Directorio de los organismos educativos de los Territorios del Noroeste", href: "https://www.ece.gov.nt.ca/en/directory-nwt-education-bodies" },
   ],
   salud: [
     { label: "GNWT — Plan de Salud de los Territorios del Noroeste (tarjeta de salud)", href: "https://www.hss.gov.nt.ca/en/services/nwt-health-care-plan" },
@@ -182,16 +186,18 @@ const RECURSOS = {
   ],
   vivienda: [
     { label: "Housing NWT — Vivienda pública y programas de vivienda", href: "https://www.nwthc.gov.nt.ca/en/services" },
-    { label: "Housing NWT — Canada-NWT Housing Benefit (ayuda para el alquiler)", href: "https://www.nwthc.gov.nt.ca/en/services/canada-nwt-housing-benefit" },
+    { label: "Housing NWT — Vivienda pública: cómo se calcula el alquiler y cómo solicitarla", href: "https://www.nwthc.gov.nt.ca/en/services/public-housing-program" },
   ],
   transporte: [
-    { label: "GNWT (Infraestructura) — Carreteras, transbordadores y caminos de invierno", href: "https://www.inf.gov.nt.ca/en/services/highways-ferries-and-winter-roads" },
-    { label: "DriveNWT — Estado de las carreteras, transbordadores y cruces de hielo", href: "https://www.inf.gov.nt.ca/en/services/highways-ferries-and-winter-roads" },
+    { label: "DriveNWT (GNWT) — Estado de las carreteras, transbordadores y cruces de hielo", href: "https://www.inf.gov.nt.ca/en/services/highway-conditions-map-drivenwt" },
+    { label: "GNWT (Infraestructura) — Transporte: carreteras, aeropuertos y transbordadores", href: "https://www.inf.gov.nt.ca/en/transportation" },
   ],
 };
 
 /* ---------- Utilidades ---------- */
-const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, "").replace(/ł/g, "l").replace(/[^a-z0-9]+/g, " ").trim();
+/* Letras de las lenguas dene sin equivalente en la descomposición Unicode (ł, ı sin punto, ʔ) → latinas, solo para las URL */
+const latino = (s) => s.replace(/ł/g, "l").replace(/Ł/g, "L").replace(/ı/g, "i").replace(/[ʔɁ]/g, "");
+const norm = (s) => latino(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 const objeto = (campos, fila_) => Object.fromEntries(campos.map((c, i) => [c, fila_[i]]));
 const num = (v) => (v == null || v === "" || !Number.isFinite(Number(v)) ? null : Number(v));
 function km(a, b) {
@@ -291,7 +297,7 @@ export function cargar(root) {
       densidad: d.densidad,
     });
   }
-  for (const r of items) r.s = slug(r.n.replace(/ł/gi, "l"));
+  for (const r of items) r.s = slug(latino(r.n));
   if (new Set(items.map((r) => r.s)).size !== items.length) throw new Error("Nombres de URL repetidos en los Territorios del Noroeste");
   const porCodigo = new Map(items.map((r) => [r.c, r]));
   for (const k of Object.keys(FICHAS)) {
@@ -300,7 +306,7 @@ export function cargar(root) {
     r.ficha = true;
   }
   for (const c of Object.keys(SV.clima)) if (!porCodigo.has(c)) throw new Error(`Normales climáticas de una subdivisión inexistente: ${c}`);
-  for (const c of SV.nnc) if (!porCodigo.has(c)) throw new Error(`Comunidad de Nutrition North inexistente: ${c}`);
+  for (const c of [...Object.keys(SV.lcd), ...Object.keys(SV.fpi)]) if (!porCodigo.has(c)) throw new Error(`Índice de costo de vida de una subdivisión inexistente: ${c}`);
 
   /* --- Lugares con nombre oficial (sin página propia) --- */
   const nombresCsd = new Set(items.flatMap((r) => [norm(r.n), norm(r.censoNombre)]));
@@ -321,7 +327,7 @@ export function cargar(root) {
   }
   for (const o of lugares) {
     const hermanos = (porCodigo.get(o.m).comunidades ||= []);
-    const b = `lugar-${slug(o.n.replace(/ł/gi, "l")) || String(o.id).toLowerCase()}`;
+    const b = `lugar-${slug(latino(o.n)) || String(o.id).toLowerCase()}`;
     let ancla = b;
     for (let k = 2; hermanos.some((h) => h.ancla === ancla); k++) ancla = `${b}-${k}`;
     o.ancla = ancla;
@@ -346,7 +352,8 @@ export function cargar(root) {
     regionesCenso: J.regiones.map(([id, n, v]) => ({ id, n: REGIONES[id], ...censo(v) })),
     escuelas: SV.escuelas,
     clima: SV.clima,
-    nnc: new Set(SV.nnc),
+    lcd: SV.lcd,
+    fpi: SV.fpi,
     cmhc: SV.cmhc,
     hospitales,
   };
@@ -363,14 +370,14 @@ const directorio = {
   tipoEtiqueta: "Tipo de comunidad",
   ejemplo: "Fort Simpson",
   extendido: true,
-  notaFichas: "Las demás comunidades tienen, por ahora, una página con información básica: clasificación oficial, región, población del Censo 2021, hora local, escuelas, hospital más cercano, acceso por carretera y enlaces oficiales. Iremos completándolas.",
+  notaFichas: "Las demás comunidades tienen, por ahora, una página con información básica: clasificación oficial, región, población del Censo 2021, hora local, escuelas, hospital más cercano, costo de vida y enlaces oficiales. Iremos completándolas.",
   intro: (L) => {
     const comunidades = L.items.filter((r) => TIPOS[r.t].grupo === "comunidad-censo");
     const habitadas = comunidades.filter((r) => r.p > 0).length;
     const lugares = L.items.filter((r) => TIPOS[r.t].grupo === "lugar").length;
     return `<p>Investiga las comunidades de los Territorios del Noroeste antes de decidir dónde vivir, trabajar o estudiar. Yellowknife, la capital, concentra la mitad de la población; las demás comunidades son pequeñas y muchas están a orillas de grandes ríos y lagos. Algunas tienen carretera todo el año; otras solo se alcanzan en avión o por caminos de invierno. El directorio reúne las ${miles(L.items.filter((r) => ES_PAGINA(r.t)).length)} subdivisiones censales del Censo 2021, que cubren todo el territorio (${miles(habitadas)} comunidades con población en ese censo), y <strong>${miles(lugares)} lugares con nombre oficial</strong> que forman parte de ellas.</p>
       <ul class="cd-list-items">
-        <li><strong>Comunidades</strong>: la ciudad de Yellowknife, los pueblos (towns), la aldea de Fort Simpson, los hamlets, las comunidades con carta, los gobiernos comunitarios tłı̨chǫ, los asentamientos y dos reservas de Primeras Naciones. Cada página indica la hora local y si la comunidad tiene acceso por carretera todo el año.</li>
+        <li><strong>Comunidades</strong>: la ciudad de Yellowknife, los pueblos (towns), la aldea de Fort Simpson, los hamlets, las comunidades con carta, los gobiernos comunitarios tłı̨chǫ, los asentamientos y dos reservas de Primeras Naciones. Cada página indica la hora local, el clima cuando hay una estación de Environment Canada y el costo de vida frente a Edmonton cuando está publicado.</li>
         <li><strong>Zonas no organizadas</strong>: una en cada región, que cubre el territorio fuera de las comunidades.</li>
         <li><strong>Lugares con nombre oficial</strong>: barrios (como Ndilǫ y Old Town, en Yellowknife), localidades a lo largo de las carreteras y antiguos asentamientos. No son comunidades aparte: aparecen dentro de la subdivisión en la que están.</li>
       </ul>`;
@@ -391,7 +398,8 @@ function pagina(r, L, { esc }) {
   const nombre = r.n;
   const habitada = typeof r.p === "number" && r.p > 0;
   const cl = L.clima[r.c] || null;
-  const aislada = L.nnc.has(r.c);
+  const lcd = L.lcd[r.c] || null;
+  const fpi = L.fpi[r.c] || null;
   const regionCorta = r.region.replace(/ \(región \d\)/, "");
 
   const titulo = r.ficha ? `${nombre}, Territorios del Noroeste: guía para inmigrantes y recién llegados` : `${nombre}, Territorios del Noroeste: información básica`;
@@ -424,7 +432,7 @@ function pagina(r, L, { esc }) {
     fila("Coordenadas", `${r.lat.toFixed(4)}, ${r.lon.toFixed(4)} <small class="cd-fact__period">Punto de referencia dentro de la subdivisión censal</small>`),
     habitada ? fila("Emergencias", `911 <small class="cd-fact__period">Servicio 9-1-1 de los Territorios del Noroeste para policía, bomberos y ambulancias</small>`) : "",
     fila("Hora local", esc(HORA.texto)),
-    habitada ? fila("Acceso por carretera todo el año", aislada ? `No <small class="cd-fact__period">Figura en la lista de comunidades aisladas del programa Nutrition North Canada (sin acceso permanente por carretera, ferrocarril o barco)</small>` : `Sí <small class="cd-fact__period">No figura entre las comunidades aisladas del programa Nutrition North Canada. Algunos tramos dependen de transbordadores o cruces de hielo según la temporada</small>`) : "",
+    lcd ? fila("Costo de vida (Edmonton = 100)", `${lcd[0]} a ${lcd[1]} <small class="cd-fact__period">Diferencial de costo de vida de los puestos aislados federales, 2025. Fuente: NWT Bureau of Statistics</small>`) : "",
   ].filter(Boolean).join("\n          ");
 
   /* --- Lugares dentro de la subdivisión --- */
@@ -458,7 +466,12 @@ function pagina(r, L, { esc }) {
       <div class="cd-indicators">
         ${datoBloque("Índice de precios al consumidor de Yellowknife", `+${IPC.yk.variacion}%`, `Variación de ${esc(IPC.anterior)} a ${esc(IPC.periodo)}${IPC.yk.previo ? ` (índice ${IPC.yk.previo} → ${IPC.yk.indice}; base 2002 = 100)` : ""}. En Canadá fue de +${IPC.canada.variacion}%. El índice mide cuánto cambian los precios, no cuánto cuestan: no sirve para comparar el costo de vida entre ciudades. Fuente: ${fuente(FUENTES.ipc, esc)}.`)}
       </div>` : ""}
-      <p>Consulta la sección de vivienda de la <a href="${PAG}#vivienda">guía de los Territorios del Noroeste</a>.</p>
+      ${lcd || fpi ? `<h3>Costo de vida en ${esc(nombre)}</h3>
+      <div class="cd-indicators">
+        ${lcd ? datoBloque("Diferencial de costo de vida (Edmonton = 100)", `${lcd[0]} a ${lcd[1]}`, `2025. Rango de precios de ${esc(nombre)} frente a Edmonton (100), que el Gobierno de Canadá usa para fijar la asignación de sus empleados en puestos aislados. Fuente: ${fuente(FUENTES.lcd, esc)}.`) : ""}
+        ${fpi ? datoBloque("Índice de precios de alimentos (Yellowknife = 100)", String(fpi), `Encuesta de precios por comunidad de 2019, la más reciente publicada: los alimentos costaban ${fpi > 100 ? `un ${fpi - 100}% más` : fpi < 100 ? `un ${100 - fpi}% menos` : "lo mismo"} que en Yellowknife. Fuente: ${fuente(FUENTES.fpi, esc)}.`) : ""}
+      </div>` : ""}
+      <p>Consulta la sección de vivienda y costo de vida de la <a href="${PAG}#vivienda">guía de los Territorios del Noroeste</a>.</p>
       ${enlaces(RECURSOS.vivienda, esc)}`;
 
   /* --- Escuelas: base abierta de establecimientos educativos (Statistics Canada, ODEF 2022) --- */
@@ -467,9 +480,9 @@ function pagina(r, L, { esc }) {
   if (escs.length) {
     escuelas = `<p>${escs.length === 1 ? `${esc(nombre)} tiene 1 establecimiento educativo` : `${esc(nombre)} tiene ${miles(escs.length)} establecimientos educativos`} en la base abierta de Statistics Canada (2022):</p>
       <ul class="cd-list-items">
-        ${escs.map((e) => `<li>${esc(e.nombre)}${e.niveles ? ` — ${esc(e.niveles)}` : ""}</li>`).join("\n        ")}
+        ${escs.map((e) => `<li>${esc(e.nombre)}${e.en_ndilo ? " (en Ndilǫ)" : ""}${e.niveles ? ` — ${esc(e.niveles)}` : ""}${e.autoridad === "CSF" ? " — en francés" : ""}</li>`).join("\n        ")}
       </ul>
-      <p>Para inscribir a tus hijos, comunícate con la escuela o con el organismo educativo de tu comunidad (education body). En Yellowknife, Hay River, Fort Smith e Inuvik también hay educación en francés.</p>
+      <p>Para inscribir a tus hijos, comunícate con la escuela o con el organismo educativo de tu comunidad (education body).${escs.some((e) => e.autoridad === "CSF") ? " Las escuelas marcadas «en francés» dependen de la Commission scolaire francophone des Territoires du Nord-Ouest." : ""}</p>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.escuelas, esc)}. La base se publicó en 2022: confirma nombres y niveles con el Departamento de Educación, Cultura y Empleo.</p>`;
   } else if (habitada) {
     escuelas = `<p>La base abierta de establecimientos educativos de Statistics Canada no lista escuelas en ${esc(nombre)}. Consulta al Departamento de Educación, Cultura y Empleo del GNWT.</p>
@@ -490,7 +503,7 @@ function pagina(r, L, { esc }) {
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.hospitales, esc)}. Confirma servicios y horarios con la Autoridad de Servicios de Salud y Sociales.</p>`;
   } else if (habitada) {
     const cerca = L.hospitales.map((h) => ({ h, d: km({ lat: r.lat, lon: r.lon }, { lat: h.lat, lon: h.lon }) })).sort((x, y) => x.d - y.d)[0];
-    salud = `<p>La atención de salud diaria en las comunidades pequeñas se da en el centro de salud local (health centre), atendido sobre todo por personal de enfermería. No hay un hospital dentro de ${esc(nombre)}: el más cercano es <strong>${esc(cerca.h.nombre)}</strong>, a unos ${DIST(cerca.d)} en línea recta${aislada ? ", y el traslado se hace en avión" : ""}.</p>
+    salud = `<p>La atención de salud diaria en las comunidades pequeñas se da en el centro de salud local (health centre), atendido sobre todo por personal de enfermería. No hay un hospital dentro de ${esc(nombre)}: el más cercano es <strong>${esc(cerca.h.nombre)}</strong>, a unos ${DIST(cerca.d)} en línea recta.</p>
       <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.hospitales, esc)}. Distancia calculada con las coordenadas oficiales.</p>`;
   } else {
     salud = `<p>${esc(nombre)} no tiene población permanente en el Censo 2021 ni servicios de salud propios.</p>`;
@@ -499,7 +512,7 @@ function pagina(r, L, { esc }) {
     salud += `
       <h3>Emergencias y líneas de ayuda</h3>
       <ul class="cd-list-items">
-        <li><strong>Emergencias: 911.</strong> Desde 2019, los Territorios del Noroeste tienen servicio 9-1-1, que comunica con un despachador capacitado para policía, bomberos y ambulancias.</li>
+        <li><strong>Emergencias: 9-1-1</strong> para policía (RCMP), bomberos o ambulancia. Di primero dónde estás: la operadora no conoce tu ubicación. Si no hablas inglés ni francés, pide tu idioma: hay intérpretes. En los Territorios del Noroeste no se puede enviar un mensaje de texto al 9-1-1, y donde no hay cobertura celular la llamada no funciona; desde un teléfono satelital, marca el 1-867-920-0911.</li>
         <li><strong>811:</strong> personal de enfermería por teléfono, las 24 horas, en todas las comunidades del territorio (o 1-844-259-1793).</li>
         <li>Si te sientes en crisis o piensas en el suicidio: <strong>9-8-8</strong> (llamada o mensaje de texto, las 24 horas, en todo Canadá).</li>
       </ul>
@@ -508,8 +521,7 @@ function pagina(r, L, { esc }) {
 
   /* --- Transporte --- */
   const transporte = habitada
-    ? `<p>${aislada ? `${esc(nombre)} figura en la lista de comunidades aisladas del programa federal Nutrition North Canada: no tiene acceso permanente por carretera, ferrocarril o barco durante todo el año. Se llega en avión y, según la temporada, por caminos de invierno o por barco.` : `${esc(nombre)} no figura en la lista de comunidades aisladas del programa Nutrition North Canada, es decir, tiene acceso por superficie durante el año. En los Territorios del Noroeste algunas carreteras dependen de transbordadores en verano y de cruces de hielo en invierno, y se cierran durante el deshielo y la congelación de los ríos.`} Antes de viajar, consulta el estado de las carreteras y los cruces.</p>
-      <p class="cd-indicator__src">Fuente: ${fuente(FUENTES.nnc, esc)}.</p>
+    ? `<p>En los Territorios del Noroeste, algunas comunidades tienen carretera todo el año, otras dependen de transbordadores en verano y de cruces o caminos de hielo en invierno, y otras solo se alcanzan en avión. Los cruces de los ríos se cierran durante la congelación y el deshielo. Antes de viajar a ${esc(nombre)} o de mudarte, confirma cómo se llega en cada temporada y consulta el estado de las carreteras, los transbordadores y los cruces de hielo en DriveNWT.</p>
       ${enlaces(RECURSOS.transporte, esc)}`
     : `<p>${esc(nombre)} no tiene población permanente en el Censo 2021.</p>`;
 
@@ -524,7 +536,7 @@ function pagina(r, L, { esc }) {
     ...(f && f.web ? [{ label: `Sitio oficial de ${f.nombre}`, href: f.web }] : []),
     { label: `Statistics Canada — Perfil del Censo 2021 de ${r.censoNombre} (en inglés)`, href: perfilCenso },
   ];
-  const fuentes = [FUENTES.csd, FUENTES.censo, ...(lista.length ? [FUENTES.nombres] : []), FUENTES.epa, ...(r.t === "city" ? [FUENTES.cmhc, FUENTES.ipc] : []), FUENTES.escuelas, FUENTES.hospitales, ...(habitada ? [FUENTES.nnc] : []), ...(cl ? [FUENTES.clima] : []), FUENTES.hora, FUENTES.horaIana];
+  const fuentes = [FUENTES.csd, FUENTES.censo, ...(lista.length ? [FUENTES.nombres] : []), FUENTES.epa, ...(r.t === "city" ? [FUENTES.cmhc, FUENTES.ipc] : []), FUENTES.escuelas, FUENTES.hospitales, ...(lcd ? [FUENTES.lcd] : []), ...(fpi ? [FUENTES.fpi] : []), ...(cl ? [FUENTES.clima] : []), FUENTES.hora, FUENTES.horaIana];
 
   const pobTxt = habitada ? ` Según el Censo 2021 de Statistics Canada, tenía ${miles(r.p)} habitantes.` : "";
   const intro = {
