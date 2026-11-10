@@ -66,18 +66,28 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Vivienda",
-    title: "¿Vives en Alberta y no te alcanza para pagar el alquiler? Conoce la ayuda mensual que ofrece el Gobierno",
-    dek: "El Gobierno de Alberta cuenta con un programa de asistencia económica que puede ayudar a personas y familias de bajos ingresos a cubrir parte del alquiler de su vivienda. Algunos inmigrantes, residentes permanentes y solicitantes de refugio también pueden cumplir los requisitos.",
+    category: "Finanzas",
+    title: "Canadá propone hasta $679 adicionales para ayudar a las familias con el costo de los alimentos",
+    dek: "El Presupuesto Federal 2026 contempla un pago extraordinario de hasta $679 CAD para una pareja con dos hijos y hasta $339 CAD para una persona soltera sin hijos. La medida busca aliviar los gastos de alimentación y productos esenciales, pero todavía debe ser aprobada.",
     author: "El Podcast del Migrante",
-    date: "8 de noviembre, 2026",
-    image: "url('assets/alberta-rent-assistance-benefit-ayuda-alquiler.jpg')",
+    date: "9 de noviembre, 2026",
+    image: "url('assets/canada-suplemento-alimentos-679-presupuesto-2026.jpg')",
     aspectRatio: "3/2",
-    alt: "Imagen editorial de El Podcast del Migrante: una familia latina sonríe frente a edificios de apartamentos, con las Montañas Rocosas y Calgary al fondo, la bandera de Canadá y una computadora con la página «Rent Assistance Benefit»; titular «¿Necesitas ayuda para pagar el alquiler?».",
+    alt: "Imagen editorial de El Podcast del Migrante: una familia latina sonríe junto a un carrito de supermercado con alimentos y la bandera de Canadá; titular «¡Hasta $679 adicionales para ayudar a las familias con el costo de los alimentos en Canadá!» y aviso «Es una propuesta del Presupuesto 2026, no un pago aprobado».",
     demo: false,
-    slug: "alberta-rent-assistance-benefit-ayuda-alquiler",
+    slug: "canada-suplemento-alimentos-679-presupuesto-2026",
   },
   secondary: [
+    {
+      category: "Vivienda",
+      title: "¿Vives en Alberta y no te alcanza para pagar el alquiler? Conoce la ayuda mensual que ofrece el Gobierno",
+      date: "8 de noviembre",
+      image: "url('assets/alberta-rent-assistance-benefit-ayuda-alquiler.jpg')",
+      aspectRatio: "3/2",
+      alt: "Imagen editorial de El Podcast del Migrante: una familia latina sonríe frente a edificios de apartamentos, con las Montañas Rocosas y Calgary al fondo, la bandera de Canadá y una computadora con la página «Rent Assistance Benefit»; titular «¿Necesitas ayuda para pagar el alquiler?».",
+      demo: false,
+      slug: "alberta-rent-assistance-benefit-ayuda-alquiler",
+    },
     {
       category: "Comunidad",
       title: "El Podcast del Migrante invita a una masterclass gratuita sobre crecimiento personal y toma de decisiones",
@@ -117,16 +127,6 @@ const HERO = {
       alt: "Miniatura oficial del episodio de El Podcast del Migrante: Santa Claus sonriente con las cataratas del Niágara y la bandera de Canadá al fondo, y los textos «De inmigrante a Santa Latino en Canadá» y «Héctor Rivero, invitado especial».",
       demo: false,
       slug: "hector-rivero-santa-latino-canada",
-    },
-    {
-      category: "Finanzas",
-      title: "¿Trabajas en Canadá? Podrías recibir dinero del Gobierno para tus compras de mercado",
-      date: "2 de noviembre",
-      image: "url('assets/canada-groceries-essentials-benefit-cgeb-2026.jpg')",
-      aspectRatio: "16/9",
-      alt: "Imagen editorial de El Podcast del Migrante: una familia sonriente con un carrito de supermercado lleno de alimentos junto a la bandera de Canadá, con el titular «¿Trabajas en Canadá? Podrías recibir dinero del Gobierno para tus compras de mercado» y el recuadro «Canada Groceries and Essentials Benefit».",
-      demo: false,
-      slug: "canada-groceries-essentials-benefit-cgeb-2026",
     },
   ],
 };

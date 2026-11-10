@@ -176,6 +176,139 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Suplemento extraordinario 2027 del Canada Groceries and Essentials
+       Benefit (Presupuesto Federal 2026): texto editorial de la dirección
+       (9-11-2026), publicado completo. Verificado el 9/10-11-2026 contra
+       budget.canada.ca/2026, capítulo 3 («one-time 50% increase for the
+       2026-27 benefit year, delivered in early 2027», hasta $339 persona
+       soltera sin hijos y $679 pareja con dos hijos) y las páginas de la CRA
+       enlazadas (todas responden): sin contradicciones con ART-2026-034.
+       Video propio en TikTok (enlace corto vt.tiktok.com/ZSpyAvC2t resuelto
+       el 10-11-2026). Recuadro publicitario de Country Hills Toyota separado
+       del contenido informativo. Imagen editorial entregada por la dirección. */
+    id: "ART-2026-042",
+    slug: "canada-suplemento-alimentos-679-presupuesto-2026",
+    category: "Finanzas",
+    contentType: "Noticia",
+    title: "Canadá propone hasta $679 adicionales para ayudar a las familias con el costo de los alimentos",
+    dek: "El Presupuesto Federal 2026 contempla un pago extraordinario de hasta $679 CAD para una pareja con dos hijos y hasta $339 CAD para una persona soltera sin hijos. La medida busca aliviar los gastos de alimentación y productos esenciales, pero todavía debe ser aprobada.",
+    excerpt: "El Presupuesto 2026 propone un pago único a principios de 2027 de hasta $679 para una pareja con dos hijos y $339 para una persona soltera, a través del Canada Groceries and Essentials Benefit. Aún no está aprobado.",
+    author: { mode: "medio", name: "El Podcast del Migrante" },
+    publishedAt: "2026-11-09T17:00:00-07:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: null, city: null },
+    demo: false,
+    heroImage: {
+      background: "url('assets/canada-suplemento-alimentos-679-presupuesto-2026.jpg')",
+      aspectRatio: "3/2",
+      alt: "Imagen editorial de El Podcast del Migrante: una familia latina —padre, madre, hijo e hija— sonríe junto a un carrito de supermercado lleno de alimentos, con la bandera de Canadá. Textos: «Noticia de Canadá», «¡Hasta $679 adicionales para ayudar a las familias con el costo de los alimentos en Canadá!», «Hasta $679 CAD para una pareja con dos hijos», «Hasta $339 CAD para una persona soltera sin hijos», «Es una propuesta del Presupuesto 2026, no un pago aprobado» y «De aprobarse, sería un pago único a principios de 2027».",
+      credit: "Imagen editorial de El Podcast del Migrante. Las personas y la escena son ilustrativas; no es una publicación oficial del Gobierno de Canadá.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p><strong>9 de noviembre de 2026 | El Podcast del Migrante | Economía y ayudas económicas</strong></p>
+      <p>El costo de los alimentos continúa siendo una preocupación para miles de familias en Canadá, especialmente para aquellas con ingresos bajos o moderados.</p>
+      <p>Ante esta situación, el Gobierno federal presentó una propuesta para entregar dinero adicional a través del <strong>Canada Groceries and Essentials Benefit</strong>, conocido en español como beneficio canadiense para alimentos y productos esenciales.</p>
+      <p>La medida forma parte del <strong>Presupuesto Federal 2026</strong> y está dirigida a reforzar la asistencia económica que reciben los hogares elegibles.</p>
+      <h2>¿Cuánto dinero adicional propone entregar Canadá?</h2>
+      <p>Según el Ministerio de Finanzas de Canadá, el suplemento extraordinario podría representar:</p>
+      <ul>
+        <li><strong>Hasta $679 CAD</strong> para una pareja con dos hijos.</li>
+        <li><strong>Hasta $339 CAD</strong> para una persona soltera sin hijos.</li>
+      </ul>
+      <p>Estas cantidades corresponden a ejemplos de hogares elegibles y no representan un pago universal.</p>
+      <p>El suplemento equivaldría a un aumento extraordinario del 50 % del beneficio correspondiente al período 2026–2027.</p>
+      <h2>¿Cuándo se entregaría el dinero?</h2>
+      <p>El Gobierno propone realizar el pago a <strong>principios de 2027</strong>, siempre que la medida obtenga las aprobaciones necesarias.</p>
+      <p><strong>Importante:</strong> este pago extraordinario todavía es una <strong>propuesta presupuestaria</strong>. No existe una solicitud específica abierta para recibir los $679 adicionales.</p>
+      <p>Tampoco sería una mensualidad: se plantea como un <strong>pago único</strong>, separado de los pagos trimestrales regulares del beneficio.</p>
+      <h2>¿Quiénes podrían recibirlo?</h2>
+      <p>La propuesta está dirigida a personas y familias de ingresos bajos y moderados que cumplan las condiciones del Canada Groceries and Essentials Benefit.</p>
+      <p>La Agencia de Ingresos de Canadá (CRA) considera factores como:</p>
+      <ul>
+        <li>Los ingresos familiares netos ajustados.</li>
+        <li>El estado civil.</li>
+        <li>El número de hijos elegibles.</li>
+        <li>La residencia fiscal en Canadá.</li>
+        <li>Los requisitos de edad y demás condiciones aplicables.</li>
+      </ul>
+      <p>El monto final puede variar según la situación de cada hogar.</p>
+      <h2>¿Los inmigrantes también pueden beneficiarse?</h2>
+      <p>Sí, algunos recién llegados a Canadá pueden tener derecho al beneficio regular si cumplen los requisitos establecidos por la CRA.</p>
+      <p>No basta con tener un permiso de trabajo, un permiso de estudio o una condición migratoria determinada. La CRA debe evaluar la residencia fiscal y las demás condiciones de elegibilidad.</p>
+      <p>Los nuevos residentes pueden solicitar el beneficio regular durante su primer año de residencia fiscal, incluso antes de presentar su primera declaración canadiense, cuando corresponda.</p>
+      <h2>¿Cómo consultar o solicitar el beneficio?</h2>
+      <p>Es importante distinguir entre el <strong>beneficio regular</strong>, que ya existe, y el <strong>suplemento extraordinario</strong> propuesto para 2027.</p>
+      <h3>Si ya presentas tus declaraciones de impuestos en Canadá:</h3>
+      <p>Generalmente no necesitas presentar una solicitud independiente para el beneficio regular. La CRA evalúa automáticamente tu elegibilidad cuando procesa tu declaración anual, incluso si no tuviste ingresos.</p>
+      <h3>Si eres recién llegado a Canadá:</h3>
+      <p>Puedes consultar las instrucciones de la CRA para solicitar el beneficio durante tu primer año de residencia fiscal.</p>
+      <p>Las personas recién llegadas sin hijos pueden utilizar el formulario <strong>RC151</strong>. Quienes tienen hijos menores de 19 años deben revisar las instrucciones correspondientes al RC151 y al formulario <strong>RC66</strong> para beneficios infantiles.</p>
+      <h2>Enlaces oficiales del Gobierno de Canadá</h2>
+      <ol>
+        <li><strong>Consultar el programa y sus beneficios:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html" target="_blank" rel="noopener">https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html</a></li>
+        <li><strong>Consultar los requisitos de elegibilidad:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/who-eligible.html" target="_blank" rel="noopener">https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/who-eligible.html</a></li>
+        <li><strong>Saber cómo recibir el beneficio regular:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html" target="_blank" rel="noopener">https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html</a></li>
+        <li><strong>Formulario RC151 para nuevos residentes:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html" target="_blank" rel="noopener">https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html</a></li>
+        <li><strong>Consultar la propuesta oficial del Presupuesto 2026:</strong><br><a href="https://budget.canada.ca/2026/report-rapport/chap3-en.html" target="_blank" rel="noopener">https://budget.canada.ca/2026/report-rapport/chap3-en.html</a></li>
+      </ol>
+      <p><strong>Atención:</strong> estos enlaces permiten consultar o solicitar el <strong>beneficio regular</strong> cuando corresponda. No constituyen una inscripción al suplemento extraordinario de $679.</p>
+      <h2>¿Qué deben hacer las familias desde ahora?</h2>
+      <p>Las personas interesadas pueden revisar si cumplen los requisitos del beneficio regular, mantener actualizada su información ante la CRA y presentar sus declaraciones de impuestos correspondientes.</p>
+      <p>También es recomendable verificar que la Agencia tenga registrados correctamente los ingresos familiares, el estado civil y los hijos elegibles.</p>
+      <p><strong>No entregues información bancaria ni documentos personales a páginas desconocidas que prometan gestionar el pago extraordinario.</strong> Utiliza exclusivamente los canales oficiales del Gobierno de Canadá.</p>
+      <h2>¿Qué significa esta propuesta para las familias migrantes?</h2>
+      <p>Si se aprueba, el suplemento podría representar un alivio adicional para hogares que enfrentan dificultades para cubrir alimentos y otros gastos esenciales.</p>
+      <p>Sin embargo, el monto no está garantizado para todas las familias y dependerá de la elegibilidad correspondiente.</p>
+      <p>El Podcast del Migrante continuará informando sobre el avance de esta propuesta y las instrucciones oficiales que publique la CRA.</p>
+      <h2>Mira nuestro video informativo</h2>
+      <p>Video de El Podcast del Migrante:</p>
+      <p class="article-apply-row"><a class="article-apply" href="https://www.tiktok.com/@podcastdelmigrante/video/7706353073295297813" target="_blank" rel="noopener">VER VIDEO EN TIKTOK</a></p>
+      <p><strong>El Podcast del Migrante</strong><br>Conectando latinos, construyendo futuro.<br><a href="https://www.podcastdelmigrante.com">www.podcastdelmigrante.com</a></p>
+      <p><strong>Fuentes:</strong> Ministerio de Finanzas de Canadá, <a href="https://budget.canada.ca/2026/report-rapport/chap3-en.html" target="_blank" rel="noopener">Presupuesto Federal 2026</a>; Canada Revenue Agency (CRA), <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html" target="_blank" rel="noopener">Canada Groceries and Essentials Benefit</a>.</p>
+      <p><em>Nota editorial: Información actualizada al 9 de noviembre de 2026. El suplemento extraordinario de 2027 es una propuesta y no debe confundirse con los beneficios regulares actualmente disponibles. La elegibilidad y los pagos corresponden a las autoridades competentes.</em></p>
+      <aside class="article-patrocinio" aria-label="Publicidad">
+        <p class="article-patrocinio__etiqueta">Publicidad · Esta noticia llega gracias a nuestro patrocinador</p>
+        <p><strong>Esta noticia llega gracias a Toyota Country Hills Calgary.</strong></p>
+        <p>Toyota Country Hills cuenta con asesores latinos que pueden atenderte en español si estás buscando un vehículo nuevo.</p>
+        <p>Como promoción anunciada por El Podcast del Migrante, quienes compren un vehículo <strong>nuevo</strong> y mencionen nuestro medio pueden recibir una <strong>tarjeta de gasolina de $200 CAD</strong>, sujeta a confirmación de las condiciones de la promoción con el concesionario.</p>
+        <p>Es una promoción comercial del concesionario: no forma parte del Canada Groceries and Essentials Benefit ni de ningún programa del Gobierno de Canadá, y el concesionario no patrocina ese programa.</p>
+        <p><a class="article-patrocinio__enlace" href="perfil-tomas-velazquez.html?utm_source=podcastdelmigrante&amp;utm_medium=patrocinio&amp;utm_campaign=country-hills-toyota&amp;utm_content=articulo-suplemento-alimentos">Contacta a Tomás Velázquez en Country Hills Toyota →</a></p>
+      </aside>
+    `,
+    /* Video propio en TikTok (@podcastdelmigrante). No se descarga ni se
+       aloja: el reproductor oficial se carga desde TikTok solo al pulsar,
+       después de la introducción (antes del primer subtítulo). */
+    video: {
+      tiktokId: "7706353073295297813",
+      tiktokUser: "podcastdelmigrante",
+      title: "Canadá propone hasta $679 adicionales para ayudar a las familias con el costo de los alimentos: explicado por El Podcast del Migrante",
+      heading: "🎥 Mira el video",
+      cover: "assets/canada-suplemento-alimentos-679-presupuesto-2026.jpg",
+      position: "intro",
+    },
+    sources: [
+      { label: "Ministerio de Finanzas de Canadá — Presupuesto 2026, capítulo 3: 2027 Canada Groceries and Essentials Benefit Supplement", href: "https://budget.canada.ca/2026/report-rapport/chap3-en.html" },
+      { label: "Canada Revenue Agency — Canada Groceries and Essentials Benefit (CGEB)", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html" },
+      { label: "Canada Revenue Agency — Who is eligible", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/who-eligible.html" },
+      { label: "Canada Revenue Agency — How to get the benefit", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html" },
+      { label: "Canada Revenue Agency — Formulario RC151", href: "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["canada-groceries-essentials-benefit-cgeb-2026", "alberta-rent-assistance-benefit-ayuda-alquiler"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Canadá propone hasta $679 más para alimentos: suplemento 2027",
+      description: "El Presupuesto 2026 propone un pago único a inicios de 2027: hasta $679 para una pareja con dos hijos y $339 para una persona soltera. Aún no está aprobado.",
+      canonicalPath: "/finanzas/canada-suplemento-alimentos-679-presupuesto-2026/",
+    },
+  },
+  {
     /* Rent Assistance Benefit de Alberta: texto editorial de Nelson Vahos
        (8-11-2026), publicado completo. Datos verificados el 8-11-2026 contra
        https://www.alberta.ca/rent-assistance (elegibilidad migratoria, cálculo, renovación anual

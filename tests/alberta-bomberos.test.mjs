@@ -17,7 +17,7 @@ const IMG = "assets/alberta-bomberos-forestales-2027.jpg";
 const art = ctx.A.find((a) => a.slug === SLUG);
 
 test("portada: con la noticia del alquiler (8-11-2026) la de bomberos deja el bloque destacado; sigue publicada, sin duplicados", () => {
-  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler", "noticia principal autorizada por la dirección editorial el 8-11-2026");
+  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026", "noticia principal autorizada por la dirección editorial el 9-11-2026");
   assert.ok(!ctx.H.secondary.some((s) => s.slug === SLUG), "ya no aparece entre las destacadas");
   const slugs = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.equal(new Set(slugs).size, slugs.length, "ninguna noticia aparece dos veces en el bloque principal");

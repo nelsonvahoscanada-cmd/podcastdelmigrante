@@ -75,9 +75,9 @@ async function sinDesborde(page, ruta) {
     assert.equal(await page.locator(`#archivoLista a[href="articulo-${EN}"]`).count(), 0, "el original en inglés no se duplica en el archivo");
     await ctx.close();
     ({ ctx, page, errores } = await abrir(browser, perfil, "/"));
-    assert.match(await page.locator("#heroMain h1").innerText(), /^¿Vives en Alberta y no te alcanza para pagar el alquiler\?/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.match(tarjetas[4], /¿Trabajas en Canadá\?/);
+    assert.match(tarjetas[4], /Santa Latino/);
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
     await ctx.close();

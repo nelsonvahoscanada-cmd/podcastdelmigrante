@@ -19,19 +19,19 @@ const CAMBIOS = "https://www.canada.ca/en/immigration-refugees-citizenship/servi
 const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-test("portada: segunda tarjeta, tras la noticia de refugio, con su imagen; las demás en su orden", () => {
-  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler");
-  const t = ctx.H.secondary[2];
+test("portada: cuarta tarjeta, tras la noticia de refugio, con su imagen; las demás en su orden", () => {
+  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026");
+  const t = ctx.H.secondary[3];
   assert.equal(t.slug, SLUG);
   assert.equal(t.title, art.title);
   assert.equal(t.image, `url('${IMG}')`);
   assert.equal(t.demo, false);
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    "alberta-rent-assistance-benefit-ayuda-alquiler",
     "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
     "canada-cambios-proceso-refugio-3-noviembre-2026",
     SLUG,
     "hector-rivero-santa-latino-canada",
-    "canada-groceries-essentials-benefit-cgeb-2026",
   ]);
 });
 
