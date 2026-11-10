@@ -1,0 +1,32 @@
+# TEMPORAL: verificar fuentes oficiales y el enlace de TikTok (solo lectura). Se elimina después.
+name: fuentes-alimentos
+on:
+  push:
+    branches: [claude/laughing-albattani-1rvkc1-alimentos-fuentes]
+permissions:
+  contents: read
+jobs:
+  fuentes:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36'
+          echo "== TikTok"; curl -s -o /dev/null -A "$UA" -L -w 'final: %{url_effective} (%{http_code})\n' https://vt.tiktok.com/ZSpyAvC2t/
+          curl -s -I -A "$UA" https://vt.tiktok.com/ZSpyAvC2t/ | grep -i '^location' | head -2
+          for u in https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/who-eligible.html https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html https://budget.canada.ca/2026/report-rapport/chap3-en.html; do curl -s -o /dev/null -A "$UA" -L -w "$u: %{http_code}\n" "$u"; done
+          curl -s -A "$UA" -L https://budget.canada.ca/2026/report-rapport/chap3-en.html > b.html
+          curl -s -A "$UA" -L https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html > c.html
+          python3 - <<'PY'
+          import re,html
+          for f in ('b.html','c.html'):
+              t=open(f,encoding='utf-8',errors='ignore').read()
+              t=re.sub(r'(?is)<(script|style|nav|footer|header).*?</\1>',' ',t); t=html.unescape(re.sub(r'<[^>]+>','\n',t))
+              lines=[l.strip() for l in t.splitlines() if l.strip()]
+              print("=====",f,len(lines))
+              hits=[i for i,l in enumerate(lines) if re.search(r'679|339|Groceries and Essentials|top-up|supplement|one-time|early 2027|50 per cent',l,re.I)]
+              shown=set()
+              for i in hits[:40]:
+                  for j in range(max(0,i-2),min(len(lines),i+3)):
+                      if j not in shown: shown.add(j); print(j,lines[j][:400])
+              print("--- first lines"); print("\n".join(l[:300] for l in lines[:60]))
+          PY
