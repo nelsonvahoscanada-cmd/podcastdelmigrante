@@ -46,30 +46,14 @@ async function sinDesborde(page, ruta) {
 (async () => {
   const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: segunda tarjeta pequeña; la principal no cambia ---------- */
+    /* ---------- Portada: sale del bloque destacado con la noticia del 9-11-2026 ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^¿Vives en Alberta y no te alcanza para pagar el alquiler\?/, "noticia principal: masterclass");
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/, "noticia principal: suplemento de alimentos (9-11-2026)");
     const tarjetas = page.locator("#heroSecondary .hero-sec-card");
     assert.equal(await tarjetas.count(), 5);
-    const textos = await tarjetas.evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.match(textos[0], /masterclass gratuita/);
-    assert.match(textos[1], /solicitar refugio/);
-    assert.match(textos[2], /Express Entry desde el 3 de noviembre/);
-    assert.match(textos[3], /Santa Latino/);
-    assert.match(textos[4], /¿Trabajas en Canadá\? Podrías recibir dinero del Gobierno/, "quinta tarjeta pequeña");
-    assert.match(textos[4], /2 de noviembre/);
-    assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"]`).count(), 0, "no es el titular grande");
-    const t2 = tarjetas.nth(4);
-    assert.match(await t2.innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")));
-    assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
-    /* Visualmente: en el grupo de tarjetas, debajo de la primera */
-    const [c1, c2] = [await tarjetas.nth(3).boundingBox(), await t2.boundingBox()];
-    assert.ok(c2.y > c1.y, "la segunda tarjeta va debajo de la primera");
-    if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
+    assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    await t2.locator(`a[href*="${SLUG}"]`).first().evaluate((a) => a.click());
-    await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 
     /* ---------- Artículo ---------- */

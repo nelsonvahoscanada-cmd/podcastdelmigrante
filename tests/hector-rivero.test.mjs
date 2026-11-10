@@ -41,15 +41,15 @@ test("artículo: noticia completa con su estructura periodística y sin afirmaci
   assert.equal(art.video.youtubeId, VIDEO);
 });
 
-test("portada: Santa Latino sigue entre las tarjetas destacadas (cuarta); nada se borra", () => {
-  assert.equal(ctx.H.main.slug, "alberta-rent-assistance-benefit-ayuda-alquiler", "noticia principal autorizada por la dirección editorial el 8-11-2026");
-  const santa = ctx.H.secondary[3];
+test("portada: Santa Latino sigue entre las tarjetas destacadas (quinta); nada se borra", () => {
+  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026", "noticia principal autorizada por la dirección editorial el 9-11-2026");
+  const santa = ctx.H.secondary[4];
   assert.equal(santa.slug, SLUG);
   assert.equal(santa.title, art.title);
   assert.equal(santa.image, `url('assets/yt/${VIDEO}.jpg')`);
   assert.equal(santa.demo, false);
   assert.ok(santa.alt.length > 40, "texto alternativo");
-  assert.equal(ctx.H.secondary[4].slug, "canada-groceries-essentials-benefit-cgeb-2026", "el CGEB, a continuación (orden de la dirección del 2-11-2026)");
+  assert.ok(ctx.A.some((a) => a.slug === "canada-groceries-essentials-benefit-cgeb-2026" && !a.draft), "el CGEB sale del bloque destacado (9-11-2026) y sigue publicado");
   assert.equal(ctx.H.secondary.length, 5);
   for (const s of ["referendum-alberta-octubre-2026-inmigrantes", "rocky-ridge-athletic-park-calgary", "alberta-energy-rebate-plazo-octubre"]) {
     assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: sigue publicado`);

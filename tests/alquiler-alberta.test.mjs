@@ -18,9 +18,9 @@ const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 const pagina = read(`articulo-${SLUG}.html`);
 
-test("publicada el 8-11-2026 como la noticia más reciente, en Vivienda", () => {
+test("publicada el 8-11-2026 (segunda más reciente, tras la del 9-11-2026), en Vivienda", () => {
   assert.ok(art && !art.draft);
-  assert.equal(ctx.A[0].slug, SLUG);
+  assert.equal(ctx.A[1].slug, SLUG);
   assert.equal(art.id, "ART-2026-041");
   assert.equal(art.contentType, "Noticia");
   assert.equal(art.category, "Vivienda");
@@ -29,12 +29,13 @@ test("publicada el 8-11-2026 como la noticia más reciente, en Vivienda", () => 
   assert.equal(new Set(ctx.A.map((a) => a.id)).size, ctx.A.length);
 });
 
-test("portada: noticia principal; las anteriores siguen publicadas", () => {
-  assert.equal(ctx.H.main.slug, SLUG);
-  assert.equal(ctx.H.main.title, art.title);
-  assert.equal(ctx.H.main.image, `url('${IMG}')`);
-  assert.equal(ctx.H.main.date, "8 de noviembre, 2026");
-  assert.equal(ctx.H.secondary[0].slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
+test("portada: primera tarjeta destacada (principal: suplemento de alimentos, 9-11-2026); las anteriores siguen publicadas", () => {
+  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026");
+  assert.equal(ctx.H.secondary[0].slug, SLUG);
+  assert.equal(ctx.H.secondary[0].title, art.title);
+  assert.equal(ctx.H.secondary[0].image, `url('${IMG}')`);
+  assert.equal(ctx.H.secondary[0].date, "8 de noviembre");
+  assert.equal(ctx.H.secondary[1].slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
   for (const s of ctx.H.secondary) assert.ok(ctx.A.some((a) => a.slug === s.slug && !a.draft), s.slug);
   assert.ok(ctx.A.some((a) => a.slug === "alberta-bomberos-forestales-2027" && !a.draft), "bomberos sigue publicada");
 });

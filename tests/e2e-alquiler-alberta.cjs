@@ -42,19 +42,20 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    const hero = page.locator("#heroMain");
-    assert.equal((await hero.locator("h1").innerText()).trim(), TITULO);
-    assert.match(await hero.innerText(), /El Podcast del Migrante · 8 de noviembre, 2026/);
-    assert.match(await hero.locator(".hero-main__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
+    /* Desde el 9-11-2026 es la primera tarjeta destacada (principal: suplemento de alimentos) */
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/);
+    const tarjeta = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.ok((await tarjeta.innerText()).includes(TITULO));
+    assert.match(await tarjeta.innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.match(tarjetas[0], /masterclass gratuita/);
-    assert.equal(tarjetas.filter((x) => x.includes("alquiler")).length, 0, "sin duplicados");
+    assert.match(tarjetas[1], /masterclass gratuita/);
+    assert.equal(tarjetas.filter((x) => x.includes("alquiler")).length, 1, "sin duplicados");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    await hero.locator("h1 a").evaluate((a) => a.click());
+    await tarjeta.locator(`a[href*="${SLUG}"]`).first().evaluate((a) => a.click());
     await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 
