@@ -36,7 +36,7 @@ jobs:
               ok(ind.length >= 10 && ind.filter((t) => /\d/.test(t)).every((t) => /Fuente|Statistics Canada|Job Bank|Gobierno|CMHC|Consultado/.test(t)), `${n} indicadores con fuente (${ind.length})`);
               await pg.waitForFunction(() => /\d/.test(document.querySelector("#cdClock [data-reloj-hora]").textContent));
               const hora = (await pg.locator("#cdClock [data-reloj-hora]").textContent()).trim();
-              const nav = await pg.evaluate(() => { const h = (z) => Number(new Intl.DateTimeFormat("en-CA", { timeZone: z, hour: "numeric", hour12: true }).formatToParts(new Date()).find((x) => x.type === "hour").value); return { yk: h("America/Yellowknife"), utc6: h("Etc/GMT+6"), ua: navigator.userAgent.match(/Chrome\/[\d.]+/)[0] }; });
+              const nav = await pg.evaluate(() => { const h = (z) => Number(new Intl.DateTimeFormat("en-CA", { timeZone: z, hour: "numeric", hour12: true }).formatToParts(new Date()).find((x) => x.type === "hour").value); return { yk: h("America/Yellowknife"), utc6: h("Etc/GMT+6"), ua: (navigator.userAgent.match(/(Chrome|Version)\/[\d.]+/) || ["?"])[0] }; });
               ok(Number(hora.split(":")[0]) === nav.yk, `${n} reloj = America/Yellowknife según el navegador (${hora}; ${nav.ua})`);
               console.log(`     hora UTC−6: ${nav.utc6}; America/Yellowknife en este navegador: ${nav.yk}${nav.yk === nav.utc6 ? " (datos horarios vigentes)" : " (datos horarios anteriores a tzdata 2026d)"}`);
               await pg.locator("#cdLoc").scrollIntoViewIfNeeded(); await pg.waitForFunction(() => !document.getElementById("cdLocBuscar").disabled);
