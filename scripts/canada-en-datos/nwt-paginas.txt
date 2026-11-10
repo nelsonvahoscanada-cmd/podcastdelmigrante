@@ -1,0 +1,46 @@
+# nombre<TAB>URL<TAB>patrón de frases a mostrar (lista revisable para obtener-nwt-ficha.py paginas)
+Immigrate NWT inicio	https://www.immigratenwt.ca/	nominee|NTNP|stream|Express Entry|francophone|newcomer|settlement
+Immigrate NWT employer-driven	https://www.immigratenwt.ca/employer-driven-stream	Employer|eligib|requirement|job offer|language|CLB|Express Entry|Skilled|Entry Level|Semi|criteria|apply|fee|pause|intake|cap|allocation|2026
+Immigrate NWT business	https://www.immigratenwt.ca/business-stream	Business|invest|net worth|Yellowknife|requirement|2026|pause
+Immigrate NWT francophone	https://www.immigratenwt.ca/francophone-stream	Francophone|French|requirement|2026
+Immigrate NWT news	https://www.immigratenwt.ca/news	2026|intake|allocation|nomination|pause|open
+Immigrate NWT settlement	https://www.immigratenwt.ca/settlement-services	settle|newcomer|language|service|Yellowknife|Hay River|Inuvik|Fort Smith|Collège|CDÉTNO|YWCA|Literacy
+Salud: plan NWT	https://www.hss.gov.nt.ca/en/services/nwt-health-care-plan	eligib|resident|register|card|apply|three months|waiting|work permit|student|temporary|coverage|documents|1-800
+Salud: registro	https://www.hss.gov.nt.ca/en/services/nwt-health-care-plan/registering-nwt-health-care-plan	eligib|resident|register|card|work permit|month|document|proof|Inuvik|1-800
+Salud: médico de familia	https://www.nthssa.ca/en/services/primary-care	primary care|family|doctor|clinic|appointment|Yellowknife|walk-in|811
+Salario mínimo	https://www.ece.gov.nt.ca/en/services/employment-standards/minimum-wage	minimum wage|\$|per hour|September|April|2026|2025
+Normas laborales	https://www.ece.gov.nt.ca/en/services/employment-standards	Employment Standards|overtime|vacation|holiday|complaint|hours
+Idiomas oficiales	https://www.ece.gov.nt.ca/en/services/official-languages	official languages|eleven|11|Chipewyan|Cree|Gwich|Inuinnaqtun|Inuktitut|Inuvialuktun|North Slavey|South Slavey|Tłı̨chǫ|English|French
+Escuelas K-12	https://www.ece.gov.nt.ca/en/services/junior-kindergarten-grade-12-education	school|education body|district|register|Junior Kindergarten|French|Yellowknife
+Asistencia de ingresos	https://www.ece.gov.nt.ca/en/services/income-assistance	Income Assistance|eligib|19|resident|apply
+Ayuda estudiantil SFA	https://www.ece.gov.nt.ca/en/services/student-financial-assistance	Student Financial Assistance|eligib|resident|permanent|citizen|12 months|deadline
+Guarderías 10 dólares	https://www.ece.gov.nt.ca/en/services/early-learning-and-child-care	\$10|child care|fee|2026|licensed
+Vivienda NWT	https://www.nwthc.gov.nt.ca/en	Housing NWT|public housing|rent|apply|program|homeownership|waitlist|local housing
+Vivienda pública	https://www.nwthc.gov.nt.ca/en/services/public-housing	public housing|rent|income|apply|eligib|wait|Local Housing
+Vivienda programas	https://www.nwthc.gov.nt.ca/en/services	program|rent|repair|homeowner|Canada-NWT Housing Benefit|benefit
+Licencia de conducir	https://www.inf.gov.nt.ca/en/services/driver-licensing	licen|days|90|exchange|foreign|reciprocal|test|new resident|move
+Licencia nuevos residentes	https://www.inf.gov.nt.ca/en/services/driver-licensing/moving-nwt	licen|days|90|exchange|foreign|reciprocal|test|new resident
+Carreteras invernales	https://www.inf.gov.nt.ca/en/services/highways-ferries-and-winter-roads	ferry|ice road|winter road|highway|Mackenzie|Dempster|crossing
+Estadísticas NWT inicio	https://www.statsnwt.ca/	population|estimate|2026|labour|price|living cost
+Estadísticas población	https://www.statsnwt.ca/population/population-estimates/	population|2026|July|Yellowknife|community
+Estadísticas costo de vida	https://www.statsnwt.ca/prices-expenditures/living_cost_differentials/	Living Cost|differential|Yellowknife|Edmonton|community|%|20
+Estadísticas precios alimentos	https://www.statsnwt.ca/prices-expenditures/food_price/	food price|index|Yellowknife|community|20
+Estadísticas IPC	https://www.statsnwt.ca/prices-expenditures/consumer-price-index/	Consumer Price Index|Yellowknife|%|2026
+Estadísticas trabajo	https://www.statsnwt.ca/labour-income/labour-force-activity/	unemployment|participation|employment|2026|%
+Estadísticas inmigración	https://www.statsnwt.ca/population/immigration/	immigrant|immigration|permanent resident|2025|2026
+Gobierno NWT inicio	https://www.gov.nt.ca/en	NWT|Northwest Territories|time|news
+Gobierno NWT noticias hora	https://www.gov.nt.ca/en/newsroom	time|daylight|Mountain|Central|clock|2026
+Hora: búsqueda GNWT	https://www.gov.nt.ca/en/search?search_api_fulltext=time%20change	time|daylight|clock|Mountain|Central|permanent|regulation|2026
+Ciudad Yellowknife	https://www.yellowknife.ca/	Yellowknife|City|resident|services|transit
+Aurora College	https://www.auroracollege.nt.ca/	Aurora College|polytechnic|campus|Yellowknife|Inuvik|Fort Smith|program|international
+RCMP NWT	https://rcmp.ca/en/northwest-territories	911|emergency|detachment|call
+NWT 911	https://www.maca.gov.nt.ca/en/services/911	911|emergency|2019|NWT|call|text
+Línea de ayuda NWT	https://www.hss.gov.nt.ca/en/services/nwt-help-line	Help Line|1-800-661-0844|24|free
+Job Bank escaneo NWT	https://www.jobbank.gc.ca/trend-analysis/job-market-reports/northwest-territories/environmental-scan	Northwest Territories|unemployment|employment|mining|diamond|public administration|2025|2026|shortage|outlook
+Job Bank salarios NWT	https://www.jobbank.gc.ca/trend-analysis/search-wages	Northwest
+CRA beneficio infantil NWT	https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/northwest-territories.html	Northwest Territories Child Benefit|\$|per year|month|income|threshold|Cost of Living Offset|offset
+CRA deducciones norte	https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-25500-northern-residents-deductions.html	Zone A|Zone B|six months|residency
+Nutrition North comunidades	https://www.nutritionnorthcanada.gc.ca/eng/1415540731169/1415540791407	Northwest Territories|Aklavik|Colville|Délįne|Fort Good Hope|Gamètì|Lutselk|Paulatuk|Sachs|Tulita|Ulukhaktok|Wekweètì|Fort McPherson|Tsiigehtchic|Inuvik|Tuktoyaktuk
+IRCC PNP	https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html	Northwest Territories|Nunavut|Quebec
+NRC zonas horarias	https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/time-zones-daylight-saving-time	Northwest Territories|Mountain|Alberta|Central|2026|permanent
+CMHC Yellowknife	https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-data/data-tables/rental-market/rental-market-report-data-tables	Yellowknife
