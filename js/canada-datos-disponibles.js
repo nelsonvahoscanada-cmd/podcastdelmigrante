@@ -2,14 +2,14 @@
    una región aparece como disponible cuando tiene ficha publicada en Canadá en Datos. */
 window.CD_DISPONIBLES = {
   "total": 13,
-  "disponibles": 8,
+  "disponibles": 9,
   "provincias": {
     "total": 10,
     "disponibles": 7
   },
   "territorios": {
     "total": 3,
-    "disponibles": 1
+    "disponibles": 2
   },
   "regiones": [
     {
@@ -82,7 +82,7 @@ window.CD_DISPONIBLES = {
       "code": "NT",
       "name": "Territorios del Noroeste",
       "type": "territorio",
-      "url": null
+      "url": "/canada-en-datos/northwest-territories"
     },
     {
       "code": "NU",
