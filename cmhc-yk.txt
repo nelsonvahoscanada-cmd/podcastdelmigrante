@@ -1,0 +1,4 @@
+# https://www03.cmhc-schl.gc.ca/hmip-pimh/en/TableMapChart/Table?TableId=2.1.31.2&GeographyId=1290&GeographyTypeId=3&DisplayAs=Table&GeograghyName=Yellowknife
+# navegador ERROR TimeoutError Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www03.cmhc-schl.gc.ca/hmip-pimh/en/TableMapCha

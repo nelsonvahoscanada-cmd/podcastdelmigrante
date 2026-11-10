@@ -1,0 +1,210 @@
+# https://auroracollege.nt.ca/
+# navegador ERROR Error Page.goto: net::ERR_TIMED_OUT at https://auroracollege.nt.ca/
+Call log:
+  - navigating to "https://auroracollege.nt.ca/" | copia del Internet Archive del 20261017133405 (200)
+Aurora College - Quality Education. Northern Experience. 
+ [#primary] Skip to content 
+ [tel:18662664966] 
+ 1-866-266-4966 
+ [mailto:info@auroracollege.ca] 
+ info@auroracollege.ca 
+ [https://www.facebook.com/Aurora-College-131796776862510/] 
+ [https://www.instagram.com/auroracollegent/] 
+ [https://www.youtube.com/channel/UCbVyQ2VRRpJXwAD20i5Z50Q] 
+ [https://www.flickr.com/photos/203567679@N08/] 
+ [https://www.auroracollege.nt.ca/future-students/admissions/apply/] 
+ How To Apply 
+ [https://www.auroracollege.nt.ca/] 
+ Search 
+ [#] Explore Programs 
+ [https://www.auroracollege.nt.ca/schools/academic-upgrading/] 
+ Academic Upgrading 
+ [https://www.auroracollege.nt.ca/program/adult-basic-education-abe/] 
+ Adult Basic Education (ABE) 
+ [https://www.auroracollege.nt.ca/program/occupations-and-college-access-program-ocap/] 
+ Occupations and College Access Program (OCAP) 
+ [https://www.auroracollege.nt.ca/program/university-and-college-access-program-ucap/] 
+ University and College Access Program (UCAP) 
+ [https://www.auroracollege.nt.ca/schools/arts-and-science/] 
+ Arts and Science 
+ [https://www.auroracollege.nt.ca/program/environment-and-natural-resources-technology/] 
+ Environment and Natural Resources Technology 
+ [https://www.auroracollege.nt.ca/program/general-studies/] 
+ General Studies 
+ [https://www.auroracollege.nt.ca/schools/business-leadership/] 
+ Business & Leadership 
+ [https://www.auroracollege.nt.ca/program/business-administration/] 
+ Business Administration 
+ [https://www.auroracollege.nt.ca/program/northern-leadership-development-program/] 
+ Northern Leadership Development Program – Level 1 
+ [https://www.auroracollege.nt.ca/program/northern-leadership-development-program-level-2/] 
+ Northern Leadership Development Program – Level 2 
+ [https://www.auroracollege.nt.ca/program/office-administration/] 
+ Office Administration 
+ [https://www.auroracollege.nt.ca/schools/education/] 
+ Education 
+ [https://www.auroracollege.nt.ca/program/certificate-in-adult-education/] 
+ Certificate in Adult Education 
+ [https://www.auroracollege.nt.ca/program/early-learning-and-child-care-diploma/] 
+ Early Learning and Child Care 
+ [https://www.auroracollege.nt.ca/schools/health-and-human-services/] 
+ Health and Human Services 
+ [https://www.auroracollege.nt.ca/program/bachelor-of-science-in-nursing/] 
+ Bachelor of Science in Nursing 
+ [https://www.auroracollege.nt.ca/program/community-health-representative/] 
+ Community Health Representative 
+ [https://www.auroracollege.nt.ca/program/licensed-practical-nurse-bridge-in-program/] 
+ Licensed Practical Nurse Bridge-In Program 
+ [https://www.auroracollege.nt.ca/program/personal-support-worker/] 
+ Personal Support Worker 
+ [https://www.auroracollege.nt.ca/program/practical-nurse/] 
+ Practical Nurse 
+ [https://www.auroracollege.nt.ca/schools/trades-apprenticeship-industrial-training/] 
+ Trades, Apprenticeship & Industrial Training 
+ [https://www.auroracollege.nt.ca/schools/apprenticeship/] 
+ Apprenticeship Programs 
+ [https://www.auroracollege.nt.ca/schools/mining/] 
+ Mining Programs 
+ [https://www.auroracollege.nt.ca/schools/trades-and-industrial/] 
+ Trades & Industrial Training Programs 
+ Other
+ [https://www.auroracollege.nt.ca/programs/continuing-education/] 
+ Continuing Education 
+ [https://www.auroracollege.nt.ca/programs/academic-upgrading/] 
+ Academic Upgrading 
+ [#] Future Students 
+ [https://www.auroracollege.nt.ca/future-students/admissions/apply/] Apply Now 
+ [https://www.auroracollege.nt.ca/programs/] Explore Programs [https://www.auroracollege.nt.ca/programs/continuing-education/] Continuing Education 
+ [https://www.auroracollege.nt.ca/future-students/admissions/] Admissions [https://www.auroracollege.nt.ca/future-students/admissions/apply/] How to Apply 
+ [https://www.auroracollege.nt.ca/future-students/admissions/fees/] Fees 
+ [https://www.auroracollege.nt.ca/future-students/admissions/office-of-the-registrar/] Office of the Registrar 
+ [https://www.auroracollege.nt.ca/future-students/campuses/] Campuses [https://www.auroracollege.nt.ca/locations/thebacha-campus-fort-smith/] Fort Smith Thebacha Campus 
+ [https://www.auroracollege.nt.ca/locations/aurora-campus-inuvik/] Inuvik Aurora Campus 
+ [https://www.auroracollege.nt.ca/locations/north-slave-campus-yellowknife/] Yellowknife North Slave Campus 
+ [https://www.auroracollege.nt.ca/programs/continuing-education/] Continuing Education 
+ [https://www.auroracollege.nt.ca/future-students/community-based-learning/] Community-based Learning 
+ [https://www.auroracollege.nt.ca/future-students/student-housing/] Student Housing [https://www.auroracollege.nt.ca/future-students/student-housing/aurora-campus-housing/] Aurora Campus Housing 
+ [https://www.auroracollege.nt.ca/future-students/student-housing/thebacha-campus-housing/] Thebacha Campus Housing 
+ [https://www.auroracollege.nt.ca/future-students/student-housing/yellowknife-north-slave-campus-housing/] Yellowknife North Slave Campus Housing 
+ [#] Current Students 
+ [#] Student Logins [https://www.office.com/] Office 365 Login 
+ [https://elearning.myauroracollege.ca/login/index.php] Moodle Login 
+ [https://myac.auroracollege.nt.ca/SelfService/Home.aspx] MyAC Self-Service 
+ [https://auroracollege.libanswers.com/ACstudentinfo/] Frequently Asked Questions 
+ [https://www.auroracollege.nt.ca/registering-for-courses/] Registering for Your Courses 
+ [https://www.auroracollege.nt.ca/current-students/studying-at-aurora-college/] Student Services [https://www.auroracollege.nt.ca/current-students/studying-at-aurora-college/convocations/] Convocations 
+ [https://www.auroracollege.nt.ca/current-students/student-toolkit/] Student Toolkit 
+ [https://auroracollege.libguides.com/home] Libraries 
+ [https://www.auroracollege.nt.ca/current-students/student-association/] Student Association 
+ [#] About Us 
+ [https://www.auroracollege.nt.ca/about-aurora-college/our-commitments/] Our Commitments 
+ [https://www.auroracollege.nt.ca/about-aurora-college/welcome-to-aurora-college/] Mission, Vision and Values 
+ [https://www.auroracollege.nt.ca/about-aurora-college/governance/] Governance and Administration 
+ [https://www.ece.gov.nt.ca/aurora-transformation/] Transformation 
+ [https://www.auroracollege.nt.ca/about-aurora-college/plans-and-reports/] Reports & Publications 
+ [https://www.auroracollege.nt.ca/about-aurora-college/news-and-events/] News and Events 
+ [https://www.auroracollege.nt.ca/newsletter/] Newsletter 
+ [https://www.auroracollege.nt.ca/about-aurora-college/history-of-aurora-college/] History of Aurora College 
+ [https://www.auroracollege.nt.ca/about-aurora-college/equity-diversity-and-inclusion/] Equity, Diversity, and Inclusion 
+ [https://www.auroracollege.nt.ca/about-aurora-college/committees/] Committees 
+ [#] Research 
+ [https://www.auroracollege.nt.ca/aurora-research-institute/journal/] Xàgots’eèhk’ǫ̀ Journal 
+ [https://auroracollege.libguides.com/home] Library 
+ Search 
+ Search: 
+ Search 
+ Learn from the land
+ [https://www.auroracollege.nt.ca/programs/] 
+ Learn More 
+ Adventure in the Classroom
+ [https://www.auroracollege.nt.ca/programs/] 
+ Learn More 
+ Small Class Sizes
+ [https://www.auroracollege.nt.ca/programs/] 
+ Learn More 
+ Real Work Experience
+ [https://www.auroracollege.nt.ca/programs/] 
+ Learn More 
+ Previous 
+ Next 
+ [https://www.auroracollege.nt.ca/programs/continuing-education/] 
+ Continuing Education
+ Learn More → 
+ [https://www.auroracollege.nt.ca/future-students/admissions/office-of-the-registrar/] 
+ Office of the Registrar
+ Learn More → 
+ [https://www.auroracollege.nt.ca/future-students/student-housing/] 
+ Student Housing
+ Learn More → 
+ [https://www.auroracollege.nt.ca/about-aurora-college/news-and-events/] 
+ News and Events
+ Learn More → 
+ What are you looking for?
+ Search programs, courses, news and more.
+ Search: 
+ Search 
+ Explore Aurora College
+ Explore Programs
+ Our programs are designed to serve the needs of the peoples of the North and beyond. Modern facilities, small classrooms, and culturally sensitive settings await when you choose us.
+ [https://www.auroracollege.nt.ca/programs/] 
+ Browse Programs →
+ Mission, Vision and Values
+ Demonstrate leadership in the delivery of relevant and meaningful education and research rooted in strong connections to Northern land, tradition, community and people.
+ [https://www.auroracollege.nt.ca/about-aurora-college/mission-vision-and-values/] 
+ Learn More →
+ Student Services
+ Each of the Aurora College campuses has a Student Success Centre. These centres are equipped with the means to assist students in achieving personal success at the College.
+ [https://www.auroracollege.nt.ca/current-students/student-success-centre/] 
+ Student Success Centre →
+ The Aurora College Advantage 
+ [https://www.auroracollege.nt.ca/about-aurora-college/land-based-learning/] 
+ Land-based learning
+ Learn More → 
+ [https://www.auroracollege.nt.ca/aurora-research-institute/] 
+ Research
+ Learn More → 
+ [https://www.auroracollege.nt.ca/home/explore-the-north/] 
+ Looking to the future
+ Learn More → 
+ [https://www.auroracollege.nt.ca/future-students/campuses/] 
+ Campuses
+ Learn More → 
+ Ready to Start Your Journey?
+ Apply now and take the first step toward your future.
+ [https://www.auroracollege.nt.ca/future-students/admissions/apply/] 
+ How To Apply 
+ Land Acknowledgement
+ We respectfully acknowledge that Aurora College is situated on the traditional territories and homeland of the Dene, Inuvialuit, Métis and Cree peoples of the Northwest Territories. We are grateful to the many Indigenous peoples of the NWT for allowing us the opportunity to learn, work and live on their lands. We are also deeply grateful for the generous sharing of Indigenous Knowledge, wisdom and ways of knowing, being, doing and believing with our students and employees.
+ [https://www.auroracollege.nt.ca/] 
+ [https://www.auroracollege.nt.ca/contact-us/] Contact Us Today 
+ Toll-Free: 
+ [tel:18662664966] 1-866-266-4966 
+ Email: 
+ [mailto:info@auroracollege.ca] info@auroracollege.ca 
+ Search: 
+ Search 
+ Popular Resources
+ [https://www.auroracollege.nt.ca/academic-calendars/] Academic Calendar 
+ [https://www.auroracollege.nt.ca/current-students/student-toolkit/] Student Toolkit 
+ [https://elearning.myauroracollege.ca/login/index.php] Moodle – eLearning 
+ [https://www.auroracollege.nt.ca/about-aurora-college/plans-and-reports/] Publications 
+ [https://www.auroracollege.nt.ca/about-aurora-college/news-and-events/] News and Events 
+ [https://auroracollege.libguides.com/home] Libraries 
+ Top Links
+ [https://www.auroracollege.nt.ca/future-students/admissions/how-to-apply/] How To Apply 
+ [https://elearning.myauroracollege.ca/login/index.php] Student Log In 
+ [https://www.auroracollege.nt.ca/current-students/student-success-centre/] Student Success Centre 
+ [https://www.auroracollege.nt.ca/key-dates/] Key Academic Dates 
+ [https://www.auroracollege.nt.ca/aurora-research-institute/] Aurora Research Institute 
+ [https://www.auroracollege.nt.ca/contact-us/] Contact Us 
+ For Faculty & Staff
+ [https://www.auroracollege.nt.ca/faculty-and-staff/] Faculty and Staff Resources 
+ [https://www.auroracollege.nt.ca/staff-directory/] Staff Directory 
+ [https://login.microsoft.com] Staff Webmail 
+ [https://www.gov.nt.ca/careers/en/search/job/department/aurora-college-57] Careers at Aurora College 
+ [https://myauroracollege.sharepoint.com/sites/AuroraCollege] SharePoint 
+ [https://www.facebook.com/Aurora-College-131796776862510/] 
+ [https://www.instagram.com/auroracollegent/] 
+ [https://www.youtube.com/channel/UCbVyQ2VRRpJXwAD20i5Z50Q] 
+ [https://www.flickr.com/photos/203567679@N08/] 
+ Copyright © 2026 Aurora College. All rights reserved.

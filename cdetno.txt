@@ -1,0 +1,169 @@
+# https://www.cdetno.com/ → https://cdetno.com/
+# estado 200
+CDÉTNO - Réalisez vos ambitions 
+ [#content] Aller au contenu 
+ fr logged in
+ [https://cdetno.com/] Français 
+ [https://cdetno.com/en/] English 
+ [https://cdetno.com/] 
+ Menu 
+ [https://cdetno.com/a-propos/] À propos 
+ [/a-propos/#historique] Historique 
+ [/a-propos/#membres-du-conseil] Conseil d’administration 
+ [/a-propos/#equipe] Équipe 
+ [/a-propos/#partenaires] Bailleurs de fonds et partenaires 
+ [https://cdetno.com/nouvelles/] Nouvelles 
+ [https://cdetno.com/offresemplois/] Offres d’emplois 
+ [https://cdetno.com/carrefour-carrieres-des-tno/] Carrefour Carrières 
+ [https://cdetno.com/carrefour-carrieres-des-tno/services-daide-a-lemploi/] Services d’aide à l’emploi 
+ [https://cdetno.com/carrefour-carrieres-des-tno/formations-professionnelles/] Formations professionnelles 
+ [https://cdetno.com/carrefour-carrieres-des-tno/programmes/] Programmes 
+ [https://cdetno.com/carrefour-carrieres-des-tno/ateliers/] Ateliers 
+ [#] Services 
+ [https://cdetno.com/services-daccueil-et-dintegration/employabilite-immigration/] Services en employabilité et aux employeurs 
+ [https://cdetno.com/services/entreprendre/] Entrepreneuriat 
+ [https://cdetno.com/services-daccueil-et-dintegration/] Services d’accueil et d’intégration 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-daccueil-et-dintegration/] Services d’accueil et d’intégration 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-aux-familles-et-integration-scolaire/] Services aux familles et intégration scolaire 
+ [https://cdetno.com/services-daccueil-et-dintegration/employabilite-immigration/] Services en employabilité et aux employeurs 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-communautaires/] Services communautaires 
+ [https://cdetno.com/services/tourisme/] Tourisme 
+ [https://cdetno.com/services/membres/] Membres 
+ [/services/membres/#POURQUOI-DEVENIR-MEMBRE] Devenir membre 
+ [/services/membres/#Nos-membres] Nos membres 
+ [https://cdetno.com/log-in/] Connexion 
+ Librairie 
+ [https://cdetno.com/parcours-dimmigrants/] Parcours d’immigrants 
+ [https://cdetno.com/libraire/publication/] Publications 
+ [https://cdetno.com/rapport-annuel/] Rapports annuels 
+ [https://cdetno.com/libraire/ressources/] Ressources 
+ [https://cdetno.com/webinaires/] Webinaires 
+ [https://cdetno.com/contactez-nous/] Contact 
+ [https://cdetno.com/] 
+ Menu 
+ [https://cdetno.com/a-propos/] À propos 
+ [/a-propos/#historique] Historique 
+ [/a-propos/#membres-du-conseil] Conseil d’administration 
+ [/a-propos/#equipe] Équipe 
+ [/a-propos/#partenaires] Bailleurs de fonds et partenaires 
+ [https://cdetno.com/nouvelles/] Nouvelles 
+ [https://cdetno.com/offresemplois/] Offres d’emplois 
+ [https://cdetno.com/carrefour-carrieres-des-tno/] Carrefour Carrières 
+ [https://cdetno.com/carrefour-carrieres-des-tno/services-daide-a-lemploi/] Services d’aide à l’emploi 
+ [https://cdetno.com/carrefour-carrieres-des-tno/formations-professionnelles/] Formations professionnelles 
+ [https://cdetno.com/carrefour-carrieres-des-tno/programmes/] Programmes 
+ [https://cdetno.com/carrefour-carrieres-des-tno/ateliers/] Ateliers 
+ [#] Services 
+ [https://cdetno.com/services-daccueil-et-dintegration/employabilite-immigration/] Services en employabilité et aux employeurs 
+ [https://cdetno.com/services/entreprendre/] Entrepreneuriat 
+ [https://cdetno.com/services-daccueil-et-dintegration/] Services d’accueil et d’intégration 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-daccueil-et-dintegration/] Services d’accueil et d’intégration 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-aux-familles-et-integration-scolaire/] Services aux familles et intégration scolaire 
+ [https://cdetno.com/services-daccueil-et-dintegration/employabilite-immigration/] Services en employabilité et aux employeurs 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-communautaires/] Services communautaires 
+ [https://cdetno.com/services/tourisme/] Tourisme 
+ [https://cdetno.com/services/membres/] Membres 
+ [/services/membres/#POURQUOI-DEVENIR-MEMBRE] Devenir membre 
+ [/services/membres/#Nos-membres] Nos membres 
+ [https://cdetno.com/log-in/] Connexion 
+ Librairie 
+ [https://cdetno.com/parcours-dimmigrants/] Parcours d’immigrants 
+ [https://cdetno.com/libraire/publication/] Publications 
+ [https://cdetno.com/rapport-annuel/] Rapports annuels 
+ [https://cdetno.com/libraire/ressources/] Ressources 
+ [https://cdetno.com/webinaires/] Webinaires 
+ [https://cdetno.com/contactez-nous/] Contact 
+ Stimule et appuie le développement économique et l’employabilité 
+ [https://cdetno.com/nouvelles/] Nouvelles 
+ [https://cdetno.com/salon-entrepreneurial-carnaval-slave-sud-un-nouveau-rendez-vous-pour-leconomie/] 
+ [https://cdetno.com/salon-entrepreneurial-carnaval-slave-sud-un-nouveau-rendez-vous-pour-leconomie/] Salon entrepreneurial – Carnaval Slave Sud : un nouveau rendez-vous pour l’économie 
+ 3 novembre, 2026 Le Conseil de développement économique des Territoires du Nord-Ouest (CDÉTNO) annonce la tenue de la première édition du Salon entrepreneurial – Carnaval Slave Sud, le samedi 21 novembre 2026, au gymnase de l’école Princess Alexandra, à Hay River. Ce salon festif, ouvert au public et gratuit, mettra en valeur les entreprises, les entrepreneurs, les artistes ... 
+ [https://cdetno.com/salon-entrepreneurial-carnaval-slave-sud-un-nouveau-rendez-vous-pour-leconomie/] Continuer la lecture 
+ [https://cdetno.com/rencontres-et-mentorat-le-cdetno-souligne-la-semaine-de-limmigration-francophone/] 
+ [https://cdetno.com/rencontres-et-mentorat-le-cdetno-souligne-la-semaine-de-limmigration-francophone/] Rencontres et mentorat : le CDÉTNO souligne la Semaine de l’immigration francophone 
+ 2 novembre, 2026 Du 1er au 7 novembre, le Conseil de développement économique des Territoires du Nord-Ouest (CDÉTNO) souligne la Semaine de l’immigration francophone 2026, sous le thème « Trouver sa place au cœur de la francophonie ». Pendant toute la semaine, l’organisme célèbre la diversité, les parcours inspirants et la richesse que l’immigration francophone apporte aux Territoires ... 
+ [https://cdetno.com/rencontres-et-mentorat-le-cdetno-souligne-la-semaine-de-limmigration-francophone/] Continuer la lecture 
+ [https://cdetno.com/osez-une-carriere-en-administration-formez-vous-pour-reussir/] 
+ [https://cdetno.com/osez-une-carriere-en-administration-formez-vous-pour-reussir/] Osez une carrière en administration : formez-vous pour réussir ! 
+ 30 octobre, 2026 Le Conseil de développement économique des Territoires du Nord-Ouest (CDÉTNO) lance une nouvelle formation en compétences administratives destinée aux femmes nouvelles immigrantes d’expression française. Offerte en présentiel au Carrefour Carrières des TNO du 5 au 25 novembre 2026, elle vise à faciliter leur accès aux métiers de bureau, un secteur qui offre de belles possibilités ... 
+ [https://cdetno.com/osez-une-carriere-en-administration-formez-vous-pour-reussir/] Continuer la lecture 
+ [https://cdetno.com/nouvelles/] Plus de Nouvelles 
+ [https://cdetno.com/offresemplois/] Offres d’emplois 
+ [https://cdetno.com/job/mentorship-facilitator-part-time/] Mentorship Facilitator (Part-time) MentorAbility NWT 
+ CDETNO Yellowknife, Northwest Territories Part-time 
+ [https://cdetno.com/job/ethnic-food-cook/] Ethnic Food Cook 
+ Miss Saigon Yellowknife, Northwest Territories Full-time 
+ [https://cdetno.com/job/commercial-fisheries-coordinator/] COMMERCIAL FISHERIES COORDINATOR 
+ INUVIALUIT REGIONAL CORPORATION (IRC) Other, Northwest Territories Full-time 
+ [https://cdetno.com/offresemplois/] Plus d’offres d’emploi 
+ [https://cdetno.com/video/] Dernières vidéos 
+ [#] 
+ [https://cdetno.com/video/48-h-top-chrono-2026-du-cdetno/] 48 h Top Chrono 2026 du CDÉTNO 
+ 20 juillet, 2026 Revivez la deuxième édition de 48 h Top Chrono, une compétition entrepreneuriale qui rassemble les jeunes, les femmes et les nouveaux arrivants des Territoires du Nord-Ouest autour de l’innovation, de la créativité et de l’entrepreneuriat. Pendant 48 heures, les participantes ont pris part à des ateliers pratiques, des séances de mentorat et des formations sur ... 
+ [https://cdetno.com/video/48-h-top-chrono-2026-du-cdetno/] Continuer la lecture 
+ [#] 
+ [https://cdetno.com/video/capsule-1-comprendre-le-developpement-de-lenfant/] Capsule 1 – Comprendre le développement de l’enfant 
+ 3 juillet, 2026 🌱 Nouvelle série de capsules sur la petite enfance! Dans le cadre du projet Petite Enfance, le CDÉTNO et ses partenaires — le Collège nordique francophone, le Centre de la petite enfance La Tanière, la Garderie Plein Soleil et la Commission scolaire francophone des T.N.-O. — sont heureux de vous présenter une série de capsules ... 
+ [https://cdetno.com/video/capsule-1-comprendre-le-developpement-de-lenfant/] Continuer la lecture 
+ [#] 
+ [https://cdetno.com/video/video-du-31e-cafe-emploi-du-cdetno/] Vidéo du 31e Café emploi du CDÉTNO 
+ 2 mai, 2026 Retour en vidéo sur le Café emploi du CDÉTNO, qui a eu lieu le 28 avril 2026 et a réuni 156 chercheurs d’emploi à l’édifice Greenstone. ... 
+ [https://cdetno.com/video/video-du-31e-cafe-emploi-du-cdetno/] Continuer la lecture 
+ [https://cdetno.com/video/] Plus de vidéos 
+ Abonnez-vous à l’infolettre
+ Email 
+ Adresse e-mail invalide.
+ [https://www.facebook.com/cdetno/] Facebook 
+ [https://www.instagram.com/cdetno/] Instagram 
+ [https://www.linkedin.com/company/cdetno] LinkedIn 
+ [https://twitter.com/CDETNO] X 
+ [https://www.youtube.com/user/CDETNO] YouTube 
+ Membre de
+ [https://rdee.ca] 
+ Heures d’ouverture
+ Lundi 9h00 - 17h00 
+ Mardi 9h00 - 17h00 
+ Mercredi 9h00 - 17h00 
+ Jeudi 9h00 - 17h00 
+ Vendredi 9h00 - 17h00 
+ Adresse
+ [https://www.google.com/maps?q=5204%2C+50th+Avenue%2C+Suite+102+Yellowknife,+NT+X1A+1E2] CDÉTNO
+5204, 50th Avenue, Suite 102
+Yellowknife, NT X1A 1E2
+ [https://www.google.com/maps/dir//5204%2C+50th+Avenue%2C+Suite+102%20Yellowknife,%20NT%20X1A+1E2] Itinéraires 
+ [tel:8678735962] 867-873-5962 
+ [tel:18668499139] 1-866-849-9139 
+ CDETNO ©2026 - Powered by [https://snoka.ca/] Snoka Media 
+ [#] 
+ Close [https://cdetno.com/a-propos/] À propos 
+ [/a-propos/#historique] Historique 
+ [/a-propos/#membres-du-conseil] Conseil d’administration 
+ [/a-propos/#equipe] Équipe 
+ [/a-propos/#partenaires] Bailleurs de fonds et partenaires 
+ [https://cdetno.com/nouvelles/] Nouvelles 
+ [https://cdetno.com/offresemplois/] Offres d’emplois 
+ [https://cdetno.com/carrefour-carrieres-des-tno/] Carrefour Carrières 
+ [https://cdetno.com/carrefour-carrieres-des-tno/services-daide-a-lemploi/] Services d’aide à l’emploi 
+ [https://cdetno.com/carrefour-carrieres-des-tno/formations-professionnelles/] Formations professionnelles 
+ [https://cdetno.com/carrefour-carrieres-des-tno/programmes/] Programmes 
+ [https://cdetno.com/carrefour-carrieres-des-tno/ateliers/] Ateliers 
+ [#] Services 
+ [https://cdetno.com/services-daccueil-et-dintegration/employabilite-immigration/] Services en employabilité et aux employeurs 
+ [https://cdetno.com/services/entreprendre/] Entrepreneuriat 
+ [https://cdetno.com/services-daccueil-et-dintegration/] Services d’accueil et d’intégration 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-daccueil-et-dintegration/] Services d’accueil et d’intégration 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-aux-familles-et-integration-scolaire/] Services aux familles et intégration scolaire 
+ [https://cdetno.com/services-daccueil-et-dintegration/employabilite-immigration/] Services en employabilité et aux employeurs 
+ [https://cdetno.com/services-daccueil-et-dintegration/services-communautaires/] Services communautaires 
+ [https://cdetno.com/services/tourisme/] Tourisme 
+ [https://cdetno.com/services/membres/] Membres 
+ [/services/membres/#POURQUOI-DEVENIR-MEMBRE] Devenir membre 
+ [/services/membres/#Nos-membres] Nos membres 
+ [https://cdetno.com/log-in/] Connexion 
+ Librairie 
+ [https://cdetno.com/parcours-dimmigrants/] Parcours d’immigrants 
+ [https://cdetno.com/libraire/publication/] Publications 
+ [https://cdetno.com/rapport-annuel/] Rapports annuels 
+ [https://cdetno.com/libraire/ressources/] Ressources 
+ [https://cdetno.com/webinaires/] Webinaires 
+ [https://cdetno.com/contactez-nous/] Contact

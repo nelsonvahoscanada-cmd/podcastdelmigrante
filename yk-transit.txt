@@ -1,0 +1,313 @@
+# https://www.yellowknife.ca/transit → https://www.yellowknife.ca/transit
+# estado 200
+Transit | City of Yellowknife 
+ [#main-content] 
+ Skip to main content
+ *]:w-full">
+ City of
+ Yellowknife
+ Main navigation
+ Living in Yellowknife
+ mega-menu#closePanel"
+ data-test="mega-menu-close">
+ Recreation
+ [/programs-and-registration] Programs and Registration
+ [/activities] Activities
+ Facilities and Parks
+ [/facility-hours-and-locations] Facility Hours and Locations
+ [/admission-and-passes] Admission and Passes
+ [/city-facilities] City Facilities
+ [/facility-rentals] Facility Rentals
+ [/trails-parks-and-playgrounds] Trails, Parks and Playgrounds
+ Culture and Community
+ [/about-yellowknife] About Yellowknife
+ [/events] Events 
+ [/culture-and-heritage] Culture and Heritage
+ Local Services
+ [/places-of-worship] Places of Worship
+ [/education] Education
+ [/hospitals-and-clinics] Hospitals and Clinics
+ [/social-services] Social Services
+ [/status-cards] Status Cards
+ [/adopt-a-street] Adopt-a-Street
+ [/community-services-directory] Community Services Directory
+ Environment and Climate
+ [/weather-and-aurora-borealis] Weather and Aurora Borealis
+ [/climate-change] Climate Change
+ [/current-environmental-hazards] Current Environmental Hazards
+ [/green-living] Green Living
+ Moving to Yellowknife
+ [/moving-what-to-expect] What to Expect
+ [/moving-getting-set-up] Getting Set Up
+ [/jobs] Jobs
+ [/housing] Housing
+ [/immigration-services] Immigration Services
+ City Services
+ mega-menu#closePanel"
+ data-test="mega-menu-close">
+ Resident Services
+ [/licences-permits-and-applications] Licenses, Permits and Applications
+ [/online-services] Online Services
+ [/waste-management] Waste Management
+ [/property-assessment-and-taxes] Property Taxes and Assessments
+ [/utility-account-and-billing] Utility Account and Billing
+ [/pets] Pets
+ [/water-and-sewer] Water and Sewer
+ [/commissioner-of-oaths] Commissioner of Oaths
+ Transit, Parking and Roads
+ [/transit] Transit
+ [/parking] Parking
+ [/roads-and-sidewalks] Roads and Sidewalks
+ [/roads-and-sidewalks/construction-underway] Construction Underway
+ Protective and emergency services
+ [/emergency-contacts] Who Do I Call?
+ [/emergency-preparedness] Emergency Preparedness
+ [/fire-and-emergency-services] Fire and Ambulance
+ [/municipal-enforcement] Municipal Enforcement
+ [/ice-safety-information] Ice Safety Information
+ City Government
+ mega-menu#closePanel"
+ data-test="mega-menu-close">
+ City Council
+ [/city-council-and-mayor] City Council and Mayor
+ [/council-meetings-and-agendas] Council Meetings and Agendas
+ [/committees-of-council] Committees of Council
+ [/grants-and-funding] Grants and Funding
+ [/elections] Elections
+ [/city-by-laws/frequently-referenced] City By-laws
+ Partnerships
+ [/indigenous-partnerships] Indigenous Partnerships
+ [/budget-and-initiatives] Budget and Initiatives
+ [/budget-and-initiatives/past-and-present-budgets] Past and Present Budgets
+ [/budget-and-initiatives/budget-proposals] Budget Proposals
+ City Organization
+ [/city-departments] City Departments
+ [/contact] Contact Directory
+ [/careers] Careers
+ [/publications-and-forms] Publications and Forms
+ News and Updates
+ [/news] News
+ [/updates] Updates
+ [/publicnotices] Public Notices
+ [/emergency-preparedness/alerts] Emergency Alerts
+ Have Your Say
+ [/public-engagement] Public Engagement
+ [/report-an-issue] Report an Issue
+ [/make-a-complaint] Make a Complaint
+ [/council-meetings-and-agendas/present-to-council] Present to Council
+ [/committees-of-council/join-a-committee] Join a Committee
+ [/budget-and-initiatives/budget-proposals] Submit a Budget Proposal
+ [/propose-a-street-name] Propose a Street Name
+ Business and Development
+ mega-menu#closePanel"
+ data-test="mega-menu-close">
+ Development and Building
+ [/development] Development
+ [/building-and-renovations] Building and Renovations
+ [/land-sales-and-leasing] Land Sales and Leasing
+ [/planning-and-development-initiatives] Planning and Development Initiatives
+ Doing Business with the City
+ [/bidding-opportunities] Bidding Opportunities
+ [/transit-advertising] Transit Advertising
+ Operating a Business
+ [/start-your-business] Start Your Business
+ [/business-licences] Business Licences
+ [/business-operators] Business Operators
+ [/filming-in-yellowknife] Filming in Yellowknife
+ Economic Development
+ [/why-invest-in-yellowknife] Why Invest in Yellowknife
+ [/economic-development-strategies] Economic Development Strategies
+ [/a-yellowknife-university] A Yellowknife University
+ search-overlay#toggle"
+ data-search-overlay-target="button"
+ aria-label="Open search"
+ >
+ search-overlay#handleSubmit"
+ class="relative w-full max-w-2xl transform transition-transform duration-300"
+ >
+ Search 
+ search-overlay#handleInput"
+ placeholder="Enter your search here"
+ class="text-base border-4 border-r-0 border-bay-blue-700 text-bismark-600 w-full rounded-l-xl rounded-r-none p-3 placeholder:text-gray-600/50 placeholder:opacity-100 outline-transparent -outline-offset-4 outline-4 focus:outline-fuchsia-500 transition-colors duration-200 ease-in"
+ >
+ Search
+ Mobile Main navigation
+ mobile-menu#toggle"
+ data-mobile-menu-target="toggle"
+ data-test="mobile-menu-toggle"
+ aria-label="Toggle menu"
+ aria-expanded="false"
+ aria-controls="block-duchess-mobile-main-navigation-drawer"
+ >
+ Living in Yellowknife 
+ Recreation 
+ [/programs-and-registration] Programs and Registration 
+ [/activities] Activities 
+ Facilities and Parks 
+ [/facility-hours-and-locations] Facility Hours and Locations 
+ [/admission-and-passes] Admission and Passes 
+ [/city-facilities] City Facilities 
+ [/facility-rentals] Facility Rentals 
+ [/trails-parks-and-playgrounds] Trails, Parks and Playgrounds 
+ Culture and Community 
+ [/about-yellowknife] About Yellowknife 
+ [/events] Events 
+ [/culture-and-heritage] Culture and Heritage 
+ Local Services 
+ [/places-of-worship] Places of Worship 
+ [/education] Education 
+ [/hospitals-and-clinics] Hospitals and Clinics 
+ [/social-services] Social Services 
+ [/status-cards] Status Cards 
+ [/adopt-a-street] Adopt-a-Street 
+ [/community-services-directory] Community Services Directory 
+ Environment and Climate 
+ [/weather-and-aurora-borealis] Weather and Aurora Borealis 
+ [/climate-change] Climate Change 
+ [/current-environmental-hazards] Current Environmental Hazards 
+ [/green-living] Green Living 
+ Moving to Yellowknife 
+ [/moving-what-to-expect] What to Expect 
+ [/moving-getting-set-up] Getting Set Up 
+ [/jobs] Jobs 
+ [/housing] Housing 
+ [/immigration-services] Immigration Services 
+ City Services 
+ Resident Services 
+ [/licences-permits-and-applications] Licenses, Permits and Applications 
+ [/online-services] Online Services 
+ [/waste-management] Waste Management 
+ [/property-assessment-and-taxes] Property Taxes and Assessments 
+ [/utility-account-and-billing] Utility Account and Billing 
+ [/pets] Pets 
+ [/water-and-sewer] Water and Sewer 
+ [/commissioner-of-oaths] Commissioner of Oaths 
+ Transit, Parking and Roads 
+ [/transit] Transit 
+ [/parking] Parking 
+ [/roads-and-sidewalks] Roads and Sidewalks 
+ [/roads-and-sidewalks/construction-underway] Construction Underway 
+ Protective and emergency services 
+ [/emergency-contacts] Who Do I Call? 
+ [/emergency-preparedness] Emergency Preparedness 
+ [/fire-and-emergency-services] Fire and Ambulance 
+ [/municipal-enforcement] Municipal Enforcement 
+ [/ice-safety-information] Ice Safety Information 
+ City Government 
+ City Council 
+ [/city-council-and-mayor] City Council and Mayor 
+ [/council-meetings-and-agendas] Council Meetings and Agendas 
+ [/committees-of-council] Committees of Council 
+ [/grants-and-funding] Grants and Funding 
+ [/elections] Elections 
+ [/city-by-laws/frequently-referenced] City By-laws 
+ Partnerships 
+ [/indigenous-partnerships] Indigenous Partnerships 
+ [/budget-and-initiatives] Budget and Initiatives 
+ [/budget-and-initiatives/past-and-present-budgets] Past and Present Budgets 
+ [/budget-and-initiatives/budget-proposals] Budget Proposals 
+ City Organization 
+ [/city-departments] City Departments 
+ [/contact] Contact Directory 
+ [/careers] Careers 
+ [/publications-and-forms] Publications and Forms 
+ News and Updates 
+ [/news] News 
+ [/updates] Updates 
+ [/publicnotices] Public Notices 
+ [/emergency-preparedness/alerts] Emergency Alerts 
+ Have Your Say 
+ [/public-engagement] Public Engagement 
+ [/report-an-issue] Report an Issue 
+ [/make-a-complaint] Make a Complaint 
+ [/council-meetings-and-agendas/present-to-council] Present to Council 
+ [/committees-of-council/join-a-committee] Join a Committee 
+ [/budget-and-initiatives/budget-proposals] Submit a Budget Proposal 
+ [/propose-a-street-name] Propose a Street Name 
+ Business and Development 
+ Development and Building 
+ [/development] Development 
+ [/building-and-renovations] Building and Renovations 
+ [/land-sales-and-leasing] Land Sales and Leasing 
+ [/planning-and-development-initiatives] Planning and Development Initiatives 
+ Doing Business with the City 
+ [/bidding-opportunities] Bidding Opportunities 
+ [/transit-advertising] Transit Advertising 
+ Operating a Business 
+ [/start-your-business] Start Your Business 
+ [/business-licences] Business Licences 
+ [/business-operators] Business Operators 
+ [/filming-in-yellowknife] Filming in Yellowknife 
+ Economic Development 
+ [/why-invest-in-yellowknife] Why Invest in Yellowknife 
+ [/economic-development-strategies] Economic Development Strategies 
+ [/a-yellowknife-university] A Yellowknife University 
+ Emergency Police, Fire, Medical Call:
+ [tel:9-1-1] 
+ 9-1-1
+ MED After-Hours:
+ [tel:+18679202737] 
+ (867) 920-2737
+ Public Works After-Hours:
+ [tel:+18679205699] 
+ (867) 920-5699
+ Emergency Police, Fire, Medical Call:
+ [tel:9-1-1] 
+ 9-1-1
+ MED After-Hours:
+ [tel:+18679202737] 
+ (867) 920-2737
+ Public Works After-Hours:
+ [tel:+18679205699] 
+ (867) 920-5699
+ Transit
+ Back to Home 
+ /
+ City Services 
+ /
+ Transit, Parking and Roads 
+ /
+ Transit 
+ [/transit/routes-and-schedules] 
+ Bus Routes and Schedules
+ [/transit/fares] 
+ Fares
+ [/transit/riding-the-bus] 
+ How to Ride the Bus
+ [/transit/specialized-transit] 
+ Specialized Transit
+ [/transit-advertising] 
+ Transit Advertising
+ Trust City Transit 
+ Even though Yellowknife has a population of only about 20,000 people, transit demand has grown over time, as the city expands into newer neighbourhoods. The system has gradually modernized with updated buses and route adjustments to serve residential growth.
+ The [https://passiogo.com/] PassioGO! app is available for the Yellowknife area, and residents are invited to download this app to view live bus tracking for all routes.
+ Taking the bus, especially in Yellowknife , has some underrated advantages:
+ It Saves You Money
+ Avoids Winter Driving Headaches
+ Less Wear and Tear on Your Vehicle
+ Better for the Environment
+ Built-In “Free Time”
+ It Connects the Community
+ Contact Us 
+ Questions, comments, or concerns? Let us know.
+ City Hall: [tel:+18679205600] (867) 920-5600 / [#] @email 
+ Service Provider: [tel:+18678734693] (867) 873-4693 
+ City of
+ Yellowknife
+ 4807 - 52 Street, P.O. Box 580,
+ Yellowknife, NT, X1A 2N4
+ (867) 920-5600
+ Monday - Friday
+ 8:30 a.m. - 5:00 p.m.
+ Footer navigation
+ [/online-services] Online Services 
+ [/feedback] Feedback 
+ [/contact] Contact Directory 
+ [/careers] Careers 
+ [/subscribe] Subscribe 
+ The City of Yellowknife respectfully acknowledges that we gather, work, and govern within the homelands of the Yellowknives Dene First Nation, the Tłıch̨ǫ people, and the North Slave Métis. We honour their enduring connection to this land and recognize the living laws, knowledge, and stewardship that continue to guide and protect this place. In our work, we commit to walking in partnership and respect, making decisions that honour Ancestors, uplift communities, and care for the generations yet to come. We recognize all First Nations, Métis, and Inuit who live, work, and contribute to the life of Yellowknife, alongside all residents who now call this city home. Together, we share responsibility for strengthening this community and caring for the land and one another.
+ © 2026 City of Yellowknife, Inc. All rights reserved.
+ Footer tertiary
+ [/privacy-policy] Privacy Policy 
+ [/accessibility-statement] Accessibility Statement 
+ [/publications-and-forms/documents-and-forms] Documents and Forms

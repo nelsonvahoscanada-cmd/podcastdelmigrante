@@ -1,0 +1,183 @@
+# https://www.statsnwt.ca/en/labour-and-income/labour-force-activity → https://www.statsnwt.ca/en/labour-and-income/labour-force-activity
+# estado 200
+Labour Force Activity | NWT Bureau of Statistics 
+ [#main-content] 
+ Skip to main content
+ [/en] 
+ NWT Bureau of Statistics 
+ [/] 
+ NWT Bureau of Statistics
+ [/fr/node/1136] 
+ Français
+ Fr
+ Search 
+ Search 
+ Menu 
+ Close 
+ Search 
+ Search 
+ Main navigation
+ [/en/economy] Economy 
+ [/en/education] Education 
+ [/en/environment] Environment 
+ [/en/health] Health 
+ [/en/housing] Housing 
+ [/en/justice/police-reported-crime] Justice 
+ [/en/labour-and-income] Labour and Income 
+ [/en/language] Language 
+ [/en/population] Population 
+ [/en/prices-and-expenditures] Prices and Expenditures 
+ [/en/traditional-activities] Traditional Activities 
+ [/en/transportation] Transportation 
+ [/en/Profiles] Profiles 
+ [/en/Indicators] Indicators 
+ [/en/Surveys] Surveys 
+ [/en/about] About Us 
+ NWT Bureau of Statistics 
+ [/en] 
+ Home 
+ [/en/labour-and-income] Labour and Income 
+ Labour Force Activity 
+ Labour Force Activity
+ The labour market provides an indication of how many people are employed or unemployed among the working age population. This information may assist in policy and program planning as well as educational and career decisions.
+ Information on labour market activity for the Northwest Territories overall, is available monthly and annually from Statistics Canada’s Monthly Labour Force Survey. Community level information is available every 2 to 3 years from the Census and from the NWT Community Survey.
+ NWT Labour Force Activity
+ Rates - %, Labour Force Activity - Thousands of Persons
+ Rates
+ Labour Force Activity
+ Year
+ Month
+ Participation Rate
+ [/en/time-series-retrival/V46438892] (V46438892) 
+ Employment Rate
+ [/en/time-series-retrival/V46438904] (V46438904) 
+ Unemployment Rate
+ [/en/time-series-retrival/V46438880] (V46438880) 
+ 2026
+ Oct
+ 71.4
+ 68.1
+ 5.1
+ Sep
+ 73.0
+ 68.8
+ 5.8
+ Aug
+ 76.1
+ 70.5
+ 7.4
+ Jul
+ 75.6
+ 69.7
+ 7.8
+ Jun
+ 73.3
+ 67.4
+ 8.0
+ May
+ 71.3
+ 65.9
+ 7.9
+ Year
+ Month
+ Population 15 & Over
+ [/en/time-series-retrival/V46438814] (V46438814) 
+ Labour Force
+ [/en/time-series-retrival/V46438826] (V46438826) 
+ Employed
+ [/en/time-series-retrival/V46438838] (V46438838) 
+ Unemployed
+ [/en/time-series-retrival/V46438862] (V46438862) 
+ Not in Labour Force
+ [/en/time-series-retrival/V46438873] (V46438873) 
+ 2026
+ Oct
+ 35.7
+ 25.5
+ 24.3
+ 1.3
+ 10.1
+ Sep
+ 35.6
+ 26.0
+ 24.5
+ 1.5
+ 9.6
+ Aug
+ 35.6
+ 27.1
+ 25.1
+ 2.0
+ 8.6
+ Jul
+ 35.6
+ 26.9
+ 24.8
+ 2.1
+ 8.8
+ Jun
+ 35.6
+ 26.1
+ 24.0
+ 2.1
+ 9.5
+ May
+ 35.5
+ 25.3
+ 23.4
+ 2.0
+ 10.2
+ [/en/download-xlsx/1136/paragraph/123397] 
+ Download XLSX
+ Publications
+ [https://www.statsnwt.ca/sites/default/files/documents/Oct2026_NewStats%20LFS.pdf] 
+ Labour Force Survey Highlights - October 2026 
+ Statistics Canada estimates that in October 2026, out of 34,600 Northwest Territories residents aged 15 years and older, 22,900 were employed, a decrease of 800 persons from the previous month. Consequently, the employment rate declined by 2.3 percentage points to 66.2%, while the unemployment rate increased to 5.8% in October.
+ PDF 
+ • 
+ 227.75KB 
+ • 
+ Issued November 6, 2026 
+ Monthly Data Tables
+ [https://www.statsnwt.ca/sites/default/files/documents/Table%20LFS100%20Labour%20force%20characteristics%20by%20sex%2C%20age%2C%20ethnicity%2C%20region%2C%20industry_0.xlsx] 
+ Table LFS100 - Labour force characteristics by sex, age, ethnicity, region, industry, monthly 
+ XLSX 
+ • 
+ 345.5KB 
+ • 
+ Issued November 6, 2026 
+ expand all
+ collapse all
+ Annual Data Tables 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/Table%20LFS101%20Labour%20force%20characteristics%20by%20education.xlsx] Table LFS101: Labour force activity by sex, age, ethnicity, geography, education (2001 - 2024) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/Table%20LFS102%20Employment%20by%20industry%2C%20occupation%2C%20class%20of%20worker%2C%20full%20time%20or%20part%20time.xlsx] Table LFS102: Employment by industry, occupation, class of worker, full time or part time (2001 - 2024) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/Table%20LFS103%20Employment%20rates%20by%20highest%20level%20of%20schooling%2C%20sex%2C%20ethnicity%20and%20region.xlsx] Table LFS103: Employment rates by highest level of schooling, sex, ethnicity and region (2006 - 2024) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/Table%20LFS104%20Labour%20force%20characteristics%20by%20province%20or%20territory.xlsx] Table LFS104: Labour force activity by province or territory (2001 - 2024) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/LFS%20Notes.pdf] Notes & Definitions on the Monthly Labour Force Survey 
+ Census & NWT Community Survey Data Tables 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/LFS105%20Historical%20Community%20Labour%20Force%20Activity%2C%201986%20to%202024%282025%29.xlsx] Table LFS105: Community Labour Force Activity (1986 - 2024) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/LFS107%20Historical%20Labour%20Force%20by%20HLOS%2C%202011%20to%202024.xlsx] Table LFS107: Labour Force Activity by Education (2011 - 2024) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/Table%20LFS108%20Labour%20force%20by%20work%20activity%20and%20community%202011%20_%202021.xlsx] Table LFS108: Labour Force Activity by Work Activity and Community (2011 - 2021) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/Table%20LFS109%20Labour%20force%20by%20industry%20and%20gender%2C%202011%20to%202021.xlsx] Table LFS109: Labour Force by Detailed Industry and Gender (2011 - 2021) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/Table%20LFS110%20Labour%20force%20by%20occupation%20and%20gender%202021_0.xlsx] Table LFS110: Labour Force Activity by Occupation and Gender (2011 - 2021) 
+ [https://bearnet.gov.nt.ca/t2/stats/sites/default/files/documents/Table%20LFS111%20Non-resident%20employment%20by%20industry%20and%20sex.xlsx] Table LFS111: Non-Resident Workers (2011) 
+ Sidebar Content
+ More Labour and Income Statistics
+ [/en/labour-and-income/labour-supply] 
+ Labour Supply
+ [/en/labour-and-income/labour-market] 
+ Labour Market Outlooks
+ [/en/labour-and-income/Income-Statistics] 
+ Income Statistics
+ [/en/labour-and-income/income-assistance] 
+ Income Assistance
+ [/en/labour-and-income/earnings-wages] 
+ Earnings and Wages
+ Page last updated date
+ Updated: Fri, 11/06/2026 - 13:56
+ [https://rdirectory.gov.nt.ca/rDirectory.aspx] Phone Directory 
+ [https://gnwt.ca/terms-use] Terms of use 
+ [https://gnwt.ca/accessibility] Accessibility 
+ [/en/about] Contact 
+ [/en] 
+ NWT Bureau of Statistics

@@ -1,0 +1,105 @@
+# https://www.statsnwt.ca/en/prices-and-expenditures/northern-market-basket-measure → https://www.statsnwt.ca/en/prices-and-expenditures/northern-market-basket-measure
+# estado 200
+Northern Market Basket Measure | NWT Bureau of Statistics 
+ [#main-content] 
+ Skip to main content
+ [/en] 
+ NWT Bureau of Statistics 
+ [/] 
+ NWT Bureau of Statistics
+ [/fr/prices-and-expenditures/northern-market-basket-measure] 
+ Français
+ Fr
+ Search 
+ Search 
+ Menu 
+ Close 
+ Search 
+ Search 
+ Main navigation
+ [/en/economy] Economy 
+ [/en/education] Education 
+ [/en/environment] Environment 
+ [/en/health] Health 
+ [/en/housing] Housing 
+ [/en/justice/police-reported-crime] Justice 
+ [/en/labour-and-income] Labour and Income 
+ [/en/language] Language 
+ [/en/population] Population 
+ [/en/prices-and-expenditures] Prices and Expenditures 
+ [/en/traditional-activities] Traditional Activities 
+ [/en/transportation] Transportation 
+ [/en/Profiles] Profiles 
+ [/en/Indicators] Indicators 
+ [/en/Surveys] Surveys 
+ [/en/about] About Us 
+ NWT Bureau of Statistics 
+ [/en] 
+ Home 
+ [/en/prices-and-expenditures] Prices and Expenditures 
+ Northern Market Basket Measure 
+ Northern Market Basket Measure
+ Statistics Canada has produced poverty estimates for the Northwest Territories using a proposed Northern Market Basket Measure (MBM-N). Conceptually, these estimates are similar to what is produced for the provinces; however, adjustments were made to address various aspects of Northern living.
+ The MBM-N is based on the cost of a basket of goods (threshold) that represents a modest, basic standard of living. Anyone with a disposable income below this threshold is considered to be in poverty. Since the income needed to calculate poverty estimates is based on survey data, it is subject to sample variability. The upper and lower bounds provide a measure of the sample variability.
+ Percentage of People in Poverty
+ Northwest Territories
+ 2024
+ % of Persons in Poverty – [/en/time-series-retrival/TS5184] (TS5184) 
+ 10.0
+ Lower Bound* – [/en/time-series-retrival/TS5186] (TS5186) 
+ 5.8
+ Upper Bound* – [/en/time-series-retrival/TS5185] (TS5185) 
+ 14.2
+ [/en/download-xlsx/548/paragraph/119290] 
+ Download XLSX
+ *Note: These bounds are based on a 95% confidence interval, meaning the true poverty value would be between 
+ the upper and lower bound 19 out of 20 times. 
+ expand all
+ collapse all
+ Downloadable Excel Tables 
+ [https://www.statsnwt.ca/sites/default/files/documents/Poverty%20Estimates%20%28MBM-N%29_2026%20%28002%29.xlsx] 
+ NWT Poverty Estimates based on Northern Market Basket Measure (2020 - 2024) 
+ XLSX 
+ • 
+ 10.86KB 
+ • 
+ Issued August 26, 2026 
+ [https://www.statsnwt.ca/sites/default/files/documents/MBM-N%20thresholds%20by%20component_2026.xlsx] 
+ Northern Market Basket Measure (MBM-N) Thresholds by Component (2025) 
+ XLSX 
+ • 
+ 18.45KB 
+ • 
+ Issued June 5, 2026 
+ [https://www.statsnwt.ca/sites/default/files/documents/MBM-N%20thresholds%20by%20family%20size_2026.xlsx] 
+ Northern Market Basket Measure (MBM-N) Thresholds by Family Size (2025) 
+ XLSX 
+ • 
+ 25.49KB 
+ • 
+ Issued June 5, 2026 
+ [https://www.statsnwt.ca/sites/default/files/documents/MBM%20from%202021%20Census.xlsx] 
+ NWT Poverty Estimates by Region based on MBM-N (2020) 
+ XLSX 
+ • 
+ 39.98KB 
+ • 
+ Issued June 5, 2021 
+ Sidebar Content
+ More Prices and Expenditures Statistics
+ [/en/prices-and-expenditures/consumer-price-index] 
+ Consumer Price Index
+ [/en/prices-and-expenditures/community-price-index] 
+ Community Price Index
+ [/en/prices-and-expenditures/living-cost-differentials] 
+ Living Cost Differentials
+ [/en/prices-and-expenditures/household-expenditures] 
+ Household Expenditures
+ Page last updated date
+ Updated: Mon, 10/26/2026 - 14:34
+ [https://rdirectory.gov.nt.ca/rDirectory.aspx] Phone Directory 
+ [https://gnwt.ca/terms-use] Terms of use 
+ [https://gnwt.ca/accessibility] Accessibility 
+ [/en/about] Contact 
+ [/en] 
+ NWT Bureau of Statistics

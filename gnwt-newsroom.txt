@@ -1,0 +1,309 @@
+# https://www.gnwt.ca/newsroom → https://gnwt.ca/newsroom
+# estado 200
+Newsroom | Government of Northwest Territories 
+ [#main-content] 
+ Skip to main content
+ [/] 
+ Government of Northwest Territories 
+ [https://gtno.ca/nouvelles] 
+ Français
+ Fr
+ Search 
+ Search 
+ Menu 
+ Close 
+ Search 
+ Search 
+ Main navigation
+ [/arts-culture-and-languages] Arts, Culture, and Languages 
+ [/business-and-economy] Business and Economy 
+ [/communities] Communities 
+ [/driving-airports-and-ferries] Driving, Airports, and Ferries 
+ [/education-training-and-employment] Education, Training, and Employment 
+ [/environment-and-energy] Environment and Energy 
+ [/family-and-social-supports] Family and Social Supports 
+ [/health-and-wellness] Health and Wellness 
+ [/housing-tenancy-and-land] Housing, Tenancy, and Land 
+ [/laws-crime-and-justice] Laws, Crime, and Justice 
+ [/life-events] Life Events 
+ [/public-safety-and-emergency-response] Public Safety and Emergency Response 
+ [/reconciliation-and-indigenous-governments] Reconciliation and Indigenous Governments 
+ [/sport-recreation-and-tourism] Sport, Recreation, and Tourism 
+ [/your-government] Your Government 
+ Utility navigation
+ [/funding-programs] Funding Programs 
+ [https://haveyoursay.nwt-tno.ca/] Have Your Say 
+ [/newsroom] Newsroom 
+ [/resources] Resource Library 
+ [https://services.nwt-tno.ca] NWT eServices Portal 
+ [https://www.gov.nt.ca/careers/] Careers with the GNWT 
+ [/] 
+ Home 
+ Newsroom 
+ Newsroom
+ Main Sidebar
+ Refine Your Results
+ Refine Your Results
+ Department
+ [/newsroom?facets_query=] (-) 
+ Show all 
+ [/newsroom?f%5B0%5D=department%3AHealth%20and%20Social%20Services] Health and Social Services 
+ (1195) 
+ [/newsroom?f%5B0%5D=department%3APremier%20and%20Cabinet] Premier and Cabinet 
+ (939) 
+ [/newsroom?f%5B0%5D=department%3AEducation%2C%20Culture%20and%20Employment] Education, Culture and Employment 
+ (915) 
+ [/newsroom?f%5B0%5D=department%3AIndustry%2C%20Tourism%20and%20Investment] Industry, Tourism and Investment 
+ (843) 
+ [/newsroom?f%5B0%5D=department%3AEnvironment%20and%20Climate%20Change] Environment and Climate Change 
+ (632) 
+ [/newsroom?f%5B0%5D=department%3AInfrastructure] Infrastructure 
+ (602) 
+ [/newsroom?f%5B0%5D=department%3AMunicipal%20and%20Community%20Affairs] Municipal and Community Affairs 
+ (523) 
+ [/newsroom?f%5B0%5D=department%3AExecutive%20and%20Indigenous%20Affairs] Executive and Indigenous Affairs 
+ (397) 
+ [/newsroom?f%5B0%5D=department%3AFinance] Finance 
+ (364) 
+ [/newsroom?f%5B0%5D=department%3AHousing%20Northwest%20Territories] Housing Northwest Territories 
+ (234) 
+ [/newsroom?f%5B0%5D=department%3AJustice%20Department] Justice Department 
+ (153) 
+ News Type
+ [/newsroom?facets_query=] (-) 
+ Show all 
+ [/newsroom?f%5B0%5D=type%3A1478] News Release 
+ (2448) 
+ [/newsroom?f%5B0%5D=type%3A1468] Ministers' Statements and Speeches 
+ (1924) 
+ [/newsroom?f%5B0%5D=type%3A1470] Public Service Announcement 
+ (1150) 
+ [/newsroom?f%5B0%5D=type%3A1466] Media Advisory 
+ (590) 
+ [/newsroom?f%5B0%5D=type%3A1467] Media Statement 
+ (268) 
+ [/newsroom?f%5B0%5D=type%3A1487] Past COVID-19 Advisories 
+ (217) 
+ [/newsroom?f%5B0%5D=type%3A1465] Joint Communiqué 
+ (182) 
+ [/newsroom?f%5B0%5D=type%3A1471] Public Safety Bulletin 
+ (105) 
+ [/newsroom?f%5B0%5D=type%3A1486] Public Health Advisories 
+ (98) 
+ [/newsroom?f%5B0%5D=type%3A1483] Water monitoring bulletin 
+ (69) 
+ [/newsroom?f%5B0%5D=type%3A1484] Special Wildfire Bulletin 
+ (8) 
+ Category
+ [/newsroom?facets_query=] (-) 
+ Show all 
+ [/newsroom?f%5B0%5D=category%3A356] Your Government 
+ (177) 
+ [/newsroom?f%5B0%5D=category%3A350] Health and Wellness 
+ (149) 
+ [/newsroom?f%5B0%5D=category%3A353] Public Safety and Emergency Response 
+ (139) 
+ [/newsroom?f%5B0%5D=category%3A347] Education, Training, and Employment 
+ (84) 
+ [/newsroom?f%5B0%5D=category%3A348] Environment and Energy 
+ (81) 
+ [/newsroom?f%5B0%5D=category%3A345] Communities 
+ (62) 
+ [/newsroom?f%5B0%5D=category%3A344] Business and Economy 
+ (57) 
+ [/newsroom?f%5B0%5D=category%3A351] Housing, Tenancy, and Land 
+ (50) 
+ [/newsroom?f%5B0%5D=category%3A346] Driving, Airports, and Ferries | Driving and Transportation 
+ (38) 
+ [/newsroom?f%5B0%5D=category%3A342] Arts, Culture, and Languages 
+ (29) 
+ [/newsroom?f%5B0%5D=category%3A355] Sport, Recreation, and Tourism 
+ (24) 
+ [/newsroom?f%5B0%5D=category%3A349] Family and Social Supports 
+ (22) 
+ [/newsroom?f%5B0%5D=category%3A354] Reconciliation + IGs 
+ (17) 
+ [/newsroom?f%5B0%5D=category%3A343] Life Events 
+ (12) 
+ [/newsroom?f%5B0%5D=category%3A352] Laws, Crime, and Justice 
+ (9) 
+ Mandate
+ [/newsroom?facets_query=] (-) 
+ Show all 
+ [/newsroom?f%5B0%5D=mandate%3A1474] Healthy people and communities 
+ (83) 
+ [/newsroom?f%5B0%5D=mandate%3A1477] Safe communities for Northerners 
+ (78) 
+ [/newsroom?f%5B0%5D=mandate%3A1473] New opportunities for Northerners 
+ (72) 
+ [/newsroom?f%5B0%5D=mandate%3A1472] More homes for Northerners 
+ (56) 
+ [/newsroom?f%5B0%5D=mandate%3A1475] Support for healing 
+ (21) 
+ [/newsroom?f%5B0%5D=mandate%3A1476] Ready for emergencies 
+ (19) 
+ Publication Date
+ [/newsroom?facets_query=] (-) 
+ Show all 
+ [/newsroom?f%5B0%5D=date%3A2026] 2026 
+ (468) 
+ [/newsroom?f%5B0%5D=date%3A2025] 2025 
+ (540) 
+ [/newsroom?f%5B0%5D=date%3A2024] 2024 
+ (459) 
+ [/newsroom?f%5B0%5D=date%3A2023] 2023 
+ (589) 
+ [/newsroom?f%5B0%5D=date%3A2022] 2022 
+ (581) 
+ [/newsroom?f%5B0%5D=date%3A2021] 2021 
+ (714) 
+ [/newsroom?f%5B0%5D=date%3A2020] 2020 
+ (653) 
+ [/newsroom?f%5B0%5D=date%3A2019] 2019 
+ (287) 
+ [/newsroom?f%5B0%5D=date%3A2018] 2018 
+ (345) 
+ [/newsroom?f%5B0%5D=date%3A2017] 2017 
+ (304) 
+ [/newsroom?f%5B0%5D=date%3A2016] 2016 
+ (291) 
+ [/newsroom?f%5B0%5D=date%3A2015] 2015 
+ (327) 
+ [/newsroom?f%5B0%5D=date%3A2014] 2014 
+ (379) 
+ [/newsroom?f%5B0%5D=date%3A2013] 2013 
+ (324) 
+ [/newsroom?f%5B0%5D=date%3A2012] 2012 
+ (357) 
+ [/newsroom?f%5B0%5D=date%3A2011] 2011 
+ (339) 
+ [/newsroom?f%5B0%5D=date%3A2010] 2010 
+ (113) 
+ [/newsroom?f%5B0%5D=date%3A2002] 2002 
+ (1) 
+ Newsroom
+ Keyword
+ (Optional) 
+ Search
+ Showing all results
+ Displaying 1 - 20 of 7071
+ Items per page
+ (Optional) 
+ 5 
+ 10 
+ 20 
+ 50 
+ Sort by
+ (Optional) 
+ Last Update (newest first) 
+ Last Update (oldest first) 
+ Publication Date (newest first) 
+ Publication Date (oldest first) 
+ Title (A - Z) 
+ Title (Z - A) 
+ Relevance (most relevant first) 
+ Relevance (least relevant first) 
+ November 9, 2026 [/newsroom/gnwt-seeks-public-feedback-recently-released-2026-state-environment-report] 
+ GNWT seeks public feedback on the recently released 2026 State of the Environment Report
+ YELLOWKNIFE, NT (November 9, 2026) – The Government of the Northwest Territories (GNWT) has released the 2026 NWT State of the Environment Report and invites residents to review the report and provide...
+ Public Service Announcement
+ November 9, 2026 [/newsroom/public-information-session-remediation-plans-abandoned-mine-sites-yellowknife-area] 
+ Public Information Session on Remediation Plans for abandoned mine sites in the Yellowknife area
+ Northwest Territories (November 10, 2026) – The Government of the Northwest Territories (GNWT) is seeking public opinion on remediation plans for six abandoned mine sites near Yellowknife. The GNWT...
+ Public Service Announcement
+ November 9, 2026 [/newsroom/boil-water-advisory-community-wekweeti] 
+ Boil Water Advisory for the Community of Wekweètì
+ WEKWEÈTÌ (November 9, 2026) - The Chief Environmental Health Officer is advising all residents in Wekweètì to boil their drinking water for at least one minute. This advisory is precautionary in...
+ Public Health Advisories
+ November 9, 2026 [/newsroom/ministerial-activities-advisory-week-november-10-16-2026] 
+ Ministerial Activities Advisory for the week of November 10-16, 2026
+ Ministerial Travel Please note that travel schedules may change with little or no notice. This schedule is accurate as of November 9, 2026. Premier Simpson will attend and provide a keynote address at...
+ Media Advisory
+ November 9, 2026 [/newsroom/gnwt-releases-2025-2026-office-fire-marshal-annual-report] 
+ GNWT Releases the 2025-2026 Office of the Fire Marshal Annual Report
+ Yellowknife (November 9, 2026) – The Government of the Northwest Territories (GNWT) has released the 2025-2026 Office of the Fire Marshal (OFM) Annual Report, highlighting the work of the OFM to...
+ Public Service Announcement
+ November 6, 2026 [/newsroom/members-approve-7945-million-capital-plan-build-stronger-better-connected-communities] 
+ Members approve $794.5 million capital plan to build stronger, better-connected communities
+ Plan advances housing, health care, transportation, energy and community infrastructure across the Northwest Territories Yellowknife (November 6, 2026) – Members of the Legislative Assembly have...
+ News Release
+ November 6, 2026 [/newsroom/new-strategy-brings-energy-and-climate-planning-together-sets-vision-nwt-future] 
+ New strategy brings energy and climate planning together, sets vision for NWT future
+ Yellowknife, NT (November 6, 2026) – Climate change is reshaping the North. The 2050 GNWT Energy and Climate Change Strategy – A Changing North, released today, establishes a long-term, whole-of...
+ News Release
+ November 6, 2026 [/newsroom/gnwt-responds-dehcho-critical-incident-investigation-recommendations] 
+ GNWT responds to Dehcho critical incident investigation recommendations
+ Yellowknife (November 6, 2026) – Today, Health and Social Services Minister Denny Rodgers tabled the Government of the Northwest Territories’ (GNWT) response to 18 recommendations arising from the...
+ News Release
+ November 5, 2026 [/newsroom/premier-simpson-and-minister-wawzonek-welcome-historic-federal-investment-north] 
+ Premier Simpson and Minister Wawzonek welcome historic federal investment in the North
+ Yellowknife (November 5, 2026) — The Government of the Northwest Territories welcomes significant investments and commitments in the Government of Canada’s Budget 2026, including $3.1 billion over...
+ Media Statement
+ November 5, 2026 [/newsroom/gnwt-sets-direction-next-phase-nthssa-governance] 
+ GNWT sets direction for next phase of NTHSSA governance
+ YELLOWKNIFE (November 5, 2026) – Minister of Health and Social Services Denny Rodgers announced today that the Government of the Northwest Territories (GNWT) will continue the Public Administrator...
+ News Release
+ November 5, 2026 [/newsroom/vince-mckay-emergency-response-and-wildland-urban-interface-activities] 
+ Vince McKay: Emergency Response and Wildland Urban Interface Activities
+ Check against delivery | Jump to video Mr. Speaker, I would like to begin by acknowledging and thanking the communities that faced evacuations this past summer. I recognize the challenges these events...
+ Ministers' Statements and Speeches
+ November 5, 2026 [/newsroom/jay-macdonald-public-safety-legislation-0] 
+ Jay Macdonald: Public Safety Legislation
+ Check against delivery | Jump to video Mr. Speaker, public safety is fundamental to strong communities, economic stability, and the well-being of Northerners. Residents of the Northwest Territories...
+ Ministers' Statements and Speeches
+ November 5, 2026 [/newsroom/minister-wawzonek-responds-proposed-fuel-tax-suspension-act-0] 
+ Minister Wawzonek responds to proposed Fuel Tax Suspension Act
+ Yellowknife | November 5, 2026 — Caroline Wawzonek, Minister of Finance, issued the following statement today regarding the proposed Fuel Tax Suspension Act: “Residents across the Northwest...
+ Media Statement
+ November 5, 2026 [/newsroom/provide-feedback-proposed-changes-2025-national-model-codes] 
+ Provide Feedback on Proposed Changes to the 2025 National Model Codes
+ Yellowknife (November 5, 2026) – The Government of the Northwest Territories (GNWT) invites residents to participate in a public review of proposed changes to the 2025 National Model Codes. National...
+ Public Service Announcement
+ November 4, 2026 [/newsroom/gnwt-releases-2025-2026-nwt-9-1-1-service-annual-report] 
+ GNWT Releases the 2025-2026 NWT 9-1-1 Service Annual Report
+ Yellowknife (November 4, 2026) – The Minister of Municipal and Community Affairs, Vince McKay, today tabled the 2025-2026 Northwest Territories’ (NWT) 9-1-1 Service Annual Report in the Legislative...
+ Public Service Announcement
+ November 4, 2026 [/newsroom/government-northwest-territories-release-2050-energy-and-climate-change-strategy] 
+ Government of the Northwest Territories to Release 2050 Energy and Climate Change Strategy
+ Yellowknife (November 4, 2026) – Media are invited to attend a briefing from GNWT Ministers and Department program staff on the 2050 Energy and Climate Change Strategy – A Changing North. Ministers...
+ Media Advisory
+ November 4, 2026 [/newsroom/gnwt-supports-south-slave-district-education-council-active-rcmp-investigation] 
+ GNWT supports South Slave District Education Council with active RCMP investigation
+ YELLOWKNIFE (November 4, 2026) - The Government of the Northwest Territories (GNWT) has been notified of an active RCMP investigation at Paul William Kaeser High School (PWK) in Fort Smith. On...
+ Media Statement
+ November 4, 2026 [/newsroom/denny-rodgers-indigenous-wellness-centre] 
+ Denny Rodgers: Indigenous Wellness Centre
+ Check against delivery | Jump to video Mr. Speaker, it will come as no surprise to Members of this House that Indigenous residents of the Northwest Territories do not always experience our health and...
+ Ministers' Statements and Speeches
+ November 4, 2026 [/newsroom/caitlin-cleveland-nwt-film-industry-0] 
+ Caitlin Cleveland: NWT Film Industry 
+ Check against delivery | Jump to video [The following portion was spoken in Inuinnaqtun] Mr. Speaker, to most of the world, the North is a setting. For the people of the Northwest Territories, the...
+ Ministers' Statements and Speeches
+ November 4, 2026 [/newsroom/caroline-wawzonek-employee-engagement-and-satisfaction-0] 
+ Caroline Wawzonek: Employee Engagement and Satisfaction
+ Check against delivery | Jump to video Mr. Speaker, I am pleased to share the results of the 2025 Employee Engagement and Satisfaction Survey. The survey provides valuable insight into the experiences...
+ Ministers' Statements and Speeches
+ 1 
+ [?page=1] 2 
+ [?page=2] 3 
+ [?page=3] 4 
+ [?page=4] 5 
+ [?page=5] 6 
+ [?page=6] 7 
+ [?page=7] 8 
+ [?page=8] 9 
+ … 
+ [?page=1] 
+ ›› 
+ Next page 
+ [?page=353] 
+ Last » 
+ Last page 
+ Footer navigation
+ [https://rdirectory.gov.nt.ca/rDirectory.aspx] Phone Directory 
+ [/terms-use] Terms of use 
+ [/accessibility] Accessibility 
+ [/contact] Contact 
+ [/newsroom] News 
+ [/] 
+ Government of Northwest Territories
