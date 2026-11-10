@@ -1,0 +1,239 @@
+tzdata sistema:
+Version: 2026e-0ubuntu0.26.04.1
+== America/Yellowknife
+America/Yellowknife  -9223372036854775808 (gmtime failed) = -9223372036854775808 (localtime failed)
+America/Yellowknife  -67768040609740801 (gmtime failed) = -67768040609740801 (localtime failed)
+America/Yellowknife  Thu Jan  1 00:00:00 -2147481748 UT = -67768040609740800 (localtime failed)
+America/Yellowknife  Thu Jan  1 07:33:51 -2147481748 UT = -67768040609713569 (localtime failed)
+America/Yellowknife  Thu Jan  1 07:33:52 -2147481748 UT = Thu Jan  1 00:00:00 -2147481748 LMT isdst=0 gmtoff=-27232
+America/Yellowknife  Sun Mar  9 08:59:59 2025 UT = Sun Mar  9 01:59:59 2025 MST isdst=0 gmtoff=-25200
+America/Yellowknife  Sun Mar  9 09:00:00 2025 UT = Sun Mar  9 03:00:00 2025 MDT isdst=1 gmtoff=-21600
+America/Yellowknife  Sun Nov  2 07:59:59 2025 UT = Sun Nov  2 01:59:59 2025 MDT isdst=1 gmtoff=-21600
+America/Yellowknife  Sun Nov  2 08:00:00 2025 UT = Sun Nov  2 01:00:00 2025 MST isdst=0 gmtoff=-25200
+America/Yellowknife  Sun Mar  8 08:59:59 2026 UT = Sun Mar  8 01:59:59 2026 MST isdst=0 gmtoff=-25200
+America/Yellowknife  Sun Mar  8 09:00:00 2026 UT = Sun Mar  8 03:00:00 2026 MDT isdst=1 gmtoff=-21600
+America/Yellowknife  Sun Nov  1 07:59:59 2026 UT = Sun Nov  1 01:59:59 2026 MDT isdst=1 gmtoff=-21600
+== America/Edmonton
+America/Edmonton  -9223372036854775808 (gmtime failed) = -9223372036854775808 (localtime failed)
+America/Edmonton  -67768040609740801 (gmtime failed) = -67768040609740801 (localtime failed)
+America/Edmonton  Thu Jan  1 00:00:00 -2147481748 UT = -67768040609740800 (localtime failed)
+America/Edmonton  Thu Jan  1 07:33:51 -2147481748 UT = -67768040609713569 (localtime failed)
+America/Edmonton  Thu Jan  1 07:33:52 -2147481748 UT = Thu Jan  1 00:00:00 -2147481748 LMT isdst=0 gmtoff=-27232
+America/Edmonton  Sun Mar  9 08:59:59 2025 UT = Sun Mar  9 01:59:59 2025 MST isdst=0 gmtoff=-25200
+America/Edmonton  Sun Mar  9 09:00:00 2025 UT = Sun Mar  9 03:00:00 2025 MDT isdst=1 gmtoff=-21600
+America/Edmonton  Sun Nov  2 07:59:59 2025 UT = Sun Nov  2 01:59:59 2025 MDT isdst=1 gmtoff=-21600
+America/Edmonton  Sun Nov  2 08:00:00 2025 UT = Sun Nov  2 01:00:00 2025 MST isdst=0 gmtoff=-25200
+America/Edmonton  Sun Mar  8 08:59:59 2026 UT = Sun Mar  8 01:59:59 2026 MST isdst=0 gmtoff=-25200
+America/Edmonton  Sun Mar  8 09:00:00 2026 UT = Sun Mar  8 03:00:00 2026 MDT isdst=1 gmtoff=-21600
+America/Edmonton  Sun Nov  1 07:59:59 2026 UT = Sun Nov  1 01:59:59 2026 MDT isdst=1 gmtoff=-21600
+== America/Regina
+America/Regina  -9223372036854775808 (gmtime failed) = -9223372036854775808 (localtime failed)
+America/Regina  -67768040609740801 (gmtime failed) = -67768040609740801 (localtime failed)
+America/Regina  Thu Jan  1 00:00:00 -2147481748 UT = -67768040609740800 (localtime failed)
+America/Regina  Thu Jan  1 06:58:35 -2147481748 UT = -67768040609715685 (localtime failed)
+America/Regina  Thu Jan  1 06:58:36 -2147481748 UT = Thu Jan  1 00:00:00 -2147481748 LMT isdst=0 gmtoff=-25116
+America/Regina  Wed Dec 31 23:59:59 2147485547 UT = Wed Dec 31 17:59:59 2147485547 CST isdst=0 gmtoff=-21600
+America/Regina  67768036191676800 (gmtime failed) = Wed Dec 31 18:00:00 2147485547 CST isdst=0 gmtoff=-21600
+America/Regina  67768036191698399 (gmtime failed) = Wed Dec 31 23:59:59 2147485547 CST isdst=0 gmtoff=-21600
+America/Regina  67768036191698400 (gmtime failed) = 67768036191698400 (localtime failed)
+America/Regina  9223372036854775807 (gmtime failed) = 9223372036854775807 (localtime failed)
+== America/Inuvik
+America/Inuvik  -9223372036854775808 (gmtime failed) = -9223372036854775808 (localtime failed)
+America/Inuvik  -67768040609740801 (gmtime failed) = -67768040609740801 (localtime failed)
+America/Inuvik  Thu Jan  1 00:00:00 -2147481748 UT = Thu Jan  1 00:00:00 -2147481748 -00 isdst=0 gmtoff=0
+America/Inuvik  Sun Mar  9 08:59:59 2025 UT = Sun Mar  9 01:59:59 2025 MST isdst=0 gmtoff=-25200
+America/Inuvik  Sun Mar  9 09:00:00 2025 UT = Sun Mar  9 03:00:00 2025 MDT isdst=1 gmtoff=-21600
+America/Inuvik  Sun Nov  2 07:59:59 2025 UT = Sun Nov  2 01:59:59 2025 MDT isdst=1 gmtoff=-21600
+America/Inuvik  Sun Nov  2 08:00:00 2025 UT = Sun Nov  2 01:00:00 2025 MST isdst=0 gmtoff=-25200
+America/Inuvik  Sun Mar  8 08:59:59 2026 UT = Sun Mar  8 01:59:59 2026 MST isdst=0 gmtoff=-25200
+America/Inuvik  Sun Mar  8 09:00:00 2026 UT = Sun Mar  8 03:00:00 2026 MDT isdst=1 gmtoff=-21600
+America/Inuvik  Sun Nov  1 07:59:59 2026 UT = Sun Nov  1 01:59:59 2026 MDT isdst=1 gmtoff=-21600
+America/Inuvik  Sun Nov  1 08:00:00 2026 UT = Sun Nov  1 02:00:00 2026 CST isdst=0 gmtoff=-21600
+America/Inuvik  Wed Dec 31 23:59:59 2147485547 UT = Wed Dec 31 17:59:59 2147485547 CST isdst=0 gmtoff=-21600
+python [datetime.timedelta(days=-1, seconds=61200), datetime.timedelta(days=-1, seconds=64800), datetime.timedelta(days=-1, seconds=64800), datetime.timedelta(days=-1, seconds=64800)]
+node 78.3 2026e America/Yellowknife 2026-07-15T12:00:00Z 06 a.m. GMT-06:00
+node 78.3 2026e America/Yellowknife 2026-11-15T12:00:00Z 06 a.m. GMT-06:00
+node 78.3 2026e America/Yellowknife 2027-01-15T12:00:00Z 06 a.m. GMT-06:00
+node 78.3 2026e America/Edmonton 2026-07-15T12:00:00Z 06 a.m. GMT-06:00
+node 78.3 2026e America/Edmonton 2026-11-15T12:00:00Z 06 a.m. GMT-06:00
+node 78.3 2026e America/Edmonton 2027-01-15T12:00:00Z 06 a.m. GMT-06:00
+News for the tz database
+
+Release 2026f - 2026-10-27 23:16:49 -0700
+
+  Briefly:
+    Cuba will not fall back 2026-11-01; stays on -04 through 2027-11-07.
+    No more leap seconds, and leap second tables no longer expire.
+    Improve 1965/1966 data for Brazil.
+
+  Changes to future timestamps
+
+    Cuba will not fall back to -05 on 2026-11-01 and instead plans to
+    maintain -04 through 2027-11-07.
+
+  Changes to past timestamps
+
+    In 1965 Brazil ended DST on 03-31 at 24:00 not 00:00, and in 1966
+    it ended DST on 03-01 at 01:00 not 00:00.  (Thanks to Daniel Dias
+    Rodrigues.)
+
+  Changes to code
+
+    zic now ignores Expires lines, as leap second tables in TZif files
+    no longer expire now that there are no more leap seconds;
+    see Internet RFC 9636 §3.2.  (Thanks to Garrett Wollman for the
+    heads-up re no more leap seconds.)
+
+    localtime.c no longer supports 49 leap seconds, as 27 now suffice.
+    zic now warns if you go over the new limit.
+
+    A new compile-time flag -DMIN_TRANSITION_GAP=N specifies a minimum
+    transition gap of N seconds when reading TZif files.  It currently
+    defaults to 0, but can be set to 1 if TZif files generated by zic
+    2021b and earlier are no longer of concern.
+
+    With 32-bit time_t, localtime.c functions now check for transition
+    ordering in TZif data as carefully as they do with 64-bit time_t.
+    (Problem reported by Ana Bobillo.)
+
+    On platforms like FreeBSD that have O_RESOLVE_BENEATH but lack
+    O_REGULAR, localtime.c compiled with -DOPENAT_TZDIR now checks
+    that a TZ setting with ".." components names a regular file
+    before opening it in an unprivileged program, as it already did
+    for other settings that might name a file outside TZDIR.
+    This fixes a bug introduced in 2026c.  (Thanks to Ana Bobillo.)
+
+  Changes to documentation and commentary
+
+    Documentation and commentary now reflect leap seconds’ demise.
+
+  Changes to commentary
+
+    Discussion on timekeeping in northwestern Ontario has been updated
+    to reflect that provincial regulation has been issued to allow these
+    areas to stay aligned with America/Winnipeg and follow Manitoba’s
+    adoption of year-round -05 after all.  (Thanks to Aoun Khan,
+    Chris Walton, and Heitor David Pinto.)
+
+    Discussion on timekeeping in Saskatchewan has been updated to
+    document its new Time Act, 2026 which comes into force on
+    2026-10-30.  (Thanks to Heitor David Pinto.)  No change is expected.
+
+
+Release 2026e - 2026-09-29 17:14:38 -0700
+
+  Briefly:
+    Manitoba moves to permanent -05 on 2026-10-31.
+
+  Changes to future timestamps
+
+    Manitoba’s 2026-03-08 spring forward was its last foreseeable clock
+    change, as it moved to permanent -05 thereafter.  Model this with
+    its traditional abbreviation EST.  Although the change to
+    permanent -05 legally takes place on 2026-10-31, temporarily model
+    the change to occur on 2026-11-01 at 02:00 for the same reason as
+    other recent temporary hacks.  This new temporary hack works
+    around a limitation in Unicode CLDR 48.2.2 (2026-09-21)
+    and ICU 78.3 (2026-03-17), and is planned to be removed after
+    CLDR and ICU are fixed.  (Caution: see “NOTE FOR 2026
+    TEMPORARY HACK FOR CLDR AND CANADA” below.)
+
+      As the change affects both America/Winnipeg and its backward
+      compatibility link, the obsolescent setting TZ="Canada/Central"
+      will now use the abbreviation EST for affected timestamps,
+      akin to TZ="Canada/Pacific" behavior introduced in 2026b.
+
+      Another TZDB release may be needed soon if any of the portions of
+      northwestern Ontario historically aligned with America/Winnipeg do
+      not follow.  For now, given the short lead time with Manitoba’s
+      announcement, assume that they will, to avoid creating new zones
+      that may not be needed if no divergence occurs.
+
+  Changes to past timestamps
+
+    In 1925 Ireland fell back on 09-20 not 10-04 (thanks to Stan Ulbrych).
+
+  Changes to commentary
+
+    Discussion on timekeeping practices in northwestern Ontario has been
+    expanded in light of Manitoba’s recent announcement.  It is not yet
+    known whether or to what extent these areas may adapt their own
+    timekeeping practices in response.
+
+
+Release 2026d - 2026-09-11 15:21:07 -0700
+
+  Briefly:
+    Canada’s Northwest Territories moved to permanent -06 on 2026-08-21.
+    Obsolescent settings like TZ="EST5EDT" now conform better to POSIX.
+    Fix security, performance and porting bugs in zic and localtime.
+
+  Changes to future timestamps
+
+    Canada’s Northwest Territories will not fall back on 2026-11-01
+    and will stay on -06 year-round, matching Alberta’s recent change.
+    Model this with its traditional abbreviation CST.  Although the
+    change to permanent -06 legally took place on 2026-08-21,
+    temporarily model the change to occur on 2026-11-01 at 02:00
+    for the same reason as other recent temporary hacks.
+    This new temporary hack works around a limitation in Unicode CLDR
+curl: (23) Failure writing output to destination, passed 56 returned 0
+2233-			-7:00	-	MST
+2234-# For Creston see America/Phoenix.
+2235-
+2236:# Northwest Territories, Nunavut, Yukon
+2237-
+2238-# From Chris Walton (2022-11-06):
+2239-# Whitehorse Star - Thursday April 22, 1965 - page 1
+2240-# title: DST Starts Monday ...
+2241-# https://www.newspapers.com/image/578587481/
+2242-# The title of this first article is wrong and/or misleading.
+2243-# Also, the start time shown in the  article is vague; it simply says "after
+2244-# midnight" when it probably should have stated 2:00a.m....
+2245-#
+2246-# Whitehorse Star - Monday October 25, 1965 - page 15 ...
+2247-# https://www.newspapers.com/image/578589147/
+2248-# The 1965 Yukon Council minutes can be found here:
+2249-# http://assets.yukonarchives.ca/PER_YG_06_1965_C20_S02_v1.pdf
+2250-# ... I do not currently believe that NWT touched any of its clocks in 1965....
+2251-#
+2252-# Whitehorse Star - Thursday Feb 24,1966 - page 2
+2253-# title: It's Time for YDT ...
+2254-# https://www.newspapers.com/image/578575979/ ...
+2255-# America/Whitehorse as a permanent change from UTC-9(YST) to
+2256-# UTC-8(PST) at 00:00 on Sunday February 27, 1966....
+2257-#
+2258-# Whitehorse Star - Friday April 28,1972 - page 6
+2259-# title: Daylight Saving Time for N.W.T....
+2260-# https://www.newspapers.com/image/578701610/ ...
+2261-# Nunavut and NWT zones ... DST starting in 1972.... Start and End ...
+--
+2547-# with that, use MST for -07, the new standard time in Yukon effective Nov. 1.
+2548-
+2549-# From Tim Parenti (2026-04-21):
+2550:# "[Northwest Territories] Premier R.J. Simpson announced Monday that the
+2551-# territory will move to end seasonal time changes and will adopt a year-round
+2552-# time standard instead. ... Simpson has previously said the territory wouldn't
+2553-# end seasonal time changes until Alberta does."
+2554-# https://www.cbc.ca/news/canada/north/nwt-ends-daylight-saving-9.7170964
+2555-#
+2556-# From Tim Parenti (2026-07-24):
+2557-# Now that Alberta has adopted year-round -06, NWT plans to follow through with
+2558-# the same.  Bill 13 of the 19th Assembly's 2nd Session, assented to
+2559-# 2021-03-31, provides the NWT Commissioner in Executive Council with authority
+2560-# to fix a year-round standard time:
+2561-# https://www.ntlegislativeassembly.ca/sites/default/files/legacy/bill_13_-_reprint_-_interpretation_a.pdf
+2562-#
+2563-# From Paul Eggert (2026-08-21):
+2564-# The regulations were registered 2026-08-18 and came into force today:
+2565-# https://www.justice.gov.nt.ca/en/files/legislation/interpretation/interpretation.r2.pdf
+2566-# Use a temporary hack like Alberta’s.
+2567-
+2568-# Rule	NAME	FROM	TO	-	IN	ON	AT	SAVE	LETTER/S
+2569-Rule	NT_YK	1918	only	-	Apr	14	2:00	1:00	D
+2570-Rule	NT_YK	1918	only	-	Oct	27	2:00	0	S
+2571-Rule	NT_YK	1919	only	-	May	25	2:00	1:00	D
+2572-Rule	NT_YK	1919	only	-	Nov	 1	0:00	0	S
+2573-Rule	NT_YK	1942	only	-	Feb	 9	2:00	1:00	W # War
+2574-Rule	NT_YK	1945	only	-	Aug	14	23:00u	1:00	P # Peace
+2575-Rule	NT_YK	1945	only	-	Sep	30	2:00	0	S

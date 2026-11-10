@@ -1,0 +1,8 @@
+
+=== Perfil del Censo 2021: Northwest Territories ===
+URL: https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A000261&GENDERlist=1&STATISTIClist=1,4&HEADERlist=0
+ERROR HTTPError HTTP Error 403: Forbidden
+
+=== Perfil del Censo 2021: Yellowknife ===
+URL: https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A00056106023&GENDERlist=1&STATISTIClist=1,4&HEADERlist=0
+ERROR HTTPError HTTP Error 403: Forbidden

@@ -1,0 +1,115 @@
+
+=== Estaciones de NWT con normales ===
+  2201400 FORT GOOD HOPE A N 1944-01-01 2015-03-12
+  2201500 FORT GOOD HOPE 2 N 1897-01-01 1966-12-31
+  2201575 FORT LIARD A Y 1973-01-01 2014-11-27
+  2201600 FORT MCPHERSON N 1892-01-01 1977-12-01
+  2201601 FORT MCPHERSON A N 1981-01-01 2014-11-30
+  2201602 FORT MCPHERSON NWLFS N 1974-01-01 1975-08-31
+  2201800 FORT PROVIDENCE N 1943-01-01 1982-12-01
+  2201998 FORT RESOLUTION N 1911-01-01 1936-12-01
+  2202000 FORT RESOLUTION A N 1930-01-01 2014-12-04
+  2202100 FORT SIMPSON N 1895-01-01 1963-12-01
+  2202101 FORT SIMPSON A Y 1963-01-01 2014-10-02
+  2202110 FORT SIMPSON CDA N 1961-01-01 1969-12-31
+  2202196 FORT SMITH N 1913-01-01 1929-12-01
+  2202198 FORT SMITH N 1928-01-01 1946-12-01
+  2202200 FORT SMITH A Y 1943-01-01 2014-11-06
+  2202398 HAY RIVER N 1893-09-01 1943-12-01
+  2202400 HAY RIVER A Y 1943-01-01 2014-09-04
+  2202405 HAY RIVER PARADISE GDNS N 1962-01-01 2006-08-31
+  2202570 INUVIK A N 1957-01-01 2013-07-11
+  2202580 INUVIK CDA N 1961-01-01 1961-12-01
+  2202800 NORMAN WELLS A Y 1943-01-01 2012-10-26
+  2203900 TUKTOYAKTUK N 1948-01-01 1956-12-01
+  2203910 TUKTOYAKTUK N 1957-01-01 1993-12-01
+  2203912 TUKTOYAKTUK A N 1970-01-01 2015-06-04
+  2204100 YELLOWKNIFE A Y 1942-01-01 2013-01-17
+  2204200 YELLOWKNIFE HYDRO N 1943-01-01 2000-06-30
+  2502501 ULUKHAKTOK A Y 1979-01-01 2014-12-04
+  2202582 INUVIK UA N 1995-07-01 2007-10-02
+  220C9JK TUKTOYAKTUK 1 N 1992-12-31 1993-04-27
+  2201799 FORT PROVIDENCE N 1994-02-01 2026-11-07
+  2203914 TUKTOYAKTUK N 1994-08-30 2026-11-07
+  2202569 INUVIK CR10 N 1999-07-01 1999-09-30
+  2204155 YELLOWKNIFE CS N 1997-07-01 2004-11-30
+  2201450 FORT GOOD HOPE CS N 1998-04-01 2026-11-07
+  2202115 FORT SIMPSON N 1998-06-01 2010-07-11
+  2202575 INUVIK AWOS A N 2006-01-01 2013-07-11
+  2202578 INUVIK CLIMATE N 2003-08-01 2026-11-07
+  2202202 FORT SMITH CLIMATE N 2003-08-01 2026-11-07
+  2202402 HAY RIVER CLIMATE N 2003-08-01 2026-11-07
+  2202102 FORT SIMPSON CLIMATE N 2003-08-01 2026-11-07
+  2202810 NORMAN WELLS CLIMATE N 2003-12-31 2026-11-07
+  2204110 YELLOWKNIFE-HENDERSON N 2006-07-01 2021-03-31
+  2202801 NORMAN WELLS A N 2012-10-09 2026-11-07
+  2204101 YELLOWKNIFE A N 2013-01-15 2026-11-07
+  2202571 INUVIK A N 2013-07-09 2026-11-07
+  2201599 FORT MCPHERSON A N 2014-03-04 2026-11-07
+  2202401 HAY RIVER A N 2014-09-02 2026-11-07
+  2201401 FORT GOOD HOPE A N 2015-03-12 2026-11-07
+  2202103 FORT SIMPSON A N 2014-09-30 2026-11-07
+  2201606 FORT MCPHERSON A N 2014-10-23 2026-11-07
+  2202201 FORT SMITH A N 2014-11-04 2026-11-07
+  2202010 FORT RESOLUTION A N 2014-12-04 2026-11-07
+  2202001 FORT RESOLUTION A N 2014-12-04 2026-11-06
+  2201406 FORT GOOD HOPE A N 2015-03-12 2026-11-07
+  2203913 TUKTOYAKTUK A N 2015-06-04 2026-11-07
+  2203911 TUKTOYAKTUK A N 2015-06-04 2026-11-07
+  2202403 HAY RIVER A N 2016-01-13 2026-11-07
+  2202104 FORT SIMPSON A N 2016-01-13 2026-11-07
+  2202203 FORT SMITH A N 2016-01-13 2026-11-07
+  2204108 YELLOWKNIFE AIRPORT N 2022-09-01 2026-11-07
+
+=== Normales: 2202101 ===
+estación: FORT SIMPSON A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2009, 'YEAR_COUNT_NORMAL_PERIOD': 29, 'MAX_DURATION_MISSING_YEARS': 0}
+  Mean daily temperature deg C {1: -24.18, 2: -20.62, 3: -13.03, 4: -0.42, 5: 8.66, 6: 15.28, 7: 17.44, 8: 14.74, 9: 8.17, 10: -2.04, 11: -15.46, 12: -21.74, 13: -2.77}
+  Mean daily max temperature deg C {1: -19.8, 2: -15.29, 3: -6.37, 4: 5.83, 5: 15.04, 6: 21.76, 7: 23.65, 8: 20.91, 9: 13.73, 10: 1.84, 11: -11.47, 12: -17.5, 13: 2.69}
+  Mean daily min temperature deg C {1: -28.51, 2: -25.9, 3: -19.66, 4: -6.67, 5: 2.24, 6: 8.75, 7: 11.18, 8: 8.52, 9: 2.57, 10: -5.9, 11: -19.41, 12: -25.93, 13: -8.23}
+  Total snowfall cm {1: 27.36, 2: 24.24, 3: 18.95, 4: 17.44, 5: 7.58, 6: 0.07, 7: 0, 8: 0.54, 9: 4.15, 10: 29.01, 11: 33.38, 12: 24.26, 13: 186.98}
+  Total precipitation mm {1: 18.86, 2: 17.61, 3: 15.42, 4: 16.97, 5: 29.35, 6: 51.3, 7: 61.12, 8: 61.4, 9: 32.23, 10: 39.4, 11: 24.83, 12: 19.07, 13: 387.56}
+
+=== Normales: 2202200 ===
+estación: FORT SMITH A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 30, 'MAX_DURATION_MISSING_YEARS': 0}
+  Mean daily temperature deg C {1: -22.42, 2: -19.12, 3: -11.75, 4: -0.32, 5: 7.75, 6: 14.44, 7: 17.01, 8: 14.71, 9: 8.38, 10: 0.22, 11: -11.36, 12: -19.25, 13: -1.81}
+  Mean daily max temperature deg C {1: -17.79, 2: -13.49, 3: -4.97, 4: 5.97, 5: 14.18, 6: 20.94, 7: 23.25, 8: 20.77, 9: 13.61, 10: 4.17, 11: -7.61, 12: -14.95, 13: 3.67}
+  Mean daily min temperature deg C {1: -27.01, 2: -24.7, 3: -18.48, 4: -6.61, 5: 1.27, 6: 7.88, 7: 10.71, 8: 8.61, 9: 3.1, 10: -3.72, 11: -15.06, 12: -23.49, 13: -7.29}
+  Total snowfall cm {1: 23.97, 2: 18.66, 3: 17.49, 4: 7.76, 5: 5.68, 6: 0.02, 7: 0, 8: 0.21, 9: 0.95, 10: 21.48, 11: 30.14, 12: 23.84, 13: 150.2}
+  Total precipitation mm {1: 16.48, 2: 12.15, 3: 13.17, 4: 12.65, 5: 27.84, 6: 48.76, 7: 54.48, 8: 54.46, 9: 42.36, 10: 32.39, 11: 22.25, 12: 16.62, 13: 353.61}
+
+=== Normales: 2202400 ===
+estación: HAY RIVER A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 30, 'MAX_DURATION_MISSING_YEARS': 0}
+  Mean daily max temperature deg C {1: -17.28, 2: -14.23, 3: -7.79, 4: 2.87, 5: 10.7, 6: 18.02, 7: 21.24, 8: 19.57, 9: 13.21, 10: 4.07, 11: -7.72, 12: -14.38, 13: 2.36}
+  Mean daily min temperature deg C {1: -26.16, 2: -24.89, 3: -19.83, 4: -8.14, 5: 0.02, 6: 6.95, 7: 10.94, 8: 9.54, 9: 4.13, 10: -3.17, 11: -15.36, 12: -23.07, 13: -7.42}
+  Total snowfall cm {1: 19.19, 2: 16.88, 3: 16.38, 4: 8.7, 5: 5.22, 6: 0.06, 7: 0, 8: 0, 9: 1.45, 10: 19.93, 11: 30.37, 12: 20.69, 13: 138.87}
+  Total precipitation mm {1: 16.36, 2: 14.32, 3: 14.36, 4: 12.57, 5: 23.26, 6: 31.94, 7: 43.04, 8: 58.65, 9: 44.56, 10: 35.69, 11: 24.8, 12: 16.81, 13: 336.36}
+  Mean daily temperature deg C {1: -21.75, 2: -19.59, 3: -13.83, 4: -2.65, 5: 5.37, 6: 12.51, 7: 16.12, 8: 14.58, 9: 8.7, 10: 0.46, 11: -11.56, 12: -18.75, 13: -2.53}
+
+=== Normales: 2202800 ===
+estación: NORMAN WELLS A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2010, 'YEAR_COUNT_NORMAL_PERIOD': 30, 'MAX_DURATION_MISSING_YEARS': 0}
+  Mean daily temperature deg C {1: -26.06, 2: -23.95, 3: -18.37, 4: -5.1, 5: 6.37, 6: 15.02, 7: 17.06, 8: 13.75, 9: 6.55, 10: -4.69, 11: -18.7, 12: -23.36, 13: -5.12}
+  Mean daily max temperature deg C {1: -22.19, 2: -19.46, 3: -12.49, 4: 0.96, 5: 12.08, 6: 20.67, 7: 22.54, 8: 19, 9: 11.02, 10: -1.6, 11: -15.15, 12: -19.57, 13: -0.35}
+  Mean daily min temperature deg C {1: -29.87, 2: -28.4, 3: -24.21, 4: -11.13, 5: 0.63, 6: 9.33, 7: 11.53, 8: 8.44, 9: 2.04, 10: -7.74, 11: -22.2, 12: -27.1, 13: -9.89}
+  Total snowfall cm {1: 21.06, 2: 19.86, 3: 14.43, 4: 12.75, 5: 6.36, 6: 0.37, 7: 0, 8: 0.7, 9: 6.87, 10: 27.25, 11: 25.95, 12: 25.87, 13: 161.47}
+  Total precipitation mm {1: 15.63, 2: 14.87, 3: 10.71, 4: 11.09, 5: 19.03, 6: 42.72, 7: 41.8, 8: 41.81, 9: 33.13, 10: 26.69, 11: 18.69, 12: 18.2, 13: 294.37}
+
+=== Normales: 2204100 ===
+estación: YELLOWKNIFE A | período: {'PERIOD': 'NORM', 'NORMAL_CODE': 'A', 'PERIOD_BEGIN': 1981, 'PERIOD_END': 2010, 'FIRST_YEAR': None, 'FIRST_YEAR_NORMAL_PERIOD': 1981, 'LAST_YEAR': None, 'LAST_YEAR_NORMAL_PERIOD': 2007, 'YEAR_COUNT_NORMAL_PERIOD': 27, 'MAX_DURATION_MISSING_YEARS': 0}
+  Mean daily temperature deg C {1: -25.6, 2: -22.86, 3: -16.75, 4: -5.34, 5: 4.64, 6: 13.34, 7: 16.95, 8: 14.18, 9: 7.23, 10: -1.67, 11: -13.74, 12: -21.77, 13: -4.28}
+  Mean daily max temperature deg C {1: -21.63, 2: -18.13, 3: -10.79, 4: 0.35, 5: 9.7, 6: 18.09, 7: 21.29, 8: 18.07, 9: 10.43, 10: 0.9, 11: -9.98, 12: -17.83, 13: 0.04}
+  Mean daily min temperature deg C {1: -29.51, 2: -27.54, 3: -22.67, 4: -11.02, 5: -0.45, 6: 8.54, 7: 12.57, 8: 10.24, 9: 3.98, 10: -4.24, 11: -17.46, 12: -25.66, 13: -8.6}
+  Total snowfall cm {1: 19.68, 2: 20.02, 3: 18.54, 4: 10.27, 5: 4.72, 6: 0.04, 7: 0, 8: 0.05, 9: 3.45, 10: 20.88, 11: 36.54, 12: 23.45, 13: 157.64}
+  Total precipitation mm {1: 14.25, 2: 14.07, 3: 13.91, 4: 11.33, 5: 18.41, 6: 28.92, 7: 40.78, 8: 39.27, 9: 36.34, 10: 30.33, 11: 24.82, 12: 16.15, 13: 288.58}
+
+=== Salario mínimo: https://minwage-salairemin.service.canada.ca/en/general.html ===
+URL: https://minwage-salairemin.service.canada.ca/en/general.html | estado: 500 | caracteres: 244
+
+=== Salario mínimo: https://web.archive.org/web/2026/https://minwage-salairemin.service.canada.ca/en/general.html ===
+URL: https://web.archive.org/web/20261007032509/https://minwage-salairemin.service.canada.ca/en/general.html | estado: 200 | caracteres: 2328
+  > Jurisdiction	Effective Date	Wage Rate	Note | Federal | Footnote
+  > Footnote | 1	01-Apr-2026	$18.15	An employee should be paid at least the federal minimum wage. If the minimum wage of the province or territory where the employee usually works is higher than the federal minimum wage, the employer is to pay the higher minimum wage. | Alberta	26-Jun-2019	$15.00
+  > Newfoundland and Labrador	01-Apr-2026	$16.35 | Northwest Territories	01-Sep-2026	$17.20 | Nova Scotia	01-Apr-2026	$16.75
+  > Nova Scotia	01-Oct-2026	$17.00 | Nunavut	01-Sep-2026	$20.17 | Ontario	01-Oct-2026	$17.95
+  > Saskatchewan	01-Oct-2025	$15.35 | Yukon	01-Apr-2026	$18.51 | Note: In most jurisdictions, these rates also apply to young workers. More information is available on special rates for young workers under "Current and Forthcoming Minimum Wage Rates in Canada for Young Workers and Specific Occupations".
+  > The federal jurisdiction includes labour market sectors coming under federal authority by virtue of the Constitution, such as international and interprovincial transportation, telecommunication and banking.
+  > Report a problem on this page | Date modified: 2026-10-07 | About this site

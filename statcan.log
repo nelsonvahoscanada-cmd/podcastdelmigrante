@@ -1,0 +1,191 @@
+
+=== 17-10-0009-01 Población estimada (últimos 10 trimestres) ===
+  2024-04-01 45050
+  2024-07-01 45274
+  2024-10-01 45526
+  2025-01-01 45700
+  2025-04-01 45892
+  2025-07-01 46031
+  2025-10-01 46038
+  2026-01-01 46046
+  2026-04-01 46071
+  2026-07-01 45904
+
+=== 17-10-0005-01 Población estimada por edad (1 de julio, total y mediana) ===
+  2024 All ages 45274
+  2024 Median age 35.7
+  2025 All ages 46031
+  2025 Median age 35.7
+  2026 All ages 45904
+  2026 Median age 35.9
+
+=== 17-10-0008-01 Componentes del crecimiento (inmigrantes, emigración interprovincial) ===
+  2022/2023 Births 468
+  2022/2023 Deaths 289
+  2022/2023 Immigrants 282
+  2022/2023 Net emigration 61
+  2022/2023 Emigrants 71
+  2022/2023 Returning emigrants 10
+  2022/2023 Net non-permanent residents 169
+  2022/2023 Non-permanent residents, inflows 304
+  2022/2023 Non-permanent residents, outflows 135
+  2022/2023 Net interprovincial migration -584
+  2023/2024 Births 498
+  2023/2024 Deaths 306
+  2023/2024 Immigrants 366
+  2023/2024 Net emigration 32
+  2023/2024 Emigrants 43
+  2023/2024 Returning emigrants 11
+  2023/2024 Net non-permanent residents 358
+  2023/2024 Non-permanent residents, inflows 524
+  2023/2024 Non-permanent residents, outflows 166
+  2023/2024 Net interprovincial migration -221
+  2024/2025 Births 497
+  2024/2025 Deaths 324
+  2024/2025 Immigrants 456
+  2024/2025 Net emigration 34
+  2024/2025 Emigrants 45
+  2024/2025 Returning emigrants 11
+  2024/2025 Net non-permanent residents 238
+  2024/2025 Non-permanent residents, inflows 401
+  2024/2025 Non-permanent residents, outflows 163
+  2024/2025 Net interprovincial migration -76
+  2025/2026 Births 461
+  2025/2026 Deaths 333
+  2025/2026 Immigrants 520
+  2025/2026 Net emigration 34
+  2025/2026 Emigrants 45
+  2025/2026 Returning emigrants 11
+  2025/2026 Net non-permanent residents 60
+  2025/2026 Non-permanent residents, inflows 357
+  2025/2026 Non-permanent residents, outflows 297
+  2025/2026 Net interprovincial migration -801
+
+=== 36-10-0222-01 PIB a precios de mercado, dólares corrientes ===
+  2020 4193 millions
+  2021 4781 millions
+  2022 5340 millions
+  2023 5203 millions
+  2024 5167 millions
+  2025 5067 millions
+
+=== 36-10-0402-01 PIB por industria (dólares encadenados de 2017), último año: sectores de 2 dígitos ===
+columnas: ['REF_DATE', 'GEO', 'DGUID', 'Prices', 'North American Industry Classification System (NAICS)', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE', 'STATUS', 'SYMBOL', 'TERMINATED', 'DECIMALS']
+
+=== 14-10-0292 EPA de los territorios, media móvil de 3 meses: series con NWT ===
+filas NWT: 7140 | columnas: ['REF_DATE', 'GEO', 'DGUID', 'Labour force characteristics', 'Gender', 'Age group', 'Statistics', 'Data type', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE']
+  2026-07 Seasonally adjusted {'Population': '35.6', 'Employment': '24.4', 'Unemployment rate': '8.0', 'Participation rate': '74.2', 'Employment rate': '68.5'}
+  2026-07 Unadjusted {'Population': '35.6', 'Employment': '24.8', 'Unemployment rate': '7.8', 'Participation rate': '75.6', 'Employment rate': '69.7'}
+  2026-08 Seasonally adjusted {'Population': '35.6', 'Employment': '24.5', 'Unemployment rate': '7.6', 'Participation rate': '74.2', 'Employment rate': '68.8'}
+  2026-08 Unadjusted {'Population': '35.6', 'Employment': '25.1', 'Unemployment rate': '7.4', 'Participation rate': '76.1', 'Employment rate': '70.5'}
+  2026-09 Seasonally adjusted {'Population': '35.6', 'Employment': '24.1', 'Unemployment rate': '5.8', 'Participation rate': '72.2', 'Employment rate': '67.7'}
+  2026-09 Unadjusted {'Population': '35.6', 'Employment': '24.5', 'Unemployment rate': '5.8', 'Participation rate': '73.0', 'Employment rate': '68.8'}
+  2026-10 Seasonally adjusted {'Population': '35.7', 'Employment': '24.2', 'Unemployment rate': '5.1', 'Participation rate': '71.4', 'Employment rate': '67.8'}
+  2026-10 Unadjusted {'Population': '35.7', 'Employment': '24.3', 'Unemployment rate': '5.1', 'Participation rate': '71.4', 'Employment rate': '68.1'}
+
+=== 14-10-0393 EPA por región económica, anual: series con NWT ===
+filas NWT: 10 | columnas: ['REF_DATE', 'GEO', 'DGUID', 'Labour force characteristics', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE', 'STATUS', 'SYMBOL', 'TERMINATED']
+  2024  {'Population': '34.5', 'Employment': '22.9', 'Unemployment rate': '5.8', 'Participation rate': '70.1', 'Employment rate': '66.4'}
+
+=== 14-10-0327 EPA anual por provincia: series con NWT ===
+filas NWT: 0 | columnas: -
+
+=== 14-10-0287 EPA mensual por provincia: series con NWT ===
+filas NWT: 0 | columnas: -
+
+=== 14-10-0064-01 Salarios por hora, todas las industrias ===
+
+=== 14-10-0223-01 SEPH: ganancias semanales promedio, todas las industrias ===
+  2025-01 Average weekly earnings including overtime for all employees 1774.67
+  2025-02 Average weekly earnings including overtime for all employees 1721.95
+  2025-03 Average weekly earnings including overtime for all employees 1685.23
+  2025-04 Average weekly earnings including overtime for all employees 1732.71
+  2025-05 Average weekly earnings including overtime for all employees 1741.52
+  2025-06 Average weekly earnings including overtime for all employees 1726.73
+  2025-07 Average weekly earnings including overtime for all employees 1738.24
+  2025-08 Average weekly earnings including overtime for all employees 1760.19
+  2025-09 Average weekly earnings including overtime for all employees 1747.68
+  2025-10 Average weekly earnings including overtime for all employees 1745.52
+  2025-11 Average weekly earnings including overtime for all employees 1733.73
+  2025-12 Average weekly earnings including overtime for all employees 1742.42
+  2026-01 Average weekly earnings including overtime for all employees 1788.22
+  2026-02 Average weekly earnings including overtime for all employees 1723.33
+  2026-03 Average weekly earnings including overtime for all employees 1738.20
+  2026-04 Average weekly earnings including overtime for all employees 1757.80
+  2026-05 Average weekly earnings including overtime for all employees 1764.89
+  2026-06 Average weekly earnings including overtime for all employees 1704.49
+  2026-07 Average weekly earnings including overtime for all employees 1810.14
+  2026-08 Average weekly earnings including overtime for all employees 1778.73
+
+=== 18-10-0004-01 IPC (Yellowknife), último dato ===
+  2026-07 All-items 169.6
+  2026-07 Food 194.0
+  2026-07 Shelter 205.5
+  2026-08 All-items 170.8
+  2026-08 Food 193.5
+  2026-08 Shelter 210.2
+  2026-09 All-items 170.0
+  2026-09 Food 193.1
+  2026-09 Shelter 211.3
+
+=== 98-10-0307-01 Censo 2021: estatus de inmigrante (NWT) ===
+  Total – Place of birth {'Total - Immigrant status and period of immigration': '40380', 'Non-immigrants': '35820', 'Immigrants': '4150', '2016 to 2021': '815', 'Non-permanent residents': '410'}
+  Americas {'Total - Immigrant status and period of immigration': '485', 'Non-immigrants': '90', 'Immigrants': '375', '2016 to 2021': '50', 'Non-permanent residents': '20'}
+  United States of America {'Total - Immigrant status and period of immigration': '260', 'Non-immigrants': '80', 'Immigrants': '175', '2016 to 2021': '10', 'Non-permanent residents': '10'}
+  Central America {'Total - Immigrant status and period of immigration': '60', 'Non-immigrants': '0', 'Immigrants': '55', '2016 to 2021': '10', 'Non-permanent residents': '0'}
+  El Salvador {'Total - Immigrant status and period of immigration': '20', 'Non-immigrants': '0', 'Immigrants': '20', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Guatemala {'Total - Immigrant status and period of immigration': '0', 'Non-immigrants': '0', 'Immigrants': '0', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Honduras {'Total - Immigrant status and period of immigration': '0', 'Non-immigrants': '0', 'Immigrants': '0', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Mexico {'Total - Immigrant status and period of immigration': '30', 'Non-immigrants': '0', 'Immigrants': '25', '2016 to 2021': '10', 'Non-permanent residents': '0'}
+  Nicaragua {'Total - Immigrant status and period of immigration': '10', 'Non-immigrants': '0', 'Immigrants': '10', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Caribbean and Bermuda {'Total - Immigrant status and period of immigration': '105', 'Non-immigrants': '0', 'Immigrants': '95', '2016 to 2021': '30', 'Non-permanent residents': '10'}
+  Cuba {'Total - Immigrant status and period of immigration': '0', 'Non-immigrants': '0', 'Immigrants': '0', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Dominican Republic {'Total - Immigrant status and period of immigration': '0', 'Non-immigrants': '0', 'Immigrants': '0', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Jamaica {'Total - Immigrant status and period of immigration': '70', 'Non-immigrants': '0', 'Immigrants': '60', '2016 to 2021': '25', 'Non-permanent residents': '10'}
+  South America {'Total - Immigrant status and period of immigration': '50', 'Non-immigrants': '0', 'Immigrants': '50', '2016 to 2021': '10', 'Non-permanent residents': '10'}
+  Argentina {'Total - Immigrant status and period of immigration': '0', 'Non-immigrants': '0', 'Immigrants': '0', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Bolivia {'Total - Immigrant status and period of immigration': '0', 'Non-immigrants': '0', 'Immigrants': '0', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Brazil {'Total - Immigrant status and period of immigration': '0', 'Non-immigrants': '0', 'Immigrants': '10', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Chile {'Total - Immigrant status and period of immigration': '10', 'Non-immigrants': '0', 'Immigrants': '10', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Colombia {'Total - Immigrant status and period of immigration': '10', 'Non-immigrants': '0', 'Immigrants': '10', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Ecuador {'Total - Immigrant status and period of immigration': '0', 'Non-immigrants': '0', 'Immigrants': '0', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Peru {'Total - Immigrant status and period of immigration': '10', 'Non-immigrants': '0', 'Immigrants': '10', '2016 to 2021': '0', 'Non-permanent residents': '0'}
+  Venezuela {'Total - Immigrant status and period of immigration': '10', 'Non-immigrants': '0', 'Immigrants': '10', '2016 to 2021': '0', 'Non-permanent residents': '10'}
+  Europe {'Total - Immigrant status and period of immigration': '830', 'Non-immigrants': '50', 'Immigrants': '740', '2016 to 2021': '90', 'Non-permanent residents': '35'}
+  United Kingdom {'Total - Immigrant status and period of immigration': '290', 'Non-immigrants': '10', 'Immigrants': '275', '2016 to 2021': '15', 'Non-permanent residents': '10'}
+  Africa {'Total - Immigrant status and period of immigration': '855', 'Non-immigrants': '15', 'Immigrants': '755', '2016 to 2021': '175', 'Non-permanent residents': '80'}
+  Nigeria {'Total - Immigrant status and period of immigration': '60', 'Non-immigrants': '0', 'Immigrants': '50', '2016 to 2021': '10', 'Non-permanent residents': '10'}
+  Eritrea {'Total - Immigrant status and period of immigration': '55', 'Non-immigrants': '0', 'Immigrants': '55', '2016 to 2021': '25', 'Non-permanent residents': '0'}
+  Ethiopia {'Total - Immigrant status and period of immigration': '50', 'Non-immigrants': '0', 'Immigrants': '45', '2016 to 2021': '20', 'Non-permanent residents': '0'}
+  Somalia {'Total - Immigrant status and period of immigration': '65', 'Non-immigrants': '0', 'Immigrants': '65', '2016 to 2021': '15', 'Non-permanent residents': '0'}
+  Zimbabwe {'Total - Immigrant status and period of immigration': '90', 'Non-immigrants': '0', 'Immigrants': '80', '2016 to 2021': '20', 'Non-permanent residents': '10'}
+  Asia {'Total - Immigrant status and period of immigration': '2550', 'Non-immigrants': '85', 'Immigrants': '2205', '2016 to 2021': '495', 'Non-permanent residents': '260'}
+  China {'Total - Immigrant status and period of immigration': '160', 'Non-immigrants': '10', 'Immigrants': '100', '2016 to 2021': '15', 'Non-permanent residents': '45'}
+  Philippines {'Total - Immigrant status and period of immigration': '1230', 'Non-immigrants': '0', 'Immigrants': '1175', '2016 to 2021': '280', 'Non-permanent residents': '50'}
+  Viet Nam {'Total - Immigrant status and period of immigration': '200', 'Non-immigrants': '10', 'Immigrants': '165', '2016 to 2021': '0', 'Non-permanent residents': '20'}
+  India {'Total - Immigrant status and period of immigration': '355', 'Non-immigrants': '0', 'Immigrants': '265', '2016 to 2021': '90', 'Non-permanent residents': '90'}
+  Pakistan {'Total - Immigrant status and period of immigration': '85', 'Non-immigrants': '0', 'Immigrants': '80', '2016 to 2021': '25', 'Non-permanent residents': '0'}
+
+=== 98-10-0222 Censo 2021: conocimiento de idiomas oficiales (NWT) ===
+  Total - Knowledge of official languages | 40545 | 100.0
+  English only | 35940 | 88.6
+  French only | 100 | 0.2
+  English and French | 4295 | 10.6
+  Neither English nor French | 215 | 0.5
+
+=== 98-10-0218 Censo 2021: lengua materna (NWT) ===
+  Total - Mother tongue | 40545 | 100.0
+  English | 30795 | 76.0
+  French | 1130 | 2.8
+  Non-official language | 7020 | 17.3
+  English and French | 300 | 0.7
+  English and non-official language | 1255 | 3.1
+  French and non-official language | 25 | 0.1
+  English, French and non-official language | 20 | 0.0
+
+=== 98-10-0264-01 Censo 2021: identidad indígena (NWT) ===
+  {"Registered or Treaty Indian status (3)": "Total - Registered or Treaty Indian status", "Age (20)": "Total - Age", "Gender (3)": "Total - Gender", "Statistics (3)": "Count", "Residence by Indigenous geography (10)": "Total - Residence on or off reserve", "Coordinate": "13.1.1.1.1.1", "Indigenous identity (9):Total - Indigenous identity[1]": "40380", "Indigenous identity (9):Indigenous identity[2]": "20035", "Indigenous identity (9):Single Indigenous responses[3]": "19360", "Indigenous identity (9):First Nations (North American Indian)[4]": "12315", "Indigenous identity (9):Métis[5]": "2890", 
+
+=== 34-10-0133-01 / 34-10-0127-01 CMHC (alquiler y desocupación): ¿hay Yellowknife o NWT? ===
+34100133 ['Yellowknife, Northwest Territories']
+34100127 sin filas de NWT
