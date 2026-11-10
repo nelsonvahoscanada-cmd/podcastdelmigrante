@@ -1,0 +1,50 @@
+# TEMPORAL: obtener datos oficiales de los Territorios del Noroeste (solo lectura). Se elimina después.
+name: tmp nwt datos
+on:
+  push:
+    branches: [claude/nwt-canada-en-datos-run]
+permissions:
+  contents: write
+jobs:
+  datos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q pyproj shapely openpyxl playwright && python -m playwright install --with-deps chromium >/dev/null
+      - name: Hora (tzdata del sistema y de Python, Node)
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/out; { echo "tzdata sistema:"; dpkg -s tzdata | grep Version; for z in America/Yellowknife America/Edmonton America/Regina America/Inuvik; do echo "== $z"; zdump -v -c 2025,2028 $z | head -12; done; python3 -c "import zoneinfo,datetime as d;z=zoneinfo.ZoneInfo('America/Yellowknife');print('python', [d.datetime(2026,m,15,tzinfo=z).utcoffset() for m in (1,7,11,12)])"; node -e "for (const z of ['America/Yellowknife','America/Edmonton']) for (const t of ['2026-07-15T12:00:00Z','2026-11-15T12:00:00Z','2027-01-15T12:00:00Z']) console.log('node',process.versions.icu,process.versions.tz,z,t,new Intl.DateTimeFormat('en-CA',{timeZone:z,timeZoneName:'longOffset',hour:'2-digit'}).format(new Date(t)))"; curl -sSL https://data.iana.org/time-zones/tzdb/NEWS | head -120; curl -sSL https://data.iana.org/time-zones/tzdb/northamerica | grep -n -i -B3 -A25 "Yellowknife\|Northwest Territories" | head -200; } > /tmp/out/hora.log 2>&1; tail -3 /tmp/out/hora.log
+      - name: Localidades
+        continue-on-error: true
+        run: python scripts/canada-en-datos/obtener-nwt-localidades.py > /tmp/out/localidades.log 2>&1; tail -5 /tmp/out/localidades.log; cp scripts/canada-en-datos/nwt-fuentes.json /tmp/out/ || true
+      - name: StatCan
+        continue-on-error: true
+        run: python scripts/canada-en-datos/obtener-nwt-ficha.py statcan > /tmp/out/statcan.log 2>&1; tail -3 /tmp/out/statcan.log
+      - name: Perfil censo
+        continue-on-error: true
+        run: python scripts/canada-en-datos/obtener-nwt-ficha.py perfil > /tmp/out/perfil.log 2>&1; tail -3 /tmp/out/perfil.log
+      - name: Sitemaps
+        continue-on-error: true
+        run: python scripts/canada-en-datos/obtener-nwt-ficha.py mapa > /tmp/out/mapa.log 2>&1; tail -3 /tmp/out/mapa.log
+      - name: Paginas
+        continue-on-error: true
+        run: python scripts/canada-en-datos/obtener-nwt-ficha.py paginas > /tmp/out/paginas.log 2>&1; tail -3 /tmp/out/paginas.log
+      - name: Clima y salario
+        continue-on-error: true
+        run: python scripts/canada-en-datos/obtener-nwt-ficha.py clima salario > /tmp/out/clima-salario.log 2>&1; tail -3 /tmp/out/clima-salario.log
+      - name: Bandera (Wikimedia Commons)
+        continue-on-error: true
+        run: |
+          UA="Mozilla/5.0 (verificacion de datos; podcastdelmigrante.com)"
+          curl -sSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Flag_of_the_Northwest_Territories.svg&prop=imageinfo&iiprop=url|extmetadata|sha1|size&format=json" > /tmp/out/bandera-licencia.json
+          U=$(python3 -c "import json;d=json.load(open('/tmp/out/bandera-licencia.json'));print(list(d['query']['pages'].values())[0]['imageinfo'][0]['url'])"); echo $U
+          curl -sSL -A "$UA" -o /tmp/out/Flag_of_the_Northwest_Territories.svg "$U"; ls -la /tmp/out/*.svg; head -c 800 /tmp/out/bandera-licencia.json
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "datos NWT [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/nwt-canada-en-datos-datos
