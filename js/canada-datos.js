@@ -3702,7 +3702,7 @@ const CD_PROFILES = {
         ],
         indicators: ["landArea"],
         links: [
-          { label: "GNWT (Justicia) — Reglamento sobre la hora de los Territorios del Noroeste (R-090-2026)", href: "https://www.justice.gov.nt.ca/en/files/legislation/interpretation/interpretation.r2.pdf" },
+          { label: "GNWT (Justicia) — Reglamento sobre la hora de los Territorios del Noroeste (R-090-2026; copia del Internet Archive del 12 de octubre de 2026)", href: "https://web.archive.org/web/20261012004451/https://www.justice.gov.nt.ca/en/files/legislation/interpretation/interpretation.r2.pdf" },
           { label: "IANA — Base de datos de zonas horarias", href: "https://www.iana.org/time-zones" },
           { label: "Environment Canada — Normales climáticas 1991-2020 de Yellowknife", href: "https://climate.weather.gc.ca/climate_normals/results_1991_2020_e.html?searchType=stnProv&lstProvince=NT&txtCentralLatMin=0&txtCentralLatSec=0&txtCentralLongMin=0&txtCentralLongSec=0&climate_id=2204100&dispBack=0" },
           { label: "Environment Canada — Normales climáticas de Canadá", href: "https://climate.weather.gc.ca/climate_normals/index_e.html" },
@@ -3812,15 +3812,14 @@ const CD_PROFILES = {
           "Las escuelas públicas, de kínder júnior a 12.º grado, dependen de los organismos educativos (education bodies) de cada región o ciudad. En Yellowknife hay dos distritos —uno público y uno católico— y la Commission scolaire francophone des Territoires du Nord-Ouest tiene escuelas en francés en Yellowknife y Hay River. Para inscribir a tus hijos, comunícate con el organismo educativo de tu comunidad.",
           "Aurora College es la institución pública de educación postsecundaria del territorio, con campus en Yellowknife, Inuvik y Fort Smith. El Collège nordique francophone, en Yellowknife, ofrece formación en francés y clases de idiomas para recién llegados.",
           "Ayuda para estudiar: el programa de Asistencia Financiera para Estudiantes (Student Financial Assistance) del GNWT apoya a residentes del territorio que estudian después de la secundaria. Según el GNWT, hay que ser ciudadano canadiense, residente permanente o persona protegida y cumplir los requisitos de residencia en el territorio. Las solicitudes vencen el 30 de junio para los programas que empiezan entre agosto y septiembre, y el 31 de octubre para los que empiezan entre diciembre y enero.",
-          "Reconocimiento de estudios: para ejercer una profesión u oficio regulado, consulta al organismo que lo regula en el territorio. El Gobierno de Canadá explica cómo hacer reconocer las credenciales extranjeras.",
+          "Reconocimiento de estudios: para ejercer una profesión u oficio regulado, consulta al organismo que lo regula en el territorio.",
         ],
         indicators: [],
         links: [
           { label: "GNWT — Directorio de organismos educativos", href: "https://www.ece.gov.nt.ca/en/directory-nwt-education-bodies" },
           { label: "GNWT — Asistencia Financiera para Estudiantes", href: "https://www.ece.gov.nt.ca/en/services/student-financial-assistance" },
           { label: "Aurora College", href: "https://www.auroracollege.nt.ca/" },
-          { label: "Collège nordique francophone (en francés)", href: "https://www.collegenordique.ca/" },
-          { label: "Gobierno de Canadá — Reconocimiento de credenciales extranjeras", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/prepare-work/credentials.html" },
+          { label: "Collège nordique francophone (en francés)", href: "https://www.cnordique.ca/" },
         ],
       },
       {
@@ -3867,7 +3866,7 @@ const CD_PROFILES = {
         indicators: [],
         links: [
           { label: "IRCC — Buscador de servicios gratuitos para recién llegados", href: "https://ircc.canada.ca/english/newcomers/services/index.asp" },
-          { label: "Collège nordique francophone (en francés)", href: "https://www.collegenordique.ca/" },
+          { label: "Collège nordique francophone (en francés)", href: "https://www.cnordique.ca/" },
           { label: "CDÉTNO — Conseil de développement économique des Territoires du Nord-Ouest", href: "https://www.cdetno.com/" },
           { label: "GNWT — Inmigración y Programa de Nominados", href: "https://www.ece.gov.nt.ca/en/services/immigration-and-nominee-program" },
         ],

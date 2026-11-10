@@ -159,7 +159,7 @@ export const FUENTES = {
   hospitales: { org: "Statistics Canada", title: "Open Database of Healthcare Facilities (ODHF), versión 1.1 (2020)", url: "https://www.statcan.gc.ca/en/lode/databases/odhf" },
   lcd: { org: "NWT Bureau of Statistics", title: "Federal Isolated Post Living Cost Differentials, by Community (2025)", url: "https://www.statsnwt.ca/en/prices-and-expenditures/living-cost-differentials" },
   fpi: { org: "NWT Bureau of Statistics", title: "NWT Food Price Index, by Community (2019 Community Price Survey)", url: "https://www.statsnwt.ca/en/prices-and-expenditures/community-price-index" },
-  hora: { org: "Gobierno de los Territorios del Noroeste", title: "Interpretation Act — reglamento sobre la hora (R-2), vigente desde el 21 de agosto de 2026", url: "https://www.justice.gov.nt.ca/en/files/legislation/interpretation/interpretation.r2.pdf" },
+  hora: { org: "Gobierno de los Territorios del Noroeste", title: "Northwest Territories Time Regulations (R-090-2026), vigente desde el 21 de agosto de 2026 (copia del Internet Archive del 12 de octubre de 2026)", url: "https://web.archive.org/web/20261012004451/https://www.justice.gov.nt.ca/en/files/legislation/interpretation/interpretation.r2.pdf" },
   horaIana: { org: "IANA", title: "Base de datos de zonas horarias (tzdata 2026d): America/Yellowknife", url: "https://www.iana.org/time-zones" },
 };
 const RECURSOS = {
