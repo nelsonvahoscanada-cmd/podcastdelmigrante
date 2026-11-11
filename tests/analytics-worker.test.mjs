@@ -139,7 +139,7 @@ test("BIZ-005: alta en js/businesses.js → lista generada → eventos guardados
   /* 1. Alta y publicación: copia del sitio con un perfil Premium nuevo */
   const dir = mkdtempSync(join(tmpdir(), "biz005-"));
   for (const d of ["js", "scripts", "css", "assets"]) cpSync(join(ROOT, d), join(dir, d), { recursive: true });
-  for (const f of ["business-profile.html"]) cpSync(join(ROOT, f), join(dir, f));
+  for (const f of ["business-profile.html", "quien-puede-ayudarte.html", "sitemap.xml"]) cpSync(join(ROOT, f), join(dir, f));
   const src = read("js/businesses.js");
   const nuevo = `  {\n    id: "BIZ-005",\n    slug: "empresa-prueba",\n    published: true,\n    name: "Empresa de Prueba",\n    category: "salud",\n    city: "Calgary",\n    province: "Alberta",\n    phone: "+1 403 000 0000",\n    instagram: "https://www.instagram.com/empresa-prueba/",\n    seo: { title: "Empresa de Prueba", description: "Prueba" },\n  },\n];`;
   const borrador = nuevo.replace("BIZ-005", "BIZ-006").replace("empresa-prueba", "borrador").replace("published: true", "published: false");

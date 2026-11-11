@@ -198,7 +198,7 @@ test("correos: el asunto y la confirmación distinguen el plan sin repetir datos
 /* ---------- Directorio: ficha gratuita ligera ---------- */
 function directory(extra) {
   const html = `<select id="fCategory"></select><select id="fProvince"></select><select id="fCity"></select><div id="bizResults"></div>`;
-  const doc = { listeners: {}, nodes: {}, getElementById(id) { return (this.nodes[id] ||= { id, value: "", innerHTML: "", addEventListener() {} }); }, addEventListener(ev, fn) { this.listeners[ev] = fn; } };
+  const doc = { listeners: {}, nodes: {}, getElementById(id) { return (this.nodes[id] ||= { id, value: "", innerHTML: "", addEventListener() {}, hasAttribute() { return false; } }); }, addEventListener(ev, fn) { this.listeners[ev] = fn; } };
   const ctx = { document: doc, window: { PDM: { initSiteChrome() {} } }, console };
   vm.createContext(ctx);
   vm.runInContext(read("js/businesses.js") + `;BUSINESSES.push(${JSON.stringify(extra)});`, ctx);
@@ -217,11 +217,13 @@ test("directorio: la ficha gratuita es una tarjeta sin miniweb, con teléfono, d
   assert.match(card, /Pan latino &lt;b&gt;fresco&lt;\/b&gt;\./, "texto escapado");
   assert.match(card, /<a class="biz-card__upsell" href="planes-directorio">/);
   assert.doesNotMatch(card, /perfil-panaderia-prueba/, "sin enlace a una miniweb");
-  assert.ok(out.indexOf("biz-card--free") > out.indexOf("perfil-tomas-velazquez.html"), "los Premium van primero");
+  assert.ok(out.indexOf("biz-card--free") > out.indexOf('href="perfil-tomas-velazquez"'), "los Premium van primero");
 });
 
 test("generador de perfiles y plantilla: una ficha gratuita nunca crea ni abre una miniweb", () => {
-  assert.match(read("scripts/build-profile-pages.mjs"), /filter\(\(b\) => b\.published && b\.plan !== "gratuito"\)/);
+  const gen = read("scripts/build-profile-pages.mjs");
+  assert.match(gen, /allPublished = loadBusinesses\(\)\.filter\(\(b\) => b\.published\)/);
+  assert.match(gen, /const published = allPublished\.filter\(\(b\) => b\.plan !== "gratuito"\)/);
   assert.match(read("js/business-profile.js"), /b\.published && b\.plan !== "gratuito"/);
 });
 

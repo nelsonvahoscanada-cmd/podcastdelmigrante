@@ -103,7 +103,7 @@ test("página estática: metadatos propios, tema solo en este perfil", () => {
   assert.match(html, /<title>Santa Latino \| Santa Claus para eventos en Niagara Falls, Ontario \| El Podcast del Migrante<\/title>/);
   assert.match(html, /property="og:image" content="https:\/\/podcastdelmigrante\.com\/assets\/directorio\/perfiles\/santa-latino-og\.jpg"/);
   assert.match(html, /<meta property="og:image:width" content="739">/);
-  assert.match(html, /rel="canonical" href="https:\/\/podcastdelmigrante\.com\/perfil-santa-latino\.html"/);
+  assert.match(html, /rel="canonical" href="https:\/\/podcastdelmigrante\.com\/perfil-santa-latino"/);
   for (const p of ["perfil-tomas-velazquez.html", "perfil-carlos-d-castillo.html", "business-profile.html"]) {
     assert.doesNotMatch(read(p), /data-profile-theme|css\/temas\//, `${p} sin tema`);
   }

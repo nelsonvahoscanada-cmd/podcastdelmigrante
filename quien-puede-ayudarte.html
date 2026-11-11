@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Encuentra quién puede ayudarte en Canadá | El Podcast del Migrante</title>
 <meta id="metaDescription" name="description" content="Encuentra empresas y profesionales que pueden ayudarte en tu ciudad. Llegaste a Canadá: no tienes que conocer a quién buscar, solo dinos qué necesitas.">
-<link id="canonicalLink" rel="canonical" href="https://podcastdelmigrante.com/quien-puede-ayudarte.html">
+<link id="canonicalLink" rel="canonical" href="https://podcastdelmigrante.com/quien-puede-ayudarte">
 
 <!-- Open Graph (fijos para el directorio) -->
 <meta id="ogType" property="og:type" content="website">
 <meta property="og:site_name" content="El Podcast del Migrante Magazine">
 <meta id="ogTitle" property="og:title" content="Encuentra quién puede ayudarte en Canadá | El Podcast del Migrante">
 <meta id="ogDescription" property="og:description" content="Encuentra empresas y profesionales que pueden ayudarte en tu ciudad. Llegaste a Canadá: no tienes que conocer a quién buscar, solo dinos qué necesitas.">
-<meta id="ogUrl" property="og:url" content="https://podcastdelmigrante.com/quien-puede-ayudarte.html">
+<meta id="ogUrl" property="og:url" content="https://podcastdelmigrante.com/quien-puede-ayudarte">
 <meta id="ogImage" property="og:image" content="https://podcastdelmigrante.com/assets/logo.png">
 <meta id="ogLocale" property="og:locale" content="es_CA">
 
@@ -32,7 +32,10 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/business.css?v=20261108">
 
-<!-- Directorio: se construye en js/business-directory.js a partir de js/businesses.js -->
+<!-- Directorio: las tarjetas y su JSON-LD los escribe scripts/build-profile-pages.mjs a partir de js/businesses.js; js/business-directory.js aplica los filtros -->
+<!-- directorio-jsonld -->
+<script type="application/ld+json" id="bizDirJsonLd">{"@context":"https://schema.org","@type":"CollectionPage","url":"https://podcastdelmigrante.com/quien-puede-ayudarte","name":"Encuentra quién puede ayudarte en Canadá","description":"Encuentra empresas y profesionales que pueden ayudarte en tu ciudad. Llegaste a Canadá: no tienes que conocer a quién buscar, solo dinos qué necesitas.","inLanguage":"es","isPartOf":{"@type":"WebSite","name":"El Podcast del Migrante Magazine","url":"https://podcastdelmigrante.com/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://podcastdelmigrante.com/"},{"@type":"ListItem","position":2,"name":"Quién puede ayudarte","item":"https://podcastdelmigrante.com/quien-puede-ayudarte"}]},"mainEntity":{"@type":"ItemList","numberOfItems":4,"itemListElement":[{"@type":"ListItem","position":1,"name":"Tomás Velázquez","url":"https://podcastdelmigrante.com/perfil-tomas-velazquez"},{"@type":"ListItem","position":2,"name":"Carlos D. Castillo","url":"https://podcastdelmigrante.com/perfil-carlos-d-castillo"},{"@type":"ListItem","position":3,"name":"Santa Latino","url":"https://podcastdelmigrante.com/perfil-santa-latino"},{"@type":"ListItem","position":4,"name":"1JuanRomero1 Inc.","url":"https://podcastdelmigrante.com/perfil-1juanromero1"}]},"dateModified":"2026-11-08"}</script>
+<!-- /directorio-jsonld -->
 </head>
 <body>
 <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -118,7 +121,55 @@
       </label>
     </form>
 
-    <div class="biz-results" id="bizResults" aria-live="polite"></div>
+    <div class="biz-results" id="bizResults" aria-live="polite" data-prerendered><!-- directorio-tarjetas -->
+      <article class="biz-card">
+        <img class="biz-card__photo" src="assets/tomas-velazquez-card.jpg" alt="Tomás Velázquez" width="84" height="84" loading="lazy">
+        <div class="biz-card__body">
+          <h2 class="biz-card__name">Tomás Velázquez</h2>
+          <p class="biz-card__title">Asesor de ventas automotrices</p>
+          <p class="biz-card__company">Country Hills Toyota</p>
+          <p class="biz-card__place">Calgary, Alberta</p>
+          
+          <a class="biz-btn biz-btn--primary biz-card__cta" href="perfil-tomas-velazquez">Ver perfil →</a>
+        </div>
+      </article>
+    
+      <article class="biz-card">
+        <img class="biz-card__photo" src="assets/carlos-d-castillo-card.jpg" alt="Carlos D. Castillo" width="84" height="84" loading="lazy">
+        <div class="biz-card__body">
+          <h2 class="biz-card__name">Carlos D. Castillo</h2>
+          <p class="biz-card__title">Asesor de Seguros de Vida y Salud</p>
+          <p class="biz-card__company">Roca Financial Group Ltd.</p>
+          <p class="biz-card__place">Calgary, Alberta</p>
+          <p class="biz-card__langs">Español | English</p>
+          <a class="biz-btn biz-btn--primary biz-card__cta" href="perfil-carlos-d-castillo">Ver perfil →</a>
+        </div>
+      </article>
+    
+      <article class="biz-card">
+        <img class="biz-card__photo" src="assets/directorio/perfiles/santa-latino-card.jpg" alt="Santa Latino" width="84" height="84" loading="lazy">
+        <div class="biz-card__body">
+          <h2 class="biz-card__name">Santa Latino</h2>
+          <p class="biz-card__title">Personaje navideño para eventos y celebraciones</p>
+          
+          <p class="biz-card__place">Niagara Falls, Ontario</p>
+          <p class="biz-card__langs">Español | English</p>
+          <a class="biz-btn biz-btn--primary biz-card__cta" href="perfil-santa-latino">Ver perfil →</a>
+        </div>
+      </article>
+    
+      <article class="biz-card">
+        <img class="biz-card__photo" src="assets/directorio/perfiles/1juanromero1-card.jpg" alt="1JuanRomero1 Inc." width="84" height="84" loading="lazy">
+        <div class="biz-card__body">
+          <h2 class="biz-card__name">1JuanRomero1 Inc.</h2>
+          <p class="biz-card__title">Fundador, Videógrafo y Editor de Video</p>
+          
+          <p class="biz-card__place">Calgary, Alberta</p>
+          <p class="biz-card__langs">Español | English</p>
+          <a class="biz-btn biz-btn--primary biz-card__cta" href="perfil-1juanromero1">Ver perfil →</a>
+        </div>
+      </article>
+    <!-- /directorio-tarjetas --></div>
     <p class="biz-note">Los perfiles muestran información profesional de contacto. Verifica directamente con cada profesional los servicios, condiciones y disponibilidad.</p>
 
     <aside class="biz-join" aria-label="Registra tu empresa en el directorio">
@@ -185,9 +236,9 @@
 </footer>
 
 <script src="js/data.js"></script>
-<script src="js/businesses.js?v=20261107"></script>
+<script src="js/businesses.js?v=20261111"></script>
 <script src="js/nav.js"></script>
 <script src="js/analytics.js"></script>
-<script src="js/business-directory.js?v=20261108"></script>
+<script src="js/business-directory.js?v=20261111"></script>
 </body>
 </html>
