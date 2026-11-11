@@ -165,7 +165,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     assert.equal(await page.locator(".biz-card", { hasText: "Santa Latino" }).locator(".biz-card__title").first().textContent().then((t) => t.trim()), "Personaje navideño para eventos y celebraciones");
     await sinDesborde(page, `${perfil} directorio`);
     /* La tarjeta abre la miniweb publicada */
-    const enlace = page.locator(".biz-card", { hasText: "Santa Latino" }).locator("a[href='perfil-santa-latino.html']").first();
+    const enlace = page.locator(".biz-card", { hasText: "Santa Latino" }).locator("a[href='perfil-santa-latino']").first();
     await enlace.click();
     await page.waitForURL(/perfil-santa-latino/);
     await page.waitForSelector("h1.biz-name");
