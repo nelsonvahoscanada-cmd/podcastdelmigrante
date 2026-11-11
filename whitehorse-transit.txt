@@ -1,0 +1,244 @@
+# https://www.whitehorse.ca/living-in-whitehorse/transit/ → https://www.whitehorse.ca/living-in-whitehorse/transit/
+# estado 200
+Transit - City of Whitehorse 
+ [/our-government/employee-sign-in/] 
+ Employee Login 
+ [/living-in-whitehorse/faq-page/] 
+ FAQ 
+ [/enotification/] 
+ eNotification 
+ [/contact-us/] 
+ Contact Us 
+ [https://www.whitehorse.ca/our-government/community-service/fire-services/] Fire and Protective Services 
+ [https://www.whitehorse.ca/our-government/community-service/emergency-services/] Bylaw Enforcement 
+ [https://www.whitehorse.ca/our-government/community-service/animal/] Animals 
+ [https://www.whitehorse.ca/our-government/community-service/taxis/] Taxis 
+ [https://www.whitehorse.ca/our-government/community-service/volunteer/] Volunteer 
+ [https://www.whitehorse.ca/our-government/community-service/sister-cities/] Sister City Programs 
+ [https://www.whitehorse.ca] 
+ [#] [https://www.whitehorse.ca/living-in-whitehorse/] Living in Whitehorse 
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/] My Property 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/] Parks and Facilities 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/] FAQ 
+ [https://www.whitehorse.ca/living-in-whitehorse/transit/] Transit 
+ [https://www.whitehorse.ca/living-in-whitehorse/recreation/] Recreation 
+ [https://www.whitehorse.ca/living-in-whitehorse/festival-event/] Events 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/] Parking 
+ [https://www.whitehorse.ca/living-in-whitehorse/water/] Water 
+ [https://www.whitehorse.ca/living-in-whitehorse/wasteservices/] Waste Services 
+ [https://www.whitehorse.ca/living-in-whitehorse/our-roads/] Our Roads 
+ [https://www.whitehorse.ca/our-government/] Our Government 
+ [https://www.whitehorse.ca/our-government/city-council/] City Council 
+ [https://www.whitehorse.ca/our-government/community-service/] Community Services 
+ [https://www.whitehorse.ca/our-government/budget/] Budget 
+ [https://www.whitehorse.ca/our-government/bylaws-policies/] Bylaws & Policies 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/] Sustainable Whitehorse 
+ [https://www.whitehorse.ca/our-government/employee-sign-in/] Employee Links 
+ [https://www.whitehorse.ca/our-government/news/] News 
+ [https://www.whitehorse.ca/our-government/budget/council-grants/] Council Grants 
+ [https://www.whitehorse.ca/our-government/employment/] Employment 
+ [https://www.whitehorse.ca/our-government/plans-projects/] Plans & Projects 
+ [https://www.whitehorse.ca/business-in-whitehorse/] Business in Whitehorse 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/] Development 
+ [https://www.whitehorse.ca/business-in-whitehorse/tenders-rfps/] Tenders & RFPs 
+ [https://www.whitehorse.ca/business-in-whitehorse/advertising-lot-sales/] Advertising & Lot Sales 
+ [https://www.whitehorse.ca/business-in-whitehorse/doing-business/] Doing Business 
+ [https://www.whitehorse.ca/visiting-whitehorse/] Visiting Whitehorse 
+ [https://www.whitehorse.ca/living-in-whitehorse/] Living in Whitehorse 
+ [https://www.whitehorse.ca/living-in-whitehorse/recreation/] Recreation 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/facilities/canada-games-centre/] Canada Games Centre 
+ [https://www.whitehorse.ca/living-in-whitehorse/recreation/programs/] Programs & Registration 
+ [https://www.whitehorse.ca/living-in-whitehorse/recreation/camps/] Camps 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/] Parks and Facilities 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/trails/] Trails 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/parks/] Parks & Outdoor Spaces 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/cemetery/] Cemeteries & Memorial Program 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/facility-booking/] Facility Booking 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/facilities/] Facilities 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/robert-service-campground/] Robert Service Campground 
+ [https://www.whitehorse.ca/living-in-whitehorse/transit/] Transit 
+ [https://www.whitehorse.ca/living-in-whitehorse/transit/safety-on-transit/] Safety on Transit 
+ [https://www.whitehorse.ca/living-in-whitehorse/transit/special-services/] Paratransit Services 
+ [https://www.whitehorse.ca/living-in-whitehorse/transit/bikes-on-bus/] Bikes 
+ [https://www.whitehorse.ca/living-in-whitehorse/transit/fares/] Fares 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/] Parking 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/accessible-parking-permit/] Parking Permits and Passes 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/payments-disputes/] Payments & Disputes 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/zone-maps/] Parking Options 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/bike-parking/] Bike Parking 
+ [https://www.whitehorse.ca/living-in-whitehorse/wasteservices/] Waste Services 
+ [https://www.whitehorse.ca/living-in-whitehorse/wasteservices/residential-collection/] Single family homes & multi-residences 
+ [https://www.whitehorse.ca/living-in-whitehorse/wasteservices/sorting/] Sorting your waste and recycling 
+ [https://www.whitehorse.ca/living-in-whitehorse/wasteservices/waste-management/] Waste Management Facility 
+ [https://www.whitehorse.ca/living-in-whitehorse/water/] Water 
+ [https://www.whitehorse.ca/living-in-whitehorse/water/bulk-water-station/] Bulk water station 
+ [https://www.whitehorse.ca/living-in-whitehorse/water/water-system/] Water System 
+ [https://www.whitehorse.ca/living-in-whitehorse/water/water-conservation/] Water Conservation 
+ [https://www.whitehorse.ca/living-in-whitehorse/water/facts-information/] Water quality and frost depths 
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/] My Property 
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/tax-utilities/] Property Tax and Utilities 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/new-builds-renovations/] New Builds & Renovations 
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/fire-smarts/] FireSmart 
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/property-maintenance/] Property Maintenance 
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/snow-and-ice-control/] Snow and Ice Control 
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/burning-with-wood/] Burning With Wood 
+ [https://www.whitehorse.ca/living-in-whitehorse/our-roads/] Our Roads 
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/snow-and-ice-control/] Snow and Ice Control 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/active-transportation/] Active Transportation and Transit Ridership 
+ [https://www.whitehorse.ca/living-in-whitehorse/our-roads/road-safety-and-traffic-management/] Vision Zero, Safe Mobility, and Traffic Management 
+ [https://www.whitehorse.ca/living-in-whitehorse/our-roads/maintenance/] Maintenance 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/] FAQ 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-budget/] FAQ – Budget 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-city-council/] FAQ – City Council 
+ [https://www.whitehorse.ca/?page_id=2432] FAQ – Community Services 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-local-improvement/] FAQ – Local Improvement 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-my-property/] FAQ – My Property 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-our-roads/] FAQ – Our Roads 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-parking/] FAQ – Parking 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-parks-recreations/] FAQ – Parks & Recreations 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-tenders-and-rfps/] FAQ – Tenders and RFPs 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-transit/] FAQ – Transit 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/faq-zoning/] FAQ – Zoning 
+ [https://www.whitehorse.ca/living-in-whitehorse/festival-event/] Events 
+ [https://www.whitehorse.ca/living-in-whitehorse/contact-a-community-association/] Contact a Community Association 
+ [https://www.whitehorse.ca/our-government/] Our Government 
+ [https://www.whitehorse.ca/our-government/city-council/] City Council 
+ [https://www.whitehorse.ca/our-government/city-council/mayor-and-council/] Mayor and Council 
+ [https://www.whitehorse.ca/our-government/city-council/meetings/] Meetings 
+ [https://www.whitehorse.ca/our-government/city-council/meetings/videos/] Videos 
+ [https://www.whitehorse.ca/our-government/city-council/advisory-committee/] Advisory Committees 
+ [https://www.whitehorse.ca/our-government/city-council/public-consultation/] Public Consultation 
+ [https://www.whitehorse.ca/our-government/employee-sign-in/] Employee Links 
+ [https://www.whitehorse.ca/our-government/employment/] Employment 
+ [https://www.whitehorse.ca/our-government/employment/job-opportunity/] Job Opportunity 
+ [https://www.whitehorse.ca/our-government/employment/how-to-apply/] How to Apply 
+ [https://www.whitehorse.ca/our-government/employment/international-applicants/] International Applicants 
+ [https://www.whitehorse.ca/our-government/plans-projects/] Plans & Projects 
+ [https://www.whitehorse.ca/our-government/budget/] Budget 
+ [https://www.whitehorse.ca/our-government/budget/council-grants/] Council Grants 
+ [https://www.whitehorse.ca/our-government/budget/annual-reports/] Annual Reports & Financial Statements 
+ [https://www.whitehorse.ca/our-government/budget/federalfunding/] Federal Funding 
+ [https://www.whitehorse.ca/our-government/bylaws-policies/] Bylaws & Policies 
+ [https://www.whitehorse.ca/our-government/news/] News 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/] Sustainable Whitehorse 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/environment/] Environment 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/storm-water/] Storm Water 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/energy/] Energy 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/active-transportation/] Active Transportation and Transit Ridership 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/whitehorse-sustainability-plan/] Sustainability Plan 
+ [https://www.whitehorse.ca/our-government/community-service/] Community Services 
+ [https://www.whitehorse.ca/our-government/community-service/animal/] Animals 
+ [https://www.whitehorse.ca/our-government/community-service/emergency-services/] Bylaw Enforcement 
+ [https://www.whitehorse.ca/our-government/community-service/fire-services/] Fire and Protective Services 
+ [https://www.whitehorse.ca/our-government/community-service/taxis/] Taxis 
+ [https://www.whitehorse.ca/our-government/community-service/volunteer/] Volunteer 
+ [https://www.whitehorse.ca/business-in-whitehorse/] Business in Whitehorse 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/] Development 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/development-permits/permits-and-guides/] Permits and Guides 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/development-permits/hard-surfacing-and-landscaping/] Hard-Surfacing and Landscaping 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/development-building-plumbing-permit-fee-payment/] Development, Building & Plumbing Permit Fee Payment 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/current-amendments/] Current Amendments 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/amendment-application/] Zoning Bylaw and Amendments 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/subdivision-application/] Subdivision Application 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/engineering-standards/] Engineering Standards 
+ [https://www.whitehorse.ca/business-in-whitehorse/tenders-rfps/] Tenders & RFPs 
+ [https://www.whitehorse.ca/business-in-whitehorse/advertising-lot-sales/] Advertising & Lot Sales 
+ [https://www.whitehorse.ca/business-in-whitehorse/doing-business/] Doing Business 
+ [https://www.whitehorse.ca/business-in-whitehorse/doing-business/business-license/] Business License 
+ [https://www.whitehorse.ca/business-in-whitehorse/doing-business/private-retail-cannabis/] Private Retail Cannabis 
+ [https://www.whitehorse.ca/visiting-whitehorse/] Visiting Whitehorse 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/] Parks and Facilities 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/zone-maps/] Parking Options 
+ What can we help you with?
+ You May Be Looking For
+ [https://www.whitehorse.ca/living-in-whitehorse/transit/] Transit Schedules 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/current-amendments/] Current Amendments 
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/new-builds-renovations/permits-information/] Permits & Information 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/] FAQ 
+ No results 
+ [#] See all results 
+ LIVING IN WHITEHORSE
+ TRANSIT
+ LIVING IN WHITEHORSE
+ TRANSIT
+ -->
+ [https://www.whitehorse.ca] 
+ [https://www.whitehorse.ca/living-in-whitehorse/] Living in Whitehorse 
+ Transit 
+ [https://www.whitehorse.ca/routes-schedules/] Routes and schedules 
+ [https://www.whitehorse.ca/routes-schedules/] Routes and schedules 
+ [https://www.whitehorse.ca/routes-schedules/] Find Transit maps, routes and schedules here! 
+ [/living-in-whitehorse/transit/fares/] Fares 
+ [/living-in-whitehorse/transit/fares/] Fares 
+ [/living-in-whitehorse/transit/fares/] Learn more about fares and purchase locations. 
+ [https://www.whitehorse.ca/transit-apps] Transit apps 
+ [https://www.whitehorse.ca/transit-apps] Transit apps 
+ [https://www.whitehorse.ca/transit-apps] Convenient ways to choose Transit! 
+ [/living-in-whitehorse/transit/bikes-on-bus/] Bikes 
+ [/living-in-whitehorse/transit/bikes-on-bus/] Bikes 
+ [/living-in-whitehorse/transit/bikes-on-bus/] Every bus can carry two bikes on its front rack, and during non-peak hours you can request permission to bring your bike on the bus. 
+ [/living-in-whitehorse/transit/safety-on-transit/] Safety on transit 
+ [/living-in-whitehorse/transit/safety-on-transit/] Safety on transit 
+ [/living-in-whitehorse/transit/safety-on-transit/] Your safety is our number one priority. 
+ [/living-in-whitehorse/transit/special-services/] Paratransit (Handy Bus) services 
+ [/living-in-whitehorse/transit/special-services/] Paratransit (Handy Bus) services 
+ [/living-in-whitehorse/transit/special-services/] The Handy Bus is available to provide transportation on both a scheduled and casual need basis. 
+ [#1729284729600-0a353fe4-3be6] Advertising On Transit 
+ Why advertise with Transit?
+ – You can’t ignore it.
+– It can’t be closed like a laptop.
+– It reaches drivers and passengers no matter what radio stations they’re listening to.
+– The large, colourful, innovative designs demand attention.
+– You have exclusivity in your space.
+– It delivers to a varied audience. It offers flexibility of ad size and location.
+ Advertising Options
+ – King Signs are located on the sides of transit vehicles. They are the largest of the signs and are attached to the bus with aluminium frames.
+– Tail Signs are located on the rear of transit vehicles. If you’ve ever been stuck behind a bus at a traffic light or in a traffic jam, you know what the back of that bus says by the time you start moving again.
+– Interior Cards are smaller and are seen only by the riders. They line the tops of the bus windows.
+– Bus Bench Signs can be placed at any existing city bus stop for you to advertise your business and location.
+– Shelter Signs are located all around Whitehorse; they are a large visual sign to advertise your business or an upcoming event.
+ View our [https://www.whitehorse.ca/wp-content/uploads/2024/04/Transit_Advertising_Rates_April-2025-v2.pdf] Advertising Rate Sheet .
+ [#1729284729612-441a9354-f408] Contact 
+ For general inquiries or for our lost-and-found:
+Phone: 867-668-8396
+Email: [/cdn-cgi/l/email-protection#daaea8bbb4a9b3aef4a9bfa8acb3b9bfa99aadb2b3aebfb2b5a8a9bff4b9bb] [email protected] 
+ LIVING IN WHITEHORSE
+ [https://www.whitehorse.ca/living-in-whitehorse/my-property/] My Property 
+ [https://www.whitehorse.ca/living-in-whitehorse/transit/] Transit 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/] Parking 
+ [https://www.whitehorse.ca/living-in-whitehorse/wasteservices/] Waste Services 
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/] Parks and Facilities 
+ [https://www.whitehorse.ca/living-in-whitehorse/recreation/] Recreation 
+ [https://www.whitehorse.ca/living-in-whitehorse/water/] Water 
+ [https://www.whitehorse.ca/living-in-whitehorse/our-roads/] Our Roads 
+ [https://www.whitehorse.ca/living-in-whitehorse/faq-page/] FAQ 
+ [https://www.whitehorse.ca/living-in-whitehorse/festival-event/] Events 
+ OUR GOVERNMENT
+ [https://www.whitehorse.ca/our-government/city-council/] City Council 
+ [https://www.whitehorse.ca/our-government/bylaws-policies/] Bylaws & Policies 
+ [https://www.whitehorse.ca/our-government/news/] News 
+ [https://www.whitehorse.ca/our-government/employment/] Employment 
+ [https://www.whitehorse.ca/our-government/community-service/] Community Services 
+ [https://www.whitehorse.ca/our-government/sustainable-whitehorse/] Sustainable Whitehorse 
+ [https://www.whitehorse.ca/our-government/budget/council-grants/] Council Grants 
+ [https://www.whitehorse.ca/our-government/budget/] Budget 
+ [https://www.whitehorse.ca/our-government/employee-sign-in/] Employee Links 
+ BUSINESS IN WHITEHORSE
+ [https://www.whitehorse.ca/business-in-whitehorse/zoning/] Development 
+ [https://www.whitehorse.ca/business-in-whitehorse/tenders-rfps/] Tenders & RFPs 
+ [https://www.whitehorse.ca/business-in-whitehorse/advertising-lot-sales/] Advertising & Lot Sales 
+ [https://www.whitehorse.ca/business-in-whitehorse/doing-business/] Doing Business 
+ VISITING WHITEHORSE
+ [https://www.whitehorse.ca/living-in-whitehorse/parks-recreation/] Parks and Facilities 
+ [https://www.whitehorse.ca/living-in-whitehorse/parking/zone-maps/] Parking Options 
+ CONTACT US
+ Monday to Friday: 8:30 am to 4:30 pm
+ 867-667-6401
+ 2121 Second Avenue, Whitehorse, YT Y1A 1C2, Canada
+ [https://www.whitehorse.ca/contact-us] City Contact List 
+ [https://www.facebook.com/cityofwhitehorse] 
+ [https://www.instagram.com/cityofwhitehorseyt/] 
+ [https://www.youtube.com/user/cityofwhitehorse] 
+ Working and living within the traditional territories of the Kwanlin Dün First Nation and the Ta’an Kwäch’än Council.
+ © 2026 Whitehorse, YT. All Rights Reserved. | [https://www.whitehorse.ca/privacy-policy/] Privacy Policy 
+ [#]

@@ -1,0 +1,146 @@
+# https://www.afy.ca/ → https://www.afy.ca/
+# estado 200
+Calendrier | Association franco-yukonnaise 
+ [/] 
+ Calendrier
+ [/services] 
+ Services
+ [/communaute] 
+ Communauté
+ [/afy] 
+ AFY
+ [https://www.afy.ca/popup/PopContact] 
+ [https://www.afy.ca/] Calendrier 
+ [/a-venir] Tous les événements 
+ [/mois] Ce mois-ci 
+ [https://www.afy.ca/services] Services 
+ [https://www.afy.ca/services/accueil-et-aide-a-letablissement] Accueil et aide à l'établissement 
+ [https://www.afy.ca/services/aide-a-lemploi] Aide à l’emploi 
+ [https://www.afy.ca/services/appui-et-recrutement] Appui au recrutement 
+ [https://www.afy.ca/services/formation] Formation 
+ [https://www.afy.ca/services/demarrage-dentreprise] Entrepreneuriat 
+ [https://www.afy.ca/services/justice] Justice 
+ [https://www.afy.ca/services/arts-et-culture] Arts et culture 
+ [https://www.afy.ca/services/offres-de-benevolat] Relations communautaires 
+ [https://www.afy.ca/services/activites-jeunesse] Jeunesse 
+ [https://www.afy.ca/services/activites-50-ans] 50 ans + 
+ [https://www.afy.ca/services/activites-50-ans/service-de-soutien-a-domicile] Soutien à domicile 
+ [https://www.afy.ca/services/location-dequipement] Location d'équipement 
+ [https://www.afy.ca/services/marketing-touristique] Marketing touristique 
+ [https://www.afy.ca/afy] AFY 
+ [/afy/devenir-membre] Devenir membre 
+ [/afy/team] Équipe 
+ [/afy/notre-conseil-dadministration] CA 
+ [/afy/notre-fonctionnement] À propos 
+ [/afy/offres-emploi] Carrière 
+ [/afy/nouvelles] Nouvelles 
+ [/afy/communiques] Communiqués 
+ [/afy/publications] Publications 
+ [/afy/projets-speciaux] Projets spéciaux 
+ [/afy/partenaires-financiers] Partenaires financiers 
+ [https://www.afy.ca/communaute] Communauté 
+ [/communaute/histoire-et-patrimoine] Histoire et patrimoine 
+ [/communaute/organismes-francophones] Organismes francophones 
+ [/communaute#centre-de-la-francophonie] Centre de la francophonie 
+ [/communaute#Medias] Médias 
+ [/communaute/journee-de-la-francophonie-yukonnaise] Journée de la francophonie 
+ [https://www.afy.ca/communaute/centre-de-la-francophonie/reconnaissance] Prix de reconnaissance 
+ [https://www.afy.ca/evenement/cafe-de-lamitie-1] 
+ Mardi
+ 10
+ Novembre 
+ Café de l’amitié - Jeux de société
+ 14 h 00 à 16 h 00
+ Titan Tavern & Geek Shop
+ [https://www.afy.ca/evenement/concert-ccf] 
+ Jeudi
+ 12
+ Novembre 
+ Coup de cœur francophone 2026
+ 19 h 00 à 23 h 00
+ Old Fire Hall
+ [https://www.afy.ca/evenement/conference] 
+ Mardi
+ 17
+ Novembre 
+ Course à pied et conférence avec Maxime D'Astous
+ 17 h 00 à 20 h 00
+ Bibliothèque publique de Whitehorse
+ [https://www.afy.ca/evenement/randonnee-intergenerationnelle-des-ptits-mollets] 
+ Mercredi
+ 18
+ Novembre 
+ Club des p’tits mollets
+ 14 h 00 à 16 h 00
+ Millennium Trail
+ [https://www.afy.ca/evenement/formation-finances] 
+ Mercredi
+ 18
+ Novembre 
+ Préparer sa retraite
+ 17 h 30 à 19 h 30
+ Centre de la francophonie / En ligne
+ [https://www.afy.ca/evenement/yoga-adapte] 
+ Jeudi
+ 19
+ Novembre 
+ Yoga adapté
+ 12 h 00 à 13 h 00
+ Centre de la Francophonie
+ [https://www.afy.ca/evenement/formations-en-entrepreneuriat] 
+ Jeudi
+ 19
+ Novembre 
+ Comprendre les états financiers
+ 18 h 00 à 20 h 00
+ Centre de la francophonie
+ [https://www.afy.ca/evenement/cafe-de-lamitie-4] 
+ Mardi
+ 24
+ Novembre 
+ Atelier cyanotype
+ 14 h 00 à 16 h 00
+ Bibliothèque publique de Whitehorse - Salle WPL Whole Room
+ [https://www.afy.ca/a-venir] 
+ À venir
+ [https://www.afy.ca/services] 
+ Services
+ [https://www.afy.ca/afy/nouvelles] 
+ Nouvelles
+ [https://www.afy.ca/infolettre-afy] 
+ Infolettres
+ [tel:8676682663] 867 668-2663 
+ 867 668-3511
+ [mailto:afy@afy.ca] afy@afy.ca 
+ [https://www.google.ca/maps/place/302+Strickland+St,+Whitehorse,+YT+Y1A+2K1/@60.7224386,-135.0594504,17z/data=!3m1!4b1!4m5!3m4!1s0x515444c329e5eadb:0x1e899cad1004a03b!8m2!3d60.722436!4d-135.0572564] 302, rue Strickland Whitehorse (Yukon) Y1A 2K1 
+ 9 h à 17 h lundi – vendredi 
+ C'est avec reconnaissance et respect que nous tenons à souligner que nous vivons et travaillons sur le territoire traditionnel de la Première Nation des Kwanlin Dün et du Conseil des Ta'an Kwäch'än. Shä̀w níthän. Kwä̀nä̀schis.
+We respectfully acknowledge that we live and work on the traditional territory of the Kwanlin Dün First Nation and the Ta’an Kwäch’än Council. Shä̀w níthän. Kwä̀nä̀schis.
+ Aussi par l’AFY
+ Les réalités du Yukon 
+--> Un budget adapté au Yukon 
+-->
+ [http://histoiresdeguerre.afy.ca] Histoire de guerre 
+ [http://mosaique.afy.ca/index.html] Mosaique (au)2 
+ [http://henri.afy.ca] JeuxFC 2025 
+ [http://fil.afy.ca] De fil en histoires 
+ [http://franco.afy.ca] La Franco-Yukonnie 
+ [http://promo.afy.ca] Outils de promotion gratuits au Yukon 
+-->
+ [http://recettes.afy.ca] Des souvenirs dans votre assiette 
+ [https://portraits-entrepreneurs.afy.ca/] Portraits : Francophone et en affaires 
+ Portails AFY
+ [http://arrivant.afy.yk.ca] Vivre au Yukon 
+ [http://50.afy.yk.ca] Rester jeune plus longtemps 
+ [http://jeune.afy.yk.ca] Avoir du fun en français 
+ [http://famille.afy.yk.ca] Éveiller par le jeu 
+ [http://entrepreneur.afy.yk.ca] Lancer ou développer une entreprise 
+ [http://emplois.afy.yk.ca] Trouver un emploi 
+ [http://partenaires.afy.yk.ca] Travailler ensemble 
+ [http://benevolat.afy.yk.ca] S'impliquer 
+-->
+ Ce site Web a été rendu possible grâce à la collaboration de
+ [https://yukon.ca] 
+ [https://www.canada.ca/fr.html] 
+ UI/UX par [http://zestudio.ca] Patric Chaussé et AFY
+ Développement web par [https://aasman.ca] aasman.ca

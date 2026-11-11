@@ -1,0 +1,14 @@
+# https://laws.yukon.ca/cms/images/LEGISLATION/PRINCIPAL/2002/2002-0099/2002-0099.pdf
+# navegador 403 https://laws.yukon.ca/cms/images/LEGISLATION/PRINCIPAL/2002/2002-0099/2002-0099.pdf
+laws.yukon.ca
+Performing security verification
+
+This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.
+
+Ray ID: a58a280a8b13d3b2
+Performance and Security by Cloudflare
+Privacy
+
+# ENLACES
+Cloudflare [https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m]
+Privacy [https://www.cloudflare.com/privacypolicy/]
