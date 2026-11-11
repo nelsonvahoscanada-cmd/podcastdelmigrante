@@ -3,200 +3,157 @@
   {
    "csd": "6001003",
    "nombre": "Johnson Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001003",
    "nombre": "Watson Lake Secondary School",
-   "niveles": "secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001004",
    "nombre": "Del Van Gorder School",
-   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001006",
    "nombre": "Khàtìnas.àxh Community School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
-  },
-  {
-   "csd": "6001009",
-   "nombre": "Aurora Virtual School",
-   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001009",
    "nombre": "Centre scolaire secondaire communautaire Paul-Émile Mercier (CSSC Mercier)",
-   "niveles": "secundaria básica, secundaria superior",
-   "francofona": true
+   "sistema": "en francés (Commission scolaire francophone du Yukon)"
   },
   {
    "csd": "6001009",
    "nombre": "Christ the King Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "escuela católica (sistema público)"
+  },
+  {
+   "csd": "6001009",
+   "nombre": "Dámbü Tän Kets’ádań Kų̀ – Cliff Trail Elementary School",
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001009",
    "nombre": "Elijah Smith Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001009",
    "nombre": "F.H. Collins Secondary School",
-   "niveles": "secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "programa en inglés e inmersión en francés"
   },
   {
    "csd": "6001009",
    "nombre": "Golden Horn Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001009",
    "nombre": "Grey Mountain Primary School",
-   "niveles": "preescolar, primaria",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001009",
    "nombre": "Hidden Valley Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001009",
    "nombre": "Holy Family Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
-  },
-  {
-   "csd": "6001009",
-   "nombre": "Individual Learning Centre",
-   "niveles": "secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "escuela católica (sistema público)"
   },
   {
    "csd": "6001009",
    "nombre": "Jack Hulland Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001009",
    "nombre": "Porter Creek Secondary School",
-   "niveles": "secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001009",
    "nombre": "Selkirk Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "programa en inglés e inmersión en francés"
   },
   {
    "csd": "6001009",
-   "nombre": "Teen Parent Centre",
-   "niveles": "secundaria básica, secundaria superior",
-   "francofona": false
+   "nombre": "St. Francis of Assisi Catholic Secondary School",
+   "sistema": "escuela católica (sistema público)"
   },
   {
    "csd": "6001009",
-   "nombre": "Vanier Catholic Secondary School",
-   "niveles": "secundaria básica, secundaria superior",
-   "francofona": false
-  },
-  {
-   "csd": "6001009",
-   "nombre": "Wood Street Centre",
-   "niveles": "secundaria básica, secundaria superior",
-   "francofona": false
-  },
-  {
-   "csd": "6001009",
-   "nombre": "Yukon University",
-   "niveles": "formación postsecundaria",
-   "francofona": false
+   "nombre": "Takhini Elementary School",
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001009",
    "nombre": "École Whitehorse Elementary School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "inmersión en francés"
   },
   {
    "csd": "6001009",
    "nombre": "École Émilie-Tremblay",
-   "niveles": "preescolar, primaria",
-   "francofona": true
+   "sistema": "en francés (Commission scolaire francophone du Yukon)"
   },
   {
    "csd": "6001012",
    "nombre": "Tantalus School",
-   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001018",
    "nombre": "St. Elias Community School",
-   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001022",
    "nombre": "J.V. Clark School",
-   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
+  },
+  {
+   "csd": "6001029",
+   "nombre": "Programme en français de Dawson",
+   "sistema": "en francés (Commission scolaire francophone du Yukon)"
   },
   {
    "csd": "6001029",
    "nombre": "Robert Service School",
-   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Departamento de Educación de Yukón"
   },
   {
    "csd": "6001037",
    "nombre": "Ross River School",
-   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001041",
    "nombre": "Eliza Van Bibber School",
-   "niveles": "preescolar, primaria, secundaria básica, secundaria superior",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001042",
    "nombre": "Nelnah Bessie John School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001043",
    "nombre": "Chief Zzeh Gittlit School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001048",
    "nombre": "Ghùch Tlâ Community School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   },
   {
    "csd": "6001049",
    "nombre": "Kluane Lake School",
-   "niveles": "preescolar, primaria, secundaria básica",
-   "francofona": false
+   "sistema": "Junta Escolar de las Primeras Naciones (First Nation School Board)"
   }
  ],
  "clima": {

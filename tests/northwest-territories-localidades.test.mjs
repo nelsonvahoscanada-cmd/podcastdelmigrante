@@ -172,7 +172,7 @@ test("SEO y redes: título, descripción, canónica, imagen social 1200×630 y J
 test("portada de Canadá en Datos y «Descubre tu Canadá»: NWT disponible; las regiones sin ficha siguen sin enlace", () => {
   const idx = read("canada-en-datos/index.html");
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="NT"/);
-  for (const code of ["NS", "NB", "NL", "YT"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
+  for (const code of ["NS", "NB", "NL"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
   assert.match(read("js/canada-datos-disponibles.js"), /northwest-territories/);
   for (const r of D.CD_REGIONS.filter((x) => !x.profile)) assert.ok(!existsSync(join(ROOT, `canada-en-datos/${r.slug}.html`)), r.code);
 });

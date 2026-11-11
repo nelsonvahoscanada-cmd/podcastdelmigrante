@@ -3,13 +3,10 @@ compactar-yt-servicios.py — Datos complementarios de las comunidades de Yukón
 ==============================================================================
 Genera scripts/canada-en-datos/yt-servicios.json, que usa provincias/yukon.mjs:
 
-  escuelas  Base abierta de establecimientos educativos de Statistics Canada (ODEF v2.1, 2022),
-            filas de Yukón (yt-fuentes.json). Algunas filas no tienen coordenadas o las tienen
-            mal (J.V. Clark School, de Mayo, aparece con las coordenadas de Dawson): se ubican
-            en su subdivisión censal por la localidad de su dirección (tabla DIRECCION). Las
-            residencias estudiantiles y las escuelas de vuelo se omiten (no son escuelas para
-            inscribir a los hijos). La base no incluye todas las escuelas del territorio:
-            la página lo advierte y remite al Departamento de Educación.
+  escuelas  Lista oficial de escuelas del Gobierno de Yukón, con su sistema escolar (página
+            «Register your child for school»). Se prefirió a la base abierta ODEF de Statistics
+            Canada (2022), que omite escuelas de Whitehorse y ubica mal algunas (J.V. Clark School,
+            de Mayo, aparece con las coordenadas de Dawson).
   clima     Normales climáticas 1991-2020 de Environment and Climate Change Canada (texto de las
             páginas oficiales guardado por obtener-yt-ficha.py), por comunidad.
   cmhc      Alquiler promedio de CMHC en Whitehorse (Statistics Canada, tabla 34-10-0133-01):
@@ -17,43 +14,63 @@ Genera scripts/canada-en-datos/yt-servicios.json, que usa provincias/yukon.mjs:
             que la página muestra «Dato no disponible».
 
 USO:
-  python3 scripts/canada-en-datos/compactar-yt-servicios.py <carpeta con los textos de la ronda 1>
+  python3 scripts/canada-en-datos/compactar-yt-servicios.py <carpeta de la ronda 1> <carpeta de la ronda 3>
 """
-import json, pathlib, re, sys
+import json, pathlib, re, sys, unicodedata
 
 BASE = pathlib.Path(__file__).parent
 F = json.loads((BASE / "yt-fuentes.json").read_text(encoding="utf-8"))
-R1 = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else None
+R1 = pathlib.Path(sys.argv[1])  # ronda 1: normales y tablas de Statistics Canada
+R3 = pathlib.Path(sys.argv[2])  # ronda 3: páginas de yukon.ca
 
-# ------------------------------------------------------------ Escuelas (ODEF 2022)
-DIRECCION = {
-    "Chief Zzeh Gittlit School": "6001043",   # Old Crow
-    "Del Van Gorder School": "6001004",       # Faro
-    "Eliza Van Bibber School": "6001041",     # Pelly Crossing
-    "Ghùch Tlâ Community School": "6001048",  # Carcross
-    "J.V. Clark School": "6001022",           # Mayo (302 7th Avenue, Mayo)
-    "Khàtìnas.àxh Community School": "6001006",  # Teslin
-    "Kluane Lake School": "6001049",          # Destruction Bay
-    "Nelnah Bessie John School": "6001042",   # Beaver Creek
-    "Ross River School": "6001037",           # Ross River
-    "Watson Lake Secondary School": "6001003",  # Watson Lake
-    "Wood Street Centre": "6001009",          # Whitehorse (411 Wood Street)
+# ------------------------------------------------------------ Escuelas (Gobierno de Yukón, «Register your child for school»)
+# Lista oficial de escuelas y sus zonas de asistencia (copia del Internet Archive guardada por
+# obtener-yt-ficha2.py, clave ed-registro). Cada escuela se ubica en la subdivisión censal de su
+# comunidad. École Nomade atiende a todo el territorio (no tiene comunidad) y no se lista por comunidad.
+COMUNIDAD = {
+    "Christ the King Elementary School": "6001009", "Holy Family Elementary School": "6001009",
+    "St. Francis of Assisi Catholic Secondary School": "6001009", "École Whitehorse Elementary School": "6001009",
+    "Selkirk Elementary School": "6001009", "F.H. Collins Secondary School": "6001009",
+    "Centre scolaire secondaire communautaire Paul-Émile Mercier (CSSC Mercier)": "6001009", "École Émilie-Tremblay": "6001009",
+    "Programme en français de Dawson": "6001029", "Chief Zzeh Gittlit School": "6001043", "Eliza Van Bibber School": "6001041",
+    "Grey Mountain Primary School": "6001009", "Ghùch Tlâ Community School": "6001048", "Johnson Elementary School": "6001003",
+    "Kluane Lake School": "6001049", "Watson Lake Secondary School": "6001003", "Nelnah Bessie John School": "6001042",
+    "Ross River School": "6001037", "St. Elias Community School": "6001018", "Takhini Elementary School": "6001009",
+    "Dámbü Tän Kets’ádań Kų̀ – Cliff Trail Elementary School": "6001009", "Elijah Smith Elementary School": "6001009",
+    "Golden Horn Elementary School": "6001009", "Hidden Valley Elementary School": "6001009", "J.V. Clark School": "6001022",
+    "Jack Hulland Elementary School": "6001009", "Porter Creek Secondary School": "6001009", "Robert Service School": "6001029",
+    "Tantalus School": "6001012", "Del Van Gorder School": "6001004", "Khàtìnas.àxh Community School": "6001006",
 }
-OMITIR = {"Alkan Air Flight Training", "Gadzoosdaa Student Residence"}
-# École Whitehorse Elementary es una escuela de inmersión en francés del sistema público en inglés,
-# no de la Commission scolaire francophone du Yukon, como indica la base.
-AUTORIDAD = {"École Whitehorse Elementary School": None}
-NIVELES = [("ISCED020", "preescolar"), ("ISCED1", "primaria"), ("ISCED2", "secundaria básica"), ("ISCED3", "secundaria superior"), ("ISCED4Plus", "formación postsecundaria")]
-escuelas = []
-for e in F["educacion"]:
-    if e["Facility_Name"] in OMITIR:
+COMUNIDAD = {unicodedata.normalize("NFC", k): v for k, v in COMUNIDAD.items()}
+SISTEMA = {
+    "Catholic schools": "escuela católica (sistema público)",
+    "French immersion schools": "programa en inglés e inmersión en francés",
+    "French first language schools": "en francés (Commission scolaire francophone du Yukon)",
+    "First Nation School Board schools": "Junta Escolar de las Primeras Naciones (First Nation School Board)",
+    "Yukon Education schools": "Departamento de Educación de Yukón",
+}
+SOLO_INMERSION = {"École Whitehorse Elementary School"}
+T = (R3 / "ed-registro.txt").read_text(encoding="utf-8")
+T = T[T.index("School attendance area"):T.rindex("Register your child for Kindergarten")]
+escuelas, seccion = [], None
+for l in T.split("\n"):
+    l = l.strip()
+    if l in SISTEMA:
+        seccion = l
         continue
-    csd = DIRECCION.get(e["Facility_Name"]) or e.get("csd")
-    if not csd:
-        raise SystemExit(f"Escuela sin subdivisión censal: {e['Facility_Name']} ({e.get('Full_Addr')})")
-    niveles = [n for k, n in NIVELES if e.get(k) == "1"]
-    autoridad = AUTORIDAD.get(e["Facility_Name"], e.get("Authority_Name"))
-    escuelas.append({"csd": csd, "nombre": e["Facility_Name"], "niveles": ", ".join(niveles), "francofona": autoridad == "Commission scolaire francophone du Yukon"})
+    m = re.match(r"\[https://yukon\.ca/en/places/[^\]]+\] (.+)$", l)
+    if not m:
+        continue
+    nombre = unicodedata.normalize("NFC", m.group(1).strip())
+    if nombre == "École Nomade":
+        continue
+    if nombre not in COMUNIDAD:
+        raise SystemExit(f"Escuela sin comunidad: {nombre}")
+    sistema = "inmersión en francés" if nombre in SOLO_INMERSION else SISTEMA[seccion]
+    escuelas.append({"csd": COMUNIDAD[nombre], "nombre": nombre, "sistema": sistema})
+faltan = set(COMUNIDAD) - {e["nombre"] for e in escuelas}
+if faltan:
+    raise SystemExit(f"Escuelas de la tabla que ya no están en la página oficial: {sorted(faltan)}")
 escuelas.sort(key=lambda x: (x["csd"], x["nombre"]))
 
 # ------------------------------------------------------------ Normales 1991-2020 (ECCC)
