@@ -1,0 +1,2 @@
+# nombre<TAB>URL<TAB>patrón (lista revisable para obtener-yt-ficha.py paginas; la ronda 2 usa obtener-yt-ficha2.py)
+Gobierno de Yukón inicio	https://yukon.ca/	Yukon|immigration|health

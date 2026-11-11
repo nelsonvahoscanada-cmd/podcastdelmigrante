@@ -1,0 +1,2 @@
+# clave<TAB>URL (se completa tras leer los sitemaps)
+yk-inicio	https://yukon.ca/
