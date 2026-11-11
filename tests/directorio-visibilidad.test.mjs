@@ -256,7 +256,8 @@ test("compartir: los metadatos de WhatsApp y Facebook no cambian (salvo la URL l
   }
 });
 
-test("QR y vCard sin cambios: siguen apuntando a la dirección impresa (con .html, que redirige)", () => {
-  execFileSync("python3", ["scripts/build-qr-images.py", "--check"], { cwd: ROOT, stdio: "pipe" });
+/* Los QR en imagen los verifica el chequeo «Perfiles: vistas previas»
+   (python3 scripts/build-qr-images.py --check, con segno y pillow instalados). */
+test("QR sin cambios: siguen apuntando a la dirección impresa (con .html, que redirige)", () => {
   assert.match(read("scripts/build-qr-images.py"), /\{SITE_ORIGIN\}\/perfil-\{slug\}\.html/);
 });
