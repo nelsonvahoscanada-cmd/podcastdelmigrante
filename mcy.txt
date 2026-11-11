@@ -1,0 +1,4 @@
+# https://www.mcyukon.com/
+# navegador ERROR Error Page.goto: net::ERR_CERT_DATE_INVALID at https://www.mcyukon.com/
+Call log:
+  - navigating to "https://www.mcyukon.com/"
