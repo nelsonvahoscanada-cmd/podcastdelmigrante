@@ -1,4 +1,4 @@
-# TEMPORAL: obtener datos oficiales de Yukón (solo lectura). Se elimina después.
+# TEMPORAL: verificar enlaces de la guía de Yukón (solo lectura). Se elimina después.
 name: tmp yt datos
 on:
   push:
@@ -8,17 +8,16 @@ permissions:
 jobs:
   datos:
     runs-on: ubuntu-latest
-    timeout-minutes: 80
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install -q pyproj shapely openpyxl pypdf playwright && python -m playwright install --with-deps chromium >/dev/null
-      - name: Paginas
+      - run: pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null
+      - run: mkdir -p /tmp/out && python .github/enlaces/verificar.py
         continue-on-error: true
-        run: mkdir -p /tmp/out && PARTES="cdx" python scripts/canada-en-datos/obtener-yt-ficha2.py > /tmp/out/ronda2b.log 2>&1; tail -5 /tmp/out/ronda2b.log
       - name: Publicar
         if: always()
         run: |
-          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "datos Yukon ronda 5 [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/yukon-canada-en-datos-datos5
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "enlaces Yukon [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/yukon-canada-en-datos-enlaces
