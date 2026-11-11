@@ -261,3 +261,47 @@ test("compartir: los metadatos de WhatsApp y Facebook no cambian (salvo la URL l
 test("QR sin cambios: siguen apuntando a la dirección impresa (con .html, que redirige)", () => {
   assert.match(read("scripts/build-qr-images.py"), /\{SITE_ORIGIN\}\/perfil-\{slug\}\.html/);
 });
+
+/* ---------- Publicación y actualización: nada desactualizado ---------- */
+function copiaSitio() {
+  const dir = mkdtempSync(join(tmpdir(), "dir-act-"));
+  for (const d of ["js", "scripts", "css", "assets", "vcard"]) cpSync(join(ROOT, d), join(dir, d), { recursive: true });
+  for (const f of ["business-profile.html", "quien-puede-ayudarte.html", "sitemap.xml", "negocios-premium.json", ...PREMIUM.map((b) => `perfil-${b.slug}.html`)]) cpSync(join(ROOT, f), join(dir, f));
+  return dir;
+}
+const generar = (dir, ...args) => execFileSync(process.execPath, [join(dir, "scripts/build-profile-pages.mjs"), ...args], { cwd: dir, stdio: "pipe" });
+
+test("retirar una empresa (published: false): desaparece de su página, el directorio, el sitemap y la lista de estadísticas", () => {
+  const dir = copiaSitio();
+  const src = readFileSync(join(dir, "js/businesses.js"), "utf8");
+  const i = src.indexOf('id: "BIZ-003"');
+  writeFileSync(join(dir, "js/businesses.js"), src.slice(0, i) + src.slice(i).replace("published: true,", "published: false,"));
+  assert.throws(() => generar(dir, "--check"), "el chequeo de CI detecta lo desactualizado");
+  generar(dir);
+  assert.ok(!existsSync(join(dir, "perfil-santa-latino.html")), "página borrada");
+  for (const f of ["quien-puede-ayudarte.html", "negocios-premium.json"]) assert.doesNotMatch(readFileSync(join(dir, f), "utf8"), /santa-latino|Santa Latino/, f);
+  /* (el sitemap conserva la noticia articulo-hector-rivero-santa-latino-canada, que no es la miniweb) */
+  assert.doesNotMatch(readFileSync(join(dir, "sitemap.xml"), "utf8"), /perfil-santa-latino/);
+  generar(dir, "--check");
+});
+
+test("editar una empresa sin regenerar: el chequeo de CI falla; al regenerar, HTML, JSON-LD, directorio y sitemap quedan al día", () => {
+  const dir = copiaSitio();
+  const src = readFileSync(join(dir, "js/businesses.js"), "utf8");
+  writeFileSync(
+    join(dir, "js/businesses.js"),
+    src
+      .replace('shortDescription: "Seguros de vida y salud, protección familiar y estrategias de ahorro y patrimonio en Calgary."', 'shortDescription: "Descripción actualizada de prueba."')
+      .replace('card: { title: "Asesor de Seguros de Vida y Salud" }', 'card: { title: "Cargo actualizado de prueba" }')
+      .replace(/(id: "BIZ-002",[\s\S]*?updatedAt: )"2026-10-07"/, '$1"2026-11-10"')
+  );
+  assert.throws(() => generar(dir, "--check"));
+  generar(dir);
+  const perfil = readFileSync(join(dir, "perfil-carlos-d-castillo.html"), "utf8");
+  const ld = JSON.parse(perfil.match(/id="bizJsonLd">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(ld.mainEntity.description, "Descripción actualizada de prueba.");
+  assert.equal(ld.dateModified, "2026-11-10");
+  assert.match(readFileSync(join(dir, "quien-puede-ayudarte.html"), "utf8"), /Cargo actualizado de prueba/);
+  assert.match(readFileSync(join(dir, "sitemap.xml"), "utf8"), /perfil-carlos-d-castillo<\/loc>\s*<lastmod>2026-11-10<\/lastmod>/);
+  generar(dir, "--check");
+});
