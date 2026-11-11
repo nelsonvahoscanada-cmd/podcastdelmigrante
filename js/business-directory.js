@@ -97,27 +97,38 @@
           ${b.company ? `<p class="biz-card__company">${esc(b.company)}</p>` : ""}
           ${place ? `<p class="biz-card__place">${esc(place)}</p>` : ""}
           ${langs.length ? `<p class="biz-card__langs">${langs.map(esc).join(" | ")}</p>` : ""}
-          <a class="biz-btn biz-btn--primary biz-card__cta" href="perfil-${encodeURIComponent(b.slug)}.html">Ver perfil →</a>
+          <a class="biz-btn biz-btn--primary biz-card__cta" href="perfil-${encodeURIComponent(b.slug)}">Ver perfil →</a>
         </div>
       </article>
     `;
+  }
+
+  /* Orden: destacados primero; después, Perfiles Premium antes que las
+     fichas gratuitas; dentro de cada grupo, orden de alta en businesses.js */
+  function results(category, province, city) {
+    return published()
+      .filter((b) => (!category || b.category === category) && (!province || provincesOf(b).includes(province)) && (!city || b.city === city))
+      .sort((a, b) => Number(!!b.featured) - Number(!!a.featured) || Number(isFree(a)) - Number(isFree(b)));
+  }
+
+  /* Todo el directorio, sin filtros. El mismo HTML lo escribe en
+     quien-puede-ayudarte.html scripts/build-profile-pages.mjs, para que los
+     nombres, categorías y enlaces se lean sin JavaScript. */
+  function allCardsHtml() {
+    return results("", "", "").map(cardHtml).join("");
   }
 
   function render() {
     const category = document.getElementById("fCategory").value;
     const province = document.getElementById("fProvince").value;
     const city = document.getElementById("fCity").value;
-    /* Orden: destacados primero; después, Perfiles Premium antes que las
-       fichas gratuitas; dentro de cada grupo, orden de alta en businesses.js */
-    const results = published()
-      .filter((b) => (!category || b.category === category) && (!province || provincesOf(b).includes(province)) && (!city || b.city === city))
-      .sort((a, b) => Number(!!b.featured) - Number(!!a.featured) || Number(isFree(a)) - Number(isFree(b)));
+    const list = results(category, province, city);
     const box = document.getElementById("bizResults");
-    if (!results.length) {
+    if (!list.length) {
       box.innerHTML = `<p class="biz-empty">Todavía no hay perfiles para esta búsqueda. Estamos sumando profesionales poco a poco.</p>`;
       return;
     }
-    box.innerHTML = results.map(cardHtml).join("");
+    box.innerHTML = list.map(cardHtml).join("");
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -132,7 +143,10 @@
     fillCategories(catSel, "");
     fillProvinces(provSel, "");
     fillCities(citySel, "", "");
-    render();
+    /* La página ya trae todo el directorio en el HTML (data-prerendered): sin
+       filtros no hace falta volver a dibujarlo. */
+    const box = document.getElementById("bizResults");
+    if (!box.hasAttribute("data-prerendered")) render();
 
     catSel.addEventListener("change", render);
     provSel.addEventListener("change", () => {
@@ -141,4 +155,7 @@
     });
     citySel.addEventListener("change", render);
   });
+
+  /* Para scripts/build-profile-pages.mjs (tarjetas del directorio en el HTML) */
+  window.PDMBizDirectory = { allCardsHtml, results, categoryLabel };
 })();

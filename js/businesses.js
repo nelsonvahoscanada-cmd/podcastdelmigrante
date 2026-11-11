@@ -21,6 +21,12 @@
     id, slug            identificadores (slug = perfil-<slug>.html; solo
                         minúsculas, números y guiones)
     published           true = aparece en el directorio y su perfil abre
+    updatedAt           [RECOMENDADO] fecha real de la última modificación
+                        del registro ("AAAA-MM-DD"). Se usa como <lastmod>
+                        del sitemap y dateModified de los datos
+                        estructurados. ACTUALIZARLA cada vez que se cambie el
+                        registro; nunca inventarla. Sin ella no se publica
+                        ninguna fecha.
     plan                [OPCIONAL] "gratuito" = ficha del plan Gratuito: SIN
                         miniweb ni página propia; se muestra solo como
                         tarjeta en el directorio con imagen (profileImage
@@ -176,6 +182,7 @@ const BUSINESSES = [
     id: "BIZ-001",
     slug: "tomas-velazquez",
     published: true,
+    updatedAt: "2026-10-07",       /* última modificación real del registro (historial de git) */
     featured: false,
     foundingProfile: true,
 
@@ -248,6 +255,7 @@ const BUSINESSES = [
     id: "BIZ-002",
     slug: "carlos-d-castillo",
     published: true,
+    updatedAt: "2026-10-07",       /* última modificación real del registro (historial de git) */
     featured: false,
     foundingProfile: true,
 
@@ -376,6 +384,7 @@ const BUSINESSES = [
     id: "BIZ-003",
     slug: "santa-latino",
     published: true,
+    updatedAt: "2026-11-06",       /* última modificación real del registro (historial de git) */
     featured: false,
     foundingProfile: false,
 
@@ -467,6 +476,7 @@ const BUSINESSES = [
     id: "BIZ-004",
     slug: "1juanromero1",
     published: true,
+    updatedAt: "2026-11-08",       /* última modificación real del registro (historial de git) */
     featured: false,
     foundingProfile: false,
 

@@ -191,9 +191,13 @@ muestra el estado del correo (`internal_email_status`,
 2. Con su aprobación: marcar «El empresario aprobó la vista previa» → *aprobada*.
 3. **Preparar publicación** → copiar la ficha y descargar la imagen.
 4. En una rama: guardar la imagen en `assets/directorio/perfiles/`, pegar la
-   ficha en `js/businesses.js` con el siguiente `BIZ-id`, y ejecutar
+   ficha en `js/businesses.js` con el siguiente `BIZ-id`, añadir
+   `updatedAt: "AAAA-MM-DD"` con la fecha del día (y actualizarla cada vez
+   que cambie el registro), y ejecutar
    `node scripts/build-profile-pages.mjs && python3 scripts/build-qr-images.py`
-   (genera la página estática, la vista previa para redes y los QR).
+   (genera la página estática con su contenido legible sin JavaScript y su
+   JSON-LD, las tarjetas del directorio, el sitemap, la vista previa para
+   redes y los QR). Ver `docs/visibilidad-buscadores.md`.
 5. Pull Request → revisar la vista previa de Cloudflare → fusionar.
 6. En el panel: *publicada* con el BIZ-id y el slug.
 

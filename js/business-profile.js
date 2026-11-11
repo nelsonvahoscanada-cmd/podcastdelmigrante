@@ -33,8 +33,11 @@
      sus propios metadatos Open Graph en el HTML. WhatsApp, Facebook e
      iMessage no ejecutan JavaScript: solo así cada perfil se comparte con
      su propio nombre, descripción y foto. */
+  /* Cloudflare Pages sirve cada perfil en la dirección limpia /perfil-<slug>
+     (y redirige /perfil-<slug>.html a ella): esa es la URL canónica. Los
+     enlaces antiguos con .html y los QR impresos siguen funcionando. */
   function profilePath(b) {
-    return "perfil-" + b.slug + ".html";
+    return "perfil-" + b.slug;
   }
 
   function profileUrl(b) {
@@ -46,7 +49,7 @@
      "Compartir" en el navegador comparta la página correcta. Se conservan
      los demás parámetros (UTM) y el ancla. */
   function adoptProfileUrl(b) {
-    if (!/\/business-profile\.html$/.test(window.location.pathname) || !window.history.replaceState) return;
+    if (!/\/business-profile(?:\.html)?$/.test(window.location.pathname) || !window.history.replaceState) return;
     const params = new URLSearchParams(window.location.search);
     params.delete("slug");
     const query = params.toString();
@@ -512,51 +515,126 @@
     setMeta("twitterDescription", "content", description);
     setMeta("twitterImage", "content", absoluteImage(b));
 
-    /* Datos estructurados: ProfilePage + Person. Sin reviews ni ratings. */
+    /* Datos estructurados: la página generada ya los trae en el HTML
+       (<script id="bizJsonLd">, scripts/build-profile-pages.mjs). Solo se
+       añaden aquí en la plantilla antigua business-profile.html?slug=... */
+    if (!document.getElementById("bizJsonLd")) {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = "bizJsonLd";
+      script.textContent = JSON.stringify(structuredData(b));
+      document.head.appendChild(script);
+    }
+  }
+
+  /* ---------- Datos estructurados (schema.org) ----------
+     Un solo lugar para el JSON-LD de cada perfil: lo usa esta plantilla y lo
+     escribe en el HTML scripts/build-profile-pages.mjs. Solo datos del
+     registro que el perfil ya muestra públicamente. Sin reseñas,
+     puntuaciones, horarios, precios ni certificaciones: nada que el
+     profesional no haya entregado. Un campo vacío no aparece.
+       - Con «representative» (negocio o marca): la entidad principal es la
+         organización y la persona figura como su representante.
+       - Sin él: la entidad principal es la persona (Person), con la empresa
+         donde trabaja (worksFor) si se indicó.
+       - Servicios: solo los activos (services) y los agrupados
+         (serviceGroups), tal como los entregó el profesional (makesOffer).
+       - Provincias de servicio: solo las indicadas (serviceAreas).
+       - dateModified: fecha real de la última modificación del registro
+         (updatedAt), si existe. */
+  const WORKS_FOR_TYPE = { automoviles: "AutoDealer" }; /* concesionario de vehículos (p. ej., Country Hills Toyota) */
+
+  function structuredData(b) {
+    const title = (b.seo && b.seo.title) || b.name + " | El Podcast del Migrante";
+    const description = (b.seo && b.seo.description) || b.shortDescription || "";
+    const url = profileUrl(b);
     const sameAs = socialList(b).map((x) => x.href);
+    const images = [b.profileImage]
+      .concat((b.gallery || []).map((g) => (g && g.src) || g))
+      .filter((x) => typeof x === "string" && x)
+      .map(toAbsolute);
+    const areas = (b.serviceAreas || []).filter(Boolean).map((name) => ({ "@type": "AdministrativeArea", name }));
+    const offer = (name, extra) => {
+      const o = { "@type": "Offer", itemOffered: Object.assign({ "@type": "Service", name }, extra || {}) };
+      if (areas.length) o.areaServed = areas;
+      return o;
+    };
+    const offers = (b.services || [])
+      .filter((x) => x.active && x.label)
+      .map((x) => offer(x.label, x.description ? { description: x.description } : null))
+      .concat(
+        (b.serviceGroups || [])
+          .filter((g) => g.title && (g.items || []).length)
+          .flatMap((g) => g.items.filter(Boolean).map((item) => offer(item, { category: g.title })))
+      );
+    const place = b.city
+      ? Object.assign({ "@type": "PostalAddress", addressLocality: b.city }, b.province ? { addressRegion: b.province } : {}, b.country ? { addressCountry: "CA" } : {})
+      : null;
+
+    let entity;
     if (b.representative) {
-      /* Negocio o personaje comercial con representante (campo opcional
-         «representative»): la entidad principal es la organización y la
-         persona figura como su representante. Los demás perfiles no cambian. */
-      const org = { "@type": "Organization", name: b.name, url };
-      if (b.shortDescription) org.description = b.shortDescription;
-      if (b.profileImage) org.image = toAbsolute(b.profileImage);
-      if (b.phone) org.telephone = b.phone;
-      if (b.email) org.email = b.email;
-      if (b.city) org.address = Object.assign({ "@type": "PostalAddress", addressLocality: b.city }, b.province ? { addressRegion: b.province } : {}, b.country ? { addressCountry: "CA" } : {});
-      if ((b.languages || []).length) org.knowsLanguage = b.languages;
-      org.employee = { "@type": "Person", name: b.representative, jobTitle: "Representante" };
-      if (sameAs.length) org.sameAs = sameAs;
-      const jsonLdOrg = { "@context": "https://schema.org", "@type": "ProfilePage", url, name: title, description, mainEntity: org };
-      const scriptOrg = document.createElement("script");
-      scriptOrg.type = "application/ld+json";
-      scriptOrg.textContent = JSON.stringify(jsonLdOrg);
-      document.head.appendChild(scriptOrg);
-      return;
-    }
-    const person = { "@type": "Person", name: b.name, url };
-    if (b.professionalTitle) person.jobTitle = b.professionalTitle;
-    if ((b.languages || []).length) person.knowsLanguage = b.languages;
-    if (b.profileImage) person.image = toAbsolute(b.profileImage);
-    if (b.company) {
-      person.worksFor = { "@type": "Organization", name: b.company };
-      if (b.website) person.worksFor.url = b.website;
-      if (b.address) {
-        person.worksFor.address = Object.assign(
-          { "@type": "PostalAddress", streetAddress: b.address },
-          b.city ? { addressLocality: b.city } : {},
-          b.province ? { addressRegion: b.province } : {},
-          b.postalCode ? { postalCode: b.postalCode } : {},
-          b.country ? { addressCountry: "CA" } : {}
-        );
+      entity = { "@type": "Organization", name: b.name, url };
+      if (b.shortDescription) entity.description = b.shortDescription;
+      if (images.length) entity.image = images.length === 1 ? images[0] : images;
+      if (b.phone) entity.telephone = b.phone;
+      if (b.email) entity.email = b.email;
+      if (place) entity.address = place;
+      if (areas.length) entity.areaServed = areas;
+      if ((b.languages || []).length) entity.knowsLanguage = b.languages;
+      entity.employee = { "@type": "Person", name: b.representative, jobTitle: "Representante" };
+      if (b.website) sameAs.unshift(b.website);
+    } else {
+      entity = { "@type": "Person", name: b.name, url };
+      if (b.professionalTitle) entity.jobTitle = b.professionalTitle;
+      if (b.shortDescription) entity.description = b.shortDescription;
+      if (images.length) entity.image = images.length === 1 ? images[0] : images;
+      if (b.phone) entity.telephone = b.phone;
+      if (b.email) entity.email = b.email;
+      if ((b.languages || []).length) entity.knowsLanguage = b.languages;
+      /* El sitio web es el de la marca del profesional si la tiene (p. ej.,
+         carlosdcastillo.com); si no, el de la empresa donde trabaja (p. ej.,
+         el concesionario). Nunca se atribuye a la empresa equivocada. */
+      if (b.brandName) entity.brand = Object.assign({ "@type": "Brand", name: b.brandName }, b.website ? { url: b.website } : {});
+      if (b.affiliation) entity.affiliation = { "@type": "Organization", name: b.affiliation };
+      if (b.company) {
+        entity.worksFor = { "@type": WORKS_FOR_TYPE[b.category] || "Organization", name: b.company };
+        if (b.website && !b.brandName) entity.worksFor.url = b.website;
+        if (b.address) {
+          entity.worksFor.address = Object.assign(
+            { "@type": "PostalAddress", streetAddress: b.address },
+            b.city ? { addressLocality: b.city } : {},
+            b.province ? { addressRegion: b.province } : {},
+            b.postalCode ? { postalCode: b.postalCode } : {},
+            b.country ? { addressCountry: "CA" } : {}
+          );
+        }
       }
+      /* Ciudad donde trabaja, si la empresa no tiene dirección pública */
+      if (!b.address && place) entity.workLocation = { "@type": "Place", address: place };
     }
-    if (sameAs.length) person.sameAs = sameAs;
-    const jsonLd = { "@context": "https://schema.org", "@type": "ProfilePage", url, name: title, description, mainEntity: person };
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(jsonLd);
-    document.head.appendChild(script);
+    if (offers.length) entity.makesOffer = offers;
+    if (sameAs.length) entity.sameAs = sameAs;
+
+    const page = {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      url,
+      name: title,
+      inLanguage: "es",
+      isPartOf: { "@type": "WebSite", name: "El Podcast del Migrante Magazine", url: SITE_ORIGIN + "/" },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_ORIGIN + "/" },
+          { "@type": "ListItem", position: 2, name: "Quién puede ayudarte", item: SITE_ORIGIN + "/quien-puede-ayudarte" },
+          { "@type": "ListItem", position: 3, name: b.name, item: url },
+        ],
+      },
+      mainEntity: entity,
+    };
+    if (description) page.description = description;
+    if (b.updatedAt) page.dateModified = b.updatedAt;
+    return page;
   }
 
   /* ---------- Tema visual propio (opcional) ----------
@@ -577,11 +655,11 @@
   }
 
   /* ---------- Render ---------- */
-  function renderProfile(b) {
-    applyTheme(b);
-    setSEO(b);
-    const root = document.getElementById("bizRoot");
-    root.innerHTML = `
+  /* Contenido del perfil. El mismo HTML lo escribe en la página
+     scripts/build-profile-pages.mjs (legible sin JavaScript) y lo usa esta
+     plantilla en business-profile.html?slug=... */
+  function contentHtml(b) {
+    return `
       ${heroHtml(b)}
       ${actionsHtml(b)}
       ${callToActionHtml(b)}
@@ -598,8 +676,18 @@
       ${contactBlockHtml(b)}
       <p class="biz-note">Perfil empresarial. Verifica directamente con el profesional los servicios, condiciones y disponibilidad antes de tomar decisiones.</p>
       ${b.disclaimer ? `<p class="biz-note">${esc(b.disclaimer)}</p>` : ""}
-      <a class="biz-back" href="quien-puede-ayudarte.html">← Volver a Quién puede ayudarte</a>
+      <a class="biz-back" href="quien-puede-ayudarte">← Volver a Quién puede ayudarte</a>
     `;
+  }
+
+  function renderProfile(b) {
+    applyTheme(b);
+    setSEO(b);
+    const root = document.getElementById("bizRoot");
+    /* La página estática ya trae el contenido de ESTE perfil en el HTML
+       (data-prerendered): no se vuelve a dibujar; solo se activan los
+       botones, el video y la medición, igual que siempre. */
+    if (root.getAttribute("data-prerendered") !== b.slug) root.innerHTML = contentHtml(b);
     const bar = stickyBarHtml(b);
     if (bar) {
       document.body.insertAdjacentHTML("beforeend", bar);
@@ -617,7 +705,7 @@
       <div class="biz-notfound">
         <h1>No encontramos este perfil</h1>
         <p>Puede que el enlace esté incompleto o el perfil todavía no esté disponible.</p>
-        <a class="biz-btn biz-btn--primary" href="quien-puede-ayudarte.html">Ver quién puede ayudarte</a>
+        <a class="biz-btn biz-btn--primary" href="quien-puede-ayudarte">Ver quién puede ayudarte</a>
       </div>
     `;
   }
@@ -633,4 +721,7 @@
       renderProfile(business);
     } else renderNotFound();
   });
+
+  /* Para scripts/build-profile-pages.mjs (HTML y JSON-LD de cada perfil) */
+  window.PDMBizProfile = { contentHtml, structuredData, profileUrl };
 })();

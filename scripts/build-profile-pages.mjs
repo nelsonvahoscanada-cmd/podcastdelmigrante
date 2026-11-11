@@ -11,8 +11,21 @@
   Este script lee js/businesses.js y, para cada perfil publicado, escribe
   perfil-<slug>.html: una copia de business-profile.html con el <title>,
   la descripción, la URL canónica y las etiquetas og:/twitter: de ESE
-  profesional ya escritas en el HTML. El cuerpo y el diseño son los de la
-  plantilla (lo arma js/business-profile.js igual que siempre).
+  profesional ya escritas en el HTML. Además escribe en el HTML:
+    - el CONTENIDO del perfil (nombre, descripción, ciudad, servicios,
+      contactos...), generado con la misma función que usa el navegador
+      (js/business-profile.js → contentHtml): se lee sin JavaScript y el
+      diseño no cambia. El navegador solo activa botones, video y medición.
+    - sus datos estructurados (JSON-LD, schema.org) con
+      js/business-profile.js → structuredData: solo datos del registro.
+  También actualiza:
+    - quien-puede-ayudarte.html: las tarjetas de TODO el directorio (fichas
+      Premium y gratuitas publicadas) y su JSON-LD (CollectionPage +
+      ItemList), con js/business-directory.js → allCardsHtml.
+    - sitemap.xml: el bloque «directorio-empresarial» (directorio y cada
+      miniweb publicada, con la fecha real updatedAt de su registro).
+  Las URL canónicas son las direcciones limpias /perfil-<slug> y
+  /quien-puede-ayudarte (Cloudflare Pages redirige las que terminan en .html).
 
   También escribe vcard/<slug>.vcf (tarjeta de contacto que abre el QR
   "Guarda mi contacto") para los perfiles con connect.contactCard. Sus
@@ -42,11 +55,34 @@ const GENERATED_MARK = "<!-- Generado por scripts/build-profile-pages.mjs a part
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const CHECK = process.argv.includes("--check");
 
+/* Carga los mismos scripts que el navegador (datos, portada de video,
+   perfil y directorio) en un contexto aislado: así el HTML generado es
+   idéntico al que dibuja la página. */
+function loadRuntime() {
+  const ctx = vm.createContext({ document: { addEventListener() {} }, console });
+  ctx.window = ctx;
+  for (const f of ["js/businesses.js", "js/video-cover.js", "js/business-profile.js", "js/business-directory.js"]) {
+    vm.runInContext(readFileSync(join(ROOT, f), "utf8"), ctx, { filename: f });
+  }
+  vm.runInContext("globalThis.__BUSINESSES = BUSINESSES; globalThis.__CATEGORIES = BUSINESS_CATEGORIES;", ctx);
+  return ctx;
+}
+const RT = loadRuntime();
 function loadBusinesses() {
-  const code = readFileSync(join(ROOT, "js/businesses.js"), "utf8");
-  const ctx = vm.createContext({});
-  vm.runInContext(code + "\n;globalThis.__BUSINESSES = BUSINESSES;", ctx);
-  return ctx.__BUSINESSES;
+  return RT.__BUSINESSES;
+}
+
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+function checkDate(b) {
+  if (b.updatedAt === undefined || b.updatedAt === "") return;
+  const d = new Date(b.updatedAt + "T00:00:00Z");
+  if (!DATE_RE.test(b.updatedAt) || isNaN(d) || d.toISOString().slice(0, 10) !== b.updatedAt) throw new Error(`${b.id}: updatedAt no válido ("${b.updatedAt}", formato AAAA-MM-DD)`);
+  if (d.getTime() > Date.now() + 86400000) throw new Error(`${b.id}: updatedAt en el futuro (${b.updatedAt})`);
+}
+
+/* JSON dentro de <script>: sin «</» ni separadores de línea problemáticos */
+function jsonForScript(obj) {
+  return JSON.stringify(obj).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
 }
 
 function escAttr(t) {
@@ -85,7 +121,7 @@ function seoFor(b) {
   return {
     title: (b.seo && b.seo.title) || b.name + " | El Podcast del Migrante",
     description: (b.seo && b.seo.description) || b.shortDescription || "",
-    url: SITE_ORIGIN + "/perfil-" + b.slug + ".html",
+    url: SITE_ORIGIN + "/perfil-" + b.slug,
     image: toAbsolute(image),
     imageSize: imageSize(image),
     imageAlt: b.name,
@@ -128,7 +164,91 @@ function buildPage(template, b) {
       `$1\n<meta property="og:image:width" content="${seo.imageSize.width}">\n<meta property="og:image:height" content="${seo.imageSize.height}">`
     );
   }
+  /* Datos estructurados en el HTML */
+  const ldComment = /<!-- JSON-LD del perfil:[^>]*-->/;
+  if (!ldComment.test(html)) throw new Error("business-profile.html: falta el comentario «JSON-LD del perfil»");
+  html = html.replace(ldComment, () => `<script type="application/ld+json" id="bizJsonLd">${jsonForScript(RT.PDMBizProfile.structuredData(b))}</script>`);
+  /* Contenido del perfil, legible sin JavaScript */
+  const loading = '<div class="biz-page wrap" id="bizRoot">\n    <p class="biz-loading">Cargando perfil…</p>\n  </div>';
+  if (!html.includes(loading)) throw new Error("business-profile.html: no se encontró el contenedor bizRoot");
+  html = html.replace(loading, () => `<div class="biz-page wrap" id="bizRoot" data-prerendered="${escAttr(b.slug)}">${RT.PDMBizProfile.contentHtml(b)}</div>`);
   return html.replace("<head>", "<head>\n" + GENERATED_MARK);
+}
+
+/* ---------- Directorio (quien-puede-ayudarte.html) ---------- */
+const DIR_URL = SITE_ORIGIN + "/quien-puede-ayudarte";
+const maxDate = (list) => list.map((b) => b.updatedAt).filter(Boolean).sort().at(-1) || "";
+
+function between(html, ini, fin, contenido, archivo) {
+  const a = html.indexOf(ini);
+  const z = html.indexOf(fin);
+  if (a < 0 || z < a) throw new Error(`${archivo}: faltan los marcadores ${ini} … ${fin}`);
+  return html.slice(0, a + ini.length) + contenido + html.slice(z);
+}
+
+function directoryJsonLd(all) {
+  const D = RT.PDMBizDirectory;
+  const ordered = D.results("", "", "");
+  const items = ordered.map((b, i) => {
+    const li = { "@type": "ListItem", position: i + 1, name: b.name };
+    if (b.plan !== "gratuito") li.url = SITE_ORIGIN + "/perfil-" + b.slug;
+    else {
+      /* Ficha gratuita: sin página propia; solo los datos de su tarjeta */
+      const item = { "@type": "Organization", name: b.name };
+      if (b.shortDescription) item.description = b.shortDescription;
+      if (b.city) item.address = Object.assign({ "@type": "PostalAddress", addressLocality: b.city }, b.province ? { addressRegion: b.province } : {}, { addressCountry: "CA" });
+      if (b.phone) item.telephone = b.phone;
+      li.item = item;
+    }
+    return li;
+  });
+  const page = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    url: DIR_URL,
+    name: "Encuentra quién puede ayudarte en Canadá",
+    description: "Encuentra empresas y profesionales que pueden ayudarte en tu ciudad. Llegaste a Canadá: no tienes que conocer a quién buscar, solo dinos qué necesitas.",
+    inLanguage: "es",
+    isPartOf: { "@type": "WebSite", name: "El Podcast del Migrante Magazine", url: SITE_ORIGIN + "/" },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_ORIGIN + "/" },
+        { "@type": "ListItem", position: 2, name: "Quién puede ayudarte", item: DIR_URL },
+      ],
+    },
+    mainEntity: { "@type": "ItemList", numberOfItems: items.length, itemListElement: items },
+  };
+  const fecha = maxDate(all);
+  if (fecha) page.dateModified = fecha;
+  return page;
+}
+
+function buildDirectory(html, all) {
+  html = between(html, "<!-- directorio-jsonld -->", "<!-- /directorio-jsonld -->", `\n<script type="application/ld+json" id="bizDirJsonLd">${jsonForScript(directoryJsonLd(all))}</script>\n`, "quien-puede-ayudarte.html");
+  return between(html, "<!-- directorio-tarjetas -->", "<!-- /directorio-tarjetas -->", RT.PDMBizDirectory.allCardsHtml(), "quien-puede-ayudarte.html");
+}
+
+/* ---------- sitemap.xml: bloque del directorio empresarial ---------- */
+const SM_INI = "  <!-- directorio-empresarial: generado por scripts/build-profile-pages.mjs -->";
+const SM_FIN = "  <!-- /directorio-empresarial -->";
+
+function sitemapBlock(all, premium) {
+  const url = (loc, lastmod, priority) => `  <url>
+    <loc>${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ""}
+    <priority>${priority}</priority>
+  </url>`;
+  const urls = [url(DIR_URL, maxDate(all), "0.7")].concat(premium.map((b) => url(SITE_ORIGIN + "/perfil-" + b.slug, b.updatedAt || "", "0.6")));
+  return `${SM_INI}\n${urls.join("\n")}\n${SM_FIN}`;
+}
+
+function updateSitemap(xml, block) {
+  const a = xml.indexOf(SM_INI);
+  const z = xml.indexOf(SM_FIN);
+  if (a >= 0 && z > a) return xml.slice(0, a) + block + xml.slice(z + SM_FIN.length);
+  const ancla = xml.indexOf("  <!-- canada-en-datos:");
+  if (ancla >= 0) return xml.slice(0, ancla) + block + "\n" + xml.slice(ancla);
+  return xml.replace("</urlset>", `${block}\n</urlset>`);
 }
 
 /* ---------- vCard 3.0 (la versión que mejor leen iPhone y Android) ---------- */
@@ -184,7 +304,9 @@ function buildVcard(b) {
 const template = readFileSync(join(ROOT, "business-profile.html"), "utf8");
 /* Las fichas del plan gratuito (plan: "gratuito") no tienen miniweb: se muestran
    solo como tarjeta en el directorio (js/business-directory.js). */
-const published = loadBusinesses().filter((b) => b.published && b.plan !== "gratuito");
+const allPublished = loadBusinesses().filter((b) => b.published);
+allPublished.forEach(checkDate);
+const published = allPublished.filter((b) => b.plan !== "gratuito");
 const expected = new Map();
 for (const b of published) {
   if (!SLUG_RE.test(b.slug || "")) throw new Error(`Slug no válido para ${b.id}: "${b.slug}" (solo minúsculas, números y guiones)`);
@@ -192,6 +314,10 @@ for (const b of published) {
   expected.set(`perfil-${b.slug}.html`, buildPage(template, b));
   if (b.connect && b.connect.contactCard) expected.set(`vcard/${b.slug}.vcf`, buildVcard(b));
 }
+
+/* Directorio y sitemap */
+expected.set("quien-puede-ayudarte.html", buildDirectory(readFileSync(join(ROOT, "quien-puede-ayudarte.html"), "utf8"), allPublished));
+expected.set("sitemap.xml", updateSitemap(readFileSync(join(ROOT, "sitemap.xml"), "utf8"), sitemapBlock(allPublished, published)));
 
 /* Lista pública de empresas Premium autorizadas para estadísticas
    (negocios-premium.json): business_id → slug de cada perfil Premium
