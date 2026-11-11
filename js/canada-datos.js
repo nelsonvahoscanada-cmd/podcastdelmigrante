@@ -4388,7 +4388,6 @@ const CD_PROFILES = {
         indicators: [],
         links: [
           { label: "IRCC — Buscador de servicios gratuitos para recién llegados", href: "https://ircc.canada.ca/english/newcomers/services/index.asp" },
-          { label: "Multicultural Centre of the Yukon", href: "https://mcyukon.com/en/" },
           { label: "Association franco-yukonnaise", href: "https://www.afy.ca/" },
           { label: "Gobierno de Yukón — Mesa de apoyo humanitario en inmigración", href: "https://yukon.ca/en/immigration/apply-immigrate-yukon/contact-immigration-humanitarian-support-desk" },
         ],

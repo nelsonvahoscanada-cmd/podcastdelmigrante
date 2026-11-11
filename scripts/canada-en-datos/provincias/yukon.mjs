@@ -120,7 +120,6 @@ export const FUENTES = {
   censo: { org: "Statistics Canada", title: "Tabla 98-10-0002-01 — Población y viviendas, Censo 2021", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201" },
   nombres: { org: "Recursos Naturales Canadá", title: "Base de datos de nombres geográficos de Canadá (CGNDB) — Yukón", url: "https://natural-resources.canada.ca/earth-sciences/geography/download-geographical-names-data/9245" },
   epa: { org: "Statistics Canada", title: "Tabla 14-10-0292-01 — Características de la población activa de los territorios, promedio móvil de 3 meses", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410029201" },
-  escuelas: { org: "Statistics Canada", title: "Open Database of Educational Facilities (ODEF), versión 2.1 (2022)", url: "https://www.statcan.gc.ca/en/lode/databases/odef" },
   clima: { org: "Environment and Climate Change Canada", title: "Normales climáticas de Canadá 1991-2020", url: "https://climate.weather.gc.ca/climate_normals/index_e.html" },
   ipc: { org: "Statistics Canada", title: "Tabla 18-10-0004-01 — Índice de precios al consumidor, mensual", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401" },
   cmhc: { org: "Statistics Canada y CMHC", title: "Tabla 34-10-0133-01 — Alquiler promedio de CMHC, por tipo de unidad", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410013301" },
