@@ -1,0 +1,14 @@
+# https://yukon.ca/node/20393
+# navegador 403 https://yukon.ca/node/20393
+yukon.ca
+Performing security verification
+
+This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.
+
+Ray ID: a58a486a3ba0861e
+Performance and Security by Cloudflare
+Privacy
+
+# ENLACES
+Cloudflare [https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m]
+Privacy [https://www.cloudflare.com/privacypolicy/]
