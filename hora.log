@@ -1,0 +1,273 @@
+Version: 2026e-0ubuntu0.26.04.1
+America/Whitehorse  Thu Jan  1 09:00:12 -2147481748 UT = Thu Jan  1 00:00:00 -2147481748 LMT isdst=0 gmtoff=-32412
+America/Whitehorse  Sun Mar 10 09:59:59 2019 UT = Sun Mar 10 01:59:59 2019 PST isdst=0 gmtoff=-28800
+America/Whitehorse  Sun Mar 10 10:00:00 2019 UT = Sun Mar 10 03:00:00 2019 PDT isdst=1 gmtoff=-25200
+America/Whitehorse  Sun Nov  3 08:59:59 2019 UT = Sun Nov  3 01:59:59 2019 PDT isdst=1 gmtoff=-25200
+America/Whitehorse  Sun Nov  3 09:00:00 2019 UT = Sun Nov  3 01:00:00 2019 PST isdst=0 gmtoff=-28800
+America/Whitehorse  Sun Mar  8 09:59:59 2020 UT = Sun Mar  8 01:59:59 2020 PST isdst=0 gmtoff=-28800
+America/Whitehorse  Sun Mar  8 10:00:00 2020 UT = Sun Mar  8 03:00:00 2020 PDT isdst=1 gmtoff=-25200
+America/Whitehorse  Sun Nov  1 06:59:59 2020 UT = Sat Oct 31 23:59:59 2020 PDT isdst=1 gmtoff=-25200
+America/Whitehorse  Sun Nov  1 07:00:00 2020 UT = Sun Nov  1 00:00:00 2020 MST isdst=0 gmtoff=-25200
+America/Whitehorse  Wed Dec 31 23:59:59 2147485547 UT = Wed Dec 31 16:59:59 2147485547 MST isdst=0 gmtoff=-25200
+2026e 2026-07-15T12:00:00Z 05 a.m. GMT-07:00
+2026e 2026-11-15T12:00:00Z 05 a.m. GMT-07:00
+236-#	mountain standard time
+237-#	Pacific standard time
+238:#	Yukon standard time
+239-#	Alaska-Hawaii standard time
+240-#	Bering standard time
+241-# And after 1983-11-30:
+242-#	Atlantic standard time
+243-#	eastern standard time
+244-#	central standard time
+245-#	mountain standard time
+246-#	Pacific standard time
+247-#	Alaska standard time
+248-#	Hawaii-Aleutian standard time
+249-#	Samoa standard time
+250-# The law doesn't give abbreviations.
+--
+261-#	1918 names			1967 names
+262-#  -08	Standard Pacific Time (PST)	Pacific standard time (PST)
+263:#  -09	(unofficial) Yukon (YST)	Yukon standard time (YST)
+264-#  -10	Standard Alaska Time (AST)	Alaska-Hawaii standard time (AHST)
+265-#  -11	(unofficial) Nome (NST)		Bering standard time (BST)
+266-#
+267-# From Paul Eggert (2023-01-23), from a 2001-01-08 heads-up from Rives McDow:
+268-# Public law 106-564 (2000-12-23) introduced "Chamorro standard time"
+269-# for time in Guam and the Northern Marianas.  See the file "australasia".
+270-# Also see 15 U.S.C. §263 <https://www.law.cornell.edu/uscode/text/15/263>.
+271-#
+272-# From Paul Eggert (2015-04-17):
+273-# HST and HDT are standardized abbreviations for Hawaii-Aleutian
+274-# standard and daylight times.  See section 9.47 (p 234) of the
+275-# U.S. Government Printing Office Style Manual (2008)
+--
+604-#
+605-# On September 20 [1979]...DOT...officials decreed that on April 27,
+606:# 1980, Juneau and other nearby communities would move to Yukon Time.
+607-# Sitka, Petersburg, Wrangell, and Ketchikan, however, would remain on
+608-# Pacific Time.
+609-#
+610-# ...on September 22, 1980, DOT Secretary Neil E. Goldschmidt rescinded the
+611-# Department's September 1979 decision. Juneau and other communities in
+612-# northern Southeast reverted to Pacific Time on October 26.
+613-#
+614-# On October 28 [1983]...the Metlakatla Indian Community Council voted
+615-# unanimously to keep the reservation on Pacific Time.
+616-#
+617-# According to DOT official Joanne Petrie, Indian reservations are not
+618-# bound to follow time zones imposed by neighboring jurisdictions.
+--
+1306-#	R: des Rocheuses
+1307-#	T: de Terre-Neuve
+1308:#	Y: du Yukon		Yukon
+1309-#
+1310-# From Paul Eggert (1994-11-22):
+1311-# Alas, this sort of thing must be handled by localization software.
+1312-
+1313-# Unless otherwise specified, the data entries for Canada are all from Shanks
+1314-# & Pottenger.
+1315-
+1316-# From Chris Walton (2006-04-01, 2006-04-25, 2006-06-26, 2007-01-31,
+1317-# 2007-03-01):
+1318-# The British Columbia government announced yesterday that it will
+1319-# adjust daylight savings next year to align with changes in the
+1320-# U.S. and the rest of Canada....
+--
+1344-# http://www.hoa.gov.nl.ca/hoa/bills/Bill0634.htm
+1345-# ...
+1346:# Yukon
+1347-# https://www.gov.yk.ca/legislation/regs/oic2006_127.pdf
+1348-# ...
+1349-# N.W.T. will follow US rules.  Whoever maintains the government web site
+1350-# does not seem to believe in bookmarks.  To see the news release, click the
+1351-# following link and search for "Daylight Savings Time Change".  Press the
+1352-# "Daylight Savings Time Change" link; it will fire off a popup using
+1353-# JavaScript.
+1354-# http://www.exec.gov.nt.ca/currentnews/currentPR.asp?mode=archive
+1355-# ...
+1356-# Nunavut
+1357-# An amendment to the Interpretation Act was registered on February 19/2007....
+1358-# http://action.attavik.ca/home/justice-gn/attach/2007/gaz02part2.pdf
+--
+2153-#	for Pacific Time becomes more popular.  Possibilities include:
+2154-#   MST - the most compatible with existing software and practice,
+2155:#	and already used in parts of BC and in Yukon
+2156-#   PDT - almost as software-friendly, but confusing because it implies
+2157-#	it is DST and is paired with PST, whereas PT is standard time
+2158-#   -07 - accurate and clear in itself, but makes BC look odd vs neighbors
+2159-#   PCT - as I understand it, inspired by the phrase “Pacific Coast Time”
+2160-#	though legally it’s “Pacific Time”; suggested by the BC government
+2161-#	<https://news.gov.bc.ca/releases/2026CITZ0009-001073>
+2162-
+2163-# From Tim Parenti (2026-08-21):
+2164-# In the southeast of the province, the Regional District of East Kootenay
+2165-# (RDEK), Columbia Shuswap Regional District’s Electoral Area A (Rural Golden),
+2166-# and the Town of Golden have all historically been aligned with neighboring
+2167-# Alberta and use America/Edmonton.
+--
+2234-# For Creston see America/Phoenix.
+2235-
+2236:# Northwest Territories, Nunavut, Yukon
+2237-
+2238-# From Chris Walton (2022-11-06):
+2239:# Whitehorse Star - Thursday April 22, 1965 - page 1
+2240-# title: DST Starts Monday ...
+2241-# https://www.newspapers.com/image/578587481/
+2242-# The title of this first article is wrong and/or misleading.
+2243-# Also, the start time shown in the  article is vague; it simply says "after
+2244-# midnight" when it probably should have stated 2:00a.m....
+2245-#
+2246:# Whitehorse Star - Monday October 25, 1965 - page 15 ...
+2247-# https://www.newspapers.com/image/578589147/
+2248:# The 1965 Yukon Council minutes can be found here:
+2249:# http://assets.yukonarchives.ca/PER_YG_06_1965_C20_S02_v1.pdf
+2250-# ... I do not currently believe that NWT touched any of its clocks in 1965....
+2251-#
+2252:# Whitehorse Star - Thursday Feb 24,1966 - page 2
+2253-# title: It's Time for YDT ...
+2254-# https://www.newspapers.com/image/578575979/ ...
+2255:# America/Whitehorse as a permanent change from UTC-9(YST) to
+2256-# UTC-8(PST) at 00:00 on Sunday February 27, 1966....
+2257-#
+2258:# Whitehorse Star - Friday April 28,1972 - page 6
+2259-# title: Daylight Saving Time for N.W.T....
+2260-# https://www.newspapers.com/image/578701610/ ...
+2261-# Nunavut and NWT zones ... DST starting in 1972.... Start and End ...
+2262-# should be the same as the rest of Canada
+2263-#
+2264-#
+2265-# From Paul Eggert (2022-11-06):
+2266:# For now, assume Yukon's 1965-04-22 spring forward was 00:00 -> 02:00, as this
+2267-# seems likely than 02:00 -> 04:00 and matches "after midnight".
+2268-
+2269-# From Paul Eggert (2006-03-22):
+2270-# Dawson switched to PST in 1973.  Inuvik switched to MST in 1979.
+2271-# Mathew Englander (1996-10-07) gives the following refs:
+2272-#	* 1967. Paragraph 28(34)(g) of the Interpretation Act, S.C. 1967-68,
+2273:#	c. 7 defines Yukon standard time as UTC-9....
+2274-#	see Interpretation Act, R.S.C. 1985, c. I-21, s. 35(1).
+2275-#	[https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-i-21/latest/rsc-1985-c-i-21.html]
+2276:#	* C.O. 1973/214 switched Yukon to PST on 1973-10-28 00:00.
+2277-#	* O.I.C. 1980/02 established DST.
+2278-#	* O.I.C. 1987/056 changed DST to Apr firstSun 2:00 to Oct lastSun 2:00.
+2279-
+2280-# From Brian Inglis (2015-04-14):
+2281-#
+2282:# I tried to trace the history of Yukon time and found the following
+2283-# regulations, giving the reference title and URL if found, regulation name,
+2284-# and relevant quote if available.  Each regulation specifically revokes its
+2285-# predecessor.  The final reference is to the current Interpretation Act
+2286-# authorizing and resulting from these regulatory changes.
+2287-#
+2288:# Only recent regulations were retrievable via Yukon government site search or
+2289-# index, and only some via Canadian legal sources.  Other sources used include
+2290-# articles titled "Standard Time and Time Zones in Canada" from JRASC via ADS
+2291-# Abstracts, cited by ADO for 1932 ..., and updated versions from 1958 and
+2292-# 1970 quoted below; each article includes current extracts from provincial
+2293-# and territorial ST and DST regulations at the end, summaries and details of
+2294-# standard times and daylight saving time at many locations across Canada,
+2295-# with time zone maps, tables and calculations for Canadian Sunrise, Sunset,
+2296-# and LMST; they also cover many countries and global locations, with a chart
+2297-# and table showing current Universal Time offsets, and may be useful as
+2298-# another source of information for 1970 and earlier.
+2299-#
+2300-# * Standard Time and Time Zones in Canada; Smith, C.C.; JRASC, Vol. 26,
+2301-#   pp.49-77; February 1932; SAO/NASA Astrophysics Data System (ADS)
+2302-#   http://adsabs.harvard.edu/abs/1932JRASC..26...49S from p.75:
+2303:#   Yukon Interpretation Ordinance
+2304:#   Yukon standard time is the local mean time at the one hundred and
+2305-#   thirty-fifth meridian.
+2306-#
+2307-# * Standard Time and Time Zones in Canada; Smith, C.C.; Thomson, Malcolm M.;
+2308-#   JRASC, Vol. 52, pp.193-223; October 1958; SAO/NASA Astrophysics Data System
+2309-#   (ADS) http://adsabs.harvard.edu/abs/1958JRASC..52..193S from pp.220-1:
+2310:#   Yukon Interpretation Ordinance, 1955, Chap. 16.
+2311-#
+2312-#     (1) Subject to this section, standard time shall be reckoned as nine
+2313:#     hours behind Greenwich Time and called Yukon Standard Time.
+2314-#
+2315-#     (2) Notwithstanding subsection (1), the Commissioner may make regulations
+2316-#     varying the manner of reckoning standard time.
+2317-#
+2318:# * Yukon Territory Commissioner's Order 1966-20 Interpretation Ordinance
+2319-#   [no online source found]
+2320-#
+2321-# * Standard Time and Time Zones in Canada; Thomson, Malcolm M.; JRASC,
+2322-#   Vol. 64, pp.129-162; June 1970; SAO/NASA Astrophysics Data System (ADS)
+2323:#   http://adsabs.harvard.edu/abs/1970JRASC..64..129T from p.156: Yukon
+2324-#   Territory Commissioner's Order 1967-59 Interpretation Ordinance ...
+2325-#
+2326:#     1. Commissioner's Order 1966-20 dated at Whitehorse in the Yukon
+2327-#     Territory on 27th January, 1966, is hereby revoked.
+2328-#
+2329:#     2. Yukon (East) Standard Time as defined by section 36 of the
+2330-#     Interpretation Ordinance from and after mid-night on the 28th day of May,
+2331-#     1967 shall be reckoned in the same manner as Pacific Standard Time, that
+2332:#     is to say, eight hours behind Greenwich Time in the area of the Yukon
+2333-#     Territory lying east of the 138th degree longitude west.
+2334-#
+2335-#     3. In the remainder of the Territory, lying west of the 138th degree
+2336:#     longitude west, Yukon (West) Standard Time shall be reckoned as nine
+2337-#     hours behind Greenwich Time.
+2338-#
+2339:# * Yukon Standard Time defined as Pacific Standard Time, YCO 1973/214
+2340-#   https://www.canlii.org/en/yk/laws/regu/yco-1973-214/latest/yco-1973-214.html
+2341-#   C.O. 1973/214 INTERPRETATION ACT ...
+2342-#
+2343-#     1. Effective October 28, 1973 Commissioner's Order 1967/59 is hereby
+2344-#     revoked.
+2345-#
+2346:#     2. Yukon Standard Time as defined by section 36 of the Interpretation
+2347-#     Act from and after midnight on the twenty-eighth day of October, 1973
+2348-#     shall be reckoned in the same manner as Pacific Standard Time, that is
+2349-#     to say eight hours behind Greenwich Time.
+2350-#
+2351-# * O.I.C. 1980/02 INTERPRETATION ACT
+2352-#   https://mm.icann.org/pipermail/tz/attachments/20201125/d5adc93b/CAYTOIC1980-02DST1980-01-04-0001.pdf
+2353-#
+2354:# * Yukon Daylight Saving Time, YOIC 1987/56
+2355-#   https://www.canlii.org/en/yk/laws/regu/yoic-1987-56/latest/yoic-1987-56.html
+2356-#   O.I.C. 1987/056 INTERPRETATION ACT ...
+2357-#
+2358-#   In every year between
+2359-#     (a) two o'clock in the morning in the first Sunday in April, and
+2360-#     (b) two o'clock in the morning in the last Sunday in October,
+2361-#   Standard Time shall be reckoned as seven hours behind Greenwich Time and
+2362:#   called Yukon Daylight Saving Time.
+2363-#   ...
+2364-#   Dated ... 9th day of March, A.D., 1987.
+2365-#
+2366:# * Yukon Daylight Saving Time 2006, YOIC 2006/127
+2367-#   https://www.canlii.org/en/yk/laws/regu/yoic-2006-127/latest/yoic-2006-127.html
+2368-#   O.I.C. 2006/127 INTERPRETATION ACT ...
+2369-#
+2370:#     1. In Yukon each year the time for general purposes shall be 7 hours
+2371-#     behind Greenwich mean time during the period commencing at two o'clock
+2372-#     in the forenoon on the second Sunday of March and ending at two o'clock
+2373-#     in the forenoon on the first Sunday of November and shall be called
+2374:#     Yukon Daylight Saving Time.
+2375-#
+2376-#     2. Order-in-Council 1987/56 is revoked.
+2377-#
+2378-#     3. This order comes into force January 1, 2007.
+2379-#
+2380-# * Interpretation Act, RSY 2002, c 125
+2381-# https://www.canlii.org/en/yk/laws/stat/rsy-2002-c-125/latest/rsy-2002-c-125.html
+2382-
+2383-# From Chris Walton (2022-11-06):
+2384-# The 5th edition of the Atlas of Canada contains a time zone map that
+2385-# shows both legislated and observed time zone boundaries.
+2386-# All communities on Baffin Island are shown to be observing Eastern time.
+--
+2524-
+2525-# From Tim Parenti (2020-03-05):
+2526:# The government of Yukon announced [yesterday] the cessation of seasonal time
+2527-# changes.  "After clocks are pushed ahead one hour on March 8, the territory
+2528-# will remain on [UTC-07].  ... [The government] found 93 per cent of
+2529-# respondents wanted to end seasonal time changes and, of that group, 70 per
+2530-# cent wanted 'permanent Pacific Daylight Saving Time.'"
+2531:# https://www.cbc.ca/news/canada/north/yukon-end-daylight-saving-time-1.5486358
+2532-#
+2533-# Although the government press release prefers PDT, we prefer MST for

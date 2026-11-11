@@ -1,0 +1,463 @@
+== 14-10-0292 (Yukón, 15+): REF_DATE | característica | Statistics | Data type | UOM | VALUE
+2025-09 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 37.3
+2025-09 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 37.3
+2025-09 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 27.3
+2025-09 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 28.1
+2025-09 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2025-09 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2025-09 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.6
+2025-09 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 4.2
+2025-09 | Unemployment rate | Estimate | Unadjusted | Percent | units | 3.4
+2025-09 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.7
+2025-09 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2025-09 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2025-09 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 76.1
+2025-09 | Participation rate | Estimate | Unadjusted | Percent | units | 78.0
+2025-09 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2025-09 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2025-09 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.5
+2025-09 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 73.2
+2025-09 | Employment rate | Estimate | Unadjusted | Percent | units | 75.3
+2025-09 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2025-09 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2025-09 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.5
+2025-10 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 37.4
+2025-10 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 37.4
+2025-10 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 27.0
+2025-10 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 27.3
+2025-10 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2025-10 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2025-10 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.6
+2025-10 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 4.6
+2025-10 | Unemployment rate | Estimate | Unadjusted | Percent | units | 4.2
+2025-10 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.7
+2025-10 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2025-10 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2025-10 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 75.9
+2025-10 | Participation rate | Estimate | Unadjusted | Percent | units | 76.2
+2025-10 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2025-10 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2025-10 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.5
+2025-10 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 72.2
+2025-10 | Employment rate | Estimate | Unadjusted | Percent | units | 73.0
+2025-10 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2025-10 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2025-10 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.5
+2025-11 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 37.4
+2025-11 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 37.4
+2025-11 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 27.0
+2025-11 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 27.0
+2025-11 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2025-11 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2025-11 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.6
+2025-11 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 4.3
+2025-11 | Unemployment rate | Estimate | Unadjusted | Percent | units | 3.9
+2025-11 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.7
+2025-11 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2025-11 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2025-11 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 75.4
+2025-11 | Participation rate | Estimate | Unadjusted | Percent | units | 75.1
+2025-11 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2025-11 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2025-11 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.5
+2025-11 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 72.2
+2025-11 | Employment rate | Estimate | Unadjusted | Percent | units | 72.2
+2025-11 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2025-11 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2025-11 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.5
+2025-12 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 37.5
+2025-12 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 37.5
+2025-12 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 26.7
+2025-12 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 26.5
+2025-12 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2025-12 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2025-12 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.6
+2025-12 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 4.3
+2025-12 | Unemployment rate | Estimate | Unadjusted | Percent | units | 4.3
+2025-12 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.7
+2025-12 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2025-12 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2025-12 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 74.4
+2025-12 | Participation rate | Estimate | Unadjusted | Percent | units | 73.9
+2025-12 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2025-12 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2025-12 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.5
+2025-12 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 71.2
+2025-12 | Employment rate | Estimate | Unadjusted | Percent | units | 70.7
+2025-12 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2025-12 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2025-12 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.5
+2026-01 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 37.5
+2026-01 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 37.5
+2026-01 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 26.9
+2026-01 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 26.6
+2026-01 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-01 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-01 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-01 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 3.6
+2026-01 | Unemployment rate | Estimate | Unadjusted | Percent | units | 4.3
+2026-01 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.6
+2026-01 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.4
+2026-01 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-01 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 74.4
+2026-01 | Participation rate | Estimate | Unadjusted | Percent | units | 74.1
+2026-01 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-01 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-01 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-01 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 71.7
+2026-01 | Employment rate | Estimate | Unadjusted | Percent | units | 70.9
+2026-01 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-01 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-01 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-02 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 37.6
+2026-02 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 37.6
+2026-02 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 26.9
+2026-02 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 26.5
+2026-02 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-02 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-02 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-02 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 3.9
+2026-02 | Unemployment rate | Estimate | Unadjusted | Percent | units | 4.7
+2026-02 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.6
+2026-02 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.4
+2026-02 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-02 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 74.5
+2026-02 | Participation rate | Estimate | Unadjusted | Percent | units | 73.9
+2026-02 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-02 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-02 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-02 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 71.5
+2026-02 | Employment rate | Estimate | Unadjusted | Percent | units | 70.5
+2026-02 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-02 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-02 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-03 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 37.7
+2026-03 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 37.7
+2026-03 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 27.2
+2026-03 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 26.4
+2026-03 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-03 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-03 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-03 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 3.9
+2026-03 | Unemployment rate | Estimate | Unadjusted | Percent | units | 4.7
+2026-03 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.6
+2026-03 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.4
+2026-03 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-03 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 75.1
+2026-03 | Participation rate | Estimate | Unadjusted | Percent | units | 73.7
+2026-03 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-03 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-03 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-03 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 72.1
+2026-03 | Employment rate | Estimate | Unadjusted | Percent | units | 70.0
+2026-03 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-03 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-03 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-04 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 37.9
+2026-04 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 37.9
+2026-04 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 27.0
+2026-04 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 26.3
+2026-04 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-04 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-04 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-04 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 5.3
+2026-04 | Unemployment rate | Estimate | Unadjusted | Percent | units | 5.7
+2026-04 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.6
+2026-04 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.4
+2026-04 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-04 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 75.2
+2026-04 | Participation rate | Estimate | Unadjusted | Percent | units | 73.6
+2026-04 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-04 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-04 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-04 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 71.2
+2026-04 | Employment rate | Estimate | Unadjusted | Percent | units | 69.4
+2026-04 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-04 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-04 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-05 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 38.0
+2026-05 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 38.0
+2026-05 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 26.7
+2026-05 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 26.2
+2026-05 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-05 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-05 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-05 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 6.3
+2026-05 | Unemployment rate | Estimate | Unadjusted | Percent | units | 6.4
+2026-05 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.6
+2026-05 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.4
+2026-05 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-05 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 75.0
+2026-05 | Participation rate | Estimate | Unadjusted | Percent | units | 73.7
+2026-05 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-05 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-05 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-05 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 70.3
+2026-05 | Employment rate | Estimate | Unadjusted | Percent | units | 68.9
+2026-05 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-05 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-05 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-06 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 38.2
+2026-06 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 38.2
+2026-06 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 26.8
+2026-06 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 26.8
+2026-06 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-06 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-06 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-06 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 7.3
+2026-06 | Unemployment rate | Estimate | Unadjusted | Percent | units | 6.6
+2026-06 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.6
+2026-06 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.4
+2026-06 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-06 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 75.4
+2026-06 | Participation rate | Estimate | Unadjusted | Percent | units | 75.4
+2026-06 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-06 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-06 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-06 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 70.2
+2026-06 | Employment rate | Estimate | Unadjusted | Percent | units | 70.2
+2026-06 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-06 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-06 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-07 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 38.5
+2026-07 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 38.5
+2026-07 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 26.8
+2026-07 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 27.5
+2026-07 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-07 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-07 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-07 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 6.6
+2026-07 | Unemployment rate | Estimate | Unadjusted | Percent | units | 5.8
+2026-07 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.7
+2026-07 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-07 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-07 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 74.5
+2026-07 | Participation rate | Estimate | Unadjusted | Percent | units | 75.6
+2026-07 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-07 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-07 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-07 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 69.6
+2026-07 | Employment rate | Estimate | Unadjusted | Percent | units | 71.4
+2026-07 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-07 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-07 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-08 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 38.7
+2026-08 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 38.7
+2026-08 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 27.0
+2026-08 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 27.9
+2026-08 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-08 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-08 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-08 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 5.3
+2026-08 | Unemployment rate | Estimate | Unadjusted | Percent | units | 4.5
+2026-08 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.7
+2026-08 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-08 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-08 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 73.6
+2026-08 | Participation rate | Estimate | Unadjusted | Percent | units | 75.5
+2026-08 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-08 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-08 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-08 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 69.8
+2026-08 | Employment rate | Estimate | Unadjusted | Percent | units | 72.1
+2026-08 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-08 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-08 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-09 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 38.8
+2026-09 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 38.8
+2026-09 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 26.9
+2026-09 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 27.6
+2026-09 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-09 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-09 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-09 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 4.6
+2026-09 | Unemployment rate | Estimate | Unadjusted | Percent | units | 4.2
+2026-09 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.7
+2026-09 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-09 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-09 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 72.7
+2026-09 | Participation rate | Estimate | Unadjusted | Percent | units | 74.2
+2026-09 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-09 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-09 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-09 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 69.3
+2026-09 | Employment rate | Estimate | Unadjusted | Percent | units | 71.1
+2026-09 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-09 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-09 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+2026-10 | Population | Estimate | Seasonally adjusted | Persons in thousands | thousands | 38.9
+2026-10 | Population | Estimate | Unadjusted | Persons in thousands | thousands | 38.9
+2026-10 | Employment | Estimate | Seasonally adjusted | Persons in thousands | thousands | 26.8
+2026-10 | Employment | Estimate | Unadjusted | Persons in thousands | thousands | 27.2
+2026-10 | Employment | Standard error of estimate | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-10 | Employment | Standard error of month-to-month change | Seasonally adjusted | Persons in thousands | thousands | 0.2
+2026-10 | Employment | Standard error of year-over-year change | Seasonally adjusted | Persons in thousands | thousands | 0.5
+2026-10 | Unemployment rate | Estimate | Seasonally adjusted | Percent | units | 5.3
+2026-10 | Unemployment rate | Estimate | Unadjusted | Percent | units | 5.2
+2026-10 | Unemployment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 0.7
+2026-10 | Unemployment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.5
+2026-10 | Unemployment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 0.9
+2026-10 | Participation rate | Estimate | Seasonally adjusted | Percent | units | 73.0
+2026-10 | Participation rate | Estimate | Unadjusted | Percent | units | 73.8
+2026-10 | Participation rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-10 | Participation rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-10 | Participation rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.3
+2026-10 | Employment rate | Estimate | Seasonally adjusted | Percent | units | 68.9
+2026-10 | Employment rate | Estimate | Unadjusted | Percent | units | 69.9
+2026-10 | Employment rate | Standard error of estimate | Seasonally adjusted | Percent | units | 1.2
+2026-10 | Employment rate | Standard error of month-to-month change | Seasonally adjusted | Percent | units | 0.6
+2026-10 | Employment rate | Standard error of year-over-year change | Seasonally adjusted | Percent | units | 1.4
+== 14-10-0292 promedio anual 2025 (calculado aparte si no existe)
+== 34-10-0133-01 CMHC alquiler promedio, Whitehorse
+columnas: ['REF_DATE', 'GEO', 'DGUID', 'Type of structure', 'Type of unit', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE']
+2021 | Whitehorse, Yukon | Row and apartment structures of three units and over | Bachelor units |  | F
+2021 | Whitehorse, Yukon | Row and apartment structures of three units and over | One bedroom units |  | F
+2021 | Whitehorse, Yukon | Row and apartment structures of three units and over | Two bedroom units |  | F
+2021 | Whitehorse, Yukon | Row and apartment structures of three units and over | Three bedroom units |  | F
+2021 | Whitehorse, Yukon | Row structures of three units and over | Bachelor units |  | F
+2021 | Whitehorse, Yukon | Row structures of three units and over | One bedroom units |  | F
+2021 | Whitehorse, Yukon | Row structures of three units and over | Two bedroom units |  | F
+2021 | Whitehorse, Yukon | Row structures of three units and over | Three bedroom units |  | F
+2021 | Whitehorse, Yukon | Apartment structures of three units and over | Bachelor units |  | F
+2021 | Whitehorse, Yukon | Apartment structures of three units and over | One bedroom units |  | F
+2021 | Whitehorse, Yukon | Apartment structures of three units and over | Two bedroom units |  | F
+2021 | Whitehorse, Yukon | Apartment structures of three units and over | Three bedroom units |  | F
+2021 | Whitehorse, Yukon | Apartment structures of six units and over | Bachelor units |  | F
+2021 | Whitehorse, Yukon | Apartment structures of six units and over | One bedroom units |  | F
+2021 | Whitehorse, Yukon | Apartment structures of six units and over | Two bedroom units |  | F
+2021 | Whitehorse, Yukon | Apartment structures of six units and over | Three bedroom units |  | F
+2022 | Whitehorse, Yukon | Row and apartment structures of three units and over | Bachelor units |  | F
+2022 | Whitehorse, Yukon | Row and apartment structures of three units and over | One bedroom units |  | F
+2022 | Whitehorse, Yukon | Row and apartment structures of three units and over | Two bedroom units |  | F
+2022 | Whitehorse, Yukon | Row and apartment structures of three units and over | Three bedroom units |  | F
+2022 | Whitehorse, Yukon | Row structures of three units and over | Bachelor units |  | F
+2022 | Whitehorse, Yukon | Row structures of three units and over | One bedroom units |  | F
+2022 | Whitehorse, Yukon | Row structures of three units and over | Two bedroom units |  | F
+2022 | Whitehorse, Yukon | Row structures of three units and over | Three bedroom units |  | F
+2022 | Whitehorse, Yukon | Apartment structures of three units and over | Bachelor units |  | F
+2022 | Whitehorse, Yukon | Apartment structures of three units and over | One bedroom units |  | F
+2022 | Whitehorse, Yukon | Apartment structures of three units and over | Two bedroom units |  | F
+2022 | Whitehorse, Yukon | Apartment structures of three units and over | Three bedroom units |  | F
+2022 | Whitehorse, Yukon | Apartment structures of six units and over | Bachelor units |  | F
+2022 | Whitehorse, Yukon | Apartment structures of six units and over | One bedroom units |  | F
+2022 | Whitehorse, Yukon | Apartment structures of six units and over | Two bedroom units |  | F
+2022 | Whitehorse, Yukon | Apartment structures of six units and over | Three bedroom units |  | F
+2023 | Whitehorse, Yukon | Row and apartment structures of three units and over | Bachelor units |  | F
+2023 | Whitehorse, Yukon | Row and apartment structures of three units and over | One bedroom units |  | F
+2023 | Whitehorse, Yukon | Row and apartment structures of three units and over | Two bedroom units |  | F
+2023 | Whitehorse, Yukon | Row and apartment structures of three units and over | Three bedroom units |  | F
+2023 | Whitehorse, Yukon | Row structures of three units and over | Bachelor units |  | F
+2023 | Whitehorse, Yukon | Row structures of three units and over | One bedroom units |  | F
+2023 | Whitehorse, Yukon | Row structures of three units and over | Two bedroom units |  | F
+2023 | Whitehorse, Yukon | Row structures of three units and over | Three bedroom units |  | F
+2023 | Whitehorse, Yukon | Apartment structures of three units and over | Bachelor units |  | F
+2023 | Whitehorse, Yukon | Apartment structures of three units and over | One bedroom units |  | F
+2023 | Whitehorse, Yukon | Apartment structures of three units and over | Two bedroom units |  | F
+2023 | Whitehorse, Yukon | Apartment structures of three units and over | Three bedroom units |  | F
+2023 | Whitehorse, Yukon | Apartment structures of six units and over | Bachelor units |  | F
+2023 | Whitehorse, Yukon | Apartment structures of six units and over | One bedroom units |  | F
+2023 | Whitehorse, Yukon | Apartment structures of six units and over | Two bedroom units |  | F
+2023 | Whitehorse, Yukon | Apartment structures of six units and over | Three bedroom units |  | F
+2024 | Whitehorse, Yukon | Row and apartment structures of three units and over | Bachelor units |  | F
+2024 | Whitehorse, Yukon | Row and apartment structures of three units and over | One bedroom units |  | F
+2024 | Whitehorse, Yukon | Row and apartment structures of three units and over | Two bedroom units |  | F
+2024 | Whitehorse, Yukon | Row and apartment structures of three units and over | Three bedroom units |  | F
+2024 | Whitehorse, Yukon | Row structures of three units and over | Bachelor units |  | F
+2024 | Whitehorse, Yukon | Row structures of three units and over | One bedroom units |  | F
+2024 | Whitehorse, Yukon | Row structures of three units and over | Two bedroom units |  | F
+2024 | Whitehorse, Yukon | Row structures of three units and over | Three bedroom units |  | F
+2024 | Whitehorse, Yukon | Apartment structures of three units and over | Bachelor units |  | F
+2024 | Whitehorse, Yukon | Apartment structures of three units and over | One bedroom units |  | F
+2024 | Whitehorse, Yukon | Apartment structures of three units and over | Two bedroom units |  | F
+2024 | Whitehorse, Yukon | Apartment structures of three units and over | Three bedroom units |  | F
+2024 | Whitehorse, Yukon | Apartment structures of six units and over | Bachelor units |  | F
+2024 | Whitehorse, Yukon | Apartment structures of six units and over | One bedroom units |  | F
+2024 | Whitehorse, Yukon | Apartment structures of six units and over | Two bedroom units |  | F
+2024 | Whitehorse, Yukon | Apartment structures of six units and over | Three bedroom units |  | F
+2025 | Whitehorse, Yukon | Row and apartment structures of three units and over | Bachelor units |  | F
+2025 | Whitehorse, Yukon | Row and apartment structures of three units and over | One bedroom units |  | F
+2025 | Whitehorse, Yukon | Row and apartment structures of three units and over | Two bedroom units |  | F
+2025 | Whitehorse, Yukon | Row and apartment structures of three units and over | Three bedroom units |  | F
+2025 | Whitehorse, Yukon | Row structures of three units and over | Bachelor units |  | F
+2025 | Whitehorse, Yukon | Row structures of three units and over | One bedroom units |  | F
+2025 | Whitehorse, Yukon | Row structures of three units and over | Two bedroom units |  | F
+2025 | Whitehorse, Yukon | Row structures of three units and over | Three bedroom units |  | F
+2025 | Whitehorse, Yukon | Apartment structures of three units and over | Bachelor units |  | F
+2025 | Whitehorse, Yukon | Apartment structures of three units and over | One bedroom units |  | F
+2025 | Whitehorse, Yukon | Apartment structures of three units and over | Two bedroom units |  | F
+2025 | Whitehorse, Yukon | Apartment structures of three units and over | Three bedroom units |  | F
+2025 | Whitehorse, Yukon | Apartment structures of six units and over | Bachelor units |  | F
+2025 | Whitehorse, Yukon | Apartment structures of six units and over | One bedroom units |  | F
+2025 | Whitehorse, Yukon | Apartment structures of six units and over | Two bedroom units |  | F
+2025 | Whitehorse, Yukon | Apartment structures of six units and over | Three bedroom units |  | F
+== 34-10-0127-01 CMHC desocupación (Whitehorse o Yukón)
+sin filas
+== 98-10-0216-01 Censo 2021: conocimiento de idiomas (Yukón)
+ERROR 98100216 tabla 98100216 omitida en esta ronda
+== 98-10-0264-01 Censo 2021: identidad indígena (Yukón, todas las columnas de la fila total)
+{"REF_DATE": "2021", "GEO": "Yukon", "DGUID": "2021A000260", "Registered or Treaty Indian status (3)": "Total - Registered or Treaty Indian status", "Age (20)": "Total - Age", "Gender (3)": "Total - Gender", "Statistics (3)": "Count", "Residence by Indigenous geography (10)": "Total - Residence on or off reserve", "Coordinate": "12.1.1.1.1.1", "Indigenous identity (9):Total - Indigenous identity[1]": "39590", "Symbol": "", "Indigenous identity (9):Indigenous identity[2]": "8810", "Indigenous identity (9):Single Indigenous responses[3]": "8485", "Indigenous identity (9):First Nations (North American Indian)[4]": "6935", "Indigenous identity (9):Métis[5]": "1285", "Indigenous identity (9):Inuk (Inuit)[6]": "260", "Indigenous identity (9):Multiple Indigenous responses[7]": "190", "Indigenous identity (9):Indigenous responses not included elsewhere[8]": "135", "Indigenous identity (9):Non-Indigenous identity[9]": "30780"}
+== 36-10-0402-01 PIB por industria, Yukón, último año, dólares encadenados de 2017
+Prices: ['Chained (2017) dollars', 'Contributions to percent change', 'Current dollars']
+2024 | All industries [T001] | 3326.1 | millions
+2024 | All industries (except cannabis sector) [T020] | 3321.6 | millions
+2024 | All industries (except unlicensed cannabis sector) [T024] | 3325.5 | millions
+2024 | Agriculture, forestry, fishing and hunting [11] | 7.6 | millions
+2024 | Mining, quarrying, and oil and gas extraction [21] | 248.7 | millions
+2024 | Mining and quarrying (except oil and gas) [212] | 205.6 | millions
+2024 | Utilities [22] | 57.6 | millions
+2024 | Construction [23] | 341.6 | millions
+2024 | Manufacturing [31-33] | 19.8 | millions
+2024 | Wholesale trade [41] | 48.7 | millions
+2024 | Retail trade [44-45] | 175.9 | millions
+2024 | Transportation and warehousing [48-49] | 117.7 | millions
+2024 | Information and cultural industries [51] | 91.9 | millions
+2024 | Finance and insurance [52] | 80.4 | millions
+2024 | Real estate and rental and leasing [53] | 469.0 | millions
+2024 | Professional, scientific and technical services [54] | 104.8 | millions
+2024 | Management of companies and enterprises [55] | 0.4 | millions
+2024 | Administrative and support, waste management and remediation services [56] | 35.4 | millions
+2024 | Educational services [61] | 177.3 | millions
+2024 | Health care and social assistance [62] | 312.6 | millions
+2024 | Arts, entertainment and recreation [71] | 20.5 | millions
+2024 | Accommodation and food services [72] | 116.5 | millions
+2024 | Other services (except public administration) [81] | 58.0 | millions
+2024 | Public administration [91] | 796.8 | millions
+== 18-10-0004-01 IPC: Whitehorse y Canadá, septiembre 2025 y 2026; Food/Shelter
+2025-09 | Canada | All-items | 164.9
+2025-09 | Canada | Food | 197.5
+2025-09 | Canada | Shelter | 188.2
+2025-09 | Canada | Gasoline | 209.4
+2025-09 | Canada | Energy | 193.1
+2025-09 | Vancouver, British Columbia | All-items | 161.9
+2025-09 | Vancouver, British Columbia | Shelter | 171.2
+2025-09 | Whitehorse, Yukon | All-items | 164.4
+2025-09 | Whitehorse, Yukon | Food | 168.9
+2025-09 | Whitehorse, Yukon | Shelter | 225.7
+2025-09 | Whitehorse, Yukon | Gasoline | 192.2
+2025-09 | Whitehorse, Yukon | Energy | 249.0
+2026-09 | Canada | All-items | 170.0
+2026-09 | Canada | Food | 201.8
+2026-09 | Canada | Shelter | 191.5
+2026-09 | Canada | Gasoline | 267.6
+2026-09 | Canada | Energy | 229.7
+2026-09 | Vancouver, British Columbia | All-items | 166.8
+2026-09 | Vancouver, British Columbia | Shelter | 175.3
+2026-09 | Whitehorse, Yukon | All-items | 174.4
+2026-09 | Whitehorse, Yukon | Food | 175.4
+2026-09 | Whitehorse, Yukon | Shelter | 241.0
+2026-09 | Whitehorse, Yukon | Gasoline | 236.8
+2026-09 | Whitehorse, Yukon | Energy | 305.9
+== 17-10-0009 Canadá y territorios, 2026-07-01
+Canada | 41798407
+Yukon | 50356
+Northwest Territories | 45904
+Nunavut | 43091
+17100009 | Population estimates, quarterly | fin 2026-07-01 | publicado 2026-09-23T08:30
+17100005 | Population estimates on July 1, by age and gender | fin 2026-01-01 | publicado 2026-09-23T08:30
+17100008 | Estimates of the components of demographic growth, annual | fin 2025-01-01 | publicado 2026-09-23T08:30
+14100292 | Labour force characteristics by territory, three-month moving average, seasonally adjusted and unadjusted | fin 2026-10-01 | publicado 2026-11-06T08:30
+14100223 | Employment and average weekly earnings (including overtime) for all employees by province and territory, monthly, seasonally adjusted | fin 2026-08-01 | publicado 2026-10-29T08:30
+36100222 | Gross domestic product, expenditure-based, provincial and territorial, annual | fin 2025-01-01 | publicado 2026-11-05T08:30
+36100402 | Gross domestic product (GDP) at basic prices, by industry, provinces and territories, inactive | fin 2024-01-01 | publicado 2025-05-01T08:30
+18100004 | Consumer Price Index, monthly, not seasonally adjusted | fin 2026-09-01 | publicado 2026-10-19T08:30
+34100133 | Canada Mortgage and Housing Corporation, average rents for areas with a population of 10,000 and over | fin 2025-01-01 | publicado 2025-12-17T08:30
