@@ -14,9 +14,9 @@
   - Yukón es una sola división censal y una sola región económica: el
     filtro «Región» tiene una sola opción.
 
-  Hora: Yukón usa UTC−7 todo el año desde el 4 de noviembre de 2020 (la
-  hora de Yukón). La zona IANA «America/Whitehorse» lo refleja desde la
-  versión 2020b de la base de datos horaria.
+  Hora: Yukón usa UTC−7 todo el año desde 2020 (la hora de Yukón). La zona
+  IANA «America/Whitehorse» lo aplica desde el 1 de noviembre de 2020.
+  No se copian reglas de otras provincias.
 
   Datos (scripts/canada-en-datos/):
     yt-localidades.json   obtener-yt-localidades.py + compactar-yt.py
@@ -73,14 +73,15 @@ const NOMBRES = {
 };
 /* Otros nombres conocidos, solo para el buscador */
 const ALIAS = {
-  6001029: ["Dawson", "City of Dawson"],
+  6001029: ["City of Dawson"],
   6001044: ["Mount Lorne"],
   6001049: ["Destruction Bay"],
 };
 
 /* ---------- Hora ----------
-   Un solo horario en todo el territorio: UTC−7 todo el año desde el 4 de noviembre de 2020
-   (la «hora de Yukón»). La zona IANA America/Whitehorse lo refleja desde tzdata 2020b. */
+   Un solo horario en todo el territorio: los relojes se adelantaron por última vez el 8 de marzo
+   de 2020 y, desde el 1 de noviembre de 2020, la hora normal es UTC−7 todo el año (Orden en
+   Consejo 2020/125). La zona IANA America/Whitehorse aplica esa regla (archivo northamerica). */
 const HORA = {
   timeZone: "America/Whitehorse",
   texto: "UTC−7 todo el año, sin cambio de hora (hora de Yukón, desde noviembre de 2020)",
@@ -124,8 +125,8 @@ export const FUENTES = {
   ipc: { org: "Statistics Canada", title: "Tabla 18-10-0004-01 — Índice de precios al consumidor, mensual", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401" },
   cmhc: { org: "Statistics Canada y CMHC", title: "Tabla 34-10-0133-01 — Alquiler promedio de CMHC, por tipo de unidad", url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410013301" },
   hospitales: { org: "Statistics Canada", title: "Open Database of Healthcare Facilities (ODHF), versión 1.1 (2020)", url: "https://www.statcan.gc.ca/en/lode/databases/odhf" },
-  hora: { org: "Gobierno de Yukón", title: "Interpretation Act — hora de Yukón (UTC−7 todo el año desde el 4 de noviembre de 2020)", url: "https://laws.yukon.ca/cms/images/LEGISLATION/PRINCIPAL/2002/2002-0125/2002-0125.pdf" },
-  horaIana: { org: "IANA", title: "Base de datos de zonas horarias: America/Whitehorse (UTC−7 todo el año desde la versión 2020b)", url: "https://www.iana.org/time-zones" },
+  hora: { org: "Base de datos horaria (tz) de la IANA", title: "Archivo northamerica: America/Whitehorse, UTC−7 todo el año desde el 1 de noviembre de 2020 (Orden en Consejo 2020/125 del Gobierno de Yukón)", url: "https://github.com/eggert/tz/blob/main/northamerica" },
+  horaIana: { org: "IANA", title: "Base de datos de zonas horarias", url: "https://www.iana.org/time-zones" },
 };
 const RECURSOS = {
   empleo: [
@@ -483,7 +484,7 @@ function pagina(r, L, { esc }) {
       <h3>Emergencias y líneas de ayuda</h3>
       <ul class="cd-list-items">
         <li><strong>Emergencias: 9-1-1</strong> para policía (RCMP), bomberos o ambulancia. Te preguntarán desde qué comunidad llamas. El 9-1-1 de Yukón no recibe mensajes de texto, y no hay cobertura celular en todo el territorio: desde un teléfono satelital que no marque el 9-1-1, llama al 867-668-9911 (RCMP).</li>
-        <li><strong>811:</strong> consejos de salud por teléfono, las 24 horas.</li>
+        <li><strong>811:</strong> Yukon HealthLine, personal de enfermería por teléfono, las 24 horas (desde un teléfono satelital, 1-604-215-4700).</li>
         <li>Si te sientes en crisis o piensas en el suicidio: <strong>9-8-8</strong> (llamada o mensaje de texto, las 24 horas, en todo Canadá).</li>
       </ul>
       <p class="cd-indicator__src">Fuentes: <a href="https://yukon.ca/en/health-and-wellness/care-services/apply-health-care-card" target="_blank" rel="noopener">Gobierno de Yukón — Apply for a Yukon health care card</a>; <a href="https://yukon.ca/en/emergencies-and-safety/communicating-during-emergencies/learn-how-9-1-1-services-work-yukon" target="_blank" rel="noopener">Learn how 911 services work in the Yukon</a> (copias del Internet Archive); <a href="https://988.ca/" target="_blank" rel="noopener">9-8-8: Suicide Crisis Helpline</a>. Consultado el ${esc(consultado)}.</p>`;
