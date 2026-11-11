@@ -1,0 +1,87 @@
+# TEMPORAL: verificar en producción la Fase 1 del Directorio Empresarial (solo lectura; estadísticas simuladas). Se elimina después.
+name: verificar-directorio
+on:
+  push:
+    branches: [claude/directorio-visibilidad-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: HTTP (estado, redirecciones, canonical, sitemap, robots, agentes)
+        run: |
+          B=https://podcastdelmigrante.com
+          for i in $(seq 1 30); do grep -q 'data-prerendered="tomas-velazquez"' <(curl -s "$B/perfil-tomas-velazquez?t=$RANDOM") && { echo "desplegado (intento $i)"; break; }; [ $i = 30 ] && exit 1; sleep 10; done
+          for r in /perfil-tomas-velazquez /perfil-carlos-d-castillo /perfil-santa-latino /perfil-1juanromero1 /quien-puede-ayudarte /sitemap.xml /robots.txt /vcard/tomas-velazquez.vcf /assets/qr/perfil-tomas-velazquez.png / /noticias /magazine/ /canada-en-datos/ /canada-en-datos/yukon; do curl -s -o /dev/null -w "$r: %{http_code} %{content_type}\n" "$B$r"; done
+          for r in "/perfil-tomas-velazquez.html?utm_source=qr&utm_medium=impreso" "/perfil-santa-latino.html" "/quien-puede-ayudarte.html?utm_source=facebook" "/business-profile.html?slug=carlos-d-castillo&utm_source=x"; do curl -s -o /dev/null -w "$r → %{http_code} %{redirect_url}\n" "$B$r"; done
+          for s in tomas-velazquez carlos-d-castillo santa-latino 1juanromero1; do
+            h=$(curl -s "$B/perfil-$s"); echo "perfil-$s: $(echo "$h" | grep -o '<link id="canonicalLink" rel="canonical" href="[^"]*"') | jsonld=$(echo "$h" | grep -c 'application/ld+json') | prerender=$(echo "$h" | grep -c "data-prerendered=\"$s\"") | cargando=$(echo "$h" | grep -c 'Cargando perfil')"
+          done
+          echo "directorio: $(curl -s "$B/quien-puede-ayudarte" | grep -o 'rel="canonical" href="[^"]*"') tarjetas=$(curl -s "$B/quien-puede-ayudarte" | grep -c '<article class="biz-card')"
+          curl -s "$B/sitemap.xml" | sed -n '/directorio-empresarial: generado/,/\/directorio-empresarial/p' | grep -E "loc|lastmod"
+          echo "--- robots.txt (tal como lo sirve producción)"; curl -s "$B/robots.txt"
+          echo "--- agentes de usuario (simulados: no equivalen a un bot verificado)"
+          for ua in "Mozilla/5.0 (compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"; do
+            c=$(curl -s -A "$ua" -o /tmp/b.html -w "%{http_code}" "$B/perfil-carlos-d-castillo"); echo "$c contenido=$(grep -c 'Carlos D. Castillo' /tmp/b.html) desafio=$(grep -ci 'just a moment\|cf-challenge' /tmp/b.html) | ${ua:0:40}"
+          done
+      - name: Navegador (sin y con JavaScript, celular y computador, regresiones)
+        run: |
+          mkdir v && cd v && npm init -y >/dev/null && npm i -s playwright@latest >/dev/null && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > v.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          const B = "https://podcastdelmigrante.com";
+          const M = { "tomas-velazquez": ["Tomás Velázquez", "Calgary, Alberta", "Country Hills Toyota", "tel:+15878948527"], "carlos-d-castillo": ["Carlos D. Castillo", "Calgary, Alberta", "TFSA", "tel:+14039184019"], "santa-latino": ["Santa Latino", "Niagara Falls, Ontario", "Visitas de Santa a hogares", "tel:+12896965721"], "1juanromero1": ["1JuanRomero1 Inc.", "Calgary, Alberta", "Edición profesional de video", "tel:+14033637566"] };
+          (async () => { const br = await chromium.launch(); let f = 0; const ok = (c, m) => { console.log((c ? "OK   " : "FALLA") + " " + m); if (!c) f++; };
+            for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["celular", devices["iPhone 13"]]]) {
+              /* Sin JavaScript */
+              let ctx = await br.newContext({ ...p, locale: "es-CA", javaScriptEnabled: false });
+              let pg = await ctx.newPage();
+              for (const [s, [nombre, lugar, txt]] of Object.entries(M)) {
+                await pg.goto(`${B}/perfil-${s}`, { waitUntil: "load" });
+                const t = await pg.locator("main").innerText();
+                ok(t.includes(nombre) && t.includes(lugar) && t.includes(txt) && !/Cargando perfil/.test(t), `${n} sin JS: perfil-${s} (nombre, ciudad, servicio)`);
+              }
+              await pg.goto(`${B}/quien-puede-ayudarte`, { waitUntil: "load" });
+              const d = await pg.locator("#bizResults").innerText();
+              ok(Object.values(M).every(([x]) => d.includes(x)) && (await pg.locator('#bizResults a[href^="perfil-"]').count()) === 4, `${n} sin JS: directorio con 4 empresas y enlaces`);
+              await ctx.close();
+              /* Con JavaScript (estadísticas SIMULADAS: no se envía nada al servidor real) */
+              ctx = await br.newContext({ ...p, locale: "es-CA" });
+              await ctx.route(/youtube(-nocookie)?\.com|ytimg\.com/, (r) => r.fulfill({ status: 204, body: "" }));
+              for (const [s, [nombre, , , tel]] of Object.entries(M)) {
+                pg = await ctx.newPage(); const err = []; const ev = [];
+                pg.on("pageerror", (e) => err.push(e.message)); pg.on("console", (m) => m.type() === "error" && err.push(m.text()));
+                await pg.route(/\/api\/(vistas|events)/, (r) => { if (/events/.test(r.request().url())) { try { ev.push(JSON.parse(r.request().postData() || "{}")); } catch (e) {} } r.fulfill({ status: 204, body: "" }); });
+                await pg.goto(`${B}/perfil-${s}.html?utm_source=prueba-verificacion`, { waitUntil: "networkidle" });
+                await pg.waitForTimeout(600);
+                ok(new URL(pg.url()).pathname === `/perfil-${s}`, `${n} ${s}: .html redirige a la URL limpia`);
+                ok((await pg.locator("h1.biz-name").count()) === 1 && (await pg.locator('script[type="application/ld+json"]').count()) === 1, `${n} ${s}: un h1 y un JSON-LD (sin duplicados)`);
+                const pv = ev.filter((e) => e.event === "profile_view");
+                ok(pv.length === 1 && pv[0].business === s && pv[0].utm_source === "prueba-verificacion", `${n} ${s}: un profile_view con su UTM (simulado)`);
+                ok((await pg.locator(`main a[href="${tel}"]`).first().getAttribute("data-track")) === "phone_click", `${n} ${s}: botón Llamar con medición`);
+                if (n === "celular") ok((await pg.locator(".biz-sticky").count()) === 1, `${n} ${s}: barra de contacto móvil`);
+                if (await pg.locator("#bizVideoPlay").count()) { await pg.locator("#bizVideoPlay").click(); await pg.waitForSelector("#bizVideoFrame iframe"); ok(ev.some((e) => e.event === "video_click"), `${n} ${s}: video se carga al pulsar (video_click)`); }
+                const [sw, cw] = await pg.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+                ok(sw <= cw + 1, `${n} ${s}: sin desplazamiento horizontal`);
+                ok(err.length === 0, `${n} ${s}: sin errores JS ${JSON.stringify(err)}`);
+                await pg.close();
+              }
+              pg = await ctx.newPage(); const err = [];
+              pg.on("pageerror", (e) => err.push(e.message));
+              await pg.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              await pg.goto(`${B}/quien-puede-ayudarte`, { waitUntil: "networkidle" });
+              await pg.locator("#fCategory").selectOption("automoviles");
+              ok((await pg.locator(".biz-card").count()) === 1, `${n} directorio: filtro por categoría`);
+              await pg.locator("#fCategory").selectOption("");
+              ok((await pg.locator(".biz-card").count()) === 4, `${n} directorio: 4 empresas`);
+              for (const [r, sel] of [["/", "h1, .hero, main"], ["/noticias", "main"], ["/magazine/", "main"], ["/canada-en-datos/", "#cdMapa, main"], ["/canada-en-datos/yukon", "h1"]]) {
+                const resp = await pg.goto(B + r, { waitUntil: "networkidle" });
+                ok(resp.status() === 200 && (await pg.locator(sel).first().count()) === 1, `${n} regresión ${r}: ${resp.status()}`);
+              }
+              ok(err.length === 0, `${n} sin errores JS en directorio y regresiones ${JSON.stringify(err)}`);
+              await ctx.close();
+            }
+            await br.close(); console.log("fallos:", f); process.exit(f ? 1 : 0); })();
+          JS
+          node v.cjs
