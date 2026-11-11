@@ -226,6 +226,29 @@ if "seguir" in PARTES:
             guardar(f"{clave}-{i}", f"# {u}\n# {nota}\n{cont}")
             time.sleep(1)
 
+# ------------------------------------------------------------ 4c. Documentos buscados en el índice del Internet Archive (yt-cdx.txt)
+if "cdx" in PARTES:
+    for l in open(__file__.replace("obtener-yt-ficha2.py", "yt-cdx.txt"), encoding="utf-8").read().splitlines():
+        if not l.strip() or l.startswith("#"):
+            continue
+        clave, prefijo, patron = l.split("\t")[:3]
+        q = {"url": prefijo, "matchType": "prefix", "output": "json", "fl": "timestamp,original,statuscode", "filter": "statuscode:200", "limit": "5000"}
+        b, st, _ = get("http://web.archive.org/cdx/search/cdx?" + urllib.parse.urlencode(q), 300)
+        try:
+            filas = [f for f in json.loads(b or b"[]")[1:] if re.search(patron, f[1], re.I)]
+        except Exception as e:
+            guardar(clave, f"# CDX {prefijo} ({st})\nERROR {e}"); continue
+        lista = "\n".join(f"{ts} {o}" for ts, o, _ in filas[-40:])
+        if not filas:
+            guardar(clave, f"# CDX {prefijo} ({st})\nsin coincidencias para {patron}"); continue
+        ts, o, _ = sorted(filas)[-1]
+        b, st2, _ = get(f"http://web.archive.org/web/{ts}id_/{o}", 180)
+        try:
+            cont = pdf_texto(b) if b[:4] == b"%PDF" else texto(b)
+        except Exception as e:
+            cont = f"ERROR {e}"
+        guardar(clave, f"# {o}\n# copia del Internet Archive del {ts} ({st2})\n# CANDIDATOS\n{lista}\n# TEXTO\n{cont}")
+
 # ------------------------------------------------------------ 5. Documentos PDF oficiales
 if "pdf" in PARTES:
     for clave, u in [l.split("\t")[:2] for l in open(__file__.replace("obtener-yt-ficha2.py", "yt-pdf.txt"), encoding="utf-8").read().splitlines() if l.strip() and not l.startswith("#")]:

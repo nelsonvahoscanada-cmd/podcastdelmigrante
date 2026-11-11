@@ -206,9 +206,9 @@ async function compartir(page, ruta, imagen) {
     await page.locator('.cd-breadcrumb a[href="/canada-en-datos/"]').click();
     await page.waitForURL(/\/canada-en-datos\/$/);
     /* Las regiones sin ficha no aparecen como completas */
-    await page.locator('path[data-code="YT"]').dispatchEvent("click");
+    await page.locator('path[data-code="NS"]').dispatchEvent("click");
     await page.waitForFunction(() => /Próximamente/i.test(document.querySelector("#cdPanel").textContent));
-    assert.equal(await page.locator('#cdPanel a[href^="/canada-en-datos/"]').count(), 0, "Yukón sin enlace a ficha");
+    assert.equal(await page.locator('#cdPanel a[href^="/canada-en-datos/"]').count(), 0, "Nueva Escocia sin enlace a ficha");
     await page.locator('path[data-code="AB"]').dispatchEvent("click");
     await page.waitForFunction(() => document.querySelector('#cdPanel a[href="/canada-en-datos/alberta"]'));
     await page.locator('#cdPanel a[href="/canada-en-datos/alberta"]').click();
