@@ -1,0 +1,13 @@
+# clave<TAB>URL[<TAB>expresión regular de los enlaces que también se guardan] — cuarta ronda: páginas de yukon.ca (copia del Internet Archive si el sitio bloquea la lectura)
+ybs-vivienda	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics/find-housing-statistics-yukon	rent-survey|rental-survey|rent
+ybs-demo	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics/find-demographic-statistics-yukon	population-report-q2-2026|population-report-q1-2026
+ybs-precios	https://yukon.ca/en/consumer-price-index-august-2026	\.pdf
+ybs-epa	https://yukon.ca/en/labour-force-survey-september-2026	\.pdf
+ybs-hoja	https://yukon.ca/node/20393	\.pdf
+c-transfer	https://yukon.ca/en/driving-and-transportation/driver-licensing/transfer-your-drivers-licence-jurisdiction-outside-yukon
+s-811	https://yukon.ca/en/health-and-wellness/care-services/access-24-hour-health-advice-811
+s-cobertura	https://yukon.ca/en/health-and-wellness/care-services/find-out-about-your-health-care-coverage
+s-medico	https://yukon.ca/en/find-primary-care-provider
+hora-noticia	https://yukon.ca/en/news/yukon-permanently-adopt-pacific-daylight-saving-time
+hora-tz	https://raw.githubusercontent.com/eggert/tz/main/northamerica
+ed-ninos	https://yukon.ca/en/education-and-schools/early-childhood-learning-and-programs

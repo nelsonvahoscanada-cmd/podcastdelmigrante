@@ -1,0 +1,3 @@
+# clave<TAB>prefijo de URL (índice del Internet Archive)<TAB>expresión regular del documento
+ybs-alquiler	yukon.ca/sites/default/files/ybs/	rent.?survey.*(oct|october).*2025.*\.pdf$
+ybs-alquiler-b	yukon.ca/sites/	rent.?survey.*(oct|october).?2025.*\.pdf$

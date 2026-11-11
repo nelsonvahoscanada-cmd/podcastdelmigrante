@@ -129,7 +129,7 @@ test("SEO y redes: título, descripción, canónica, imagen social 1200×630 y J
 test("portada de Canadá en Datos y módulo «Descubre tu Canadá»: Nunavut disponible sin tocar las demás regiones", () => {
   const idx = read("canada-en-datos/index.html");
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="NU"/);
-  for (const code of ["NS", "NB", "NL", "YT"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
+  for (const code of ["NS", "NB", "NL"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="NT"/, "Territorios del Noroeste, ficha añadida después");
   assert.match(read("js/canada-datos-disponibles.js"), /nunavut/);
 });

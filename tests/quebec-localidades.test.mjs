@@ -279,6 +279,6 @@ test("portada de Canadá en Datos: Quebec marcada como ficha disponible, sin toc
   const idx = read("canada-en-datos/index.html");
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="QC"/);
   for (const code of ["AB", "ON", "BC", "PE", "SK", "MB", "NU"]) assert.match(idx, new RegExp(`class="cd-region cd-region--ficha" data-code="${code}"`), code);
-  for (const code of ["NS", "NB", "NL", "YT"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
+  for (const code of ["NS", "NB", "NL"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="NT"/, "Territorios del Noroeste, ficha añadida después");
 });
