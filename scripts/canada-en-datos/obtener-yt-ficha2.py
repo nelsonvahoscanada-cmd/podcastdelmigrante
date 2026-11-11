@@ -199,6 +199,33 @@ if "navegador" in PARTES:
             guardar(clave, f"# {u}\n# {nota}\n{t}")
         br.close()
 
+# ------------------------------------------------------------ 4b. Documentos enlazados (tercera columna de la lista: expresión regular)
+if "seguir" in PARTES:
+    for l in open(__file__.replace("obtener-yt-ficha2.py", "yt-paginas2.txt"), encoding="utf-8").read().splitlines():
+        c = l.split("\t")
+        if l.startswith("#") or len(c) < 3:
+            continue
+        clave, patron = c[0], c[2]
+        try:
+            t = open(f"{OUT}/{clave}.txt", encoding="utf-8").read()
+        except OSError:
+            continue
+        vistos = []
+        for m in re.findall(r"\[((?:https?://[^\]\s]+)|(?:/[^\]\s]*))\]", t):
+            u = urllib.parse.urljoin("https://yukon.ca/", m)
+            if re.search(patron, u) and u not in vistos:
+                vistos.append(u)
+        for i, u in enumerate(vistos[:2], 1):
+            b, st, _ = get(u, 120); nota = f"directo {st}"
+            if not (st == 200 and b and (b[:4] == b"%PDF" or len(texto(b)) > 800)):
+                b, nota = archivo(u, "2024")
+            try:
+                cont = pdf_texto(b) if b and b[:4] == b"%PDF" else texto(b or b"")
+            except Exception as e:
+                cont = f"ERROR {e}"
+            guardar(f"{clave}-{i}", f"# {u}\n# {nota}\n{cont}")
+            time.sleep(1)
+
 # ------------------------------------------------------------ 5. Documentos PDF oficiales
 if "pdf" in PARTES:
     for clave, u in [l.split("\t")[:2] for l in open(__file__.replace("obtener-yt-ficha2.py", "yt-pdf.txt"), encoding="utf-8").read().splitlines() if l.strip() and not l.startswith("#")]:

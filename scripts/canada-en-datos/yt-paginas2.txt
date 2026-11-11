@@ -1,44 +1,13 @@
-# clave<TAB>URL — tercera ronda: páginas concretas de yukon.ca (copia del Internet Archive si el sitio bloquea la lectura) y otras fuentes
-s-tarjeta	https://yukon.ca/en/health-and-wellness/care-services/apply-health-care-card
-s-hospital	https://yukon.ca/en/health-and-wellness/care-services/find-hospital-or-health-centre
-s-walkin	https://yukon.ca/en/health-and-wellness/care-services/get-walk-medical-services-whitehorse
-s-cuidados	https://yukon.ca/en/health-and-wellness/care-services
-e-salario	https://yukon.ca/en/doing-business/employer-responsibilities/find-minimum-wage-yukon
-e-salario2	https://yukon.ca/en/employment/employment-standards/find-out-about-minimum-wage-under-employment-standards-act
-e-trabajar	https://yukon.ca/en/immigration/yukon-nominee-program/learn-about-working-yukon
-e-normas	https://yukon.ca/en/employment/employment-standards
-c-licencia	https://yukon.ca/en/driving-and-transportation/driver-licensing/get-drivers-licence
-c-licencias	https://yukon.ca/en/driving-and-transportation/driver-licensing/drivers-licences
-c-docs	https://yukon.ca/en/driving-and-transportation/driver-licensing/identity-documents-needed-get-drivers-licence
-c-oficinas	https://yukon.ca/en/driving-and-transportation/driver-licensing/find-motor-vehicles-services-office
-c-ferry	https://yukon.ca/en/driving-and-transportation/travel-yukon/find-sailing-times-yukon-ferries
-em-911	https://yukon.ca/en/emergencies-and-safety/communicating-during-emergencies/learn-how-9-1-1-services-work-yukon
-em-ems	https://yukon.ca/en/emergencies-and-safety/emergency-medical-services
-v-subsidio	https://yukon.ca/en/housing-and-property/funding-and-loans/apply-rent-subsidy
-v-rgi	https://yukon.ca/en/housing-and-property/social-housing-tenant-supports/apply-rent-geared-income-housing
-v-limites	https://yukon.ca/en/housing-and-property/social-housing-tenant-supports/find-household-income-limit-thresholds
-v-oficinas	https://yukon.ca/en/housing-and-property/social-housing-tenant-supports/find-housing-office
-i-inmigrar	https://yukon.ca/en/immigration/apply-immigrate-yukon/immigrate-yukon
-i-apply	https://yukon.ca/en/immigration/apply-immigrate-yukon
-i-negocios	https://yukon.ca/en/immigration/yukon-business-nominee-program/find-eligibility-requirements-apply-run-your-business-yukon-foreign-entrepreneurs
-i-negocios2	https://yukon.ca/en/immigration/yukon-business-nominee-program
-i-skilled	https://yukon.ca/en/doing-business/yukon-nominee-program/apply-skilled-worker-and-critical-impact-worker-streams-hire-foreign-worker
-i-ee	https://yukon.ca/en/doing-business/yukon-nominee-program/apply-express-entry-stream-hire-foreign-worker
-i-humanitario	https://yukon.ca/en/immigration/apply-immigrate-yukon/contact-immigration-humanitarian-support-desk
-i-rep	https://yukon.ca/en/immigration/apply-immigrate-yukon/learn-about-hiring-immigration-representative
-ybs	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics
-ybs-comunidades	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics/find-statistics-yukon-communities
-ybs-anual	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics/find-annual-statistics-yukon
-ybs-econ	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics/find-economic-statistics-yukon
-ybs-clave	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics/access-yukons-key-indicators
-ed-registro	https://yukon.ca/en/education-and-schools/plan-elementary-and-high-school/register-your-child-school
-ed-escuelas	https://yukon.ca/en/education-and-schools/plan-elementary-and-high-school/find-school
-ed-frances	https://yukon.ca/en/french-language-programs
-ed-juntas	https://yukon.ca/en/education-and-schools/school-councils-and-boards/learn-about-yukons-school-boards
-ed-guarderia	https://yukon.ca/en/education-and-schools/early-childhood-learning-and-programs/learn-about-funding-your-early-learning
-ed-sfa	https://yukon.ca/en/education-and-schools/financial-support-for-students
-ed-oficios	https://yukon.ca/en/education-and-schools/apprentices-and-trades/learn-about-apprenticeship-program
-social	https://yukon.ca/en/legal-and-social-supports
-mcy	https://www.mcyukon.com/
-yukonu-programas	https://www.yukonu.ca/programs
-cra-ycb	https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/yukon.html
+# clave<TAB>URL[<TAB>expresión regular de los enlaces que también se guardan] — cuarta ronda: páginas de yukon.ca (copia del Internet Archive si el sitio bloquea la lectura)
+ybs-vivienda	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics/find-housing-statistics-yukon	rent-survey|rental-survey|rent
+ybs-demo	https://yukon.ca/en/statistics-and-data/yukon-bureau-statistics/find-demographic-statistics-yukon	population-report-q2-2026|population-report-q1-2026
+ybs-precios	https://yukon.ca/en/consumer-price-index-august-2026	\.pdf
+ybs-epa	https://yukon.ca/en/labour-force-survey-september-2026	\.pdf
+ybs-hoja	https://yukon.ca/node/20393	\.pdf
+c-transfer	https://yukon.ca/en/driving-and-transportation/driver-licensing/transfer-your-drivers-licence-jurisdiction-outside-yukon
+s-811	https://yukon.ca/en/health-and-wellness/care-services/access-24-hour-health-advice-811
+s-cobertura	https://yukon.ca/en/health-and-wellness/care-services/find-out-about-your-health-care-coverage
+s-medico	https://yukon.ca/en/find-primary-care-provider
+hora-noticia	https://yukon.ca/en/news/yukon-permanently-adopt-pacific-daylight-saving-time
+hora-tz	https://raw.githubusercontent.com/eggert/tz/main/northamerica
+ed-ninos	https://yukon.ca/en/education-and-schools/early-childhood-learning-and-programs
