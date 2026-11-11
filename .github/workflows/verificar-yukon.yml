@@ -1,0 +1,83 @@
+# TEMPORAL: verificar en producción la guía de Yukón (solo lectura; sin estadísticas). Se elimina después.
+name: verificar-yukon
+on:
+  push:
+    branches: [claude/yukon-canada-en-datos-prod]
+permissions:
+  contents: read
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          B=https://podcastdelmigrante.com; G=/canada-en-datos/yukon
+          for i in $(seq 1 40); do c=$(curl -s -o /dev/null -w "%{http_code}" "$B$G?t=$RANDOM"); [ "$c" = 200 ] && { echo "desplegado (intento $i)"; break; }; if [ $i = 40 ]; then exit 1; fi; sleep 15; done
+          for r in $G $G/whitehorse $G/dawson-city $G/watson-lake $G/haines-junction $G/old-crow $G/yukon-zona-no-organizada /canada-en-datos/ /canada-en-datos/alberta /canada-en-datos/northwest-territories/yellowknife /canada-en-datos/nunavut/iqaluit /assets/canada-en-datos/social-yukon.jpg /assets/canada-en-datos/bandera-yukon.svg /assets/canada-en-datos/yukon/whitehorse.jpg /js/yukon-localidades.js; do curl -s -o /dev/null -w "$r: %{http_code} %{content_type}\n" "$B$r"; done
+          curl -s -o /dev/null -w "$G/whitehorse.html: %{http_code} → %{redirect_url}\n" "$B$G/whitehorse.html"
+          curl -s -o /dev/null -w "$G/no-existe: %{http_code}\n" "$B$G/no-existe"
+          curl -s "$B$G" | grep -oE '<title>[^<]*</title>|(property|name)="(og:title|og:image|og:url|twitter:image)" content="[^"]*"|rel="canonical" href="[^"]*"'
+          curl -s "$B/sitemap.xml" | grep -c "canada-en-datos/yukon" | sed 's/^/sitemap: /'
+          mkdir v && cd v && npm init -y >/dev/null && npm i -s playwright@latest >/dev/null && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > v.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          const B = "https://podcastdelmigrante.com", G = "/canada-en-datos/yukon";
+          (async () => { const br = await chromium.launch(); let f = 0; const ok = (c, m) => { console.log((c ? "OK   " : "FALLA") + " " + m); if (!c) f++; };
+            for (const [n, p] of [["computador", { viewport: { width: 1440, height: 900 } }], ["tableta", devices["iPad Mini"]], ["celular", devices["iPhone 13"]]]) {
+              const ctx = await br.newContext({ ...p, locale: "es-CA" });
+              await ctx.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+              const pg = await ctx.newPage(); const err = []; pg.on("pageerror", (e) => err.push(e.message)); pg.on("console", (m) => m.type() === "error" && err.push(m.text()));
+              const sinScroll = async () => { const [sw, cw] = await pg.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]); return sw <= cw + 1; };
+              await pg.goto(B + G, { waitUntil: "networkidle" });
+              ok((await pg.locator("h1").first().textContent()).trim() === "Yukón", `${n} ficha: título`);
+              ok(await pg.locator("h1 img.cd-flag").evaluate((i) => i.complete && i.naturalWidth > 0), `${n} bandera cargada`);
+              const ids = ["poblacion","idiomas","geografia","economia","empleo","inmigracion","vivienda","salud","educacion","transporte","beneficios","integracion","seguridad","vida","ciudades","localidades","recien-llegado","estafas","noticias","fuentes"];
+              ok((await Promise.all(ids.map((i) => pg.locator("#" + i).count()))).every((c) => c === 1), `${n} 20 secciones`);
+              const ind = await pg.locator(".cd-indicator").evaluateAll((d) => d.map((x) => x.textContent));
+              ok(ind.length >= 10 && ind.filter((t) => /\d/.test(t)).every((t) => /Fuente[\s\S]*Consultado/.test(t)), `${n} indicadores con fuente y fecha (${ind.length})`);
+              await pg.waitForFunction(() => /\d/.test(document.querySelector("#cdClock [data-reloj-hora]").textContent));
+              const hora = (await pg.locator("#cdClock [data-reloj-hora]").textContent()).trim();
+              const nav = await pg.evaluate(() => { const h = (z) => Number(new Intl.DateTimeFormat("en-CA", { timeZone: z, hour: "numeric", hour12: true }).formatToParts(new Date()).find((x) => x.type === "hour").value); return { wh: h("America/Whitehorse"), utc7: h("Etc/GMT+7"), ua: (navigator.userAgent.match(/(Chrome|Version)\/[\d.]+/) || ["?"])[0] }; });
+              ok(Number(hora.split(":")[0]) === nav.wh && nav.wh === nav.utc7, `${n} reloj de Whitehorse = UTC−7 (${hora}; ${nav.ua})`);
+              await pg.locator("#cdLoc").scrollIntoViewIfNeeded(); await pg.waitForFunction(() => !document.getElementById("cdLocBuscar").disabled);
+              ok(await pg.evaluate(() => window.CD_LOCALIDADES.localidades.filter((x) => x[7]).length) === 35, `${n} directorio: 35 páginas`);
+              await pg.locator("#cdLocBuscar").fill("city of dawson");
+              ok(await pg.waitForFunction(() => document.querySelector('#cdLocLista a[href$="/yukon/dawson-city"]')).then(() => true).catch(() => false), `${n} búsqueda por nombre alternativo`);
+              ok(await sinScroll(), `${n} sin desplazamiento horizontal (ficha)`);
+              ok(err.length === 0, `${n} sin errores JS ficha ${JSON.stringify(err)}`); err.length = 0;
+              for (const s of ["whitehorse", "dawson-city", "old-crow"]) {
+                await pg.goto(B + G + "/" + s, { waitUntil: "load", timeout: 60000 });
+                ok((await pg.locator("[data-reloj-localidad]").getAttribute("data-zona")) === "America/Whitehorse", `${n} ${s}: reloj America/Whitehorse`);
+                const e = await pg.locator("#educacion").textContent();
+                ok({ "whitehorse": /École Émilie-Tremblay/, "dawson-city": /Robert Service School/, "old-crow": /Chief Zzeh Gittlit School/ }[s].test(e), `${n} ${s}: escuelas`);
+                ok(await sinScroll(), `${n} ${s}: sin desplazamiento horizontal`);
+              }
+              ok(err.length === 0, `${n} sin errores JS comunidades ${JSON.stringify(err)}`); err.length = 0;
+              await pg.goto(B + "/canada-en-datos/", { waitUntil: "networkidle" });
+              ok(await pg.locator('path.cd-region--ficha[data-code="YT"]').count() === 1, `${n} mapa: Yukón como ficha disponible`);
+              ok(await pg.locator('path.cd-region--ficha[data-code="NS"]').count() === 0, `${n} mapa: Nueva Escocia sigue sin ficha`);
+              await pg.locator('path[data-code="YT"]').dispatchEvent("click");
+              await pg.waitForFunction(() => document.querySelector('#cdPanel a[href="/canada-en-datos/yukon"]'));
+              await pg.locator('#cdPanel a[href="/canada-en-datos/yukon"]').click();
+              await pg.waitForURL(/\/yukon$/); ok(true, `${n} mapa → ficha`);
+              await pg.locator('.cd-breadcrumb a[href="/canada-en-datos/"]').click(); await pg.waitForURL(/canada-en-datos\/$/); ok(true, `${n} ficha → mapa`);
+              await pg.goto(B + "/canada-en-datos/northwest-territories", { waitUntil: "networkidle" });
+              ok(await pg.evaluate(() => CD_REGIONS.find((x) => x.code === "NT").timeZone) === "America/Yellowknife", `${n} NWT intacto (America/Yellowknife)`);
+              await pg.goto(B + "/canada-en-datos/alberta", { waitUntil: "networkidle" });
+              ok((await pg.locator("h1").first().textContent()).trim() === "Alberta" && (await pg.locator("h1 img.cd-flag").count()) === 0, `${n} Alberta intacta`);
+              ok(err.length === 0, `${n} sin errores JS mapa/NWT/Alberta ${JSON.stringify(err)}`);
+              await ctx.close();
+            } await br.close(); process.exit(f ? 1 : 0); })();
+          JS
+          node v.cjs
+      - name: navegador antiguo (Chromium de 2024) — America/Whitehorse también es UTC−7
+        run: |
+          mkdir w && cd w && npm init -y >/dev/null && npm i -s playwright@1.49.1 >/dev/null && npx playwright install chromium >/dev/null 2>&1
+          cat > w.cjs <<'JS'
+          const { chromium } = require("playwright");
+          (async () => { const br = await chromium.launch(); const pg = await (await br.newContext()).newPage();
+            await pg.route(/\/api\/(vistas|events)/, (r) => r.fulfill({ status: 204, body: "" }));
+            await pg.goto("https://podcastdelmigrante.com/canada-en-datos/yukon", { waitUntil: "networkidle" });
+            const r = await pg.evaluate(() => ({ ua: navigator.userAgent.match(/Chrome\/[\d.]+/)[0], inv: new Intl.DateTimeFormat("en-CA", { timeZone: "America/Whitehorse", timeZoneName: "longOffset" }).format(new Date("2027-01-15T12:00:00Z")), ver: new Intl.DateTimeFormat("en-CA", { timeZone: "America/Whitehorse", timeZoneName: "longOffset" }).format(new Date("2026-07-15T12:00:00Z")) }));
+            console.log(JSON.stringify(r)); await br.close(); process.exit(/GMT-07:00/.test(r.inv) && /GMT-07:00/.test(r.ver) ? 0 : 1); })();
+          JS
+          node w.cjs
