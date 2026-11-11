@@ -14,34 +14,11 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -q pyproj shapely openpyxl pypdf playwright && python -m playwright install --with-deps chromium >/dev/null
-      - name: Hora
+      - name: Paginas
         continue-on-error: true
-        run: |
-          mkdir -p /tmp/out; { dpkg -s tzdata | grep Version; zdump -v -c 2019,2028 America/Whitehorse | grep -v "gmtime failed\|localtime failed" | head -20; node -e "for (const t of ['2026-07-15T12:00:00Z','2026-11-15T12:00:00Z']) console.log(process.versions.tz,t,new Intl.DateTimeFormat('en-CA',{timeZone:'America/Whitehorse',timeZoneName:'longOffset',hour:'2-digit'}).format(new Date(t)))"; curl -sSL https://data.iana.org/time-zones/tzdb/northamerica | grep -n -i -B2 -A12 "whitehorse\|yukon" | sed -n 1,260p; } > /tmp/out/hora.log 2>&1; tail -3 /tmp/out/hora.log
-      - name: Localidades
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-yt-localidades.py > /tmp/out/localidades.log 2>&1; tail -5 /tmp/out/localidades.log; cp scripts/canada-en-datos/yt-fuentes.json /tmp/out/ || true
-      - name: StatCan
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-yt-ficha.py statcan > /tmp/out/statcan.log 2>&1; tail -3 /tmp/out/statcan.log
-      - name: Sitemaps
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-yt-ficha.py mapa > /tmp/out/mapa.log 2>&1; tail -3 /tmp/out/mapa.log
-      - name: Salario
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-yt-ficha.py salario > /tmp/out/salario.log 2>&1; tail -3 /tmp/out/salario.log
-      - name: StatCan 2 y normales 1991-2020
-        continue-on-error: true
-        run: OMITIR_TABLAS="98100216" PARTES="statcan clima" python scripts/canada-en-datos/obtener-yt-ficha2.py > /tmp/out/ronda2.log 2>&1; tail -5 /tmp/out/ronda2.log
-      - name: Bandera (Wikimedia Commons)
-        continue-on-error: true
-        run: |
-          UA="Mozilla/5.0 (verificacion de datos; podcastdelmigrante.com)"
-          curl -sSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Flag_of_Yukon.svg&prop=imageinfo&iiprop=url|extmetadata|sha1|size&format=json" > /tmp/out/bandera-licencia.json
-          U=$(python3 -c "import json;d=json.load(open('/tmp/out/bandera-licencia.json'));print(list(d['query']['pages'].values())[0]['imageinfo'][0]['url'])"); echo $U
-          curl -sSL -A "$UA" -o /tmp/out/Flag_of_Yukon.svg "$U"; ls -la /tmp/out/*.svg
+        run: mkdir -p /tmp/out && PARTES="paginas navegador" python scripts/canada-en-datos/obtener-yt-ficha2.py > /tmp/out/ronda2b.log 2>&1; tail -5 /tmp/out/ronda2b.log
       - name: Publicar
         if: always()
         run: |
-          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "datos Yukon [CF-Pages-Skip]"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/yukon-canada-en-datos-datos
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "datos Yukon ronda 2 [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/yukon-canada-en-datos-datos2
