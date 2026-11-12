@@ -1,0 +1,5 @@
+OK celular: TikTok carga al tocar (https://www.tiktok.com/player/v1/7707075782757190933?autoplay=1&rel=0&), sin desborde, sin errores
+OK computador: TikTok carga al tocar (https://www.tiktok.com/player/v1/7707075782757190933?autoplay=1&rel=0&), sin desborde, sin errores
+OK imagen social 1200x630
+OK sitemap
+OK HTML: NewsArticle, contenido sin JS, canónica
