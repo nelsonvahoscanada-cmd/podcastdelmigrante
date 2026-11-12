@@ -1,0 +1,7 @@
+ERR TimeoutError https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html
+ERR TimeoutError https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cow-may-28-2026/33k-ongoing-one-time-initiative-temporary-resident-permanent-resident-transition.html
+ERR TimeoutError https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/permanent-residents.html
+ERR TimeoutError https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-status.html
+ERR TimeoutError https://www.canada.ca/en/services/immigration-citizenship.html
+ERR TimeoutError https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/choose/authorized.html
+200 https://www.tiktok.com/@podcastdelmigrante/video/7707075782757190933 | TikTok - Make Your Day
