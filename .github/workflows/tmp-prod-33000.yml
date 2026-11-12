@@ -24,29 +24,16 @@ jobs:
       - name: TikTok real, imagen social, sitemap y HTML
         if: always()
         run: NODE_PATH=/tmp/pw/node_modules node tmp-prod/extra.cjs 2>&1 | tee /tmp/out/extra.txt; exit ${PIPESTATUS[0]}
-      - name: Fuentes oficiales accesibles
-        if: always()
-        shell: python3 {0}
-        run: |
-          import re, urllib.request
-          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36", "Accept-Language": "en-CA"}
-          h = urllib.request.urlopen("https://podcastdelmigrante.com/articulo-canada-33000-residencias-permanentes-trabajadores-2026", timeout=60).read().decode()
-          urls = sorted(set(re.findall(r'href="(https://www\.canada\.ca/[^"]+)"', h)))
-          res = []
-          for u in urls:
-              try:
-                  with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60) as r: res.append(f"{r.status} {u}")
-              except Exception as e: res.append(f"ERR {getattr(e,'code',type(e).__name__)} {u}")
-          open("/tmp/out/fuentes.txt", "w").write("\n".join(res)); print("\n".join(res))
-      - name: Fuentes con navegador (si la lectura directa falla)
+      - name: Fuentes oficiales accesibles (navegador)
         if: always()
         run: |
           cat > /tmp/f.cjs <<'JS'
           const { chromium } = require("playwright"); const fs = require("fs");
           (async () => { const b = await chromium.launch(); const p = await b.newPage(); const out = [];
-            const urls = fs.readFileSync("/tmp/out/fuentes.txt", "utf8").split("\n").filter((l) => !l.startsWith("200 ")).map((l) => l.split(" ").pop()).filter(Boolean);
-            for (const u of urls) { try { const r = await p.goto(u, { waitUntil: "domcontentloaded", timeout: 60000 }); out.push(`${r && r.status()} ${(await p.title()).slice(0, 80)} | ${u}`); } catch (e) { out.push(`ERR ${e.message.slice(0, 60)} ${u}`); } }
-            fs.writeFileSync("/tmp/out/fuentes-navegador.txt", out.join("\n")); console.log(out.join("\n")); await b.close(); })();
+            await p.goto("https://podcastdelmigrante.com/articulo-canada-33000-residencias-permanentes-trabajadores-2026", { waitUntil: "domcontentloaded" });
+            const urls = [...new Set(await p.locator('a[href^="https://www.canada.ca/"]').evaluateAll((as) => as.map((a) => a.href)))];
+            for (const u of urls) { try { const r = await p.goto(u, { waitUntil: "domcontentloaded", timeout: 60000 }); out.push(`${r && r.status()} ${(await p.title()).slice(0, 90)} | ${u}`); } catch (e) { out.push(`ERR ${e.message.slice(0, 60)} ${u}`); } }
+            fs.writeFileSync("/tmp/out/fuentes.txt", out.join("\n")); console.log(out.join("\n")); await b.close(); })();
           JS
           NODE_PATH=/tmp/pw/node_modules node /tmp/f.cjs
       - name: Publicar
