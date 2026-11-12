@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   check:
+    name: articulos-vistas-previas
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
