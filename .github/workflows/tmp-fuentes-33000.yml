@@ -1,0 +1,77 @@
+# TEMPORAL: leer las fuentes oficiales de la noticia de las 33.000 residencias (solo lectura). Se elimina después.
+name: tmp fuentes 33000
+on:
+  push:
+    branches: [claude/residencias-33000-fuentes]
+permissions:
+  contents: write
+jobs:
+  leer:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null
+      - name: Fuentes
+        shell: python3 {0}
+        run: |
+          import os, re, html, json, urllib.request
+          os.makedirs("/tmp/out", exist_ok=True)
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36", "Accept-Language": "en-CA"}
+          URLS = {
+            "comunicado": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html",
+            "comite": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cow-may-28-2026/33k-ongoing-one-time-initiative-temporary-resident-permanent-resident-transition.html",
+            "estadisticas": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/permanent-residents.html",
+          }
+          ENLACES = ["https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-status.html",
+            "https://www.canada.ca/en/services/immigration-citizenship.html",
+            "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/choose/authorized.html",
+            "https://www.tiktok.com/@podcastdelmigrante/video/7707075782757190933"]
+          def texto(b):
+              h = b.decode("utf-8", "ignore")
+              h = re.sub(r"(?is)<(script|style|noscript|svg)[^>]*>.*?</\1>", " ", h)
+              h = re.sub(r'(?is)<a [^>]*href="([^"]+)"[^>]*>', r" [\1] ", h)
+              h = re.sub(r"(?i)<br\s*/?>|</(p|li|h\d|tr|div|td|th|dt|dd|caption)>", "\n", h)
+              t = html.unescape(re.sub(r"<[^>]+>", " ", h))
+              return re.sub(r"[ \t\xa0]+", " ", re.sub(r"\n\s*\n+", "\n", t)).strip()
+          estado = []
+          for k, u in URLS.items():
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60) as r:
+                      open(f"/tmp/out/{k}.txt", "w").write(f"# {u}\n# {r.status} {r.geturl()}\n" + texto(r.read()))
+                      estado.append(f"{r.status} {u}")
+              except Exception as e:
+                  estado.append(f"ERR {getattr(e,'code',type(e).__name__)} {u}")
+          for u in ENLACES:
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60) as r:
+                      estado.append(f"{r.status} {r.geturl()} | {(re.search(rb'(?is)<title[^>]*>(.*?)</title>', r.read(300000)) or [b'',b''])[1].decode('utf-8','ignore').strip()[:90]}")
+              except Exception as e:
+                  estado.append(f"ERR {getattr(e,'code',type(e).__name__)} {u}")
+          try:
+              with urllib.request.urlopen(urllib.request.Request("https://www.tiktok.com/oembed?url=https://www.tiktok.com/@podcastdelmigrante/video/7707075782757190933", headers=UA), timeout=60) as r:
+                  open("/tmp/out/tiktok-oembed.json", "wb").write(r.read())
+          except Exception as e:
+              estado.append(f"oembed ERR {e}")
+          open("/tmp/out/estado.txt", "w").write("\n".join(estado)); print("\n".join(estado))
+      - name: Copia de respaldo con navegador (si la lectura directa falla)
+        shell: python3 {0}
+        run: |
+          import os
+          from playwright.sync_api import sync_playwright
+          URLS = {"comunicado": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html",
+            "comite": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cow-may-28-2026/33k-ongoing-one-time-initiative-temporary-resident-permanent-resident-transition.html",
+            "estadisticas": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/permanent-residents.html"}
+          with sync_playwright() as p:
+              b = p.chromium.launch(); pg = b.new_page()
+              for k, u in URLS.items():
+                  if os.path.exists(f"/tmp/out/{k}.txt") and os.path.getsize(f"/tmp/out/{k}.txt") > 2000: continue
+                  try:
+                      r = pg.goto(u, wait_until="domcontentloaded", timeout=60000); pg.wait_for_timeout(3000)
+                      open(f"/tmp/out/{k}.txt", "w").write(f"# {u}\n# navegador {r.status if r else None}\n" + pg.inner_text("body"))
+                  except Exception as e:
+                      open(f"/tmp/out/{k}.txt", "w").write(f"# {u}\n# ERROR {e}")
+              b.close()
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "fuentes 33000 [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/residencias-33000-fuentes-datos
