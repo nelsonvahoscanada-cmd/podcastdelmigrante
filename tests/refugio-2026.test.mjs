@@ -26,9 +26,9 @@ const art = ctx.A.find((a) => a.slug === SLUG);
 const [periodistico, publicidad] = art.bodyHtml.split('<aside class="article-patrocinio"');
 const texto = (h) => h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 
-test("portada: tercera tarjeta (tras el alquiler en Alberta y la masterclass; principal: suplemento de alimentos, 9-11-2026) con su ilustración; las demás en su orden", () => {
-  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026");
-  const t = ctx.H.secondary[2];
+test("portada: cuarta tarjeta (tras el suplemento, el alquiler en Alberta y la masterclass; principal: 33.000 residencias, 11-11-2026) con su ilustración; las demás en su orden", () => {
+  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
+  const t = ctx.H.secondary[3];
   assert.equal(t.slug, SLUG);
   assert.equal(t.title, art.title);
   assert.equal(t.image, `url('${IMG}')`);
@@ -36,11 +36,11 @@ test("portada: tercera tarjeta (tras el alquiler en Alberta y la masterclass; pr
   assert.equal(t.demo, false);
   assert.match(t.alt, /^Ilustración editorial/);
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    "canada-suplemento-alimentos-679-presupuesto-2026",
     "alberta-rent-assistance-benefit-ayuda-alquiler",
     "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
     "canada-cambios-proceso-refugio-3-noviembre-2026",
     "canada-cambios-express-entry-3-noviembre-2026",
-    "hector-rivero-santa-latino-canada",
   ]);
 });
 

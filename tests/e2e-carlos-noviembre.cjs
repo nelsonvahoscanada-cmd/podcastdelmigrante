@@ -83,9 +83,9 @@ async function retrato(page, selector) {
     const r2 = await retrato(page, `img.contributor-card__avatar[src="${AVATAR}"]`);
     assert.deepEqual([r2.w, r2.h, r2.radio, r2.nat], [64, 64, "50%", "300x300"], JSON.stringify(r2));
     if (SHOTS) await page.locator(`img.contributor-card__avatar[src="${AVATAR}"]`).screenshot({ path: path.join(SHOTS, `retrato-portada-${perfil}.png`) });
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.match(tarjetas[4], /Santa Latino/);
+    assert.match(tarjetas[4], /Express Entry desde el 3 de noviembre/);
     assert.equal(tarjetas.filter((t) => t.includes(TITULO)).length, 0, "no entra en el bloque principal");
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);

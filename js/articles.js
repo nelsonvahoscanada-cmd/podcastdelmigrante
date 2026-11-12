@@ -87,6 +87,16 @@
                               subtítulos <h2>, <blockquote>, etc.)
   video             Object | null   — [OPCIONAL] { title, placeholder:
                               true } mientras no haya embed real
+                              Video propio de TikTok: { tiktokId, tiktokUser,
+                              title, heading?, cover?, position? }.
+                              position "intro" = antes del primer subtítulo;
+                              "antes-de" + beforeHeading: "<texto exacto de
+                              un <h2>>" = justo antes de ese subtítulo.
+  prerender         Boolean — [OPCIONAL] true = la página generada
+                              (articulo-<slug>.html) trae el contenido del
+                              artículo y sus datos estructurados (JSON-LD)
+                              escritos en el HTML: se lee sin JavaScript.
+                              Sin el campo, la página no cambia.
   sources           Array   — [OPCIONAL] [{ label, href }]. Vacío = sin
                               módulo "Fuentes consultadas".
   correctionNote    String | null   — [OPCIONAL]
@@ -175,6 +185,154 @@ const DISCLAIMERS = {
    describe hechos, cifras ni declaraciones reales.
 ========================================================= */
 const ARTICLES = [
+  {
+    /* Iniciativa de 33.000 trabajadores (In-Canada Workers Initiative): texto
+       editorial entregado por la dirección (11-11-2026). Verificado el
+       11-11-2026 contra IRCC: comunicado del 4 de mayo de 2026 (hasta 33.000
+       en 2026 y 2027, al menos 20.000 en 2026; PNP, AIP, pilotos comunitarios,
+       pilotos de cuidadores y Agri-Food Pilot; 2 años o más en comunidades
+       pequeñas; «Applicants do not need to take any action»), nota al Comité
+       del 28 de mayo de 2026 («This is not a new program»; no está dirigida a
+       personas sin estatus) y página de estadísticas de residentes
+       permanentes (actualizada el 20-10-2026): 15.100 de enero a agosto de
+       2026, 75 % de la meta de 20.000. Imagen editorial entregada por la
+       dirección. Video propio en TikTok. */
+    id: "ART-2026-043",
+    slug: "canada-33000-residencias-permanentes-trabajadores-2026",
+    category: "Inmigración",
+    contentType: "Noticia",
+    title: "Canadá acelera 33.000 residencias permanentes: 15.100 trabajadores ya fueron beneficiados. ¿Quiénes califican?",
+    dek: "El Gobierno canadiense tiene en marcha una iniciativa especial para acelerar la residencia permanente de hasta 33.000 trabajadores durante 2026 y 2027. Inmigración Canadá confirma que miles ya han obtenido su estatus, pero advierte que no se trata de un programa nuevo ni de una convocatoria abierta para todos los inmigrantes.",
+    excerpt: "IRCC confirma que 15.100 trabajadores obtuvieron la residencia permanente entre enero y agosto de 2026 mediante la iniciativa de 33.000. No es un programa nuevo ni una convocatoria abierta: los beneficiarios ya habían presentado su solicitud.",
+    author: { mode: "medio", name: "El Podcast del Migrante" },
+    publishedAt: "2026-11-11T17:30:00-07:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: null, city: null },
+    demo: false,
+    /* Página con el contenido y los datos estructurados escritos en el HTML
+       (legible sin JavaScript): scripts/build-article-pages.mjs. */
+    prerender: true,
+    heroImage: {
+      background: "url('assets/canada-33000-residencias-permanentes-trabajadores-2026.jpg')",
+      aspectRatio: "1672/941",
+      alt: "Ilustración editorial de El Podcast del Migrante: trabajadores con casco, chaleco reflectante y uniforme de salud frente al Parlamento de Canadá y la bandera canadiense. Textos: «Canadá acelera 33.000 residencias permanentes», «15.100 trabajadores beneficiados hasta agosto de 2026», «No es una convocatoria nueva», «Aplica en 2026 y 2027», «Dirigida a trabajadores con solicitudes ya presentadas» y «Para quienes llevan al menos 2 años en comunidades pequeñas de Canadá».",
+      credit: "Ilustración editorial de El Podcast del Migrante. No es un anuncio oficial del Gobierno de Canadá; las personas y la escena son ilustrativas.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p><strong>El Podcast del Migrante | Inmigración Canadá | 11 de noviembre de 2026</strong></p>
+      <p>Miles de inmigrantes que viven y trabajan en Canadá esperan durante meses, e incluso años, una respuesta a sus solicitudes de residencia permanente.</p>
+      <p>En medio de esa incertidumbre, una noticia ha despertado interés en las redes sociales: Canadá está facilitando la transición a residencia permanente de 33.000 trabajadores.</p>
+      <p><strong>La información es real, pero no significa que el Gobierno esté regalando residencias ni que cualquier persona pueda inscribirse para obtener una.</strong></p>
+      <p>El Podcast del Migrante revisó los documentos oficiales de Immigration, Refugees and Citizenship Canada (IRCC) para explicar quiénes pueden beneficiarse, cuáles son los programas involucrados y qué deben hacer las personas que ya tienen una solicitud en trámite.</p>
+      <h2>La cifra es oficial: 33.000 trabajadores durante 2026 y 2027</h2>
+      <p>La medida se conoce oficialmente como <strong>In-Canada Workers Initiative</strong>, una iniciativa extraordinaria anunciada en el Presupuesto federal de 2025.</p>
+      <p>Su objetivo es acelerar la transición a residencia permanente de hasta 33.000 trabajadores temporales que ya se encuentran en Canadá y que contribuyen a sectores económicos donde existe necesidad de mano de obra.</p>
+      <p>El Gobierno prevé que al menos 20.000 trabajadores obtengan su residencia permanente mediante esta iniciativa durante 2026 y que los restantes sean admitidos en 2027.</p>
+      <p>La medida también busca ayudar a las comunidades pequeñas y rurales a conservar trabajadores que ya conocen sus empleos, participan en la economía local y han establecido vínculos con sus comunidades.</p>
+      <p><strong>Fuente:</strong> <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html" target="_blank" rel="noopener">Comunicado oficial de IRCC del 4 de mayo de 2026</a>.</p>
+      <h2>Ya hay resultados: 15.100 nuevos residentes permanentes</h2>
+      <p>Uno de los datos más importantes es que la iniciativa no se encuentra únicamente en una etapa de anuncios.</p>
+      <p>De acuerdo con la información publicada por IRCC, <strong>15.100 trabajadores obtuvieron la residencia permanente entre enero y agosto de 2026</strong> mediante esta medida.</p>
+      <p>La cifra representa aproximadamente el 75 % de la meta de al menos 20.000 admisiones establecida para 2026.</p>
+      <p>En un informe anterior, correspondiente a los primeros dos meses del año, el Gobierno había registrado 3.600 trabajadores admitidos.</p>
+      <p>Esto demuestra que la iniciativa está siendo ejecutada, aunque no significa que todas las personas con permisos temporales puedan beneficiarse automáticamente.</p>
+      <p><strong>Fuente:</strong> <a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/permanent-residents.html" target="_blank" rel="noopener">Estadísticas oficiales de residentes permanentes de IRCC</a> (página actualizada el 20 de octubre de 2026; datos de enero a agosto de 2026, los más recientes publicados).</p>
+      <h2>¿Quiénes pueden beneficiarse realmente?</h2>
+      <p>La iniciativa se concentra en trabajadores que cumplen condiciones específicas.</p>
+      <p>Según IRCC, la selección se enfoca en personas que:</p>
+      <ul>
+        <li>Ya viven en Canadá.</li>
+        <li>Han estado establecidas durante al menos dos años en comunidades pequeñas.</li>
+        <li>Presentaron previamente una solicitud de residencia permanente mediante determinados programas regionales o pilotos ocupacionales.</li>
+        <li>Cumplen los requisitos correspondientes a la vía migratoria por la cual solicitaron su residencia.</li>
+      </ul>
+      <p>No se trata de un mecanismo que convierta automáticamente cualquier permiso de trabajo o estudio en residencia permanente.</p>
+      <p>Tampoco está diseñado para personas indocumentadas o que se encuentran en Canadá sin estatus migratorio válido.</p>
+      <p><strong>Fuente:</strong> <a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cow-may-28-2026/33k-ongoing-one-time-initiative-temporary-resident-permanent-resident-transition.html" target="_blank" rel="noopener">Documento oficial de IRCC sobre la iniciativa de 33.000 trabajadores</a> (nota para el Comité Plenario del 28 de mayo de 2026).</p>
+      <h2>¿Cuáles son los programas migratorios involucrados?</h2>
+      <p>IRCC identifica varias vías migratorias relacionadas con los trabajadores priorizados:</p>
+      <ol>
+        <li><strong>Provincial Nominee Program (PNP):</strong> programas de nominación provincial.</li>
+        <li><strong>Atlantic Immigration Program (AIP):</strong> programa de inmigración del Atlántico.</li>
+        <li><strong>Rural Community Immigration Pilot (RCIP):</strong> piloto de inmigración para comunidades rurales.</li>
+        <li><strong>Francophone Community Immigration Pilot (FCIP):</strong> piloto de inmigración para comunidades francófonas.</li>
+        <li><strong>Home Care Worker Immigration Pilots:</strong> programas piloto para trabajadores de cuidado domiciliario.</li>
+        <li><strong>Agri-Food Pilot:</strong> programa piloto agroalimentario.</li>
+      </ol>
+      <p>En su comunicado, IRCC agrupa el RCIP y el FCIP como «pilotos de inmigración comunitaria» (<em>community immigration pilots</em>) y los programas de cuidado domiciliario como «pilotos para cuidadores» (<em>caregiver pilots</em>).</p>
+      <p>La inclusión de estos programas no significa que todas las personas que hayan participado en ellos serán seleccionadas. IRCC aplica sus propios criterios y procedimientos a los expedientes correspondientes.</p>
+      <p><strong>Fuente:</strong> <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html" target="_blank" rel="noopener">Comunicado oficial de IRCC del 4 de mayo de 2026</a>.</p>
+      <h2>¿Qué significa esta iniciativa para los trabajadores de Alberta?</h2>
+      <p>Para comunidades como Brooks y otras localidades pequeñas de Alberta, la medida resulta especialmente relevante por la presencia de trabajadores inmigrantes en sectores productivos y de servicios.</p>
+      <p>Sin embargo, <strong>vivir en Brooks, Calgary, Edmonton o cualquier otra ciudad no garantiza ser beneficiario</strong>.</p>
+      <p>Lo determinante es cumplir los criterios oficiales y haber presentado una solicitud mediante alguna de las vías migratorias correspondientes.</p>
+      <p>Una persona que tenga un permiso de trabajo válido, pero que todavía no haya presentado una solicitud de residencia permanente, no debe interpretar esta iniciativa como una aprobación automática ni como una nueva vía de inscripción.</p>
+      <h2>¿Cómo puedo solicitar una de estas 33.000 residencias?</h2>
+      <p>Esta es una de las preguntas más importantes.</p>
+      <p><strong>IRCC ha explicado que los solicitantes elegibles ya habían sido seleccionados mediante programas migratorios existentes y que no necesitan realizar una gestión adicional para entrar en esta iniciativa.</strong></p>
+      <p>Por lo tanto, no existe una convocatoria general nueva en la que cualquier inmigrante pueda registrarse para reclamar una de las 33.000 residencias.</p>
+      <p>Quienes ya tengan un expediente de residencia permanente deben continuar utilizando los canales oficiales de IRCC para consultar su estado y responder a cualquier requerimiento que reciban.</p>
+      <h3>Enlaces oficiales para consultar</h3>
+      <ol>
+        <li><strong>Consultar el estado de una solicitud de inmigración:</strong><br><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-status.html" target="_blank" rel="noopener">https://<wbr>www.canada.ca/<wbr>en/<wbr>immigration-refugees-citizenship/<wbr>services/<wbr>application/<wbr>check-status.html</a></li>
+        <li><strong>Información oficial sobre inmigración y ciudadanía:</strong><br><a href="https://www.canada.ca/en/services/immigration-citizenship.html" target="_blank" rel="noopener">https://<wbr>www.canada.ca/<wbr>en/<wbr>services/<wbr>immigration-citizenship.html</a></li>
+        <li><strong>Consultar el comunicado sobre los 33.000 trabajadores:</strong><br><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html" target="_blank" rel="noopener">https://<wbr>www.canada.ca/<wbr>en/<wbr>immigration-refugees-citizenship/<wbr>news/<wbr>2026/<wbr>04/<wbr>filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html</a></li>
+      </ol>
+      <h2>Cuidado con las falsas promesas de residencia permanente</h2>
+      <p>La circulación de noticias migratorias en redes sociales también puede facilitar la aparición de anuncios engañosos.</p>
+      <p>Desconfía de cualquier persona que asegure tener una inscripción especial para las 33.000 residencias, que prometa aprobación garantizada o que exija pagos para incluirte en una lista supuestamente autorizada por el Gobierno.</p>
+      <p>No compartas pasaportes, números de identificación, documentos migratorios ni información financiera mediante enlaces que no hayas verificado.</p>
+      <p>Si necesitas asesoría profesional, comprueba que la persona esté legalmente autorizada para representar solicitantes ante las autoridades migratorias de Canadá.</p>
+      <p><strong>Consultar representantes autorizados:</strong><br><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/choose/authorized.html" target="_blank" rel="noopener">https://<wbr>www.canada.ca/<wbr>en/<wbr>immigration-refugees-citizenship/<wbr>services/<wbr>immigration-citizenship-representative/<wbr>choose/<wbr>authorized.html</a></p>
+      <h2>¿La iniciativa sigue vigente?</h2>
+      <p>Sí. La medida corresponde al período 2026–2027 y figura en la información oficial sobre el sistema migratorio canadiense.</p>
+      <p>Sin embargo, es importante diferenciar una iniciativa que está procesando expedientes existentes de un programa nuevo que acepta solicitudes del público.</p>
+      <p>La información sobre nuevas vías migratorias, modificaciones a programas o convocatorias futuras debe consultarse por separado.</p>
+      <h2>Una noticia importante, pero que exige información responsable</h2>
+      <p>Para miles de trabajadores inmigrantes, obtener la residencia permanente representa estabilidad, oportunidades laborales y la posibilidad de construir un proyecto de vida a largo plazo en Canadá.</p>
+      <p>La iniciativa de 33.000 trabajadores demuestra que el Gobierno está acelerando determinados expedientes, especialmente de personas que ya han establecido vínculos con comunidades pequeñas.</p>
+      <p>Pero la conclusión es clara:</p>
+      <p><strong>Canadá está acelerando la residencia permanente de trabajadores previamente seleccionados. No está regalando 33.000 residencias ni abrió una inscripción general para reclamarlas.</strong></p>
+      <p>El Podcast del Migrante continuará siguiendo las actualizaciones de IRCC para informar a la comunidad latina sobre los cambios que realmente puedan afectar sus procesos migratorios.</p>
+      <h2>Mira nuestro video explicativo en TikTok</h2>
+      <p class="article-apply-row"><a class="article-apply" href="https://www.tiktok.com/@podcastdelmigrante/video/7707075782757190933" target="_blank" rel="noopener">VER VIDEO EN TIKTOK</a></p>
+      <p><strong>El Podcast del Migrante</strong><br><em>Conectando latinos, construyendo futuro.</em><br><a href="https://www.podcastdelmigrante.com">www.podcastdelmigrante.com</a></p>
+      <p><em>Nota editorial: información verificada el 11 de noviembre de 2026 con las publicaciones oficiales de IRCC citadas. Las cifras de admisiones corresponden al período de enero a agosto de 2026, el más reciente publicado. La decisión sobre cada solicitud corresponde exclusivamente a IRCC.</em></p>
+    `,
+    /* Video propio en TikTok (@podcastdelmigrante). No se descarga ni se
+       aloja: el reproductor oficial se carga desde TikTok solo al pulsar,
+       justo antes del subtítulo «¿Quiénes pueden beneficiarse realmente?». */
+    video: {
+      tiktokId: "7707075782757190933",
+      tiktokUser: "podcastdelmigrante",
+      title: "Canadá acelera 33.000 residencias permanentes: explicado por El Podcast del Migrante",
+      heading: "🎥 Mira el video",
+      cover: "assets/canada-33000-residencias-permanentes-trabajadores-2026.jpg",
+      position: "antes-de",
+      beforeHeading: "¿Quiénes pueden beneficiarse realmente?",
+    },
+    sources: [
+      { label: "IRCC — Filling labour gaps in smaller communities by accelerating permanent residence for 33,000 workers (comunicado, 4 de mayo de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html" },
+      { label: "IRCC — Permanent residents: one-time initiatives for 2026 and 2027 (estadísticas, actualizadas el 20 de octubre de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/permanent-residents.html" },
+      { label: "IRCC — 33K + Ongoing, One-time Initiative: Temporary Resident to Permanent Resident transition (Comité Plenario, 28 de mayo de 2026)", href: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cow-may-28-2026/33k-ongoing-one-time-initiative-temporary-resident-permanent-resident-transition.html" },
+      { label: "IRCC — Check your application status", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-status.html" },
+      { label: "IRCC — Find out if your representative is authorized", href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/choose/authorized.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: "Migración",
+    relatedSlugs: ["multas-representantes-migratorios-canada-2026", "canada-cambios-proceso-refugio-3-noviembre-2026", "express-entry-nuevos-puntos-noviembre-2026"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "Canadá acelera 33.000 residencias permanentes: requisitos y beneficiarios",
+      description: "IRCC confirma que 15.100 trabajadores ya obtuvieron residencia permanente mediante la iniciativa de 33.000. Conoce quiénes califican y evita engaños.",
+      canonicalPath: "/inmigracion/canada-33000-residencias-permanentes-trabajadores-2026/",
+    },
+  },
   {
     /* Suplemento extraordinario 2027 del Canada Groceries and Essentials
        Benefit (Presupuesto Federal 2026): texto editorial de la dirección

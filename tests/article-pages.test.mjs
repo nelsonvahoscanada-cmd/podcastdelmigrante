@@ -88,8 +88,21 @@ for (const a of ARTICLES) {
       assert.equal(local, "assets/logo.png", "sin foto principal: logotipo del Magazine");
     }
 
-    /* El cuerpo es idéntico a la plantilla: mismo diseño */
-    assert.equal(html.slice(html.indexOf("</head>")), template.slice(template.indexOf("</head>")));
+    /* El cuerpo es idéntico a la plantilla: mismo diseño. Con «prerender: true»
+       la página trae además el contenido y el JSON-LD en el HTML, y sus
+       scripts llevan versión: sin eso, es igual a la plantilla. */
+    let cuerpo = html;
+    if (a.prerender === true) {
+      assert.match(html, new RegExp(`<article class="article-page wrap" id="articleRoot" data-prerendered="${a.slug}">`));
+      assert.equal((html.match(/<script type="application\/ld\+json" id="articleJsonLd">/g) || []).length, 1);
+      cuerpo = html
+        .replace(/<article class="article-page wrap" id="articleRoot" data-prerendered="[^"]+">[\s\S]*?<\/article>\n<\/main>/, '<article class="article-page wrap" id="articleRoot">\n    <p class="article-loading">Cargando artículo…</p>\n  </article>\n</main>')
+        .replace(/<script type="application\/ld\+json" id="articleJsonLd">[\s\S]*?<\/script>\n/, "")
+        .replace(/(<script src="js\/[a-z-]+\.js)\?v=[0-9a-f]{10}">/g, '$1">');
+    } else {
+      assert.doesNotMatch(html, /data-prerendered|articleJsonLd/, "las demás noticias no cambian");
+    }
+    assert.equal(cuerpo.slice(cuerpo.indexOf("</head>")), template.slice(template.indexOf("</head>")));
     /* Nada de dominios ajenos ni rutas locales en los metadatos */
     for (const v of [...html.matchAll(/(?:content|href)="(https?:\/\/[^"]*)"/g)].map((m) => m[1])) {
       assert.ok(!/share\.google|localhost|github\.io|pages\.dev|workers\.dev/.test(v), v);

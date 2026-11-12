@@ -51,9 +51,9 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: noticia principal destacada ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    /* Desde el 8-11-2026: primera tarjeta destacada, tras la noticia del alquiler */
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/);
-    const hero = page.locator("#heroSecondary .hero-sec-card").nth(1);
+    /* Desde el 11-11-2026: tercera tarjeta destacada, tras el suplemento y el alquiler */
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").nth(2);
     assert.equal((await hero.locator("h2").innerText()).trim(), TITULO);
     assert.equal(await hero.locator(".demo-badge").count(), 0);
     const media = hero.locator(".hero-sec-card__media");
@@ -62,7 +62,7 @@ async function sinDesborde(page, ruta) {
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5, "las demás noticias destacadas se conservan");
-    assert.match(tarjetas[2], /solicitar refugio/);
+    assert.match(tarjetas[3], /solicitar refugio/);
     assert.equal(tarjetas.filter((x) => x.includes("masterclass")).length, 1, "sin duplicados en el bloque principal");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");

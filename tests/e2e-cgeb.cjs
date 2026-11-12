@@ -48,7 +48,7 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: sale del bloque destacado con la noticia del 9-11-2026 ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/, "noticia principal: suplemento de alimentos (9-11-2026)");
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/, "noticia principal: 33.000 residencias (11-11-2026)");
     const tarjetas = page.locator("#heroSecondary .hero-sec-card");
     assert.equal(await tarjetas.count(), 5);
     assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");

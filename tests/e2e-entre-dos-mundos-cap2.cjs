@@ -119,10 +119,10 @@ async function sinDesborde(page, ruta) {
 
     /* ---------- Portada: noticia principal intacta; bloque de la columna ---------- */
     ({ ctx, page, errores } = await abrir(browser, perfil, "/"));
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.match(tarjetas[4], /Santa Latino/);
+    assert.match(tarjetas[4], /Express Entry desde el 3 de noviembre/);
     const bloque = page.locator("#columnFeature");
     await bloque.scrollIntoViewIfNeeded();
     assert.equal((await bloque.locator(".column-banner__title a").textContent()).trim(), "Canadá también puede convertirse en un infierno");

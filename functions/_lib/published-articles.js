@@ -1,5 +1,6 @@
 /* Generado por scripts/build-article-pages.mjs a partir de js/articles.js. No editar a mano. */
 export const PUBLISHED_ARTICLES = new Set([
+  "canada-33000-residencias-permanentes-trabajadores-2026",
   "canada-suplemento-alimentos-679-presupuesto-2026",
   "alberta-rent-assistance-benefit-ayuda-alquiler",
   "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
@@ -46,6 +47,7 @@ export const PUBLISHED_ARTICLES = new Set([
 
 /* Noticias y guías publicadas con contador público de visualizaciones. */
 export const ARTICULOS_CON_CONTADOR = new Set([
+  "ART-2026-043",
   "ART-2026-042",
   "ART-2026-041",
   "ART-2026-040",

@@ -52,8 +52,8 @@ test("columna «Tu dinero en Canadá»: entrega de noviembre publicada; la de se
 });
 
 test("portada: la noticia principal y las destacadas aprobadas no cambian", () => {
-  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026");
-  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["alberta-rent-assistance-benefit-ayuda-alquiler", "masterclass-gratuita-ley-intrinseca-creacion-eder-campos", "canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada"]);
+  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
+  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["canada-suplemento-alimentos-679-presupuesto-2026", "alberta-rent-assistance-benefit-ayuda-alquiler", "masterclass-gratuita-ley-intrinseca-creacion-eder-campos", "canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026"]);
 });
 
 test("retrato circular del autor: mismo archivo y mismo tamaño (300 × 300), JPEG optimizado", () => {

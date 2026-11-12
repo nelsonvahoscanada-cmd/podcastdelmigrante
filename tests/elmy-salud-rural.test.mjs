@@ -59,8 +59,8 @@ test("recursos de salud en Alberta con enlaces oficiales y aviso 811 / 911", () 
 });
 
 test("no toca la portada destacada; SEO, redes y sitemap", () => {
-  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026");
-  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["alberta-rent-assistance-benefit-ayuda-alquiler", "masterclass-gratuita-ley-intrinseca-creacion-eder-campos", "canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026", "hector-rivero-santa-latino-canada"]);
+  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
+  assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), ["canada-suplemento-alimentos-679-presupuesto-2026", "alberta-rent-assistance-benefit-ayuda-alquiler", "masterclass-gratuita-ley-intrinseca-creacion-eder-campos", "canada-cambios-proceso-refugio-3-noviembre-2026", "canada-cambios-express-entry-3-noviembre-2026"]);
   for (const s of [ES, EN]) {
     const h = read(`articulo-${s}.html`);
     assert.match(h, new RegExp(`property="og:image" content="https://podcastdelmigrante\\.com/assets/social/${s}\\.jpg"`));

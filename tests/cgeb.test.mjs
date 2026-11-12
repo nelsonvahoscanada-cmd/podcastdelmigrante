@@ -21,12 +21,12 @@ const [informativo, publicidad] = art.bodyHtml.split('<aside class="article-patr
 const texto = informativo.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
 test("portada: sale del bloque destacado con la noticia del suplemento (9-11-2026) y sigue publicada", () => {
-  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026");
+  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
   assert.equal(ctx.H.secondary.length, 5);
   assert.ok(!ctx.H.secondary.some((s) => s.slug === SLUG), "ya no aparece entre las destacadas");
   assert.ok(art && !art.draft, "sigue publicada");
   assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)), "y conserva su URL");
-  assert.equal(ctx.H.secondary[4].slug, "hector-rivero-santa-latino-canada");
+  assert.equal(ctx.H.secondary[4].slug, "canada-cambios-express-entry-3-noviembre-2026");
   const slugs = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.equal(new Set(slugs).size, slugs.length, "sin duplicados");
   assert.ok(ctx.A.some((a) => a.slug === "referendum-alberta-octubre-2026-inmigrantes" && !a.draft), "la que sale de las destacadas sigue publicada");

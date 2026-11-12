@@ -42,15 +42,15 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    /* Desde el 9-11-2026 es la primera tarjeta destacada (principal: suplemento de alimentos) */
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/);
-    const tarjeta = page.locator("#heroSecondary .hero-sec-card").first();
+    /* Desde el 11-11-2026 es la segunda tarjeta destacada (principal: 33.000 residencias; primera: suplemento) */
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
+    const tarjeta = page.locator("#heroSecondary .hero-sec-card").nth(1);
     assert.ok((await tarjeta.innerText()).includes(TITULO));
     assert.match(await tarjeta.innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.match(tarjetas[1], /masterclass gratuita/);
+    assert.match(tarjetas[2], /masterclass gratuita/);
     assert.equal(tarjetas.filter((x) => x.includes("alquiler")).length, 1, "sin duplicados");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
