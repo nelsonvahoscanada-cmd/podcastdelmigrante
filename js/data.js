@@ -66,18 +66,28 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Finanzas",
-    title: "Canadá propone hasta $679 adicionales para ayudar a las familias con el costo de los alimentos",
-    dek: "El Presupuesto Federal 2026 contempla un pago extraordinario de hasta $679 CAD para una pareja con dos hijos y hasta $339 CAD para una persona soltera sin hijos. La medida busca aliviar los gastos de alimentación y productos esenciales, pero todavía debe ser aprobada.",
+    category: "Inmigración",
+    title: "Canadá acelera 33.000 residencias permanentes: 15.100 trabajadores ya fueron beneficiados. ¿Quiénes califican?",
+    dek: "El Gobierno canadiense tiene en marcha una iniciativa especial para acelerar la residencia permanente de hasta 33.000 trabajadores durante 2026 y 2027. Inmigración Canadá confirma que miles ya han obtenido su estatus, pero advierte que no se trata de un programa nuevo ni de una convocatoria abierta para todos los inmigrantes.",
     author: "El Podcast del Migrante",
-    date: "9 de noviembre, 2026",
-    image: "url('assets/canada-suplemento-alimentos-679-presupuesto-2026.jpg')",
-    aspectRatio: "3/2",
-    alt: "Imagen editorial de El Podcast del Migrante: una familia latina sonríe junto a un carrito de supermercado con alimentos y la bandera de Canadá; titular «¡Hasta $679 adicionales para ayudar a las familias con el costo de los alimentos en Canadá!» y aviso «Es una propuesta del Presupuesto 2026, no un pago aprobado».",
+    date: "11 de noviembre, 2026",
+    image: "url('assets/canada-33000-residencias-permanentes-trabajadores-2026.jpg')",
+    aspectRatio: "1672/941",
+    alt: "Ilustración editorial de El Podcast del Migrante: trabajadores frente al Parlamento de Canadá y la bandera canadiense; titular «Canadá acelera 33.000 residencias permanentes», «15.100 trabajadores beneficiados hasta agosto de 2026» y aviso «No es una convocatoria nueva».",
     demo: false,
-    slug: "canada-suplemento-alimentos-679-presupuesto-2026",
+    slug: "canada-33000-residencias-permanentes-trabajadores-2026",
   },
   secondary: [
+    {
+      category: "Finanzas",
+      title: "Canadá propone hasta $679 adicionales para ayudar a las familias con el costo de los alimentos",
+      date: "9 de noviembre",
+      image: "url('assets/canada-suplemento-alimentos-679-presupuesto-2026.jpg')",
+      aspectRatio: "3/2",
+      alt: "Imagen editorial de El Podcast del Migrante: una familia latina sonríe junto a un carrito de supermercado con alimentos y la bandera de Canadá; titular «¡Hasta $679 adicionales para ayudar a las familias con el costo de los alimentos en Canadá!» y aviso «Es una propuesta del Presupuesto 2026, no un pago aprobado».",
+      demo: false,
+      slug: "canada-suplemento-alimentos-679-presupuesto-2026",
+    },
     {
       category: "Vivienda",
       title: "¿Vives en Alberta y no te alcanza para pagar el alquiler? Conoce la ayuda mensual que ofrece el Gobierno",
@@ -117,16 +127,6 @@ const HERO = {
       alt: "Imagen editorial de El Podcast del Migrante: la bandera de Canadá sobre el horizonte de Calgary, un pasaporte canadiense y un documento de Express Entry, con el titular «Cambios en Express Entry desde el 3 de noviembre» y «Hasta 150 puntos por experiencia laboral y ofertas de empleo».",
       demo: false,
       slug: "canada-cambios-express-entry-3-noviembre-2026",
-    },
-    {
-      category: "Comunidad",
-      title: "Héctor Rivero, el Santa Latino que convirtió su historia migratoria en esperanza para las familias de Canadá",
-      date: "24 de octubre",
-      image: "url('assets/yt/LxTr1Zda3dg.jpg')",
-      aspectRatio: "16/9",
-      alt: "Miniatura oficial del episodio de El Podcast del Migrante: Santa Claus sonriente con las cataratas del Niágara y la bandera de Canadá al fondo, y los textos «De inmigrante a Santa Latino en Canadá» y «Héctor Rivero, invitado especial».",
-      demo: false,
-      slug: "hector-rivero-santa-latino-canada",
     },
   ],
 };

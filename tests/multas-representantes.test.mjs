@@ -19,7 +19,7 @@ const IRCC = "https://www.canada.ca/en/immigration-refugees-citizenship/news/202
 const art = ctx.A.find((a) => a.slug === SLUG);
 
 test("portada: fuera del bloque destacado (principal: alquiler en Alberta, 8-11-2026), sigue publicada y conserva su URL", () => {
-  assert.equal(ctx.H.main.slug, "canada-suplemento-alimentos-679-presupuesto-2026");
+  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
   assert.ok(!ctx.H.secondary.some((s) => s.slug === SLUG), "ya no aparece entre las destacadas");
   assert.equal(ctx.H.secondary.length, 5);
   assert.ok(art && !art.draft, "sigue publicada");

@@ -45,7 +45,7 @@ test("privacidad: ninguna página pública pide miniaturas a YouTube ni crea el 
 
 test("las páginas con videos cargan el componente VideoCover", () => {
   const pages = ["articulo.html", "colaborador.html", ...readdirSync(ROOT).filter((f) => /^(articulo|colaborador)-.+\.html$/.test(f))];
-  for (const p of pages) assert.match(read(p), /<script src="js\/video-cover\.js"><\/script>\s*<script src="js\/(article|colaborador)\.js">/, p);
+  for (const p of pages) assert.match(read(p), /<script src="js\/video-cover\.js(\?v=[0-9a-f]{10})?"><\/script>\s*<script src="js\/(article|colaborador)\.js(\?v=[0-9a-f]{10})?">/, p);
 });
 
 test("carrusel Podcast del Migrante Play: videos con reproducción en la portada", () => {

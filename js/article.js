@@ -251,7 +251,9 @@
      oficial (tiktok.com/player/v1) solo se crea cuando la persona lo pulsa.
      El enlace «Ver video en TikTok» queda siempre visible por si el
      reproductor no carga. Con video.position = "intro" se coloca antes del
-     primer subtítulo del cuerpo. */
+     primer subtítulo del cuerpo; con video.position = "antes-de" y
+     video.beforeHeading = "<texto de un subtítulo h2>", justo antes de ese
+     subtítulo (si no se encuentra, antes del primer subtítulo). */
   function tiktokBlockHtml(article) {
     const v = article.video;
     const url = `https://www.tiktok.com/@${v.tiktokUser}/video/${v.tiktokId}`;
@@ -291,17 +293,21 @@
     });
   }
 
+  const videoEnCuerpo = (v) => !!(v && v.tiktokId && (v.position === "intro" || v.position === "antes-de"));
+
   function bodyWithVideoHtml(article) {
     const v = article.video;
-    if (!(v && v.tiktokId && v.position === "intro")) return article.bodyHtml;
-    const i = article.bodyHtml.indexOf("<h2");
+    if (!videoEnCuerpo(v)) return article.bodyHtml;
+    let i = -1;
+    if (v.position === "antes-de" && v.beforeHeading) i = article.bodyHtml.indexOf("<h2>" + v.beforeHeading + "</h2>");
+    if (i < 0) i = article.bodyHtml.indexOf("<h2");
     if (i < 0) return article.bodyHtml + tiktokBlockHtml(article);
     return article.bodyHtml.slice(0, i) + tiktokBlockHtml(article) + article.bodyHtml.slice(i);
   }
 
   function videoBlockHtml(article) {
     if (!article.video) return "";
-    if (article.video.tiktokId) return article.video.position === "intro" ? "" : tiktokBlockHtml(article);
+    if (article.video.tiktokId) return videoEnCuerpo(article.video) ? "" : tiktokBlockHtml(article);
     if (article.video.youtubeId) {
       /* El video de YouTube solo se carga cuando la persona pulsa
          «Reproducir» (antes se cargaba al llegar a la sección). */
@@ -479,13 +485,29 @@
     document.getElementById("ogImage").setAttribute("content", imageUrl);
     document.getElementById("twitterImage").setAttribute("content", imageUrl);
 
+    /* Datos estructurados: la página generada puede traerlos ya en el HTML
+       (<script id="articleJsonLd">, scripts/build-article-pages.mjs). */
+    if (!document.getElementById("articleJsonLd")) {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = "articleJsonLd";
+      script.textContent = JSON.stringify(articleJsonLd(article));
+      document.head.appendChild(script);
+    }
+  }
+
+  /* NewsArticle / Article de cada artículo (mismo objeto en el navegador y en
+     la página generada). */
+  function articleJsonLd(article) {
+    const description = article.seo.description || article.excerpt;
+    const url = canonicalUrl(article);
+    const imageUrl = heroImageUrl(article);
     const schemaType = CONTENT_TYPE_SCHEMA[article.contentType] || "Article";
     const authorNode =
       article.author.mode === "medio"
         ? { "@type": "Organization", name: article.author.name }
         : { "@type": "Person", name: article.author.name };
-
-    const jsonLd = {
+    return {
       "@context": "https://schema.org",
       "@type": schemaType,
       headline: article.title,
@@ -502,10 +524,6 @@
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
       image: imageUrl,
     };
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(jsonLd);
-    document.head.appendChild(script);
   }
 
   /* ---------- Ensamblado completo ---------- */
@@ -582,13 +600,12 @@
     `;
   }
 
-  function renderArticle(article) {
-    setSEO(article);
+  /* Contenido completo del artículo. El mismo HTML lo escribe
+     scripts/build-article-pages.mjs en las páginas con «prerender: true»
+     (legible sin JavaScript). */
+  function articleContentHtml(article) {
     const isAuthorColumn = article.layout === "columna-autor";
-
-    const root = document.getElementById("articleRoot");
-    root.classList.toggle("article-page--autor-columna", isAuthorColumn);
-    root.innerHTML = `
+    return `
       ${sponsoredBadgeHtml(article)}
       ${isAuthorColumn ? authorColumnMastheadHtml(article) : contentTypeHtml(article) + columnBadgeHtml(article)}
       <h1 class="article-title">${article.title}</h1>
@@ -616,6 +633,15 @@
       ${newsletterHtml(article)}
       ${relatedHtml(article)}
     `;
+  }
+
+  function renderArticle(article) {
+    setSEO(article);
+    const isAuthorColumn = article.layout === "columna-autor";
+
+    const root = document.getElementById("articleRoot");
+    root.classList.toggle("article-page--autor-columna", isAuthorColumn);
+    root.innerHTML = articleContentHtml(article);
 
     VideoCover.bind(root);
     bindTiktok(root);
@@ -665,6 +691,9 @@
   }
 
   function renderNotFound() {
+    /* Si la página ya trae su contenido en el HTML (generado), se conserva:
+       puede que el navegador tenga en caché una lista de artículos anterior. */
+    if (document.getElementById("articleRoot").hasAttribute("data-prerendered")) return;
     document.title = "Artículo no encontrado — El Podcast del Migrante Magazine";
     document.getElementById("articleRoot").innerHTML = `
       <div class="article-not-found">
@@ -690,4 +719,7 @@
       renderNotFound();
     }
   });
+
+  /* Para scripts/build-article-pages.mjs (contenido y datos estructurados en el HTML) */
+  window.PDMArticle = { articleContentHtml, articleJsonLd };
 })();

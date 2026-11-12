@@ -15,6 +15,13 @@
   y twitter:* de ESE artículo ya escritos en el HTML. El cuerpo lo sigue
   armando js/article.js como siempre (mismo diseño).
 
+  Artículos con «prerender: true»: la página trae además el contenido
+  completo y los datos estructurados (NewsArticle) escritos en el HTML, con
+  las mismas funciones del navegador (js/article.js → articleContentHtml y
+  articleJsonLd), para que se lean sin JavaScript. Sus scripts llevan una
+  versión (?v=<huella>) para que el navegador no use una copia anterior.
+  Los demás artículos no cambian.
+
   Imagen social: assets/social/<slug>.jpg (1200 × 630, la genera
   scripts/build-social-images.py a partir de la foto principal). Si
   todavía no existe se usa la foto original; sin foto, el logotipo.
@@ -65,6 +72,39 @@ function loadArticles() {
   const ctx = vm.createContext({});
   vm.runInContext(readFileSync(join(ROOT, "js/articles.js"), "utf8") + "\n;globalThis.__A = ARTICLES;", ctx);
   return ctx.__A;
+}
+
+/* Mismos scripts que el navegador, en un contexto aislado (solo para los
+   artículos con prerender: true). */
+let RT = null;
+function runtime() {
+  if (RT) return RT;
+  const ctx = vm.createContext({ document: { addEventListener() {} }, console, URLSearchParams });
+  ctx.window = ctx;
+  ctx.PDM = { el() {}, initSiteChrome() {} };
+  for (const f of ["js/articles.js", "js/columns.js", "js/video-cover.js", "js/article.js"]) vm.runInContext(readFileSync(join(ROOT, f), "utf8"), ctx, { filename: f });
+  vm.runInContext("globalThis.__ARTICLES = ARTICLES;", ctx);
+  return (RT = ctx);
+}
+const versionDe = (f) => createHash("sha256").update(readFileSync(join(ROOT, f))).digest("hex").slice(0, 10);
+const PRERENDER_SCRIPTS = ["js/data.js", "js/articles.js", "js/columns.js", "js/nav.js", "js/video-cover.js", "js/article.js", "js/vistas.js"];
+function jsonForScript(obj) {
+  return JSON.stringify(obj).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
+}
+
+function prerender(html, a) {
+  const R = runtime();
+  const art = R.__ARTICLES.find((x) => x.slug === a.slug);
+  const loading = '<article class="article-page wrap" id="articleRoot">\n    <p class="article-loading">Cargando artículo…</p>\n  </article>';
+  if (!html.includes(loading)) throw new Error("articulo.html: no se encontró el contenedor articleRoot");
+  html = html.replace(loading, () => `<article class="article-page wrap" id="articleRoot" data-prerendered="${escAttr(a.slug)}">${R.PDMArticle.articleContentHtml(art)}</article>`);
+  html = html.replace("</head>", () => `<script type="application/ld+json" id="articleJsonLd">${jsonForScript(R.PDMArticle.articleJsonLd(art))}</script>\n</head>`);
+  for (const f of PRERENDER_SCRIPTS) {
+    const tag = `<script src="${f}"></script>`;
+    if (!html.includes(tag)) throw new Error(`articulo.html: falta ${tag}`);
+    html = html.replace(tag, `<script src="${f}?v=${versionDe(f)}"></script>`);
+  }
+  return html;
 }
 
 function escAttr(t) {
@@ -161,6 +201,7 @@ function buildPage(template, a, problems) {
     a.category && `<meta property="article:section" content="${escAttr(a.category)}">`,
   ].filter(Boolean);
   html = html.replace(/(<meta id="ogImage"[^>]*>)/, `$1\n${extra.join("\n")}`);
+  if (a.prerender === true) html = prerender(html, a);
   return html.replace("<head>", "<head>\n" + GENERATED_MARK);
 }
 

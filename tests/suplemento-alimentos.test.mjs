@@ -29,9 +29,9 @@ const OFICIALES = [
   "https://budget.canada.ca/2026/report-rapport/chap3-en.html",
 ];
 
-test("publicada el 9-11-2026 como la noticia más reciente, en Finanzas, sin duplicados", () => {
+test("publicada el 9-11-2026 (segunda más reciente, tras la del 11-11-2026), en Finanzas, sin duplicados", () => {
   assert.ok(art && !art.draft && !art.demo);
-  assert.equal(ctx.A[0].slug, SLUG);
+  assert.equal(ctx.A[1].slug, SLUG);
   assert.equal(art.id, "ART-2026-042");
   assert.equal(art.contentType, "Noticia");
   assert.equal(art.category, "Finanzas");
@@ -41,17 +41,18 @@ test("publicada el 9-11-2026 como la noticia más reciente, en Finanzas, sin dup
   assert.equal(ctx.A.filter((a) => a.slug === SLUG).length, 1);
 });
 
-test("portada: noticia principal; las anteriores se desplazan y siguen publicadas", () => {
-  assert.equal(ctx.H.main.slug, SLUG);
-  assert.equal(ctx.H.main.title, art.title);
-  assert.equal(ctx.H.main.image, `url('${IMG}')`);
-  assert.equal(ctx.H.main.date, "9 de noviembre, 2026");
+test("portada: primera tarjeta destacada (la noticia de 33.000 residencias pasa a principal el 11-11-2026); las anteriores siguen publicadas", () => {
+  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
+  assert.equal(ctx.H.secondary[0].slug, SLUG);
+  assert.equal(ctx.H.secondary[0].title, art.title);
+  assert.equal(ctx.H.secondary[0].image, `url('${IMG}')`);
+  assert.equal(ctx.H.secondary[0].date, "9 de noviembre");
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    SLUG,
     "alberta-rent-assistance-benefit-ayuda-alquiler",
     "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
     "canada-cambios-proceso-refugio-3-noviembre-2026",
     "canada-cambios-express-entry-3-noviembre-2026",
-    "hector-rivero-santa-latino-canada",
   ]);
   for (const s of ctx.H.secondary) assert.ok(ctx.A.some((a) => a.slug === s.slug && !a.draft), s.slug);
   assert.ok(ctx.A.some((a) => a.slug === "canada-groceries-essentials-benefit-cgeb-2026" && !a.draft), "el CGEB sigue publicado");

@@ -60,13 +60,11 @@ async function reproduce(page, contenedor) {
 (async () => {
   const browser = await chromium.launch();
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: primera tarjeta secundaria (tras la noticia de empleo) ---------- */
+    /* ---------- Portada: fuera de las destacadas desde el 11-11-2026; sigue en el carrusel ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá propone hasta \$679 adicionales/);
-    const hero = page.locator("#heroSecondary .hero-sec-card").nth(4);
-    assert.match(await hero.innerText(), new RegExp(TITULO.slice(0, 40)));
-    assert.equal(await hero.locator(".demo-badge").count(), 0);
-    assert.match(await hero.innerHTML(), new RegExp(`assets/yt/${VIDEO}\\.jpg`));
+    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
+    /* Desde el 11-11-2026 sale del bloque destacado; sigue publicada */
+    assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");
     assert.equal((await fetch(`${BASE}/assets/yt/${VIDEO}.jpg`)).status, 200);
 
     /* ---------- Podcast del Migrante Play (carrusel) ---------- */
@@ -86,12 +84,13 @@ async function reproduce(page, contenedor) {
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
 
-    /* La tarjeta de la portada abre el artículo completo (una sola URL: /articulo-<slug>).
+    /* «Leer el artículo» del carrusel de la portada abre el artículo completo (una sola
+       URL: /articulo-<slug>). Desde el 11-11-2026 ya no está entre las destacadas.
        En una página recién cargada: el reproductor creado arriba conserva el foco. */
     const portada = await ctx.newPage();
     await portada.goto(BASE + "/", { waitUntil: "networkidle" });
     await portada.addStyleTag({ content: "html{scroll-behavior:auto!important}" });
-    await portada.locator(`#heroSecondary .hero-sec-card a[href*="${SLUG}"]`).first().click();
+    await portada.locator(`#videoTrack a[href="articulo-${SLUG}"]`).first().click();
     await portada.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 
