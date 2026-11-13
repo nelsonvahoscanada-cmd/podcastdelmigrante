@@ -1,0 +1,17 @@
+noticias-html: 0 OK noticias: HTML completo sin JavaScript, sin duplicados con JavaScript y sin «no encontrado»
+seo-redirecciones: 0 OK SEO: enlaces sin redirecciones, canónicas definitivas y 404 reales
+residencias-33000: 0 OK 33.000 residencias: portada (principal), artículo con y sin JS, video de TikTok, enlaces oficiales, imagen y redes
+suplemento-alimentos: 0 OK suplemento de alimentos: portada (principal), artículo, video de TikTok, enlaces oficiales, patrocinio, imagen y redes
+refugio-2026: 0 OK Refugio 2026: portada (principal), artículo, video, publicidad separada, fuentes, redes y Migración
+elmy-salud-rural: 0 OK artículo de Elmy Castillo: español, inglés, recursos, perfil, archivo y portada sin cambios
+entre-dos-mundos-cap2: 0 OK Entre dos mundos, capítulo 2: artículo, columna, archivo y portada
+carlos-noviembre: 0 OK columna de noviembre de Carlos D. Castillo, calculadora y retrato circular
+cgeb: 0 OK CGEB: segunda tarjeta junto a la principal, artículo, botón oficial, video y publicidad separada
+express-entry-150: 0 OK Express Entry 150 puntos: portada (principal), artículo, video, fuentes y Migración
+alquiler-alberta: 0 OK alquiler en Alberta: portada (principal), artículo, video de TikTok, enlaces oficiales, imagen y redes
+masterclass-eder-campos: 0 OK masterclass: portada (principal), artículo, imagen, botón de inscripción y vista previa para redes
+hector-rivero: 0 OK Héctor Rivero: portada, Play, video y artículo
+multas-representantes: 0 OK multas a representantes migratorios: portada (tarjeta secundaria) y artículo
+alberta-bomberos: 0 OK Alberta bomberos forestales: portada (tras la noticia principal y Santa Latino) y artículo
+empleo-remoto-alberta: 0 OK empleo desde casa en Alberta: fuera de las destacadas y artículo publicado
+noticias: 0 OK noticias (24 enlaces permanentes)
