@@ -1,0 +1,34 @@
+
+=== /articulo-canada-cambios-proceso-refugio-3-noviembre-2026
+  HTTP navegador: 200 | content-type text/html; charset=utf-8 | x-robots-tag - | cache-control public, max-age=0, must-revalidate | 11937 bytes
+  HTML sin JS: <title> «Canadá cambia el proceso de refugio desde el 3 de noviembre de 2026» | canónica https://podcastdelmigrante.com/articulo-canada-cambios-proceso-refugio-3-noviembre-2026 | robots - | og:title «Canadá cambia el proceso para solicitar refugio: estas son l» | og:image https://podcastdelmigrante.com/assets/social/canada-cambios-proceso-refugio-3-noviembre-2026.jpg | cuerpo: «Cargando artículo…»
+  og:image: 200 image/jpeg
+  HTTP Googlebot (UA): 200 | content-type text/html; charset=utf-8 | x-robots-tag - | cache-control public, max-age=0, must-revalidate | 11937 bytes
+  renderizado hoy (UA Googlebot): título «Canadá cambia el proceso de refugio desde el 3 de noviembre de 2026» | h1 «Canadá cambia el proceso para solicitar refugio: estas son l» | 1214 palabras | canónica /articulo-canada-cambios-proceso-refugio-3-noviembre-2026 | robots - | imagen true | JSON-LD NewsArticle | «no encontrado» false | «Cargando» false | fecha «Nelson Vahos»
+  errores JS: ninguno
+  sin JavaScript: título «Canadá cambia el proceso de refugio desde el 3 de noviembre de 2026» | h1 «» | 2 palabras | canónica /articulo-canada-cambios-proceso-refugio-3-noviembre-2026 | robots - | imagen false | JSON-LD - | «no encontrado» false | «Cargando» true | fecha «»
+  con articles.js en caché de antes de publicarla: título «Artículo no encontrado — El Podcast del Migrante Magazine» | h1 «No encontramos este artículo» | 20 palabras | canónica /articulo-canada-cambios-proceso-refugio-3-noviembre-2026 | robots - | imagen false | JSON-LD - | «no encontrado» true | «Cargando» false | fecha «»
+  si articles.js no carga: título «Canadá cambia el proceso de refugio desde el 3 de noviembre de 2026» | h1 «» | 2 palabras | canónica /articulo-canada-cambios-proceso-refugio-3-noviembre-2026 | robots - | imagen false | JSON-LD - | «no encontrado» false | «Cargando» true | fecha «»
+
+=== /articulo-salud-rural-urbana-alberta-atencion-medica
+  HTTP navegador: 200 | content-type text/html; charset=utf-8 | x-robots-tag - | cache-control public, max-age=0, must-revalidate | 11289 bytes
+  HTML sin JS: <title> «Salud rural en Alberta: ¿es más difícil recibir atención médica?» | canónica https://podcastdelmigrante.com/articulo-salud-rural-urbana-alberta-atencion-medica | robots - | og:title «Salud en Canadá: ¿es más difícil recibir atención médica en » | og:image https://podcastdelmigrante.com/assets/social/salud-rural-urbana-alberta-atencion-medica.jpg | cuerpo: «Cargando artículo…»
+  og:image: 200 image/jpeg
+  HTTP Googlebot (UA): 200 | content-type text/html; charset=utf-8 | x-robots-tag - | cache-control public, max-age=0, must-revalidate | 11289 bytes
+  renderizado hoy (UA Googlebot): título «Salud rural en Alberta: ¿es más difícil recibir atención médica?» | h1 «Salud en Canadá: ¿es más difícil recibir atención médica en » | 1271 palabras | canónica /articulo-salud-rural-urbana-alberta-atencion-medica | robots - | imagen true | JSON-LD NewsArticle | «no encontrado» false | «Cargando» false | fecha «Elmy Castillo — Corresponsal de salud rural, County of Newel»
+  errores JS: ninguno
+  sin JavaScript: título «Salud rural en Alberta: ¿es más difícil recibir atención médica?» | h1 «» | 2 palabras | canónica /articulo-salud-rural-urbana-alberta-atencion-medica | robots - | imagen false | JSON-LD - | «no encontrado» false | «Cargando» true | fecha «»
+  con articles.js en caché de antes de publicarla: título «Artículo no encontrado — El Podcast del Migrante Magazine» | h1 «No encontramos este artículo» | 20 palabras | canónica /articulo-salud-rural-urbana-alberta-atencion-medica | robots - | imagen false | JSON-LD - | «no encontrado» true | «Cargando» false | fecha «»
+  si articles.js no carga: título «Salud rural en Alberta: ¿es más difícil recibir atención médica?» | h1 «» | 2 palabras | canónica /articulo-salud-rural-urbana-alberta-atencion-medica | robots - | imagen false | JSON-LD - | «no encontrado» false | «Cargando» true | fecha «»
+  enlaces desde /: articulo-canada-cambios-proceso-refugio-3-noviembre-2026 → 200 ; articulo-salud-rural-urbana-alberta-atencion-medica → 200
+  enlaces desde /noticias: articulo-canada-cambios-proceso-refugio-3-noviembre-2026 → 200 ; articulo-salud-rural-urbana-alberta-atencion-medica → 200
+  enlaces desde /guia?categoria=migracion: articulo-canada-cambios-proceso-refugio-3-noviembre-2026 → 200
+  enlaces desde /colaborador-elmy-castillo: ninguno
+  enlaces desde /articulo-rural-vs-urban-healthcare-high-level-review: articulo-salud-rural-urbana-alberta-atencion-medica → 200
+  enlaces desde /articulo-canada-cambios-express-entry-3-noviembre-2026: ninguno
+  enlaces desde /articulo-canada-33000-residencias-permanentes-trabajadores-2026: articulo-canada-cambios-proceso-refugio-3-noviembre-2026 → 200
+  enlaces desde /articulo-plan-dental-canada-cdcp: articulo-salud-rural-urbana-alberta-atencion-medica → 200
+  sitemap /articulo-canada-cambios-proceso-refugio-3-noviembre-2026: sí
+  sitemap /articulo-salud-rural-urbana-alberta-atencion-medica: sí
+  robots.txt bloquea /js/ o /articulo: false
+  /js/articles.js: 200 cache-control public, max-age=14400, must-revalidate etag W/"c321d5e15422f70ff383fac66a6d669f"
