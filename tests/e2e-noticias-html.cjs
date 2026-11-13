@@ -78,23 +78,40 @@ async function contexto(browser, perfil, extra = {}) {
     console.log(`ok ${nombre}: ${PUBLICADAS.length} noticias legibles sin JavaScript e idénticas con JavaScript`);
   }
 
-  /* Catálogo sin la noticia (copia antigua en caché) o que no carga */
+  /* Catálogo sin la noticia o que aún la tenía como borrador (copia antigua
+     en caché), o que no carga: el artículo sigue completo, sin errores y con
+     sus botones activos (copiar enlace, video) */
   for (const [caso, accion] of [
     ["catálogo antiguo sin la noticia", (r) => r.fulfill({ status: 200, contentType: "application/javascript", body: "const ARTICLES = [];" })],
+    ["catálogo antiguo con la noticia como borrador", (r) => r.fulfill({ status: 200, contentType: "application/javascript", body: `const ARTICLES = ${JSON.stringify(SOFT404.map((slug) => ({ slug, draft: true, title: "x", columnName: "x" })))};` })],
     ["js/articles.js no carga", (r) => r.abort()],
   ]) {
     const c = await contexto(browser, devices["Pixel 5"]);
     await c.route(/\/js\/articles\.js/, accion);
     for (const slug of SOFT404) {
       const p = await c.newPage();
+      const errores = [];
+      p.on("pageerror", (e) => errores.push(e.message));
       await p.goto(`${BASE}/articulo-${slug}`, { waitUntil: "networkidle" });
       const d = await p.evaluate(() => ({ titulo: document.title, nf: /no encontrad/i.test(document.title + document.body.innerText), palabras: document.getElementById("articleRoot").innerText.split(/\s+/).length }));
       assert.equal(d.nf, false, `${slug} (${caso}): nunca «no encontrado»`);
       assert.ok(d.palabras > 500, `${slug} (${caso}): el artículo sigue completo (${d.palabras} palabras)`);
+      assert.deepEqual(errores, [], `${slug} (${caso}): sin errores de JavaScript`);
+      const copiar = p.locator("#copyLinkBtn");
+      if (await copiar.count()) {
+        await copiar.click();
+        await p.waitForFunction(() => /copiado/i.test(document.getElementById("copyLinkLabel").textContent), null, { timeout: 3000 });
+      }
+      const play = p.locator(".article-tiktok__play, [data-video-play]").first();
+      if (await play.count()) {
+        await play.scrollIntoViewIfNeeded();
+        await play.click();
+        await p.waitForSelector(".article-tiktok iframe, .article-video iframe", { state: "attached", timeout: 3000 });
+      }
       await p.close();
     }
     await c.close();
-    console.log(`ok ${caso}: las noticias señaladas como Soft 404 siguen completas`);
+    console.log(`ok ${caso}: las noticias señaladas como Soft 404 siguen completas, sin errores y con sus botones activos`);
   }
   await browser.close();
   console.log("OK noticias: HTML completo sin JavaScript, sin duplicados con JavaScript y sin «no encontrado»");
