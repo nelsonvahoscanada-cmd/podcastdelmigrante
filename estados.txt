@@ -1,0 +1,28 @@
+/guia?categoria=migracion                                      200  Información útil para migrantes — El Podcast del Migr
+/guia                                                          404  Página no encontrada — El Podcast del Migrante Magazi
+/guia?categoria=x                                              404  Página no encontrada — El Podcast del Migrante Magazi
+/guia.html?categoria=migracion                                 308 https://claude-seo-redirecciones-can.podcastdelmigrante.pages.dev/guia?categoria=migracion 
+/guia-ruta?ruta=quiero-venir-canada                            200  Quiero venir a Canadá — El Podcast del Migrante Magaz
+/guia-ruta?subruta=quiero-visitar-canada                       200  Quiero venir a Canadá — El Podcast del Migrante Magaz
+/guia-ruta                                                     404  Página no encontrada — El Podcast del Migrante Magazi
+/historia?slug=desafio-carlos-castillo-proteccion-familiar     200  Desafío 100 Empresas — El Podcast del Migrante Magazi
+/historia?slug=x                                               404  Página no encontrada — El Podcast del Migrante Magazi
+/historia-vida?slug=historia-diana-pineda-radio-canada         200  Historias de vida — El Podcast del Migrante Magazine
+/columna?slug=entre-dos-mundos                                 200  Columna — El Podcast del Migrante Magazine
+/columna                                                       404  Página no encontrada — El Podcast del Migrante Magazi
+/colaborador?id=carlos-castillo                                200  Colaboradores — El Podcast del Migrante Magazine
+/colaborador                                                   404  Página no encontrada — El Podcast del Migrante Magazi
+/colaborador-carlos-castillo                                   200  Carlos D. Castillo — Educación Financiera | El Podcas
+/business-profile?slug=santa-latino                            200  Perfiles empresariales | El Podcast del Migrante
+/business-profile                                              404  Página no encontrada — El Podcast del Migrante Magazi
+/articulo?slug=plan-dental-canada-cdcp                         301 https://claude-seo-redirecciones-can.podcastdelmigrante.pages.dev/articulo-plan-dental-canada-cdcp 
+/articulo.html?slug=plan-dental-canada-cdcp                    301 https://claude-seo-redirecciones-can.podcastdelmigrante.pages.dev/articulo-plan-dental-canada-cdcp 
+/articulo?slug=x                                               404  Página no encontrada — El Podcast del Migrante Magazi
+/articulo                                                      404  Página no encontrada — El Podcast del Migrante Magazi
+/no-existe                                                     404  Página no encontrada — El Podcast del Migrante Magazi
+/registra-tu-empresa                                           200  Registra tu empresa: plan Gratuito o Premium | Direct
+/registra-tu-empresa.html                                      308 https://claude-seo-redirecciones-can.podcastdelmigrante.pages.dev/registra-tu-empresa 
+/index.html                                                    308 https://claude-seo-redirecciones-can.podcastdelmigrante.pages.dev/ 
+/                                                              200  El Podcast del Migrante Magazine — Información real p
+/canada-en-datos/                                              200  Canadá en Datos: provincias y territorios de Canadá —
+/perfil-santa-latino                                           200  Santa Latino | Santa Claus para eventos en Niagara Fa

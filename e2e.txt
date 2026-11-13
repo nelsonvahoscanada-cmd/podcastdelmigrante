@@ -1,0 +1,5 @@
+ok 130 enlaces internos renderizados responden 200 sin redirección
+ok computador: 13 URL inexistentes → 404 con la página del sitio
+ok celular: 13 URL inexistentes → 404 con la página del sitio
+ok redirecciones antiguas conservadas
+OK SEO: enlaces sin redirecciones, canónicas definitivas y 404 reales
