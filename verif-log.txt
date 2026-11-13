@@ -1,0 +1,48 @@
+OK computador /noticias: 200, canónica /noticias, «Todas las noticias»
+OK computador /articulo-canada-33000-residencias-permanentes-trabajadores-2026: 200, canónica /articulo-canada-33000-residencias-permanentes-trabajadores-2026, «Canadá acelera 33.000 residencias permanentes: 15.»
+OK computador /articulo-canada-suplemento-alimentos-679-presupuesto-2026: 200, canónica /articulo-canada-suplemento-alimentos-679-presupuesto-2026, «Canadá propone hasta $679 adicionales para ayudar »
+OK computador /articulo-salud-rural-urbana-alberta-atencion-medica: 200, canónica /articulo-salud-rural-urbana-alberta-atencion-medica, «Salud en Canadá: ¿es más difícil recibir atención »
+OK computador /guia?categoria=migracion: 200, canónica /guia?categoria=migracion, «Migración a Canadá»
+OK computador /guia-ruta?ruta=quiero-venir-canada: 200, canónica /guia-ruta?ruta=quiero-venir-canada, «Quiero venir a Canadá»
+OK computador /guia-ruta?subruta=quiero-visitar-canada: 200, canónica /guia-ruta?subruta=quiero-visitar-canada, «Quiero visitar Canadá»
+OK computador /historia?slug=desafio-carlos-castillo-proteccion-familiar: 200, canónica /historia?slug=desafio-carlos-castillo-proteccion-familiar, «¿Qué pasaría con tu familia si mañana faltaras? | »
+OK computador /historia-vida?slug=historia-diana-pineda-radio-canada: 200, canónica /historia-vida?slug=historia-diana-pineda-radio-canada, «De una cabina de radio en FM a una nueva vida en C»
+OK computador /quien-puede-ayudarte: 200, canónica /quien-puede-ayudarte, «Encuentra quién puede ayudarte en Canadá»
+OK computador /perfil-santa-latino: 200, canónica /perfil-santa-latino, «Santa Latino»
+OK computador /perfil-carlos-d-castillo: 200, canónica /perfil-carlos-d-castillo, «Carlos D. Castillo»
+OK computador /perfil-tomas-velazquez: 200, canónica /perfil-tomas-velazquez, «Tomás Velázquez»
+OK computador /perfil-1juanromero1: 200, canónica /perfil-1juanromero1, «1JuanRomero1 Inc.»
+OK computador /registra-tu-empresa: 200, canónica /registra-tu-empresa, «Registra tu empresa»
+OK computador /: 200, canónica /, «Canadá acelera 33.000 residencias permanentes: 15.»
+OK celular /noticias: 200, canónica /noticias, «Todas las noticias»
+OK celular /articulo-canada-33000-residencias-permanentes-trabajadores-2026: 200, canónica /articulo-canada-33000-residencias-permanentes-trabajadores-2026, «Canadá acelera 33.000 residencias permanentes: 15.»
+OK celular /articulo-canada-suplemento-alimentos-679-presupuesto-2026: 200, canónica /articulo-canada-suplemento-alimentos-679-presupuesto-2026, «Canadá propone hasta $679 adicionales para ayudar »
+OK celular /articulo-salud-rural-urbana-alberta-atencion-medica: 200, canónica /articulo-salud-rural-urbana-alberta-atencion-medica, «Salud en Canadá: ¿es más difícil recibir atención »
+OK celular /guia?categoria=migracion: 200, canónica /guia?categoria=migracion, «Migración a Canadá»
+OK celular /guia-ruta?ruta=quiero-venir-canada: 200, canónica /guia-ruta?ruta=quiero-venir-canada, «Quiero venir a Canadá»
+OK celular /guia-ruta?subruta=quiero-visitar-canada: 200, canónica /guia-ruta?subruta=quiero-visitar-canada, «Quiero visitar Canadá»
+OK celular /historia?slug=desafio-carlos-castillo-proteccion-familiar: 200, canónica /historia?slug=desafio-carlos-castillo-proteccion-familiar, «¿Qué pasaría con tu familia si mañana faltaras? | »
+OK celular /historia-vida?slug=historia-diana-pineda-radio-canada: 200, canónica /historia-vida?slug=historia-diana-pineda-radio-canada, «De una cabina de radio en FM a una nueva vida en C»
+OK celular /quien-puede-ayudarte: 200, canónica /quien-puede-ayudarte, «Encuentra quién puede ayudarte en Canadá»
+OK celular /perfil-santa-latino: 200, canónica /perfil-santa-latino, «Santa Latino»
+OK celular /perfil-carlos-d-castillo: 200, canónica /perfil-carlos-d-castillo, «Carlos D. Castillo»
+OK celular /perfil-tomas-velazquez: 200, canónica /perfil-tomas-velazquez, «Tomás Velázquez»
+OK celular /perfil-1juanromero1: 200, canónica /perfil-1juanromero1, «1JuanRomero1 Inc.»
+OK celular /registra-tu-empresa: 200, canónica /registra-tu-empresa, «Registra tu empresa»
+OK celular /: 200, canónica /, «Canadá acelera 33.000 residencias permanentes: 15.»
+OK intacto /robots.txt: idéntico a robots.txt (6c833b9abfe5)
+OK intacto /sitemap.xml: idéntico a sitemap.xml (221b285fe5a2)
+FALLO /canada-en-datos/: 200, difiere de canada-en-datos/index.html
+FALLO /canada-en-datos/alberta: 200, difiere de canada-en-datos/alberta.html
+FALLO /canada-en-datos/alberta/brooks: 200, difiere de canada-en-datos/alberta/brooks.html
+FALLO /canada-en-datos/northwest-territories/north-slave-zona-no-organizada: 200, difiere de canada-en-datos/northwest-territories/north-slave-zona-no-organizada.html
+FALLO /canada-en-datos/quebec/montreal: 200, difiere de canada-en-datos/quebec/montreal.html
+FALLO /canada-en-datos/ontario/markham: 200, difiere de canada-en-datos/ontario/markham.html
+FALLO /magazine/: 200, difiere de magazine/index.html
+FALLO /magazine/2026-10/: 200, difiere de magazine/2026-10/index.html
+FALLO /magazine/ediciones/: 200, difiere de magazine/ediciones/index.html
+OK intacto /js/articles.js: idéntico a js/articles.js (ecdea7d04050)
+OK intacto /js/businesses.js: idéntico a js/businesses.js (5446f2065b06)
+OK intacto /js/canada-datos.js: idéntico a js/canada-datos.js (3ee12dd6c858)
+OK Canadá en Datos: página básica conserva noindex
+OK sin X-Robots-Tag en Canadá en Datos
