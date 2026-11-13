@@ -1,0 +1,30 @@
+# TEMPORAL: verificar en la vista previa de Cloudflare el PR #124 (solo lectura). Se elimina después.
+name: tmp seo preview
+on:
+  push:
+    branches: [claude/seo-redirecciones-preview]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: Estados HTTP en la vista previa (Functions reales de Cloudflare)
+        if: always()
+        run: |
+          P=https://claude-seo-redirecciones-can.podcastdelmigrante.pages.dev
+          for u in "/guia?categoria=migracion" "/guia" "/guia?categoria=x" "/guia.html?categoria=migracion" "/guia-ruta?ruta=quiero-venir-canada" "/guia-ruta?subruta=quiero-visitar-canada" "/guia-ruta" "/historia?slug=desafio-carlos-castillo-proteccion-familiar" "/historia?slug=x" "/historia-vida?slug=historia-diana-pineda-radio-canada" "/columna?slug=entre-dos-mundos" "/columna" "/colaborador?id=carlos-castillo" "/colaborador" "/colaborador-carlos-castillo" "/business-profile?slug=santa-latino" "/business-profile" "/articulo?slug=plan-dental-canada-cdcp" "/articulo.html?slug=plan-dental-canada-cdcp" "/articulo?slug=x" "/articulo" "/no-existe" "/registra-tu-empresa" "/registra-tu-empresa.html" "/index.html" "/" "/canada-en-datos/" "/perfil-santa-latino"; do
+            printf "%-62s %s\n" "$u" "$(curl -s -o /tmp/b -w '%{http_code} %{redirect_url}' "$P$u") $(grep -o '<title>[^<]*' /tmp/b | head -1 | cut -c8-60)"
+          done | tee /tmp/out/estados.txt
+      - name: E2E SEO contra la vista previa
+        if: always()
+        run: BASE=https://claude-seo-redirecciones-can.podcastdelmigrante.pages.dev NODE_PATH=/tmp/pw/node_modules node tests/e2e-seo-redirecciones.cjs 2>&1 | tee /tmp/out/e2e.txt; exit ${PIPESTATUS[0]}
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "seo preview [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/seo-redirecciones-preview-datos
