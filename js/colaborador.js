@@ -200,7 +200,7 @@
       <article class="related-card">
         <div class="related-card__media" style="background-image:${article.heroImage.background}"></div>
         <span class="tag tag--sm">${article.category}</span>
-        <h3 class="related-card__title"><a href="articulo.html?slug=${encodeURIComponent(article.slug)}">${article.title}</a></h3>
+        <h3 class="related-card__title"><a href="${window.PDM.urlArticulo(article.slug)}">${article.title}</a></h3>
       </article>
     `;
   }
@@ -294,7 +294,7 @@
       <div class="article-not-found">
         <h1>No encontramos este perfil</h1>
         <p>Puede que el enlace esté incompleto o el colaborador ya no esté disponible.</p>
-        <a class="btn" href="index.html">Volver al inicio</a>
+        <a class="btn" href="/">Volver al inicio</a>
       </div>
     `;
   }

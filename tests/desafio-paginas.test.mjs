@@ -95,7 +95,7 @@ test("entrevistas: todas en el archivo, con su ciudad real y su video", () => {
     assert.doesNotMatch(html, /<iframe|i\.ytimg\.com|img\.youtube\.com/, `EP ${e.ep}: no contacta a YouTube al abrirse`);
     assert.match(html, /<script src="\/js\/video-cover\.js"><\/script>/);
     if (e.portadaPropia) assert.match(html, /class="dz-portada"/, `EP ${e.ep}: portada propia`);
-    if (e.storySlug) assert.ok(html.includes(`/historia.html?slug=${e.storySlug}`), `EP ${e.ep}: historia editorial`);
+    if (e.storySlug) assert.ok(html.includes(`/historia?slug=${e.storySlug}`), `EP ${e.ep}: historia editorial`);
   }
 });
 

@@ -137,7 +137,7 @@ async function comunes(page, ruta) {
         assert.match(await page.locator(".dz-ficha").innerText(), /2 episodios.*cuenta como 1/s);
       }
       if (nombre === "carlos") {
-        const href = await page.locator('a[href="/perfil-carlos-d-castillo.html"]').first().getAttribute("href");
+        const href = await page.locator('a[href="/perfil-carlos-d-castillo"]').first().getAttribute("href");
         assert.equal((await page.request.get(BASE + href)).status(), 200);
         assert.equal(await page.locator("blockquote.dz-frase").count(), 0, "con historia editorial no se repite la frase");
       }

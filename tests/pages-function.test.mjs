@@ -42,12 +42,12 @@ test("/articulo.html?slug=X también redirige y conserva UTM", async () => {
   assert.equal(r.headers.get("Location"), "/articulo-plan-dental-canada-cdcp?utm_source=facebook&utm_medium=social");
 });
 
-test("slug inexistente o no válido → plantilla sin redirección", async () => {
-  for (const p of ["/articulo?slug=no-existe-esta-noticia", "/articulo?slug=../../etc", "/articulo?slug=", "/articulo"]) {
+test("slug inexistente o no válido → 404 real (antes: plantilla con 200, «soft 404»)", async () => {
+  for (const p of ["/articulo?slug=no-existe-esta-noticia", "/articulo?slug=../../etc", "/articulo?slug=", "/articulo", "/articulo.html?slug=no-existe"]) {
     const c = ctx(p);
     const r = await onRequest(c);
-    assert.equal(r.status, 200, p);
-    assert.equal(c.nextCalled, true, p);
+    assert.equal(r.status, 404, p);
+    assert.equal(c.nextCalled, false, p);
   }
 });
 
@@ -65,10 +65,10 @@ test("la lista de publicados coincide con las páginas generadas", async () => {
   for (const slug of PUBLISHED_ARTICLES) assert.ok(existsSync(new URL(`articulo-${slug}.html`, ROOT)), slug);
 });
 
-test("_routes.json limita las funciones a la plantilla de artículos, al contador de visualizaciones, al registro y a las carpetas internas", () => {
+test("_routes.json limita las funciones a las plantillas, al contador de visualizaciones, al registro y a las carpetas internas", () => {
   const routes = JSON.parse(readFileSync(new URL("_routes.json", ROOT), "utf8"));
   assert.equal(routes.version, 1);
-  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/api/vistas/*", "/registro/*", "/admin-worker/*", "/analytics-worker/*", "/db/*", "/docs/*", "/tests/*", "/scripts/*", "/functions/*", "/.github/*"].sort());
+  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/guia", "/guia.html", "/guia-ruta", "/guia-ruta.html", "/historia", "/historia.html", "/historia-vida", "/historia-vida.html", "/columna", "/columna.html", "/colaborador", "/colaborador.html", "/business-profile", "/business-profile.html", "/api/vistas/*", "/registro/*", "/admin-worker/*", "/analytics-worker/*", "/db/*", "/docs/*", "/tests/*", "/scripts/*", "/functions/*", "/.github/*"].sort());
 });
 
 test("carpetas internas del repositorio → 404 (no forman parte del sitio)", async () => {

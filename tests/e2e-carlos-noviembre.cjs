@@ -60,7 +60,7 @@ async function retrato(page, selector) {
     assert.equal(await boton.getAttribute("target"), "_blank");
     assert.equal(await boton.getAttribute("rel"), "noopener noreferrer");
     assert.ok((await boton.boundingBox()).height >= 44, "botón táctil");
-    assert.equal(await page.locator('a[href="colaborador.html?id=carlos-castillo"]').count() >= 1, true, "enlace al perfil del autor");
+    assert.equal(await page.locator('a[href="colaborador-carlos-castillo"]').count() >= 1, true, "enlace al perfil del autor");
     const crudo = await (await fetch(`${BASE}/articulo-${SLUG}`)).text();
     assert.match(crudo, new RegExp(`property="og:image" content="https://podcastdelmigrante\\.com/assets/social/${SLUG}\\.jpg"`));
     assert.equal((await fetch(`${BASE}/assets/${SLUG}.jpg`)).status, 200);

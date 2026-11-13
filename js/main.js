@@ -82,12 +82,12 @@
 
   /* ---------- Hero ----------
      Si el objeto trae `slug`, el título enlaza a su artículo real
-     (articulo.html?slug=...). Si no trae `slug` (como las demás
+     (/articulo-<slug>, ver PDM.urlArticulo en nav.js). Si no trae `slug` (como las demás
      tarjetas demo del HOME), se muestra exactamente igual que antes:
      texto plano, sin enlace — así ninguna tarjeta sin artículo real
      queda apuntando a una página vacía. */
   function articleHref(slug) {
-    return "articulo.html?slug=" + encodeURIComponent(slug);
+    return window.PDM.urlArticulo(slug);
   }
 
   function buildHero() {
@@ -287,7 +287,7 @@
         </div>
       `
       );
-      card.href = "historia.html?slug=" + encodeURIComponent(story.slug);
+      card.href = "historia?slug=" + encodeURIComponent(story.slug);
       grid.appendChild(card);
     });
   }
@@ -352,7 +352,7 @@
       /* Columna con identidad visual propia: la imagen institucional es
          permanente y la entrega se presenta aparte, para que cada
          crónica nueva aparezca sin cambiar la imagen. */
-      const archiveHref = `columna.html?slug=${encodeURIComponent(column.slug)}`;
+      const archiveHref = `columna?slug=${encodeURIComponent(column.slug)}`;
       host.innerHTML = `
         <div class="column-banner">
           <a class="column-banner__media" href="${archiveHref}" aria-label="${column.title}: ver todas las crónicas">
@@ -418,7 +418,7 @@
         ? `
           <p class="contributor-card__latest-label">Última entrega:</p>
           <p class="contributor-card__latest-title">${latest.title}</p>
-          <a class="contributor-card__cta" href="articulo.html?slug=${encodeURIComponent(latest.slug)}">Leer la columna →</a>
+          <a class="contributor-card__cta" href="${window.PDM.urlArticulo(latest.slug)}">Leer la columna →</a>
         `
         : `
           <div class="contributor-card__links">

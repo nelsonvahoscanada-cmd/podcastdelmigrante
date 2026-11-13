@@ -38,30 +38,30 @@ const EDITION = {
    destacado: true → botón verde con ícono de trofeo (js/nav.js), en el
    menú de computador y en el móvil. */
 const NAV_PRIMARY = [
-  { label: "Inicio", href: "index.html#inicio" },
+  { label: "Inicio", href: "/#inicio" },
   { label: "Canadá", href: "canada-en-datos/" },
-  { label: "Migración", href: "guia.html?categoria=migracion" },
-  { label: "Empleo", href: "index.html#", pending: true },
-  { label: "Comunidad", href: "index.html#", pending: true },
-  { label: "Historias", href: "index.html#historias" },
-  { label: "Videos", href: "index.html#video" },
-  { label: "Directorio Empresarial", href: "index.html#quien-puede-ayudarte" },
+  { label: "Migración", href: "guia?categoria=migracion" },
+  { label: "Empleo", href: "/#", pending: true },
+  { label: "Comunidad", href: "/#", pending: true },
+  { label: "Historias", href: "/#historias" },
+  { label: "Videos", href: "/#video" },
+  { label: "Directorio Empresarial", href: "/#quien-puede-ayudarte" },
   { label: "Desafío 100 Empresas", href: "desafio-100-empresas/", destacado: true },
 ];
 
 const NAV_MORE = [
-  { label: "Educación", href: "index.html#", pending: true },
-  { label: "Emprendimiento", href: "index.html#", pending: true },
-  { label: "Vivienda", href: "index.html#", pending: true },
-  { label: "Finanzas", href: "index.html#", pending: true },
-  { label: "Cultura", href: "index.html#", pending: true },
-  { label: "Opinión", href: "index.html#", pending: true },
-  { label: "Entrevistas", href: "index.html#video" },
-  { label: "Podcast del Migrante", href: "index.html#video" },
-  { label: "Ediciones", href: "index.html#edicion" },
-  { label: "Archivo", href: "index.html#", pending: true },
-  { label: "Puntos de distribución", href: "index.html#distribution" },
-  { label: "Nuestros colaboradores", href: "index.html#contributors" },
+  { label: "Educación", href: "/#", pending: true },
+  { label: "Emprendimiento", href: "/#", pending: true },
+  { label: "Vivienda", href: "/#", pending: true },
+  { label: "Finanzas", href: "/#", pending: true },
+  { label: "Cultura", href: "/#", pending: true },
+  { label: "Opinión", href: "/#", pending: true },
+  { label: "Entrevistas", href: "/#video" },
+  { label: "Podcast del Migrante", href: "/#video" },
+  { label: "Ediciones", href: "/#edicion" },
+  { label: "Archivo", href: "/#", pending: true },
+  { label: "Puntos de distribución", href: "/#distribution" },
+  { label: "Nuestros colaboradores", href: "/#contributors" },
 ];
 
 const HERO = {
@@ -136,7 +136,7 @@ const HERO = {
    archivo completo está en noticias.html. */
 
 const USEFUL_INFO = [
-  { title: "Migración", desc: "Trámites, permisos y rutas de residencia explicados sin lenguaje técnico.", href: "guia.html?categoria=migracion" },
+  { title: "Migración", desc: "Trámites, permisos y rutas de residencia explicados sin lenguaje técnico.", href: "guia?categoria=migracion" },
   { title: "Empleo", desc: "Dónde buscar trabajo, cómo validar experiencia y qué esperar del primer contrato." },
   { title: "Vivienda", desc: "Cómo rentar, qué son los derechos del arrendatario y errores que salen caros." },
   { title: "Educación", desc: "Escuelas, cursos de idioma y equivalencias de estudios para adultos y menores." },
@@ -149,21 +149,21 @@ const STORIES = [
     title: "Mi primer trabajo en Canadá: era para una oficina en un ancianato… ¡y acabé trabajando en la cocina!",
     excerpt: "Andrea Díaz cuenta la historia de su primer trabajo en Canadá — y el contraste entre lo que esperaba y lo que finalmente vivió.",
     videoId: "oqfNbzC_OLA",
-    href: "historia-vida.html?slug=historia-andrea-diaz-primer-trabajo-canada",
+    href: "historia-vida?slug=historia-andrea-diaz-primer-trabajo-canada",
     demo: false,
   },
   {
     title: "De una cabina de radio en FM a una nueva vida en Canadá",
     excerpt: "Diana Pineda, conocida en la radio colombiana como \"La Pinedita\", nos relata cómo fue ese cambio de vida.",
     videoId: "6YdTsBzG2gs",
-    href: "historia-vida.html?slug=historia-diana-pineda-radio-canada",
+    href: "historia-vida?slug=historia-diana-pineda-radio-canada",
     demo: false,
   },
   {
     title: "De vender en la calle a triunfar en Canadá: mi pasión por el comercio ambulante",
     excerpt: "Teresa Jiménez comparte su recorrido desde sus comienzos vendiendo en la calle hasta desarrollar su camino como empresaria en Canadá.",
     videoId: "UsWWtkmnszw",
-    href: "historia-vida.html?slug=historia-teresa-jimenez-comercio-canada",
+    href: "historia-vida?slug=historia-teresa-jimenez-comercio-canada",
     demo: false,
   },
 ];
@@ -278,7 +278,7 @@ const SPONSORS = [
     /* Miniweb Premium de Tomás Velázquez (Country Hills Toyota) en el
        Directorio Empresarial. Medición: profile_view con
        utm_source=podcastdelmigrante y utm_campaign=country-hills-toyota. */
-    url: "perfil-tomas-velazquez.html?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=country-hills-toyota&utm_content=logo-portada",
+    url: "perfil-tomas-velazquez?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=country-hills-toyota&utm_content=logo-portada",
     interno: true,
     etiqueta: "Country Hills Toyota: ver el perfil de Tomás Velázquez en el Directorio Empresarial",
   },

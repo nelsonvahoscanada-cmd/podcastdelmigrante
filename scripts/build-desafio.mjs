@@ -36,6 +36,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 import vm from "node:vm";
+import { enlacesDefinitivos } from "./enlaces-definitivos.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://podcastdelmigrante.com";
@@ -77,7 +78,8 @@ function chrome(root) {
   const iniPie = html.indexOf("<!-- ================= FOOTER");
   const finPie = html.indexOf("</footer>") + "</footer>".length;
   if (ini < 0 || finCab < 0 || iniPie < 0 || finPie < 9) throw new Error("404.html cambió: no se encontró la cabecera o el pie");
-  return { cabecera: html.slice(ini, finCab).trimEnd(), pie: html.slice(iniPie, finPie) };
+  /* Enlaces internos a su URL final (sin .html): ver scripts/enlaces-definitivos.mjs */
+  return { cabecera: enlacesDefinitivos(html.slice(ini, finCab).trimEnd()), pie: enlacesDefinitivos(html.slice(iniPie, finPie)) };
 }
 
 function head({ title, description, path, image, jsonLd }) {
@@ -462,7 +464,7 @@ function paginaEdicion(d, c) {
   const directorio = perfiles.length
     ? perfiles.map((p) => {
         const e = d.episodiosDe(p.historia)[0];
-        return `<div class="dz-perfil"><img src="/assets/${esc(p.businessSlug)}-logo.jpg" alt="Logotipo de ${esc(p.empresa)}" width="72" height="72" loading="lazy"><div><h3>${esc(p.nombre)}</h3><p>${esc(p.empresa)} · ${esc(p.ciudad)}${e ? ` · EP ${dos(e.ep)}` : ""}</p><a href="/perfil-${esc(p.businessSlug)}.html">Ver perfil en el Directorio →</a></div></div>`;
+        return `<div class="dz-perfil"><img src="/assets/${esc(p.businessSlug)}-logo.jpg" alt="Logotipo de ${esc(p.empresa)}" width="72" height="72" loading="lazy"><div><h3>${esc(p.nombre)}</h3><p>${esc(p.empresa)} · ${esc(p.ciudad)}${e ? ` · EP ${dos(e.ep)}` : ""}</p><a href="/perfil-${esc(p.businessSlug)}">Ver perfil en el Directorio →</a></div></div>`;
       }).join("\n      ")
     : "";
   const cuerpo = `
@@ -607,12 +609,12 @@ function paginaEpisodio(d, c, e, i) {
     : `1 de las ${r.meta}`;
   const muro = personas.filter((p) => p.muro).map((p) => `N.º ${p.muro}`).join(", ");
   const cajaEmpresario = perfil
-    ? `<div class="dz-perfil" style="border:0;padding:0"><img src="/assets/${esc(perfil.businessSlug)}-logo.jpg" alt="Logotipo de ${esc(perfil.empresa)}" width="72" height="72"><div><h3>${esc(e.persona)}</h3><p>${esc(e.empresa || "")} · ${esc(e.ciudad)}</p><a href="/perfil-${esc(perfil.businessSlug)}.html">Ver perfil en el Directorio →</a></div></div>`
+    ? `<div class="dz-perfil" style="border:0;padding:0"><img src="/assets/${esc(perfil.businessSlug)}-logo.jpg" alt="Logotipo de ${esc(perfil.empresa)}" width="72" height="72"><div><h3>${esc(e.persona)}</h3><p>${esc(e.empresa || "")} · ${esc(e.ciudad)}</p><a href="/perfil-${esc(perfil.businessSlug)}">Ver perfil en el Directorio →</a></div></div>`
     : `<h3>${esc(e.persona)}</h3><p class="dz-nota" style="margin-top:4px">${esc(e.empresa || e.categoriaTexto)}</p><span class="dz-lugar">${PIN}${esc(lugar)}</span>`;
   const enlaces = [
     `<a class="dz-boton-borde" href="https://www.youtube.com/watch?v=${esc(e.videoId)}" target="_blank" rel="noopener">Ver en YouTube</a>`,
-    story ? `<a class="dz-boton-borde" href="/historia.html?slug=${esc(story.slug)}">Leer la historia</a>` : "",
-    perfil ? `<a class="dz-boton-borde" href="/perfil-${esc(perfil.businessSlug)}.html">Perfil en el Directorio</a>` : "",
+    story ? `<a class="dz-boton-borde" href="/historia?slug=${esc(story.slug)}">Leer la historia</a>` : "",
+    perfil ? `<a class="dz-boton-borde" href="/perfil-${esc(perfil.businessSlug)}">Perfil en el Directorio</a>` : "",
   ].filter(Boolean).join("");
   const relacionadas = [...d.episodios.filter((x) => x.historia === e.historia && x.ep !== e.ep), ...d.episodios.filter((x) => x.categoria === e.categoria && x.historia !== e.historia).sort((a, b) => b.ep - a.ep)].slice(0, 3);
   const mas = relacionadas.length ? relacionadas : d.episodios.filter((x) => x.ep !== e.ep).slice(-3);
@@ -708,7 +710,7 @@ function paginaMuro(d, c) {
       ${d.muro.map((p) => persona(d, p)).join("\n      ")}
     </div>
     <p class="dz-sin-resultados" id="dzMuroVacio" hidden>No hay empresarios que coincidan con la búsqueda.</p>
-    <p class="dz-nota" style="margin-top:18px">El Muro no publica correos, teléfonos ni direcciones. Para contactar a una empresa, consulta su perfil en el <a href="/index.html#quien-puede-ayudarte">Directorio Empresarial</a> cuando exista.</p>
+    <p class="dz-nota" style="margin-top:18px">El Muro no publica correos, teléfonos ni direcciones. Para contactar a una empresa, consulta su perfil en el <a href="/#quien-puede-ayudarte">Directorio Empresarial</a> cuando exista.</p>
   </div>
 </section>`;
   return pagina(c, {

@@ -246,7 +246,7 @@ const GUIA_SUBRUTAS = {
       {
         heading: "5. Quiero quedarme en Canadá después de estudiar",
         bodyHtml: `<p>Estudiar en Canadá no garantiza la residencia permanente. Pueden existir programas federales o provinciales para los cuales una persona llegue a ser elegible dependiendo de su perfil.</p>`,
-        cta: { label: "Explorar caminos hacia residencia permanente →", href: "guia-ruta.html?ruta=residencia-permanente" },
+        cta: { label: "Explorar caminos hacia residencia permanente →", href: "guia-ruta?ruta=residencia-permanente" },
       },
     ],
     callouts: [],
@@ -308,7 +308,7 @@ const GUIA_SUBRUTAS = {
       {
         heading: "6. Quiero quedarme permanentemente",
         bodyHtml: `<p>Dependiendo de tu elegibilidad, puedes explorar opciones como Express Entry, Provincial Nominee Programs u otros programas económicos aplicables. Ninguna de estas opciones promete elegibilidad ni residencia permanente garantizada.</p>`,
-        cta: { label: "Explorar residencia permanente →", href: "guia-ruta.html?ruta=residencia-permanente" },
+        cta: { label: "Explorar residencia permanente →", href: "guia-ruta?ruta=residencia-permanente" },
       },
     ],
     callouts: [],
@@ -365,7 +365,7 @@ const GUIA_SUBRUTAS = {
       {
         heading: "5. Servicios para recién llegados",
         bodyHtml: `<p>Existen settlement services, apoyo de empleo, idioma y otros recursos disponibles según tu elegibilidad. La sección "Servicios para recién llegados" de esta misma guía de Migración reunirá esta información — mientras tanto, puedes consultar directamente la herramienta oficial de IRCC.</p>`,
-        cta: { label: "Buscar servicios para recién llegados →", href: "guia-ruta.html?ruta=servicios-recien-llegados" },
+        cta: { label: "Buscar servicios para recién llegados →", href: "guia-ruta?ruta=servicios-recien-llegados" },
       },
       {
         heading: "6. Ciudadanía canadiense",
@@ -963,8 +963,8 @@ const GUIA_SUBRUTAS = {
         heading: "Sigue explorando",
         bodyHtml: `
           <ul>
-            <li><a href="guia-ruta.html?ruta=permisos-de-trabajo">Permisos de trabajo →</a> (dentro del Magazine).</li>
-            <li><a href="guia-ruta.html?ruta=residencia-permanente">Residencia permanente →</a> (dentro del Magazine).</li>
+            <li><a href="guia-ruta?ruta=permisos-de-trabajo">Permisos de trabajo →</a> (dentro del Magazine).</li>
+            <li><a href="guia-ruta?ruta=residencia-permanente">Residencia permanente →</a> (dentro del Magazine).</li>
           </ul>
         `,
       },

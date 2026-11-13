@@ -50,6 +50,24 @@
     return ARTICLES.find((a) => a.slug === slug) || null;
   }
 
+  /* Enlaces internos a la URL definitiva (sin .html ni redirecciones):
+     /articulo-<slug> si la noticia está publicada; si es borrador, la
+     plantilla /articulo?slug=…. Igual que PDM.urlArticulo (nav.js), que
+     aquí no se usa porque scripts/build-article-pages.mjs ejecuta este
+     archivo sin nav.js. */
+  function urlArticulo(slug) {
+    const a = findArticle(slug);
+    return (a && !a.draft ? "articulo-" : "articulo?slug=") + encodeURIComponent(slug);
+  }
+
+  /* Enlaces internos escritos con .html dentro del texto (por ejemplo, los
+     de los recuadros de patrocinio a perfil-<slug>.html): misma página, sin
+     la redirección 308 de Cloudflare Pages. No cambia el texto ni los
+     enlaces externos. */
+  function enlacesDefinitivos(html) {
+    return String(html || "").replace(/href="(perfil-[a-z0-9-]+)\.html(?=[?#"])/g, 'href="$1');
+  }
+
   /* URL pública SIN .html: Cloudflare Pages redirige x.html → /x y
      GitHub Pages también sirve /x; así no hay redirecciones al compartir. */
   function articlePath(article) {
@@ -112,19 +130,27 @@
 
   function renderAuthorHtml(author) {
     if (author.mode === "colaborador") {
-      const link = author.profileHref
-        ? `<a href="${author.profileHref}">${author.name}</a>`
-        : author.name;
       const contributor =
         author.authorId && typeof CONTRIBUTORS !== "undefined"
           ? CONTRIBUTORS.find((c) => c.id === author.authorId)
           : null;
+      /* Perfil del autor en su URL definitiva: la página estática
+         colaborador-<id> (CONTRIBUTORS.link) en lugar de
+         colaborador.html?id=…, que pasa por una redirección. */
+      const profileHref = !author.profileHref
+        ? ""
+        : contributor && /^colaborador-[a-z0-9-]+$/.test(contributor.link || "")
+          ? contributor.link
+          : author.profileHref.replace(/^colaborador\.html\?/, "colaborador?");
+      const link = profileHref
+        ? `<a href="${profileHref}">${author.name}</a>`
+        : author.name;
       const logo =
         contributor && contributor.brandLogo
           ? `<img class="article-byline__logo" src="${contributor.brandLogo.src}" alt="${contributor.brandLogo.alt}">`
           : "";
-      const profileLink = author.profileHref
-        ? `<a class="article-byline__profile-link" href="${author.profileHref}">Conoce al autor →</a>`
+      const profileLink = profileHref
+        ? `<a class="article-byline__profile-link" href="${profileHref}">Conoce al autor →</a>`
         : "";
       return `<span class="article-byline__name">${link}</span>${
         author.specialty ? `<span class="article-byline__specialty"> — ${author.specialty}</span>` : ""
@@ -165,7 +191,7 @@
     if (!article.columnName) return "";
     const column = typeof COLUMNS !== "undefined" ? COLUMNS.find((c) => c.title === article.columnName) : null;
     if (column) {
-      return `<a class="article-column-badge" href="columna.html?slug=${encodeURIComponent(column.slug)}">${article.columnName}</a>`;
+      return `<a class="article-column-badge" href="columna?slug=${encodeURIComponent(column.slug)}">${article.columnName}</a>`;
     }
     return `<span class="article-column-badge">${article.columnName}</span>`;
   }
@@ -434,7 +460,7 @@
             ${a.demo === false ? "" : `<span class="demo-badge demo-badge--sm">Demo</span>`}
           </div>
           <span class="tag tag--sm">${a.category}</span>
-          <h3 class="related-card__title"><a href="articulo.html?slug=${encodeURIComponent(a.slug)}">${a.title}</a></h3>
+          <h3 class="related-card__title"><a href="${urlArticulo(a.slug)}">${a.title}</a></h3>
         </article>
       `
       )
@@ -451,12 +477,12 @@
     const esActive = article.lang === "es";
     const esNode = esActive
       ? `<span class="lang-pill is-active">ES</span>`
-      : `<a class="lang-pill" href="articulo.html?slug=${encodeURIComponent(article.translationSlug || article.slug)}">ES</a>`;
+      : `<a class="lang-pill" href="${urlArticulo(article.translationSlug || article.slug)}">ES</a>`;
     let enNode;
     if (article.lang === "en") {
       enNode = `<span class="lang-pill is-active">EN</span>`;
     } else if (article.translationSlug && findArticle(article.translationSlug)) {
-      enNode = `<a class="lang-pill" href="articulo.html?slug=${encodeURIComponent(article.translationSlug)}">EN</a>`;
+      enNode = `<a class="lang-pill" href="${urlArticulo(article.translationSlug)}">EN</a>`;
     } else {
       enNode = `<span class="lang-pill is-disabled" title="Traducción no disponible todavía">EN</span>`;
     }
@@ -536,7 +562,7 @@
   function authorColumnMastheadHtml(article) {
     const column = findColumnFor(article);
     const name = column
-      ? `<a class="column-masthead__name" href="columna.html?slug=${encodeURIComponent(column.slug)}">${article.columnName}</a>`
+      ? `<a class="column-masthead__name" href="columna?slug=${encodeURIComponent(column.slug)}">${article.columnName}</a>`
       : `<span class="column-masthead__name">${article.columnName}</span>`;
     return `
       <div class="column-masthead">
@@ -582,7 +608,7 @@
         <h2 class="article-author-card__name">${card.name}</h2>
         <p class="article-author-card__role">${card.role}</p>
         <p class="article-author-card__bio">${card.bio}</p>
-        <a class="btn" href="columna.html?slug=${encodeURIComponent(column.slug)}">${card.ctaLabel}</a>
+        <a class="btn" href="columna?slug=${encodeURIComponent(column.slug)}">${card.ctaLabel}</a>
       </aside>
     `;
   }
@@ -595,7 +621,7 @@
         ${article.columnName ? `<p class="column-masthead__name">${article.columnName}</p>` : ""}
         <h1>Próximamente</h1>
         <p>Estamos preparando esta entrega para publicarla completa. Muy pronto estará disponible en El Podcast del Migrante.</p>
-        <a class="btn" href="${column ? "columna.html?slug=" + encodeURIComponent(column.slug) : "index.html"}">${column ? "Ver la columna" : "Volver al inicio"}</a>
+        <a class="btn" href="${column ? "columna?slug=" + encodeURIComponent(column.slug) : "/"}">${column ? "Ver la columna" : "Volver al inicio"}</a>
       </div>
     `;
   }
@@ -621,7 +647,7 @@
       <p class="article-meta">${metaLineHtml(article)}</p>
       ${locationHtml(article)}
       ${heroImageHtml(article)}
-      <div class="article-body">${bodyWithVideoHtml(article)}</div>
+      <div class="article-body">${enlacesDefinitivos(bodyWithVideoHtml(article))}</div>
       ${sponsorBlockHtml(article)}
       ${isAuthorColumn ? originalNoteHtml(article) + authorCardHtml(article) : ""}
       ${videoBlockHtml(article)}
@@ -699,7 +725,7 @@
       <div class="article-not-found">
         <h1>No encontramos este artículo</h1>
         <p>Puede que el enlace esté incompleto o el contenido ya no esté disponible.</p>
-        <a class="btn" href="index.html">Volver al inicio</a>
+        <a class="btn" href="/">Volver al inicio</a>
       </div>
     `;
   }
