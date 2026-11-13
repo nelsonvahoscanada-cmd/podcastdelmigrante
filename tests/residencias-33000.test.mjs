@@ -151,9 +151,10 @@ test("SEO: título, descripción, canónica, Open Graph, Twitter, imagen social 
   assert.equal(sitemap.split(`<loc>${URL_ART}</loc>`).length - 1, 1);
 });
 
-test("los demás artículos siguen renderizándose en el navegador (sin prerender)", () => {
-  for (const a of ctx.A.filter((x) => x.slug !== SLUG && !x.draft).slice(0, 5)) {
+test("todas las noticias publicadas llevan su contenido en el HTML (como esta)", () => {
+  for (const a of ctx.A.filter((x) => !x.draft)) {
     const h = read(`articulo-${a.slug}.html`);
-    assert.doesNotMatch(h, /data-prerendered|id="articleJsonLd"/, a.slug);
+    assert.match(h, /data-prerendered=/, a.slug);
+    assert.match(h, /id="articleJsonLd"/, a.slug);
   }
 });
