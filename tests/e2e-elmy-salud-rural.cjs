@@ -49,8 +49,8 @@ async function sinDesborde(page, ruta) {
       const a = page.locator(`main a[href="${u}"]`).first();
       assert.equal(await a.getAttribute("target"), "_blank", u);
     }
-    assert.match(await page.locator(".lang-toggle a.lang-pill").getAttribute("href"), new RegExp(`slug=${EN}$`), "EN lleva al original");
-    assert.equal(await page.locator('a[href="colaborador.html?id=elmy-castillo"]').count() >= 1, true, "enlace al perfil de la autora");
+    assert.match(await page.locator(".lang-toggle a.lang-pill").getAttribute("href"), new RegExp(`^articulo-${EN}$`), "EN lleva al original (URL definitiva)");
+    assert.equal(await page.locator('a[href="colaborador-elmy-castillo"]').count() >= 1, true, "enlace al perfil de la autora");
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `es-${perfil}.png`), fullPage: true });
     await sinDesborde(page, `/articulo-${ES}`);
     assert.deepEqual(errores, []);
@@ -60,7 +60,7 @@ async function sinDesborde(page, ruta) {
     ({ ctx, page, errores } = await abrir(browser, perfil, `/articulo-${EN}`));
     assert.equal((await page.locator("h1").first().innerText()).trim(), "Rural vs Urban Healthcare: A High-Level Review");
     assert.equal(await page.locator("html").getAttribute("lang"), "en");
-    assert.match(await page.locator(".lang-toggle a.lang-pill").getAttribute("href"), new RegExp(`slug=${ES}$`), "ES lleva a la traducción");
+    assert.match(await page.locator(".lang-toggle a.lang-pill").getAttribute("href"), new RegExp(`^articulo-${ES}$`), "ES lleva a la traducción (URL definitiva)");
     await sinDesborde(page, `/articulo-${EN}`);
     assert.deepEqual(errores, []);
     await ctx.close();

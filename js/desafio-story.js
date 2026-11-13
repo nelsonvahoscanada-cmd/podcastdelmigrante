@@ -23,7 +23,7 @@
     // URL pública REAL. story.seo.canonicalPath es solo documentación de
     // una ruta futura que no existe todavía — nunca debe usarse aquí
     // (rompe la página al compartir, ver la nota en article.js).
-    return SITE_ORIGIN + "/historia.html?slug=" + encodeURIComponent(story.slug);
+    return SITE_ORIGIN + "/historia?slug=" + encodeURIComponent(story.slug);
   }
 
   /* Portada local (sin contactar a YouTube al abrir la página). */
@@ -224,7 +224,7 @@
       <div class="article-not-found">
         <h1>No encontramos esta historia</h1>
         <p>Puede que el enlace esté incompleto o el contenido ya no esté disponible.</p>
-        <a class="btn" href="index.html">Volver al inicio</a>
+        <a class="btn" href="/">Volver al inicio</a>
       </div>
     `;
   }

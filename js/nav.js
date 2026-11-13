@@ -162,9 +162,20 @@
     scrollToHashOnLoad();
   }
 
+  /* URL definitiva de una noticia, sin pasar por redirecciones: la página
+     estática /articulo-<slug> si está publicada (scripts/build-article-pages.mjs
+     solo la escribe para artículos que no son borrador); si no, la plantilla
+     /articulo?slug=… (borradores: «próximamente»). */
+  function urlArticulo(slug) {
+    const lista = typeof ARTICLES !== "undefined" ? ARTICLES : [];
+    const a = lista.find((x) => x.slug === slug);
+    return (a && !a.draft ? "articulo-" : "articulo?slug=") + encodeURIComponent(slug);
+  }
+
   global.PDM = global.PDM || {};
   Object.assign(global.PDM, {
     el,
+    urlArticulo,
     initials,
     prefersReducedMotion,
     updateHeaderOffset,

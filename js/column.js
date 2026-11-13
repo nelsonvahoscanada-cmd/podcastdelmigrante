@@ -26,7 +26,7 @@
   function entryRowHtml(entry) {
     if (entry.published && entry.slug) {
       return `
-        <a class="column-entry column-entry--published" href="articulo.html?slug=${encodeURIComponent(entry.slug)}">
+        <a class="column-entry column-entry--published" href="${window.PDM.urlArticulo(entry.slug)}">
           <span class="column-entry__month">${entry.monthLabel}</span>
           <span class="column-entry__title">${entry.title}</span>
           <span class="column-entry__status">Leer</span>
@@ -47,7 +47,7 @@
     document.title = column.title + " — El Podcast del Migrante Magazine";
 
     const authorLine = contributor
-      ? `<a href="index.html#contributors">${contributor.name}</a>${contributor.organization ? ` — ${contributor.organization}` : ""}`
+      ? `<a href="/#contributors">${contributor.name}</a>${contributor.organization ? ` — ${contributor.organization}` : ""}`
       : column.authorName;
     const authorLogo =
       contributor && contributor.brandLogo
@@ -83,7 +83,7 @@
       <div class="article-not-found">
         <h1>No encontramos esta columna</h1>
         <p>Puede que el enlace esté incompleto o la columna ya no esté disponible.</p>
-        <a class="btn" href="index.html">Volver al inicio</a>
+        <a class="btn" href="/">Volver al inicio</a>
       </div>
     `;
   }

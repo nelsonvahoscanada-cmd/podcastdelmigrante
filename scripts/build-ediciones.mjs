@@ -38,6 +38,7 @@ import { join, dirname, resolve, relative, isAbsolute } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import vm from "node:vm";
+import { enlacesDefinitivos } from "./enlaces-definitivos.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://podcastdelmigrante.com";
@@ -179,7 +180,8 @@ function chrome(root) {
   const iniPie = html.indexOf("<!-- ================= FOOTER");
   const finPie = html.indexOf("</footer>") + "</footer>".length;
   if (ini < 0 || finCab < 0 || iniPie < 0 || finPie < 9) throw new Error("404.html cambió: no se encontró la cabecera o el pie");
-  return { cabecera: html.slice(ini, finCab).trimEnd(), pie: html.slice(iniPie, finPie) };
+  /* Enlaces internos a su URL final (sin .html): ver scripts/enlaces-definitivos.mjs */
+  return { cabecera: enlacesDefinitivos(html.slice(ini, finCab).trimEnd()), pie: enlacesDefinitivos(html.slice(iniPie, finPie)) };
 }
 
 function head({ title, description, path, canonical = path, image, imageAlt, imageType = "image/jpeg", imageW, imageH, jsonLd, noindex }) {
@@ -267,7 +269,7 @@ ${comun.cabecera}
 <main id="main" class="ed">
   ${borrador ? '<p class="ed-borrador" role="note"><strong>Borrador: vista previa privada.</strong> Esta edición no está publicada.</p>' : ""}
   <div class="wrap">
-    <nav class="ed-migas" aria-label="Ruta de navegación"><a href="/index.html">Inicio</a> › <a href="${BASE}/ediciones/">Ediciones</a> › <span aria-current="page">Edición ${dos(ed.numero)}</span></nav>
+    <nav class="ed-migas" aria-label="Ruta de navegación"><a href="/">Inicio</a> › <a href="${BASE}/ediciones/">Ediciones</a> › <span aria-current="page">Edición ${dos(ed.numero)}</span></nav>
     <header class="ed-cabecera">
       <figure class="ed-portada">
         <img src="${esc(ed.portada.imagen)}" alt="${esc(ed.portada.alt)}" width="${ed.portada.ancho}" height="${ed.portada.alto}" fetchpriority="high">
@@ -324,7 +326,7 @@ ${comun.cabecera}
 
 <main id="main" class="ed">
   <div class="wrap">
-    <nav class="ed-migas" aria-label="Ruta de navegación"><a href="/index.html">Inicio</a> › <span aria-current="page">Ediciones</span></nav>
+    <nav class="ed-migas" aria-label="Ruta de navegación"><a href="/">Inicio</a> › <span aria-current="page">Ediciones</span></nav>
     <header class="hem-cabecera">
       <p class="ed-rotulo">El Podcast del Migrante Magazine</p>
       <h1 class="ed-titulo">Ediciones</h1>

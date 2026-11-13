@@ -65,7 +65,7 @@
         <article class="related-card">
           <div class="related-card__media" style="background-image:${a.heroImage.background}"></div>
           <span class="tag tag--sm">${a.category}</span>
-          <h3 class="related-card__title"><a href="articulo.html?slug=${encodeURIComponent(a.slug)}">${a.title}</a></h3>
+          <h3 class="related-card__title"><a href="${window.PDM.urlArticulo(a.slug)}">${a.title}</a></h3>
         </article>
       `
       )
@@ -107,7 +107,7 @@
     document.getElementById("ogDescription").setAttribute("content", guide.dek);
     document.getElementById("twitterTitle").setAttribute("content", guide.title);
     document.getElementById("twitterDescription").setAttribute("content", guide.dek);
-    const url = "https://podcastdelmigrante.com/guia.html?categoria=" + encodeURIComponent(guide.slug);
+    const url = "https://podcastdelmigrante.com/guia?categoria=" + encodeURIComponent(guide.slug);
     document.getElementById("canonicalLink").setAttribute("href", url);
     document.getElementById("ogUrl").setAttribute("content", url);
   }
@@ -148,7 +148,7 @@
       <div class="article-not-found">
         <h1>No encontramos esta sección</h1>
         <p>Puede que el enlace esté incompleto o la sección todavía no esté disponible.</p>
-        <a class="btn" href="index.html">Volver al inicio</a>
+        <a class="btn" href="/">Volver al inicio</a>
       </div>
     `;
   }

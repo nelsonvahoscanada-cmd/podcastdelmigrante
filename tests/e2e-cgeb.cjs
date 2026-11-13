@@ -79,7 +79,7 @@ async function sinDesborde(page, ruta) {
     const pub = page.locator("aside.article-patrocinio");
     assert.equal(await pub.count(), 1);
     assert.match(await pub.innerText(), /PUBLICIDAD[\s\S]*Country Hills Toyota[\s\S]*atención en español[\s\S]*tarjeta de gasolina de \$200 CAD[\s\S]*no un beneficio del Gobierno de Canadá/i);
-    assert.match(await pub.locator("a").getAttribute("href"), /^perfil-tomas-velazquez\.html\?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=country-hills-toyota&utm_content=articulo-cgeb$/);
+    assert.match(await pub.locator("a").getAttribute("href"), /^perfil-tomas-velazquez\?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=country-hills-toyota&utm_content=articulo-cgeb$/);
     if (SHOTS) await pub.screenshot({ path: path.join(SHOTS, `publicidad-${perfil}.png`) });
     assert.deepEqual(errores, [], "sin errores antes de cargar el reproductor de TikTok");
     await page.locator(".article-tiktok__play").click();

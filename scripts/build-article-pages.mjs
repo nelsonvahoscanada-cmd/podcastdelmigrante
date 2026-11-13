@@ -49,6 +49,7 @@ import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
+import { rutasValidas, archivo as archivoRutas } from "./build-rutas-validas.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE_ORIGIN = "https://podcastdelmigrante.com";
@@ -240,6 +241,11 @@ expected.set(
     "export const ARTICULOS_CON_CONTADOR = new Set(" + JSON.stringify(conContador, null, 2) + ");\n"
 );
 
+/* Parámetros válidos de las plantillas (functions/_middleware.js responde
+   404 real a los demás): se actualizan aquí también, porque publicar una
+   noticia agrega un ?slug= válido. Ver scripts/build-rutas-validas.mjs. */
+expected.set("functions/_lib/rutas-validas.js", archivoRutas(rutasValidas(ROOT)));
+
 /* Portada: versión de los scripts que dependen de los artículos publicados */
 const VERSIONADOS = ["js/data.js", "js/articles.js", "js/noticias.js", "js/main.js"];
 const huella = (f) => createHash("sha256").update(readFileSync(join(ROOT, f))).digest("hex").slice(0, 10);
@@ -274,4 +280,4 @@ if (problems.length) {
     process.exit(1);
   }
 }
-console.log(`${expected.size - 2} artículo(s) y la portada ${CHECK ? "verificados" : "al día"}.`);
+console.log(`${expected.size - 3} artículo(s) y la portada ${CHECK ? "verificados" : "al día"}.`);

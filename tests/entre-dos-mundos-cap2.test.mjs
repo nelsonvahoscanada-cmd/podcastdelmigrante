@@ -130,5 +130,5 @@ test("patrocinio: enlaza a la miniweb Premium de Carlos D. Castillo dentro del s
   assert.match(read("js/analytics.js"), /const UTM_KEYS = \["utm_source", "utm_medium", "utm_campaign", "utm_content"\];/);
   /* Solo este artículo lleva el recuadro */
   assert.deepEqual(JSON.parse(JSON.stringify(ctx.A.filter((a) => a.sponsorBlock).map((a) => a.slug))), [SLUG]);
-  assert.match(read("js/article.js"), /<div class="article-body">\$\{bodyWithVideoHtml\(article\)\}<\/div>\s*\$\{sponsorBlockHtml\(article\)\}/);
+  assert.match(read("js/article.js"), /<div class="article-body">\$\{enlacesDefinitivos\(bodyWithVideoHtml\(article\)\)\}<\/div>\s*\$\{sponsorBlockHtml\(article\)\}/);
 });

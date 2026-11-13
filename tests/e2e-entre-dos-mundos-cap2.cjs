@@ -46,7 +46,7 @@ async function sinDesborde(page, ruta) {
     assert.equal((await page.locator("h1").first().textContent()).trim(), "Canadá también puede convertirse en un infierno");
     assert.match(await page.locator(".article-dek").textContent(), /^El sueño de Andrés: llegó con 22 años/);
     assert.equal((await page.locator(".column-masthead__name").textContent()).trim(), "Entre dos mundos");
-    assert.equal(await page.locator(".column-masthead__name").getAttribute("href"), "columna.html?slug=entre-dos-mundos");
+    assert.equal(await page.locator(".column-masthead__name").getAttribute("href"), "columna?slug=entre-dos-mundos");
     assert.equal((await page.locator(".column-masthead__chapter").textContent()).trim(), "Capítulo 2");
     assert.equal((await page.locator(".column-masthead__by").textContent()).trim(), "Por Nelson Vahos");
     assert.match(await page.locator(".article-meta").textContent(), /Noviembre 2026/);
@@ -77,7 +77,7 @@ async function sinDesborde(page, ruta) {
     assert.ok(caja.height >= 44, "botón cómodo de tocar");
     if (SHOTS) await patrocinio.screenshot({ path: path.join(SHOTS, `patrocinio-${perfil}.png`) });
     assert.match(await page.locator(".article-author-card").textContent(), /Nelson Vahos/);
-    assert.equal(await page.locator(".article-author-card a.btn").getAttribute("href"), "columna.html?slug=entre-dos-mundos");
+    assert.equal(await page.locator(".article-author-card a.btn").getAttribute("href"), "columna?slug=entre-dos-mundos");
     /* Lo que leen Facebook y WhatsApp: el HTML servido, sin ejecutar JavaScript */
     assert.ok((await (await page.request.get(`${BASE}/articulo-${SLUG}`)).text()).includes(`property="og:image" content="https://podcastdelmigrante.com/assets/social/${IMG}.jpg"`));
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `articulo-${perfil}.png`), fullPage: true });
@@ -104,8 +104,8 @@ async function sinDesborde(page, ruta) {
     ({ ctx, page, errores } = await abrir(browser, perfil, "/columna.html?slug=entre-dos-mundos"));
     const filas = await page.locator(".column-entry--published").evaluateAll((as) => as.map((a) => [a.getAttribute("href"), a.textContent.replace(/\s+/g, " ").trim()]));
     assert.equal(filas.length, 2);
-    assert.match(filas[0][0], new RegExp(`slug=${CAP1}$`));
-    assert.match(filas[1][0], new RegExp(`slug=${SLUG}$`));
+    assert.match(filas[0][0], new RegExp(`^articulo-${CAP1}$`));
+    assert.match(filas[1][0], new RegExp(`^articulo-${SLUG}$`));
     assert.match(filas[1][1], /Noviembre 2026 Canadá también puede convertirse en un infierno/);
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `columna-${perfil}.png`), fullPage: true });
     await sinDesborde(page, "/columna");

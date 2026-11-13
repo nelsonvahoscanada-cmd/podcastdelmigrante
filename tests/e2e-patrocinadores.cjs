@@ -14,7 +14,7 @@ const { chromium } = require("playwright");
 const assert = require("node:assert/strict");
 const path = require("node:path");
 
-const DESTINO = "perfil-tomas-velazquez.html?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=country-hills-toyota&utm_content=logo-portada";
+const DESTINO = "perfil-tomas-velazquez?utm_source=podcastdelmigrante&utm_medium=patrocinio&utm_campaign=country-hills-toyota&utm_content=logo-portada";
 const BASE = process.env.BASE || "http://127.0.0.1:8890";
 const SHOTS = process.env.SHOTS || "";
 const PERFILES = {
