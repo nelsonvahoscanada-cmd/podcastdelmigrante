@@ -1,0 +1,69 @@
+=== canada-en-datos/index.html (prod 50276 bytes, repo 50047 bytes; antes del PR: distinto)
+208,209c208,209
+<         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+<         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
+---
+>         <a href="/cdn-cgi/l/email-protection#43332c272022303727262f2e2a2431222d372603242e222a2f6d202c2e7c303621292620377e1336212f2a202a272227">Publicidad</a>
+>         <a href="/cdn-cgi/l/email-protection#99e9f6fdfaf8eaedfdfcf5f4f0feebf8f7edfcd9fef4f8f0f5b7faf6f4">Contacto</a>
+235c235
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+---
+> <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>window.PDM_SITE_ROOT_LINKS = true;</script>
+=== canada-en-datos/alberta/brooks.html (prod 29676 bytes, repo 29096 bytes; antes del PR: distinto)
+111c111
+<           <p class="cd-share__redes" data-share-redes>También en: <a class="cd-share__red cd-share__red--whatsapp" href="https://wa.me/?text=Brooks%2C%20Alberta%3A%20datos%20oficiales%20y%20recursos%20para%20migrantes%2C%20en%20Canad%C3%A1%20en%20Datos%20de%20El%20Podcast%20del%20Migrante.%20https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta%2Fbrooks" target="_blank" rel="noopener" aria-label="Compartir la guía de Brooks por WhatsApp">WhatsApp</a> · <a class="cd-share__red cd-share__red--facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta%2Fbrooks" target="_blank" rel="noopener" aria-label="Compartir la guía de Brooks por Facebook">Facebook</a> · <a class="cd-share__red cd-share__red--x" href="https://twitter.com/intent/tweet?text=Brooks%2C%20Alberta%3A%20datos%20oficiales%20y%20recursos%20para%20migrantes%2C%20en%20Canad%C3%A1%20en%20Datos%20de%20El%20Podcast%20del%20Migrante.&amp;url=https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta%2Fbrooks" target="_blank" rel="noopener" aria-label="Compartir la guía de Brooks por X">X</a> · <a class="cd-share__red cd-share__red--correo" href="mailto:?subject=Brooks%2C%20Alberta%3A%20gu%C3%ADa%20para%20inmigrantes%20y%20reci%C3%A9n%20llegados&amp;body=Brooks%2C%20Alberta%3A%20datos%20oficiales%20y%20recursos%20para%20migrantes%2C%20en%20Canad%C3%A1%20en%20Datos%20de%20El%20Podcast%20del%20Migrante.%20https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta%2Fbrooks" aria-label="Compartir la guía de Brooks por Correo">Correo</a></p>
+---
+>           <p class="cd-share__redes" data-share-redes>También en: <a class="cd-share__red cd-share__red--whatsapp" href="https://wa.me/?text=Brooks%2C%20Alberta%3A%20datos%20oficiales%20y%20recursos%20para%20migrantes%2C%20en%20Canad%C3%A1%20en%20Datos%20de%20El%20Podcast%20del%20Migrante.%20https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta%2Fbrooks" target="_blank" rel="noopener" aria-label="Compartir la guía de Brooks por WhatsApp">WhatsApp</a> · <a class="cd-share__red cd-share__red--facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta%2Fbrooks" target="_blank" rel="noopener" aria-label="Compartir la guía de Brooks por Facebook">Facebook</a> · <a class="cd-share__red cd-share__red--x" href="https://twitter.com/intent/tweet?text=Brooks%2C%20Alberta%3A%20datos%20oficiales%20y%20recursos%20para%20migrantes%2C%20en%20Canad%C3%A1%20en%20Datos%20de%20El%20Podcast%20del%20Migrante.&amp;url=https%3A%2F%2Fpodcastdelmigrante.com%2Fcanada-en-datos%2Falberta%2Fbrooks" target="_blank" rel="noopener" aria-label="Compartir la guía de Brooks por X">X</a> · <a class="cd-share__red cd-share__red--correo" href="/cdn-cgi/l/email-protection#625d111700080701165f20100d0d0911475021475052230e0007101603475123475052051747215147232603475052120310034750520b0c0f0b0510030c1607114750521b4750521007010b47215147235b0c4750520e0e070503060d1144030f1259000d061b5f20100d0d0911475021475052230e00071016034751234750520603160d114750520d040b010b030e07114750521b4750521007011710110d11475052120310034750520f0b0510030c160711475021475052070c47505221030c0306472151472353475052070c4750522603160d114750520607475052270e475052320d060103111647505206070e4750522f0b0510030c16074c4750520a16161211475123475024475024120d060103111606070e0f0b0510030c16074c010d0f47502401030c0306034f070c4f0603160d11475024030e000710160347502400100d0d0911" aria-label="Compartir la guía de Brooks por Correo">Correo</a></p>
+311,312c311,312
+<         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+<         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
+---
+>         <a href="/cdn-cgi/l/email-protection#03736c676062707767666f6e6a6471626d776643646e626a6f2d606c6e3c707661696660773e5376616f6a606a676267">Publicidad</a>
+>         <a href="/cdn-cgi/l/email-protection#86f6e9e2e5e7f5f2e2e3eaebefe1f4e7e8f2e3c6e1ebe7efeaa8e5e9eb">Contacto</a>
+338c338
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+---
+> <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>window.PDM_SITE_ROOT_LINKS = true;</script>
+=== magazine/index.html (prod 25592 bytes, repo 25363 bytes; antes del PR: distinto)
+289,290c289,290
+<         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+<         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
+---
+>         <a href="/cdn-cgi/l/email-protection#74041b1017150700101118191d1306151a0011341319151d185a171b194b0701161e11170049240116181d171d101510">Publicidad</a>
+>         <a href="/cdn-cgi/l/email-protection#1b6b747f787a686f7f7e7776727c697a756f7e5b7c767a727735787476">Contacto</a>
+316c316
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+---
+> <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>window.PDM_SITE_ROOT_LINKS = true;</script>
+=== noticias.html (prod 9365 bytes, repo 9136 bytes; antes del PR: distinto)
+133,134c133,134
+<         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+<         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
+---
+>         <a href="/cdn-cgi/l/email-protection#61110e050200121505040d0c080613000f150421060c00080d4f020e0c5e1214030b0402155c3114030d080208050005">Publicidad</a>
+>         <a href="/cdn-cgi/l/email-protection#b9c9d6dddad8cacddddcd5d4d0decbd8d7cddcf9ded4d8d0d597dad6d4">Contacto</a>
+160c160
+< <script src="js/data.js"></script>
+---
+> <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/data.js"></script>
+=== perfil-santa-latino.html (prod 23070 bytes, repo 22606 bytes; antes del PR: distinto)
+131c131
+<       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="phone">Llamar</a><a class="biz-btn" href="mailto:santalatinoon@gmail.com" data-track="email_click" data-track-target="email">Enviar email</a></div>
+---
+>       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="phone">Llamar</a><a class="biz-btn" href="/cdn-cgi/l/email-protection#b9cad8d7cdd8d5d8cdd0d7d6d6d7f9ded4d8d0d597dad6d4" data-track="email_click" data-track-target="email">Enviar email</a></div>
+210,211c210,211
+<         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="phone-final">Llamar</a><a class="biz-btn" href="mailto:santalatinoon@gmail.com" data-track="email_click" data-track-target="email-final">Email</a></div>
+<         <p class="biz-contact__email">Correo: <a href="mailto:santalatinoon@gmail.com" data-track="email_click" data-track-target="email-text">santalatinoon@gmail.com</a></p>
+---
+>         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="phone-final">Llamar</a><a class="biz-btn" href="/cdn-cgi/l/email-protection#7407151a00151815001d1a1b1b1a341319151d185a171b19" data-track="email_click" data-track-target="email-final">Email</a></div>
+>         <p class="biz-contact__email">Correo: <a href="/cdn-cgi/l/email-protection#f784969983969b96839e99989899b7909a969e9bd994989a" data-track="email_click" data-track-target="email-text"><span class="__cf_email__" data-cfemail="9fecfef1ebfef3feebf6f1f0f0f1dff8f2fef6f3b1fcf0f2">[email&#160;protected]</span></a></p>
+247,248c247,248
+<         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+<         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
+---
+>         <a href="/cdn-cgi/l/email-protection#6d1d02090e0c1e1909080100040a1f0c0319082d0a000c0401430e0200521e180f07080e19503d180f01040e04090c09">Publicidad</a>
+>         <a href="/cdn-cgi/l/email-protection#9feff0fbfcfeecebfbfaf3f2f6f8edfef1ebfadff8f2fef6f3b1fcf0f2">Contacto</a>
+274c274
+< <script src="js/data.js"></script>
+---
+> <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/data.js"></script>
