@@ -19,7 +19,7 @@
 */
 const { chromium, devices } = require("playwright");
 const assert = require("node:assert/strict");
-const http = require("node:http");
+const http = require(/^https:/.test(process.env.BASE || "") ? "node:https" : "node:http");
 
 const BASE = process.env.BASE || "http://127.0.0.1:8890";
 const SITE = "https://podcastdelmigrante.com";
