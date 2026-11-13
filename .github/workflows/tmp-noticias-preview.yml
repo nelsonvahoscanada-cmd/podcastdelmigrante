@@ -1,0 +1,35 @@
+# TEMPORAL: verificar en la vista previa de Cloudflare el PR #125 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp noticias preview
+on:
+  push:
+    branches: [claude/noticias-html-preview]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      BASE: https://claude-noticias-html-complet.podcastdelmigrante.pages.dev
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar la vista previa del PR (máx. 15 min)
+        run: |
+          for i in $(seq 90); do
+            curl -fsS "$BASE/articulo-canada-cambios-proceso-refugio-3-noviembre-2026?nc=$i" | grep -q 'data-prerendered="canada-cambios-proceso-refugio-3-noviembre-2026"' && { echo lista; exit 0; }
+            sleep 10
+          done; exit 1
+      - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: Suites e2e contra la vista previa
+        run: |
+          for t in noticias-html seo-redirecciones residencias-33000 suplemento-alimentos refugio-2026 elmy-salud-rural entre-dos-mundos-cap2 carlos-noviembre cgeb express-entry-150 alquiler-alberta masterclass-eder-campos hector-rivero multas-representantes alberta-bomberos empleo-remoto-alberta noticias patrocinadores; do
+            r=$(NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" timeout 900 node tests/e2e-$t.cjs 2>&1); c=$?
+            echo "$t: $c $(echo "$r" | grep -m1 -E '^OK|Error|assert' | cut -c1-300)" | tee -a /tmp/out/e2e.txt
+            [ $c -ne 0 ] && echo "$r" | tail -25 > /tmp/out/fallo-$t.txt
+          done; true
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "preview [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/noticias-html-preview-datos
