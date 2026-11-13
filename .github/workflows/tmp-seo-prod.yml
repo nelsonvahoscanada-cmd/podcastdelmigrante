@@ -1,0 +1,42 @@
+# TEMPORAL: verificar en producción el PR #124 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp seo prod
+on:
+  push:
+    branches: [claude/seo-redirecciones-prod]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue del commit fusionado (máx. 20 min)
+        run: |
+          for i in $(seq 120); do
+            curl -fsS "https://podcastdelmigrante.com/js/nav.js?nc=$i$RANDOM" | grep -q "function urlArticulo" && [ "$(curl -s -o /dev/null -w '%{http_code}' 'https://podcastdelmigrante.com/guia')" = 404 ] && { echo "desplegado (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
+      - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: Estados HTTP en producción
+        if: always()
+        run: |
+          P=https://podcastdelmigrante.com
+          for u in "/guia?categoria=migracion" "/guia" "/guia?categoria=x" "/guia.html?categoria=migracion" "/guia-ruta?ruta=quiero-venir-canada" "/guia-ruta?subruta=quiero-visitar-canada" "/guia-ruta" "/historia?slug=desafio-carlos-castillo-proteccion-familiar" "/historia?slug=x" "/historia.html?slug=desafio-carlos-castillo-proteccion-familiar" "/historia-vida?slug=historia-diana-pineda-radio-canada" "/columna?slug=entre-dos-mundos" "/columna" "/colaborador?id=carlos-castillo" "/colaborador" "/colaborador-carlos-castillo" "/business-profile?slug=santa-latino" "/business-profile.html?slug=santa-latino" "/business-profile" "/articulo?slug=plan-dental-canada-cdcp" "/articulo.html?slug=plan-dental-canada-cdcp" "/articulo?slug=canada-33000-residencias-permanentes-trabajadores-2026" "/articulo?slug=x" "/articulo" "/no-existe" "/registra-tu-empresa" "/registra-tu-empresa.html" "/index.html" "/" "/noticias.html" "/perfil-santa-latino.html" "/canada-en-datos/" "/robots.txt" "/sitemap.xml"; do
+            printf "%-70s %s\n" "$u" "$(curl -s -o /tmp/b -w '%{http_code} %{redirect_url}' "$P$u") $(grep -o '<title>[^<]*' /tmp/b | head -1 | cut -c8-60)"
+          done | tee /tmp/out/estados.txt
+      - name: E2E SEO (enlaces, canónicas, 404, redirecciones) contra producción
+        if: always()
+        run: BASE=https://podcastdelmigrante.com NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-seo-redirecciones.cjs 2>&1 | tee /tmp/out/e2e-seo.txt; exit ${PIPESTATUS[0]}
+      - name: E2E noticia principal contra producción
+        if: always()
+        run: BASE=https://podcastdelmigrante.com NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-residencias-33000.cjs 2>&1 | tee /tmp/out/e2e-noticia.txt; exit ${PIPESTATUS[0]}
+      - name: Noticias, guías, historias, directorio y 4 miniwebs Premium (computador y celular); áreas intactas
+        if: always()
+        run: NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tmp-prod/verif.cjs 2>&1 | tee /tmp/out/verif-log.txt; exit ${PIPESTATUS[0]}
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "seo prod [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/seo-redirecciones-prod-datos
