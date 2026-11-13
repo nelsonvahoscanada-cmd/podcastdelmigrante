@@ -1,0 +1,28 @@
+# TEMPORAL: diferencia entre producción y el repositorio (solo lectura). Se elimina después.
+name: tmp seo diff
+on:
+  push:
+    branches: [claude/seo-redirecciones-prod-diff]
+permissions:
+  contents: write
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Diferencias
+        run: |
+          mkdir -p /tmp/out
+          for p in canada-en-datos/index.html:/canada-en-datos/ canada-en-datos/alberta/brooks.html:/canada-en-datos/alberta/brooks magazine/index.html:/magazine/ noticias.html:/noticias perfil-santa-latino.html:/perfil-santa-latino; do
+            f=${p%%:*}; u=${p#*:}; n=$(echo $f | tr '/' '_')
+            curl -s --compressed "https://podcastdelmigrante.com$u" -o /tmp/prod.html
+            echo "=== $f (prod $(wc -c </tmp/prod.html) bytes, repo $(wc -c <$f) bytes; antes del PR: $(git show f9d3afb:$f | cmp -s - /tmp/prod.html && echo igual || echo distinto))" >> /tmp/out/diff.txt
+            diff $f /tmp/prod.html | head -40 >> /tmp/out/diff.txt
+          done
+          cat /tmp/out/diff.txt
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "diff [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/seo-redirecciones-prod-diff-datos
