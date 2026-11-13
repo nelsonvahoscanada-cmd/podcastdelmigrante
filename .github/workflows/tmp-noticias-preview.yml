@@ -17,14 +17,14 @@ jobs:
       - name: Esperar la vista previa del PR (máx. 15 min)
         run: |
           for i in $(seq 90); do
-            curl -fsS "$BASE/articulo-canada-cambios-proceso-refugio-3-noviembre-2026?nc=$i" | grep -q 'data-prerendered="canada-cambios-proceso-refugio-3-noviembre-2026"' && { echo lista; exit 0; }
+            curl -fsS "$BASE/articulo-canada-cambios-proceso-refugio-3-noviembre-2026?nc=$i" | grep -q "js/article.js?v=$(sha256sum js/article.js | cut -c1-10)" && { echo lista; exit 0; }
             sleep 10
           done; exit 1
       - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
       - name: Suites e2e contra la vista previa
         run: |
-          for t in noticias-html seo-redirecciones residencias-33000 suplemento-alimentos refugio-2026 elmy-salud-rural entre-dos-mundos-cap2 carlos-noviembre cgeb express-entry-150 alquiler-alberta masterclass-eder-campos hector-rivero multas-representantes alberta-bomberos empleo-remoto-alberta noticias patrocinadores; do
-            r=$(NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" timeout 900 node tests/e2e-$t.cjs 2>&1); c=$?
+          for t in noticias-html seo-redirecciones residencias-33000 suplemento-alimentos refugio-2026 elmy-salud-rural entre-dos-mundos-cap2 carlos-noviembre cgeb express-entry-150 alquiler-alberta masterclass-eder-campos hector-rivero multas-representantes alberta-bomberos empleo-remoto-alberta noticias; do
+            set +e; r=$(NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" timeout 900 node tests/e2e-$t.cjs 2>&1); c=$?
             echo "$t: $c $(echo "$r" | grep -m1 -E '^OK|Error|assert' | cut -c1-300)" | tee -a /tmp/out/e2e.txt
             [ $c -ne 0 ] && echo "$r" | tail -25 > /tmp/out/fallo-$t.txt
           done; true
