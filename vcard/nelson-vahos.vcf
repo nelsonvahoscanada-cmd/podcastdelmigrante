@@ -7,7 +7,10 @@ ORG:eRadio Global Corp.
 TITLE:Fundador y Director General
 NOTE:Fundador y Director de El Podcast del Migrante. Conectando latinos\, c
  onstruyendo futuro.
+TEL;TYPE=WORK,VOICE:+14024272741
 EMAIL;TYPE=INTERNET,WORK:eRadioGlobal@gmail.com
 URL:https://podcastdelmigrante.com/perfil-nelson-vahos
+X-SOCIALPROFILE;TYPE=whatsapp:https://wa.me/14024272741
+X-SOCIALPROFILE;TYPE=tiktok:https://www.tiktok.com/@podcastdelmigrante
 ADR;TYPE=WORK:;;;;Alberta;;Canadá
 END:VCARD

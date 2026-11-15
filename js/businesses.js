@@ -161,11 +161,19 @@
     quoteRaw: true      la cita se muestra tal cual (con sus comillas).
     projects            [{ id, name, logo?, kicker?, text, url, label,
                         note?, links: [{ network, href }] }] una tarjeta
-                        por proyecto; sin logo, el nombre en texto.
+                        por proyecto (logo opcional).
     projectsTitle, timelineTitle  títulos de esas secciones.
     timeline            [{ date?, text }] hitos confirmados; sin fecha no
                         se inventa ninguna.
     Sin ciudad (city: ""), la ubicación se muestra como «Provincia, País».
+  Contacto (opcionales, sirven a cualquier perfil):
+    whatsappMessage     mensaje predefinido del enlace wa.me (?text=…).
+    whatsappLabel, phoneLabel  texto de los botones de WhatsApp y llamada
+                        (la barra fija del celular sigue con «WhatsApp» y
+                        «Llamar»).
+    showPhone: true     muestra el número en el bloque final de contacto.
+    connect.contactCard.socialProfiles  [{ type, url }] → X-SOCIALPROFILE
+                        en la vCard (ej. whatsapp, tiktok).
 
   FICHA GRATUITA (solicitud con «Plan solicitado: Plan Gratuito»)
     Solo estos campos: id, slug, published: true, plan: "gratuito",
@@ -705,8 +713,19 @@ const BUSINESSES = [
       { text: "Hoy: dirige **eRadio Global Corp.** y **El Podcast del Migrante**, escribe la columna *Entre dos mundos* y lidera **Desafío 100 Empresas**." },
     ],
 
-    phone: "",
-    whatsapp: "",
+    /* Objetivo de la miniweb: patrocinios, publicidad y alianzas comerciales.
+       WhatsApp es la llamada a la acción principal (también en la barra fija
+       del celular); el mismo número sirve para llamadas. */
+    callToAction: {
+      title: "Patrocinios, publicidad y alianzas comerciales",
+      text: "¿Quieres que tu marca llegue a la comunidad latina en Canadá? Conversemos sobre patrocinios, publicidad y alianzas comerciales con El Podcast del Migrante y eRadio Global Corp.",
+    },
+    phone: "+1 402 427 2741",
+    whatsapp: "+1 402 427 2741",
+    whatsappMessage: "Hola Nelson, encontré tu perfil en El Podcast del Migrante y me gustaría conversar contigo sobre publicidad, patrocinios o una posible alianza comercial.",
+    whatsappLabel: "Contactar por WhatsApp",
+    phoneLabel: "Llamar a Nelson",
+    showPhone: true,               /* número visible en el contacto profesional */
     email: "eRadioGlobal@gmail.com",
     showEmail: true,
     emailLabel: "Enviar correo",
@@ -714,7 +733,7 @@ const BUSINESSES = [
     inventoryUrl: "",
     bookingUrl: "",
     instagram: "",
-    tiktok: "",
+    tiktok: "https://www.tiktok.com/@podcastdelmigrante",   /* @podcastdelmigrante */
     facebook: "",
     linkedin: "",
     youtubeVideoId: "",
@@ -733,6 +752,10 @@ const BUSINESSES = [
         familyName: "Vahos",
         note: "Fundador y Director de El Podcast del Migrante. Conectando latinos, construyendo futuro.",
         url: "https://podcastdelmigrante.com/perfil-nelson-vahos",
+        socialProfiles: [
+          { type: "whatsapp", url: "https://wa.me/14024272741" },
+          { type: "tiktok", url: "https://www.tiktok.com/@podcastdelmigrante" },
+        ],
       },
     },
 
