@@ -1,0 +1,6 @@
+N:Vahos Alvarado;Juan Sebastián;;;
+FN:1JuanRomero1 Inc.
+ORG:1JuanRomero1 Inc.
+NOTE:Representante: Juan Sebastián Vahos Alvarado
+content-type: text/x-vcard; charset=utf-8
+x-content-type-options: nosniff

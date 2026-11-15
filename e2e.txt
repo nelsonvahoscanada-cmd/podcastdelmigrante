@@ -1,0 +1,4 @@
+1juanromero1: 0 OK 1JuanRomero1: perfil Premium, contacto, vCard, QR, estadísticas y directorio
+planes-directorio: 0 OK planes del Directorio: página, botones, formulario por plan, navegación y miniwebs
+santa-latino: 0 OK Santa Latino: perfil, enlaces, QR, vCard, SEO, estadísticas y perfiles existentes
+directorio-visibilidad: 0 OK Directorio Empresarial: legible sin JavaScript, mismo funcionamiento con JavaScript, direcciones y sitemap
