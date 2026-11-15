@@ -61,6 +61,13 @@ html[data-profile-theme="institucional"] .biz-btn:focus-visible,
 html[data-profile-theme="institucional"] .biz-back:focus-visible,
 html[data-profile-theme="institucional"] .biz-project a:focus-visible { outline: 3px solid var(--in-verde); outline-offset: 3px; }
 
+/* ---------- Patrocinios: llamada a la acción principal ---------- */
+html[data-profile-theme="institucional"] .biz-cta { background: var(--in-verde-suave); border-left: 6px solid var(--in-verde); border-radius: 0 12px 12px 0; }
+html[data-profile-theme="institucional"] .biz-cta p { font-size: 1.05rem; line-height: 1.6; color: var(--negro); }
+/* WhatsApp (primer botón): verde y a todo el ancho en el celular */
+html[data-profile-theme="institucional"] .biz-actions .biz-btn--primary { background: var(--in-verde); border-color: var(--in-verde); color: var(--in-negro); }
+html[data-profile-theme="institucional"] .biz-actions .biz-btn--primary:hover { background: var(--in-verde-oscuro); border-color: var(--in-verde-oscuro); color: var(--in-blanco); }
+
 /* ---------- Títulos y biografía ---------- */
 html[data-profile-theme="institucional"] .biz-h2::after {
   content: "";
@@ -138,6 +145,8 @@ html[data-profile-theme="institucional"] .biz-quote cite { color: var(--in-verde
 
 /* ---------- Contacto ---------- */
 html[data-profile-theme="institucional"] .biz-contact { border-top: 6px solid var(--in-verde); }
+html[data-profile-theme="institucional"] .biz-section.biz-contact .biz-contact__phone { margin: 18px 0 0; color: var(--in-gris); font-size: 1.05rem; }
+html[data-profile-theme="institucional"] .biz-contact__phone a { color: var(--in-blanco); font-weight: 700; font-size: 1.15rem; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
 html[data-profile-theme="institucional"] .biz-section.biz-contact .biz-contact__email { margin: 14px 0 0; color: var(--in-gris); font-size: 1rem; overflow-wrap: anywhere; }
 html[data-profile-theme="institucional"] .biz-contact__email a { color: var(--in-blanco); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 html[data-profile-theme="institucional"] .biz-qr { border-top: 4px solid var(--in-verde); }

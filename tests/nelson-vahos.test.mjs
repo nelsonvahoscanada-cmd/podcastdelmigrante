@@ -4,8 +4,11 @@
   - Independiente: no aparece en «Quién puede ayudarte» ni en «Planes del
     Directorio»; sí en el sitemap, en la lista de estadísticas y en las rutas válidas.
   - Funciones Premium: QR del perfil, QR de contacto, vCard, SEO, JSON-LD, canónica.
-  - Sin teléfonos, WhatsApp ni Instagram de eRadio Global; eradioglobal.com
-    se presenta como sitio oficial en desarrollo.
+  - Objetivo: patrocinios, publicidad y alianzas comerciales. WhatsApp
+    (+1 402 427 2741, con mensaje predefinido) es la acción principal; el
+    mismo número sirve para llamadas y se ve en el contacto. TikTok
+    @podcastdelmigrante en redes. Sin Instagram de eRadio Global;
+    eradioglobal.com se presenta como sitio oficial en desarrollo.
 */
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -87,17 +90,62 @@ test("HTML sin JavaScript: portada, cargos, proyectos, trayectoria y contacto pr
   assert.doesNotMatch(MAIN, /Perfil empresarial|quien-puede-ayudarte/);
 });
 
-test("sin teléfonos, WhatsApp, Instagram de eRadio Global ni datos personales adicionales", () => {
-  assert.equal(N.phone, "");
-  assert.equal(N.whatsapp, "");
-  assert.doesNotMatch(MAIN, /tel:|wa\.me|whatsapp|instagram\.com\/eradio/i);
-  assert.doesNotMatch(JSON.stringify(N), /instagram\.com\/eradio/i);
-  const vcf = read("vcard/nelson-vahos.vcf");
-  assert.doesNotMatch(vcf, /^TEL/m);
-  assert.match(vcf, /^FN:Nelson Vahos$/m);
-  assert.match(vcf, /^EMAIL;TYPE=INTERNET,WORK:eRadioGlobal@gmail\.com$/m);
-  assert.match(vcf, /^URL:https:\/\/podcastdelmigrante\.com\/perfil-nelson-vahos$/m);
-  assert.match(vcf, /^ADR;TYPE=WORK:;;;;Alberta;;Canadá$/m);
+const TEL = "tel:+14024272741";
+const WA = "https://wa.me/14024272741?text=" + encodeURIComponent("Hola Nelson, encontré tu perfil en El Podcast del Migrante y me gustaría conversar contigo sobre publicidad, patrocinios o una posible alianza comercial.");
+const enlaces = (re) => [...MAIN.matchAll(/<a class="([^"]*)" href="([^"]+)"[^>]*data-track="([^"]+)" data-track-target="([^"]+)">([^<]*)</g)].filter((m) => re.test(m[2])).map((m) => [m[1], m[2], m[3], m[4], m[5]]);
+
+test("WhatsApp (acción principal, con mensaje predefinido) y llamada, con el mismo número", () => {
+  assert.equal(N.phone, "+1 402 427 2741");
+  assert.equal(N.whatsapp, "+1 402 427 2741");
+  const wa = enlaces(/^https:\/\/wa\.me\//);
+  assert.deepEqual(wa.map((x) => x.slice(1)), [
+    [WA, "whatsapp_click", "whatsapp", "Contactar por WhatsApp"],
+    [WA, "whatsapp_click", "whatsapp-final", "Contactar por WhatsApp"],
+  ]);
+  assert.ok(wa.every(([c]) => c === "biz-btn biz-btn--primary"), "WhatsApp es el botón principal");
+  assert.match(MAIN, /<div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https:\/\/wa\.me\/14024272741\?text=/, "primer botón de la portada");
+  const tel = enlaces(/^tel:/);
+  assert.deepEqual(tel.map((x) => x.slice(1)), [
+    [TEL, "phone_click", "phone", "Llamar a Nelson"],
+    [TEL, "phone_click", "phone-final", "Llamar a Nelson"],
+  ]);
+  assert.ok(MAIN.includes(`<p class="biz-contact__phone">Teléfono y WhatsApp: <a href="${TEL}" data-track="phone_click" data-track-target="phone-text">+1 402 427 2741</a></p>`), "número visible");
+  assert.doesNotMatch(MAIN, /<form/, "sin formularios");
+  /* Barra fija del celular: WhatsApp primero (la dibuja business-profile.js) */
+  assert.match(read("js/business-profile.js"), /const keep = \["booking", "whatsapp", "phone", "inventory"\]/);
+});
+
+test("TikTok @podcastdelmigrante en las redes del perfil, con ícono; sin Instagram de eRadio Global", () => {
+  assert.equal(N.tiktok, "https://www.tiktok.com/@podcastdelmigrante");
+  for (const lugar of ["hero", "final"]) {
+    assert.match(MAIN, new RegExp(`<a class="biz-social__link" href="https://www\\.tiktok\\.com/@podcastdelmigrante" target="_blank" rel="noopener" data-track="tiktok_click" data-track-target="tiktok-${lugar}"[^>]*><svg`), lugar);
+  }
+  assert.equal(N.instagram, "");
+  assert.doesNotMatch(MAIN, /instagram\.com/i);
+  /* Las redes oficiales de los proyectos se conservan */
+  for (const u of ["https://facebook.com/eradioglobal", "https://youtube.com/@eradioglobal4291", "https://www.youtube.com/@ElPodcastDelMigranteOficial"]) assert.ok(MAIN.includes(`href="${u}"`), u);
+});
+
+test("patrocinios, publicidad y alianzas: bloque principal tras los botones de contacto", () => {
+  assert.ok(T.includes("Patrocinios, publicidad y alianzas comerciales"));
+  assert.ok(MAIN.indexOf("biz-cta") < MAIN.indexOf("biz-about"), "antes de la biografía");
+  assert.doesNotMatch(T, /producci[oó]n audiovisual|edici[oó]n de video/i, "no es una página de servicios audiovisuales");
+});
+
+test("vCard: nombre, empresa, teléfono, WhatsApp, miniweb y TikTok; la dirección del QR no cambia", () => {
+  const vcf = read("vcard/nelson-vahos.vcf").replace(/\r\n /g, "");
+  assert.match(vcf, /^FN:Nelson Vahos\r$/m);
+  assert.match(vcf, /^ORG:eRadio Global Corp\.\r$/m);
+  assert.match(vcf, /^TEL;TYPE=WORK,VOICE:\+14024272741\r$/m);
+  assert.match(vcf, /^X-SOCIALPROFILE;TYPE=whatsapp:https:\/\/wa\.me\/14024272741\r$/m);
+  assert.match(vcf, /^X-SOCIALPROFILE;TYPE=tiktok:https:\/\/www\.tiktok\.com\/@podcastdelmigrante\r$/m);
+  assert.match(vcf, /^EMAIL;TYPE=INTERNET,WORK:eRadioGlobal@gmail\.com\r$/m);
+  assert.match(vcf, /^URL:https:\/\/podcastdelmigrante\.com\/perfil-nelson-vahos\r$/m);
+  assert.match(vcf, /^ADR;TYPE=WORK:;;;;Alberta;;Canadá\r$/m);
+  /* Los QR codifican direcciones permanentes: la vCard y el perfil */
+  assert.match(read("assets/qr/contacto-nelson-vahos.svg"), /QR de contacto de Nelson Vahos/);
+  assert.match(read("scripts/build-qr-images.py"), /url = f"\{SITE_ORIGIN\}\/vcard\/\{slug\}\.vcf"/);
+  assert.match(read("scripts/build-qr-images.py"), /url = f"\{SITE_ORIGIN\}\/perfil-\{slug\}\.html"/);
 });
 
 test("SEO: título, descripción, canónica, Open Graph y JSON-LD (Person con sus dos organizaciones)", () => {
@@ -112,7 +160,8 @@ test("SEO: título, descripción, canónica, Open Graph y JSON-LD (Person con su
   assert.deepEqual(ld.mainEntity.worksFor.map((o) => [o.name, o.url]), [["eRadio Global Corp.", "https://eradioglobal.com/"], ["El Podcast del Migrante", "https://podcastdelmigrante.com/"]]);
   assert.deepEqual(ld.mainEntity.workLocation.address, { "@type": "PostalAddress", addressRegion: "Alberta", addressCountry: "CA" });
   assert.deepEqual(ld.breadcrumb.itemListElement.map((x) => x.name), ["Inicio", "Nelson Vahos"], "sin el directorio en la ruta");
-  assert.doesNotMatch(JSON.stringify(ld), /telephone|instagram/i);
+  assert.equal(ld.mainEntity.telephone, "+1 402 427 2741");
+  assert.doesNotMatch(JSON.stringify(ld), /instagram/i);
 });
 
 test("independiente: fuera de «Quién puede ayudarte» y de «Planes del Directorio»; dentro del sitemap, estadísticas y rutas", () => {

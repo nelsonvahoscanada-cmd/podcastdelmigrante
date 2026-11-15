@@ -293,6 +293,9 @@ function buildVcard(b) {
     tel && `TEL;TYPE=WORK,VOICE:${tel}`,
     b.email && `EMAIL;TYPE=INTERNET,WORK:${b.email}`,
     (b.website || card.url) && `URL:${b.website || card.url}`,
+    /* contactCard.socialProfiles (opcional): [{ type: "whatsapp" | "tiktok" | …, url }]
+       → X-SOCIALPROFILE (contactos de iPhone y Android) */
+    ...(card.socialProfiles || []).filter((x) => x && /^[a-z]+$/.test(x.type || "") && /^https:\/\//.test(x.url || "")).map((x) => `X-SOCIALPROFILE;TYPE=${x.type}:${x.url}`),
     /* Sin dirección pública (ej. atención con cita) solo van ciudad,
        provincia y país, si están en el registro */
     (b.address || b.city || b.province) && `ADR;TYPE=WORK:;;${[b.address, b.city, b.province, b.postalCode, b.country].map((v) => vEsc(v || "")).join(";")}`,

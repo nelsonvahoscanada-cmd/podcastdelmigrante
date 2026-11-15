@@ -22,6 +22,10 @@ const PERFILES = {
   celular: { ...devices["iPhone 13"] },
 };
 const CARGOS = ["Fundador y Director General de eRadio Global Corp.", "Fundador y Director de El Podcast del Migrante"];
+const MENSAJE = "Hola Nelson, encontré tu perfil en El Podcast del Migrante y me gustaría conversar contigo sobre publicidad, patrocinios o una posible alianza comercial.";
+const WA = "https://wa.me/14024272741?text=" + encodeURIComponent(MENSAJE);
+const TEL = "tel:+14024272741";
+const TIKTOK = "https://www.tiktok.com/@podcastdelmigrante";
 const CITA = "«El frío no pudo apagar mi señal. Solamente me enseñó a transmitir con un propósito diferente».";
 
 async function abrir(browser, perfil, ruta, js = true) {
@@ -57,8 +61,8 @@ const visible = (page) => page.evaluate(() => document.getElementById("bizRoot")
     let { ctx, page, errores, res } = await abrir(browser, perfil, "/perfil-nelson-vahos", false);
     assert.equal(res.status(), 200);
     const sinJs = await visible(page);
-    for (const t of ["Nelson Vahos", ...CARGOS, "Conectando latinos, construyendo futuro", "Alberta, Canadá", "Sobre Nelson", "William Vinasco Ch.", CITA, "Proyectos", "Sitio oficial en desarrollo.", "Desafío 100 Empresas", "Trayectoria", "Contacto profesional", "eRadioGlobal@gmail.com"]) {
-      assert.ok(sinJs.includes(t), `${perfil} sin JavaScript: «${t}»`);
+    for (const t of ["Nelson Vahos", ...CARGOS, "Conectando latinos, construyendo futuro", "Alberta, Canadá", "Sobre Nelson", "William Vinasco Ch.", CITA, "Proyectos", "Sitio oficial en desarrollo.", "Desafío 100 Empresas", "Trayectoria", "Contacto profesional", "eRadioGlobal@gmail.com", "Patrocinios, publicidad y alianzas comerciales", "Contactar por WhatsApp", "Llamar a Nelson", "Teléfono y WhatsApp: +1 402 427 2741", "TikTok"]) {
+      assert.ok(sinJs.toLowerCase().includes(t.toLowerCase()), `${perfil} sin JavaScript: «${t}»`);
     }
     assert.ok(!/Cargando perfil/.test(sinJs));
     assert.equal(await page.locator("h1").count(), 1);
@@ -89,7 +93,33 @@ const visible = (page) => page.evaluate(() => document.getElementById("bizRoot")
     has("email_click", "email-final", "mailto:eRadioGlobal@gmail.com");
     has("vcard_download", "vcard-connect", "vcard/nelson-vahos.vcf");
     has("qr_profile_download", "qr-profile", "assets/qr/perfil-nelson-vahos.png");
-    assert.ok(!hrefs.some(([, , h]) => /^(tel:|https:\/\/wa\.me)/.test(h)), "sin teléfono ni WhatsApp");
+    /* WhatsApp (principal, con mensaje predefinido), llamada y TikTok */
+    has("whatsapp_click", "whatsapp", WA);
+    has("whatsapp_click", "whatsapp-final", WA);
+    has("phone_click", "phone", TEL);
+    has("phone_click", "phone-final", TEL);
+    has("phone_click", "phone-text", TEL);
+    has("tiktok_click", "tiktok-hero", TIKTOK);
+    has("tiktok_click", "tiktok-final", TIKTOK);
+    assert.ok(hrefs.filter(([, , h]) => /^(tel:|https:\/\/wa\.me)/.test(h)).every(([, , h]) => h === WA || h === TEL), "un solo número");
+    assert.equal(new URL(WA).searchParams.get("text"), MENSAJE, "mensaje predefinido");
+    const primero = page.locator(".biz-actions").first().locator("a").first();
+    assert.equal(await primero.getAttribute("href"), WA, "WhatsApp es la primera acción");
+    assert.equal((await primero.innerText()).trim().toLowerCase(), "contactar por whatsapp");
+    assert.equal(await primero.getAttribute("target"), "_blank");
+    assert.equal((await page.locator(".biz-actions").first().locator("a").nth(1).innerText()).trim().toLowerCase(), "llamar a nelson");
+    assert.equal(await page.locator("main form").count(), 0, "sin formularios");
+    /* Barra fija: solo en celular, con WhatsApp primero y visible */
+    const barra = page.locator(".biz-sticky");
+    if (perfil === "celular") {
+      assert.ok(await barra.isVisible(), "barra fija visible en el celular");
+      assert.deepEqual(await barra.locator("a").evaluateAll((as) => as.map((a) => [a.textContent.trim(), a.getAttribute("href"), a.className])), [
+        ["WhatsApp", WA, "biz-sticky__btn biz-sticky__btn--primary"],
+        ["Llamar", TEL, "biz-sticky__btn"],
+      ]);
+      const caja = await barra.locator("a").first().boundingBox();
+      assert.ok(caja.height >= 44, "botón táctil");
+    }
     assert.equal(await page.locator("main a[href*='instagram.com']").count(), 0, "sin Instagram en la miniweb");
     assert.ok(hrefs.filter(([, , h]) => /^mailto:/.test(h)).every(([, , h]) => h === "mailto:eRadioGlobal@gmail.com"), "solo el correo público");
     /* El enlace interno del Desafío existe */
@@ -108,7 +138,12 @@ const visible = (page) => page.evaluate(() => document.getElementById("bizRoot")
     assert.equal(vcf.status(), 200);
     const tarjeta = await vcf.text();
     assert.match(tarjeta, /FN:Nelson Vahos/);
-    assert.doesNotMatch(tarjeta, /^TEL/m);
+    assert.match(tarjeta, /^TEL;TYPE=WORK,VOICE:\+14024272741\r$/m);
+    assert.match(tarjeta, /^X-SOCIALPROFILE;TYPE=whatsapp:https:\/\/wa\.me\/14024272741\r$/m);
+    assert.match(tarjeta, /^X-SOCIALPROFILE;TYPE=tiktok:https:\/\/www\.tiktok\.com\/@podcastdelmigrante\r$/m);
+    assert.match(tarjeta, /^ORG:eRadio Global Corp\.\r$/m);
+    /* El QR de contacto apunta a la misma dirección permanente de la vCard */
+    assert.match(await (await page.request.get(`${BASE}/assets/qr/contacto-nelson-vahos.svg`)).text(), /<svg/);
     /* Correo del bloque final visible y legible */
     const correo = page.locator(".biz-contact__email");
     await correo.scrollIntoViewIfNeeded();
@@ -120,6 +155,11 @@ const visible = (page) => page.evaluate(() => document.getElementById("bizRoot")
     await page.locator("a[data-track-target='project-eradio-global']").evaluate((a) => { a.addEventListener("click", (e) => e.preventDefault(), { once: true }); a.click(); });
     const clic = (await page.evaluate(() => window.__eventos)).find((e) => e.event === "website_click");
     assert.ok(clic && clic.business_id === "BIZ-005", `${perfil}: website_click medido`);
+    for (const sel of ["a[data-track-target='whatsapp']", "a[data-track-target='phone']", "a[data-track-target='tiktok-hero']"]) {
+      await page.locator(sel).evaluate((a) => { a.addEventListener("click", (e) => e.preventDefault(), { once: true }); a.click(); });
+    }
+    const ev = await page.evaluate(() => window.__eventos);
+    for (const e of ["whatsapp_click", "phone_click", "tiktok_click"]) assert.ok(ev.some((x) => x.event === e && x.business_id === "BIZ-005"), `${perfil}: ${e} medido`);
     /* Contraste (AA): nombre y cargos sobre la banda negra */
     const contraste = await page.evaluate(() => {
       const lum = (c) => { const [r, g, b] = c.match(/\d+(\.\d+)?/g).slice(0, 3).map(Number).map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };

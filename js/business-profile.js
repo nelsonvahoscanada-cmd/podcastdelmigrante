@@ -91,9 +91,11 @@
     return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
   }
 
+  /* «whatsappMessage» (opcional): mensaje predefinido del chat */
   function whatsappHref(b) {
     const digits = (b.whatsapp || "").replace(/\D/g, "");
-    return digits ? "https://wa.me/" + digits : "";
+    if (!digits) return "";
+    return "https://wa.me/" + digits + (b.whatsappMessage ? "?text=" + encodeURIComponent(b.whatsappMessage) : "");
   }
 
   function phoneHref(b) {
@@ -121,9 +123,10 @@
     const list = [];
     if (b.bookingUrl) list.push({ key: "booking", label: b.bookingLabel || "Agenda una cita", href: b.bookingUrl, ext: true, track: "booking_click", target: "booking" });
     const wa = whatsappHref(b);
-    if (wa) list.push({ key: "whatsapp", label: "WhatsApp", href: wa, ext: true, track: "whatsapp_click", target: "whatsapp" });
+    /* «whatsappLabel» / «phoneLabel» (opcionales): texto de los botones */
+    if (wa) list.push({ key: "whatsapp", label: b.whatsappLabel || "WhatsApp", href: wa, ext: true, track: "whatsapp_click", target: "whatsapp" });
     const tel = phoneHref(b);
-    if (tel) list.push({ key: "phone", label: "Llamar", href: tel, ext: false, track: "phone_click", target: "phone" });
+    if (tel) list.push({ key: "phone", label: b.phoneLabel || "Llamar", href: tel, ext: false, track: "phone_click", target: "phone" });
     if (b.inventoryUrl) list.push({ key: "inventory", label: b.inventoryLabel || "Ver catálogo", href: b.inventoryUrl, ext: true, track: "vehicles_click", target: "inventory" });
     const map = mapsHref(b);
     if (map) list.push({ key: "maps", label: "Cómo llegar", href: map, ext: true, track: "directions_click", target: "directions" });
@@ -447,9 +450,9 @@
   function contactBlockHtml(b) {
     const channels = [];
     const wa = whatsappHref(b);
-    if (wa) channels.push({ label: "WhatsApp", href: wa, ext: true, track: "whatsapp_click", target: "whatsapp-final" });
+    if (wa) channels.push({ label: b.whatsappLabel || "WhatsApp", href: wa, ext: true, track: "whatsapp_click", target: "whatsapp-final" });
     const tel = phoneHref(b);
-    if (tel) channels.push({ label: "Llamar", href: tel, ext: false, track: "phone_click", target: "phone-final" });
+    if (tel) channels.push({ label: b.phoneLabel || "Llamar", href: tel, ext: false, track: "phone_click", target: "phone-final" });
     if (b.email) channels[b.emailFirst ? "unshift" : "push"]({ label: b.emailLabel || "Email", href: "mailto:" + b.email, ext: false, track: "email_click", target: "email-final" });
     if (b.website) channels.push({ label: "Visitar sitio web", href: b.website, ext: true, track: "website_click", target: "website" });
     if (!channels.length) return "";
@@ -458,7 +461,8 @@
         <h2 class="biz-h2">${esInstitucional(b) ? "Contacto profesional" : `¿Quieres hablar con ${esc(b.shortName || b.name)}?`}</h2>
         <div class="biz-actions">${channels
           .map((a, i) => `<a class="biz-btn${i === 0 ? " biz-btn--primary" : ""}" ${linkAttrs(a)}>${esc(a.label)}</a>`)
-          .join("")}</div>
+          .join("")}</div>${b.showPhone && tel ? `
+        <p class="biz-contact__phone">${(b.whatsapp || "").replace(/\D/g, "") === tel.replace(/\D/g, "") ? "Teléfono y WhatsApp" : "Teléfono"}: <a href="${esc(tel)}" data-track="phone_click" data-track-target="phone-text">${esc(b.phone)}</a></p>` : ""}
         ${b.showEmail && b.email ? `<p class="biz-contact__email">Correo: <a href="mailto:${esc(b.email)}" data-track="email_click" data-track-target="email-text">${esc(b.email)}</a></p>` : ""}
         ${socialHtml(b, "final")}
       </section>
@@ -546,7 +550,9 @@
     });
   }
 
-  /* Barra inferior móvil: Agenda | WhatsApp | Llamar | Ver (solo los disponibles) */
+  /* Barra inferior móvil: Agenda | WhatsApp | Llamar | Ver (solo los disponibles).
+     Textos cortos fijos, aunque los botones de la página lleven otro texto. */
+  const STICKY_LABEL = { booking: "Agenda", whatsapp: "WhatsApp", phone: "Llamar" };
   function stickyBarHtml(b) {
     /* emailFirst (opcional): el correo, medio preferido, también va en la barra */
     const keep = ["booking", "whatsapp", "phone", "inventory"].concat(b.emailFirst ? ["email"] : []);
@@ -555,7 +561,7 @@
       .map((a) => Object.assign({}, a, { target: a.target + "-sticky" }));
     if (!list.length) return "";
     return `<nav class="biz-sticky" aria-label="Contacto rápido">${list
-      .map((a, i) => `<a class="biz-sticky__btn${i === 0 ? " biz-sticky__btn--primary" : ""}" ${linkAttrs(a)}>${esc(a.key === "booking" ? "Agenda" : a.label)}</a>`)
+      .map((a, i) => `<a class="biz-sticky__btn${i === 0 ? " biz-sticky__btn--primary" : ""}" ${linkAttrs(a)}>${esc(STICKY_LABEL[a.key] || a.label)}</a>`)
       .join("")}</nav>`;
   }
 
