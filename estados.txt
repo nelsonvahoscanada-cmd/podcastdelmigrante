@@ -1,0 +1,29 @@
+página · estado · enlaces «Fundador» en el pie
+/                                                                        200 · 1
+/noticias                                                                200 · 1
+/articulo-canada-33000-residencias-permanentes-trabajadores-2026         200 · 1
+/articulo-el-frio-no-pudo-apagar-mi-senal                                200 · 1
+/magazine/                                                               200 · 1
+/magazine/2026-10/                                                       200 · 1
+/desafio-100-empresas/                                                   200 · 1
+/quien-puede-ayudarte                                                    200 · 1
+/planes-directorio                                                       200 · 1
+/registra-tu-empresa                                                     200 · 1
+/perfil-nelson-vahos                                                     200 · 1
+/perfil-tomas-velazquez                                                  200 · 1
+/perfil-carlos-d-castillo                                                200 · 1
+/perfil-santa-latino                                                     200 · 1
+/perfil-1juanromero1                                                     200 · 1
+/colaborador-carlos-castillo                                             200 · 1
+/guia?categoria=migracion                                                200 · 1
+/publicidad                                                              200 · 1
+/politica-editorial                                                      200 · 1
+/privacidad                                                              200 · 1
+/canada-en-datos/                                                        200 · 0
+/404-no-existe                                                           404 · 0
+/assets/directorio/perfiles/nelson-vahos-480.webp                        200 image/webp
+/assets/directorio/perfiles/nelson-vahos-720.webp                        200 image/webp
+/assets/directorio/perfiles/nelson-vahos-480.jpg                         200 image/jpeg
+/css/styles.css                                                          200 text/css; charset=utf-8
+/vcard/nelson-vahos.vcf                                                  200 text/x-vcard; charset=utf-8
+/sitemap.xml                                                             200 application/xml
