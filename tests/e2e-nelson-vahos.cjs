@@ -46,7 +46,9 @@ async function sinDesborde(page, donde) {
   const [sw, cw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
   assert.ok(sw <= cw + 1, `${donde}: desplazamiento horizontal ${sw} > ${cw}`);
 }
-const visible = (page) => page.evaluate(() => document.getElementById("bizRoot").innerText.replace(/\s+/g, " ").trim());
+/* En el dominio de producción, la protección de correo de Cloudflare muestra
+   «[email protected]» sin JavaScript y lo decodifica con JavaScript */
+const visible = (page) => page.evaluate(() => document.getElementById("bizRoot").innerText.replace(/\[email\s*protected\]/g, "eRadioGlobal@gmail.com").replace(/\s+/g, " ").trim());
 
 (async () => {
   const browser = await chromium.launch();
