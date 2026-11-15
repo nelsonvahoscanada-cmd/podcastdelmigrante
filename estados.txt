@@ -1,0 +1,20 @@
+página · estado · «Fundador» en el pie
+/                                                                      200 · 1
+/noticias                                                              200 · 1
+/articulo-canada-33000-residencias-permanentes-trabajadores-2026       200 · 1
+/magazine/                                                             200 · 1
+/desafio-100-empresas/                                                 200 · 1
+/quien-puede-ayudarte                                                  200 · 1
+/planes-directorio                                                     200 · 1
+/perfil-nelson-vahos                                                   200 · 1
+/perfil-tomas-velazquez                                                200 · 1
+/perfil-carlos-d-castillo                                              200 · 1
+/perfil-santa-latino                                                   200 · 1
+/perfil-1juanromero1                                                   200 · 1
+/publicidad                                                            200 · 1
+/sitemap.xml                                                           200 · 0
+/robots.txt                                                            200 · 0
+/assets/directorio/perfiles/nelson-vahos-480.webp                      200 image/webp
+/assets/directorio/perfiles/nelson-vahos-720.webp                      200 image/webp
+/assets/directorio/perfiles/nelson-vahos-480.jpg                       200 image/jpeg
+/css/styles.css                                                        200 text/css; charset=utf-8
