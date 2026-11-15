@@ -1,0 +1,56 @@
+# TEMPORAL: verificar en producción el PR #129 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp tarjeta fundador prod
+on:
+  push:
+    branches: [claude/fundador-tarjeta-prod]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      P: https://podcastdelmigrante.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue en producción (máx. 20 min)
+        run: |
+          for i in $(seq 120); do
+            curl -fsS "$P/?nc=$i$RANDOM" | grep -q '<h3 class="fundador__nombre">Nelson Vahos</h3>' && { echo "desplegado (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
+      - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: Estados HTTP y enlace «Fundador» del pie
+        if: always()
+        run: |
+          echo "página · estado · «Fundador» en el pie" | tee /tmp/out/estados.txt
+          for u in / /noticias /articulo-canada-33000-residencias-permanentes-trabajadores-2026 /magazine/ /desafio-100-empresas/ /quien-puede-ayudarte /planes-directorio /perfil-nelson-vahos /perfil-tomas-velazquez /perfil-carlos-d-castillo /perfil-santa-latino /perfil-1juanromero1 /publicidad /sitemap.xml /robots.txt; do
+            printf "%-70s %s · %s\n" "$u" "$(curl -s -o /tmp/b -w '%{http_code}' "$P$u")" "$(grep -c '<a href="/perfil-nelson-vahos">Fundador</a>' /tmp/b)"
+          done | tee -a /tmp/out/estados.txt
+          for u in /assets/directorio/perfiles/nelson-vahos-480.webp /assets/directorio/perfiles/nelson-vahos-720.webp /assets/directorio/perfiles/nelson-vahos-480.jpg /css/styles.css; do printf "%-70s %s\n" "$u" "$(curl -s -o /dev/null -w '%{http_code} %{content_type}' "$P$u")"; done | tee -a /tmp/out/estados.txt
+      - name: HTML de la tarjeta sin JavaScript (como lo ve un buscador)
+        if: always()
+        run: |
+          curl -s "$P/" > /tmp/p.html
+          node -e '
+          const h=require("fs").readFileSync("/tmp/p.html","utf8");
+          const i=h.indexOf("id=\"fundador\""); const s=h.slice(h.lastIndexOf("<section",i), h.indexOf("</section>",i));
+          console.log("sección en el HTML:", i>0, "· antes de «Socios y patrocinadores»:", i < h.indexOf("Socios y patrocinadores"));
+          console.log("encabezados:", [...s.matchAll(/<h([23])[^>]*>([^<]*)/g)].map(m=>"h"+m[1]+" "+m[2]).join(" | "));
+          console.log("texto:", s.replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim());
+          console.log("enlace:", (s.match(/<a [^>]*href="([^"]+)"/)||[])[1]);
+          console.log("datos estructurados en la portada:", (h.match(/application\/ld\+json/g)||[]).length);
+          ' | tee /tmp/out/seo.txt
+      - name: E2E en producción (estadísticas bloqueadas)
+        if: always()
+        run: |
+          r=0
+          for t in fundador-portada nelson-vahos santa-latino noticias menu seo-redirecciones; do
+            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -12 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
+          done; exit $r
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "prod tarjeta [CF-Pages-Skip]"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/fundador-tarjeta-prod-datos-${{ github.run_number }}
