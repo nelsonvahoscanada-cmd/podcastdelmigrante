@@ -1,0 +1,206 @@
+[
+ {
+  "escenario": "prod-limpio",
+  "dispositivo": "iphone-13",
+  "vw": 390,
+  "tarjeta": {
+   "w": 358,
+   "h": 268,
+   "x": 16,
+   "y": 278
+  },
+  "marco": {
+   "w": 86,
+   "h": 86,
+   "x": 35,
+   "y": 297
+  },
+  "foto": {
+   "w": 107,
+   "h": 107,
+   "x": 26,
+   "y": 289
+  },
+  "nombre": {
+   "w": 218,
+   "h": 22,
+   "x": 137,
+   "y": 307
+  },
+  "fondo": "rgb(255, 255, 255)",
+  "cols": "85.7969px 218.203px",
+  "css": [
+   "https://podcastdelmigrante.com/css/styles.css?v=dc8ef963ba"
+  ]
+ },
+ {
+  "escenario": "prod-limpio",
+  "dispositivo": "iphone-se",
+  "vw": 347,
+  "tarjeta": {
+   "w": 288,
+   "h": 316,
+   "x": 16,
+   "y": 254
+  },
+  "marco": {
+   "w": 76,
+   "h": 76,
+   "x": 35,
+   "y": 279
+  },
+  "foto": {
+   "w": 95,
+   "h": 95,
+   "x": 27,
+   "y": 271
+  },
+  "nombre": {
+   "w": 158,
+   "h": 22,
+   "x": 127,
+   "y": 273
+  },
+  "fondo": "rgb(255, 255, 255)",
+  "cols": "76px 158px",
+  "css": [
+   "https://podcastdelmigrante.com/css/styles.css?v=dc8ef963ba"
+  ]
+ },
+ {
+  "escenario": "prod-limpio",
+  "dispositivo": "escritorio",
+  "vw": 1366,
+  "tarjeta": {
+   "w": 760,
+   "h": 213,
+   "x": 43,
+   "y": 459
+  },
+  "marco": {
+   "w": 140,
+   "h": 140,
+   "x": 68,
+   "y": 496
+  },
+  "foto": {
+   "w": 175,
+   "h": 175,
+   "x": 54,
+   "y": 482
+  },
+  "nombre": {
+   "w": 546,
+   "h": 26,
+   "x": 232,
+   "y": 482
+  },
+  "fondo": "rgb(255, 255, 255)",
+  "cols": "140px 546px",
+  "css": [
+   "https://podcastdelmigrante.com/css/styles.css?v=dc8ef963ba"
+  ]
+ },
+ {
+  "escenario": "prod-css-anterior",
+  "dispositivo": "iphone-13",
+  "vw": 390,
+  "tarjeta": {
+   "w": 390,
+   "h": 685,
+   "x": 0,
+   "y": 72
+  },
+  "marco": {
+   "w": 240,
+   "h": 320,
+   "x": 75,
+   "y": 98
+  },
+  "foto": {
+   "w": 240,
+   "h": 320,
+   "x": 75,
+   "y": 98
+  },
+  "nombre": {
+   "w": 346,
+   "h": 28,
+   "x": 22,
+   "y": 442
+  },
+  "fondo": "rgb(11, 11, 11)",
+  "cols": "346px",
+  "css": [
+   "https://podcastdelmigrante.com/css/styles.css?v=dc8ef963ba"
+  ]
+ },
+ {
+  "escenario": "prod-css-anterior",
+  "dispositivo": "iphone-se",
+  "vw": 347,
+  "tarjeta": {
+   "w": 320,
+   "h": 716,
+   "x": 0,
+   "y": 59
+  },
+  "marco": {
+   "w": 224,
+   "h": 299,
+   "x": 48,
+   "y": 85
+  },
+  "foto": {
+   "w": 224,
+   "h": 299,
+   "x": 48,
+   "y": 85
+  },
+  "nombre": {
+   "w": 276,
+   "h": 28,
+   "x": 22,
+   "y": 408
+  },
+  "fondo": "rgb(11, 11, 11)",
+  "cols": "276px",
+  "css": [
+   "https://podcastdelmigrante.com/css/styles.css?v=dc8ef963ba"
+  ]
+ },
+ {
+  "escenario": "prod-css-anterior",
+  "dispositivo": "escritorio",
+  "vw": 1366,
+  "tarjeta": {
+   "w": 1320,
+   "h": 572,
+   "x": 23,
+   "y": 281
+  },
+  "marco": {
+   "w": 240,
+   "h": 320,
+   "x": 59,
+   "y": 313
+  },
+  "foto": {
+   "w": 240,
+   "h": 320,
+   "x": 59,
+   "y": 313
+  },
+  "nombre": {
+   "w": 972,
+   "h": 28,
+   "x": 335,
+   "y": 437
+  },
+  "fondo": "rgb(11, 11, 11)",
+  "cols": "240px 972px",
+  "css": [
+   "https://podcastdelmigrante.com/css/styles.css?v=dc8ef963ba"
+  ]
+ }
+]

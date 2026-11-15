@@ -1,0 +1,15 @@
+portada → css/styles.css?v=dc8ef963ba
+HTTP/2 200 
+content-type: text/css; charset=utf-8
+cache-control: public, max-age=14400, must-revalidate
+huella servida: dc8ef963ba · repositorio: dc8ef963ba
+/                                        200
+/noticias                                200
+/magazine/                               200
+/quien-puede-ayudarte                    200
+/perfil-nelson-vahos                     200
+/perfil-santa-latino                     200
+/perfil-1juanromero1                     200
+/perfil-tomas-velazquez                  200
+/perfil-carlos-d-castillo                200
+/desafio-100-empresas/                   200
