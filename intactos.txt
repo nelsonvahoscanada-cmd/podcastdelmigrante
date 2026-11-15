@@ -1,0 +1,12 @@
+assets/directorio/perfiles/santa-latino.jpg · producción = repositorio: sí
+assets/directorio/perfiles/santa-latino-card.jpg · producción = repositorio: sí
+assets/qr/perfil-santa-latino.png · producción = repositorio: sí
+assets/qr/contacto-santa-latino.png · producción = repositorio: sí
+assets/qr/perfil-santa-latino.svg · producción = repositorio: sí
+assets/qr/contacto-santa-latino.svg · producción = repositorio: sí
+vcard/santa-latino.vcf · producción = repositorio: sí
+ .../directorio/perfiles/santa-latino-og-navidad.jpg   | Bin 0 -> 110303 bytes
+ js/businesses.js                                      |   2 +-
+ perfil-santa-latino.html                              |   8 ++++----
+ tests/santa-latino.test.mjs                           |  18 +++++++++++++++---
+ 4 files changed, 20 insertions(+), 8 deletions(-)

@@ -1,0 +1,10 @@
+SIMULACIÓN desde GitHub Actions con el User-Agent público de cada plataforma.
+WhatsApp               página: 200 · imagen: 200 image/jpeg 110303 B
+Facebook               página: 200 · imagen: 200 image/jpeg 110303 B
+X (Twitterbot)         página: 200 · imagen: 200 image/jpeg 110303 B
+LinkedIn               página: 200 · imagen: 200 image/jpeg 110303 B
+/tmp/og.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, progressive, precision 8, 1200x630, components 3
+idéntica al repositorio: sí
+HTTP/2 200 
+content-type: image/jpeg
+cache-control: public, max-age=14400, must-revalidate
