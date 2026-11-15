@@ -1,0 +1,43 @@
+/perfil-nelson-vahos                               200  Nelson Vahos | Fundador de eRadio Global Corp. y El Podcast del Migrante
+/perfil-nelson-vahos.html                          308 https://claude-miniweb-nelson-vahos.podcastdelmigrante.pages.dev/perfil-nelson-vahos 
+/vcard/nelson-vahos.vcf                            200  
+/assets/qr/perfil-nelson-vahos.svg                 200  QR del perfil de Nelson Vahos
+/assets/qr/contacto-nelson-vahos.svg               200  QR de contacto de Nelson Vahos
+/assets/qr/perfil-nelson-vahos.png                 200  
+/assets/qr/contacto-nelson-vahos.png               200  
+/assets/directorio/perfiles/nelson-vahos.jpg       200  
+/assets/directorio/perfiles/nelson-vahos-og.jpg    200  
+/css/temas/institucional.css                       200  
+/desafio-100-empresas/                             200  Desafío 100 Empresas — El Podcast del Migrante Magazine
+/perfil-tomas-velazquez                            200  Tomás Velázquez | Vehículos en Calgary | El Podcast del Migrante
+/perfil-carlos-d-castillo                          200  Carlos D. Castillo | Seguros de vida y salud en Calgary | El Podcast del 
+/perfil-santa-latino                               200  Santa Latino | Santa Claus para eventos en Niagara Falls, Ontario | El Po
+/perfil-1juanromero1                               200  1JuanRomero1 Inc. | Producción audiovisual y edición de video en Calgary,
+/quien-puede-ayudarte                              200  Encuentra quién puede ayudarte en Canadá | El Podcast del Migrante
+/planes-directorio                                 200  Planes del Directorio Empresarial: Gratuito y Premium | El Podcast del Mi
+--- vCard servida
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//El Podcast del Migrante//build-profile-pages//ES
+N:Vahos;Nelson;;;
+FN:Nelson Vahos
+ORG:eRadio Global Corp.
+TITLE:Fundador y Director General
+NOTE:Fundador y Director de El Podcast del Migrante. Conectando latinos\, c
+ onstruyendo futuro.
+TEL;TYPE=WORK,VOICE:+14024272741
+EMAIL;TYPE=INTERNET,WORK:eRadioGlobal@gmail.com
+URL:https://podcastdelmigrante.com/perfil-nelson-vahos
+X-SOCIALPROFILE;TYPE=whatsapp:https://wa.me/14024272741
+X-SOCIALPROFILE;TYPE=tiktok:https://www.tiktok.com/@podcastdelmigrante
+ADR;TYPE=WORK:;;;;Alberta;;Canadá
+END:VCARD
+--- QR iguales a los del repositorio
+perfil-nelson-vahos.svg idéntico
+contacto-nelson-vahos.svg idéntico
+perfil-nelson-vahos.png idéntico
+contacto-nelson-vahos.png idéntico
+/publicidad → href="/perfil-nelson-vahos">Nelson Vahos, fundador de eRadio Global Corp. y de El Podcast del Migrante
+/desafio-100-empresas/ → href="/perfil-nelson-vahos">Nelson Vahos
+perfil-nelson-vahos.png → https://podcastdelmigrante.com/perfil-nelson-vahos.html
+contacto-nelson-vahos.png → https://podcastdelmigrante.com/vcard/nelson-vahos.vcf

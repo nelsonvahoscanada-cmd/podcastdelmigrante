@@ -1,0 +1,9 @@
+page.goto: net::ERR_FAILED at https://claude-miniweb-nelson-vahos.podcastdelmigrante.pages.dev/desafio-100-empresas/
+Call log:
+  - navigating to "https://claude-miniweb-nelson-vahos.podcastdelmigrante.pages.dev/desafio-100-empresas/", waiting until "networkidle"
+
+  log: [
+    '  - navigating to "https://claude-miniweb-nelson-vahos.podcastdelmigrante.pages.dev/desafio-100-empresas/", waiting until "networkidle"'
+  ],
+  name: 'Error'
+}
