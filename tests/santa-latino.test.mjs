@@ -81,7 +81,7 @@ test("servicios indicados, sin precios, horarios, paquetes ni testimonios invent
 });
 
 test("fotografías originales optimizadas, sin EXIF, y la grupal en la galería", () => {
-  const imgs = { profileImage: [739, 924], cardImage: [320, 320], ogImage: [739, 739] };
+  const imgs = { profileImage: [739, 924], cardImage: [320, 320], ogImage: [1200, 630] };
   for (const [k, [w, h]] of Object.entries(imgs)) {
     const info = jpegInfo(S[k]);
     assert.deepEqual([info.width, info.height], [w, h], k);
@@ -101,8 +101,20 @@ test("página estática: metadatos propios, tema solo en este perfil", () => {
   assert.match(html, /<html lang="es" id="htmlRoot" data-profile-slug="santa-latino" data-profile-theme="navidad">/);
   assert.match(html, /<link rel="stylesheet" href="css\/business\.css">\n<link rel="stylesheet" href="css\/temas\/navidad\.css">/);
   assert.match(html, /<title>Santa Latino \| Santa Claus para eventos en Niagara Falls, Ontario \| El Podcast del Migrante<\/title>/);
-  assert.match(html, /property="og:image" content="https:\/\/podcastdelmigrante\.com\/assets\/directorio\/perfiles\/santa-latino-og\.jpg"/);
-  assert.match(html, /<meta property="og:image:width" content="739">/);
+  /* Imagen para compartir: fotografía navideña 1200 × 630 (WhatsApp, Facebook, LinkedIn, X) */
+  const og = "https://podcastdelmigrante.com/assets/directorio/perfiles/santa-latino-og-navidad.jpg";
+  assert.ok(html.includes(`<meta id="ogImage" property="og:image" content="${og}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">`));
+  assert.ok(html.includes(`<meta id="twitterImage" name="twitter:image" content="${og}">`));
+  assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+  assert.match(html, /<meta id="ogImageAlt" property="og:image:alt" content="Santa Latino">/);
+  const jpg = readFileSync(new URL("../assets/directorio/perfiles/santa-latino-og-navidad.jpg", import.meta.url));
+  let i = 2, dim = null;
+  while (i < jpg.length) { const m = jpg[i + 1]; assert.notEqual(m, 0xe1, "sin EXIF"); if (m >= 0xc0 && m <= 0xc2) { dim = [jpg.readUInt16BE(i + 7), jpg.readUInt16BE(i + 5)]; break; } i += 2 + jpg.readUInt16BE(i + 2); }
+  assert.deepEqual(dim, [1200, 630]);
+  assert.ok(jpg.length < 300_000, `peso ${jpg.length}`);
+  /* La foto principal y los datos estructurados no cambian */
+  assert.equal(S.profileImage, "assets/directorio/perfiles/santa-latino.jpg");
+  assert.doesNotMatch(html.match(/<script type="application\/ld\+json" id="bizJsonLd">[\s\S]*?<\/script>/)[0], /santa-latino-og/);
   assert.match(html, /rel="canonical" href="https:\/\/podcastdelmigrante\.com\/perfil-santa-latino"/);
   for (const p of ["perfil-tomas-velazquez.html", "perfil-carlos-d-castillo.html", "business-profile.html"]) {
     assert.doesNotMatch(read(p), /data-profile-theme|css\/temas\//, `${p} sin tema`);

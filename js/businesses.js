@@ -491,7 +491,7 @@ const BUSINESSES = [
 
     profileImage: "assets/directorio/perfiles/santa-latino.jpg",      /* retrato 4:5 */
     cardImage: "assets/directorio/perfiles/santa-latino-card.jpg",    /* directorio */
-    ogImage: "assets/directorio/perfiles/santa-latino-og.jpg",        /* al compartir */
+    ogImage: "assets/directorio/perfiles/santa-latino-og-navidad.jpg",   /* al compartir: fotografía navideña 1200 × 630 (nuevo nombre para renovar la caché de WhatsApp y Facebook) */
     coverImage: "",
     gallery: [
       { src: "assets/directorio/perfiles/santa-latino-navidad-grupo.jpg", alt: "Santa Latino junto a un árbol de Navidad, acompañado de una ayudante vestida de duende y dos invitadas" },
