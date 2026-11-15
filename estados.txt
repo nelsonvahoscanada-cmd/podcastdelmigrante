@@ -1,0 +1,11 @@
+/                                                       200 text/html; charset=utf-8 21707
+/perfil-nelson-vahos                                    200 text/html; charset=utf-8 26369
+/assets/directorio/perfiles/nelson-vahos-480.webp       200 image/webp 44362
+/assets/directorio/perfiles/nelson-vahos-720.webp       200 image/webp 90190
+/assets/directorio/perfiles/nelson-vahos-480.jpg        200 image/jpeg 61942
+/css/styles.css                                         200 text/css; charset=utf-8 56710
+/publicidad                                             200 text/html; charset=utf-8 22025
+/noticias                                               200 text/html; charset=utf-8 9136
+/quien-puede-ayudarte                                   200 text/html; charset=utf-8 15030
+--- enlaces a la miniweb en la portada
+<a class="btn fundador__btn" href="/perfil-nelson-vahos">Conoce al fundador 
