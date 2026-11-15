@@ -1,0 +1,51 @@
+# TEMPORAL: verificar en producción el PR #126 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp juan prod
+on:
+  push:
+    branches: [claude/juan-nombre-planes-prod]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      BASE: https://podcastdelmigrante.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue del commit fusionado (máx. 20 min)
+        run: |
+          for i in $(seq 120); do
+            curl -fsS "$BASE/planes-directorio?nc=$i$RANDOM" | grep -q 'href="perfil-1juanromero1"' && curl -fsS "$BASE/vcard/1juanromero1.vcf?nc=$i$RANDOM" | grep -q "Juan Sebastián" && { echo "desplegado (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
+      - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: Comprobaciones HTTP (nombre, vCard, enlaces, QR)
+        if: always()
+        run: |
+          set +e
+          {
+          echo "== Miniweb de Juan"; curl -s -o /tmp/j.html -w "HTTP %{http_code}\n" "$BASE/perfil-1juanromero1"
+          grep -o 'Representante: <strong>[^<]*' /tmp/j.html; grep -o '"employee":{[^}]*}' /tmp/j.html; grep -o 'rel="canonical" href="[^"]*"' /tmp/j.html
+          echo "== vCard"; curl -sI "$BASE/vcard/1juanromero1.vcf" | grep -i "^HTTP\|content-type"; curl -s "$BASE/vcard/1juanromero1.vcf" | grep -E "^(N|FN|ORG|NOTE):"
+          echo "== Enlaces de Planes del Directorio"; curl -s "$BASE/planes-directorio" | grep -o '<p class="pl-examples">.*</p>' | grep -o 'href="[^"]*"' | while read h; do u=${h#href=\"}; u=${u%\"}; echo "$u → $(curl -s -o /dev/null -w '%{http_code}' "$BASE/$u")"; done
+          echo "== QR y recursos"; for u in assets/qr/perfil-1juanromero1.png assets/qr/perfil-1juanromero1.svg assets/qr/contacto-1juanromero1.png assets/qr/contacto-1juanromero1.svg assets/qr/perfil-santa-latino.png assets/qr/perfil-tomas-velazquez.png assets/qr/perfil-carlos-d-castillo.png vcard/santa-latino.vcf vcard/tomas-velazquez.vcf vcard/carlos-d-castillo.vcf; do echo "$u → $(curl -s -o /dev/null -w '%{http_code}' "$BASE/$u")"; done
+          echo "== QR del repositorio = QR servidos"; for f in assets/qr/perfil-1juanromero1.png assets/qr/contacto-1juanromero1.png; do [ "$(curl -s "$BASE/$f" | sha256sum | cut -c1-16)" = "$(sha256sum $f | cut -c1-16)" ] && echo "$f idéntico" || echo "$f DIFIERE"; done
+          echo "== Variantes"; for u in perfil-1juanromero1.html business-profile?slug=1juanromero1 quien-puede-ayudarte sitemap.xml; do echo "$u → $(curl -s -o /dev/null -w '%{http_code}' "$BASE/$u")"; done
+          curl -s "$BASE/sitemap.xml" | grep -A1 "perfil-1juanromero1\|planes-directorio\|quien-puede-ayudarte</loc>" | grep -o "<loc>[^<]*\|<lastmod>[^<]*"
+          } 2>&1 | tee /tmp/out/http.txt
+      - name: Suites e2e contra producción (estadísticas simuladas; /api/* nunca llega al servidor)
+        if: always()
+        run: |
+          set +e
+          for t in 1juanromero1 planes-directorio santa-latino directorio-visibilidad; do
+            r=$(NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/solo-api.cjs" timeout 900 node tests/e2e-$t.cjs 2>&1); c=$?
+            echo "$t: $c $(echo "$r" | grep -m1 -E '^OK|Error|assert' | cut -c1-300)" | tee -a /tmp/out/e2e.txt
+            [ $c -ne 0 ] && echo "$r" | tail -30 > /tmp/out/fallo-$t.txt
+          done; true
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "prod [CF-Pages-Skip]"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/juan-nombre-planes-prod-datos
