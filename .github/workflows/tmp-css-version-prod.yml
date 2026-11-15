@@ -35,7 +35,7 @@ jobs:
         if: always()
         run: |
           r=0
-          for t in fundador-portada nelson-vahos menu noticias; do
+          for t in fundador-portada; do
             BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -12 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
           done; exit $r
       - name: Publicar

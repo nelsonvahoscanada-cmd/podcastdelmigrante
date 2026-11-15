@@ -19,7 +19,7 @@ const DISP = [["iphone-13", devices["iPhone 13"]], ["iphone-se", devices["iPhone
       const c = await b.newContext({ ...p, reducedMotion: "reduce" });
       await c.addInitScript(() => { navigator.sendBeacon = () => true; });
       await c.route(/\/api\//, (r) => r.fulfill({ status: 204, body: "" }));
-      if (cssVieja) await c.route(/\/css\/styles\.css/, (r) => r.fulfill({ status: 200, contentType: "text/css", body: VIEJA }));
+      if (cssVieja) await c.route(/\/css\/styles\.css$/, (r) => r.fulfill({ status: 200, contentType: "text/css", body: VIEJA }));
       const pg = await c.newPage();
       await pg.goto(base + "/", { waitUntil: "networkidle" });
       const s = pg.locator("#fundador"); await s.scrollIntoViewIfNeeded();
