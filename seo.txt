@@ -1,0 +1,6 @@
+sección #fundador en el HTML: true
+texto sin JavaScript: Quién está detrás de El Podcast del Migrante Nelson Vahos Fundador de eRadio Global Corp. y El Podcast del Migrante Con una visión de conectar, informar y fortalecer a la comunidad latina en Canadá, Nelson Vahos impulsa proyectos de comunicación, información y colaboración empresarial a través de eRadio Global Corp. Conoce al fundador →
+enlace: /perfil-nelson-vahos
+imagen: <img class="fundador__foto" src="assets/directorio/perfiles/nelson-vahos-480.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Nelson Vahos, fundador de eRadio Global Corp. y El Podcast del Migrante">
+antes de «Socios y patrocinadores»: true
+datos estructurados en la portada: 1
