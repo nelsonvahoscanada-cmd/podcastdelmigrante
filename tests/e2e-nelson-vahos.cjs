@@ -177,11 +177,11 @@ const visible = (page) => page.evaluate(() => document.getElementById("bizRoot")
     ({ ctx, page, errores } = await abrir(browser, perfil, "/quien-puede-ayudarte"));
     await page.waitForSelector(".biz-card");
     assert.deepEqual(await page.$$eval(".biz-card__name", (n) => n.map((x) => x.textContent.trim())), ["Tomás Velázquez", "Carlos D. Castillo", "Santa Latino", "1JuanRomero1 Inc."]);
-    assert.ok(!(await page.content()).includes("nelson-vahos"));
+    assert.ok(!(await page.locator("main").innerHTML()).includes("nelson-vahos"), "fuera del contenido (solo «Fundador» en el pie)");
     assert.deepEqual(errores, []);
     await ctx.close();
     ({ ctx, page, errores } = await abrir(browser, perfil, "/planes-directorio"));
-    assert.ok(!(await page.content()).includes("nelson-vahos"));
+    assert.ok(!(await page.locator("main").innerHTML()).includes("nelson-vahos"), "fuera del contenido (solo «Fundador» en el pie)");
     assert.deepEqual(errores, []);
     await ctx.close();
 
