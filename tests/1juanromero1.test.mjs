@@ -28,7 +28,7 @@ test("datos de la solicitud, sin inventar", () => {
   assert.equal(J.id, "BIZ-004");
   assert.equal(ctx.B.filter((b) => b.id === "BIZ-004" || b.slug === "1juanromero1").length, 1);
   assert.equal(J.name, "1JuanRomero1 Inc.");
-  assert.equal(J.representative, "Juan Sebastian Vahos Alvarado");
+  assert.equal(J.representative, "Juan Sebastián Vahos Alvarado");
   assert.equal(J.professionalTitle, "Fundador, Videógrafo y Editor de Video");
   assert.deepEqual([J.city, J.province], ["Calgary", "Alberta"]);
   assert.equal(J.phone, "+1 403 363 7566");
@@ -75,7 +75,7 @@ test("fotografía original, vCard, QR y página generada", () => {
   assert.deepEqual(jpegSize(J.profileImage), [630, 607], "fotografía original, sin recorte");
   assert.deepEqual(jpegSize(J.ogImage), [1200, 630]);
   const v = read("vcard/1juanromero1.vcf");
-  for (const l of ["N:Vahos Alvarado;Juan Sebastian;;;", "FN:1JuanRomero1 Inc.", "ORG:1JuanRomero1 Inc.", "NOTE:Representante: Juan Sebastian Vahos Alvarado", "TEL;TYPE=WORK,VOICE:+14033637566", `EMAIL;TYPE=INTERNET,WORK:${M}`]) assert.ok(v.includes(`\r\n${l}\r\n`), l);
+  for (const l of ["N:Vahos Alvarado;Juan Sebastián;;;", "FN:1JuanRomero1 Inc.", "ORG:1JuanRomero1 Inc.", "NOTE:Representante: Juan Sebastián Vahos Alvarado", "TEL;TYPE=WORK,VOICE:+14033637566", `EMAIL;TYPE=INTERNET,WORK:${M}`]) assert.ok(v.includes(`\r\n${l}\r\n`), l);
   const html = read("perfil-1juanromero1.html");
   assert.match(html, /data-profile-theme="cine"/);
   assert.match(html, /css\/temas\/cine\.css/);

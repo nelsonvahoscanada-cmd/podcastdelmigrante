@@ -212,9 +212,13 @@ test("borradores y fichas gratuitas: el borrador no aparece en ninguna parte; la
   const free = ld.mainEntity.itemListElement.find((x) => x.name === "Panadería Prueba");
   assert.equal(free.url, undefined);
   assert.deepEqual(free.item.address, { "@type": "PostalAddress", addressLocality: "Edmonton", addressRegion: "Alberta", addressCountry: "CA" });
-  /* La fecha del directorio incluye la ficha gratuita, pero no el borrador */
-  assert.equal(ld.dateModified, "2026-11-08");
-  assert.match(sm, /<loc>https:\/\/podcastdelmigrante\.com\/quien-puede-ayudarte<\/loc>\s*<lastmod>2026-11-08<\/lastmod>/);
+  /* La fecha del directorio es la más reciente de los perfiles publicados:
+     incluye la ficha gratuita (2026-11-02), pero no el borrador. Se calcula
+     con los datos reales para que una actualización de perfil no rompa la
+     prueba. */
+  const esperada = [...ALL.map((b) => b.updatedAt), "2026-11-02"].sort().at(-1);
+  assert.equal(ld.dateModified, esperada);
+  assert.match(sm, new RegExp(`<loc>https://podcastdelmigrante\\.com/quien-puede-ayudarte</loc>\\s*<lastmod>${esperada}</lastmod>`));
 });
 
 test("fechas: una fecha inválida o futura detiene el generador (nunca se inventan)", () => {

@@ -64,11 +64,14 @@ const M = "contact1juanromero1@gmail.com", B = process.env.BASE || "http://127.0
   assert.ok(ev.slice(antes).some((u) => /website_click/.test(u) && /portfolio/.test(u) && /BIZ-004/.test(u)), "evento website_click/portfolio");
   if (SHOTS) await port.screenshot({ path: require("node:path").join(SHOTS, `portafolio-${n}.png`) });
   const txt = await pg.locator("main").innerText();
-  for (const t of ["1JuanRomero1 Inc.","Juan Sebastian Vahos Alvarado","Fundador, Videógrafo y Editor de Video","Calgary","Correo: "+M]) assert.ok(txt.includes(t),t);
+  for (const t of ["1JuanRomero1 Inc.","Juan Sebastián Vahos Alvarado","Fundador, Videógrafo y Editor de Video","Calgary","Correo: "+M]) assert.ok(txt.includes(t),t);
   assert.ok(/videos para redes sociales/i.test(txt));
   const ld = await pg.evaluate(()=>JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent));
   assert.equal(ld.mainEntity.email,M); assert.equal(ld.mainEntity.name,"1JuanRomero1 Inc.");
   for (const u of ["vcard/1juanromero1.vcf","assets/qr/perfil-1juanromero1.png","assets/qr/contacto-1juanromero1.svg","assets/directorio/perfiles/1juanromero1-og.jpg"]) assert.equal((await pg.request.get(B+"/"+u)).status(),200,u);
+  const vcf = await (await pg.request.get(B+"/vcard/1juanromero1.vcf")).text();
+  assert.ok(vcf.includes("\r\nN:Vahos Alvarado;Juan Sebastián;;;\r\n") && vcf.includes("\r\nNOTE:Representante: Juan Sebastián Vahos Alvarado\r\n"), "vCard con el nombre oficial (con tilde)");
+  assert.equal(ld.mainEntity.employee.name, "Juan Sebastián Vahos Alvarado");
   assert.ok(ev.length>0,"estadísticas: el perfil registra su visita (simulada)");
   const [sw,cw]=await pg.evaluate(()=>[document.documentElement.scrollWidth,document.documentElement.clientWidth]); assert.ok(sw<=cw+1,"desborde");
   assert.deepEqual(err,[]);
