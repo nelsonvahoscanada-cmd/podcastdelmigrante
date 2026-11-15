@@ -1,0 +1,6 @@
+prod-limpio        iphone-13   vw=390 tarjeta=358x268 marco-foto=86x86 fondo=rgb(255, 255, 255) columnas=85.7969px 218.203px nombre-junto-a-foto=true
+prod-limpio        iphone-se   vw=347 tarjeta=288x316 marco-foto=76x76 fondo=rgb(255, 255, 255) columnas=76px 158px nombre-junto-a-foto=true
+prod-limpio        escritorio  vw=1366 tarjeta=760x213 marco-foto=140x140 fondo=rgb(255, 255, 255) columnas=140px 546px nombre-junto-a-foto=true
+prod-css-anterior  iphone-13   vw=390 tarjeta=358x268 marco-foto=86x86 fondo=rgb(255, 255, 255) columnas=85.7969px 218.203px nombre-junto-a-foto=true
+prod-css-anterior  iphone-se   vw=347 tarjeta=288x316 marco-foto=76x76 fondo=rgb(255, 255, 255) columnas=76px 158px nombre-junto-a-foto=true
+prod-css-anterior  escritorio  vw=1366 tarjeta=760x213 marco-foto=140x140 fondo=rgb(255, 255, 255) columnas=140px 546px nombre-junto-a-foto=true
