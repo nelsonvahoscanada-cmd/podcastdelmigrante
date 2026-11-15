@@ -9,7 +9,7 @@ jobs:
   verificar:
     runs-on: ubuntu-latest
     env:
-      P: https://claude-ultimas-noticias-movil.podcastdelmigrante.pages.dev
+      P: https://claude-ultimas-noticias-movi.podcastdelmigrante.pages.dev
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
