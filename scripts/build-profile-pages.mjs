@@ -289,13 +289,16 @@ function buildVcard(b) {
     b.representative ? `ORG:${vEsc(b.name)}` : b.company && `ORG:${vEsc(b.company)}`,
     b.representative && "X-ABShowAs:COMPANY",
     b.professionalTitle && `TITLE:${vEsc(b.professionalTitle)}`,
-    b.representative && `NOTE:${vEsc(`Representante: ${b.representative}`)}`,
+    b.representative ? `NOTE:${vEsc(`Representante: ${b.representative}`)}` : card.note && `NOTE:${vEsc(card.note)}`,
     tel && `TEL;TYPE=WORK,VOICE:${tel}`,
     b.email && `EMAIL;TYPE=INTERNET,WORK:${b.email}`,
-    b.website && `URL:${b.website}`,
+    (b.website || card.url) && `URL:${b.website || card.url}`,
+    /* contactCard.socialProfiles (opcional): [{ type: "whatsapp" | "tiktok" | …, url }]
+       → X-SOCIALPROFILE (contactos de iPhone y Android) */
+    ...(card.socialProfiles || []).filter((x) => x && /^[a-z]+$/.test(x.type || "") && /^https:\/\//.test(x.url || "")).map((x) => `X-SOCIALPROFILE;TYPE=${x.type}:${x.url}`),
     /* Sin dirección pública (ej. atención con cita) solo van ciudad,
        provincia y país, si están en el registro */
-    (b.address || b.city) && `ADR;TYPE=WORK:;;${[b.address, b.city, b.province, b.postalCode, b.country].map((v) => vEsc(v || "")).join(";")}`,
+    (b.address || b.city || b.province) && `ADR;TYPE=WORK:;;${[b.address, b.city, b.province, b.postalCode, b.country].map((v) => vEsc(v || "")).join(";")}`,
     "END:VCARD",
   ].filter(Boolean);
   return lines.map(vFold).join("\r\n") + "\r\n";
@@ -315,9 +318,12 @@ for (const b of published) {
   if (b.connect && b.connect.contactCard) expected.set(`vcard/${b.slug}.vcf`, buildVcard(b));
 }
 
-/* Directorio y sitemap */
-expected.set("quien-puede-ayudarte.html", buildDirectory(readFileSync(join(ROOT, "quien-puede-ayudarte.html"), "utf8"), allPublished));
-expected.set("sitemap.xml", updateSitemap(readFileSync(join(ROOT, "sitemap.xml"), "utf8"), sitemapBlock(allPublished, published)));
+/* Directorio y sitemap. El Directorio («Quién puede ayudarte») y su fecha
+   solo cuentan los perfiles listados; una miniweb con «directory: false»
+   (institucional) tiene igualmente su URL en el sitemap. */
+const enDirectorio = allPublished.filter((b) => b.directory !== false);
+expected.set("quien-puede-ayudarte.html", buildDirectory(readFileSync(join(ROOT, "quien-puede-ayudarte.html"), "utf8"), enDirectorio));
+expected.set("sitemap.xml", updateSitemap(readFileSync(join(ROOT, "sitemap.xml"), "utf8"), sitemapBlock(enDirectorio, published)));
 
 /* Lista pública de empresas Premium autorizadas para estadísticas
    (negocios-premium.json): business_id → slug de cada perfil Premium

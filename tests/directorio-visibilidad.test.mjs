@@ -28,8 +28,13 @@ function runtime(root = ROOT) {
   return ctx;
 }
 const RT = runtime();
-const ALL = JSON.parse(JSON.stringify(RT.__B)).filter((b) => b.published);
-const PREMIUM = ALL.filter((b) => b.plan !== "gratuito");
+const PUBLICADOS = JSON.parse(JSON.stringify(RT.__B)).filter((b) => b.published);
+const ALL = PUBLICADOS.filter((b) => b.directory !== false);
+/* Miniwebs del directorio. Las institucionales (directory: false, ej.
+   perfil-nelson-vahos) no aparecen en el directorio ni en los planes; las
+   cubre su propia prueba (tests/nelson-vahos.test.mjs). */
+const PREMIUM = ALL.filter((b) => b.plan !== "gratuito" && b.directory !== false);
+const INSTITUCIONALES = PUBLICADOS.filter((b) => b.directory === false);
 const CATEGORY = Object.fromEntries(RT.__C.map((c) => [c.id, c.label]));
 
 /* Texto visible sin JavaScript: sin <script>, sin etiquetas, entidades básicas */
@@ -172,7 +177,7 @@ test("sitemap: directorio y miniwebs publicadas, fechas reales, sin .html ni dup
   const urls = [...bloque.matchAll(/<loc>([^<]+)<\/loc>(?:\s*<lastmod>([^<]+)<\/lastmod>)?/g)].map((m) => [m[1], m[2]]);
   assert.deepEqual(
     urls,
-    [[`${SITE}/quien-puede-ayudarte`, ALL.map((b) => b.updatedAt).sort().at(-1)], ...PREMIUM.map((b) => [`${SITE}/perfil-${b.slug}`, b.updatedAt])]
+    [[`${SITE}/quien-puede-ayudarte`, ALL.map((b) => b.updatedAt).sort().at(-1)], ...PREMIUM.map((b) => [`${SITE}/perfil-${b.slug}`, b.updatedAt]), ...INSTITUCIONALES.map((b) => [`${SITE}/perfil-${b.slug}`, b.updatedAt])]
   );
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   assert.equal(new Set(locs).size, locs.length, "sin URL repetidas en todo el sitemap");

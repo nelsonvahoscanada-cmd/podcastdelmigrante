@@ -207,6 +207,8 @@ a.dz-edicion:hover { border-color: var(--verde-oscuro); }
 .dz-miembro { border: var(--border); border-radius: var(--radius-s); padding: 16px; background: var(--blanco); }
 .dz-miembro small { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--verde-oscuro); }
 .dz-miembro b { display: block; font-family: var(--font-display); font-size: 1.15rem; margin: 4px 0; }
+.dz-miembro b a { color: inherit; text-decoration: underline; text-decoration-color: var(--verde); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.dz-miembro b a:hover { color: var(--verde-oscuro); }
 .dz-miembro p { font-size: .82rem; color: var(--gris-texto); line-height: 1.45; }
 .dz-creditos { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 16px; font-size: .86rem; color: var(--gris-800); }
 .dz-faq details { border-bottom: var(--border); padding: 14px 0; }

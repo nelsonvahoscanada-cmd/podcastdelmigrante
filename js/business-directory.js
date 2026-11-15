@@ -18,7 +18,10 @@
     return name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join("");
   }
 
-  const published = () => BUSINESSES.filter((b) => b.published);
+  /* Perfiles visibles en el Directorio: publicados y sin «directory: false»
+     (una miniweb institucional, como la de Nelson Vahos, tiene su página,
+     QR, vCard y estadísticas, pero no aparece en «Quién puede ayudarte»). */
+  const published = () => BUSINESSES.filter((b) => b.published && b.directory !== false);
   const unique = (arr) => [...new Set(arr)];
 
   function fillCategories(select, selected) {

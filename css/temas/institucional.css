@@ -1,0 +1,153 @@
+/* =========================================================
+   Tema «institucional» (js/businesses.js → theme: "institucional")
+   ---------------------------------------------------------
+   Miniweb institucional de una persona (ej. perfil-nelson-vahos):
+   negro, blanco y verde de la marca. Portada en banda negra con texto
+   blanco, cargos en verde, tarjetas de proyecto con borde superior verde
+   y trayectoria en línea de tiempo vertical. Solo aplica bajo
+   html[data-profile-theme="institucional"]: los demás perfiles, el
+   directorio y el resto del sitio no cambian. La fotografía se muestra
+   completa (3:4), sin filtros. Sin animaciones.
+========================================================= */
+html[data-profile-theme="institucional"] {
+  --in-negro: #0b0b0b;
+  --in-negro-2: #161616;
+  --in-verde: #6f9a03;
+  --in-verde-claro: #9cc93a;
+  --in-verde-oscuro: #557902;
+  --in-verde-suave: #eef4e0;
+  --in-blanco: #ffffff;
+  --in-gris: #d4d4d4;
+}
+
+/* ---------- Portada ---------- */
+html[data-profile-theme="institucional"] .biz-hero {
+  padding: 26px 20px 28px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, var(--in-negro-2) 0%, var(--in-negro) 70%);
+  border-bottom: 6px solid var(--in-verde);
+  color: var(--in-blanco);
+}
+@media (min-width: 720px) {
+  html[data-profile-theme="institucional"] .biz-hero { grid-template-columns: 280px minmax(0, 1fr); gap: 40px; padding: 36px 36px 38px; }
+}
+html[data-profile-theme="institucional"] .biz-hero__media { justify-self: center; }
+html[data-profile-theme="institucional"] .biz-hero__photo {
+  width: min(100%, 300px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  border: 3px solid var(--in-verde);
+}
+@media (min-width: 720px) {
+  html[data-profile-theme="institucional"] .biz-hero__photo { width: 280px; }
+}
+html[data-profile-theme="institucional"] .biz-label { background: var(--in-verde); color: var(--in-negro); }
+html[data-profile-theme="institucional"] .biz-name { color: var(--in-blanco); }
+html[data-profile-theme="institucional"] .biz-hero .biz-tagline,
+html[data-profile-theme="institucional"] .biz-hero p { color: var(--in-gris); }
+html[data-profile-theme="institucional"] .biz-hero .biz-tagline { font-family: var(--font-display); font-size: 1.12rem; font-style: italic; color: var(--in-blanco); }
+html[data-profile-theme="institucional"] .biz-hero .biz-place { color: var(--in-gris); }
+html[data-profile-theme="institucional"] .biz-hero .biz-lang { color: var(--in-verde-claro); }
+
+/* Cargos */
+.biz-roles { list-style: none; margin: 6px 0 14px; padding: 0; display: grid; gap: 8px; }
+.biz-roles__item { padding-left: 14px; border-left: 3px solid var(--verde); font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
+html[data-profile-theme="institucional"] .biz-roles__item { color: var(--in-verde-claro); border-left-color: var(--in-verde); }
+
+/* ---------- Botones ---------- */
+html[data-profile-theme="institucional"] .biz-btn:focus-visible,
+html[data-profile-theme="institucional"] .biz-back:focus-visible,
+html[data-profile-theme="institucional"] .biz-project a:focus-visible { outline: 3px solid var(--in-verde); outline-offset: 3px; }
+
+/* ---------- Patrocinios: llamada a la acción principal ---------- */
+html[data-profile-theme="institucional"] .biz-cta { background: var(--in-verde-suave); border-left: 6px solid var(--in-verde); border-radius: 0 12px 12px 0; }
+html[data-profile-theme="institucional"] .biz-cta p { font-size: 1.05rem; line-height: 1.6; color: var(--negro); }
+/* WhatsApp (primer botón): verde y a todo el ancho en el celular */
+html[data-profile-theme="institucional"] .biz-actions .biz-btn--primary { background: var(--in-verde); border-color: var(--in-verde); color: var(--in-negro); }
+html[data-profile-theme="institucional"] .biz-actions .biz-btn--primary:hover { background: var(--in-verde-oscuro); border-color: var(--in-verde-oscuro); color: var(--in-blanco); }
+
+/* ---------- Títulos y biografía ---------- */
+html[data-profile-theme="institucional"] .biz-h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 8px;
+  background: var(--in-verde);
+  border-radius: 2px;
+}
+html[data-profile-theme="institucional"] .biz-about .biz-long { font-size: 1.05rem; line-height: 1.7; }
+html[data-profile-theme="institucional"] .biz-about strong { color: var(--in-negro); }
+html[data-profile-theme="institucional"] .biz-quote {
+  margin-top: 26px;
+  padding: 22px 22px 22px 24px;
+  border-left: 6px solid var(--in-verde);
+  border-radius: 0 12px 12px 0;
+  background: var(--in-negro);
+}
+html[data-profile-theme="institucional"] .biz-section .biz-quote p { color: var(--in-blanco); font-size: 1.28rem; }
+html[data-profile-theme="institucional"] .biz-quote cite { color: var(--in-verde-claro); }
+
+/* ---------- Proyectos ---------- */
+.biz-projects__grid { display: grid; gap: 18px; margin-top: 18px; }
+@media (min-width: 860px) { .biz-projects__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.biz-project {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 22px 20px;
+  border: 1px solid var(--gris-200);
+  border-top: 5px solid var(--verde);
+  border-radius: 12px;
+  background: var(--blanco);
+}
+.biz-project__logo { display: block; width: auto; height: 56px; max-width: 100%; margin: 0 0 14px; object-fit: contain; }
+.biz-project__name { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.25; margin: 0 0 6px; }
+.biz-section .biz-project__kicker { margin: 0 0 10px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--verde-oscuro); }
+.biz-section .biz-project__text { margin: 0 0 16px; font-size: 0.97rem; line-height: 1.6; flex: 1 1 auto; }
+.biz-project .biz-btn { width: 100%; }
+.biz-section .biz-project__note { margin: 10px 0 0; font-size: 0.84rem; font-style: italic; color: var(--gris-600); }
+.biz-project__links { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 14px 0 0; padding: 0; }
+.biz-project__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--gris-200);
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--negro);
+}
+.biz-project__links a:hover { border-color: var(--verde); color: var(--verde-oscuro); }
+
+/* ---------- Trayectoria ---------- */
+.biz-timeline__list { list-style: none; margin: 18px 0 0; padding: 0 0 0 26px; position: relative; }
+.biz-timeline__list::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 3px; background: var(--verde); border-radius: 2px; }
+.biz-timeline__item { position: relative; padding: 0 0 22px; }
+.biz-timeline__item:last-child { padding-bottom: 0; }
+.biz-timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 4px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--negro);
+  border: 3px solid var(--verde);
+  box-sizing: border-box;
+}
+.biz-section .biz-timeline__date { margin: 0 0 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--verde-oscuro); }
+.biz-section .biz-timeline__text { margin: 0; font-size: 1rem; line-height: 1.6; }
+
+/* ---------- Contacto ---------- */
+html[data-profile-theme="institucional"] .biz-contact { border-top: 6px solid var(--in-verde); }
+html[data-profile-theme="institucional"] .biz-section.biz-contact .biz-contact__phone { margin: 18px 0 0; color: var(--in-gris); font-size: 1.05rem; }
+html[data-profile-theme="institucional"] .biz-contact__phone a { color: var(--in-blanco); font-weight: 700; font-size: 1.15rem; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
+html[data-profile-theme="institucional"] .biz-section.biz-contact .biz-contact__email { margin: 14px 0 0; color: var(--in-gris); font-size: 1rem; overflow-wrap: anywhere; }
+html[data-profile-theme="institucional"] .biz-contact__email a { color: var(--in-blanco); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+html[data-profile-theme="institucional"] .biz-qr { border-top: 4px solid var(--in-verde); }
+html[data-profile-theme="institucional"] .biz-back { color: var(--in-verde-oscuro); }

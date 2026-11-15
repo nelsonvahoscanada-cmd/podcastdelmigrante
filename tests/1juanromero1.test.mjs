@@ -45,7 +45,7 @@ test("datos de la solicitud, sin inventar", () => {
   assert.equal(J.category, "produccion-audiovisual");
   assert.equal(ctx.C.find((c) => c.id === J.category).label, "Producción audiovisual y contenido digital");
   assert.equal(ctx.B.filter((b) => b.category === "produccion-audiovisual").length, 1, "solo esta empresa");
-  assert.deepEqual(JSON.parse(JSON.stringify(ctx.B.filter((b) => b.slug !== J.slug).map((b) => [b.slug, b.category]))), [["tomas-velazquez", "automoviles"], ["carlos-d-castillo", "seguros-finanzas"], ["santa-latino", "eventos-celebraciones"]], "las demás conservan su categoría");
+  assert.deepEqual(JSON.parse(JSON.stringify(ctx.B.filter((b) => b.slug !== J.slug && b.directory !== false).map((b) => [b.slug, b.category]))), [["tomas-velazquez", "automoviles"], ["carlos-d-castillo", "seguros-finanzas"], ["santa-latino", "eventos-celebraciones"]], "las demás conservan su categoría");
   assert.ok(J.seo.description.length <= 160);
 });
 
@@ -53,7 +53,7 @@ test("contacto preferido: correo con «Solicitar cotización» (opcional en la p
   assert.equal(J.emailFirst, true);
   assert.equal(J.emailLabel, "Solicitar cotización");
   assert.equal(J.showEmail, true);
-  for (const b of ctx.B.filter((x) => x.slug !== J.slug)) assert.ok(b.emailFirst === undefined && b.emailLabel === undefined, b.slug);
+  for (const b of ctx.B.filter((x) => x.slug !== J.slug && x.directory !== false)) assert.ok(b.emailFirst === undefined && b.emailLabel === undefined, b.slug);
   assert.match(read("js/business-profile.js"), /label: b\.emailLabel \|\| "Enviar email"/);
   assert.match(read("js/business-profile.js"), /label: b\.emailLabel \|\| "Email"/);
   assert.match(read("js/business-profile.js"), /concat\(b\.emailFirst \? \["email"\] : \[\]\)/, "barra móvil: correo primero solo con emailFirst");

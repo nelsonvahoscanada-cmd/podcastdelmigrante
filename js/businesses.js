@@ -135,6 +135,49 @@
                           python3 scripts/build-qr-images.py
                               → assets/qr/perfil-<slug>.svg/.png y
                                 assets/qr/contacto-<slug>.svg/.png
+                          contactCard.note / contactCard.url [OPCIONAL]
+                                            nota y enlace de la vCard
+                                            (sin website ni representante)
+                          profileQrCaption  [OPCIONAL] texto bajo el QR del
+                                            perfil (por defecto «Escanea y
+                                            conoce mis servicios»)
+
+  MINIWEB INSTITUCIONAL (ej. Nelson Vahos): mismas funciones Premium (página
+  propia, SEO, datos estructurados, QR, vCard y estadísticas). Campos
+  opcionales; sin ellos ningún perfil cambia:
+    directory: false    no aparece en «Quién puede ayudarte» (tarjetas,
+                        filtros, datos estructurados ni fecha del
+                        directorio) ni se exige en «Planes del Directorio».
+                        Conserva su URL /perfil-<slug> en el sitemap.
+    institutional: true textos de presentación institucional: «Perfil
+                        institucional», «Contacto profesional», sin el
+                        aviso de servicios del Directorio.
+    roles               [{ title, organization?, url?, sameAs?, founder? }] cargos
+                        completos, uno por línea en la portada; en Google,
+                        jobTitle y worksFor (cada organización con su
+                        sitio y redes oficiales).
+    aboutTitle          título de la sección de la biografía.
+    longDescription     admite **negrita** y *cursiva* (texto aprobado).
+    quoteRaw: true      la cita se muestra tal cual (con sus comillas).
+    projects            [{ id, name, logo?, kicker?, text, url, label,
+                        note?, links: [{ network, href }] }] una tarjeta
+                        por proyecto (logo opcional).
+    projectsTitle, timelineTitle  títulos de esas secciones.
+    timeline            [{ date?, text }] hitos confirmados; sin fecha no
+                        se inventa ninguna.
+    Sin ciudad (city: ""), la ubicación se muestra como «Provincia, País».
+    founder: true (en un cargo)  la organización declara a la persona como
+                        fundadora en los datos estructurados.
+    profileImageWidth, profileImageHeight  dimensiones reales de la foto
+                        principal (atributos width/height).
+  Contacto (opcionales, sirven a cualquier perfil):
+    whatsappMessage     mensaje predefinido del enlace wa.me (?text=…).
+    whatsappLabel, phoneLabel  texto de los botones de WhatsApp y llamada
+                        (la barra fija del celular sigue con «WhatsApp» y
+                        «Llamar»).
+    showPhone: true     muestra el número en el bloque final de contacto.
+    connect.contactCard.socialProfiles  [{ type, url }] → X-SOCIALPROFILE
+                        en la vCard (ej. whatsapp, tiktok).
 
   FICHA GRATUITA (solicitud con «Plan solicitado: Plan Gratuito»)
     Solo estos campos: id, slug, published: true, plan: "gratuito",
@@ -560,6 +603,173 @@ const BUSINESSES = [
     seo: {
       title: "1JuanRomero1 Inc. | Producción audiovisual y edición de video en Calgary, Alberta | El Podcast del Migrante",
       description: "Edición de video, contenido para redes, eventos, videografía, animación, efectos visuales e IA, en español e inglés. Presencial y remoto desde Calgary.",
+    },
+  },
+  /* ================================================================
+     BIZ-005 — Nelson Vahos (miniweb institucional, fuera del Directorio)
+     Aprobado por Nelson Vahos: identidad, biografía (texto literal),
+     fotografía original (chaqueta amarilla y micrófono RØDE, solo
+     recortes y optimización), correo público y enlaces. Diciembre de
+     2011 = inicio de las transmisiones de eRadio Global (no es la
+     constitución legal de eRadio Global Corp.). Sin teléfonos, WhatsApp
+     ni datos personales adicionales; sin Instagram de eRadio Global hasta
+     confirmar su vigencia.
+     ================================================================ */
+  {
+    id: "BIZ-005",
+    slug: "nelson-vahos",
+    published: true,
+    updatedAt: "2026-11-15",       /* fecha real de publicación del registro */
+    featured: false,
+    foundingProfile: false,
+    directory: false,              /* no aparece en «Quién puede ayudarte» ni en «Planes del Directorio» */
+    institutional: true,
+
+    name: "Nelson Vahos",
+    shortName: "Nelson",
+    theme: "institucional",
+    roles: [
+      {
+        title: "Fundador y Director General de eRadio Global Corp.",
+        founder: true,
+        organization: "eRadio Global Corp.",
+        url: "https://eradioglobal.com/",
+        sameAs: ["https://facebook.com/eradioglobal", "https://youtube.com/@eradioglobal4291"],
+      },
+      {
+        title: "Fundador y Director de El Podcast del Migrante",
+        founder: true,
+        organization: "El Podcast del Migrante",
+        url: "https://podcastdelmigrante.com/",
+        sameAs: ["https://www.youtube.com/@ElPodcastDelMigranteOficial", "https://www.tiktok.com/@podcastdelmigrante"],
+      },
+    ],
+    tagline: "Conectando latinos, construyendo futuro",
+    professionalTitle: "Fundador y Director General",   /* vCard (TITLE) */
+    company: "eRadio Global Corp.",                     /* vCard (ORG) */
+    category: "institucional",
+    city: "",
+    province: "Alberta",
+    country: "Canadá",
+    address: "",
+    postalCode: "",
+    mapUrl: "",
+    languages: ["es"],
+
+    shortDescription: "Nelson Vahos, comunicador colombiano en Alberta, Canadá. Fundador y Director General de eRadio Global Corp. y Fundador y Director de El Podcast del Migrante.",
+    /* Biografía aprobada: texto literal, sin cambios de redacción */
+    aboutTitle: "Sobre Nelson",
+    longDescription: [
+      "Nelson Vahos es un comunicador colombiano, emprendedor y fundador de proyectos de comunicación digital en Canadá. Desde Alberta, dirige eRadio Global Corp. y El Podcast del Migrante, iniciativas orientadas a informar, conectar y fortalecer a la comunidad latina.",
+      "Su trayectoria comenzó en la radio colombiana, donde tuvo la oportunidad de trabajar junto a William Vinasco Ch., una figura reconocida de la radiodifusión nacional. Durante esa etapa adquirió experiencia en comunicación, entrevistas y producción de contenidos.",
+      "En diciembre de 2011 comenzaron las transmisiones de **eRadio Global**, un proyecto que con el tiempo evolucionó hacia nuevas iniciativas de comunicación y medios digitales.",
+      "Su llegada a Canadá representó una nueva etapa personal y profesional. Como muchos migrantes, enfrentó el desafío de comenzar nuevamente, adaptarse a otro idioma y trabajar en sectores diferentes a los de su trayectoria anterior, incluida la construcción.",
+      "Esa experiencia le permitió comprender de cerca las dificultades, oportunidades y aspiraciones de quienes construyen una nueva vida lejos de su país de origen.",
+      "Hoy, a través de **El Podcast del Migrante**, comparte noticias, entrevistas e información de utilidad para la comunidad latina en Canadá. También escribe la columna *Entre dos mundos* en el Magazine digital.",
+      "Además, lidera **Desafío 100 Empresas**, una iniciativa que busca dar visibilidad a las historias de empresarios y emprendedores, comenzando en Calgary, mediante entrevistas gratuitas.",
+      "Su trabajo reúne comunicación, tecnología, emprendimiento y experiencia migratoria bajo una misma visión:",
+      "**«Conectando latinos, construyendo futuro».**",
+    ],
+    quote: "«El frío no pudo apagar mi señal. Solamente me enseñó a transmitir con un propósito diferente».",
+    quoteRaw: true,
+
+    projectsTitle: "Proyectos",
+    projects: [
+      {
+        id: "eradio-global",
+        name: "eRadio Global Corp.",
+        kicker: "Transmisiones desde diciembre de 2011",
+        text: "En diciembre de 2011 comenzaron las transmisiones de eRadio Global, un proyecto que con el tiempo evolucionó hacia nuevas iniciativas de comunicación y medios digitales.",
+        url: "https://eradioglobal.com/",
+        label: "Visitar eradioglobal.com",
+        note: "Sitio oficial en desarrollo.",
+        links: [
+          { network: "facebook", href: "https://facebook.com/eradioglobal" },
+          { network: "youtube", href: "https://youtube.com/@eradioglobal4291" },
+        ],
+      },
+      {
+        id: "podcast-del-migrante",
+        name: "El Podcast del Migrante",
+        logo: "assets/logo.png",
+        kicker: "Medio informativo para la comunidad latina en Canadá",
+        text: "Noticias, entrevistas e información de utilidad para la comunidad latina en Canadá, y la columna *Entre dos mundos* en el Magazine digital.",
+        url: "https://podcastdelmigrante.com/",
+        label: "Visitar podcastdelmigrante.com",
+        links: [
+          { network: "youtube", href: "https://www.youtube.com/@ElPodcastDelMigranteOficial" },
+          { network: "tiktok", href: "https://www.tiktok.com/@podcastdelmigrante" },
+        ],
+      },
+      {
+        id: "desafio-100-empresas",
+        name: "Desafío 100 Empresas",
+        kicker: "100 empresarios. 100 historias. Un legado.",
+        text: "Una iniciativa que busca dar visibilidad a las historias de empresarios y emprendedores, comenzando en Calgary, mediante entrevistas gratuitas, con la meta de llegar a 100 entrevistas.",
+        url: "/desafio-100-empresas/",
+        label: "Conocer el Desafío",
+      },
+    ],
+
+    timelineTitle: "Trayectoria",
+    timeline: [
+      { text: "Radio colombiana: trabaja junto a William Vinasco Ch. y adquiere experiencia en comunicación, entrevistas y producción de contenidos." },
+      { date: "Diciembre de 2011", text: "Comienzan las transmisiones de **eRadio Global**." },
+      { text: "Llegada a Canadá: una nueva etapa personal y profesional." },
+      { text: "Hoy: dirige **eRadio Global Corp.** y **El Podcast del Migrante**, escribe la columna *Entre dos mundos* y lidera **Desafío 100 Empresas**." },
+    ],
+
+    /* Objetivo de la miniweb: patrocinios, publicidad y alianzas comerciales.
+       WhatsApp es la llamada a la acción principal (también en la barra fija
+       del celular); el mismo número sirve para llamadas. */
+    callToAction: {
+      title: "Patrocinios, publicidad y alianzas comerciales",
+      text: "¿Quieres que tu marca llegue a la comunidad latina en Canadá? Conversemos sobre patrocinios, publicidad y alianzas comerciales con El Podcast del Migrante y eRadio Global Corp.",
+    },
+    phone: "+1 402 427 2741",
+    whatsapp: "+1 402 427 2741",
+    whatsappMessage: "Hola Nelson, encontré tu perfil en El Podcast del Migrante y me gustaría conversar contigo sobre publicidad, patrocinios o una posible alianza comercial.",
+    whatsappLabel: "Contactar por WhatsApp",
+    phoneLabel: "Llamar a Nelson",
+    showPhone: true,               /* número visible en el contacto profesional */
+    email: "eRadioGlobal@gmail.com",
+    showEmail: true,
+    emailLabel: "Enviar correo",
+    website: "",                   /* eradioglobal.com está en desarrollo: se enlaza en su tarjeta, no como sitio web del perfil */
+    inventoryUrl: "",
+    bookingUrl: "",
+    instagram: "",
+    tiktok: "https://www.tiktok.com/@podcastdelmigrante",   /* @podcastdelmigrante */
+    facebook: "",
+    linkedin: "",
+    youtubeVideoId: "",
+
+    profileImage: "assets/directorio/perfiles/nelson-vahos.jpg",    /* fotografía original aprobada, solo redimensionada */
+    profileImageWidth: 960,
+    profileImageHeight: 1280,
+    ogImage: "assets/directorio/perfiles/nelson-vahos-og.jpg",      /* recorte 1200 × 630 para redes */
+    coverImage: "",
+    gallery: [],
+    hours: [],
+
+    connect: {
+      profileQr: true,
+      profileQrCaption: "Escanea y conoce mi perfil",
+      contactCard: {
+        givenName: "Nelson",
+        familyName: "Vahos",
+        note: "Fundador y Director de El Podcast del Migrante. Conectando latinos, construyendo futuro.",
+        url: "https://podcastdelmigrante.com/perfil-nelson-vahos",
+        socialProfiles: [
+          { type: "whatsapp", url: "https://wa.me/14024272741" },
+          { type: "tiktok", url: "https://www.tiktok.com/@podcastdelmigrante" },
+        ],
+      },
+    },
+
+    seo: {
+      title: "Nelson Vahos | Fundador de eRadio Global Corp. y El Podcast del Migrante",
+      description: "Nelson Vahos, fundador de eRadio Global Corp. y El Podcast del Migrante. Patrocinios, publicidad y alianzas para llegar a la comunidad latina en Canadá.",
     },
   },
 ];
