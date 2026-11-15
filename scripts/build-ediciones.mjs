@@ -38,7 +38,7 @@ import { join, dirname, resolve, relative, isAbsolute } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import vm from "node:vm";
-import { enlacesDefinitivos } from "./enlaces-definitivos.mjs";
+import { enlacesDefinitivos, conFundador } from "./enlaces-definitivos.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://podcastdelmigrante.com";
@@ -181,7 +181,7 @@ function chrome(root) {
   const finPie = html.indexOf("</footer>") + "</footer>".length;
   if (ini < 0 || finCab < 0 || iniPie < 0 || finPie < 9) throw new Error("404.html cambió: no se encontró la cabecera o el pie");
   /* Enlaces internos a su URL final (sin .html): ver scripts/enlaces-definitivos.mjs */
-  return { cabecera: enlacesDefinitivos(html.slice(ini, finCab).trimEnd()), pie: enlacesDefinitivos(html.slice(iniPie, finPie)) };
+  return { cabecera: enlacesDefinitivos(html.slice(ini, finCab).trimEnd()), pie: conFundador(enlacesDefinitivos(html.slice(iniPie, finPie))) };
 }
 
 function head({ title, description, path, canonical = path, image, imageAlt, imageType = "image/jpeg", imageW, imageH, jsonLd, noindex }) {

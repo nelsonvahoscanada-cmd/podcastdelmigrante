@@ -6,6 +6,8 @@
   - Foto cargada, nombre, cargo, texto y botón «Conoce al fundador» con
     enlace HTML a /perfil-nelson-vahos, que abre la miniweb.
   - Foco visible con teclado, sin desbordes ni errores de JavaScript.
+  - Pie de página: enlace «Fundador» (una vez, en «El medio») en páginas de
+    cada tipo, con y sin JavaScript; abre la miniweb.
   Las estadísticas no se tocan: /api/* y sendBeacon se responden localmente.
 
   1. node scripts/build-public.mjs --out=/tmp/dist
@@ -23,6 +25,8 @@ const PERFILES = {
   tableta: { ...devices["iPad Mini"] },
   celular: { ...devices["iPhone 13"] },
 };
+/* Páginas de cada tipo que comparten el pie (plantillas y generadas) */
+const PIE = ["/", "/noticias", "/articulo-canada-33000-residencias-permanentes-trabajadores-2026", "/desafio-100-empresas/", "/magazine/", "/perfil-santa-latino", "/publicidad", "/colaborador-carlos-castillo"];
 const TEXTO = "Con una visión de conectar, informar y fortalecer a la comunidad latina en Canadá, Nelson Vahos impulsa proyectos de comunicación, información y colaboración empresarial a través de eRadio Global Corp.";
 
 (async () => {
@@ -80,6 +84,31 @@ const TEXTO = "Con una visión de conectar, informar y fortalecer a la comunidad
       await page.waitForSelector("h1.biz-name");
       assert.equal((await page.locator("h1.biz-name").textContent()).trim(), "Nelson Vahos", `${donde}: abre la miniweb`);
       assert.deepEqual(errores, [], `${donde}: ${errores.join(" | ")}`);
+      await ctx.close();
+    }
+    /* Pie de página: «Fundador» una vez en «El medio», con HTML (sin JavaScript) y con JavaScript */
+    for (const js of [false, true]) {
+      const ctx = await browser.newContext({ ...PERFILES[perfil], locale: "es-CA", timezoneId: "America/Edmonton", javaScriptEnabled: js, reducedMotion: "reduce" });
+      await ctx.route((u) => !u.href.startsWith(BASE), (r) => r.abort());
+      await ctx.route(/\/api\//, (r) => r.fulfill({ status: 204, body: "" }));
+      if (js) await ctx.addInitScript(() => { navigator.sendBeacon = () => true; });
+      const page = await ctx.newPage();
+      const errores = [];
+      page.on("pageerror", (e) => errores.push(e.message));
+      for (const ruta of PIE) {
+        const r = await page.goto(BASE + ruta, { waitUntil: js ? "networkidle" : "load" });
+        assert.equal(r.status(), 200, ruta);
+        const medio = page.locator(".site-footer .footer-col", { has: page.locator(".footer-col__title", { hasText: "El medio" }) });
+        const enlaces = await medio.locator("a:not([hidden])").evaluateAll((as) => as.map((a) => [a.textContent.trim(), a.getAttribute("href")]));
+        assert.deepEqual(enlaces.map(([t]) => t), ["Ediciones", "Colaboradores", "Puntos de distribución", "Fundador", "Publicidad", "Contacto"], `${ruta}: columna «El medio»`);
+        assert.equal(await page.locator('.site-footer a[href="/perfil-nelson-vahos"]').count(), 1, `${ruta}: un solo enlace en el pie`);
+        const f = medio.locator('a[href="/perfil-nelson-vahos"]');
+        await f.scrollIntoViewIfNeeded();
+        assert.ok(await f.isVisible(), `${ruta}: visible`);
+        await Promise.all([page.waitForURL(/\/perfil-nelson-vahos$/, { waitUntil: "commit" }), f.click()]);
+        await page.waitForSelector("h1.biz-name");
+      }
+      assert.deepEqual(errores, [], `${perfil} pie: ${errores.join(" | ")}`);
       await ctx.close();
     }
     console.log(`ok ${perfil}`);
