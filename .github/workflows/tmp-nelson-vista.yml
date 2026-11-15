@@ -17,7 +17,7 @@ jobs:
       - name: Esperar la vista previa con WhatsApp, llamada y TikTok (máx. 15 min)
         run: |
           for i in $(seq 90); do
-            curl -fsS "$P/perfil-nelson-vahos?nc=$i$RANDOM" | grep -q "Contactar por WhatsApp" && curl -fsS "$P/vcard/nelson-vahos.vcf?nc=$i$RANDOM" | grep -q "TEL;TYPE=WORK,VOICE:+14024272741" && { echo "vista previa actualizada (intento $i)"; exit 0; }
+            curl -fsS "$P/perfil-nelson-vahos?nc=$i$RANDOM" | grep -q "Patrocinios, publicidad y alianzas para llegar" && curl -fsS "$P/publicidad?nc=$i$RANDOM" | grep -q 'href="/perfil-nelson-vahos"'  && { echo "vista previa actualizada (intento $i)"; exit 0; }
             sleep 10
           done; exit 1
       - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
@@ -33,6 +33,10 @@ jobs:
           for f in perfil-nelson-vahos.svg contacto-nelson-vahos.svg perfil-nelson-vahos.png contacto-nelson-vahos.png; do
             curl -s "$P/assets/qr/$f" -o /tmp/q && cmp -s /tmp/q assets/qr/$f && echo "$f idéntico" || echo "$f DIFERENTE"
           done | tee -a /tmp/out/estados.txt
+      - name: Enlaces internos hacia la miniweb
+        if: always()
+        run: |
+          for u in /publicidad /desafio-100-empresas/; do echo "$u → $(curl -s "$P$u" | grep -o 'href="/perfil-nelson-vahos"[^<]*' | head -1)"; done | tee -a /tmp/out/estados.txt
       - name: Decodificar los QR (dirección que abren)
         if: always()
         run: |
@@ -45,7 +49,7 @@ jobs:
         if: always()
         run: |
           r=0
-          for t in santa-latino planes-directorio directorio-visibilidad; do
+          for t in santa-latino planes-directorio desafio menu; do
             BASE=$P NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -12 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
           done; exit $r
       - name: Publicar
