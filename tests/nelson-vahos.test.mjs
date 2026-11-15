@@ -233,6 +233,30 @@ test("descubrimiento interno: enlaces HTML desde la política de publicidad (ser
   assert.match(read("publicidad.html"), /<li>Para patrocinios, publicidad y alianzas comerciales también puedes contactar directamente a <a href="\/perfil-nelson-vahos">Nelson Vahos, fundador de eRadio Global Corp\. y de El Podcast del Migrante<\/a>\.<\/li>/);
   assert.match(read("desafio-100-empresas/index.html"), /<b><a href="\/perfil-nelson-vahos">Nelson Vahos<\/a><\/b>/);
   assert.match(read("scripts/build-desafio.mjs"), /<b><a href="\/perfil-nelson-vahos">Nelson Vahos<\/a><\/b>/);
-  /* No se mezcla con las empresas Premium de pago */
-  for (const f of ["quien-puede-ayudarte.html", "planes-directorio.html", "index.html"]) assert.doesNotMatch(read(f), /perfil-nelson-vahos/, f);
+  /* No se mezcla con las empresas Premium de pago: en la portada, solo la
+     presentación del fundador (#fundador), fuera de la vitrina del Directorio */
+  for (const f of ["quien-puede-ayudarte.html", "planes-directorio.html"]) assert.doesNotMatch(read(f), /perfil-nelson-vahos/, f);
+  const portada = read("index.html");
+  assert.equal((portada.match(/href="\/perfil-nelson-vahos"/g) || []).length, 1, "un solo enlace en la portada");
+  const vitrina = portada.slice(portada.indexOf('id="quien-puede-ayudarte"'), portada.indexOf("<!-- ================= HISTORIAS"));
+  assert.doesNotMatch(vitrina, /nelson/i);
+});
+
+test("portada: presentación del fundador cerca del final, antes de «Socios y patrocinadores», con enlace HTML a la miniweb", () => {
+  const h = read("index.html");
+  const i = h.indexOf('<section class="section wrap fundador-section" id="fundador" aria-labelledby="fundadorTitulo">');
+  assert.ok(i > 0, "sección #fundador");
+  const sec = h.slice(i, h.indexOf("</section>", i));
+  /* Orden: después de las noticias y de «Dónde encontrar el Magazine»; antes de patrocinadores y newsletter */
+  for (const antes of ["Últimas noticias", "id=\"historias\"", "id=\"distribution\""]) assert.ok(h.indexOf(antes) < i, antes);
+  assert.ok(i < h.indexOf("Socios y patrocinadores") && i < h.indexOf('class="newsletter'));
+  assert.match(sec, /<h2 class="section-title fundador__nombre" id="fundadorTitulo">Nelson Vahos<\/h2>/);
+  assert.match(sec, /<p class="fundador__cargo">Fundador de eRadio Global Corp\. y El Podcast del Migrante<\/p>/);
+  assert.ok(sec.includes("<p class=\"fundador__desc\">Con una visión de conectar, informar y fortalecer a la comunidad latina en Canadá, Nelson Vahos impulsa proyectos de comunicación, información y colaboración empresarial a través de eRadio Global Corp.</p>"));
+  assert.match(sec, /<a class="btn fundador__btn" href="\/perfil-nelson-vahos">Conoce al fundador <span aria-hidden="true">→<\/span><\/a>/);
+  assert.match(sec, /<img class="fundador__foto" src="assets\/directorio\/perfiles\/nelson-vahos-480\.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Nelson Vahos, fundador de eRadio Global Corp\. y El Podcast del Migrante">/);
+  for (const f of ["nelson-vahos-480.jpg", "nelson-vahos-480.webp", "nelson-vahos-720.webp"]) assert.ok(existsSync(join(ROOT, "assets/directorio/perfiles", f)), f);
+  /* Sin datos estructurados nuevos ni un segundo h1 */
+  assert.doesNotMatch(sec, /ld\+json|itemscope|<h1/);
+  assert.equal((h.match(/application\/ld\+json/g) || []).length, 1);
 });

@@ -104,9 +104,10 @@ test("sin datos (archivo no cargado), el módulo conserva solo el botón princip
 test("ubicación: después de «Últimas noticias»; el hero, las noticias y el resto de la portada no cambian", () => {
   const i = (s) => portada.indexOf(s);
   assert.ok(i('id="heroMain"') < i('id="latestList"') && i('id="latestList"') < i('id="descubre-tu-canada"') && i('id="descubre-tu-canada"') < i('id="usefulGrid"'));
-  /* Mismas secciones de la portada, en el mismo orden, con «Descubre tu Canadá» como única novedad */
+  /* Mismas secciones de la portada, en el mismo orden, con «Descubre tu Canadá» y
+     la presentación del fundador (#fundador, antes de «Socios y patrocinadores») */
   const secciones = [...portada.matchAll(/<section class="([^"]*)"(?: id="([^"]*)")?/g)].map((m) => m[2] || m[1]);
-  assert.deepEqual(secciones, ["inicio", "section wrap", "descubre-tu-canada", "section useful-section", "quien-puede-ayudarte", "historias", "video", "desafio", "section wrap", "columnFeature", "contributors", "edicion", "distribution", "section wrap", "newsletter section--tight"]);
+  assert.deepEqual(secciones, ["inicio", "section wrap", "descubre-tu-canada", "section useful-section", "quien-puede-ayudarte", "historias", "video", "desafio", "section wrap", "columnFeature", "contributors", "edicion", "distribution", "fundador", "section wrap", "newsletter section--tight"]);
   /* El hero y las noticias siguen vacíos en el HTML: los llena main.js con el mismo orden editorial */
   assert.match(portada, /<article id="heroMain" class="hero-main"><\/article>\n      <div id="heroSecondary" class="hero-secondary"><\/div>/);
   assert.match(portada, /<div class="latest-list" id="latestList"><\/div>/);
