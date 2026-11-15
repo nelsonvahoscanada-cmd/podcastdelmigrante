@@ -1,0 +1,43 @@
+== Miniweb de Juan
+HTTP 200
+Representante: <strong>Juan Sebastián Vahos Alvarado
+"employee":{"@type":"Person","name":"Juan Sebastián Vahos Alvarado","jobTitle":"Representante"}
+rel="canonical" href="https://podcastdelmigrante.com/perfil-1juanromero1"
+== vCard
+HTTP/2 200 
+content-type: text/x-vcard; charset=utf-8
+x-content-type-options: nosniff
+N:Vahos Alvarado;Juan Sebastián;;;
+FN:1JuanRomero1 Inc.
+ORG:1JuanRomero1 Inc.
+NOTE:Representante: Juan Sebastián Vahos Alvarado
+== Enlaces de Planes del Directorio
+perfil-tomas-velazquez → 200
+perfil-carlos-d-castillo → 200
+perfil-santa-latino → 200
+perfil-1juanromero1 → 200
+== QR y recursos
+assets/qr/perfil-1juanromero1.png → 200
+assets/qr/perfil-1juanromero1.svg → 200
+assets/qr/contacto-1juanromero1.png → 200
+assets/qr/contacto-1juanromero1.svg → 200
+assets/qr/perfil-santa-latino.png → 200
+assets/qr/perfil-tomas-velazquez.png → 200
+assets/qr/perfil-carlos-d-castillo.png → 200
+vcard/santa-latino.vcf → 200
+vcard/tomas-velazquez.vcf → 200
+vcard/carlos-d-castillo.vcf → 200
+== QR del repositorio = QR servidos
+assets/qr/perfil-1juanromero1.png idéntico
+assets/qr/contacto-1juanromero1.png idéntico
+== Variantes
+perfil-1juanromero1.html → 308
+business-profile?slug=1juanromero1 → 200
+quien-puede-ayudarte → 200
+sitemap.xml → 200
+<loc>https://podcastdelmigrante.com/planes-directorio
+<lastmod>2026-11-15
+<loc>https://podcastdelmigrante.com/quien-puede-ayudarte
+<lastmod>2026-11-15
+<loc>https://podcastdelmigrante.com/perfil-1juanromero1
+<lastmod>2026-11-15
