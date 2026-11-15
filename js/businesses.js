@@ -476,13 +476,13 @@ const BUSINESSES = [
     id: "BIZ-004",
     slug: "1juanromero1",
     published: true,
-    updatedAt: "2026-11-08",       /* última modificación real del registro (historial de git) */
+    updatedAt: "2026-11-15",       /* última modificación real del registro (historial de git) */
     featured: false,
     foundingProfile: false,
 
     name: "1JuanRomero1 Inc.",
     shortName: "1JuanRomero1",
-    representative: "Juan Sebastian Vahos Alvarado",
+    representative: "Juan Sebastián Vahos Alvarado",
     theme: "cine",
     professionalTitle: "Fundador, Videógrafo y Editor de Video",
     company: "",
@@ -554,7 +554,7 @@ const BUSINESSES = [
 
     connect: {
       profileQr: true,
-      contactCard: { givenName: "Juan Sebastian", familyName: "Vahos Alvarado" },
+      contactCard: { givenName: "Juan Sebastián", familyName: "Vahos Alvarado" },
     },
 
     seo: {

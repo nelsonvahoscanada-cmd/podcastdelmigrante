@@ -243,3 +243,25 @@ test("«Haz visible tu negocio en Canadá»: solo dos opciones públicas, sin co
   /* La cortesía nunca aparece en público */
   for (const html of [planes, read("registra-tu-empresa.html"), read("quien-puede-ayudarte.html")]) assert.doesNotMatch(html, /cortes[íi]a|PREMIUM_GIFT|regalo/i);
 });
+
+test("ejemplos Premium: enlace HTML directo a cada Perfil Premium publicado, con su URL definitiva", () => {
+  const ctxB = {};
+  vm.runInNewContext(read("js/businesses.js") + ";globalThis.B = BUSINESSES;", ctxB);
+  const premium = ctxB.B.filter((b) => b.published && b.plan !== "gratuito").map((b) => b.slug);
+  assert.deepEqual([...premium].sort(), ["1juanromero1", "carlos-d-castillo", "santa-latino", "tomas-velazquez"]);
+  const linea = (planes.match(/<p class="pl-examples">[\s\S]*?<\/p>/) || [""])[0];
+  assert.ok(linea, "línea de ejemplos Premium");
+  const enlaces = [...linea.matchAll(/<a href="([^"]+)">([^<]+)<\/a>/g)].map((m) => [m[1], m[2]]);
+  assert.deepEqual(enlaces, [
+    ["perfil-tomas-velazquez", "Tomás Velázquez"],
+    ["perfil-carlos-d-castillo", "Carlos D. Castillo"],
+    ["perfil-santa-latino", "Santa Latino"],
+    ["perfil-1juanromero1", "1JuanRomero1 Inc."],
+  ]);
+  for (const s of premium) {
+    assert.ok(enlaces.some(([h]) => h === `perfil-${s}`), `falta el enlace a perfil-${s}`);
+    assert.ok(existsSync(new URL(`perfil-${s}.html`, ROOT)), `perfil-${s}.html existe`);
+  }
+  /* Mismo estilo de siempre: sin clases ni CSS nuevos */
+  assert.doesNotMatch(linea, /<a [^>]*class=|style=/);
+});
