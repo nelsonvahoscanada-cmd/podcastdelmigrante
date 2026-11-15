@@ -12,15 +12,22 @@
   draft), escribe articulo-<slug>.html (URL pública:
   https://podcastdelmigrante.com/articulo-<slug>, sin .html): una copia exacta de
   articulo.html con <title>, descripción, URL canónica, og:*, article:*
-  y twitter:* de ESE artículo ya escritos en el HTML. El cuerpo lo sigue
-  armando js/article.js como siempre (mismo diseño).
+  y twitter:* de ESE artículo ya escritos en el HTML.
 
-  Artículos con «prerender: true»: la página trae además el contenido
-  completo y los datos estructurados (NewsArticle) escritos en el HTML, con
-  las mismas funciones del navegador (js/article.js → articleContentHtml y
-  articleJsonLd), para que se lean sin JavaScript. Sus scripts llevan una
-  versión (?v=<huella>) para que el navegador no use una copia anterior.
-  Los demás artículos no cambian.
+  Contenido en el HTML (todas las noticias publicadas): la página trae
+  además el artículo completo y sus datos estructurados (NewsArticle)
+  escritos en el HTML, con las mismas funciones del navegador
+  (js/article.js → articleContentHtml y articleJsonLd), para que Google y
+  las redes lo lean sin ejecutar JavaScript. Antes el cuerpo decía
+  «Cargando artículo…» hasta que js/article.js lo dibujaba, y una copia
+  antigua de js/articles.js en la caché de Google (sin la noticia nueva)
+  mostraba «Artículo no encontrado» con estado 200: «Soft 404».
+  En el navegador, js/article.js vuelve a dibujar el mismo HTML (mismo
+  diseño) y, si su catálogo no trae la noticia, conserva el contenido
+  escrito (no muestra «no encontrado»). Los scripts llevan una versión
+  (?v=<huella>) para que el navegador y Google no usen una copia anterior.
+  Las fechas se escriben en la hora de Alberta (America/Edmonton), la de
+  la redacción; el navegador las vuelve a mostrar en la hora del lector.
 
   Imagen social: assets/social/<slug>.jpg (1200 × 630, la genera
   scripts/build-social-images.py a partir de la foto principal). Si
@@ -75,15 +82,21 @@ function loadArticles() {
   return ctx.__A;
 }
 
-/* Mismos scripts que el navegador, en un contexto aislado (solo para los
-   artículos con prerender: true). */
+/* Mismos scripts que el navegador, en un contexto aislado: js/data.js
+   (colaboradores), js/articles.js, js/columns.js, js/video-cover.js y
+   js/article.js. Intl.DateTimeFormat usa por defecto la hora de Alberta
+   (la de la redacción): sin esto, la fecha dependería de la zona horaria
+   de la máquina que genera (en CI, UTC: una noticia de la tarde en
+   Alberta saldría con la fecha del día siguiente). */
+const ZONA_REDACCION = "America/Edmonton";
 let RT = null;
 function runtime() {
   if (RT) return RT;
   const ctx = vm.createContext({ document: { addEventListener() {} }, console, URLSearchParams });
   ctx.window = ctx;
   ctx.PDM = { el() {}, initSiteChrome() {} };
-  for (const f of ["js/articles.js", "js/columns.js", "js/video-cover.js", "js/article.js"]) vm.runInContext(readFileSync(join(ROOT, f), "utf8"), ctx, { filename: f });
+  vm.runInContext(`(() => { const DTF = Intl.DateTimeFormat; Intl.DateTimeFormat = function (l, o) { return new DTF(l, Object.assign({ timeZone: ${JSON.stringify(ZONA_REDACCION)} }, o)); }; Intl.DateTimeFormat.prototype = DTF.prototype; Intl.DateTimeFormat.supportedLocalesOf = DTF.supportedLocalesOf; })();`, ctx);
+  for (const f of ["js/data.js", "js/articles.js", "js/columns.js", "js/video-cover.js", "js/article.js"]) vm.runInContext(readFileSync(join(ROOT, f), "utf8"), ctx, { filename: f });
   vm.runInContext("globalThis.__ARTICLES = ARTICLES;", ctx);
   return (RT = ctx);
 }
@@ -202,7 +215,7 @@ function buildPage(template, a, problems) {
     a.category && `<meta property="article:section" content="${escAttr(a.category)}">`,
   ].filter(Boolean);
   html = html.replace(/(<meta id="ogImage"[^>]*>)/, `$1\n${extra.join("\n")}`);
-  if (a.prerender === true) html = prerender(html, a);
+  html = prerender(html, a);
   return html.replace("<head>", "<head>\n" + GENERATED_MARK);
 }
 

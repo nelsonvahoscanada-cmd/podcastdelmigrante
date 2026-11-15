@@ -67,3 +67,26 @@ Si el parámetro falta o no existe, `functions/_middleware.js` responde **404** 
 - Si la lista no está al día, fallan las comprobaciones obligatorias `test` y `articulos-vistas-previas`, y el PR no se puede fusionar. Así una página válida no puede quedar respondiendo 404.
 
 `_routes.json` limita la función a esas rutas (con y sin `.html`). El resto del sitio sigue sirviéndose como archivo estático.
+
+## Noticias legibles sin JavaScript (Soft 404 de noticias)
+
+Search Console marcó como Soft 404 dos noticias que existen y funcionan:
+- `articulo-canada-cambios-proceso-refugio-3-noviembre-2026`
+- `articulo-salud-rural-urbana-alberta-atencion-medica`
+
+Causa: el HTML de cada noticia solo decía «Cargando artículo…». El texto lo dibujaba `js/article.js` con el catálogo `js/articles.js`. Google guarda copias de los archivos JavaScript; con una copia anterior a la noticia, la página mostraba «Artículo no encontrado» con estado 200.
+
+Solución: `scripts/build-article-pages.mjs` escribe en el HTML de **todas** las noticias publicadas lo siguiente:
+- el artículo completo;
+- sus datos estructurados (NewsArticle);
+- los scripts con versión (`?v=<huella>`).
+
+Usa las mismas funciones del navegador (`articleContentHtml` y `articleJsonLd` de `js/article.js`, con `js/data.js` para los colaboradores). Las fechas se escriben en la hora de Alberta.
+
+En el navegador, `js/article.js` vuelve a dibujar el mismo artículo:
+- No hay duplicados ni cambios de diseño (`tests/e2e-noticias-html.cjs` lo compara noticia por noticia).
+- Si su catálogo no trae la noticia, conserva el contenido del HTML y nunca muestra «no encontrado».
+
+Publicar una noticia sigue siendo el mismo paso: `python3 scripts/build-social-images.py && node scripts/build-article-pages.mjs`. La página nueva sale con el HTML completo. El campo `prerender` de `js/articles.js` ya no es necesario: se ignora.
+
+Nota: cada cambio en `js/articles.js` actualiza la versión de los scripts en todas las páginas de noticias. Es lo esperado: así nadie usa una copia antigua del catálogo.

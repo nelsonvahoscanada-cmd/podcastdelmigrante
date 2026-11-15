@@ -47,6 +47,9 @@
   }
 
   function findArticle(slug) {
+    /* Si js/articles.js no cargó (fallo de red o de recursos), no hay
+       catálogo: la página generada conserva su contenido (ver más abajo). */
+    if (typeof ARTICLES === "undefined") return null;
     return ARTICLES.find((a) => a.slug === slug) || null;
   }
 
@@ -668,7 +671,13 @@
     const root = document.getElementById("articleRoot");
     root.classList.toggle("article-page--autor-columna", isAuthorColumn);
     root.innerHTML = articleContentHtml(article);
+    activarArticulo(root);
+  }
 
+  /* Botones del artículo (video, TikTok, copiar enlace, boletín). Se activan
+     tras dibujar el artículo o, si el catálogo no está disponible, sobre el
+     contenido que ya trae el HTML generado. */
+  function activarArticulo(root) {
     VideoCover.bind(root);
     bindTiktok(root);
     const copyBtn = document.getElementById("copyLinkBtn");
@@ -716,10 +725,14 @@
     }
   }
 
+  /* La página ya trae su contenido en el HTML (generado). */
+  const contenidoGenerado = () => document.getElementById("articleRoot").hasAttribute("data-prerendered");
+
   function renderNotFound() {
-    /* Si la página ya trae su contenido en el HTML (generado), se conserva:
-       puede que el navegador tenga en caché una lista de artículos anterior. */
-    if (document.getElementById("articleRoot").hasAttribute("data-prerendered")) return;
+    /* Si la página ya trae su contenido en el HTML (generado), se conserva y
+       se activan sus botones: puede que el navegador o Google tengan en caché
+       una lista de artículos anterior, o que js/articles.js no haya cargado. */
+    if (contenidoGenerado()) { activarArticulo(document.getElementById("articleRoot")); return; }
     document.title = "Artículo no encontrado — El Podcast del Migrante Magazine";
     document.getElementById("articleRoot").innerHTML = `
       <div class="article-not-found">
@@ -736,7 +749,11 @@
        Plantilla genérica: articulo.html?slug=... */
     const slug = document.documentElement.getAttribute("data-article-slug") || getParam("slug");
     const article = slug ? findArticle(slug) : null;
-    if (article && article.draft) {
+    if (article && article.draft && contenidoGenerado()) {
+      /* Catálogo antiguo en caché que aún la tenía como borrador: la página
+         publicada conserva su contenido. */
+      activarArticulo(document.getElementById("articleRoot"));
+    } else if (article && article.draft) {
       renderComingSoon(article);
     } else if (article) {
       adoptArticleUrl(article);
