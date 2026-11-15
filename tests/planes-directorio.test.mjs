@@ -247,7 +247,7 @@ test("«Haz visible tu negocio en Canadá»: solo dos opciones públicas, sin co
 test("ejemplos Premium: enlace HTML directo a cada Perfil Premium publicado, con su URL definitiva", () => {
   const ctxB = {};
   vm.runInNewContext(read("js/businesses.js") + ";globalThis.B = BUSINESSES;", ctxB);
-  const premium = ctxB.B.filter((b) => b.published && b.plan !== "gratuito").map((b) => b.slug);
+  const premium = ctxB.B.filter((b) => b.published && b.plan !== "gratuito" && b.directory !== false).map((b) => b.slug);
   assert.deepEqual([...premium].sort(), ["1juanromero1", "carlos-d-castillo", "santa-latino", "tomas-velazquez"]);
   const linea = (planes.match(/<p class="pl-examples">[\s\S]*?<\/p>/) || [""])[0];
   assert.ok(linea, "línea de ejemplos Premium");

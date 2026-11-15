@@ -60,6 +60,26 @@
     }
   }
 
+  /* Texto aprobado con énfasis mínimo: **negrita** y *cursiva*. Primero se
+     escapa todo; luego solo se convierten esas marcas. Lo usa la biografía
+     (longDescription) para respetar el formato del texto aprobado. */
+  function richText(t) {
+    return esc(t)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+  }
+
+  /* Perfil institucional (campo opcional «institutional: true», p. ej. la
+     miniweb de Nelson Vahos): mismas funciones Premium, con textos propios
+     de una presentación institucional en lugar de los de un negocio del
+     Directorio. Sin el campo, todo queda exactamente igual. */
+  const esInstitucional = (b) => b.institutional === true;
+
+  /* Ubicación visible: «Ciudad, Provincia»; sin ciudad, «Provincia, País». */
+  function placeText(b) {
+    return b.city ? [b.city, b.province].filter(Boolean).join(", ") : [b.province, b.country].filter(Boolean).join(", ");
+  }
+
   function initials(name) {
     return name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join("");
   }
@@ -128,19 +148,23 @@
     const media = b.profileImage
       ? `<img class="biz-hero__photo${b.profileImageKind === "logo" ? " biz-hero__photo--logo" : ""}" src="${esc(b.profileImage)}" alt="${esc(b.name)}"${b.heroLayout === "wide" ? ' width="1600" height="1280"' : ""} fetchpriority="high">`
       : `<div class="biz-hero__photo biz-hero__photo--initials" role="img" aria-label="${esc(b.name)}">${esc(initials(b.name))}</div>`;
-    const place = [b.city, b.province].filter(Boolean).join(", ");
+    const place = placeText(b);
     const lang = languageLine(b);
+    /* «roles» (opcional): cargos completos, uno por línea, en lugar de
+       professionalTitle / professionalTitleAlt / company. */
+    const roles = (b.roles || []).filter((r) => r && r.title);
     return `
       <header class="biz-hero${b.heroLayout === "wide" ? " biz-hero--wide" : ""}">
         <div class="biz-hero__media">${media}</div>
         <div class="biz-hero__body">
-          <span class="biz-label">Perfil empresarial</span>
-          <h1 class="biz-name">${esc(b.name)}</h1>
+          <span class="biz-label">${esInstitucional(b) ? "Perfil institucional" : "Perfil empresarial"}</span>
+          <h1 class="biz-name">${esc(b.name)}</h1>${roles.length ? `
+          <ul class="biz-roles">${roles.map((r) => `<li class="biz-roles__item">${esc(r.title)}</li>`).join("")}</ul>` : ""}
           ${b.tagline ? `<p class="biz-tagline">${esc(b.tagline)}</p>` : ""}
-          ${b.professionalTitle ? `<p class="biz-title">${esc(b.professionalTitle)}</p>` : ""}
-          ${b.professionalTitleAlt ? `<p class="biz-title-alt" lang="en">${esc(b.professionalTitleAlt)}</p>` : ""}
+          ${!roles.length && b.professionalTitle ? `<p class="biz-title">${esc(b.professionalTitle)}</p>` : ""}
+          ${!roles.length && b.professionalTitleAlt ? `<p class="biz-title-alt" lang="en">${esc(b.professionalTitleAlt)}</p>` : ""}
           ${b.brandLogo ? `<img class="biz-brand-logo" src="${esc(b.brandLogo)}" alt="${esc(b.brandName || b.name)}" loading="lazy">` : ""}
-          ${b.company ? `<p class="biz-company">${esc(b.company)}</p>` : ""}
+          ${!roles.length && b.company ? `<p class="biz-company">${esc(b.company)}</p>` : ""}
           ${b.representative ? `<p class="biz-representative">Representante: <strong>${esc(b.representative)}</strong></p>` : ""}
           ${b.affiliation ? `<p class="biz-affiliation">Afiliación indicada por el profesional: ${esc(b.affiliation)}</p>` : ""}
           ${place ? `<p class="biz-place">${esc(place)}</p>` : ""}
@@ -165,10 +189,63 @@
   function aboutHtml(b) {
     const paras = [].concat(b.longDescription || []).filter(Boolean);
     if (!paras.length && !b.quote) return "";
+    /* «aboutTitle» (opcional): título de la sección. «quoteRaw: true»: la
+       cita se muestra tal como está escrita (con sus propias comillas). */
+    const quote = b.quote ? (b.quoteRaw ? esc(b.quote) : `“${esc(b.quote)}”`) : "";
     return `
-      <section class="biz-section biz-about">
-        ${paras.map((t) => `<p class="biz-long">${esc(t)}</p>`).join("")}
-        ${b.quote ? `<blockquote class="biz-quote"><p>“${esc(b.quote)}”</p><cite>— ${esc(b.name)}</cite></blockquote>` : ""}
+      <section class="biz-section biz-about"${b.aboutTitle ? ' aria-labelledby="bizAboutTitle"' : ""}>${b.aboutTitle ? `
+        <h2 class="biz-h2" id="bizAboutTitle">${esc(b.aboutTitle)}</h2>` : ""}
+        ${paras.map((t) => `<p class="biz-long">${richText(t)}</p>`).join("")}
+        ${quote ? `<blockquote class="biz-quote"><p>${quote}</p><cite>— ${esc(b.name)}</cite></blockquote>` : ""}
+      </section>
+    `;
+  }
+
+  /* Proyectos (campo opcional «projects»): una tarjeta por proyecto, con
+     logotipo opcional, nombre, descripción, enlace principal, aviso
+     opcional (p. ej., «Sitio oficial en desarrollo») y redes oficiales del
+     proyecto. Solo enlaces: nada de contenido externo incrustado.
+     Medición con eventos ya aceptados por el Worker: website_click (enlace
+     principal) y <red>_click (redes; YouTube cuenta como website_click). */
+  const PROJECT_NETWORKS = { facebook: "Facebook", instagram: "Instagram", youtube: "YouTube", tiktok: "TikTok", linkedin: "LinkedIn" };
+  function projectsHtml(b) {
+    const list = (b.projects || []).filter((p) => p && p.name);
+    if (!list.length) return "";
+    const card = (p) => {
+      const id = esc(p.id || "");
+      const ext = /^https?:\/\//.test(p.url || "");
+      const links = (p.links || []).filter((l) => l && PROJECT_NETWORKS[l.network] && /^https:\/\//.test(l.href || ""));
+      const track = (l) => (["facebook", "instagram", "tiktok", "linkedin"].includes(l.network) ? `${l.network}_click` : "website_click");
+      return `
+        <article class="biz-project" id="proyecto-${id}" aria-labelledby="bizProject-${id}">
+          ${p.logo ? `<img class="biz-project__logo" src="${esc(p.logo)}" alt="Logotipo de ${esc(p.name)}" width="96" height="96" loading="lazy">` : ""}
+          <h3 class="biz-project__name" id="bizProject-${id}">${esc(p.name)}</h3>
+          ${p.kicker ? `<p class="biz-project__kicker">${esc(p.kicker)}</p>` : ""}
+          ${[].concat(p.text || []).filter(Boolean).map((t) => `<p class="biz-project__text">${richText(t)}</p>`).join("")}
+          ${p.url ? `<p class="biz-project__cta"><a class="biz-btn biz-btn--primary" href="${esc(p.url)}"${ext ? ' target="_blank" rel="noopener"' : ""} data-track="website_click" data-track-target="project-${id}">${esc(p.label || "Conocer más")}${ext ? ' <span aria-hidden="true">↗</span>' : ""}</a></p>` : ""}
+          ${p.note ? `<p class="biz-project__note">${esc(p.note)}</p>` : ""}
+          ${links.length ? `<ul class="biz-project__links" aria-label="Redes oficiales de ${esc(p.name)}">${links.map((l) => `<li><a href="${esc(l.href)}" target="_blank" rel="noopener" data-track="${track(l)}" data-track-target="project-${id}-${esc(l.network)}" aria-label="${esc(PROJECT_NETWORKS[l.network])} de ${esc(p.name)} (se abre en una pestaña nueva)">${esc(PROJECT_NETWORKS[l.network])}</a></li>`).join("")}</ul>` : ""}
+        </article>`;
+    };
+    return `
+      <section class="biz-section biz-projects" aria-labelledby="bizProjectsTitle">
+        <h2 class="biz-h2" id="bizProjectsTitle">${esc(b.projectsTitle || "Proyectos")}</h2>
+        <div class="biz-projects__grid">${list.map(card).join("")}</div>
+      </section>
+    `;
+  }
+
+  /* Trayectoria (campo opcional «timeline»): hitos confirmados, en orden.
+     «date» es opcional: un hito sin fecha no la inventa. */
+  function timelineHtml(b) {
+    const list = (b.timeline || []).filter((t) => t && t.text);
+    if (!list.length) return "";
+    return `
+      <section class="biz-section biz-timeline" aria-labelledby="bizTimelineTitle">
+        <h2 class="biz-h2" id="bizTimelineTitle">${esc(b.timelineTitle || "Trayectoria")}</h2>
+        <ol class="biz-timeline__list">${list
+          .map((t) => `<li class="biz-timeline__item">${t.date ? `<p class="biz-timeline__date">${esc(t.date)}</p>` : ""}<p class="biz-timeline__text">${richText(t.text)}</p></li>`)
+          .join("")}</ol>
       </section>
     `;
   }
@@ -378,7 +455,7 @@
     if (!channels.length) return "";
     return `
       <section class="biz-section biz-contact">
-        <h2 class="biz-h2">¿Quieres hablar con ${esc(b.shortName || b.name)}?</h2>
+        <h2 class="biz-h2">${esInstitucional(b) ? "Contacto profesional" : `¿Quieres hablar con ${esc(b.shortName || b.name)}?`}</h2>
         <div class="biz-actions">${channels
           .map((a, i) => `<a class="biz-btn${i === 0 ? " biz-btn--primary" : ""}" ${linkAttrs(a)}>${esc(a.label)}</a>`)
           .join("")}</div>
@@ -405,7 +482,7 @@
           <p class="biz-qr__kicker">Visita mi perfil</p>
           <figure class="biz-qr__figure">
             <img class="biz-qr__code" src="assets/qr/perfil-${esc(b.slug)}.svg" width="220" height="220" loading="lazy" alt="Código QR que abre el perfil de ${esc(b.name)} en El Podcast del Migrante">
-            <figcaption class="biz-qr__caption">Escanea y conoce mis servicios</figcaption>
+            <figcaption class="biz-qr__caption">${esc(c.profileQrCaption || "Escanea y conoce mis servicios")}</figcaption>
           </figure>
           <div class="biz-qr__actions">
             <a class="biz-btn biz-btn--primary" href="assets/qr/perfil-${esc(b.slug)}.png" download="qr-perfil-${esc(b.slug)}.png" data-track="qr_profile_download" data-track-target="qr-profile">Descargar QR</a>
@@ -446,7 +523,7 @@
     const status = document.querySelector("[data-qr-share-status]");
     const url = profileUrl(b);
     const title = b.name + " | El Podcast del Migrante";
-    const text = "Escanea y conoce los servicios de " + b.name;
+    const text = (esInstitucional(b) ? "Escanea y conoce el perfil de " : "Escanea y conoce los servicios de ") + b.name;
     btn.addEventListener("click", async () => {
       if (status) status.textContent = "";
       try {
@@ -569,7 +646,10 @@
       );
     const place = b.city
       ? Object.assign({ "@type": "PostalAddress", addressLocality: b.city }, b.province ? { addressRegion: b.province } : {}, b.country ? { addressCountry: "CA" } : {})
-      : null;
+      : b.province
+        ? Object.assign({ "@type": "PostalAddress", addressRegion: b.province }, b.country ? { addressCountry: "CA" } : {})
+        : null;
+    const roles = (b.roles || []).filter((r) => r && r.title);
 
     let entity;
     if (b.representative) {
@@ -585,7 +665,8 @@
       if (b.website) sameAs.unshift(b.website);
     } else {
       entity = { "@type": "Person", name: b.name, url };
-      if (b.professionalTitle) entity.jobTitle = b.professionalTitle;
+      if (roles.length) entity.jobTitle = roles.length === 1 ? roles[0].title : roles.map((r) => r.title);
+      else if (b.professionalTitle) entity.jobTitle = b.professionalTitle;
       if (b.shortDescription) entity.description = b.shortDescription;
       if (images.length) entity.image = images.length === 1 ? images[0] : images;
       if (b.phone) entity.telephone = b.phone;
@@ -596,7 +677,13 @@
          el concesionario). Nunca se atribuye a la empresa equivocada. */
       if (b.brandName) entity.brand = Object.assign({ "@type": "Brand", name: b.brandName }, b.website ? { url: b.website } : {});
       if (b.affiliation) entity.affiliation = { "@type": "Organization", name: b.affiliation };
-      if (b.company) {
+      /* Con «roles»: cada organización que dirige (nombre, sitio y redes
+         oficiales de la organización, que no son de la persona). */
+      const orgs = roles
+        .filter((r) => r.organization)
+        .map((r) => Object.assign({ "@type": "Organization", name: r.organization }, r.url ? { url: r.url } : {}, (r.sameAs || []).length ? { sameAs: r.sameAs } : {}));
+      if (orgs.length) entity.worksFor = orgs.length === 1 ? orgs[0] : orgs;
+      else if (b.company) {
         entity.worksFor = { "@type": WORKS_FOR_TYPE[b.category] || "Organization", name: b.company };
         if (b.website && !b.brandName) entity.worksFor.url = b.website;
         if (b.address) {
@@ -624,11 +711,15 @@
       isPartOf: { "@type": "WebSite", name: "El Podcast del Migrante Magazine", url: SITE_ORIGIN + "/" },
       breadcrumb: {
         "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_ORIGIN + "/" },
-          { "@type": "ListItem", position: 2, name: "Quién puede ayudarte", item: SITE_ORIGIN + "/quien-puede-ayudarte" },
-          { "@type": "ListItem", position: 3, name: b.name, item: url },
-        ],
+        /* Un perfil fuera del Directorio (directory: false) no cuelga de «Quién puede ayudarte» */
+        itemListElement: (b.directory === false
+          ? [{ name: "Inicio", item: SITE_ORIGIN + "/" }, { name: b.name, item: url }]
+          : [
+              { name: "Inicio", item: SITE_ORIGIN + "/" },
+              { name: "Quién puede ayudarte", item: SITE_ORIGIN + "/quien-puede-ayudarte" },
+              { name: b.name, item: url },
+            ]
+        ).map((x, i) => Object.assign({ "@type": "ListItem", position: i + 1 }, x)),
       },
       mainEntity: entity,
     };
@@ -663,7 +754,9 @@
       ${heroHtml(b)}
       ${actionsHtml(b)}
       ${callToActionHtml(b)}
-      ${aboutHtml(b)}
+      ${aboutHtml(b)}${projectsHtml(b) ? `
+      ${projectsHtml(b)}` : ""}${timelineHtml(b) ? `
+      ${timelineHtml(b)}` : ""}
       ${videoHtml(b)}
       ${portfolioHtml(b)}
       ${servicesHtml(b)}
@@ -674,9 +767,9 @@
       ${locationHtml(b)}
       ${connectHtml(b)}
       ${contactBlockHtml(b)}
-      <p class="biz-note">Perfil empresarial. Verifica directamente con el profesional los servicios, condiciones y disponibilidad antes de tomar decisiones.</p>
+      ${esInstitucional(b) ? "" : `<p class="biz-note">Perfil empresarial. Verifica directamente con el profesional los servicios, condiciones y disponibilidad antes de tomar decisiones.</p>`}
       ${b.disclaimer ? `<p class="biz-note">${esc(b.disclaimer)}</p>` : ""}
-      <a class="biz-back" href="quien-puede-ayudarte">← Volver a Quién puede ayudarte</a>
+      ${b.directory === false ? `<a class="biz-back" href="/">← Ir a El Podcast del Migrante</a>` : `<a class="biz-back" href="quien-puede-ayudarte">← Volver a Quién puede ayudarte</a>`}
     `;
   }
 

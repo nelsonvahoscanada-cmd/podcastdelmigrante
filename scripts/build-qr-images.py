@@ -166,14 +166,18 @@ def main():
     f = fonts()
     OUT.mkdir(parents=True, exist_ok=True)
     count = 0
+    # --solo=<slug>: genera solo los QR de ese perfil y no reescribe los PNG
+    # de los demás perfiles publicados.
+    solo = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--solo=")), None)
     for b in load_businesses():
         c = b.get("connect")
-        if not b.get("published") or not c:
+        if not b.get("published") or not c or (solo and b["slug"] != solo):
             continue
         slug, name = b["slug"], b["name"]
         if c.get("profileQr"):
             url = f"{SITE_ORIGIN}/perfil-{slug}.html"
-            qr, card = build_card(url, "Visita mi perfil", name, "Escanea y conoce mis servicios", url.replace("https://", ""), f)
+            caption = c.get("profileQrCaption") or "Escanea y conoce mis servicios"
+            qr, card = build_card(url, "Visita mi perfil", name, caption, url.replace("https://", ""), f)
             write_svg(qr, OUT / f"perfil-{slug}.svg", f"QR del perfil de {name}")
             card.save(OUT / f"perfil-{slug}.png", optimize=True)
             print(f"escrito  assets/qr/perfil-{slug}.svg/.png  → {url}")

@@ -120,6 +120,7 @@ export const RUTAS_VALIDAS = {
     "slug": [
       "1juanromero1",
       "carlos-d-castillo",
+      "nelson-vahos",
       "santa-latino",
       "tomas-velazquez"
     ]
