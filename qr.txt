@@ -1,0 +1,14 @@
+perfil-nelson-vahos.png → https://podcastdelmigrante.com/perfil-nelson-vahos.html · igual al repositorio: sí
+contacto-nelson-vahos.png → https://podcastdelmigrante.com/vcard/nelson-vahos.vcf · igual al repositorio: sí
+perfil-tomas-velazquez.png → https://podcastdelmigrante.com/perfil-tomas-velazquez.html · igual al repositorio: sí
+contacto-tomas-velazquez.png → https://podcastdelmigrante.com/vcard/tomas-velazquez.vcf · igual al repositorio: sí
+perfil-carlos-d-castillo.png → https://podcastdelmigrante.com/perfil-carlos-d-castillo.html · igual al repositorio: sí
+perfil-santa-latino.png → https://podcastdelmigrante.com/perfil-santa-latino.html · igual al repositorio: sí
+perfil-1juanromero1.png → https://podcastdelmigrante.com/perfil-1juanromero1.html · igual al repositorio: sí
+https://podcastdelmigrante.com/perfil-nelson-vahos.html → 308 https://podcastdelmigrante.com/perfil-nelson-vahos
+https://podcastdelmigrante.com/vcard/nelson-vahos.vcf → 200 
+https://podcastdelmigrante.com/perfil-tomas-velazquez.html → 308 https://podcastdelmigrante.com/perfil-tomas-velazquez
+https://podcastdelmigrante.com/vcard/tomas-velazquez.vcf → 200 
+https://podcastdelmigrante.com/perfil-carlos-d-castillo.html → 308 https://podcastdelmigrante.com/perfil-carlos-d-castillo
+https://podcastdelmigrante.com/perfil-santa-latino.html → 308 https://podcastdelmigrante.com/perfil-santa-latino
+https://podcastdelmigrante.com/perfil-1juanromero1.html → 308 https://podcastdelmigrante.com/perfil-1juanromero1

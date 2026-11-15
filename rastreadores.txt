@@ -1,0 +1,8 @@
+SIMULACIÓN desde GitHub Actions: se envía el User-Agent público de cada rastreador. No son visitas auténticas de esos servicios ni garantizan su comportamiento.
+Googlebot        200 26829 · title:1 · biografía:1 · JSON-LD:1
+Bingbot          200 26829 · title:1 · biografía:1 · JSON-LD:1
+OAI-SearchBot    200 26829 · title:1 · biografía:1 · JSON-LD:1
+GPTBot           200 26829 · title:1 · biografía:1 · JSON-LD:1
+ChatGPT-User     200 26829 · title:1 · biografía:1 · JSON-LD:1
+ClaudeBot        200 26829 · title:1 · biografía:1 · JSON-LD:1
+PerplexityBot    200 26829 · title:1 · biografía:1 · JSON-LD:1

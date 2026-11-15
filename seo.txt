@@ -1,0 +1,53 @@
+title: Nelson Vahos | Fundador de eRadio Global Corp. y El Podcast del Migrante
+description: Nelson Vahos, fundador de eRadio Global Corp. y El Podcast del Migrante. Patrocinios, publicidad y alianzas para llegar a la comunidad latina en Canadá.
+canonical: https://podcastdelmigrante.com/perfil-nelson-vahos
+og:title: Nelson Vahos | Fundador de eRadio Global Corp. y El Podcast del Migrante
+og:description: Nelson Vahos, fundador de eRadio Global Corp. y El Podcast del Migrante. Patrocinios, publicidad y alianzas para llegar a la comunidad latina en Canadá.
+og:url: https://podcastdelmigrante.com/perfil-nelson-vahos
+og:image: https://podcastdelmigrante.com/assets/directorio/perfiles/nelson-vahos-og.jpg
+og:image:width: 1200
+og:image:height: 630
+og:type: profile
+twitter:card: summary_large_image
+twitter:image: https://podcastdelmigrante.com/assets/directorio/perfiles/nelson-vahos-og.jpg
+meta robots: ninguna
+h1: 1 · encabezados: h1 h2 h2 h2 h3 h3 h3 h2 h2 h2
+palabras sin JavaScript: 581 · biografía: true · patrocinios: true · teléfono visible: true
+enlace https://wa.me/14024272741?text=: sí
+enlace tel:+14024272741: sí
+enlace https://www.tiktok.com/@podcastdelmigrante: sí
+enlace vcard/nelson-vahos.vcf: sí
+enlace /desafio-100-empresas/: sí
+enlace https://eradioglobal.com/: sí
+enlace https://podcastdelmigrante.com/: sí
+JSON-LD: ProfilePage → Person https://podcastdelmigrante.com/perfil-nelson-vahos#persona · worksFor: eRadio Global Corp. (founder), El Podcast del Migrante (founder) · tel: +1 402 427 2741 · dateModified: 2026-11-15
+--- sitemap
+    <loc>https://podcastdelmigrante.com/perfil-nelson-vahos</loc>
+    <lastmod>2026-11-15</lastmod>
+--- robots.txt servido
+User-agent: *
+Allow: /
+Disallow: /admin-worker/
+Disallow: /db/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /scripts/
+Disallow: /functions/
+Disallow: /registro/
+
+Sitemap: https://podcastdelmigrante.com/sitemap.xml
+--- enlaces internos
+/publicidad → href="/perfil-nelson-vahos">Nelson Vahos, fundador de eRadio Global Corp. y de El Podcast del Migrante
+/desafio-100-empresas/ → href="/perfil-nelson-vahos">Nelson Vahos
+--- negocios-premium.json
+{
+  "version": 1,
+  "generated_from": "js/businesses.js",
+  "businesses": {
+    "BIZ-001": "tomas-velazquez",
+    "BIZ-002": "carlos-d-castillo",
+    "BIZ-003": "santa-latino",
+    "BIZ-004": "1juanromero1",
+    "BIZ-005": "nelson-vahos"
+  }
+}
