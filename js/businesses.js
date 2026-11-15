@@ -152,7 +152,7 @@
     institutional: true textos de presentación institucional: «Perfil
                         institucional», «Contacto profesional», sin el
                         aviso de servicios del Directorio.
-    roles               [{ title, organization?, url?, sameAs? }] cargos
+    roles               [{ title, organization?, url?, sameAs?, founder? }] cargos
                         completos, uno por línea en la portada; en Google,
                         jobTitle y worksFor (cada organización con su
                         sitio y redes oficiales).
@@ -166,6 +166,10 @@
     timeline            [{ date?, text }] hitos confirmados; sin fecha no
                         se inventa ninguna.
     Sin ciudad (city: ""), la ubicación se muestra como «Provincia, País».
+    founder: true (en un cargo)  la organización declara a la persona como
+                        fundadora en los datos estructurados.
+    profileImageWidth, profileImageHeight  dimensiones reales de la foto
+                        principal (atributos width/height).
   Contacto (opcionales, sirven a cualquier perfil):
     whatsappMessage     mensaje predefinido del enlace wa.me (?text=…).
     whatsappLabel, phoneLabel  texto de los botones de WhatsApp y llamada
@@ -627,12 +631,14 @@ const BUSINESSES = [
     roles: [
       {
         title: "Fundador y Director General de eRadio Global Corp.",
+        founder: true,
         organization: "eRadio Global Corp.",
         url: "https://eradioglobal.com/",
         sameAs: ["https://facebook.com/eradioglobal", "https://youtube.com/@eradioglobal4291"],
       },
       {
         title: "Fundador y Director de El Podcast del Migrante",
+        founder: true,
         organization: "El Podcast del Migrante",
         url: "https://podcastdelmigrante.com/",
         sameAs: ["https://www.youtube.com/@ElPodcastDelMigranteOficial", "https://www.tiktok.com/@podcastdelmigrante"],
@@ -739,6 +745,8 @@ const BUSINESSES = [
     youtubeVideoId: "",
 
     profileImage: "assets/directorio/perfiles/nelson-vahos.jpg",    /* fotografía original aprobada, solo redimensionada */
+    profileImageWidth: 960,
+    profileImageHeight: 1280,
     ogImage: "assets/directorio/perfiles/nelson-vahos-og.jpg",      /* recorte 1200 × 630 para redes */
     coverImage: "",
     gallery: [],
@@ -761,7 +769,7 @@ const BUSINESSES = [
 
     seo: {
       title: "Nelson Vahos | Fundador de eRadio Global Corp. y El Podcast del Migrante",
-      description: "Nelson Vahos, comunicador colombiano en Alberta, Canadá. Fundador y Director General de eRadio Global Corp. y Fundador y Director de El Podcast del Migrante.",
+      description: "Nelson Vahos, fundador de eRadio Global Corp. y El Podcast del Migrante. Patrocinios, publicidad y alianzas para llegar a la comunidad latina en Canadá.",
     },
   },
 ];
