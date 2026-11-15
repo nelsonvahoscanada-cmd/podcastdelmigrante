@@ -112,8 +112,11 @@ test("página estática: metadatos propios, tema solo en este perfil", () => {
   while (i < jpg.length) { const m = jpg[i + 1]; assert.notEqual(m, 0xe1, "sin EXIF"); if (m >= 0xc0 && m <= 0xc2) { dim = [jpg.readUInt16BE(i + 7), jpg.readUInt16BE(i + 5)]; break; } i += 2 + jpg.readUInt16BE(i + 2); }
   assert.deepEqual(dim, [1200, 630]);
   assert.ok(jpg.length < 300_000, `peso ${jpg.length}`);
-  /* La foto principal y los datos estructurados no cambian */
-  assert.equal(S.profileImage, "assets/directorio/perfiles/santa-latino.jpg");
+  /* Foto principal: la misma fotografía navideña (fondo de madera), en 4:5 */
+  assert.equal(S.profileImage, "assets/directorio/perfiles/santa-latino-principal-navidad.jpg");
+  assert.match(html, /<img class="biz-hero__photo" src="assets\/directorio\/perfiles\/santa-latino-principal-navidad\.jpg" alt="Santa Latino" fetchpriority="high">/);
+  /* La tarjeta del Directorio conserva su imagen */
+  assert.equal(S.cardImage, "assets/directorio/perfiles/santa-latino-card.jpg");
   assert.doesNotMatch(html.match(/<script type="application\/ld\+json" id="bizJsonLd">[\s\S]*?<\/script>/)[0], /santa-latino-og/);
   assert.match(html, /rel="canonical" href="https:\/\/podcastdelmigrante\.com\/perfil-santa-latino"/);
   for (const p of ["perfil-tomas-velazquez.html", "perfil-carlos-d-castillo.html", "business-profile.html"]) {
