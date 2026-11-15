@@ -1,0 +1,96 @@
+# TEMPORAL: verificar en producción la miniweb de Nelson Vahos tras fusionar el PR #127 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp nelson prod
+on:
+  push:
+    branches: [claude/miniweb-nelson-vahos-prod]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      P: https://podcastdelmigrante.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue en producción (máx. 20 min)
+        run: |
+          for i in $(seq 120); do
+            curl -fsS "$P/perfil-nelson-vahos?nc=$i$RANDOM" | grep -q "Patrocinios, publicidad y alianzas para llegar" && curl -fsS "$P/negocios-premium.json?nc=$i$RANDOM" | grep -q '"BIZ-005": "nelson-vahos"' && { echo "desplegado (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
+      - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null && sudo apt-get install -y -qq zbar-tools >/dev/null 2>&1 || true
+      - name: Estados HTTP, cabeceras y redirección
+        if: always()
+        run: |
+          for u in "/perfil-nelson-vahos" "/perfil-nelson-vahos.html" "/business-profile?slug=nelson-vahos" "/vcard/nelson-vahos.vcf" "/assets/qr/perfil-nelson-vahos.png" "/assets/qr/contacto-nelson-vahos.png" "/assets/directorio/perfiles/nelson-vahos.jpg" "/assets/directorio/perfiles/nelson-vahos-og.jpg" "/negocios-premium.json" "/sitemap.xml" "/robots.txt" "/" "/noticias" "/publicidad" "/desafio-100-empresas/" "/quien-puede-ayudarte" "/planes-directorio" "/perfil-tomas-velazquez" "/perfil-carlos-d-castillo" "/perfil-santa-latino" "/perfil-1juanromero1" "/articulo-canada-33000-residencias-permanentes-trabajadores-2026" "/canada-en-datos/"; do
+            printf "%-70s %s\n" "$u" "$(curl -s -o /tmp/b -w '%{http_code} %{redirect_url} %{content_type}' "$P$u") $(grep -o '<title>[^<]*' /tmp/b | head -1 | cut -c8-70)"
+          done | tee /tmp/out/estados.txt
+          echo "--- cabeceras de /perfil-nelson-vahos" | tee -a /tmp/out/estados.txt
+          curl -sI "$P/perfil-nelson-vahos" | grep -i -E "^(HTTP|content-type|x-robots-tag|cache-control|link)" | tee -a /tmp/out/estados.txt
+      - name: SEO del HTML publicado (sin JavaScript)
+        if: always()
+        run: |
+          curl -s "$P/perfil-nelson-vahos" > /tmp/p.html
+          node -e '
+          const h=require("fs").readFileSync("/tmp/p.html","utf8"); const o=[];
+          const g=(re)=>{const m=h.match(re);return m?m[1]:"(falta)";};
+          o.push("title: "+g(/<title>([^<]*)/));
+          o.push("description: "+g(/name="description" content="([^"]*)"/));
+          o.push("canonical: "+g(/rel="canonical" href="([^"]*)"/));
+          for (const k of ["og:title","og:description","og:url","og:image","og:image:width","og:image:height","og:type"]) o.push(k+": "+g(new RegExp(`property="${k}" content="([^"]*)"`)));
+          for (const k of ["twitter:card","twitter:image"]) o.push(k+": "+g(new RegExp(`name="${k}" content="([^"]*)"`)));
+          o.push("meta robots: "+(/<meta[^>]+name="robots"/i.test(h)?"PRESENTE":"ninguna"));
+          const main=h.match(/<main id="main">([\s\S]*?)<\/main>/)[1];
+          o.push("h1: "+(main.match(/<h1[^>]*>/g)||[]).length+" · encabezados: "+[...main.matchAll(/<h([1-6])/g)].map(m=>"h"+m[1]).join(" "));
+          const t=main.replace(/<script[\s\S]*?<\/script>/g," ").replace(/<[^>]+>/g," ").replace(/\s+/g," ");
+          o.push("palabras sin JavaScript: "+t.split(" ").length+" · biografía: "+t.includes("Su trayectoria comenzó en la radio colombiana")+" · patrocinios: "+t.includes("Patrocinios, publicidad y alianzas comerciales")+" · teléfono visible: "+t.includes("+1 402 427 2741"));
+          for (const href of ["https://wa.me/14024272741?text=","tel:+14024272741","https://www.tiktok.com/@podcastdelmigrante","vcard/nelson-vahos.vcf","/desafio-100-empresas/","https://eradioglobal.com/","https://podcastdelmigrante.com/"]) o.push("enlace "+href+": "+(main.includes(`href="${href}`)?"sí":"NO"));
+          const ld=JSON.parse(h.match(/id="bizJsonLd">([\s\S]*?)<\/script>/)[1]);
+          o.push("JSON-LD: "+ld["@type"]+" → "+ld.mainEntity["@type"]+" "+ld.mainEntity["@id"]+" · worksFor: "+ld.mainEntity.worksFor.map(x=>x.name+(x.founder?" (founder)":"")).join(", ")+" · tel: "+ld.mainEntity.telephone+" · dateModified: "+ld.dateModified);
+          console.log(o.join("\n"));' | tee /tmp/out/seo.txt
+          echo "--- sitemap" | tee -a /tmp/out/seo.txt
+          curl -s "$P/sitemap.xml" | grep -A1 "perfil-nelson-vahos" | tee -a /tmp/out/seo.txt
+          echo "--- robots.txt servido" | tee -a /tmp/out/seo.txt
+          curl -s "$P/robots.txt" | tee -a /tmp/out/seo.txt
+          echo "--- enlaces internos" | tee -a /tmp/out/seo.txt
+          for u in /publicidad /desafio-100-empresas/; do echo "$u → $(curl -s "$P$u" | grep -o 'href="/perfil-nelson-vahos"[^<]*' | head -1)"; done | tee -a /tmp/out/seo.txt
+          echo "--- negocios-premium.json" | tee -a /tmp/out/seo.txt; curl -s "$P/negocios-premium.json" | tee -a /tmp/out/seo.txt
+      - name: Rastreadores e IA (SIMULACIÓN con User-Agent; no son visitas reales de esos servicios)
+        if: always()
+        run: |
+          echo "SIMULACIÓN desde GitHub Actions: se envía el User-Agent público de cada rastreador. No son visitas auténticas de esos servicios ni garantizan su comportamiento." | tee /tmp/out/rastreadores.txt
+          while IFS='|' read -r n ua; do
+            r=$(curl -s -A "$ua" -o /tmp/r.html -w '%{http_code} %{size_download}' "$P/perfil-nelson-vahos")
+            printf "%-16s %s · title:%s · biografía:%s · JSON-LD:%s\n" "$n" "$r" "$(grep -c '<title>Nelson Vahos' /tmp/r.html)" "$(grep -c 'Su trayectoria comenzó en la radio colombiana' /tmp/r.html)" "$(grep -c 'id="bizJsonLd"' /tmp/r.html)"
+          done <<'UA' | tee -a /tmp/out/rastreadores.txt
+          Googlebot|Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+          Bingbot|Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+          OAI-SearchBot|Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot
+          GPTBot|Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot
+          ChatGPT-User|Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot
+          ClaudeBot|Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
+          PerplexityBot|Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)
+          UA
+      - name: vCard y QR en producción
+        if: always()
+        run: |
+          curl -s "$P/vcard/nelson-vahos.vcf" | tee /tmp/out/vcard.txt
+          for f in perfil-nelson-vahos.png contacto-nelson-vahos.png perfil-tomas-velazquez.png contacto-tomas-velazquez.png perfil-carlos-d-castillo.png perfil-santa-latino.png perfil-1juanromero1.png; do curl -s "$P/assets/qr/$f" -o /tmp/$f; echo "$f → $(zbarimg -q --raw /tmp/$f) · igual al repositorio: $(cmp -s /tmp/$f assets/qr/$f && echo sí || echo NO)"; done | tee /tmp/out/qr.txt
+          for u in $(cat /tmp/out/qr.txt | grep -o 'https://[^ ]*'); do echo "$u → $(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "$u")"; done | tee -a /tmp/out/qr.txt
+      - name: E2E miniweb en producción (computador, tableta, celular; sin y con JavaScript; estadísticas bloqueadas)
+        if: always()
+        run: BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-nelson-vahos.cjs 2>&1 | grep -v "^\s*at " | tee /tmp/out/e2e-nelson.txt; exit ${PIPESTATUS[0]}
+      - name: E2E de otras páginas en producción (estadísticas bloqueadas)
+        if: always()
+        run: |
+          r=0
+          for t in santa-latino planes-directorio desafio menu seo-redirecciones; do
+            BASE=$P NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -12 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
+          done; exit $r
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "prod nelson [CF-Pages-Skip]"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/miniweb-nelson-vahos-prod-datos
