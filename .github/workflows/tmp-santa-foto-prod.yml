@@ -1,0 +1,59 @@
+# TEMPORAL: verificar en producción el PR #132 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp santa foto prod
+on:
+  push:
+    branches: [claude/santa-latino-foto-prod]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      P: https://podcastdelmigrante.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue en producción (máx. 20 min)
+        run: |
+          for i in $(seq 120); do
+            curl -fsS "$P/perfil-santa-latino?nc=$i$RANDOM" | grep -q 'santa-latino-principal-navidad.jpg' && curl -fsS -o /dev/null "$P/assets/directorio/perfiles/santa-latino-principal-navidad.jpg?nc=$i" && { echo "desplegado (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
+      - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: Foto principal, imagen para compartir e intactos en producción
+        if: always()
+        run: |
+          curl -s "$P/perfil-santa-latino" | grep -o -E '<img class="biz-hero__photo"[^>]*>|og:image" content="[^"]*"|twitter:image" content="[^"]*"' | tee /tmp/out/estados.txt
+          for f in assets/directorio/perfiles/santa-latino-principal-navidad.jpg assets/directorio/perfiles/santa-latino-og-navidad.jpg assets/directorio/perfiles/santa-latino-card.jpg assets/qr/perfil-santa-latino.png assets/qr/contacto-santa-latino.png vcard/santa-latino.vcf; do
+            printf "%-62s %s · igual al repositorio: %s\n" "$f" "$(curl -s -o /tmp/x -w '%{http_code}' "$P/$f")" "$(cmp -s /tmp/x $f && echo sí || echo NO)"
+          done | tee -a /tmp/out/estados.txt
+      - name: Capturas de la portada del perfil en producción
+        if: always()
+        run: |
+          cat > /tmp/cap.cjs <<'JS'
+          const { chromium, devices } = require("playwright");
+          (async () => {
+            const b = await chromium.launch();
+            for (const [n, p] of [["iphone-13", devices["iPhone 13"]], ["ipad-mini", devices["iPad Mini"]], ["escritorio", { viewport: { width: 1366, height: 900 }, deviceScaleFactor: 2 }]]) {
+              const c = await b.newContext({ ...p, reducedMotion: "reduce" });
+              await c.addInitScript(() => { navigator.sendBeacon = () => true; });
+              await c.route(/\/api\//, (r) => r.fulfill({ status: 204, body: "" }));
+              const pg = await c.newPage(); await pg.goto(process.env.P + "/perfil-santa-latino", { waitUntil: "networkidle" });
+              await pg.waitForFunction(() => { const i = document.querySelector(".biz-hero__photo"); return i.complete && i.naturalWidth > 0; });
+              await pg.locator(".biz-hero").screenshot({ path: `/tmp/out/portada-${n}.png` });
+              console.log(n, await pg.evaluate(() => { const i = document.querySelector(".biz-hero__photo"), r = i.getBoundingClientRect(); return `${i.getAttribute("src")} · ${Math.round(r.width)}x${Math.round(r.height)} · natural ${i.naturalWidth}x${i.naturalHeight}`; }));
+              await c.close();
+            }
+            await b.close();
+          })();
+          JS
+          NODE_PATH=/tmp/pw/node_modules node /tmp/cap.cjs | tee -a /tmp/out/estados.txt
+      - name: E2E Santa Latino en producción (estadísticas bloqueadas)
+        if: always()
+        run: BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-santa-latino.cjs 2>&1 | grep -v "^\s*at " | tail -8 | tee /tmp/out/e2e-santa-latino.txt; exit ${PIPESTATUS[0]}
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "prod santa foto [CF-Pages-Skip]"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/santa-latino-foto-prod-datos-${{ github.run_number }}
