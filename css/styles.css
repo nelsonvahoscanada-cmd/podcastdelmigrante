@@ -622,6 +622,30 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .latest-more { margin-top: 18px; }
 
+/* Portada · «Últimas noticias» en celular: foto a la izquierda (tamaño
+   uniforme) y, a la derecha, categoría, titular y fecha agrupados.
+   Solo #latestList de la portada; el escritorio, la tableta y el archivo
+   (/noticias) conservan su diseño. */
+@media (max-width: 759px) {
+  section:has(> #latestList) { padding-left: 16px; padding-right: 16px; }
+  #latestList .latest-row {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "tag" "titulo" "fecha";
+    align-items: start;
+    row-gap: 5px;
+    padding: 14px 0;
+  }
+  #latestList .latest-row--img {
+    grid-template-columns: 76px minmax(0, 1fr);
+    grid-template-areas: "foto tag" "foto titulo" "foto fecha";
+    column-gap: 14px;
+  }
+  #latestList .latest-row__thumb { grid-area: foto; width: 76px; height: 76px; }
+  #latestList .latest-row .tag { grid-area: tag; justify-self: start; margin: 0; }
+  #latestList .latest-row__title { grid-area: titulo; min-width: 0; font-size: 0.98rem; line-height: 1.35; overflow-wrap: break-word; }
+  #latestList .latest-row__time { grid-area: fecha; font-size: 0.8rem; }
+}
+
 /* Archivo de noticias (noticias.html) */
 .news-archive__intro { color: var(--gris-600); margin: -10px 0 8px; }
 .news-pager {
