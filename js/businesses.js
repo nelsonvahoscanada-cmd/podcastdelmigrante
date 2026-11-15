@@ -489,7 +489,7 @@ const BUSINESSES = [
     videoText: "Conoce la historia de Héctor Rivero, el hombre detrás de Santa Latino, en esta entrevista especial de El Podcast del Migrante.",
     videoLinkLabel: "Ver entrevista en YouTube",
 
-    profileImage: "assets/directorio/perfiles/santa-latino.jpg",      /* retrato 4:5 */
+    profileImage: "assets/directorio/perfiles/santa-latino-principal-navidad.jpg",   /* retrato 4:5: fotografía navideña (fondo de madera), la misma de ogImage */
     cardImage: "assets/directorio/perfiles/santa-latino-card.jpg",    /* directorio */
     ogImage: "assets/directorio/perfiles/santa-latino-og-navidad.jpg",   /* al compartir: fotografía navideña 1200 × 630 (nuevo nombre para renovar la caché de WhatsApp y Facebook) */
     coverImage: "",

@@ -59,6 +59,13 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
       assert.ok(ok, `${perfil}: ${sel} cargada`);
     }
     assert.equal(await page.getAttribute(".biz-hero__photo", "alt"), "Santa Latino");
+    /* Foto principal: la fotografía navideña (fondo de madera), 4:5 sin deformar, con el marco dorado del tema */
+    const foto = await page.locator(".biz-hero__photo").evaluate((i) => { const r = i.getBoundingClientRect(), c = getComputedStyle(i); return { src: i.getAttribute("src"), nat: [i.naturalWidth, i.naturalHeight], w: r.width, h: r.height, fit: c.objectFit, borde: c.borderTopColor }; });
+    assert.equal(foto.src, "assets/directorio/perfiles/santa-latino-principal-navidad.jpg");
+    assert.deepEqual(foto.nat, [739, 924]);
+    assert.ok(Math.abs(foto.w / foto.h - 739 / 924) < 0.02, `${perfil}: proporción 4:5 (${foto.w}×${foto.h})`);
+    assert.equal(foto.fit, "cover");
+    assert.equal(foto.borde, "rgb(217, 178, 92)", "marco dorado");
     /* Botones y enlaces (con sus eventos de medición sin cambios) */
     const hrefs = await page.$$eval("a[data-track]", (as) => as.map((a) => [a.getAttribute("data-track"), a.getAttribute("data-track-target"), a.getAttribute("href")]));
     const has = (track, target, href) => assert.ok(hrefs.some(([a, b, c]) => a === track && b === target && c === href), `${perfil}: falta ${track}/${target} → ${href}`);
