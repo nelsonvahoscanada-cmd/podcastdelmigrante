@@ -295,3 +295,13 @@ test("pie de página: «Fundador» (→ /perfil-nelson-vahos) una vez en la colu
   /* Canadá en Datos sigue copiando el pie de 404.html, sin el enlace */
   assert.doesNotMatch(read("canada-en-datos/index.html"), /perfil-nelson-vahos/);
 });
+
+test("portada: css/styles.css con versión (?v=<huella>) para que la tarjeta del fundador no use una hoja anterior en caché", async () => {
+  const { createHash } = await import("node:crypto");
+  const huella = createHash("sha256").update(readFileSync(join(ROOT, "css/styles.css"))).digest("hex").slice(0, 10);
+  const portada = read("index.html");
+  assert.ok(portada.includes(`<link rel="stylesheet" href="css/styles.css?v=${huella}">`), "la versión coincide con el contenido de css/styles.css");
+  assert.equal((portada.match(/href="css\/styles\.css/g) || []).length, 1);
+  /* La regla de la tarjeta compacta está en esa hoja */
+  assert.match(read("css/styles.css"), /\.fundador \{\s*display: grid;\s*grid-template-columns: clamp\(76px, 22vw, 96px\) minmax\(0, 1fr\);/);
+});
