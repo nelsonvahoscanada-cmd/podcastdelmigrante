@@ -48,7 +48,7 @@
   este script pone en index.html, junto a js/data.js, js/articles.js,
   js/noticias.js y js/main.js, una versión calculada con su contenido
   (?v=<huella>): si el archivo cambia, cambia la URL y el navegador lo pide
-  de nuevo.
+  de nuevo. Lo mismo con css/styles.css en la portada.
 ========================================================================= */
 
 import { readFileSync, writeFileSync, readdirSync, unlinkSync, existsSync, mkdirSync } from "node:fs";
@@ -268,6 +268,12 @@ for (const f of VERSIONADOS) {
   if (!re.test(portada)) problems.push(`index.html no carga ${f}`);
   portada = portada.replace(re, `<script src="${f}?v=${huella(f)}"></script>`);
 }
+/* Hoja de estilos de la portada con versión (?v=<huella>): al cambiar
+   css/styles.css (p. ej. la tarjeta del fundador), el navegador no combina el
+   HTML nuevo con una hoja anterior guardada en su caché */
+const reCss = /<link rel="stylesheet" href="css\/styles\.css(\?v=[0-9a-f]+)?">/;
+if (!reCss.test(portada)) problems.push("index.html no carga css/styles.css");
+portada = portada.replace(reCss, `<link rel="stylesheet" href="css/styles.css?v=${huella("css/styles.css")}">`);
 expected.set("index.html", portada);
 
 const stale = readdirSync(ROOT).filter(

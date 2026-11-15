@@ -96,7 +96,7 @@ async function abrir(browser, opts, ruta) {
   /* ---------- Hoja de estilos antigua en caché: el trofeo no debe crecer ---------- */
   {
     const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
-    await ctx.route("**/css/styles.css", async (route) => {
+    await ctx.route(/\/css\/styles\.css(\?v=[0-9a-f]+)?$/, async (route) => {
       const r = await route.fetch();
       const css = (await r.text()).replace(/\.(mobile-)?nav-(trofeo|link--destacado)[^{]*\{[^}]*\}/g, "");
       await route.fulfill({ response: r, body: css });

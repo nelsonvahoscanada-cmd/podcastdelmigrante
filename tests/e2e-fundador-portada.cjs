@@ -6,6 +6,8 @@
   - Foto cargada, nombre, cargo, texto y botón «Conoce al fundador» con
     enlace HTML a /perfil-nelson-vahos, que abre la miniweb.
   - Foco visible con teclado, sin desbordes ni errores de JavaScript.
+  - Con la hoja anterior (PR #128) en la caché del navegador, la tarjeta
+    mantiene sus medidas: la portada pide css/styles.css?v=<huella>.
   - Pie de página: enlace «Fundador» (una vez, en «El medio») en páginas de
     cada tipo, con y sin JavaScript; abre la miniweb.
   Las estadísticas no se tocan: /api/* y sendBeacon se responden localmente.
@@ -29,6 +31,9 @@ const PERFILES = {
 };
 /* Páginas de cada tipo que comparten el pie (plantillas y generadas) */
 const PIE = ["/", "/noticias", "/articulo-canada-33000-residencias-permanentes-trabajadores-2026", "/desafio-100-empresas/", "/magazine/", "/perfil-santa-latino", "/publicidad", "/colaborador-carlos-castillo"];
+/* css/styles.css del PR #128 (tarjeta negra con foto grande): simula la hoja
+   anterior guardada en la caché del navegador */
+const HOJA_ANTERIOR = require("node:fs").readFileSync(require("node:path").join(__dirname, "fixtures-styles-pr128.css"), "utf8");
 const TEXTO = "Impulsando la información, la comunicación y las alianzas empresariales para conectar y fortalecer a la comunidad latina en Canadá.";
 
 (async () => {
@@ -108,6 +113,29 @@ const TEXTO = "Impulsando la información, la comunicación y las alianzas empre
       assert.deepEqual(errores, [], `${donde}: ${errores.join(" | ")}`);
       await ctx.close();
     }
+    /* Hoja anterior en la caché del navegador (css/styles.css sin versión, del
+       PR #128): la portada pide la hoja con versión y la tarjeta conserva sus
+       medidas aprobadas */
+    {
+      const ctx = await browser.newContext({ ...PERFILES[perfil], reducedMotion: "reduce" });
+      await ctx.route((u) => !u.href.startsWith(BASE), (r) => r.abort());
+      await ctx.route(/\/api\//, (r) => r.fulfill({ status: 204, body: "" }));
+      await ctx.addInitScript(() => { navigator.sendBeacon = () => true; });
+      await ctx.route(/\/css\/styles\.css$/, (r) => r.fulfill({ status: 200, contentType: "text/css", body: HOJA_ANTERIOR }));
+      const page = await ctx.newPage();
+      await page.goto(BASE + "/", { waitUntil: "networkidle" });
+      await page.locator("#fundador").scrollIntoViewIfNeeded();
+      const m = await page.evaluate(() => {
+        const r = (sel) => document.querySelector(sel).getBoundingClientRect();
+        return { vw: document.documentElement.clientWidth, href: document.querySelector('link[href*="css/styles.css"]').getAttribute("href"), marco: r(".fundador__media"), nombre: r(".fundador__nombre"), tarjeta: r(".fundador"), fondo: getComputedStyle(document.querySelector(".fundador")).backgroundColor };
+      });
+      assert.match(m.href, /^css\/styles\.css\?v=[0-9a-f]{10}$/, `${perfil}: hoja con versión`);
+      assert.ok(Math.abs(m.marco.width - m.marco.height) < 1 && m.marco.width <= (m.vw < 720 ? 100 : 150), `${perfil} con hoja anterior en caché: foto ${m.marco.width}×${m.marco.height}`);
+      assert.ok(m.nombre.left >= m.marco.right, `${perfil} con hoja anterior en caché: nombre junto a la foto`);
+      assert.equal(m.fondo, "rgb(255, 255, 255)");
+      await ctx.close();
+    }
+
     /* Pie de página: «Fundador» una vez en «El medio», con HTML (sin JavaScript) y con JavaScript */
     for (const js of [false, true]) {
       const ctx = await browser.newContext({ ...PERFILES[perfil], locale: "es-CA", timezoneId: "America/Edmonton", javaScriptEnabled: js, reducedMotion: "reduce" });
