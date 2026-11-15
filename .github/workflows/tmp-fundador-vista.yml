@@ -17,7 +17,7 @@ jobs:
       - name: Esperar la vista previa con la sección del fundador (máx. 15 min)
         run: |
           for i in $(seq 90); do
-            curl -fsS "$P/?nc=$i$RANDOM" | grep -q 'class="btn fundador__btn" href="/perfil-nelson-vahos"' && { echo "vista previa lista (intento $i)"; exit 0; }
+            curl -fsS "$P/?nc=$i$RANDOM" | grep -q 'class="btn fundador__btn" href="/perfil-nelson-vahos"' && curl -fsS "$P/magazine/?nc=$i$RANDOM" | grep -q '<a href="/perfil-nelson-vahos">Fundador</a>' && { echo "vista previa lista (intento $i)"; exit 0; }
             sleep 10
           done; exit 1
       - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
@@ -27,6 +27,8 @@ jobs:
           for u in "/" "/perfil-nelson-vahos" "/assets/directorio/perfiles/nelson-vahos-480.webp" "/assets/directorio/perfiles/nelson-vahos-720.webp" "/assets/directorio/perfiles/nelson-vahos-480.jpg" "/css/styles.css" "/publicidad" "/noticias" "/quien-puede-ayudarte"; do
             printf "%-55s %s\n" "$u" "$(curl -s -o /tmp/b -w '%{http_code} %{content_type} %{size_download}' "$P$u")"
           done | tee /tmp/out/estados.txt
+          echo "--- «Fundador» en el pie (número de enlaces por página)" | tee -a /tmp/out/estados.txt
+          for u in / /noticias /articulo-canada-33000-residencias-permanentes-trabajadores-2026 /desafio-100-empresas/ /magazine/ /perfil-santa-latino /perfil-nelson-vahos /publicidad /quien-puede-ayudarte /planes-directorio /politica-editorial /canada-en-datos/; do echo "$u → $(curl -s "$P$u" | grep -c '<a href="/perfil-nelson-vahos">Fundador</a>')"; done | tee -a /tmp/out/estados.txt
           echo "--- enlaces a la miniweb en la portada" | tee -a /tmp/out/estados.txt
           curl -s "$P/" | grep -o '<a [^>]*href="/perfil-nelson-vahos"[^>]*>[^<]*' | tee -a /tmp/out/estados.txt
       - name: E2E portada (fundador) y miniweb
