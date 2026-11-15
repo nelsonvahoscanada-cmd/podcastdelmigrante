@@ -253,9 +253,11 @@ test("portada: presentación del fundador cerca del final, antes de «Socios y p
   /* Orden: después de las noticias y de «Dónde encontrar el Magazine»; antes de patrocinadores y newsletter */
   for (const antes of ["Últimas noticias", "id=\"historias\"", "id=\"distribution\""]) assert.ok(h.indexOf(antes) < i, antes);
   assert.ok(i < h.indexOf("Socios y patrocinadores") && i < h.indexOf('class="newsletter'));
-  assert.match(sec, /<h2 class="section-title fundador__nombre" id="fundadorTitulo">Nelson Vahos<\/h2>/);
+  assert.match(sec, /<h2 class="section-title" id="fundadorTitulo">Quién está detrás de El Podcast del Migrante<\/h2>/);
+  assert.match(sec, /<article class="fundador">/);
+  assert.match(sec, /<h3 class="fundador__nombre">Nelson Vahos<\/h3>/);
   assert.match(sec, /<p class="fundador__cargo">Fundador de eRadio Global Corp\. y El Podcast del Migrante<\/p>/);
-  assert.ok(sec.includes("<p class=\"fundador__desc\">Con una visión de conectar, informar y fortalecer a la comunidad latina en Canadá, Nelson Vahos impulsa proyectos de comunicación, información y colaboración empresarial a través de eRadio Global Corp.</p>"));
+  assert.ok(sec.includes("<p class=\"fundador__desc\">Impulsando la información, la comunicación y las alianzas empresariales para conectar y fortalecer a la comunidad latina en Canadá.</p>"));
   assert.match(sec, /<a class="btn fundador__btn" href="\/perfil-nelson-vahos">Conoce al fundador <span aria-hidden="true">→<\/span><\/a>/);
   assert.match(sec, /<img class="fundador__foto" src="assets\/directorio\/perfiles\/nelson-vahos-480\.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Nelson Vahos, fundador de eRadio Global Corp\. y El Podcast del Migrante">/);
   for (const f of ["nelson-vahos-480.jpg", "nelson-vahos-480.webp", "nelson-vahos-720.webp"]) assert.ok(existsSync(join(ROOT, "assets/directorio/perfiles", f)), f);

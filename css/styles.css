@@ -1863,35 +1863,55 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
 }
 
 /* =========================================================
-   Fundador — presentación institucional en la portada
-   (antes de «Socios y patrocinadores»; enlaza a /perfil-nelson-vahos)
+   Fundador — tarjeta institucional en la portada
+   (antes de «Socios y patrocinadores»; enlaza a /perfil-nelson-vahos).
+   Estilo de las tarjetas del Directorio: fondo blanco, borde sutil y foto
+   cuadrada a la izquierda. La foto es la oficial (3:4), recortada solo por
+   CSS (object-fit), sin deformarla.
 ========================================================= */
-.fundador-section { border-top: 4px solid var(--verde); }
+/* Margen lateral propio: la tarjeta no toca los bordes en el celular */
+.fundador-section { padding-left: 16px; padding-right: 16px; }
+@media (min-width: 720px) { .fundador-section { padding-left: 20px; padding-right: 20px; } }
 .fundador {
   display: grid;
-  gap: 24px;
+  grid-template-columns: clamp(76px, 22vw, 96px) minmax(0, 1fr);
+  grid-template-areas: "foto cab" "desc desc" "accion accion";
+  column-gap: 16px;
   align-items: center;
-  padding: 26px 22px;
-  background: var(--negro);
-  color: var(--blanco);
+  max-width: 760px;
+  padding: 18px;
+  background: var(--blanco);
+  border: var(--border);
   border-radius: var(--radius-s);
 }
-.fundador__media { display: block; justify-self: center; width: min(70vw, 240px); }
+/* Miniatura cuadrada: la foto oficial (3:4) se encuadra en el rostro con
+   object-fit y una ampliación moderada por CSS, sin deformarla */
+.fundador__media { grid-area: foto; display: block; aspect-ratio: 1 / 1; overflow: hidden; border-radius: var(--radius-s); background: var(--gris-100); }
 .fundador__foto {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-s);
-  border: 3px solid var(--verde);
+  object-position: 50% 50%;
+  transform: scale(1.25);
+  transform-origin: 40% 38%;
 }
-.fundador__texto .eyebrow { color: #9cc93a; }
-.fundador__nombre { color: var(--blanco); margin: 0 0 6px; }
-.fundador__cargo { font-weight: 700; color: #9cc93a; margin: 0 0 14px; }
-.fundador__desc { color: #d4d4d4; font-size: 1rem; line-height: 1.65; max-width: 62ch; margin: 0 0 20px; }
-.fundador__btn:focus-visible { outline: 3px solid var(--blanco); outline-offset: 3px; }
+.fundador__cab { grid-area: cab; min-width: 0; }
+.fundador__nombre { font-family: var(--font-display); font-size: clamp(1.15rem, 1rem + 0.6vw, 1.35rem); font-weight: 700; line-height: 1.2; margin: 0 0 4px; }
+.fundador__cargo { font-size: 0.9rem; font-weight: 600; line-height: 1.4; color: var(--verde-oscuro); margin: 0; }
+.fundador__desc { grid-area: desc; font-size: 0.95rem; line-height: 1.55; color: var(--gris-800); margin: 14px 0 0; max-width: 60ch; }
+.fundador__accion { grid-area: accion; margin: 14px 0 0; }
+.fundador__btn { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
+.fundador__btn:focus-visible { outline: 3px solid var(--negro); outline-offset: 3px; }
 @media (min-width: 720px) {
-  .fundador { grid-template-columns: 240px minmax(0, 1fr); gap: 36px; padding: 32px 36px; }
-  .fundador__media { width: 240px; }
+  .fundador {
+    grid-template-columns: 140px minmax(0, 1fr);
+    grid-template-areas: "foto cab" "foto desc" "foto accion";
+    column-gap: 24px;
+    align-items: start;
+    padding: 22px 24px;
+  }
+  .fundador__media { align-self: center; }
+  .fundador__desc { margin-top: 10px; }
+  .fundador__accion { margin-top: 14px; }
 }

@@ -24,10 +24,12 @@ const PERFILES = {
   computador: { viewport: { width: 1440, height: 900 } },
   tableta: { ...devices["iPad Mini"] },
   celular: { ...devices["iPhone 13"] },
+  "celular pequeño": { ...devices["iPhone SE"] },
+  "celular grande": { ...devices["iPhone 14 Pro Max"] },
 };
 /* Páginas de cada tipo que comparten el pie (plantillas y generadas) */
 const PIE = ["/", "/noticias", "/articulo-canada-33000-residencias-permanentes-trabajadores-2026", "/desafio-100-empresas/", "/magazine/", "/perfil-santa-latino", "/publicidad", "/colaborador-carlos-castillo"];
-const TEXTO = "Con una visión de conectar, informar y fortalecer a la comunidad latina en Canadá, Nelson Vahos impulsa proyectos de comunicación, información y colaboración empresarial a través de eRadio Global Corp.";
+const TEXTO = "Impulsando la información, la comunicación y las alianzas empresariales para conectar y fortalecer a la comunidad latina en Canadá.";
 
 (async () => {
   const browser = await chromium.launch();
@@ -55,7 +57,8 @@ const TEXTO = "Con una visión de conectar, informar y fortalecer a la comunidad
       const s = page.locator("#fundador");
       await s.scrollIntoViewIfNeeded();
       assert.ok(await s.isVisible());
-      assert.equal((await s.locator("h2").textContent()).trim(), "Nelson Vahos");
+      assert.equal((await s.locator("h2").textContent()).trim(), "Quién está detrás de El Podcast del Migrante");
+      assert.equal((await s.locator("h3.fundador__nombre").textContent()).trim(), "Nelson Vahos");
       assert.equal((await s.locator(".fundador__cargo").textContent()).trim(), "Fundador de eRadio Global Corp. y El Podcast del Migrante");
       assert.equal((await s.locator(".fundador__desc").textContent()).trim(), TEXTO);
       const btn = s.locator("a.fundador__btn");
@@ -65,8 +68,27 @@ const TEXTO = "Con una visión de conectar, informar y fortalecer a la comunidad
       assert.equal(await s.locator(".fundador__foto").getAttribute("alt"), "Nelson Vahos, fundador de eRadio Global Corp. y El Podcast del Migrante");
       const caja = await btn.boundingBox();
       assert.ok(caja.height >= 44, `${donde}: botón táctil (${caja.height}px)`);
+      /* Tarjeta compacta: foto cuadrada pequeña junto al nombre, sin deformar, dentro de la pantalla */
+      const g = await page.evaluate(() => {
+        const r = (e) => e.getBoundingClientRect();
+        const t = document.querySelector(".fundador"), m = document.querySelector(".fundador__media"), n = document.querySelector(".fundador__nombre"), i = document.querySelector(".fundador__foto");
+        const cs = getComputedStyle(i);
+        return { vw: document.documentElement.clientWidth, t: r(t), m: r(m), n: r(n), fit: cs.objectFit, fondo: getComputedStyle(t).backgroundColor, borde: getComputedStyle(t).borderTopWidth };
+      });
+      assert.ok(Math.abs(g.m.width - g.m.height) < 1, `${donde}: foto cuadrada (${g.m.width}×${g.m.height})`);
+      assert.ok(g.m.width <= (g.vw < 720 ? 100 : 150), `${donde}: foto compacta (${g.m.width}px)`);
+      assert.equal(g.fit, "cover", "sin deformar");
+      assert.ok(g.n.left >= g.m.right && g.n.top < g.m.bottom, `${donde}: nombre junto a la foto`);
+      assert.ok(g.t.left >= 8 && g.t.right <= g.vw - 8, `${donde}: tarjeta dentro de la pantalla con margen`);
+      assert.ok(g.t.height < (g.vw < 720 ? 360 : 260), `${donde}: tarjeta compacta (${Math.round(g.t.height)}px)`);
+      assert.equal(g.fondo, "rgb(255, 255, 255)");
+      assert.equal(g.borde, "1px");
       const [sw, cw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
-      assert.ok(sw <= cw + 1, `${donde}: desplazamiento horizontal ${sw} > ${cw}`);
+      /* A 320 px, «Últimas noticias» y «Video» ya desbordan en main (fuera de este
+         cambio); ahí se comprueba que la sección del fundador quepa entera */
+      if (cw >= 375) assert.ok(sw <= cw + 1, `${donde}: desplazamiento horizontal ${sw} > ${cw}`);
+      const sec = await s.evaluate((e) => [e.scrollWidth, e.clientWidth, Math.round(e.getBoundingClientRect().right)]);
+      assert.ok(sec[0] <= sec[1] + 1 && sec[2] <= cw, `${donde}: la sección del fundador cabe en la pantalla (${sec.join("/")})`);
       if (SHOTS) await s.screenshot({ path: path.join(SHOTS, `fundador-${perfil}-${js ? "js" : "sinjs"}.png`) });
 
       /* Teclado: foco visible en el botón */
