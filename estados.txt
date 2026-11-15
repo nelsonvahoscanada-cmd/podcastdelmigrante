@@ -1,0 +1,25 @@
+/                                                       200 text/html; charset=utf-8 21759
+/perfil-nelson-vahos                                    200 text/html; charset=utf-8 26421
+/assets/directorio/perfiles/nelson-vahos-480.webp       200 image/webp 44362
+/assets/directorio/perfiles/nelson-vahos-720.webp       200 image/webp 90190
+/assets/directorio/perfiles/nelson-vahos-480.jpg        200 image/jpeg 61942
+/css/styles.css                                         200 text/css; charset=utf-8 56710
+/publicidad                                             200 text/html; charset=utf-8 22077
+/noticias                                               200 text/html; charset=utf-8 9188
+/quien-puede-ayudarte                                   200 text/html; charset=utf-8 15082
+--- «Fundador» en el pie (número de enlaces por página)
+/ → 1
+/noticias → 1
+/articulo-canada-33000-residencias-permanentes-trabajadores-2026 → 1
+/desafio-100-empresas/ → 1
+/magazine/ → 1
+/perfil-santa-latino → 1
+/perfil-nelson-vahos → 1
+/publicidad → 1
+/quien-puede-ayudarte → 1
+/planes-directorio → 1
+/politica-editorial → 1
+/canada-en-datos/ → 0
+--- enlaces a la miniweb en la portada
+<a class="btn fundador__btn" href="/perfil-nelson-vahos">Conoce al fundador 
+<a href="/perfil-nelson-vahos">Fundador
