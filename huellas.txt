@@ -1,0 +1,17 @@
+=== huellas sha256 (producción · repositorio main)
+index.html  9657a308da2a1a81 · b3a5c73b4a4a2262
+styles.css  dc8ef963ba38b24a · dc8ef963ba38b24a
+styles.css del PR #128: 5cb4a345fcb0fd51
+380,381c380,381
+<         <a href="/cdn-cgi/l/email-protection#2a5a454e494b595e4e4f4647434d584b445e4f6a4d474b43460449454715595f48404f495e177a5f48464349434e4b4e">Publicidad</a>
+<         <a href="/cdn-cgi/l/email-protection#52223d363133212636373e3f3b3520333c263712353f333b3e7c313d3f">Contacto</a>
+---
+>         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+>         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
+407c407
+< <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/data.js?v=ec719918a1"></script>
+---
+> <script src="js/data.js?v=ec719918a1"></script>
+reglas .fundador__cab en styles.css de producción: 1
+30:<link rel="stylesheet" href="css/fonts.css">
+32:<link rel="stylesheet" href="css/styles.css">

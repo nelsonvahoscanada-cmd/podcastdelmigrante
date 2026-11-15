@@ -1,0 +1,32 @@
+=== /
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+cache-control: public, max-age=0, must-revalidate
+cf-cache-status: DYNAMIC
+=== /index.html
+HTTP/2 308 
+cf-cache-status: DYNAMIC
+=== /css/styles.css
+HTTP/2 200 
+content-type: text/css; charset=utf-8
+cache-control: public, max-age=14400, must-revalidate
+etag: "bae6224f4d06e3590518479538d5f391"
+cf-cache-status: EXPIRED
+=== /css/fonts.css
+HTTP/2 200 
+content-type: text/css; charset=utf-8
+cache-control: public, max-age=14400, must-revalidate
+etag: W/"f271048244b69a007c1b5024ebde61e9"
+cf-cache-status: REVALIDATED
+=== /js/main.js
+HTTP/2 200 
+content-type: application/javascript
+cache-control: public, max-age=14400, must-revalidate
+etag: "1c5d2e5b6a3c83accda235f3bd99256f"
+cf-cache-status: MISS
+=== /assets/directorio/perfiles/nelson-vahos-480.webp
+HTTP/2 200 
+content-type: image/webp
+cache-control: public, max-age=14400, must-revalidate
+etag: "1c84468a8385f25b8d65e324e04e7bd7"
+cf-cache-status: MISS
