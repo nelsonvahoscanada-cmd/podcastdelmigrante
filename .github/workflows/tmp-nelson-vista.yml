@@ -14,14 +14,40 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
+      - name: Esperar la vista previa con WhatsApp, llamada y TikTok (máx. 15 min)
+        run: |
+          for i in $(seq 90); do
+            curl -fsS "$P/perfil-nelson-vahos?nc=$i$RANDOM" | grep -q "Contactar por WhatsApp" && curl -fsS "$P/vcard/nelson-vahos.vcf?nc=$i$RANDOM" | grep -q "TEL;TYPE=WORK,VOICE:+14024272741" && { echo "vista previa actualizada (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
       - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
-      - name: E2E 1JuanRomero1 completa (vista previa y producción)
+      - name: Estados HTTP y vCard en la vista previa
         if: always()
         run: |
-          for B in $P https://podcastdelmigrante.com; do
-            echo "=== $B"
-            BASE=$B NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-1juanromero1.cjs 2>&1 | grep -v "^\s*at " | tee -a /tmp/out/e2e-1juanromero1-completa.txt
-          done
+          for u in "/perfil-nelson-vahos" "/perfil-nelson-vahos.html" "/vcard/nelson-vahos.vcf" "/assets/qr/perfil-nelson-vahos.svg" "/assets/qr/contacto-nelson-vahos.svg" "/assets/qr/perfil-nelson-vahos.png" "/assets/qr/contacto-nelson-vahos.png" "/assets/directorio/perfiles/nelson-vahos.jpg" "/assets/directorio/perfiles/nelson-vahos-og.jpg" "/css/temas/institucional.css" "/desafio-100-empresas/" "/perfil-tomas-velazquez" "/perfil-carlos-d-castillo" "/perfil-santa-latino" "/perfil-1juanromero1" "/quien-puede-ayudarte" "/planes-directorio"; do
+            printf "%-50s %s\n" "$u" "$(curl -s -o /tmp/b -w '%{http_code} %{redirect_url}' "$P$u") $(grep -o '<title>[^<]*' /tmp/b | head -1 | cut -c8-80)"
+          done | tee /tmp/out/estados.txt
+          echo "--- vCard servida" | tee -a /tmp/out/estados.txt
+          curl -s "$P/vcard/nelson-vahos.vcf" | tee -a /tmp/out/estados.txt
+          echo "--- QR iguales a los del repositorio" | tee -a /tmp/out/estados.txt
+          for f in perfil-nelson-vahos.svg contacto-nelson-vahos.svg perfil-nelson-vahos.png contacto-nelson-vahos.png; do
+            curl -s "$P/assets/qr/$f" -o /tmp/q && cmp -s /tmp/q assets/qr/$f && echo "$f idéntico" || echo "$f DIFERENTE"
+          done | tee -a /tmp/out/estados.txt
+      - name: Decodificar los QR (dirección que abren)
+        if: always()
+        run: |
+          sudo apt-get install -y -qq zbar-tools >/dev/null 2>&1 || true
+          for f in perfil-nelson-vahos.png contacto-nelson-vahos.png; do curl -s "$P/assets/qr/$f" -o /tmp/$f; echo "$f → $(zbarimg -q --raw /tmp/$f)"; done | tee -a /tmp/out/estados.txt
+      - name: E2E miniweb Nelson Vahos (computador, tableta, celular; sin y con JavaScript)
+        if: always()
+        run: BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-nelson-vahos.cjs 2>&1 | tee /tmp/out/e2e-nelson.txt; exit ${PIPESTATUS[0]}
+      - name: E2E miniwebs existentes, directorio y planes
+        if: always()
+        run: |
+          r=0
+          for t in santa-latino planes-directorio directorio-visibilidad; do
+            BASE=$P NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -12 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
+          done; exit $r
       - name: Publicar
         if: always()
         run: |
