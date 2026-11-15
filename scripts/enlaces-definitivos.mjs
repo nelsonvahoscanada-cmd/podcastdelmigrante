@@ -22,3 +22,16 @@ export function enlacesDefinitivos(html) {
   return String(html)
     .replace(new RegExp(`href="(/?)(${PAGINAS})\\.html(?=[?#"])`, "g"), (_, barra, pagina) => (pagina === "index" ? 'href="/' : `href="${barra}${pagina}`));
 }
+
+/* conFundador(html): enlace «Fundador» (→ /perfil-nelson-vahos) en la columna
+   «El medio» del pie, justo después de «Puntos de distribución». Una sola vez:
+   si el enlace ya está, no cambia nada. Lo usan build-desafio.mjs y
+   build-ediciones.mjs sobre el pie que copian de 404.html; las demás páginas
+   lo traen escrito en su HTML. 404.html y Canadá en Datos no lo llevan
+   (excepción pendiente de autorización: regenerar sus 4.193 páginas). */
+export const ENLACE_FUNDADOR = '<a href="/perfil-nelson-vahos">Fundador</a>';
+export function conFundador(html) {
+  const s = String(html);
+  if (s.includes(ENLACE_FUNDADOR)) return s;
+  return s.replace(/\n([ \t]*)(<a href="[^"]*#distribution">Puntos de distribución<\/a>)/, (_, sangria, enlace) => `\n${sangria}${enlace}\n${sangria}${ENLACE_FUNDADOR}`);
+}

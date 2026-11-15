@@ -1861,3 +1861,37 @@ a.distro-card__social-item--link:hover { color: var(--verde-oscuro); }
 @media (prefers-reduced-motion: reduce) {
   .descubre__btn, .descubre__region a { transition: none; }
 }
+
+/* =========================================================
+   Fundador — presentación institucional en la portada
+   (antes de «Socios y patrocinadores»; enlaza a /perfil-nelson-vahos)
+========================================================= */
+.fundador-section { border-top: 4px solid var(--verde); }
+.fundador {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  padding: 26px 22px;
+  background: var(--negro);
+  color: var(--blanco);
+  border-radius: var(--radius-s);
+}
+.fundador__media { display: block; justify-self: center; width: min(70vw, 240px); }
+.fundador__foto {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+  border: 3px solid var(--verde);
+}
+.fundador__texto .eyebrow { color: #9cc93a; }
+.fundador__nombre { color: var(--blanco); margin: 0 0 6px; }
+.fundador__cargo { font-weight: 700; color: #9cc93a; margin: 0 0 14px; }
+.fundador__desc { color: #d4d4d4; font-size: 1rem; line-height: 1.65; max-width: 62ch; margin: 0 0 20px; }
+.fundador__btn:focus-visible { outline: 3px solid var(--blanco); outline-offset: 3px; }
+@media (min-width: 720px) {
+  .fundador { grid-template-columns: 240px minmax(0, 1fr); gap: 36px; padding: 32px 36px; }
+  .fundador__media { width: 240px; }
+}

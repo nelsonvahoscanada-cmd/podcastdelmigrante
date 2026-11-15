@@ -165,7 +165,9 @@ test("SEO: título, descripción, canónica, Open Graph y JSON-LD (Person con su
 });
 
 test("independiente: fuera de «Quién puede ayudarte» y de «Planes del Directorio»; dentro del sitemap, estadísticas y rutas", () => {
-  for (const f of ["quien-puede-ayudarte.html", "planes-directorio.html"]) assert.doesNotMatch(read(f), /nelson-vahos|Nelson Vahos/, f);
+  /* Contenido (sin el pie común, que lleva el enlace «Fundador») */
+  const sinPie = (h) => h.slice(0, h.indexOf('<footer class="site-footer">'));
+  for (const f of ["quien-puede-ayudarte.html", "planes-directorio.html"]) assert.doesNotMatch(sinPie(read(f)), /nelson-vahos|Nelson Vahos/, f);
   assert.match(read("js/business-directory.js"), /b\.published && b\.directory !== false/);
   assert.match(read("sitemap.xml"), new RegExp(`<loc>${SITE}/perfil-nelson-vahos</loc>\\s*<lastmod>${N.updatedAt}</lastmod>`));
   assert.equal(JSON.parse(read("negocios-premium.json")).businesses["BIZ-005"], "nelson-vahos");
@@ -233,6 +235,61 @@ test("descubrimiento interno: enlaces HTML desde la política de publicidad (ser
   assert.match(read("publicidad.html"), /<li>Para patrocinios, publicidad y alianzas comerciales también puedes contactar directamente a <a href="\/perfil-nelson-vahos">Nelson Vahos, fundador de eRadio Global Corp\. y de El Podcast del Migrante<\/a>\.<\/li>/);
   assert.match(read("desafio-100-empresas/index.html"), /<b><a href="\/perfil-nelson-vahos">Nelson Vahos<\/a><\/b>/);
   assert.match(read("scripts/build-desafio.mjs"), /<b><a href="\/perfil-nelson-vahos">Nelson Vahos<\/a><\/b>/);
-  /* No se mezcla con las empresas Premium de pago */
-  for (const f of ["quien-puede-ayudarte.html", "planes-directorio.html", "index.html"]) assert.doesNotMatch(read(f), /perfil-nelson-vahos/, f);
+  /* No se mezcla con las empresas Premium de pago: en la portada, solo la
+     presentación del fundador (#fundador), fuera de la vitrina del Directorio */
+  const sinPie = (h) => h.slice(0, h.indexOf('<footer class="site-footer">'));
+  for (const f of ["quien-puede-ayudarte.html", "planes-directorio.html"]) assert.doesNotMatch(sinPie(read(f)), /perfil-nelson-vahos/, f);
+  const portada = read("index.html");
+  assert.equal((sinPie(portada).match(/href="\/perfil-nelson-vahos"/g) || []).length, 1, "un solo enlace en el contenido de la portada (más «Fundador» en el pie)");
+  const vitrina = portada.slice(portada.indexOf('id="quien-puede-ayudarte"'), portada.indexOf("<!-- ================= HISTORIAS"));
+  assert.doesNotMatch(vitrina, /nelson/i);
+});
+
+test("portada: presentación del fundador cerca del final, antes de «Socios y patrocinadores», con enlace HTML a la miniweb", () => {
+  const h = read("index.html");
+  const i = h.indexOf('<section class="section wrap fundador-section" id="fundador" aria-labelledby="fundadorTitulo">');
+  assert.ok(i > 0, "sección #fundador");
+  const sec = h.slice(i, h.indexOf("</section>", i));
+  /* Orden: después de las noticias y de «Dónde encontrar el Magazine»; antes de patrocinadores y newsletter */
+  for (const antes of ["Últimas noticias", "id=\"historias\"", "id=\"distribution\""]) assert.ok(h.indexOf(antes) < i, antes);
+  assert.ok(i < h.indexOf("Socios y patrocinadores") && i < h.indexOf('class="newsletter'));
+  assert.match(sec, /<h2 class="section-title fundador__nombre" id="fundadorTitulo">Nelson Vahos<\/h2>/);
+  assert.match(sec, /<p class="fundador__cargo">Fundador de eRadio Global Corp\. y El Podcast del Migrante<\/p>/);
+  assert.ok(sec.includes("<p class=\"fundador__desc\">Con una visión de conectar, informar y fortalecer a la comunidad latina en Canadá, Nelson Vahos impulsa proyectos de comunicación, información y colaboración empresarial a través de eRadio Global Corp.</p>"));
+  assert.match(sec, /<a class="btn fundador__btn" href="\/perfil-nelson-vahos">Conoce al fundador <span aria-hidden="true">→<\/span><\/a>/);
+  assert.match(sec, /<img class="fundador__foto" src="assets\/directorio\/perfiles\/nelson-vahos-480\.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Nelson Vahos, fundador de eRadio Global Corp\. y El Podcast del Migrante">/);
+  for (const f of ["nelson-vahos-480.jpg", "nelson-vahos-480.webp", "nelson-vahos-720.webp"]) assert.ok(existsSync(join(ROOT, "assets/directorio/perfiles", f)), f);
+  /* Sin datos estructurados nuevos ni un segundo h1 */
+  assert.doesNotMatch(sec, /ld\+json|itemscope|<h1/);
+  assert.equal((h.match(/application\/ld\+json/g) || []).length, 1);
+});
+
+test("pie de página: «Fundador» (→ /perfil-nelson-vahos) una vez en la columna «El medio» de cada página que comparte el pie, salvo 404.html y Canadá en Datos", async () => {
+  const { readdirSync, statSync } = await import("node:fs");
+  const { conFundador, ENLACE_FUNDADOR } = await import("../scripts/enlaces-definitivos.mjs");
+  const paginas = [];
+  const recorrer = (dir) => {
+    for (const n of readdirSync(join(ROOT, dir))) {
+      const rel = dir ? `${dir}/${n}` : n;
+      if (/^(\.|node_modules|canada-en-datos|tests|scripts|admin-worker|analytics-worker|functions|docs|db)/.test(rel)) continue;
+      if (statSync(join(ROOT, rel)).isDirectory()) recorrer(rel);
+      else if (rel.endsWith(".html") && read(rel).includes('footer-col__title">El medio')) paginas.push(rel);
+    }
+  };
+  recorrer("");
+  assert.ok(paginas.length >= 110, `páginas con pie: ${paginas.length}`);
+  for (const p of paginas) {
+    const html = read(p);
+    const medio = html.slice(html.indexOf('footer-col__title">El medio'), html.indexOf("</div>", html.indexOf('footer-col__title">El medio')));
+    const n = (html.match(/href="\/perfil-nelson-vahos">Fundador<\/a>/g) || []).length;
+    if (p === "404.html") { assert.equal(n, 0, "404.html: excepción (lo copia Canadá en Datos)"); continue; }
+    assert.equal(n, 1, `${p}: un solo enlace «Fundador»`);
+    assert.match(medio, /#distribution">Puntos de distribución<\/a>\n\s*<a href="\/perfil-nelson-vahos">Fundador<\/a>\n\s*<a href="mailto:podcastdelmigrante@gmail\.com\?subject=Publicidad">Publicidad<\/a>/, `${p}: en «El medio», tras «Puntos de distribución»`);
+  }
+  /* conFundador no duplica y no toca un pie sin la columna */
+  const pie = '<h2 class="footer-col__title">El medio</h2>\n        <a href="/#distribution">Puntos de distribución</a>\n        <a href="mailto:x">Publicidad</a>';
+  assert.equal(conFundador(conFundador(pie)).split(ENLACE_FUNDADOR).length - 1, 1);
+  assert.equal(conFundador("<p>sin pie</p>"), "<p>sin pie</p>");
+  /* Canadá en Datos sigue copiando el pie de 404.html, sin el enlace */
+  assert.doesNotMatch(read("canada-en-datos/index.html"), /perfil-nelson-vahos/);
 });
