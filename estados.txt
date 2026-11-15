@@ -1,0 +1,6 @@
+/                                                       200 text/html; charset=utf-8
+/perfil-nelson-vahos                                    200 text/html; charset=utf-8
+/assets/directorio/perfiles/nelson-vahos-480.webp       200 image/webp
+/assets/directorio/perfiles/nelson-vahos-720.webp       200 image/webp
+/assets/directorio/perfiles/nelson-vahos-480.jpg        200 image/jpeg
+/css/styles.css                                         200 text/css; charset=utf-8
