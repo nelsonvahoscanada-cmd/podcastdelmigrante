@@ -1,0 +1,12 @@
+og:image" content="https://podcastdelmigrante.com/assets/directorio/perfiles/santa-latino-og-navidad.jpg"
+twitter:image" content="https://podcastdelmigrante.com/assets/directorio/perfiles/santa-latino-og-navidad.jpg"
+<img class="biz-hero__photo" src="assets/directorio/perfiles/santa-latino-principal-navidad.jpg" alt="Santa Latino" fetchpriority="high">
+assets/directorio/perfiles/santa-latino-principal-navidad.jpg  200 · igual al repositorio: sí
+assets/directorio/perfiles/santa-latino-og-navidad.jpg         200 · igual al repositorio: sí
+assets/directorio/perfiles/santa-latino-card.jpg               200 · igual al repositorio: sí
+assets/qr/perfil-santa-latino.png                              200 · igual al repositorio: sí
+assets/qr/contacto-santa-latino.png                            200 · igual al repositorio: sí
+vcard/santa-latino.vcf                                         200 · igual al repositorio: sí
+iphone-13 assets/directorio/perfiles/santa-latino-principal-navidad.jpg · 300x375 · natural 739x924
+ipad-mini assets/directorio/perfiles/santa-latino-principal-navidad.jpg · 240x300 · natural 739x924
+escritorio assets/directorio/perfiles/santa-latino-principal-navidad.jpg · 280x350 · natural 739x924
