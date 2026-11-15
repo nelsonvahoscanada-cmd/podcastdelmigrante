@@ -1,0 +1,15 @@
+ css/styles.css                       |  24 +++++++++
+ index.html                           |   2 +-
+ tests/e2e-ultimas-noticias-movil.cjs | 101 +++++++++++++++++++++++++++++++++++
+ 3 files changed, 126 insertions(+), 1 deletion(-)
+/                                                                      200
+/noticias                                                              200
+/articulo-canada-33000-residencias-permanentes-trabajadores-2026       200
+/magazine/                                                             200
+/desafio-100-empresas/                                                 200
+/quien-puede-ayudarte                                                  200
+/planes-directorio                                                     200
+/perfil-nelson-vahos                                                   200
+/perfil-santa-latino                                                   200
+/canada-en-datos/                                                      200
+styles.css servida = repositorio: sí
