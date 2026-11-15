@@ -149,7 +149,7 @@
   /* ---------- Secciones ---------- */
   function heroHtml(b) {
     const media = b.profileImage
-      ? `<img class="biz-hero__photo${b.profileImageKind === "logo" ? " biz-hero__photo--logo" : ""}" src="${esc(b.profileImage)}" alt="${esc(b.name)}"${b.heroLayout === "wide" ? ' width="1600" height="1280"' : ""} fetchpriority="high">`
+      ? `<img class="biz-hero__photo${b.profileImageKind === "logo" ? " biz-hero__photo--logo" : ""}" src="${esc(b.profileImage)}" alt="${esc(b.name)}"${b.heroLayout === "wide" ? ' width="1600" height="1280"' : b.profileImageWidth && b.profileImageHeight ? ` width="${Number(b.profileImageWidth)}" height="${Number(b.profileImageHeight)}"` : ""} fetchpriority="high">`
       : `<div class="biz-hero__photo biz-hero__photo--initials" role="img" aria-label="${esc(b.name)}">${esc(initials(b.name))}</div>`;
     const place = placeText(b);
     const lang = languageLine(b);
@@ -685,9 +685,12 @@
       if (b.affiliation) entity.affiliation = { "@type": "Organization", name: b.affiliation };
       /* Con «roles»: cada organización que dirige (nombre, sitio y redes
          oficiales de la organización, que no son de la persona). */
+      /* «founder: true» en el cargo: la organización declara a la persona como
+         fundadora (mismo @id de la persona en la página) */
+      if (roles.some((r) => r.founder)) entity["@id"] = url + "#persona";
       const orgs = roles
         .filter((r) => r.organization)
-        .map((r) => Object.assign({ "@type": "Organization", name: r.organization }, r.url ? { url: r.url } : {}, (r.sameAs || []).length ? { sameAs: r.sameAs } : {}));
+        .map((r) => Object.assign({ "@type": "Organization", name: r.organization }, r.url ? { url: r.url } : {}, (r.sameAs || []).length ? { sameAs: r.sameAs } : {}, r.founder ? { founder: { "@id": url + "#persona" } } : {}));
       if (orgs.length) entity.worksFor = orgs.length === 1 ? orgs[0] : orgs;
       else if (b.company) {
         entity.worksFor = { "@type": WORKS_FOR_TYPE[b.category] || "Organization", name: b.company };
@@ -706,7 +709,11 @@
       if (!b.address && place) entity.workLocation = { "@type": "Place", address: place };
     }
     if (offers.length) entity.makesOffer = offers;
-    if (sameAs.length) entity.sameAs = sameAs;
+    /* Con «roles»: las redes de cada organización (ej. el TikTok de El Podcast
+       del Migrante) quedan en esa organización, no como perfiles de la persona */
+    const deOrgs = new Set(roles.flatMap((r) => r.sameAs || []));
+    const propias = sameAs.filter((u) => !deOrgs.has(u));
+    if (propias.length) entity.sameAs = propias;
 
     const page = {
       "@context": "https://schema.org",

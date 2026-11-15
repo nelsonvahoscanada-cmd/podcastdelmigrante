@@ -193,3 +193,46 @@ test("QR del perfil y de contacto, fotografía y recorte para redes", () => {
   assert.ok(s2 < 250_000);
   assert.ok(existsSync(join(ROOT, "css/temas/institucional.css")));
 });
+
+test("SEO comercial: descripción orientada a patrocinios, foto con dimensiones y datos estructurados con fundador", () => {
+  const desc = "Nelson Vahos, fundador de eRadio Global Corp. y El Podcast del Migrante. Patrocinios, publicidad y alianzas para llegar a la comunidad latina en Canadá.";
+  assert.equal(N.seo.description, desc);
+  assert.ok(desc.length <= 160);
+  for (const re of [/<meta id="metaDescription" name="description" content="([^"]+)">/, /<meta id="ogDescription" property="og:description" content="([^"]+)">/, /<meta id="twitterDescription" name="twitter:description" content="([^"]+)">/]) assert.equal(HTML.match(re)[1], desc);
+  assert.match(HTML, /<meta name="twitter:card" content="summary_large_image">/);
+  assert.match(HTML, /<meta property="og:image:width" content="1200">\s*<meta property="og:image:height" content="630">/);
+  assert.match(MAIN, /<img class="biz-hero__photo" src="assets\/directorio\/perfiles\/nelson-vahos\.jpg" alt="Nelson Vahos" width="960" height="1280" fetchpriority="high">/);
+  for (const img of MAIN.match(/<img [^>]*>/g)) assert.match(img, / alt="[^"]+"/, img);
+  /* Encabezados: un h1 y luego h2/h3 sin saltos */
+  const niveles = [...MAIN.matchAll(/<h([1-6])\b/g)].map((m) => +m[1]);
+  assert.equal(niveles[0], 1);
+  assert.equal(niveles.filter((n) => n === 1).length, 1);
+  niveles.reduce((a, n) => (assert.ok(n <= a + 1, `salto de h${a} a h${n}`), n));
+  const ld = JSON.parse(HTML.match(/<script type="application\/ld\+json" id="bizJsonLd">([\s\S]*?)<\/script>/)[1]);
+  const p = ld.mainEntity;
+  assert.equal(ld.description, desc);
+  assert.equal(p["@id"], `${SITE}/perfil-nelson-vahos#persona`);
+  assert.equal(p.sameAs, undefined, "las redes son de las organizaciones, no perfiles personales");
+  for (const o of p.worksFor) assert.deepEqual(o.founder, { "@id": `${SITE}/perfil-nelson-vahos#persona` }, o.name);
+  assert.ok(p.worksFor[1].sameAs.includes("https://www.tiktok.com/@podcastdelmigrante"));
+  /* Sin esquemas sin contenido real que los respalde */
+  assert.doesNotMatch(HTML, /FAQPage|VideoObject|AggregateRating|"Review"|"award"/);
+});
+
+test("rastreadores e IA: robots.txt no bloquea la miniweb; sin noindex", () => {
+  const robots = read("robots.txt");
+  assert.doesNotMatch(robots, /User-agent:\s*(Googlebot|Bingbot|OAI-SearchBot|GPTBot|ChatGPT-User|ClaudeBot|PerplexityBot)/i, "sin reglas que excluyan rastreadores concretos");
+  for (const l of robots.split("\n").filter((x) => /^Disallow:/i.test(x))) assert.ok(!"/perfil-nelson-vahos".startsWith(l.split(":")[1].trim()) || l.split(":")[1].trim() === "", l);
+  assert.match(robots, /^Sitemap: https:\/\/podcastdelmigrante\.com\/sitemap\.xml$/m);
+  assert.doesNotMatch(HTML, /<meta[^>]+name="(robots|googlebot|bingbot)"/i, "sin meta robots");
+  assert.doesNotMatch(HTML, /noindex/i);
+  assert.ok(!existsSync(join(ROOT, "llms.txt")));
+});
+
+test("descubrimiento interno: enlaces HTML desde la política de publicidad (servicios comerciales) y el equipo de Desafío 100 Empresas", () => {
+  assert.match(read("publicidad.html"), /<li>Para patrocinios, publicidad y alianzas comerciales también puedes contactar directamente a <a href="\/perfil-nelson-vahos">Nelson Vahos, fundador de eRadio Global Corp\. y de El Podcast del Migrante<\/a>\.<\/li>/);
+  assert.match(read("desafio-100-empresas/index.html"), /<b><a href="\/perfil-nelson-vahos">Nelson Vahos<\/a><\/b>/);
+  assert.match(read("scripts/build-desafio.mjs"), /<b><a href="\/perfil-nelson-vahos">Nelson Vahos<\/a><\/b>/);
+  /* No se mezcla con las empresas Premium de pago */
+  for (const f of ["quien-puede-ayudarte.html", "planes-directorio.html", "index.html"]) assert.doesNotMatch(read(f), /perfil-nelson-vahos/, f);
+});

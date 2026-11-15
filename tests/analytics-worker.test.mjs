@@ -181,3 +181,35 @@ test("BIZ-006: alta en js/businesses.js → lista generada → eventos guardados
   assert.equal(st.total_events, 5);
   assert.deepEqual(st.business_slugs, ["empresa-prueba"]);
 });
+
+/* ---------- Miniweb institucional de Nelson Vahos (BIZ-005) ---------- */
+test("BIZ-005 (nelson-vahos): visitas y clics de WhatsApp, teléfono, TikTok, proyectos, vCard y QR se guardan y llegan al panel", async () => {
+  const env = { DB: d1() };
+  const eventos = ["profile_view", "whatsapp_click", "phone_click", "tiktok_click", "website_click", "email_click", "vcard_download", "qr_profile_download"];
+  for (const e of eventos) {
+    const r = await send({ event: e, business_id: "BIZ-005", business: "nelson-vahos", page: "/perfil-nelson-vahos", target: e }, env);
+    assert.equal(r.status, 204, e);
+  }
+  assert.equal(fetches, 1, "una sola lectura de la lista pública");
+  /* Identificador cruzado o inventado: rechazado */
+  assert.equal((await send({ event: "profile_view", business_id: "BIZ-005", business: "tomas-velazquez" }, env)).status, 400);
+  const [n] = (await listBusinesses(env.DB)).filter((b) => b.business_id === "BIZ-005");
+  assert.deepEqual([n.business_slug, n.events], ["nelson-vahos", eventos.length]);
+});
+
+test("BIZ-005: si negocios-premium.json falla, la lista ya leída se conserva; sin ninguna lectura previa rige el respaldo (BIZ-001…BIZ-004)", async () => {
+  const env = { DB: d1() };
+  assert.equal((await send({ event: "profile_view", business_id: "BIZ-005", business: "nelson-vahos" }, env)).status, 204);
+  failFetch = true;
+  const realNow = Date.now;
+  Date.now = () => realNow() + 10 * 60_000;
+  try {
+    assert.equal((await send({ event: "whatsapp_click", business_id: "BIZ-005", business: "nelson-vahos" }, env)).status, 204, "con la lista anterior en memoria");
+  } finally {
+    Date.now = realNow;
+  }
+  /* Instancia nueva sin poder leer la lista: solo el respaldo fijo */
+  resetAuthorizedCache();
+  assert.equal((await send({ event: "profile_view", business_id: "BIZ-001", business: "tomas-velazquez" }, env)).status, 204);
+  assert.equal((await send({ event: "profile_view", business_id: "BIZ-005", business: "nelson-vahos" }, env)).status, 400, "BIZ-005 no está en el respaldo del Worker desplegado");
+});
