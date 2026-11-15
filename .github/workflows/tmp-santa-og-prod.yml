@@ -1,0 +1,58 @@
+# TEMPORAL: verificar en producción el PR #131 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp santa og prod
+on:
+  push:
+    branches: [claude/santa-latino-og-prod]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      P: https://podcastdelmigrante.com
+      IMG: https://podcastdelmigrante.com/assets/directorio/perfiles/santa-latino-og-navidad.jpg
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 3 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue en producción (máx. 20 min)
+        run: |
+          for i in $(seq 120); do
+            curl -fsS "$P/perfil-santa-latino?nc=$i$RANDOM" | grep -q 'santa-latino-og-navidad.jpg' && curl -fsS -o /dev/null "$IMG?nc=$i" && { echo "desplegado (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
+      - run: mkdir -p /tmp/out /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: Etiquetas Open Graph / Twitter en producción
+        if: always()
+        run: curl -s "$P/perfil-santa-latino" | grep -E 'og:|twitter:|rel="canonical"|<title>|biz-hero__photo' | sed 's/^ *//' | tee /tmp/out/etiquetas.txt
+      - name: Imagen accesible para las plataformas (SIMULACIÓN con User-Agent; no son visitas reales de esos servicios)
+        if: always()
+        run: |
+          echo "SIMULACIÓN desde GitHub Actions con el User-Agent público de cada plataforma." | tee /tmp/out/imagen.txt
+          while IFS='|' read -r n ua; do
+            printf "%-22s página: %s · imagen: %s\n" "$n" "$(curl -s -A "$ua" -o /dev/null -w '%{http_code}' "$P/perfil-santa-latino")" "$(curl -s -A "$ua" -o /tmp/i.jpg -w '%{http_code} %{content_type} %{size_download} B' "$IMG")"
+          done <<'UA' | tee -a /tmp/out/imagen.txt
+          WhatsApp|WhatsApp/2.23.20.0
+          Facebook|facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+          X (Twitterbot)|Twitterbot/1.0
+          LinkedIn|LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://www.linkedin.com)
+          UA
+          curl -s "$IMG" -o /tmp/og.jpg; file /tmp/og.jpg | tee -a /tmp/out/imagen.txt
+          echo "idéntica al repositorio: $(cmp -s /tmp/og.jpg assets/directorio/perfiles/santa-latino-og-navidad.jpg && echo sí || echo NO)" | tee -a /tmp/out/imagen.txt
+          curl -sI "$IMG" | grep -i -E "^(HTTP|content-type|cache-control)" | tee -a /tmp/out/imagen.txt
+      - name: Foto principal, QR y vCard sin cambios
+        if: always()
+        run: |
+          for f in assets/directorio/perfiles/santa-latino.jpg assets/directorio/perfiles/santa-latino-card.jpg assets/qr/perfil-santa-latino.png assets/qr/contacto-santa-latino.png assets/qr/perfil-santa-latino.svg assets/qr/contacto-santa-latino.svg vcard/santa-latino.vcf; do
+            curl -s "$P/$f" -o /tmp/x; echo "$f · producción = repositorio: $(cmp -s /tmp/x $f && echo sí || echo NO)"
+          done | tee /tmp/out/intactos.txt
+          git diff --stat HEAD~2 HEAD~1 | tee -a /tmp/out/intactos.txt
+      - name: E2E Santa Latino en producción (estadísticas bloqueadas)
+        if: always()
+        run: BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-santa-latino.cjs 2>&1 | grep -v "^\s*at " | tail -8 | tee /tmp/out/e2e-santa-latino.txt; exit ${PIPESTATUS[0]}
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "prod santa og [CF-Pages-Skip]"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/santa-latino-og-prod-datos-${{ github.run_number }}
