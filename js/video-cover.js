@@ -48,6 +48,7 @@
     "oqfNbzC_OLA": ["/assets/yt/oqfNbzC_OLA.jpg", 1280, 720],
     "6YdTsBzG2gs": ["/assets/yt/6YdTsBzG2gs.jpg", 1280, 720],
     "UsWWtkmnszw": ["/assets/yt/UsWWtkmnszw.jpg", 1280, 720],
+    "ZlUEYjQpEpE": ["/assets/yt/ZlUEYjQpEpE.jpg", 1280, 720],
     "EEqjez0MuAY": ["/assets/yt/EEqjez0MuAY.jpg", 1280, 720],
     /* Desafío 100 Empresas: miniaturas oficiales del canal (23-10-2026). Los
        episodios cuya miniatura muestra a Sterna como patrocinador no se

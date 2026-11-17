@@ -100,6 +100,9 @@
                         (sin él: "Conoce a <shortName>")
     videoLinkLabel      [OPCIONAL] texto de un enlace alternativo para ver
                         el video en YouTube, bajo el reproductor
+    videoPlacement      [OPCIONAL] "after-cta" = el video va justo después
+                        del bloque comercial (callToAction), antes de la
+                        biografía. Sin el campo: después de la trayectoria.
     profileImage        foto del PERFIL (vertical 4:5)
     profileImageKind    [OPCIONAL] "logo" = la imagen es un logotipo: se
                         muestra completa (sin recortar) sobre fondo blanco.
@@ -742,7 +745,14 @@ const BUSINESSES = [
     tiktok: "https://www.tiktok.com/@podcastdelmigrante",   /* @podcastdelmigrante */
     facebook: "",
     linkedin: "",
-    youtubeVideoId: "",
+    /* Video comercial entregado por Nelson Vahos (17-11-2026): presenta el
+       Perfil Empresarial Premium. Portada local (js/video-cover.js); YouTube
+       solo se carga al pulsar reproducir. */
+    youtubeVideoId: "ZlUEYjQpEpE",
+    videoTitle: "Conoce el Perfil Empresarial Premium de El Podcast del Migrante",
+    videoText: "Descubre las ventajas de tener tu propia miniweb empresarial Premium por $24.99 CAD al mes más impuestos aplicables.",
+    videoLinkLabel: "Ver en YouTube",
+    videoPlacement: "after-cta",   /* justo después de «Patrocinios, publicidad y alianzas comerciales», antes de «Sobre Nelson» */
 
     profileImage: "assets/directorio/perfiles/nelson-vahos.jpg",    /* fotografía original aprobada, solo redimensionada */
     profileImageWidth: 960,

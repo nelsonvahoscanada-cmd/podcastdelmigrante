@@ -253,8 +253,11 @@
     `;
   }
 
-  function videoHtml(b) {
-    if (!b.youtubeVideoId) return "";
+  /* Posición (campo opcional «videoPlacement»): sin el campo, el video va
+     después de la trayectoria; "after-cta", justo después del bloque
+     comercial. Cada lugar de contentHtml pide su posición y solo uno lo dibuja. */
+  function videoHtml(b, lugar = "") {
+    if (!b.youtubeVideoId || (b.videoPlacement || "") !== lugar) return "";
     const id = encodeURIComponent(b.youtubeVideoId);
     return `
       <section class="biz-section biz-video">
@@ -766,7 +769,8 @@
     return `
       ${heroHtml(b)}
       ${actionsHtml(b)}
-      ${callToActionHtml(b)}
+      ${callToActionHtml(b)}${b.videoPlacement === "after-cta" ? `
+      ${videoHtml(b, "after-cta")}` : ""}
       ${aboutHtml(b)}${projectsHtml(b) ? `
       ${projectsHtml(b)}` : ""}${timelineHtml(b) ? `
       ${timelineHtml(b)}` : ""}

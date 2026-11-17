@@ -195,8 +195,9 @@ test("entrevista de El Podcast del Migrante: video de YouTube con título, texto
   /* Portada local del video (sin pedir imágenes a YouTube al cargar la página) */
   assert.ok(existsSync(new URL("assets/yt/LxTr1Zda3dg.jpg", ROOT)));
   assert.match(read("js/video-cover.js"), /"LxTr1Zda3dg": \["\/assets\/yt\/LxTr1Zda3dg\.jpg"/);
-  /* Los demás perfiles conservan su título de siempre («Conoce a …») */
-  for (const b of ALL.filter((x) => x.slug !== "santa-latino")) {
+  /* Los demás perfiles conservan su título de siempre («Conoce a …»),
+     salvo la miniweb de Nelson Vahos (video del Perfil Premium, 17-11-2026) */
+  for (const b of ALL.filter((x) => !["santa-latino", "nelson-vahos"].includes(x.slug))) {
     assert.equal(b.videoTitle, undefined, b.slug);
     /* 1JuanRomero1 (BIZ-004) usa también el enlace alternativo a YouTube */
     if (b.slug !== "1juanromero1") assert.equal(b.videoLinkLabel, undefined, b.slug);
