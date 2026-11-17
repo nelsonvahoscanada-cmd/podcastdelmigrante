@@ -306,7 +306,7 @@ test("portada: css/styles.css con versión (?v=<huella>) para que la tarjeta del
   assert.match(read("css/styles.css"), /\.fundador \{\s*display: grid;\s*grid-template-columns: clamp\(76px, 22vw, 96px\) minmax\(0, 1fr\);/);
 });
 
-test("video comercial del Perfil Empresarial Premium: reproductor de YouTube con portada local, título, precio y enlace alternativo", () => {
+test("video comercial del Perfil Empresarial Premium: tras la propuesta comercial, reproductor de YouTube con portada local, título, precio y enlace alternativo", () => {
   assert.equal(N.youtubeVideoId, "ZlUEYjQpEpE");
   assert.equal(N.videoTitle, "Conoce el Perfil Empresarial Premium de El Podcast del Migrante");
   assert.match(N.videoText, /miniweb empresarial Premium por \$24\.99 CAD al mes más impuestos aplicables\./);
@@ -321,6 +321,12 @@ test("video comercial del Perfil Empresarial Premium: reproductor de YouTube con
   assert.match(read("js/video-cover.js"), /"ZlUEYjQpEpE": \["\/assets\/yt\/ZlUEYjQpEpE\.jpg", 1280, 720\]/);
   assert.ok(MAIN.includes('href="https://www.youtube.com/watch?v=ZlUEYjQpEpE"'));
   assert.doesNotMatch(MAIN, /<iframe/, "el reproductor se carga solo al pulsar");
-  /* Tras la trayectoria y antes del contacto */
-  assert.ok(MAIN.indexOf("biz-timeline") < MAIN.indexOf("biz-video") && MAIN.indexOf("biz-video") < MAIN.indexOf("biz-contact"));
+  /* Justo después de la propuesta comercial y antes de «Sobre Nelson» y la trayectoria */
+  assert.equal(N.videoPlacement, "after-cta");
+  assert.match(MAIN, /<section class="biz-section biz-cta">[\s\S]*?<\/section>\s*<section class="biz-section biz-video">/, "inmediatamente después del bloque comercial");
+  assert.ok(MAIN.indexOf("biz-actions") < MAIN.indexOf("biz-cta") && MAIN.indexOf("biz-cta") < MAIN.indexOf("biz-video"));
+  assert.ok(MAIN.indexOf("biz-video") < MAIN.indexOf("biz-about") && MAIN.indexOf("biz-about") < MAIN.indexOf("biz-timeline"));
+  assert.equal((MAIN.match(/class="biz-section biz-video"/g) || []).length, 1, "una sola sección de video");
+  /* Las demás miniwebs conservan el video después de la trayectoria (sin el campo) */
+  for (const b of ALL.filter((x) => x.slug !== "nelson-vahos")) assert.equal(b.videoPlacement, undefined, b.slug);
 });

@@ -2,7 +2,7 @@
   Prueba de extremo a extremo: video comercial del Perfil Empresarial
   Premium en la miniweb de Nelson Vahos (/perfil-nelson-vahos).
   En iPhone SE, iPhone 13, iPhone 14 Pro Max, tableta y computador: sección
-  con título y precio, portada local (sin contactar a YouTube al abrir),
+  justo después de la propuesta comercial (antes de «Sobre Nelson»), con título y precio, portada local (sin contactar a YouTube al abrir),
   reproductor 16:9 dentro de la pantalla y, al pulsar, el reproductor oficial
   de YouTube (youtube-nocookie) con el video ZlUEYjQpEpE.
   Con REAL=1 deja salir solo a YouTube y comprueba que el video empieza a
@@ -55,6 +55,8 @@ const PERFILES = {
     assert.equal(await sec.count(), 1, `${nombre}: una sección de video`);
     assert.equal((await sec.locator(".biz-h2").textContent()).trim(), TITULO);
     assert.match(await sec.textContent(), /\$24\.99 CAD al mes más impuestos aplicables/);
+    const orden = await page.evaluate(() => [...document.querySelectorAll("main .biz-actions, main .biz-section")].map((e) => [...e.classList].find((c) => /^biz-(actions|cta|video|about|projects|timeline|contact)$/.test(c))).filter(Boolean));
+    assert.deepEqual(orden.slice(0, 6), ["biz-actions", "biz-cta", "biz-video", "biz-about", "biz-projects", "biz-timeline"], `${nombre}: video justo después de la propuesta comercial (${orden.join(", ")})`);
     assert.equal(await sec.locator("iframe").count(), 0, `${nombre}: el reproductor no se carga hasta pulsar`);
     assert.deepEqual(externos, [], `${nombre}: no se contacta a YouTube al abrir`);
     const portada = await sec.locator(".biz-video__thumb").evaluate((e) => getComputedStyle(e).backgroundImage);
