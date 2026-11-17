@@ -1,0 +1,6 @@
+ok computador: 44 noticias legibles sin JavaScript e idénticas con JavaScript
+ok celular: 44 noticias legibles sin JavaScript e idénticas con JavaScript
+ok catálogo antiguo sin la noticia: las noticias señaladas como Soft 404 siguen completas, sin errores y con sus botones activos
+ok catálogo antiguo con la noticia como borrador: las noticias señaladas como Soft 404 siguen completas, sin errores y con sus botones activos
+ok js/articles.js no carga: las noticias señaladas como Soft 404 siguen completas, sin errores y con sus botones activos
+OK noticias: HTML completo sin JavaScript, sin duplicados con JavaScript y sin «no encontrado»
