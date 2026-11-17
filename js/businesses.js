@@ -742,7 +742,13 @@ const BUSINESSES = [
     tiktok: "https://www.tiktok.com/@podcastdelmigrante",   /* @podcastdelmigrante */
     facebook: "",
     linkedin: "",
-    youtubeVideoId: "",
+    /* Video comercial entregado por Nelson Vahos (17-11-2026): presenta el
+       Perfil Empresarial Premium. Portada local (js/video-cover.js); YouTube
+       solo se carga al pulsar reproducir. */
+    youtubeVideoId: "ZlUEYjQpEpE",
+    videoTitle: "Conoce el Perfil Empresarial Premium de El Podcast del Migrante",
+    videoText: "Descubre las ventajas de tener tu propia miniweb empresarial Premium por $24.99 CAD al mes más impuestos aplicables.",
+    videoLinkLabel: "Ver en YouTube",
 
     profileImage: "assets/directorio/perfiles/nelson-vahos.jpg",    /* fotografía original aprobada, solo redimensionada */
     profileImageWidth: 960,

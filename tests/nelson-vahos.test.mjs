@@ -305,3 +305,22 @@ test("portada: css/styles.css con versión (?v=<huella>) para que la tarjeta del
   /* La regla de la tarjeta compacta está en esa hoja */
   assert.match(read("css/styles.css"), /\.fundador \{\s*display: grid;\s*grid-template-columns: clamp\(76px, 22vw, 96px\) minmax\(0, 1fr\);/);
 });
+
+test("video comercial del Perfil Empresarial Premium: reproductor de YouTube con portada local, título, precio y enlace alternativo", () => {
+  assert.equal(N.youtubeVideoId, "ZlUEYjQpEpE");
+  assert.equal(N.videoTitle, "Conoce el Perfil Empresarial Premium de El Podcast del Migrante");
+  assert.match(N.videoText, /miniweb empresarial Premium por \$24\.99 CAD al mes más impuestos aplicables\./);
+  assert.equal(N.videoLinkLabel, "Ver en YouTube");
+  /* Mismo precio que la página de registro */
+  assert.match(read("registra-tu-empresa.html"), /\$24\.99 CAD al mes más impuestos aplicables/);
+  /* HTML sin JavaScript: sección de video con portada local (no se pide nada a YouTube al abrir) */
+  assert.match(MAIN, /<section class="biz-section biz-video">\s*<h2 class="biz-h2">Conoce el Perfil Empresarial Premium de El Podcast del Migrante<\/h2>/);
+  assert.match(MAIN, /data-video-id="ZlUEYjQpEpE"/);
+  assert.match(MAIN, /background-image:url\('\/assets\/yt\/ZlUEYjQpEpE\.jpg'\)/);
+  assert.ok(existsSync(join(ROOT, "assets/yt/ZlUEYjQpEpE.jpg")));
+  assert.match(read("js/video-cover.js"), /"ZlUEYjQpEpE": \["\/assets\/yt\/ZlUEYjQpEpE\.jpg", 1280, 720\]/);
+  assert.ok(MAIN.includes('href="https://www.youtube.com/watch?v=ZlUEYjQpEpE"'));
+  assert.doesNotMatch(MAIN, /<iframe/, "el reproductor se carga solo al pulsar");
+  /* Tras la trayectoria y antes del contacto */
+  assert.ok(MAIN.indexOf("biz-timeline") < MAIN.indexOf("biz-video") && MAIN.indexOf("biz-video") < MAIN.indexOf("biz-contact"));
+});
