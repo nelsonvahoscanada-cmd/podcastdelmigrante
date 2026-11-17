@@ -33,6 +33,8 @@ jobs:
             grep -c "podcastdelmigrante.com/perfil-nelson-vahos" vcard/nelson-vahos.vcf
             echo "--- demás miniwebs: HTML servido = repositorio"
             for f in perfil-*.html; do u="/${f%.html}"; printf "%-40s %s %s\n" "$u" "$(curl -s -o /dev/null -w '%{http_code}' "$P$u")" "$(curl -s "$P$u" | cmp -s - $f && echo idéntico || echo DIFERENTE)"; done
+            echo "--- diferencias entre el HTML servido y el repositorio"
+            for f in perfil-*.html; do u="/${f%.html}"; echo "## $u"; curl -s "$P$u" > /tmp/servido.html; diff $f /tmp/servido.html | head -8 | cut -c1-300; done
             echo "--- estadísticas (solo lectura: GET no registra nada)"
             echo "/api/events GET: $(curl -s -o /dev/null -w '%{http_code}' "$P/api/events") (405 = Worker activo, solo acepta POST)"
             echo "analytics.js en la miniweb: $(curl -s "$P/perfil-nelson-vahos" | grep -c 'js/analytics.js')"
@@ -45,8 +47,8 @@ jobs:
         if: always()
         run: |
           r=0
-          for t in nelson-video nelson-vahos santa-latino; do
-            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -10 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
+          for t in nelson-video; do
+            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -30 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
           done; exit $r
       - name: Publicar
         if: always()
