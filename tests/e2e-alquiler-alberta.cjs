@@ -43,14 +43,14 @@ async function sinDesborde(page, ruta) {
     /* ---------- Portada ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
     /* Desde el 11-11-2026 es la segunda tarjeta destacada (principal: 33.000 residencias; primera: suplemento) */
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
-    const tarjeta = page.locator("#heroSecondary .hero-sec-card").nth(1);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^🇨🇦 ¿Recién llegado a Canadá\? Podrías recibir ayudas económicas/);
+    const tarjeta = page.locator("#heroSecondary .hero-sec-card").nth(2);
     assert.ok((await tarjeta.innerText()).includes(TITULO));
     assert.match(await tarjeta.innerHTML(), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.match(tarjetas[2], /masterclass gratuita/);
+    assert.match(tarjetas[3], /masterclass gratuita/);
     assert.equal(tarjetas.filter((x) => x.includes("alquiler")).length, 1, "sin duplicados");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");

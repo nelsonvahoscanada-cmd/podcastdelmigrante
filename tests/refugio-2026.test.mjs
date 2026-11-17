@@ -26,9 +26,9 @@ const art = ctx.A.find((a) => a.slug === SLUG);
 const [periodistico, publicidad] = art.bodyHtml.split('<aside class="article-patrocinio"');
 const texto = (h) => h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 
-test("portada: cuarta tarjeta (tras el suplemento, el alquiler en Alberta y la masterclass; principal: 33.000 residencias, 11-11-2026) con su ilustración; las demás en su orden", () => {
-  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
-  const t = ctx.H.secondary[3];
+test("portada: quinta tarjeta (tras 33.000 residencias, el suplemento, el alquiler en Alberta y la masterclass; principal: beneficios de la CRA para recién llegados, 16-11-2026) con su ilustración; las demás en su orden", () => {
+  assert.equal(ctx.H.main.slug, "recien-llegados-canada-beneficios-cra-cgeb-ccb");
+  const t = ctx.H.secondary[4];
   assert.equal(t.slug, SLUG);
   assert.equal(t.title, art.title);
   assert.equal(t.image, `url('${IMG}')`);
@@ -36,11 +36,11 @@ test("portada: cuarta tarjeta (tras el suplemento, el alquiler en Alberta y la m
   assert.equal(t.demo, false);
   assert.match(t.alt, /^Ilustración editorial/);
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    "canada-33000-residencias-permanentes-trabajadores-2026",
     "canada-suplemento-alimentos-679-presupuesto-2026",
     "alberta-rent-assistance-benefit-ayuda-alquiler",
     "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
     "canada-cambios-proceso-refugio-3-noviembre-2026",
-    "canada-cambios-express-entry-3-noviembre-2026",
   ]);
 });
 

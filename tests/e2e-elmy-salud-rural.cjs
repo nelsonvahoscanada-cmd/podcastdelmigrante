@@ -75,9 +75,9 @@ async function sinDesborde(page, ruta) {
     assert.equal(await page.locator(`#archivoLista a[href="articulo-${EN}"]`).count(), 0, "el original en inglés no se duplica en el archivo");
     await ctx.close();
     ({ ctx, page, errores } = await abrir(browser, perfil, "/"));
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^🇨🇦 ¿Recién llegado a Canadá\? Podrías recibir ayudas económicas/);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
-    assert.match(tarjetas[4], /Express Entry desde el 3 de noviembre/);
+    assert.match(tarjetas[4], /solicitar refugio/);
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
     await ctx.close();

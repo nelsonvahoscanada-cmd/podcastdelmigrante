@@ -66,18 +66,28 @@ const NAV_MORE = [
 
 const HERO = {
   main: {
-    category: "Inmigración",
-    title: "Canadá acelera 33.000 residencias permanentes: 15.100 trabajadores ya fueron beneficiados. ¿Quiénes califican?",
-    dek: "El Gobierno canadiense tiene en marcha una iniciativa especial para acelerar la residencia permanente de hasta 33.000 trabajadores durante 2026 y 2027. Inmigración Canadá confirma que miles ya han obtenido su estatus, pero advierte que no se trata de un programa nuevo ni de una convocatoria abierta para todos los inmigrantes.",
+    category: "Economía e inmigración",
+    title: "🇨🇦 ¿Recién llegado a Canadá? Podrías recibir ayudas económicas sin haber declarado impuestos",
+    dek: "La CRA permite a algunas personas que acaban de llegar solicitar el Canada Groceries and Essentials Benefit (CGEB) y el Canada Child Benefit (CCB) antes de su primera declaración de impuestos. No son automáticos para todos los inmigrantes: cada programa tiene requisitos propios.",
     author: "El Podcast del Migrante",
-    date: "11 de noviembre, 2026",
-    image: "url('assets/canada-33000-residencias-permanentes-trabajadores-2026.jpg')",
+    date: "16 de noviembre, 2026",
+    image: "url('assets/recien-llegados-canada-beneficios-cra-cgeb-ccb.jpg')",
     aspectRatio: "1672/941",
-    alt: "Ilustración editorial de El Podcast del Migrante: trabajadores frente al Parlamento de Canadá y la bandera canadiense; titular «Canadá acelera 33.000 residencias permanentes», «15.100 trabajadores beneficiados hasta agosto de 2026» y aviso «No es una convocatoria nueva».",
+    alt: "Portada editorial de El Podcast del Migrante: una familia latina sonríe con la bandera de Canadá frente al Parlamento en Ottawa; a la derecha, sobre fondo negro, el titular «¿Recién llegado a Canadá? Podrías recibir ayudas económicas sin haber declarado impuestos» y los nombres de los beneficios «Canada Groceries and Essentials Benefit (CGEB)» y «Canada Child Benefit (CCB)».",
     demo: false,
-    slug: "canada-33000-residencias-permanentes-trabajadores-2026",
+    slug: "recien-llegados-canada-beneficios-cra-cgeb-ccb",
   },
   secondary: [
+    {
+      category: "Inmigración",
+      title: "Canadá acelera 33.000 residencias permanentes: 15.100 trabajadores ya fueron beneficiados. ¿Quiénes califican?",
+      date: "11 de noviembre",
+      image: "url('assets/canada-33000-residencias-permanentes-trabajadores-2026.jpg')",
+      aspectRatio: "1672/941",
+      alt: "Ilustración editorial de El Podcast del Migrante: trabajadores frente al Parlamento de Canadá y la bandera canadiense; titular «Canadá acelera 33.000 residencias permanentes», «15.100 trabajadores beneficiados hasta agosto de 2026» y aviso «No es una convocatoria nueva».",
+      demo: false,
+      slug: "canada-33000-residencias-permanentes-trabajadores-2026",
+    },
     {
       category: "Finanzas",
       title: "Canadá propone hasta $679 adicionales para ayudar a las familias con el costo de los alimentos",
@@ -117,16 +127,6 @@ const HERO = {
       alt: "Ilustración editorial de El Podcast del Migrante: una familia latina mira hacia el horizonte junto a la bandera de Canadá y el Parlamento en Ottawa, con un documento «Refugee Claim — New Rules» y el titular «Canadá cambia las reglas para solicitar refugio: nuevo proceso digital desde el 3 de noviembre de 2026».",
       demo: false,
       slug: "canada-cambios-proceso-refugio-3-noviembre-2026",
-    },
-    {
-      category: "Migración",
-      title: "Canadá cambia Express Entry desde el 3 de noviembre: algunos inmigrantes podrán obtener hasta 150 puntos",
-      date: "2 de noviembre",
-      image: "url('assets/canada-cambios-express-entry-3-noviembre-2026.jpg')",
-      aspectRatio: "16/9",
-      alt: "Imagen editorial de El Podcast del Migrante: la bandera de Canadá sobre el horizonte de Calgary, un pasaporte canadiense y un documento de Express Entry, con el titular «Cambios en Express Entry desde el 3 de noviembre» y «Hasta 150 puntos por experiencia laboral y ofertas de empleo».",
-      demo: false,
-      slug: "canada-cambios-express-entry-3-noviembre-2026",
     },
   ],
 };

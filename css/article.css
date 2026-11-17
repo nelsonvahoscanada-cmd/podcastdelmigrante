@@ -585,6 +585,13 @@ a.column-masthead__name:hover { color: var(--negro); }
   }
 }
 
+/* Tabla de montos dentro de un artículo (.legal-table--montos): en celulares
+   el título ocupa todo el ancho y las cifras se alinean a la izquierda. */
+@media (max-width: 640px) {
+  .article-body .legal-table--montos caption { display: block; width: 100%; }
+  .article-body .legal-table--montos td:last-child { text-align: left; white-space: normal; }
+}
+
 /* Páginas legales: enlaces reconocibles y viñetas en las listas
    (solo .legal-page; no cambia el estilo de los artículos). */
 .legal-page .article-body a { color: var(--verde-oscuro); text-decoration: underline; text-underline-offset: 2px; }

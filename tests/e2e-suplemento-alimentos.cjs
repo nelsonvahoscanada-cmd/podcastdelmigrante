@@ -51,16 +51,16 @@ async function sinDesborde(page, ruta) {
     /* ---------- Portada ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
     /* Desde el 11-11-2026 es la primera tarjeta destacada (principal: 33.000 residencias) */
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
-    const hero = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.match(await page.locator("#heroMain h1").innerText(), /^🇨🇦 ¿Recién llegado a Canadá\? Podrías recibir ayudas económicas/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").nth(1);
     assert.ok((await hero.innerText()).includes(TITULO));
     assert.match(await hero.innerText(), /9 de noviembre/);
     assert.match(await hero.locator(".hero-sec-card__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.match(tarjetas[1], /pagar el alquiler/);
-    assert.match(tarjetas[2], /masterclass gratuita/);
+    assert.match(tarjetas[2], /pagar el alquiler/);
+    assert.match(tarjetas[3], /masterclass gratuita/);
     assert.equal(tarjetas.filter((x) => x.includes("$679")).length, 1, "sin duplicados");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
