@@ -1,0 +1,41 @@
+# TEMPORAL: descargar el texto de las páginas oficiales de la CRA citadas en la noticia (solo lectura). Se elimina después.
+name: tmp fuentes cra
+on:
+  push:
+    branches: [claude/fuentes-cra-verificacion]
+permissions:
+  contents: write
+jobs:
+  fuentes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar y convertir a texto
+        run: |
+          mkdir -p /tmp/out && cd /tmp/out
+          pip install -q html2text >/dev/null 2>&1 || true
+          while IFS='|' read -r n u; do
+            code=$(curl -sL -A "Mozilla/5.0 (verificacion editorial)" -o "$n.html" -w '%{http_code} %{url_effective}' "$u")
+            echo "$n · $code" | tee -a estados.txt
+            python3 -c "
+          import sys,html2text,re
+          h=open('$n.html',encoding='utf-8',errors='ignore').read()
+          m=re.search(r'<main.*?</main>',h,re.S); h=m.group(0) if m else h
+          t=html2text.HTML2Text(); t.body_width=0; t.ignore_images=True
+          open('$n.txt','w').write(t.handle(h))" || true
+          done <<'URLS'
+          recien-llegados|https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/newcomers-canada-immigrants.html
+          rc151|https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html
+          rc66|https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html
+          cgeb-solicitar|https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html
+          cgeb-inicio|https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html
+          cgeb-elegibilidad|https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/eligibility.html
+          ccb-quien|https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/who-apply.html
+          ccb-como|https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html
+          ccb-cuanto|https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-much.html
+          URLS
+          rm -f *.html
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "fuentes cra [CF-Pages-Skip]"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/fuentes-cra-verificacion-datos-${{ github.run_number }}
