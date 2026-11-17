@@ -1,0 +1,14 @@
+200 text/html; charset=utf-8 /articulo-recien-llegados-canada-beneficios-cra-cgeb-ccb
+200 image/jpeg /assets/social/recien-llegados-canada-beneficios-cra-cgeb-ccb.jpg
+200 image/jpeg /assets/recien-llegados-canada-beneficios-cra-cgeb-ccb.jpg
+<title>¿Recién llegado a Canadá? Ayudas económicas de la CRA: CGEB y CCB</title>
+rel="canonical" href="https://podcastdelmigrante.com/articulo-recien-llegados-canada-beneficios-cra-cgeb-ccb"
+<meta property="og:site_name" content="El Podcast del Migrante Magazine"
+<meta property="og:image:secure_url" content="https://podcastdelmigrante.com/assets/social/recien-llegados-canada-beneficios-cra-cgeb-ccb.jpg"
+<meta property="og:image:type" content="image/jpeg"
+<meta property="og:image:width" content="1200"
+<meta property="og:image:height" content="630"
+<meta name="twitter:card" content="summary_large_image"
+"@type":"NewsArticle"
+      3 href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html"
+      3 href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html"
