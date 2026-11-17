@@ -1,0 +1,15 @@
+AssertionError [ERR_ASSERTION]: iPhone SE: no se contacta a YouTube al abrir
++ actual - expected
+
++ [
++   'static.cloudflareinsights.com'
++ ]
+- []
+
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
