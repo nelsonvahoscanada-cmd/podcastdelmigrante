@@ -1,0 +1,86 @@
+--- orden de las secciones en /perfil-nelson-vahos
+<div class="biz-actions"
+<section class="biz-section biz-cta"
+    título: Patrocinios, publicidad y alianzas comerciales
+<section class="biz-section biz-video"
+    título: Conoce el Perfil Empresarial Premium de El Podcast del Migrante
+<section class="biz-section biz-about"
+    título: Sobre Nelson
+<section class="biz-section biz-projects"
+    título: Proyectos
+<section class="biz-section biz-timeline"
+    título: Trayectoria
+<section class="biz-section biz-connect"
+    título: Conecta con Nelson
+<section class="biz-section biz-contact"
+    título: Contacto profesional
+<div class="biz-actions"
+--- archivos servidos idénticos al repositorio
+vcard/nelson-vahos.vcf                           200 idéntico
+assets/qr/perfil-nelson-vahos.svg                200 idéntico
+assets/qr/contacto-nelson-vahos.svg              200 idéntico
+assets/qr/perfil-nelson-vahos.png                200 idéntico
+assets/qr/contacto-nelson-vahos.png              200 idéntico
+assets/directorio/perfiles/nelson-vahos.jpg      200 idéntico
+assets/directorio/perfiles/nelson-vahos-og.jpg   200 idéntico
+assets/yt/ZlUEYjQpEpE.jpg                        200 idéntico
+--- QR del perfil apunta a la miniweb
+1
+--- demás miniwebs: HTML servido = repositorio
+/perfil-1juanromero1                     200 DIFERENTE
+/perfil-carlos-d-castillo                200 DIFERENTE
+/perfil-nelson-vahos                     200 DIFERENTE
+/perfil-santa-latino                     200 DIFERENTE
+/perfil-tomas-velazquez                  200 DIFERENTE
+--- diferencias entre el HTML servido y el repositorio
+## /perfil-1juanromero1
+131c131
+<       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="mailto:contact1juanromero1@gmail.com" data-track="email_click" data-track-target="email">Solicitar cotización</a><a class="biz-btn" href="tel:+14033637566" data-track="phone_click" data-track-target="phone">Llamar</a></div>
+---
+>       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="/cdn-cgi/l/email-protection#6605090812070512570c13070814090b0314095726010b070f0a4805090b" data-track="email_click" data-track-target="email">Solicitar cotización</a><a class="biz-btn" href="tel:+14033637566" data-track="phone
+217,218c217,218
+<         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="mailto:contact1juanromero1@gmail.com" data-track="email_click" data-track-target="email-final">Solicitar cotización</a><a class="biz-btn" href="tel:+14033637566" data-track="phone_click" data-track-target="phone-final">Llam
+<         <p class="biz-contact__email">Correo: <a href="mailto:contact1juanromero1@gmail.com" data-track="email_click" data-track-target="email-text">contact1juanromero1@gmail.com</a></p>
+---
+## /perfil-carlos-d-castillo
+130c130
+<       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://link.carlosdcastillo.com/widget/booking/lQX2qvrteyfJherfQb8r" target="_blank" rel="noopener" data-track="booking_click" data-track-target="booking">Agenda una consulta</a><a class="biz-btn" href="https://wa.me/1403918
+---
+>       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://link.carlosdcastillo.com/widget/booking/lQX2qvrteyfJherfQb8r" target="_blank" rel="noopener" data-track="booking_click" data-track-target="booking">Agenda una consulta</a><a class="biz-btn" href="https://wa.me/1403918
+215c215
+<         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/14039184019" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+14039184019" data-track="phone_click" data-track-target="pho
+---
+>         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/14039184019" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+14039184019" data-track="phone_click" data-track-target="pho
+## /perfil-nelson-vahos
+132c132
+<       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/14024272741?text=Hola%20Nelson%2C%20encontr%C3%A9%20tu%20perfil%20en%20El%20Podcast%20del%20Migrante%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20publicidad%2C%20patrocinios%20o%20una%20posible%20ali
+---
+>       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/14024272741?text=Hola%20Nelson%2C%20encontr%C3%A9%20tu%20perfil%20en%20El%20Podcast%20del%20Migrante%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20publicidad%2C%20patrocinios%20o%20una%20posible%20ali
+240c240
+<         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/14024272741?text=Hola%20Nelson%2C%20encontr%C3%A9%20tu%20perfil%20en%20El%20Podcast%20del%20Migrante%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20publicidad%2C%20patrocinios%20o%20una%20posible%20a
+---
+>         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/14024272741?text=Hola%20Nelson%2C%20encontr%C3%A9%20tu%20perfil%20en%20El%20Podcast%20del%20Migrante%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20publicidad%2C%20patrocinios%20o%20una%20posible%20a
+## /perfil-santa-latino
+131c131
+<       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="phone">Llam
+---
+>       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="phone">Llam
+210,211c210,211
+<         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="pho
+<         <p class="biz-contact__email">Correo: <a href="mailto:santalatinoon@gmail.com" data-track="email_click" data-track-target="email-text">santalatinoon@gmail.com</a></p>
+---
+## /perfil-tomas-velazquez
+130c130
+<       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/15878948527" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp">WhatsApp</a><a class="biz-btn" href="tel:+15878948527" data-track="phone_click" data-track-target="phone">Llam
+---
+>       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/15878948527" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp">WhatsApp</a><a class="biz-btn" href="tel:+15878948527" data-track="phone_click" data-track-target="phone">Llam
+203c203
+<         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/15878948527" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+15878948527" data-track="phone_click" data-track-target="pho
+---
+>         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/15878948527" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+15878948527" data-track="phone_click" data-track-target="pho
+--- estadísticas (solo lectura: GET no registra nada)
+/api/events GET: 405 (405 = Worker activo, solo acepta POST)
+analytics.js en la miniweb: 1
+data-track en la miniweb:       3 data-track="email_click"       1 data-track="facebook_click"       3 data-track="phone_click"       1 data-track="qr_contact_download"       1 data-track="qr_profile_download"       3 data-track="tiktok_click"       1 data-track="vcard_download"       2 data-track="video_click"       5 data-track="website_click"       2 data-track="whatsapp_click" 
+--- YouTube
+embed: 200
