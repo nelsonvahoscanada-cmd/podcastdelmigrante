@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: evento website_click/portfolio
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
