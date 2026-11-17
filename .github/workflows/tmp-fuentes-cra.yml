@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar y convertir a texto
+        shell: bash {0}
         run: |
           mkdir -p /tmp/out && cd /tmp/out
           pip install -q html2text >/dev/null 2>&1 || true
           while IFS='|' read -r n u; do
-            code=$(curl -sL -A "Mozilla/5.0 (verificacion editorial)" -o "$n.html" -w '%{http_code} %{url_effective}' "$u")
+            code=$(curl -sL --http1.1 --retry 3 --retry-all-errors --compressed -H "Accept-Language: en-CA,en;q=0.9" -A "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" -o "$n.html" -w '%{http_code} %{url_effective}' "$u" || echo "error $?")
             echo "$n · $code" | tee -a estados.txt
             python3 -c "
           import sys,html2text,re
