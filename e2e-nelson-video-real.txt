@@ -1,0 +1,9 @@
+diag iPhone SE: {"error":"","readyState":0,"src":"","codecs":{"vp9":true,"h264":true},"ua":"Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/27.2 Mobile/14E304 Safari/602.1"}
+AssertionError [ERR_ASSERTION]: iPhone SE: el video se reproduce (currentTime 0)
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

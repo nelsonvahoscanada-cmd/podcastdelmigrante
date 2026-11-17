@@ -1,0 +1,16 @@
+/perfil-nelson-vahos                               200 text/html; charset=utf-8
+/assets/yt/ZlUEYjQpEpE.jpg                         200 image/jpeg
+/vcard/nelson-vahos.vcf                            200 text/x-vcard; charset=utf-8
+/assets/qr/perfil-nelson-vahos.svg                 200 image/svg+xml
+/assets/qr/contacto-nelson-vahos.svg               200 image/svg+xml
+/assets/directorio/perfiles/nelson-vahos.jpg       200 image/jpeg
+/perfil-santa-latino                               200 text/html; charset=utf-8
+/perfil-tomas-velazquez                            200 text/html; charset=utf-8
+/perfil-1juanromero1                               200 text/html; charset=utf-8
+/perfil-carlos-d-castillo                          200 text/html; charset=utf-8
+vcard/nelson-vahos.vcf servido = repositorio: sí
+assets/qr/perfil-nelson-vahos.svg servido = repositorio: sí
+assets/qr/contacto-nelson-vahos.svg servido = repositorio: sí
+assets/directorio/perfiles/nelson-vahos.jpg servido = repositorio: sí
+embed de YouTube: 200
+{"title":"\ud83d\ude80 Haz que encuentren tu negocio en Canad\u00e1 | Perfil Empresarial Premium","author_name":"El Podcast del Migrante ","author_url":"https://www.youtube.com/@ElPodcastDelMigranteOficial","type":"video","height":113,"width":200,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_height":360,"thumbnail_width":480,"thumbnail_url":"https://i.ytimg.com/vi/ZlUEYjQpEpE/hqdefault.jpg","html":"\u003ciframe width=\u0022200\u0022 height=\u0022113\u0022 src=\u0022https://www.youtube.com/embed/ZlUEYjQpEpE?feature=oembed\u0022 frameborder=\u00220\u0022 allow=\u0022accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\u0022 referrerpolicy=\u0022strict-origin-when-cross-origin\u0022 allowfullscreen title=\u0022\ud83d\ude80 Haz que encuentren tu negocio en Canad\u00e1 | Perfil Empresarial Premium\u0022\u003e\u003c/iframe\u003e"}
