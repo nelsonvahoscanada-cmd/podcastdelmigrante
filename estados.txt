@@ -1,0 +1,40 @@
+--- orden de las secciones en /perfil-nelson-vahos
+<div class="biz-actions"
+<section class="biz-section biz-cta"
+    título: Patrocinios, publicidad y alianzas comerciales
+<section class="biz-section biz-video"
+    título: Conoce el Perfil Empresarial Premium de El Podcast del Migrante
+<section class="biz-section biz-about"
+    título: Sobre Nelson
+<section class="biz-section biz-projects"
+    título: Proyectos
+<section class="biz-section biz-timeline"
+    título: Trayectoria
+<section class="biz-section biz-connect"
+    título: Conecta con Nelson
+<section class="biz-section biz-contact"
+    título: Contacto profesional
+<div class="biz-actions"
+--- archivos servidos idénticos al repositorio
+vcard/nelson-vahos.vcf                           200 idéntico
+assets/qr/perfil-nelson-vahos.svg                200 idéntico
+assets/qr/contacto-nelson-vahos.svg              200 idéntico
+assets/qr/perfil-nelson-vahos.png                200 idéntico
+assets/qr/contacto-nelson-vahos.png              200 idéntico
+assets/directorio/perfiles/nelson-vahos.jpg      200 idéntico
+assets/directorio/perfiles/nelson-vahos-og.jpg   200 idéntico
+assets/yt/ZlUEYjQpEpE.jpg                        200 idéntico
+--- QR del perfil apunta a la miniweb
+1
+--- demás miniwebs: HTML servido = repositorio
+/perfil-1juanromero1                     200 DIFERENTE
+/perfil-carlos-d-castillo                200 DIFERENTE
+/perfil-nelson-vahos                     200 DIFERENTE
+/perfil-santa-latino                     200 DIFERENTE
+/perfil-tomas-velazquez                  200 DIFERENTE
+--- estadísticas (solo lectura: GET no registra nada)
+/api/events GET: 405 (405 = Worker activo, solo acepta POST)
+analytics.js en la miniweb: 1
+data-track en la miniweb:       3 data-track="email_click"       1 data-track="facebook_click"       3 data-track="phone_click"       1 data-track="qr_contact_download"       1 data-track="qr_profile_download"       3 data-track="tiktok_click"       1 data-track="vcard_download"       2 data-track="video_click"       5 data-track="website_click"       2 data-track="whatsapp_click" 
+--- YouTube
+embed: 200
