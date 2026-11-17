@@ -1,0 +1,55 @@
+# TEMPORAL: verificar en producción el PR #135 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp nelson video prod
+on:
+  push:
+    branches: [claude/nelson-video-premium-prod]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      P: https://podcastdelmigrante.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue en producción (máx. 20 min)
+        run: |
+          for i in $(seq 120); do
+            curl -fsS "$P/perfil-nelson-vahos?nc=$i$RANDOM" | tr -d '\n' | grep -q 'biz-cta">.*biz-video">.*biz-about"' && { echo "desplegado (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
+      - name: Orden, QR, vCard, estadísticas y demás miniwebs
+        if: always()
+        run: |
+          mkdir -p /tmp/out
+          {
+            echo "--- orden de las secciones en /perfil-nelson-vahos"
+            curl -s "$P/perfil-nelson-vahos" | grep -oE '<(div|section) class="biz-(actions|section biz-[a-z]+)"|<h2 class="biz-h2"[^>]*>[^<]*' | sed -E 's/<h2 class="biz-h2"[^>]*>/    título: /' | head -20
+            echo "--- archivos servidos idénticos al repositorio"
+            for f in vcard/nelson-vahos.vcf assets/qr/perfil-nelson-vahos.svg assets/qr/contacto-nelson-vahos.svg assets/qr/perfil-nelson-vahos.png assets/qr/contacto-nelson-vahos.png assets/directorio/perfiles/nelson-vahos.jpg assets/directorio/perfiles/nelson-vahos-og.jpg assets/yt/ZlUEYjQpEpE.jpg; do printf "%-48s %s %s\n" "$f" "$(curl -s -o /dev/null -w '%{http_code}' "$P/$f")" "$(curl -s "$P/$f" | cmp -s - $f && echo idéntico || echo DIFERENTE)"; done
+            echo "--- QR del perfil apunta a la miniweb"
+            grep -c "podcastdelmigrante.com/perfil-nelson-vahos" vcard/nelson-vahos.vcf
+            echo "--- demás miniwebs: HTML servido = repositorio"
+            for f in perfil-*.html; do u="/${f%.html}"; printf "%-40s %s %s\n" "$u" "$(curl -s -o /dev/null -w '%{http_code}' "$P$u")" "$(curl -s "$P$u" | cmp -s - $f && echo idéntico || echo DIFERENTE)"; done
+            echo "--- estadísticas (solo lectura: GET no registra nada)"
+            echo "/api/events GET: $(curl -s -o /dev/null -w '%{http_code}' "$P/api/events") (405 = Worker activo, solo acepta POST)"
+            echo "analytics.js en la miniweb: $(curl -s "$P/perfil-nelson-vahos" | grep -c 'js/analytics.js')"
+            echo "data-track en la miniweb: $(curl -s "$P/perfil-nelson-vahos" | grep -o 'data-track="[a-z_]*"' | sort | uniq -c | tr '\n' ' ')"
+            echo "--- YouTube"
+            echo "embed: $(curl -s -o /dev/null -w '%{http_code}' 'https://www.youtube-nocookie.com/embed/ZlUEYjQpEpE')"
+          } 2>&1 | tee /tmp/out/estados.txt
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: E2E en producción (estadísticas bloqueadas)
+        if: always()
+        run: |
+          r=0
+          for t in nelson-video nelson-vahos santa-latino; do
+            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -10 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
+          done; exit $r
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "producción video Nelson [CF-Pages-Skip]"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/nelson-video-premium-prod-datos-${{ github.run_number }}
