@@ -87,6 +87,13 @@ const PERFILES = {
         if (tiempo <= 0) await page.waitForTimeout(1000);
       }
       const titulo = await handle.evaluate(() => (document.querySelector(".ytp-title-link") || {}).textContent || "");
+      const diag = await handle.evaluate(() => {
+        const v = document.querySelector("video");
+        const err = document.querySelector(".ytp-error, .ytp-error-content-wrap");
+        return { error: err ? err.innerText.trim() : "", readyState: v ? v.readyState : null, src: v ? (v.currentSrc || v.src || "").slice(0, 40) : null, codecs: { vp9: !!(window.MediaSource && MediaSource.isTypeSupported('video/webm; codecs="vp9"')), h264: !!(window.MediaSource && MediaSource.isTypeSupported('video/mp4; codecs="avc1.42E01E"')) }, ua: navigator.userAgent };
+      });
+      console.log(`diag ${nombre}: ${JSON.stringify(diag)}`);
+      if (SHOTS) await page.locator(".biz-video__frame").screenshot({ path: path.join(SHOTS, `nelson-video-${nombre.replace(/\s+/g, "-")}-tras-pulsar.png`) });
       assert.ok(tiempo > 0, `${nombre}: el video se reproduce (currentTime ${tiempo})`);
       estado = `reproduciendo (${tiempo.toFixed(1)} s)${titulo ? ` «${titulo.trim()}»` : ""}`;
       if (SHOTS) await page.locator(".biz-video__frame").screenshot({ path: path.join(SHOTS, `nelson-video-${nombre.replace(/\s+/g, "-")}-reproduciendo.png`) });
