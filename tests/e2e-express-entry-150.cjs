@@ -47,25 +47,18 @@ async function sinDesborde(page, ruta) {
 (async () => {
   const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: segunda tarjeta, tras la noticia de refugio (masterclass principal desde el 5-11-2026) ---------- */
+    /* ---------- Portada ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
+    /* Desde el 16-11-2026 sale del bloque destacado (principal: beneficios de la CRA); sigue publicada */
+    assert.match(await page.locator("#heroMain h1").innerText(), /^🇨🇦 ¿Recién llegado a Canadá\? Podrías recibir ayudas económicas/);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.match(tarjetas[0], /\$679/);
-    assert.match(tarjetas[1], /pagar el alquiler/);
-    assert.match(tarjetas[2], /masterclass gratuita/);
-    assert.match(tarjetas[3], /solicitar refugio/);
-    assert.ok(tarjetas[4].includes(TITULO), "Express Entry, quinta tarjeta");
-    const hero = page.locator("#heroSecondary .hero-sec-card").nth(4);
-    assert.match(await hero.locator(".hero-sec-card__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
+    assert.match(tarjetas[0], /33\.000 residencias/);
+    assert.match(tarjetas[4], /solicitar refugio/);
+    assert.equal(tarjetas.filter((x) => x.includes(TITULO)).length, 0, "ya no está entre las destacadas");
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    const enlaceHero = hero.locator("h2 a");
-    assert.match(await enlaceHero.getAttribute("href"), new RegExp(`articulo(-|\\.html\\?slug=)${SLUG}$`));
-    await enlaceHero.evaluate((a) => a.click());
-    await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 
     /* ---------- Artículo ---------- */

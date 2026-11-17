@@ -57,23 +57,22 @@ const videoAntesDelSubtitulo = (page) => page.evaluate((sub) => {
 (async () => {
   const browser = await chromium.launch();
   for (const perfil of Object.keys(PERFILES)) {
-    /* ---------- Portada: noticia principal ---------- */
+    /* ---------- Portada: primera tarjeta (principal desde el 16-11-2026: beneficios de la CRA) ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    const hero = page.locator("#heroMain");
-    assert.equal((await hero.locator("h1").innerText()).trim(), TITULO);
-    assert.match(await hero.innerText(), /11 de noviembre, 2026/);
-    assert.match(await hero.locator(".hero-main__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
+    assert.match(await page.locator("#heroMain h1").innerText(), /^🇨🇦 ¿Recién llegado a Canadá\? Podrías recibir ayudas económicas/);
+    const hero = page.locator("#heroSecondary .hero-sec-card").first();
+    assert.ok((await hero.innerText()).includes(TITULO));
+    assert.match(await hero.innerText(), /11 de noviembre/);
+    assert.match(await hero.locator(".hero-sec-card__media").getAttribute("style"), new RegExp(IMG.replace(/\./g, "\\.")));
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);
     const tarjetas = await page.locator("#heroSecondary .hero-sec-card").evaluateAll((cs) => cs.map((c) => c.innerText));
     assert.equal(tarjetas.length, 5);
-    assert.match(tarjetas[0], /\$679/, "la anterior principal pasa a la primera tarjeta");
-    assert.equal(tarjetas.filter((x) => x.includes("33.000")).length, 0, "sin duplicados");
-    const hb = await hero.boundingBox();
-    assert.ok(hb.y < 900 && hb.height > 200, "titular principal visible arriba " + JSON.stringify(hb));
+    assert.match(tarjetas[1], /\$679/);
+    assert.equal(tarjetas.filter((x) => x.includes("33.000")).length, 1, "sin duplicados");
     if (SHOTS) await page.locator("#inicio").screenshot({ path: path.join(SHOTS, `portada-${perfil}.png`) });
     await sinDesborde(page, "/");
     assert.deepEqual(errores, []);
-    await hero.locator("h1 a").evaluate((a) => a.click());
+    await hero.locator("h2 a").evaluate((a) => a.click());
     await page.waitForURL(new RegExp(`/articulo-${SLUG}$`));
     await ctx.close();
 

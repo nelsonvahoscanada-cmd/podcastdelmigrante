@@ -42,7 +42,7 @@ test("artículo: noticia completa con su estructura periodística y sin afirmaci
 });
 
 test("portada: Santa Latino sale del bloque destacado (11-11-2026) y sigue publicada; nada se borra", () => {
-  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026", "noticia principal autorizada por la dirección editorial el 11-11-2026");
+  assert.equal(ctx.H.main.slug, "recien-llegados-canada-beneficios-cra-cgeb-ccb", "noticia principal autorizada por la dirección editorial el 16-11-2026");
   assert.ok(!ctx.H.secondary.some((s) => s.slug === SLUG), "ya no aparece entre las destacadas");
   assert.ok(art && !art.draft, "sigue publicada");
   assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)), "y conserva su URL");

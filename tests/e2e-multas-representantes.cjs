@@ -48,9 +48,9 @@ async function sinDesborde(page, ruta) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: noticia principal de Express Entry; Santa Latino, bomberos y luego IRCC ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/, "noticia principal: 33.000 residencias (11-11-2026)");
+    assert.match(await page.locator("#heroMain h1").innerText(), /^🇨🇦 ¿Recién llegado a Canadá\? Podrías recibir ayudas económicas/, "noticia principal: beneficios de la CRA para recién llegados (16-11-2026)");
     const quinta = page.locator("#heroSecondary .hero-sec-card").nth(4);
-    assert.equal(await quinta.locator('a[href*="canada-cambios-express-entry-3-noviembre-2026"]').count() >= 1, true, "quinta tarjeta: Express Entry");
+    assert.equal(await quinta.locator('a[href*="canada-cambios-proceso-refugio-3-noviembre-2026"]').count() >= 1, true, "quinta tarjeta: refugio");
     /* Con la masterclass (5-11-2026) deja el bloque destacado; sigue publicada */
     assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");
     assert.equal((await fetch(`${BASE}/${IMG}`)).status, 200);

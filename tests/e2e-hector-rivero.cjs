@@ -62,7 +62,7 @@ async function reproduce(page, contenedor) {
   for (const perfil of Object.keys(PERFILES)) {
     /* ---------- Portada: fuera de las destacadas desde el 11-11-2026; sigue en el carrusel ---------- */
     let { ctx, page, errores } = await abrir(browser, perfil, "/");
-    assert.match(await page.locator("#heroMain h1").innerText(), /^Canadá acelera 33\.000 residencias permanentes/);
+    assert.match(await page.locator("#heroMain h1").innerText(), /^🇨🇦 ¿Recién llegado a Canadá\? Podrías recibir ayudas económicas/);
     /* Desde el 11-11-2026 sale del bloque destacado; sigue publicada */
     assert.equal(await page.locator(`#heroMain a[href*="${SLUG}"], #heroSecondary a[href*="${SLUG}"]`).count(), 0, "ya no está entre las destacadas");
     assert.equal((await fetch(`${BASE}/assets/yt/${VIDEO}.jpg`)).status, 200);

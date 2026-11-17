@@ -19,19 +19,17 @@ const CAMBIOS = "https://www.canada.ca/en/immigration-refugees-citizenship/servi
 const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-test("portada: quinta tarjeta, tras la noticia de refugio, con su imagen; las demás en su orden", () => {
-  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
-  const t = ctx.H.secondary[4];
-  assert.equal(t.slug, SLUG);
-  assert.equal(t.title, art.title);
-  assert.equal(t.image, `url('${IMG}')`);
-  assert.equal(t.demo, false);
+test("portada: sale del bloque destacado con la noticia de la CRA para recién llegados (16-11-2026), sigue publicada y conserva su URL", () => {
+  assert.equal(ctx.H.main.slug, "recien-llegados-canada-beneficios-cra-cgeb-ccb");
+  assert.ok(!ctx.H.secondary.some((s) => s.slug === SLUG), "ya no aparece entre las destacadas");
+  assert.ok(art && !art.draft, "sigue publicada");
+  assert.ok(existsSync(join(ROOT, `articulo-${SLUG}.html`)), "y conserva su URL");
   assert.deepEqual(Array.from(ctx.H.secondary, (s) => s.slug), [
+    "canada-33000-residencias-permanentes-trabajadores-2026",
     "canada-suplemento-alimentos-679-presupuesto-2026",
     "alberta-rent-assistance-benefit-ayuda-alquiler",
     "masterclass-gratuita-ley-intrinseca-creacion-eder-campos",
     "canada-cambios-proceso-refugio-3-noviembre-2026",
-    SLUG,
   ]);
 });
 

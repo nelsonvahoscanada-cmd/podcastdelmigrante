@@ -31,9 +31,9 @@ const IRCC = {
   representantes: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/choose/authorized.html",
 };
 
-test("publicada el 11-11-2026 como la noticia más reciente, en Inmigración, sin duplicados", () => {
+test("publicada el 11-11-2026 (segunda más reciente, tras la del 16-11-2026), en Inmigración, sin duplicados", () => {
   assert.ok(art && !art.draft && !art.demo);
-  assert.equal(ctx.A[0].slug, SLUG);
+  assert.equal(ctx.A[1].slug, SLUG);
   assert.equal(art.id, "ART-2026-043");
   assert.equal(art.title, TITULO);
   assert.equal(art.category, "Inmigración");
@@ -43,18 +43,20 @@ test("publicada el 11-11-2026 como la noticia más reciente, en Inmigración, si
   assert.equal(new Set(ctx.A.map((a) => a.id)).size, ctx.A.length, "id único");
 });
 
-test("portada: noticia principal; la anterior principal pasa a la primera tarjeta y nada se borra", () => {
-  assert.equal(ctx.H.main.slug, SLUG);
-  assert.equal(ctx.H.main.title, TITULO);
-  assert.equal(ctx.H.main.category, "Inmigración");
-  assert.equal(ctx.H.main.date, "11 de noviembre, 2026");
-  assert.equal(ctx.H.main.image, `url('${IMG}')`);
-  assert.ok(ctx.H.main.alt.length > 40, "texto alternativo");
-  assert.equal(ctx.H.secondary[0].slug, "canada-suplemento-alimentos-679-presupuesto-2026");
+test("portada: con la noticia de la CRA (16-11-2026) pasa de principal a primera tarjeta; nada se borra", () => {
+  assert.equal(ctx.H.main.slug, "recien-llegados-canada-beneficios-cra-cgeb-ccb");
+  const t = ctx.H.secondary[0];
+  assert.equal(t.slug, SLUG);
+  assert.equal(t.title, TITULO);
+  assert.equal(t.category, "Inmigración");
+  assert.equal(t.date, "11 de noviembre");
+  assert.equal(t.image, `url('${IMG}')`);
+  assert.ok(t.alt.length > 40, "texto alternativo");
+  assert.equal(ctx.H.secondary[1].slug, "canada-suplemento-alimentos-679-presupuesto-2026");
   assert.equal(ctx.H.secondary.length, 5);
   const slugs = [ctx.H.main.slug, ...ctx.H.secondary.map((s) => s.slug)];
   assert.equal(new Set(slugs).size, slugs.length, "sin duplicados");
-  for (const s of [...slugs, "hector-rivero-santa-latino-canada"]) assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: sigue publicada`);
+  for (const s of [...slugs, "hector-rivero-santa-latino-canada", "canada-cambios-express-entry-3-noviembre-2026"]) assert.ok(ctx.A.some((a) => a.slug === s && !a.draft), `${s}: sigue publicada`);
 });
 
 test("cifras verificadas con IRCC: 33.000 en 2026-2027, 15.100 hasta agosto de 2026, programas y sin convocatoria nueva", () => {

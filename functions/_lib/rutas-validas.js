@@ -34,6 +34,7 @@ export const RUTAS_VALIDAS = {
       "plan-dental-canada-cdcp",
       "premios-impacto-inmigrante-alberta-2026",
       "primer-arriendo-alberta",
+      "recien-llegados-canada-beneficios-cra-cgeb-ccb",
       "reembolso-bombas-de-calor-canada",
       "referendum-alberta-octubre-2026-inmigrantes",
       "reglas-invierno-electricidad-gas-alberta",

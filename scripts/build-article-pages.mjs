@@ -25,7 +25,8 @@
   En el navegador, js/article.js vuelve a dibujar el mismo HTML (mismo
   diseño) y, si su catálogo no trae la noticia, conserva el contenido
   escrito (no muestra «no encontrado»). Los scripts llevan una versión
-  (?v=<huella>) para que el navegador y Google no usen una copia anterior.
+  (?v=<huella>) para que el navegador y Google no usen una copia anterior;
+  css/article.css también.
   Las fechas se escriben en la hora de Alberta (America/Edmonton), la de
   la redacción; el navegador las vuelve a mostrar en la hora del lector.
 
@@ -118,6 +119,12 @@ function prerender(html, a) {
     if (!html.includes(tag)) throw new Error(`articulo.html: falta ${tag}`);
     html = html.replace(tag, `<script src="${f}?v=${versionDe(f)}"></script>`);
   }
+  /* Hoja de estilos del artículo con versión (?v=<huella>): al cambiar
+     css/article.css (p. ej. la tabla de montos en celulares), el navegador
+     no combina el HTML nuevo con una hoja anterior guardada en su caché */
+  const css = '<link rel="stylesheet" href="css/article.css">';
+  if (!html.includes(css)) throw new Error(`articulo.html: falta ${css}`);
+  html = html.replace(css, `<link rel="stylesheet" href="css/article.css?v=${versionDe("css/article.css")}">`);
   return html;
 }
 

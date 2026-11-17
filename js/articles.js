@@ -186,6 +186,192 @@ const DISCLAIMERS = {
 ========================================================= */
 const ARTICLES = [
   {
+    /* Beneficios de la CRA para recién llegados (CGEB y CCB): texto editorial
+       entregado por la dirección (16-11-2026), con fecha editorial del 16 de
+       noviembre de 2026. Portada: imagen de la dirección (familia frente al
+       Parlamento) recortada y compuesta con la identidad del Magazine; sin
+       documentos que aparenten ser oficiales. Video: pendiente de grabación
+       (ver el campo video). */
+    id: "ART-2026-044",
+    slug: "recien-llegados-canada-beneficios-cra-cgeb-ccb",
+    category: "Economía e inmigración",
+    contentType: "Noticia",
+    title: "🇨🇦 ¿Recién llegado a Canadá? Podrías recibir ayudas económicas sin haber declarado impuestos",
+    dek: "La CRA permite a algunas personas que acaban de llegar solicitar el Canada Groceries and Essentials Benefit (CGEB) y el Canada Child Benefit (CCB) antes de su primera declaración de impuestos. No son automáticos para todos los inmigrantes: cada programa tiene requisitos propios.",
+    excerpt: "Qué son el CGEB y el CCB, quiénes pueden solicitarlos al llegar a Canadá, los formularios RC151 y RC66 y los requisitos especiales para residentes temporales.",
+    author: { mode: "medio", name: "El Podcast del Migrante" },
+    publishedAt: "2026-11-16T09:00:00-06:00",
+    updatedAt: null,
+    readingTimeOverride: null,
+    location: { country: "Canadá", province: null, city: null },
+    demo: false,
+    prerender: true,
+    heroImage: {
+      background: "url('assets/recien-llegados-canada-beneficios-cra-cgeb-ccb.jpg')",
+      aspectRatio: "1672/941",
+      alt: "Portada editorial de El Podcast del Migrante: una familia latina sonríe con la bandera de Canadá frente al Parlamento en Ottawa; a la derecha, sobre fondo negro, el titular «¿Recién llegado a Canadá? Podrías recibir ayudas económicas sin haber declarado impuestos» y los nombres de los beneficios «Canada Groceries and Essentials Benefit (CGEB)» y «Canada Child Benefit (CCB)».",
+      credit: "Portada editorial de El Podcast del Migrante. Las personas y la escena son ilustrativas: no es una imagen oficial del Gobierno de Canadá.",
+      socialArea: "0% 100%",
+    },
+    bodyHtml: `
+      <p><strong>El Podcast del Migrante | Economía e inmigración | 16 de noviembre de 2026</strong></p>
+      <p><strong>Fuente:</strong> Canada Revenue Agency (CRA). <strong>Estado de los programas:</strong> beneficios existentes, sujetos a requisitos de elegibilidad.</p>
+      <h2>Canadá ofrece ayudas económicas que muchos recién llegados desconocen</h2>
+      <p>La Agencia de Ingresos de Canadá (CRA) confirma que algunas personas que llegan al país pueden solicitar beneficios económicos incluso antes de presentar su primera declaración de impuestos canadiense.</p>
+      <p>Entre las ayudas disponibles se encuentran el <strong>Canada Groceries and Essentials Benefit (CGEB)</strong>, dirigido a personas y familias con ingresos bajos o moderados, y el <strong>Canada Child Benefit (CCB)</strong>, destinado a familias elegibles con hijos menores de 18 años.</p>
+      <p>Para la comunidad latina, esta información puede ser especialmente útil durante los primeros meses de establecimiento en Canadá, cuando los gastos de vivienda, alimentación y transporte representan una parte importante del presupuesto familiar.</p>
+      <p>Sin embargo, es fundamental entender que <strong>estos beneficios no son automáticos para todos los inmigrantes</strong>. Cada programa establece condiciones específicas de residencia fiscal, ingresos, composición familiar y, en determinados casos, situación migratoria.</p>
+      <h2>1. Canada Groceries and Essentials Benefit: apoyo para alimentos y gastos esenciales</h2>
+      <p>El Canada Groceries and Essentials Benefit, conocido como CGEB, reemplazó en julio de 2026 al antiguo GST/HST credit.</p>
+      <p>Se trata de un beneficio federal que entrega pagos trimestrales libres de impuestos a personas y familias elegibles con ingresos bajos o moderados.</p>
+      <p>La CRA utiliza la información de ingresos y situación familiar para determinar si corresponde recibir pagos y calcular su valor.</p>
+      <h3>¿Quiénes pueden calificar?</h3>
+      <p>Entre los requisitos principales se encuentran:</p>
+      <ul>
+        <li>Ser residente de Canadá para efectos fiscales durante los períodos exigidos por la CRA.</li>
+        <li>Tener al menos 19 años, salvo determinadas excepciones para personas menores de esa edad.</li>
+        <li>Cumplir los límites de ingresos familiares aplicables.</li>
+        <li>Proporcionar información correcta sobre ingresos y composición familiar.</li>
+      </ul>
+      <p>No es necesario tener hijos para ser elegible.</p>
+      <h3>¿Puedo solicitarlo sin haber presentado mi primera declaración de impuestos?</h3>
+      <p>Sí. Si acabas de convertirte en residente de Canadá para efectos fiscales, la CRA permite solicitar este beneficio durante tu primer año de residencia, antes de presentar tu primera declaración.</p>
+      <p>Solamente se requiere una solicitud por hogar.</p>
+      <h3>¿Cómo presentar la solicitud?</h3>
+      <p><strong>Si eres nuevo residente y no tienes hijos:</strong> la CRA permite completar y enviar electrónicamente el formulario RC151.</p>
+      <p class="article-enlace-oficial"><strong>Enlace oficial para solicitar — formulario RC151:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>forms-publications/<wbr>forms/<wbr>rc151.html</a></p>
+      <p><strong>Si eres nuevo residente y tienes hijos menores de 19 años:</strong> la CRA establece un procedimiento diferente que puede requerir descargar y enviar por correo el formulario RC151 o el RC66, según corresponda.</p>
+      <p>El formulario RC66 permite solicitar el beneficio infantil y también proporciona información que la CRA utiliza para determinar la elegibilidad a otros programas relacionados.</p>
+      <p class="article-enlace-oficial"><strong>Enlace oficial — formulario RC66:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>forms-publications/<wbr>forms/<wbr>rc66.html</a></p>
+      <p class="article-enlace-oficial"><strong>Enlace oficial — instrucciones para solicitar el CGEB:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>child-family-benefits/<wbr>canada-groceries-essentials-benefit/<wbr>get-benefit.html</a></p>
+      <p><strong>Importante:</strong> si ya presentas declaraciones de impuestos en Canadá, normalmente no necesitas solicitar el CGEB por separado. La CRA revisa automáticamente tu elegibilidad cuando procesa tu declaración anual.</p>
+      <h2>2. Canada Child Benefit: hasta $8,157 anuales por cada hijo menor de seis años</h2>
+      <p>El Canada Child Benefit (CCB) es un beneficio federal mensual, libre de impuestos, destinado a familias elegibles que tienen a su cargo hijos menores de 18 años.</p>
+      <p>Los pagos buscan ayudar a cubrir los gastos relacionados con la crianza de los niños.</p>
+      <h3>¿Cuánto dinero puede recibir una familia?</h3>
+      <p>Para el período comprendido entre julio de 2026 y junio de 2027, la CRA establece los siguientes montos máximos:</p>
+      <div class="legal-table legal-table--montos">
+      <table>
+        <caption>Canada Child Benefit: montos máximos por hijo (julio de 2026 a junio de 2027; fuente: CRA)</caption>
+        <thead><tr><th scope="col">Edad del hijo</th><th scope="col">Máximo anual</th><th scope="col">Equivalente mensual</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Edad del hijo">Menor de 6 años</td><td data-label="Máximo anual">$8,157 CAD</td><td data-label="Equivalente mensual">$679.75 CAD</td></tr>
+          <tr><td data-label="Edad del hijo">De 6 a 17 años</td><td data-label="Máximo anual">$6,883 CAD</td><td data-label="Equivalente mensual">Aproximadamente $573.58 CAD</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Estos montos máximos corresponden a familias elegibles cuyo ingreso familiar neto ajustado de 2025 es inferior a $38,237 CAD.</p>
+      <p>Cuando los ingresos familiares superan ese nivel, el beneficio se reduce gradualmente según las reglas de la CRA.</p>
+      <p>Por lo tanto, <strong>las cantidades indicadas son máximos posibles, no pagos garantizados</strong>.</p>
+      <h3>¿Qué inmigrantes pueden recibir el Canada Child Benefit?</h3>
+      <p>Para calificar, una persona debe cumplir las condiciones relacionadas con el cuidado de los hijos, la residencia fiscal y la situación migratoria.</p>
+      <p>Entre las categorías contempladas por la CRA se encuentran:</p>
+      <ul>
+        <li>Ciudadanos canadienses.</li>
+        <li>Residentes permanentes.</li>
+        <li>Personas protegidas que cumplen los requisitos.</li>
+        <li>Determinados residentes temporales.</li>
+        <li>Personas registradas o con derecho a registrarse conforme a la Indian Act.</li>
+      </ul>
+      <h3>Atención: requisitos especiales para residentes temporales</h3>
+      <p>Los residentes temporales, incluidos algunos trabajadores extranjeros, deben cumplir dos condiciones específicas:</p>
+      <ol>
+        <li>Haber vivido en Canadá durante los 18 meses anteriores.</li>
+        <li>Tener un permiso válido durante el mes 19 que no contenga las restricciones de estatus señaladas por la CRA.</li>
+      </ol>
+      <p>Además, deben cumplir los demás requisitos del programa.</p>
+      <p>Esto significa que <strong>una persona con permiso de trabajo que acaba de llegar a Canadá no necesariamente puede solicitar inmediatamente el Canada Child Benefit</strong>.</p>
+      <p class="article-enlace-oficial"><strong>Enlace oficial — quiénes pueden solicitarlo:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/who-apply.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>child-family-benefits/<wbr>canada-child-benefit/<wbr>who-apply.html</a></p>
+      <h2>3. ¿Cómo solicitar el Canada Child Benefit?</h2>
+      <p>Las familias que cumplen los requisitos pueden consultar los procedimientos oficiales de solicitud de la CRA.</p>
+      <p>Para los recién llegados, el proceso puede incluir el formulario RC66 y el anexo RC66SCH, que permite proporcionar información sobre la situación en Canadá y los ingresos.</p>
+      <p>Dependiendo de las circunstancias, la CRA puede solicitar documentos adicionales para comprobar la elegibilidad.</p>
+      <p class="article-enlace-oficial"><strong>Enlace oficial — cómo solicitar el beneficio infantil:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>child-family-benefits/<wbr>canada-child-benefit/<wbr>how-apply.html</a></p>
+      <p class="article-enlace-oficial"><strong>Enlace oficial — montos y cálculos vigentes:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-much.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>child-family-benefits/<wbr>canada-child-benefit/<wbr>how-much.html</a></p>
+      <h2>4. ¿Qué información debes tener preparada?</h2>
+      <p>Antes de iniciar cualquier solicitud, conviene reunir la documentación que corresponda a tu situación.</p>
+      <p>La CRA puede requerir información como:</p>
+      <ul>
+        <li>Fecha de llegada a Canadá.</li>
+        <li>Número de Seguro Social (SIN) u otra identificación fiscal aceptada.</li>
+        <li>Situación migratoria y documentos correspondientes.</li>
+        <li>Estado civil.</li>
+        <li>Información de ingresos dentro y fuera de Canadá.</li>
+        <li>Datos de tu cónyuge o pareja, cuando corresponda.</li>
+        <li>Información y documentos de nacimiento de los hijos.</li>
+        <li>Documentos adicionales o traducciones aceptables cuando sean necesarios.</li>
+      </ul>
+      <p>Los documentos exigidos dependen del beneficio y del caso particular.</p>
+      <h2>5. ¿Qué ocurre si no tienes ingresos?</h2>
+      <p>No tener ingresos no significa automáticamente que una persona esté excluida de todos los beneficios.</p>
+      <p>Algunos programas están precisamente dirigidos a personas y familias con ingresos bajos o moderados.</p>
+      <p>Sin embargo, la ausencia de ingresos no elimina los demás requisitos de elegibilidad.</p>
+      <p>La CRA también recomienda presentar las declaraciones anuales de impuestos para mantener actualizada la información utilizada en el cálculo de los beneficios.</p>
+      <p>Incluso las personas sin ingresos pueden necesitar presentar una declaración para continuar recibiendo determinados pagos.</p>
+      <h2>6. ¿Los estudiantes internacionales y trabajadores temporales pueden aplicar?</h2>
+      <p>La elegibilidad depende del beneficio específico.</p>
+      <p>Para el CGEB, la CRA examina principalmente la residencia fiscal, la edad, los ingresos y las demás condiciones del programa.</p>
+      <p>Para el CCB existen requisitos migratorios adicionales, especialmente para residentes temporales.</p>
+      <p>Por eso, no debe suponerse que tener un permiso de trabajo o estudio garantiza automáticamente el acceso a todos los programas.</p>
+      <p>La residencia fiscal y la situación migratoria son conceptos diferentes que deben evaluarse según las reglas oficiales.</p>
+      <h2>7. Evita estafas y solicitudes fraudulentas</h2>
+      <p>El Podcast del Migrante recomienda utilizar exclusivamente las páginas oficiales de la Agencia de Ingresos de Canadá.</p>
+      <p>Desconfía de quienes:</p>
+      <ul>
+        <li>Prometen subsidios garantizados sin revisar requisitos.</li>
+        <li>Cobran por liberar supuestos pagos del Gobierno.</li>
+        <li>Solicitan contraseñas bancarias o códigos de seguridad.</li>
+        <li>Ofrecen registrar información falsa para obtener beneficios.</li>
+        <li>Afirman que cualquier inmigrante recibe dinero automáticamente.</li>
+      </ul>
+      <p>La CRA es la entidad responsable de determinar la elegibilidad y los montos.</p>
+      <h2>8. Enlaces oficiales para consultar y solicitar los beneficios</h2>
+      <ol>
+        <li><strong>Beneficios y créditos para recién llegados a Canadá:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/newcomers-canada-immigrants.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>tax/<wbr>international-non-residents/<wbr>individuals-leaving-entering-canada-non-residents/<wbr>newcomers-canada-immigrants.html</a></li>
+        <li><strong>Formulario RC151 — Solicitud para nuevos residentes:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>forms-publications/<wbr>forms/<wbr>rc151.html</a></li>
+        <li><strong>Formulario RC66 — Solicitud de beneficios por hijos:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>forms-publications/<wbr>forms/<wbr>rc66.html</a></li>
+        <li><strong>Cómo solicitar el Canada Groceries and Essentials Benefit:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>child-family-benefits/<wbr>canada-groceries-essentials-benefit/<wbr>get-benefit.html</a></li>
+        <li><strong>Requisitos del Canada Child Benefit:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/who-apply.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>child-family-benefits/<wbr>canada-child-benefit/<wbr>who-apply.html</a></li>
+        <li><strong>Cómo solicitar el Canada Child Benefit:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>child-family-benefits/<wbr>canada-child-benefit/<wbr>how-apply.html</a></li>
+        <li><strong>Montos oficiales del Canada Child Benefit para 2026–2027:</strong><br><a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-much.html" target="_blank" rel="noopener">https://<wbr><wbr>www.canada.ca/<wbr>en/<wbr>revenue-agency/<wbr>services/<wbr>child-family-benefits/<wbr>canada-child-benefit/<wbr>how-much.html</a></li>
+      </ol>
+      <h2>Infórmate antes de solicitar</h2>
+      <p>Si eres inmigrante y estás comenzando una nueva vida en Canadá, conocer los programas oficiales puede ayudarte a identificar apoyos económicos para los cuales podrías ser elegible.</p>
+      <p>Recuerda que no todos los beneficios se solicitan de la misma manera y que cada programa tiene sus propios requisitos.</p>
+      <p>En <strong>El Podcast del Migrante</strong> compartimos información para que nuestra comunidad pueda conocer sus derechos, cumplir sus obligaciones y tomar decisiones informadas.</p>
+      <p>Comparte este artículo con una familia recién llegada a Canadá.</p>
+      <p><strong>El Podcast del Migrante</strong><br><em>Conectando latinos, construyendo futuro.</em></p>
+      <p><em>Aviso legal: este contenido es informativo. No constituye asesoría tributaria, financiera o migratoria personalizada. La CRA es la autoridad encargada de evaluar las solicitudes y determinar la elegibilidad y los pagos. El Podcast del Migrante no procesa solicitudes ni representa al Gobierno de Canadá.</em></p>
+    `,
+    /* Video: pendiente de grabación. Cuando exista, reemplazar null por, p. ej.:
+       { tiktokId: "<id>", tiktokUser: "podcastdelmigrante", title: "…", heading: "🎥 Mira el video",
+         cover: "assets/recien-llegados-canada-beneficios-cra-cgeb-ccb.jpg",
+         position: "antes-de", beforeHeading: "1. Canada Groceries and Essentials Benefit: apoyo para alimentos y gastos esenciales" }
+       (o { youtubeId: "<id>", title: "…" }). No se inventa ningún enlace. */
+    video: null,
+    sources: [
+      { label: "CRA — Benefits and credits for newcomers to Canada", href: "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/newcomers-canada-immigrants.html" },
+      { label: "CRA — Formulario RC151 (solicitud para nuevos residentes)", href: "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc151.html" },
+      { label: "CRA — Formulario RC66 (solicitud de beneficios por hijos)", href: "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html" },
+      { label: "CRA — Canada Groceries and Essentials Benefit: how to get the benefit", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/get-benefit.html" },
+      { label: "CRA — Canada Child Benefit: who can apply", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/who-apply.html" },
+      { label: "CRA — Canada Child Benefit: how to apply", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html" },
+      { label: "CRA — Canada Child Benefit: how much you can get", href: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-much.html" },
+    ],
+    correctionNote: null,
+    disclaimerCategory: null,
+    relatedSlugs: ["canada-groceries-essentials-benefit-cgeb-2026", "canada-suplemento-alimentos-679-presupuesto-2026", "llegar-canada-documentos-primer-dia"],
+    showNewsletter: true,
+    sponsored: false,
+    translationSlug: null,
+    lang: "es",
+    seo: {
+      fullTitle: "¿Recién llegado a Canadá? Ayudas económicas de la CRA: CGEB y CCB",
+      description: "Recién llegado a Canadá: cómo solicitar el CGEB y el Canada Child Benefit antes de tu primera declaración. Requisitos, formularios RC151 y RC66.",
+      canonicalPath: "/economia/recien-llegados-canada-beneficios-cra-cgeb-ccb/",
+    },
+  },
+  {
     /* Iniciativa de 33.000 trabajadores (In-Canada Workers Initiative): texto
        editorial entregado por la dirección (11-11-2026). Verificado el
        11-11-2026 contra IRCC: comunicado del 4 de mayo de 2026 (hasta 33.000

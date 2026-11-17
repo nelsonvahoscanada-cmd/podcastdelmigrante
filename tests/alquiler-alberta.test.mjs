@@ -18,9 +18,9 @@ const art = ctx.A.find((a) => a.slug === SLUG);
 const texto = art.bodyHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 const pagina = read(`articulo-${SLUG}.html`);
 
-test("publicada el 8-11-2026 (tercera más reciente, tras las del 11-11 y 9-11-2026), en Vivienda", () => {
+test("publicada el 8-11-2026 (cuarta más reciente, tras las del 16-11, 11-11 y 9-11-2026), en Vivienda", () => {
   assert.ok(art && !art.draft);
-  assert.equal(ctx.A[2].slug, SLUG);
+  assert.equal(ctx.A[3].slug, SLUG);
   assert.equal(art.id, "ART-2026-041");
   assert.equal(art.contentType, "Noticia");
   assert.equal(art.category, "Vivienda");
@@ -29,13 +29,13 @@ test("publicada el 8-11-2026 (tercera más reciente, tras las del 11-11 y 9-11-2
   assert.equal(new Set(ctx.A.map((a) => a.id)).size, ctx.A.length);
 });
 
-test("portada: segunda tarjeta destacada (principal: 33.000 residencias, 11-11-2026; primera: suplemento de alimentos); las anteriores siguen publicadas", () => {
-  assert.equal(ctx.H.main.slug, "canada-33000-residencias-permanentes-trabajadores-2026");
-  assert.equal(ctx.H.secondary[1].slug, SLUG);
-  assert.equal(ctx.H.secondary[1].title, art.title);
-  assert.equal(ctx.H.secondary[1].image, `url('${IMG}')`);
-  assert.equal(ctx.H.secondary[1].date, "8 de noviembre");
-  assert.equal(ctx.H.secondary[2].slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
+test("portada: tercera tarjeta destacada (principal: beneficios de la CRA, 16-11-2026; antes: 33.000 residencias y suplemento de alimentos); las anteriores siguen publicadas", () => {
+  assert.equal(ctx.H.main.slug, "recien-llegados-canada-beneficios-cra-cgeb-ccb");
+  assert.equal(ctx.H.secondary[2].slug, SLUG);
+  assert.equal(ctx.H.secondary[2].title, art.title);
+  assert.equal(ctx.H.secondary[2].image, `url('${IMG}')`);
+  assert.equal(ctx.H.secondary[2].date, "8 de noviembre");
+  assert.equal(ctx.H.secondary[3].slug, "masterclass-gratuita-ley-intrinseca-creacion-eder-campos");
   for (const s of ctx.H.secondary) assert.ok(ctx.A.some((a) => a.slug === s.slug && !a.draft), s.slug);
   assert.ok(ctx.A.some((a) => a.slug === "alberta-bomberos-forestales-2027" && !a.draft), "bomberos sigue publicada");
 });
