@@ -2,10 +2,10 @@
    una región aparece como disponible cuando tiene ficha publicada en Canadá en Datos. */
 window.CD_DISPONIBLES = {
   "total": 13,
-  "disponibles": 10,
+  "disponibles": 11,
   "provincias": {
     "total": 10,
-    "disponibles": 7
+    "disponibles": 8
   },
   "territorios": {
     "total": 3,
@@ -52,7 +52,7 @@ window.CD_DISPONIBLES = {
       "code": "NB",
       "name": "Nuevo Brunswick",
       "type": "provincia",
-      "url": null
+      "url": "/canada-en-datos/new-brunswick"
     },
     {
       "code": "NS",

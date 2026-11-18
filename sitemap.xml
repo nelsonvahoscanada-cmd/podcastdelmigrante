@@ -130,7 +130,7 @@
   <!-- canada-en-datos: generado por scripts/build-canada-datos.mjs -->
   <url>
     <loc>https://podcastdelmigrante.com/canada-en-datos/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -683,6 +683,66 @@
   <url>
     <loc>https://podcastdelmigrante.com/canada-en-datos/quebec/chibougamau</loc>
     <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/saint-john</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/riverview</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/moncton</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/dieppe</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/miramichi</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/fredericton</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/edmundston</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/campbellton</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podcastdelmigrante.com/canada-en-datos/new-brunswick/bathurst</loc>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
