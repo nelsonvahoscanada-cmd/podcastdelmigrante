@@ -1,0 +1,100 @@
+200 | https://511.gnb.ca/ | https://511.gnb.ca/ | New Brunswick 511
+200 | https://ccnb.ca/ | https://ccnb.ca/ | Accueil - CCNB
+200 | https://edmundston.ca/en | https://edmundston.ca/en | Home :: Ville d'Edmundston
+200 | https://facebook.com/eradioglobal | https://www.facebook.com/eradioglobal | Eradioglobal | Brooks AB
+200 | https://horizonnb.ca/ | https://horizonnb.ca/ | Home - Horizon Health Network
+200 | https://instagram.com/eradioglobal | https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Feradioglobal&is_from_rle | Instagram
+200 | https://ircc.canada.ca/english/newcomers/services/index.asp | https://ircc.canada.ca/english/newcomers/services/index.asp | Find free newcomer services near you
+200 | https://maritimebus.com/ | https://maritimebus.com/ | Home | Maritime Bus
+200 | https://natural-resources.canada.ca/earth-sciences/geography/download-geographical-names-data/9245 | https://natural-resources.canada.ca/maps-tools-publications/maps/geographical-names-canada/download-geographical-names-data | Download Geographical Names Data - Natural Resources Canada
+200 | https://nbcc.ca/ | https://nbcc.ca/ | NBCC (New Brunswick Community College)
+200 | https://nbhealthlink.ca/ | https://nbhealthlink.ca/ | Homepage | NB Health Link
+200 | https://saintjohn.ca/en | https://saintjohn.ca/en | City of Saint John, New Brunswick
+200 | https://saintjohn.ca/en/transit/routes-stops-and-schedules | https://saintjohn.ca/en/transit/routes-stops-and-schedules | Routes, Stops, and Schedules | City of Saint John, New Brunswick
+200 | https://weather.gc.ca/ | https://weather.gc.ca/ | Weather Information - Environment Canada
+200 | https://www.alertready.ca/ | https://www.alertready.ca/ | Home - Alert Ready Emergency Alert System (Pelmorex Corp).
+200 | https://www.bathurst.ca/ | https://www.bathurst.ca/ | City of Bathurst | Northeastern New Brunswick's Hub City
+ERR TimeoutError | https://www.canada.ca/en/employment-social-development/services/sin/temporary-residents.html
+ERR TimeoutError | https://www.canada.ca/en/financial-consumer-agency/services/banking/opening-bank-account.html
+ERR TimeoutError | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/atlantic-immigration.html
+ERR TimeoutError | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html
+ERR TimeoutError | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative.html
+ERR TimeoutError | https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html
+ERR TimeoutError | https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html
+ERR TimeoutError | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html
+ERR TimeoutError | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-new-brunswick.html
+ERR TimeoutError | https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html
+ERR TimeoutError | https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html
+200 | https://www.cicic.ca/ | https://www.cicic.ca/2/home.canada | Canadian Information Centre for International Credentials
+200 | https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-data/data-tables/rental-market/rental-market-report-data-tables | https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-data/data-tables/rental-market/rental-market-report-data-tables | Rental Market Survey Data Tables | CMHC
+200 | https://www.codiactranspo.ca/moncton-transport/schedules-routes | https://www.codiactranspo.ca/moncton-transport/schedules-routes | Schedules & Routes | Codiac
+200 | https://www.dieppe.ca/en/ | https://www.dieppe.ca/en/ | Home | City of Dieppe
+200 | https://www.fredericton.ca/ | https://www.fredericton.ca/ | City of Fredericton
+200 | https://www.fredericton.ca/resident-services/fredericton-transit/schedule-maps | https://www.fredericton.ca/resident-services/fredericton-transit/schedule-maps | Schedule & Maps | City of Fredericton
+200 | https://www.gnb.ca/content/gnb/en/departments/health/DrugPlans/content/medicare/ApplyingforaCard.html | https://www2.gnb.ca/content/gnb/en/departments/health/DrugPlans/content/medicare/ApplyingforaCard.html | Applying for Medicare Coverage
+200 | https://www.gnb.ca/content/gnb/en/departments/health/Medicare.html | https://www2.gnb.ca/content/gnb/en/departments/health/Medicare.html | Medicare
+200 | https://www.gnb.ca/en/campaign/accessing-health-care-nb.html | https://www.gnb.ca/en/campaign/accessing-health-care-nb.html | Accessing health care in New Brunswick - gnb.ca
+200 | https://www.gnb.ca/en/campaign/geonb/data-catalogue/local-governments.html | https://www.gnb.ca/en/campaign/geonb/data-catalogue/local-governments.html | Local governments - gnb.ca
+200 | https://www.gnb.ca/en/topic/business-economy/economic-information.html | https://www.gnb.ca/en/topic/business-economy/economic-information.html | Economic information - gnb.ca
+200 | https://www.gnb.ca/en/topic/driving-transportation/driving-licensing/licences-new-residents.html | https://www.gnb.ca/en/topic/driving-transportation/driving-licensing/licences-new-residents.html | Driver's licences for new residents - gnb.ca
+200 | https://www.gnb.ca/en/topic/education-training/k-12/district.html | https://www.gnb.ca/en/topic/education-training/k-12/district.html | School districts and education councils - gnb.ca
+200 | https://www.gnb.ca/en/topic/education-training/k-12/school/new-families.html | https://www.gnb.ca/en/topic/education-training/k-12/school/new-families.html | Families new to the New Brunswick school system - gnb.ca
+200 | https://www.gnb.ca/en/topic/education-training/post-secondary/universities-colleges.html | https://www.gnb.ca/en/topic/education-training/post-secondary/universities-colleges.html | Universities and colleges - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/communty-local-gov/rural-districts.html | https://www.gnb.ca/en/topic/family-home-community/communty-local-gov/rural-districts.html | Rural districts - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/immigration.html | https://www.gnb.ca/en/topic/family-home-community/immigration.html | Immigration - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/immigration/atlantic-immigration-program.html | https://www.gnb.ca/en/topic/family-home-community/immigration/atlantic-immigration-program.html | Atlantic Immigration Program - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/immigration/important-information.html | https://www.gnb.ca/en/topic/family-home-community/immigration/important-information.html | Important information for every candidate - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/immigration/important-notices.html | https://www.gnb.ca/en/topic/family-home-community/immigration/important-notices.html | Important notices - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/immigration/invitation-selection-rounds.html | https://www.gnb.ca/en/topic/family-home-community/immigration/invitation-selection-rounds.html | Invitation and selection rounds - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/immigration/newcomers.html | https://www.gnb.ca/en/topic/family-home-community/immigration/newcomers.html | Newcomers to New Brunswick - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program.html | https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program.html | New Brunswick Provincial Nominee Program - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program/strategic-initiative.html | https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program/strategic-initiative.html | New Brunswick Strategic Initiative - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/renting.html | https://www.gnb.ca/en/topic/family-home-community/renting.html | Renting - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/renting/deposits.html | https://www.gnb.ca/en/topic/family-home-community/renting/deposits.html | Security deposits - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/renting/increase.html | https://www.gnb.ca/en/topic/family-home-community/renting/increase.html | Rent increases - gnb.ca
+200 | https://www.gnb.ca/en/topic/family-home-community/renting/solve-problem.html | https://www.gnb.ca/en/topic/family-home-community/renting/solve-problem.html | Solve a problem - gnb.ca
+200 | https://www.gnb.ca/en/topic/health-wellness/access-health-care/regional-health-authorities.html | https://www.gnb.ca/en/topic/health-wellness/access-health-care/regional-health-authorities.html | Regional Health Authorities - gnb.ca
+200 | https://www.gnb.ca/en/topic/health-wellness/access-health-care/tele-care-811.html | https://www.gnb.ca/en/topic/health-wellness/access-health-care/tele-care-811.html | Tele-Care 811 - gnb.ca
+200 | https://www.gnb.ca/en/topic/health-wellness/access-health-care/virtual-care.html | https://www.gnb.ca/en/topic/health-wellness/access-health-care/virtual-care.html | Virtual care - gnb.ca
+200 | https://www.gnb.ca/en/topic/jobs-workplaces/find-a-job.html | https://www.gnb.ca/en/topic/jobs-workplaces/find-a-job.html | Find a job in New Brunswick - gnb.ca
+200 | https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards.html | https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards.html | Employment standards - gnb.ca
+200 | https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/foreign-workers.html | https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/foreign-workers.html | Registry of employers of foreign workers - gnb.ca
+200 | https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/wage-pay.html | https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/wage-pay.html | Minimum wage, overtime and minimum pay for reporting for work - gnb.ca
+200 | https://www.gnb.ca/en/topic/laws-safety/emergency-preparedness-alerts.html | https://www.gnb.ca/en/topic/laws-safety/emergency-preparedness-alerts.html | Emergency preparedness - gnb.ca
+200 | https://www.iana.org/time-zones | https://www.iana.org/time-zones | Time Zones
+200 | https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=New+Brunswick | https://www.jobbank.gc.ca/jobsearch/jobsearch?locationstring=New+Brunswick | Available jobs - Search - Job Bank
+200 | https://www.jobbank.gc.ca/trend-analysis/job-market-reports/new-brunswick/environmental-scan | https://www.jobbank.gc.ca/trend-analysis/job-market-reports/new-brunswick/environmental-scan | Economic Scan – New Brunswick - Job Bank
+200 | https://www.miramichi.org/ | https://www.miramichi.org/ | City of Miramichi
+200 | https://www.moncton.ca/ | https://www.moncton.ca/language_select?destination=/node/143 | Language selection | City of Moncton
+200 | https://www.nbjobs.ca/ | https://www.nbjobs.ca/ | Home | NBjobs.ca
+200 | https://www.nbmc-cmnb.ca/ | https://www.nbmc-cmnb.ca/ | Home Page - The New Brunswick Multicultural Council
+200 | https://www.townofriverview.ca/ | https://www.townofriverview.ca/ | Town of Riverview, New Brunswick
+200 | https://www.umoncton.ca/ | https://www.umoncton.ca/ | Choisir l’Université de Moncton | UMoncton
+200 | https://www.unb.ca/ | https://www.unb.ca/ | University of New Brunswick | UNB
+200 | https://www.vitalitenb.ca/en | https://vitalitenb.ca/en | Home - Vitalité | Francophone leader serving its communities
+ERR 403 | https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410006401 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410006401 | Employee wages by industry, annual
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701 | Labour force characteristics, monthly, seasonally adjusted and trend-cycle
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410032701 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410032701 | Labour force characteristics by gender and detailed age group, annual
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410046401 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410046401 | Labour force characteristics by province, territory and economic region, annual
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410046601 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410046601 | Employment characteristics by economic region, annual
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710000901 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710000901 | Population estimates, quarterly
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710004001 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710004001 | Estimates of the components of international migration, quarterly
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610022201 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610022201 | Gross domestic product, expenditure-based, provincial and territorial, annual
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201 | Population and dwelling counts: Canada and census subdivisions (municipalities)
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810022201 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810022201 | Knowledge of official languages by age: Canada, provinces and territories
+200 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810030701 | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810030701 | Immigrant status and period of immigration by place of birth: Canada, provinces and territ
+200 | https://youtube.com/@eradioglobal4291 | https://www.youtube.com/@eradioglobal4291 | 
+NAV 200 | https://www.canada.ca/en/employment-social-development/services/sin/temporary-residents.html | https://www.canada.ca/en/employment-social-development/services/sin/temporary-residents.html | SIN for temporary residents in Canada - Canada.ca
+NAV 200 | https://www.canada.ca/en/financial-consumer-agency/services/banking/opening-bank-account.html | https://www.canada.ca/en/financial-consumer-agency/services/banking/opening-bank-account.html | Opening a bank account - Canada.ca
+NAV 200 | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/atlantic-immigration.html | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/atlantic-immigration.html | Atlantic Immigration Program - Canada.ca
+NAV 200 | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html | Immigrate as a provincial nominee - Canada.ca
+NAV 200 | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative.html | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative.html | Using an immigration and citizenship representative - Canada.ca
+NAV 200 | https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html | https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html | Protect yourself from immigration fraud - Canada.ca
+NAV 200 | https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html | https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html | Provinces and territories - Intergovernmental Affairs - Canada.ca
+NAV 200 | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html | How to apply - Canada child benefit (CCB) - Canada.ca
+NAV 200 | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-new-brunswick.html | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-new-brunswick.html | Province of New Brunswick - Canada.ca
+NAV 200 | https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html | https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html | GST/HST calculator (and rates) - Canada.ca
+NAV 200 | https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html | https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets.html | Tax rates and income brackets - Personal income tax - Canada.ca
+NAV 403 | https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21 | https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21 | Just a moment...
+ARCHIVO 20261105045305 | https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21
