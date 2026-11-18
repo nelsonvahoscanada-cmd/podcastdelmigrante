@@ -95,7 +95,8 @@ export const FICHAS = {
   miramichi: { nombre: "Miramichi", web: "https://www.miramichi.org/", cmhc: ["new-brunswick", "Miramichi CA", "la aglomeración de Miramichi"], transporte: [MARITIME] },
   edmundston: { nombre: "Edmundston", web: "https://edmundston.ca/en", cmhc: ["new-brunswick", "Edmundston CA", "la aglomeración de Edmundston"], transporte: [MARITIME] },
   bathurst: { nombre: "Bathurst", web: "https://www.bathurst.ca/", cmhc: ["new-brunswick", "Bathurst CA", "la aglomeración de Bathurst"], transporte: [MARITIME] },
-  campbellton: { nombre: "Campbellton", web: "https://www.campbellton.org/", cmhc: ["new-brunswick", "Campbellton CA", "la parte de Nuevo Brunswick de la aglomeración de Campbellton"], transporte: [MARITIME] },
+  /* Sin sitio oficial: no se pudo comprobar su dirección (18-11-2026) */
+  campbellton: { nombre: "Campbellton", web: null, cmhc: ["new-brunswick", "Campbellton CA", "la parte de Nuevo Brunswick de la aglomeración de Campbellton"], transporte: [MARITIME] },
 };
 
 /* ---------- Fuentes ---------- */
@@ -473,7 +474,7 @@ function pagina(r, L, { esc }) {
 
   const perfilCenso = `https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&DGUIDlist=2021A0005${r.c}`;
   const oficiales = [
-    ...(f ? [{ label: `Sitio oficial de ${f.nombre}`, href: f.web }] : []),
+    ...(f && f.web ? [{ label: `Sitio oficial de ${f.nombre}`, href: f.web }] : []),
     { label: "Gobierno de Nuevo Brunswick — Gobiernos locales y distritos rurales (GeoNB)", href: FUENTES.gobiernos.url },
     { label: `Statistics Canada — Perfil del Censo 2021 de ${r.censoNombre} (en inglés)`, href: perfilCenso },
   ];
