@@ -155,25 +155,31 @@ def tabla_statcan(pid):
 
 paso("Censo 2021 (98-10-0002-01): provincia, CD y CSD de Nuevo Brunswick")
 censo = {}
-with tabla_statcan("98100002") as f:
-    r = csv.reader(io.TextIOWrapper(f, encoding="utf-8-sig"))
-    cab = next(r)
-    print("columnas:", cab)
-    for fila in r:
-        if len(fila) > 2 and (re.match(r"^2021A0005(13\d{5})$", fila[2]) or re.match(r"^2021A0003(13\d{2})$", fila[2]) or fila[2] == "2021A000213"):
-            censo[fila[2]] = {cab[i]: v for i, v in enumerate(fila) if v != "" and i >= 1}
+try:
+  with tabla_statcan("98100002") as f:
+      r = csv.reader(io.TextIOWrapper(f, encoding="utf-8-sig"))
+      cab = next(r)
+      print("columnas:", cab)
+      for fila in r:
+          if len(fila) > 2 and (re.match(r"^2021A0005(13\d{5})$", fila[2]) or re.match(r"^2021A0003(13\d{2})$", fila[2]) or fila[2] == "2021A000213"):
+              censo[fila[2]] = {cab[i]: v for i, v in enumerate(fila) if v != "" and i >= 1}
+except Exception as e:
+    print("ERROR censo", type(e).__name__, e)
 print("filas:", len(censo))
 salida["censo"] = censo
 salida["fuentes"]["censo"] = "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201"
 
 paso("Censo 2021 (98-10-0012-01): lugares designados de Nuevo Brunswick")
 censo_dpl = {}
-with tabla_statcan("98100012") as f:
-    r = csv.reader(io.TextIOWrapper(f, encoding="utf-8-sig"))
-    cab = next(r)
-    for fila in r:
-        if len(fila) > 2 and re.match(r"^2021A0006(13\d+)$", fila[2]):
-            censo_dpl[fila[2]] = {cab[i]: v for i, v in enumerate(fila) if v != "" and i >= 1}
+try:
+  with tabla_statcan("98100012") as f:
+      r = csv.reader(io.TextIOWrapper(f, encoding="utf-8-sig"))
+      cab = next(r)
+      for fila in r:
+          if len(fila) > 2 and re.match(r"^2021A0006(13\d+)$", fila[2]):
+              censo_dpl[fila[2]] = {cab[i]: v for i, v in enumerate(fila) if v != "" and i >= 1}
+except Exception as e:
+    print("ERROR censo DPL", type(e).__name__, e)
 print("filas:", len(censo_dpl))
 salida["censo_dpl"] = censo_dpl
 salida["fuentes"]["censo_dpl"] = "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810001201"
@@ -200,19 +206,22 @@ salida["fuentes"]["cgn"] = "https://natural-resources.canada.ca/earth-sciences/g
 # ------------------------------------------------------------ Encuesta de Población Activa
 paso("EPA por región económica (Nuevo Brunswick)")
 salida["epa"] = {}
-for pid, campo in (("14100393", "Labour force characteristics"), ("14100392", "North American Industry Classification System (NAICS)")):
-    with tabla_statcan(pid) as f:
-        filas = [x for x in csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig")) if "New Brunswick" in x["GEO"]]
-    ult = max(x["REF_DATE"] for x in filas)
-    print(pid, "geos:", sorted({x["GEO"] for x in filas}), "último año:", ult)
-    for x in filas:
-        if x["REF_DATE"] != ult:
-            continue
-        if pid == "14100393" and "Statistics" in x and x["Statistics"] != "Estimate":
-            continue
-        reg = salida["epa"].setdefault(x["GEO"], {"anio": ult})
-        destino = reg.setdefault("lfs" if pid == "14100393" else "industrias", {})
-        destino[x[campo]] = {"v": x["VALUE"], "uom": x["UOM"], "status": x["STATUS"], "escala": x["SCALAR_FACTOR"]}
+try:
+    for pid, campo in (("14100393", "Labour force characteristics"), ("14100392", "North American Industry Classification System (NAICS)")):
+        with tabla_statcan(pid) as f:
+            filas = [x for x in csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig")) if "New Brunswick" in x["GEO"]]
+        ult = max(x["REF_DATE"] for x in filas)
+        print(pid, "geos:", sorted({x["GEO"] for x in filas}), "último año:", ult)
+        for x in filas:
+            if x["REF_DATE"] != ult:
+                continue
+            if pid == "14100393" and "Statistics" in x and x["Statistics"] != "Estimate":
+                continue
+            reg = salida["epa"].setdefault(x["GEO"], {"anio": ult})
+            destino = reg.setdefault("lfs" if pid == "14100393" else "industrias", {})
+            destino[x[campo]] = {"v": x["VALUE"], "uom": x["UOM"], "status": x["STATUS"], "escala": x["SCALAR_FACTOR"]}
+except Exception as e:
+    print("ERROR EPA", type(e).__name__, e)
 for k, v in salida["epa"].items():
     print(" ", k, v["anio"], (v.get("lfs") or {}).get("Unemployment rate"))
 

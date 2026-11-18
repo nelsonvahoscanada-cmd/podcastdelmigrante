@@ -283,3 +283,67 @@ if "paginas" in PARTES:
     for nombre, url, lim in PAGINAS + [(f"Extra: {u}", u, 8000) for u in EXTRA]:
         leer_pagina(nombre, url, lim, nav)
         time.sleep(1)
+
+# ------------------------------------------------------------ 5. API oficial de Statistics Canada (WDS)
+if "wds" in PARTES:
+    paso("WDS de Statistics Canada: acceso de prueba")
+    for u in ["https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata", "https://www150.statcan.gc.ca/t1/wds/rest/getFullTableDownloadCSV/17100009/en"]:
+        try:
+            if u.endswith("getCubeMetadata"):
+                req = urllib.request.Request(u, data=json.dumps([{"productId": 17100009}]).encode(), headers={**UA, "Content-Type": "application/json"})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    print(u, "→", r.status, r.read()[:400])
+            else:
+                b, st, fin = get(u, 60)
+                print(u, "→", st, b[:400])
+        except Exception as e:
+            print("ERROR", u, type(e).__name__, str(e)[:200])
+
+
+# ------------------------------------------------------------ 6. Páginas del Gobierno de Nuevo Brunswick (sitemap completo)
+SEL_GNB = r"/immigration|/renting|licences-new-residents|driver-licences\.html|/communty-local-gov/(rural-districts|local-resource-manual/local-government-organization)|geonb/data-catalogue/(local-governments|rural-districts)|k-12/school/new-families|k-12/district(/anglophone|/francophone)?\.html|k-12\.html|/topic/health|/health-|medicare|patient|tele-care|811|family-doctor|jobs-workplaces|employment-standard|minimum-wage|labour|/emergency|seniors/senior-tax-credit|low-income|social-assistance|child|family-children\.html|population|statistic|economic-information|post-secondary|student-financial|language-proficiency|newcomer|settlement|study-succeed"
+if "gnb" in PARTES:
+    import os
+    os.makedirs("/tmp/out/gnb", exist_ok=True)
+    paso("Sitemap completo de gnb.ca (inglés)")
+    b, st, fin = get("https://www.gnb.ca/en.sitemap.xml", 120)
+    todas = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", b.decode("utf-8", "ignore"))
+    open("/tmp/out/gnb-sitemap.txt", "w").write("\n".join(todas))
+    sel = [u for u in todas if re.search(SEL_GNB, u, re.I) and "/business-economy/tenders" not in u]
+    print("páginas:", len(todas), "seleccionadas:", len(sel))
+    nav = None
+    try:
+        from playwright.sync_api import sync_playwright
+        pw = sync_playwright().start()
+        nav = pw.chromium.launch().new_context(locale="en-CA")
+    except Exception as e:
+        print("sin navegador:", e)
+    for u in sel[:260]:
+        nombre = re.sub(r"[^a-z0-9]+", "-", u.split("/en/", 1)[-1].lower()).strip("-")[:120]
+        try:
+            b, st, fin = get(u, 60)
+            h = b.decode("utf-8", "ignore")
+        except Exception as e:
+            h = ""
+            print("ERROR", u, type(e).__name__, str(e)[:120])
+        if len(texto(h)) < 300 and nav:
+            try:
+                pg = nav.new_page()
+                pg.goto(u, wait_until="networkidle", timeout=60000)
+                h = pg.content()
+                pg.close()
+            except Exception as e:
+                print("navegador ERROR", u, type(e).__name__)
+        titulo = (re.search(r"<title>(.*?)</title>", h, re.S) or [None, "-"])[1].strip()
+        mod = re.search(r'(?i)(?:dcterms\.modified|date[-_ ]?modified|last[-_ ]?modified)"?\s*content="([^"]+)"', h) or re.search(r"(?i)(Date modified|Last updated|Updated)\s*:?\s*</?[^>]*>?\s*([0-9]{4}-[0-9]{2}-[0-9]{2}|[A-Z][a-z]+ \d{1,2}, \d{4})", h)
+        main = re.search(r"(?is)<main[^>]*>(.*?)</main>", h)
+        cuerpo = main.group(1) if main else h
+        links = []
+        for href, txt in re.findall(r'(?is)<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', cuerpo):
+            t = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", txt))).strip()
+            if t and (href, t) not in links:
+                links.append((urllib.parse.urljoin(u, href), t))
+        with open(f"/tmp/out/gnb/{nombre}.txt", "w") as f:
+            f.write(f"URL: {u}\nTÍTULO: {titulo}\nMODIFICADA: {mod.group(mod.lastindex) if mod else '—'}\n\n{texto(cuerpo)}\n\n--- ENLACES ---\n" + "\n".join(f"{t} | {l}" for l, t in links))
+        print("ok", u, "|", titulo[:90], "|", mod.group(mod.lastindex) if mod else "—")
+        time.sleep(0.5)
