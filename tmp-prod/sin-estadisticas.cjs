@@ -18,7 +18,8 @@ Module._load = function (req, ...rest) {
         const c = await nc(...o);
         await c.exposeBinding("__beaconBloqueado", () => { cont.beacon++; });
         await c.addInitScript(() => { navigator.sendBeacon = () => { try { window.__beaconBloqueado(); } catch (e) {} return true; }; });
-        await c.route((u) => /cloudflareinsights\.com|\/cdn-cgi\/rum/.test(u.href), (r) => { cont.cloudflare++; return r.fulfill({ status: 200, contentType: "application/javascript", body: "" }); });
+        /* Cloudflare Web Analytics: su script carga normal (firma de integridad), pero el envío de datos (/cdn-cgi/rum) se responde localmente y no llega a Cloudflare; sendBeacon también está anulado */
+        await c.route((u) => /\/cdn-cgi\/rum/.test(u.href), (r) => { cont.cloudflare++; return r.fulfill({ status: 204, body: "" }); });
         await c.route(/\/api\//, (r) => {
           cont.api++;
           const u = r.request().url();
