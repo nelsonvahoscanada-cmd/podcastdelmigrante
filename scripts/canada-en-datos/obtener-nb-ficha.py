@@ -374,7 +374,9 @@ RONDA3 = [
     "https://www.gnb.ca/en/topic/family-home-community/immigration/newcomers.html",
     "https://www.gnb.ca/en/topic/family-home-community/immigration/atlantic-immigration-program.html",
 ]
-if "ronda3" in PARTES:
+if "ronda3" in PARTES or "ronda5" in PARTES:
+    if "ronda5" in PARTES:
+        RONDA3[:] = ["https://www.gnb.ca/content/gnb/en/departments/health/Medicare.html", "https://www.gnb.ca/content/gnb/en/departments/health/DrugPlans/content/medicare/ApplyingforaCard.html", "https://nbhealthlink.ca/", "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html"]
     import os
     os.makedirs("/tmp/out/r3", exist_ok=True)
     from playwright.sync_api import sync_playwright
