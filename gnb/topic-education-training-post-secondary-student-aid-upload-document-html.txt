@@ -1,0 +1,52 @@
+URL: https://www.gnb.ca/en/topic/education-training/post-secondary/student-aid/upload-document.html
+TÍTULO: How to upload a document - gnb.ca
+MODIFICADA: —
+
+How to upload a document
+ Understand the process, file sizes and how to upload a multiple page document.
+\r\n"}}" id="text-b679aa046c" class="cmp-text">
+ Understand the process, file sizes and how to upload a multiple page document.
+ On this page
+ Uploading a document
+ You will need to create an NB Student Aid account if you don’t already have one.
+\r\n From the&nbsp; My Dashboard &nbsp;page, select&nbsp; Upload . Upload one PDF format document at a time. Each different document or form should be uploaded separately.
+\r\n A message will appear when the document has successfully uploaded. Wait for this message before uploading another document. If you receive an error message, try to upload the document again at another time or send it by fax to 506-444-4333 or by mail.
+\r\n \r\n Steps for uploading a document provides information to guide you through the process (PDF 274 KB). 
+\r\n Contact Student Financial Services if you’re having issues uploading. 
+\r\n \r\n"}}" id="text-cc9ce919fe" class="cmp-text">
+ You will need to create an NB Student Aid account if you don’t already have one.
+ From the My Dashboard page, select Upload . Upload one PDF format document at a time. Each different document or form should be uploaded separately.
+ A message will appear when the document has successfully uploaded. Wait for this message before uploading another document. If you receive an error message, try to upload the document again at another time or send it by fax to 506-444-4333 or by mail.
+ Steps for uploading a document provides information to guide you through the process (PDF 274 KB). 
+ Contact Student Financial Services if you’re having issues uploading. 
+ Upload a document now 
+ Document requirements and tips
+ You can upload a document when you are completing your online application.
+\r\n \r\n Complete the required info on the page and hit “ Next ” or “ Previous ” before exiting so that all your information is saved.&nbsp;
+\r\n Select “ Exit Application ” in the top right of the screen to return to the&nbsp; Welcome Page 
+\r\n When you continue your application, it will bring you back to the beginning.&nbsp; You will have to select “ Next ” to reach the point where you left off.
+\r\n \r\n A document that has multiple pages must be uploaded as one file.
+\r\n
+\r\n A document must be under 5MB for upload. To reduce the size of a file:
+\r\n \r\n Windows :&nbsp;Find the file you want to compress in Windows Explorer. Right-click the file and hover the cursor over “ Send To ”. From there, select “ Compressed Folder ”. This will create a&nbsp; ZIP &nbsp;folder with the same name as your file that will appear in the same location as the file you compressed or on your desktop. Within this&nbsp; ZIP &nbsp;folder will be a compressed version of your document.
+\r\n Mac :&nbsp;Find your folder in the Finder. Right-click or control-click on the file to bring up the pop-up menu. Select the “ Compress filename ”. This will create a file that ends in . zip &nbsp;next to the file you selected. The compressed file will be in that file.
+\r\n \r\n"}}" id="text-f2f71da48f" class="cmp-text">
+ You can upload a document when you are completing your online application.
+ Complete the required info on the page and hit “ Next ” or “ Previous ” before exiting so that all your information is saved. 
+ Select “ Exit Application ” in the top right of the screen to return to the Welcome Page 
+ When you continue your application, it will bring you back to the beginning. You will have to select “ Next ” to reach the point where you left off.
+ A document that has multiple pages must be uploaded as one file.
+ A document must be under 5MB for upload. To reduce the size of a file:
+ Windows : Find the file you want to compress in Windows Explorer. Right-click the file and hover the cursor over “ Send To ”. From there, select “ Compressed Folder ”. This will create a ZIP folder with the same name as your file that will appear in the same location as the file you compressed or on your desktop. Within this ZIP folder will be a compressed version of your document.
+ Mac : Find your folder in the Finder. Right-click or control-click on the file to bring up the pop-up menu. Select the “ Compress filename ”. This will create a file that ends in . zip next to the file you selected. The compressed file will be in that file.
+ Learn more (PDF 434 KB) 
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Education and training | https://www.gnb.ca/en/topic/education-training.html
+Post-secondary | https://www.gnb.ca/en/topic/education-training/post-secondary.html
+Student Aid | https://www.gnb.ca/en/topic/education-training/post-secondary/student-aid.html
+Steps for uploading a document provides information to guide you through the process (PDF 274 KB). | https://www.gnb.ca/content/dam/GNB3/t/et-ef/post-secondary/docs/document-upload-steps-e.pdf
+Upload a document now | https://www.gnb.ca/en/topic/education-training/post-secondary/student-aid/student-aid-portal.html
+Learn more (PDF 434 KB) | https://www.gnb.ca/content/dam/GNB3/t/et-ef/post-secondary/docs/document-upload-faq-e.pdf

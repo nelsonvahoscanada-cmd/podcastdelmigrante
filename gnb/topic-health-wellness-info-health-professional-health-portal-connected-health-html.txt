@@ -1,0 +1,56 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/connected-health.html
+TÍTULO: Connected Health - gnb.ca
+MODIFICADA: —
+
+Connected Health
+ Learn how Connected Health uses smart technology and data sharing to provide proactive, efficient, and patient-centered care, even when clinicians and patients are in different locations.
+\n"}}" id="text-7b53d1c61c" class="cmp-text">
+ Learn how Connected Health uses smart technology and data sharing to provide proactive, efficient, and patient-centered care, even when clinicians and patients are in different locations.
+ Overview
+ Connected Health is conceptual model for health care which encompasses terms such as wireless, digital, electronic, mobile, and tele-health.&nbsp;&nbsp;
+\n In the Connected Health model:&nbsp;
+\n \n devices, services and interventions are designed around the patient's needs&nbsp;
+\n health related data is shared, in such a way that the patient can receive care in the most proactive and efficient manner possible&nbsp;
+\n all stakeholders in the process are connected
+\n accurate and pertinent information regarding patient status is shared and presented in a timely manner through smarter use of data, devices, communication platforms and people.
+\n \n Connected Health has been identified as a critical offering with the potential to better enable access to care when the clinician and client are not in the same location. The notion of connected health also builds on the interaction between clients and/or members of their circle of care, occurring remotely, using any forms of communication or information exchange with the aim of maximizing the quality and effectiveness of client care.&nbsp;
+\n Some examples of Connected Health digital health solutions are:&nbsp;
+\n \n virtual care - such as videoconferencing, teleconferencing, and secure text-based communication&nbsp;
+\n digital health collaboration tools - such as eConsult&nbsp;
+\n longitudinal patient records - such as the NB Electronic Health Record (EHR)&nbsp;&nbsp;
+\n \n A key component to the Connected Health Strategy is virtual care.
+\n"}}" id="text-bba7c2d2fd" class="cmp-text">
+ Connected Health is conceptual model for health care which encompasses terms such as wireless, digital, electronic, mobile, and tele-health. 
+ In the Connected Health model: 
+ devices, services and interventions are designed around the patient's needs 
+ health related data is shared, in such a way that the patient can receive care in the most proactive and efficient manner possible 
+ all stakeholders in the process are connected
+ accurate and pertinent information regarding patient status is shared and presented in a timely manner through smarter use of data, devices, communication platforms and people.
+ Connected Health has been identified as a critical offering with the potential to better enable access to care when the clinician and client are not in the same location. The notion of connected health also builds on the interaction between clients and/or members of their circle of care, occurring remotely, using any forms of communication or information exchange with the aim of maximizing the quality and effectiveness of client care. 
+ Some examples of Connected Health digital health solutions are: 
+ virtual care - such as videoconferencing, teleconferencing, and secure text-based communication 
+ digital health collaboration tools - such as eConsult 
+ longitudinal patient records - such as the NB Electronic Health Record (EHR) 
+ A key component to the Connected Health Strategy is virtual care.
+ Connected Health webinar series 
+ \n MyHealthNB COVID Results Application 2021-01-25 (PDF 2.1 MB) 
+\n 8 Digital Health Myths about Patient Access to Digital Health Results (PDF 203 KB) 
+\n \n"}}" id="text-5593d6e391" class="cmp-text">
+ MyHealthNB COVID Results Application 2021-01-25 (PDF 2.1 MB) 
+ 8 Digital Health Myths about Patient Access to Digital Health Results (PDF 203 KB) 
+ Virtual care
+ Virtual care for patients 
+ Information for patients about virtual care, their privacy and how it supports gaining access to health care services.
+ Virtual care for clinicians 
+ Information how virtual tools can support clinicians deliver health services, expertise and information to their patients.
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+MyHealthNB COVID Results Application 2021-01-25 (PDF 2.1 MB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/ch-sc/docs/MyHealthNB-results-application.pdf
+8 Digital Health Myths about Patient Access to Digital Health Results (PDF 203 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/ch-sc/docs/digital-health-myths.pdf
+Virtual care for patients | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/connected-health/virtual-care-patients.html
+Virtual care for clinicians | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/connected-health/virtual-care-clinicians.html

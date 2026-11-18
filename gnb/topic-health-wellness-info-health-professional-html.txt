@@ -1,0 +1,64 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+TÍTULO: Information for health professionals  - gnb.ca
+MODIFICADA: —
+
+Information for health professionals 
+ Up-to-date information and resources on health topics including drug policies, registrations, forms and more.
+\n"}}" id="text-58fd64a8fc" class="cmp-text">
+ Up-to-date information and resources on health topics including drug policies, registrations, forms and more.
+ On this page
+ New Brunswick Health Portal &nbsp;&nbsp;
+\r\n Access to secure and innovative tools, such as the provincial Electronic Health Record (EHR) and Medicare Claims Entry (MCE). The portal also supports information sharing with health-care professionals and EMR vendors.
+\r\n"}}" id="text-952164b4aa" class="cmp-text">
+ New Brunswick Health Portal 
+ Access to secure and innovative tools, such as the provincial Electronic Health Record (EHR) and Medicare Claims Entry (MCE). The portal also supports information sharing with health-care professionals and EMR vendors.
+ Disease resources and reporting
+ Communicable disease resources
+ Disease and outbreak information for health-care providers.
+ Communicable diseases
+ Information on emerging diseases and different types of illnesses.
+ Diabetes 
+ The Insulin Pump Program (IPP), CANRISK and other tools for primary care providers.
+ Notifiable Diseases and Events Guide (NDEG)
+ Program standards and guidelines for Regional Public Health in the prevention and control of reportable diseases and events.
+ Employment support
+ Educational bursaries for paramedics (PCPs and ACPs) and emergency medical technicians (EMTs) 
+ Students enrolled in a recognized post-secondary institution who sign a “Pay-to-Stay” return-of-service commitment may qualify for a tuition bursary after graduation. 
+ NB Health Jobs
+ Apply to work as a doctor or health-care professional in New Brunswick.
+ New Brunswick Critical Care Nursing Program (NBCCNP)
+ This program is open to nurses employed by New Brunswick Regional Health Authorities who are newly graduated or new to critical or emergency care. 
+ Health data and forms
+ Mental Health Act forms
+ Find the right form if you or someone you know has been involuntarily hospitalized.
+ Respiratory watch
+ Learn about current outbreaks of respiratory illness across the province.
+ Immunizations
+ New Brunswick Immunization Program Guide (NBIPG)
+ The New Brunswick Immunization Program Guide provides direction to all health-care professionals who provide publicly funded vaccines.
+ Prescriptions and medical coverage
+ Medicare information for health professionals 
+ Registration, programs and other information for physicians and nurse practitioners. 
+ New Brunswick Drug Plans
+ The Government of New Brunswick provides drug coverage to eligible residents through the New Brunswick Drug Plan, New Brunswick Prescription Drug Program and other government-sponsored programs (known collectively as the New Brunswick Drug Plans). 
+ Prescription Monitoring Program
+ The Prescription Monitoring Program (PMP) helps manage the potential risks of prescribing, dispensing and using prescription medications that can lead to problematic use.
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Communicable disease resources | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/communicable-disease.html
+Communicable diseases | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/communicable-diseases.html
+Diabetes | https://www.gnb.ca/content/gnb/en/departments/health/patientinformation/PrimaryHealthCare/A-Comprehensive-Diabetes-Strategy-for-New-Brunswickers.html
+Notifiable Diseases and Events Guide (NDEG) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/diseases-events.html
+Educational bursaries for paramedics (PCPs and ACPs) and emergency medical technicians (EMTs) | https://www.gnb.ca/en/campaign/medical-education-bursaries.html
+NB Health Jobs | https://nbhealthjobs.ca/
+New Brunswick Critical Care Nursing Program (NBCCNP) | https://www.unb.ca/learningfutures/professional-development/nursing-criticalcare.html
+Mental Health Act forms | https://www.gnb.ca/en/topic/health-wellness/mental-health/psychiatric-advocate-services/mental-health-forms.html
+Respiratory watch | https://www.gnb.ca/en/topic/laws-safety/health-environment-advisories/respiratory-watch.html
+New Brunswick Immunization Program Guide (NBIPG) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide.html
+Medicare information for health professionals | https://www.gnb.ca/content/gnb/en/departments/health/healthprofessionals.html
+New Brunswick Drug Plans | https://www.gnb.ca/en/topic/health-wellness/nb-drug-plans.html
+Prescription Monitoring Program | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/prescription-monitoring-program.html

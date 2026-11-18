@@ -1,0 +1,36 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/overview.html
+TÍTULO: Intended use of the Guide and Program Overview - gnb.ca
+MODIFICADA: —
+
+Intended use of the Guide and Program Overview
+ The guide outlines legislation, policies and standards necessary in the provision of safe, effective and competent immunization practice.
+\r\n"}}" id="text-ec552cbcc1" class="cmp-text">
+ The guide outlines legislation, policies and standards necessary in the provision of safe, effective and competent immunization practice.
+ On this page
+ Overview
+ Immunization is one of the most powerful and cost-effective tools of modern medicine. One hundred years ago, infectious diseases were the leading cause of death worldwide. In Canada they now cause less than 5% of all deaths- thanks to immunization programs. (12 Great Achievements, CPHA 100 http://cpha100.ca/12-great-achievements)
+\r\n The New Brunswick Immunization Program provides vaccines through routine, high risk and communicable disease response programs. Safe and effective vaccines, legislation, policies, standards and competent providers are the cornerstones of the New Brunswick Immunization Program.&nbsp;
+\r\n"}}" id="text-f5473cbf4f" class="cmp-text">
+ Immunization is one of the most powerful and cost-effective tools of modern medicine. One hundred years ago, infectious diseases were the leading cause of death worldwide. In Canada they now cause less than 5% of all deaths- thanks to immunization programs. (12 Great Achievements, CPHA 100 http://cpha100.ca/12-great-achievements)
+ The New Brunswick Immunization Program provides vaccines through routine, high risk and communicable disease response programs. Safe and effective vaccines, legislation, policies, standards and competent providers are the cornerstones of the New Brunswick Immunization Program. 
+ Intended use of the guide
+ The New Brunswick Immunization Program Guide provides direction to all health care practitioners who provide publicly funded vaccine. It outlines legislation, policies and standards necessary in the provision of safe, effective and competent immunization practice. The guide is intended to be used in conjunction with the Canadian Immunization Guide. Additional information can be found directly from the National Advisory Committee on Immunization.
+\r\n The New Brunswick Immunization Program Guide is updated regularly to reflect changes in evidence and resources.&nbsp;
+\r\n"}}" id="text-921509bb78" class="cmp-text">
+ The New Brunswick Immunization Program Guide provides direction to all health care practitioners who provide publicly funded vaccine. It outlines legislation, policies and standards necessary in the provision of safe, effective and competent immunization practice. The guide is intended to be used in conjunction with the Canadian Immunization Guide. Additional information can be found directly from the National Advisory Committee on Immunization.
+ The New Brunswick Immunization Program Guide is updated regularly to reflect changes in evidence and resources. 
+ Program overview
+ Immunization is used to prevent and control vaccine preventable diseases. Publicly funded vaccines are those vaccines that are available to the population of New Brunswick as outlined in the eligibility criteria which is determined by the Office of the Chief Medical Officer of Health. Publicly funded vaccines are provided for routine programs for infants, children and adults; targeted programs for high-risk individuals; and for communicable disease follow-up. They are provided free of charge through a network of immunizers in public health clinics, primary care settings, pharmacies, long-term care facilities, other institutions and private organizations. This mixed model of delivery allows for prudent use of vaccines which often come at high costs and at times can be limited in supply.
+\r\n Increasing immunization acceptance and continually improving the quality of service through the surveillance of adverse events following immunization (AEFI) is integral to the success of the New Brunswick Immunization program. As such the New Brunswick immunization program is a part of the Canadian Adverse Events Following Immunization Surveillance System (CAEFISS), which is the mechanism for reporting, assessing and providing recommendation about adverse events following immunization. 
+\r\n Immunization is an increasingly complex subject and immunization providers must rely on the expertise of others such microbiologists, virologists and epidemiologists to inform their work. The recommendations of the National Advisory Committee on Immunization and the Canadian Immunization Committee provide expert guidance to the New Brunswick Immunization Program.
+\r\n"}}" id="text-67782542fa" class="cmp-text">
+ Immunization is used to prevent and control vaccine preventable diseases. Publicly funded vaccines are those vaccines that are available to the population of New Brunswick as outlined in the eligibility criteria which is determined by the Office of the Chief Medical Officer of Health. Publicly funded vaccines are provided for routine programs for infants, children and adults; targeted programs for high-risk individuals; and for communicable disease follow-up. They are provided free of charge through a network of immunizers in public health clinics, primary care settings, pharmacies, long-term care facilities, other institutions and private organizations. This mixed model of delivery allows for prudent use of vaccines which often come at high costs and at times can be limited in supply.
+ Increasing immunization acceptance and continually improving the quality of service through the surveillance of adverse events following immunization (AEFI) is integral to the success of the New Brunswick Immunization program. As such the New Brunswick immunization program is a part of the Canadian Adverse Events Following Immunization Surveillance System (CAEFISS), which is the mechanism for reporting, assessing and providing recommendation about adverse events following immunization. 
+ Immunization is an increasingly complex subject and immunization providers must rely on the expertise of others such microbiologists, virologists and epidemiologists to inform their work. The recommendations of the National Advisory Committee on Immunization and the Canadian Immunization Committee provide expert guidance to the New Brunswick Immunization Program.
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Immunization Program Guide (NBIPG) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide.html

@@ -1,0 +1,58 @@
+URL: https://www.gnb.ca/en/topic/health-wellness.html
+TÍTULO: Health and wellness - gnb.ca
+MODIFICADA: —
+
+Health and wellness
+ Accessing health care, medicare, public health, drug programs, immunization and vaccination, managing diseases, mental health, addictions and substance use and more.
+\r\n"}}" id="text-1c73286040" class="cmp-text">
+ Accessing health care, medicare, public health, drug programs, immunization and vaccination, managing diseases, mental health, addictions and substance use and more.
+ Information and services
+ Addictions and substance use 
+ Support and services for addictions or substance use including gambling, opioids, alcohol, cannabis and more.
+ Information for health professionals 
+ Up-to-date information and resources on health topics including drug policies, registrations, forms and more. 
+ Environmental health and advisories 
+ Advisories and alerts regarding health and safety matters including blue-green algae, boil orders, respiratory watch and more.
+ Health and lifestyle 
+ Pregnancy, breastfeeding, Newborn and Infant Hearing Screening Program, childhood, food security, smoking and vaping and more. 
+ Health system and services 
+ Primary health care, 811, regional health authorities, NB Health Link, clinics, sexual health, pharmacies and more. 
+ Immunization and vaccination 
+ Immunizations, vaccines, specialized information for health professionals and more. 
+ Managing health and diseases 
+ Diseases, cancer, diabetes, COVID-19, influenza, health care related infections, reports and more. 
+ Medicare, drug plans and programs 
+ Medicare, organ and tissue donation program, NB drug plans and more. 
+ Mental health 
+ Mental health support and information, suicide prevention, helplines and online resources. 
+ New Brunswick Drug Plans 
+ The Government of New Brunswick provides drug coverage to eligible residents through the New Brunswick Drug Plan, New Brunswick Prescription Drug Program and other government-sponsored programs (known collectively as the New Brunswick Drug Plans).
+ Patient engagement and privacy 
+ Medical health information, MyHealthNB, privacy and access, patient information, rights and advocacy and more. 
+ Sexual health 
+ Sexually transmitted and blood borne infections, gender-confirming surgery, sexual health clinics and more. 
+ Featured
+ Screening saves lives 
+ Learn how to lower your risk of developing cancer and how to find it early through screening programs.
+ MyHealthNB 
+ Access your health information and related services.
+ Language profile 
+ Add your language information to your Medicare record.
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Addictions and substance use | https://www.gnb.ca/en/topic/health-wellness/addictions-substance-abuse.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+Environmental health and advisories | https://www.gnb.ca/en/topic/laws-safety/health-environment-advisories.html
+Health and lifestyle | https://www.gnb.ca/en/topic/health-wellness/health-lifestyle.html
+Health system and services | https://www.gnb.ca/en/topic/health-wellness/access-health-care.html
+Immunization and vaccination | https://www.gnb.ca/en/topic/health-wellness/immunization-vaccination.html
+Managing health and diseases | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease.html
+Medicare, drug plans and programs | https://www.gnb.ca/en/topic/health-wellness/medicare-plans-programs.html
+Mental health | https://www.gnb.ca/en/topic/health-wellness/mental-health.html
+New Brunswick Drug Plans | https://www.gnb.ca/en/topic/health-wellness/nb-drug-plans.html
+Patient engagement and privacy | https://www.gnb.ca/en/topic/health-wellness/patient-engagement-privacy.html
+Sexual health | https://www.gnb.ca/en/topic/health-wellness/sexual-health.html
+Screening saves lives | https://www.gnb.ca/en/campaign/screening-saves-lives.html
+MyHealthNB | https://myhealth.gnb.ca/s/?language=en_US
+Language profile | https://www.gnb.ca/en/campaign/language-profile.html

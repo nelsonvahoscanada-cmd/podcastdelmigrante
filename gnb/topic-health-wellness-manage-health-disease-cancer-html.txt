@@ -1,0 +1,63 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer.html
+TÍTULO: Cancer prevention and care - gnb.ca
+MODIFICADA: —
+
+Cancer prevention and care
+ Learn about reducing your risk of developing cancer and discover resources available for cancer care.
+\n"}}" id="text-9955471c95" class="cmp-text">
+ Learn about reducing your risk of developing cancer and discover resources available for cancer care.
+ On this page
+ Cancer screening programs
+ Breast cancer
+ Learn about breast cancer, screening and how to reduce your risk.
+ Cervical cancer
+ Learn about cervical cancer, screening and how to reduce your risk.
+ Colon cancer
+ Learn about colon cancer, screening and how to reduce your risk.
+ Information for health professionals
+ Cancer epidemiology and Cancer Registry
+ How cancer information is used to understand the burden of cancer in the province.
+ Cancer screening tools for health-care providers
+ Resources for health-care providers for cervical, colon and breast cancer screening. 
+ Resources
+ New Brunswick Cancer Network
+ The New Brunswick Cancer Network (NBCN) is a branch of the Department of Health and its mission is to reduce the burden of cancer for New Brunswickers.
+ Canadian Cancer Society - cancer.ca
+ Information about cancer, treatments and living with the disease.
+ Cancer patient navigation
+ Support for patients and their families through the care process.
+ Cancer care facilities
+ Cancer services available for New Brunswickers.
+ Cancer prevention
+ How to lower your risk of developing cancer.
+ Cancer screening
+ Find out whether you should be screened for different types of cancer and how to access testing.
+ Pediatric oncology
+ Pediatric oncology navigation services and cancer care centres.
+ Patient resources to download
+ Materials available to download and print.
+ Reports
+ Cancer statistics and other reports.
+ Palliative care
+ How to access palliative care and other resources for patients and families.
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Managing health and diseases | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease.html
+Breast cancer | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/breast-cancer.html
+Cervical cancer | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/cervical-cancer.html
+Colon cancer | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/colon-cancer.html
+Cancer epidemiology and Cancer Registry | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/cancer-epidemiology.html
+Cancer screening tools for health-care providers | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/provider-tools-screening.html
+New Brunswick Cancer Network | https://www.gnb.ca/en/org/new-brunswick-cancer-network.html
+Canadian Cancer Society - cancer.ca | https://cancer.ca/en/
+Cancer patient navigation | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/patient-navigation.html
+Cancer care facilities | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/facilities.html
+Cancer prevention | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/cancer-prevention.html
+Cancer screening | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/cancer-screening.html
+Pediatric oncology | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/pediatric-oncology.html
+Patient resources to download | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/patient-resources-download.html
+Reports | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/reports.html
+Palliative care | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/palliative-care.html

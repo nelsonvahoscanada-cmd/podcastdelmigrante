@@ -1,0 +1,37 @@
+URL: https://www.gnb.ca/en/campaign/geonb/data-catalogue/health-regions.html
+TÍTULO: Health regions - gnb.ca
+MODIFICADA: —
+
+Health regions
+ GeoNB
+\n"}}" id="text-4db8ce27ab" class="cmp-text">
+ GeoNB
+ Overview
+ \n Data purpose:&nbsp; Health regions are an important geographic unit by which health and health-related data are produced. Health regions are legislated administrative areas defined by provincial ministries of health. These administrative areas represent geographic areas of responsibility for regional health authorities. Health regions, being provincial administrative areas, are subject to change.
+\n Data description:&nbsp; Provides a provincial coverage of the administrative boundaries of the regional health authorities (2) in New Brunswick to promote the use of a common geographic representation in New Brunswick. The health regions in New Brunswick are groupings of the NBHC Community Boundaries (as defined by the NBHC), which are groupings of the municipalities (Census subdivisions).
+\n Attributes: &nbsp;Health Region, Name of Health Region (FR &amp; EN), Regional Health Authority.
+\n Update requirements:&nbsp; On an ad hoc basis if boundaries change.
+\n Restriction on use:&nbsp; Unrestricted
+\n License:&nbsp; Open Government License 
+\n Georeferencing:&nbsp; datum - NAD83(CSRS), map projection - NB Stereographic Double, (EPSG 2953)
+\n Data formats:&nbsp; ESRI file geodatabase, ESRI shape file, KML
+\n Data coverage and size: &nbsp;Provincial Coverage
+\n Responsible Agency: &nbsp;New Brunswick Health Council (NBHC)
+\n \n"}}" id="text-160c2d6840" class="cmp-text">
+ Data purpose: Health regions are an important geographic unit by which health and health-related data are produced. Health regions are legislated administrative areas defined by provincial ministries of health. These administrative areas represent geographic areas of responsibility for regional health authorities. Health regions, being provincial administrative areas, are subject to change.
+ Data description: Provides a provincial coverage of the administrative boundaries of the regional health authorities (2) in New Brunswick to promote the use of a common geographic representation in New Brunswick. The health regions in New Brunswick are groupings of the NBHC Community Boundaries (as defined by the NBHC), which are groupings of the municipalities (Census subdivisions).
+ Attributes: Health Region, Name of Health Region (FR & EN), Regional Health Authority.
+ Update requirements: On an ad hoc basis if boundaries change.
+ Restriction on use: Unrestricted
+ License: Open Government License 
+ Georeferencing: datum - NAD83(CSRS), map projection - NB Stereographic Double, (EPSG 2953)
+ Data formats: ESRI file geodatabase, ESRI shape file, KML
+ Data coverage and size: Provincial Coverage
+ Responsible Agency: New Brunswick Health Council (NBHC)
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+GeoNB | https://www.gnb.ca/en/campaign/geonb.html
+Data catalogue | https://www.gnb.ca/en/campaign/geonb/data-catalogue.html
+Open Government License | https://www.gnb.ca/en/campaign/geonb/open-government-license.html

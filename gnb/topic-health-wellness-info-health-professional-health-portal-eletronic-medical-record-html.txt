@@ -1,0 +1,383 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html
+TÍTULO: Provincial Electronic Medical Record (EMR) - gnb.ca
+MODIFICADA: —
+
+Provincial Electronic Medical Record (EMR)
+ Learn how the program helps primary care providers and community specialists adopt Certified EMR solutions to improve patient care and access to health information.
+\r\n"}}" id="text-45858d8bd7" class="cmp-text">
+ Learn how the program helps primary care providers and community specialists adopt Certified EMR solutions to improve patient care and access to health information.
+ On this page
+ Overview
+ The New Brunswick Provincial Electronic Medical Record (EMR) Program supports primary care providers and community-based specialists across the province in adopting certified electronic medical record (EMR) solutions to enhance patient care, streamline workflows and improve access to health information.&nbsp;
+\n"}}" id="text-c8ada74ce4" class="cmp-text">
+ The New Brunswick Provincial Electronic Medical Record (EMR) Program supports primary care providers and community-based specialists across the province in adopting certified electronic medical record (EMR) solutions to enhance patient care, streamline workflows and improve access to health information. 
+ Program objectives
+ The key objectives of the Provincial EMR Program are to:&nbsp;
+\n \n Improve the efficiency of the health system through:&nbsp; \n adoption of integrated EMRs, connecting community care settings to the Electronic Health Record (EHR)&nbsp;
+\n enhanced population health management by enabling evidence-based decision making&nbsp;
+\n \n
+\n Improve clinical value of EMRs through:&nbsp; \n access to provincial EHR Connectivity and Tools (e.g. EHR Clinical Viewer, electronic laboratory results, and future services such as eConsult/eReferral, immunizations, and medication profiles)&nbsp;
+\n use of hosted EMRs for better protection of Personal Health Information (PHI)&nbsp;
+\n enhanced care coordination by enabling collaboration across multidisciplinary care teams and care settings&nbsp;
+\n \n
+\n Improve patient care outcomes through: &nbsp; \n increased access to comprehensive and accurate patient records in a timely manner, leading to better-informed decisions&nbsp;
+\n bilateral exchange of patient data between the EMR and the EHR&nbsp;
+\n better continuity of care by ensuring seamless transition between health care providers and care settings&nbsp;
+\n \n
+\n \n The Provincial EMR Program is a key part of achieving a connected health system that unlocks clinical value for the clinicians and residents of New Brunswick.&nbsp;
+\n"}}" id="text-c374885f3c" class="cmp-text">
+ The key objectives of the Provincial EMR Program are to: 
+ Improve the efficiency of the health system through: adoption of integrated EMRs, connecting community care settings to the Electronic Health Record (EHR) 
+ enhanced population health management by enabling evidence-based decision making 
+ Improve clinical value of EMRs through: access to provincial EHR Connectivity and Tools (e.g. EHR Clinical Viewer, electronic laboratory results, and future services such as eConsult/eReferral, immunizations, and medication profiles) 
+ use of hosted EMRs for better protection of Personal Health Information (PHI) 
+ enhanced care coordination by enabling collaboration across multidisciplinary care teams and care settings 
+ Improve patient care outcomes through: increased access to comprehensive and accurate patient records in a timely manner, leading to better-informed decisions 
+ bilateral exchange of patient data between the EMR and the EHR 
+ better continuity of care by ensuring seamless transition between health care providers and care settings 
+ The Provincial EMR Program is a key part of achieving a connected health system that unlocks clinical value for the clinicians and residents of New Brunswick. 
+ EMR certification 
+ The NB EMR Certification process provides assurance to clinicians, patients and the digital health community that EMR vendors and their Certified EMR products continue to meet the minimum set of requirements and obligations to drive EMR maturity for the province.&nbsp;&nbsp;
+\r\n Certification ensures an EMR solution&nbsp;adheres to a set of minimum standards that confirm the EMR will provide:
+\r\n \r\n clinical, administrative and billing functions necessary to support and enhance quality of care for patients, along with improving practice efficiency
+\r\n
+\r\n interoperability with the provincial health system to support improved continuity of care and the advancement of health&nbsp;system planning
+\r\n
+\r\n privacy and security features and controls necessary for the protection of PHI.
+\r\n \r\n"}}" id="text-d83cbe0905" class="cmp-text">
+ The NB EMR Certification process provides assurance to clinicians, patients and the digital health community that EMR vendors and their Certified EMR products continue to meet the minimum set of requirements and obligations to drive EMR maturity for the province. 
+ Certification ensures an EMR solution adheres to a set of minimum standards that confirm the EMR will provide:
+ clinical, administrative and billing functions necessary to support and enhance quality of care for patients, along with improving practice efficiency
+ interoperability with the provincial health system to support improved continuity of care and the advancement of health system planning
+ privacy and security features and controls necessary for the protection of PHI.
+ Partnership with OMD
+ In preparation for the EMR Open Market, the New Brunswick Department of Health conducted a jurisdictional scan of EMR Certification programs in Canada to identify best practices for EMR certifications. This resulted in the decision to partner with OntarioMD (OMD) and leverage the OMD certification process. OMD has extensive experience with EMRs and runs Canada's longest established and most mature certification process.&nbsp;
+\n NB EMR certification follows the OMD Certification process (see diagram below). While OMD oversees the end-to-end certification process and conducts the validation of functional and foundational requirements, vendors work directly with NB to complete validation of all requirements in the EHR Connectivity and Tools category.&nbsp;&nbsp;
+\n"}}" id="text-c1b659ed96" class="cmp-text">
+ In preparation for the EMR Open Market, the New Brunswick Department of Health conducted a jurisdictional scan of EMR Certification programs in Canada to identify best practices for EMR certifications. This resulted in the decision to partner with OntarioMD (OMD) and leverage the OMD certification process. OMD has extensive experience with EMRs and runs Canada's longest established and most mature certification process. 
+ NB EMR certification follows the OMD Certification process (see diagram below). While OMD oversees the end-to-end certification process and conducts the validation of functional and foundational requirements, vendors work directly with NB to complete validation of all requirements in the EHR Connectivity and Tools category. 
+ EMR certification fee
+ New EMR vendors are required to pay a one-time total fee of $22,000 for the EMR validation process. The fee is divided into three milestone payments (at the beginning of the designated stage):&nbsp;
+\n \n application submission – $2,500+HST (Stage 1)&nbsp;
+\n validation, foundation and functional categories – $15,000+HST (Stage 3)&nbsp;
+\n validation, EHR connectivity and tools category – $4,500+HST (Stage 4)&nbsp;&nbsp;
+\n \n Vendors already certified with OMD for Ontario may complete NB certification with no additional fees.&nbsp;
+\n See the OMD EMR validation overview for more detail.&nbsp;
+\n"}}" id="text-9a6e9ed836" class="cmp-text">
+ New EMR vendors are required to pay a one-time total fee of $22,000 for the EMR validation process. The fee is divided into three milestone payments (at the beginning of the designated stage): 
+ application submission – $2,500+HST (Stage 1) 
+ validation, foundation and functional categories – $15,000+HST (Stage 3) 
+ validation, EHR connectivity and tools category – $4,500+HST (Stage 4) 
+ Vendors already certified with OMD for Ontario may complete NB certification with no additional fees. 
+ See the OMD EMR validation overview for more detail. 
+ Certification prerequisites
+ As a pre-requisite to obtaining certification, EMRs in New Brunswick must integrate with Medicare Claims Entry (MCE) for electronic billing.&nbsp;&nbsp;
+\n"}}" id="text-728b6a7024" class="cmp-text">
+ As a pre-requisite to obtaining certification, EMRs in New Brunswick must integrate with Medicare Claims Entry (MCE) for electronic billing. 
+ New Brunswick EMR Certification
+ The table below identifies the list of specifications required to achieve NB certification.&nbsp;&nbsp;
+\r\n Once a vendor's EMR has successfully completed the certification process against the current Certification Release, their EMR will be designated as certified and added to the list of Certified EMRs.&nbsp;
+\r\n"}}" id="text-70be809270" class="cmp-text">
+ The table below identifies the list of specifications required to achieve NB certification. 
+ Once a vendor's EMR has successfully completed the certification process against the current Certification Release, their EMR will be designated as certified and added to the list of Certified EMRs. 
+ \r\n Certification release
+\r\n Certification area
+\r\n Component requirements
+\r\n
+ PCNB-2024-01 
+\r\n Foundational
+\r\n Core Data Set Standard
+\r\n
+ Data Migration
+\r\n
+ Hosting
+\r\n
+ Privacy and Security
+\r\n
+ Functional
+\r\n Primary Case Baseline
+\r\n
+ Chronic Disease Management
+\r\n
+ EHR Connectivity and Tools
+\r\n EHR Clinical Viewer (ECV)
+\r\n
+ Electronic Laboratory Results
+\r\n
+ \r\n"}}" id="text-08e5eb66b3" class="cmp-text">
+ Certification release
+ Certification area
+ Component requirements
+ PCNB-2024-01 
+ Foundational
+ Core Data Set Standard
+ Data Migration
+ Hosting
+ Privacy and Security
+ Functional
+ Primary Case Baseline
+ Chronic Disease Management
+ EHR Connectivity and Tools
+ EHR Clinical Viewer (ECV)
+ Electronic Laboratory Results
+ Note: Technical Specifications are only available in English. 
+\n"}}" id="text-0b55c782a0" class="cmp-text">
+ Note: Technical Specifications are only available in English. 
+ Certified EMRs
+ The table below lists the Certified EMR offerings and their certification status.&nbsp;&nbsp;
+\n"}}" id="text-04c535e95d" class="cmp-text">
+ The table below lists the Certified EMR offerings and their certification status. 
+ \r\n EMR vendor
+\r\n EMR offering*
+\r\n Minimum certified version
+\r\n Certified languages
+\r\n Certification status
+\r\n Last certified under
+\r\n
+ &nbsp;
+\r\n &nbsp;
+\r\n &nbsp;
+\r\n &nbsp;
+\r\n Date
+\r\n Status
+\r\n &nbsp;
+\r\n
+ Intrahealth
+\r\n Profile 
+\r\n 8.6.3.16
+\r\n English, French
+\r\n 2025-03-31&nbsp;
+\r\n Active
+\r\n PCNB-2023-02 
+\r\n
+ TELUS Health
+\r\n CHR 
+\r\n 25.8.2
+\r\n Bilingual
+\r\n 2025-05-27
+\r\n Active&nbsp;
+\r\n PCNB-2023-02 
+\r\n
+ TELUS Health
+\r\n PS Suite 
+\r\n 5.21.401
+\r\n English
+\r\n 2025-03-31&nbsp;
+\r\n Suspended
+\r\n PCNB-2021-01&nbsp; 
+\r\n
+ \r\n"}}" id="text-562dd3139e" class="cmp-text">
+ EMR vendor
+ EMR offering*
+ Minimum certified version
+ Certified languages
+ Certification status
+ Last certified under
+ Date
+ Status
+ Intrahealth
+ Profile 
+ 8.6.3.16
+ English, French
+ 2025-03-31 
+ Active
+ PCNB-2023-02 
+ TELUS Health
+ CHR 
+ 25.8.2
+ Bilingual
+ 2025-05-27
+ Active 
+ PCNB-2023-02 
+ TELUS Health
+ PS Suite 
+ 5.21.401
+ English
+ 2025-03-31 
+ Suspended
+ PCNB-2021-01 
+ * All EMR offerings in the province are centrally hosted.&nbsp;
+\r\n&nbsp;
+\r\n"}}" id="text-8baf33bc5e" class="cmp-text">
+ * All EMR offerings in the province are centrally hosted. 
+ Minimum certified version: Indicates the minimum version of the EMR offering that was assessed and validated by OMD for certification. Clinicians must be using the published minimum version or higher listed in the table to be recognized as using a Certified EMR offering.&nbsp;
+\r\n Certified languages: The languages for which the EMR offering is certified. An EMR offering can be certified as English, French or Bilingual. EMR offerings certified as both English and French offer solutions in both languages, however the clinic must select their desired language at implementation time. EMR offerings certified as bilingual offer users the ability to toggle between English and French at any time.&nbsp;&nbsp;
+\r\n Certification status: Represents the current status of an EMR offering certification. An EMR offering certification status can be active, suspended or withdrawn.&nbsp;For more information on the certification status visit the EMR Certification Status page.
+\r\n Last certified under: The EMR Certification release that the EMR offering was certified against. For more information on EMR Certification release visit the OMD EMR certification page .&nbsp;
+\r\n"}}" id="text-51e6dd92d6" class="cmp-text">
+ Minimum certified version: Indicates the minimum version of the EMR offering that was assessed and validated by OMD for certification. Clinicians must be using the published minimum version or higher listed in the table to be recognized as using a Certified EMR offering. 
+ Certified languages: The languages for which the EMR offering is certified. An EMR offering can be certified as English, French or Bilingual. EMR offerings certified as both English and French offer solutions in both languages, however the clinic must select their desired language at implementation time. EMR offerings certified as bilingual offer users the ability to toggle between English and French at any time. 
+ Certification status: Represents the current status of an EMR offering certification. An EMR offering certification status can be active, suspended or withdrawn. For more information on the certification status visit the EMR Certification Status page.
+ Last certified under: The EMR Certification release that the EMR offering was certified against. For more information on EMR Certification release visit the OMD EMR certification page . 
+ EMR integrations
+ Certified EMR offering list 
+ Certified EMRs in New Brunswick have access to eHealthNB and Medicare Claims Entry (MCE) billing integrations. The table below lists the Certified EMR offerings along with the available integrations and their current implementation status.
+\r\n"}}" id="text-1f5fdaae2d" class="cmp-text">
+ Certified EMRs in New Brunswick have access to eHealthNB and Medicare Claims Entry (MCE) billing integrations. The table below lists the Certified EMR offerings along with the available integrations and their current implementation status.
+ \n EMR vendor
+\n EMR offering
+\n eHealthNB integrations
+\n Billing integrations
+\n
+ &nbsp;
+\n &nbsp;
+\n ECV
+\n Labs
+\n CR Query
+\n CR Add/update
+\n MCE
+\n
+ Intrahealth
+\n Profile 
+\n &nbsp; 
+\n &nbsp; 
+\n &nbsp; 
+\n *
+\n &nbsp; 
+\n
+ TELUS Health
+\n CHR 
+\n &nbsp; 
+\n &nbsp; 
+\n &nbsp; 
+\n &nbsp; 
+\n &nbsp; 
+\n
+ TELUS Health
+\n PS Suite 
+\n &nbsp; 
+\n &nbsp; 
+\n &nbsp; 
+\n &nbsp; 
+\n &nbsp; 
+\n
+ \n"}}" id="text-ca0ebc7f12" class="cmp-text">
+ EMR vendor
+ EMR offering
+ eHealthNB integrations
+ Billing integrations
+ ECV
+ Labs
+ CR Query
+ CR Add/update
+ MCE
+ Intrahealth
+ Profile 
+ *
+ TELUS Health
+ CHR 
+ TELUS Health
+ PS Suite 
+ * RHA EMRs only&nbsp; 
+\n"}}" id="text-201e684941" class="cmp-text">
+ * RHA EMRs only 
+ Support and access requests
+ Users requiring access to integrations should contact their EMR vendor, who will assist them in completing the eHealthNB EMR Integration Access form, available for download:&nbsp; eHealthNB Integration Access Request Form (docx 63 KB) 
+\r\n"}}" id="text-ad5f6ebb12" class="cmp-text">
+ Users requiring access to integrations should contact their EMR vendor, who will assist them in completing the eHealthNB EMR Integration Access form, available for download: eHealthNB Integration Access Request Form (docx 63 KB) 
+ Available integrations
+ \n Integration
+\n Required?
+\n Purpose
+\n
+ EHR Clinical Viewer (ECV) 
+\n &nbsp; 
+\n Provides authorized EMR users with in-context access to the provincial Electronic Health Record (EHR) for patients already registered in the EMR.&nbsp;
+\n
+ Electronic Lab Results​&nbsp; 
+\n &nbsp; 
+\n Enables EMR users to retrieve, view, and manage electronic laboratory results from the provincial EHR directly within the EMR.
+\n
+ MCE
+\n &nbsp; 
+\n Defines the functional and integration requirements to support core Medicare claims billing, as well as other MCE services including claims reconciliation and Open Data Gateway tables.&nbsp;&nbsp;
+\n This integration is a prerequisite for EMR Certification.&nbsp;
+\n
+\n
+ Client Registry - Query​&nbsp; 
+\n Optional
+\n Enables EMR users to query the provincial Client Registry and automatically populate key patient demographics into the EMR such as name, date of birth, gender, NB Medicare number, address and phone number.&nbsp;
+\n
+ Client Registry - Add/Update 
+\n Optional
+\n Enables the EMR to contribute new and updated patient demographics to the Client Registry.&nbsp;&nbsp;
+\n
+ \n"}}" id="text-51e3ec3f71" class="cmp-text">
+ Integration
+ Required?
+ Purpose
+ EHR Clinical Viewer (ECV) 
+ Provides authorized EMR users with in-context access to the provincial Electronic Health Record (EHR) for patients already registered in the EMR. 
+ Electronic Lab Results​ 
+ Enables EMR users to retrieve, view, and manage electronic laboratory results from the provincial EHR directly within the EMR.
+ MCE
+ Defines the functional and integration requirements to support core Medicare claims billing, as well as other MCE services including claims reconciliation and Open Data Gateway tables. 
+ This integration is a prerequisite for EMR Certification. 
+ Client Registry - Query​ 
+ Optional
+ Enables EMR users to query the provincial Client Registry and automatically populate key patient demographics into the EMR such as name, date of birth, gender, NB Medicare number, address and phone number. 
+ Client Registry - Add/Update 
+ Optional
+ Enables the EMR to contribute new and updated patient demographics to the Client Registry. 
+ Clinician information
+ EMR quality assurance&nbsp; 
+\r\n Choosing a Certified EMR gives clinicians the assurance that the EMR solution will perform clinical care and health system integration functions in accordance with published specifications.&nbsp;&nbsp;
+\r\n The benefits of choosing a Certified EMR include improved patient care through interoperability with the health system and timely access to the Electronic Health Record, as well as enhanced patient safety and protection of Personal Health Information.&nbsp;
+\r\n Clinician mobility support&nbsp; 
+\r\n As EMR programs mature, it is common for clinicians to change or leave EMRs. Some reasons include leaving one practice to join another, a desire to move to a different EMR that provides better functionality for their practice, EMR vendors leaving the market, retirements, etc.&nbsp;&nbsp;
+\r\n Clinician mobility refers to the ease of movement of clinicians and their patient data between clinics using EMRs, within the same or different EMR solutions, with minimum clinical data loss.&nbsp;&nbsp;
+\r\n A key aspect of the EMR Certification process ensures Certified EMR products adhere to a common data migration format for the data elements that are part of the EMR Core Data Set Specification (CDS-S), which can support clinician mobility.&nbsp;
+\r\n Provincial integrations&nbsp; 
+\r\n Only Certified EMRs are granted access to provincial integrations, ensuring that patient information is safeguarded and accessed exclusively by EMRs that meet strict privacy and security standards.&nbsp;
+\r\n Financial incentives&nbsp; 
+\r\n To support the Provincial EMR Program objectives, financial incentives are available for clinicians adopting Certified EMRs. These incentives are administered by the New Brunswick Medical Society (NBMS) and can change over time. For information on the current incentive programs contact NBMS at support@nbms.nb.ca .&nbsp;
+\r\n Clinician responsibilities&nbsp;&nbsp; 
+\r\n It is the clinician's responsibility to select the EMR best suited to their practice needs. EMR certification does not guarantee the EMR will meet the needs of a specific clinic setting.&nbsp;
+\r\n The decision to adopt EMR technology and whether to select a Certified EMR is at the sole discretion of individual clinicians. Clinicians should exercise due diligence when entering in any agreement pertaining to the acquisition of EMRs and ensure the selected EMR meets their individual practice needs.&nbsp;&nbsp;
+\r\n Use of Certified EMRs is required to access provincial integrations. Choosing an EMR that is not certified will limit the clinician's ability to leverage these integrations and/or participate in any financial incentives.&nbsp;&nbsp;
+\r\n Clinicians must contact their EMR vendors to understand their plans for pursuing and maintaining EMR Certification for New Brunswick.&nbsp;&nbsp;
+\r\n"}}" id="text-e9e500ccdc" class="cmp-text">
+ EMR quality assurance 
+ Choosing a Certified EMR gives clinicians the assurance that the EMR solution will perform clinical care and health system integration functions in accordance with published specifications. 
+ The benefits of choosing a Certified EMR include improved patient care through interoperability with the health system and timely access to the Electronic Health Record, as well as enhanced patient safety and protection of Personal Health Information. 
+ Clinician mobility support 
+ As EMR programs mature, it is common for clinicians to change or leave EMRs. Some reasons include leaving one practice to join another, a desire to move to a different EMR that provides better functionality for their practice, EMR vendors leaving the market, retirements, etc. 
+ Clinician mobility refers to the ease of movement of clinicians and their patient data between clinics using EMRs, within the same or different EMR solutions, with minimum clinical data loss. 
+ A key aspect of the EMR Certification process ensures Certified EMR products adhere to a common data migration format for the data elements that are part of the EMR Core Data Set Specification (CDS-S), which can support clinician mobility. 
+ Provincial integrations 
+ Only Certified EMRs are granted access to provincial integrations, ensuring that patient information is safeguarded and accessed exclusively by EMRs that meet strict privacy and security standards. 
+ Financial incentives 
+ To support the Provincial EMR Program objectives, financial incentives are available for clinicians adopting Certified EMRs. These incentives are administered by the New Brunswick Medical Society (NBMS) and can change over time. For information on the current incentive programs contact NBMS at [email protected] . 
+ Clinician responsibilities 
+ It is the clinician's responsibility to select the EMR best suited to their practice needs. EMR certification does not guarantee the EMR will meet the needs of a specific clinic setting. 
+ The decision to adopt EMR technology and whether to select a Certified EMR is at the sole discretion of individual clinicians. Clinicians should exercise due diligence when entering in any agreement pertaining to the acquisition of EMRs and ensure the selected EMR meets their individual practice needs. 
+ Use of Certified EMRs is required to access provincial integrations. Choosing an EMR that is not certified will limit the clinician's ability to leverage these integrations and/or participate in any financial incentives. 
+ Clinicians must contact their EMR vendors to understand their plans for pursuing and maintaining EMR Certification for New Brunswick. 
+ Get help
+ For more information on the Provincial EMR Program please contact emradmin@gnb.ca .&nbsp;
+\n"}}" id="text-b8463627e1" class="cmp-text">
+ For more information on the Provincial EMR Program please contact [email protected] . 
+ EMR frequently asked questions 
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+OMD EMR validation overview | https://www.ontariomd.ca/emr-certification/emr-validation/overview
+PCNB-2024-01 | https://www.ontariomd.ca/emr-certification/emr-certification/overview
+Profile | https://intrahealth.com/
+PCNB-2023-02 | https://www.ontariomd.ca/emr-certification/emr-certification/overview
+CHR | https://www.telus.com/en/health/health-professionals/clinics/collaborative-health-record
+PS Suite | https://www.telus.com/en/health/health-professionals/clinics/ps-suite?linktype=ge-meganav
+PCNB-2021-01 | https://www.ontariomd.ca/emr-certification/emr-certification/overview
+EMR Certification Status | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/emr-certification-status.html
+OMD EMR certification page | https://www.ontariomd.ca/emr-certification/emr-certification/overview
+PS Suite | https://www.telus.com/en/health/health-professionals/clinics/ps-suite
+eHealthNB Integration Access Request Form (docx 63 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/emr-dme/doc/eHealthNB-integration-access-request-form.docx
+EHR Clinical Viewer (ECV) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/ehr-ecv.html
+Electronic Lab Results​ | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/lab-results.html
+Client Registry - Query​ | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/client-registry-query.html
+Client Registry - Add/Update | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/updating-client-registry.html
+EMR frequently asked questions | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/questions-EMR.html

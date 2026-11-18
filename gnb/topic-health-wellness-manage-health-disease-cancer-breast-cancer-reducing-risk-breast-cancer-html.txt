@@ -1,0 +1,101 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/breast-cancer/reducing-risk-breast-cancer.html
+TÍTULO: Reducing the risk of breast cancer - gnb.ca
+MODIFICADA: —
+
+Reducing the risk of breast cancer
+ Learn about the steps you can take today.
+\r\n"}}" id="text-de071c6fbf" class="cmp-text">
+ Learn about the steps you can take today.
+ On this page
+ Risk factors
+ Risk factors are conditions that may increase the chance of developing breast cancer.
+\n Everyone should know what is normal for their breasts. They should discuss their risk factors for breast cancer or any changes in their breasts with a physician or nurse practitioner.
+\n"}}" id="text-7138bec928" class="cmp-text">
+ Risk factors are conditions that may increase the chance of developing breast cancer.
+ Everyone should know what is normal for their breasts. They should discuss their risk factors for breast cancer or any changes in their breasts with a physician or nurse practitioner.
+ \r\n Non-modifiable risk factors 
+\r\n Modifiable risk factors 
+\r\n
+ Age over 50
+\r\n Body weight
+\r\n
+ Family history of cancer
+\r\n Exercise
+\r\n
+ Hormones and menstrual history
+\r\n Diet
+\r\n
+ High breast density
+\r\n Alcohol consumption
+\r\n
+ Previous breast condition
+\r\n Smoking
+\r\n
+ Gene mutations
+\r\n Environment
+\r\n
+ \r\n"}}" id="text-29eca2e6ac" class="cmp-text">
+ Non-modifiable risk factors 
+ Modifiable risk factors 
+ Age over 50
+ Body weight
+ Family history of cancer
+ Exercise
+ Hormones and menstrual history
+ Diet
+ High breast density
+ Alcohol consumption
+ Previous breast condition
+ Smoking
+ Gene mutations
+ Environment
+ Lowering your risk
+ You can lower your risk for breast cancer by:
+\r\n \r\n getting screened regularly
+\r\n eating a balanced diet high in fruits and vegetables
+\r\n maintaining a healthy weight
+\r\n being physically active
+\r\n not smoking
+\r\n limiting alcohol consumption
+\r\n discussing benefits and risks of hormone replacement therapy
+\r\n having children and breastfeeding, if possible
+\r\n \r\n"}}" id="text-104554a0a7" class="cmp-text">
+ You can lower your risk for breast cancer by:
+ getting screened regularly
+ eating a balanced diet high in fruits and vegetables
+ maintaining a healthy weight
+ being physically active
+ not smoking
+ limiting alcohol consumption
+ discussing benefits and risks of hormone replacement therapy
+ having children and breastfeeding, if possible
+ Breast density
+ Breast density is a measure used to describe the proportion of different tissues that make up a person’s breasts. Breasts are made up of fatty (non-dense tissue) and glandular tissue (dense breast tissue), which includes milk glands, ducts and supportive tissue. Dense breast tissue is common and is not considered abnormal. People with high breast density may have increased risk of developing breast cancer.
+\r\n Everyone should know what is normal for their breasts and discuss their risk factors for breast cancer (personal or family history of cancer, obesity, age, hormone replacement, breast density, gene mutations, etc) or discuss any changes in their breasts with their physician or nurse practitioner.
+\r\n Breast density cannot be detected by a physical exam and it is not related to breast size. Breast density can only be measured by mammogram. A mammogram is a low-dose x-ray of the breast. It is the most reliable way to find breast cancer early.
+\r\n Breast density is assessed and reported by the radiologist in the mammogram report as:&nbsp;
+\r\n"}}" id="text-74326f6b37" class="cmp-text">
+ Breast density is a measure used to describe the proportion of different tissues that make up a person’s breasts. Breasts are made up of fatty (non-dense tissue) and glandular tissue (dense breast tissue), which includes milk glands, ducts and supportive tissue. Dense breast tissue is common and is not considered abnormal. People with high breast density may have increased risk of developing breast cancer.
+ Everyone should know what is normal for their breasts and discuss their risk factors for breast cancer (personal or family history of cancer, obesity, age, hormone replacement, breast density, gene mutations, etc) or discuss any changes in their breasts with their physician or nurse practitioner.
+ Breast density cannot be detected by a physical exam and it is not related to breast size. Breast density can only be measured by mammogram. A mammogram is a low-dose x-ray of the breast. It is the most reliable way to find breast cancer early.
+ Breast density is assessed and reported by the radiologist in the mammogram report as: 
+ A low breast density result (BI-RADS Category A or B) means you are at average risk for developing breast cancer.
+\r\n The higher the breast density result (BI-RADS Category C or D), the harder it can be to see or detect abnormalities on a mammogram.
+\r\n It is important to remember that no screening test is perfect and dense breast tissue can make it harder to detect abnormalities.
+\r\n"}}" id="text-de641e84c9" class="cmp-text">
+ A low breast density result (BI-RADS Category A or B) means you are at average risk for developing breast cancer.
+ The higher the breast density result (BI-RADS Category C or D), the harder it can be to see or detect abnormalities on a mammogram.
+ It is important to remember that no screening test is perfect and dense breast tissue can make it harder to detect abnormalities.
+ More information
+ Government of Canada: Breast cancer and your risk&nbsp; 
+\r\n"}}" id="text-f036e5d58a" class="cmp-text">
+ Government of Canada: Breast cancer and your risk 
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Managing health and diseases | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease.html
+Cancer prevention and care | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer.html
+Breast cancer | https://www.gnb.ca/en/topic/health-wellness/manage-health-disease/cancer/breast-cancer.html
+Government of Canada: Breast cancer and your risk | https://www.canada.ca/en/public-health/services/chronic-diseases/breast-cancer-your-risk.html

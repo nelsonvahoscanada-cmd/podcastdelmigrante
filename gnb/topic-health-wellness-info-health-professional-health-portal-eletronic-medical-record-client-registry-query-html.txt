@@ -1,0 +1,25 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/client-registry-query.html
+TÍTULO: Client Registry Query - gnb.ca
+MODIFICADA: —
+
+Client Registry Query
+ Best practices to be followed by clinic users when interacting with a patient and querying the Client Registry.
+\n"}}" id="text-c226334df7" class="cmp-text">
+ Best practices to be followed by clinic users when interacting with a patient and querying the Client Registry.
+ Overview
+ These steps help ensure the most accurate and up-to-date information is retrieved and recorded during the clinical encounter.
+\r\n The Client Registry integration enables EMR users to retrieve up-to-date patient demographic information directly from the provincial Client Registry. Available data includes name, date of birth, gender, NB Medicare number, address, and phone number. Through the CR Query, users can search for matching patients and import the most current demographics, reducing registration time and ensuring EMR charts remain accurate and consistent.
+\r\n This chart is also available as a PDF download:&nbsp; Client Registry Patient Query quick reference card (PDF 196 KB) 
+\r\n"}}" id="text-14ab8977b0" class="cmp-text">
+ These steps help ensure the most accurate and up-to-date information is retrieved and recorded during the clinical encounter.
+ The Client Registry integration enables EMR users to retrieve up-to-date patient demographic information directly from the provincial Client Registry. Available data includes name, date of birth, gender, NB Medicare number, address, and phone number. Through the CR Query, users can search for matching patients and import the most current demographics, reducing registration time and ensuring EMR charts remain accurate and consistent.
+ This chart is also available as a PDF download: Client Registry Patient Query quick reference card (PDF 196 KB) 
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html
+Client Registry Patient Query quick reference card (PDF 196 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/emr-dme/doc/emr-cr-query-qr-card-en.pdf

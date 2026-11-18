@@ -1,0 +1,75 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/electronic-health-record.html
+TÍTULO: Electronic Health Record (EHR) - gnb.ca
+MODIFICADA: —
+
+Electronic Health Record (EHR)
+ Learn how the system provides authorized health professionals licensed in New Brunswick access to clinically relevant, real-time patient information, securely.
+\n"}}" id="text-088ce91b13" class="cmp-text">
+ Learn how the system provides authorized health professionals licensed in New Brunswick access to clinically relevant, real-time patient information, securely.
+ On this page
+ Overview
+ The Electronic Health Record started with the provincial vision of One Patient, One Record (OPOR). This vision provides current, clinically relevant health information in a standardized manner and protects the privacy, confidentiality and security of patient information. This is accomplished through a single point of access which is available to health care professionals anytime, anywhere.&nbsp;&nbsp;
+\n"}}" id="text-80a29b4a41" class="cmp-text">
+ The Electronic Health Record started with the provincial vision of One Patient, One Record (OPOR). This vision provides current, clinically relevant health information in a standardized manner and protects the privacy, confidentiality and security of patient information. This is accomplished through a single point of access which is available to health care professionals anytime, anywhere. 
+ How it works
+ The EHR provides authorized health professionals licensed in New Brunswick access to clinically relevant information.&nbsp;&nbsp;
+\n The information available to health professionals includes the following: demographic information - laboratory test results, diagnostic imaging reports, cardiology reports, medications from community pharmacies, immunizations and hospital visits.&nbsp; &nbsp;
+\n"}}" id="text-a722cdb050" class="cmp-text">
+ The EHR provides authorized health professionals licensed in New Brunswick access to clinically relevant information. 
+ The information available to health professionals includes the following: demographic information - laboratory test results, diagnostic imaging reports, cardiology reports, medications from community pharmacies, immunizations and hospital visits. 
+ Benefits
+ \n access to current, relevant health information to support clinical decision making&nbsp;
+\n single entry point to access information&nbsp;
+\n real time access to health information, improving delivery of patient care&nbsp;
+\n increased efficiency and improved coordination of care&nbsp; &nbsp;
+\n \n"}}" id="text-88c66da066" class="cmp-text">
+ access to current, relevant health information to support clinical decision making 
+ single entry point to access information 
+ real time access to health information, improving delivery of patient care 
+ increased efficiency and improved coordination of care 
+ Request access
+ &nbsp;To be granted access to the Electronic Health Record, the following steps must be completed:&nbsp;
+\n Step 1: Create an eHealthNB Centre account&nbsp; 
+\n \n To begin the EHR Access process, you will need to create an account on our eHealthNB Centre . Use the email to which you wish to receive communications and training.
+\n If you already have an account for the eHealth NB Centre, do not create any additional accounts and proceed to Step 2.&nbsp;
+\n Upon registration, you must select a location and role. If you do not see your role within the drop down, email EHRaccess@gnb.ca .&nbsp;
+\n Please select the location: 01. – EHR – Electronic Health Record.&nbsp; 
+\n Once your account has been created, you will receive an email confirmation.&nbsp;
+\n \n Step 2: Complete the EHR Access Request form&nbsp; 
+\n \n Once you have created your account, login to the eHealthNB Centre and locate the required forms under the My Activities tab.&nbsp;
+\n Complete all fields and submit the required forms.&nbsp;
+\n \n Step 3: Complete both the online Privacy and EHR Training&nbsp; 
+\n \n Once the required forms are completed, the EHR Administrator will review your request and, upon approval, you will be enrolled in two courses:&nbsp; \n Privacy Training (15 minutes)
+\n EHR Training (30 minutes)
+\n \n
+\n Once the two courses are completed and your access request is approved, you will receive an email informing you that your access to the EHR is ready.&nbsp;
+\n \n For additional information or questions about the EHR access process please contact: EHRAccess@gnb.ca .
+\n"}}" id="text-f4224e7c46" class="cmp-text">
+ To be granted access to the Electronic Health Record, the following steps must be completed: 
+ Step 1: Create an eHealthNB Centre account 
+ To begin the EHR Access process, you will need to create an account on our eHealthNB Centre . Use the email to which you wish to receive communications and training.
+ If you already have an account for the eHealth NB Centre, do not create any additional accounts and proceed to Step 2. 
+ Upon registration, you must select a location and role. If you do not see your role within the drop down, email [email protected] . 
+ Please select the location: 01. – EHR – Electronic Health Record. 
+ Once your account has been created, you will receive an email confirmation. 
+ Step 2: Complete the EHR Access Request form 
+ Once you have created your account, login to the eHealthNB Centre and locate the required forms under the My Activities tab. 
+ Complete all fields and submit the required forms. 
+ Step 3: Complete both the online Privacy and EHR Training 
+ Once the required forms are completed, the EHR Administrator will review your request and, upon approval, you will be enrolled in two courses: Privacy Training (15 minutes)
+ EHR Training (30 minutes)
+ Once the two courses are completed and your access request is approved, you will receive an email informing you that your access to the EHR is ready. 
+ For additional information or questions about the EHR access process please contact: [email protected] .
+ Get help
+ Health care professionals may contact the provincial Electronic Health Record (EHR) team by sending an email to: opor@gnb.ca .
+\n"}}" id="text-2f94cb3bb9" class="cmp-text">
+ Health care professionals may contact the provincial Electronic Health Record (EHR) team by sending an email to: [email protected] .
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+eHealthNB Centre | https://ehealthnbcentre.itacit.com/register
+eHealthNB Centre | https://ehealthnbcentre.itacit.com/login

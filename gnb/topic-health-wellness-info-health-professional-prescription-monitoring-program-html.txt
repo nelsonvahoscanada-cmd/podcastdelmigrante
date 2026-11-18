@@ -1,0 +1,64 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/prescription-monitoring-program.html
+TÍTULO: Prescription Monitoring Program - gnb.ca
+MODIFICADA: —
+
+Prescription Monitoring Program
+ The Prescription Monitoring Program (PMP) helps manage the potential risks of prescribing,&nbsp;dispensing&nbsp;and using prescription medications that can lead to problematic use.
+\r\n"}}" id="text-e0b711e676" class="cmp-text">
+ The Prescription Monitoring Program (PMP) helps manage the potential risks of prescribing, dispensing and using prescription medications that can lead to problematic use.
+ On this page
+ Overview
+ The&nbsp;Prescription Monitoring Program&nbsp;(PMP)&nbsp;aims to reduce prescription drug misuse, support safer and&nbsp;coordinated&nbsp;patient&nbsp;care&nbsp;and promote&nbsp;appropriate prescribing&nbsp;practices.&nbsp;Prescription&nbsp;information from all community pharmacies within New Brunswick&nbsp;is used for the PMP.&nbsp;Authorized&nbsp;health-care&nbsp;providers can access and use&nbsp;this&nbsp;to make more informed decisions about patient care.&nbsp;The privacy and security of patient information is strictly enforced.&nbsp;Health-care&nbsp;providers may access information only for patients under&nbsp;their care.
+\r\n The program&nbsp;receives recommendations from the PMP Advisory Committee, composed of members&nbsp;representing&nbsp;multiple health professions, including pharmacy, medicine, nursing, dentistry,&nbsp;optometrists&nbsp;and veterinarians.
+\r\n The New Brunswick Prescription&nbsp;Monitoring&nbsp;Program&nbsp;is&nbsp;regulated under the&nbsp; Prescription Monitoring Act &nbsp;and its&nbsp; PMP Regulation .
+\r\n"}}" id="text-147e3d94ac" class="cmp-text">
+ The Prescription Monitoring Program (PMP) aims to reduce prescription drug misuse, support safer and coordinated patient care and promote appropriate prescribing practices. Prescription information from all community pharmacies within New Brunswick is used for the PMP. Authorized health-care providers can access and use this to make more informed decisions about patient care. The privacy and security of patient information is strictly enforced. Health-care providers may access information only for patients under their care.
+ The program receives recommendations from the PMP Advisory Committee, composed of members representing multiple health professions, including pharmacy, medicine, nursing, dentistry, optometrists and veterinarians.
+ The New Brunswick Prescription Monitoring Program is regulated under the Prescription Monitoring Act and its PMP Regulation .
+ Monitored drugs
+ Monitored drugs include opioids, such as Dilaudid (hydromorphone) and Percocet (oxycodone), and controlled drugs like Ritalin (methylphenidate) and Ativan (lorazepam).
+\r\n A complete list of these drugs can be found on the Monitored Drug List (PDF 176 KB) .
+\r\n"}}" id="text-3c77283684" class="cmp-text">
+ Monitored drugs include opioids, such as Dilaudid (hydromorphone) and Percocet (oxycodone), and controlled drugs like Ritalin (methylphenidate) and Ativan (lorazepam).
+ A complete list of these drugs can be found on the Monitored Drug List (PDF 176 KB) .
+ MaveRx NB
+ New Brunswick has launched a new&nbsp;program&nbsp;called&nbsp;MaveRx&nbsp;NB (pronounced&nbsp;“Mavericks”). As the first&nbsp;prescription monitoring&nbsp;technology solution in Canada to include prescription information on all drugs,&nbsp;MaveRx&nbsp;NB provides access to prescription information and helps health-care providers assess patients.
+\r\n For example, prescribers can assess&nbsp;risk of harm due to:
+\r\n \r\n potentially&nbsp;high doses and long-term use
+\r\n multiple&nbsp;prescriptions for similar monitored drugs
+\r\n different&nbsp;pharmacies where prescriptions have been filled
+\r\n possible&nbsp;risky combinations of&nbsp;monitored&nbsp;drugs
+\r\n \r\n Health-care providers can&nbsp;also&nbsp;draw insights&nbsp;from&nbsp;their own individualized prescriber reports. This helps them&nbsp;assess how their prescribing may affect patient&nbsp;safety. MaveRx&nbsp;NB also&nbsp;allows&nbsp;the&nbsp;provider’s&nbsp;team to act as delegates to access the system and search for patients on their behalf.
+\r\n"}}" id="text-ba9f01e33c" class="cmp-text">
+ New Brunswick has launched a new program called MaveRx NB (pronounced “Mavericks”). As the first prescription monitoring technology solution in Canada to include prescription information on all drugs, MaveRx NB provides access to prescription information and helps health-care providers assess patients.
+ For example, prescribers can assess risk of harm due to:
+ potentially high doses and long-term use
+ multiple prescriptions for similar monitored drugs
+ different pharmacies where prescriptions have been filled
+ possible risky combinations of monitored drugs
+ Health-care providers can also draw insights from their own individualized prescriber reports. This helps them assess how their prescribing may affect patient safety. MaveRx NB also allows the provider’s team to act as delegates to access the system and search for patients on their behalf.
+ Disclaimer
+ The Department of Health&nbsp;makes no claims, promises, or guarantees about the accuracy, completeness, or adequacy of information in the New Brunswick Prescription Monitoring Program and expressly&nbsp;disclaims&nbsp;liability for errors and omissions in the information in the PMP. The records&nbsp;herein&nbsp;are based on information&nbsp;submitted&nbsp;by dispensing locations as defined by the&nbsp; Prescription Monitoring Act &nbsp;and should always be verified before any clinical decisions are made or actions are taken.
+\r\n"}}" id="text-84537f4789" class="cmp-text">
+ The Department of Health makes no claims, promises, or guarantees about the accuracy, completeness, or adequacy of information in the New Brunswick Prescription Monitoring Program and expressly disclaims liability for errors and omissions in the information in the PMP. The records herein are based on information submitted by dispensing locations as defined by the Prescription Monitoring Act and should always be verified before any clinical decisions are made or actions are taken.
+ Get help
+ For additional inquiries, you can contact us Monday to Friday between 8:30 a.m. and 4:15 p.m., excluding holidays.
+\n"}}" id="text-207177ddae" class="cmp-text">
+ For additional inquiries, you can contact us Monday to Friday between 8:30 a.m. and 4:15 p.m., excluding holidays.
+ Pharmaceutical Services
+\r\n Phone: &nbsp; 506-457-4800 
+\r\n Email: &nbsp; InfoPMP-PSP@gnb.ca 
+\r\n"}}" id="text-ee610d44f8" class="cmp-text">
+ Pharmaceutical Services
+ Phone: 506-457-4800 
+ Email: [email protected] 
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+Prescription Monitoring Act | https://laws.gnb.ca/en/document/cs/P-15.05
+PMP Regulation | https://laws.gnb.ca/en/document/cr/2014-142
+Monitored Drug List (PDF 176 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/docs/monitored-drug-list-en-nov2025.pdf
+506-457-4800 | tel:506-457-4800

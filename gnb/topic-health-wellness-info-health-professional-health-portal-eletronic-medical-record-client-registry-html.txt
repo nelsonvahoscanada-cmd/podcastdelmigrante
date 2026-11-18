@@ -1,0 +1,38 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/client-registry.html
+TÍTULO: Client Registry integration - gnb.ca
+MODIFICADA: —
+
+Client Registry integration
+ The Client Registry integration allows EMR users to access current patient demographic information for patients registered in the provincial Client Registry directly from their EMR.&nbsp;
+\n"}}" id="text-9cd5b7f1a6" class="cmp-text">
+ The Client Registry integration allows EMR users to access current patient demographic information for patients registered in the provincial Client Registry directly from their EMR. 
+ Client Registry integration with EMRs 
+ The data in the Client Registry includes name, date of birth, gender, NB Medicare number, address and phone number.&nbsp;
+\n EMRs can connect to the Client Registry to:
+\n \n Query - search the Client Registry for matching patients and retrieve the most current set of demographics, saving time during registration and ensuring EMR charts contain accurate patient data
+\n Add/Update - contribute patient demogprahic updates to the Client Registry, helping keep records current, support system-wide data accuracy, and ensure other users have access to the most up-to-date patient information
+\n \n"}}" id="text-8fdb4795e3" class="cmp-text">
+ The data in the Client Registry includes name, date of birth, gender, NB Medicare number, address and phone number. 
+ EMRs can connect to the Client Registry to:
+ Query - search the Client Registry for matching patients and retrieve the most current set of demographics, saving time during registration and ensuring EMR charts contain accurate patient data
+ Add/Update - contribute patient demogprahic updates to the Client Registry, helping keep records current, support system-wide data accuracy, and ensure other users have access to the most up-to-date patient information
+ More information on Client Registry Query and Add/Update integrations including quick reference guides for users:
+\n \n Query quick reference guide (PDF 196 KB) 
+\n Add/Update quick reference guide (PDF 4 MB) 
+\n \n"}}" id="text-95482cee29" class="cmp-text">
+ More information on Client Registry Query and Add/Update integrations including quick reference guides for users:
+ Query quick reference guide (PDF 196 KB) 
+ Add/Update quick reference guide (PDF 4 MB) 
+ Currently, due to implications for certain provincial systems, gender X will be represented as ‘U’ (Unknown) by the Client Registry.
+\n"}}" id="text-257eec3e58" class="cmp-text">
+ Currently, due to implications for certain provincial systems, gender X will be represented as ‘U’ (Unknown) by the Client Registry.
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html
+Query quick reference guide (PDF 196 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/emr-dme/doc/emr-cr-query-qr-card-en.pdf
+Add/Update quick reference guide (PDF 4 MB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/emr-dme/doc/emr-cr-add-qr-card.pdf

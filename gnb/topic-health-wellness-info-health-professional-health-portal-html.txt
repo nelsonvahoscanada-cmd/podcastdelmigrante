@@ -1,0 +1,116 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+TÍTULO: New Brunswick Health Portal - gnb.ca
+MODIFICADA: —
+
+New Brunswick Health Portal
+ Access to secure and innovative tools, such as the provincial Electronic Health Record (EHR) and Medicare Claims Entry (MCE). The portal also supports information sharing with health-care professionals and EMR vendors.&nbsp;
+\n"}}" id="text-6f2c419e5d" class="cmp-text">
+ Access to secure and innovative tools, such as the provincial Electronic Health Record (EHR) and Medicare Claims Entry (MCE). The portal also supports information sharing with health-care professionals and EMR vendors. 
+ On this page
+ Overview
+ The New Brunswick Health Portal is a gateway to modern, secure health care solutions that improve patient care and health system efficiency across the province.&nbsp;&nbsp;
+\r\n The Electronic Health Record (EHR) is a tool which provides health professionals with access to their patient’s health information from across the province to improve coordination of care.&nbsp;&nbsp;
+\r\n eConsult (for&nbsp; family physicians and nurse practitioners and for&nbsp; specialists ) and CommunityCareNB promote collaboration and remote care through innovative technologies, while the Provincial Electronic Medical Record (EMR) program provides EMR vendors with an informational framework on how to certify EMRs for use in the community.&nbsp;
+\r\n Together, these services align with the vision of &quot;One Patient, One Record&quot; by prioritizing real-time accessibility, integration, data quality and security in health-care delivery.&nbsp;
+\r\n"}}" id="text-fb4b4ea535" class="cmp-text">
+ The New Brunswick Health Portal is a gateway to modern, secure health care solutions that improve patient care and health system efficiency across the province. 
+ The Electronic Health Record (EHR) is a tool which provides health professionals with access to their patient’s health information from across the province to improve coordination of care. 
+ eConsult (for family physicians and nurse practitioners and for specialists ) and CommunityCareNB promote collaboration and remote care through innovative technologies, while the Provincial Electronic Medical Record (EMR) program provides EMR vendors with an informational framework on how to certify EMRs for use in the community. 
+ Together, these services align with the vision of "One Patient, One Record" by prioritizing real-time accessibility, integration, data quality and security in health-care delivery. 
+ Initiatives
+ CommunityCareNB
+ Learn about CommunityCareNB and how it is creating the best community care experience through improved access to information and collaboration.
+ eConsult for family physicians and nurse practitioners
+ How family physicians and nurse practitioners can register, access and utilize eConsult in their practice.
+ eConsult for specialists
+ How specialists can register, access and utilize eConsult in their practice.
+ Electronic Health Record (EHR)
+ Learn how the system provides authorized health professionals licensed in New Brunswick access to clinically relevant information securely.
+ Provincial Electronic Medical Record (EMR)
+ Learn how the program helps primary care providers and community specialists adopt certified EMR solutions to improve patient care and access to health information.
+ Resources
+ Department of Health
+ The Department of Health is responsible for supporting excellence in health care to ensure a healthy New Brunswick. 
+ Horizon Health Network 
+ Horizon provides services ranging from acute and specialized care to community-based health services. 
+ New Brunswick Health Council
+ The New Brunswick Health Council has a dual mandate: to report publicly on the performance of the provincial health system, and to engage citizens in the improvement of health service quality. 
+ Service New Brunswick
+ Service New Brunswick is the Government of New Brunswick’s chief provider of front-line services to the public.
+ Vitalité Health Network
+ Vitalité Health Network is a regional health authority providing and managing health care and services in an area covering northern and southeastern New Brunswick. 
+ Back to top 
+ Get help
+ Active Directory (AD) username and password issues
+ RHA users
+\n Zone Service Desk
+\n 1-844-354-4357 
+\n service@snb.ca 
+\n Private Sector users
+\n (community pharmacists, physiotherapists, chiropractors, optometrists, dentists)
+\nService desk
+\n 1-844-250-5250 
+\n"}}" id="text-56633ee490" class="cmp-text">
+ RHA users
+ Zone Service Desk
+ 1-844-354-4357 
+ [email protected] 
+ Private Sector users
+ (community pharmacists, physiotherapists, chiropractors, optometrists, dentists)
+Service desk
+ 1-844-250-5250 
+ Other technical support
+ Zoom for Healthcare users 
+\n connectedcare@gnb.ca 
+\n
+\n EMR users 
+\nEMR vendor service desk
+\n 1-844-250-5250 
+\n eHealthNB Centre username/password issues 
+\n EHRaccess@gnb.ca 
+\n"}}" id="text-d106c13440" class="cmp-text">
+ Zoom for Healthcare users 
+ [email protected] 
+ EMR users 
+EMR vendor service desk
+ 1-844-250-5250 
+ eHealthNB Centre username/password issues 
+ [email protected] 
+ EHR access
+ RHA/RRS and private sector users 
+\n eHealthNB Centre 
+\n EMR users 
+\nEMR vendor service desk
+\n 1-844-250-5250 
+\n"}}" id="text-25b4e8764d" class="cmp-text">
+ RHA/RRS and private sector users 
+ eHealthNB Centre 
+ EMR users 
+EMR vendor service desk
+ 1-844-250-5250 
+ Please note that patient information must never be included in an email.&nbsp; 
+\n"}}" id="text-c0b6197ff9" class="cmp-text">
+ Please note that patient information must never be included in an email.
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+Electronic Health Record (EHR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/electronic-health-record.html
+family physicians and nurse practitioners | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/econsult-family-physicians-nurse-practitioners.html
+specialists | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/econsult-specialists.html
+CommunityCareNB | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/community-care-nb.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html
+CommunityCareNB | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/community-care-nb.html
+eConsult for family physicians and nurse practitioners | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/econsult-family-physicians-nurse-practitioners.html
+eConsult for specialists | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/econsult-specialists.html
+Electronic Health Record (EHR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/electronic-health-record.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html
+Department of Health | https://www.gnb.ca/en/org/health.html
+Horizon Health Network | https://horizonnb.ca/
+New Brunswick Health Council | https://nbhc.ca/
+Service New Brunswick | https://www2.snb.ca/content/snb/en.html
+Vitalité Health Network | https://vitalitenb.ca/en
+1-844-354-4357 | tel:1-844-354-4357
+1-844-250-5250 | tel:1-844-250-5250
+eHealthNB Centre | https://ehealthnbcentre.itacit.com/login

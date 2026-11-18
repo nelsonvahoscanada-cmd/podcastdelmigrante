@@ -1,0 +1,164 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/questions-EMR.html
+TÍTULO: Frequently asked questions: Electronic Medical Record - gnb.ca
+MODIFICADA: —
+
+Frequently asked questions: Electronic Medical Record
+ Answers to frequently asked questions about the provincial Electronic Medical Record program.
+\n"}}" id="text-f08ede4ec4" class="cmp-text">
+ Answers to frequently asked questions about the provincial Electronic Medical Record program.
+ On this page
+ General questions
+ What is an EMR?&nbsp; 
+\r\n An EMR, or Electronic Medical Record, is a digital version of a medical record specific to a physician’s practice. It is maintained by the physician and includes details such as patient demographics, medical and drug history, diagnostic information, and administrative activities like billing and scheduling.&nbsp;
+\r\n What is a Certified EMR?&nbsp; 
+\r\n A Certified EMR is one that meets provincial criteria, including a set of base specifications and standards, as well as a certification agreement. This agreement defines the responsibilities of EMR vendors in New Brunswick and clarifies clinical, business, technical, privacy and security requirements to ensure quality patient care. Certified EMR solutions must continuously comply with these evolving criteria to maintain their certification status.&nbsp;
+\r\n Only Certified EMRs are eligible for current and future provincial integrations. Additionally, the use of Certified EMRs may be a requirement for physician financial incentive programs offered by NBMS, aimed at promoting EMR adoption and meaningful use.&nbsp;
+\r\n What is EMR certification?&nbsp; 
+\r\n EMR certification is the process by which vendors wishing to participate in the New Brunswick Provincial EMR Program ensure their EMR solution meets the needs of clinicians and their patients. The certification process is comprised of a set of base specifications and standards, along with a certification agreement, that outlines the responsibilities of an EMR vendor in New Brunswick and provides clarity regarding clinical, business, technical, privacy and security requirements to ensure the delivery of quality patient care.&nbsp;
+\r\n EMR access to provincial integrations is restricted to Certified EMRs. New Brunswick has partnered with OMD to leverage the OMD EMR certification process.&nbsp;
+\r\n Why is EMR certification necessary?&nbsp; 
+\r\n The certification process gives clinicians and the health system assurance that the EMR:&nbsp;
+\r\n \r\n meets basic functional and technical requirements
+\r\n is interoperable with provincial health systems&nbsp;
+\r\n protects the privacy and security of Personal Health Information
+\r\n \r\n Why did New Brunswick select OMD certification services for its certification program?&nbsp; 
+\r\n After a comprehensive review of the Provincial EMR Program delivered by Velante, a recommendation was made to move away from a single EMR to an Open Market where other EMRs could be offered by more EMR vendors. The Government of New Brunswick conducted a jurisdictional scan of certification programs in Canada to leverage best practices for its certification program and provide its physicians with high quality products to meet physician and patient needs. This resulted in the decision to partner with OMD. OMD has extensive experience with EMRs for Canadian physicians, and runs Canada's longest established and mature EMR certification process.&nbsp;
+\r\n Will OMD Certified EMRs in Ontario be automatically certified in New Brunswick?&nbsp; 
+\r\n OMD Certified EMRs will need to complete a gap assessment to address New Brunswick specific requirements as well as successfully integrating with mandatory provincial integrations.
+\r\n What is required of vendors who do not have Certified EMRs under the OMD certification program?&nbsp; 
+\r\n Vendors whose EMR products are not yet certified by OMD for Ontario and who wish to participate in the NB Provincial EMR Program will be required to complete the full NB EMR certification process.&nbsp;
+\r\n What does it mean to have an EMR Open Market?&nbsp; 
+\r\n From 2012-2021, the NB Provincial EMR Program was delivered by Velante, a subsidiary of the NBMS. Velante was the delivery organization of a single EMR Solution - Profile EMR from Intrahealth.&nbsp;&nbsp;
+\r\n In 2021, New Brunswick transitioned from a single EMR to Open Market, which consists of an EMR certification process that identifies a list of EMRs eligible to function in NB under the Provincial EMR umbrella. Certified EMRs will connect to provincial integrations. Physicians using Certified EMRs may qualify for incentive programs targeted at increasing adoption, meaningful-use and integration with the provincial health system.&nbsp;
+\r\n Under Open Market, any EMR solution that meets the provincial criteria can be certified to be part of the Provincial EMR Program, giving physicians a broader choice and enabling more EMRs to enter the market.&nbsp;&nbsp;
+\r\n Open Market processes, including the certification process, do not apply to RHA Managed EMRs.&nbsp;&nbsp;
+\r\n"}}" id="text-a2db8e01cf" class="cmp-text">
+ What is an EMR? 
+ An EMR, or Electronic Medical Record, is a digital version of a medical record specific to a physician’s practice. It is maintained by the physician and includes details such as patient demographics, medical and drug history, diagnostic information, and administrative activities like billing and scheduling. 
+ What is a Certified EMR? 
+ A Certified EMR is one that meets provincial criteria, including a set of base specifications and standards, as well as a certification agreement. This agreement defines the responsibilities of EMR vendors in New Brunswick and clarifies clinical, business, technical, privacy and security requirements to ensure quality patient care. Certified EMR solutions must continuously comply with these evolving criteria to maintain their certification status. 
+ Only Certified EMRs are eligible for current and future provincial integrations. Additionally, the use of Certified EMRs may be a requirement for physician financial incentive programs offered by NBMS, aimed at promoting EMR adoption and meaningful use. 
+ What is EMR certification? 
+ EMR certification is the process by which vendors wishing to participate in the New Brunswick Provincial EMR Program ensure their EMR solution meets the needs of clinicians and their patients. The certification process is comprised of a set of base specifications and standards, along with a certification agreement, that outlines the responsibilities of an EMR vendor in New Brunswick and provides clarity regarding clinical, business, technical, privacy and security requirements to ensure the delivery of quality patient care. 
+ EMR access to provincial integrations is restricted to Certified EMRs. New Brunswick has partnered with OMD to leverage the OMD EMR certification process. 
+ Why is EMR certification necessary? 
+ The certification process gives clinicians and the health system assurance that the EMR: 
+ meets basic functional and technical requirements
+ is interoperable with provincial health systems 
+ protects the privacy and security of Personal Health Information
+ Why did New Brunswick select OMD certification services for its certification program? 
+ After a comprehensive review of the Provincial EMR Program delivered by Velante, a recommendation was made to move away from a single EMR to an Open Market where other EMRs could be offered by more EMR vendors. The Government of New Brunswick conducted a jurisdictional scan of certification programs in Canada to leverage best practices for its certification program and provide its physicians with high quality products to meet physician and patient needs. This resulted in the decision to partner with OMD. OMD has extensive experience with EMRs for Canadian physicians, and runs Canada's longest established and mature EMR certification process. 
+ Will OMD Certified EMRs in Ontario be automatically certified in New Brunswick? 
+ OMD Certified EMRs will need to complete a gap assessment to address New Brunswick specific requirements as well as successfully integrating with mandatory provincial integrations.
+ What is required of vendors who do not have Certified EMRs under the OMD certification program? 
+ Vendors whose EMR products are not yet certified by OMD for Ontario and who wish to participate in the NB Provincial EMR Program will be required to complete the full NB EMR certification process. 
+ What does it mean to have an EMR Open Market? 
+ From 2012-2021, the NB Provincial EMR Program was delivered by Velante, a subsidiary of the NBMS. Velante was the delivery organization of a single EMR Solution - Profile EMR from Intrahealth. 
+ In 2021, New Brunswick transitioned from a single EMR to Open Market, which consists of an EMR certification process that identifies a list of EMRs eligible to function in NB under the Provincial EMR umbrella. Certified EMRs will connect to provincial integrations. Physicians using Certified EMRs may qualify for incentive programs targeted at increasing adoption, meaningful-use and integration with the provincial health system. 
+ Under Open Market, any EMR solution that meets the provincial criteria can be certified to be part of the Provincial EMR Program, giving physicians a broader choice and enabling more EMRs to enter the market. 
+ Open Market processes, including the certification process, do not apply to RHA Managed EMRs. 
+ Physician questions
+ Can NB physicians select their own EMR solution for their offices in an Open Market?&nbsp; 
+\r\n NB physicians operate under a variety of remuneration types: Salaried (SAL), Fee for Service (FFS), Family Medicine New Brunswick (FMNB) and Alternate Funding Programs (AFP). Their remuneration type and working arrangements determine the eligibility to select their own EMR.&nbsp;&nbsp;
+\r\n FFS and FMNB physicians operating in private practice (outside of an RHA facility) will be able to choose from certified or uncertified EMRs. Choosing a Certified EMR will enable them to qualify for financial incentives and gain access to provincial integrations.&nbsp;&nbsp;
+\r\n SAL physicians or physicians working in RHA facilities will not be eligible to select an EMR of their choice in Open Market. Their EMR selection will be made in conjunction with their RHA. Currently, a reduced list of EMRs operate in the RHA context.&nbsp;&nbsp;
+\r\n AFP physicians can operate either like FFS Physicians or like SAL physicians in an RHA context. Their specific circumstances will dictate if the EMR selection is made by the RHA or the physician. These circumstances need to be discussed with the respective RHA before the AFP physician makes an EMR selection.&nbsp;
+\r\n EMRs implemented in RHA facilities will be licensed and managed under the RHAs. These will be referred to as RHA Managed EMRs.&nbsp;
+\r\n What will it mean if I want to change EMRs?&nbsp; 
+\r\n Open Market physicians (physicians operating outside of RHA facilities, hence not in RHA Managed EMRs) can choose to move to an alternate EMR solution (certified or uncertified). Physicians choosing an uncertified EMR solution will not have access to provincial integrations or incentives.&nbsp;
+\r\n What is an RHA Managed EMR?&nbsp; 
+\r\n An RHA Managed EMR is an EMR implemented and managed by the RHA in either an RHA facility or in a Salaried Physician office.&nbsp;&nbsp;
+\r\n All Physicians operating in an RHA Managed EMR, regardless of their remuneration type, must comply with the EMR Policies and Procedures set out by the RHA and are not able to sign contracts directly with EMR vendors.&nbsp;&nbsp;
+\r\n How do I know if I am in an RHA Managed EMR?&nbsp; 
+\r\n For all implementations of RHA Managed EMRs, the RHAs will make it clear to the physician via contractual agreements that they operate in such an EMR. In addition, RHA Managed EMRs will display the RHA logo on the login screen. Physicians working in RHA Managed EMRs will not have a direct contract with the EMR vendor.&nbsp;
+\r\n What does it mean to me if I am in an RHA Managed EMR? 
+\r\n Physicians operating in RHA Managed EMRs cannot sign a contract directly with the EMR vendor and must comply with RHA Policies and Procedures governing the use of the EMR.&nbsp;&nbsp;
+\r\n Are there any EMR funding incentives available?&nbsp; 
+\r\n NBMS administers the EMR funding programs for EMR adoption and meaningful use. These incentives can change over time. Contact NBMS for details regarding current programs ( support@nbms.nb.ca ).&nbsp;
+\r\n"}}" id="text-e55722cc42" class="cmp-text">
+ Can NB physicians select their own EMR solution for their offices in an Open Market? 
+ NB physicians operate under a variety of remuneration types: Salaried (SAL), Fee for Service (FFS), Family Medicine New Brunswick (FMNB) and Alternate Funding Programs (AFP). Their remuneration type and working arrangements determine the eligibility to select their own EMR. 
+ FFS and FMNB physicians operating in private practice (outside of an RHA facility) will be able to choose from certified or uncertified EMRs. Choosing a Certified EMR will enable them to qualify for financial incentives and gain access to provincial integrations. 
+ SAL physicians or physicians working in RHA facilities will not be eligible to select an EMR of their choice in Open Market. Their EMR selection will be made in conjunction with their RHA. Currently, a reduced list of EMRs operate in the RHA context. 
+ AFP physicians can operate either like FFS Physicians or like SAL physicians in an RHA context. Their specific circumstances will dictate if the EMR selection is made by the RHA or the physician. These circumstances need to be discussed with the respective RHA before the AFP physician makes an EMR selection. 
+ EMRs implemented in RHA facilities will be licensed and managed under the RHAs. These will be referred to as RHA Managed EMRs. 
+ What will it mean if I want to change EMRs? 
+ Open Market physicians (physicians operating outside of RHA facilities, hence not in RHA Managed EMRs) can choose to move to an alternate EMR solution (certified or uncertified). Physicians choosing an uncertified EMR solution will not have access to provincial integrations or incentives. 
+ What is an RHA Managed EMR? 
+ An RHA Managed EMR is an EMR implemented and managed by the RHA in either an RHA facility or in a Salaried Physician office. 
+ All Physicians operating in an RHA Managed EMR, regardless of their remuneration type, must comply with the EMR Policies and Procedures set out by the RHA and are not able to sign contracts directly with EMR vendors. 
+ How do I know if I am in an RHA Managed EMR? 
+ For all implementations of RHA Managed EMRs, the RHAs will make it clear to the physician via contractual agreements that they operate in such an EMR. In addition, RHA Managed EMRs will display the RHA logo on the login screen. Physicians working in RHA Managed EMRs will not have a direct contract with the EMR vendor. 
+ What does it mean to me if I am in an RHA Managed EMR? 
+ Physicians operating in RHA Managed EMRs cannot sign a contract directly with the EMR vendor and must comply with RHA Policies and Procedures governing the use of the EMR. 
+ Are there any EMR funding incentives available? 
+ NBMS administers the EMR funding programs for EMR adoption and meaningful use. These incentives can change over time. Contact NBMS for details regarding current programs ( [email protected] ). 
+ Telus PS Suite certification questions
+ Why is Telus PS Suite showing a suspended certificate status?&nbsp; 
+\r\n The EMR Vendor does not meet all EMR certification requirements for the PS Suite EMR.&nbsp;
+\r\n Why is Telus PS Suite certification being suspended?&nbsp; 
+\r\n In June 2023, the NB Provincial EMR Program introduced new requirements to support delivery of electronic laboratory results to Certified EMRs. All Certified EMRs must comply with this updated specification by March 31, 2025.&nbsp;
+\r\n TELUS Health has informed the Provincial EMR Program that they do not intend to implement this specification in Telus PS Suite and comply with certification requirements. Based on this decision, Telus PS Suite will lose its Active certification and its certificate status will be &quot;Suspended&quot;.&nbsp;
+\r\n What does &quot;certificate suspension&quot; mean?&nbsp; 
+\r\n The certificate suspension means that Telus PS Suite will not be eligible to add new integrations to provincial EHR products and services.&nbsp;
+\r\n The EMR will be in a suspended status for a transition period of 24 months, after which its certification will be withdrawn on March 31, 2027. During the transition period, the vendor must maintain all other certification obligations, including privacy and security measures necessary for the protection of personal health information. At the end of the transition period, the vendor will no longer have any contractual obligations to the Provincial EMR Program. However, all obligations outlined in the subscription agreements between physicians and the vendor will remain in effect.&nbsp;
+\r\n See the EMR Certification Status page for information on the various EMR Certification Statuses.&nbsp;&nbsp;
+\r\n What does this mean for me as a clinician using Telus PS Suite?&nbsp; 
+\r\n To support clinicians through the transition, all certification benefits, including financial incentives and access to the provincial integrations, will continue until March 31, 2027. You will also have the option to transition to a replacement or alternate EMR Offering.&nbsp;&nbsp;
+\r\n When does the suspension take effect?&nbsp; 
+\r\n Telus PS Suite is Suspended as of March 31, 2025. The EMR will be in a Suspended state for a transition period of 24 months, until March 31, 2027, after which certification will be withdrawn.&nbsp;&nbsp;
+\r\n Can I continue using Telus PS Suite?&nbsp; 
+\r\n Yes, clients can continue using Telus PS Suite during the transition period and will retain all benefits, including access to the EHR Clinical Viewer and funding incentives.&nbsp;
+\r\n Can I continue using my current integrations to EHR Clinical Viewer and MCE billing?&nbsp; 
+\r\n Your existing EHR Clinical Viewer and MCE Billing integrations will not be disconnected. New users can be added to existing sites that already use these integrations; however any new sites will not be able to connect to ECV.&nbsp;
+\r\n Will MCE billing continue to be supported in Telus PS Suite?&nbsp; 
+\r\n MCE billing integration is available to all EMRs, certified or uncertified, and will remain active for at least the 24-month transition period. It may continue beyond that if the vendor chooses to maintain it.&nbsp;
+\r\n Is Telus PS Suite still being funded?&nbsp; 
+\r\n NBMS funding incentives will continue during the transition period. The NBMS is currently in discussions with government on the future of EMR reimbursement programs.&nbsp;
+\r\n Will Telus PS Suite continue to be supported by the vendor once suspended?&nbsp; 
+\r\n Yes, TELUS will provide full support to customers during the transition period. For questions related to ongoing Telus PS Suite support, please contact TELUS Health.&nbsp;&nbsp;
+\r\n Can I transition to a different Certified EMR?&nbsp; 
+\r\n There is no immediate action required, but you should consider transitioning to another Certified EMR during the transition period so that you can retain access to provincial integrations.
+\r\n Who should I contact if I have questions about support or the transition?&nbsp; 
+\r\n \r\n Questions about provincial integrations should be directed to the NB Provincial EMR Program ( emradmin@gnb.ca )&nbsp;
+\r\n Questions regarding funding incentives should be directed to NBMS ( support@nbms.nb.ca )&nbsp;
+\r\n Questions regarding ongoing support for Telus PS Suite should be directed to TELUS Health.&nbsp;
+\r\n \r\n"}}" id="text-78901091cd" class="cmp-text">
+ Why is Telus PS Suite showing a suspended certificate status? 
+ The EMR Vendor does not meet all EMR certification requirements for the PS Suite EMR. 
+ Why is Telus PS Suite certification being suspended? 
+ In June 2023, the NB Provincial EMR Program introduced new requirements to support delivery of electronic laboratory results to Certified EMRs. All Certified EMRs must comply with this updated specification by March 31, 2025. 
+ TELUS Health has informed the Provincial EMR Program that they do not intend to implement this specification in Telus PS Suite and comply with certification requirements. Based on this decision, Telus PS Suite will lose its Active certification and its certificate status will be "Suspended". 
+ What does "certificate suspension" mean? 
+ The certificate suspension means that Telus PS Suite will not be eligible to add new integrations to provincial EHR products and services. 
+ The EMR will be in a suspended status for a transition period of 24 months, after which its certification will be withdrawn on March 31, 2027. During the transition period, the vendor must maintain all other certification obligations, including privacy and security measures necessary for the protection of personal health information. At the end of the transition period, the vendor will no longer have any contractual obligations to the Provincial EMR Program. However, all obligations outlined in the subscription agreements between physicians and the vendor will remain in effect. 
+ See the EMR Certification Status page for information on the various EMR Certification Statuses. 
+ What does this mean for me as a clinician using Telus PS Suite? 
+ To support clinicians through the transition, all certification benefits, including financial incentives and access to the provincial integrations, will continue until March 31, 2027. You will also have the option to transition to a replacement or alternate EMR Offering. 
+ When does the suspension take effect? 
+ Telus PS Suite is Suspended as of March 31, 2025. The EMR will be in a Suspended state for a transition period of 24 months, until March 31, 2027, after which certification will be withdrawn. 
+ Can I continue using Telus PS Suite? 
+ Yes, clients can continue using Telus PS Suite during the transition period and will retain all benefits, including access to the EHR Clinical Viewer and funding incentives. 
+ Can I continue using my current integrations to EHR Clinical Viewer and MCE billing? 
+ Your existing EHR Clinical Viewer and MCE Billing integrations will not be disconnected. New users can be added to existing sites that already use these integrations; however any new sites will not be able to connect to ECV. 
+ Will MCE billing continue to be supported in Telus PS Suite? 
+ MCE billing integration is available to all EMRs, certified or uncertified, and will remain active for at least the 24-month transition period. It may continue beyond that if the vendor chooses to maintain it. 
+ Is Telus PS Suite still being funded? 
+ NBMS funding incentives will continue during the transition period. The NBMS is currently in discussions with government on the future of EMR reimbursement programs. 
+ Will Telus PS Suite continue to be supported by the vendor once suspended? 
+ Yes, TELUS will provide full support to customers during the transition period. For questions related to ongoing Telus PS Suite support, please contact TELUS Health. 
+ Can I transition to a different Certified EMR? 
+ There is no immediate action required, but you should consider transitioning to another Certified EMR during the transition period so that you can retain access to provincial integrations.
+ Who should I contact if I have questions about support or the transition? 
+ Questions about provincial integrations should be directed to the NB Provincial EMR Program ( [email protected] ) 
+ Questions regarding funding incentives should be directed to NBMS ( [email protected] ) 
+ Questions regarding ongoing support for Telus PS Suite should be directed to TELUS Health. 
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html
+EMR Certification Status page | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/emr-certification-status.html

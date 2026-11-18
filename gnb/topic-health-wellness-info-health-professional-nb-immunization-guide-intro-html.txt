@@ -1,0 +1,271 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/intro.html
+TÍTULO: Introduction - gnb.ca
+MODIFICADA: —
+
+Introduction
+ This introduction outlines the intended use of the NBIPG, an overview of the immunization program, roles and responsibilities of key partners, related legislation, and reporting requirements for administered vaccines.
+\r\n"}}" id="text-4eb168c763" class="cmp-text">
+ This introduction outlines the intended use of the NBIPG, an overview of the immunization program, roles and responsibilities of key partners, related legislation, and reporting requirements for administered vaccines.
+ On this page
+ Intended use of the guide
+ The New Brunswick Immunization Program Guide provides direction to all health care practitioners who provide publicly funded vaccine. It outlines legislation, policies and standards necessary in the provision of safe, effective and competent immunization practice. The guide is intended to be used in conjunction with the Canadian Immunization Guide. Additional information can be found directly from the National Advisory Committee on Immunization. 
+\r\n The New Brunswick Immunization Program Guide is updated regularly to reflect changes in evidence and resources.
+\r\n"}}" id="text-dc66d3ef73" class="cmp-text">
+ The New Brunswick Immunization Program Guide provides direction to all health care practitioners who provide publicly funded vaccine. It outlines legislation, policies and standards necessary in the provision of safe, effective and competent immunization practice. The guide is intended to be used in conjunction with the Canadian Immunization Guide. Additional information can be found directly from the National Advisory Committee on Immunization. 
+ The New Brunswick Immunization Program Guide is updated regularly to reflect changes in evidence and resources.
+ Program overview
+ Immunization is used to prevent and control vaccine preventable diseases. Publicly funded vaccines are those vaccines that are available to the population of New Brunswick as outlined in the eligibility criteria which is determined by the Office of the Chief Medical Officer of Health. Publicly funded vaccines are provided for routine programs for infants, children and adults; targeted programs for high-risk individuals; and for communicable disease follow-up. They are provided free of charge through a network of immunizers in public health clinics, primary care settings, pharmacies, long-term care facilities, other institutions and private organizations. This mixed model of delivery allows for prudent use of vaccines which often come at high costs and at times can be limited in supply.
+\r\n Increasing immunization acceptance and continually improving the quality of service through the surveillance of adverse events following immunization is integral to the success of the New Brunswick Immunization program. As such the New Brunswick immunization program is a part of the Canadian Adverse Events Following Immunization Surveillance System (CAEFISS), which is the mechanism for reporting, assessing and providing recommendation about adverse events following immunization.
+\r\n Immunization is an increasingly complex subject and immunization providers must rely on the expertise of others such microbiologists, virologists and epidemiologists to inform their work. The recommendations of the National Advisory Committee on Immunization and the Canadian Immunization Committee provide expert guidance to the New Brunswick Immunization Program.
+\r\n"}}" id="text-813ab09f23" class="cmp-text">
+ Immunization is used to prevent and control vaccine preventable diseases. Publicly funded vaccines are those vaccines that are available to the population of New Brunswick as outlined in the eligibility criteria which is determined by the Office of the Chief Medical Officer of Health. Publicly funded vaccines are provided for routine programs for infants, children and adults; targeted programs for high-risk individuals; and for communicable disease follow-up. They are provided free of charge through a network of immunizers in public health clinics, primary care settings, pharmacies, long-term care facilities, other institutions and private organizations. This mixed model of delivery allows for prudent use of vaccines which often come at high costs and at times can be limited in supply.
+ Increasing immunization acceptance and continually improving the quality of service through the surveillance of adverse events following immunization is integral to the success of the New Brunswick Immunization program. As such the New Brunswick immunization program is a part of the Canadian Adverse Events Following Immunization Surveillance System (CAEFISS), which is the mechanism for reporting, assessing and providing recommendation about adverse events following immunization.
+ Immunization is an increasingly complex subject and immunization providers must rely on the expertise of others such microbiologists, virologists and epidemiologists to inform their work. The recommendations of the National Advisory Committee on Immunization and the Canadian Immunization Committee provide expert guidance to the New Brunswick Immunization Program.
+ Roles and pesponsibilities of key partners in the New Brunswick Immunization Program
+ The success of an immunization program is dependent upon partnerships and collaborations. As a component of the Communicable Disease Control (CDC) program many of those who support the immunization program provide support for the CDC work in general. This section outlines the levels of responsibilities of those involved in the New Brunswick Immunization Program from a general perspective and does not reflect the specific organizational structures of the Regional Health Authorities
+\r\n"}}" id="text-5a71dc74f8" class="cmp-text">
+ The success of an immunization program is dependent upon partnerships and collaborations. As a component of the Communicable Disease Control (CDC) program many of those who support the immunization program provide support for the CDC work in general. This section outlines the levels of responsibilities of those involved in the New Brunswick Immunization Program from a general perspective and does not reflect the specific organizational structures of the Regional Health Authorities
+ The Office of the Chief Medical Officer of Health (OCMOH)
+ The Office of the Chief Medical Officer of Health (OCMOH) is the provincial Public Health office lead by the Chief Medical Officer of Health (CMOH). Under the Public Health Act (PHA) and Regulations (2009), the CMOH is a designate of the Minister of Health.
+\n The OCMOH is responsible to:
+\n \n Plan, fund, monitor and evaluate the New Brunswick Immunization Program. This is supported by the work of a number of health professionals in the OCMOH including public health physicians, nurses, epidemiologists, inspectors, data analysts, support staff and others.
+\n Determine the New Brunswick routine immunization schedule, targeted high risk schedules and parameters for use of vaccine in the control of cases or outbreaks of vaccine preventable diseases.
+\n Communicate routine immunization schedules, eligibility criteria, and program policy guidelines and standards to Regional Health Authorities-Public Health and provincial partners including professional associations.
+\n Secure and manage contracts that allow for the procurement of vaccines and biological preparations used in publicly funded immunization programs.
+\n Supply a “Record of Immunization “for use by those who administer publicly funded vaccine per Regulation 2009-136.
+\n Supply the forms to document instances where proof of immunization is not required as per Regulation 2009-136.
+\n Analyze AEFI data and disseminate reports. 8. Assist with consultations on AEFI related matters with the RMOH when necessary.
+\n \n"}}" id="text-52d9964e6f" class="cmp-text">
+ The Office of the Chief Medical Officer of Health (OCMOH) is the provincial Public Health office lead by the Chief Medical Officer of Health (CMOH). Under the Public Health Act (PHA) and Regulations (2009), the CMOH is a designate of the Minister of Health.
+ The OCMOH is responsible to:
+ Plan, fund, monitor and evaluate the New Brunswick Immunization Program. This is supported by the work of a number of health professionals in the OCMOH including public health physicians, nurses, epidemiologists, inspectors, data analysts, support staff and others.
+ Determine the New Brunswick routine immunization schedule, targeted high risk schedules and parameters for use of vaccine in the control of cases or outbreaks of vaccine preventable diseases.
+ Communicate routine immunization schedules, eligibility criteria, and program policy guidelines and standards to Regional Health Authorities-Public Health and provincial partners including professional associations.
+ Secure and manage contracts that allow for the procurement of vaccines and biological preparations used in publicly funded immunization programs.
+ Supply a “Record of Immunization “for use by those who administer publicly funded vaccine per Regulation 2009-136.
+ Supply the forms to document instances where proof of immunization is not required as per Regulation 2009-136.
+ Analyze AEFI data and disseminate reports. 8. Assist with consultations on AEFI related matters with the RMOH when necessary.
+ Central Serum Depot (CSD)
+ The Central Serum Depot (CSD) is part of the OCMOH. It is a centrally located depot for publicly funded vaccines and biologics. 
+\r\n The CSD is responsible to: 
+\r\n \r\n Procure vaccines and biological preparations used in the New Brunswick Immunization Program. 
+\r\n Ensure the safe handling and storage of vaccines and biologics within its care. 
+\r\n Distribute vaccines and biologics.
+\r\n \r\n"}}" id="text-048d9d706c" class="cmp-text">
+ The Central Serum Depot (CSD) is part of the OCMOH. It is a centrally located depot for publicly funded vaccines and biologics. 
+ The CSD is responsible to: 
+ Procure vaccines and biological preparations used in the New Brunswick Immunization Program. 
+ Ensure the safe handling and storage of vaccines and biologics within its care. 
+ Distribute vaccines and biologics.
+ The Regional Medical Officer of Health (RMOH)
+ The Regional Medical Officer of Health (RMOH) is the regional delegate of the CMOH and is responsible for the oversight of public health in their assigned geographical region.
+\n The RMOH is responsible to:
+\n \n Supports the implementation of immunization program policies, standards and guidelines including those related to AEFI.
+\n May be involved in regional immunization program development and evaluation.
+\n Provides the medical directive necessary for nurses to immunize according to the New Brunswick Immunization Program in Regional Health Authority Public Health settings and, upon request in First Nations Community Health settings.
+\n May assist with providing medical consultation on immunization related matters to immunization practitioners within the Regional Health Authority.
+\n Receives/reviews reports of AEFIs from the Regional Health Authority- in keeping with provincial policies and guidelines. 6. Makes recommendation to the health care provider regarding future immunizations for client that have experienced an AEFI.&nbsp;
+\n \n"}}" id="text-ee3c82c8f6" class="cmp-text">
+ The Regional Medical Officer of Health (RMOH) is the regional delegate of the CMOH and is responsible for the oversight of public health in their assigned geographical region.
+ The RMOH is responsible to:
+ Supports the implementation of immunization program policies, standards and guidelines including those related to AEFI.
+ May be involved in regional immunization program development and evaluation.
+ Provides the medical directive necessary for nurses to immunize according to the New Brunswick Immunization Program in Regional Health Authority Public Health settings and, upon request in First Nations Community Health settings.
+ May assist with providing medical consultation on immunization related matters to immunization practitioners within the Regional Health Authority.
+ Receives/reviews reports of AEFIs from the Regional Health Authority- in keeping with provincial policies and guidelines. 6. Makes recommendation to the health care provider regarding future immunizations for client that have experienced an AEFI. 
+ The Regional Health Authority-Public Health Programs (RHA-PH)
+ The Regional Health Authority-Public Health Programs (RHA-PH) is responsible to:
+\n \n Ensure that their populations are optimally immunized by planning, delivering and evaluating immunization programs.
+\n Ensure that immunization services are provided in keeping with the directives of the New Brunswick Immunization Program.
+\n Ensure that publicly funded vaccines and biologics in their keeping are stored, maintained and monitored as set out by provincial storage and handling guidelines.
+\n Ensure the cold chain is maintained during distribution of product to other providers.
+\n Ensure that all those who provide immunization services within the public health setting have the knowledge and skills necessary to safely and competently provide vaccine as well as identify and report adverse eventsfollowing immunization asis demonstrated in part through completion of a certification program approved by the OCMOH.
+\n Ensure that immunization records and AEFI reports are managed as per organizational records management and privacy policies.
+\n Ensure immunization program information, including AEFI information, is communicated to appropriate stakeholders within their jurisdiction.
+\n Provide expertise and support on immunization related matters, including AEFIs to immunization practitioners within the geographical boundaries of the regional health authority.
+\n Provide access to competencies tools and resources to immunizers practicing outside of the Public Health setting.
+\n Oversee the storage and handling of vaccines and biologics and make recommendations to ensure standards are maintained.
+\n Monitor vaccine inventory and report to OCMOH as per provincial inventory management policies and guidelines.
+\n Oversee the surveillance of the regulatory requirements of the PHA and Regulation 2009-136 sections (12) as they relate to the immunization of school children and children attending daycare and in keeping with provincial policies and guidelines.
+\n Oversee the surveillance of regulatory requirements of the Public Health Act as it relates to reportable events, including AEFIs, and in keeping with provincial policies, standards and guideline
+\n Oversee, and coordinate reports of adverse events following immunization (AEFIs) in collaboration with the RMOH and report to OCMOH in keeping with provincial policies, standards and guidelines.
+\n Ensure mechanisms are in place to receive and review all submitted AEFI report forms from multiple sources.
+\n Ensure AEFI recommendations are communicated to the immunization provider.
+\n \n"}}" id="text-9db00f85ba" class="cmp-text">
+ The Regional Health Authority-Public Health Programs (RHA-PH) is responsible to:
+ Ensure that their populations are optimally immunized by planning, delivering and evaluating immunization programs.
+ Ensure that immunization services are provided in keeping with the directives of the New Brunswick Immunization Program.
+ Ensure that publicly funded vaccines and biologics in their keeping are stored, maintained and monitored as set out by provincial storage and handling guidelines.
+ Ensure the cold chain is maintained during distribution of product to other providers.
+ Ensure that all those who provide immunization services within the public health setting have the knowledge and skills necessary to safely and competently provide vaccine as well as identify and report adverse eventsfollowing immunization asis demonstrated in part through completion of a certification program approved by the OCMOH.
+ Ensure that immunization records and AEFI reports are managed as per organizational records management and privacy policies.
+ Ensure immunization program information, including AEFI information, is communicated to appropriate stakeholders within their jurisdiction.
+ Provide expertise and support on immunization related matters, including AEFIs to immunization practitioners within the geographical boundaries of the regional health authority.
+ Provide access to competencies tools and resources to immunizers practicing outside of the Public Health setting.
+ Oversee the storage and handling of vaccines and biologics and make recommendations to ensure standards are maintained.
+ Monitor vaccine inventory and report to OCMOH as per provincial inventory management policies and guidelines.
+ Oversee the surveillance of the regulatory requirements of the PHA and Regulation 2009-136 sections (12) as they relate to the immunization of school children and children attending daycare and in keeping with provincial policies and guidelines.
+ Oversee the surveillance of regulatory requirements of the Public Health Act as it relates to reportable events, including AEFIs, and in keeping with provincial policies, standards and guideline
+ Oversee, and coordinate reports of adverse events following immunization (AEFIs) in collaboration with the RMOH and report to OCMOH in keeping with provincial policies, standards and guidelines.
+ Ensure mechanisms are in place to receive and review all submitted AEFI report forms from multiple sources.
+ Ensure AEFI recommendations are communicated to the immunization provider.
+ All Providers of publicly funded and non-publicly funded vaccine (including but not limited to, all physicians, nurses, nurse practitioners and pharmacists) are responsible to:
+ \r\n Adhere to the regulatory requirements as they apply to immunization and AEFIs. 
+\r\n Follow the policies, standards and guidelines as set out by the OCMOH for the delivery of the New Brunswick Immunization Program this includes policies, standards and guidelines for AEFIs. 
+\r\n Provide clients that have experienced an AEFI with recommendation for future immunizations as outlined by the RMOH. 
+\r\n Ensure that vaccines and biologics in their care will be maintained as per provincial storing and handling guidelines. 
+\r\n Practice in a safe and competent manner
+\r\n \r\n"}}" id="text-5f132d6345" class="cmp-text">
+ Adhere to the regulatory requirements as they apply to immunization and AEFIs. 
+ Follow the policies, standards and guidelines as set out by the OCMOH for the delivery of the New Brunswick Immunization Program this includes policies, standards and guidelines for AEFIs. 
+ Provide clients that have experienced an AEFI with recommendation for future immunizations as outlined by the RMOH. 
+ Ensure that vaccines and biologics in their care will be maintained as per provincial storing and handling guidelines. 
+ Practice in a safe and competent manner
+ Legislation
+ Public Health Act and Regulations 2009 
+\r\n The legislative authority forthe New Brunswick Immunization Program is provided by the Public Health Act and Regulation 2009-136 . This updated legislation replaced the Health Act in 2009 and is designed to protect the public from health hazards, environmental risks and communicable diseases. 
+\r\n Schedule A under Reporting and Diseases Regulation 2009-136 , identifies and describes the reporting requirements associated with communicable diseases, notifiable diseases and reportable events including a requirement to report all adverse events following immunization.
+\r\n"}}" id="text-8512e89e36" class="cmp-text">
+ Public Health Act and Regulations 2009 
+ The legislative authority forthe New Brunswick Immunization Program is provided by the Public Health Act and Regulation 2009-136 . This updated legislation replaced the Health Act in 2009 and is designed to protect the public from health hazards, environmental risks and communicable diseases. 
+ Schedule A under Reporting and Diseases Regulation 2009-136 , identifies and describes the reporting requirements associated with communicable diseases, notifiable diseases and reportable events including a requirement to report all adverse events following immunization.
+ Reporting requirements related to immunization practice
+ Report by medical practitioner, nurse practitioner or nurse
+ A medical practitioners, nurse practitioners , or nurses, who, while providing professional services to a person who is not a patient in or an outpatient of a hospital facility or a resident of an institution, has reasonable and probable grounds to believe that the person has or may have a notifiable disease, is or may be infected with an agent of a communicable disease or has suffered a reportable event , as listed in Schedule A, shall report to a medical officer of health or a person designated by the Minister the information required under section 6.
+\r\n"}}" id="text-4aa59fae2b" class="cmp-text">
+ A medical practitioners, nurse practitioners , or nurses, who, while providing professional services to a person who is not a patient in or an outpatient of a hospital facility or a resident of an institution, has reasonable and probable grounds to believe that the person has or may have a notifiable disease, is or may be infected with an agent of a communicable disease or has suffered a reportable event , as listed in Schedule A, shall report to a medical officer of health or a person designated by the Minister the information required under section 6.
+ Report by person in charge of institution
+ A person in charge of an institution who has reasonable and probable grounds to believe that the person under his or her custody or control has or may have a notifiable disease, is or may be infected with an agent of a communicable disease or has suffered a reportable event , as listed in Schedule A, shall report to a medical officer of health or a person designated by the Minister the information required under section 6.
+\r\n"}}" id="text-3e807bf8f0" class="cmp-text">
+ A person in charge of an institution who has reasonable and probable grounds to believe that the person under his or her custody or control has or may have a notifiable disease, is or may be infected with an agent of a communicable disease or has suffered a reportable event , as listed in Schedule A, shall report to a medical officer of health or a person designated by the Minister the information required under section 6.
+ Report by chief executive officer of a regional health authority
+ The chief executive officer of a regional health authority or person designated by the chief executive officer shall, where there is an entry in the records of a hospital facility operated by the regional health authority that states that a person who is a patient in or an outpatient of a hospital facility has or may have a notifiable disease, is or may be infected by an agent of a communicable disease or has suffered a reportable event , as listed in Schedule A, shall report to a medical officer of health or a person designated by the Minister the information required under section 6.&nbsp;
+\r\n"}}" id="text-9e664c161f" class="cmp-text">
+ The chief executive officer of a regional health authority or person designated by the chief executive officer shall, where there is an entry in the records of a hospital facility operated by the regional health authority that states that a person who is a patient in or an outpatient of a hospital facility has or may have a notifiable disease, is or may be infected by an agent of a communicable disease or has suffered a reportable event , as listed in Schedule A, shall report to a medical officer of health or a person designated by the Minister the information required under section 6. 
+ Contents of report
+ The following information shall be provided in a report:
+\n \n the name, address and telephone number of the person reporting
+\n the name and address of the person who has or may have a notifiable disease, is or may be infected with an agent of a communicable disease or has suffered a reportable event
+\n the Medicare number of the person referred to in paragraph 2
+\n the residential telephone number and any other telephone number for the person referred to in paragraph 2
+\n the date of birth and gender of the person referred to in paragraph 2
+\n the name or description of the disease or reportable event
+\n the name of the primary care medical practitioner or attending physician of the person referred to in paragraph 2, where applicable
+\n such other clinical information as may be required by the Ministerin relation to the matter being reported.
+\n \n"}}" id="text-444689827e" class="cmp-text">
+ The following information shall be provided in a report:
+ the name, address and telephone number of the person reporting
+ the name and address of the person who has or may have a notifiable disease, is or may be infected with an agent of a communicable disease or has suffered a reportable event
+ the Medicare number of the person referred to in paragraph 2
+ the residential telephone number and any other telephone number for the person referred to in paragraph 2
+ the date of birth and gender of the person referred to in paragraph 2
+ the name or description of the disease or reportable event
+ the name of the primary care medical practitioner or attending physician of the person referred to in paragraph 2, where applicable
+ such other clinical information as may be required by the Ministerin relation to the matter being reported.
+ Timing and form of report
+ A report referred to in section 3, 4 or 5 shall be delivered as follows:
+\n \n for those communicable diseases, notifiable diseases or reportable events listed in Part 1 of Schedule A — orally within one hour after identification, followed by a written report by the end of the next working day
+\n for those communicable diseases, notifiable diseases or reportable events listed in Part 2 of Schedule A — orally as soon as possible within 24 hours after identification, followed by a written report within one week
+\n for those communicable diseases, notifiable diseases or reportable events listed in Part 3 of Schedule A — in writing within one week after identification.
+\n \n A written report shall be made on a form provided by the Minister.
+\n"}}" id="text-87a5da1ce9" class="cmp-text">
+ A report referred to in section 3, 4 or 5 shall be delivered as follows:
+ for those communicable diseases, notifiable diseases or reportable events listed in Part 1 of Schedule A — orally within one hour after identification, followed by a written report by the end of the next working day
+ for those communicable diseases, notifiable diseases or reportable events listed in Part 2 of Schedule A — orally as soon as possible within 24 hours after identification, followed by a written report within one week
+ for those communicable diseases, notifiable diseases or reportable events listed in Part 3 of Schedule A — in writing within one week after identification.
+ A written report shall be made on a form provided by the Minister.
+ Immunization of children
+ &nbsp;If a child is entering a school in New Brunswick for the first time, the principal of the school shall ensure that proof of immunization of the child for the following diseases is provided to him or her: 
+\r\n \r\n diphtheria 
+\r\n tetanus
+\r\n polio
+\r\n pertussis
+\r\n measles
+\r\n mumps
+\r\n rubella
+\r\n varicella
+\r\n meningococcal disease. 
+\r\n \r\n The operator of a day care center shall ensure that proof of immunization for the following diseases is provided to him or her for each child who attends that day care center: 
+\r\n \r\n diphtheria
+\r\n tetanus
+\r\n polio
+\r\n pertussis
+\r\n measles
+\r\n mumps
+\r\n rubella
+\r\n varicella
+\r\n meningococcal disease
+\r\n Haemophilus influenzae type B disease
+\r\n pneumococcal disease. 
+\r\n \r\n Notwithstanding subsections (1) and (2), proof of immunization is not required if the parent or legal guardian of the child provides:
+\r\n \r\n a medical exemption, on a form provided by the Minister, that is signed by a medical practitioner or nurse practitioner, or
+\r\n a written statement, on a form provided by the Minister, signed by the parent or legal guardian of his or her objections to the immunizations required by the Minister.&nbsp;
+\r\n \r\n"}}" id="text-232167634c" class="cmp-text">
+ If a child is entering a school in New Brunswick for the first time, the principal of the school shall ensure that proof of immunization of the child for the following diseases is provided to him or her: 
+ diphtheria 
+ tetanus
+ polio
+ pertussis
+ measles
+ mumps
+ rubella
+ varicella
+ meningococcal disease. 
+ The operator of a day care center shall ensure that proof of immunization for the following diseases is provided to him or her for each child who attends that day care center: 
+ diphtheria
+ tetanus
+ polio
+ pertussis
+ measles
+ mumps
+ rubella
+ varicella
+ meningococcal disease
+ Haemophilus influenzae type B disease
+ pneumococcal disease. 
+ Notwithstanding subsections (1) and (2), proof of immunization is not required if the parent or legal guardian of the child provides:
+ a medical exemption, on a form provided by the Minister, that is signed by a medical practitioner or nurse practitioner, or
+ a written statement, on a form provided by the Minister, signed by the parent or legal guardian of his or her objections to the immunizations required by the Minister. 
+ Immunization — Information to the Minister
+ A medical practitioner, nurse practitioner or a nurse who administers a publicly funded vaccine or biological preparation to a person shall provide to the Minister in a manner required by the Minister the following information within one week after administering the vaccine or biological preparation: 
+\r\n \r\n the name and address of the person to whom the vaccine or biological preparation was administered
+\r\n the Medicare number of the person
+\r\n the date of birth and gender of the person
+\r\n the date on which the vaccine or biological preparation was administered
+\r\n the name and lot number of the vaccine or biological preparation
+\r\n the name of the person who administered the vaccine or biological preparation
+\r\n \r\n"}}" id="text-c6bfb3650a" class="cmp-text">
+ A medical practitioner, nurse practitioner or a nurse who administers a publicly funded vaccine or biological preparation to a person shall provide to the Minister in a manner required by the Minister the following information within one week after administering the vaccine or biological preparation: 
+ the name and address of the person to whom the vaccine or biological preparation was administered
+ the Medicare number of the person
+ the date of birth and gender of the person
+ the date on which the vaccine or biological preparation was administered
+ the name and lot number of the vaccine or biological preparation
+ the name of the person who administered the vaccine or biological preparation
+ Record of Immunization
+ A medical practitioner, nurse practitioner or nurse who administers a vaccine to a person shall provide to the person a record of the immunization on a form provided by the Minister that includes the following information: 
+\r\n \r\n the name of person and date of birth
+\r\n the Medicare number of the person
+\r\n the name of disease against which the person has been vaccinated
+\r\n the date on which the vaccine was administered
+\r\n \r\n"}}" id="text-1f9c17af5a" class="cmp-text">
+ A medical practitioner, nurse practitioner or nurse who administers a vaccine to a person shall provide to the person a record of the immunization on a form provided by the Minister that includes the following information: 
+ the name of person and date of birth
+ the Medicare number of the person
+ the name of disease against which the person has been vaccinated
+ the date on which the vaccine was administered
+ Privacy Act
+ The Collection, Use and Disclosure of Personal Information (PI) and Personal Health Information (PHI) within the New Brunswick Immunization Program are governed by the Right To Information and Protection of Privacy Act and the Personal Health Information Privacy and Access Act of the Province of New Brunswick. Each time PI or PHI is collected, used or disclosed, the individuals involved must ensure that such collection, use or disclosure is authorized by, and carried out in compliance with, these Acts, including making sure that appropriate informed consents are obtained. It is important for members of the New Brunswick Immunization Program (Doctors, Nurses, Administrators, Principals, Directors of day care facilities) to understand that, every time PI or PHI is shared by one member with another member of the program (such as by a Principal of a school with a Public Health Nurse) both a disclosure and a collection takes place: the Principal discloses PI or PHI to the Nurse; the Nurse collects PI or PHI from the Principal. 
+\r\n Each such action must comply with the requirements of the appropriate Act. 
+\r\n For further information with regard to privacy requirements in the collection, use and disclosure of PI or PHI in this program, individuals should approach the Privacy Officers for their respective organizations. These requirements will be described in further detail through the policies, guidelines and standards of the New Brunswick Immunization Program.
+\r\n"}}" id="text-6d6fc61281" class="cmp-text">
+ The Collection, Use and Disclosure of Personal Information (PI) and Personal Health Information (PHI) within the New Brunswick Immunization Program are governed by the Right To Information and Protection of Privacy Act and the Personal Health Information Privacy and Access Act of the Province of New Brunswick. Each time PI or PHI is collected, used or disclosed, the individuals involved must ensure that such collection, use or disclosure is authorized by, and carried out in compliance with, these Acts, including making sure that appropriate informed consents are obtained. It is important for members of the New Brunswick Immunization Program (Doctors, Nurses, Administrators, Principals, Directors of day care facilities) to understand that, every time PI or PHI is shared by one member with another member of the program (such as by a Principal of a school with a Public Health Nurse) both a disclosure and a collection takes place: the Principal discloses PI or PHI to the Nurse; the Nurse collects PI or PHI from the Principal. 
+ Each such action must comply with the requirements of the appropriate Act. 
+ For further information with regard to privacy requirements in the collection, use and disclosure of PI or PHI in this program, individuals should approach the Privacy Officers for their respective organizations. These requirements will be described in further detail through the policies, guidelines and standards of the New Brunswick Immunization Program.
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Immunization Program Guide (NBIPG) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide.html

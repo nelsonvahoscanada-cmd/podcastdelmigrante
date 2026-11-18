@@ -1,0 +1,63 @@
+URL: https://www.gnb.ca/en/campaign/geonb/data-catalogue/health-council.html
+TÍTULO: New Brunswick health council community boundaries - gnb.ca
+MODIFICADA: —
+
+New Brunswick health council community boundaries
+ GeoNB
+\r\n"}}" id="text-64ccf34f5d" class="cmp-text">
+ GeoNB
+ Overview
+ \n Data purpose:&nbsp; The NBHC Community Boundaries were developed by the New Brunswick Health Council (NBHC) for the purpose of data collection, analysis, and reporting regarding health services quality and population health in New Brunswick. \n Having information available for these specific geographies help with New Brunswickers understanding of local realities regarding health services quality and population health in New Brunswick.
+\n The NBHC has divided the province into&nbsp; 33 NBHC communities &nbsp;to be able to report local information. These community boundaries, created in 2011, are based on the catchment areas of health care service establishments such as health care centres, community health centres, and hospitals in New Brunswick. The NBHC communities were further validated with various community members to ensure communities of interest were respected as much as possible for all areas of New Brunswick.
+\n The baseline criteria for each of the 33 NBHC Communities are: \n Statistic’s Canada census subdivisions (CSD) as the geographic base
+\n each community fits completely within 1 of the 7 health region* boundaries
+\n where most people access their primary care services in the area
+\n population size of no less than 5,000 to ensure data availability and privacy for the various indicators
+\n \n
+\n * These health regions are as established in the&nbsp; Health Regions Regulation of the Public Health Act . They are administrative areas that represent the geographic area of responsibility for regional health authorities.
+\n \n
+\n Data description:&nbsp; Provides a provincial coverage of 33 NBHC communities. All communities are groupings of municipalities (Census subdivisions). The following NBHC communities have been modified since the last version: \n Neguac, Alnwick, Esgenoopetitj Area
+\n Tracadie and Saint-Isidore
+\n Shippagan, Lamèque, Inkerman Area
+\n Bouctouche, Richibucto, Sainte-Antoine Area
+\n Salisbury and Petitcodiac
+\n Shediac, Beaubassin East and Cap-Pelé
+\n \n
+\n Attributes: &nbsp;Community number, Community name (short name, long name and full name), Health zone number
+\n Update requirements:&nbsp; The next revision of the NBHC Community boundaries will be done in 2026.
+\n Restriction on use:&nbsp; Unrestricted
+\n License:&nbsp; Open Government License 
+\n Georeferencing:&nbsp; EPSG 3347 – NAD83 / Statistics Canada Lambert
+\n Data formats:&nbsp; ESRI file geodatabase, ESRI shape file, KML
+\n Data coverage and size: &nbsp;Provincial Coverage
+\n Responsible Agency: &nbsp;Department of Health
+\n \n"}}" id="text-ce3066d912" class="cmp-text">
+ Data purpose: The NBHC Community Boundaries were developed by the New Brunswick Health Council (NBHC) for the purpose of data collection, analysis, and reporting regarding health services quality and population health in New Brunswick. Having information available for these specific geographies help with New Brunswickers understanding of local realities regarding health services quality and population health in New Brunswick.
+ The NBHC has divided the province into 33 NBHC communities to be able to report local information. These community boundaries, created in 2011, are based on the catchment areas of health care service establishments such as health care centres, community health centres, and hospitals in New Brunswick. The NBHC communities were further validated with various community members to ensure communities of interest were respected as much as possible for all areas of New Brunswick.
+ The baseline criteria for each of the 33 NBHC Communities are: Statistic’s Canada census subdivisions (CSD) as the geographic base
+ each community fits completely within 1 of the 7 health region* boundaries
+ where most people access their primary care services in the area
+ population size of no less than 5,000 to ensure data availability and privacy for the various indicators
+ * These health regions are as established in the Health Regions Regulation of the Public Health Act . They are administrative areas that represent the geographic area of responsibility for regional health authorities.
+ Data description: Provides a provincial coverage of 33 NBHC communities. All communities are groupings of municipalities (Census subdivisions). The following NBHC communities have been modified since the last version: Neguac, Alnwick, Esgenoopetitj Area
+ Tracadie and Saint-Isidore
+ Shippagan, Lamèque, Inkerman Area
+ Bouctouche, Richibucto, Sainte-Antoine Area
+ Salisbury and Petitcodiac
+ Shediac, Beaubassin East and Cap-Pelé
+ Attributes: Community number, Community name (short name, long name and full name), Health zone number
+ Update requirements: The next revision of the NBHC Community boundaries will be done in 2026.
+ Restriction on use: Unrestricted
+ License: Open Government License 
+ Georeferencing: EPSG 3347 – NAD83 / Statistics Canada Lambert
+ Data formats: ESRI file geodatabase, ESRI shape file, KML
+ Data coverage and size: Provincial Coverage
+ Responsible Agency: Department of Health
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+GeoNB | https://www.gnb.ca/en/campaign/geonb.html
+Data catalogue | https://www.gnb.ca/en/campaign/geonb/data-catalogue.html
+Health Regions Regulation of the Public Health Act | https://laws.gnb.ca/en/document/cr/2009-141%20/
+Open Government License | https://www.gnb.ca/en/campaign/geonb/open-government-license.html

@@ -1,0 +1,562 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/standards.html
+TÍTULO: Program standards - gnb.ca
+MODIFICADA: —
+
+Program standards
+ Immunization practice standards, eligibility, administration, consent, reporting adverse events, school and daycare requirements, special populations, safe environment and Tuberculin Skin Testing.
+\r\n"}}" id="text-57e4f0eb8b" class="cmp-text">
+ Immunization practice standards, eligibility, administration, consent, reporting adverse events, school and daycare requirements, special populations, safe environment and Tuberculin Skin Testing.
+ On this page
+ Immunization practice standards in New Brunswick
+ Purpose: To provide updated immunization practice standards for all immunizers and their employers administering publicly funded vaccines in New Brunswick.&nbsp;
+\r\n Preamble: The Department of Health Public Health Branch provides vaccines and biologics for use in New Brunswick through three program areas:&nbsp;
+\r\n \r\n Routine programs for infants, children and adults.
+\r\n Targeted programs for high risk individuals.
+\r\n Communicable disease follow-up.
+\r\n \r\n The National Advisory Committee on Immunization (NACI) has developed guidelines for immunization practices applicable to both public and private programs. These guidelines, endorsed by various professional organizations, aim to ensure high-quality immunization practices across Canada.&nbsp;
+\r\n Guiding Principle: Vaccines and biologics in NB shall be provided and handled in accordance with the immunization program policies and standards as outlined in the New Brunswick Immunization Program Guide (NBIPG).&nbsp;
+\r\n"}}" id="text-c92e26ff02" class="cmp-text">
+ Purpose: To provide updated immunization practice standards for all immunizers and their employers administering publicly funded vaccines in New Brunswick. 
+ Preamble: The Department of Health Public Health Branch provides vaccines and biologics for use in New Brunswick through three program areas: 
+ Routine programs for infants, children and adults.
+ Targeted programs for high risk individuals.
+ Communicable disease follow-up.
+ The National Advisory Committee on Immunization (NACI) has developed guidelines for immunization practices applicable to both public and private programs. These guidelines, endorsed by various professional organizations, aim to ensure high-quality immunization practices across Canada. 
+ Guiding Principle: Vaccines and biologics in NB shall be provided and handled in accordance with the immunization program policies and standards as outlined in the New Brunswick Immunization Program Guide (NBIPG). 
+ Standards
+ \r\n Accessibility to Immunization Services \r\n Immunization services must be readily accessible to all eligible individuals in New Brunswick (NB).
+\r\n For general eligibility information, refer to the NBIPG:&nbsp;Eligibility Criteria Table for Publicly Funded Vaccines/Biologics.
+\r\n Immunizers/Employers should offer flexible hours and multiple locations to accommodate different schedules and geographic areas.
+\r\n Eliminate unnecessary prerequisites and logistical barriers while accommodating walk-ins to increase accessibility for eligible individuals.
+\r\n No recipient shall be charged for the cost of or the administration of publicly funded vaccines or biologics in the province.
+\r\n \r\n
+\r\n Screening and Vaccinations \r\n Utilize every clinical visit as an opportunity to screen whether any vaccines are needed, and, if so, administer them — ensuring no opportunity to vaccinate and prevent vaccine-preventable diseases is missed.
+\r\n Utilize tracking systems, electronic health records (EHR) and immunization registries such as the Public Health Information Solution System (PHIS) in NB to identify patients due or overdue for vaccines.
+\r\n Use reminders and recall systems to notify patients of upcoming or missed vaccinations.
+\r\n \r\n
+\r\n Comprehensive Vaccination \r\n Administer all vaccine doses for which a recipient is eligible at each visit, unless there are contraindications.
+\r\n Co-administer routine vaccines as most can be safely and effectively administered during the same visit. Refer to the sections Timing of Vaccine Administration and Vaccine Administration Practices from the Canadian Immunization Guide regarding administration of multiple injections.&nbsp;
+\r\n \r\n
+\r\n Education and Effective Communication \r\n During appointment, provide general education to the client (or parent/guardian) about the risks and the benefits of receiving vaccines or any other questions they may have.
+\r\n Use culturally sensitive, evidence-based educational materials and methods to reach diverse populations, ensuring communication is clear, culturally appropriate, and effective.
+\r\n Effective communication by health care providers has an important influence on people's decisions about whether to proceed with immunization. Immunizers should review this chapter: Communicating effectively about immunization from the Canadian Immunization Guide to learn basic principles of effective communication.
+\r\n \r\n
+\r\n Contraindications to Vaccinations \r\n Defer or withhold vaccines only for true contraindications as outlined in the Canadian Immunization Guide: Contraindications and Precautions , and avoid delaying vaccination for conditions or circumstances that are not true contraindications.
+\r\n Document and communicate any contraindications to ensure appropriate follow-up and alternative measures.
+\r\n \r\n
+\r\n Accurate Record-Keeping and Accessibility \r\n Immunizations must be documented accurately and completely. Refer to the section: Immunization records in the Canadian Immunization Guide for all pertinent information that needs to be documented after vaccination.
+\r\n Immunization record must be updated within one week after administering the vaccine in the EHR and/or the provincial immunization registry (i.e., PHIS) as explained in the Reporting and Disease Regulations – 2009-136 under the NB Public Health Act .
+\r\n Provide to each client with an accessible copy of their immunization record at each vaccination and upon request, as supported by the New Brunswick Right to Information and Protection of Privacy Act ( RTIPPA ), the Personal Health Information Privacy and Access Act ( PHIPAA ) and Section 68 of the Reporting and Disease Regulations – 2009-136 under the New Brunswick Public Health Act .
+\r\n \r\n
+\r\n Adverse Events Reporting \r\n Promptly and accurately report all clinically significant adverse events following immunization per Section 68 of the Reporting and Disease Regulations – 2009-136 under the New Brunswick Public Health Act .
+\r\n Adhere to provincial guidelines for reporting and investigation as outlined by in the NBIPG section on Reporting Adverse Events Following Immunization. 
+\r\n \r\n
+\r\n Vaccine-Preventable Diseases Reporting \r\n Report all cases of vaccine-preventable diseases to the minister as required from the provincial legislation: Section 68, Reporting and Disease Regulations – 2009-136 under the NB Public Health Act .&nbsp;
+\r\n Ensure timely communication with public health authorities to facilitate outbreak control measures. The Notifiable Disease and Events Guidelines can be found: NDEG (gnb.ca) 
+\r\n \r\n
+\r\n Vaccine Management \r\n Adhere to national ( National Vaccine Storage and Handling Guidelines for Immunization Providers — 2015 ) and provincial (NBIPG) policies on vaccine storage, handling, and transportation to maintain the cold chain and vaccine efficacy.
+\r\n Implement regular training for vaccinators on proper vaccine management as outlined in the NBIPG immunization competency requirements.
+\r\n \r\n
+\r\n Error/Deviation Reporting \r\n Report immunization errors/deviation as outlined by Management of Vaccine Errors and Deviation for all Immunizers in the NBIPG.
+\r\n Have a process in place for tracking and analyzing errors to prevent future occurrences
+\r\n \r\n
+\r\n Immunization Competency \r\n Ensure all immunizers are well-equipped to provide safe and effective immunization services and maintain high competency levels by adhering to the requirements set by their regulatory body and/or by completing the NBIPG — Immunization Competency Requirements for All Immunization Providers&nbsp;(PDF 319 KB) 
+\r\n Ensure regular ongoing education for vaccinators regarding current immunization recommendations and practices.
+\r\n Regular audits will be carried out to compile a list of immunization personnel who no longer meet the applicable competency requirements.
+\r\n Maintain up-to-date, easily retrievable records of competency completion for all staff at all vaccination locations.&nbsp;
+\r\n \r\n
+\r\n Consent Standards \r\n Ensure informed consent is obtained from all vaccine recipients or their legal guardians before administering any vaccine.
+\r\n Use standardized consent forms approved by provincial health authorities as best practice for consistent and complete documentation in the patient's chart or EHR.
+\r\n Ensure that the filled consent forms are clear, concise, and available in multiple languages.
+\r\n \r\n
+\r\n Audits \r\n Conduct regular audits in immunization clinics to maintain the integrity and success of immunization programs as part of quality assurance and risk management processes, ensuring the identification and resolution of identified issues.
+\r\n Use audit results to assess the quality of immunization services, evaluate vaccination coverage levels within the geographical area, and identify areas for service improvement and necessary changes
+\r\n \r\n
+\r\n \r\n"}}" id="text-f08bd26ca2" class="cmp-text">
+ Accessibility to Immunization Services Immunization services must be readily accessible to all eligible individuals in New Brunswick (NB).
+ For general eligibility information, refer to the NBIPG: Eligibility Criteria Table for Publicly Funded Vaccines/Biologics.
+ Immunizers/Employers should offer flexible hours and multiple locations to accommodate different schedules and geographic areas.
+ Eliminate unnecessary prerequisites and logistical barriers while accommodating walk-ins to increase accessibility for eligible individuals.
+ No recipient shall be charged for the cost of or the administration of publicly funded vaccines or biologics in the province.
+ Screening and Vaccinations Utilize every clinical visit as an opportunity to screen whether any vaccines are needed, and, if so, administer them — ensuring no opportunity to vaccinate and prevent vaccine-preventable diseases is missed.
+ Utilize tracking systems, electronic health records (EHR) and immunization registries such as the Public Health Information Solution System (PHIS) in NB to identify patients due or overdue for vaccines.
+ Use reminders and recall systems to notify patients of upcoming or missed vaccinations.
+ Comprehensive Vaccination Administer all vaccine doses for which a recipient is eligible at each visit, unless there are contraindications.
+ Co-administer routine vaccines as most can be safely and effectively administered during the same visit. Refer to the sections Timing of Vaccine Administration and Vaccine Administration Practices from the Canadian Immunization Guide regarding administration of multiple injections. 
+ Education and Effective Communication During appointment, provide general education to the client (or parent/guardian) about the risks and the benefits of receiving vaccines or any other questions they may have.
+ Use culturally sensitive, evidence-based educational materials and methods to reach diverse populations, ensuring communication is clear, culturally appropriate, and effective.
+ Effective communication by health care providers has an important influence on people's decisions about whether to proceed with immunization. Immunizers should review this chapter: Communicating effectively about immunization from the Canadian Immunization Guide to learn basic principles of effective communication.
+ Contraindications to Vaccinations Defer or withhold vaccines only for true contraindications as outlined in the Canadian Immunization Guide: Contraindications and Precautions , and avoid delaying vaccination for conditions or circumstances that are not true contraindications.
+ Document and communicate any contraindications to ensure appropriate follow-up and alternative measures.
+ Accurate Record-Keeping and Accessibility Immunizations must be documented accurately and completely. Refer to the section: Immunization records in the Canadian Immunization Guide for all pertinent information that needs to be documented after vaccination.
+ Immunization record must be updated within one week after administering the vaccine in the EHR and/or the provincial immunization registry (i.e., PHIS) as explained in the Reporting and Disease Regulations – 2009-136 under the NB Public Health Act .
+ Provide to each client with an accessible copy of their immunization record at each vaccination and upon request, as supported by the New Brunswick Right to Information and Protection of Privacy Act ( RTIPPA ), the Personal Health Information Privacy and Access Act ( PHIPAA ) and Section 68 of the Reporting and Disease Regulations – 2009-136 under the New Brunswick Public Health Act .
+ Adverse Events Reporting Promptly and accurately report all clinically significant adverse events following immunization per Section 68 of the Reporting and Disease Regulations – 2009-136 under the New Brunswick Public Health Act .
+ Adhere to provincial guidelines for reporting and investigation as outlined by in the NBIPG section on Reporting Adverse Events Following Immunization. 
+ Vaccine-Preventable Diseases Reporting Report all cases of vaccine-preventable diseases to the minister as required from the provincial legislation: Section 68, Reporting and Disease Regulations – 2009-136 under the NB Public Health Act . 
+ Ensure timely communication with public health authorities to facilitate outbreak control measures. The Notifiable Disease and Events Guidelines can be found: NDEG (gnb.ca) 
+ Vaccine Management Adhere to national ( National Vaccine Storage and Handling Guidelines for Immunization Providers — 2015 ) and provincial (NBIPG) policies on vaccine storage, handling, and transportation to maintain the cold chain and vaccine efficacy.
+ Implement regular training for vaccinators on proper vaccine management as outlined in the NBIPG immunization competency requirements.
+ Error/Deviation Reporting Report immunization errors/deviation as outlined by Management of Vaccine Errors and Deviation for all Immunizers in the NBIPG.
+ Have a process in place for tracking and analyzing errors to prevent future occurrences
+ Immunization Competency Ensure all immunizers are well-equipped to provide safe and effective immunization services and maintain high competency levels by adhering to the requirements set by their regulatory body and/or by completing the NBIPG — Immunization Competency Requirements for All Immunization Providers (PDF 319 KB) 
+ Ensure regular ongoing education for vaccinators regarding current immunization recommendations and practices.
+ Regular audits will be carried out to compile a list of immunization personnel who no longer meet the applicable competency requirements.
+ Maintain up-to-date, easily retrievable records of competency completion for all staff at all vaccination locations. 
+ Consent Standards Ensure informed consent is obtained from all vaccine recipients or their legal guardians before administering any vaccine.
+ Use standardized consent forms approved by provincial health authorities as best practice for consistent and complete documentation in the patient's chart or EHR.
+ Ensure that the filled consent forms are clear, concise, and available in multiple languages.
+ Audits Conduct regular audits in immunization clinics to maintain the integrity and success of immunization programs as part of quality assurance and risk management processes, ensuring the identification and resolution of identified issues.
+ Use audit results to assess the quality of immunization services, evaluate vaccination coverage levels within the geographical area, and identify areas for service improvement and necessary changes
+ Eligibility criteria standards for publicly funded vaccine and biologics in New Brunswick
+ Purpose: Provide updated standards for administering publicly funded vaccines and biologics, ensuring the intended use of products distributed by the Department of Health Public Health Branch.
+\r\n Preamble: Each year, Public Health through its provincial Immunization Advisory Committee conducts a review of the New Brunswick Immunization Program and evaluates the current vaccines, immunization schedules, and introduction of new vaccines. During this review, many factors are taken into consideration to help inform decision-making, including scientific research, recommendations from expert groups, burden of disease, program delivery, cost-effectiveness, fiscal restraints, and competing priorities within the department.
+\r\n The Public Health Branch also reviews provincial disease epidemiology, best evidence including recommendations from the National Advisory Committee on Immunization [NACI] and the Canadian Immunization Committee [CIC]), schedules in other jurisdictions, and available funding.
+\r\n Guiding Principle: To ensure compliance with legislation and provincial immunization best practices, the following document, Immunization Practice Standards in New-Brunswick must be used as an accompanying standard within the broader New Brunswick Immunization Program Guide (NBIPG).
+\r\n"}}" id="text-a9afbbce2e" class="cmp-text">
+ Purpose: Provide updated standards for administering publicly funded vaccines and biologics, ensuring the intended use of products distributed by the Department of Health Public Health Branch.
+ Preamble: Each year, Public Health through its provincial Immunization Advisory Committee conducts a review of the New Brunswick Immunization Program and evaluates the current vaccines, immunization schedules, and introduction of new vaccines. During this review, many factors are taken into consideration to help inform decision-making, including scientific research, recommendations from expert groups, burden of disease, program delivery, cost-effectiveness, fiscal restraints, and competing priorities within the department.
+ The Public Health Branch also reviews provincial disease epidemiology, best evidence including recommendations from the National Advisory Committee on Immunization [NACI] and the Canadian Immunization Committee [CIC]), schedules in other jurisdictions, and available funding.
+ Guiding Principle: To ensure compliance with legislation and provincial immunization best practices, the following document, Immunization Practice Standards in New-Brunswick must be used as an accompanying standard within the broader New Brunswick Immunization Program Guide (NBIPG).
+ Standards
+ \r\n Publicly Funded Vaccines and Biologics in New Brunswick must be Provided for:&nbsp; \r\n Routine programs for infants, children, and adults.
+\r\n Targeted programs for high-risk individuals.
+\r\n Communicable disease management.
+\r\n In areas of concern or outbreaks, in consultation with the Medical Officer of Health (MOH), publicly funded vaccines may be made available depending on the specific public health need and the epidemiological evidence. Approval for, and confirmation of vaccine supply must be confirmed with Department of Health Public Health Branch.&nbsp;
+\r\n \r\n
+\r\n Publicly Funded Vaccines are Free-of-Charge to Residents of New Brunswick: \r\n Vaccines listed in our NB Immunization Program are provided free-of-charge to individuals who are registered with New Brunswick Medicare.&nbsp;
+\r\n \r\n
+\r\n Publicly Funded Vaccines May Be Provided to Non-Residents Under the Following Conditions: &nbsp; \r\n To individuals who have begun an immunization series in another province or territory under a publicly funded program but have not yet completed it (pending product availability).&nbsp;
+\r\n Outbreak or pandemic management.
+\r\n Managing contacts as part of intervention strategies for cases or outbreaks.
+\r\n Prevention of communicable diseases in high-risk populations, including immigrants, refugees, and vulnerable individuals (i.e., Unhoused individuals).
+\r\n \r\n
+\r\n Publicly Funded Vaccines Are Provided to Uninsured Visitors (those who live, work, and/or study in New Brunswick for an extended period and who are not registered with New Brunswick Medicare): \r\n To international students engaged in internships within the healthcare sector.
+\r\n The healthcare provider must (in consultation with the Regional Medical Officer of Health) determine there to be a public health need as mentioned in the above standard #3 , or for certain health care internships to support the health system: \r\n Administration fees may still apply.
+\r\n Whenever possible, visitors must make every effort to obtain their immunizations before arriving in New Brunswick.
+\r\n \r\n
+\r\n \r\n
+\r\n Publicly Funded Vaccines Are Not Provided Where Required to Meet Third-Party Demands, such as: \r\n Educational, occupational or travel requirements, or for individual clinical care. Vaccines and biologics for these purposes must be obtained through other sources and cannot be purchased from the Central Serum Depot (CSD).
+\r\n \r\n
+\r\n \r\n"}}" id="text-75ec6ce737" class="cmp-text">
+ Publicly Funded Vaccines and Biologics in New Brunswick must be Provided for: Routine programs for infants, children, and adults.
+ Targeted programs for high-risk individuals.
+ Communicable disease management.
+ In areas of concern or outbreaks, in consultation with the Medical Officer of Health (MOH), publicly funded vaccines may be made available depending on the specific public health need and the epidemiological evidence. Approval for, and confirmation of vaccine supply must be confirmed with Department of Health Public Health Branch. 
+ Publicly Funded Vaccines are Free-of-Charge to Residents of New Brunswick: Vaccines listed in our NB Immunization Program are provided free-of-charge to individuals who are registered with New Brunswick Medicare. 
+ Publicly Funded Vaccines May Be Provided to Non-Residents Under the Following Conditions: To individuals who have begun an immunization series in another province or territory under a publicly funded program but have not yet completed it (pending product availability). 
+ Outbreak or pandemic management.
+ Managing contacts as part of intervention strategies for cases or outbreaks.
+ Prevention of communicable diseases in high-risk populations, including immigrants, refugees, and vulnerable individuals (i.e., Unhoused individuals).
+ Publicly Funded Vaccines Are Provided to Uninsured Visitors (those who live, work, and/or study in New Brunswick for an extended period and who are not registered with New Brunswick Medicare): To international students engaged in internships within the healthcare sector.
+ The healthcare provider must (in consultation with the Regional Medical Officer of Health) determine there to be a public health need as mentioned in the above standard #3 , or for certain health care internships to support the health system: Administration fees may still apply.
+ Whenever possible, visitors must make every effort to obtain their immunizations before arriving in New Brunswick.
+ Publicly Funded Vaccines Are Not Provided Where Required to Meet Third-Party Demands, such as: Educational, occupational or travel requirements, or for individual clinical care. Vaccines and biologics for these purposes must be obtained through other sources and cannot be purchased from the Central Serum Depot (CSD).
+ Standards for routine immunization schedules for infants, children, and adults in New Brunswick
+ Purpose: To establish comprehensive standards for the administration of publicly funded vaccines for the routine immunization of infants, children, and adults in New Brunswick.
+\r\n Preamble: Immunization remains one of the most successful, equitable, and cost-effective public health interventions with minimal risk. Vaccines used in Canada are highly effective and extremely safe, with serious side effects being rare. Immunization schedules across Canada are tailored based on local epidemiology, which accounts for the variations observed between provinces. Following a standard immunization schedule tailored to local epidemiology and evidence-based practice guidelines maximizes the level of protection through immunization.&nbsp;
+\r\n The standards outlined in this document are developed in alignment with the best practices and recommendations from national health authorities, including the Canadian Immunization Guide and updates from the National Advisory Committee on Immunization .
+\r\n Guiding Principle: To ensure compliance with legislation and provincial immunization best practices, the following document, Immunization Practice Standards in New-Brunswick must be used as an accompanying standard within the broader New Brunswick Immunization Program Guide (NBIPG).
+\r\n"}}" id="text-16e8fdee27" class="cmp-text">
+ Purpose: To establish comprehensive standards for the administration of publicly funded vaccines for the routine immunization of infants, children, and adults in New Brunswick.
+ Preamble: Immunization remains one of the most successful, equitable, and cost-effective public health interventions with minimal risk. Vaccines used in Canada are highly effective and extremely safe, with serious side effects being rare. Immunization schedules across Canada are tailored based on local epidemiology, which accounts for the variations observed between provinces. Following a standard immunization schedule tailored to local epidemiology and evidence-based practice guidelines maximizes the level of protection through immunization. 
+ The standards outlined in this document are developed in alignment with the best practices and recommendations from national health authorities, including the Canadian Immunization Guide and updates from the National Advisory Committee on Immunization .
+ Guiding Principle: To ensure compliance with legislation and provincial immunization best practices, the following document, Immunization Practice Standards in New-Brunswick must be used as an accompanying standard within the broader New Brunswick Immunization Program Guide (NBIPG).
+ Standards
+ \r\n Provide a Routine Immunization Schedule for All Infants, Childrens and Adults in New Brunswick:&nbsp; \r\n The New Brunswick Routine Immunization Schedule&nbsp;(PDF 107 KB) outlined in the NBIPG is the primary schedule to follow for infants, children, and adults.
+\r\n \r\n
+\r\n Accommodate Deviation from Routine Schedule:&nbsp; \r\n Routine vaccination schedules can be flexible, acknowledging that interruptions may occur for various reasons without necessitating the restart of a vaccination series.
+\r\n If the routine schedule is interrupted or cannot be maintained, practitioners are to first refer to the Canadian Immunization Guide: Delayed Immunization Schedules , consult with local immunization coordinators or to seek guidance with their Regional Medical Officers of Health.
+\r\n Individuals who miss their initial opportunity to receive a publicly funded vaccine remain eligible to receive the vaccine at a later time, unless otherwise specified. This principle, though generally referred to as &quot;once eligible, always eligible,&quot; may have exceptions based on changes in vaccine eligibility due to factors like seasonal availability, changes in eligibility criteria or epidemic situation.
+\r\n \r\n
+\r\n \r\n"}}" id="text-5bd5276aad" class="cmp-text">
+ Provide a Routine Immunization Schedule for All Infants, Childrens and Adults in New Brunswick: The New Brunswick Routine Immunization Schedule (PDF 107 KB) outlined in the NBIPG is the primary schedule to follow for infants, children, and adults.
+ Accommodate Deviation from Routine Schedule: Routine vaccination schedules can be flexible, acknowledging that interruptions may occur for various reasons without necessitating the restart of a vaccination series.
+ If the routine schedule is interrupted or cannot be maintained, practitioners are to first refer to the Canadian Immunization Guide: Delayed Immunization Schedules , consult with local immunization coordinators or to seek guidance with their Regional Medical Officers of Health.
+ Individuals who miss their initial opportunity to receive a publicly funded vaccine remain eligible to receive the vaccine at a later time, unless otherwise specified. This principle, though generally referred to as "once eligible, always eligible," may have exceptions based on changes in vaccine eligibility due to factors like seasonal availability, changes in eligibility criteria or epidemic situation.
+ Immunization consent standards
+ Purpose: Provide standards on informed consent to all those who administer publicly funded vaccines in the New Brunswick Immunization Program.
+\r\n Preamble: A vital component of any immunization program is an open and informed decision-making partnership between the immunization provider and the vaccine recipient (or his/her parent/legal guardian). This partnership forms the basis of the informed consent required prior to vaccines being administered. For all vaccine programs in Canada, clear vaccine risk and benefit disclosure are essential to avoid confusion, promote the integrity of the consent process and build trust in the vaccine program and the vaccine itself.&nbsp;
+\r\n Informed consent is derived from the Patient’s Bill of Rights (Canada) (unproclaimed) and the Health Charter of Rights and Responsibilities Act (New Brunswick) (unproclaimed). The H ealth Charter of Rights and Responsibilities Act states the rights and responsibilities of New Brunswickers relating to publicly funded health-care programs, including the New Brunswick Immunization Program. The following excerpts from the Health Charter of Rights Act speak to principles of informed consent:
+\r\n 3(1) Every resident of New Brunswick has the following rights:
+\r\n \r\n A right to receive relevant health care information. This entails a right to receive information about the treatments, interventions and procedures that are appropriate to one’s identified health care needs.
+\r\n A right to take informed health care decisions. This entails: \r\n A right to be involved in planning and review of one’s care, and to have treatments, interventions and procedures, as well as risks, side-effects and alternatives, explained by an appropriate health care professional
+\r\n A right to consent, or refuse consent to any treatment, intervention procedure
+\r\n A right to ask questions and have them answered.
+\r\n \r\n
+\r\n \r\n 3(2) Every resident of New Brunswick has the following responsibilities in relation to the appropriate and effective exercise of the rights set out in subsection (1):
+\r\n \r\n a responsibility to learn about and to make healthy lifestyle choices
+\r\n a responsibility to share appropriate health information with health care providers
+\r\n a responsibility to inform health care providers of any special communication requirements
+\r\n a responsibility to participate actively in health care decisions
+\r\n a responsibility to communicate health care decisions.
+\r\n \r\n All immunization providers of publicly funded vaccine and biologics must obtain consent for immunization. The following must be considered in obtaining consent:
+\r\n Informed consent for immunization: 
+\r\n To be able to give informed consent to receive a particular vaccine or series of vaccines, the immunization provider must ensure that the recipient and/or parent/legal guardian is informed of the following:&nbsp;
+\r\n \r\n nature and purpose of the vaccine
+\r\n benefits of the vaccine
+\r\n risks of the vaccine
+\r\n possible consequences if the vaccine is refused
+\r\n the need for follow-up, for example if immunization requires a series of injections
+\r\n information on signs or symptoms of complications and actions to be taken if such symptoms occur
+\r\n any alternatives (including doing nothing) and their risks
+\r\n \r\n Furthermore, the recipient of the vaccine and/or his parents/legal guardian will be given the opportunity to ask questions and have them answered before immunization.&nbsp;
+\r\n Legal age of consent and consent of minors: 
+\r\n Under the Medical Consent of Minors Act , minors who have reached the age of 16 can consent to medical treatment in the same manner as if they had reached the age of majority. A parent/legal guardian needs to consent to immunization for minors younger than 16; however, the Medical Consent of Minors Act does allow for medical treatment (including any procedure undertaken for the purpose of preventing any disease or ailment) of a minor younger than 16 without the need for a parent/legal guardian’s consent when certain conditions are met:
+\r\n 3(1) The consent to medical treatment of a minor who has not attained the age of 16 is as effective as it would be if he had attained the age of majority where, in the opinion of a legally qualified medical practitioner, dentist, nurse practitioner or nurse attending the minor:
+\r\n \r\n The minor is capable of understanding the nature and consequences of a medical treatment; and
+\r\n The medical treatment and the procedure to be used is in the best interests of the minor and his or her continuing health and well-being.
+\r\n \r\n When a child is sufficiently mature to be considered competent to make a medical decision and the parent/legal guardian refuses consent, the child can choose to be vaccinated.
+\r\n Obtaining consent and recording consent: 
+\r\n Consent can be obtained in writing from the recipient (e.g. a consent form, written statement). However, in a clinical practice setting, consent is often implied when the recipient or his/her legal guardian presents for an immunization. Consent may also be stated verbally, directly or by telephone; such consent should be obtained and recorded in keeping with organizational policy.
+\r\n When verifying past consent, the Public Health Nurse should consider that parents/legal guardians can provide consent for immunization for their children prior to the date of administration. Once parents/legal guardians provide consent, a relative, babysitter or friend can accompany the infants/children for subsequent visits to the Pediatric Immunization Clinic.
+\r\n Consent for primary childhood series should have an expiry date on the child’s 7th birthday for those completing their immunization series prior to age of 7 years. For off schedule vaccination, with vaccines being received after 7 years of age, consent will be expired after the completion of the primary series. School consents are valid from September 1st to August 31st of the current school year.
+\r\n Refusal of consent: 
+\r\n If vaccination is recommended but refused, a detailed note of both the consent discussion and the refusal should be made in the client/patient record. Alternately, the patient could be asked to sign a standard form stating that he/she has been informed of the benefits and risks of the vaccine but has refused the vaccine(s) despite being aware of the risks of doing so. Public Health Nurses will document refusal of consent in the Public Health Information Solution (PHIS).&nbsp;
+\r\n Withdrawal of consent: 
+\r\n At any time, an individual or a minor’s parents/legal guardian can withdraw previous consent for a single vaccine or a series of vaccines. Documentation that an individual or parent/legal guardian is withdrawing consent should be completed (written statement signed by individual/parent/legal guardian, or verbal withdrawal of consent). Additionally, a detailed note of the consent withdrawal discussion should be made in the client/patient record. The Public Health Nurse will document withdrawal of consent by expiring the consent in the Public Health Information Solution (PHIS).
+\r\n"}}" id="text-cc7385414c" class="cmp-text">
+ Purpose: Provide standards on informed consent to all those who administer publicly funded vaccines in the New Brunswick Immunization Program.
+ Preamble: A vital component of any immunization program is an open and informed decision-making partnership between the immunization provider and the vaccine recipient (or his/her parent/legal guardian). This partnership forms the basis of the informed consent required prior to vaccines being administered. For all vaccine programs in Canada, clear vaccine risk and benefit disclosure are essential to avoid confusion, promote the integrity of the consent process and build trust in the vaccine program and the vaccine itself. 
+ Informed consent is derived from the Patient’s Bill of Rights (Canada) (unproclaimed) and the Health Charter of Rights and Responsibilities Act (New Brunswick) (unproclaimed). The H ealth Charter of Rights and Responsibilities Act states the rights and responsibilities of New Brunswickers relating to publicly funded health-care programs, including the New Brunswick Immunization Program. The following excerpts from the Health Charter of Rights Act speak to principles of informed consent:
+ 3(1) Every resident of New Brunswick has the following rights:
+ A right to receive relevant health care information. This entails a right to receive information about the treatments, interventions and procedures that are appropriate to one’s identified health care needs.
+ A right to take informed health care decisions. This entails: A right to be involved in planning and review of one’s care, and to have treatments, interventions and procedures, as well as risks, side-effects and alternatives, explained by an appropriate health care professional
+ A right to consent, or refuse consent to any treatment, intervention procedure
+ A right to ask questions and have them answered.
+ 3(2) Every resident of New Brunswick has the following responsibilities in relation to the appropriate and effective exercise of the rights set out in subsection (1):
+ a responsibility to learn about and to make healthy lifestyle choices
+ a responsibility to share appropriate health information with health care providers
+ a responsibility to inform health care providers of any special communication requirements
+ a responsibility to participate actively in health care decisions
+ a responsibility to communicate health care decisions.
+ All immunization providers of publicly funded vaccine and biologics must obtain consent for immunization. The following must be considered in obtaining consent:
+ Informed consent for immunization: 
+ To be able to give informed consent to receive a particular vaccine or series of vaccines, the immunization provider must ensure that the recipient and/or parent/legal guardian is informed of the following: 
+ nature and purpose of the vaccine
+ benefits of the vaccine
+ risks of the vaccine
+ possible consequences if the vaccine is refused
+ the need for follow-up, for example if immunization requires a series of injections
+ information on signs or symptoms of complications and actions to be taken if such symptoms occur
+ any alternatives (including doing nothing) and their risks
+ Furthermore, the recipient of the vaccine and/or his parents/legal guardian will be given the opportunity to ask questions and have them answered before immunization. 
+ Legal age of consent and consent of minors: 
+ Under the Medical Consent of Minors Act , minors who have reached the age of 16 can consent to medical treatment in the same manner as if they had reached the age of majority. A parent/legal guardian needs to consent to immunization for minors younger than 16; however, the Medical Consent of Minors Act does allow for medical treatment (including any procedure undertaken for the purpose of preventing any disease or ailment) of a minor younger than 16 without the need for a parent/legal guardian’s consent when certain conditions are met:
+ 3(1) The consent to medical treatment of a minor who has not attained the age of 16 is as effective as it would be if he had attained the age of majority where, in the opinion of a legally qualified medical practitioner, dentist, nurse practitioner or nurse attending the minor:
+ The minor is capable of understanding the nature and consequences of a medical treatment; and
+ The medical treatment and the procedure to be used is in the best interests of the minor and his or her continuing health and well-being.
+ When a child is sufficiently mature to be considered competent to make a medical decision and the parent/legal guardian refuses consent, the child can choose to be vaccinated.
+ Obtaining consent and recording consent: 
+ Consent can be obtained in writing from the recipient (e.g. a consent form, written statement). However, in a clinical practice setting, consent is often implied when the recipient or his/her legal guardian presents for an immunization. Consent may also be stated verbally, directly or by telephone; such consent should be obtained and recorded in keeping with organizational policy.
+ When verifying past consent, the Public Health Nurse should consider that parents/legal guardians can provide consent for immunization for their children prior to the date of administration. Once parents/legal guardians provide consent, a relative, babysitter or friend can accompany the infants/children for subsequent visits to the Pediatric Immunization Clinic.
+ Consent for primary childhood series should have an expiry date on the child’s 7th birthday for those completing their immunization series prior to age of 7 years. For off schedule vaccination, with vaccines being received after 7 years of age, consent will be expired after the completion of the primary series. School consents are valid from September 1st to August 31st of the current school year.
+ Refusal of consent: 
+ If vaccination is recommended but refused, a detailed note of both the consent discussion and the refusal should be made in the client/patient record. Alternately, the patient could be asked to sign a standard form stating that he/she has been informed of the benefits and risks of the vaccine but has refused the vaccine(s) despite being aware of the risks of doing so. Public Health Nurses will document refusal of consent in the Public Health Information Solution (PHIS). 
+ Withdrawal of consent: 
+ At any time, an individual or a minor’s parents/legal guardian can withdraw previous consent for a single vaccine or a series of vaccines. Documentation that an individual or parent/legal guardian is withdrawing consent should be completed (written statement signed by individual/parent/legal guardian, or verbal withdrawal of consent). Additionally, a detailed note of the consent withdrawal discussion should be made in the client/patient record. The Public Health Nurse will document withdrawal of consent by expiring the consent in the Public Health Information Solution (PHIS).
+ Standards for reporting Adverse Events Following Immunizations (AEFI) in New Brunswick
+ Purpose: To provide updated standards for all those who administer vaccines (public or private) and care for clients who may have experienced an AEFI, ensuring compliance with current national and provincial regulations.
+\r\n Preamble: An AEFI is any untoward medical occurrence in a vaccinee that follows immunization but does not necessarily have a causal relationship with the administration of the vaccine. The adverse event may be an unexpected or undesirable sign, an abnormal laboratory result, a symptom, or a disease. Reporting AEFIs is crucial for public confidence in vaccine safety and is legally mandated for all healthcare professionals in New Brunswick under the Reporting and Diseases Regulation 2009-136. 
+\r\n"}}" id="text-985c09ccba" class="cmp-text">
+ Purpose: To provide updated standards for all those who administer vaccines (public or private) and care for clients who may have experienced an AEFI, ensuring compliance with current national and provincial regulations.
+ Preamble: An AEFI is any untoward medical occurrence in a vaccinee that follows immunization but does not necessarily have a causal relationship with the administration of the vaccine. The adverse event may be an unexpected or undesirable sign, an abnormal laboratory result, a symptom, or a disease. Reporting AEFIs is crucial for public confidence in vaccine safety and is legally mandated for all healthcare professionals in New Brunswick under the Reporting and Diseases Regulation 2009-136. 
+ Standards
+ \n Reporting Responsibilities: \n All healthcare providers administering vaccines or caring for patients who have experienced an AEFI must comply with the MINIMUM mandatory reporting requirements as per Section 68 of the Reporting and Disease Regulations – 2009-136 under the New\u0002Brunswick Public Health Act. Non-compliance may result in penalties as defined by provincial legislation.&nbsp;
+\n Notwithstanding the above, we ask that serious AEFIs be verbally reported to Regional Public Health within one day of identification followed by a written notification within one week. Non serious AEFIs should be reported by a written notification within 1 week.
+\n Complete the report by using the standardized AEFI Report Form&nbsp;(PDF 386 KB) located in the New Brunswick Immunization Program Guide (NBIPG).
+\n Submit the report to the Regional Medical Officer of Health (RMOH) adhering to the procedures and timelines outlined in the following corresponding NBIPG policy: Reporting Adverse Events Following Immunization. 
+\n Follow-up reporting is completed by using the same AEFI Report Form and in order to provide updates on patient outcomes and any additional investigations or treatments.
+\n \n
+\n Criteria for Reporting: \n Utilize the User guide: Report of Adverse Event Following Immunization (AEFI)&nbsp;(PDF 531 KB) &nbsp;in the NBIPG for helpful instructions on completion of the AEFI form.
+\n Utilize the Summary of AEFI Reporting Criteria (PDF 133 KB) document as a guide for detailed temporal criteria
+\n \n
+\n \n"}}" id="text-e2217fe86a" class="cmp-text">
+ Reporting Responsibilities: All healthcare providers administering vaccines or caring for patients who have experienced an AEFI must comply with the MINIMUM mandatory reporting requirements as per Section 68 of the Reporting and Disease Regulations – 2009-136 under the NewBrunswick Public Health Act. Non-compliance may result in penalties as defined by provincial legislation. 
+ Notwithstanding the above, we ask that serious AEFIs be verbally reported to Regional Public Health within one day of identification followed by a written notification within one week. Non serious AEFIs should be reported by a written notification within 1 week.
+ Complete the report by using the standardized AEFI Report Form (PDF 386 KB) located in the New Brunswick Immunization Program Guide (NBIPG).
+ Submit the report to the Regional Medical Officer of Health (RMOH) adhering to the procedures and timelines outlined in the following corresponding NBIPG policy: Reporting Adverse Events Following Immunization. 
+ Follow-up reporting is completed by using the same AEFI Report Form and in order to provide updates on patient outcomes and any additional investigations or treatments.
+ Criteria for Reporting: Utilize the User guide: Report of Adverse Event Following Immunization (AEFI) (PDF 531 KB) in the NBIPG for helpful instructions on completion of the AEFI form.
+ Utilize the Summary of AEFI Reporting Criteria (PDF 133 KB) document as a guide for detailed temporal criteria
+ Required immunization of school children
+ Purpose: Provide standards to the regional health authorities (RHAs) regarding the requirements to comply with Sections 12(1) and 12(3) of the Reporting and Diseases Regulation 2009-136 under the Public Health Act pertaining to children entering New Brunswick schools for the first time.&nbsp;
+\r\n Preamble: Since 1982, New Brunswick legislation has required proof of immunization against measles, mumps, rubella, diphtheria, tetanus and polio as a condition of school entry. This legislation supports the Policy 706-Immunization Proof from the Department of Education and Early Childhood Development. Each department collaborates to ensure immunization requirements are in place to assure the maximum level of disease protection afforded by vaccines. A requirement at the time of school entry provides a “catch-up” opportunity for all those children not immunized in early infancy and is an adjunct to the voluntary immunization program.
+\r\n In November 2009, the Public Health Act was proclaimed. This legislation has expanded the requirements for those children entering New Brunswick schools for the first time to include proof of immunization against diphtheria, tetanus, polio, pertussis, measles, rubella, mumps, varicella, and meningococcal disease.&nbsp;
+\r\n Changes to the requirements are the result of advancements in the science of vaccine preventable diseases, the availability of new vaccines and the inclusion of these vaccines into the New Brunswick Routine Immunization Schedule.&nbsp;
+\r\n Exemptions from legislated immunization requirements are permitted for medical reasons or if the parent or legal guardian objects to immunization.
+\r\n In New Brunswick publicly funded vaccines are documented in the provincial system, Public Health Information Solution (PHIS). PHIS is a secure, integrated comprehensive, repository of up-to-date immunization information that facilitates the management and delivery of publicly funded immunizations in New Brunswick.&nbsp;
+\r\n The immunization status of all children entering New Brunswick schools for the first time will be assessed to ensure proof of immunization and provide a catch-up opportunity for all those children not immunized in early infancy. (“School” as defined by the Education Act ).
+\r\n"}}" id="text-4fb06a6bf3" class="cmp-text">
+ Purpose: Provide standards to the regional health authorities (RHAs) regarding the requirements to comply with Sections 12(1) and 12(3) of the Reporting and Diseases Regulation 2009-136 under the Public Health Act pertaining to children entering New Brunswick schools for the first time. 
+ Preamble: Since 1982, New Brunswick legislation has required proof of immunization against measles, mumps, rubella, diphtheria, tetanus and polio as a condition of school entry. This legislation supports the Policy 706-Immunization Proof from the Department of Education and Early Childhood Development. Each department collaborates to ensure immunization requirements are in place to assure the maximum level of disease protection afforded by vaccines. A requirement at the time of school entry provides a “catch-up” opportunity for all those children not immunized in early infancy and is an adjunct to the voluntary immunization program.
+ In November 2009, the Public Health Act was proclaimed. This legislation has expanded the requirements for those children entering New Brunswick schools for the first time to include proof of immunization against diphtheria, tetanus, polio, pertussis, measles, rubella, mumps, varicella, and meningococcal disease. 
+ Changes to the requirements are the result of advancements in the science of vaccine preventable diseases, the availability of new vaccines and the inclusion of these vaccines into the New Brunswick Routine Immunization Schedule. 
+ Exemptions from legislated immunization requirements are permitted for medical reasons or if the parent or legal guardian objects to immunization.
+ In New Brunswick publicly funded vaccines are documented in the provincial system, Public Health Information Solution (PHIS). PHIS is a secure, integrated comprehensive, repository of up-to-date immunization information that facilitates the management and delivery of publicly funded immunizations in New Brunswick. 
+ The immunization status of all children entering New Brunswick schools for the first time will be assessed to ensure proof of immunization and provide a catch-up opportunity for all those children not immunized in early infancy. (“School” as defined by the Education Act ).
+ Standards
+ The Regional Health Authority, Public Health (RHA PH) service will generate PHIS reports at the beginning of each school year and in the event, there are students in kindergarten who have not received the required immunizations or do not present an Exemption form, a second verification report will be provided to the school after the 120 days as per policy 706. The immunization status for children entering a New Brunswick school for the first time will also be provided by RHA PH when notified by the school of a new student from out of province as these individuals may not appear in the PHIS report that has been provided at the time of the verifications. The RHA PH can use this report to inform their immunization program planning and implementation of required PH measures.
+\r\n Although not required for the purposes of this policy, immunization records of school aged children may be assessed as part of a communicable disease response.
+\r\n \r\n Proof of immunization will be determined by examination of the child’s immunization record through a report generated in the Public Health Information Solution (PHIS). The report provides immunization status for diphtheria, tetanus, polio, pertussis, measles, mumps, rubella, varicella and meningococcal disease as per the New Brunswick Routine Immunization Schedule, or as per a prescribed schedule for those not immunized in early infancy AND in conjunction with the current eligibility criteria for publicly funded vaccine.
+\r\n Acceptable schedules for those not immunized in early infancy are those prescribed by the National Advisory Committee on Immunization and described in the most current edition of the Canadian Immunization Guide .
+\r\n Proof of immunization is not required if the child’s parent or legal guardian provides:&nbsp; \r\n A medical exemption signed by a medical practitioner or nurse practitioner, on a form provided by the Minister. All medical exemptions must be entered in PHIS by regional Public Health.&nbsp;
+\r\n A written statement of his or her objections to the immunization(s) required by the Minister signed by the parent or legal guardian on a form provided by the Minister. All parental objections must be entered in PHIS by regional Public Health.
+\r\n \r\n
+\r\n A copy of immunization or an Immunization Exemption Form for School Entry signed by the parent/legal guardian will be provided to the Public Health Nurse (PHN) by the principal of the school. The PHN will upload the exemption form in the child's context document from PHIS and add a comment into the special consideration section.&nbsp;
+\r\n In the event a child has not received the required immunizations and does not present an Immunization Exemption Form for School Entry, the child’s immunizations will be initiated within 120 days (as listed in policy 706) and be completed according to the schedule prescribed by the National Advisory Committee on Immunization and described in the most current edition of the Canadian Immunization Guide. &nbsp;
+\r\n Relevant sections of Public Health Act and the Reporting and Diseases Regulation- Immunization of Children, can be found through the Intranet under Acts and Regulations or directly at this link: Reporting and Diseases: Public Health Act .&nbsp;
+\r\n Relevant sections of Education Act Section 10(1) &amp; 10(2) can be found through the Intranet under the Acts and Regulations or directly at this link: Education Act .&nbsp;
+\r\n The Department of Education’s Policy 706, outlines Education’s role in Required Immunization and can be found at this link: Policy 706-Proof of immunization&nbsp; (PDF 156 KB) .&nbsp;
+\r\n Public Health NB (surveillance branch) will use PHIS to produce an annual Immunization Coverage report.
+\r\n \r\n"}}" id="text-3f94d42018" class="cmp-text">
+ The Regional Health Authority, Public Health (RHA PH) service will generate PHIS reports at the beginning of each school year and in the event, there are students in kindergarten who have not received the required immunizations or do not present an Exemption form, a second verification report will be provided to the school after the 120 days as per policy 706. The immunization status for children entering a New Brunswick school for the first time will also be provided by RHA PH when notified by the school of a new student from out of province as these individuals may not appear in the PHIS report that has been provided at the time of the verifications. The RHA PH can use this report to inform their immunization program planning and implementation of required PH measures.
+ Although not required for the purposes of this policy, immunization records of school aged children may be assessed as part of a communicable disease response.
+ Proof of immunization will be determined by examination of the child’s immunization record through a report generated in the Public Health Information Solution (PHIS). The report provides immunization status for diphtheria, tetanus, polio, pertussis, measles, mumps, rubella, varicella and meningococcal disease as per the New Brunswick Routine Immunization Schedule, or as per a prescribed schedule for those not immunized in early infancy AND in conjunction with the current eligibility criteria for publicly funded vaccine.
+ Acceptable schedules for those not immunized in early infancy are those prescribed by the National Advisory Committee on Immunization and described in the most current edition of the Canadian Immunization Guide .
+ Proof of immunization is not required if the child’s parent or legal guardian provides: A medical exemption signed by a medical practitioner or nurse practitioner, on a form provided by the Minister. All medical exemptions must be entered in PHIS by regional Public Health. 
+ A written statement of his or her objections to the immunization(s) required by the Minister signed by the parent or legal guardian on a form provided by the Minister. All parental objections must be entered in PHIS by regional Public Health.
+ A copy of immunization or an Immunization Exemption Form for School Entry signed by the parent/legal guardian will be provided to the Public Health Nurse (PHN) by the principal of the school. The PHN will upload the exemption form in the child's context document from PHIS and add a comment into the special consideration section. 
+ In the event a child has not received the required immunizations and does not present an Immunization Exemption Form for School Entry, the child’s immunizations will be initiated within 120 days (as listed in policy 706) and be completed according to the schedule prescribed by the National Advisory Committee on Immunization and described in the most current edition of the Canadian Immunization Guide. 
+ Relevant sections of Public Health Act and the Reporting and Diseases Regulation- Immunization of Children, can be found through the Intranet under Acts and Regulations or directly at this link: Reporting and Diseases: Public Health Act . 
+ Relevant sections of Education Act Section 10(1) & 10(2) can be found through the Intranet under the Acts and Regulations or directly at this link: Education Act . 
+ The Department of Education’s Policy 706, outlines Education’s role in Required Immunization and can be found at this link: Policy 706-Proof of immunization (PDF 156 KB) . 
+ Public Health NB (surveillance branch) will use PHIS to produce an annual Immunization Coverage report.
+ Required immunization for children attending licensed early learning and child care facilities in New Brunswick
+ Purpose:&nbsp; Provide updated standards to regional Public Health from regional health authorities (RHAs) on the process required to comply with the Reporting and Diseases Regulation under the Public Health Act pertaining to children attending a licensed early learning and child care facility in New Brunswick.
+\r\n Preamble: Since 1982, New Brunswick legislation has required proof of immunization against measles, mumps, rubella, diphtheria, tetanus and polio as a condition of school entry.
+\r\n In November 2009, the Public Health Act was proclaimed. This legislation has expanded the requirements for school children and now includes a requirement for all children who attend an early learning and child care facility to demonstrate proof of immunization against diphtheria, tetanus, polio, pertussis, measles, rubella, mumps, varicella, meningococcal, pneumococcal and haemophilus influenzae type B disease.
+\r\n Changes to the requirements reflect advancements in the science of vaccine preventable diseases, the availability of new vaccines and the inclusion of these vaccines into the New Brunswick Routine Immunization Schedule.
+\r\n Immunization requirements are in place to ensure the maximum level of disease protection afforded by vaccines. Infants and pre-school children are at considerable risk of complications from vaccine preventable diseases. Measures to ensure optimum immunization are essential in preventing serious consequences in these children.
+\r\n Exemptions from legislated immunization requirements are permitted for medical reasons or if the parent or legal guardian objects to immunization.
+\r\n The immunization status of children attending an early learning and child care facility (as defined in New Brunswick Licensing 2018-11 under the Early Childhood Services Act ) will be assessed to ensure proof of immunization and provide a catch-up opportunity for all those children not immunized in early infancy.
+\r\n"}}" id="text-051ccb8c82" class="cmp-text">
+ Purpose: Provide updated standards to regional Public Health from regional health authorities (RHAs) on the process required to comply with the Reporting and Diseases Regulation under the Public Health Act pertaining to children attending a licensed early learning and child care facility in New Brunswick.
+ Preamble: Since 1982, New Brunswick legislation has required proof of immunization against measles, mumps, rubella, diphtheria, tetanus and polio as a condition of school entry.
+ In November 2009, the Public Health Act was proclaimed. This legislation has expanded the requirements for school children and now includes a requirement for all children who attend an early learning and child care facility to demonstrate proof of immunization against diphtheria, tetanus, polio, pertussis, measles, rubella, mumps, varicella, meningococcal, pneumococcal and haemophilus influenzae type B disease.
+ Changes to the requirements reflect advancements in the science of vaccine preventable diseases, the availability of new vaccines and the inclusion of these vaccines into the New Brunswick Routine Immunization Schedule.
+ Immunization requirements are in place to ensure the maximum level of disease protection afforded by vaccines. Infants and pre-school children are at considerable risk of complications from vaccine preventable diseases. Measures to ensure optimum immunization are essential in preventing serious consequences in these children.
+ Exemptions from legislated immunization requirements are permitted for medical reasons or if the parent or legal guardian objects to immunization.
+ The immunization status of children attending an early learning and child care facility (as defined in New Brunswick Licensing 2018-11 under the Early Childhood Services Act ) will be assessed to ensure proof of immunization and provide a catch-up opportunity for all those children not immunized in early infancy.
+ Standards
+ \r\n Immunization records of infants and preschoolers attending early learning and child care facility will be assessed by regional Public Health from RHA.
+\r\n Immunization records of children who attend school-age care will be assessed at school entry in compliance with Regulation 2009-136 under the Public Health Act . It must be understood, that although not required for the purposes of this standard, immunization records of school-age children who attend an early learning and child care facility may be assessed as part of a communicable disease response.
+\r\n Proof of immunization will be determined by examination of the child’s immunization record. The record will be assessed to determine documentation of immunization against diphtheria, tetanus, polio, pertussis, measles, rubella, mumps, varicella, meningococcal, pneumococcal and haemophilus influenzae type B disease in accordance with the New Brunswick routine immunization schedule, or as per the schedule applicable to those not immunized during childhood and in conjunction with the current eligibility criteria of the publicly funded&nbsp;vaccination program in New Brunswick.
+\r\n Acceptable schedules for those not immunized in early infancy are those prescribed by the National Advisory Committee on Immunization (NACI) and described in the most current edition of the Canadian Immunization Guide .
+\r\n In cases where children have not been immunized according to the New Brunswick routine immunization schedule, refer to the document in the New Brunswick Immunization Program Guide — Assessment Tool to Determine the Validity of Vaccine Doses&nbsp;(PDF 265 KB) .
+\r\n A record of immunization will include the following information:&nbsp; \r\n the name and birth date of the individual
+\r\n the Medicare number of the individual
+\r\n the name of the disease/s immunized against or the name of the product used to immunize the individual
+\r\n the date on which the individual was immunized
+\r\n the name of the person or clinic where the individual was immunized
+\r\n \r\n
+\r\n Proof of immunization is not required if the parent/legal guardian of the child provides:&nbsp; \r\n a medical exemption signed by a medical practitioner or nurse practitioner on a form provided by the Minister; or
+\r\n a written statement of his or her objection(s) to the immunization(s) required by the Minister, signed by a parent/legal guardian on a form provided by the Minister
+\r\n \r\n
+\r\n A record of immunization or the Immunization Exemption Form for early learning and child care facilities&nbsp;(PDF 266 KB) will be provided to regional Public Health from RHAs by the operator of the early learning and child care facility.
+\r\n In the event a child has not received the required immunizations and does not present an immunization exemption form to the early learning and child care facility, the child’s immunizations will be initiated within 120 days and be completed according to the schedule prescribed by the National Advisory Committee on Immunization and described in the most current edition of the Canadian Immunization Guide.
+\r\n \r\n Reporting requirements: 
+\r\n On June 30 of each year, regional Public Health from RHAs will submit to the Office of the Chief Medical Officer of Health (OCMOH), using the immunization spreadsheet, the immunization coverage rates for early learning and child care facilities.&nbsp;
+\r\n Public Health Information Solution (PHIS): 
+\r\n Currently, PHIS does not support generating reports by child care facility. However, reports can be generated by age and by region.
+\r\n The provincial immunization team, along with the PHIS team, will continue working in collaboration with the Department of Education and Early Childhood Development to explore potential solutions for optimizing the use of PHIS in this process.&nbsp;
+\r\n"}}" id="text-4ea086b487" class="cmp-text">
+ Immunization records of infants and preschoolers attending early learning and child care facility will be assessed by regional Public Health from RHA.
+ Immunization records of children who attend school-age care will be assessed at school entry in compliance with Regulation 2009-136 under the Public Health Act . It must be understood, that although not required for the purposes of this standard, immunization records of school-age children who attend an early learning and child care facility may be assessed as part of a communicable disease response.
+ Proof of immunization will be determined by examination of the child’s immunization record. The record will be assessed to determine documentation of immunization against diphtheria, tetanus, polio, pertussis, measles, rubella, mumps, varicella, meningococcal, pneumococcal and haemophilus influenzae type B disease in accordance with the New Brunswick routine immunization schedule, or as per the schedule applicable to those not immunized during childhood and in conjunction with the current eligibility criteria of the publicly funded vaccination program in New Brunswick.
+ Acceptable schedules for those not immunized in early infancy are those prescribed by the National Advisory Committee on Immunization (NACI) and described in the most current edition of the Canadian Immunization Guide .
+ In cases where children have not been immunized according to the New Brunswick routine immunization schedule, refer to the document in the New Brunswick Immunization Program Guide — Assessment Tool to Determine the Validity of Vaccine Doses (PDF 265 KB) .
+ A record of immunization will include the following information: the name and birth date of the individual
+ the Medicare number of the individual
+ the name of the disease/s immunized against or the name of the product used to immunize the individual
+ the date on which the individual was immunized
+ the name of the person or clinic where the individual was immunized
+ Proof of immunization is not required if the parent/legal guardian of the child provides: a medical exemption signed by a medical practitioner or nurse practitioner on a form provided by the Minister; or
+ a written statement of his or her objection(s) to the immunization(s) required by the Minister, signed by a parent/legal guardian on a form provided by the Minister
+ A record of immunization or the Immunization Exemption Form for early learning and child care facilities (PDF 266 KB) will be provided to regional Public Health from RHAs by the operator of the early learning and child care facility.
+ In the event a child has not received the required immunizations and does not present an immunization exemption form to the early learning and child care facility, the child’s immunizations will be initiated within 120 days and be completed according to the schedule prescribed by the National Advisory Committee on Immunization and described in the most current edition of the Canadian Immunization Guide.
+ Reporting requirements: 
+ On June 30 of each year, regional Public Health from RHAs will submit to the Office of the Chief Medical Officer of Health (OCMOH), using the immunization spreadsheet, the immunization coverage rates for early learning and child care facilities. 
+ Public Health Information Solution (PHIS): 
+ Currently, PHIS does not support generating reports by child care facility. However, reports can be generated by age and by region.
+ The provincial immunization team, along with the PHIS team, will continue working in collaboration with the Department of Education and Early Childhood Development to explore potential solutions for optimizing the use of PHIS in this process. 
+ Appendix A — General guidelines for reviewing immunization records of children attending licensed early learning and child care facilities 
+ NOTE: These guidelines serve as a general framework and may be adapted to reflect the unique needs of each community.
+\n \n Each licensed early learning and child care facility must provide copies of the immunization records for all children currently attending the facility to the public health nurse.&nbsp;
+\n The public health nurse reviews the immunization records. PHIS can be consulted to assist with the verification. \n If any vaccines are missing in PHIS, the nurse will update the system accordingly.
+\n If the child is not yet in PHIS, the nurse will create a profile, provided three valid identifiers are available. Recommended identifiers include: \n Full Name
+\n Medicare Number
+\n Date of Birth
+\n \n
+\n If the client is still awaiting their Medicare number, enter the full address, including the postal code and phone number. Each identifier must be double-checked against the source record.
+\n \n
+\n The public health nurse sends the facility operator a list of children whose immunization status does not comply with New Brunswick’s immunization schedule. The list will specify the missing vaccine(s) for each child.
+\n The facility operator is responsible for informing the parents or guardians of non-compliant children about the missing vaccine(s) identified by the public health nurse.
+\n \n NOTE: Public health nurses conduct only one verification. The facility operator is responsible for following up with the parents of non-compliant children to ensure that the necessary vaccinations are initiated within 120 days and be completed in accordance with the New Brunswick immunization schedule.
+\n"}}" id="text-330cf21e35" class="cmp-text">
+ NOTE: These guidelines serve as a general framework and may be adapted to reflect the unique needs of each community.
+ Each licensed early learning and child care facility must provide copies of the immunization records for all children currently attending the facility to the public health nurse. 
+ The public health nurse reviews the immunization records. PHIS can be consulted to assist with the verification. If any vaccines are missing in PHIS, the nurse will update the system accordingly.
+ If the child is not yet in PHIS, the nurse will create a profile, provided three valid identifiers are available. Recommended identifiers include: Full Name
+ Medicare Number
+ Date of Birth
+ If the client is still awaiting their Medicare number, enter the full address, including the postal code and phone number. Each identifier must be double-checked against the source record.
+ The public health nurse sends the facility operator a list of children whose immunization status does not comply with New Brunswick’s immunization schedule. The list will specify the missing vaccine(s) for each child.
+ The facility operator is responsible for informing the parents or guardians of non-compliant children about the missing vaccine(s) identified by the public health nurse.
+ NOTE: Public health nurses conduct only one verification. The facility operator is responsible for following up with the parents of non-compliant children to ensure that the necessary vaccinations are initiated within 120 days and be completed in accordance with the New Brunswick immunization schedule.
+ Populations requiring special consideration
+ Purpose: Provide standards to those who provide publicly funded vaccines to individuals in New Brunswick requiring special consideration prior to immunization.
+\r\n Preamble: Immunizers need to recognize and respond to the unique immunization needs of certain population groups. The New Brunswick Routine Immunization Schedule&nbsp; (PDF 107 KB) used in conjunction with the Eligibility Criteria Table for Publicly Funded Vaccines/Biologics adapts to meet the needs of specific populations within the context of the New Brunswick Immunization Program.
+\r\n Although National Advisory Committee on Immunization (NACI) may make recommendations for these groups, each jurisdiction makes its own decisions with respect to funding. Immunization providers should be aware of those who provide vaccine outside of the publicly funded programs and, in particular, to the support provided by Citizenship and Immigration Canada (CIC) ,&nbsp;travel health clinics, and occupational health clinics.
+\r\n NACI identifies the following as special population groups:
+\r\n \r\n individuals with certain medical conditions that include the presence of risk factors for vaccine preventable disease or carry the risk of serious complication should the disease occur
+\r\n individuals who are behind on their immunization
+\r\n individuals who have had a serious adverse event following a previous vaccine
+\r\n outbreak populations
+\r\n pregnant and breastfeeding women
+\r\n individuals with behaviours that put them at risk for vaccine preventable disease
+\r\n hard-to-reach individuals
+\r\n individuals new to Canada
+\r\n travellers
+\r\n persons in occupational risk groups who may be at increased risk of particular vaccine preventable diseases or who if not immunized themselves, may put vulnerable clients/patients at risk.
+\r\n \r\n The New Brunswick Immunization Program does not provide vaccines and biologics for third-party demands such as educational, occupational or travel requirements.
+\r\n Providers of publicly funded vaccine will provide vaccine and biologics to those requiring special consideration as set out by the policies in the New Brunswick Immunization Program.
+\r\n"}}" id="text-ad54adabf9" class="cmp-text">
+ Purpose: Provide standards to those who provide publicly funded vaccines to individuals in New Brunswick requiring special consideration prior to immunization.
+ Preamble: Immunizers need to recognize and respond to the unique immunization needs of certain population groups. The New Brunswick Routine Immunization Schedule (PDF 107 KB) used in conjunction with the Eligibility Criteria Table for Publicly Funded Vaccines/Biologics adapts to meet the needs of specific populations within the context of the New Brunswick Immunization Program.
+ Although National Advisory Committee on Immunization (NACI) may make recommendations for these groups, each jurisdiction makes its own decisions with respect to funding. Immunization providers should be aware of those who provide vaccine outside of the publicly funded programs and, in particular, to the support provided by Citizenship and Immigration Canada (CIC) , travel health clinics, and occupational health clinics.
+ NACI identifies the following as special population groups:
+ individuals with certain medical conditions that include the presence of risk factors for vaccine preventable disease or carry the risk of serious complication should the disease occur
+ individuals who are behind on their immunization
+ individuals who have had a serious adverse event following a previous vaccine
+ outbreak populations
+ pregnant and breastfeeding women
+ individuals with behaviours that put them at risk for vaccine preventable disease
+ hard-to-reach individuals
+ individuals new to Canada
+ travellers
+ persons in occupational risk groups who may be at increased risk of particular vaccine preventable diseases or who if not immunized themselves, may put vulnerable clients/patients at risk.
+ The New Brunswick Immunization Program does not provide vaccines and biologics for third-party demands such as educational, occupational or travel requirements.
+ Providers of publicly funded vaccine will provide vaccine and biologics to those requiring special consideration as set out by the policies in the New Brunswick Immunization Program.
+ Standards
+ \r\n The New Brunswick Routine Immunization Schedule is the standard to be followed when providing routine immunization to infants, children and adults in New Brunswick.
+\r\n In addition to the routine program for infants, children and adults, vaccines are provided for targeted programs and in the follow-up of vaccine preventable diseases. The Eligibility Criteria Table for Publicly Funded Vaccines/Biologics document is in the NBIPG. Vaccines are to be used only as outlined in this document.
+\r\n In instances where the New Brunswick Routine Immunization Schedule cannot be followed and additional scheduling information is required, immunizers should refer to: \r\n The Canadian Immunization Guide; and
+\r\n NACI statements as outlined in the Public Health Agency of Canada website.
+\r\n \r\n
+\r\n Additional information about CIC programs can be obtained from local Public Health offices.
+\r\n Immunizers should consult the product monograph for additional information about product safety in reference to particular population groups.
+\r\n \r\n"}}" id="text-a8952f3ee5" class="cmp-text">
+ The New Brunswick Routine Immunization Schedule is the standard to be followed when providing routine immunization to infants, children and adults in New Brunswick.
+ In addition to the routine program for infants, children and adults, vaccines are provided for targeted programs and in the follow-up of vaccine preventable diseases. The Eligibility Criteria Table for Publicly Funded Vaccines/Biologics document is in the NBIPG. Vaccines are to be used only as outlined in this document.
+ In instances where the New Brunswick Routine Immunization Schedule cannot be followed and additional scheduling information is required, immunizers should refer to: The Canadian Immunization Guide; and
+ NACI statements as outlined in the Public Health Agency of Canada website.
+ Additional information about CIC programs can be obtained from local Public Health offices.
+ Immunizers should consult the product monograph for additional information about product safety in reference to particular population groups.
+ Maintaining a safe environment for immunization practice
+ Purpose: Provide standards to those administering publicly funded vaccine and or biologics on ensuring a safe environment during immunization. 
+\r\n Preamble: A safe environment for immunization practice is one that does not harm the recipient, does not expose the immunization provider to any avoidable risks and does not result in waste that is dangerous for the community. The administration of vaccine and biologics must be supported by organizational and/or practice policies and procedures that recognize the unique environments where immunization occurs. 
+\r\n Immunization providers administering publicly funded vaccines and or biologics shall ensure that each office, facility or location where vaccines and or biologics are administered have written procedures or protocols that address or include the standards below.&nbsp;
+\r\n"}}" id="text-19d1087564" class="cmp-text">
+ Purpose: Provide standards to those administering publicly funded vaccine and or biologics on ensuring a safe environment during immunization. 
+ Preamble: A safe environment for immunization practice is one that does not harm the recipient, does not expose the immunization provider to any avoidable risks and does not result in waste that is dangerous for the community. The administration of vaccine and biologics must be supported by organizational and/or practice policies and procedures that recognize the unique environments where immunization occurs. 
+ Immunization providers administering publicly funded vaccines and or biologics shall ensure that each office, facility or location where vaccines and or biologics are administered have written procedures or protocols that address or include the standards below. 
+ Standards
+ Written procedures are necessary to ensure that there is a routine and systematic approach in maintaining a safe environment for immunization practice.
+\r\n \r\n Hand hygiene: \r\n hand washing
+\r\n use of hand sanitizers
+\r\n appropriate use of gloves in a non-hospital settings
+\r\n \r\n
+\r\n Needle stick injury: \r\n universal precautions to prevent exposure of blood borne pathogens by preventing injuries caused by needles and other sharp devices
+\r\n procedures to follow when a needle stick injury occurs
+\r\n \r\n
+\r\n Disposal of sharps and transportation of dangerous goods: \r\n clearly identified sharps containers
+\r\n location, storage, handling and disposal of containers
+\r\n “transportation of dangerous goods” training and certification
+\r\n \r\n
+\r\n Client/patient safety: \r\n positioning and/or securing the vaccine recipient prior to vaccine administration
+\r\n appropriate equipment (chairs, mats and/or stretchers)
+\r\n identification of hazards specific to client/patients age groups
+\r\n mitigation of hazards
+\r\n \r\n
+\r\n \r\n"}}" id="text-d635ff1f25" class="cmp-text">
+ Written procedures are necessary to ensure that there is a routine and systematic approach in maintaining a safe environment for immunization practice.
+ Hand hygiene: hand washing
+ use of hand sanitizers
+ appropriate use of gloves in a non-hospital settings
+ Needle stick injury: universal precautions to prevent exposure of blood borne pathogens by preventing injuries caused by needles and other sharp devices
+ procedures to follow when a needle stick injury occurs
+ Disposal of sharps and transportation of dangerous goods: clearly identified sharps containers
+ location, storage, handling and disposal of containers
+ “transportation of dangerous goods” training and certification
+ Client/patient safety: positioning and/or securing the vaccine recipient prior to vaccine administration
+ appropriate equipment (chairs, mats and/or stretchers)
+ identification of hazards specific to client/patients age groups
+ mitigation of hazards
+ Competency standards for public health nurses providing Tuberculin Skin Testing
+ Purpose: &nbsp;Provide standards to regional public health on the competencies required by health professionals who administer Tuberculin Skin Testing (TST) through the provision of communicable disease follow up.
+\r\n Preamble: Health care providers and laboratories are required to confidentially notify Public Health of Tuberculosis cases. Public Health staff may investigate to find out how the infection occurred, identify other people who may be at risk of infection, implement control measures, ensure appropriate tests and treatment are provided, and provide advice as necessary. Tuberculosis contact investigation and follow-up may involve TST with some contacts.
+\r\n Competency in TST practice is an individual professional responsibility and the responsibility of the employing agency. It is guided by professional practice standards, employer/organizational policies and evidence-based research. 
+\r\n Public health nurses within the regional health authority who provide TST through New Brunswick communicable disease follow up must demonstrate competency in the skills and knowledge required for safe and competent practice through completion of learning programs based on the Canadian Tuberculosis Standards .
+\r\n"}}" id="text-e81f81f745" class="cmp-text">
+ Purpose: Provide standards to regional public health on the competencies required by health professionals who administer Tuberculin Skin Testing (TST) through the provision of communicable disease follow up.
+ Preamble: Health care providers and laboratories are required to confidentially notify Public Health of Tuberculosis cases. Public Health staff may investigate to find out how the infection occurred, identify other people who may be at risk of infection, implement control measures, ensure appropriate tests and treatment are provided, and provide advice as necessary. Tuberculosis contact investigation and follow-up may involve TST with some contacts.
+ Competency in TST practice is an individual professional responsibility and the responsibility of the employing agency. It is guided by professional practice standards, employer/organizational policies and evidence-based research. 
+ Public health nurses within the regional health authority who provide TST through New Brunswick communicable disease follow up must demonstrate competency in the skills and knowledge required for safe and competent practice through completion of learning programs based on the Canadian Tuberculosis Standards .
+ Standards
+ \r\n For the provision of communicable disease follow-up for Tuberculin Skin Testing (TST): \r\n the administrative authority responsible must have in place quality control processes to ensure adherence to the conditions of the Medical Directive for Tuberculin Skin Testing (TST) and to the policies, standards and guidelines of the Reportable Disease Events Guidelines.
+\r\n \r\n
+\r\n It is an expectation that the Regional Health Authority’s policies in regards to the above mentioned topics will be shared with the Medical Officer of Health. As the medical authority signing the directive, he/she must be satisfied with the content and details of these policies.
+\r\n \r\n Additional requirements:
+\r\n \r\n Complete a TST learning program developed by the Regional Health Authority with theory and practice necessary to perform this skill
+\r\n Follow the policies, standards and guidelines of the Reportable Disease Events Guidelines
+\r\n Demonstrate competency before practicing independently
+\r\n Be evaluated every two years
+\r\n \r\n"}}" id="text-99515f9872" class="cmp-text">
+ For the provision of communicable disease follow-up for Tuberculin Skin Testing (TST): the administrative authority responsible must have in place quality control processes to ensure adherence to the conditions of the Medical Directive for Tuberculin Skin Testing (TST) and to the policies, standards and guidelines of the Reportable Disease Events Guidelines.
+ It is an expectation that the Regional Health Authority’s policies in regards to the above mentioned topics will be shared with the Medical Officer of Health. As the medical authority signing the directive, he/she must be satisfied with the content and details of these policies.
+ Additional requirements:
+ Complete a TST learning program developed by the Regional Health Authority with theory and practice necessary to perform this skill
+ Follow the policies, standards and guidelines of the Reportable Disease Events Guidelines
+ Demonstrate competency before practicing independently
+ Be evaluated every two years
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Immunization Program Guide (NBIPG) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide.html
+guidelines for immunization practices | https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-1-key-immunization-information/page-4-national-guidelines-immunization-practices.html
+Public Health Information Solution System (PHIS) | https://www.gnb.ca/content/gnb/en/departments/ocmoh/cdc/content/PHIS.html
+Timing of Vaccine Administration | https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-1-key-immunization-information/page-10-timing-vaccine-administration.html
+Vaccine Administration Practices | https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-1-key-immunization-information/page-8-vaccine-administration-practices.html
+Communicating effectively about immunization | https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-1-key-immunization-information/page-5-communicating-effectively-immunization.html
+Canadian Immunization Guide: Contraindications and Precautions | https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-2-vaccine-safety/page-3-contraindications-precautions-concerns.html
+Immunization records | https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-1-key-immunization-information/page-12-immunization-records.html
+Reporting and Disease Regulations – 2009-136 | https://www.canlii.org/en/nb/laws/regu/nb-reg-2009-136/latest/nb-reg-2009-136.html
+RTIPPA | https://www.gnb.ca/en/gov/information-access-privacy/rippa-act.html
+PHIPAA | https://laws.gnb.ca/en/document/cs/P-7.05
+Reporting Adverse Events Following Immunization. | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/policies.html
+NDEG (gnb.ca) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/diseases-events.html
+National Vaccine Storage and Handling Guidelines for Immunization Providers — 2015 | https://www.canada.ca/en/public-health/services/publications/healthy-living/national-vaccine-storage-handling-guidelines-immunization-providers-2015.html
+Management of Vaccine Errors and Deviation for all Immunizers | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/policies.html
+Immunization Competency Requirements for All Immunization Providers (PDF 319 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/policy-competency.pdf
+Canadian Immunization Guide | https://www.canada.ca/en/public-health/services/canadian-immunization-guide.html
+National Advisory Committee on Immunization | https://www.canada.ca/en/public-health/services/immunization/national-advisory-committee-on-immunization-naci.html
+New Brunswick Routine Immunization Schedule (PDF 107 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/resources-routine-schedule.pdf
+Reporting and Diseases Regulation 2009-136. | https://www.canlii.org/en/nb/laws/regu/nb-reg-2009-136/latest/nb-reg-2009-136.html
+AEFI Report Form (PDF 386 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/form-adverse.pdf
+Reporting Adverse Events Following Immunization. | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/policies.html
+User guide: Report of Adverse Event Following Immunization (AEFI) (PDF 531 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/intro-adverse.pdf
+Summary of AEFI Reporting Criteria (PDF 133 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/resources-adverse.pdf
+Canadian Immunization Guide. | https://www.canada.ca/en/public-health/services/canadian-immunization-guide.html
+Reporting and Diseases: Public Health Act | https://laws.gnb.ca/en/document/cr/2009-136
+Education Act | https://laws.gnb.ca/en/ShowPdf/cs/E-1.12.pdf
+Policy 706-Proof of immunization (PDF 156 KB) | https://www.gnb.ca/content/dam/GNB3/t/et-ef/km-12/policies/docs/policy-706.pdf
+Public Health Act | https://laws.gnb.ca/en/showpdf/cs/P-22.4.pdf
+Assessment Tool to Determine the Validity of Vaccine Doses (PDF 265 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/resources-assessment.pdf
+Immunization Exemption Form for early learning and child care facilities (PDF 266 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/form-exemption-childcare.pdf
+New Brunswick Routine Immunization Schedule (PDF 107 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/resources-routine-schedule.pdf
+Citizenship and Immigration Canada (CIC) | http://www.cic.gc.ca/english/index.asp
+Public Health Agency of Canada | https://www.canada.ca/en/public-health.html

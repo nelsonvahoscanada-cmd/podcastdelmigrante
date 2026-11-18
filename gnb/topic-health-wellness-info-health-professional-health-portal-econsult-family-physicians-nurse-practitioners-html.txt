@@ -1,0 +1,135 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/econsult-family-physicians-nurse-practitioners.html
+TÍTULO: eConsult for Family Physicians and Nurse Practitioners - gnb.ca
+MODIFICADA: —
+
+eConsult for family physicians and nurse practitioners
+ How family physicians and nurse practitioners can register, access and utilize eConsult in their practice.
+\n"}}" id="text-53de65d3de" class="cmp-text">
+ How family physicians and nurse practitioners can register, access and utilize eConsult in their practice.
+ On this page
+ Overview
+ eConsult has been available since May 2018 and allows primary care providers and medical residents (under their supervisor) to access specialist advice for non-urgent, patient specific questions through the provincial Electronic Health Record's secure platform.&nbsp;
+\n Currently there are 20 specialties available through eConsult:&nbsp;
+\n Bilingual 
+\n \n ​cardiology&nbsp;
+\n ​dermatology&nbsp;
+\n endocrinology
+\n ​gastroenterology&nbsp;
+\n ​geriatric medicine&nbsp;
+\n ​hematology
+\n nephrology
+\n neurology&nbsp;
+\n ​obstetrics/gynecology&nbsp;
+\n ​orthopedics&nbsp;
+\n psychiatry&nbsp;
+\n rheumatology
+\n \n English only 
+\n \n child and adolescent psychiatry&nbsp;
+\n ​chronic pain management
+\n hepatology
+\n medical oncology
+\n
+\n ophthalmology
+\n ​pediatrics&nbsp;
+\n spine surgery (orthopedics)&nbsp;
+\n urology
+\n \n"}}" id="text-0fdeda1f2b" class="cmp-text">
+ eConsult has been available since May 2018 and allows primary care providers and medical residents (under their supervisor) to access specialist advice for non-urgent, patient specific questions through the provincial Electronic Health Record's secure platform. 
+ Currently there are 20 specialties available through eConsult: 
+ Bilingual 
+ ​cardiology 
+ ​dermatology 
+ endocrinology
+ ​gastroenterology 
+ ​geriatric medicine 
+ ​hematology
+ nephrology
+ neurology 
+ ​obstetrics/gynecology 
+ ​orthopedics 
+ psychiatry 
+ rheumatology
+ English only 
+ child and adolescent psychiatry 
+ ​chronic pain management
+ hepatology
+ medical oncology
+ ophthalmology
+ ​pediatrics 
+ spine surgery (orthopedics) 
+ urology
+ eConsult
+ eConsult is an electronic communication between a primary care provider and a specialist. An eConsult occurs when a primary care provider sends a patient specific, non-urgent request for advice to a specialist through the Electronic Health Record (EHR). eConsult provides advice to the primary care provider, who continues to manage the patient's care in the community. It may result in a patient not needing a face-to-face consult with the specialist. If a face-to-face consult is required, the referral for this consultation would proceed in the usual manner that is followed in your area.&nbsp;
+\n"}}" id="text-0f30b157cc" class="cmp-text">
+ eConsult is an electronic communication between a primary care provider and a specialist. An eConsult occurs when a primary care provider sends a patient specific, non-urgent request for advice to a specialist through the Electronic Health Record (EHR). eConsult provides advice to the primary care provider, who continues to manage the patient's care in the community. It may result in a patient not needing a face-to-face consult with the specialist. If a face-to-face consult is required, the referral for this consultation would proceed in the usual manner that is followed in your area. 
+ Why use eConsult?
+ eConsult offers a wide range of benefits for primary care providers. eConsult provides quick access to specialist advice for non-urgent questions, leading to quicker treatment for patients and reducing the need for a face-to-face referral. It improves care coordination and collaboration between clinicians and enhances provider and patient satisfaction.&nbsp;&nbsp;
+\n During the eConsult Proof of Concept, 67% of primary care providers who were considering referring a patient to a specialist were able to manage the case without needing an in-person specialist visit, thanks to the advice received through eConsult.&nbsp;
+\n"}}" id="text-a4072858ca" class="cmp-text">
+ eConsult offers a wide range of benefits for primary care providers. eConsult provides quick access to specialist advice for non-urgent questions, leading to quicker treatment for patients and reducing the need for a face-to-face referral. It improves care coordination and collaboration between clinicians and enhances provider and patient satisfaction. 
+ During the eConsult Proof of Concept, 67% of primary care providers who were considering referring a patient to a specialist were able to manage the case without needing an in-person specialist visit, thanks to the advice received through eConsult. 
+ Requirements
+ Primary care providers, including family physicians and nurse practitioners, with an active Medicare billing number and access to the EHR can submit eConsults to 20 specialty groups.&nbsp;
+\n You can access eConsult by signing into the provincial EHR through the Health Portal .&nbsp;
+\n"}}" id="text-e5d297513d" class="cmp-text">
+ Primary care providers, including family physicians and nurse practitioners, with an active Medicare billing number and access to the EHR can submit eConsults to 20 specialty groups. 
+ You can access eConsult by signing into the provincial EHR through the Health Portal . 
+ Request access
+ eConsult is available through New Brunswick’s provincial Electronic Health Record (EHR) .
+\r\n To request EHR access, submit a form using the eHealthNB Centre. If you do not have an eHealthNB Centre account, click the ‘GET STARTED’ button and select the location 01. – EHR – Electronic Health Record . If you have questions, please send an email to EHRAccess@gnb.ca . 
+\r\n"}}" id="text-80294cc04e" class="cmp-text">
+ eConsult is available through New Brunswick’s provincial Electronic Health Record (EHR) .
+ To request EHR access, submit a form using the eHealthNB Centre. If you do not have an eHealthNB Centre account, click the ‘GET STARTED’ button and select the location 01. – EHR – Electronic Health Record . If you have questions, please send an email to [email protected] . 
+ Privacy and practice guidelines
+ eConsult is available through the secure provincial Electronic Health Record (EHR) and adheres to requirements of the Personal Health Information Privacy and Access Act . All data is stored and transmitted securely and is monitored to maintain compliance and security. We are committed to safeguarding the privacy of our users while delivering a valuable service.&nbsp;
+\n"}}" id="text-0b148d298f" class="cmp-text">
+ eConsult is available through the secure provincial Electronic Health Record (EHR) and adheres to requirements of the Personal Health Information Privacy and Access Act . All data is stored and transmitted securely and is monitored to maintain compliance and security. We are committed to safeguarding the privacy of our users while delivering a valuable service. 
+ More information
+ \n eConsult Quick Reference Guide - Primary care providers (PDF 271 KB) 
+\n eConsult Quick Reference Guide - Medical residents (PDF 220 KB) 
+\n eConsult Quick Reference Guide - Resident supervisors (PDF 212 KB) 
+\n eConsult FAQ (PDF 83 KB) 
+\n eConsult PCP FAQ (PDF 209 KB) 
+\n \n"}}" id="text-df7c59b190" class="cmp-text">
+ eConsult Quick Reference Guide - Primary care providers (PDF 271 KB) 
+ eConsult Quick Reference Guide - Medical residents (PDF 220 KB) 
+ eConsult Quick Reference Guide - Resident supervisors (PDF 212 KB) 
+ eConsult FAQ (PDF 83 KB) 
+ eConsult PCP FAQ (PDF 209 KB) 
+ Get help
+ If you require assistance with eConsult, our team is available to answer any questions and provide support. Please submit your request by email to eConsult@gnb.ca . Inquiries will receive a response within two business days.&nbsp;
+\n"}}" id="text-d585fa85e3" class="cmp-text">
+ If you require assistance with eConsult, our team is available to answer any questions and provide support. Please submit your request by email to [email protected] . Inquiries will receive a response within two business days. 
+ For technical support, including username and password issues:&nbsp;
+\n RHA users 
+\nZone Service Desk
+\n 1-844-354-4357 
+\n service@snb.ca&nbsp; 
+\n EMR users 
+\nEMR Vendor Service Desk&nbsp;
+\n 1-844-250-5250 
+\n"}}" id="text-29c08d8bcc" class="cmp-text">
+ For technical support, including username and password issues: 
+ RHA users 
+Zone Service Desk
+ 1-844-354-4357 
+ [email protected] 
+ EMR users 
+EMR Vendor Service Desk 
+ 1-844-250-5250 
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Health Portal | https://hps.gnb.ca
+Electronic Health Record (EHR) | https://hps.gnb.ca
+eConsult Quick Reference Guide - Primary care providers (PDF 271 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/econsult/econsult-quick-reference-guide-primary-care-providers.pdf
+eConsult Quick Reference Guide - Medical residents (PDF 220 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/econsult/econsult-quick-reference-guide-medical-residents.pdf
+eConsult Quick Reference Guide - Resident supervisors (PDF 212 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/econsult/econsult-quick-reference-guide-resident-supervisors.pdf
+eConsult FAQ (PDF 83 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/econsult/e-consult-faq.pdf
+eConsult PCP FAQ (PDF 209 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/econsult/e-consult-pcp-faq.pdf
+1-844-354-4357 | tel:1-844-354-4357
+1-844-250-5250 | tel:1-844-250-5250

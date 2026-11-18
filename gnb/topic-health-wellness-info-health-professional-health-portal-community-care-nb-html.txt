@@ -1,0 +1,109 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/community-care-nb.html
+TÍTULO: CommunityCareNB - gnb.ca
+MODIFICADA: —
+
+CommunityCareNB
+ Learn about CommunityCareNB and how it is creating the best community care experience through improved access to information and collaboration. 
+\n"}}" id="text-ca3792a701" class="cmp-text">
+ Learn about CommunityCareNB and how it is creating the best community care experience through improved access to information and collaboration. 
+ On this page
+ Overview
+ CommunityCareNB is a patient health record system designed to support coordinated care in community-based programs. CommunityCareNB is currently used by the Extra-Mural Program for maintaining a patient’s health record and includes patient care plans recent assessments, interventions and care observations. CommunityCareNB is also used by Ambulance New Brunswick to capture a patient electronic Patient Care Record (ePCR). CommunityCareNB is also integrated with the Provincial Electronic Health Record (EHR). The platform is built on Salesforce Health Cloud, ensuring reliable and efficient access to patient information for better collaboration and care.&nbsp;&nbsp;
+\n Today nurse practitioners and physicians can use CommunityCareNB to:&nbsp;
+\n \n create a Referral for Extra-Mural Program (EMP) services
+\n monitor EMP Referrals. Will not need to call EMP to determine the status of a referral
+\n review a patient's dispensed medication list from all NB-based Community Pharmacies Hospital-based users can print a Medication Reconciliation Report for hospital admissions
+\n review a patient’s electronic health record including care plans, recent assessments, interventions and care observations&nbsp;
+\n link with Provincial Client Registry to search, add or update a person account&nbsp;
+\n see a patient's hospital visits
+\n \n"}}" id="text-3a8209d249" class="cmp-text">
+ CommunityCareNB is a patient health record system designed to support coordinated care in community-based programs. CommunityCareNB is currently used by the Extra-Mural Program for maintaining a patient’s health record and includes patient care plans recent assessments, interventions and care observations. CommunityCareNB is also used by Ambulance New Brunswick to capture a patient electronic Patient Care Record (ePCR). CommunityCareNB is also integrated with the Provincial Electronic Health Record (EHR). The platform is built on Salesforce Health Cloud, ensuring reliable and efficient access to patient information for better collaboration and care. 
+ Today nurse practitioners and physicians can use CommunityCareNB to: 
+ create a Referral for Extra-Mural Program (EMP) services
+ monitor EMP Referrals. Will not need to call EMP to determine the status of a referral
+ review a patient's dispensed medication list from all NB-based Community Pharmacies Hospital-based users can print a Medication Reconciliation Report for hospital admissions
+ review a patient’s electronic health record including care plans, recent assessments, interventions and care observations 
+ link with Provincial Client Registry to search, add or update a person account 
+ see a patient's hospital visits
+ Request access to CommunityCareNB
+ Physicians and nurse practitioners licenced to work in New Brunswick can request access to CommunityCareNB.&nbsp;
+\r\n Approval for access is granted to physicians and nurse practitioners who have completed their privacy training through their RHA.&nbsp;
+\r\n Fill out the access request Form at the eHealthNB Centre 
+\r\n ​The eHealthNB Centre is the same site where EHR training is provided.&nbsp;
+\r\n This step verifies you have completed Privacy and Security training from your RHA, before starting the training.&nbsp;&nbsp;
+\r\n Complete eLearning 
+\r\n ​You receive a link to complete eLearning to use CommunityCareNB.&nbsp;
+\r\n Takes approximately 30 minutes to complete.&nbsp;
+\r\n Receive access to CommunityCareNB 
+\r\n You receive single sign on access to CommunityCareNB.&nbsp;
+\r\n Step one – Complete the access request form&nbsp; 
+\r\n 1. Go to the&nbsp; eHealthNB Centre .
+\r\n 2. Sign in by entering the username (your email) and password you created to complete EHR training or set up an account.&nbsp;
+\r\n"}}" id="text-b42a2888fc" class="cmp-text">
+ Physicians and nurse practitioners licenced to work in New Brunswick can request access to CommunityCareNB. 
+ Approval for access is granted to physicians and nurse practitioners who have completed their privacy training through their RHA. 
+ Fill out the access request Form at the eHealthNB Centre 
+ ​The eHealthNB Centre is the same site where EHR training is provided. 
+ This step verifies you have completed Privacy and Security training from your RHA, before starting the training. 
+ Complete eLearning 
+ ​You receive a link to complete eLearning to use CommunityCareNB. 
+ Takes approximately 30 minutes to complete. 
+ Receive access to CommunityCareNB 
+ You receive single sign on access to CommunityCareNB. 
+ Step one – Complete the access request form 
+ 1. Go to the eHealthNB Centre .
+ 2. Sign in by entering the username (your email) and password you created to complete EHR training or set up an account. 
+ 3. This takes you to the Notice Board. On the left side of the Notice Board page are a series of links. Click on &quot;My Activities.&quot;
+\n"}}" id="text-3e561bce26" class="cmp-text">
+ 3. This takes you to the Notice Board. On the left side of the Notice Board page are a series of links. Click on "My Activities."
+ 4. On the &quot;My Activities&quot; page in the Assigned section, find CommunityCareNB Access Request. Click on &quot;complete this form&quot; beside it. If you do not see the access request form, contact ccnb.scnb@gnb.ca .&nbsp;
+\r\n"}}" id="text-fc9e011c7a" class="cmp-text">
+ 4. On the "My Activities" page in the Assigned section, find CommunityCareNB Access Request. Click on "complete this form" beside it. If you do not see the access request form, contact [email protected] . 
+ 5.&nbsp;Clicking on &quot;complete this form&quot; in step four takes you to this page. Click on &quot;start now&quot; to complete the Access Request form.&nbsp;
+\n"}}" id="text-1090d01f80" class="cmp-text">
+ 5. Clicking on "complete this form" in step four takes you to this page. Click on "start now" to complete the Access Request form. 
+ Unless the Administrator has questions for you, you will receive an email with the information needed to start the access process.&nbsp;
+\n Note, the access request form requests verification of Privacy and Security training from your RHA, before starting the training.&nbsp;
+\n"}}" id="text-77c783092f" class="cmp-text">
+ Unless the Administrator has questions for you, you will receive an email with the information needed to start the access process. 
+ Note, the access request form requests verification of Privacy and Security training from your RHA, before starting the training. 
+ Step two – Complete eLearning&nbsp; 
+\r\n If your request for access is approved, an email will be sent to you informing you that:&nbsp;
+\r\n \r\n Your request access form was approved.
+\r\n Your assigned eLearning course entitled CommunityCare Practitioner Learning is in your My Activities section of your eHealthNB Centre.
+\r\n \r\n Step three – Receive access to CommunityCareNB&nbsp; 
+\r\n \r\n Upon successfully completing the assigned CommunityCareNB eLearning, you will receive a notification that access to CommunityCareNB has been provided to you.&nbsp;
+\r\n Look for the CommunityCareNB icon on your desktop.
+\r\n \r\n"}}" id="text-af0c3f8c5d" class="cmp-text">
+ Step two – Complete eLearning 
+ If your request for access is approved, an email will be sent to you informing you that: 
+ Your request access form was approved.
+ Your assigned eLearning course entitled CommunityCare Practitioner Learning is in your My Activities section of your eHealthNB Centre.
+ Step three – Receive access to CommunityCareNB 
+ Upon successfully completing the assigned CommunityCareNB eLearning, you will receive a notification that access to CommunityCareNB has been provided to you. 
+ Look for the CommunityCareNB icon on your desktop.
+ 3. Click on the icon, which brings you to the salesforce log in page.
+\n If you are logged onto a hospital network, to log in click on &quot;Log in with GNB Azure AD SSO&quot; framed in orange below. A password should not be required.
+\n"}}" id="text-dfd3a24b89" class="cmp-text">
+ 3. Click on the icon, which brings you to the salesforce log in page.
+ If you are logged onto a hospital network, to log in click on "Log in with GNB Azure AD SSO" framed in orange below. A password should not be required.
+ Support
+ \r\n cheat Sheets for specific for specific functions are in the eHealthNB Centre, in the document section of your library
+\r\n your completed eLearning will be available in your library in the eHealthNB Centre
+\r\n contact ccnb.scnb@gnb.ca if you have any additional questions
+\r\n \r\n"}}" id="text-b270bc0787" class="cmp-text">
+ cheat Sheets for specific for specific functions are in the eHealthNB Centre, in the document section of your library
+ your completed eLearning will be available in your library in the eHealthNB Centre
+ contact [email protected] if you have any additional questions
+ Get help
+ For questions about CommunityCareNB or the Access Request process, contact ccnb.scnb@gnb.ca .&nbsp;
+\n"}}" id="text-76e468126e" class="cmp-text">
+ For questions about CommunityCareNB or the Access Request process, contact [email protected] . 
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+eHealthNB Centre | https://ehealthnbcentre.itacit.com/login

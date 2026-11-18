@@ -1,0 +1,61 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/communicable-diseases/legionellosis.html
+TÍTULO: Legionellosis - gnb.ca
+MODIFICADA: —
+
+Legionellosis
+ Symptoms, diagnosis, treatment and prevention of legionellosis.
+\r\n"}}" id="text-a8fb63cf07" class="cmp-text">
+ Symptoms, diagnosis, treatment and prevention of legionellosis.
+ On this page
+ Overview
+ Legionellosis is a disease caused by bacteria called Legionella. These bacteria are found worldwide, including in New Brunswick. They live in the environment and can be found in both natural waters (such as ponds, lakes and streams) and in man-made water systems (such as air conditioners, cooling towers, whirlpools, spas and decorative fountains). Improperly maintained man-made water sources are often the cause of illness from Legionella bacteria.&nbsp;&nbsp;
+\r\n Diagnosis of infection is based on assessment of clinical symptoms by a health-care provider and laboratory samples from the lung, blood and urine to confirm diagnosis.
+\r\n"}}" id="text-45fa50dd5f" class="cmp-text">
+ Legionellosis is a disease caused by bacteria called Legionella. These bacteria are found worldwide, including in New Brunswick. They live in the environment and can be found in both natural waters (such as ponds, lakes and streams) and in man-made water systems (such as air conditioners, cooling towers, whirlpools, spas and decorative fountains). Improperly maintained man-made water sources are often the cause of illness from Legionella bacteria. 
+ Diagnosis of infection is based on assessment of clinical symptoms by a health-care provider and laboratory samples from the lung, blood and urine to confirm diagnosis.
+ Download printable PDF
+ The content of this page is also available as a printable document.
+\r\n"}}" id="text-f82826db71" class="cmp-text">
+ The content of this page is also available as a printable document.
+ PDF 334 KB
+ 2025-02-06
+ Legionellosis
+ Symptoms, diagnosis, treatment and prevention of legionellosis.
+ This publication may not be accessible to screen readers. 
+\r\n"}}" id="text-28b3b6b16d" class="cmp-text">
+ This publication may not be accessible to screen readers. 
+ Symptoms
+ Legionella bacteria cause two types of illness: Legionnaire’s disease and Pontiac fever. Both types of illness result in headache, fever, muscle pain, diarrhea and loss of appetite. People with Legionnaire’s Disease often develop pneumonia and a cough requiring hospitalization. Those with Pontiac Fever have milder flu like symptoms and will often recover in a few days without treatment.&nbsp;
+\r\n"}}" id="text-49df5e2f06" class="cmp-text">
+ Legionella bacteria cause two types of illness: Legionnaire’s disease and Pontiac fever. Both types of illness result in headache, fever, muscle pain, diarrhea and loss of appetite. People with Legionnaire’s Disease often develop pneumonia and a cough requiring hospitalization. Those with Pontiac Fever have milder flu like symptoms and will often recover in a few days without treatment. 
+ How it spreads
+ Legionellosis is usually spread when the bacteria are present in an infected water source and fine mists of water from that source are inhaled. It is not spread person to person.&nbsp;
+\r\n"}}" id="text-a2ad1f2bce" class="cmp-text">
+ Legionellosis is usually spread when the bacteria are present in an infected water source and fine mists of water from that source are inhaled. It is not spread person to person. 
+ Risk factors
+ Anyone exposed to the bacteria can become infected. Older persons, those with weakened immune systems or chronic diseases, travelers, smokers, alcoholics and persons working with man-made water systems (such as maintenance workers on air conditioning systems) are at greater risk of developing the disease.&nbsp;
+\r\n"}}" id="text-97f88bb322" class="cmp-text">
+ Anyone exposed to the bacteria can become infected. Older persons, those with weakened immune systems or chronic diseases, travelers, smokers, alcoholics and persons working with man-made water systems (such as maintenance workers on air conditioning systems) are at greater risk of developing the disease. 
+ Treatment 
+ Medications can be used to treat Legionnaire’s Disease. People with Pontiac Fever will recover on their own without treatment.&nbsp;
+\r\n Health-care providers and laboratories are required to confidentially report cases to Public Health. Public health staff may investigate to find out how the infection occurred, identify other people who may be at risk of infection, implement control measures and provide advice as necessary.&nbsp;
+\r\n"}}" id="text-25cc3577d2" class="cmp-text">
+ Medications can be used to treat Legionnaire’s Disease. People with Pontiac Fever will recover on their own without treatment. 
+ Health-care providers and laboratories are required to confidentially report cases to Public Health. Public health staff may investigate to find out how the infection occurred, identify other people who may be at risk of infection, implement control measures and provide advice as necessary. 
+ Prevention
+ Proper maintenance of water systems . Regularly clean and disinfect mist-producing devices such as shower heads, whirlpool spas, humidifiers and hot tubs. Use distilled water in respiratory therapy devices and clean regularly.&nbsp;
+\r\n Adequate hot water storage . Maintain hot water at 60°C in hot water tanks. Install safety devices on taps to prevent burns.&nbsp;
+\r\n For additional information, contact your health-care provider, local Public Health office or Tele-Care 811 .
+\r\n"}}" id="text-1a9bfd8d5e" class="cmp-text">
+ Proper maintenance of water systems . Regularly clean and disinfect mist-producing devices such as shower heads, whirlpool spas, humidifiers and hot tubs. Use distilled water in respiratory therapy devices and clean regularly. 
+ Adequate hot water storage . Maintain hot water at 60°C in hot water tanks. Install safety devices on taps to prevent burns. 
+ For additional information, contact your health-care provider, local Public Health office or Tele-Care 811 .
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+Communicable diseases | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/communicable-diseases.html
+Legionellosis | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/communicable-diseases/docs/Legionellosis.pdf
+Public Health office | https://www.gnb.ca/en/topic/health-wellness/access-health-care/public-health-clinics.html

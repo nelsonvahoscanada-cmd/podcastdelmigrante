@@ -1,0 +1,334 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/connected-health/virtual-care-clinicians.html
+TÍTULO: Virtual care for clinicians - gnb.ca
+MODIFICADA: —
+
+Virtual care for clinicians
+ How virtual tools can support clinicians deliver health services, expertise and information to their patients.
+\n"}}" id="text-a7f081869a" class="cmp-text">
+ How virtual tools can support clinicians deliver health services, expertise and information to their patients.
+ On this page
+ Overview
+ To help support patient care and health care providers in the current COVID-19 pandemic, Zoom for Healthcare has been approved as a virtual care platform for use on an interim basis. Zoom for Healthcare enables clinicians to deliver health services, expertise and information in real time over distance, improving access and eliminating barriers to patient care across New Brunswick.&nbsp;&nbsp;
+\n"}}" id="text-c44ce3a285" class="cmp-text">
+ To help support patient care and health care providers in the current COVID-19 pandemic, Zoom for Healthcare has been approved as a virtual care platform for use on an interim basis. Zoom for Healthcare enables clinicians to deliver health services, expertise and information in real time over distance, improving access and eliminating barriers to patient care across New Brunswick. 
+ License extension
+ Based on usage and user feedback, we are extending the license agreement for an additional year, through to March 2026. This extension will ensure continuity of care in these uncertain times. ZoomHC licenses will continue to be provided free of charge to clinicians in good standing who are currently providing patient care.&nbsp;&nbsp;
+\n Zoom for Healthcare is a secure, web-based virtual care video conferencing platform. Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing and collaboration across mobile devices, desktops and telephones. The Department of Health has obtained Zoom for Healthcare which provides additional security measures to protect the privacy of personal health information being shared over internet channels.&nbsp;
+\n"}}" id="text-a4d3ba7297" class="cmp-text">
+ Based on usage and user feedback, we are extending the license agreement for an additional year, through to March 2026. This extension will ensure continuity of care in these uncertain times. ZoomHC licenses will continue to be provided free of charge to clinicians in good standing who are currently providing patient care. 
+ Zoom for Healthcare is a secure, web-based virtual care video conferencing platform. Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing and collaboration across mobile devices, desktops and telephones. The Department of Health has obtained Zoom for Healthcare which provides additional security measures to protect the privacy of personal health information being shared over internet channels. 
+ Zoom in your practice
+ Zoom for Healthcare may be right for you if you:&nbsp;
+\n \n need the enhancement of video to deliver patient care&nbsp;
+\n are in self-isolation or available to practice remotely&nbsp;
+\n can provide patients currently using smart phones and computers for other online services like banking, shopping and Internet with the instructions they need to connect for care using Zoom for Healthcare&nbsp;
+\n are concerned about the security of free video conferencing services offered over the internet&nbsp;
+\n \n Technology requirements 
+\n \n an email account (if an administrative assistant will be scheduling appointments on your behalf, they will also require a Zoom for Healthcare account)
+\n email scheduling software (scheduling software can be used, i.e. Outlook, Gmail, etc.)
+\n for both health-care providers and patients: access to a computer, tablet or smartphone with audio and video technology and high-speed internet or cell service (4G LTE connection)
+\n \n Note: Each user is responsible for any charges related to their internet data usage. If you are using data on a mobile device (instead of a wireless &quot;Wi-Fi&quot; connection) be aware that video streams can require significant data.&nbsp;
+\n"}}" id="text-dc4ca3881d" class="cmp-text">
+ Zoom for Healthcare may be right for you if you: 
+ need the enhancement of video to deliver patient care 
+ are in self-isolation or available to practice remotely 
+ can provide patients currently using smart phones and computers for other online services like banking, shopping and Internet with the instructions they need to connect for care using Zoom for Healthcare 
+ are concerned about the security of free video conferencing services offered over the internet 
+ Technology requirements 
+ an email account (if an administrative assistant will be scheduling appointments on your behalf, they will also require a Zoom for Healthcare account)
+ email scheduling software (scheduling software can be used, i.e. Outlook, Gmail, etc.)
+ for both health-care providers and patients: access to a computer, tablet or smartphone with audio and video technology and high-speed internet or cell service (4G LTE connection)
+ Note: Each user is responsible for any charges related to their internet data usage. If you are using data on a mobile device (instead of a wireless "Wi-Fi" connection) be aware that video streams can require significant data. 
+ Virtual care in practice
+ Zoom for Healthcare Status Report
+ The Provincial Virtual Care Program has been operational for approximately seven months. There have been many successes, lessons learned and opportunities for growth. Here is an update on the program with a focus on Zoom for Healthcare (ZoomH) usage.&nbsp;&nbsp;
+\n"}}" id="text-85e35a7ccc" class="cmp-text">
+ The Provincial Virtual Care Program has been operational for approximately seven months. There have been many successes, lessons learned and opportunities for growth. Here is an update on the program with a focus on Zoom for Healthcare (ZoomH) usage. 
+ Summary of user survey conducted June 2020 
+\n \n 475 responses received from 2500 contacted users
+\n 19% response rate
+\n 79% find ZoomHC easy to use
+\n 81% want ZoomHC to continue post-pandemic
+\n 78% would recommend ZoomHC
+\n 61% use ZoomHC regularly (at least once a week)
+\n \n Common themes 
+\n \n easy to use
+\n continuity of care
+\n convenient
+\n safe
+\n reliable
+\n flexibility for clients and clinicians
+\n \n Challenges common themes 
+\n \n lack of &quot;real&quot; contact – human touch&nbsp;
+\n barriers to technology/internet access&nbsp;
+\n not well-suited to all patients&nbsp;
+\n \n Opportunities 
+\n \n better &quot;webside manner&quot; can add a &quot;human touch&quot; to a virtual visit.&nbsp;
+\n providing education and assistance to develop digital literacy of clients and providers&nbsp;
+\n creation of community access points&nbsp;
+\n \n What you are saying 
+\n &quot;Recently did a Zoom HC on complex patient; was able to have eight different care teams participate as well as patient and family and local caregivers.&quot;
+\n &quot;Patients have been super impressed with the quality of video and audio without any interruption of services. Comparatively I keep hearing it's better than anything else they've used.&quot;
+\n &quot;I really hope to continue to offer my services virtually. I offer services to the whole province and many of my clients have mobility and/or financial difficulties that are barriers to acccess. This removes some barriers for them and allows me to offer services more widely and equitably.&quot;
+\n &quot;I think it is great to offer virtual services, however, there are always going to be clients who prefer in-person sessions.&quot;
+\n"}}" id="text-4754c6f393" class="cmp-text">
+ Summary of user survey conducted June 2020 
+ 475 responses received from 2500 contacted users
+ 19% response rate
+ 79% find ZoomHC easy to use
+ 81% want ZoomHC to continue post-pandemic
+ 78% would recommend ZoomHC
+ 61% use ZoomHC regularly (at least once a week)
+ Common themes 
+ easy to use
+ continuity of care
+ convenient
+ safe
+ reliable
+ flexibility for clients and clinicians
+ Challenges common themes 
+ lack of "real" contact – human touch 
+ barriers to technology/internet access 
+ not well-suited to all patients 
+ Opportunities 
+ better "webside manner" can add a "human touch" to a virtual visit. 
+ providing education and assistance to develop digital literacy of clients and providers 
+ creation of community access points 
+ What you are saying 
+ "Recently did a Zoom HC on complex patient; was able to have eight different care teams participate as well as patient and family and local caregivers."
+ "Patients have been super impressed with the quality of video and audio without any interruption of services. Comparatively I keep hearing it's better than anything else they've used."
+ "I really hope to continue to offer my services virtually. I offer services to the whole province and many of my clients have mobility and/or financial difficulties that are barriers to acccess. This removes some barriers for them and allows me to offer services more widely and equitably."
+ "I think it is great to offer virtual services, however, there are always going to be clients who prefer in-person sessions."
+ Request access
+ Private sector employees: Complete the Zoom Healthcare Access Request form (PDF 61 KB) &nbsp;and submit it to ConnectedCare@gnb.ca .
+\n Public sector employees (RHA, GNB, EMANB): If you would like to obtain a Zoom for Healthcare license, please respond to ConnectedCare@gnb.ca with &quot;Zoom for Healthcare&quot; in the subject line.&nbsp;
+\n Please provide:&nbsp;
+\n \n your name&nbsp;
+\n phone number&nbsp;
+\n preferred language of communication&nbsp;
+\n role&nbsp;
+\n employer (RHA &amp; Zone and/or private practice name &amp; Zone)&nbsp;
+\n zone/GNB username&nbsp;
+\n \n Note: With the submission of the above information the clinician represents that the information provided therein is true and accurate, and that they are a practicing member in good standing with their professional association or college.&nbsp;&nbsp;
+\n"}}" id="text-de7552b4b7" class="cmp-text">
+ Private sector employees: Complete the Zoom Healthcare Access Request form (PDF 61 KB) and submit it to [email protected] .
+ Public sector employees (RHA, GNB, EMANB): If you would like to obtain a Zoom for Healthcare license, please respond to [email protected] with "Zoom for Healthcare" in the subject line. 
+ Please provide: 
+ your name 
+ phone number 
+ preferred language of communication 
+ role 
+ employer (RHA & Zone and/or private practice name & Zone) 
+ zone/GNB username 
+ Note: With the submission of the above information the clinician represents that the information provided therein is true and accurate, and that they are a practicing member in good standing with their professional association or college. 
+ Privacy and practice guidelines
+ GNB has conducted a thorough investigation (including a privacy review and threat risk examination) regarding the privacy and security of Zoom for Healthcare and is comfortable with the measures included in the health care-specific version of Zoom to protect user privacy. GNB will continue to monitor for privacy and security issues on an ongoing basis.&nbsp;
+\n The Department of Health has obtained Zoom for Healthcare which provides additional security measures to protect the privacy of personal health information being shared over internet channels. These security measures include:&nbsp;
+\n \n restricting Zoom to only processing personal information (PI) and Personal Health Information (PHI) for purposes strictly required to deliver the services
+\n disabling features like cloud recording, copying chat text between meeting participants, and others
+\n limiting the amount of personal information used when scheduling a meeting
+\n using a unique meeting ID for each virtual care session
+\n creating a&nbsp; secure site &nbsp;where authorized health-care providers and their patients or clients can communicate
+\n \n"}}" id="text-52c9170a15" class="cmp-text">
+ GNB has conducted a thorough investigation (including a privacy review and threat risk examination) regarding the privacy and security of Zoom for Healthcare and is comfortable with the measures included in the health care-specific version of Zoom to protect user privacy. GNB will continue to monitor for privacy and security issues on an ongoing basis. 
+ The Department of Health has obtained Zoom for Healthcare which provides additional security measures to protect the privacy of personal health information being shared over internet channels. These security measures include: 
+ restricting Zoom to only processing personal information (PI) and Personal Health Information (PHI) for purposes strictly required to deliver the services
+ disabling features like cloud recording, copying chat text between meeting participants, and others
+ limiting the amount of personal information used when scheduling a meeting
+ using a unique meeting ID for each virtual care session
+ creating a secure site where authorized health-care providers and their patients or clients can communicate
+ Privacy and security documents
+ \n Document
+\n Document contents
+\n
+ Zoom for Healthcare Privacy and Security Guidelines (PDF 81 KB) 
+\n This guidance document defines minimum privacy and security requirements that must be followed when providing virtual care.
+\n
+ Verbal Consent Guidelines for Patients (PDF 27 KB) 
+\n Health Care Providers should outline and explain the consent guidelines to their clients as a means of verbal consent.
+\n
+ Zoom for Healthcare - Security Best Practices (PDF 996 KB) 
+\n Security best practices
+\n
+ \n"}}" id="text-f352b93c71" class="cmp-text">
+ Document
+ Document contents
+ Zoom for Healthcare Privacy and Security Guidelines (PDF 81 KB) 
+ This guidance document defines minimum privacy and security requirements that must be followed when providing virtual care.
+ Verbal Consent Guidelines for Patients (PDF 27 KB) 
+ Health Care Providers should outline and explain the consent guidelines to their clients as a means of verbal consent.
+ Zoom for Healthcare - Security Best Practices (PDF 996 KB) 
+ Security best practices
+ More information
+ User guides
+ \n Document
+\n Content description
+\n
+ Zoom for Healthcare User Guide (PDF 2.1 MB) 
+\n Complete user guide&nbsp;
+\n
+ Zoom for Healthcare Quick Start Guide (PDF 214 KB) 
+\n Abbreviated &quot;Getting Started&quot; guide
+\n
+ Zoom for Healthcare Terms of Use (PDF 128 KB) 
+\n Terms and conditions of use
+\n
+ \n"}}" id="text-2ddd2e40ba" class="cmp-text">
+ Document
+ Content description
+ Zoom for Healthcare User Guide (PDF 2.1 MB) 
+ Complete user guide 
+ Zoom for Healthcare Quick Start Guide (PDF 214 KB) 
+ Abbreviated "Getting Started" guide
+ Zoom for Healthcare Terms of Use (PDF 128 KB) 
+ Terms and conditions of use
+ Quick references
+ \n Document
+\n Content description
+\n
+ Download and Install Zoom for Healthcare -&nbsp;For public sector users (PDF 121 KB) 
+\n Cheat sheet for downloading and installing Zoom for Healthcare desktop application (for GNB, EMP, HHN/RSH, VHN/RSV)
+\n
+ ​Download and Install Zoom for Healthcare using MFA -&nbsp;For public sector users (PDF 237 KB) 
+\n Cheat sheet including MFA for downloading &amp; installing Zoom for Healthcare desktop application (for GNB, EMP, HHN/RSH, VHN/RSV)
+\n
+ Active and Configure Zoom for Healthcare - For private sector users without single sign on (SSO) (PDF 324 KB) 
+\n Cheat sheet for activating and installing Zoom for Healthcare desktop application
+\n
+ Zoom for Healthcare Desktop Client (other calendar) (PDF 579 KB) 
+\n Cheat sheet for booking and launching an appointment from the desktop application (including how to manually add to any scheduling program)&nbsp;
+\n
+ Zoom for Healthcare Desktop Client (Outlook) (PDF 798 KB) 
+\n Cheat sheet for booking and launching an appointment from the desktop application (including how to generate Outlook invitation)
+\n
+ Zoom for Healthcare and Outlook (PDF 869 KB) 
+\n Cheat sheet for booking and launching an appointment with the Outlook Zoom Add-in
+\n
+ Zoom for Healthcare and Outlook Online (PDF 1 MB) 
+\n Cheat sheet for booking and launching an appointment with the Outlook Online Zoom Add-in
+\n
+ Zoom Quick Reference - Scheduling on Behalf of Another Clinician (PDF 971 KB) 
+\n Cheat sheet for the &quot;schedule on behalf of&quot; feature
+\n
+ Zoom Quick Reference - Outlook Desktop Group Conferencing (PDF 726 KB) 
+\n Cheat sheet for scheduling and conducting virtual conferences
+\n
+ Virtual appointment checklist (PDF 147 KB) 
+\n Check list to guide pre-appointment discussion of virtual care with client
+\n
+ FAQs for clinicians (PDF 165 KB) 
+\n Frequently asked questions for clinicians
+\n
+ Terms and conditions of service (PDF 128 KB) 
+\n Zoom for Healthcare terms and conditions of services
+\n
+ \n"}}" id="text-5e4e1eee3d" class="cmp-text">
+ Document
+ Content description
+ Download and Install Zoom for Healthcare - For public sector users (PDF 121 KB) 
+ Cheat sheet for downloading and installing Zoom for Healthcare desktop application (for GNB, EMP, HHN/RSH, VHN/RSV)
+ ​Download and Install Zoom for Healthcare using MFA - For public sector users (PDF 237 KB) 
+ Cheat sheet including MFA for downloading & installing Zoom for Healthcare desktop application (for GNB, EMP, HHN/RSH, VHN/RSV)
+ Active and Configure Zoom for Healthcare - For private sector users without single sign on (SSO) (PDF 324 KB) 
+ Cheat sheet for activating and installing Zoom for Healthcare desktop application
+ Zoom for Healthcare Desktop Client (other calendar) (PDF 579 KB) 
+ Cheat sheet for booking and launching an appointment from the desktop application (including how to manually add to any scheduling program) 
+ Zoom for Healthcare Desktop Client (Outlook) (PDF 798 KB) 
+ Cheat sheet for booking and launching an appointment from the desktop application (including how to generate Outlook invitation)
+ Zoom for Healthcare and Outlook (PDF 869 KB) 
+ Cheat sheet for booking and launching an appointment with the Outlook Zoom Add-in
+ Zoom for Healthcare and Outlook Online (PDF 1 MB) 
+ Cheat sheet for booking and launching an appointment with the Outlook Online Zoom Add-in
+ Zoom Quick Reference - Scheduling on Behalf of Another Clinician (PDF 971 KB) 
+ Cheat sheet for the "schedule on behalf of" feature
+ Zoom Quick Reference - Outlook Desktop Group Conferencing (PDF 726 KB) 
+ Cheat sheet for scheduling and conducting virtual conferences
+ Virtual appointment checklist (PDF 147 KB) 
+ Check list to guide pre-appointment discussion of virtual care with client
+ FAQs for clinicians (PDF 165 KB) 
+ Frequently asked questions for clinicians
+ Terms and conditions of service (PDF 128 KB) 
+ Zoom for Healthcare terms and conditions of services
+ Information for your client
+ \n Document
+\n Content description
+\n
+ Virtual visit guide for clients (PDF 136 KB) 
+\n Cheat sheet for client joining a Zoom for Healthcare virtual appointment
+\n
+ ​ Virtual visit - tips for clients (PDF 172 KB) 
+\n Tips for clients attending a virtual visit
+\n
+ FAQ for clients (PDF 152 KB) 
+\n Client frequently asked questions
+\n
+ Dowload Zoom on smart phone or tablet (PDF 370 KB) 
+\n Visual guide (Android and iOS)
+\n
+ Join Zoom with computer (PDF 541 KB) 
+\n ​​Visual guide
+\n
+ Join Zoom with smart phone or tablet (PDF 542 KB) 
+\n Visual guide (Android and iOS)
+\n
+ Join Zoom with telephone (audio only) (PDF 269 KB) 
+\n Visual guide
+\n
+ Privacy and security (PDF 277 KB) 
+\n Visual guide
+\n
+ \n"}}" id="text-c08f4f6db4" class="cmp-text">
+ Document
+ Content description
+ Virtual visit guide for clients (PDF 136 KB) 
+ Cheat sheet for client joining a Zoom for Healthcare virtual appointment
+ ​ Virtual visit - tips for clients (PDF 172 KB) 
+ Tips for clients attending a virtual visit
+ FAQ for clients (PDF 152 KB) 
+ Client frequently asked questions
+ Dowload Zoom on smart phone or tablet (PDF 370 KB) 
+ Visual guide (Android and iOS)
+ Join Zoom with computer (PDF 541 KB) 
+ ​​Visual guide
+ Join Zoom with smart phone or tablet (PDF 542 KB) 
+ Visual guide (Android and iOS)
+ Join Zoom with telephone (audio only) (PDF 269 KB) 
+ Visual guide
+ Privacy and security (PDF 277 KB) 
+ Visual guide
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Connected Health | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/connected-health.html
+Zoom Healthcare Access Request form (PDF 61 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/connected-care-access-request-zoom-healthcare.pdf
+secure site | https://gnb.zoom.us/
+Zoom for Healthcare Privacy and Security Guidelines (PDF 81 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-privacy-security-guidelines.pdf
+Verbal Consent Guidelines for Patients (PDF 27 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/verbal-consent.pdf
+Zoom for Healthcare - Security Best Practices (PDF 996 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-security-best-practices.pdf
+Zoom for Healthcare User Guide (PDF 2.1 MB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-user-guide.pdf
+Zoom for Healthcare Quick Start Guide (PDF 214 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-quick-start-guide.pdf
+Zoom for Healthcare Terms of Use (PDF 128 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-terms-conditions-service.pdf
+Download and Install Zoom for Healthcare - For public sector users (PDF 121 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/download-install-zoom-healthcare-public-sector.pdf
+​Download and Install Zoom for Healthcare using MFA - For public sector users (PDF 237 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/download-install-zoom-healthcare-public-sector-mfa.pdf
+Active and Configure Zoom for Healthcare - For private sector users without single sign on (SSO) (PDF 324 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/active-configure-zoom-healthcare.pdf
+Zoom for Healthcare Desktop Client (other calendar) (PDF 579 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-desktop-other-calendar.pdf
+Zoom for Healthcare Desktop Client (Outlook) (PDF 798 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-desktop-outlook.pdf
+Zoom for Healthcare and Outlook (PDF 869 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-outlook.pdf
+Zoom for Healthcare and Outlook Online (PDF 1 MB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-outlook-online.pdf
+Zoom Quick Reference - Scheduling on Behalf of Another Clinician (PDF 971 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-quick-reference-scheduling-another-clinician.pdf
+Zoom Quick Reference - Outlook Desktop Group Conferencing (PDF 726 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-quick-reference-outlook-group-conferencing.pdf
+Virtual appointment checklist (PDF 147 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/virtual-appointment-checklist.pdf
+FAQs for clinicians (PDF 165 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-faq-clinicians.pdf
+Terms and conditions of service (PDF 128 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/zoom-healthcare-terms-conditions-service.pdf
+Virtual visit guide for clients (PDF 136 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/virtual-visit-guide.pdf
+Virtual visit - tips for clients (PDF 172 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-clinicians-soins-virtuels-cliniciens/docs/virtual-visit-tips.pdf
+FAQ for clients (PDF 152 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/faq-zoom-healthcare.pdf
+Dowload Zoom on smart phone or tablet (PDF 370 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/download-zoom-phone.pdf
+Join Zoom with computer (PDF 541 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/download-zoom-computer.pdf
+Join Zoom with smart phone or tablet (PDF 542 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/download-zoom-smartphone-tablet.pdf
+Join Zoom with telephone (audio only) (PDF 269 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/zoom-phone.pdf
+Privacy and security (PDF 277 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/privacy-security.pdf

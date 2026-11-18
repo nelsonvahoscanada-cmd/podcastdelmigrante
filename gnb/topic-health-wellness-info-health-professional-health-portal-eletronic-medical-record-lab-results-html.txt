@@ -1,0 +1,57 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/lab-results.html
+TÍTULO: Electronic Lab Results integration - gnb.ca
+MODIFICADA: —
+
+Electronic Lab Results integration
+ The Electronic Laboratory Results integration allows authorized users to retrieve, view and manage electronic copies of patient lab results directly in their EMR.&nbsp;
+\n"}}" id="text-1fc02ac528" class="cmp-text">
+ The Electronic Laboratory Results integration allows authorized users to retrieve, view and manage electronic copies of patient lab results directly in their EMR. 
+ Receiving Electronic Lab Results in Certified EMRs
+ Physicians and nurse oractitioners can sign up to receive electronic copies of lab results in their EMR. Once signed up, they will receive all results where they are identified as either an ordering or copied-to provider.
+\n Receiving lab results electronically in a Certified EMR means that:
+\n \n lab results will be automatically delivered to EMRs as soon as they become available in the EHR
+\n lab results will be automatically matched to the patient chart using patient demographics
+\n if no matching patient is found, the lab result will be added to a work queue for manual review
+\n lab results stored in the EMR can be tracked and graphed over time for a better view of continued care
+\n abnormal results will be flagged automatically by the EMR
+\n \n"}}" id="text-4449dee642" class="cmp-text">
+ Physicians and nurse oractitioners can sign up to receive electronic copies of lab results in their EMR. Once signed up, they will receive all results where they are identified as either an ordering or copied-to provider.
+ Receiving lab results electronically in a Certified EMR means that:
+ lab results will be automatically delivered to EMRs as soon as they become available in the EHR
+ lab results will be automatically matched to the patient chart using patient demographics
+ if no matching patient is found, the lab result will be added to a work queue for manual review
+ lab results stored in the EMR can be tracked and graphed over time for a better view of continued care
+ abnormal results will be flagged automatically by the EMR
+ Providers will continue to receive paper copies of lab results until they request to have them turned off from the RHA lab facility.
+\n"}}" id="text-d282ac9961" class="cmp-text">
+ Providers will continue to receive paper copies of lab results until they request to have them turned off from the RHA lab facility.
+ Troubleshooting missing labs
+ Providers are responsible for ensuring follow-up on any lab results that have not been received - whether electronic or paper. A process must be in place to identify and address missing results.
+\n Electronic lab results may occasionally fail to reach a provider’s EMR due to data-related issues. Below are some common reasons this may occur:
+\n \n physician or nurse practitioner license number missing or incorrect on the original lab result entered by the lab
+\n the lab result was completed in multiple testing facilities, which can lead to &quot;copied-to&quot; providers being removed, or provider information being entered incorrectly
+\n the lab result was not stored successfully in the EHR (e.g. if patient information on the lab result was not verified against the Client Registry)
+\n there is a consent directive in place for the patient causing results to not be delivered to certain providers
+\n the provider is registered to receive lab results in a different EMR - results follow the providers and are not distributed to specific clinics or locations
+\n \n If a lab result is missing from the EMR, it may still be available in the provincial EHR.&nbsp;
+\n For any issues related to the delivery or accuracy of electronic lab results in a Certified EMR, contact your EMR vendor for support.&nbsp;
+\n Reporting all such issues is essential to identify and resolve underlying data integrity problems and help ensure future lab results are delivered correctly.
+\n"}}" id="text-d5b0509eb6" class="cmp-text">
+ Providers are responsible for ensuring follow-up on any lab results that have not been received - whether electronic or paper. A process must be in place to identify and address missing results.
+ Electronic lab results may occasionally fail to reach a provider’s EMR due to data-related issues. Below are some common reasons this may occur:
+ physician or nurse practitioner license number missing or incorrect on the original lab result entered by the lab
+ the lab result was completed in multiple testing facilities, which can lead to "copied-to" providers being removed, or provider information being entered incorrectly
+ the lab result was not stored successfully in the EHR (e.g. if patient information on the lab result was not verified against the Client Registry)
+ there is a consent directive in place for the patient causing results to not be delivered to certain providers
+ the provider is registered to receive lab results in a different EMR - results follow the providers and are not distributed to specific clinics or locations
+ If a lab result is missing from the EMR, it may still be available in the provincial EHR. 
+ For any issues related to the delivery or accuracy of electronic lab results in a Certified EMR, contact your EMR vendor for support. 
+ Reporting all such issues is essential to identify and resolve underlying data integrity problems and help ensure future lab results are delivered correctly.
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html

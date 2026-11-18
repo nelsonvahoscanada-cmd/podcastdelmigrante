@@ -1,0 +1,35 @@
+URL: https://www.gnb.ca/en/campaign/geonb/data-catalogue/rural-districts.html
+TÍTULO: Rural districts - gnb.ca
+MODIFICADA: —
+
+Rural districts
+ GeoNB
+\r\n"}}" id="text-f47b78977c" class="cmp-text">
+ GeoNB
+ Overview
+ \n Data purpose:&nbsp; To show the limits of the rural districts which cover areas outside incorporated local governments for the provision of services such as fire protection, streetlights and garbage disposal.
+\n Data description:&nbsp; Rural district (RD) polygons are a graphical representation of the rural district boundaries as defined in regulation 2022-45 under the Local Governance Act with an associated RD name attribute. Effective date is January 1, 2023.
+\n Update requirements:&nbsp; On an ad hoc basis as boundaries change.
+\n Restriction on use:&nbsp; Unrestricted
+\n License:&nbsp; Open Government Licence 
+\n Georeferencing:&nbsp; datum - NAD83(CSRS), map projection - NB Stereographic Double, (EPSG 2953)
+\n Data formats:&nbsp; ESRI file geodatabase, ESRI shape file, KML
+\n Data coverage and size:&nbsp; Provincial coverage
+\n Responsible Agency:&nbsp; Department of Environment &amp; Local Government
+\n \n"}}" id="text-cff1dee5b2" class="cmp-text">
+ Data purpose: To show the limits of the rural districts which cover areas outside incorporated local governments for the provision of services such as fire protection, streetlights and garbage disposal.
+ Data description: Rural district (RD) polygons are a graphical representation of the rural district boundaries as defined in regulation 2022-45 under the Local Governance Act with an associated RD name attribute. Effective date is January 1, 2023.
+ Update requirements: On an ad hoc basis as boundaries change.
+ Restriction on use: Unrestricted
+ License: Open Government Licence 
+ Georeferencing: datum - NAD83(CSRS), map projection - NB Stereographic Double, (EPSG 2953)
+ Data formats: ESRI file geodatabase, ESRI shape file, KML
+ Data coverage and size: Provincial coverage
+ Responsible Agency: Department of Environment & Local Government
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+GeoNB | https://www.gnb.ca/en/campaign/geonb.html
+Data catalogue | https://www.gnb.ca/en/campaign/geonb/data-catalogue.html
+Open Government Licence | https://www.gnb.ca/en/campaign/geonb/open-government-license.html

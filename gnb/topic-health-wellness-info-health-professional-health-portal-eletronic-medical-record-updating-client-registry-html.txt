@@ -1,0 +1,119 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/updating-client-registry.html
+TÍTULO: Updating the Client Registry - gnb.ca
+MODIFICADA: —
+
+Updating the Client Registry
+ The following guidelines outline best practices for adding or updating a patient in a Certified EMR.
+\n"}}" id="text-7f54b17f47" class="cmp-text">
+ The following guidelines outline best practices for adding or updating a patient in a Certified EMR.
+ Overview
+ The Client Registry integration enables EMR users to access current patient demographic information directly from the provincial Client Registry. The CR Add/Update functionality allows EMRs to contribute updated patient demographics back to the Client Registry, helping keep records current, support system-wide data accuracy, and ensure other users have access to the most up-to-date information.
+\r\n Field labels may vary by EMR, so the guidelines below focus on general practices to ensure updates are accurate. For EMR-specific instructions, please refer to training provided by your EMR vendor.
+\r\n This guide is also available as a PDF download:&nbsp; Adding and Updating Patient Information Quick Reference Card (PDF 4 MB) 
+\r\n"}}" id="text-54ed701213" class="cmp-text">
+ The Client Registry integration enables EMR users to access current patient demographic information directly from the provincial Client Registry. The CR Add/Update functionality allows EMRs to contribute updated patient demographics back to the Client Registry, helping keep records current, support system-wide data accuracy, and ensure other users have access to the most up-to-date information.
+ Field labels may vary by EMR, so the guidelines below focus on general practices to ensure updates are accurate. For EMR-specific instructions, please refer to training provided by your EMR vendor.
+ This guide is also available as a PDF download: Adding and Updating Patient Information Quick Reference Card (PDF 4 MB) 
+ \r\n Area
+\r\n Do's
+\r\n Dont's
+\r\n
+ general
+\r\n
+\r\n \r\n ask to see their provincial health card&nbsp;
+\r\n verify the expiry date on the card
+\r\n always confirm demographic information at the time of the encounter
+\r\n ask the patient to provide the information ​
+\r\n \r\n
+\r\n \r\n don't read the information to the patient for validation​
+\r\n don’t create duplicate patient records
+\r\n don’t overwrite an existing patient with another’s information
+\r\n \r\n
+\r\n
+ names
+\r\n \r\n enter the patient’s name exactly as it appears on their official identification to ensure it accurately reflects their identity
+\r\n use the patient's legal name (i.e. documented first, second and last names only)
+\r\n include the space, dash (-), hyphen or apostrophe that might be part of a two-part given name as verified on supporting identification
+\r\n if a patient has only one legal name, record the name in the last name field and the first name field: e.g. FirstName: &quot;Madonna&quot;, LastName: &quot;Madonna&quot;
+\r\n \r\n
+\r\n \r\n don't enter initials as part of a name unless it is actually a one character name (e.g. &quot;J&quot;)
+\r\n don't enter a title as part of a name - keep it separate if a title field is available in your EMR (e.g. Dr., Sr., Fr. etc.)
+\r\n don't rely on the Medicare card as having the full legal name as the card may not have enough space for the full name​
+\r\n \r\n
+\r\n
+ alternate names, nicknames or preferred names
+\r\n if the patient goes by a name that is different from their legal name, record them as alternate names in the EMR. This field may be labelled &quot;nickname&quot; or &quot;preferred name&quot; in your EMR
+\r\n don't use an alias or nickname as part of a patient's legal name
+\r\n
+ date of birth
+\r\n
+\r\n \r\n confirm the date of birth when the patient presents for care
+\r\n if the date of birth is unknown, enter it as January 1, 1900
+\r\n \r\n
+\r\n &nbsp;
+\r\n
+ address
+\r\n \r\n enter street address, city, province and postal code - these are mandatory parts of all Canadian mailing addresses
+\r\n use Canada Post approved abbreviations for the street type and the province. (e.g. &quot;St&quot; not &quot;Street&quot;, &quot;Ave&quot; not &quot;Avenue&quot; etc)
+\r\n always enter the postal code for Canadian addresses using the &quot;A1A 1A1&quot; format
+\r\n \r\n
+\r\n \r\n don't use special characters such as # , : ; ( )
+\r\n don't use dots (.) in street and province abbreviations (e.g. &quot;NB&quot; not &quot;N.B.&quot;)
+\r\n don't input information in any address lines that is not part of the address (e.g. do not put someone's name as the first part of the address)
+\r\n \r\n
+\r\n
+ phone numbers
+\r\n enter in the home phone number field whenever possible
+\r\n don't enter text indicating telephone type in the number field (e.g. &quot;506 555 1212 cell&quot;)
+\r\n
+ non-human patients
+\r\n enter a &quot;ZZZZ&quot; prefix to the last name for any non-human patients that are registered (e.g. &quot;ZZZZDOG, FIDO&quot;)
+\r\n &nbsp;
+\r\n
+ \r\n"}}" id="text-c43b64051b" class="cmp-text">
+ Area
+ Do's
+ Dont's
+ general
+ ask to see their provincial health card 
+ verify the expiry date on the card
+ always confirm demographic information at the time of the encounter
+ ask the patient to provide the information ​
+ don't read the information to the patient for validation​
+ don’t create duplicate patient records
+ don’t overwrite an existing patient with another’s information
+ names
+ enter the patient’s name exactly as it appears on their official identification to ensure it accurately reflects their identity
+ use the patient's legal name (i.e. documented first, second and last names only)
+ include the space, dash (-), hyphen or apostrophe that might be part of a two-part given name as verified on supporting identification
+ if a patient has only one legal name, record the name in the last name field and the first name field: e.g. FirstName: "Madonna", LastName: "Madonna"
+ don't enter initials as part of a name unless it is actually a one character name (e.g. "J")
+ don't enter a title as part of a name - keep it separate if a title field is available in your EMR (e.g. Dr., Sr., Fr. etc.)
+ don't rely on the Medicare card as having the full legal name as the card may not have enough space for the full name​
+ alternate names, nicknames or preferred names
+ if the patient goes by a name that is different from their legal name, record them as alternate names in the EMR. This field may be labelled "nickname" or "preferred name" in your EMR
+ don't use an alias or nickname as part of a patient's legal name
+ date of birth
+ confirm the date of birth when the patient presents for care
+ if the date of birth is unknown, enter it as January 1, 1900
+ address
+ enter street address, city, province and postal code - these are mandatory parts of all Canadian mailing addresses
+ use Canada Post approved abbreviations for the street type and the province. (e.g. "St" not "Street", "Ave" not "Avenue" etc)
+ always enter the postal code for Canadian addresses using the "A1A 1A1" format
+ don't use special characters such as # , : ; ( )
+ don't use dots (.) in street and province abbreviations (e.g. "NB" not "N.B.")
+ don't input information in any address lines that is not part of the address (e.g. do not put someone's name as the first part of the address)
+ phone numbers
+ enter in the home phone number field whenever possible
+ don't enter text indicating telephone type in the number field (e.g. "506 555 1212 cell")
+ non-human patients
+ enter a "ZZZZ" prefix to the last name for any non-human patients that are registered (e.g. "ZZZZDOG, FIDO")
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html
+Adding and Updating Patient Information Quick Reference Card (PDF 4 MB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/emr-dme/doc/emr-cr-add-qr-card.pdf

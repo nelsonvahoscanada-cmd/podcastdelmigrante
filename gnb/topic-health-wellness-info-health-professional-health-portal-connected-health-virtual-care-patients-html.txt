@@ -1,0 +1,117 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/connected-health/virtual-care-patients.html
+TÍTULO: Virtual care for patients - gnb.ca
+MODIFICADA: —
+
+Virtual care for patients
+ Information for patients about virtual care, their privacy and how it supports gaining access to health care services.
+\n"}}" id="text-8b0de13e5d" class="cmp-text">
+ Information for patients about virtual care, their privacy and how it supports gaining access to health care services.
+ On this page
+ Overview
+ To help support patient care and health care providers in the current COVID-19 pandemic, Zoom for Health care has been approved as a virtual care platform for use on an interim basis. Zoom for Health care enables clinicians to deliver health services, expertise and information in real time over distance, improving access and eliminating barriers to patient care across New Brunswick.
+\n"}}" id="text-4a790579a5" class="cmp-text">
+ To help support patient care and health care providers in the current COVID-19 pandemic, Zoom for Health care has been approved as a virtual care platform for use on an interim basis. Zoom for Health care enables clinicians to deliver health services, expertise and information in real time over distance, improving access and eliminating barriers to patient care across New Brunswick.
+ Virtual care in practice
+ Zoom for Healthcare
+ Zoom for Healthcare is a secure, web-based virtual care video conferencing platform. Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing and collaboration across mobile devices, desktops and telephones. The Department of Health has obtained Zoom for Healthcare which provides additional security measures to protect the privacy of personal health information being shared over internet channels.&nbsp;
+\n"}}" id="text-a290b5b7c1" class="cmp-text">
+ Zoom for Healthcare is a secure, web-based virtual care video conferencing platform. Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing and collaboration across mobile devices, desktops and telephones. The Department of Health has obtained Zoom for Healthcare which provides additional security measures to protect the privacy of personal health information being shared over internet channels. 
+ Personal Respiratory Management Record
+ Individuals with complex respiratory conditions can now take advantage of an online form to generate their personal Respiratory Management Record. This Record can be provided by the individual and/or their support person(s) to medical professions outside of their circle of care to support best care outcomes.&nbsp;&nbsp;
+\n The Respiratory Management Record was developed under the guidance of doctors and respiratory therapists from the Stan Cassidy Centre for Rehabilitation and the community.&nbsp;
+\n You may wish to have some assistance from your respiratory therapist or respiratory care physician in completing this form:&nbsp; Personal Respiratory Management Record*&nbsp; .
+\n *When completing this form, the information entered will not be stored anywhere. Once completed, a PDF of the information entered will be sent to you via email.&nbsp;&nbsp; 
+\n"}}" id="text-6ce1fb0be5" class="cmp-text">
+ Individuals with complex respiratory conditions can now take advantage of an online form to generate their personal Respiratory Management Record. This Record can be provided by the individual and/or their support person(s) to medical professions outside of their circle of care to support best care outcomes. 
+ The Respiratory Management Record was developed under the guidance of doctors and respiratory therapists from the Stan Cassidy Centre for Rehabilitation and the community. 
+ You may wish to have some assistance from your respiratory therapist or respiratory care physician in completing this form: Personal Respiratory Management Record* .
+ *When completing this form, the information entered will not be stored anywhere. Once completed, a PDF of the information entered will be sent to you via email. 
+ Patient safety, privacy and practice guidelines
+ Virtual care contributes to patient safety in many ways. It has kept Canadians safe during the pandemic by reducing their risk of contracting COVID-19 in crowded clinics and waiting rooms. Mental health support is available virtually for those who are considering self-harm. And e-prescribing through PrescribeIT® reduces transcription errors and the likelihood of fraudulent prescriptions.
+\n GNB has conducted a thorough investigation (including a privacy review and threat risk examination) regarding the privacy and security of Zoom for Healthcare and is comfortable with the measures included in the health care-specific version of Zoom to protect user privacy. GNB will continue to monitor for privacy and security issues on an ongoing basis.&nbsp;
+\n The Department of Health has obtained Zoom for Healthcare, which provides additional security measures to protect the privacy of personal health information being shared over internet channels. These security measures include:&nbsp;
+\n \n restricting Zoom to only processing personal information (PI) and Personal Health Information (PHI) for purposes strictly required to deliver the services
+\n disabling features like recording, copying chat text between meeting participants, sharing files between participants and others
+\n limiting the amount of personal information used when scheduling a meeting
+\n using a unique meeting ID for each virtual care session
+\n creating a secure site &nbsp;where authorized health-care providers and their patients or clients can communicate
+\n \n"}}" id="text-0d74e33d4f" class="cmp-text">
+ Virtual care contributes to patient safety in many ways. It has kept Canadians safe during the pandemic by reducing their risk of contracting COVID-19 in crowded clinics and waiting rooms. Mental health support is available virtually for those who are considering self-harm. And e-prescribing through PrescribeIT® reduces transcription errors and the likelihood of fraudulent prescriptions.
+ GNB has conducted a thorough investigation (including a privacy review and threat risk examination) regarding the privacy and security of Zoom for Healthcare and is comfortable with the measures included in the health care-specific version of Zoom to protect user privacy. GNB will continue to monitor for privacy and security issues on an ongoing basis. 
+ The Department of Health has obtained Zoom for Healthcare, which provides additional security measures to protect the privacy of personal health information being shared over internet channels. These security measures include: 
+ restricting Zoom to only processing personal information (PI) and Personal Health Information (PHI) for purposes strictly required to deliver the services
+ disabling features like recording, copying chat text between meeting participants, sharing files between participants and others
+ limiting the amount of personal information used when scheduling a meeting
+ using a unique meeting ID for each virtual care session
+ creating a secure site where authorized health-care providers and their patients or clients can communicate
+ Supporting documents
+ \n Document
+\n Document contents​
+\n
+ Zoom for Healthcare privacy and security guidelines (PDF 81 KB) 
+\n This guidance document defines minimum privacy and security requirements that must be followed when providing virtual care.
+\n
+ Verbal consent guidelines for patient (PDF 27 KB) 
+\n Health care providers should outline and explain the consent guidelines to their clients as a means of verbal consent.
+\n
+ Virtual visit guide for client (PDF 163 KB) 
+\n Cheat sheet for client joining a Zoom for Healthcare virtual appointment
+\n
+ Virtual visit tips (PDF 171 KB) 
+\n Infographic of virtual visit tips and tricks​&nbsp;
+\n
+ Dowload Zoom on smart phone or tablet (PDF 370 KB) 
+\n Visual guide (Android and iOS)
+\n
+ Join Zoom with computer (PDF 541 KB) 
+\n Visual guide
+\n
+ Join Zoom with telephone (audio only) (PDF 269 KB) 
+\n Visual guide
+\n
+ Privacy and security (PDF 277 KB) 
+\n Visual guide
+\n
+ FAQs (PDF 152 KB) 
+\n Frequently asked questions
+\n
+ \n"}}" id="text-69e7db43d1" class="cmp-text">
+ Document
+ Document contents​
+ Zoom for Healthcare privacy and security guidelines (PDF 81 KB) 
+ This guidance document defines minimum privacy and security requirements that must be followed when providing virtual care.
+ Verbal consent guidelines for patient (PDF 27 KB) 
+ Health care providers should outline and explain the consent guidelines to their clients as a means of verbal consent.
+ Virtual visit guide for client (PDF 163 KB) 
+ Cheat sheet for client joining a Zoom for Healthcare virtual appointment
+ Virtual visit tips (PDF 171 KB) 
+ Infographic of virtual visit tips and tricks​ 
+ Dowload Zoom on smart phone or tablet (PDF 370 KB) 
+ Visual guide (Android and iOS)
+ Join Zoom with computer (PDF 541 KB) 
+ Visual guide
+ Join Zoom with telephone (audio only) (PDF 269 KB) 
+ Visual guide
+ Privacy and security (PDF 277 KB) 
+ Visual guide
+ FAQs (PDF 152 KB) 
+ Frequently asked questions
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Connected Health | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/connected-health.html
+Personal Respiratory Management Record* | https://www.pxw1.snb.ca/snb9000/product.aspx?productid=A001P351901
+secure site | https://gnb.zoom.us
+Zoom for Healthcare privacy and security guidelines (PDF 81 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/zoom-privacy-security-guidelines.pdf
+Verbal consent guidelines for patient (PDF 27 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/verbal-consent.pdf
+Virtual visit guide for client (PDF 163 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/visit-guide.pdf
+Virtual visit tips (PDF 171 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/visit-tips.pdf
+Dowload Zoom on smart phone or tablet (PDF 370 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/download-zoom-phone.pdf
+Join Zoom with computer (PDF 541 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/download-zoom-computer.pdf
+Join Zoom with telephone (audio only) (PDF 269 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/zoom-phone.pdf
+Privacy and security (PDF 277 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/privacy-security.pdf
+FAQs (PDF 152 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/health-portal-portail-sante/virtual-care-patients-soins-virtuels/faq-zoom-healthcare.pdf

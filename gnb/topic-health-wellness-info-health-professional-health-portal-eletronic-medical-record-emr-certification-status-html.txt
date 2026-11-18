@@ -1,0 +1,60 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/emr-certification-status.html
+TÍTULO: EMR Certification Status - gnb.ca
+MODIFICADA: —
+
+EMR Certification Status
+ An EMR Offering will have a certificate in one of the following statuses.
+\n"}}" id="text-c81583143c" class="cmp-text">
+ An EMR Offering will have a certificate in one of the following statuses.
+ Active
+ ​An active certificate status indicates that the EMR Offering is in good standing:
+\n \n aligned with the applicable EMR specifications
+\n the EMR Vendor is maintaining their obligations set forth in the EMR Vendor Certification Agreement
+\n \n An EMR Offering with an active certificate status is eligible:
+\n \n to connect to provincial integrations
+\n to participate in provincial EMR integration, EMR tooling, or quality improvement initiatives (e.g. Proof of Concepts)
+\n \n"}}" id="text-e3736bd1ab" class="cmp-text">
+ ​An active certificate status indicates that the EMR Offering is in good standing:
+ aligned with the applicable EMR specifications
+ the EMR Vendor is maintaining their obligations set forth in the EMR Vendor Certification Agreement
+ An EMR Offering with an active certificate status is eligible:
+ to connect to provincial integrations
+ to participate in provincial EMR integration, EMR tooling, or quality improvement initiatives (e.g. Proof of Concepts)
+ Suspended
+ A suspended certificate indicates that an EMR Offering is out of alignment with one or more applicable EMR specifications and/or the EMR vendor has not resolved its non-conformance to its obligations set forth in the EMR Vendor Certification Agreement.
+\n An EMR Offering with a suspended certificate:
+\n \n is no longer eligible to connect new clinicians/clients to Provincial EHR products and services such as EHR Clinical Viewer, electronic laboratory results, etc. (existing connections will not be disconnected). This includes new products and services as they become available
+\n will not be eligible to participate in provincial EMR integration, EMR tooling, or quality improvement initiatives (e.g. Proof of Concepts)
+\n \n EMRs with a suspended certificate will be given a cure period to realign to certification requirements.
+\n In some cases, an EMR vendor may choose to retire or replace an EMR Offering.&nbsp; In that case, the cure period will allow for the transition of EMR clients to another Certified EMR.&nbsp;
+\n"}}" id="text-ba22db5a0d" class="cmp-text">
+ A suspended certificate indicates that an EMR Offering is out of alignment with one or more applicable EMR specifications and/or the EMR vendor has not resolved its non-conformance to its obligations set forth in the EMR Vendor Certification Agreement.
+ An EMR Offering with a suspended certificate:
+ is no longer eligible to connect new clinicians/clients to Provincial EHR products and services such as EHR Clinical Viewer, electronic laboratory results, etc. (existing connections will not be disconnected). This includes new products and services as they become available
+ will not be eligible to participate in provincial EMR integration, EMR tooling, or quality improvement initiatives (e.g. Proof of Concepts)
+ EMRs with a suspended certificate will be given a cure period to realign to certification requirements.
+ In some cases, an EMR vendor may choose to retire or replace an EMR Offering. In that case, the cure period will allow for the transition of EMR clients to another Certified EMR. 
+ Withdrawn
+ An EMR Offering will have its certificate withdrawn for the following reasons:
+\n 1. Unresolved non-conformance: items of non-conformance that remain unresolved after the cure period expires for a suspended certificate.
+\n 2. Retired version of an EMR Offering : when a new version of the EMR Offering has been successfully validated, the certificate for the retired version of the EMR Offering will be withdrawn.
+\n An EMR Offering whose certificate has been withdrawn:
+\n \n will no longer be eligible to connect clinicians to provincial EHR products and services&nbsp;&nbsp;
+\n will not be eligible to participate in new or existing provincial EMR integration, EMR tooling, or quality improvement initiatives (e.g. Proof of Concepts)
+\n will no longer appear in the list of Certified EMRs
+\n \n"}}" id="text-49479af621" class="cmp-text">
+ An EMR Offering will have its certificate withdrawn for the following reasons:
+ 1. Unresolved non-conformance: items of non-conformance that remain unresolved after the cure period expires for a suspended certificate.
+ 2. Retired version of an EMR Offering : when a new version of the EMR Offering has been successfully validated, the certificate for the retired version of the EMR Offering will be withdrawn.
+ An EMR Offering whose certificate has been withdrawn:
+ will no longer be eligible to connect clinicians to provincial EHR products and services 
+ will not be eligible to participate in new or existing provincial EMR integration, EMR tooling, or quality improvement initiatives (e.g. Proof of Concepts)
+ will no longer appear in the list of Certified EMRs
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html

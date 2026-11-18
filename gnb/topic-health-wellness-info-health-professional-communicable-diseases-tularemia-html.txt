@@ -1,0 +1,67 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/communicable-diseases/tularemia.html
+TÍTULO: Tularemia - gnb.ca
+MODIFICADA: —
+
+Tularemia
+ Symptoms, diagnosis, treatment and prevention of tularemia.
+\r\n"}}" id="text-07df3ad120" class="cmp-text">
+ Symptoms, diagnosis, treatment and prevention of tularemia.
+ On this page
+ Overview
+ Tularemia is a zoonotic disease (diseases spread from animals to people) caused by the bacteria Francisella tularensis. It is found mainly in the Northern Hemisphere and is carried by many wild and domestic animals, especially rabbits. Tularemia infection in people is not common in Canada.&nbsp;
+\r\n Tularemia is diagnosed by symptoms, history of exposure and laboratory testing.
+\r\n"}}" id="text-7cdcfeb5d1" class="cmp-text">
+ Tularemia is a zoonotic disease (diseases spread from animals to people) caused by the bacteria Francisella tularensis. It is found mainly in the Northern Hemisphere and is carried by many wild and domestic animals, especially rabbits. Tularemia infection in people is not common in Canada. 
+ Tularemia is diagnosed by symptoms, history of exposure and laboratory testing.
+ Download printable PDF
+ The content of this page is also available as a printable document.
+\r\n"}}" id="text-412440b421" class="cmp-text">
+ The content of this page is also available as a printable document.
+ PDF 69 KB
+ 2024-08-07
+ Tularemia 
+ Symptoms, diagnosis, treatment and prevention of tularemia. 
+ This publication may not be accessible to screen readers. 
+\r\n"}}" id="text-0ef22d15f9" class="cmp-text">
+ This publication may not be accessible to screen readers. 
+ Symptoms
+ Symptoms can appear within one to 14 days and depend on the entry of bacteria into the body – skin, gastrointestinal tract, eyes or lungs. Skin exposures can cause skin ulcers and swollen glands. Gastrointestinal exposures, such as eating an infected animal, may produce a throat infection, abdominal pain, diarrhea and vomiting. Infected eyes can be swollen, red and painful. Breathing in the bacteria may cause fever and pneumonia. Serious complications can develop.&nbsp;
+\r\n"}}" id="text-6fb03b032b" class="cmp-text">
+ Symptoms can appear within one to 14 days and depend on the entry of bacteria into the body – skin, gastrointestinal tract, eyes or lungs. Skin exposures can cause skin ulcers and swollen glands. Gastrointestinal exposures, such as eating an infected animal, may produce a throat infection, abdominal pain, diarrhea and vomiting. Infected eyes can be swollen, red and painful. Breathing in the bacteria may cause fever and pneumonia. Serious complications can develop. 
+ How it spreads
+ People can become infected through direct contact or touching infected animals or animal carcasses (especially rabbits, hares and rodents). Bacteria enter the body through cuts in the skin or the mucous membranes (skin around the eyes, nose and mouth). Infections can occur by eating contaminated meat. Ticks and flies can become infected and the disease spread by tick or fly bites.&nbsp;
+\r\n Less common means of spread include drinking contaminated water or breathing in dust from contaminated soil.&nbsp;
+\r\n"}}" id="text-1fc73415e6" class="cmp-text">
+ People can become infected through direct contact or touching infected animals or animal carcasses (especially rabbits, hares and rodents). Bacteria enter the body through cuts in the skin or the mucous membranes (skin around the eyes, nose and mouth). Infections can occur by eating contaminated meat. Ticks and flies can become infected and the disease spread by tick or fly bites. 
+ Less common means of spread include drinking contaminated water or breathing in dust from contaminated soil. 
+ Risk factors
+ Usually occupational exposures to infected animals result in infections (veterinarians and people handling rabbit, hare and rodent carcasses).
+\r\n"}}" id="text-978dba9f3d" class="cmp-text">
+ Usually occupational exposures to infected animals result in infections (veterinarians and people handling rabbit, hare and rodent carcasses).
+ Treatment 
+ Antibiotics are effective in treating tularemia.
+\r\n Health-care providers and laboratories must report cases of tularemia to Public Health. Public Health staff may interview the health-care provider and patient (or caregivers) to find out how the infection occurred, identify other people at risk of infection, implement control measures and provide other advice.
+\r\n"}}" id="text-c29b1c9260" class="cmp-text">
+ Antibiotics are effective in treating tularemia.
+ Health-care providers and laboratories must report cases of tularemia to Public Health. Public Health staff may interview the health-care provider and patient (or caregivers) to find out how the infection occurred, identify other people at risk of infection, implement control measures and provide other advice.
+ Prevention
+ Practise good personal hygiene . Wash hands thoroughly with soap and water after using the toilet, after handling animals, after handling raw meats and before preparing or eating food.
+\r\n Practise basic food safety precautions . Thoroughly cook all meats (meat, poultry and seafood). Prevent contact of cooked foods with raw meat or poultry.
+\r\n Avoid water that might be contaminated . Do not drink untreated surface water.
+\r\n Follow basic precautions when handling animals . Wear waterproof gloves and thoroughly wash hands after handling animals. Insect repellents and long clothing should be used when walking through areas known to contain infected deer flies and ticks.
+\r\n For additional information, contact your health-care provider, local Public Health office or Tele-Care 811 .
+\r\n"}}" id="text-159b598671" class="cmp-text">
+ Practise good personal hygiene . Wash hands thoroughly with soap and water after using the toilet, after handling animals, after handling raw meats and before preparing or eating food.
+ Practise basic food safety precautions . Thoroughly cook all meats (meat, poultry and seafood). Prevent contact of cooked foods with raw meat or poultry.
+ Avoid water that might be contaminated . Do not drink untreated surface water.
+ Follow basic precautions when handling animals . Wear waterproof gloves and thoroughly wash hands after handling animals. Insect repellents and long clothing should be used when walking through areas known to contain infected deer flies and ticks.
+ For additional information, contact your health-care provider, local Public Health office or Tele-Care 811 .
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+Communicable diseases | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/communicable-diseases.html
+Tularemia | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/communicable-diseases/docs/tularemia.pdf
+Public Health office | https://www.gnb.ca/en/topic/health-wellness/access-health-care/public-health-clinics.html

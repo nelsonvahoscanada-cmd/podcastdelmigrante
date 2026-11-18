@@ -1,0 +1,67 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/communicable-diseases/q-fever.html
+TÍTULO: Q fever - gnb.ca
+MODIFICADA: —
+
+Q fever
+ Symptoms, diagnosis, treatment and prevention of Q fever.
+\r\n"}}" id="text-24a4c4658b" class="cmp-text">
+ Symptoms, diagnosis, treatment and prevention of Q fever.
+ On this page
+ Overview
+ Q fever is a zoonotic disease (diseases spread from animals to people) caused by the bacteria Coxiella burnetii. Q fever occurs worldwide and is usually found in domestic livestock (such as cattle, sheep and goats). Q fever can occur in people exposed to infected animals or unpasteurized milk. Q fever is not common in Canada.
+\r\n Q fever is diagnosed by symptoms, history of exposure and laboratory testing.&nbsp;
+\r\n"}}" id="text-b830d65e0a" class="cmp-text">
+ Q fever is a zoonotic disease (diseases spread from animals to people) caused by the bacteria Coxiella burnetii. Q fever occurs worldwide and is usually found in domestic livestock (such as cattle, sheep and goats). Q fever can occur in people exposed to infected animals or unpasteurized milk. Q fever is not common in Canada.
+ Q fever is diagnosed by symptoms, history of exposure and laboratory testing. 
+ Download printable PDF
+ The content of this page is also available as a printable document.
+\r\n"}}" id="text-3a0385c7ff" class="cmp-text">
+ The content of this page is also available as a printable document.
+ PDF 68 KB
+ 2024-08-07
+ Q fever 
+ Symptoms, diagnosis, treatment and prevention of babesiosis.
+ This publication may not be accessible to screen readers. 
+\r\n"}}" id="text-f4278f33e4" class="cmp-text">
+ This publication may not be accessible to screen readers. 
+ Symptoms
+ Symptoms usually appear within two to three weeks after exposure. Initial symptoms are similar to the flu and include fever, headache, fatigue and muscle pain. Sore throat, nausea, vomiting, diarrhea, abdominal pain and chest pain can also develop. Most people recover.&nbsp;
+\r\n In a few cases, infection persists for more than six months and serious complications can develop.&nbsp;
+\r\n"}}" id="text-e8c9139004" class="cmp-text">
+ Symptoms usually appear within two to three weeks after exposure. Initial symptoms are similar to the flu and include fever, headache, fatigue and muscle pain. Sore throat, nausea, vomiting, diarrhea, abdominal pain and chest pain can also develop. Most people recover. 
+ In a few cases, infection persists for more than six months and serious complications can develop. 
+ How it spreads
+ The bacteria are found in milk, urine and feces from infected animals. During birthing, the bacteria are shed in high numbers within the amniotic or birth fluids and the placenta. The bacteria are resistant to heat and drying, and they survive for long periods in the environment. Infections usually occur by breathing in barnyard dust contaminated with bacteria from dried placental material, birth fluids and feces of infected animals. Other methods of transmission, such as tick bites, are rare.&nbsp;
+\r\n"}}" id="text-f67275f116" class="cmp-text">
+ The bacteria are found in milk, urine and feces from infected animals. During birthing, the bacteria are shed in high numbers within the amniotic or birth fluids and the placenta. The bacteria are resistant to heat and drying, and they survive for long periods in the environment. Infections usually occur by breathing in barnyard dust contaminated with bacteria from dried placental material, birth fluids and feces of infected animals. Other methods of transmission, such as tick bites, are rare. 
+ Risk factors
+ Q fever is usually a result of occupational exposures (veterinarians, meat processing plant workers, farmers and laboratory researchers).&nbsp;
+\r\n"}}" id="text-9e817b293a" class="cmp-text">
+ Q fever is usually a result of occupational exposures (veterinarians, meat processing plant workers, farmers and laboratory researchers). 
+ Treatment 
+ Antibiotics are used to treat Q fever.
+\r\n Health-care providers and laboratories must report cases of Q fever to Public Health. Public Health staff may interview the health-care provider and patient (or caregivers) to find out how the infection occurred, identify other people at risk of infection, implement control measures and provide other advice.
+\r\n"}}" id="text-c439ec52be" class="cmp-text">
+ Antibiotics are used to treat Q fever.
+ Health-care providers and laboratories must report cases of Q fever to Public Health. Public Health staff may interview the health-care provider and patient (or caregivers) to find out how the infection occurred, identify other people at risk of infection, implement control measures and provide other advice.
+ Prevention
+ Practise good personal hygiene . Wash hands thoroughly with soap and water after using the toilet, after handling animals, after handling raw meats and before preparing or eating food.
+\r\n Practise basic food safety precautions . Thoroughly cook all meats (meat, poultry and seafood). Drink and eat only pasteurized dairy products (milk, cheese and yogurt).
+\r\n Avoid water that might be contaminated . Do not drink untreated surface water.
+\r\n Follow basic precautions when handling animals . Wear waterproof gloves and thoroughly wash hands after handling animals. Workers at facilities housing domestic livestock should follow good farming and animal husbandry practices, including appropriate disposal of all birthing tissues.&nbsp;
+\r\n For additional information, contact your health-care provider, local Public Health office or Tele-Care 811 .
+\r\n"}}" id="text-d5bd51fe3f" class="cmp-text">
+ Practise good personal hygiene . Wash hands thoroughly with soap and water after using the toilet, after handling animals, after handling raw meats and before preparing or eating food.
+ Practise basic food safety precautions . Thoroughly cook all meats (meat, poultry and seafood). Drink and eat only pasteurized dairy products (milk, cheese and yogurt).
+ Avoid water that might be contaminated . Do not drink untreated surface water.
+ Follow basic precautions when handling animals . Wear waterproof gloves and thoroughly wash hands after handling animals. Workers at facilities housing domestic livestock should follow good farming and animal husbandry practices, including appropriate disposal of all birthing tissues. 
+ For additional information, contact your health-care provider, local Public Health office or Tele-Care 811 .
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+Communicable diseases | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/communicable-diseases.html
+Q fever | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/communicable-diseases/docs/qfever.pdf
+Public Health office | https://www.gnb.ca/en/topic/health-wellness/access-health-care/public-health-clinics.html

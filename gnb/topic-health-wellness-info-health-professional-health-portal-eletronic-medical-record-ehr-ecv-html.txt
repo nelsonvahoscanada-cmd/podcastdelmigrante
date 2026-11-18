@@ -1,0 +1,25 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record/ehr-ecv.html
+TÍTULO: EHR Clinical Viewer (ECV) integration - gnb.ca
+MODIFICADA: —
+
+EHR Clinical Viewer (ECV) integration
+ The EHR Clinical Viewer (ECV) integration allows authorized users to access the Electronic Health Record (EHR) directly from their EMR and view a patient's provincial electronic health record.&nbsp;
+\n"}}" id="text-5cf7ec1e83" class="cmp-text">
+ The EHR Clinical Viewer (ECV) integration allows authorized users to access the Electronic Health Record (EHR) directly from their EMR and view a patient's provincial electronic health record. 
+ Using ECV to Access a Patient's Information in the EHR
+ Users of Certified EMRs must request access to the EHR before using the ECV integration.
+\n"}}" id="text-4b501191d6" class="cmp-text">
+ Users of Certified EMRs must request access to the EHR before using the ECV integration.
+ When viewing a patient chart in the EMR, users can access the EHR by clicking on the ECV button. This will launch ECV in a new window with the EHR patient record in context.
+\n Note that ECV is only available for patients with a valid NB Medicare number.
+\n"}}" id="text-4a71d91292" class="cmp-text">
+ When viewing a patient chart in the EMR, users can access the EHR by clicking on the ECV button. This will launch ECV in a new window with the EHR patient record in context.
+ Note that ECV is only available for patients with a valid NB Medicare number.
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html
+Provincial Electronic Medical Record (EMR) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/eletronic-medical-record.html

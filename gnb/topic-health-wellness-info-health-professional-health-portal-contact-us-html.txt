@@ -1,0 +1,26 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal/contact-us.html
+TÍTULO: Contact us - gnb.ca
+MODIFICADA: —
+
+Contact us
+ NB Health Portal contact information.
+\r\n"}}" id="text-24dfd86c32" class="cmp-text">
+ NB Health Portal contact information.
+ For inquiries on EHR Access, please contact EHRAccess@gnb.ca .
+\r\n For inquiries on MCE, please contact MCEadmin@gnb.ca .
+\r\n For inquiries on EMR, please contact EMRadmin@gnb.ca .
+\r\n For inquiries on MyHealthNB, please contact MyHealth@gnb.ca .
+\r\n For all other inquiries, please contact opor@gnb.ca .
+\r\n"}}" id="text-ca8b71d823" class="cmp-text">
+ For inquiries on EHR Access, please contact [email protected] .
+ For inquiries on MCE, please contact [email protected] .
+ For inquiries on EMR, please contact [email protected] .
+ For inquiries on MyHealthNB, please contact [email protected] .
+ For all other inquiries, please contact [email protected] .
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Health Portal | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/health-portal.html

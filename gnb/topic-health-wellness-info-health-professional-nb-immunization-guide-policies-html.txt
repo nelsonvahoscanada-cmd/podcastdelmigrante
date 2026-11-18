@@ -1,0 +1,580 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/policies.html
+TÍTULO: Program policies - gnb.ca
+MODIFICADA: —
+
+Program policies
+ Competency requirements and directives, eligibility criteria, managing errors and deviation, vaccine handling, managing and reporting reactions, communication and releasing information.
+\n"}}" id="text-ab6a5f0319" class="cmp-text">
+ Competency requirements and directives, eligibility criteria, managing errors and deviation, vaccine handling, managing and reporting reactions, communication and releasing information.
+ On this page
+ Policy documents
+ Vaccine storage, handling and transportation of vaccines
+ Management of Anaphylaxis and Other Reactions Following Immunization in Non-Hospital Settings (PDF 580 KB)
+ Eligibility Criteria for Publicly Funded Vaccines/Biologics (PDF 386 KB)
+ Immunization competency requirement for all immunization providers
+ Purpose: This policy provides guidelines on the immunization competencies required by immunizers who prepare and/or administer vaccines in New-Brunswick (NB). All immunizers preparing and administering vaccines must have the required education, training, and have the knowledge, skills, and judgment to administer vaccines safely.
+\n In a pandemic, training and education competencies will be set by the province determined by the specific pandemic context and needs.
+\n Preamble: Immunization has become increasingly complex. Continual advancement of vaccine technology along with emerging/ re-emerging diseases, and multiple products available, immunizers require a specialized body of knowledge and technical skills. Healthcare professionals who are knowledgeable about evidence-based immunization strategies and best practices are critical to implementing a successful vaccination program. Competency in immunization administration leads to higher vaccine coverage rates which in turn will provide the highest possible level of community protection against vaccine preventable diseases.
+\n The Public Health Agency of Canada (PHAC) developed a manual called Immunization Competencies for Health Professionals to support the application of the National Guidelines for Immunization Practices, published in the Canadian Immunization Guide. This reference manual is universal to a wide range of health care professionals with an adaptable framework to be used by stakeholders for immunization education programs or competency reviews.
+\n Private Immunization services may be employed to provide immunization support to provincial Public Health Immunization Programs. These agencies will ensure that immunization services provided are in alignment with this policy and policies, standards, and guidelines of the New Brunswick Immunization Program Guide.
+\n Policy: All immunizers administering vaccines in NB will have recognized training in immunization and maintain their competencies in all areas of practice to deliver safe vaccination programs.
+\n Competency in immunization practice is the professional responsibility of both the individual and the employer. It is guided by professional practice standards, employer/organizational policies, and evidence- based research.
+\n For the purposes of this policy, the term “health care professionals” and “immunizer” refers to: 
+\n Those employed by the Regional Health Authorities, by private immunization services or by private employers (e.g., community pharmacies, long term care facilities) who administer vaccines. This includes, but is not limited to:
+\n \n Public Health staff
+\n acute and long-term care staff
+\n extra-mural, nursing home and adult residential facility staff
+\n all health care professionals employed by Regional Health Authorities who administer vaccines as part of their practice (i.e., community health centers, in hospitals)
+\n paramedics and pharmacy technicians
+\n community Health Nurses and those employed by First Nation’s community health programs who administer vaccines under a directive provided by the Regional Medical Officer of Health (RMOH)
+\n all health care professionals employed by private immunization services
+\n all health care professionals who are authorized prescribers administering vaccines but do not require a directive
+\n \n Policy Standards: 
+\n 1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Immunization certification: Employers will require each health care professional who will be immunizing in practice, to complete a knowledge and skills-based learning program prior to administering vaccines in NB. While it is recognized that many health care professionals have administered vaccine without completing formal competency education, ongoing competency must be re-assessed and maintained.
+\n \n The following educational program related to immunization competency is recognized and approved for use by the Department of Health, Public Health New Brunswick: Education Program for Immunization Competencies (EPIC) program.
+\n Immunization learning programs independently developed by the employer/organizations must adhere to policies and standards of the NBIPG and will be based on PHAC’s Immunization Competencies for Health Professionals. These learning programs no longer need to be approved by the Department of Health.
+\n Certain organizations/employers recognize accredited immunization competency skills-based learning programs centered on the work environment and technical requirements (ex: pharmacy technicians).
+\n Authorized prescribers who administer vaccines will complete the accredited immunization competency learning program supported by their regulatory professional college or association.
+\n \n 2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designated person: All employers of immunizers will assign a designated person who demonstrates the technical and behavioral competencies required to oversee and co-ordinate immunization activities, ensuring ongoing competency. The assigned individual will ensure the requirements in Appendix A — Immunization Competency Requirements for all Immunizers Administering Vaccines in New-Brunswick and the standards provided in NBIPG — Directive for the Provision of all Immunization Services (PDF 371 KB) are met.
+\n \n Private immunization providers will assign a designated person who, in addition to the above, provides the contractor with the following information for each health care employee providing immunization services in New-Brunswick: \n Immunizer’s full name.
+\n A current provincial license.
+\n Original licensing province number.
+\n A documented list of all immunizers having signed the directive needed to perform the immunization task.
+\n \n
+\n \n 3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Evaluation framework: All employers of immunizers will have an evaluation framework in place to review and assess staff competencies at regular intervals and refer to the example provided in Appendix B — Immunization Competency Review Template (PDF 147 KB). 
+\n 4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delegated immunization services: Allied Health Care professionals who are delegated to assist in administering vaccines in a pandemic (ex: but not limited to physiotherapists, respiratory therapists) must have completed during their core health education, at minimum, the following two courses: intramuscular injections and anatomy and physiology.
+\n \n Allied Health Care Professionals services may be required during a rapid immunization deployment to increase the capacity to immunize a targeted population.
+\n These health care professionals must be aware of their professional liability and check with their association and employer to ensure that this reassignment of duties is compliant and legal as these falls outside their regular area of practice (i.e., vaccine administration).
+\n \n 5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Immunization errors: All employers of immunizers will have a policy in place to identify and manage vaccine errors and refer to Management of vaccine errors and deviation for all immunizers .
+\n 6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adverse events following immunization (AEFI): When an adverse event occurs following immunization (note: this is not for vaccine errors), all immunizers will complete and submit an AEFI form and refer to Reporting adverse events following immunization .
+\n 7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Anaphylaxis management: All immunizers will be competent in anaphylaxis management and refer to Management of Anaphylaxis and Other Reactions Following Immunizations in Non- Hospital Settings (PDF 580 KB). 
+\n 8 .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vaccine transportation : Both those who administer vaccines and those Health Care Professionals who do not administer vaccines but are asked to transport vaccines ( including non-health care professionals ) must be competent in transportation and handling of vaccines. Refer to Vaccine Storage, Handling and Transportation for Publicly Funded Vaccines in NB located in the NBIPG.
+\n"}}" id="text-53d85bbd9e" class="cmp-text">
+ Purpose: This policy provides guidelines on the immunization competencies required by immunizers who prepare and/or administer vaccines in New-Brunswick (NB). All immunizers preparing and administering vaccines must have the required education, training, and have the knowledge, skills, and judgment to administer vaccines safely.
+ In a pandemic, training and education competencies will be set by the province determined by the specific pandemic context and needs.
+ Preamble: Immunization has become increasingly complex. Continual advancement of vaccine technology along with emerging/ re-emerging diseases, and multiple products available, immunizers require a specialized body of knowledge and technical skills. Healthcare professionals who are knowledgeable about evidence-based immunization strategies and best practices are critical to implementing a successful vaccination program. Competency in immunization administration leads to higher vaccine coverage rates which in turn will provide the highest possible level of community protection against vaccine preventable diseases.
+ The Public Health Agency of Canada (PHAC) developed a manual called Immunization Competencies for Health Professionals to support the application of the National Guidelines for Immunization Practices, published in the Canadian Immunization Guide. This reference manual is universal to a wide range of health care professionals with an adaptable framework to be used by stakeholders for immunization education programs or competency reviews.
+ Private Immunization services may be employed to provide immunization support to provincial Public Health Immunization Programs. These agencies will ensure that immunization services provided are in alignment with this policy and policies, standards, and guidelines of the New Brunswick Immunization Program Guide.
+ Policy: All immunizers administering vaccines in NB will have recognized training in immunization and maintain their competencies in all areas of practice to deliver safe vaccination programs.
+ Competency in immunization practice is the professional responsibility of both the individual and the employer. It is guided by professional practice standards, employer/organizational policies, and evidence- based research.
+ For the purposes of this policy, the term “health care professionals” and “immunizer” refers to: 
+ Those employed by the Regional Health Authorities, by private immunization services or by private employers (e.g., community pharmacies, long term care facilities) who administer vaccines. This includes, but is not limited to:
+ Public Health staff
+ acute and long-term care staff
+ extra-mural, nursing home and adult residential facility staff
+ all health care professionals employed by Regional Health Authorities who administer vaccines as part of their practice (i.e., community health centers, in hospitals)
+ paramedics and pharmacy technicians
+ community Health Nurses and those employed by First Nation’s community health programs who administer vaccines under a directive provided by the Regional Medical Officer of Health (RMOH)
+ all health care professionals employed by private immunization services
+ all health care professionals who are authorized prescribers administering vaccines but do not require a directive
+ Policy Standards: 
+ 1. Immunization certification: Employers will require each health care professional who will be immunizing in practice, to complete a knowledge and skills-based learning program prior to administering vaccines in NB. While it is recognized that many health care professionals have administered vaccine without completing formal competency education, ongoing competency must be re-assessed and maintained.
+ The following educational program related to immunization competency is recognized and approved for use by the Department of Health, Public Health New Brunswick: Education Program for Immunization Competencies (EPIC) program.
+ Immunization learning programs independently developed by the employer/organizations must adhere to policies and standards of the NBIPG and will be based on PHAC’s Immunization Competencies for Health Professionals. These learning programs no longer need to be approved by the Department of Health.
+ Certain organizations/employers recognize accredited immunization competency skills-based learning programs centered on the work environment and technical requirements (ex: pharmacy technicians).
+ Authorized prescribers who administer vaccines will complete the accredited immunization competency learning program supported by their regulatory professional college or association.
+ 2. Designated person: All employers of immunizers will assign a designated person who demonstrates the technical and behavioral competencies required to oversee and co-ordinate immunization activities, ensuring ongoing competency. The assigned individual will ensure the requirements in Appendix A — Immunization Competency Requirements for all Immunizers Administering Vaccines in New-Brunswick and the standards provided in NBIPG — Directive for the Provision of all Immunization Services (PDF 371 KB) are met.
+ Private immunization providers will assign a designated person who, in addition to the above, provides the contractor with the following information for each health care employee providing immunization services in New-Brunswick: Immunizer’s full name.
+ A current provincial license.
+ Original licensing province number.
+ A documented list of all immunizers having signed the directive needed to perform the immunization task.
+ 3. Evaluation framework: All employers of immunizers will have an evaluation framework in place to review and assess staff competencies at regular intervals and refer to the example provided in Appendix B — Immunization Competency Review Template (PDF 147 KB). 
+ 4. Delegated immunization services: Allied Health Care professionals who are delegated to assist in administering vaccines in a pandemic (ex: but not limited to physiotherapists, respiratory therapists) must have completed during their core health education, at minimum, the following two courses: intramuscular injections and anatomy and physiology.
+ Allied Health Care Professionals services may be required during a rapid immunization deployment to increase the capacity to immunize a targeted population.
+ These health care professionals must be aware of their professional liability and check with their association and employer to ensure that this reassignment of duties is compliant and legal as these falls outside their regular area of practice (i.e., vaccine administration).
+ 5. Immunization errors: All employers of immunizers will have a policy in place to identify and manage vaccine errors and refer to Management of vaccine errors and deviation for all immunizers .
+ 6. Adverse events following immunization (AEFI): When an adverse event occurs following immunization (note: this is not for vaccine errors), all immunizers will complete and submit an AEFI form and refer to Reporting adverse events following immunization .
+ 7. Anaphylaxis management: All immunizers will be competent in anaphylaxis management and refer to Management of Anaphylaxis and Other Reactions Following Immunizations in Non- Hospital Settings (PDF 580 KB). 
+ 8 . Vaccine transportation : Both those who administer vaccines and those Health Care Professionals who do not administer vaccines but are asked to transport vaccines ( including non-health care professionals ) must be competent in transportation and handling of vaccines. Refer to Vaccine Storage, Handling and Transportation for Publicly Funded Vaccines in NB located in the NBIPG.
+ Appendix A — Immunization Competency Requirements for all Immunizers Administering Vaccines in New-Brunswick
+ Depending on the area of immunization, the requirements may differ. Immunizers share the responsibility with their employer to ensure they have the knowledge and expertise to administer vaccines safely and competently. 
+\n A.&nbsp; &nbsp;All immunizers are to: 
+\n \n Maintain ongoing education in their practice and stay up to date with current provincial immunization recommendations.
+\n Maintain CPR skills through refresher training and certifications at least every 1-2 years based on employer policies or professional liabilities/obligations.
+\n Maintain current anaphylaxis treatment practices through annual refresher courses. Refer to Management of Anaphylaxis and Other Reactions Following Immunizations in Non-Hospital Settings (PDF 580 KB) .
+\n For those who require signing a directive, give a new signed copy to your employer yearly . Refer to the NBIPG Directive and Provision of all Immunization Services (PDF 371 KB) .
+\n \n B.&nbsp;&nbsp; Depending on your work environment , the designated person assigned will ensure all immunizers delivering vaccines in New-Brunswick, have completed section A and: 
+\n \n Completed all modules of a recognized learning program noted in this Policy ( Immunization Competency Standards for All Immunization Providers ).
+\n Provide a copy of their certification to their employer.
+\n Immunizers who have not previously completed all EPIC modules (or from another recognized training program) will be required at their next competency review, to provide proof of completion of the program (i.e., completed all course modules) to their employer.
+\n New immunizers will acquire initial immunization experience by participating in supervised vaccine clinic until competency is obtained.
+\n Initial competency review will be done at a minimum of 3, 6 and 12 months. It may include additional assessments on an as needed basis (as determined by the designated person) and competency reviews must be completed at least every 2 years thereafter . Refer to Appendix B — Immunization Competency Review Template (PDF 147 KB) 
+\n In some settings, the immunizer may require more frequent competency reviews (example yearly) based on their program responsibilities and/or how often they immunize in their practice. The frequency of reviews will be determined by employer policy/designated person.
+\n \n Note: New Brunswick’s authorized prescribers1 have autonomous immunization practice, however, will have a framework in place to complete regular competency reviews. They follow their respective regulatory college’s/association standards and conditions needed for their immunization practice.
+\n C.&nbsp; &nbsp; For rapid vaccine deployment or casual hires with purpose to increase immunization capacity (ex. pandemic response, communicable disease outbreaks or school clinics) these immunizers will initially be categorized as being either “experienced” or “novice”. 
+\n Experienced Immunizers: 
+\n Have already achieved full immunization competency (i.e., section B). The designated person assigned to review each immunizer’s competency, will ensure that all immunization requirements in their respective practice have been reached prior to deployment.
+\n Novice immunizers: 
+\n Have either never administered a vaccine or more than two years have elapsed since their last competency review/vaccine administration. Prior to deployment or casual hire, the designated person assigned to review each immunizer’s competency, will ensure section A is complete and the following:
+\n \n The person must have completed the following two core courses: Intramuscular Injections and Anatomy and Physiology, during their basic health training. These core courses are essential.
+\n Complete the minimum of 4 essential immunization modules &nbsp;from the EPIC learning program (or from another recognized training program). A copy of the completed essential modules will be provided to the employer.
+\n Has acquired supervised immunization experience by participating in vaccine clinic until competency is obtained. It may include additional assessments on an as needed basis (as determined by the designated person). Refer to Appendix B — Immunization Competency (PDF 147 KB) 
+\n If immunizing only during pandemic responses or to increase immunization capacity (school clinics or outbreaks) and not employed in a regular immunization work setting, immunizer competency reviews must be completed at least every 2 years . If in some circumstances, the immunizer become employed on a continual basis, the designated person assigned will ensure that section B will be completed at the employee’s next competency review.
+\n \n"}}" id="text-1f22c99abf" class="cmp-text">
+ Depending on the area of immunization, the requirements may differ. Immunizers share the responsibility with their employer to ensure they have the knowledge and expertise to administer vaccines safely and competently. 
+ A. All immunizers are to: 
+ Maintain ongoing education in their practice and stay up to date with current provincial immunization recommendations.
+ Maintain CPR skills through refresher training and certifications at least every 1-2 years based on employer policies or professional liabilities/obligations.
+ Maintain current anaphylaxis treatment practices through annual refresher courses. Refer to Management of Anaphylaxis and Other Reactions Following Immunizations in Non-Hospital Settings (PDF 580 KB) .
+ For those who require signing a directive, give a new signed copy to your employer yearly . Refer to the NBIPG Directive and Provision of all Immunization Services (PDF 371 KB) .
+ B. Depending on your work environment , the designated person assigned will ensure all immunizers delivering vaccines in New-Brunswick, have completed section A and: 
+ Completed all modules of a recognized learning program noted in this Policy ( Immunization Competency Standards for All Immunization Providers ).
+ Provide a copy of their certification to their employer.
+ Immunizers who have not previously completed all EPIC modules (or from another recognized training program) will be required at their next competency review, to provide proof of completion of the program (i.e., completed all course modules) to their employer.
+ New immunizers will acquire initial immunization experience by participating in supervised vaccine clinic until competency is obtained.
+ Initial competency review will be done at a minimum of 3, 6 and 12 months. It may include additional assessments on an as needed basis (as determined by the designated person) and competency reviews must be completed at least every 2 years thereafter . Refer to Appendix B — Immunization Competency Review Template (PDF 147 KB) 
+ In some settings, the immunizer may require more frequent competency reviews (example yearly) based on their program responsibilities and/or how often they immunize in their practice. The frequency of reviews will be determined by employer policy/designated person.
+ Note: New Brunswick’s authorized prescribers1 have autonomous immunization practice, however, will have a framework in place to complete regular competency reviews. They follow their respective regulatory college’s/association standards and conditions needed for their immunization practice.
+ C. For rapid vaccine deployment or casual hires with purpose to increase immunization capacity (ex. pandemic response, communicable disease outbreaks or school clinics) these immunizers will initially be categorized as being either “experienced” or “novice”. 
+ Experienced Immunizers: 
+ Have already achieved full immunization competency (i.e., section B). The designated person assigned to review each immunizer’s competency, will ensure that all immunization requirements in their respective practice have been reached prior to deployment.
+ Novice immunizers: 
+ Have either never administered a vaccine or more than two years have elapsed since their last competency review/vaccine administration. Prior to deployment or casual hire, the designated person assigned to review each immunizer’s competency, will ensure section A is complete and the following:
+ The person must have completed the following two core courses: Intramuscular Injections and Anatomy and Physiology, during their basic health training. These core courses are essential.
+ Complete the minimum of 4 essential immunization modules from the EPIC learning program (or from another recognized training program). A copy of the completed essential modules will be provided to the employer.
+ Has acquired supervised immunization experience by participating in vaccine clinic until competency is obtained. It may include additional assessments on an as needed basis (as determined by the designated person). Refer to Appendix B — Immunization Competency (PDF 147 KB) 
+ If immunizing only during pandemic responses or to increase immunization capacity (school clinics or outbreaks) and not employed in a regular immunization work setting, immunizer competency reviews must be completed at least every 2 years . If in some circumstances, the immunizer become employed on a continual basis, the designated person assigned will ensure that section B will be completed at the employee’s next competency review.
+ Directive for the Provision of all Immunization Services 
+ Purpose: To outline standards for immunizers, and their employers (including private&nbsp;immunization clinic services) regarding directives to administer vaccines through the publicly funded New Brunswick immunization program. The policy also establishes which immunizers require a directive.&nbsp;
+\r\n Preamble: A directive is a written order from an authorized prescriber, for a number of clients, when specific conditions are met. The specifics of the directive will depend on the client population and the nature of the order (i.e., vaccines). Authorized prescribers do not require a directive to provide immunizations.&nbsp;
+\r\n Providing immunization is within the scope of practice for many health care professionals in New Brunswick (NB) however, some require a directive to administer vaccines. These directives may originate from the Regional Medical Officer of Health (RMOH) or by an authorized prescriber.&nbsp;
+\r\n Providing safe immunization requires that both the authorized prescribers and the immunizers follow the National Guidelines for Immunization Practice in the&nbsp; Canadian Immunization Guide as well as in the New Brunswick Immunization Program Guide (NBIPG).&nbsp;
+\r\n Policy: The following health care professionals require a signed directive to provide&nbsp;
+\r\nvaccines in NB:&nbsp;
+\r\n \r\n Registered Nurses&nbsp;
+\r\n Licensed Practical Nurses&nbsp;
+\r\n Paramedics 
+\r\n Pharmacy Technicians
+\r\n All health care students authorized to practice medicine&nbsp;
+\r\n Delegated “non-traditional” health care professional during a pandemic&nbsp;
+\r\n \r\n Regional Medical Officers of Health have a mandate to provide the directive for health care professionals within the Regional Health Authority Public Health setting to administer vaccines and biologics including management of immediate events following the administration of those products.&nbsp;
+\r\n Upon request from the administrative authority responsible for the provision of public health immunization programs for community health nurses in First Nations communities , the Regional Medical Officer of Health (RMOH) may provide a directive for the provision of immunization services in that community.&nbsp;
+\r\n For the Extra Mural Program (Adult Residential Facilities and home bound patients) or within nursing home settings, authorized prescribers may provide a&nbsp; directive for the provision of immunization services within those programs.&nbsp;
+\r\n Health care professionals working outside of the Regional Health Authority setting (i.e., extra mural program or in nursing homes), will provide immunization services under the designated authorized prescriber.&nbsp;
+\r\n All health care professionals are guided by professional practice standards and are always accountable for their practice and compliance with relevant standards. 
+\r\n Standards: 
+\r\n \r\n A directive for immunization services will be provided for public health nurses and community health nurses following consultation among the parties involved; namely, the Regional Medical Officer of Health; the administrative authority&nbsp;
+\r\nfor immunization service delivery in each organization; and the nurses affected by the directive. The nurses may be represented by the immunization coordinator or designate. In this document, refer to its Appendix A—Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) &nbsp;including vaccine administration and the management of adverse events following immunization.&nbsp;
+\r\n A directive for immunization services will be provided for extra mural program nurses and nurses working in nursing homes following consultation among the parties involved; by the designated authorized prescriber as the administrative authority for immunization service delivery in each organization; and the nurses affected by the directive. The nurses may be represented by the immunization coordinator or designate. In this document, refer to its Appendix A—Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) &nbsp; including vaccine administration and the management of adverse events following immunization. including vaccine administration and the management of adverse events following immunization.&nbsp;
+\r\n Employers will ensure that all immunizers have met conditions outlined in this directive.&nbsp;
+\r\n The directive will be reviewed by all parties and updated each fiscal year.&nbsp;
+\r\n A copy of the directive will be available to staff in all sites where the directive is applied. In this document, refer to its Appendix A — Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) .
+\r\n The accountability and responsibility to initiate, implement and maintain a directive for client care is shared by the person administering the vaccine, authorized prescribers, and employers.&nbsp;
+\r\n \r\n"}}" id="text-c05ca93e4b" class="cmp-text">
+ Purpose: To outline standards for immunizers, and their employers (including private immunization clinic services) regarding directives to administer vaccines through the publicly funded New Brunswick immunization program. The policy also establishes which immunizers require a directive. 
+ Preamble: A directive is a written order from an authorized prescriber, for a number of clients, when specific conditions are met. The specifics of the directive will depend on the client population and the nature of the order (i.e., vaccines). Authorized prescribers do not require a directive to provide immunizations. 
+ Providing immunization is within the scope of practice for many health care professionals in New Brunswick (NB) however, some require a directive to administer vaccines. These directives may originate from the Regional Medical Officer of Health (RMOH) or by an authorized prescriber. 
+ Providing safe immunization requires that both the authorized prescribers and the immunizers follow the National Guidelines for Immunization Practice in the Canadian Immunization Guide as well as in the New Brunswick Immunization Program Guide (NBIPG). 
+ Policy: The following health care professionals require a signed directive to provide 
+vaccines in NB: 
+ Registered Nurses 
+ Licensed Practical Nurses 
+ Paramedics 
+ Pharmacy Technicians
+ All health care students authorized to practice medicine 
+ Delegated “non-traditional” health care professional during a pandemic 
+ Regional Medical Officers of Health have a mandate to provide the directive for health care professionals within the Regional Health Authority Public Health setting to administer vaccines and biologics including management of immediate events following the administration of those products. 
+ Upon request from the administrative authority responsible for the provision of public health immunization programs for community health nurses in First Nations communities , the Regional Medical Officer of Health (RMOH) may provide a directive for the provision of immunization services in that community. 
+ For the Extra Mural Program (Adult Residential Facilities and home bound patients) or within nursing home settings, authorized prescribers may provide a directive for the provision of immunization services within those programs. 
+ Health care professionals working outside of the Regional Health Authority setting (i.e., extra mural program or in nursing homes), will provide immunization services under the designated authorized prescriber. 
+ All health care professionals are guided by professional practice standards and are always accountable for their practice and compliance with relevant standards. 
+ Standards: 
+ A directive for immunization services will be provided for public health nurses and community health nurses following consultation among the parties involved; namely, the Regional Medical Officer of Health; the administrative authority 
+for immunization service delivery in each organization; and the nurses affected by the directive. The nurses may be represented by the immunization coordinator or designate. In this document, refer to its Appendix A—Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) including vaccine administration and the management of adverse events following immunization. 
+ A directive for immunization services will be provided for extra mural program nurses and nurses working in nursing homes following consultation among the parties involved; by the designated authorized prescriber as the administrative authority for immunization service delivery in each organization; and the nurses affected by the directive. The nurses may be represented by the immunization coordinator or designate. In this document, refer to its Appendix A—Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) including vaccine administration and the management of adverse events following immunization. including vaccine administration and the management of adverse events following immunization. 
+ Employers will ensure that all immunizers have met conditions outlined in this directive. 
+ The directive will be reviewed by all parties and updated each fiscal year. 
+ A copy of the directive will be available to staff in all sites where the directive is applied. In this document, refer to its Appendix A — Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) .
+ The accountability and responsibility to initiate, implement and maintain a directive for client care is shared by the person administering the vaccine, authorized prescribers, and employers. 
+ Medical Directive Required for Tuberculin Skin Testing
+ Purpose: The purpose of this policy is to provide standards to Public Health nurses and their employers concerning the requirements for medical directives to administer Tuberculin Skin Testing (TST) through the provision of communicable disease follow up.
+\r\n Preamble: Providing TST is within the scope of practice for registered nurses in New Brunswick. Nurses are guided by professional practice standards and are at all times accountable for their practice and compliance with relevant standards.
+\r\n Providing safe TST requires that the provider follow practices as detailed in the Canadian Tuberculosis Standards, 8th edition (2022) — Canada.ca for:
+\r\n \r\n Administration
+\r\n Precautions
+\r\n Measuring Induration
+\r\n Interpretation of a Negative TST Result
+\r\n Management of a Positive TST Result
+\r\n Interpretation of a Positive TST
+\r\n Interpretation When Serial (repeated) TST is Performed
+\r\n \r\n Regional Medical Officers of Health have a mandate to provide the medical direction necessary for the administration of vaccine/biologics.
+\r\n Policy: Nurses working in Public Health settings under the regional health authorities will provide TST services under the medical direction of the Regional Medical Officer of Health.
+\r\n Procedures: 
+\r\n \r\n A medical directive for the provision of TST for communicable follow up will be provided for Public Health nurses by the Regional Medical Officer of Health. Refer to this form — Medical Directive for Tuberculin Skin Testing (TST) (PDF 97 KB). 
+\r\n Public Health nurses employed by the regional health authorities will ensure that they have met conditions outlined in the medical directive.
+\r\n For Public Health nurses employed by the regional health authorities, the director of public health programs (or designate) will ensure that all conditions of the medical directive are met.
+\r\n The medical directive will be reviewed by all parties and updated each fiscal year.
+\r\n A copy of the medical directive will be available to staff in all sites where the medical directive is applied. Refer to this form — Medical Directive for Tuberculin Skin Testing (TST) (PDF 97 KB). 
+\r\n \r\n"}}" id="text-090e841499" class="cmp-text">
+ Purpose: The purpose of this policy is to provide standards to Public Health nurses and their employers concerning the requirements for medical directives to administer Tuberculin Skin Testing (TST) through the provision of communicable disease follow up.
+ Preamble: Providing TST is within the scope of practice for registered nurses in New Brunswick. Nurses are guided by professional practice standards and are at all times accountable for their practice and compliance with relevant standards.
+ Providing safe TST requires that the provider follow practices as detailed in the Canadian Tuberculosis Standards, 8th edition (2022) — Canada.ca for:
+ Administration
+ Precautions
+ Measuring Induration
+ Interpretation of a Negative TST Result
+ Management of a Positive TST Result
+ Interpretation of a Positive TST
+ Interpretation When Serial (repeated) TST is Performed
+ Regional Medical Officers of Health have a mandate to provide the medical direction necessary for the administration of vaccine/biologics.
+ Policy: Nurses working in Public Health settings under the regional health authorities will provide TST services under the medical direction of the Regional Medical Officer of Health.
+ Procedures: 
+ A medical directive for the provision of TST for communicable follow up will be provided for Public Health nurses by the Regional Medical Officer of Health. Refer to this form — Medical Directive for Tuberculin Skin Testing (TST) (PDF 97 KB). 
+ Public Health nurses employed by the regional health authorities will ensure that they have met conditions outlined in the medical directive.
+ For Public Health nurses employed by the regional health authorities, the director of public health programs (or designate) will ensure that all conditions of the medical directive are met.
+ The medical directive will be reviewed by all parties and updated each fiscal year.
+ A copy of the medical directive will be available to staff in all sites where the medical directive is applied. Refer to this form — Medical Directive for Tuberculin Skin Testing (TST) (PDF 97 KB). 
+ Management of vaccine errors and deviation for all immunizers
+ Purpose: The purpose of this policy is to provide standards of practice to all immunizers that provide publicly funded vaccines in New-Brunswick (NB) on management of errors or deviation in administration of vaccines. This policy is not for Adverse Events Following Immunizations (AEFI). For reporting AEFI’s, refer to the New Brunswick Immunization Program Guide (NBIPG) document: Reporting of Adverse Events Following immunization.
+\n Preamble: Immunization has become increasingly complex. It is crucial that vaccines are safely and effectively administered to as many eligible recipients as possible. Immunization errors include deviations in recommended vaccine type, reconstitution volume, dose, site, route, person, time or schedule. Immunization related incidents include a range of events, such as a needle injury caused by failed positioning of a child, immunization without consent, or fainting with a fall resulting in injury.
+\n Methods to detect immunization errors or incidents may include vaccine provider self-reporting, direct observation or record audits. Clinical judgment is necessary for making appropriate decisions regarding vaccine administration errors and deviations.
+\n Policy: All employers of immunizers who provide publicly funded vaccine and biologics through the New Brunswick Immunization Program must have an internal process in place on how to manage/ report vaccination administration errors and deviations.
+\n In addition to reporting administration errors and deviations, incidents and near misses are tracked in order to offer support, recognize trends and/or identify professional development/competency shortcomings and implement strategies to prevent it from happening again.&nbsp;
+\n \n All errors, deviations, incident or near miss must be reported immediately by the immunizer to the direct person in charge/supervisor or authorized prescriber in order to assess direct impact to the client. A process will be in place for clients needing immediate intervention measures and determine if further recommendations should be made (i.e., give another dose, re-assess in 24 hours, etc.).
+\n All immunizers who do not have direct access to enter or correct vaccines in the Public Health Information Solution (PHIS) will need to follow the procedures in Appendix A-Standard Operating Procedure for external PHIS users of this policy (depending on their immunizer category) to ensure that any errors or deviations in vaccine administration are captured in the PHIS.
+\n Inform the client, parent or legal guardian of the error/incident as soon as possible after it is identified. The client should be informed of any implications/recommendations for future doses, possibility for local or systemic reaction and impact on the effectiveness of the vaccine (if applicable and as known).
+\n Report all errors, deviations or near miss incidents in accordance with the employers’ policy and/or professional regulatory body’s required quality management system.
+\n Determine how the vaccine administration error, deviation or near miss occurred and implement strategies to prevent it from happening again.
+\n \n Note: Guidance documents exists for managing vaccine administration errors or deviations for certain vaccines programs (i.e., COVID-19 vaccines). All immunizers providing vaccines in these specific programs must be familiar with the resource documents as well as the management of these vaccine administration errors or deviations.&nbsp;
+\n"}}" id="text-9aba36aca3" class="cmp-text">
+ Purpose: The purpose of this policy is to provide standards of practice to all immunizers that provide publicly funded vaccines in New-Brunswick (NB) on management of errors or deviation in administration of vaccines. This policy is not for Adverse Events Following Immunizations (AEFI). For reporting AEFI’s, refer to the New Brunswick Immunization Program Guide (NBIPG) document: Reporting of Adverse Events Following immunization.
+ Preamble: Immunization has become increasingly complex. It is crucial that vaccines are safely and effectively administered to as many eligible recipients as possible. Immunization errors include deviations in recommended vaccine type, reconstitution volume, dose, site, route, person, time or schedule. Immunization related incidents include a range of events, such as a needle injury caused by failed positioning of a child, immunization without consent, or fainting with a fall resulting in injury.
+ Methods to detect immunization errors or incidents may include vaccine provider self-reporting, direct observation or record audits. Clinical judgment is necessary for making appropriate decisions regarding vaccine administration errors and deviations.
+ Policy: All employers of immunizers who provide publicly funded vaccine and biologics through the New Brunswick Immunization Program must have an internal process in place on how to manage/ report vaccination administration errors and deviations.
+ In addition to reporting administration errors and deviations, incidents and near misses are tracked in order to offer support, recognize trends and/or identify professional development/competency shortcomings and implement strategies to prevent it from happening again. 
+ All errors, deviations, incident or near miss must be reported immediately by the immunizer to the direct person in charge/supervisor or authorized prescriber in order to assess direct impact to the client. A process will be in place for clients needing immediate intervention measures and determine if further recommendations should be made (i.e., give another dose, re-assess in 24 hours, etc.).
+ All immunizers who do not have direct access to enter or correct vaccines in the Public Health Information Solution (PHIS) will need to follow the procedures in Appendix A-Standard Operating Procedure for external PHIS users of this policy (depending on their immunizer category) to ensure that any errors or deviations in vaccine administration are captured in the PHIS.
+ Inform the client, parent or legal guardian of the error/incident as soon as possible after it is identified. The client should be informed of any implications/recommendations for future doses, possibility for local or systemic reaction and impact on the effectiveness of the vaccine (if applicable and as known).
+ Report all errors, deviations or near miss incidents in accordance with the employers’ policy and/or professional regulatory body’s required quality management system.
+ Determine how the vaccine administration error, deviation or near miss occurred and implement strategies to prevent it from happening again.
+ Note: Guidance documents exists for managing vaccine administration errors or deviations for certain vaccines programs (i.e., COVID-19 vaccines). All immunizers providing vaccines in these specific programs must be familiar with the resource documents as well as the management of these vaccine administration errors or deviations. 
+ Standard operating procedure for external PHIS users
+ \n Subject: External PHIS Immunizers reporting immunization errors in vaccine documentation and administration or clients’ choices to deviate from New Brunswick immunization recommendations to PHIS support.
+\n
+ Approved by: Shelley Landsburg&nbsp;
+\n
+ Approval Date: February 2023
+\n
+ Applies To: All external immunizers who administer vaccines in which their immunization information is transferred to PHIS through integrations of systems (i.e. physicians/Nurse Practitioners via Medicare; Pharmacists/Pharmacy technicians via Drug Information System). Also, PHIS users with view only access.
+\n
+ \n 
+\nIntroduction 
+\n External PHIS immunizers provide vaccine administration support to the New Brunswick Public Health Immunization Program. All immunizers will provide immunization services in alignment with the legislation, policies, and standards as outlined in the New Brunswick Immunization Program Guide (NBIPG) to ensure the provision of safe, effective, and competent immunization. Public Health Information Solution (PHIS) receives immunization data through multiple means which includes integration with the following systems:
+\n \n The Pharmacy Drug Information System (DIS) for Pharmacists’ and Pharmacy Technicians’ administered vaccines.
+\n Medicare for Physicians’, Nurse Practitioners’ (NPs) and Midwives’ administered vaccines
+\n \n Purpose 
+\n The purpose of this Standard Operating Procedure (SOP) is to outline the key processes required to ensure accurate documentation is contained in PHIS client records pertaining to errors in documentation and administration of vaccines or when a client chooses to deviate from New Brunswick (NB) immunization recommendation that has been entered via other electronic systems. This SOP is to be used in conjunction with the NBIPG.
+\n Responsibilities 
+\n Immunization providers, whose immunization data is integrated into PHIS through other systems, are accountable to ensure accurate information is updated in PHIS such as when an error has occurred, or a client chooses to deviate from NB recommendation. In addition, all those who have been provided PHIS view only access for the purpose of providing immunization services, are responsible to notify PHIS support if an error in documentation is noted on a client’s record.
+\n"}}" id="text-629650236d" class="cmp-text">
+ Subject: External PHIS Immunizers reporting immunization errors in vaccine documentation and administration or clients’ choices to deviate from New Brunswick immunization recommendations to PHIS support.
+ Approved by: Shelley Landsburg 
+ Approval Date: February 2023
+ Applies To: All external immunizers who administer vaccines in which their immunization information is transferred to PHIS through integrations of systems (i.e. physicians/Nurse Practitioners via Medicare; Pharmacists/Pharmacy technicians via Drug Information System). Also, PHIS users with view only access.
+Introduction 
+ External PHIS immunizers provide vaccine administration support to the New Brunswick Public Health Immunization Program. All immunizers will provide immunization services in alignment with the legislation, policies, and standards as outlined in the New Brunswick Immunization Program Guide (NBIPG) to ensure the provision of safe, effective, and competent immunization. Public Health Information Solution (PHIS) receives immunization data through multiple means which includes integration with the following systems:
+ The Pharmacy Drug Information System (DIS) for Pharmacists’ and Pharmacy Technicians’ administered vaccines.
+ Medicare for Physicians’, Nurse Practitioners’ (NPs) and Midwives’ administered vaccines
+ Purpose 
+ The purpose of this Standard Operating Procedure (SOP) is to outline the key processes required to ensure accurate documentation is contained in PHIS client records pertaining to errors in documentation and administration of vaccines or when a client chooses to deviate from New Brunswick (NB) immunization recommendation that has been entered via other electronic systems. This SOP is to be used in conjunction with the NBIPG.
+ Responsibilities 
+ Immunization providers, whose immunization data is integrated into PHIS through other systems, are accountable to ensure accurate information is updated in PHIS such as when an error has occurred, or a client chooses to deviate from NB recommendation. In addition, all those who have been provided PHIS view only access for the purpose of providing immunization services, are responsible to notify PHIS support if an error in documentation is noted on a client’s record.
+ Process for vaccine documentation and administration errors
+ Documentation: 
+\r\n Vaccine documentation error is detected in a community pharmacy:
+\r\n \r\n Immunizer should follow internal and professional processes for reporting and correcting vaccine documentation errors.
+\r\n The error should be corrected in DIS by immunizer which will correct the vaccine documentation in PHIS through integration of systems.
+\r\n If the correction cannot be made in DIS, then the pharmacist or pharmacy technician will contact PHNB via the PHIS support email. PHIS support will notify the PHIS clinical corrections team, and they will contact the pharmacist to obtain the applicable information and make the correction in PHIS.&nbsp;
+\r\n \r\n Vaccine documentation error is detected by a physician/NP or a midwife:
+\r\n \r\n The immunizer should follow internal and professional processes for reporting and correcting vaccine documentation errors.
+\r\n Contact PHNB via the PHIS support email &nbsp;to report error. PHIS support will notify the PHIS clinical corrections team, and they will contact the physician/NP or midwife to obtain the applicable information and make the correction in PHIS.
+\r\n \r\n Vaccine documentation errors detected by PHIS Audits:
+\r\n \r\n The PHIS clinical correction team will contact the applicable immunizer or manual data entry person to investigate and confirm that it is a vaccine documentation error.
+\r\n If the error occurred in a community pharmacy, the error should be corrected in DIS by immunizer which will correct the vaccine documentation in PHIS through integration of systems.
+\r\n If the error occurred by a physician/NP or a midwife, the clinical corrections team will obtain the applicable information and will make the correction in PHIS.
+\r\n If the error was made by manual data entry, the correction should be made by the person who entered the data. If that person is no longer available, the clinical corrections team will require the paper consent/admin form to make the correction in PHIS.
+\r\n The immunizer should follow organization’s internal and professional processes for reporting and correcting vaccine documentation errors.
+\r\n \r\n Administration Error:&nbsp; 
+\r\n Vaccine administration errors detected in a community pharmacy:
+\r\n \r\n The immunizer should follow internal and professional processes for reporting and correcting vaccine administration errors including notifying the client.&nbsp;
+\r\n Consult with Regional Medical Officer of Health if needed. The pharmacist or pharmacy technician will contact PHNB via the PHIS support email. PHIS support will notify the PHIS clinical corrections team, and they will contact the vaccine administer to obtain the applicable information and make the appropriate note in PHIS.
+\r\n \r\n Vaccine administration errors detected by a physician/nurse practitioner or a midwife:
+\r\n \r\n Immunizer should follow internal and professional processes for reporting and correcting vaccine administration errors including notifying the client.&nbsp;
+\r\n Consult with Regional Medical Officer of Health if needed. The physician, NP or midwife will contact PHNB via the PHIS support email . PHIS support will notify the PHIS clinical corrections team, and they will contact the immunizer to obtain the applicable information and make the appropriate note in PHIS.&nbsp;
+\r\n \r\n Vaccine administration errors detected by PHIS Audits:
+\r\n \r\n The PHIS clinical correction team will contact the applicable immunizer or manual data entry person to investigate and confirm that it is a vaccine administration error.
+\r\n The PHIS clinical correction team will obtain the applicable information and make the appropriate note in PHIS.
+\r\n If not already completed, immunizer should follow internal process for vaccine administration errors.
+\r\n Refer to the appropriate NB Immunization documents relating to required follow-up for this type of vaccine administration error. Consult with Regional Medical Officer of Health if needed.
+\r\n \r\n"}}" id="text-f99d8c2ab9" class="cmp-text">
+ Documentation: 
+ Vaccine documentation error is detected in a community pharmacy:
+ Immunizer should follow internal and professional processes for reporting and correcting vaccine documentation errors.
+ The error should be corrected in DIS by immunizer which will correct the vaccine documentation in PHIS through integration of systems.
+ If the correction cannot be made in DIS, then the pharmacist or pharmacy technician will contact PHNB via the PHIS support email. PHIS support will notify the PHIS clinical corrections team, and they will contact the pharmacist to obtain the applicable information and make the correction in PHIS. 
+ Vaccine documentation error is detected by a physician/NP or a midwife:
+ The immunizer should follow internal and professional processes for reporting and correcting vaccine documentation errors.
+ Contact PHNB via the PHIS support email to report error. PHIS support will notify the PHIS clinical corrections team, and they will contact the physician/NP or midwife to obtain the applicable information and make the correction in PHIS.
+ Vaccine documentation errors detected by PHIS Audits:
+ The PHIS clinical correction team will contact the applicable immunizer or manual data entry person to investigate and confirm that it is a vaccine documentation error.
+ If the error occurred in a community pharmacy, the error should be corrected in DIS by immunizer which will correct the vaccine documentation in PHIS through integration of systems.
+ If the error occurred by a physician/NP or a midwife, the clinical corrections team will obtain the applicable information and will make the correction in PHIS.
+ If the error was made by manual data entry, the correction should be made by the person who entered the data. If that person is no longer available, the clinical corrections team will require the paper consent/admin form to make the correction in PHIS.
+ The immunizer should follow organization’s internal and professional processes for reporting and correcting vaccine documentation errors.
+ Administration Error: 
+ Vaccine administration errors detected in a community pharmacy:
+ The immunizer should follow internal and professional processes for reporting and correcting vaccine administration errors including notifying the client. 
+ Consult with Regional Medical Officer of Health if needed. The pharmacist or pharmacy technician will contact PHNB via the PHIS support email. PHIS support will notify the PHIS clinical corrections team, and they will contact the vaccine administer to obtain the applicable information and make the appropriate note in PHIS.
+ Vaccine administration errors detected by a physician/nurse practitioner or a midwife:
+ Immunizer should follow internal and professional processes for reporting and correcting vaccine administration errors including notifying the client. 
+ Consult with Regional Medical Officer of Health if needed. The physician, NP or midwife will contact PHNB via the PHIS support email . PHIS support will notify the PHIS clinical corrections team, and they will contact the immunizer to obtain the applicable information and make the appropriate note in PHIS. 
+ Vaccine administration errors detected by PHIS Audits:
+ The PHIS clinical correction team will contact the applicable immunizer or manual data entry person to investigate and confirm that it is a vaccine administration error.
+ The PHIS clinical correction team will obtain the applicable information and make the appropriate note in PHIS.
+ If not already completed, immunizer should follow internal process for vaccine administration errors.
+ Refer to the appropriate NB Immunization documents relating to required follow-up for this type of vaccine administration error. Consult with Regional Medical Officer of Health if needed.
+ History
+ \r\n Date 
+\r\n Version 
+\r\n Revised by 
+\r\n Approved by 
+\r\n Revision 
+\r\n
+ 15-02-2023
+\r\n V 1.0
+\r\n Suzann Feggos
+\r\n Shelley Landsburg
+\r\n Initial Version
+\r\n
+ 12-12-2024
+\r\n V 1.1
+\r\n Pam Thompson Bourque
+\r\n Pam Thompson Bourque
+\r\n \r\n Removed statements that refer to manual entry.&nbsp;
+\r\n Removed referral to appropriate immunization documents.&nbsp;
+\r\n Removed process when a client chooses to deviate from NB recommendations.
+\r\n \r\n
+\r\n
+ \r\n"}}" id="text-130754b142" class="cmp-text">
+ Date 
+ Version 
+ Revised by 
+ Approved by 
+ Revision 
+ 15-02-2023
+ V 1.0
+ Suzann Feggos
+ Shelley Landsburg
+ Initial Version
+ 12-12-2024
+ V 1.1
+ Pam Thompson Bourque
+ Pam Thompson Bourque
+ Removed statements that refer to manual entry. 
+ Removed referral to appropriate immunization documents. 
+ Removed process when a client chooses to deviate from NB recommendations.
+ Communicating effectively about immunization: A guideline for immunization providers
+ Preamble: Health-care providers play an important role in the success of the New Brunswick Immunization Program. Not only do they need the skills and knowledge related to vaccines and immunization, but they require an expertise in communicating information about immunization — the “how to” is just as important as the information itself. Effective communication is necessary for the informed decision-making partnership that is required as part of the informed consent process. Refer to the NBIPG document — Standards for Consent for Immunization. 
+\r\n Strategies for successful communication: 
+\r\n Successful communication involves a conversation between the care provider and the client/patient. It is imperative that health-care providers provide accurate information. Consider the following in your parent and client/patient encounters:
+\r\n \r\n Take the time to listen. Parents and clients/patients may have many questions. Make sure you hear and understand whatthey are asking; acknowledge their concerns and respond with current and correct information. If you do not know, say you will find out and get back to them. It is not possible for everyone to know all the answers.
+\r\n Ask questions. Be sure that parents and clients/patients understand your response by asking questions. Ifthey do not ask questions, encourage discussion by asking open-ended questions.
+\r\n Provide information. As an immunization provider, you first need to be informed; make sure you have the most current information. When providing information to the individual, take into account what he or she knows and what level of detail he or she needs. Have ready reliable and appropriate resources for parents and clients/patients.
+\r\n Respect differences of opinions. Determine the strength of these opinions and the underlying reasons forthem. Ifthey are founded in myths or misinformation, provide clarity and evidence based information.
+\r\n Convey the risks and benefits of the vaccine openly and fairly.&nbsp; 
+\r\n \r\n References: 
+\r\n \r\n Canadian Immunization Guide , 2007, Part I — Communicating Effectively about Immunization. 
+\r\n Centers for Disease Control and Prevention — Provider Resources for Vaccine Conversations with Parents. 
+\r\n Ekos Research/Public Health Agency of Canada — Survey of Parents on the Key Issues Related to Immuization. 
+\r\n \r\n"}}" id="text-804929ffd3" class="cmp-text">
+ Preamble: Health-care providers play an important role in the success of the New Brunswick Immunization Program. Not only do they need the skills and knowledge related to vaccines and immunization, but they require an expertise in communicating information about immunization — the “how to” is just as important as the information itself. Effective communication is necessary for the informed decision-making partnership that is required as part of the informed consent process. Refer to the NBIPG document — Standards for Consent for Immunization. 
+ Strategies for successful communication: 
+ Successful communication involves a conversation between the care provider and the client/patient. It is imperative that health-care providers provide accurate information. Consider the following in your parent and client/patient encounters:
+ Take the time to listen. Parents and clients/patients may have many questions. Make sure you hear and understand whatthey are asking; acknowledge their concerns and respond with current and correct information. If you do not know, say you will find out and get back to them. It is not possible for everyone to know all the answers.
+ Ask questions. Be sure that parents and clients/patients understand your response by asking questions. Ifthey do not ask questions, encourage discussion by asking open-ended questions.
+ Provide information. As an immunization provider, you first need to be informed; make sure you have the most current information. When providing information to the individual, take into account what he or she knows and what level of detail he or she needs. Have ready reliable and appropriate resources for parents and clients/patients.
+ Respect differences of opinions. Determine the strength of these opinions and the underlying reasons forthem. Ifthey are founded in myths or misinformation, provide clarity and evidence based information.
+ Convey the risks and benefits of the vaccine openly and fairly. 
+ References: 
+ Canadian Immunization Guide , 2007, Part I — Communicating Effectively about Immunization. 
+ Centers for Disease Control and Prevention — Provider Resources for Vaccine Conversations with Parents. 
+ Ekos Research/Public Health Agency of Canada — Survey of Parents on the Key Issues Related to Immuization. 
+ Recording, reporting and releasing immunization information
+ Recording Immunization 
+\r\n Immunization is an increasingly complex process. Not only are there multiple vaccines used to prevent the same disease, but immunization schedules can vary from one jurisdiction to another and even from one person to another. Practitioners maintain immunization records for a number of reasons:
+\r\n \r\n they provide important information about the care (vaccines) the patient has received, and as such provides a degree of information about the client’s/patient’s immunity against disease
+\r\n they help inform future immunization decisions
+\r\n it may be specifically required by legislation
+\r\n it is a professional requirement and maybe described in professional practice standards
+\r\n it may be required by organization policy
+\r\n \r\n In addition to vaccine administration information, any information about serological test results, adverse events following immunization or information related to contraindications or deferrals of future doses of vaccines should be recorded. Refer to the NBIPG Standards for consent for Immunization for more detailed information about the documentation required as a part of the consent process.
+\r\n Reporting Immunization 
+\r\n Regulation 2009-136 under the Public Health Act requires that those who administer a publicly funded vaccine report information to the Minister within one week of administration of the vaccine.&nbsp;
+\r\n There are three systems in place to report individual level information directly to the Minister:
+\r\n \r\n The Public Health Information Solution (PHIS) is a web-based Communicable Disease Surveillance and Management system which includes an Immunization Management component. This component helps in planning, delivering, and tracking of immunizations. The system also monitors adverse reactions, precautions, contraindications, and exemptions.
+\r\n New Brunswick Medicare Program — through unique service codes, data is captured on immunization provided by physicians. This information is entered into PHIS through integration with the two systems.
+\r\n New Brunswick Prescription Drug Program, Plan I — captures data of pharmacists for the administration of seasonal influenza vaccine given to specific eligible groups at the request of the Office of the Chief Medical Officer of Health.
+\r\n \r\n Immunization providers must maintain client records that include (at a minimum) the information required by the regulations:
+\r\n \r\n the name and address of the person to whom the vaccine or biological preparation was administered
+\r\n the Medicare number of the person
+\r\n the date of birth and the gender of the person
+\r\n the date on which the vaccine or biological preparation was administered
+\r\n the name and lot number of the vaccine or biological preparation
+\r\n the name of the person who administered the vaccine or biological preparation.
+\r\n \r\n 3.5.2 - Release of Immunization Records (to individuals and to health-care providers)&nbsp; 
+\r\n In addition to requiring that practice records be maintained, Regulation 2009-136 under the Public Health Act requires that those who administer a vaccine to a person give that person a record of the immunization. Personal immunization records are available from local Public Health offices. Refer to the NBIPG documents — Immunization Record (infants and children)&nbsp;(PDF 736 KB) and Immunization Record (adults)&nbsp;(PDF 161 KB) .
+\r\n"}}" id="text-d3c3bf751a" class="cmp-text">
+ Recording Immunization 
+ Immunization is an increasingly complex process. Not only are there multiple vaccines used to prevent the same disease, but immunization schedules can vary from one jurisdiction to another and even from one person to another. Practitioners maintain immunization records for a number of reasons:
+ they provide important information about the care (vaccines) the patient has received, and as such provides a degree of information about the client’s/patient’s immunity against disease
+ they help inform future immunization decisions
+ it may be specifically required by legislation
+ it is a professional requirement and maybe described in professional practice standards
+ it may be required by organization policy
+ In addition to vaccine administration information, any information about serological test results, adverse events following immunization or information related to contraindications or deferrals of future doses of vaccines should be recorded. Refer to the NBIPG Standards for consent for Immunization for more detailed information about the documentation required as a part of the consent process.
+ Reporting Immunization 
+ Regulation 2009-136 under the Public Health Act requires that those who administer a publicly funded vaccine report information to the Minister within one week of administration of the vaccine. 
+ There are three systems in place to report individual level information directly to the Minister:
+ The Public Health Information Solution (PHIS) is a web-based Communicable Disease Surveillance and Management system which includes an Immunization Management component. This component helps in planning, delivering, and tracking of immunizations. The system also monitors adverse reactions, precautions, contraindications, and exemptions.
+ New Brunswick Medicare Program — through unique service codes, data is captured on immunization provided by physicians. This information is entered into PHIS through integration with the two systems.
+ New Brunswick Prescription Drug Program, Plan I — captures data of pharmacists for the administration of seasonal influenza vaccine given to specific eligible groups at the request of the Office of the Chief Medical Officer of Health.
+ Immunization providers must maintain client records that include (at a minimum) the information required by the regulations:
+ the name and address of the person to whom the vaccine or biological preparation was administered
+ the Medicare number of the person
+ the date of birth and the gender of the person
+ the date on which the vaccine or biological preparation was administered
+ the name and lot number of the vaccine or biological preparation
+ the name of the person who administered the vaccine or biological preparation.
+ 3.5.2 - Release of Immunization Records (to individuals and to health-care providers) 
+ In addition to requiring that practice records be maintained, Regulation 2009-136 under the Public Health Act requires that those who administer a vaccine to a person give that person a record of the immunization. Personal immunization records are available from local Public Health offices. Refer to the NBIPG documents — Immunization Record (infants and children) (PDF 736 KB) and Immunization Record (adults) (PDF 161 KB) .
+ Reporting adverse events following immunization
+ Preamble: The information herein is intended for use by all those who administer vaccine (publicly funded or non- publicly funded) and/or who care for clients who may have experienced an adverse event following immunization (AEFI). Outlined below are reporting requirements necessary in completing a report of an AEFI for submission to Regional Public Health, on behalf of the Regional Medical Officer of Health (RMOH). AEFI report forms received at Regional Public Health are recorded in the Public Health Information Solution (PHIS) database and are then reviewed by RMOHs and Senior Program Advisor from the Public Health Branch of the Department of Health. After review, AEFI reports are subsequently forwarded to Public Health Agency of Canada (PHAC). At the Regional, Provincial and National levels, AEFI reports are monitored with special attention to serious, unusual events or clusters that could signal a concern regarding vaccine safety. At the PHAC, the submitted AEFI reports are entered into the Canadian Adverse Event Following Immunization Surveillance System (CAEFISS) database and coded using standard international coding systems. Canadian data are periodically forwarded on to the World Health Organization (WHO) International Drug Monitoring Program in Uppsala, Sweden, where global data are analyzed for any evidence of safety concerns.
+\r\n Triggers for reporting 
+\r\n AEFI should be reported when the event:
+\r\n \r\n has a temporal association with a vaccine.
+\r\n has no other cause at the time of reporting. A causal relationship between immunization and the event that follows does not need to be proven, and submitting a report does not imply or establish causality.
+\r\n is serious, urgent or unusual.
+\r\n \r\n Of particular importance are those AEFIs which:
+\r\n \r\n are life threatening; result in death or significant disability/ incapacity; require in patient hospitalization or prolongation of an existing hospitalization; or cause congenital anomaly/birth defect (any medical event that requires intervention to prevent one of the outcomes above may also be considered as serious).
+\r\n are unexpected regardless of seriousness (i.e. an event that has either not been identified previously or one that has been identified previously, but reporting frequency seems to have increased).
+\r\n \r\n If there is any doubt as to whether or not an event should be reported, a conservative approach should be taken, and the event should be reported.&nbsp;
+\r\n Note:&nbsp; When an adverse event follows the administration of a product that is not a vaccine (e.g., monoclonal antibodies, Botox, immunoglobulins, or diagnostic tests such as tuberculin skin test) an AEFI form should not be completed. Instead, the information regarding the adverse event should be sent to Health Canada by submitting a Side Effect Reporting Form&nbsp;(PDF 588 KB) . For additional information please refer to Canada Vigilance Program .
+\r\n If the AEFI report is for a vaccine distributed through Health Canada's Special Access Program (SAP), the information regarding the adverse event should be sent to SAP by submitting a Special Access Program Form C&nbsp;(PDF 310 KB) . For additional information please refer to Special Access Program .
+\r\n If a vaccine was co-administered with another health product, the report should be submitted to both NB Regional Public Health and Health Canada. (Please note that PHAC does not forward reports to Health Canada)
+\r\n"}}" id="text-ffe176ce5f" class="cmp-text">
+ Preamble: The information herein is intended for use by all those who administer vaccine (publicly funded or non- publicly funded) and/or who care for clients who may have experienced an adverse event following immunization (AEFI). Outlined below are reporting requirements necessary in completing a report of an AEFI for submission to Regional Public Health, on behalf of the Regional Medical Officer of Health (RMOH). AEFI report forms received at Regional Public Health are recorded in the Public Health Information Solution (PHIS) database and are then reviewed by RMOHs and Senior Program Advisor from the Public Health Branch of the Department of Health. After review, AEFI reports are subsequently forwarded to Public Health Agency of Canada (PHAC). At the Regional, Provincial and National levels, AEFI reports are monitored with special attention to serious, unusual events or clusters that could signal a concern regarding vaccine safety. At the PHAC, the submitted AEFI reports are entered into the Canadian Adverse Event Following Immunization Surveillance System (CAEFISS) database and coded using standard international coding systems. Canadian data are periodically forwarded on to the World Health Organization (WHO) International Drug Monitoring Program in Uppsala, Sweden, where global data are analyzed for any evidence of safety concerns.
+ Triggers for reporting 
+ AEFI should be reported when the event:
+ has a temporal association with a vaccine.
+ has no other cause at the time of reporting. A causal relationship between immunization and the event that follows does not need to be proven, and submitting a report does not imply or establish causality.
+ is serious, urgent or unusual.
+ Of particular importance are those AEFIs which:
+ are life threatening; result in death or significant disability/ incapacity; require in patient hospitalization or prolongation of an existing hospitalization; or cause congenital anomaly/birth defect (any medical event that requires intervention to prevent one of the outcomes above may also be considered as serious).
+ are unexpected regardless of seriousness (i.e. an event that has either not been identified previously or one that has been identified previously, but reporting frequency seems to have increased).
+ If there is any doubt as to whether or not an event should be reported, a conservative approach should be taken, and the event should be reported. 
+ Note: When an adverse event follows the administration of a product that is not a vaccine (e.g., monoclonal antibodies, Botox, immunoglobulins, or diagnostic tests such as tuberculin skin test) an AEFI form should not be completed. Instead, the information regarding the adverse event should be sent to Health Canada by submitting a Side Effect Reporting Form (PDF 588 KB) . For additional information please refer to Canada Vigilance Program .
+ If the AEFI report is for a vaccine distributed through Health Canada's Special Access Program (SAP), the information regarding the adverse event should be sent to SAP by submitting a Special Access Program Form C (PDF 310 KB) . For additional information please refer to Special Access Program .
+ If a vaccine was co-administered with another health product, the report should be submitted to both NB Regional Public Health and Health Canada. (Please note that PHAC does not forward reports to Health Canada)
+ Reporting requirements
+ 1. Report Criteria 
+\r\n AEFI report should contain: 
+\r\n \r\n Client — unique identifier, date of birth and gender
+\r\n Immunization event(s) — province where given, date, all vaccines given including name, manufacturer, lot number, administration site and route, as well as the number in series of vaccine doses if relevant
+\r\n Adverse event(s) — description, including time of first onset following immunization, duration, health care utilization, treatment and outcome
+\r\n Relevant medical and treatment history — underlying disease, known allergies, prior AEFI, concomitant medication
+\r\n Associated event(s) — acute illness, injury, exposure to environmental toxins
+\r\n Reporter details.
+\r\n \r\n In the event that the above information is unavailable at the time of the initial report minimal criteria for AEFI reporting to Regional PH should contain: 
+\r\n \r\n Client identification (ID) (name, date of birth and gender)
+\r\n Vaccine(s) received (name, date of administration, route, dose)
+\r\n Event description (onset, duration, symptoms, highest level of care)
+\r\n Reporter ID (name, contact information).
+\r\n \r\n Lack of any of these four elements means that the report is incomplete. 
+\r\n \r\n If the client has had more than one AEFI following the vaccination(s) administered at the same time, then all AEFI details should be reported on the same form.
+\r\n \r\n More than one form can be completed for the same client under these circumstances: 
+\r\n \r\n If the client has had more than one AEFI following vaccination(s) administered at different&nbsp;dates, then the separate AEFI details should be completed on separate forms.
+\r\n \r\n 2. Timing of reporting 
+\r\n All AEFIs should be reported as close to the event as possible. When providing immunization services, remind the individual or parent to contact you as soon as possible if a serious reaction occurs, rather than waiting until the next visit.
+\r\n \r\n HCPs should notify their regional PH office (RPHO) in writing within one week of AEFI identification/ notification.
+\r\n Any AEFI that is life threatening or caused death should be verbally reported within one day to PH, followed by written notification within one week.
+\r\n \r\n 3. How to report: 
+\r\n For Public health Nurses: 
+\r\n \r\n Enter AEFI report in the Public Health Information Solution (PHIS) within one week of receiving report for non-serious AEFIs and as soon as possible for serious AEFIs.
+\r\n \r\n For other healthcare providers: 
+\r\n \r\n Fill in the NB AEFI Report Form&nbsp;(PDF 368 KB) .
+\r\n Both the form and user guide are available on the Government of New Brunswick (GNB) website, or it can be obtained from your local PHO.
+\r\n FAX or mail the form to your local PHO.
+\r\n See appendix document — User Guide: Report of Adverse Event Following Immunization (AEFI)&nbsp;(PDF 531 KB) .
+\r\n \r\n"}}" id="text-4bff27ceee" class="cmp-text">
+ 1. Report Criteria 
+ AEFI report should contain: 
+ Client — unique identifier, date of birth and gender
+ Immunization event(s) — province where given, date, all vaccines given including name, manufacturer, lot number, administration site and route, as well as the number in series of vaccine doses if relevant
+ Adverse event(s) — description, including time of first onset following immunization, duration, health care utilization, treatment and outcome
+ Relevant medical and treatment history — underlying disease, known allergies, prior AEFI, concomitant medication
+ Associated event(s) — acute illness, injury, exposure to environmental toxins
+ Reporter details.
+ In the event that the above information is unavailable at the time of the initial report minimal criteria for AEFI reporting to Regional PH should contain: 
+ Client identification (ID) (name, date of birth and gender)
+ Vaccine(s) received (name, date of administration, route, dose)
+ Event description (onset, duration, symptoms, highest level of care)
+ Reporter ID (name, contact information).
+ Lack of any of these four elements means that the report is incomplete. 
+ If the client has had more than one AEFI following the vaccination(s) administered at the same time, then all AEFI details should be reported on the same form.
+ More than one form can be completed for the same client under these circumstances: 
+ If the client has had more than one AEFI following vaccination(s) administered at different dates, then the separate AEFI details should be completed on separate forms.
+ 2. Timing of reporting 
+ All AEFIs should be reported as close to the event as possible. When providing immunization services, remind the individual or parent to contact you as soon as possible if a serious reaction occurs, rather than waiting until the next visit.
+ HCPs should notify their regional PH office (RPHO) in writing within one week of AEFI identification/ notification.
+ Any AEFI that is life threatening or caused death should be verbally reported within one day to PH, followed by written notification within one week.
+ 3. How to report: 
+ For Public health Nurses: 
+ Enter AEFI report in the Public Health Information Solution (PHIS) within one week of receiving report for non-serious AEFIs and as soon as possible for serious AEFIs.
+ For other healthcare providers: 
+ Fill in the NB AEFI Report Form (PDF 368 KB) .
+ Both the form and user guide are available on the Government of New Brunswick (GNB) website, or it can be obtained from your local PHO.
+ FAX or mail the form to your local PHO.
+ See appendix document — User Guide: Report of Adverse Event Following Immunization (AEFI) (PDF 531 KB) .
+ Back to top
+
+--- ENLACES ---
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Information for health professionals | https://www.gnb.ca/en/topic/health-wellness/info-health-professional.html
+New Brunswick Immunization Program Guide (NBIPG) | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide.html
+Vaccine storage, handling and transportation of vaccines | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/policies/vaccine-storage.html
+Management of Anaphylaxis and Other Reactions Following Immunization in Non-Hospital Settings (PDF 580 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/policy-anaphylaxis.pdf
+Eligibility Criteria for Publicly Funded Vaccines/Biologics (PDF 386 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/policy-eligibility.pdf
+Immunization Competencies for Health Professionals | https://www.canada.ca/en/public-health/services/publications/healthy-living/immunization-competencies-health-professionals.html
+Canadian Immunization Guide. | https://www.canada.ca/en/public-health/services/canadian-immunization-guide.html
+Education Program for Immunization Competencies | https://www.cps.ca/en/epic-pfci
+NBIPG | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide.html
+Immunization Competencies for Health Professionals. | https://www.canada.ca/en/public-health/services/publications/healthy-living/immunization-competencies-health-professionals.html
+NBIPG — Directive for the Provision of all Immunization Services (PDF 371 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/policy-provision.pdf
+Appendix B — Immunization Competency Review Template (PDF 147 KB). | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/immunization-competency-review-template.pdf
+Management of Anaphylaxis and Other Reactions Following Immunizations in Non- Hospital Settings (PDF 580 KB). | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/policy-anaphylaxis.pdf
+Vaccine Storage, Handling and Transportation for Publicly Funded Vaccines in NB | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/policies/vaccine-storage.html
+Management of Anaphylaxis and Other Reactions Following Immunizations in Non-Hospital Settings (PDF 580 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/policy-anaphylaxis.pdf
+NBIPG | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide.html
+Directive and Provision of all Immunization Services (PDF 371 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/policy-provision.pdf
+Appendix B — Immunization Competency Review Template (PDF 147 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/immunization-competency-review-template.pdf
+Appendix B — Immunization Competency (PDF 147 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/immunization-competency-review-template.pdf
+Canadian Immunization Guide | https://www.canada.ca/en/public-health/services/canadian-immunization-guide.html
+New Brunswick Immunization Program Guide | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide.html
+Appendix A—Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/form-provision-immunization.pdf
+Appendix A—Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/form-provision-immunization.pdf
+Appendix A — Directive for the Administration and Provision of all Immunization Services (PDF 158 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/form-provision-immunization.pdf
+Canadian Tuberculosis Standards, 8th edition (2022) — Canada.ca | https://www.canada.ca/en/public-health/services/diseases/tuberculosis/health-professionals/canadian-tuberculosis-standards.html
+Medical Directive for Tuberculin Skin Testing (TST) (PDF 97 KB). | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/medical-directive-tuberculin-skin-testing-form.pdf
+Medical Directive for Tuberculin Skin Testing (TST) (PDF 97 KB). | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/medical-directive-tuberculin-skin-testing-form.pdf
+PHIS support email | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/Phisisp@gnb.ca
+Standards for Consent for Immunization. | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/standards.html
+Standards for consent for Immunization | https://www.gnb.ca/en/topic/health-wellness/info-health-professional/nb-immunization-guide/standards.html
+Immunization Record (infants and children) (PDF 736 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/resources-routine-card.pdf
+Immunization Record (adults) (PDF 161 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/resources-adult-record.pdf
+Side Effect Reporting Form (PDF 588 KB) | https://www.canada.ca/content/dam/hc-sc/migration/hc-sc/dhp-mps/alt_formats/pdf/medeff/report-declaration/ser-des_form-eng.pdf
+Canada Vigilance Program | https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/canada-vigilance-program.html
+Special Access Program Form C (PDF 310 KB) | https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/special-access/drugs/special-access-program-form-c-follow-up-information-further-c08-010-1bi-en.pdf
+Special Access Program | https://www.canada.ca/en/health-canada/services/drugs-health-products/special-access/drugs.html
+NB AEFI Report Form (PDF 368 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/form-adverse.pdf
+User Guide: Report of Adverse Event Following Immunization (AEFI) (PDF 531 KB) | https://www.gnb.ca/content/dam/GNB3/t/hw-sme/ihp-ips/immunization-guide/docs/intro-adverse.pdf
