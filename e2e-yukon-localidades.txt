@@ -1,0 +1,14 @@
++ actual - expected
+
++ [
++   'Failed to load resource: net::ERR_FAILED'
++ ]
+- []
+
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

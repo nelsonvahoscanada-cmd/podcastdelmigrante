@@ -1,0 +1,14 @@
+ERR TimeoutError | https://www.canada.ca/en/employment-social-development/services/sin/temporary-residents.html
+ERR TimeoutError | https://www.canada.ca/en/financial-consumer-agency/services/banking/opening-bank-account.html
+ERR TimeoutError | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/atlantic-immigration.html
+ERR TimeoutError | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html
+ERR TimeoutError | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative.html
+ERR TimeoutError | https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html
+ERR TimeoutError | https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html
+ERR TimeoutError | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html
+ERR TimeoutError | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-new-brunswick.html
+ERR TimeoutError | https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html
+ERR TimeoutError | https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html
+ERR 403 | https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21
+NAV 403 | https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21 | https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21 | Just a moment...
+ARCHIVO 20261105045305 | https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21

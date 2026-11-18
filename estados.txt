@@ -1,0 +1,44 @@
+--- Nuevo Brunswick
+/canada-en-datos/new-brunswick                               200
+/canada-en-datos/new-brunswick/moncton                       200
+/canada-en-datos/new-brunswick/saint-john                    200
+/canada-en-datos/new-brunswick/fredericton                   200
+/canada-en-datos/new-brunswick/dieppe                        200
+/canada-en-datos/new-brunswick/riverview                     200
+/canada-en-datos/new-brunswick/miramichi                     200
+/canada-en-datos/new-brunswick/edmundston                    200
+/canada-en-datos/new-brunswick/bathurst                      200
+/canada-en-datos/new-brunswick/campbellton                   200
+/canada-en-datos/new-brunswick/moncton-parish                200
+/canada-en-datos/new-brunswick/shediac                       200
+/assets/canada-en-datos/social-new-brunswick.jpg             200
+/assets/canada-en-datos/new-brunswick/moncton.jpg            200
+/js/new-brunswick-localidades.js                             200
+/assets/canada-en-datos/new-brunswick-regiones.svg           200
+--- Demás provincias y territorios (guía y una localidad)
+/canada-en-datos/                                            200
+/canada-en-datos/alberta                                     200
+/canada-en-datos/alberta/brooks                              200
+/canada-en-datos/british-columbia                            200
+/canada-en-datos/british-columbia/vancouver                  200
+/canada-en-datos/saskatchewan                                200
+/canada-en-datos/manitoba                                    200
+/canada-en-datos/ontario                                     200
+/canada-en-datos/ontario/toronto                             200
+/canada-en-datos/quebec                                      200
+/canada-en-datos/prince-edward-island                        200
+/canada-en-datos/prince-edward-island/charlottetown          200
+/canada-en-datos/yukon                                       200
+/canada-en-datos/northwest-territories                       200
+/canada-en-datos/nunavut                                     200
+--- Mapa: Nuevo Brunswick como ficha disponible
+class="cd-region cd-region--ficha" data-code="NB" d="M861 687.3l-1.7 4.5 -2.4 2.1 -3.2 -1.7 1.7 2.3 -1 4.4 -11.3 14.5 -3.8 -0.5 0.3 -2.4 -1.4 2.5 1.4 1.8 -2.9 4.2 -1.4 -0.5 -4.3 3.5 -2.1 -1.1 -4.1 0.7 -0.5 1.3 -3.1 -1.5 -2 -6.6 -6 -0.4 -10.4 -26.1 -7.6 -2.9 -6.7 5.8 -3.7 -0.7 6.5 -7.6 -2.3 -8 3.4 -1.3 -0.6 -1.3 6.5 -2.6 4.3 1.5 4.9 -3 0.6 -2.5 5.7 -3.8 7.6 0.1 5.1 3.2 6.2 -6.7 -0.1 1.2 4.9 -0.6 0.4 7.9 -3 7.4 2.1 0.2 4.6 -2.3 0.5 3.7 2.7 3.1 1.4 -0.1 3.8 5.5 2.4 1.6 9.5 -2.3 0.9 0.5z" role="button" tabindex="-1" aria-pressed="false" aria-label="Nuevo Brunswick (ficha disponible)"
+Nuevo Brunswick (ficha disponible)
+--- Archivos servidos = repositorio
+js/new-brunswick-localidades.js: idéntico
+js/canada-datos.js: idéntico
+js/canada-datos-disponibles.js: idéntico
+assets/canada-en-datos/social-new-brunswick.jpg: idéntico
+assets/canada-en-datos/descubre-mapa.svg: idéntico
+--- Sitemap
+10
