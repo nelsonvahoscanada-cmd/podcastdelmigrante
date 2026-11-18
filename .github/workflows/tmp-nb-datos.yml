@@ -21,15 +21,15 @@ jobs:
       - name: StatCan
         continue-on-error: true
         run: python scripts/canada-en-datos/obtener-nb-ficha.py statcan 2>&1 | tee /tmp/out/statcan.log
+      - name: API WDS
+        continue-on-error: true
+        run: python scripts/canada-en-datos/obtener-nb-ficha.py wds 2>&1 | tee /tmp/out/wds.log
       - name: Perfil del Censo
         continue-on-error: true
         run: python scripts/canada-en-datos/obtener-nb-ficha.py perfil 2>&1 | tee /tmp/out/perfil.log
-      - name: Sitemaps
+      - name: Gobierno de Nuevo Brunswick
         continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-nb-ficha.py mapa 2>&1 | tee /tmp/out/mapa.log
-      - name: Páginas
-        continue-on-error: true
-        run: python scripts/canada-en-datos/obtener-nb-ficha.py paginas 2>&1 | tee /tmp/out/paginas.log
+        run: python scripts/canada-en-datos/obtener-nb-ficha.py gnb 2>&1 | tee /tmp/out/gnb.log
       - name: Publicar
         if: always()
         run: |
