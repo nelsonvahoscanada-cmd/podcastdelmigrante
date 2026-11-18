@@ -41,9 +41,10 @@ import Quebec from "./canada-en-datos/provincias/quebec.mjs";
 import Nunavut from "./canada-en-datos/provincias/nunavut.mjs";
 import NorthwestTerritories from "./canada-en-datos/provincias/northwest-territories.mjs";
 import Yukon from "./canada-en-datos/provincias/yukon.mjs";
+import NewBrunswick from "./canada-en-datos/provincias/new-brunswick.mjs";
 
 /* Provincias y territorios con directorio de localidades (ver docs del estándar en el repositorio interno) */
-export const PROVINCIAS = { alberta: Alberta, ontario: Ontario, "british-columbia": BritishColumbia, "prince-edward-island": PrinceEdwardIsland, saskatchewan: Saskatchewan, manitoba: Manitoba, quebec: Quebec, nunavut: Nunavut, "northwest-territories": NorthwestTerritories, yukon: Yukon };
+export const PROVINCIAS = { alberta: Alberta, ontario: Ontario, "british-columbia": BritishColumbia, "prince-edward-island": PrinceEdwardIsland, saskatchewan: Saskatchewan, manitoba: Manitoba, quebec: Quebec, nunavut: Nunavut, "northwest-territories": NorthwestTerritories, yukon: Yukon, "new-brunswick": NewBrunswick };
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
