@@ -433,3 +433,46 @@ if "ronda3" in PARTES:
                 print(nombre, "bytes:", len(b), "zip válido:", b[:2] == b"PK", "fecha de la copia:", s["timestamp"])
         except Exception as e:
             print("ERROR", nombre, type(e).__name__, str(e)[:150])
+
+
+# ------------------------------------------------------------ 8. Cuarta ronda: capas oficiales de GeoNB y regiones económicas
+GEONB = "https://geonb.snb.ca/arcgis/rest/services/"
+SERVICIOS = ["GeoNB_ELG_Local_Governance", "GeoNB_EECD_PublicSchools", "GeoNB_Health_Facilities", "GeoNB_ENB_RegionalHealthAuthorities"]
+if "geonb" in PARTES:
+    import os
+    os.makedirs("/tmp/out/geonb", exist_ok=True)
+    for s in SERVICIOS:
+        paso(f"GeoNB: {s}")
+        try:
+            m = json.loads(get(f"{GEONB}{s}/MapServer?f=json", 60)[0])
+            print("descripción:", (m.get("serviceDescription") or m.get("description") or "")[:600])
+            print("capas:", [(l["id"], l["name"]) for l in m.get("layers", [])])
+            for l in m.get("layers", []):
+                if l.get("subLayerIds"):
+                    continue
+                info = json.loads(get(f"{GEONB}{s}/MapServer/{l['id']}?f=json", 60)[0])
+                print(f"  capa {l['id']} {l['name']} | tipo {info.get('geometryType')} | campos:", [f["name"] for f in info.get("fields", [])][:30], "| edición:", (info.get("editingInfo") or {}).get("lastEditDate"))
+                feats, desde = [], 0
+                while True:
+                    q = {"where": "1=1", "outFields": "*", "returnGeometry": "true", "outSR": "4326", "f": "geojson", "resultOffset": desde, "resultRecordCount": 1000}
+                    if info.get("geometryType") == "esriGeometryPolygon":
+                        q["maxAllowableOffset"] = "0.0005"
+                    d = json.loads(get(f"{GEONB}{s}/MapServer/{l['id']}/query?" + urllib.parse.urlencode(q), 300)[0])
+                    lote = d.get("features", [])
+                    feats += lote
+                    if len(lote) < 1000 or not d.get("exceededTransferLimit", len(lote) == 1000):
+                        break
+                    desde += 1000
+                json.dump({"type": "FeatureCollection", "servicio": s, "capa": l["name"], "features": feats}, open(f"/tmp/out/geonb/{s}-{l['id']}.geojson", "w"))
+                print(f"  → {len(feats)} elementos; ejemplo:", (feats[0]["properties"] if feats else "-"))
+        except Exception as e:
+            print("ERROR", s, type(e).__name__, str(e)[:200])
+
+    paso("Statistics Canada (límites 2021): regiones económicas de Nuevo Brunswick")
+    try:
+        q = {"where": "PRUID='13'", "outFields": "ERUID,ERNAME", "returnGeometry": "true", "outSR": "4326", "f": "geojson", "maxAllowableOffset": "0.005"}
+        d = get("https://geo.statcan.gc.ca/geo_wa/rest/services/2021/Cartographic_boundary_files/MapServer/2/query?" + urllib.parse.urlencode(q), 300)[0]
+        open("/tmp/out/geonb/statcan-er-2021.geojson", "wb").write(d)
+        print("regiones:", [f["properties"] for f in json.loads(d)["features"]])
+    except Exception as e:
+        print("ERROR ER", type(e).__name__, str(e)[:200])
