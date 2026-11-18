@@ -1,0 +1,11 @@
+/canada-en-datos/                                            200
+/canada-en-datos/new-brunswick                               200
+/canada-en-datos/new-brunswick/moncton                       200
+/canada-en-datos/new-brunswick/campbellton                   200
+/canada-en-datos/new-brunswick/moncton-parish                200
+/assets/canada-en-datos/social-new-brunswick.jpg             200
+/js/new-brunswick-localidades.js                             200
+/canada-en-datos/prince-edward-island                        200
+/canada-en-datos/yukon                                       200
+/canada-en-datos/alberta                                     200
+/canada-en-datos/quebec                                      200
