@@ -1,0 +1,13 @@
+ok computador
+ok tableta
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'' !== '#salud'
+
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '',
+  expected: '#salud',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
