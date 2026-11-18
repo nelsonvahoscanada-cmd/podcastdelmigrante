@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      P: https://claude-canada-datos-new-brun.podcastdelmigrante.pages.dev
+      P: https://podcastdelmigrante.com
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -18,7 +18,7 @@ jobs:
       - name: Esperar la vista previa (máx. 20 min)
         run: |
           for i in $(seq 120); do
-            curl -fsS "$P/canada-en-datos/new-brunswick?nc=$i$RANDOM" | grep -q 'Explora las ciudades y pueblos de Nuevo Brunswick' && { echo "lista (intento $i)"; exit 0; }
+            curl -fsS "$P/canada-en-datos/?nc=$i$RANDOM" | grep -q "Canadá en Datos" && { echo "lista (intento $i)"; exit 0; }
             sleep 10
           done; exit 1
       - name: Estados HTTP
