@@ -1,0 +1,48 @@
+
+=== Provincia (contorno del mapa) ===
+polígonos: 1 propiedades: {'OBJECTID': 4, 'PRUID': '13', 'DGUID': '2021A000213', 'PRNAME': 'New Brunswick / Nouveau-Brunswick', 'PRENAME': 'New Brunswick', 'PRFNAME': 'Nouveau-Brunswick', 'PREABBR': 'N.B.', 'PRFABBR': 'N.-B.', 'LANDAREA': 71248.4981, 'SHAPE_Length': 6441658.612351713, 'SHAPE_Area': 74193416176.8369}
+
+=== Divisiones censales (condados) ===
+CD: [('1301', 'Saint John', 'CT'), ('1302', 'Charlotte', 'CT'), ('1303', 'Sunbury', 'CT'), ('1304', 'Queens', 'CT'), ('1305', 'Kings', 'CT'), ('1306', 'Albert', 'CT'), ('1307', 'Westmorland', 'CT'), ('1308', 'Kent', 'CT'), ('1309', 'Northumberland', 'CT'), ('1310', 'York', 'CT'), ('1311', 'Carleton', 'CT'), ('1312', 'Victoria', 'CT'), ('1313', 'Madawaska', 'CT'), ('1314', 'Restigouche', 'CT'), ('1315', 'Gloucester', 'CT')] bytes: 260952
+
+=== Regiones económicas ===
+ER: {'1310': 'Campbellton--Miramichi', '1320': 'Moncton--Richibucto', '1330': 'Saint John--St. Stephen', '1340': 'Fredericton--Oromocto', '1350': 'Edmundston--Woodstock'}
+
+=== Subdivisiones censales (CSD) ===
+CSD: 266 tipos: {'P': 142, 'VL': 61, 'C': 8, 'RCR': 8, 'TV': 26, 'IRI': 20, 'MRM': 1} campos: ['OBJECTID', 'CSDUID', 'DGUID', 'CSDNAME', 'CSDTYPE', 'LANDAREA', 'PRUID', 'SHAPE_Length', 'SHAPE_Area']
+
+=== Aglomeraciones censales (CA) ===
+CMA/CA: [('305', 'Moncton', 'B', 15), ('310', 'Saint John', 'B', 18), ('320', 'Fredericton', 'B', 18), ('328', 'Bathurst', 'D', 8), ('329', 'Miramichi', 'D', 12), ('330', 'Campbellton (New Brunswick part / partie du Nouveau-Brunswick)', 'D', 4), ('335', 'Edmundston', 'D', 7)]
+
+=== Lugares designados (DPL) ===
+DPL: 161 tipos: ['FLG', 'LSD']
+
+=== Censo 2021 (98-10-0002-01): provincia, CD y CSD de Nuevo Brunswick ===
+Traceback (most recent call last):
+  File "/home/runner/work/podcastdelmigrante/podcastdelmigrante/scripts/canada-en-datos/obtener-nb-localidades.py", line 158, in <module>
+    with tabla_statcan("98100002") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/podcastdelmigrante/podcastdelmigrante/scripts/canada-en-datos/obtener-nb-localidades.py", line 151, in tabla_statcan
+    zf = zipfile.ZipFile(io.BytesIO(get(f"https://www150.statcan.gc.ca/n1/tbl/csv/{pid}-eng.zip", 900)))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/podcastdelmigrante/podcastdelmigrante/scripts/canada-en-datos/obtener-nb-localidades.py", line 48, in get
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=t) as r:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
