@@ -1,0 +1,105 @@
+URL: https://www.gnb.ca/en/topic/health-wellness/access-health-care.html
+TÍTULO: Health system and services - gnb.ca
+ESTADO: 200 | FINAL: https://www.gnb.ca/en/topic/health-wellness/access-health-care.html
+
+Health system and services
+ Primary health care, 811, regional health authorities, NB Health Link , clinics, sexual health, pharmacies and more. 
+ On this page
+ Emergency and crisis care
+ 911
+ 911 is the emergency telephone number to call if there is a threat to health, safety or property.
+ Ambulance services
+ Information about ambulances and related fees.
+ Emergency departments - Horizon hospitals
+ Emergency department locations, hours of operation and triage information for hospitals in the Horizon Health Network.
+ Emergency departments - Vitalité hospitals
+ Emergency department locations, hours of operation and triage information for hospitals in the Vitalité Health Network.
+ Non-urgent health care
+ Primary care providers
+ If you already have a family doctor or nurse practitioner, contact them for non-urgent health care.
+ Collaborative team-based primary health care
+ Team-based primary health care connects patients who don't already have a primary health-care provider with a group of providers who share responsibility for meeting their ongoing health needs.
+ NB Health Link
+ NB Health Link is a program for New Brunswickers without access to a primary health-care provider.
+ Get information 24 hours a day
+ 211 New Brunswick
+ Find community, government and social services.
+ Check your symptoms
+ Use this symptom checker to learn how serious your symptoms are, if a health care visit is needed and what steps you can take to relieve your symptoms at home.
+ Digital Health Strategy
+ A vision for a modern, connected healthcare system with digital solutions that puts people at the center of care.
+ Patient safety surveillance
+ A strong health system learns from patient safety problems, including mistakes and near misses, to improve care and prevent future issues.
+ Tele-Care 811
+ Get 24-hour support from a nurse, determine if you need to seek care or get referred for an appointment. 
+ Your rights as a patient
+ Information for patients and families about health care rights, responsibilities of care, and how to give feedback.
+ Health care options
+ Addictions and substance use
+ Find services to help if you are struggling with a substance (i.e. alcohol and/or drugs) or have a gambling issue.
+ Extra-Mural Program
+ Home and community-based health care for people of all ages across New Brunswick.
+ Pharmacy services
+ Health-care services offered by New Brunswick pharmacists and funded by the Department of Health.
+ Medical (walk-in) clinics
+ In-person health-care consultations for a common illness, injury, infection or general health concerns. 
+ Mental health
+ Find mental health support for vulnerable communities, whatever your stage of life.
+ Public health clinics
+ Find public health clinics across the province.
+ Regional Health Authorities
+ Vitalité and Horizon Network are the two authorities responsible for managing and delivering health services in the province.
+ Sexual health
+ Find sexual and reproductive health care in New Brunswick.
+ Virtual Care NB
+ Virtual Care NB can provide virtual consultations for common illnesses, injuries, infections or general health concerns. 
+ Back to top
+
+--- ENLACES (toda la página) ---
+ | https://www.gnb.ca/en.html
+Français | https://www.gnb.ca/fr/sujet/sante-mieux-etre/acces-soins-sante.html
+Business and economy | https://www.gnb.ca/en/topic/business-economy.html
+Culture and heritage | https://www.gnb.ca/en/topic/culture-heritage.html
+Driving and transportation | https://www.gnb.ca/en/topic/driving-transportation.html
+Education and training | https://www.gnb.ca/en/topic/education-training.html
+Environment and natural resources | https://www.gnb.ca/en/topic/environment-resources.html
+Family, home and community | https://www.gnb.ca/en/topic/family-home-community.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Jobs and workplaces | https://www.gnb.ca/en/topic/jobs-workplaces.html
+Laws and safety | https://www.gnb.ca/en/topic/laws-safety.html
+Tourism, recreation and outdoors | https://www.gnb.ca/en/topic/tourism-recreation.html
+Your government | https://www.gnb.ca/en/topic/your-gov.html
+News | https://www.gnb.ca/en/news.html
+Contacts | https://www.gnb.ca/en/gov/contacts.html
+Departments and organizations | https://www.gnb.ca/en/org.html
+Your Government | https://www.gnb.ca/en/topic/your-gov.html
+Service New Brunswick | https://www2.snb.ca/content/snb/en.html
+About New Brunswick | https://www.gnb.ca/en/admin/about-nb.html
+GNB.ca | https://www.gnb.ca/en.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+911 | https://www.gnb.ca/en/topic/laws-safety/community-safety/911.html
+Ambulance services | https://www.gnb.ca/en/topic/health-wellness/access-health-care/ambulance-services.html
+Emergency departments - Horizon hospitals | https://horizonnb.ca/services/emergency-department/
+Emergency departments - Vitalité hospitals | https://vitalitenb.ca/en/services-and-locations/service-directory/emergency
+Collaborative team-based primary health care | https://www.gnb.ca/en/topic/health-wellness/access-health-care/collaborative-care.html
+NB Health Link | https://nbhealthlink.ca/
+211 New Brunswick | https://nb.211.ca/
+Check your symptoms | https://www.gnb.ca/en/topic/health-wellness/access-health-care/symptom-checker.html
+Digital Health Strategy | https://www.gnb.ca/en/topic/health-wellness/access-health-care/digital-health-strategy.html
+Patient safety surveillance | https://www.gnb.ca/en/topic/health-wellness/patient-engagement-privacy/patient-safety-surveillance.html
+Tele-Care 811 | https://www.gnb.ca/en/topic/health-wellness/access-health-care/tele-care-811.html
+Your rights as a patient | https://www.gnb.ca/en/topic/health-wellness/access-health-care/rights-patient.html
+Addictions and substance use | https://www.gnb.ca/en/topic/health-wellness/addictions-substance-abuse.html
+Extra-Mural Program | https://www.gnb.ca/en/topic/health-wellness/medicare-plans-programs/extra-mural.html
+Pharmacy services | https://www.gnb.ca/en/topic/health-wellness/access-health-care/pharmacy-services.html
+Medical (walk-in) clinics | https://www.gnb.ca/en/topic/health-wellness/access-health-care/medical-clinics.html
+Mental health | https://www.gnb.ca/en/topic/health-wellness/mental-health.html
+Public health clinics | https://www.gnb.ca/en/topic/health-wellness/access-health-care/public-health-clinics.html
+Regional Health Authorities | https://www.gnb.ca/en/topic/health-wellness/access-health-care/regional-health-authorities.html
+Sexual health | https://www.gnb.ca/en/topic/health-wellness/sexual-health.html
+Virtual Care NB | https://www.gnb.ca/en/topic/health-wellness/access-health-care/virtual-care.html
+Disclaimer | https://www.gnb.ca/en/admin/disclaimer.html
+Feedback | https://www.gnb.ca/en/admin/site-feedback.html
+News and alerts | https://www.gnb.ca/en/news/newswire.html
+Privacy | https://www.gnb.ca/en/admin/privacy.html
+Social media | https://www.gnb.ca/en/admin/social-media.html

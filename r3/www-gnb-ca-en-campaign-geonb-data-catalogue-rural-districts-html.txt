@@ -1,0 +1,47 @@
+URL: https://www.gnb.ca/en/campaign/geonb/data-catalogue/rural-districts.html
+TÍTULO: Rural districts - gnb.ca
+ESTADO: 200 | FINAL: https://www.gnb.ca/en/campaign/geonb/data-catalogue/rural-districts.html
+
+Rural districts
+ GeoNB
+ Overview
+ Data purpose: To show the limits of the rural districts which cover areas outside incorporated local governments for the provision of services such as fire protection, streetlights and garbage disposal.
+ Data description: Rural district (RD) polygons are a graphical representation of the rural district boundaries as defined in regulation 2022-45 under the Local Governance Act with an associated RD name attribute. Effective date is January 1, 2023.
+ Update requirements: On an ad hoc basis as boundaries change.
+ Restriction on use: Unrestricted
+ License: Open Government Licence 
+ Georeferencing: datum - NAD83(CSRS), map projection - NB Stereographic Double, (EPSG 2953)
+ Data formats: ESRI file geodatabase, ESRI shape file, KML
+ Data coverage and size: Provincial coverage
+ Responsible Agency: Department of Environment & Local Government
+ Back to top
+
+--- ENLACES (toda la página) ---
+ | https://www.gnb.ca/en.html
+Français | https://www.gnb.ca/fr/campagne/geonb/catalogue-donnees/districts-ruraux.html
+Business and economy | https://www.gnb.ca/en/topic/business-economy.html
+Culture and heritage | https://www.gnb.ca/en/topic/culture-heritage.html
+Driving and transportation | https://www.gnb.ca/en/topic/driving-transportation.html
+Education and training | https://www.gnb.ca/en/topic/education-training.html
+Environment and natural resources | https://www.gnb.ca/en/topic/environment-resources.html
+Family, home and community | https://www.gnb.ca/en/topic/family-home-community.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Jobs and workplaces | https://www.gnb.ca/en/topic/jobs-workplaces.html
+Laws and safety | https://www.gnb.ca/en/topic/laws-safety.html
+Tourism, recreation and outdoors | https://www.gnb.ca/en/topic/tourism-recreation.html
+Your government | https://www.gnb.ca/en/topic/your-gov.html
+News | https://www.gnb.ca/en/news.html
+Contacts | https://www.gnb.ca/en/gov/contacts.html
+Departments and organizations | https://www.gnb.ca/en/org.html
+Your Government | https://www.gnb.ca/en/topic/your-gov.html
+Service New Brunswick | https://www2.snb.ca/content/snb/en.html
+About New Brunswick | https://www.gnb.ca/en/admin/about-nb.html
+GNB.ca | https://www.gnb.ca/en.html
+GeoNB | https://www.gnb.ca/en/campaign/geonb.html
+Data catalogue | https://www.gnb.ca/en/campaign/geonb/data-catalogue.html
+Open Government Licence | https://www.gnb.ca/en/campaign/geonb/open-government-license.html
+Disclaimer | https://www.gnb.ca/en/admin/disclaimer.html
+Feedback | https://www.gnb.ca/en/admin/site-feedback.html
+News and alerts | https://www.gnb.ca/en/news/newswire.html
+Privacy | https://www.gnb.ca/en/admin/privacy.html
+Social media | https://www.gnb.ca/en/admin/social-media.html

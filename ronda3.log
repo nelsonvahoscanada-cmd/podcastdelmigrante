@@ -1,0 +1,40 @@
+ok https://www.gnb.ca/en/topic/health-wellness/medicare-plans-programs.html | Medicare, drug plans and programs - gnb.ca
+ok https://www.gnb.ca/en/topic/health-wellness/access-health-care.html | Health system and services - gnb.ca
+ok https://www.gnb.ca/en/topic/health-wellness/access-health-care/tele-care-811.html | Tele-Care 811 - gnb.ca
+ok https://www.gnb.ca/en/topic/health-wellness/access-health-care/virtual-care.html | Virtual care - gnb.ca
+ok https://www.gnb.ca/en/topic/health-wellness/access-health-care/medical-clinics.html | Medical (walk-in) clinics - gnb.ca
+ok https://www.gnb.ca/en/topic/health-wellness/access-health-care/ambulance-services.html | Ambulance services - gnb.ca
+ok https://www.gnb.ca/en/topic/health-wellness/access-health-care/regional-health-authorities.html | Regional Health Authorities - gnb.ca
+ok https://www.gnb.ca/en/campaign/accessing-health-care-nb.html | Accessing health care in New Brunswick - gnb.ca
+ok https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards.html | Employment standards - gnb.ca
+ok https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/wage-pay.html | Minimum wage, overtime and minimum pay for reporting for work - gnb.ca
+ok https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/foreign-workers.html | Registry of employers of foreign workers - gnb.ca
+ok https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/rights-terminated.html | Employee rights including if terminated, laid off, or dismissed and unfair employment acti
+ERROR https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/employment-standards-complaint.html TimeoutError Page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-stand
+ok https://www.gnb.ca/en/topic/jobs-workplaces/find-a-job.html | Find a job in New Brunswick - gnb.ca
+ok https://www.gnb.ca/en/topic/laws-safety/emergency-preparedness-alerts.html | Emergency preparedness - gnb.ca
+ok https://www.gnb.ca/en/topic/business-economy/economic-information.html | Economic information - gnb.ca
+ok https://www.gnb.ca/content/gnb/en/corporate/promo/immigration/immigrating-to-nb/nb-immigration-program-streams/nb-critical-workers-pilot.html | NB Critical Workers Pilot
+ok https://www.gnb.ca/en/campaign/geonb/data-catalogue/local-governments.html | Local governments - gnb.ca
+ok https://www.gnb.ca/en/campaign/geonb/data-catalogue/rural-districts.html | Rural districts - gnb.ca
+ok https://www.gnb.ca/en/topic/family-home-community/communty-local-gov/local-resource-manual/local-government-organization.html | The local government organization - gnb.ca
+ok https://www.gnb.ca/en/topic/family-home-community/immigration/newcomers.html | Newcomers to New Brunswick - gnb.ca
+ok https://www.gnb.ca/en/topic/family-home-community/immigration/atlantic-immigration-program.html | Atlantic Immigration Program - gnb.ca
+
+=== Salario mínimo (tabla del Gobierno de Canadá, con navegador) ===
+ERROR salario TimeoutError Page.wait_for_selector: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("table tbody tr") to be visible
+
+
+=== GeoNB: servicios de mapas (límites de gobiernos locales y distritos rurales) ===
+https://geonb.snb.ca/arcgis/rest/services?f=json 200 {"currentVersion":10.91,"folders":["Geocoding","GeoNB_Imagery_NBSD","geoprocessing","GRP","RIPT","test","Utilities"],"services":[{"name":"GeoNB_Basemap_Grey","type":"MapServer"},{"name":"GeoNB_Basemap_Imagery","type":"MapServer"},{"name":"GeoNB_Basemap_NBRN","type":"MapServer"},{"name":"GeoNB_Basemap_Provinces_bare","type":"MapServer"},{"name":"GeoNB_Basemap_Topo","type":"MapServer"},{"name":"GeoNB_DEM_Coastal_Erosion","type":"MapServer"},{"name":"GeoNB_DNR_Crown_Land","type":"MapServer"},{"name":"GeoNB_DNR_Forest","type":"MapServer"},{"name":"GeoNB_DNR_ForestSoils","type":"MapServer"},{"name":"GeoNB_DNR_MineralOccurrences","type":"MapServer"},{"name":"GeoNB_DNR_NBHN","type":"MapServer"},{"name":"GeoNB_DNR_NonForest","type":"MapServer"},{"name":"GeoNB_DNR_ProvincialParks","type":"MapServer"},{"name":"GeoNB_DNR_WildlifeRefuges","type":"MapServer"},{"name":"GeoNB_DPS_Civic_Address","type":"MapServer"},{"name":"GeoNB_DPS_NB911_Communities","type":"MapServer"},{"name":"GeoNB_EECD_PublicSchools","type":"MapServer"},{"name":"GeoNB_ELG_Climate_Change_Adaptation_Plans","type":"MapServer"},{"name":"GeoNB_ELG_CoastalZones","type":"MapServer"},{"name":"GeoNB_ELG_Contaminated_Sites","type":"MapServer"},{"name":"GeoNB_ELG_Local_Governance","type":"MapServer"},{"name":"GeoNB_ELG_LocalServiceDistricts","type":"MapServer"},{"name":"GeoNB_ELG_WaterQuality_Lakes_Rivers","type":"MapServer"},{"name":"GeoNB_ELG_WAWA","type":"MapServer"},{"name":"GeoNB_ENB_Local_Government_Elections","type":"MapServer"},{"name":"GeoNB_ENB_Provincial_Elections","type":"MapServer"},{"name":"GeoNB_ENB_RegionalHealthAuthorities","type":"MapServer"},{"name":"GeoNB_ENB_SchoolDistricts","type":"MapServer"},{"name":"GeoNB_ENV_Flood_Link","type":"MapServer"},{"name":"GeoNB_ENV_FloodHazardIndex","type":"MapServer"},{"name":"GeoNB_ENV_Flood","type":"MapServer"},{"name":"GeoNB_ENV_Historical_Floods","type":"MapServer"},{"name":"GeoNB_ENV_ProtectedWatersheds","type":"MapServer"},{"name":"GeoNB_ENV_ProtectedWellfields","type":"MapServer"},{"name":"GeoNB_ENV_Wetlands","type":"MapServer"},{"name":"GeoNB_Health_Boundaries","type":"MapServer"},{"name":"GeoNB_Health_Facilities","type":"MapServer"},{"name":"GeoNB_NRCan_FirstNations","type":"MapServer"},{"name":"GeoNB_NRCan_PlaceNames","type":"MapServer"},{"name":"GeoNB_PETL_WorkingNB_Boundaries","type":"MapServer"},{"name":"GeoNB_ScriptedUpdateTrackingData","type":"MapServer"},{"name":"GeoNB_SNB_atlas_index","type":"MapServer"},{"name":"GeoNB_SNB_Atlas","type":"MapServer"},{"name":"GeoNB_SNB_Buildings","type":"MapServer"},{"name":"GeoNB_SNB_Contours","type":"MapServer"},{"name":"GeoNB_SNB_Counties","type":"MapServer"},{"name":"GeoNB_SNB_dtdb_index","type":"MapServer"},{"name":"GeoNB_SNB_FSAs","type":"MapServer"},{"name":"GeoNB_SNB_Historical_Municipal_Areas","type":"MapServer"},{"name":"GeoNB_SNB_ImageIndex","type":"MapServer"},{"name":"GeoNB_SNB_ImageryYear","type":"MapServer"},{"name":"GeoNB_SNB_LidarIndex","type":"MapServer"},{"name":"GeoNB_SNB_Munici
+https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_LocalGovernment/MapServer?f=json 200 {"error":{"code":404,"message":"Service GeoNB_DNR_LocalGovernment/MapServer not found ","details":[]}}
+
+=== ODHF y ODEF: copias del Archivo de Internet ===
+ODHF.zip copia: {'status': '200', 'available': True, 'url': 'http://web.archive.org/web/20211116122121/https://www150.statcan.gc.ca/n1/pub/13-26-0001/2020001/ODHF.zip', 'timestamp': '20211116122121'}
+ODHF.zip bytes: 677185 zip válido: True fecha de la copia: 20211116122121
+ODEF_v2.1.zip copia: {'status': '200', 'available': True, 'url': 'http://web.archive.org/web/20260226070257/https://www150.statcan.gc.ca/n1/pub/37-26-0001/2022001/ODEF_v2.1.zip', 'timestamp': '20260226070257'}
+ODEF_v2.1.zip bytes: 1536420 zip válido: True fecha de la copia: 20260226070257

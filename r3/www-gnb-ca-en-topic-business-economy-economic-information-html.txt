@@ -1,0 +1,53 @@
+URL: https://www.gnb.ca/en/topic/business-economy/economic-information.html
+TÍTULO: Economic information - gnb.ca
+ESTADO: 200 | FINAL: https://www.gnb.ca/en/topic/business-economy/economic-information.html
+
+Economic information
+ Economic and social indicators, census, investor relations and more.
+ Census
+ An extensive collection of New Brunswick census records over the years.
+ Economic and social indicators
+ A list of economic and social indicators including GDP, income and more.
+ Economic and well-being dashboards
+ Dashboard for key indicators to find out more about the status of the economy and the well-being of residents.
+ Economic development strategy
+ Learn how we are building a competitive and resilient New Brunswick.
+ Investor relations
+ New Brunswick's financial and economic performance for financial markets, investors and the public. 
+ Labour market information
+ Information, reports and bulletins regarding labour markets in New Brunswick.
+ Back to top
+
+--- ENLACES (toda la página) ---
+ | https://www.gnb.ca/en.html
+Français | https://www.gnb.ca/fr/sujet/affaires-economie/information-economique.html
+Business and economy | https://www.gnb.ca/en/topic/business-economy.html
+Culture and heritage | https://www.gnb.ca/en/topic/culture-heritage.html
+Driving and transportation | https://www.gnb.ca/en/topic/driving-transportation.html
+Education and training | https://www.gnb.ca/en/topic/education-training.html
+Environment and natural resources | https://www.gnb.ca/en/topic/environment-resources.html
+Family, home and community | https://www.gnb.ca/en/topic/family-home-community.html
+Health and wellness | https://www.gnb.ca/en/topic/health-wellness.html
+Jobs and workplaces | https://www.gnb.ca/en/topic/jobs-workplaces.html
+Laws and safety | https://www.gnb.ca/en/topic/laws-safety.html
+Tourism, recreation and outdoors | https://www.gnb.ca/en/topic/tourism-recreation.html
+Your government | https://www.gnb.ca/en/topic/your-gov.html
+News | https://www.gnb.ca/en/news.html
+Contacts | https://www.gnb.ca/en/gov/contacts.html
+Departments and organizations | https://www.gnb.ca/en/org.html
+Your Government | https://www.gnb.ca/en/topic/your-gov.html
+Service New Brunswick | https://www2.snb.ca/content/snb/en.html
+About New Brunswick | https://www.gnb.ca/en/admin/about-nb.html
+GNB.ca | https://www.gnb.ca/en.html
+Business and economy | https://www.gnb.ca/en/topic/business-economy.html
+Census | https://www.gnb.ca/content/gnb/en/departments/finance/esi/census.html
+Economic and social indicators | https://www.gnb.ca/content/gnb/en/departments/finance/esi.html
+Economic and well-being dashboards | https://www3.gnb.ca/FTB-FCT
+Economic development strategy | https://www.gnb.ca/en/topic/business-economy/economic-information/economic-development-strategy.html
+Investor relations | https://www.gnb.ca/en/topic/your-gov/budget-finance/investor-relations.html
+Labour market information | https://www.gnb.ca/content/gnb/en/services/services_renderer.16796.Labour_Market_Information_.html
+Disclaimer | https://www.gnb.ca/en/admin/disclaimer.html
+Feedback | https://www.gnb.ca/en/admin/site-feedback.html
+News and alerts | https://www.gnb.ca/en/news/newswire.html
+Privacy | https://www.gnb.ca/en/admin/privacy.html
+Social media | https://www.gnb.ca/en/admin/social-media.html
