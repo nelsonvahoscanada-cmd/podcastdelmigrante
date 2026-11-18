@@ -347,3 +347,89 @@ if "gnb" in PARTES:
             f.write(f"URL: {u}\nTÍTULO: {titulo}\nMODIFICADA: {mod.group(mod.lastindex) if mod else '—'}\n\n{texto(cuerpo)}\n\n--- ENLACES ---\n" + "\n".join(f"{t} | {l}" for l, t in links))
         print("ok", u, "|", titulo[:90], "|", mod.group(mod.lastindex) if mod else "—")
         time.sleep(0.5)
+
+
+# ------------------------------------------------------------ 7. Tercera ronda: páginas concretas, GeoNB, salario mínimo y bases ODHF/ODEF
+RONDA3 = [
+    "https://www.gnb.ca/en/topic/health-wellness/medicare-plans-programs.html",
+    "https://www.gnb.ca/en/topic/health-wellness/access-health-care.html",
+    "https://www.gnb.ca/en/topic/health-wellness/access-health-care/tele-care-811.html",
+    "https://www.gnb.ca/en/topic/health-wellness/access-health-care/virtual-care.html",
+    "https://www.gnb.ca/en/topic/health-wellness/access-health-care/medical-clinics.html",
+    "https://www.gnb.ca/en/topic/health-wellness/access-health-care/ambulance-services.html",
+    "https://www.gnb.ca/en/topic/health-wellness/access-health-care/regional-health-authorities.html",
+    "https://www.gnb.ca/en/campaign/accessing-health-care-nb.html",
+    "https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards.html",
+    "https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/wage-pay.html",
+    "https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/foreign-workers.html",
+    "https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/rights-terminated.html",
+    "https://www.gnb.ca/en/topic/jobs-workplaces/labour-market-workforce/employment-standards/employment-standards-complaint.html",
+    "https://www.gnb.ca/en/topic/jobs-workplaces/find-a-job.html",
+    "https://www.gnb.ca/en/topic/laws-safety/emergency-preparedness-alerts.html",
+    "https://www.gnb.ca/en/topic/business-economy/economic-information.html",
+    "https://www.gnb.ca/content/gnb/en/corporate/promo/immigration/immigrating-to-nb/nb-immigration-program-streams/nb-critical-workers-pilot.html",
+    "https://www.gnb.ca/en/campaign/geonb/data-catalogue/local-governments.html",
+    "https://www.gnb.ca/en/campaign/geonb/data-catalogue/rural-districts.html",
+    "https://www.gnb.ca/en/topic/family-home-community/communty-local-gov/local-resource-manual/local-government-organization.html",
+    "https://www.gnb.ca/en/topic/family-home-community/immigration/newcomers.html",
+    "https://www.gnb.ca/en/topic/family-home-community/immigration/atlantic-immigration-program.html",
+]
+if "ronda3" in PARTES:
+    import os
+    os.makedirs("/tmp/out/r3", exist_ok=True)
+    from playwright.sync_api import sync_playwright
+    pw = sync_playwright().start()
+    nav = pw.chromium.launch().new_context(locale="en-CA")
+
+    def guarda(u, h, extra=""):
+        nombre = re.sub(r"[^a-z0-9]+", "-", u.split("://", 1)[-1].lower()).strip("-")[:140]
+        titulo = (re.search(r"<title>(.*?)</title>", h, re.S) or [None, "-"])[1].strip()
+        links = []
+        for href, txt in re.findall(r'(?is)<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', h):
+            t = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", txt))).strip()
+            if (href, t) not in links:
+                links.append((urllib.parse.urljoin(u, href), t))
+        main = re.search(r"(?is)<main[^>]*>(.*?)</main>", h)
+        with open(f"/tmp/out/r3/{nombre}.txt", "w") as f:
+            f.write(f"URL: {u}\nTÍTULO: {titulo}\n{extra}\n\n{texto(main.group(1) if main else h)}\n\n--- ENLACES (toda la página) ---\n" + "\n".join(f"{t} | {l}" for l, t in links))
+        print("ok", u, "|", titulo[:90])
+
+    for u in RONDA3:
+        try:
+            pg = nav.new_page()
+            r = pg.goto(u, wait_until="networkidle", timeout=90000)
+            guarda(u, pg.content(), f"ESTADO: {r.status if r else '-'} | FINAL: {pg.url}")
+            pg.close()
+        except Exception as e:
+            print("ERROR", u, type(e).__name__, str(e)[:150])
+
+    paso("Salario mínimo (tabla del Gobierno de Canadá, con navegador)")
+    try:
+        pg = nav.new_page()
+        pg.goto("https://minwage-salairemin.service.canada.ca/en/general.html", wait_until="networkidle", timeout=90000)
+        pg.wait_for_selector("table tbody tr", timeout=60000)
+        print(texto(pg.inner_html("main"))[:6000])
+        pg.close()
+    except Exception as e:
+        print("ERROR salario", type(e).__name__, str(e)[:200])
+
+    paso("GeoNB: servicios de mapas (límites de gobiernos locales y distritos rurales)")
+    for u in ["https://geonb.snb.ca/arcgis/rest/services?f=json", "https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_LocalGovernment/MapServer?f=json"]:
+        try:
+            b, st, fin = get(u, 60)
+            print(u, st, b.decode("utf-8", "ignore")[:3000])
+        except Exception as e:
+            print("ERROR", u, type(e).__name__, str(e)[:150])
+
+    paso("ODHF y ODEF: copias del Archivo de Internet")
+    for nombre, u in [("ODHF.zip", "www150.statcan.gc.ca/n1/pub/13-26-0001/2020001/ODHF.zip"), ("ODEF_v2.1.zip", "www150.statcan.gc.ca/n1/pub/37-26-0001/2022001/ODEF_v2.1.zip")]:
+        try:
+            d = json.loads(get("https://archive.org/wayback/available?url=" + urllib.parse.quote(u, safe=""), 60)[0])
+            s = (d.get("archived_snapshots") or {}).get("closest")
+            print(nombre, "copia:", s)
+            if s:
+                b, st, fin = get(s["url"].replace("/web/" + s["timestamp"] + "/", "/web/" + s["timestamp"] + "id_/"), 300)
+                open(f"/tmp/out/{nombre}", "wb").write(b)
+                print(nombre, "bytes:", len(b), "zip válido:", b[:2] == b"PK", "fecha de la copia:", s["timestamp"])
+        except Exception as e:
+            print("ERROR", nombre, type(e).__name__, str(e)[:150])
