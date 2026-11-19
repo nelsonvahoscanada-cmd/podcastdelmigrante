@@ -97,7 +97,8 @@ const enlaces = (re) => [...MAIN.matchAll(/<a class="([^"]*)" href="([^"]+)"[^>]
 test("WhatsApp (acción principal, con mensaje predefinido) y llamada, con el mismo número", () => {
   assert.equal(N.phone, "+1 402 427 2741");
   assert.equal(N.whatsapp, "+1 402 427 2741");
-  const wa = enlaces(/^https:\/\/wa\.me\//);
+  /* El botón del Perfil Premium (target «premium-cta») tiene su propio mensaje: se prueba aparte */
+  const wa = enlaces(/^https:\/\/wa\.me\//).filter((x) => x[3] !== "premium-cta");
   assert.deepEqual(wa.map((x) => x.slice(1)), [
     [WA, "whatsapp_click", "whatsapp", "Contactar por WhatsApp"],
     [WA, "whatsapp_click", "whatsapp-final", "Contactar por WhatsApp"],
@@ -329,4 +330,35 @@ test("video comercial del Perfil Empresarial Premium: tras la propuesta comercia
   assert.equal((MAIN.match(/class="biz-section biz-video"/g) || []).length, 1, "una sola sección de video");
   /* Las demás miniwebs conservan el video después de la trayectoria (sin el campo) */
   for (const b of ALL.filter((x) => x.slug !== "nelson-vahos")) assert.equal(b.videoPlacement, undefined, b.slug);
+});
+
+test("Perfil Empresarial Premium bajo el video: beneficios, precio, botón verde de WhatsApp con su mensaje, aclaración y medición", () => {
+  const o = N.premiumOffer;
+  const MSG = "Hola, vi el Perfil Empresarial Premium de El Podcast del Migrante y quiero información para registrar mi negocio por $24.99 CAD mensuales.";
+  assert.equal(o.whatsappMessage, MSG);
+  assert.equal(o.ctaLabel, "Quiero mi Perfil Empresarial Premium");
+  assert.equal(o.price, "$24.99 CAD al mes");
+  assert.equal(o.priceDetail, "+ impuestos aplicables");
+  assert.equal(o.note, "El servicio facilita tu presencia digital, pero no garantiza clientes, visitas ni posicionamiento en buscadores.");
+  /* Mismo precio que la página oficial de registro y de planes */
+  assert.match(read("registra-tu-empresa.html"), /\$24\.99 CAD al mes más impuestos aplicables/);
+  /* Dentro de la sección del video (ubicación aprobada), después del reproductor */
+  const video = MAIN.slice(MAIN.indexOf('<section class="biz-section biz-video">'), MAIN.indexOf('<section class="biz-section biz-about"'));
+  assert.ok(video.indexOf("bizVideoFrame") < video.indexOf("biz-premium"), "debajo del video");
+  for (const t of ["Miniweb personalizada", "Fotografías", "video de presentación", "WhatsApp", "redes sociales", "códigos QR", "vCard", "Estadísticas"]) assert.ok(video.includes(t), t);
+  assert.match(video, /<strong class="biz-premium__monto">\$24\.99 CAD al mes<\/strong> <span class="biz-premium__periodo">\+ impuestos aplicables<\/span>/);
+  const href = `https://wa.me/14024272741?text=${encodeURIComponent(MSG)}`.replace(/&/g, "&amp;");
+  assert.ok(video.includes(`<div class="biz-actions biz-premium__accion"><a class="biz-btn biz-btn--primary biz-premium__btn" href="${href}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="premium-cta">Quiero mi Perfil Empresarial Premium</a></div>`), "botón verde con el mensaje y la medición");
+  assert.ok(video.includes('<p class="biz-premium__nota">El servicio facilita tu presencia digital, pero no garantiza clientes, visitas ni posicionamiento en buscadores.</p>'));
+  /* Contactos de publicidad y patrocinios, separados: conservan su propio mensaje */
+  assert.equal(enlaces(/^https:\/\/wa\.me\//).filter((x) => x[3] === "premium-cta").length, 1);
+  assert.match(N.whatsappMessage, /publicidad, patrocinios o una posible alianza comercial/);
+  /* Medición con el sistema actual: evento y destino aceptados por el Worker, sin cambios en él */
+  const worker = read("analytics-worker/src/worker.js");
+  assert.match(worker, /"whatsapp_click"/);
+  assert.match("premium-cta", /^[a-z0-9][a-z0-9_-]*$/);
+  /* Sin pagos: ningún formulario ni enlace de cobro */
+  assert.doesNotMatch(video, /<form|stripe|paypal|checkout/i);
+  /* Las demás miniwebs no tienen la oferta */
+  for (const b of ALL.filter((x) => x.slug !== "nelson-vahos")) assert.equal(b.premiumOffer, undefined, b.slug);
 });

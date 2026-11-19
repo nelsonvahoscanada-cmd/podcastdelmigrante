@@ -101,7 +101,7 @@ const visible = (page) => page.evaluate(() => document.getElementById("bizRoot")
     has("phone_click", "phone-text", TEL);
     has("tiktok_click", "tiktok-hero", TIKTOK);
     has("tiktok_click", "tiktok-final", TIKTOK);
-    assert.ok(hrefs.filter(([, , h]) => /^(tel:|https:\/\/wa\.me)/.test(h)).every(([, , h]) => h === WA || h === TEL), "un solo número");
+    assert.ok(hrefs.filter(([, , h]) => /^(tel:|https:\/\/wa\.me)/.test(h)).every(([, , h]) => h === TEL || h.startsWith("https://wa.me/14024272741?text=")), "un solo número (el botón Premium usa el mismo número con su propio mensaje)");
     assert.equal(new URL(WA).searchParams.get("text"), MENSAJE, "mensaje predefinido");
     const primero = page.locator(".biz-actions").first().locator("a").first();
     assert.equal(await primero.getAttribute("href"), WA, "WhatsApp es la primera acción");
