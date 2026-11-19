@@ -1,0 +1,48 @@
+--- Orden de las secciones
+class="biz-section biz-cta"
+class="biz-section biz-video"
+id="bizVideoFrame"
+class="biz-premium"
+class="biz-section biz-about"
+class="biz-section biz-projects"
+class="biz-section biz-timeline"
+class="biz-section biz-connect"
+--- Botón Premium (href y medición)
+<a class="biz-btn biz-btn--primary biz-premium__btn" href="https://wa.me/14024272741?text=Hola%2C%20vi%20el%20Perfil%20Empresarial%20Premium%20de%20El%20Podcast%20del%20Migrante%20y%20quiero%20informaci%C3%B3n%20para%20registrar%20mi%20negocio%20por%20%2424.99%20CAD%20mensuales." target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="premium-cta">Quiero mi Perfil Empresarial Premium</a>
+--- Precio
+<p class="biz-premium__precio"><strong class="biz-premium__monto">$24.99 CAD al mes</strong> <span class="biz-premium__periodo">+ impuestos aplicables</span></p>
+--- Aclaración
+<p class="biz-premium__nota">El servicio facilita tu presencia digital, pero no garantiza clientes, visitas ni posicionamiento en buscadores.</p>
+--- Estados
+/perfil-nelson-vahos                         200
+/css/temas/institucional.css                 200
+/vcard/nelson-vahos.vcf                      200
+/assets/qr/perfil-nelson-vahos.svg           200
+/assets/qr/contacto-nelson-vahos.svg         200
+/assets/qr/perfil-nelson-vahos.png           200
+/assets/qr/contacto-nelson-vahos.png         200
+/assets/yt/ZlUEYjQpEpE.jpg                   200
+/perfil-santa-latino                         200
+/perfil-tomas-velazquez                      200
+/perfil-1juanromero1                         200
+/perfil-carlos-d-castillo                    200
+--- Archivos servidos = repositorio
+css/temas/institucional.css: idéntico
+js/business-profile.js: idéntico
+js/businesses.js: idéntico
+vcard/nelson-vahos.vcf: idéntico
+assets/qr/perfil-nelson-vahos.svg: idéntico
+assets/qr/contacto-nelson-vahos.svg: idéntico
+assets/directorio/perfiles/nelson-vahos.jpg: idéntico
+--- Demás miniwebs: HTML servido = repositorio (sin lo que Cloudflare reescribe: correos y su analítica)
+## /perfil-santa-latino
+< <script src="js/data.js"></script>
+## /perfil-tomas-velazquez
+< <script src="js/data.js"></script>
+## /perfil-1juanromero1
+< <script src="js/data.js"></script>
+## /perfil-carlos-d-castillo
+< <script src="js/data.js"></script>
+--- Estadísticas (solo lectura: GET no registra nada)
+/api/events GET: 405 (405 = Worker activo, solo acepta POST)
+data-track en la miniweb:       1 data-track="email_click" data-track-target="email"       1 data-track="email_click" data-track-target="email-final"       1 data-track="email_click" data-track-target="email-text"       1 data-track="facebook_click" data-track-target="project-eradio-global-facebook"       1 data-track="phone_click" data-track-target="phone"       1 data-track="phone_click" data-track-target="phone-final"       1 data-track="phone_click" data-track-target="phone-text"       1 data-track="qr_contact_download" data-track-target="qr-contact"       1 data-track="qr_profile_download" data-track-target="qr-profile"       1 data-track="tiktok_click" data-track-target="project-podcast-del-migrante-tiktok"       1 data-track="tiktok_click" data-track-target="tiktok-final"       1 data-track="tiktok_click" data-track-target="tiktok-hero"       1 data-track="vcard_download" data-track-target="vcard-connect"       1 data-track="video_click" data-track-target="profile-video"       1 data-track="video_click" data-track-target="profile-video-youtube"       1 data-track="website_click" data-track-target="project-desafio-100-empresas"       1 data-track="website_click" data-track-target="project-eradio-global"       1 data-track="website_click" data-track-target="project-eradio-global-youtube"       1 data-track="website_click" data-track-target="project-podcast-del-migrante"       1 data-track="website_click" data-track-target="project-podcast-del-migrante-youtube"       1 data-track="whatsapp_click" data-track-target="premium-cta"       1 data-track="whatsapp_click" data-track-target="whatsapp"       1 data-track="whatsapp_click" data-track-target="whatsapp-final" 

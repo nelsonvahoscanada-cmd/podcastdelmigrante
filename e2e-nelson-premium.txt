@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: ningún envío de estadísticas fuera de la página
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
