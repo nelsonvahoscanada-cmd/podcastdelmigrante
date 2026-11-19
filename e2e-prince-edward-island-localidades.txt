@@ -1,0 +1,14 @@
+  computador: 727 búsquedas por nombre correctas (629 lugares sin página propia, con su subdivisión y condado)
+  computador: 23 opciones de tipo, región y condado con el conteo correcto
+  computador: directorio listo en 149 ms, 99 grupos y 137 círculos en el mapa
+  reloj: hora del Atlántico, UTC−3 hasta el 1-11-2026 y UTC−4 después; vuelve a UTC−3 en marzo de 2027
+ok computador
+  tableta: 727 búsquedas por nombre correctas (629 lugares sin página propia, con su subdivisión y condado)
+  tableta: 23 opciones de tipo, región y condado con el conteo correcto
+  tableta: directorio listo en 86 ms, 99 grupos y 137 círculos en el mapa
+ok tableta
+  celular: 727 búsquedas por nombre correctas (629 lugares sin página propia, con su subdivisión y condado)
+  celular: 23 opciones de tipo, región y condado con el conteo correcto
+  celular: directorio listo en 116 ms, 99 grupos y 137 círculos en el mapa
+ok celular
+OK Isla del Príncipe Eduardo: guía, directorio, mapa, fichas, reloj y compartir
