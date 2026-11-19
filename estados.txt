@@ -1,0 +1,9 @@
+/perfil-nelson-vahos                     200
+/css/temas/institucional.css             200
+/perfil-santa-latino                     200
+/perfil-tomas-velazquez                  200
+/perfil-1juanromero1                     200
+/perfil-carlos-d-castillo                200
+/planes-directorio                       200
+/registra-tu-empresa                     200
+institucional.css servida = rama: idéntica
