@@ -1,0 +1,6 @@
+ok iPhone SE: botón 238×77 px; evento whatsapp_click/premium-cta capturado sin enviar
+ok iPhone 13: botón 308×53 px; evento whatsapp_click/premium-cta capturado sin enviar
+ok iPhone 14 Pro Max: botón 348×53 px; evento whatsapp_click/premium-cta capturado sin enviar
+ok tableta: botón 429×52 px; evento whatsapp_click/premium-cta capturado sin enviar
+ok computador: botón 429×52 px; evento whatsapp_click/premium-cta capturado sin enviar
+OK Perfil Empresarial Premium: beneficios, precio, botón de WhatsApp, aclaración y medición
