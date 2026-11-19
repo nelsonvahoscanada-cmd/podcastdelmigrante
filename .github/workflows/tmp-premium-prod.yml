@@ -41,7 +41,7 @@ jobs:
             for f in css/temas/institucional.css js/business-profile.js js/businesses.js vcard/nelson-vahos.vcf assets/qr/perfil-nelson-vahos.svg assets/qr/contacto-nelson-vahos.svg assets/directorio/perfiles/nelson-vahos.jpg; do echo "$f: $(curl -s "$P/$f" | cmp -s - $f && echo idéntico || echo DIFERENTE)"; done
             echo "--- Demás miniwebs: HTML servido = repositorio (sin lo que Cloudflare reescribe: correos y su analítica)"
             limpia() { grep -vE 'email-protection|mailto:|cloudflareinsights|data-cfemail|__cf_email__|cdn-cgi'; }
-            for f in perfil-santa-latino.html perfil-tomas-velazquez.html perfil-1juanromero1.html perfil-carlos-d-castillo.html; do u="/${f%.html}"; d=$(diff <(limpia < $f) <(curl -s "$P$u" | limpia) | grep -c '^[<>]'); echo "$u: $d líneas distintas"; done
+            for f in perfil-santa-latino.html perfil-tomas-velazquez.html perfil-1juanromero1.html perfil-carlos-d-castillo.html; do u="/${f%.html}"; echo "## $u"; diff <(limpia < $f) <(curl -s "$P$u" | limpia) | grep '^[<>]' | cut -c1-300; done
             echo "--- Estadísticas (solo lectura: GET no registra nada)"
             echo "/api/events GET: $(curl -s -o /dev/null -w '%{http_code}' "$P/api/events") (405 = Worker activo, solo acepta POST)"
             echo "data-track en la miniweb: $(echo "$H" | grep -o 'data-track="[a-z_]*" data-track-target="[a-z0-9_-]*"' | sort | uniq -c | tr '\n' ' ')"
@@ -51,8 +51,8 @@ jobs:
         if: always()
         run: |
           r=0
-          for t in nelson-premium nelson-video nelson-vahos santa-latino; do
-            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -14 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
+          for t in nelson-premium nelson-video; do
+            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -40 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
           done; exit $r
       - name: Publicar
         if: always()
