@@ -21,31 +21,11 @@ jobs:
             curl -fsS "$P/perfil-nelson-vahos?nc=$i$RANDOM" | grep -q 'biz-premium__btn' && { echo "desplegado (intento $i)"; exit 0; }
             sleep 10
           done; exit 1
-      - name: Bloque, botón, precio, archivos y demás miniwebs
+      - name: Línea de data.js en las demás miniwebs (servido)
         if: always()
         run: |
           mkdir -p /tmp/out
-          {
-            H=$(curl -s "$P/perfil-nelson-vahos")
-            echo "--- Orden de las secciones"
-            echo "$H" | tr -d '\n' | grep -oE 'class="biz-section biz-[a-z]+"|class="biz-premium"|id="bizVideoFrame"' | head -8
-            echo "--- Botón Premium (href y medición)"
-            echo "$H" | grep -o '<a class="biz-btn biz-btn--primary biz-premium__btn"[^>]*>[^<]*</a>'
-            echo "--- Precio"
-            echo "$H" | grep -o '<p class="biz-premium__precio">.*</p>'
-            echo "--- Aclaración"
-            echo "$H" | grep -o '<p class="biz-premium__nota">[^<]*</p>'
-            echo "--- Estados"
-            for u in /perfil-nelson-vahos /css/temas/institucional.css /vcard/nelson-vahos.vcf /assets/qr/perfil-nelson-vahos.svg /assets/qr/contacto-nelson-vahos.svg /assets/qr/perfil-nelson-vahos.png /assets/qr/contacto-nelson-vahos.png /assets/yt/ZlUEYjQpEpE.jpg /perfil-santa-latino /perfil-tomas-velazquez /perfil-1juanromero1 /perfil-carlos-d-castillo; do printf "%-44s %s\n" "$u" "$(curl -s -o /dev/null -w '%{http_code}' "$P$u")"; done
-            echo "--- Archivos servidos = repositorio"
-            for f in css/temas/institucional.css js/business-profile.js js/businesses.js vcard/nelson-vahos.vcf assets/qr/perfil-nelson-vahos.svg assets/qr/contacto-nelson-vahos.svg assets/directorio/perfiles/nelson-vahos.jpg; do echo "$f: $(curl -s "$P/$f" | cmp -s - $f && echo idéntico || echo DIFERENTE)"; done
-            echo "--- Demás miniwebs: HTML servido = repositorio (sin lo que Cloudflare reescribe: correos y su analítica)"
-            limpia() { grep -vE 'email-protection|mailto:|cloudflareinsights|data-cfemail|__cf_email__|cdn-cgi'; }
-            for f in perfil-santa-latino.html perfil-tomas-velazquez.html perfil-1juanromero1.html perfil-carlos-d-castillo.html; do u="/${f%.html}"; echo "## $u"; diff <(limpia < $f) <(curl -s "$P$u" | limpia) | grep '^[<>]' | cut -c1-300; done
-            echo "--- Estadísticas (solo lectura: GET no registra nada)"
-            echo "/api/events GET: $(curl -s -o /dev/null -w '%{http_code}' "$P/api/events") (405 = Worker activo, solo acepta POST)"
-            echo "data-track en la miniweb: $(echo "$H" | grep -o 'data-track="[a-z_]*" data-track-target="[a-z0-9_-]*"' | sort | uniq -c | tr '\n' ' ')"
-          } 2>&1 | tee /tmp/out/estados.txt
+          for u in /perfil-santa-latino /perfil-tomas-velazquez /perfil-1juanromero1 /perfil-carlos-d-castillo; do echo "## $u"; curl -s "$P$u" | grep -n 'js/data.js' | cut -c1-400; done | tee /tmp/out/datajs.txt
       - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
       - name: E2E en producción (estadísticas bloqueadas)
         if: always()

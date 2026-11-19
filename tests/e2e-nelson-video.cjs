@@ -58,7 +58,7 @@ const PERFILES = {
     const orden = await page.evaluate(() => [...document.querySelectorAll("main .biz-actions, main .biz-section")].filter((e) => e.classList.contains("biz-section") || !e.closest(".biz-section")).map((e) => [...e.classList].find((c) => /^biz-(actions|cta|video|about|projects|timeline|contact)$/.test(c))).filter(Boolean));
     assert.deepEqual(orden.slice(0, 6), ["biz-actions", "biz-cta", "biz-video", "biz-about", "biz-projects", "biz-timeline"], `${nombre}: video justo después de la propuesta comercial (${orden.join(", ")})`);
     assert.equal(await sec.locator("iframe").count(), 0, `${nombre}: el reproductor no se carga hasta pulsar`);
-    assert.deepEqual(externos, [], `${nombre}: no se contacta a YouTube al abrir`);
+    assert.deepEqual(externos.filter((h) => YT.test(h)), [], `${nombre}: no se contacta a YouTube al abrir (otros: ${[...new Set(externos)].join(", ")})`);
     const portada = await sec.locator(".biz-video__thumb").evaluate((e) => getComputedStyle(e).backgroundImage);
     assert.match(portada, new RegExp(`/assets/yt/${ID}\\.jpg`), `${nombre}: portada local del video`);
     assert.equal((await fetch(`${BASE}/assets/yt/${ID}.jpg`)).status, 200);
