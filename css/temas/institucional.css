@@ -151,3 +151,40 @@ html[data-profile-theme="institucional"] .biz-section.biz-contact .biz-contact__
 html[data-profile-theme="institucional"] .biz-contact__email a { color: var(--in-blanco); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 html[data-profile-theme="institucional"] .biz-qr { border-top: 4px solid var(--in-verde); }
 html[data-profile-theme="institucional"] .biz-back { color: var(--in-verde-oscuro); }
+
+/* ---------- Oferta del Perfil Empresarial Premium (bajo el video) ---------- */
+html[data-profile-theme="institucional"] .biz-premium {
+  margin-top: 22px;
+  padding: 22px 20px 20px;
+  border: 1px solid var(--gris-200);
+  border-top: 5px solid var(--in-verde);
+  border-radius: 12px;
+  background: var(--in-verde-suave);
+}
+html[data-profile-theme="institucional"] .biz-premium__title { font-family: var(--font-display); font-size: 1.22rem; line-height: 1.25; margin: 0 0 8px; color: var(--in-negro); }
+html[data-profile-theme="institucional"] .biz-section .biz-premium__intro { margin: 0 0 12px; font-size: 1rem; line-height: 1.55; color: var(--negro); }
+html[data-profile-theme="institucional"] .biz-premium__beneficios { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 8px; }
+@media (min-width: 720px) { html[data-profile-theme="institucional"] .biz-premium__beneficios { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; } }
+html[data-profile-theme="institucional"] .biz-premium__beneficios li { position: relative; padding-left: 28px; font-size: 0.98rem; line-height: 1.45; color: var(--negro); }
+html[data-profile-theme="institucional"] .biz-premium__beneficios li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--in-verde);
+  color: var(--in-blanco);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+html[data-profile-theme="institucional"] .biz-section .biz-premium__precio { margin: 0 0 14px; color: var(--negro); }
+html[data-profile-theme="institucional"] .biz-premium__monto { font-family: var(--font-display); font-size: 1.7rem; line-height: 1.1; color: var(--in-verde-oscuro); }
+html[data-profile-theme="institucional"] .biz-premium__periodo { font-size: 0.95rem; font-weight: 600; color: var(--negro); white-space: nowrap; }
+html[data-profile-theme="institucional"] .biz-premium__accion { margin: 0; }
+html[data-profile-theme="institucional"] .biz-premium__btn { width: 100%; min-height: 52px; font-size: 1.02rem; text-align: center; }
+@media (min-width: 720px) { html[data-profile-theme="institucional"] .biz-premium__btn { width: auto; padding-left: 28px; padding-right: 28px; } }
+html[data-profile-theme="institucional"] .biz-section .biz-premium__nota { margin: 12px 0 0; font-size: 0.82rem; line-height: 1.5; color: var(--gris-600); }

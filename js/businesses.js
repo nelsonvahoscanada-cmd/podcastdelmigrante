@@ -753,6 +753,27 @@ const BUSINESSES = [
     videoText: "Descubre las ventajas de tener tu propia miniweb empresarial Premium por $24.99 CAD al mes más impuestos aplicables.",
     videoLinkLabel: "Ver en YouTube",
     videoPlacement: "after-cta",   /* justo después de «Patrocinios, publicidad y alianzas comerciales», antes de «Sobre Nelson» */
+    /* Oferta del Perfil Empresarial Premium bajo el video (solo informativa: sin pagos en línea).
+       Beneficios según la página oficial de planes; precio igual al de registra-tu-empresa. */
+    premiumOffer: {
+      title: "Lo que incluye el Perfil Empresarial Premium",
+      intro: "Tu negocio, con su propia miniweb en El Podcast del Migrante, lista para compartir con tus clientes:",
+      benefits: [
+        "Miniweb personalizada para tu negocio",
+        "Fotografías de tu negocio, según la plantilla",
+        "Tu video de presentación, si nos lo proporcionas",
+        "Botón directo a WhatsApp, además de llamada y correo",
+        "Enlaces a tus redes sociales oficiales",
+        "Dos códigos QR: tu miniweb y tu contacto",
+        "Tarjeta digital vCard para guardar tu contacto",
+        "Estadísticas de las visitas y los clics de tu perfil",
+      ],
+      price: "$24.99 CAD al mes",
+      priceDetail: "+ impuestos aplicables",
+      ctaLabel: "Quiero mi Perfil Empresarial Premium",
+      whatsappMessage: "Hola, vi el Perfil Empresarial Premium de El Podcast del Migrante y quiero información para registrar mi negocio por $24.99 CAD mensuales.",
+      note: "El servicio facilita tu presencia digital, pero no garantiza clientes, visitas ni posicionamiento en buscadores.",
+    },
 
     profileImage: "assets/directorio/perfiles/nelson-vahos.jpg",    /* fotografía original aprobada, solo redimensionada */
     profileImageWidth: 960,

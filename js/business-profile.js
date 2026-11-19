@@ -270,9 +270,35 @@
             ${VideoCover.noteHtml()}
           </button>
         </div>
-        ${b.videoLinkLabel ? `<p class="biz-video__alt"><a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener" data-track="video_click" data-track-target="profile-video-youtube">${esc(b.videoLinkLabel)} <span aria-hidden="true">↗</span></a></p>` : ""}
+        ${b.videoLinkLabel ? `<p class="biz-video__alt"><a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener" data-track="video_click" data-track-target="profile-video-youtube">${esc(b.videoLinkLabel)} <span aria-hidden="true">↗</span></a></p>` : ""}${premiumOfferHtml(b)}
       </section>
     `;
+  }
+
+  /* Oferta del Perfil Empresarial Premium dentro de la sección del video
+     (campo opcional «premiumOffer»: { title, intro, benefits[], price,
+     priceDetail, ctaLabel, whatsappMessage, note }). Solo informativa: no
+     hay pagos en línea. El botón abre WhatsApp al número del perfil con su
+     propio mensaje y se mide con el evento ya aceptado por el Worker
+     (whatsapp_click / target "premium-cta"). Va dentro de un bloque
+     .biz-actions para heredar el botón verde del tema aunque la hoja de
+     estilos nueva aún no esté en la caché. Sin el campo no se muestra nada. */
+  function premiumOfferHtml(b) {
+    const o = b.premiumOffer;
+    const digits = (b.whatsapp || "").replace(/\D/g, "");
+    if (!o || !digits || !o.ctaLabel) return "";
+    const href = "https://wa.me/" + digits + (o.whatsappMessage ? "?text=" + encodeURIComponent(o.whatsappMessage) : "");
+    return `
+        <div class="biz-premium" aria-labelledby="bizPremiumTitle">
+          <h3 class="biz-premium__title" id="bizPremiumTitle">${esc(o.title || "Lo que incluye el Perfil Empresarial Premium")}</h3>
+          ${o.intro ? `<p class="biz-premium__intro">${esc(o.intro)}</p>` : ""}
+          ${(o.benefits || []).length ? `<ul class="biz-premium__beneficios">
+            ${o.benefits.map((t) => `<li>${esc(t)}</li>`).join("\n            ")}
+          </ul>` : ""}
+          ${o.price ? `<p class="biz-premium__precio"><strong class="biz-premium__monto">${esc(o.price)}</strong>${o.priceDetail ? ` <span class="biz-premium__periodo">${esc(o.priceDetail)}</span>` : ""}</p>` : ""}
+          <div class="biz-actions biz-premium__accion"><a class="biz-btn biz-btn--primary biz-premium__btn" href="${esc(href)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="premium-cta">${esc(o.ctaLabel)}</a></div>
+          ${o.note ? `<p class="biz-premium__nota">${esc(o.note)}</p>` : ""}
+        </div>`;
   }
 
   /* Portafolio externo (campo opcional «portfolio»: { title, text, label, url }).

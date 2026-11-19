@@ -55,7 +55,7 @@ const PERFILES = {
     assert.equal(await sec.count(), 1, `${nombre}: una sección de video`);
     assert.equal((await sec.locator(".biz-h2").textContent()).trim(), TITULO);
     assert.match(await sec.textContent(), /\$24\.99 CAD al mes más impuestos aplicables/);
-    const orden = await page.evaluate(() => [...document.querySelectorAll("main .biz-actions, main .biz-section")].map((e) => [...e.classList].find((c) => /^biz-(actions|cta|video|about|projects|timeline|contact)$/.test(c))).filter(Boolean));
+    const orden = await page.evaluate(() => [...document.querySelectorAll("main .biz-actions, main .biz-section")].filter((e) => e.classList.contains("biz-section") || !e.closest(".biz-section")).map((e) => [...e.classList].find((c) => /^biz-(actions|cta|video|about|projects|timeline|contact)$/.test(c))).filter(Boolean));
     assert.deepEqual(orden.slice(0, 6), ["biz-actions", "biz-cta", "biz-video", "biz-about", "biz-projects", "biz-timeline"], `${nombre}: video justo después de la propuesta comercial (${orden.join(", ")})`);
     assert.equal(await sec.locator("iframe").count(), 0, `${nombre}: el reproductor no se carga hasta pulsar`);
     assert.deepEqual(externos, [], `${nombre}: no se contacta a YouTube al abrir`);
