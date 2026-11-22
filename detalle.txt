@@ -1,0 +1,34 @@
+### foto anterior
+HTTP/2 404 
+content-type: text/html; charset=utf-8
+cf-cache-status: BYPASS
+/tmp/vieja: HTML document, Unicode text, UTF-8 text, with very long lines (482)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+### sin parámetro
+HTTP/2 404 
+content-type: text/html; charset=utf-8
+cf-cache-status: BYPASS
+### otra ruta inexistente
+HTTP/2 404 
+content-type: text/html; charset=utf-8
+### diff perfil-santa-latino.html
+131d130
+<       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="phone">Llam
+210,211d208
+<         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+12896965721" data-track="phone_click" data-track-target="pho
+<         <p class="biz-contact__email">Correo: <a href="mailto:santalatinoon@gmail.com" data-track="email_click" data-track-target="email-text">santalatinoon@gmail.com</a></p>
+248,249d244
+<         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+<         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
+### diff perfil-tomas-velazquez.html
+130d129
+<       <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/15878948527" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp">WhatsApp</a><a class="biz-btn" href="tel:+15878948527" data-track="phone_click" data-track-target="phone">Llam
+203d201
+<         <div class="biz-actions"><a class="biz-btn biz-btn--primary" href="https://wa.me/15878948527" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final">WhatsApp</a><a class="biz-btn" href="tel:+15878948527" data-track="phone_click" data-track-target="pho
+241,242d238
+<         <a href="mailto:podcastdelmigrante@gmail.com?subject=Publicidad">Publicidad</a>
+<         <a href="mailto:podcastdelmigrante@gmail.com">Contacto</a>
