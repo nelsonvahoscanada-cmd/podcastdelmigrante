@@ -1,0 +1,39 @@
+igual assets/directorio/perfiles/santa-latino-evento-escenario.jpg
+igual assets/directorio/perfiles/santa-latino-evento-regalos.jpg
+igual assets/directorio/perfiles/santa-latino-principal-navidad.jpg
+igual assets/directorio/perfiles/santa-latino-og-navidad.jpg
+igual assets/directorio/perfiles/santa-latino-card.jpg
+igual css/temas/navidad.css
+igual assets/qr/contacto-1juanromero1.png
+igual assets/qr/contacto-1juanromero1.svg
+igual assets/qr/contacto-carlos-d-castillo.png
+igual assets/qr/contacto-carlos-d-castillo.svg
+igual assets/qr/contacto-nelson-vahos.png
+igual assets/qr/contacto-nelson-vahos.svg
+igual assets/qr/contacto-santa-latino.png
+igual assets/qr/contacto-santa-latino.svg
+igual assets/qr/contacto-tomas-velazquez.png
+igual assets/qr/contacto-tomas-velazquez.svg
+igual assets/qr/perfil-1juanromero1.png
+igual assets/qr/perfil-1juanromero1.svg
+igual assets/qr/perfil-carlos-d-castillo.png
+igual assets/qr/perfil-carlos-d-castillo.svg
+igual assets/qr/perfil-nelson-vahos.png
+igual assets/qr/perfil-nelson-vahos.svg
+igual assets/qr/perfil-santa-latino.png
+igual assets/qr/perfil-santa-latino.svg
+igual assets/qr/perfil-tomas-velazquez.png
+igual assets/qr/perfil-tomas-velazquez.svg
+igual assets/qr/qr-guia-carlos.png
+igual vcard/1juanromero1.vcf
+igual vcard/carlos-d-castillo.vcf
+igual vcard/nelson-vahos.vcf
+igual vcard/santa-latino.vcf
+igual vcard/tomas-velazquez.vcf
+foto anterior: 200
+GET /api/events: 405
+/perfil-1juanromero1: 5 líneas distintas (fuera de la protección de correos de Cloudflare)
+/perfil-carlos-d-castillo: 4 líneas distintas (fuera de la protección de correos de Cloudflare)
+/perfil-nelson-vahos: 5 líneas distintas (fuera de la protección de correos de Cloudflare)
+/perfil-santa-latino: 5 líneas distintas (fuera de la protección de correos de Cloudflare)
+/perfil-tomas-velazquez: 4 líneas distintas (fuera de la protección de correos de Cloudflare)
