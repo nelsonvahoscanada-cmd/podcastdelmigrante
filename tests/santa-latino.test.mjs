@@ -80,7 +80,7 @@ test("servicios indicados, sin precios, horarios, paquetes ni testimonios invent
   assert.deepEqual(S.testimonials, []);
 });
 
-test("fotografías originales optimizadas, sin EXIF, y la grupal en la galería", () => {
+test("fotografías originales optimizadas, sin EXIF, y las dos del evento en la galería", () => {
   const imgs = { profileImage: [739, 924], cardImage: [320, 320], ogImage: [1200, 630] };
   for (const [k, [w, h]] of Object.entries(imgs)) {
     const info = jpegInfo(S[k]);
@@ -88,12 +88,16 @@ test("fotografías originales optimizadas, sin EXIF, y la grupal en la galería"
     assert.equal(info.exif, false, `${k} sin EXIF`);
     assert.ok(info.bytes < 150_000, `${k} pesa ${info.bytes} B`);
   }
-  assert.equal(S.gallery.length, 1);
-  const g = jpegInfo(S.gallery[0].src);
-  assert.deepEqual([g.width, g.height], [900, 1200]);
-  assert.equal(g.exif, false);
-  assert.ok(g.bytes < 250_000);
-  assert.ok(S.gallery[0].alt.length > 20, "texto alternativo descriptivo");
+  /* La fotografía junto al árbol se reemplazó por dos del evento navideño */
+  assert.deepEqual(S.gallery.map((g) => g.src), ["assets/directorio/perfiles/santa-latino-evento-escenario.jpg", "assets/directorio/perfiles/santa-latino-evento-regalos.jpg"]);
+  assert.ok(!existsSync(new URL("assets/directorio/perfiles/santa-latino-navidad-grupo.jpg", ROOT)), "foto anterior retirada");
+  for (const [item, [w, h]] of S.gallery.map((g, i) => [g, [[800, 1014], [800, 867]][i]])) {
+    const g = jpegInfo(item.src);
+    assert.deepEqual([g.width, g.height], [w, h], `${item.src}: proporción original`);
+    assert.equal(g.exif, false);
+    assert.ok(g.bytes < 130_000, `${item.src} pesa ${g.bytes} B`);
+    assert.ok(item.alt.length > 20, "texto alternativo descriptivo");
+  }
 });
 
 test("página estática: metadatos propios, tema solo en este perfil", () => {
