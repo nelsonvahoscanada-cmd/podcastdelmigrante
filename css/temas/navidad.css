@@ -173,6 +173,30 @@ html[data-profile-theme="navidad"] .biz-gallery img {
   box-shadow: 0 0 0 6px rgba(13, 42, 28, 0.9), 0 0 0 7px var(--nv-linea), 0 18px 46px rgba(0, 0, 0, 0.45);
 }
 
+/* Dos o más fotografías: lado a lado en dos columnas (también en el celular),
+   mismo tamaño visual 4:5 con recorte centrado (sin deformar) */
+html[data-profile-theme="navidad"] .biz-gallery:has(img + img) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 4vw, 34px);
+  max-width: 780px;
+  margin-inline: auto;
+}
+html[data-profile-theme="navidad"] .biz-gallery:has(img + img) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 35%;
+}
+@media (max-width: 560px) {
+  html[data-profile-theme="navidad"] .biz-gallery:has(img + img) img {
+    border-width: 2px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px rgba(13, 42, 28, 0.9), 0 0 0 5px var(--nv-linea), 0 10px 26px rgba(0, 0, 0, 0.4);
+  }
+}
+
 /* ---------- Conecta (QR): tarjetas claras para que los códigos se lean bien ---------- */
 html[data-profile-theme="navidad"] .biz-qr { background: var(--nv-marfil); border: 1px solid var(--nv-oro); border-top: 4px solid var(--nv-oro); border-radius: 14px; }
 html[data-profile-theme="navidad"] .biz-section .biz-qr__kicker { color: var(--nv-vino); }
