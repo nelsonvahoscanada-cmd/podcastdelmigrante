@@ -15,35 +15,18 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - name: Esperar el despliegue en producción (máx. 20 min)
-        run: |
-          for i in $(seq 120); do
-            curl -fsS "$P/perfil-santa-latino?nc=$i$RANDOM" | grep -q 'santa-latino-evento-regalos' && { echo "desplegado (intento $i)"; exit 0; }
-            sleep 10
-          done; exit 1
-      - name: Archivos servidos frente al repositorio (solo GET de archivos estáticos)
+      - name: Detalle (solo lectura)
         if: always()
         run: |
-          mkdir -p /tmp/out; o=/tmp/out/archivos.txt
-          for f in assets/directorio/perfiles/santa-latino-evento-escenario.jpg assets/directorio/perfiles/santa-latino-evento-regalos.jpg assets/directorio/perfiles/santa-latino-principal-navidad.jpg assets/directorio/perfiles/santa-latino-og-navidad.jpg assets/directorio/perfiles/santa-latino-card.jpg css/temas/navidad.css $(git ls-files 'assets/qr/*' 'vcard/*'); do
-            curl -fsS "$P/$f?nc=$RANDOM" -o /tmp/f && cmp -s /tmp/f "$f" && echo "igual $f" || echo "DISTINTO $f"
-          done >> $o
-          echo "foto anterior: $(curl -s -o /dev/null -w '%{http_code}' "$P/assets/directorio/perfiles/santa-latino-navidad-grupo.jpg")" >> $o
-          echo "GET /api/events: $(curl -s -o /dev/null -w '%{http_code}' "$P/api/events")" >> $o
-          for h in $(git ls-files 'perfil-*.html'); do
-            u=/${h%.html}; curl -fsS "$P$u?nc=$RANDOM" -o /tmp/h || { echo "ERROR $u" >> $o; continue; }
-            n=$(diff <(grep -v -e 'email-decode' -e 'email-protection' -e 'js/data.js' "$h") <(grep -v -e 'email-decode' -e 'email-protection' -e 'js/data.js' /tmp/h) | grep -c '^[<>]')
-            echo "$u: $n líneas distintas (fuera de la protección de correos de Cloudflare)" >> $o
-          done
+          mkdir -p /tmp/out; o=/tmp/out/detalle.txt
+          { echo "### foto anterior"; curl -sS -D - -o /tmp/vieja "$P/assets/directorio/perfiles/santa-latino-navidad-grupo.jpg?nc=$RANDOM" | grep -i -E '^(HTTP|content-type|content-length|cf-cache-status|age|location)'; file /tmp/vieja; head -c 300 /tmp/vieja | strings | head -5
+            echo "### sin parámetro"; curl -sS -D - -o /dev/null "$P/assets/directorio/perfiles/santa-latino-navidad-grupo.jpg" | grep -i -E '^(HTTP|content-type|cf-cache-status|age)'
+            echo "### otra ruta inexistente"; curl -sS -D - -o /dev/null "$P/assets/directorio/perfiles/no-existe-xyz.jpg" | grep -i -E '^(HTTP|content-type)'
+            for h in perfil-santa-latino.html perfil-tomas-velazquez.html; do
+              echo "### diff $h"; curl -fsS "$P/${h%.html}?nc=$RANDOM" -o /tmp/h
+              diff <(grep -v -e 'email-decode' -e 'email-protection' -e 'js/data.js' "$h") <(grep -v -e 'email-decode' -e 'email-protection' -e 'js/data.js' /tmp/h) | cut -c1-300
+            done; } > $o 2>&1
           cat $o
-      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
-      - name: E2E en producción (estadísticas bloqueadas)
-        if: always()
-        run: |
-          r=0
-          for t in santa-latino-galeria santa-latino nelson-vahos; do
-            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -40 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
-          done; exit $r
       - name: Publicar
         if: always()
         run: |
