@@ -2,10 +2,10 @@
    una región aparece como disponible cuando tiene ficha publicada en Canadá en Datos. */
 window.CD_DISPONIBLES = {
   "total": 13,
-  "disponibles": 11,
+  "disponibles": 12,
   "provincias": {
     "total": 10,
-    "disponibles": 8
+    "disponibles": 9
   },
   "territorios": {
     "total": 3,
@@ -58,7 +58,7 @@ window.CD_DISPONIBLES = {
       "code": "NS",
       "name": "Nueva Escocia",
       "type": "provincia",
-      "url": null
+      "url": "/canada-en-datos/nova-scotia"
     },
     {
       "code": "PE",
