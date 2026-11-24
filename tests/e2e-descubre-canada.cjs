@@ -145,7 +145,7 @@ const ordenPortada = (page) => page.evaluate(() => ({
     assert.equal(await page.locator('#enlaces a[href="https://montreal.ca/"]').count(), 1, "enlace oficial");
     /* Una provincia sin guía: sin enlace a una página inexistente */
     await page.goto(BASE + "/canada-en-datos/", { waitUntil: "networkidle" });
-    await page.locator('.cd-chip[data-code="NS"]').click();
+    await page.locator('.cd-chip[data-code="NL"]').click();
     assert.match(await page.locator(".cd-panel").textContent(), /Ficha completa: próximamente/);
     assert.equal(await page.locator('.cd-panel a[href*="/canada-en-datos/"]').count(), 0);
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `descubre-canada-en-datos-${perfil}.png`) });

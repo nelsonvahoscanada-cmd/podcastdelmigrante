@@ -70,15 +70,15 @@ test("disponibilidad: sale de CD_REGIONS (regiones con ficha), y el archivo publ
 });
 
 test("actualización automática: al publicar una provincia nueva, el módulo la muestra sin tocar la portada", () => {
-  const regiones = D.CD_REGIONS.map((r) => (r.code === "NS" ? { ...r, profile: "nova-scotia" } : r));
+  const regiones = D.CD_REGIONS.map((r) => (r.code === "NL" ? { ...r, profile: "newfoundland-and-labrador" } : r));
   const d = disponibilidad({ ...D, CD_REGIONS: regiones });
   assert.equal(d.disponibles, D.CD_REGIONS.filter((r) => r.profile).length + 1);
   const n = ejecutar(d);
   assert.equal(n.descubreConteo.textContent, `${d.disponibles} de 13 provincias y territorios ya disponibles`);
   assert.equal(n.descubreConteo.hidden, false);
   const enlaces = n.descubreLista.children.map((li) => [li.children[0].textContent, li.children[0].href]);
-  assert.ok(enlaces.some(([nombre, href]) => nombre === "Nueva Escocia" && href === "/canada-en-datos/nova-scotia"));
-  assert.ok(!n.descubreProximas.children.some((c) => /Nueva Escocia/.test(c.textContent)));
+  assert.ok(enlaces.some(([nombre, href]) => nombre === "Terranova y Labrador" && href === "/canada-en-datos/newfoundland-and-labrador"));
+  assert.ok(!n.descubreProximas.children.some((c) => /Terranova y Labrador/.test(c.textContent)));
 });
 
 test("con los datos actuales: siete enlaces a guías publicadas y las demás como «Próximamente», sin enlace", () => {
