@@ -1,0 +1,34 @@
+# TEMPORAL: verificar la vista previa de Cloudflare del PR de Nueva Escocia (solo lectura; sin estadísticas). Se elimina después.
+name: tmp ns vista
+on:
+  push:
+    branches: [claude/canada-datos-ns-vista]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      P: https://claude-canada-datos-nova-sco.podcastdelmigrante.pages.dev
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Vista previa disponible
+        run: |
+          mkdir -p /tmp/out
+          for u in /canada-en-datos/nova-scotia /canada-en-datos/nova-scotia/halifax /canada-en-datos/nova-scotia/dartmouth /canada-en-datos/nova-scotia/sydney /canada-en-datos/ /canada-en-datos/new-brunswick /assets/canada-en-datos/bandera-nova-scotia.svg /assets/canada-en-datos/social-nova-scotia.jpg /js/nova-scotia-localidades.js; do echo "$(curl -s -o /dev/null -w '%{http_code}' "$P$u") $u"; done | tee /tmp/out/estado.txt
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: E2E en la vista previa (estadísticas bloqueadas)
+        if: always()
+        run: |
+          r=0
+          for t in nova-scotia-localidades new-brunswick-localidades descubre-canada; do
+            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -30 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
+          done; exit $r
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "vista previa Nueva Escocia [CF-Pages-Skip]"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/canada-datos-ns-vista-datos-${{ github.run_number }}
