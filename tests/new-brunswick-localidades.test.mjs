@@ -167,6 +167,7 @@ test("portada de Canadá en Datos: Nuevo Brunswick «Ya disponible», sin tocar 
   assert.match(idx, /class="cd-region cd-region--ficha" data-code="NB"/);
   assert.match(idx, /aria-label="Nuevo Brunswick \(ficha disponible\)"/);
   for (const code of ["AB", "ON", "BC", "PE", "SK", "MB", "QC", "NU", "NT", "YT"]) assert.match(idx, new RegExp(`class="cd-region cd-region--ficha" data-code="${code}"`), code);
-  for (const code of ["NS", "NL"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
+  for (const code of ["NL"]) assert.match(idx, new RegExp(`class="cd-region" data-code="${code}"`), code);
+  assert.match(idx, /class="cd-region cd-region--ficha" data-code="NS"/, "Nueva Escocia, ficha añadida después");
   assert.match(read("js/canada-datos-disponibles.js"), /new-brunswick/);
 });

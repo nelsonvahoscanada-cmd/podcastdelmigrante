@@ -164,8 +164,8 @@ test("sitemap: solo URL definitivas (sin .html ni parámetros)", () => {
   }
 });
 
-test("Canadá en Datos: sin cambios en su indexación (4.338 páginas básicas con noindex: 4.081 anteriores y 257 de Nuevo Brunswick)", () => {
+test("Canadá en Datos: sin cambios en su indexación (4.425 páginas básicas con noindex: 4.338 anteriores y 87 de Nueva Escocia)", () => {
   let noindex = 0;
   for (const f of paginas()) if (f.startsWith("canada-en-datos/") && read(f).includes('<meta name="robots" content="noindex">')) noindex++;
-  assert.equal(noindex, 4338);
+  assert.equal(noindex, 4425);
 });
