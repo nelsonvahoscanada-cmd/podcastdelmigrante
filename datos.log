@@ -1,0 +1,258 @@
+
+=== Catálogo de data.novascotia.ca ===
+[schools] cjnf-ywvt | Nova Scotia Public School Enrolment by RCE/CSAP and School | dataset | 2026-04-20T11:20:41.000Z | https://data.novascotia.ca/d/cjnf-ywvt
+      columnas: ['REG_ABBREV', 'REG_CODE', 'SCHOOL_NUMBER', 'REG_CENTRE_NAME', 'SCHOOL_YEAR', 'ENROLMENT', 'SCHOOL_NAME']
+[schools] w8cn-b32n | Schools with French Programs Map | map | 2017-12-05T14:20:07.000Z | https://data.novascotia.ca/d/w8cn-b32n
+      columnas: []
+[schools] mjkg-93xg | Recognized Private Schools Granting the Nova Scotia High School Leaving Certificate | dataset | 2026-04-20T12:14:13.000Z | https://data.novascotia.ca/d/mjkg-93xg
+      columnas: ['Civic Address Line 1', 'Designated Special Education Private School?', 'Renewal Date of Designation or Recognition', 'Biannual Renewal?', 'Civic Address Line 3', 'Civic Address Line 2', 'georeference', 'URL', 'Fax', 'Phone', 'Grade Level', 'Mailing Address Line 3', 'Mailing Address Line 2', 'Mailing Address Line 1', 'School']
+[schools] kdgs-3rvd | Schools with French Programs | dataset | 2017-12-05T14:20:07.000Z | https://data.novascotia.ca/d/kdgs-3rvd
+      columnas: ['School Name', 'Email', 'Grade Level', 'Integrated French', 'Location (city)', 'Location (zip)', 'Civic Address Line 2', 'Civic Address Line 1', 'Mail Address Line 1', 'School Code', 'School Board', 'Early Immersion', 'Civic Postal Code', 'Mail Address Line 2', 'Location (address)', 'Location (state)', 'Intensive French', 'Late Immersion', 'Fax', 'Telephone', 'Mail Postal Code', 'Board Code', 'Location', 'Nova Scotia Health Authority Management Zones', 'Middle Immersion']
+[schools] hijj-kp39 | Driver Training Schools | dataset | 2026-07-22T16:07:52.000Z | https://data.novascotia.ca/d/hijj-kp39
+      columnas: ['Driving School Name', 'Street Address', 'georeference', 'Postal Code', 'City/Province']
+[schools] jr2d-k7va | Discovering Opportunities (DO) Schools | dataset | 2026-07-21T11:54:47.000Z | https://data.novascotia.ca/d/jr2d-k7va
+      columnas: ['CIVIC ADDRESS LINE 2', 'MAILING ADDRESS LINE 1', 'geo_location', 'CIVIC POSTAL CODE', 'MAILING POSTAL CODE', 'SCHOOL NAME', 'RCE/BOARD NAME', 'IMPLEMENTATION YEAR', 'MAILING ADDRESS LINE 2', 'CIVIC ADDRESS LINE 1']
+[schools] wemr-kg5f | Gaelic Courses Taught by School Board and School, and Enrolment | dataset | 2026-03-24T12:40:51.000Z | https://data.novascotia.ca/d/wemr-kg5f
+      columnas: ['Enrolment', 'YEAR', 'Board Name', 'School Name', 'School Code', 'Board Code']
+[schools] s56f-5bea | Options and Opportunities (O2) Schools | dataset | 2026-07-21T11:52:36.000Z | https://data.novascotia.ca/d/s56f-5bea
+      columnas: ['Implementation_Year', 'RCE/Board_name', 'School_Name']
+[schools] 6x7t-pwfj | Recognized Private Schools Granting the Nova Scotia High School Leaving Certificate Map | map | 2026-04-20T12:14:13.000Z | https://data.novascotia.ca/d/6x7t-pwfj
+      columnas: []
+[schools] hcdu-5rtg | Nova Scotia Public School Contact Information Map | map | 2026-07-21T12:01:51.000Z | https://data.novascotia.ca/d/hcdu-5rtg
+      columnas: []
+[schools] 2p4q-s7y7 | Driver Training Schools Map | map | 2026-07-22T16:07:52.000Z | https://data.novascotia.ca/d/2p4q-s7y7
+      columnas: []
+[schools] v69y-jn74 | Nova Scotia School Board Zones - English | dataset | 2020-11-20T19:40:29.000Z | https://data.novascotia.ca/d/v69y-jn74
+      columnas: ['Shape_Leng', 'WEB', 'FAX', 'CIVIC2', 'CIVIC1', 'BRDNAME', 'BRDCODE', 'Shape_Area', 'SCHLYR', 'PHONE', 'CPOSTCODE', 'the_geom']
+[schools] iyap-ttn5 | Nova Scotia Public School Contact Information | dataset | 2026-07-21T12:01:51.000Z | https://data.novascotia.ca/d/iyap-ttn5
+      columnas: ['Telephone', 'Mail Address Line 2', 'Mail Address Line 1', 'End Grade', 'Start Grade', 'School Name', 'School Code', 'Civic Postal Code', 'Fax', 'Email', 'RCE/CSAP Name', 'RCE/CSAP Code', 'Year', 'georeference', 'Civic Address Line 2', 'Civic Address Line 1', 'Mailing Postal Code']
+[schools] 2k3n-wed5 | Schools Offering the Pre-primary Program | dataset | 2021-05-05T12:40:02.000Z | https://data.novascotia.ca/d/2k3n-wed5
+      columnas: ['School Number', 'Region', 'Implementation Year', 'School Name ', 'Community', 'telephone', 'Province', 'Postal Code ', 'Address', 'fax', 'email', 'georeference']
+[schools] mzvg-qui6 | Public School Co-op Programs | dataset | 2026-07-21T11:51:46.000Z | https://data.novascotia.ca/d/mzvg-qui6
+      columnas: ['SCHOOL', 'RCE/CSAP Name']
+[school locations] 7q7k-h9ut | Surplus Crown Property Disposal - Computer Equipment | dataset | 2026-06-22T13:01:47.000Z | https://data.novascotia.ca/d/7q7k-h9ut
+      columnas: ['Location Address', 'Description', 'Quantity', 'Location', 'ID', 'File #', 'Fiscal Year']
+[school locations] utbc-xmfs | Boys and Girls Clubs of Nova Scotia | dataset | 2020-01-08T17:21:14.000Z | https://data.novascotia.ca/d/utbc-xmfs
+      columnas: ['Email', 'Phone', 'Fax', 'Location', 'Catchment Area', 'Address', 'Location (state)', 'X_coordina', 'Location (city)', 'UID', 'Name', 'Website', 'Facebook', 'Location (zip)', 'Y_coordina', 'Location (address)']
+[school locations] rud4-7ues | Early Childhood Development Intervention Services (ECDIS) Contact Information | dataset | 2017-10-05T13:43:43.000Z | https://data.novascotia.ca/d/rud4-7ues
+      columnas: ['Phone ', 'Region  ', 'Location', 'Address', 'Fax']
+[school locations] rcyb-u6kq | A Place to Belong Program | dataset | 2023-05-08T13:57:56.000Z | https://data.novascotia.ca/d/rcyb-u6kq
+      columnas: ['UID', 'Community', 'Province', 'Website', 'Location (zip)', 'Nova Scotia Health Authority Management Zones', 'Location (address)', 'Phone', 'Fax', 'Location (state)', 'Postal Code', 'Email', 'Catchment Area', 'Location', 'Address', 'Location (city)', 'Y_coordina', 'X_coordina', 'Facebook', 'Name']
+[school locations] en5t-xr3k | Big Brothers Big Sisters | dataset | 2023-02-03T17:54:13.000Z | https://data.novascotia.ca/d/en5t-xr3k
+      columnas: ['Location (city)', 'Location', 'Location (address)', 'UID', 'Y_coordina', 'X_coordina', 'Catchment Area', 'Name', 'Email', 'Fax', 'Address', 'DCS Region', 'Location (zip)', 'Location (state)', 'Facebook', 'Website', 'Phone']
+[school locations] iite-snyb | Licensed Direct Selling Companies in Nova Scotia | dataset | 2026-08-20T11:36:28.000Z | https://data.novascotia.ca/d/iite-snyb
+      columnas: ['Province/State', 'Location Geocode (city)', 'Location Geocode (zip)', 'Licensee Name', 'Address', 'Postal/Zip Code', 'City', 'Location Geocode (address)', 'Nova Scotia Health Authority Management Zones', 'Location Geocode (state)', 'Location Geocode', 'License Type']
+[school locations] y8k4-nuqh | Big Brothers and Big Sisters Locations | map | 2023-02-03T17:54:13.000Z | https://data.novascotia.ca/d/y8k4-nuqh
+      columnas: []
+[school locations] nfpn-9xc2 | Boys and Girls Clubs Locations | map | 2020-01-08T17:21:14.000Z | https://data.novascotia.ca/d/nfpn-9xc2
+      columnas: []
+[school locations] 2kw3-tjdw | Surplus Crown Property Disposal - Real Property | dataset | 2026-06-22T13:04:05.000Z | https://data.novascotia.ca/d/2kw3-tjdw
+      columnas: ['Location', 'File No.', 'Paid To', 'Fiscal Year', 'Contract Price', 'Description', 'Awarded']
+[school locations] vcrd-d2c2 | A Place to Belong Program Locations | map | 2023-05-08T13:57:56.000Z | https://data.novascotia.ca/d/vcrd-d2c2
+      columnas: []
+[school locations] ut6n-ijt8 | [ARCHIVED] NHS Education by Location of Education | dataset | 2016-04-05T18:42:10.000Z | https://data.novascotia.ca/d/ut6n-ijt8
+      columnas: ['Male - .', 'DataGroup', 'DataGroup_Order', 'Female - %', 'Total - .', 'Total - %', 'Female - .', 'ComID', 'Year', 'Male - %', 'GeogName']
+[hospitals] 2kxr-ajui | Hospitals Map | map | 2026-04-08T11:53:46.000Z | https://data.novascotia.ca/d/2kxr-ajui
+      columnas: []
+[hospitals] tmfr-3h8a | Hospitals | dataset | 2026-04-08T11:53:46.000Z | https://data.novascotia.ca/d/tmfr-3h8a
+      columnas: ['FACILITY', 'Address', 'the_geom', 'TYPE', 'TOWN', 'COUNTY']
+[hospitals] upev-srp2 | Hospital Inpatient Occupancy | filter | 2024-05-07T13:16:18.000Z | https://data.novascotia.ca/d/upev-srp2
+      columnas: ['Zone', 'CTAS', 'Hospital', 'Actual', 'Type', 'Measure Name', 'Date']
+[hospitals] ffed-x8cd | Hospital Service Volumes | filter | 2024-05-07T13:16:18.000Z | https://data.novascotia.ca/d/ffed-x8cd
+      columnas: ['Date', 'CTAS', 'Actual', 'Measure Name', 'Hospital', 'Zone', 'Type']
+[hospitals] xcmy-9pdq | Average Total Occupancy by Hospital | chart | 2024-05-07T13:16:18.000Z | https://data.novascotia.ca/d/xcmy-9pdq
+      columnas: []
+[hospitals] mcjw-5mk3 | Average Acute Occupancy by Hospital | chart | 2024-05-07T13:16:18.000Z | https://data.novascotia.ca/d/mcjw-5mk3
+      columnas: []
+[hospitals] wxtt-c25y | Average Mental Health and Addictions Occupancy by Hospital | chart | 2024-05-07T13:16:18.000Z | https://data.novascotia.ca/d/wxtt-c25y
+      columnas: []
+[hospitals] g6s5-bwwy | [ARCHIVED] Health Statistics Injury Hospitalization Rates 2006-2009 | dataset | 2016-04-07T13:20:31.000Z | https://data.novascotia.ca/d/g6s5-bwwy
+      columnas: ['Datagroup', 'comid', 'Year', 'Injury Hospitalization Rate', 'Geogname']
+[hospitals] jq27-qa8x | Clostridium difficile Infection (CDI) rates in patients while in hospital | dataset | 2026-06-11T11:32:55.000Z | https://data.novascotia.ca/d/jq27-qa8x
+      columnas: ['Canadian Benchmark', 'DHA', 'Quarter', 'YEAR', 'CDI Rate (p/10000 days)', 'ZONE']
+[hospitals] nezp-psuh | Clostridium difficile Infection (CDI) rates in patients in hospital by region | chart | 2026-06-11T11:32:55.000Z | https://data.novascotia.ca/d/nezp-psuh
+      columnas: []
+[hospitals] fhgh-hs5y | Methicillin-resistant Staphylococcus aureus (MRSA) bloodstream infection rates in patients while in hospital | dataset | 2026-06-11T12:06:31.000Z | https://data.novascotia.ca/d/fhgh-hs5y
+      columnas: ['YEAR', 'MRSA Rate (p/10000 days)', 'ZONE', 'DHA', 'Quarter', 'Canadian Benchmark']
+[hospitals] 6kt2-5vdn | Emergency Patient Canadian Triage and Acuity Scale (CTAS) Level Breakdown by Zone | chart | 2024-05-07T13:16:18.000Z | https://data.novascotia.ca/d/6kt2-5vdn
+      columnas: []
+[hospitals] m9ng-y7cu | Action for Health | dataset | 2024-05-07T13:16:18.000Z | https://data.novascotia.ca/d/m9ng-y7cu
+      columnas: ['Type', 'Date', 'Measure Name', 'Actual', 'Zone', 'CTAS', 'Hospital']
+[hospitals] c39g-gsdd | Long-term Care Waitlist | dataset | 2026-04-20T11:19:27.000Z | https://data.novascotia.ca/d/c39g-gsdd
+      columnas: ['Year', 'Date', 'Total Waiting for Initial Placement', 'Waiting for Inter-Facility Transfer', 'Waiting In Hospital', 'Waiting in the Community']
+[hospitals] 77h9-je62 | Death Registrations 1864-1877, 1908-1974; City of Halifax 1890-1908 | dataset | 2025-07-17T14:42:50.000Z | https://data.novascotia.ca/d/77h9-je62
+      columnas: ['Cause 1A', 'Hospital', 'Undertaker', 'Race', 'Birth Day', 'Birth Year', 'County', 'Citizenship', 'Married Status', 'Age Years', 'Age Hours', 'Occupation', 'Time Occupation', 'Father First Name', 'Mother First Name', 'Birth Mother', 'Burial Date', 'Cause 1B', 'Deathid', 'RegYear', 'RegBook', 'LastName', 'Year', 'Day', 'FirstName', 'RegPage', 'Reference', 'VSComplete', 'Gender', 'Birth Month', 'RegNumber', 'Cause2', 'Cause 1C', 'Industry', 'Age Minutes', 'Month', 'Place', 'Age Days', 'Age Months', 'Note']
+[health facilities] s7ui-kx6d | Long-term Care and Residential Care Facilities Map | map | 2026-11-23T12:05:49.000Z | https://data.novascotia.ca/d/s7ui-kx6d
+      columnas: []
+[health facilities] wu5w-qxki | Surgical Wait Times | dataset | 2025-08-05T13:50:25.000Z | https://data.novascotia.ca/d/wu5w-qxki
+      columnas: ['Procedure', 'Consult_90th', 'Year', 'Period', 'Surgery_Median', 'Zone', 'Surgery_90th', 'Quarter', 'Facility', 'Provider', 'Consult_Median', 'Specialty']
+[health facilities] x76a-axw2 | Long-term Care and Residential Care Facilities | dataset | 2026-11-23T12:05:49.000Z | https://data.novascotia.ca/d/x76a-axw2
+      columnas: ['Location (state)', 'Facility Name', 'Location (zip)', 'RCF Respite Beds', 'Nursing Homes (NH) No. of Beds', 'Facility ID', 'Address', 'Postal Code', 'Single Entry Access (SEA) Participating', 'Facility Type', 'X Coordinate', 'Nursing Homes (NH) No. of Respite Beds', 'Location (city)', 'Town', 'Residential Care Facilities (RCF) No.of Beds', 'the_geom', 'Zone', 'Location', 'Y  Coordinate', 'Location (address)']
+[health facilities] 75nx-yut7 | Emergency Department Closure Hours by Zone, Facility, and Facility Type | dataset | 2025-06-05T16:32:02.000Z | https://data.novascotia.ca/d/75nx-yut7
+      columnas: ['Temporary', 'Site', 'Total', 'YEAR', 'TYPE', 'Zone', 'Scheduled']
+[health facilities] pkj5-hhwu | Emergency Department Closure Hours by Year | chart | 2025-06-05T16:32:02.000Z | https://data.novascotia.ca/d/pkj5-hhwu
+      columnas: []
+[health facilities] 7t68-9xmm | Boil Water Advisories | dataset | 2026-06-16T13:58:43.000Z | https://data.novascotia.ca/d/7t68-9xmm
+      columnas: ['County', 'Facility Type', 'Date Advisory Removed', 'Length of Advisory in Days', 'Site Name', 'Date Advisory Issued', 'Reason for the Report']
+[health facilities] dyij-8xgr | Long-term Care Waitlist Totals by Month | chart | 2026-04-20T11:19:27.000Z | https://data.novascotia.ca/d/dyij-8xgr
+      columnas: []
+[health facilities] vy3k-snwm | Surgical Wait Times for Procedures: Median Average by Facility and Year | chart | 2025-08-05T13:50:25.000Z | https://data.novascotia.ca/d/vy3k-snwm
+      columnas: []
+[health facilities] shcq-4v93 | Municipal Fiscal Statistics - Consolidated Revenues and Expenses by Municipality | dataset | 2026-01-16T12:27:02.000Z | https://data.novascotia.ca/d/shcq-4v93
+      columnas: ['Provincial government and provincial government agencies', 'Return on investments', 'Fire protection', 'Total Other Rates, Charges and Assessments', 'Total Other Assessable Property Tax Revenue', 'Region Type', 'Protective Services Short-term interest and other debt charges', 'Annual Surplus(Surplus)', 'TOTAL EXPENSES', 'TOTAL ELECTRIC FUND', 'Electric Fund Amortization, gain / loss, writedowns on capital assets', 'Electric Fund Interest on long-term debt', 'Electric fund expenses', 'TOTAL WATER FUND', 'Water Fund Amortization, gain / loss, writedowns on capital assets', 'Water Fund Interest on long-term debt', 'Water fund expenses', 'TOTAL EXTRAORDINARY OR SPECIAL ITEMS', 'Optional (supplementary) education contributions', 'Extraordinary or special expenditure items', 'Extraordinary or special revenue items ', 'TOTAL RECREATION AND CULTURAL SERVICES', 'Other recreation and cultural services', 'Recreation Amortization, gain / loss, writedowns on capital assets', 'Short-term interest and other debt charges', 'Recreation Interest on long-term debt', 'Transfers to regional library', 'Cultural buildings and facilities', 'Recreation facilities', 'TOTAL ENVIRONMENTAL DEVELOPMENT SERVICES', 'Other environmental development services', 'Environmental Development Amortization, gain / loss, writedowns on capital assets', 'Environmental Development Short-term interest and other debt charges', 'Environmental planning and zoning', 'Other public health services', 'Public Health Interest on long-term debt', 'Public Health', 'TOTAL ENVIRONMENTAL HEALTH SERVICES', 'Other environmental health services', 'Environmental Health Amortization, gain / loss, writedowns on capital assets']
+[municipal boundaries] 7bqh-hssn | Municipality Boundaries | dataset | 2025-12-05T12:02:47.000Z | https://data.novascotia.ca/d/7bqh-hssn
+      columnas: ['NAME', 'FeatDesc', 'OBJECTID', 'the_geom', 'FullName', 'County', 'SHAPE_Area', 'SHAPE_Leng', 'CGNDB_KEY']
+[municipal boundaries] 4s9u-shxs | Boundaries for Municipal Districts | map | 2025-12-05T12:02:47.000Z | https://data.novascotia.ca/d/4s9u-shxs
+      columnas: []
+[municipal boundaries] hi6r-rzid | Boundaries for Municipal Counties | map | 2025-12-05T12:02:47.000Z | https://data.novascotia.ca/d/hi6r-rzid
+      columnas: []
+[municipal boundaries] swqc-jpc3 | Boundaries for Towns | map | 2025-12-05T12:02:47.000Z | https://data.novascotia.ca/d/swqc-jpc3
+      columnas: []
+[municipal boundaries] i54i-va96 | Boundaries for Villages | map | 2026-09-01T11:02:42.000Z | https://data.novascotia.ca/d/i54i-va96
+      columnas: []
+[municipal boundaries] iymb-rmgy | Boundaries for Regional Municipalities | map | 2025-12-05T12:02:47.000Z | https://data.novascotia.ca/d/iymb-rmgy
+      columnas: []
+[municipal boundaries] 23hp-7dde | Village Boundaries | dataset | 2026-09-01T11:02:42.000Z | https://data.novascotia.ca/d/23hp-7dde
+      columnas: ['NAME', 'SHAPE_Area', 'FeatDesc', 'CGNDB_KEY', 'SHAPE_Leng', 'OBJECTID', 'Municipality', 'the_geom']
+[municipal boundaries] gcep-xeci | Municipal Polling Districts | dataset | 2025-11-19T13:08:59.000Z | https://data.novascotia.ca/d/gcep-xeci
+      columnas: ['SHAPE_Area', 'Reg_Num', 'Poll_Dist', 'Mun', 'MU_Code', 'CO_Code', 'SHAPE_Leng', 'the_geom']
+[municipal boundaries] a89z-tinp | Nova Scotia Civic Address File (NSCAF) - Community Boundaries | dataset | 2026-11-05T12:02:16.000Z | https://data.novascotia.ca/d/a89z-tinp
+      columnas: ['RETIRED', 'VERIFIED', 'LOCKED', 'MUN_CODE', 'GSA_CODE', 'GSA_NAME', 'CO_CODE', 'GSA_KEY', 'EDIT_V', 'the_geom', 'MUN_ID']
+[municipal boundaries] qazs-jfca | Nova Scotia Civic Address File (NSCAF) - Community Boundaries Map | map | 2026-11-05T12:02:16.000Z | https://data.novascotia.ca/d/qazs-jfca
+      columnas: []
+[municipal boundaries] 4qyk-69iq | Municipal Polling Districts | map | 2025-11-19T13:08:59.000Z | https://data.novascotia.ca/d/4qyk-69iq
+      columnas: []
+[municipal boundaries] agxn-dwx7 | Boundary File of Nova Scotia’s Self-contained Labour Areas (2016) | dataset | 2024-08-13T13:20:56.000Z | https://data.novascotia.ca/d/agxn-dwx7
+      columnas: ['SLA_CODE', 'the_geom', 'SLA_NAME']
+[municipal boundaries] p3ve-n8ge | Boundary File of Nova Scotia’s Self-contained Labour Areas (2021) | dataset | 2024-08-13T13:07:30.000Z | https://data.novascotia.ca/d/p3ve-n8ge
+      columnas: ['Self-contained Labour Area Boundary', 'Self-contained Labour Area Name']
+[municipal boundaries] jk9s-dhfu | Nova Scotia Functional Economic Regions (2021) | map | 2024-08-13T13:07:30.000Z | https://data.novascotia.ca/d/jk9s-dhfu
+      columnas: []
+[municipal boundaries] wwaq-2akq | Gaelic Placenames in Nova Scotia | dataset | 2019-05-22T16:55:13.000Z | https://data.novascotia.ca/d/wwaq-2akq
+      columnas: ['lat', 'COUNTY', 'Georeferenced Column', 'SIORRAMACHD', 'long', "ÀINM-AITE 'S A' GHÀIDHLIG", 'easting', 'northing', 'ENGLISH PLACENAME']
+[municipalities] ure8-3w7m | Municipal Property Tax Rates | dataset | 2026-02-24T12:08:46.000Z | https://data.novascotia.ca/d/ure8-3w7m
+      columnas: ['Commercial', 'Residential', 'Year', 'Area Type', 'Area']
+[municipalities] 4hyt-4nhy | 911 Municipal Grants | dataset | 2025-12-22T12:34:19.000Z | https://data.novascotia.ca/d/4hyt-4nhy
+      columnas: ['Region Type', 'Region', 'Funds Allotted', 'Dwelling Count', 'Year']
+[municipalities] 597s-9r3k | Municipal Contribution To Roads | dataset | 2026-05-20T11:30:50.000Z | https://data.novascotia.ca/d/597s-9r3k
+      columnas: [' Number of Kms ', ' Municipality ', 'Year', 'Contribution Total', 'Area or Region Type']
+[municipalities] sbzw-ajrm | Municipal Fiscal Statistics: Operating Fund Total Revenues and Expenditures by Municipality | dataset | 2026-01-16T12:53:15.000Z | https://data.novascotia.ca/d/sbzw-ajrm
+      columnas: ['Region', 'General Government Services', 'Conditional Transfers From Other Local Governments', 'Conditional Transfers From Federal Or Provincial Governments Or Agencies', 'Conditional transfers from other governments', 'Unconditional Transfers From Other Governments', 'Other Revenue From Own Sources', 'Sales Of Services', 'Services Provided To Other Governments', 'Assessable Property Taxes (Net Of School Board Appropriations, corrections, housing deficits)', 'Net property taxes and payments in lieu of taxes', 'Year', 'Region Type', 'ANNUAL SURPLUS (DEFICIT)', 'Operating surplus (deficit) before financing and transfers', 'Recreation And Cultural Services', 'Environmental Development Services', 'Total Revenues', 'Grants In Lieu Of Taxes', 'Extraordinary Or Special Items', 'Total Expenses', 'TOTAL FINANCING AND TRANSFERS', 'Public Health Services', 'Environmental Health Services', 'Transportation Services', 'Protective Services']
+[municipalities] 5rgt-der6 | Municipal Affairs Funding Programs | dataset | 2024-07-05T12:11:52.000Z | https://data.novascotia.ca/d/5rgt-der6
+      columnas: ['Area', 'Actual Funding Amount', 'Funding Program', 'Year']
+[municipalities] mp68-kdz7 | Municipal Solid Waste Disposal Totals | dataset | 2026-06-23T12:37:02.000Z | https://data.novascotia.ca/d/mp68-kdz7
+      columnas: ['IC&I/Capita', 'Population', 'Total', 'IC&I', 'Garbage', 'Municipality', 'Year', 'C&D', 'Total/Capita', 'C&D/Capita', 'Region']
+[municipalities] 44ah-ugrd | Municipal Fiscal Statistics - Financial Condition Indicators | dataset | 2026-01-16T12:17:37.000Z | https://data.novascotia.ca/d/44ah-ugrd
+      columnas: ['3 Year Change in Tax Base', 'Debt Service Cost', 'Undepreciated Assets', 'Outstanding Operating Debt', 'Year', 'Region Type', 'Reliance on Government Transfers', 'Reliance on Single Business or Instituion', 'Liquidity', 'Combined Operating   Capital Reserves', 'Operating Reserve', 'Residential Tax Effort', 'Total # of Budget Accuracy within + or - 5% ', 'Total # of Deficits', 'Uncollected Taxes', 'Region']
+[municipalities] m3zv-87rm | Municipal Land Use Planning Comprehensiveness | dataset | 2016-10-27T12:22:24.000Z | https://data.novascotia.ca/d/m3zv-87rm
+      columnas: ['Level of Planning Comprehensiveness ', 'Date of Plan', 'Municipality Name ']
+[villages] 57fm-m8a8 | Nova Scotia Museum - Locations Map | map | 2026-06-22T11:11:38.000Z | https://data.novascotia.ca/d/57fm-m8a8
+      columnas: []
+[villages] f84a-3hfv | Nova Scotia Museum - Locations | dataset | 2026-06-22T11:11:38.000Z | https://data.novascotia.ca/d/f84a-3hfv
+      columnas: ['Town', 'County', 'geolocation', 'Site', 'Address', 'Postal Code']
+[villages] 7pnv-7sdm | Registered Heritage Properties | dataset | 2026-07-17T16:30:45.000Z | https://data.novascotia.ca/d/7pnv-7sdm
+      columnas: ['TYPE', 'REASON FOR REGISTRATION', 'CHARACTER-DEFINING ELEMENTS', 'BUILDER', 'CULTURAL ASSOCIATION', 'YEAR BUILT', 'DECADE BUILT', 'PROPERTY NAME', 'CIVIC ADDRESS', 'COMMUNITY', 'COUNTY', 'PID #', 'NOTICE OF REGISTRATION DATE (Y/M/D)', 'LEVEL OF REGISTRATION', 'ARCHITECT/DESIGNER', 'UNIQUE IDENTIFIER/FILE NO.', 'LATITUDE', 'LONGITUDE']
+[villages] jzzj-4e9w | Nova Scotia Open Data Portal Survey | dataset | 2025-12-23T19:53:35.000Z | https://data.novascotia.ca/d/jzzj-4e9w
+      columnas: ['Used or helped others find open data', 'Interactions with datasets on the portal', 'Other activities on the portal', 'NS Portal needs and experiences', 'Barriers to use of the portal', 'Use portal in future', 'Nova Scotia Government employee', 'Purpose of portal use', 'Open data needs and experiences', 'Tools used for analysis and visualization of open data', 'Open data formats used', 'How open data is accessed', 'Open data sources used', 'Data sources', 'As a Nova Scotia Government employee, please select the most appropriate statement(s) as they apply to your experience with the Nova Scotia Open Data Portal.', "Do you work or volunteer for an organization where you've used, gathered, or directed people to data from Nova Scotia's Open Data Portal?", 'Best describes you', 'Date Completed', 'Index', 'Live in Nova Scotia', 'Level of data detail interest', 'Level of use of the portal', 'Open data interests', 'Open data useful now or in future', "Outside of your work as a government employee, do you work or volunteer for an organization where you've used, gathered, or directed people to data from Nova Scotia's Open Data Portal?"]
+[communities] aasp-xptj | [ARCHIVED] Nova Scotia Communities Engaged in Age-Friendly Community Planning | dataset | 2016-01-22T15:12:29.000Z | https://data.novascotia.ca/d/aasp-xptj
+      columnas: ['Location (zip)', 'Mailing Address', 'Location (city)', 'Community', 'Location', 'Longitude', 'Latitude', 'Province', 'Email', 'Phone', 'Postal Code', 'City/Town', 'Street Address', 'Contact', 'Website', 'Location (state)', 'Location (address)']
+[communities] ndaw-w8n7 | Nova Scotia Community Clusters Map | map | 2020-11-30T14:53:57.000Z | https://data.novascotia.ca/d/ndaw-w8n7
+      columnas: []
+[communities] 2rfn-4b6m | Nova Scotia Community Clusters | dataset | 2020-11-30T14:53:57.000Z | https://data.novascotia.ca/d/2rfn-4b6m
+      columnas: ['Cluster', 'ClusterID', 'the_geom']
+[communities] v47v-22q4 | Feeding Communities Fund | dataset | 2026-09-18T17:57:09.000Z | https://data.novascotia.ca/d/v47v-22q4
+      columnas: ['Amount', 'Grant Program', 'Organization', 'Region', 'Year']
+[communities] 5zdi-iics | Community Health Boards | dataset | 2026-04-08T11:49:58.000Z | https://data.novascotia.ca/d/5zdi-iics
+      columnas: ['REGN_CD', 'Shape_Area', 'Shape_Leng', 'Zone_Name', 'Zone', 'the_geom', 'CHB_NAME', 'CHB_NO']
+[communities] is4a-t3qd | Tourism Nova Scotia Visitor Exit Survey Communities | dataset | 2024-05-07T12:51:20.000Z | https://data.novascotia.ca/d/is4a-t3qd
+      columnas: ['Region', 'Community', 'Year', 'Percent']
+[communities] cxaa-6d86 | Community Health Boards Map | map | 2026-04-08T11:49:58.000Z | https://data.novascotia.ca/d/cxaa-6d86
+      columnas: []
+[communities] v5z7-rzy4 | Nova Scotia Community Health Network | dataset | 2019-06-20T18:53:53.000Z | https://data.novascotia.ca/d/v5z7-rzy4
+      columnas: ['Network', 'the_geom', 'Network_ID']
+[communities] bcxb-v7fu | Community Economic Development Fund | dataset | 2022-02-02T16:45:26.000Z | https://data.novascotia.ca/d/bcxb-v7fu
+      columnas: ['Number of Applications', 'Year', 'Invest Nova Scotia Applications']
+[communities] axmt-riwq | Community Living - Disability Support Program | dataset | 2026-11-05T19:03:46.000Z | https://data.novascotia.ca/d/axmt-riwq
+      columnas: ['DSP participants in community-based living', 'Date', 'Year', '% in community-based living', 'Total DSP participants']
+[communities] chvv-syvv | Community Feed-in Tariff Program | dataset | 2023-04-18T16:41:11.000Z | https://data.novascotia.ca/d/chvv-syvv
+      columnas: ['#ID', 'Megawatts', 'Entity Type', 'Project Description', 'Technology', 'Applicant Name', 'Project Location', 'Project Status (Approval Date)', 'Anticipated In-service Date']
+[communities] p9y5-d99g | Low Carbon Communities Grant Recipients | dataset | 2025-03-26T20:14:45.000Z | https://data.novascotia.ca/d/p9y5-d99g
+      columnas: ['Category', 'Area', 'Project Name', 'Funding Round', 'Fiscal year', 'Organization', 'Amount Awarded by Program']
+[communities] fkyr-wmdy | Solar Electricity for Community Buildings Program | dataset | 2020-01-09T17:31:54.000Z | https://data.novascotia.ca/d/fkyr-wmdy
+      columnas: ['Size (kW)', 'Location (address)', 'Location (city)', 'Solar Project County', 'Price (cents/kWh)', 'Solar Project Address 2', 'Solar Project Town/Municipality', 'Location', 'Year', 'Location (zip)', 'Solar Project Address 1', 'Organization Name', 'Location (state)', 'Project Description']
+[communities] 58d7-yrbq | Treaty Day Awards by Community | chart | 2024-12-05T12:45:19.000Z | https://data.novascotia.ca/d/58d7-yrbq
+      columnas: []
+[communities] 4qqi-i6zp | Nova Scotia Community Clusters Census Population | dataset | 2019-02-05T13:50:19.000Z | https://data.novascotia.ca/d/4qqi-i6zp
+      columnas: ['Community Cluster', 'ClusterID', 'NetworkID', 'Zone', 'Community Health Network', 'Population Weight', 'Population After Weighing', 'Census Year', 'ZoneID', 'Population Un-Weighted']
+[community counts] 244y-didh | [ARCHIVED] Taxfiler Data by County Distribution of Income | dataset | 2016-04-01T17:20:20.000Z | https://data.novascotia.ca/d/244y-didh
+      columnas: ['65-74 Years', 'Total', '45-54 Years', '35-44 Years', '25-34 Years', 'ComID', 'Year', '55-64 Years', 'DataGroup1', 'DataGroup2', '0-24 Years', 'DataGroup1_Order', 'GeogName', '75+ Years']
+[community counts] s6f2-3jrq | [ARCHIVED] Census Population Density | dataset | 2016-04-07T13:56:21.000Z | https://data.novascotia.ca/d/s6f2-3jrq
+      columnas: ['Percent Change 1996 - 2006', '1996 - .', 'Percent Change 1991 - 2001', '2001 - .', '1991 - .', 'ComID', 'GeogName', 'DataGroup2', 'DataGroup1_Order', '2011 - .', '2006 - .', 'DataGroup1', 'Percent Change 2001 - 2011']
+[community counts] wa8g-ji9a | [ARCHIVED] Business Establishments 2010-2011 | dataset | 2016-04-06T13:14:47.000Z | https://data.novascotia.ca/d/wa8g-ji9a
+      columnas: ['Year', 'Small: 0-49 Employees', 'Total', 'Datagroup', 'ComID', 'GeogName', 'Datagroup_Order', 'Medium: 50-99 Employees', 'Large: 100+ Employees']
+[community counts] miff-bspm | [ARCHIVED] Census Long Form Low Income | dataset | 2016-04-06T18:14:30.000Z | https://data.novascotia.ca/d/miff-bspm
+      columnas: ['1996 - %', 'Percent Change 1996 - 2006', '2006 - %', '2006 - .', '2001 - %', '2001 - .', '1996 - .', '1991 - %', '1991 - .', 'GeogName', 'DataGroup1_Order', 'DataGroup2', 'ComID', 'DataGroup1']
+[community counts] ymgy-r83d | [ARCHIVED] Census Long Form Citizenship and Immigration | dataset | 2016-04-06T15:54:25.000Z | https://data.novascotia.ca/d/ymgy-r83d
+      columnas: ['1996 - %', '2001 - %', 'Percent Change 1996 - 2006', '2006 - %', '2006 - .', '1991 - .', 'DataGroup2', 'DataGroup1', '2001 - .', 'ComID', 'GeogName', 'DataGroup1_Order', '1991 - %', '1996 - .']
+[community counts] qtxk-xxni | [ARCHIVED] Census Housing Dwelling Characteristics | dataset | 2016-04-06T15:44:45.000Z | https://data.novascotia.ca/d/qtxk-xxni
+      columnas: ['DataGroup1_Order', '2011 - %', 'DataGroup2', 'ComID', '1991 - .', '1996 - %', '2001 - .', '1996 - .', '1991 - %', 'GeogName', '2011 - .', 'Percent Change 2001 - 2011', '2006 - %', '2006 - .', '2001 - %', 'DataGroup1']
+[community counts] w6k5-8vkh | [ARCHIVED] NHS Labour Employment Type | dataset | 2016-04-05T14:48:11.000Z | https://data.novascotia.ca/d/w6k5-8vkh
+      columnas: ['Female - .', 'Male - .', 'GeogName', 'Female - %', 'Year', 'Male - %', 'DataGroup', 'DataGroup_Order', 'ComID', 'Total - %', 'Total - .']
+[community counts] ctq8-2wjx | [ARCHIVED] NHS Labour Employment by Industry | dataset | 2016-04-05T14:54:06.000Z | https://data.novascotia.ca/d/ctq8-2wjx
+      columnas: ['ComID', 'Total - .', 'Male - %', 'GeogName', 'Female - %', 'Male - .', 'DataGroup', 'DataGroup_Order', 'Total - %', 'Year', 'Female - .']
+[community counts] 7axg-w7xa | [ARCHIVED] Health Statistics Mental Health 2001-2007 | dataset | 2016-04-05T18:42:44.000Z | https://data.novascotia.ca/d/7axg-w7xa
+      columnas: ['Seriously considered suicide - lifetime', 'Mood Disorder', 'ComID', 'Takes positive attitude towards self', 'Learning Disability - ADHD', 'Felt sad/blue/depressed for 2 weeks', 'Year', 'Has someone for suggestions for personal', 'Self-Esteem Scale - Moderate', 'Schizophrenia', 'Attempted suicide - past 12 months', 'Geogname', 'Learning Disability', 'Self-Esteem Scale - High', 'Datagroup', 'Depression scale - Predicted probability', 'Chronicity of distress/impairment', 'Self-Esteem Scale - Low', 'Has someone who shows love and affection', 'Ability to handle day-to-day demands', 'Anxiety', 'Learning Disability - ADD', 'Ability to handle unexpected problem', 'Has someone to help with daily chores if sick', 'Has someone to receive advice about a crisis', 'Seriously considered suicide - past 12 months', 'Attempted suicide - lifetime']
+[community counts] kwwk-s848 | [ARCHIVED] Taxfiler Data Sources of Income by Gender | dataset | 2016-04-01T15:04:32.000Z | https://data.novascotia.ca/d/kwwk-s848
+      columnas: ['DataGroup1_Order', 'ComID', 'GeogName', 'DataGroup1', 'DataGroup2', 'Year', 'Female', 'Male', 'Total']
+[community counts] uqj2-7kdz | [ARCHIVED] Collision Statistics Monthly 2000-2003 | dataset | 2016-04-06T17:00:20.000Z | https://data.novascotia.ca/d/uqj2-7kdz
+      columnas: ['GeogName', 'DataGroup1_Order', 'DataGroup2', 'Fatal', 'Injury', 'Property Damage', 'Year', 'DataGroup1', 'ComID', 'Total']
+[community counts] 2zws-gisw | [ARCHIVED] Census Population by 5 Year Age Groups | dataset | 2016-04-07T13:07:29.000Z | https://data.novascotia.ca/d/2zws-gisw
+      columnas: ['2011 - .', 'ComID', '1991 - %', 'DataGroup1', 'GeogName', 'DataGroup1_Order', 'Percent Change 1991 - 2001', 'Percent Change 1996 - 2006', '2011 - %', '2001 - .', '1996 - .', '1996 - %', '2001 - %', '2006 - .', '2006 - %', '1991 - .', 'Percent Change 2001 - 2011', 'DataGroup2']
+[community counts] eytb-9sg2 | [ARCHIVED] Canadian Community Health Survey 2001-2010 | dataset | 2016-04-06T13:24:38.000Z | https://data.novascotia.ca/d/eytb-9sg2
+      columnas: ['Datagroup', 'Physical Activity during Leisure', 'Smoker (Daily or Occasional)', 'High Blood Pressure', 'Respiratory Disease', 'Diabetes', 'Overweight or Obese', 'Perceived Mental Health', 'Perceived Health', 'Year', 'Geogname', 'ComID', 'Exposure to Secondhand Smoke in vehicles public places', 'Fruit and Vegetable Consumption', 'Heavy Drinking (5 or more drinks on one occasion)', 'Household Food Insecurity', 'Participation and activity limitation', 'Life Satisfaction', 'Exposure to Secondhand Smoke at Home', 'Contact with Medical Doctor', 'Contact with Health Professionals about MH', 'Sense of Belonging']
+[community counts] jaam-rhea | [ARCHIVED] Census Long Form Mobility | dataset | 2016-04-07T12:50:28.000Z | https://data.novascotia.ca/d/jaam-rhea
+      columnas: ['DataGroup', 'Prior 5 Years - .', 'Prior 5 Years - %', 'Prior Year - .', 'ComID', 'Year', 'Prior Year - %', 'DataGroup_Order', 'GeogName']
+[community counts] dfg8-y2y2 | [ARCHIVED] Census Population - Selected Age Groups | dataset | 2016-04-07T13:53:03.000Z | https://data.novascotia.ca/d/dfg8-y2y2
+      columnas: ['2006 - %', '2006 - .', '2001 - .', 'Percent Change 2001 - 2011', 'Percent Change 1996 - 2006', 'Percent Change 1991 - 2001', '2011 - %', '2011 - .', '1991 - %', '2001 - %', '1991 - .', 'DataGroup1', 'GeogName', 'ComID', '1996 - .', 'DataGroup1_Order', 'DataGroup2', '1996 - %']
+[regional centre for education] s2fr-akki | Gaelic Courses Taught by Regional Centre for Education, School and Grade | dataset | 2026-03-24T12:33:23.000Z | https://data.novascotia.ca/d/s2fr-akki
+      columnas: ['Course', 'School Name', 'Regional Centre for Education Code', 'School Code', 'Regional Centre for Education Name', 'Year']
+[regional centre for education] hwzw-sx5c | School Bus Survey Data | dataset | 2019-11-06T14:14:10.000Z | https://data.novascotia.ca/d/hwzw-sx5c
+      columnas: ['SAMPLE SIZE (#)', 'GROUP #', 'RESPONSE', 'GROUP %', 'TABLE', 'GROUP']
+[regional centre for education] fqau-nfyv | Graduation Rates | dataset | 2018-01-05T19:12:47.000Z | https://data.novascotia.ca/d/fqau-nfyv
+      columnas: ['Graduation Rate (%)', 'Year', 'Number of Graduating Students', 'Grade 9 Enrolment Year', 'Grade 9 Enrolment Number']
+[regional centre for education] kyn8-d3kj | Skilled Trades Centres | dataset | 2026-07-21T11:50:52.000Z | https://data.novascotia.ca/d/kyn8-d3kj
+      columnas: ['RCE/Board_name', 'City/Town', 'Postal_Code_Civic_Address', 'Mailing_address_city_town', 'Mailing_Address ', 'Civic_Address ', 'Postal_Code_Mailing_Address', 'Trade_Centre_School']
+[regional centre for education] dfrt-tihs | Gaelic Courses Offered | dataset | 2026-03-24T12:23:59.000Z | https://data.novascotia.ca/d/dfrt-tihs
+      columnas: ['Year', 'Course Code', 'Course Title']
+[regional centre for education] 76iu-75v2 | Nova Scotia School Board Zones - French | dataset | 2020-11-20T19:47:24.000Z | https://data.novascotia.ca/d/76iu-75v2
+      columnas: ['BRDNAME', 'CPOSTCODE', 'WEB', 'Shape_Leng', 'BRDCODE', 'the_geom', 'CIVIC2', 'CIVIC1', 'PHONE', 'FAX', 'SCHLYR', 'Shape_Area']
+[regional centre for education] y69u-3nas | SchoolsPlus Sites, including Hub sites and schools by Hub | dataset | 2024-06-12T16:37:06.000Z | https://data.novascotia.ca/d/y69u-3nas
+      columnas: ['RCE/Board Name', 'Year', 'Geolocation', 'Civic Address Line 1', 'RCE/Board Code', 'Telephone', 'Fax', 'Email', 'Mail Address Line 1', 'School Name', 'School Code', 'HUB?', 'Civic Postal Code', 'Civic Address Line 2', 'Mailing Postal Code', 'Mail Address Line 2']
+[census subdivision] 6pvu-62js | Nova Scotia's Functional Economic Regions | map | 2024-08-13T13:20:56.000Z | https://data.novascotia.ca/d/6pvu-62js
+      columnas: []
+[census subdivision] fwxc-ehtr | Sea Level Rise Over Time and Across Regions in Nova Scotia (SSP5-8.5 scenario, 2070 and 2100) | chart | 2026-07-09T11:40:44.000Z | https://data.novascotia.ca/d/fwxc-ehtr
+      columnas: []
+[census subdivision] abep-wtes | Sea Level Rise Uncertainty in Nova Scotia (SSP5-8.5 scenario, 2100) | chart | 2026-07-09T11:40:44.000Z | https://data.novascotia.ca/d/abep-wtes
+      columnas: []
+[census subdivision] dci8-twta | Mean Annual Temperature Across Regions in Nova Scotia (SSP5-8.5 scenario, p50, 2071-2100) | chart | 2026-07-09T11:31:22.000Z | https://data.novascotia.ca/d/dci8-twta
+      columnas: []
+[census subdivision] 3r68-jx4q | Mean Annual Temperature Uncertainty in Nova Scotia (SSP5-8.5 scenario, 2071-2100) | chart | 2026-07-09T11:31:22.000Z | https://data.novascotia.ca/d/3r68-jx4q
+      columnas: []
+[census subdivision] trk2-6yfx | Mean Annual Temperature Over Time in Nova Scotia (SSP5-8.5 scenario, p50) | chart | 2026-07-09T11:31:22.000Z | https://data.novascotia.ca/d/trk2-6yfx
+      columnas: []
+[census subdivision] ncpw-qf9z | NS Sea Level Rise Projections (CMIP6) | dataset | 2026-07-09T11:40:44.000Z | https://data.novascotia.ca/d/ncpw-qf9z
+      columnas: ['ssp245_p50_2100', 'ssp245_p95_2100', 'ssp585_p05_2070', 'ssp585_p05_2100', 'ssp585_p50_2100', 'ssp585_p95_2100', 'ssp585_p95_2070', 'ssp585_p50_2070', 'ssp245_p95_2070', 'Units', 'Common Name', 'Region', 'Geo_ID', 'Region Type', 'Variable', 'Description', 'ssp245_p05_2070', 'ssp245_p50_2070', 'ssp245_p05_2100']
+[census subdivision] vmh8-8a3a | NS Climate Change Projections (CMIP6) | dataset | 2026-07-09T11:31:22.000Z | https://data.novascotia.ca/d/vmh8-8a3a
+      columnas: ['Region Type', 'Variable', 'Common Name', 'Description', 'ssp245_p10_1981-2010', 'ssp245_p50_1981-2010', 'ssp245_p90_1981-2010', 'ssp245_mean_1981-2010', 'ssp245_p10_2041-2070', 'ssp245_p50_2041-2070', 'ssp585_p90_2041-2070', 'ssp585_mean_2041-2070', 'ssp585_p50_2071-2100', 'ssp585_p10_2041-2070', 'ssp585_p50_2041-2070', 'ssp245_p90_2041-2070', 'ssp245_mean_2041-2070', 'ssp245_p10_2071-2100', 'ssp245_p50_2071-2100', 'ssp245_p90_2071-2100', 'ssp245_mean_2071-2100', 'ssp585_p10_1981-2010', 'ssp585_p50_1981-2010', 'ssp585_p90_1981-2010', 'ssp585_mean_2071-2100', 'ssp585_p90_2071-2100', 'ssp585_p10_2071-2100', 'Units', 'ssp585_mean_1981-2010', 'Region', 'Geo_ID']
+
+=== Bandera de Nueva Escocia en Wikimedia Commons ===
+url: https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Nova_Scotia.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | tamaño: 1200 x 600 | sha1: 311a02d80801857b0d000fa79367df122a5ddc8d
+  LicenseShortName : Public domain
+  License : pd
+  UsageTerms : Public domain
+  Copyrighted : False
+  Restrictions : insignia
+  Artist : Original: Unknown author Vector:  Kooma, FJDEACKB, Zscout370 and Denelson83
+  Credit : [1] (dead link)
+  AttributionRequired : false
+SVG: 7087 bytes

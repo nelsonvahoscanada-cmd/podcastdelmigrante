@@ -1,0 +1,175 @@
+URL: https://www.jobbank.gc.ca/trend-analysis/job-market-reports/nova-scotia/environmental-scan
+TÍTULO: Economic Scan – Nova Scotia - Job Bank
+MODIFICADA: 2026-05-06
+ESTADO: 200 | FINAL: https://www.jobbank.gc.ca/trend-analysis/job-market-reports/nova-scotia/environmental-scan
+
+Economic Scan – Nova Scotia - 2026
+ Demographics
+ Highlights
+ In 2025, 1,093,000 people lived in Nova Scotia, an increase of 1.0% from 2024 to 2025. Nova Scotia represents 2.6% of Canada's total population.
+ The average age of the Indigenous population in Nova Scotia was 37.0 in 2021 compared to 44.2 for the non-Indigenos population .
+ Seniors aged 65+ are projected to comprise 25.5% of the population in 2035, up from 22.6% in 2025.
+ The population share of the prime working age group (25 to 54) is expected to remain relatively stable, edging up from 39.2% in 2025 to 40.2% in 2035.
+ Youth (age 15 to 29) are anticipated to make up 17.7% of the population in 2035, down from 18.5% in 2025.
+ Enrolment in the public school system has been growing since the 2016/17 school year and reached 133,752 students in 2025/26. However, declining head counts began to occur again in some more rural regions this year.
+ Landed immigrants comprised 11.0% of the working-age population and 12.8% of workers in Nova Scotia in 2025, both up by 0.7 percentage points from 2024. 
+ Recent policy changes have reduced the intake of permanent residents somewhat. Further, over the course of 2025 the number of non-permanent residents in the province fell from nearly 60,000 to just over 53,000, due in large part to limits on study permits and post-graduate work permits.
+ Nova Scotia remains a largely Anglophone province. At the time of the 2021 Census, 89.3% of the population only knew English, while 10.3% had knowledge of both official languages. Three census subdivisions with Acadian roots had rates of bilingualism above 50%: Argyle (56.7%); Clare (68.5%); and Richmond, Subd. C (Isle Madame) (55.7%). 
+ Linguistic diversity in Nova Scotia has been increasing as more immigrants who speak non-official languages move to the province. In 2021, there were 93,440 people in Nova Scotia who had knowledge of non-official languages, with Arabic (13%), Hindi (11%), Spanish (9%) being the most common. 
+ In 2021, the province had the highest prevalence of transgender and non-binary persons in Canada, at 4.8 per 1,000 people. Among Census Metropolitan Areas, Halifax, had the second-highest share, at 6.6 per 1,000 people.
+ The 2022 Canadian Survey on Disability indicated that Nova Scotia has the highest share of persons with disabilities, at 37.9%, as well as the highest share in every age group under age 75. In 2021, people with disabilities earned an average of $31,700 annually, 33.4% less than their counterparts without disabilities who earned $43,300. 
+ Labour Market Conditions
+ In 2025...
+ Employment grew slowly (0.4%)
+ Unemployment rose sharply (1.9%)
+ Participation Rate decreased slightly (61.8% to 61.3%)
+ Employment Rate was down slightly (57.8% to 57.3% ) 
+ Province's Unemployment Rate 
+ Show data table : Province's Unemployment Rate 
+ Year
+ Unemployment Rate (%)
+ 2016
+ 8.4
+ 2017
+ 8.7
+ 2018
+ 7.9
+ 2019
+ 7.5
+ 2020
+ 9.9
+ 2021
+ 8.6
+ 2022
+ 6.6
+ 2023
+ 6.4
+ 2024
+ 6.5
+ 2025
+ 6.6
+ Employment expanded by 0.4% in 2025 as the labour market added 2,200 workers. This was a considerable slowdown compared to the three previous years, during which the province posted an annual average job growth rate of more than 3%. All employment gains in 2025 were in full-time work, while the number of part-time workers declined.
+ The working-age population (15 years and older) grew by 11,700 (+1.3%), of whom 8,900 were in the prime working age (25 to 54) bracket. However, the number of individuals active in the labour force went up by just 2,800. This served to limit the increase in the unemployment rate to 0.1 percentage point, reaching 6.6%, but also resulted in declining participation and employment rates.
+ Economic Conditions
+ Nova Scotia's Economic Drivers in 2025
+ Slowing population growth 
+ Strong residential investment 
+ Falling export values 
+ GDP Growth Rate in province 
+ Show data table : GDP Growth Rate in Province 
+ GDP Growth Rate
+ Year
+ GDP growth rate 
+ 2022
+ 5.1% 
+ 2023
+ 2.4% 
+ 2024
+ 3.1% 
+ Reviewing 2025... 
+ Real GDP growth exceeded expectations in 2024, expanding by 3.1%. Strong population growth boosted household and government consumption, which accounted for much of the growth. Government fixed capital formation also surged as provincial capital spending on major projects ramped up.
+ Real GDP growth in 2025 is expected to have been around 1.7%. Changes to federal immigration policy-particularly with respect to non-permanent residents -caused population growth to fall from 2.8% in 2024 to 1.0% in 2025, slowing the expansion of household consumption in the province. 
+ While trade remains a primary source of uncertainty, the value of exports to the United States was little-changed (in current dollars) in 2025 compared to 2024. However, Chinese tariffs on seafood weighed heavily on the province’s exports to that country, which dipped by $183M.
+ Residential investment is expected to have been a bright spot in 2025, as stakeholders in the construction industry continued to try to address a backlog of demand for housing.
+ Risks to the Nova Scotia Economy in 2026
+ Trade uncertainty persists as a headline risk to Nova Scotia and the rest of the country. While U.S.-bound exports account for a smaller share of GDP in Nova Scotia than in almost all other provinces, the looming renegotiation of the Canada-United States Mexico Trade Agreement could cause direct and indirect shocks to the provincial economy.
+ Belt-tightening budgets at all three levels of government could weigh on government consumption and employment in 2026. The slowdown in population growth has turned a string of provincial fiscal windfalls into a record-setting deficit in N.S. and most other provinces. At the same time, the provincial government remains committed to core spending priorities such as healthcare. It also released a $3.5B capital plan for 2026-27, the largest ever by a sizeable margin.
+ Regional Issues
+ Over the past five years, the rate of population growth rate has rapidly accelerated and then slowed again, creating a moving target for industries and policymakers trying to respond to the influx of new residents. The housing supply, school capacity, road network, and health care system have been strained to varying degrees by the nearly-100,000-person increase in the population since 2021.
+ Rapid growth has prompted higher levels of government spending and residential construction based on both current and projected need. However, the recent slowdown in population growth has caused expectations to change again. For example, stakeholders in the construction sector may scale back new projects for risk of overbuilding. Further, slowing population and economic growth combined with major investments in infrastructure are expected to push the provincial government’s debt-to-GDP ratio above 40% sooner than previously planned.
+ Average wage gains have outpaced inflation for the past three years. Even so, the cost of living remains a frequent topic of regional media coverage. Consumer confidence in Atlantic Canada has deteriorated since 2022 with respect to household budgets, employment expectations, and major purchases.
+ Worsening housing affordability has played a major role in cost-of-living challenges, squeezed consumers' discretionary spending in other sectors, and driven higher levels of homelessness. Asking rents in Halifax have risen between 40% and 50% over the past five years, roughly twice as much as the increase in average weekly wages. Relief for renters may be on the horizon as vacancy rates for apartments in Halifax have risen from 0.9% in 2022 to 2.5% in 2025. However, with newly built units commanding a higher price, average rents have continued to increase despite considerable growth in the housing supply.
+ Industry Trends
+ Show data table 
+ Employment Change by Industry (NAICS) in 2025 ('000s)
+ Industry (NAICS) 
+ Employment Change ('000s)
+ Health care and social assistance
+ 2.7
+ Transportation and warehousing 
+ 2.3
+ Construction
+ 1.4
+ Business, building and other support services
+ 1.3
+ Professional, scientific and technical services 
+ 1.2
+ Forestry, fishing, mining, quarrying, oil and gas
+ 0.4
+ Utilities
+ 0.3
+ Public administration
+ 0.1
+ Agriculture
+ -0.1
+ Finance, insurance, real estate, rental and leasing
+ -0.2
+ Wholesale and retail trade 
+ -0.4
+ Information, culture and recreation
+ -0.6
+ Manufacturing
+ -0.7
+ Other services (except public administration)
+ -1.4
+ Educational services
+ -1.6
+ Accommodation and food services
+ -2.3
+ The slower employment growth rate in 2025 was reflected at the industry level, as the biggest sectoral gains were modest compared to last year. The health care and social assistance industry led job growth in nominal terms as it added 2,700 workers (+3.2%). This sector continues to be characterized by above-average job vacancy rates, with the number of vacancies trending around 4,000. Demand for workers in this industry has expanded with the health and long-term care needs of the aging population.
+ Employment in the construction sector went up by 3.3% in 2025 to reach 43,700 workers, its highest annual average level on record. Residential construction activity has ramped up considerably in response to the shortage of housing, while large capital projects have boosted the non-residential side. However, growth in this industry has been constrained largely by the supply of labour.
+ A noteworthy contraction happened in the accommodation and food services industry in 2025, after having finally returned to pre pandemic employment levels in 2024. While food services receipts were up by 6.9% in 2025, the profitability of many restaurants has been squeezed by rising food and labour costs and a customer base that is sensitive to higher menu prices.
+ Regional Economic Conditions
+ Halifax posted an employment growth rate of 1.2% in 2025, a considerable slowdown from 2024 (+5.2%). Even so, the region still accounted for an outsized share of Nova Scotia's population, labour force, and job growth in 2025, continuing a multi-year trend that has seen 80% of the province's job gains since 2019 accrue to the region. The health care and social assistance sector led employment growth, followed by professional, scientific and technical services, and business, building and other support services.
+ The four other economic regions have fluctuated between job growth and loss in recent years, which continued in 2025. Employment gains occurred in the North Shore and Southern regions, while the Annapolis Valley shed workers. Employment was little-changed in Cape Breton. Unemployment rates ranged from 5.1% in the Annapolis Valley to 10.9% in Cape Breton.
+ Halifax attracts roughly four-in-five of the province's immigrants, while population growth in the other economic regions has been more dependent on interprovincial migrants. Immigration levels (excluding non-permanent residents) are expected to remain relatively stable in the coming years, so Halifax's economy should continue to benefit from a growing population. Prospects for population-driven growth elsewhere in the province are less certain, as interprovincial migration has slowed considerably.
+ Show data table 
+ The province's employment change in 2025 ('000s)
+ Employment Change ('000s)
+ Halifax
+ 3.2
+ Nova Scotia 
+ 2.2
+ Southern
+ 1.2
+ North Shore
+ 0.7
+ Cape Breton
+ 0.2
+ Annapolis Valley
+ -3.2
+ Download the PDF version (552 KB) of this content.
+ 6;#Travail en cours|63e0d7cc-798c-4b6e-bac4-698cd220c5eb 
+ 0x0101002B64EA82F63FB340BFA35F0D8A06CC7500D137F01FF972B941A052576782AA6BE2 
+ 1;#Strategic Services Branch|50d82272-3219-441b-9d13-1880c34ac3fb 
+ 1;#Strategic Services Branch|50d82272-3219-441b-9d13-1880c34ac3fb;#6;#Travail en cours|63e0d7cc-798c-4b6e-bac4-698cd220c5eb 
+ Page details
+ Report a problem or mistake on this page 
+ Date modified: 
+ 2026-05-06
+
+--- ENLACES ---
+Français fr | https://www.guichetemplois.gc.ca/analyse-tendances/rapports-marche-travail/nouvelle-ecosse/analyse-environnement
+Job Bank | https://www.jobbank.gc.ca/home
+Job seekers | https://www.jobbank.gc.ca/login
+Employers | https://employer.jobbank.gc.ca/employer/dashboard
+Job search | https://www.jobbank.gc.ca/findajob
+Training and careers | https://www.jobbank.gc.ca/career-planning
+Labour market information | https://www.jobbank.gc.ca/trend-analysis
+Hiring | https://www.jobbank.gc.ca/employers
+Help | https://www.jobbank.gc.ca/aboutus
+About | https://www.jobbank.gc.ca/helpsupport
+Job Bank | https://www.jobbank.gc.ca/
+Labour market information | https://www.jobbank.gc.ca/trend-analysis
+Explore the Canadian labour market | https://www.jobbank.gc.ca/trend-analysis/job-market-reports
+Trends and events in Nova Scotia's labour market | https://www.jobbank.gc.ca/trend-analysis/job-market-reports/nova-scotia
+PDF version (552 KB) | https://jobbank-guichetemplois.service.canada.ca/Escans/NS/2026/ATL_E-Scan_2026_NS_EN_Final.pdf
+Report a problem or mistake on this page | https://www.canada.ca/en/report-problem.html
+Opens in a new window | https://forces.ca/en/paid-education/?utm_campaign=caf_job_posts&amp;utm_medium=digital&amp;utm_source=jobbank
+Job Bank Support | https://www.jobbank.gc.ca/helpsupport
+About us | https://www.jobbank.gc.ca/aboutus
+Our network | https://www.jobbank.gc.ca/network
+Terms of use - Job seekers | https://www.jobbank.gc.ca/termsofuseseeker
+Terms of use - Employers | https://www.jobbank.gc.ca/termsofuseemployer
+Terms and conditions This link will open in a new window | https://www.canada.ca/en/transparency/terms.html
+Privacy This link will open in a new window | https://www.canada.ca/en/transparency/privacy.html
