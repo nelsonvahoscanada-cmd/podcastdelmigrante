@@ -92,7 +92,7 @@ const HOSPITAL_GENERAL = new Set(["Regional", "Community", "Tertiary"]);
    disponible». Sitios oficiales comprobados antes de publicar. */
 const MARITIME = { label: "Maritime Bus — Autobuses entre ciudades", href: "https://maritimebus.com/" };
 const HALIFAX_TRANSIT = { label: "Halifax Transit — Autobuses y ferris de Halifax y Dartmouth", href: "https://www.halifax.ca/transportation/halifax-transit" };
-const TRANSIT_CB = { label: "Transit Cape Breton — Autobuses del municipio regional de Cape Breton", href: "https://www.cbrm.ns.ca/transit" };
+const TRANSIT_CB = { label: "Transit Cape Breton — Autobuses del municipio regional de Cape Breton", href: "https://cbrm.ns.ca/transportation/transit-cape-breton/" };
 export const FICHAS = {
   halifax: { nombre: "Halifax", web: "https://www.halifax.ca/", cmhc: ["halifax", "Halifax RGM (Zones 1-10)", "el municipio regional de Halifax (zonas 1 a 10 de CMHC)"], transporte: [HALIFAX_TRANSIT, MARITIME] },
   dartmouth: { nombre: "Dartmouth", comunidad: true, nscaf: "DARTMOUTH", padre: "halifax", web: "https://www.halifax.ca/", cmhc: ["halifax", "City of Dartmouth (Zones 5-7)", "Dartmouth (zonas 5 a 7 de CMHC)"], centro: null, transporte: [HALIFAX_TRANSIT, MARITIME] },
