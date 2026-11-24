@@ -1,0 +1,9 @@
+200 /canada-en-datos/nova-scotia
+200 /canada-en-datos/nova-scotia/halifax
+200 /canada-en-datos/nova-scotia/dartmouth
+200 /canada-en-datos/nova-scotia/sydney
+200 /canada-en-datos/
+200 /canada-en-datos/new-brunswick
+200 /assets/canada-en-datos/bandera-nova-scotia.svg
+200 /assets/canada-en-datos/social-nova-scotia.jpg
+200 /js/nova-scotia-localidades.js
