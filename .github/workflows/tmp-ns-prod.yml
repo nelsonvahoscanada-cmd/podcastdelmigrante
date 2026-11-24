@@ -15,38 +15,21 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - name: Esperar el despliegue en producción (máx. 20 min)
-        run: |
-          for i in $(seq 120); do
-            curl -fsS "$P/canada-en-datos/nova-scotia?nc=$i$RANDOM" | grep -q 'Explora las ciudades y pueblos de Nueva Escocia' && { echo "desplegado (intento $i)"; exit 0; }
-            sleep 10
-          done; exit 1
-      - name: Páginas servidas frente al repositorio (solo GET)
+      - name: Detalle de la línea PDM_SITE_ROOT_LINKS (solo GET)
         if: always()
         run: |
-          mkdir -p /tmp/out; o=/tmp/out/paginas.txt
-          norm() { grep -v -e 'email-decode' -e 'email-protection' -e 'js/data.js' -e 'mailto:' "$1"; }
-          ok=0; dif=0; err=0
-          for h in $(ls canada-en-datos/*.html) $(ls canada-en-datos/nova-scotia/*.html) $(for d in canada-en-datos/*/; do ls $d*.html | head -3; done | grep -v nova-scotia); do
-            u=/${h%.html}; [ "$u" = "/canada-en-datos/index" ] && u=/canada-en-datos/
-            if ! curl -fsS "$P$u?nc=$RANDOM" -o /tmp/h; then echo "ERROR $u" >> $o; err=$((err+1)); continue; fi
-            if diff -q <(norm "$h") <(norm /tmp/h) >/dev/null; then ok=$((ok+1)); else echo "DISTINTA $u" >> $o; diff <(norm "$h") <(norm /tmp/h) | head -6 >> $o; dif=$((dif+1)); fi
+          mkdir -p /tmp/out; o=/tmp/out/detalle.txt
+          for u in /canada-en-datos/quebec/abercorn /canada-en-datos/nova-scotia/halifax /canada-en-datos/alberta /index.html; do
+            curl -sS -D /tmp/hdr "$P$u?nc=$RANDOM" -o /tmp/h
+            echo "### $u | apariciones: $(grep -c PDM_SITE_ROOT_LINKS /tmp/h) | cf-cache: $(grep -i '^cf-cache-status' /tmp/hdr | tr -d '\r')" >> $o
+            grep -n -o '.\{0,80\}PDM_SITE_ROOT_LINKS.\{0,80\}' /tmp/h | head -3 >> $o
           done
-          echo "idénticas: $ok | distintas: $dif | errores: $err" | tee -a $o
-          for f in sitemap.xml js/canada-datos.js js/canada-datos-disponibles.js js/nova-scotia-localidades.js assets/canada-en-datos/descubre-mapa.svg assets/canada-en-datos/nova-scotia-regiones.svg assets/canada-en-datos/bandera-nova-scotia.svg assets/canada-en-datos/social-nova-scotia.jpg assets/canada-en-datos/nova-scotia/halifax.jpg assets/canada-en-datos/nova-scotia/dartmouth.jpg; do
-            curl -fsS "$P/$f?nc=$RANDOM" -o /tmp/f && cmp -s /tmp/f "$f" && echo "igual $f" || echo "DISTINTO $f"
-          done >> $o
-          echo "sitemap URL de Nueva Escocia: $(curl -s $P/sitemap.xml | grep -c 'canada-en-datos/nova-scotia')" >> $o
-          echo "GET /api/events: $(curl -s -o /dev/null -w '%{http_code}' $P/api/events)" >> $o
-          cat $o | tail -40
+          cat $o
       - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
-      - name: E2E en producción (estadísticas bloqueadas)
+      - name: E2E general de Canadá en Datos sin capturas (estadísticas bloqueadas)
         if: always()
         run: |
-          r=0
-          for t in nova-scotia-localidades new-brunswick-localidades descubre-canada canada-datos; do
-            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -30 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
-          done; exit $r
+          BASE=$P NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-canada-datos.cjs 2>&1 | grep -v "^\s*at " | tail -30 | tee /tmp/out/e2e-canada-datos.txt
       - name: Publicar
         if: always()
         run: |
