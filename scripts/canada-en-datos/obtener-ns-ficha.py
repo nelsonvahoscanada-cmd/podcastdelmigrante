@@ -17,6 +17,11 @@ servidores), en partes:
              hospitales, límites municipales y comunidades, con sus columnas
              y fecha de actualización. Con «datos=<id>,<id>» descarga esos
              conjuntos completos en JSON.
+  sitio      recorrido de los sitios oficiales sin sitemap utilizable
+             (liveinnovascotia.com, antes novascotiaimmigration.com, y las
+             páginas temáticas de novascotia.ca): sigue solo los enlaces
+             internos cuyo texto o dirección coincide con los temas de la guía
+             y guarda cada página como en «paginas».
   bandera    Wikimedia Commons: licencia y archivo SVG de la bandera de
              Nueva Escocia.
 Uso: python3 obtener-ns-ficha.py <parte> [<parte> …] [urls.txt]
@@ -127,7 +132,7 @@ PAGINAS = [
     "https://www.halifax.ca/transportation/halifax-transit",
     "https://www.cbrm.ns.ca/transit",
 ]
-if "paginas" in PARTES:
+if "paginas" in PARTES or "sitio" in PARTES:
     os.makedirs(f"{OUT}/paginas", exist_ok=True)
     nav = None
     try:
@@ -151,7 +156,7 @@ if "paginas" in PARTES:
             f.write(f"URL: {u}\nTÍTULO: {titulo}\nMODIFICADA: {mod.group(mod.lastindex) if mod else '—'}\n{extra}\n\n{cuerpo}\n\n--- ENLACES ---\n" + "\n".join(f"{t} | {l}" for l, t in links))
         print("ok", u, "|", titulo[:90], "|", mod.group(mod.lastindex) if mod else "—", "|", len(cuerpo), "car.")
 
-    for u in PAGINAS + EXTRA:
+    def leer(u):
         h, extra = "", ""
         try:
             b, st, fin = get(u, 60)
@@ -173,6 +178,36 @@ if "paginas" in PARTES:
         else:
             print("ERROR", u, extra)
         time.sleep(0.5)
+        return h, extra
+
+    if "paginas" in PARTES:
+        for u in (EXTRA if EXTRA else PAGINAS):
+            leer(u)
+
+    if "sitio" in PARTES:
+        TEMAS = r"immigra|nominee|nsnp|express|skilled|graduate|entrepreneur|critical|atlantic|priorit|settle|newcomer|language|study|after-you|program-update|resources/|taxonomy|health-card|health-insurance|eligib|move-nova-scotia|family-practice|tenan|rent-cap|rental|deposit|driver|licen|exchange|road-test|school|education|regional-centre|child-benefit|benefit|income-assistance|affordable|heating|emergency|alert|municipal|minimum-wage|labour-standard|overtime|holiday|vacation|transit"
+        cola = [(u, 0) for u in ["https://liveinnovascotia.com/", "https://liveinnovascotia.com/resources", "https://liveinnovascotia.com/taxonomy/term/3", "https://novascotia.ca/topic", "https://novascotia.ca/programs-and-services", "https://novascotia.ca/topic/driving-and-transportation", "https://novascotia.ca/topic/money-tax-and-benefits", "https://novascotia.ca/topic/education-training-and-skills", "https://novascotia.ca/topic/health-and-wellness", "https://novascotia.ca/topic/housing-and-property", "https://novascotia.ca/topic/jobs-and-workplaces", "https://novascotia.ca/topic/immigration"] + EXTRA]
+        vistos = set()
+        while cola and len(vistos) < 260:
+            u, prof = cola.pop(0)
+            u = u.split("#")[0].rstrip("/") or u
+            if u in vistos:
+                continue
+            vistos.add(u)
+            h, extra = leer(u)
+            if prof >= 2 or not h:
+                continue
+            for href, txt in re.findall(r'(?is)<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', h):
+                v = urllib.parse.urljoin(u, html.unescape(href)).split("#")[0]
+                t = re.sub(r"<[^>]+>", " ", txt)
+                host = urllib.parse.urlparse(v).netloc
+                if host not in ("liveinnovascotia.com", "novascotia.ca", "www.novascotia.ca", "beta.novascotia.ca"):
+                    continue
+                if re.search(r"/fr(/|$)|\.pdf$|/news|/search|/node/|login|\?", v, re.I):
+                    continue
+                if host == "liveinnovascotia.com" or re.search(TEMAS, v + " " + t, re.I):
+                    cola.append((v, prof + 1))
+        print("páginas recorridas:", len(vistos))
 
 # ------------------------------------------------------------ 3. Datos abiertos de Nueva Escocia (Socrata)
 if "datos" in PARTES:

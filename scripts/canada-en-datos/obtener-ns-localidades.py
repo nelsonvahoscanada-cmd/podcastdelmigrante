@@ -102,6 +102,13 @@ paso("Regiones económicas")
 er = capa(2, offset=500)
 salida["er"] = {f["properties"]["ERUID"]: f["properties"]["ERNAME"] for f in er}
 print("ER:", salida["er"])
+# Región económica de cada condado: la que contiene un punto interior del condado (Statistics Canada forma las regiones con condados completos)
+geo_er = [(f["properties"]["ERUID"], shape(f["geometry"]).buffer(0)) for f in er]
+salida["er_de_cd"] = {}
+for f in cd:
+    p = shape(f["geometry"]).representative_point()
+    salida["er_de_cd"][f["properties"]["CDUID"]] = [u for u, g in geo_er if g.contains(p)]
+print("ER de cada condado:", salida["er_de_cd"])
 
 paso("Subdivisiones censales (CSD)")
 csd = capa(9)
