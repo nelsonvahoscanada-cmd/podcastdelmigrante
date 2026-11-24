@@ -210,7 +210,7 @@ if "paginas" in PARTES or "sitio" in PARTES:
         print("páginas recorridas:", len(vistos))
 
 # ------------------------------------------------------------ 3. Datos abiertos de Nueva Escocia (Socrata)
-if "datos" in PARTES:
+if any(p == "datos" or p.startswith("datos=") for p in PARTES):
     paso("Catálogo de data.novascotia.ca")
     cat = {}
     for q in ["schools", "school locations", "hospitals", "health facilities", "municipal boundaries", "municipalities", "villages", "communities", "community counts", "regional centre for education", "census subdivision"]:
