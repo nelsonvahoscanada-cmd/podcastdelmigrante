@@ -1,0 +1,303 @@
+URL: https://www.halifax.ca/transportation/halifax-transit
+TÍTULO: Halifax Transit | Bus | Schedules | Routes | Ferries | Halifax
+MODIFICADA: —
+ERROR directo: HTTPError HTTP Error 502: Bad Gateway | NAVEGADOR: 200 https://www.halifax.ca/transportation/halifax-transit
+
+Schedules and route maps
+ View bus and ferry route maps and schedules. 
+ Service disruptions
+ Learn of upcoming bus stop closures and detours. 
+ Fares, tickets, and passes
+ See how much Halifax Transit costs and where to buy tickets and passes. 
+ How to ride: A guide to using Halifax Transit
+ Learn how to use Halifax Transit. Guides and videos are available in multiple languages. 
+ Real-time alerts
+ Publish Date
+ November 29, 2026 - 12:45 pm 
+ Title
+ 9A Greystone Outbound is on detour due to a Community Event in the area
+ Publish Date
+ November 29, 2026 - 12:45 pm 
+ Title
+ 9A Greystone Inbound is on detour due to a Community Event in the area
+ Publish Date
+ November 29, 2026 - 12:45 pm 
+ Title
+ 9B Herring Cove Outbound is on detour due to a Community Event in the area
+ See all alerts 
+ -->
+ Service Changes
+ Starting Nov. 30, 2026, changes are coming to Halifax Transit bus routes and schedules.
+ -->
+ Transit accessibility
+ Accessible transit means more than just physical accessibility. It means freedom, independence and connection to community.
+ -->
+ The Transit Code
+ Follow The Transit Code to help make everyone's ride on Halifax Transit enjoyable and safe.
+ -->
+ HFXGO
+ Buy tickets & passes with Halifax Transit's mobile fare payment app.
+ Latest Updates
+ Posted: 
+ September 22, 2026 - 4:40 pm 
+ Halifax Transit launches new HFXGO features 
+ Posted: 
+ May 22, 2026 - 11:21 am 
+ Alderney Ferry service reduction until further notice 
+ Posted: 
+ April 30, 2026 - 1:27 pm 
+ New real-time Halifax Transit alert service 
+ See all updates 
+ -->
+ Bus Operator Recruitment 
+ Looking for a career that moves you forward? Join us at Halifax Transit, where your journey to success begins behind the wheel.
+ Bluesky feed
+ Work with Halifax Transit 
+ We're hiring Truck and Transport Mechanics (Red Seal) and Bus Operators. Learn more and apply today! 
+ Talk Transit 
+ Help us improve Transit in Halifax. Take our Talk Transit survey to share your thoughts! 
+ Contact Information
+ For general transit inquiries, complaints, or compliments, please contact 311 or 1-800-835-6428.
+ Phone 
+ Departures line: 902.480.8000 
+Access-A-Bus registration: 902.490.6681 
+Access-A-Bus bookings: 902.490.6999 
+ Mail 
+ Halifax Transit
+PO Box 1749
+Halifax NS B3J 3A5
+
+--- ENLACES ---
+Visiting Halifax? Check out all there is to explore! | https://discoverhalifaxns.com/
+ | https://www.halifax.ca/
+Accessibility | https://www.halifax.ca/about-halifax/diversity-inclusion/accessibility
+311 | https://www.halifax.ca/home/311
+Online Services | https://www.halifax.ca/home/online-services
+En français | https://www.halifax.ca/fr
+About Halifax | https://www.halifax.ca/about-halifax
+Explore all About Halifax | https://www.halifax.ca/about-halifax
+Diversity & Inclusion | https://www.halifax.ca/about-halifax/diversity-inclusion
+Employment | https://www.halifax.ca/about-halifax/employment
+Environment & Climate Change | https://www.halifax.ca/about-halifax/environment-climate-change
+Municipal Archives | https://www.halifax.ca/about-halifax/municipal-archives
+Regional & Community Planning | https://www.halifax.ca/about-halifax/regional-community-planning
+Volunteering | https://www.halifax.ca/about-halifax/volunteering
+Affordable Access Program | https://www.halifax.ca/about-halifax/affordable-access-program
+Public Notices | https://www.halifax.ca/city-hall/legislation-by-laws/public-notices
+Tell Us What You Think | https://www.halifax.ca/about-halifax/regional-community-planning/engage-halifax
+Visiting Halifax? | https://discoverhalifaxns.com/
+Municipal communications channels | https://www.halifax.ca/home/stay-informed/
+Home & Property | https://www.halifax.ca/home-property
+Explore all Home & Property | https://www.halifax.ca/home-property
+Animal Services | https://www.halifax.ca/home-property/animal-services
+Building & Development Permits | https://www.halifax.ca/home-property/building-development-permits
+Civic addressing | https://www.halifax.ca/home-property/civic-addressing
+Garbage, Recycling, & Green Cart | https://www.halifax.ca/home-property/garbage-recycling-green-cart
+Property Taxes | https://www.halifax.ca/home-property/property-taxes
+Urban Forestry | https://www.halifax.ca/home-property/urban-forestry
+Alarm Registration | https://www.halifax.ca/home-property/building-development-permits/alarm-registration
+Apply for a Permit | https://www.halifax.ca/home-property/building-development-permits
+Short Term Rentals | https://www.halifax.ca/about-halifax/regional-community-planning/short-term-rentals
+Collection Schedules | https://www.halifax.ca/home-property/garbage-recycling-green-cart/collection-schedules-what-goes-where
+Transportation | https://www.halifax.ca/transportation
+Explore all Transportation | https://www.halifax.ca/transportation
+Halifax Transit | https://www.halifax.ca/transportation/halifax-transit
+Cycling & Walking | https://www.halifax.ca/transportation/cycling-walking
+Parking | https://www.halifax.ca/transportation/parking
+Winter Operations | https://www.halifax.ca/transportation/winter-operations
+Your Trip | https://www.halifax.ca/transportation/your-trip
+Streets & Sidewalks | https://www.halifax.ca/transportation/streets-sidewalks
+Transit Schedules | https://www.halifax.ca/transportation/halifax-transit/routes-schedules
+Cogswell District | https://www.halifax.ca/about-halifax/regional-community-planning/construction-projects/cogswell-district-redevelopment-0
+Pay Your Parking Ticket | https://www.halifax.ca/transportation/parking/parking-tickets
+Mobile Payment for Parking | https://www.halifax.ca/transportation/parking/street-parking
+ | https://www.halifax.ca/transportation/halifax-transit
+Safety & Security | https://www.halifax.ca/safety-security
+Explore all Safety & Security | https://www.halifax.ca/safety-security
+Emergency Management | https://www.halifax.ca/safety-security/emergency-management
+Fire & Emergency | https://www.halifax.ca/safety-security/fire-emergency
+Public Safety Strategy & Programs | https://www.halifax.ca/safety-security/public-safety-strategy-programs
+Police | https://www.halifax.ca/safety-security/police
+RCMP Halifax Regional Detachment | https://www.halifax.ca/safety-security/halifax-district-rcmp
+Safety programs | https://www.halifax.ca/safety-security/safety-programs
+Voluntary Vulnerable Persons Registry | https://www.halifax.ca/fire-police/fire-emergency-management/emergency-management/emergency-preparedness/voluntary
+Crime Mapping in Halifax | https://www.halifax.ca/safety-security/police/crime-mapping
+Volunteer Firefighter Recruitment | https://www.halifax.ca/fire-police/fire/recruitment/volunteer-firefighter-recruitment
+Emergency Management | https://www.halifax.ca/fire-police/fire/emergency-management
+Sign-up for Emergency Notifications | https://www.halifax.ca/fire-police/emergency-management/hfxalert
+Business | https://www.halifax.ca/business
+Explore all Business | https://www.halifax.ca/business
+Doing Business with Halifax | https://www.halifax.ca/business/doing-business-halifax
+Business Parks | https://www.halifax.ca/business/business-parks
+Filming in Halifax | https://www.halifax.ca/business/filming-halifax
+Licences | https://www.halifax.ca/business/licences
+Planning & Development | https://www.halifax.ca/business/planning-development
+Real Estate & Land Management | https://www.halifax.ca/business/real-estate-land-management
+Garbage & Recycling for Businesses | https://www.halifax.ca/business/doing-business-halifax/garbage-recycling-businesses
+Planning & Subdivision Applications | https://www.halifax.ca/business/planning-development/planning-subdivision-applications
+Procurement | https://www.halifax.ca/business/doing-business-halifax/procurement
+Parks & Recreation | https://www.halifax.ca/parks-recreation
+Explore all Parks & Recreation | https://www.halifax.ca/parks-recreation
+Programs & Activities | https://www.halifax.ca/parks-recreation/programs-activities
+Arts, Culture & Heritage | https://www.halifax.ca/parks-recreation/arts-culture-heritage
+Events | https://www.halifax.ca/parks-recreation/events
+Facility Rentals, Bookings, & Field Conditions | https://www.halifax.ca/parks-recreation/facility-rentals-bookings-field-conditions
+Youth Programs & Services | https://www.halifax.ca/parks-recreation/halifax-youth
+Parks, Trails & Gardens | https://www.halifax.ca/parks-recreation/parks-trails-gardens
+Emera Oval | https://www.halifax.ca/parks-recreation/programs-activities/outdoor-recreation/emera-oval
+Civic Events | https://www.halifax.ca/parks-recreation/events
+Recreation Activities | https://www.halifax.ca/parks-recreation/programs-activities/recreation-activities
+Rec Centres Near Me | https://www.halifax.ca/parks-recreation/programs-activities/recreation-centres-your-community
+Register for Recreation Programs | https://www.halifax.ca/myrec
+City Hall | https://www.halifax.ca/city-hall
+Explore all City Hall | https://www.halifax.ca/city-hall
+Budget & Finances | https://www.halifax.ca/city-hall/budget-finances
+Mayor Andy Fillmore | https://www.halifax.ca/city-hall/mayor-andy-fillmore
+Districts & Councillors | https://www.halifax.ca/city-hall/districts-councillors
+Regional Council | https://www.halifax.ca/city-hall/regional-council
+Agendas, Meetings, & Reports | https://www.halifax.ca/city-hall/agendas-meetings-reports
+Legislation & By-laws | https://www.halifax.ca/city-hall/legislation-by-laws
+Official Election Results | https://www.halifax.ca/city-hall/elections/2024-election-results
+Boards, Committees, & Commissions | https://www.halifax.ca/city-hall/boards-committees-commissions
+Budget | https://www.halifax.ca/city-hall/budget-finances/budget
+Regional Council Meeting Schedule | https://www.halifax.ca/city-hall/agendas-meetings-reports?category=127
+Strategic Plan | https://www.halifax.ca/city-hall/strategic-plan
+Accessibility | https://www.halifax.ca/about-halifax/diversity-inclusion/accessibility
+311 | https://www.halifax.ca/home/311
+Online Services | https://www.halifax.ca/home/online-services
+Home | https://www.halifax.ca/
+Transportation | https://www.halifax.ca/transportation
+Schedules and route maps | https://www.halifax.ca/transportation/halifax-transit/routes-schedules
+Service disruptions | https://www.halifax.ca/transportation/halifax-transit/service-advisories/service-disruptions
+Fares, tickets, and passes | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes
+How to ride: A guide to using Halifax Transit | https://www.halifax.ca/transportation/halifax-transit/passenger-information/how-ride-transit
+See all alerts | https://www.halifax.ca/transportation/halifax-transit/service-alerts
+ | https://www.halifax.ca/transportation/halifax-transit/service-changes
+Service Changes Starting Nov. 30, 2026, changes are coming to Halifax Transit bus routes and schedules. | https://www.halifax.ca/transportation/halifax-transit/service-changes
+ | https://www.halifax.ca/transportation/halifax-transit/accessibility
+Transit accessibility Accessible transit means more than just physical accessibility. It means freedom, independence and connection to community. | https://www.halifax.ca/transportation/halifax-transit/accessibility
+ | https://www.halifax.ca/transportation/halifax-transit/passenger-information/transit-code
+The Transit Code Follow The Transit Code to help make everyone's ride on Halifax Transit enjoyable and safe. | https://www.halifax.ca/transportation/halifax-transit/passenger-information/transit-code
+ | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes/hfxgo
+HFXGO Buy tickets & passes with Halifax Transit's mobile fare payment app. | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes/hfxgo
+Halifax Transit launches new HFXGO features | https://www.halifax.ca/home/news/halifax-transit-launches-new-hfxgo-features
+Alderney Ferry service reduction until further notice | https://www.halifax.ca/home/news/alderney-ferry-service-reduction-until-further-notice-1
+New real-time Halifax Transit alert service | https://www.halifax.ca/home/news/new-real-time-halifax-transit-alert-service
+See all updates | https://www.halifax.ca/news?category=1091
+ | https://www.halifax.ca/about-halifax/employment/work-halifax-transit/bus-operator-recruitment
+Bus Operator Recruitment Looking for a career that moves you forward? Join us at Halifax Transit, where your journey to success begins behind the wheel. | https://www.halifax.ca/about-halifax/employment/work-halifax-transit/bus-operator-recruitment
+Work with Halifax Transit | https://www.halifax.ca/about-halifax/employment/work-halifax-transit
+Talk Transit | https://www.shapeyourcityhalifax.ca/talktransit
+Fares, Tickets, & Passes | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes
+Fare Strategy Frequently Asked Questions | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes/fare-strategy-frequently-asked-questions
+Where to Buy Tickets and Passes | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes/where-buy-tickets-passes
+HFXGO | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes/hfxgo
+HFXGO Privacy Policy | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes/hfxgo/hfxgo-privacy-policy
+HFXGO Terms and Conditions | https://www.halifax.ca/transportation/halifax-transit/fares-tickets-passes/hfxgo/hfxgo-terms-conditions
+Routes & Schedules | https://www.halifax.ca/transportation/halifax-transit/routes-schedules
+Route Descriptions | https://www.halifax.ca/transportation/halifax-transit/routes-schedules/route-descriptions
+Service advisories | https://www.halifax.ca/transportation/halifax-transit/service-advisories
+Real-time alerts | https://www.halifax.ca/transportation/halifax-transit/service-advisories/real-time-alerts
+Service disruptions | https://www.halifax.ca/transportation/halifax-transit/service-advisories/service-disruptions
+Service changes | https://www.halifax.ca/transportation/halifax-transit/service-advisories/service-changes
+Detailed Route Descriptions | https://www.halifax.ca/transportation/halifax-transit/service-advisories/service-changes/detailed-route-descriptions
+Frequently Asked Questions | https://www.halifax.ca/transportation/halifax-transit/service-advisories/service-changes/frequently-asked-questions
+Bus stop construction | https://www.halifax.ca/transportation/halifax-transit/service-advisories/bus-stop-construction
+Holiday Schedules | https://www.halifax.ca/transportation/halifax-transit/service-advisories/holiday-schedules
+Snow Plan | https://www.halifax.ca/transportation/halifax-transit/service-advisories/snow-plan
+Rural Transit Services | https://www.halifax.ca/transportation/halifax-transit/rural-transit-funding-partners
+Report a Problem | https://www.halifax.ca/transportation/halifax-transit/report-a-problem
+Access-A-Bus | https://www.halifax.ca/transportation/halifax-transit/access-a-bus
+Ferry Service | https://www.halifax.ca/transportation/halifax-transit/ferry-service
+Alderney Ferry Schedule | https://www.halifax.ca/transportation/halifax-transit/ferry-service/alderney-ferry-schedule
+Woodside Ferry Schedule | https://www.halifax.ca/transportation/halifax-transit/ferry-service/woodside-ferry-schedule
+Lost & Found | https://www.halifax.ca/transportation/halifax-transit/lost-found
+Park & Ride | https://www.halifax.ca/transportation/halifax-transit/park-ride
+Passenger Information | https://www.halifax.ca/transportation/halifax-transit/passenger-information
+How To Ride Transit | https://www.halifax.ca/transportation/halifax-transit/passenger-information/how-ride-transit
+The Transit Code | https://www.halifax.ca/transportation/halifax-transit/passenger-information/transit-code
+Accessibility | https://www.halifax.ca/transportation/halifax-transit/accessibility
+Passenger Courtesy | https://www.halifax.ca/transportation/halifax-transit/passenger-information/transit-code/passenger-courtesy
+Prohibited Conduct | https://www.halifax.ca/transportation/halifax-transit/passenger-information/transit-code/prohibited-conduct
+Transit tips | https://www.halifax.ca/transportation/halifax-transit/passenger-information/transit-code/transit-tips
+Policies & Guidelines | https://www.halifax.ca/transportation/halifax-transit/passenger-information/transit-code/policies-guidelines
+Safety Tips for Passengers | https://www.halifax.ca/transportation/halifax-transit/passenger-information/transit-code/safety-tips-passengers
+Plans and Reports | https://www.halifax.ca/transportation/halifax-transit/plans-reports
+Rapid Transit Strategy | https://www.halifax.ca/transportation/halifax-transit/rapid-transit-strategy
+Zero Emission Bus Project | https://www.halifax.ca/transportation/halifax-transit/zero-emission-bus-project
+Transit Programs and Services | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services
+Event Transit Fares Program | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/event-transit-fares-program
+Non-Profit Organizations and Registered Charities Transit Fares Program | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/non-profit-organizations-registered
+SmartTrip Program | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/smarttrip-program
+EPass Program | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/smarttrip-program/epass-program
+Student Transit Pass Pilot Program | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/student-pass-pilot-program
+Affordable Access Transit Pass Program | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/affordable-access-transit-pass-program
+Rural Transit Funding Program | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/rural-transit-funding-program
+Seniors Services | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/seniors-services
+UPass Program | https://www.halifax.ca/transportation/halifax-transit/transit-programs-services/upass-program
+Transit Technology | https://www.halifax.ca/transportation/halifax-transit/transit-technology
+Automated Stop Announcements | https://www.halifax.ca/transportation/halifax-transit/transit-technology/automated-stop-announcements
+Departures | https://www.halifax.ca/transportation/halifax-transit/transit-technology/departures
+General Transit Feed (GTFS) | https://www.halifax.ca/transportation/halifax-transit/transit-technology/general-transit-feed-gtfs
+Google Transit | https://www.halifax.ca/transportation/halifax-transit/transit-technology/google-transit
+Service Alerts | https://www.halifax.ca/transportation/halifax-transit/transit-technology/service-alerts
+Advertise with Halifax Transit | https://www.halifax.ca/transportation/halifax-transit/advertise-halifax-transit
+About Halifax | https://www.halifax.ca/about-halifax
+Employment | https://www.halifax.ca/about-halifax/employment
+Volunteering | https://www.halifax.ca/about-halifax/volunteering
+Regional & Community Planning | https://www.halifax.ca/about-halifax/regional-community-planning
+Municipal Archives | https://www.halifax.ca/about-halifax/municipal-archives
+Parks & Recreation | https://www.halifax.ca/parks-recreation
+Programs & Activities | https://www.halifax.ca/recreation/programs-activities
+Parks, Trails & Gardens | https://www.halifax.ca/recreation/parks-trails-gardens
+Facilities & Fields | https://www.halifax.ca/recreation/facilities-fields
+Arts, Culture, & Heritage | https://www.halifax.ca/recreation/arts-culture-heritage
+Home & Property | https://www.halifax.ca/home-property
+Garbage & Recycling | https://www.halifax.ca/home-property/garbage-recycling-green-cart
+Property Taxes | https://www.halifax.ca/home-property/property-taxes
+Halifax Water | https://www.halifaxwater.ca/
+Transportation | https://www.halifax.ca/transportation
+Halifax Transit | https://www.halifax.ca/transportation/halifax-transit
+Cycling & Walking | https://www.halifax.ca/transportation/cycling-walking
+Parking | https://www.halifax.ca/transportation/parking
+Transportation Projects | https://www.halifax.ca/transportation/transportation-projects
+Safety & Security | https://www.halifax.ca/safety-security
+Emergency Management | https://www.halifax.ca/safety-security/emergency-management
+Fire | https://www.halifax.ca/fire-police/fire
+Police | https://www.halifax.ca/fire-police/police
+Business | https://www.halifax.ca/business
+Business Parks | https://www.halifax.ca/business/business-parks
+Land & Real Estate | https://www.halifax.ca/business/real-estate-land-management
+Planning & Development | https://www.halifax.ca/business/planning-development
+Doing Business with Halifax | https://www.halifax.ca/business/doing-business-halifax
+City Hall | https://www.halifax.ca/city-hall
+Districts & Councillors | https://www.halifax.ca/city-hall/districts-councillors
+Mayor Andy Fillmore | https://www.halifax.ca/city-hall/mayor-mike-savage
+Regional Council | https://www.halifax.ca/city-hall/regional-council
+Agendas, meetings, & reports | https://www.halifax.ca/city-hall/agendas-meetings-reports
+Legislation & By-laws | https://www.halifax.ca/city-hall/legislation-by-laws
+Municipal Elections | https://www.halifax.ca/city-hall/elections
+Maps & data | https://www.halifax.ca/home/online-services/maps-data
+Auditor General | https://hrmauditorgeneral.ca/
+Halifax Public Libraries | http://halifaxpubliclibraries.ca
+Contact the municipality | https://www.halifax.ca/home/311
+Call 311 | https://www.halifax.ca/home/311
+Online services | https://www.halifax.ca/home/online-services
+News | https://www.halifax.ca/home/news
+Calendar | https://www.halifax.ca/home/events-calendar
+Engagement Hub | https://engagehalifax.ca/
+Social Media | https://www.halifax.ca/home/social-media
+Surveys | https://www.halifax.ca/home/surveys
+ | https://www.facebook.com/hfxgov
+ | https://www.instagram.com/hfxmoments/
+ | http://www.youtube.com/HRMNovaScotia
+ | https://www.linkedin.com/company/halifaxregionalmunicipality/
+ | https://bsky.app/profile/hfxgov.bsky.social
+ | https://www.halifax.ca/
+Home | https://www.halifax.ca/
+Privacy | https://www.halifax.ca/home/terms/privacy
+Digital standards | https://www.halifax.ca/home/terms/web-standards
+Disclaimer | https://www.halifax.ca/home/terms/disclaimer
+News | https://www.halifax.ca/home/news
+Feedback | https://www.halifax.ca/feedback
+Contact us | https://www.halifax.ca/home/311

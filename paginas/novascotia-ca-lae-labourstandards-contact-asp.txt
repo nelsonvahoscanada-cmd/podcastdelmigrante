@@ -1,0 +1,104 @@
+URL: https://novascotia.ca/lae/labourstandards/contact.asp
+TÍTULO: Contact Labour Standards | novascotia.ca
+MODIFICADA: —
+ESTADO: 200 | FINAL: https://novascotia.ca/lae/labourstandards/contact.asp
+
+Contact Labour Standards | novascotia.ca 
+ Labour, Skills and Immigration 
+ Contact Labour Standards
+ Contact Labour Standards Division : NS Labour and Advanced Education 
+ Inquiries About Employment Rights 
+ By Phone 
+ Toll free within NS: 1-888-315-0110
+ Tel: 902-424-4311
+ labourstandards@novascotia.ca 
+ In Person 
+Maritime Centre
+ 1505 Barrington Street, 3rd Floor North
+Halifax, NS B3J 3K5
+ By Mail 
+ Labour Standards Division
+ PO Box 697
+ Halifax, Nova Scotia B3J 2T8
+ Administrative Inquiries
+ Phone: 902-424-5637
+ Nova Scotia Foreign Worker Program
+ Foreign Worker Program Inquiries
+ Toll free within NS: 1-888-315-0110
+Tel: 902-424-4311
+ E-mail: erc@novascotia.ca 
+ > Employment Rights home page 
+ , use an and add the "smallheader" class (the will look like an ). -->
+ Sub-heading
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ Great Content:
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ Latest News
+ Content sub-headings
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ Links! 
+-->
+
+--- ENLACES ---
+ | https://novascotia.ca/
+Residents | https://novascotia.ca/sns/access/individuals.asp
+Visitors | http://novascotia.com
+Businesses | https://novascotia.ca/business/
+Government | https://novascotia.ca/government/
+News | https://novascotia.ca/news/
+Labour, Skills and Immigration | https://novascotia.ca/lae/
+Labour, Skills and Immigration | https://novascotia.ca/lae
+Home | https://novascotia.ca/lae/
+Contact | https://novascotia.ca/lae/contact/
+LaMPSS | https://novascotia.ca/lae/LaMPSS/LaMPSS.asp
+NSW Resources | https://novascotia.ca/lae/LaMPSS/eas_resources.asp
+Publications | https://novascotia.ca/lae/pubs/
+Non-Profit Sector | https://novascotia.ca/lae/volunteerism/
+Service By Subject | https://novascotia.ca/lae/servicebysubject.asp
+Career Planning and Labour Information | https://novascotia.ca/lae/CareerPlanningLabourInformation.asp
+Codes | https://novascotia.ca/lae/Codes.asp
+Education and Training | https://novascotia.ca/lae/EducationTraining.asp
+Employment and Labour | https://novascotia.ca/lae/LabourEmploymentIssues.asp
+Licensing, Registration and Certification | https://novascotia.ca/lae/LicensingRegistrationCertification.asp
+Safety | https://novascotia.ca/lae/safety.asp
+ | https://novascotia.ca/lae/healthandsafety/documents/small-business-safety-toolkit.pdf
+ | https://acadien.novascotia.ca/fr/%C3%A0-propos-des-prix-bonjour
+labourstandards@novascotia.ca | mailto:labourstandards@novascotia.ca
+erc@novascotia.ca | mailto:erc@novascotia.ca
+Employment Rights home page | https://novascotia.ca/lae/employmentrights/
+Links! | https://novascotia.ca/lae/templates/default-sidebar.asp
+Government of Nova Scotia | https://beta.novascotia.ca/
+Departments/Agencies | https://beta.novascotia.ca/government
+MLA list | https://nslegislature.ca/members/profiles
+Legislature | http://nslegislature.ca/
+Legislation | https://nslegislature.ca/legislative-business/bills-statutes
+Regulations | https://novascotia.ca/just/regulations/index.htm
+Lieutenant Governor | http://lt.gov.ns.ca/
+Ombudsman | https://novascotia.ca/ombu/
+Human Rights Commission | https://humanrights.novascotia.ca/
+Register to Vote | https://electionsnovascotia.ca/
+For Individuals | https://novascotia.ca/snsmr/access/individuals.asp
+For Businesses | https://novascotia.ca/snsmr/access/business.asp
+Online Services | https://novascotia.ca/snsmr/access/online-services.asp
+Services en français | https://novascotia.ca/snsmr/access/services-en-francais.asp
+HealthLink 811 | https://811.novascotia.ca/
+Road Conditions - 511 | http://511.gov.ns.ca/map/
+Highway Webcams | https://novascotia.ca/tran/cameras/
+Tenders | https://novascotia.ca/tenders/
+Nova Scotia Travel | http://www.novascotia.com/
+Live in Nova Scotia | http://novascotiaimmigration.ca/
+Archives | https://archives.novascotia.ca/
+Museums | https://museum.novascotia.ca/
+Festivals/Events | https://www.novascotia.com/events
+Provincial Libraries | https://library.novascotia.ca/
+News Releases | https://novascotia.ca/news/
+RSS | https://novascotia.ca/news/rss/
+Legislative TV | https://nslegislature.ca/legislative-business/legislative-tv
+Contact Us | https://beta.novascotia.ca/contact-us
+Twitter | http://twitter.com/nsgov
+Facebook | https://www.facebook.com/nsgov
+YouTube | http://www.youtube.com/nsgov
+More Social Media | https://novascotia.ca/connect/
+Français / English | https://novascotia.ca/bonjour/
+Privacy | https://novascotia.ca/lae/privacy/
+Terms | https://novascotia.ca/terms/

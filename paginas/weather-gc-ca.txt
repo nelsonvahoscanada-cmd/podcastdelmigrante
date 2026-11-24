@@ -1,0 +1,642 @@
+URL: https://weather.gc.ca/
+TÍTULO: Weather Information - Environment Canada
+MODIFICADA: 2026-10-16
+ESTADO: 200 | FINAL: https://weather.gc.ca/
+
+Weather Information
+ Due to recent time zone changes in some provinces and territories, time information may not appear accurately on our website. The content of alerts and forecasts remains accurate. We are in the process of updating our systems to reflect these changes and appreciate your patience. Please ensure your browser is up to date.
+ Use this site to access weather information as layers on an interactive map. An alert table is available below for an alternative view of all active alerts . Learn more about the layers .
+ Please note that the browser or operating system used on your device is no longer supported. Content may be missing or not displayed as expected, it is best to use the latest version of Edge, Firefox, Safari or Chrome.
+ Weather Alerts for Canada
+ This table displays all active alerts for Canada, with the ability to view alerts by province or territory and searching by alert name, alert type or forecast location.
+ Select a province, territory or national view
+ BC 
+ NL 
+ ON 
+ QC 
+ YT 
+ National view 
+ National view BC NL ON QC YT Go 
+ Result for National view 
+ Legend Warnings / Advisories Watches Red 
+ Red 
+ Orange 
+ Orange 
+ Yellow 
+ Yellow 
+ Statements Grey 
+ Alert Levels Explained 
+ Weather No Alerts in effect. Go 
+ Showing 40 alerts
+ Forecast Location 
+ British Columbia 
+ East Vancouver Island - Courtenay to Campbell River
+ Yellow Warning 
+ Rainfall 
+ Wind 
+ East Vancouver Island - Duncan to Nanaimo
+ Yellow Warning 
+ Rainfall 
+ East Vancouver Island - Nanoose Bay to Fanny Bay
+ Yellow Warning 
+ Rainfall 
+ Wind 
+ Greater Victoria
+ Yellow Warning 
+ Wind 
+ Haida Gwaii
+ Yellow Warning 
+ Wind 
+ Inland Vancouver Island
+ Yellow Warning 
+ Rainfall 
+ North Vancouver Island
+ Yellow Warning 
+ Wind 
+ Sunshine Coast - Saltery Bay to Powell River
+ Yellow Warning 
+ Wind 
+ West Vancouver Island
+ Yellow Warning 
+ Rainfall 
+ Newfoundland and Labrador 
+ Avalon Peninsula Southeast
+ Yellow Warning 
+ Wind 
+ Avalon Peninsula Southwest
+ Yellow Warning 
+ Wind 
+ Postville - Makkovik
+ Statement 
+ Special weather 
+ Ontario 
+ Barrie - Collingwood - Hillsdale
+ Yellow Warning 
+ Snow squall 
+ Bruce Peninsula - Sauble Beach - Tobermory
+ Statement 
+ Special weather 
+ Goderich - Bluewater - Southern Huron County
+ Statement 
+ Special weather 
+ Hanover - Dundalk - Southern Grey County
+ Statement 
+ Special weather 
+ Innisfil - New Tecumseth - Angus
+ Statement 
+ Special weather 
+ Listowel - Milverton - Northern Perth County
+ Statement 
+ Special weather 
+ London - Parkhill - Eastern Middlesex County
+ Statement 
+ Special weather 
+ Mount Forest - Arthur - Northern Wellington County
+ Statement 
+ Special weather 
+ Orangeville - Grand Valley - Southern Dufferin County
+ Statement 
+ Special weather 
+ Owen Sound - Blue Mountains - Northern Grey County
+ Yellow Warning 
+ Snow squall 
+ Rodney - Shedden - Western Elgin County
+ Statement 
+ Special weather 
+ Saugeen Shores - Kincardine - Southern Bruce County
+ Statement 
+ Special weather 
+ Shelburne - Mansfield - Northern Dufferin County
+ Statement 
+ Special weather 
+ Simcoe - Delhi - Norfolk
+ Statement 
+ Special weather 
+ St. Thomas - Aylmer - Eastern Elgin County
+ Statement 
+ Special weather 
+ Stratford - Mitchell - Southern Perth County
+ Statement 
+ Special weather 
+ Strathroy - Komoka - Western Middlesex County
+ Statement 
+ Special weather 
+ Watford - Pinery Park - Eastern Lambton County
+ Statement 
+ Special weather 
+ Wingham - Blyth - Northern Huron County
+ Statement 
+ Special weather 
+ Woodstock - Tillsonburg - Oxford County
+ Statement 
+ Special weather 
+ Quebec 
+ Anticosti
+ Yellow Warning 
+ Wind 
+ Grande-Vallée area
+ Yellow Warning 
+ Wind 
+ Minganie
+ Yellow Warning 
+ Wind 
+ Natashquan
+ Yellow Warning 
+ Wind 
+ Sainte-Anne-des-Monts area
+ Yellow Warning 
+ Wind 
+ Yukon 
+ Dempster
+ Yellow Warning 
+ Wind 
+ British Columbia East Vancouver Island - Courtenay to Campbell River
+ Yellow Warning 
+ Yellow Warning - Rainfall 
+ Yellow Warning - Wind 
+ East Vancouver Island - Duncan to Nanaimo
+ Yellow Warning 
+ Yellow Warning - Rainfall 
+ East Vancouver Island - Nanoose Bay to Fanny Bay
+ Yellow Warning 
+ Yellow Warning - Rainfall 
+ Yellow Warning - Wind 
+ Greater Victoria
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Haida Gwaii
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Inland Vancouver Island
+ Yellow Warning 
+ Yellow Warning - Rainfall 
+ North Vancouver Island
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Sunshine Coast - Saltery Bay to Powell River
+ Yellow Warning 
+ Yellow Warning - Wind 
+ West Vancouver Island
+ Yellow Warning 
+ Yellow Warning - Rainfall 
+ Newfoundland and Labrador Avalon Peninsula Southeast
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Avalon Peninsula Southwest
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Postville - Makkovik
+ Statement 
+ Special weather statement 
+ Ontario Barrie - Collingwood - Hillsdale
+ Yellow Warning 
+ Yellow Warning - Snow squall 
+ Bruce Peninsula - Sauble Beach - Tobermory
+ Statement 
+ Special weather statement 
+ Goderich - Bluewater - Southern Huron County
+ Statement 
+ Special weather statement 
+ Hanover - Dundalk - Southern Grey County
+ Statement 
+ Special weather statement 
+ Innisfil - New Tecumseth - Angus
+ Statement 
+ Special weather statement 
+ Listowel - Milverton - Northern Perth County
+ Statement 
+ Special weather statement 
+ London - Parkhill - Eastern Middlesex County
+ Statement 
+ Special weather statement 
+ Mount Forest - Arthur - Northern Wellington County
+ Statement 
+ Special weather statement 
+ Orangeville - Grand Valley - Southern Dufferin County
+ Statement 
+ Special weather statement 
+ Owen Sound - Blue Mountains - Northern Grey County
+ Yellow Warning 
+ Yellow Warning - Snow squall 
+ Rodney - Shedden - Western Elgin County
+ Statement 
+ Special weather statement 
+ Saugeen Shores - Kincardine - Southern Bruce County
+ Statement 
+ Special weather statement 
+ Shelburne - Mansfield - Northern Dufferin County
+ Statement 
+ Special weather statement 
+ Simcoe - Delhi - Norfolk
+ Statement 
+ Special weather statement 
+ St. Thomas - Aylmer - Eastern Elgin County
+ Statement 
+ Special weather statement 
+ Stratford - Mitchell - Southern Perth County
+ Statement 
+ Special weather statement 
+ Strathroy - Komoka - Western Middlesex County
+ Statement 
+ Special weather statement 
+ Watford - Pinery Park - Eastern Lambton County
+ Statement 
+ Special weather statement 
+ Wingham - Blyth - Northern Huron County
+ Statement 
+ Special weather statement 
+ Woodstock - Tillsonburg - Oxford County
+ Statement 
+ Special weather statement 
+ Quebec Anticosti
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Grande-Vallée area
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Minganie
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Natashquan
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Sainte-Anne-des-Monts area
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Yukon Dempster
+ Yellow Warning 
+ Yellow Warning - Wind 
+ Coastal Flooding No Alerts in effect. Go 
+ Showing 32 alerts
+ Forecast Location 
+ British Columbia 
+ Boundary Bay including Beach Grove
+ Statement 
+ Coastal flooding 
+ Coastline from Farrant Island to Price Island
+ Statement 
+ Coastal flooding 
+ Coastline from Harbledown Island to Hardwicke Island incl. Knight Inlet
+ Statement 
+ Coastal flooding 
+ Coastline from Hunts Inlet to Farrant Island including Banks Island
+ Statement 
+ Coastal flooding 
+ Coastline from Margaret Bay to Cedar Island
+ Statement 
+ Coastal flooding 
+ Coastline of Metro Vancouver incl. Vancouver and Musqueam FN
+ Statement 
+ Coastal flooding 
+ Coastline of Metro Vancouver incl. West Vancouver and Bowen Island
+ Statement 
+ Coastal flooding 
+ Coastline: Prince Inlet - North Bentinck Arm - Margaret Bay
+ Yellow Warning 
+ Coastal flooding 
+ Eastern Coastline of Haida Gwaii from Cumshewa Island to Cape St. James
+ Statement 
+ Coastal flooding 
+ Eastern Coastline of Haida Gwaii from Rose Spit to Cumshewa Island
+ Statement 
+ Coastal flooding 
+ Greater Victoria Coastline: Cordova Bay to East Sooke
+ Yellow Warning 
+ Coastal flooding 
+ Greater Victoria Coastline: Swartz Bay to Cordova Bay
+ Statement 
+ Coastal flooding 
+ Mainland Coastline - Knight Inlet to Gibsons
+ Statement 
+ Coastal flooding 
+ Mud and Semiahmoo Bay: South Surrey - White Rock - Semiahmoo FN
+ Statement 
+ Coastal flooding 
+ Northern Coastline of Haida Gwaii
+ Statement 
+ Coastal flooding 
+ Shoreline of Howe Sound
+ Statement 
+ Coastal flooding 
+ Shoreline of Johnstone Strait
+ Statement 
+ Coastal flooding 
+ Shoreline of Saanich Inlet
+ Statement 
+ Coastal flooding 
+ Shoreline of the Strait of Georgia including Tsawwassen
+ Statement 
+ Coastal flooding 
+ Southern Gulf Islands
+ Statement 
+ Coastal flooding 
+ Vancouver Island Coastline from Bamfield to Clo-oose
+ Yellow Warning 
+ Coastal flooding 
+ Vancouver Island Coastline from Cape Scott to Nootka Sound
+ Yellow Warning 
+ Coastal flooding 
+ Vancouver Island Coastline from Cape Scott to Telegraph Cove incl. Port Hardy
+ Yellow Warning 
+ Coastal flooding 
+ Vancouver Island Coastline from Clo-oose to East Sooke
+ Yellow Warning 
+ Coastal flooding 
+ Vancouver Island Coastline from Nootka Sound to Barkley Sound incl. Tofino
+ Yellow Warning 
+ Coastal flooding 
+ Vancouver Island Coastline: Campbell River to Oyster River
+ Statement 
+ Coastal flooding 
+ Vancouver Island Coastline: Chemainus to Cowichan Bay
+ Statement 
+ Coastal flooding 
+ Vancouver Island Coastline: Nanaimo to Saltair
+ Statement 
+ Coastal flooding 
+ Vancouver Island Coastline: Oyster River to Royston incl. Courtenay and Comox
+ Statement 
+ Coastal flooding 
+ Vancouver Island Coastline: Royston to Lantzville incl. Parksville
+ Statement 
+ Coastal flooding 
+ Vancouver Island Coastline: Sayward to Duncan Bay
+ Statement 
+ Coastal flooding 
+ Western Coastline of Haida Gwaii
+ Yellow Warning 
+ Coastal flooding 
+ British Columbia Boundary Bay including Beach Grove
+ Statement 
+ Coastal flooding statement 
+ Coastline from Farrant Island to Price Island
+ Statement 
+ Coastal flooding statement 
+ Coastline from Harbledown Island to Hardwicke Island incl. Knight Inlet
+ Statement 
+ Coastal flooding statement 
+ Coastline from Hunts Inlet to Farrant Island including Banks Island
+ Statement 
+ Coastal flooding statement 
+ Coastline from Margaret Bay to Cedar Island
+ Statement 
+ Coastal flooding statement 
+ Coastline of Metro Vancouver incl. Vancouver and Musqueam FN
+ Statement 
+ Coastal flooding statement 
+ Coastline of Metro Vancouver incl. West Vancouver and Bowen Island
+ Statement 
+ Coastal flooding statement 
+ Coastline: Prince Inlet - North Bentinck Arm - Margaret Bay
+ Yellow Warning 
+ Yellow Warning - Coastal flooding 
+ Eastern Coastline of Haida Gwaii from Cumshewa Island to Cape St. James
+ Statement 
+ Coastal flooding statement 
+ Eastern Coastline of Haida Gwaii from Rose Spit to Cumshewa Island
+ Statement 
+ Coastal flooding statement 
+ Greater Victoria Coastline: Cordova Bay to East Sooke
+ Yellow Warning 
+ Yellow Warning - Coastal flooding 
+ Greater Victoria Coastline: Swartz Bay to Cordova Bay
+ Statement 
+ Coastal flooding statement 
+ Mainland Coastline - Knight Inlet to Gibsons
+ Statement 
+ Coastal flooding statement 
+ Mud and Semiahmoo Bay: South Surrey - White Rock - Semiahmoo FN
+ Statement 
+ Coastal flooding statement 
+ Northern Coastline of Haida Gwaii
+ Statement 
+ Coastal flooding statement 
+ Shoreline of Howe Sound
+ Statement 
+ Coastal flooding statement 
+ Shoreline of Johnstone Strait
+ Statement 
+ Coastal flooding statement 
+ Shoreline of Saanich Inlet
+ Statement 
+ Coastal flooding statement 
+ Shoreline of the Strait of Georgia including Tsawwassen
+ Statement 
+ Coastal flooding statement 
+ Southern Gulf Islands
+ Statement 
+ Coastal flooding statement 
+ Vancouver Island Coastline from Bamfield to Clo-oose
+ Yellow Warning 
+ Yellow Warning - Coastal flooding 
+ Vancouver Island Coastline from Cape Scott to Nootka Sound
+ Yellow Warning 
+ Yellow Warning - Coastal flooding 
+ Vancouver Island Coastline from Cape Scott to Telegraph Cove incl. Port Hardy
+ Yellow Warning 
+ Yellow Warning - Coastal flooding 
+ Vancouver Island Coastline from Clo-oose to East Sooke
+ Yellow Warning 
+ Yellow Warning - Coastal flooding 
+ Vancouver Island Coastline from Nootka Sound to Barkley Sound incl. Tofino
+ Yellow Warning 
+ Yellow Warning - Coastal flooding 
+ Vancouver Island Coastline: Campbell River to Oyster River
+ Statement 
+ Coastal flooding statement 
+ Vancouver Island Coastline: Chemainus to Cowichan Bay
+ Statement 
+ Coastal flooding statement 
+ Vancouver Island Coastline: Nanaimo to Saltair
+ Statement 
+ Coastal flooding statement 
+ Vancouver Island Coastline: Oyster River to Royston incl. Courtenay and Comox
+ Statement 
+ Coastal flooding statement 
+ Vancouver Island Coastline: Royston to Lantzville incl. Parksville
+ Statement 
+ Coastal flooding statement 
+ Vancouver Island Coastline: Sayward to Duncan Bay
+ Statement 
+ Coastal flooding statement 
+ Western Coastline of Haida Gwaii
+ Yellow Warning 
+ Yellow Warning - Coastal flooding 
+ Weather 
+ Latest hourly and 7-day weather forecasts for locations across Canada. Plus view local radar and satellite imagery.
+ Satellite 
+ Jet Stream 
+ Find your location 
+ Alerts 
+ Weather alerts 24/7 from Environment and Climate Change Canada, your authoritative source. Track lightning and hurricanes using our maps.
+ Hurricane 
+ Marine 
+ The latest alerts and forecasts for marine, sea state and ice conditions for regions across Canada.
+ Air Quality 
+ Find the latest local air quality forecasts and information.
+ Analyses and Modelling 
+ Access environmental analysis and model data for different time horizons and application areas as well as geospatial web services.
+ Past Weather 
+ Canadians and weather sensitive economic sectors can access past weather data, climate normals, historical radar, and climate data.
+ About Weather 
+ Learn about weather events, health, safety, forecasting tools and services.
+ Canadian Centre for Climate Services 
+ The Canadian Centre for Climate Services provides Canadians with the information and support they need to understand and reduce the risks from climate change.
+ MSC Open data 
+ The Meteorological Service of Canada makes weather, climate, water and environmental data available to the private sector, academics, and the general public.
+ Add to shortcuts Organize shortcuts 
+ Select to drag and drop, rename or delete.
+ No shortcuts
+ Report Severe Weather 
+ Canadian Weather 
+ Weather Radar - Canada 
+ Satellite - Canada 
+ Marine - Canada 
+ Air Quality 
+ Canadian Ice Service 
+ Seasonal forecasts 
+ Extended forecast 
+ Public Alerts - Canada 
+ Lightning 
+ Hurricane 
+ Weather Summaries 
+ Hazardous Weather 
+ Global and Regional forecast models 
+ Astronomy 
+ Water Level and Flow 
+ Historical Climate Data 
+ Aviation 
+ Guide to Public forecasts 
+ Guide to Marine forecasts 
+ Guide to Air Quality forecasts 
+ Canadian Centre for Climate Services Library 
+ Wind Chill and Humidex Calculators 
+ Weather and your health 
+ Add this page
+ Name 
+ Save Cancel 
+ Rename 
+ Delete 
+ Save 
+ × Add to shortcuts
+ The name you have entered for the shortcut already exists on your Weather shortcuts menu. Would you like to overwrite it?
+ Yes No 
+ × Rename shortcut
+ There is already a shortcut with the same name in this list. Do you want to rename " link " to " link(2) "? 
+ Yes No 
+ × Add to shortcuts
+ Your shortcut list has reached the maximum size of 30
+ Close 
+ Add to shortcuts Go to the desired page on the site, open the Weather shortcuts menu and click on the "Add to shortcuts" button
+ Page name will display in the "Add this page" window, the name can be changed by highlighting the text and entering the desired name
+ Click on the "Save" button to add the link to the list
+ Click on the "X" button to close the panel
+ Delete a link Click on the "Organize shortcuts" button
+ Select the link to delete
+ Click on the "Delete" button to remove the link from the list
+ Click on the "Close" button to save the change
+ Move a link up/down the list Click on the "Organize shortcuts" button
+ Click and hold the link and move to new location in the list
+ Click on the "Close" button to save the change
+ Rename a link Click on the "Organize shortcuts" button
+ Select the link to rename
+ Click on the "Rename" button and change the link name
+ Click the enter or tab key
+ Click on the "Close" button to save the change
+ Keyboard navigation Use the Tab key to move to a button or link 
+ Use the Enter key to click on buttons or links 
+ Organize shortcuts navigation Use the ↑ Up key to select the link above. If none are selected, it will select the first link. 
+ Use the ↓ Down key to select the link below. If none are selected, it will select the last link. 
+ Use the Page Up key to move a selection up in the list. 
+ Use the Page Down key to move a selection down in the list. 
+ Restore default list Warning: Clicking on the button below will remove all your customized links.
+ Restore default links 
+ Save your customized list as a bookmark. 
+ Copy/paste or click on the link below then when the page displays, you can bookmark the page using the web browser. Bookmarking your customized list will allow you to access it even if the local storage on your device is erased.
+ Close 
+ Features
+ View yesterday's weather data
+ Check out weather conditions from the previous day using the Past Data link on each location page.
+ Feedback about this web site 
+ Date modified:
+ 2026-10-16
+
+--- ENLACES ---
+Français | https://meteo.gc.ca/index_f.html
+Government of Canada / Gouvernement du Canada | http://www.canada.ca/en.html
+Canada.ca | http://www.canada.ca/en.html
+Edit My Profile My Weather Profile | https://weather.gc.ca/myprofile/index_e.html
+about the layers | https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/weather-webmapping.html
+BC | https://weather.gc.ca/index_e.html?alertTableFilterProv=BC
+NL | https://weather.gc.ca/index_e.html?alertTableFilterProv=NL
+ON | https://weather.gc.ca/index_e.html?alertTableFilterProv=ON
+QC | https://weather.gc.ca/index_e.html?alertTableFilterProv=QC
+YT | https://weather.gc.ca/index_e.html?alertTableFilterProv=YT
+Weather | https://weather.gc.ca/mainmenu/weather_menu_e.html
+Satellite | https://weather.gc.ca/satellite/index_e.html
+Jet Stream | https://weather.gc.ca/jet_stream/index_e.html
+Alerts | https://weather.gc.ca/mainmenu/alert_menu_e.html
+Hurricane | https://weather.gc.ca/hurricane/track_e.html
+Marine | https://weather.gc.ca/mainmenu/marine_menu_e.html
+Air Quality | https://weather.gc.ca/mainmenu/airquality_menu_e.html
+Analyses and Modelling | https://weather.gc.ca/mainmenu/modelling_menu_e.html
+Past Weather | https://climate.weather.gc.ca/index_e.html
+About Weather | https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources.html
+Canadian Centre for Climate Services | https://www.canada.ca/en/environment-climate-change/services/climate-change/canadian-centre-climate-services.html
+MSC Open data | https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/weather-tools-specialized-data.html
+Report Severe Weather | https://www.canada.ca/en/environment-climate-change/services/report-severe-weather/overview.html
+Canadian Weather | https://weather.gc.ca/canada_e.html
+Weather Radar - Canada | https://weather.gc.ca/index_e.html?layers=,radar
+Satellite - Canada | https://weather.gc.ca/satellite/index_e.html
+Marine - Canada | https://weather.gc.ca/marine/index_e.html
+Air Quality | https://weather.gc.ca/mainmenu/airquality_menu_e.html
+Canadian Ice Service | https://www.canada.ca/en/environment-climate-change/services/ice-forecasts-observations/latest-conditions.html
+Seasonal forecasts | https://weather.gc.ca/saisons/index_e.html
+Extended forecast | https://weather.gc.ca/forecast/public_bulletins_e.html
+Public Alerts - Canada | https://weather.gc.ca/index_e.html?layers=alert
+Lightning | https://weather.gc.ca/index_e.html?layers=,,lightning
+Hurricane | https://weather.gc.ca/hurricane/index_e.html
+Weather Summaries | https://weather.gc.ca/warnings/weathersummaries_e.html
+Hazardous Weather | https://www.canada.ca/en/environment-climate-change/services/seasonal-weather-hazards.html
+Global and Regional forecast models | https://weather.gc.ca/model_forecast/model_e.html
+Astronomy | https://weather.gc.ca/astro/index_e.html
+Water Level and Flow | https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey.html
+Historical Climate Data | https://climate.weather.gc.ca/index_e.html
+Aviation | https://flightplanning.navcanada.ca/cgi-bin/CreePage.pl?Langue=anglais&NoSession=NS_Inconnu&Page=forecast-observation&TypeDoc=html
+Guide to Public forecasts | https://www.canada.ca/en/environment-climate-change/services/types-weather-forecasts-use/public/guide.html
+Guide to Marine forecasts | https://www.canada.ca/en/environment-climate-change/services/general-marine-weather-information/publications/guide-forecasts.html
+Guide to Air Quality forecasts | https://www.canada.ca/en/environment-climate-change/services/air-quality-health-index/about.html
+Canadian Centre for Climate Services Library | https://climate-change.canada.ca/climate-library
+Wind Chill and Humidex Calculators | https://weather.gc.ca/windchill/wind_chill_e.html
+Weather and your health | https://www.canada.ca/en/environment-climate-change/services/weather-health.html
+View yesterday's weather data | https://weather.gc.ca/redirect.php?url=http://weather.gc.ca/canada_e.html
+Feedback about this web site | https://weather.gc.ca/mainmenu/contact_us_e.html
+Contact us | https://weather.gc.ca/mainmenu/contact_us_e.html
+Weather tools and resources | https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources.html
+Careers | https://www.canada.ca/en/services/environment/weather/careers-meteorologist.html
+All contacts | https://www.canada.ca/en/contact.html
+Departments and agencies | https://www.canada.ca/en/government/dept.html
+About government | https://www.canada.ca/en/government/system.html
+Jobs | https://www.canada.ca/en/services/jobs.html
+Immigration and citizenship | https://www.canada.ca/en/services/immigration-citizenship.html
+Travel and tourism | https://travel.gc.ca/
+Business | https://www.canada.ca/en/services/business.html
+Benefits | https://www.canada.ca/en/services/benefits.html
+Health | https://www.canada.ca/en/services/health.html
+Taxes | https://www.canada.ca/en/services/taxes.html
+Environment and natural resources | http://www.canada.ca/en/services/environment.html
+National security and defence | https://www.canada.ca/en/services/defence.html
+Culture, history and sport | https://www.canada.ca/en/services/culture.html
+Policing, justice and emergencies | https://www.canada.ca/en/services/policing.html
+Transport and infrastructure | https://www.canada.ca/en/services/transport.html
+Canada and the world | http://international.gc.ca/world-monde/index.aspx?lang=eng
+Money and finance | https://www.canada.ca/en/services/finance.html
+Science and innovation | https://www.canada.ca/en/services/science.html
+Indigenous peoples | https://www.canada.ca/en/services/indigenous-peoples.html
+Veterans and military | https://www.canada.ca/en/services/veterans-military.html
+Youth | https://www.canada.ca/en/services/youth.html
+Social media | https://www.canada.ca/en/social.html
+Mobile applications | https://www.canada.ca/en/mobile.html
+About Canada.ca | https://www.canada.ca/en/government/about.html
+Terms and conditions | https://www.canada.ca/en/transparency/terms.html
+Privacy | https://www.canada.ca/en/transparency/privacy.html
