@@ -1,0 +1,33 @@
+URL: http://www.novascotia.ca/eNSNP
+TÍTULO: Home - LaMPSS Online
+MODIFICADA: —
+ESTADO: 200 | FINAL: https://lampss.novascotia.ca/forms/imm/home
+
+Immigrate to Nova Scotia
+ Select your role to continue 
+ Are you a candidate? 
+ For individuals applying to immigrate to
+Nova Scotia through the Nova Scotia Nominee Program (NSNP).
+ Sign In / Create Account 
+ Are you an immigration representative applying for an NSNP candidate?
+ For NSNP representatives applying on
+behalf of an NSNP client.
+ Registered representatives can sign in
+to view and apply to available NSNP streams.
+ New representatives see only the registration form; once approved, they can apply on behalf of clients.
+ Sign In / Create Account 
+ Are you an employer or immigration representative applying through the
+Atlantic Immigration Program (AIP)? 
+ For already designated employers or their representatives applying for an AIP endorsement.
+ Sign In
+
+--- ENLACES ---
+ | http://www.novascotia.ca/Forms/IMM/Home
+Terms of Use | https://novascotia.ca/terms
+RSS | http://novascotia.ca/news/rss/
+Twitter | https://www.twitter.com/nsgov
+Youtube | https://www.youtube.com/nsgov
+Facebook | https://www.facebook.com/nsgov
+Privacy | http://novascotia.ca/cns/privacy/
+Terms | http://novascotia.ca/terms/
+Cookies | http://novascotia.ca/cns/privacy/cookies/

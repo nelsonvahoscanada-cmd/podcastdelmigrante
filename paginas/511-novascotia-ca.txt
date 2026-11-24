@@ -1,0 +1,227 @@
+URL: https://511.novascotia.ca/
+TÍTULO: 511 Nova Scotia
+MODIFICADA: —
+ESTADO: 200 | FINAL: https://511.novascotia.ca/
+
+511 Nova Scotia
+ Loading...
+ × 
+ Skip to main content 
+ 511 Nova Scotia
+ ADVISORIES 
+ × 
+ Say hello to the transformed 511 Nova Scotia
+ Welcome to 511 Nova Scotia
+ Get started to discover new and exciting features!
+ Next 
+ Signing up with 511 Nova Scotia
+ Creating an account is NOT mandatory on this website; however if you do, you’ll be able to personalize your experience and receive traffic notifications.
+ Select ‘Sign Up’ from the menu options in the top right corner
+ You can now sign up with either your email or phone number.
+ Enter your information and click Sign up button. Verify your account by clicking on the confirmation link that will be sent to your email or SMS.
+ Previous 
+ Next 
+ Creating & Saving a Customized Route
+ Enter your start and end locations by typing the addresses into the address fields. Alternatively, you may also right click on the map. Once you have entered the route locations, click ‘Drive’.
+ Review the routes generated and select the one that suits you best.
+ When done, enter a name for your route and click ‘Save’.
+ Previous 
+ Next 
+ Creating a Notification for your Route
+ Once your route is saved, you will be asked if you want to be notified of events on this route. Click ‘Create Route Notification’
+ You will be redirected to the notification creation page. Enter the required information for your route, select a delivery option (email or SMS), and click ‘Save’.
+ You will now be notified of any future events that affect your route.
+ Previous 
+ Done 
+ Welcome to 511 Nova Scotia
+ Get started to discover new and exciting features!
+ Next 
+ Signing up with 511 Nova Scotia
+ Creating an account is NOT mandatory on this website; however if you do,you’ll be able to personalize your experience and receive traffic notifications.
+ Select ‘Sign Up’ from the menu options in the top right corner
+ You can now sign up with either your email or phone number.
+ Enter your information and click Sign up button. Verify your account by clicking on the confirmation link that will be sent to your email or SMS.
+ Previous 
+ Next 
+ Creating & Saving a Customized Route
+ Enter your start and end locations by typing the addresses into the address fields. Alternatively, you may also right click on the map. Once you have entered the route locations, click ‘Drive’.
+ Review the routes generated and select the one that suits you best.
+ When done, enter a name for your route and click ‘Save’.
+ Previous 
+ Next 
+ Creating a Notification for your Route
+ Once your route is saved, you will be asked if you want to be notified of events on this route. Click ‘Create Route Notification’
+ You will be redirected to the alert creation page. Enter the required information for your route, select a delivery option (email or SMS), and click ‘Save’.
+ You will now be notified of any future events that affect your route.
+ Previous 
+ Done 
+ Map
+ My Routes 
+ Content for Heading
+ Start Location 
+ A
+ My Location Starting Point 
+ Swap locations A and B 
+ Add Waypoint
+ Destination 
+ B
+ My Location Destination 
+ Drive
+ Transit
+ Reset
+ Avoid 
+ Tolls 
+ My Cameras 
+ Toggle 
+ Please login to customize My Cameras.
+ To add to My Cameras View:
+ Map page - Click on a camera icon on the map, then click the "My Cameras" button at the top of the camera popup. Select from the Camera View list to add or de-select to remove.
+ Camera page - Click on the three dots icon below the camera image to access the "My Cameras" option. Select from the Camera View list to add or de-select to remove.
+ Search Map
+ Back to Map 
+ Close 
+ Legend 
+ Clear All 
+ Road Conditions
+ You can click on any road segment to view detailed information about road conditions.
+ No Report 
+ Bare (Dry / Wet) 
+ Partly Covered 
+ Covered 
+ Closed 
+ Reduced Visibility 
+ Traffic Speeds
+ Closed/Stopped 
+ Slow 
+ Fast 
+ Closures
+ Incidents
+ Construction
+ Halifax Harbour Bridge Activity
+ Bridge Restrictions
+ Cameras
+ Parks
+ National Parks
+ Provincial Parks
+ Ferries
+ In Service 
+ Reduced Service 
+ Out of Service 
+ Weather New 
+ Weather Radar
+ Weather Forecasts
+ Weather Alerts
+ Marker Clustering 
+ Group of clustered icons on the map. Click to zoom in and see individual markers.
+ My Location 
+ Route
+ Route 
+ Alerts 
+ Legend 
+ Camera 
+ Guide 
+ EMERGENCY ALERT 
+ × 
+ Log In 
+ Email or phone 
+ Password 
+ Remember me 
+ Sign up as a new user 
+ Forgot password? 
+ Information 
+ × 
+ You're currently not logged in, if you don't already have an account please create one here so you can save your route.
+ If you do not wish to create an account, please close this window and continue with your route planning.
+ Log in 
+ Create Account 
+ Don't show this message again 
+ Create Route Notification 
+ Would you like to be notified of events and road conditions on this route? 
+ Route: 
+ Default options for receiving Event and Road Condition Notifications:
+ Weekdays
+ 6 AM - 6 PM
+ By SMS 
+ To change these options, click "Edit". 
+ Don't show this message again 
+ Save 
+ Edit 
+ Cancel
+
+--- ENLACES ---
+Sign Up for an account. | https://511.novascotia.ca/my511/register
+ | https://beta.novascotia.ca/
+ | https://511.novascotia.ca/map
+Link to X in new window.. | https://twitter.com/511ns
+All Regions | https://511.novascotia.ca/region/All%20Regions
+Cape Breton | https://511.novascotia.ca/region/Cape%20Breton
+Eastern | https://511.novascotia.ca/region/Eastern
+Halifax | https://511.novascotia.ca/region/Halifax
+Northern | https://511.novascotia.ca/region/Northern
+South Shore | https://511.novascotia.ca/region/South%20Shore
+Valley | https://511.novascotia.ca/region/Valley
+Western | https://511.novascotia.ca/region/Western
+English | javascript:submitLanguageInfo('en')
+Français | javascript:submitLanguageInfo('fr')
+Sign Up for an account. | https://511.novascotia.ca/my511/register
+Map | https://511.novascotia.ca/map
+Text Report | https://511.novascotia.ca/
+Traffic Events | https://511.novascotia.ca/list/events/traffic
+Cameras | https://511.novascotia.ca/cctv
+Road Conditions | https://511.novascotia.ca/roadconditions
+Ferries | https://511.novascotia.ca/list/pois/ferryterminals
+Halifax Harbour Bridge Activity | https://511.novascotia.ca/halifaxharbourbridges
+My 511 | https://511.novascotia.ca/
+My Routes & Notifications | https://511.novascotia.ca/my511
+Links | https://511.novascotia.ca/
+Snow Plows | https://novascotia.ca/tran/winter/plowtracker.asp
+Five Year Construction Plan | https://novascotia.ca/tran/highways/hwyconstruction.asp
+When will my road get plowed? | https://novascotia.ca/tran/winter/WinterMaintenanceStandards.pdf
+Commercial Vehicle Safety and Compliance | https://novascotia.ca/tran/trucking/
+About | https://511.novascotia.ca/
+Help | https://511.novascotia.ca/about/help
+About 511 Nova Scotia | https://511.novascotia.ca/about/about
+FAQ | https://511.novascotia.ca/about/faq
+Definitions | https://511.novascotia.ca/about/definitions
+Privacy Policy | https://511.novascotia.ca/about/privacy
+Contact Us | https://511.novascotia.ca/contact
+Map | https://511.novascotia.ca/map
+Traffic Events | https://511.novascotia.ca/list/events/traffic
+Cameras | https://511.novascotia.ca/cctv
+Road Conditions | https://511.novascotia.ca/roadconditions
+Ferries | https://511.novascotia.ca/list/pois/ferryterminals
+Halifax Harbour Bridge Activity | https://511.novascotia.ca/halifaxharbourbridges
+My Routes & Notifications | https://511.novascotia.ca/my511
+Help | https://511.novascotia.ca/about/help
+About 511 Nova Scotia | https://511.novascotia.ca/about/about
+FAQ | https://511.novascotia.ca/about/faq
+Definitions | https://511.novascotia.ca/about/definitions
+Privacy Policy | https://511.novascotia.ca/about/privacy
+Contact Us | https://511.novascotia.ca/contact
+All Regions | https://511.novascotia.ca/region/All%20Regions
+Cape Breton | https://511.novascotia.ca/region/Cape%20Breton
+Eastern | https://511.novascotia.ca/region/Eastern
+Halifax | https://511.novascotia.ca/region/Halifax
+Northern | https://511.novascotia.ca/region/Northern
+South Shore | https://511.novascotia.ca/region/South%20Shore
+Valley | https://511.novascotia.ca/region/Valley
+Western | https://511.novascotia.ca/region/Western
+ADVISORIES | https://511.novascotia.ca/List/Alerts
+Map page | https://511.novascotia.ca/map
+Camera page | https://511.novascotia.ca/cctv
+Map | https://511.novascotia.ca/map
+Traffic Events | https://511.novascotia.ca/list/events/traffic
+Cameras | https://511.novascotia.ca/cctv
+Road Conditions | https://511.novascotia.ca/roadconditions
+Ferries | https://511.novascotia.ca/list/pois/ferryterminals
+Halifax Harbour Bridge Activity | https://511.novascotia.ca/halifaxharbourbridges
+My Routes & Notifications | https://511.novascotia.ca/my511
+Help | https://511.novascotia.ca/about/help
+About 511 Nova Scotia | https://511.novascotia.ca/about/about
+FAQ | https://511.novascotia.ca/about/faq
+Definitions | https://511.novascotia.ca/about/definitions
+Privacy Policy | https://511.novascotia.ca/about/privacy
+Contact Us | https://511.novascotia.ca/contact
+Sign up as a new user | https://511.novascotia.ca/my511/register
+Forgot password? | https://511.novascotia.ca/my511/forgotpassword
+Create Account | https://511.novascotia.ca/my511/register

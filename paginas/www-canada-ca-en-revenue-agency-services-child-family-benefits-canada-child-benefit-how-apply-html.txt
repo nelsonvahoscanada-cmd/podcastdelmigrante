@@ -1,0 +1,816 @@
+URL: https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html
+TÍTULO: How to apply - Canada child benefit (CCB) - Canada.ca
+MODIFICADA: —
+ERROR directo: TimeoutError The read operation timed out | NAVEGADOR: 200 https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html
+
+Canada child benefit (CCB)
+ How to apply
+ When you apply for the Canada child benefit (CCB), you don't need to apply separately for related provincial and territorial programs. The Canada Revenue Agency (CRA) will determine your eligibility for these programs when you apply for the CCB.
+ On this page
+ When to apply 
+ Apply for the benefit 
+ When to apply
+ You should apply for the CCB as soon as you or your spouse or common-law partner meet the eligibility criteria, and any of the following happens:
+ Your child is born
+ A child starts to live with you, or returns to live with you after a temporary period with someone else
+ You begin, end, or change a shared custody arrangement 
+ You get custody of a child
+ Apply for the benefit
+ Before you apply, make sure you or your spouse or common-law partner meet the eligibility criteria .
+ Gather supporting documents
+ You may need to provide additional documents based on your situation when you apply: 
+ Child's proof of birth is required 
+ You must provide proof of birth for a child with your application if the CRA has never paid benefits for this child, and you are applying online using your CRA account or by mail. If you apply through birth registration, you do not need to provide proof of birth for your child as it’s securely shared with the CRA by your province or territory.
+ Proof of birth, such as a birth certificate, must include the child’s last name, given name, and date of birth. For a complete list of supporting documents, go to Supporting documents .
+ To send us your documents:
+ Upload the proof of birth using "Submit documents" in your CRA account 
+ Mail the proof of birth with Form RC66, Canada Child Benefits Application , to your tax centre 
+ Other parent is designated as primarily responsible 
+ When a child resides with individuals who are spouses or common-law partners, the female parent is presumed to be primarily responsible for the care and upbringing of all the children in the home.
+ If you are the other parent and are primarily responsible for the care and upbringing of all the children in the home, you must:
+ Include a signed letter from the female parent stating that you are primarily responsible for the care and upbringing of all the children in the home
+ Mail the letter and Form RC66, Canada Child Benefits Application , to your tax centre 
+ A letter is not required if both parents residing with the child are of the same sex.
+ Applying for a period that started more than 11 months ago 
+ If you are applying for a child that started living with you more than 11 months ago, you must:
+ Provide supporting documents for
+ Your citizenship status (1 of the following) such as:
+ Canadian birth certificate
+ Canadian passport
+ permanent residence card
+ Canadian immigration status documents for you and your spouse or common-law partner
+ Proof that you live in Canada (at least 3 of the following document types) such as:
+ lease agreement
+ rent receipt
+ household bill (gas, electricity, cable television, telephone)
+ driver's licence, vehicle registration, or car insurance
+ membership in social or professional organizations
+ Proof of birth for each child you are applying for
+ Proof that you are primarily responsible for the care and upbringing of the child (at least 3 of the following document types) such as:
+ a letter from the nursery or school authority showing the contact information on file for the child
+ a copy of the child's report card, showing the contact information on file for the child
+ a copy of the child's school registration or enrolment document, or information or emergency contact sheet, signed and certified by the school
+ if your child is being home-schooled, a letter from the school board or appropriate educational authority confirming that you have a home school arrangement
+ a registration form or a receipt from an activity or club the child is enrolled in
+ a complete and signed court order, decree, or separation agreement; the document must explain the type of custody arrangement you have (for example, shared custody) and clearly show the living arrangements for the child
+ any other document showing that the child lived with you during the period being reviewed
+ For a complete list of all supporting documents, go to Supporting documents 
+ Mail all supporting documents and Form RC66, Canada Child Benefits Application , to your tax centre 
+ Newcomers or returning residents to Canada 
+ You must:
+ Fill out and sign Schedule RC66SCH, Status in Canada/Statement of Income 
+ Mail Schedule RC66SCH and Form RC66, Canada Child Benefits Application , to your tax centre 
+ If your spouse or common-law partner is a non-resident of Canada during any part of the year, you must fill out Form CTB9, Canada Child Benefit – Statement of Income , for each year, or part of a year, that they are a non-resident of Canada.
+ Leaving an abusive or violent situation 
+ Get benefit and credit payments without putting yourself, or your family, in danger. For more information, go to Getting benefits and credits when in an abusive or violent situation .
+ If you are providing original documents in a language other than English or French, you need to include an acceptable translation with a copy of the original. 
+ Choose how you want to apply
+ You can register for the CCB through:
+ Birth registration
+ You can apply for the CCB at the same time as when you register the birth of your newborn using the Automated Benefits Application at the hospital or birthing centre.
+ Note: This service is currently not available for Nunavut.
+ Complete the birth registration for your newborn with your province or territory 
+ Provinces with online registration 
+ Residents living in the following provinces have the option to register online:
+ Ontario
+ Quebec
+ British Columbia
+ Alberta
+ Apply for the CCB within the birth registration form
+ Give your consent to allow your province or territory to securely share your information with the CRA
+ If you do not give consent to share information 
+ If you do not give your consent, your information will not be sent to the CRA. You will need to use another option to apply for the CCB.
+ Enter your Social Insurance Number (SIN)
+ Submit the birth registration form (which includes your CCB application) to your province or territory
+ Your CRA account
+ If you didn't apply for the CCB when you registered the birth of your newborn, you can apply online using your CRA account.
+ Sign in to your CRA account 
+ Choose your Individual account
+ Select Benefits and credits on the Overview screen
+ In the "Child information" section, select + Add and complete the following sections:
+ Confirm account information (contact, marital status, and citizenship)
+ Enter child information
+ Review and submit your application
+ Print or save your confirmation
+ Select the Submit documents button if you're asked to provide additional documents, such as proof of birth of a child, to complete your application
+ If you are unable to apply through the other methods
+ Send a form to the CRA by mail 
+ Fill out and sign Form RC66, Canada Child Benefits Application 
+ Include any additional supporting documents needed based on your situation
+ Mail the form to your tax centre 
+ Check the processing times for your application
+ You can sign in to your CRA account to view the status of your application using the progress tracker. 
+ You can also check general processing times for your CCB application based on how you applied:
+ Choose the option you used to apply
+ Select the Show targeted processing times button to find the current processing time.
+ Check processing times 
+ How did you apply: 
+ My Account, using "Apply for child benefits"
+ When registering the birth of your newborn with your province or territory (Automated Benefit Application)
+ Canada Child Benefit application form (RC66)
+ How did you apply: Make your selection... My Account, using "Apply for child benefits" When registering the birth of your newborn with your province or territory (Automated Benefit Application) Canada Child Benefit application form (RC66) 
+ Date submitted ( YYYY-MM-DD ) 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Show targeted processing time 
+ Federal film tax credits:
+ Canadian film or video production tax credit
+ Film or video production services tax credit
+ Provincial film tax credits that are considered equivalent:
+ British Columbia film and television basic tax credit
+ British Columbia production services basic tax credit
+ Manitoba film and video production tax credit
+ Ontario film and television tax credit
+ Ontario production services tax credit
+ × Close: Select an option: (escape key) 
+ What is considered electronic filing? 
+ Returns filed using the CRA's EFILE or NETFILE service or the automated phone service, File My Return
+ What is considered paper filing? 
+ Returns filed on paper, including returns printed using tax preparation software
+ × Close: Select a filing option (escape key) 
+ Electronic: 
+ Requests for reassessments submitted online via: 
+ Change my return (CMR) in My Account portal
+ ReFILE, for previously electronically transmitted returns, using certified NETFILE software (individual) or certified EFILE software (Efiler service provider)
+ Paper: 
+ Requests for reassessments submitted by; 
+ Mail
+ Fax
+ Phone call to a CRA call centre
+ × Close: Select a filing option (escape key) 
+ You applied for child benefits using the Automated Benefits Application when you registered your newborn child with your province or territory (the automated application is not available in Nunavut or Yukon)
+ You applied for child benefits using the "Apply for child benefits" option on your My Account service.
+ You applied for Child Benefit application using Form RC66, and sent it to the CRA by mail or through the "Submit documents" service on My Account.
+ × Close: How did you apply? (escape key) 
+ Calculations in this tool assume that you sent a complete claim when you filed your T2 return.
+ × Close: Do you remember the date you filed your claim? (escape key) 
+ Charities include:
+ new charity application
+ re-registration charity application
+ Canadian Amateur Athletic Association application
+ registered National Arts Service organization application
+ other qualified donee application
+ × Close: Select a CRA service: (escape key) 
+ Routine enquiry is generally recurring and that needs little research and analysis.
+ Complex enquiry is specific to a given charity or a donor and needs research or analysis as well as a consultation with internal stakeholders.
+ × Close: Select an option: (escape key) 
+ What is a low-complexity tax objection? 
+ Low-complexity objections may relate to issues with credits associated with the GSTC and CCB programs, income amounts reported on an information slip, deductions from total or net income, and non-refundable tax credits.
+ What is a medium-complexity tax objection? 
+ Medium-complexity objections may relate to issues with business expenses and more complex individual income tax, as well as GST/HST new housing rebates, input tax credits, and imposition of GST/HST.
+ What is a high-complexity tax objection? 
+ High complexity income tax objections take much longer to resolve than other objections because of their technical content. These objections may relate to large corporations, complex business transactions, international transfer pricing, general anti-avoidance rule assessments, and tax avoidance schemes.
+ You can find more information to help you figure out the complexity levels for objections at Processing times and complexity levels – Income tax and GST/HST objections .
+ × Close: How complex is your tax objection? (escape key) 
+ Electronic: 
+ Submit documents feature in My Account portal
+ Paper: 
+ Mailed to Sudbury Tax Centre (3 to 5 business days, via Canada Post standard mail)
+ × Close: How did you submit your request? (escape key) 
+ Results are not provided if:
+ the processing time for your return exceeds the service standard
+ your return is excluded from the service standard
+ × Close: Income tax and benefit returns (T1) – Question (escape key) 
+ For the Automated Benefits Application, the CRA calculates the estimated date starting from the date it receives the application from the province or territory.
+ × Close: Automated Benefits Application – Question (escape key) 
+ The processing time for your application may vary, depending on the following situations:
+ if we need to ask for more information or supporting documents
+ how long you or your medical practitioner take to respond to any requests for more information
+ if we have received more applications than usual
+ × Close: Disability tax credit certificate – Question (escape key) 
+ Processing times will vary based on:
+ complexity and completeness of the application
+ volume of charity applications received by the CRA
+ how easily we can verify your information
+ how long an applicant takes to respond to any request from the CRA 
+ × Close: Charities - final decision on applications – Question (escape key) 
+ Certain factors may increase the time required to finalize a request such as:
+ the ability to contact and communicate with the requester;
+ the amount of additional documentation that is required to complete the request;
+ if the request requires a review of an issue upon which the CRA has not yet adopted a position; or
+ if the CRA is currently in the process of reconsidering its existing position.
+ × Close: GST/HST rulings and interpretations – Question (escape key) 
+ Some delays could result from the need to consult with third party or the need to validate information from various sources.
+ × Close: Technical interpretations – Question (escape key) 
+ Processing times will vary based on:
+ the complexity of the complaint
+ if all the information to address the complaint has been provided
+ how quickly we expect to process complaints we've already received
+ how easily we can verify your information
+ The processing time is calculated from the date the complaint is received at the National Intake Centre, not the date it is received in the CRA
+ × Close: Service complaints – Question (escape key) 
+ Processing times and actual response times from the CRA will vary based on any of the following:
+ how complex the objection is
+ whether the objection was submitted with all of the supporting information and documentation
+ whether the objection and supporting documents were submitted on paper or electronically
+ × Close: Tax objections – Question (escape key) 
+ This is a targeted date. Please see the Benefit payment dates page to determine the actual CRA payment issuance date.
+ × Close: Benefit applications – electronic – Question (escape key) 
+ Some delays could result from the need to consult with third party or the need to validate information from various sources. 
+ × Close: Advance income tax rulings – Question (escape key) 
+ Result
+ T1 income tax and benefit return – electronic
+ T1 income tax and benefit return – paper
+ T1 adjustment requests – electronic
+ T1 adjustment requests – paper
+ T2 Corporation income tax return – electronic
+ T3 trust returns
+ GST/HST returns – electronic
+ Clearance certificate request (TX19/GST352)
+ Canada child benefit application
+ Canada child benefits correspondence
+ Form T2201, Disability Tax Credit Certificate
+ Film and media tax credits (FMTCs)
+ Scientific research and experimental development (SR&ED) tax credits – Refundable claim
+ Scientific research and experimental development (SR&ED) tax credits – Non-refundable claim
+ Deferred income plans - response to written enquiries
+ Actuarial valuation reports
+ Applications to register pension plans and deferred profit sharing plans
+ Deferred income and savings plans (specimens)
+ Charities - written enquiries – routine
+ Charities - written enquiries – complex
+ Charities - final decision on applications
+ GST/HST rulings and interpretations
+ Advance income tax rulings
+ Service complaints
+ Tax objections – Low complexity
+ Tax objections – Medium complexity
+ Tax objections – High complexity
+ Taxpayer relief requests
+ Authorize or cancel a representative – electronic
+ Canada Recovery Sickness Benefit - direct deposit
+ Canada Recovery Sickness Benefit - cheque
+ Canada Recovery Caregiving Benefit - direct deposit
+ Canada Recovery Caregiving Benefit - cheque
+ Uncashed CRA cheques – electronic
+ Uncashed CRA cheques – paper
+ Problem Resolution
+ Loading data... 
+ Loading data... 
+ The processing time is a targeted time. It applies to a return received on or before the filing due date. It does not apply to a return filed for a deceased, bankrupt, international or non-resident individual, or an emigrant. Also, the time does not apply in a situation where returns are filed for multiple tax years or the Canada Revenue Agency has to contact an individual for more information.
+ The processing time is a targeted time. It applies to a return received on or before the filing due date. It does not apply to a return filed for a deceased, bankrupt, international or non-resident individual, or an emigrant. Also, the time does not apply in a situation where returns are filed for multiple tax years or the Canada Revenue Agency has to contact an individual for more information.
+ The Canada Revenue Agency is experiencing delays in processing T1 adjustment requests due to higher than normal intake.
+ The processing time is a targeted time. It applies to straightforward taxpayer-requested adjustments only. It does not apply to complex requests. Complex requests include situations where more information or additional verification is required. Our current timeline to issue your notice of reassessment or a letter of explanation is within 29 weeks of receiving your complex adjustment request. This excludes requests filed for international and non-resident individuals, and emigrants. 
+ The Canada Revenue Agency is experiencing delays in processing T1 adjustment requests due to higher than normal intake.
+ For faster service you can submit your requests for changes electronically, using Change My Return in My Account or ReFILE .
+ The processing time is a targeted time. It applies to straightforward taxpayer-requested adjustments only. It does not apply to complex requests. Complex requests include situations where more information or additional verification is required. Our current timeline to issue your notice of reassessment or a letter of explanation is within 29 weeks of receiving your complex adjustment request. This excludes requests filed for international and non-resident individuals, and emigrants. 
+ The processing time is a targeted time for assessing corporation income tax returns (T2) filed from businesses and incorporated self-employed individuals. Processing time applies from the day we receive your return to when we make a decision; including any submission of supporting documents.
+ The processing time is a targeted time for processing T3 trust returns from trust recipients, which includes assessing the return and mailing a notice of assessment and refund, if applicable.
+ The processing time is a targeted time for processing GST/HST returns filed by businesses. Processing times include most steps from the day we receive your return to when we may send you your notice of assessment (if applicable).
+ The Canada Revenue Agency (CRA) is currently experiencing a significant increase in the number of taxpayer relief requests received. As a result, processing times are longer than usual.
+ While the current average processing time is approximately sixteen (16) months , your request may take less or more time depending on factors such as the complexity of the request, the number of tax years and tax programs involved, and the volume and completeness of the information and supporting documentation that must be reviewed.
+ Actual response times are calculated excluding any period during which additional information is being requested or provided. They also exclude the time required to resolve related objections or appeals or to complete an assessment or reassessment.
+ This standard does not apply to requests to accept late, amended, or revoked elections, or requests to issue refunds or to reduce the amount payable beyond the normal three-year period.
+ For more information about our current processing timeframe, go to canada.ca/penalty-interest-relief .
+ The targeted time is based on the assumption that we have all of the information needed to process your clearance certificate request.
+ If you have not received your clearance certificate or a clearance certificate officer has not contacted you by the anticipated date indicated, please call the CRA's Individual tax enquiries line at 1-800-959-8281.
+ The processing time is based on the assumption that we have all of the information required to process your application. If we need to contact you for more information, there could be delays in processing your application and sending you any payment you are entitled to receive.
+ Applying for the Canada child benefit does not guarantee that you will receive benefit payments. We need to determine your eligibility based on the information you provide to us. After we process your application, we will send you a notice. It will tell you if you will get benefits, how much your payment will be, and what information we used to calculate the amount.
+ The processing time is based on the assumption that we have all of the information required to process your correspondence. If we need to contact you for more information, there could be delays in processing correspondence and sending you any payment you are entitled to receive.
+ Applying for the Canada child benefit does not guarantee that you will receive the benefit payments. We need to determine your eligibility based on the information you provide to us. After we process your application, we will send you a notice. It will tell you if you will get benefits, how much your payment will be, and what information we used to calculate the amount.
+ The processing time noted is a targeted time for processing a Form T2201, Disability Tax Credit Certificate .
+ Some applications are considered complex and will take longer to process. Complex requests include situations where additional information or clarification from the medical practitioner, or, supporting documentation from the taxpayer is required.
+ The processing times noted are the CRA’s published service standards for reviewing corporation income tax returns that include a federal film tax credit or an equivalent provincial film tax credit. The dates provided are only estimates, they do not account for delays outside of CRA’s control.
+ For the month of October 2026 , we met this service standard 95% of the time. Note: there may be variances in a given month based on seasonality and intake.
+ For more information, see the FAQ section.
+ The processing times noted are the CRA’s published service standards for reviewing corporation income tax returns that include a federal film tax credit or an equivalent provincial film tax credit. The dates provided are only estimates, they do not account for delays outside of CRA’s control.
+ For the month of October 2026 , we met this service standard 88% of the time. Note: there may be variances in a given month based on seasonality and intake.
+ For more information, see the FAQ section.
+ The processing times noted are the CRA’s published service standards for reviewing corporation income tax returns that include a federal film tax credit or an equivalent provincial film tax credit. The dates provided are only estimates, they do not account for delays outside of CRA’s control.
+ For the month of October 2026 , we met this service standard 88% of the time if your claim was not selected for an audit and 95% of the time if your claim was selected for an audit. Note: there may be variances in a given month based on seasonality and intake.
+ For more information, see the FAQ section.
+ The processing times noted are a targeted time for processing SR&ED claims. Processing times do not account for delays outside of the CRA's control, which can include the following:
+ an incomplete claim
+ an SR&ED claim filed without the associated income tax return
+ there is no response to the CRA's requests for information or to a CRA proposal letter
+ cases where the claimant postpones or cannot schedule meetings with the CRA
+ cases where a CRA review/audit of a previous-year SR&ED claim affects a current-year claim
+ For the month of October 2026 , we met this service standard 92% of the time. Note: there may be variances in a given month based on seasonality and intake.
+ For more information, see the FAQ section.
+ The processing times noted are a targeted time for processing SR&ED claims. Processing times do not account for delays outside of the CRA's control, which can include the following:
+ an incomplete claim
+ an SR&ED claim filed without the associated income tax return
+ there is no response to the CRA's requests for information or to a CRA proposal letter
+ cases where the claimant postpones or cannot schedule meetings with the CRA
+ cases where a CRA review/audit of a previous-year SR&ED claim affects a current-year claim
+ For the month of October 2026 , we met this service standard 88% of the time. Note: there may be variances in a given month based on seasonality and intake.
+ For more information, see the FAQ section.
+ The processing times noted are a targeted time for processing SR&ED claims. Processing times do not account for delays outside of the CRA's control, which can include the following: 
+ an incomplete claim
+ an SR&ED claim filed without the associated income tax return
+ there is no response to the CRA’s requests for information or to a CRA proposal letter
+ cases where the claimant postpones or cannot schedule meetings with the CRA
+ cases where a CRA review/audit of a previous-year SR&ED claim affects a current-year claim
+ For the month of October 2026 , we met this service standard 88% of the time if your claim was not selected for a review and 92% of the time if your claim was selected for a review. Note: there may be variances in a given month based on seasonality and intake.
+ For more information, see the FAQ section.
+ The processing times noted are a targeted time for processing SR&ED claims. Processing times do not account for delays outside of the CRA's control, which can include the following:
+ an incomplete claim
+ an SR&ED claim filed without the associated income tax return
+ there is no response to the CRA's requests for information or to a CRA proposal letter
+ cases where the claimant postpones or cannot schedule meetings with the CRA
+ cases where a CRA review/audit of a previous-year SR&ED claim affects a current-year claim
+ For more information, see the FAQ section.
+ The processing times noted are a targeted time for processing SR&ED claims. Processing times do not account for delays outside of the CRA's control, which can include the following:
+ an incomplete claim
+ an SR&ED claim filed without the associated income tax return
+ there is no response to the CRA's requests for information or to a CRA proposal letter
+ cases where the claimant postpones or cannot schedule meetings with the CRA
+ cases where a CRA review/audit of a previous-year SR&ED claim affects a current-year claim
+ For the month of October 2026 , we met this service standard 88% of the time. Note: there may be variances in a given month based on seasonality and intake.
+ For more information, see the FAQ section.
+ The processing times noted are a targeted time for processing SR&ED claims. Processing times do not account for delays outside of the CRA's control, which can include the following:
+ an incomplete claim
+ an SR&ED claim filed without the associated income tax return
+ there is no response to the CRA's requests for information or to a CRA proposal letter
+ cases where the claimant postpones or cannot schedule meetings with the CRA
+ cases where a CRA review/audit of a previous-year SR&ED claim affects a current-year claim
+ For the month of October 2026 , we met this service standard 88% of the time if your claim was not selected for review. Note: there may be variances in a given month based on seasonality and intake.
+ For more information, see the FAQ section.
+ Our goal is to review and respond to a written enquiry within 60 calendar days of receiving your enquiry and any required supporting documents. The CRA aims to meet this standard 80% of the time . This is a timeliness service standard for responding to written enquiries pertaining to deferred income and savings plans. Written enquiries includes general enquiries, plan-specific enquiries, waivers, administrative relief, and requests to validate earnings and service. This service is provided to clients who have questions or concerns about registered pension plans, registered disability savings plans, registered education savings plans, registered retirement savings plans, registered retirement income funds, deferred profit sharing plans, supplementary unemployment benefit plans, tax-free savings accounts, registered investments, or first home savings accounts. We generally deal with all written enquiries on a first-come, first-served basis.
+ Our goal is to review and respond to a written enquiry within 60 calendar days of receiving your enquiry and any required supporting documents. The CRA aims to meet this standard 80% of the time . This is a timeliness service standard for responding to written enquiries pertaining to deferred income and savings plans. Written enquiries includes general enquiries, plan-specific enquiries, waivers, administrative relief, and requests to validate earnings and service. This service is provided to clients who have questions or concerns about registered pension plans, registered disability savings plans, registered education savings plans, registered retirement savings plans, registered retirement income funds, deferred profit sharing plans, supplementary unemployment benefit plans, tax-free savings accounts, registered investments, or first home savings accounts. We generally deal with all written enquiries on a first-come, first-served basis.
+ Our goal is to provide a decision on the recommended employer contributions to a registered pension plan, within 270 calendar days of receipt of the actuarial valuation report. The CRA aims to meet this standard 80% of the time . This is a timeliness service standard for reviewing and responding to actuarial valuation reports. For an employer’s contributions to a registered defined benefit pension plan to be tax-deductible, an actuary must demonstrate that the contributions are necessary to pay for the future pension benefits for employees. These contributions must be approved by the Canada Revenue Agency (CRA).
+ Our goal is to provide a decision on the recommended employer contributions to a registered pension plan, within 270 calendar days of receipt of the actuarial valuation report. The CRA aims to meet this standard 80% of the time . This is a timeliness service standard for reviewing and responding to actuarial valuation reports. For an employer’s contributions to a registered defined benefit pension plan to be tax-deductible, an actuary must demonstrate that the contributions are necessary to pay for the future pension benefits for employees. These contributions must be approved by the Canada Revenue Agency (CRA).
+ Our goal is to provide a decision within 150 calendar days of receipt of an application to register a pension plan or a deferred profit sharing plan. The CRA aims to meet this standard 85% of the time . This is a timeliness service standard for reviewing and responding to applications to register new pension plans and deferred profit sharing plans.
+ Our goal is to provide a decision within 150 calendar days of receipt of an application to register a pension plan or a deferred profit sharing plan. The CRA aims to meet this standard 85% of the time . This is a timeliness service standard for reviewing and responding to applications to register new pension plans and deferred profit sharing plans.
+ Our goal is to review applications to approve, amend or terminate a specimen for a disability savings plan, education savings plan, retirement income fund, retirement savings plan, registered investments, or tax-free savings account or first home savings account within 60 calendar days of receipt. The CRA aims to meet this standard 90% of the time . This is a timeliness service standard for reviewing and responding to submissions to approve, amend or terminate specimen plans for disability savings plans, education savings plans, retirement income funds, retirement savings plans, registered investments, tax-free savings accounts or first home savings accounts. A promoter, issuer or carrier can only market its plan once the specimen plan is approved by the CRA or when the proposed amendments under an existing specimen plan are approved.
+ Our goal is to review applications to approve, amend or terminate a specimen for a disability savings plan, education savings plan, retirement income fund, retirement savings plan, registered investments, or tax-free savings account or first home savings account within 60 calendar days of receipt. The CRA aims to meet this standard 90% of the time . This is a timeliness service standard for reviewing and responding to submissions to approve, amend or terminate specimen plans for disability savings plans, education savings plans, retirement income funds, retirement savings plans, registered investments, tax-free savings accounts or first home savings accounts. A promoter, issuer or carrier can only market its plan once the specimen plan is approved by the CRA or when the proposed amendments under an existing specimen plan are approved.
+ The processing time is a targeted time for responding to written enquiries concerning charities. Some enquiries are considered complex and will take longer to process.
+ The CRA aims to meet this standard 80% of the time.
+ The processing time is a targeted time for reviewing and responding to applications for charitable registration. Applications for charitable status are reviewed on a first come, first served basis.
+ Each application for registration is unique. As a result, factors such as complexity and completeness of an application, the speed with which the applicant provides information to the CRA and volume of applications received by the CRA, all affect processing times.
+ The CRA aims to meet this standard 80% of the time.
+ This excludes highly technical and precedent and/or policy-setting rulings and interpretations. By receiving as much information as possible with the initial request, we can provide a more accurate, timely and complete response. For more information on supporting documentation, please refer to paragraph 55 of GST/HST Memorandum 1-4, Requesting a GST/HST Rulings and Interpretation .
+ Currently, GST/HST Ruling and Interpretation requests are being processed in an average of 45 business days. 
+ The processing time is a targeted time for issuing advance income tax rulings to taxpayers. Processing times include most steps from the day we receive your request to when we make a decision; including all essential information and supporting documentation.
+ The processing time is a targeted time for the resolution of your tax objection and the actual response time may vary. It does not include any time it takes you to provide more information. For more details go to: Processing times and complexity levels – Income tax and GST/HST objections .
+ The processing time is a targeted time for the resolution of your tax objection and the actual response time may vary. It does not include any time it takes you to provide more information. There may be delays in processing due to high volumes. For more details go to: Processing times and complexity levels – Income tax and GST/HST objections .
+ If you want to know the status of your high complexity objection , and you don't have the contact information for your appeals officer, call an Appeals Intake Centre. For contact details, go to: Processing times and complexity levels – Income tax and GST/HST objections .
+ The processing time is a targeted time for issuing decision letters for taxpayer relief requests to cancel or waive penalties and interest. The actual response time may vary. It does not include any time it takes you to provide more information. It does not include taxpayer relief requests to accept late, amended, or revoked elections; or requests to issue refunds or to reduce the amount payable beyond the normal three-year period.
+ The processing time is a targeted time for processing a request to authorize or cancel a representative. Processing time applies from the latest date we receive the request (provided it can be verified and that it includes all the necessary supporting documents) related to your request to the date we make a decision.
+ The processing time is a targeted date for processing your application based on eligibility and the assumption that we have all of the correct information needed to process the application.
+ For more information, please visit Canada Recovery Sickness Benefit (CRSB) .
+ The processing time is a targeted time for processing your application based on eligibility and the assumption that we have all of the correct information needed to process the application.
+ For more information, please visit Canada Recovery Sickness Benefit (CRSB) .
+ The processing time is a targeted date for processing your application based on eligibility and the assumption that we have all of the correct information needed to process the application.
+ For more information, please visit Canada Recovery Caregiving Benefit (CRCB) .
+ The processing time is a targeted time for processing your application based on eligibility and the assumption that we have all of the correct information needed to process the application.
+ For more information, please visit Canada Recovery Caregiving Benefit (CRCB) .
+ The CRA aims to meet this standard 95% of the time.
+ Last updated on: 2026-11-20 | Updated monthly 
+ Last updated on: 2026-11-20 
+ Page details
+ Give feedback about this page
+ Comments are only used to improve our website. You will not receive a response.
+ To protect your privacy, remove personal information before submitting your comment: 
+ What is considered personal information? 
+ Certain types of information can’t be included in this comment form, such as your:
+ email address
+ telephone number
+ postal code
+ passport number
+ business number
+ social insurance number (SIN)
+ street address
+ Go back and edit comment 
+ Did you find what you were looking for? 
+ Yes 
+ Yes 
+ No 
+ If not, tell us why below:
+ Tell us why below:
+ Need urgent help with a problem? Contact us 
+ Please provide more details 
+ You will not receive a reply. Don't include personal information (telephone, email, SIN, financial, medical, or work details). 
+ Maximum 300 characters
+ Submit 
+ Thank you for your feedback.
+ 2026-10-22
+
+--- ENLACES ---
+Switch to basic HTML version | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html?wbdisable=true
+Français fr | https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/allocation-canadienne-enfants/comment-demande.html
+/ Gouvernement du Canada | https://www.canada.ca/en.html
+Jobs : home | https://www.canada.ca/en/services/jobs.html
+Job Bank | https://www.jobbank.gc.ca/findajob
+Government of Canada jobs | https://www.canada.ca/en/services/jobs/opportunities/government.html
+Youth and student employment | https://www.canada.ca/en/services/jobs/youth.html
+Jobs in national security and defence | https://www.canada.ca/en/services/defence/jobs.html
+Moving within Canada to work | https://www.canada.ca/en/employment-social-development/programs/labour-mobility.html
+Funding for jobs and training | https://www.canada.ca/en/employment-social-development/services/funding/programs.html
+Training | https://www.canada.ca/en/services/jobs/training.html
+Hiring and managing employees | https://www.canada.ca/en/services/business/hire.html
+Starting a business | https://www.canada.ca/en/services/business/start.html
+Employment Insurance benefits and leave | https://www.canada.ca/en/services/benefits/ei.html
+Workplace standards | https://www.canada.ca/en/services/jobs/workplace.html
+Pensions and retirement | https://www.canada.ca/en/services/finance/pensions.html
+Work in Canada - work permits | https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html
+Immigrate as a skilled worker | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html
+Hire a temporary foreign worker | https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/hire-temporary-foreign.html
+Federal Skilled Worker Program | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/who-can-apply/federal-skilled-workers.html
+View your records of employment | https://www.canada.ca/en/employment-social-development/services/my-account.html
+Submit a record of employment - employers | https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html
+Federal Student Work Experience Program (FSWEP) | https://www.canada.ca/en/public-service-commission/jobs/services/recruitment/students/federal-student-work-program.html
+Apply for a Social Insurance Number (SIN) | https://www.canada.ca/en/employment-social-development/services/sin.html
+Immigration and citizenship : home | https://www.canada.ca/en/services/immigration-citizenship.html
+IRCC applications | https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html
+Visit Canada | https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html
+Live in Canada permanently | https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html
+Work in Canada temporarily | https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html
+Study in Canada | https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html
+Refugees and asylum | https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees.html
+International Experience Canada (IEC) | https://ircc.canada.ca/iec/index.asp
+Passports and other travel documents | https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html
+Citizenship | https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship.html
+Permanent resident (PR) cards and status | https://www.canada.ca/en/immigration-refugees-citizenship/services/permanent-residents.html
+Settling in Canada as a newcomer | https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada.html
+International adoption | https://www.canada.ca/en/immigration-refugees-citizenship/services/canadians/adopt-child-abroad.html
+Explore immigration programs | https://ircc.canada.ca/explore-programs/index.asp
+Immigration fraud and scams | https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html
+Inadmissibility, enforcement and appeals | https://www.canada.ca/en/services/immigration-citizenship/enforcement-violations.html
+Sign in to your IRCC account | https://www.canada.ca/en/immigration-refugees-citizenship/services/application/ircc-accounts.html
+Check your application status | https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-status.html
+Current processing times | https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html
+Find an application form | https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides.html
+Portals for representatives and partners | https://www.canada.ca/en/immigration-refugees-citizenship/corporate/partners-service-providers.html
+Travel and tourism : home | https://travel.gc.ca/
+Travel advice and advisories | https://travel.gc.ca/travelling/advisories
+Travel outside Canada | https://travel.gc.ca/travelling
+Air travel | https://travel.gc.ca/air
+Canadian passports and travel documents | https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html
+Stay connected | https://travel.gc.ca/stay-connected
+Assistance outside Canada | https://travel.gc.ca/assistance
+Visit Canada | https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html?outside
+Return or travel to Canada | https://travel.gc.ca/returning
+Canadian attractions, events and experiences | https://travel.gc.ca/canadian-tourism
+Emergency assistance abroad | https://travel.gc.ca/assistance/emergency-assistance
+Find out if you need a visa to travel to Canada | https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/check-visa-eta.html
+Apply for an eTA | https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta.html
+Apply for NEXUS | https://www.cbsa-asfc.gc.ca/services/travel-voyage/prog/nexus/menu-eng.html
+Register as a Canadian abroad | https://travel.gc.ca/travelling/registration
+Travel insurance | https://travel.gc.ca/travelling/documents/travel-insurance
+Business and industry : home | https://www.canada.ca/en/services/business.html
+Business taxes | https://www.canada.ca/en/services/business/taxes.html
+Business financing and support | https://innovation.ised-isde.canada.ca/s/?language=en_CA
+Federal corporations | https://ised-isde.canada.ca/site/corporations-canada/en
+Maintaining your business | https://www.canada.ca/en/services/business/maintaingrowimprovebusiness.html
+Permits, licences and regulations | https://www.canada.ca/en/services/business/permits.html
+International trade and investment | https://international.canada.ca/en/services/business/trade
+Intellectual property and copyright | https://www.canada.ca/en/services/business/ip.html
+Research and business intelligence | https://www.canada.ca/en/services/business/research.html
+Doing business with government | https://www.canada.ca/en/services/business/doing-business.html
+R&D and innovation | https://www.canada.ca/en/services/science/innovation.html
+Protecting your business | https://www.canada.ca/en/services/business/protecting.html
+Insolvency for business | https://ised-isde.canada.ca/site/office-superintendent-bankruptcy/en/you-owe-money
+Canada's response to U.S. tariffs on Canadian goods | https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/canadas-response-us-tariffs.html
+Find a corporation | https://ised-isde.canada.ca/cc/lgcy/fdrlCrpSrch.html?locale=en_CA
+File Corporations Canada annual return | https://ised-isde.canada.ca/site/corporations-canada/en/keep-your-corporation-good-shape/annual-return
+My Business Account (Canada Revenue Agency) | https://www.canada.ca/en/revenue-agency/services/e-services/digital-services-businesses/business-account.html
+Helping small businesses get loans | https://ised-isde.canada.ca/site/canada-small-business-financing-program/en
+Loans to improve cash flow and increase sales | https://www.bdc.ca/en/financing/small-business-loan
+Benefits : home | https://www.canada.ca/en/services/benefits.html
+Canada Groceries and Essentials Benefit (CGEB) | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit.html
+Canadian Dental Care Plan (CDCP) | https://www.canada.ca/en/services/benefits/dental/dental-care-plan.html
+Disability benefits | https://www.canada.ca/en/services/benefits/disability.html
+Family and caregiving benefits | https://www.canada.ca/en/services/benefits/family.html
+Public pensions | https://www.canada.ca/en/services/benefits/publicpensions.html
+Grants and funding opportunities | https://www.canada.ca/en/employment-social-development/services/funding/programs.html
+Student aid and education planning | https://www.canada.ca/en/services/benefits/education.html
+Housing benefits | https://www.canada.ca/en/services/benefits/housing.html
+Find benefits and financial support | https://www.canada.ca/en/services/benefits/benefits-financial-support.html
+Benefits by audience | https://www.canada.ca/en/services/benefits/audience.html
+What to do when someone dies | https://www.canada.ca/en/services/life-events/death.html
+Apply for Employment Insurance (EI) | https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit.html
+Benefit payment dates | https://www.canada.ca/en/services/benefits/calendar.html
+Child and family benefits calculators | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/child-family-benefits-calculator.html
+Sign in to an account | https://www.canada.ca/en/government/sign-in-online-account.html
+Set up or change direct deposit | https://www.canada.ca/en/public-services-procurement/services/payments-to-from-government/direct-deposit.html
+Submit your EI report | https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html
+Personal income tax - claim deductions, credits and expenses | https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/deductions-credits-expenses.html
+Health : home | https://www.canada.ca/en/services/health.html
+Food and nutrition | https://www.canada.ca/en/services/health/food-nutrition.html
+Drug and health products | https://www.canada.ca/en/services/health/drug-health-products.html
+Vaccines and immunization | https://www.canada.ca/en/public-health/services/immunization-vaccines.html
+Diseases and conditions | https://www.canada.ca/en/public-health/services/diseases.html
+Health system and services | https://www.canada.ca/en/services/health/health-system-services.html
+Product safety | https://www.canada.ca/en/services/health/product-safety.html
+Healthy living | https://www.canada.ca/en/services/health/healthy-living.html
+Health risks and safety | https://www.canada.ca/en/services/health/health-risks-safety.html
+Health science, research and data | https://www.canada.ca/en/services/health/science-research-data.html
+Indigenous health | https://www.sac-isc.gc.ca/eng/1569861171996/1569861324236
+Canadian Dental Care Plan | https://www.canada.ca/en/services/benefits/dental/dental-care-plan.html
+Recalls and safety alerts | https://recalls-rappels.canada.ca/en
+Canada's food guide | https://food-guide.canada.ca/en/
+Autism | https://www.canada.ca/en/public-health/services/diseases/autism-spectrum-disorder-asd.html
+Taxes : home | https://www.canada.ca/en/services/taxes.html
+Income tax | https://www.canada.ca/en/services/taxes/income-tax.html
+Payments | https://www.canada.ca/en/revenue-agency/services/payments.html
+Tax credits and benefits for individuals | https://www.canada.ca/en/services/taxes/child-and-family-benefits.html
+GST/HST | https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses.html
+Payroll | https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll.html
+Business number | https://www.canada.ca/en/services/taxes/business-number.html
+Charities and giving | https://www.canada.ca/en/services/taxes/charities.html
+Savings and pension plans | https://www.canada.ca/en/services/taxes/savings-and-pension-plans.html
+Excise and specialty taxes | https://www.canada.ca/en/services/taxes/excise-taxes-duties-and-levies.html
+Scams and fraud | https://www.canada.ca/en/revenue-agency/corporate/scams-fraud.html
+Support in difficult situations | https://www.canada.ca/en/revenue-agency/services/support-difficult-situations.html
+Compliance and enforcement | https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance.html
+CRA Service feedback | https://www.canada.ca/en/revenue-agency/services/make-a-service-complaint.html
+Find benefit payment dates | https://www.canada.ca/en/services/benefits/calendar.html
+Forms and publications | https://www.canada.ca/en/revenue-agency/services/forms-publications.html
+Make a payment to the CRA | https://www.canada.ca/en/revenue-agency/services/payments/payments-cra.html
+Environment and natural resources : home | https://www.canada.ca/en/services/environment.html
+Weather and hazards | https://www.canada.ca/en/services/environment/weather.html
+Climate change | https://www.canada.ca/en/services/environment/climatechange.html
+Energy | https://www.canada.ca/en/services/environment/energy.html
+Natural resources | https://www.canada.ca/en/services/environment/natural-resources.html
+Agricultural production tools and data | https://agriculture.canada.ca/en/agricultural-production
+Environment and sustainability in agriculture | https://agriculture.canada.ca/en/environment
+Fisheries | https://www.canada.ca/en/services/environment/fisheries.html
+Wildlife, plants and species | https://www.canada.ca/en/services/environment/wildlife-plants-species.html
+Pollution and waste management | https://www.canada.ca/en/services/environment/pollution-waste-management.html
+Environmental conservation and protection | https://www.canada.ca/en/services/environment/conservation.html
+Environment statistics | https://www.statcan.gc.ca/en/subjects-start/environment
+Water and the environment | https://www.canada.ca/en/environment-climate-change/services/water-overview.html
+Local weather forecast | https://weather.gc.ca/canada_e.html
+Fuel-efficient vehicles | https://natural-resources.canada.ca/energy-efficiency/transportation-energy-efficiency/personal-vehicles/most-fuel-efficient-vehicles
+Home energy efficiency | https://natural-resources.canada.ca/energy-efficiency/home-energy-efficiency/energy-efficiency-homes
+Prepare for severe weather | https://www.canada.ca/en/environment-climate-change/services/seasonal-weather-hazards.html
+Download WeatherCAN | https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/weathercan.html
+National security and defence Defence: home | https://www.canada.ca/en/services/defence.html
+National security | https://www.canada.ca/en/services/defence/nationalsecurity.html
+Canadian Armed Forces | https://www.canada.ca/en/services/defence/caf.html
+Services and benefits | https://www.canada.ca/en/government/publicservice/benefitsmilitary.html
+Cyber security | https://www.canada.ca/en/services/defence/cybersecurity.html
+Defence equipment purchases and upgrades | https://www.canada.ca/en/services/defence/defence-equipment-purchases-upgrades.html
+Protecting the Canadian border | https://www.cbsa-asfc.gc.ca/security-securite/safety-surete-eng.html
+Transportation security | https://tc.canada.ca/en/corporate-services/transportation-security
+Jobs in the Forces | https://forces.ca/en/careers/
+Canadian military support to Ukraine | https://www.canada.ca/en/department-national-defence/campaigns/canadian-military-support-to-ukraine.html
+Military ranks | https://www.canada.ca/en/services/defence/caf/military-identity-system/rank-appointment-insignia.html
+Defence equipment | https://www.canada.ca/en/services/defence/caf/equipment.html
+Canada's Defence policy | https://www.canada.ca/en/department-national-defence/corporate/policies-standards/our-north-strong-free-renewed-vision-canada-defence.html
+Join the Cadet Program | https://www.canada.ca/en/department-national-defence/services/cadets-junior-canadian-rangers/cadets/join-us.html
+Culture , history and sport : home | https://www.canada.ca/en/services/culture.html
+Funding - Culture, history and sport | https://www.canada.ca/en/canadian-heritage/services/funding.html
+Events, celebrations and commemorations | https://www.canada.ca/en/services/culture/events-celebrations-commemorations.html
+Cultural landmarks and attractions | https://www.canada.ca/en/services/culture/cultural-attractions.html
+Canadian identity and society | https://www.canada.ca/en/services/culture/canadian-identity-society.html
+Sport | https://www.canada.ca/en/services/culture/sport.html
+History and heritage | https://www.canada.ca/en/services/culture/history-heritage.html
+Arts and media | https://www.canada.ca/en/services/culture/arts-media.html
+Youth leadership and cultural program | https://www.canada.ca/en/services/culture/cultural-youth-programs.html
+Cultural trade and investment | https://www.canada.ca/en/services/culture/cultural-trade-investment.html
+Visit the Canadian Virtual War Memorial | https://www.veterans.gc.ca/en/remembrance/memorials/canadian-virtual-war-memorial
+Anthems and symbols of Canada | https://www.canada.ca/en/services/culture/canadian-identity-society/anthems-symbols.html
+Find a CRTC decision | https://crtc.gc.ca/eng/dno.htm
+Research your family history | https://library-archives.canada.ca/eng/collection/research-help/genealogy-family-history/Pages/genealogy-family-history.aspx
+Search census records | https://recherche-collection-search.bac-lac.gc.ca/eng/Census/index
+Major events in Canada's Capital Region | https://www.canada.ca/en/services/culture/events-celebrations-commemorations/experience-canada-capital/events-capital.html
+Policing , justice and emergencies : home | https://www.canada.ca/en/services/policing.html
+Policing | https://www.canada.ca/en/services/policing/police.html
+Justice | https://www.canada.ca/en/services/policing/justice.html
+Emergencies | https://www.canada.ca/en/services/policing/emergencies.html
+Corrections | https://www.canada.ca/en/services/policing/corrections.html
+Parole, record suspension, expungement and clemency | https://www.canada.ca/en/services/policing/parole.html
+Victims of crime | https://www.canada.ca/en/services/policing/victims.html
+Crime and justice statistics | https://www.statcan.gc.ca/en/subjects-start/crime_and_justice
+Wildfire Response | https://www.canada.ca/en/public-safety-canada/campaigns/wildfires.html
+Apply/Renew a firearms licence | https://rcmp.ca/en/firearms
+Get a criminal records check | https://rcmp.ca/en/criminal-records/criminal-record-checks
+Apply for a criminal record suspension | https://www.canada.ca/en/parole-board/services/record-suspensions/official-pbc-application-guide-and-forms.html
+What to do during an emergency | https://www.getprepared.gc.ca/cnt/hzd/drng-en.aspx
+Know the law on impaired driving | https://www.canada.ca/en/services/policing/police/community-safety-policing/impaired-driving.html
+Help solve a crime | https://www.canada.ca/en/services/policing/police/help-solve-crime.html
+Transport and infrastructure : home | https://www.canada.ca/en/services/transport.html
+Zero-emission vehicles | https://www.canada.ca/en/services/transport/zero-emission-vehicles.html
+Aviation | https://tc.canada.ca/en/aviation
+Marine transportation | https://tc.canada.ca/en/marine-transportation
+Road transportation | https://tc.canada.ca/en/road-transportation
+Rail transportation | https://tc.canada.ca/en/rail-transportation
+Dangerous goods | https://tc.canada.ca/en/dangerous-goods
+Infrastructure | https://tc.canada.ca/en/infrastructure
+Drone safety | https://tc.canada.ca/en/aviation/drone-safety
+What not to bring on a plane | https://tc.canada.ca/en/aviation/aviation-security/what-you-can-t-bring-plane
+Register your vessel | https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration
+Child car seat safety | https://tc.canada.ca/en/road-transportation/child-car-seat-safety
+Transporting dangerous goods - Regulations | https://tc.canada.ca/en/corporate-services/acts-regulations/list-regulations/transportation-dangerous-goods-regulations
+Canadian Aviation Regulations | https://tc.canada.ca/en/corporate-services/acts-regulations/list-regulations/canadian-aviation-regulations-sor-96-433
+Canada and the world : home | https://www.international.gc.ca/world-monde/index.aspx?lang=eng
+International offices and emergency contacts | https://www.international.gc.ca/world-monde/offices-bureaux/index.aspx?lang=eng
+Study, work and travel worldwide | https://www.international.gc.ca/world-monde/study_work_travel-etude_travail_voyage/index.aspx?lang=eng
+Information by country and territory | https://www.international.gc.ca/world-monde/country-pays/index.aspx?lang=eng
+Stories | https://www.international.gc.ca/world-monde/stories-histoires/index.aspx?lang=eng
+Canada's foreign policy and international relations | https://www.international.gc.ca/world-monde/international_relations-relations_internationales/index.aspx?lang=eng
+Global issues and international assistance | https://www.international.gc.ca/world-monde/issues_development-enjeux_developpement/index.aspx?lang=eng
+Canadian funding for international initiatives | https://www.international.gc.ca/world-monde/funding-financement/index.aspx?lang=eng
+International education and scholarships | https://www.educanada.ca/index.aspx?lang=eng
+Contact an embassy or consulate | https://travel.gc.ca/assistance/embassies-consulates
+Sanctions | https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/index.aspx?lang=eng
+Authenticate a document | https://international.canada.ca/en/global-affairs/services/document-authentication
+International treaties signed by Canada | https://www.treaty-accord.gc.ca/index.aspx?lang=eng
+Project Browser | https://w05.international.gc.ca/projectbrowser-banqueprojets/?lang=eng&amp;_ga=2.177755878.2114306412.1738083014-1550541383.1711385614
+Contact a foreign representative in Canada | https://www.international.gc.ca/protocol-protocole/reps.aspx?lang=eng
+Canada-United States trade: federal supports | https://www.canada.ca/en/government/united-states-canada.html
+Money and finances Finance: home | https://www.canada.ca/en/services/finance.html
+Managing your money | https://www.canada.ca/en/services/finance/manage.html
+Consumer affairs | https://www.canada.ca/en/services/finance/consumer-affairs.html
+Debt and borrowing | https://www.canada.ca/en/services/finance/debt.html
+Education funding | https://www.canada.ca/en/services/finance/educationfunding.html
+Financial tools and calculators | https://www.canada.ca/en/services/finance/tools.html
+Savings and investments | https://www.canada.ca/en/services/finance/savings.html
+Taxes | https://www.canada.ca/en/services/taxes.html
+Financial literacy programs | https://www.canada.ca/en/financial-consumer-agency/services/financial-literacy-programs.html
+Protection from frauds and scams | https://www.canada.ca/en/services/finance/fraud.html
+Financial and money services regulation | https://www.canada.ca/en/services/business/permits/federallyregulatedindustrysectors/financialservicesregulation.html
+Insolvency | https://www.canada.ca/en/services/finance/bankruptcy.html
+Canada's response to U.S. tariffs | https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/canadas-response-us-tariffs.html
+Housing | https://www.canada.ca/en/services/finance/manage/housing.html
+Student loans | https://www.canada.ca/en/services/benefits/education/student-aid.html
+Credit report and scores | https://www.canada.ca/en/financial-consumer-agency/services/credit-reports-score.html
+Mortgages | https://www.canada.ca/en/financial-consumer-agency/services/mortgages.html
+Make a budget | https://itools-ioutils.fcac-acfc.gc.ca/BP-PB/budget-planner
+Find a bankruptcy or insolvency record | https://www.ic.gc.ca/app/scr/bsf-osb/ins/login.html?lang=eng
+Science and innovation : home | https://www.canada.ca/en/services/science.html
+Research funding and awards | https://www.canada.ca/en/services/science/researchfunding.html
+Science subjects | https://www.canada.ca/en/services/science/sciencesubjects.html
+Health emergency readiness | https://ised-isde.canada.ca/site/ised/en/programs-and-initiatives/health-emergency-readiness-canada
+Research institutes and facilities | https://www.canada.ca/en/services/science/institutes.html
+Open data, statistics and archives | https://www.canada.ca/en/services/science/open-data.html
+Science education resources | https://www.canada.ca/en/services/science/educationalresources.html
+Directory of scientists and research professionals | https://www.canada.ca/en/services/science/scientistsdirectory.html
+Our environment | https://www.canada.ca/en/services/environment/our-environment.html
+Federal Open Science Repository of Canada | https://open-science.canada.ca/home?utm_campaign=fosrc-promo-jan-2024&amp;utm_medium=pog&amp;utm_source=ised-e
+Grants for technological innovation (IRAP) | https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation
+National building codes | https://nrc.canada.ca/en/certifications-evaluations-standards/codes-canada/codes-canada-publications
+Federal Science Libraries Network | https://science-libraries.canada.ca/eng/home/
+Check sunrise and sunset times | https://nrc.canada.ca/en/research-development/products-services/software-applications/sun-calculator/
+Official times across Canada | https://nrc.canada.ca/en/web-clock/
+Live view of northern lights cam | https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/auroramax-observatory.asp
+Manage life events : home | https://www.canada.ca/en/services/life-events.html
+Welcoming a child | https://www.canada.ca/en/services/life-events/child.html
+Learn and plan for your retirement | https://www.canada.ca/en/services/life-events/retirement.html
+Sign in to a Government of Canada account | https://www.canada.ca/en/government/sign-in-online-account.html
+CPP payment amounts | https://www.canada.ca/en/services/benefits/publicpensions/cpp/payment-amounts.html
+Benefits payments dates | https://www.canada.ca/en/services/benefits/calendar.html
+Canada child benefit | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html
+Canadian Retirement Income Calculator | https://www.canada.ca/en/services/benefits/publicpensions/cpp/retirement-income-calculator.html
+Prepare tax returns for someone who died | https://www.canada.ca/en/revenue-agency/services/tax/individuals/life-events/doing-taxes-someone-died.html
+Get a birth certificate | https://www.canada.ca/en/services/life-events/child/register-birth.html
+Apply for a SIN | https://www.canada.ca/en/employment-social-development/services/sin.html
+Sign in CRA sign in | https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html
+Canada.ca | https://www.canada.ca/en.html
+Taxes | https://www.canada.ca/en/services/taxes.html
+Tax credits and benefits for individuals | https://www.canada.ca/en/services/taxes/child-and-family-benefits.html
+Canada child benefit (CCB) | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit.html
+Who can apply | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/who-apply.html
+How much you can get | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-much.html
+How to apply | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-apply.html
+Payment dates | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/payment-dates.html
+Keep getting your payments | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/get-payments.html
+Get support for an issue | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/contact.html
+Supporting documents | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/supporting-documents.html
+CRA account | https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html
+Form RC66, Canada Child Benefits Application | https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html
+your tax centre | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/address-tax-centre-mail-your-forms.html
+Form RC66, Canada Child Benefits Application | https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html
+your tax centre | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/address-tax-centre-mail-your-forms.html
+Supporting documents | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/supporting-documents.html
+Form RC66, Canada Child Benefits Application | https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html
+your tax centre | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/address-tax-centre-mail-your-forms.html
+Schedule RC66SCH, Status in Canada/Statement of Income | https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66sch.html
+Form RC66, Canada Child Benefits Application | https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html
+your tax centre | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/address-tax-centre-mail-your-forms.html
+Form CTB9, Canada Child Benefit – Statement of Income | https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/ctb9.html
+Getting benefits and credits when in an abusive or violent situation | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefits-credits-abusive-violent-situation.html
+with your province or territory | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/automated-benefits-application.html
+CRA account | https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html
+Form RC66, Canada Child Benefits Application | https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html
+your tax centre | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/address-tax-centre-mail-your-forms.html
+CRA account | https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html
+Processing times and complexity levels – Income tax and GST/HST objections | https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/complexity-level-processing-time.html
+Benefit payment dates | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/benefit-payment-dates.html
+My Account | https://www.canada.ca/en/revenue-agency/services/e-services/digital-services-individuals/account-individuals.html
+ReFILE | https://www.canada.ca/en/revenue-agency/services/e-services/digital-services-businesses/refile-online-t1-adjustments-efile-service-providers.html
+canada.ca/penalty-interest-relief | https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/cancel-waive-penalties-interest.html
+GST/HST Memorandum 1-4, Requesting a GST/HST Rulings and Interpretation | https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/1-4/excise-gst-hst-rulings-interpretations-service.html
+Processing times and complexity levels – Income tax and GST/HST objections | https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/complexity-level-processing-time.html
+Processing times and complexity levels – Income tax and GST/HST objections | https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/complexity-level-processing-time.html
+Processing times and complexity levels – Income tax and GST/HST objections | https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/complexity-level-processing-time.html
+Canada Recovery Sickness Benefit (CRSB) | https://www.canada.ca/en/revenue-agency/services/benefits/recovery-sickness-benefit.html
+Canada Recovery Sickness Benefit (CRSB) | https://www.canada.ca/en/revenue-agency/services/benefits/recovery-sickness-benefit.html
+Canada Recovery Caregiving Benefit (CRCB) | https://www.canada.ca/en/revenue-agency/services/benefits/recovery-caregiving-benefit.html
+Canada Recovery Caregiving Benefit (CRCB) | https://www.canada.ca/en/revenue-agency/services/benefits/recovery-caregiving-benefit.html
+Next: Payment dates | https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/payment-dates.html
+Contact the CRA | https://www.canada.ca/en/revenue-agency/corporate/contact-information.html
+Update your information | https://www.canada.ca/en/revenue-agency/services/update-information-cra.html
+About the CRA | https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra.html
+All contacts | https://www.canada.ca/en/contact.html
+Departments and agencies | https://www.canada.ca/en/government/dept.html
+About government | https://www.canada.ca/en/government/system.html
+Jobs | https://www.canada.ca/en/services/jobs.html
+Immigration and citizenship | https://www.canada.ca/en/services/immigration-citizenship.html
+Travel and tourism | https://travel.gc.ca/
+Business | https://www.canada.ca/en/services/business.html
+Benefits | https://www.canada.ca/en/services/benefits.html
+Health | https://www.canada.ca/en/services/health.html
+Taxes | https://www.canada.ca/en/services/taxes.html
+Environment and natural resources | https://www.canada.ca/en/services/environment.html
+National security and defence | https://www.canada.ca/en/services/defence.html
+Culture, history and sport | https://www.canada.ca/en/services/culture.html
+Policing, justice and emergencies | https://www.canada.ca/en/services/policing.html
+Transport and infrastructure | https://www.canada.ca/en/services/transport.html
+Canada and the world | https://www.international.gc.ca/world-monde/index.aspx?lang=eng
+Money and finances | https://www.canada.ca/en/services/finance.html
+Science and innovation | https://www.canada.ca/en/services/science.html
+Indigenous Peoples | https://www.canada.ca/en/services/indigenous-peoples.html
+Veterans and military | https://www.canada.ca/en/services/veterans-military.html
+Youth | https://www.canada.ca/en/services/youth.html
+Manage life events | https://www.canada.ca/en/services/life-events.html
+Social media | https://www.canada.ca/en/social.html
+Mobile applications | https://www.canada.ca/en/mobile.html
+About Canada.ca | https://www.canada.ca/en/government/about-canada-ca.html
+Terms and conditions | https://www.canada.ca/en/transparency/terms.html
+Privacy | https://www.canada.ca/en/revenue-agency/corporate/privacy-notice.html

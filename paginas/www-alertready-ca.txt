@@ -1,0 +1,32 @@
+URL: https://www.alertready.ca/
+TÍTULO: Home - Alert Ready Emergency Alert System (Pelmorex Corp).
+MODIFICADA: 2026-11-16T18:40:39+00:00
+ESTADO: 200 | FINAL: https://www.alertready.ca/
+
+On November 18th, a national test of the Alert Ready system is taking place. Check test times here 
+ To help improve the overall Alert Ready system, a third party partner is conducting a short survey about the test. 
+ Click here if you wish to participate in the survey. Your feedback is important to us and we thank you in advance for your participation. 
+ Please do not call 911 for information about the test. Using 911 for non-emergency calls could delay help for people experiencing real emergencies. 
+ To contact us or to get answers to frequently asked questions, click here 
+ Check Your Phone’s Compatibility 
+ What is Alert Ready?
+ Alert Ready is Canada’s emergency alerting system. Alert Ready delivers critical and potentially life-saving alerts to Canadians through television, radio and LTE-connected and compatible wireless devices. The Alert Ready system was developed with many partners, including federal, provincial and territorial emergency management officials, Environment and Climate Change Canada, Pelmorex, the broadcasting industry and wireless service providers. Together, these partners work to ensure Canadians receive alerts immediately and know when to take action to stay safe.
+ Alert Tone
+ If you hear this distinctive tone on television, radio or on your wireless device, please pay attention and take action right away.
+ Notice for people who are deaf, hard of hearing, blind, or partially sighted: Alternate formats of the alerts may be issued, however, not every alerting authority or device has the capability to produce or receive these formats. Broadcasters may use text-to-speech software to create an audio version of an alert message. Emergency alerts may be read to the recipient if your device supports this feature. The vibration feature that accompanies emergency alerts is available to alert Canadians. Please contact your wireless provider for more services which may be available to you.
+
+--- ENLACES ---
+FAQ | https://support.alertready.ca/hc/en-us/categories/4405950929939-Top-Questions-and-Answers-
+Contact Us | https://support.alertready.ca/hc/en-us/requests/new
+Francais | https://www.enalerte.ca
+Home | https://www.alertready.ca/
+Wireless | https://www.alertready.ca/wireless/
+Alert Types | https://www.alertready.ca/mmejaskipelmorex-com/
+Responsibilities | https://www.alertready.ca/roles-responsibilities/
+Alert Count | https://www.alertready.ca/alert-count/
+Test Schedule | https://www.alertready.ca/testing-schedule/
+News | https://www.alertready.ca/news/
+here | https://alertready.ca/testing-schedule/
+here | https://peasi.com/emergency-alert-test-survey.html
+here | https://support.alertready.ca/hc/en-us
+{{ data.index ? ( data.index + '. ' ) : '' }} {{ data.caption }} “{{{ data.title }}}” — {{ data.meta.artist }} {{{ data.title }}} | https://www.alertready.ca/{{ data.src }}

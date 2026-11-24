@@ -1,0 +1,2015 @@
+{
+ "cjnf-ywvt": {
+  "nombre": "Nova Scotia Public School Enrolment by RCE/CSAP and School",
+  "tipo": "dataset",
+  "actualizado": "2026-04-20T11:20:41.000Z",
+  "columnas": [
+   "REG_ABBREV",
+   "REG_CODE",
+   "SCHOOL_NUMBER",
+   "REG_CENTRE_NAME",
+   "SCHOOL_YEAR",
+   "ENROLMENT",
+   "SCHOOL_NAME"
+  ],
+  "url": "https://data.novascotia.ca/d/cjnf-ywvt",
+  "descripcion": "Student enrolment by year, RCE/CSAP and school as well as historical enrolment of school boards."
+ },
+ "w8cn-b32n": {
+  "nombre": "Schools with French Programs Map",
+  "tipo": "map",
+  "actualizado": "2017-12-05T14:20:07.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/w8cn-b32n",
+  "descripcion": "List of schools offering French programs."
+ },
+ "mjkg-93xg": {
+  "nombre": "Recognized Private Schools Granting the Nova Scotia High School Leaving Certificate",
+  "tipo": "dataset",
+  "actualizado": "2026-04-20T12:14:13.000Z",
+  "columnas": [
+   "Civic Address Line 1",
+   "Designated Special Education Private School?",
+   "Renewal Date of Designation or Recognition",
+   "Biannual Renewal?",
+   "Civic Address Line 3",
+   "Civic Address Line 2",
+   "georeference",
+   "URL",
+   "Fax",
+   "Phone",
+   "Grade Level",
+   "Mailing Address Line 3",
+   "Mailing Address Line 2",
+   "Mailing Address Line 1",
+   "School"
+  ],
+  "url": "https://data.novascotia.ca/d/mjkg-93xg",
+  "descripcion": "Private Schools that have been approved by the Department to grant the Nova Scotia High School Leaving Certificate"
+ },
+ "kdgs-3rvd": {
+  "nombre": "Schools with French Programs",
+  "tipo": "dataset",
+  "actualizado": "2017-12-05T14:20:07.000Z",
+  "columnas": [
+   "School Name",
+   "Email",
+   "Grade Level",
+   "Integrated French",
+   "Location (city)",
+   "Location (zip)",
+   "Civic Address Line 2",
+   "Civic Address Line 1",
+   "Mail Address Line 1",
+   "School Code",
+   "School Board",
+   "Early Immersion",
+   "Civic Postal Code",
+   "Mail Address Line 2",
+   "Location (address)",
+   "Location (state)",
+   "Intensive French",
+   "Late Immersion",
+   "Fax",
+   "Telephone",
+   "Mail Postal Code",
+   "Board Code",
+   "Location",
+   "Nova Scotia Health Authority Management Zones",
+   "Middle Immersion"
+  ],
+  "url": "https://data.novascotia.ca/d/kdgs-3rvd",
+  "descripcion": "List of schools offering French programs."
+ },
+ "hijj-kp39": {
+  "nombre": "Driver Training Schools",
+  "tipo": "dataset",
+  "actualizado": "2026-07-22T16:07:52.000Z",
+  "columnas": [
+   "Driving School Name",
+   "Street Address",
+   "georeference",
+   "Postal Code",
+   "City/Province"
+  ],
+  "url": "https://data.novascotia.ca/d/hijj-kp39",
+  "descripcion": "Driver Training Schools licenced to provide theory and/or practical lessons."
+ },
+ "jr2d-k7va": {
+  "nombre": "Discovering Opportunities (DO) Schools",
+  "tipo": "dataset",
+  "actualizado": "2026-07-21T11:54:47.000Z",
+  "columnas": [
+   "CIVIC ADDRESS LINE 2",
+   "MAILING ADDRESS LINE 1",
+   "geo_location",
+   "CIVIC POSTAL CODE",
+   "MAILING POSTAL CODE",
+   "SCHOOL NAME",
+   "RCE/BOARD NAME",
+   "IMPLEMENTATION YEAR",
+   "MAILING ADDRESS LINE 2",
+   "CIVIC ADDRESS LINE 1"
+  ],
+  "url": "https://data.novascotia.ca/d/jr2d-k7va",
+  "descripcion": "A list of public schools offering the Discovering Opportunities program. Includes school board, school, school address and implementation year."
+ },
+ "wemr-kg5f": {
+  "nombre": "Gaelic Courses Taught by School Board and School, and Enrolment",
+  "tipo": "dataset",
+  "actualizado": "2026-03-24T12:40:51.000Z",
+  "columnas": [
+   "Enrolment",
+   "YEAR",
+   "Board Name",
+   "School Name",
+   "School Code",
+   "Board Code"
+  ],
+  "url": "https://data.novascotia.ca/d/wemr-kg5f",
+  "descripcion": "Gaelic Courses Taught by school board and school in various years, and enrolment in Gaelic courses by school board and school"
+ },
+ "s56f-5bea": {
+  "nombre": "Options and Opportunities (O2) Schools",
+  "tipo": "dataset",
+  "actualizado": "2026-07-21T11:52:36.000Z",
+  "columnas": [
+   "Implementation_Year",
+   "RCE/Board_name",
+   "School_Name"
+  ],
+  "url": "https://data.novascotia.ca/d/s56f-5bea",
+  "descripcion": "A listing of public schools offering Options and Opportunities programs. Includes RCE/Board, school name and year program was implemented."
+ },
+ "6x7t-pwfj": {
+  "nombre": "Recognized Private Schools Granting the Nova Scotia High School Leaving Certificate Map",
+  "tipo": "map",
+  "actualizado": "2026-04-20T12:14:13.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/6x7t-pwfj",
+  "descripcion": "Private Schools that have been approved by the Department to grant the Nova Scotia High School Leaving Certificate"
+ },
+ "hcdu-5rtg": {
+  "nombre": "Nova Scotia Public School Contact Information Map",
+  "tipo": "map",
+  "actualizado": "2026-07-21T12:01:51.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/hcdu-5rtg",
+  "descripcion": "Public school mailing address, civic address, telephone, fax"
+ },
+ "2p4q-s7y7": {
+  "nombre": "Driver Training Schools Map",
+  "tipo": "map",
+  "actualizado": "2026-07-22T16:07:52.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/2p4q-s7y7",
+  "descripcion": "Driver Training Schools licenced to provide theory and/or practical lessons."
+ },
+ "v69y-jn74": {
+  "nombre": "Nova Scotia School Board Zones - English",
+  "tipo": "dataset",
+  "actualizado": "2020-11-20T19:40:29.000Z",
+  "columnas": [
+   "Shape_Leng",
+   "WEB",
+   "FAX",
+   "CIVIC2",
+   "CIVIC1",
+   "BRDNAME",
+   "BRDCODE",
+   "Shape_Area",
+   "SCHLYR",
+   "PHONE",
+   "CPOSTCODE",
+   "the_geom"
+  ],
+  "url": "https://data.novascotia.ca/d/v69y-jn74",
+  "descripcion": "Nova Scotia School Board zones."
+ },
+ "iyap-ttn5": {
+  "nombre": "Nova Scotia Public School Contact Information",
+  "tipo": "dataset",
+  "actualizado": "2026-07-21T12:01:51.000Z",
+  "columnas": [
+   "Telephone",
+   "Mail Address Line 2",
+   "Mail Address Line 1",
+   "End Grade",
+   "Start Grade",
+   "School Name",
+   "School Code",
+   "Civic Postal Code",
+   "Fax",
+   "Email",
+   "RCE/CSAP Name",
+   "RCE/CSAP Code",
+   "Year",
+   "georeference",
+   "Civic Address Line 2",
+   "Civic Address Line 1",
+   "Mailing Postal Code"
+  ],
+  "url": "https://data.novascotia.ca/d/iyap-ttn5",
+  "descripcion": "Public school mailing address, civic address, telephone, fax"
+ },
+ "2k3n-wed5": {
+  "nombre": "Schools Offering the Pre-primary Program",
+  "tipo": "dataset",
+  "actualizado": "2021-05-05T12:40:02.000Z",
+  "columnas": [
+   "School Number",
+   "Region",
+   "Implementation Year",
+   "School Name ",
+   "Community",
+   "telephone",
+   "Province",
+   "Postal Code ",
+   "Address",
+   "fax",
+   "email",
+   "georeference"
+  ],
+  "url": "https://data.novascotia.ca/d/2k3n-wed5",
+  "descripcion": "List of schools offering the Pre-primary Program"
+ },
+ "mzvg-qui6": {
+  "nombre": "Public School Co-op Programs",
+  "tipo": "dataset",
+  "actualizado": "2026-07-21T11:51:46.000Z",
+  "columnas": [
+   "SCHOOL",
+   "RCE/CSAP Name"
+  ],
+  "url": "https://data.novascotia.ca/d/mzvg-qui6",
+  "descripcion": "A listing of public schools offering co-op programs. List is arranged by Regional Centres for Education/CSAP."
+ },
+ "utbc-xmfs": {
+  "nombre": "Boys and Girls Clubs of Nova Scotia",
+  "tipo": "dataset",
+  "actualizado": "2020-01-08T17:21:14.000Z",
+  "columnas": [
+   "Email",
+   "Phone",
+   "Fax",
+   "Location",
+   "Catchment Area",
+   "Address",
+   "Location (state)",
+   "X_coordina",
+   "Location (city)",
+   "UID",
+   "Name",
+   "Website",
+   "Facebook",
+   "Location (zip)",
+   "Y_coordina",
+   "Location (address)"
+  ],
+  "url": "https://data.novascotia.ca/d/utbc-xmfs",
+  "descripcion": "Boys and Girls Clubs of Nova Scotia provide quality after school and out-of-school programs to children and youth that support their healthy physical, educational and social development."
+ },
+ "7q7k-h9ut": {
+  "nombre": "Surplus Crown Property Disposal - Computer Equipment",
+  "tipo": "dataset",
+  "actualizado": "2026-06-22T13:01:47.000Z",
+  "columnas": [
+   "Location Address",
+   "Description",
+   "Quantity",
+   "Location",
+   "ID",
+   "File #",
+   "Fiscal Year"
+  ],
+  "url": "https://data.novascotia.ca/d/7q7k-h9ut",
+  "descripcion": "This category covers surplus computer equipment. In 1994 the Executive Council approved a plan that would have government embark on a program that would see all surplus government computer equipment redistributed throughout the Public School System under The Computers for Schools Program."
+ },
+ "rud4-7ues": {
+  "nombre": "Early Childhood Development Intervention Services (ECDIS) Contact Information",
+  "tipo": "dataset",
+  "actualizado": "2017-10-05T13:43:43.000Z",
+  "columnas": [
+   "Phone ",
+   "Region  ",
+   "Location",
+   "Address",
+   "Fax"
+  ],
+  "url": "https://data.novascotia.ca/d/rud4-7ues",
+  "descripcion": "Contact Information: Early Childhood Development Intervention Services (ECDIS)"
+ },
+ "rcyb-u6kq": {
+  "nombre": "A Place to Belong Program",
+  "tipo": "dataset",
+  "actualizado": "2023-05-08T13:57:56.000Z",
+  "columnas": [
+   "UID",
+   "Community",
+   "Province",
+   "Website",
+   "Location (zip)",
+   "Nova Scotia Health Authority Management Zones",
+   "Location (address)",
+   "Phone",
+   "Fax",
+   "Location (state)",
+   "Postal Code",
+   "Email",
+   "Catchment Area",
+   "Location",
+   "Address",
+   "Location (city)",
+   "Y_coordina",
+   "X_coordina",
+   "Facebook",
+   "Name"
+  ],
+  "url": "https://data.novascotia.ca/d/rcyb-u6kq",
+  "descripcion": "A Place to Belong (APTB) programs provides children and youth aged 5 to 18 with a positive after school experience that promotes their personal, social, and emotional development. These programs provide an adult-supervised environment where they can experience new opportunities, overcome barriers, b"
+ },
+ "en5t-xr3k": {
+  "nombre": "Big Brothers Big Sisters",
+  "tipo": "dataset",
+  "actualizado": "2023-02-03T17:54:13.000Z",
+  "columnas": [
+   "Location (city)",
+   "Location",
+   "Location (address)",
+   "UID",
+   "Y_coordina",
+   "X_coordina",
+   "Catchment Area",
+   "Name",
+   "Email",
+   "Fax",
+   "Address",
+   "DCS Region",
+   "Location (zip)",
+   "Location (state)",
+   "Facebook",
+   "Website",
+   "Phone"
+  ],
+  "url": "https://data.novascotia.ca/d/en5t-xr3k",
+  "descripcion": "Big Brothers Big Sisters provides children and youth with high quality, professionally supported volunteer mentoring programs. This includes the pairing of children and youth to adult role models who serve as a mentor and a friend to talk to and share the experiences of growing up with. Big Brothers"
+ },
+ "iite-snyb": {
+  "nombre": "Licensed Direct Selling Companies in Nova Scotia",
+  "tipo": "dataset",
+  "actualizado": "2026-08-20T11:36:28.000Z",
+  "columnas": [
+   "Province/State",
+   "Location Geocode (city)",
+   "Location Geocode (zip)",
+   "Licensee Name",
+   "Address",
+   "Postal/Zip Code",
+   "City",
+   "Location Geocode (address)",
+   "Nova Scotia Health Authority Management Zones",
+   "Location Geocode (state)",
+   "Location Geocode",
+   "License Type"
+  ],
+  "url": "https://data.novascotia.ca/d/iite-snyb",
+  "descripcion": "List of Businesses / Persons licensed to operate as direct sellers in Nova Scotia"
+ },
+ "y8k4-nuqh": {
+  "nombre": "Big Brothers and Big Sisters Locations",
+  "tipo": "map",
+  "actualizado": "2023-02-03T17:54:13.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/y8k4-nuqh",
+  "descripcion": "Big Brothers Big Sisters provides children and youth with high quality, professionally supported volunteer mentoring programs. This includes the pairing of children and youth to adult role models who serve as a mentor and a friend to talk to and share the experiences of growing up with. Big Brothers"
+ },
+ "nfpn-9xc2": {
+  "nombre": "Boys and Girls Clubs Locations",
+  "tipo": "map",
+  "actualizado": "2020-01-08T17:21:14.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/nfpn-9xc2",
+  "descripcion": "Boys and Girls Clubs of Nova Scotia provide quality after school and out-of-school programs to children and youth that support their healthy physical, educational and social development."
+ },
+ "2kw3-tjdw": {
+  "nombre": "Surplus Crown Property Disposal - Real Property",
+  "tipo": "dataset",
+  "actualizado": "2026-06-22T13:04:05.000Z",
+  "columnas": [
+   "Location",
+   "File No.",
+   "Paid To",
+   "Fiscal Year",
+   "Contract Price",
+   "Description",
+   "Awarded"
+  ],
+  "url": "https://data.novascotia.ca/d/2kw3-tjdw",
+  "descripcion": "\"This category covers items of surplus in the Real Property classification.  Real Property, in general, is considered land or buildings that are deemed surplus to the needs of the various government departments responsible for their management.\n\""
+ },
+ "vcrd-d2c2": {
+  "nombre": "A Place to Belong Program Locations",
+  "tipo": "map",
+  "actualizado": "2023-05-08T13:57:56.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/vcrd-d2c2",
+  "descripcion": "A Place to Belong (APTB) programs provides children and youth aged 5 to 18 with a positive after school experience that promotes their personal, social, and emotional development. These programs provide an adult-supervised environment where they can experience new opportunities, overcome barriers, b"
+ },
+ "ut6n-ijt8": {
+  "nombre": "[ARCHIVED] NHS Education by Location of Education",
+  "tipo": "dataset",
+  "actualizado": "2016-04-05T18:42:10.000Z",
+  "columnas": [
+   "Male - .",
+   "DataGroup",
+   "DataGroup_Order",
+   "Female - %",
+   "Total - .",
+   "Total - %",
+   "Female - .",
+   "ComID",
+   "Year",
+   "Male - %",
+   "GeogName"
+  ],
+  "url": "https://data.novascotia.ca/d/ut6n-ijt8",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "2kxr-ajui": {
+  "nombre": "Hospitals Map",
+  "tipo": "map",
+  "actualizado": "2026-04-08T11:53:46.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/2kxr-ajui",
+  "descripcion": "The geographic locations of all hospitals in Nova Scotia by their civic address."
+ },
+ "tmfr-3h8a": {
+  "nombre": "Hospitals",
+  "tipo": "dataset",
+  "actualizado": "2026-04-08T11:53:46.000Z",
+  "columnas": [
+   "FACILITY",
+   "Address",
+   "the_geom",
+   "TYPE",
+   "TOWN",
+   "COUNTY"
+  ],
+  "url": "https://data.novascotia.ca/d/tmfr-3h8a",
+  "descripcion": "The geographic locations of all hospitals in Nova Scotia by their civic address."
+ },
+ "upev-srp2": {
+  "nombre": "Hospital Inpatient Occupancy",
+  "tipo": "filter",
+  "actualizado": "2024-05-07T13:16:18.000Z",
+  "columnas": [
+   "Zone",
+   "CTAS",
+   "Hospital",
+   "Actual",
+   "Type",
+   "Measure Name",
+   "Date"
+  ],
+  "url": "https://data.novascotia.ca/d/upev-srp2",
+  "descripcion": "The Hospital Inpatient Occupancy data set includes various service-related metrics and indicators related to the calculated occupancy rate of the hospitals found in Nova Scotia Health and the IWK. This data includes measures for the calculated occupancy rates for the following areas: Acute Inpatient"
+ },
+ "ffed-x8cd": {
+  "nombre": "Hospital Service Volumes",
+  "tipo": "filter",
+  "actualizado": "2024-05-07T13:16:18.000Z",
+  "columnas": [
+   "Date",
+   "CTAS",
+   "Actual",
+   "Measure Name",
+   "Hospital",
+   "Zone",
+   "Type"
+  ],
+  "url": "https://data.novascotia.ca/d/ffed-x8cd",
+  "descripcion": "The Hospital Services Volumes dataset includes various service-related  metrics and indicators related to the service volumes in the hospitals of Nova Scotia Health and the IWK. The data is collected from multiple sources within the health system, including Hospital Inpatient, Emergency, and Surgica"
+ },
+ "xcmy-9pdq": {
+  "nombre": "Average Total Occupancy by Hospital",
+  "tipo": "chart",
+  "actualizado": "2024-05-07T13:16:18.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/xcmy-9pdq",
+  "descripcion": "The Hospital Inpatient Occupancy data set includes various service-related metrics and indicators related to the calculated occupancy rate of the hospitals found in Nova Scotia Health and the IWK. This data includes measures for the calculated occupancy rates for the following areas: Acute Inpatient"
+ },
+ "mcjw-5mk3": {
+  "nombre": "Average Acute Occupancy by Hospital",
+  "tipo": "chart",
+  "actualizado": "2024-05-07T13:16:18.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/mcjw-5mk3",
+  "descripcion": "The Hospital Inpatient Occupancy data set includes various service-related metrics and indicators related to the calculated occupancy rate of the hospitals found in Nova Scotia Health and the IWK. This data includes measures for the calculated occupancy rates for the following areas: Acute Inpatient"
+ },
+ "wxtt-c25y": {
+  "nombre": "Average Mental Health and Addictions Occupancy by Hospital",
+  "tipo": "chart",
+  "actualizado": "2024-05-07T13:16:18.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/wxtt-c25y",
+  "descripcion": "The Hospital Inpatient Occupancy data set includes various service-related metrics and indicators related to the calculated occupancy rate of the hospitals found in Nova Scotia Health and the IWK. This data includes measures for the calculated occupancy rates for the following areas: Acute Inpatient"
+ },
+ "g6s5-bwwy": {
+  "nombre": "[ARCHIVED] Health Statistics Injury Hospitalization Rates 2006-2009",
+  "tipo": "dataset",
+  "actualizado": "2016-04-07T13:20:31.000Z",
+  "columnas": [
+   "Datagroup",
+   "comid",
+   "Year",
+   "Injury Hospitalization Rate",
+   "Geogname"
+  ],
+  "url": "https://data.novascotia.ca/d/g6s5-bwwy",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "jq27-qa8x": {
+  "nombre": "Clostridium difficile Infection (CDI) rates in patients while in hospital",
+  "tipo": "dataset",
+  "actualizado": "2026-06-11T11:32:55.000Z",
+  "columnas": [
+   "Canadian Benchmark",
+   "DHA",
+   "Quarter",
+   "YEAR",
+   "CDI Rate (p/10000 days)",
+   "ZONE"
+  ],
+  "url": "https://data.novascotia.ca/d/jq27-qa8x",
+  "descripcion": "Clostridium difficile Infection (CDI) rates while in hospital are measured and monitored by infection prevention and control staff as a means to evaluate the effectiveness of their infection control protocols. CDI rates are calculated by dividing the number of clostridium difficile infections by the"
+ },
+ "nezp-psuh": {
+  "nombre": "Clostridium difficile Infection (CDI) rates in patients in hospital by region",
+  "tipo": "chart",
+  "actualizado": "2026-06-11T11:32:55.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/nezp-psuh",
+  "descripcion": "Clostridium difficile Infection (CDI) rates while in hospital are measured and monitored by infection prevention and control staff as a means to evaluate the effectiveness of their infection control protocols. CDI rates are calculated by dividing the number of clostridium difficile infections by the"
+ },
+ "fhgh-hs5y": {
+  "nombre": "Methicillin-resistant Staphylococcus aureus (MRSA) bloodstream infection rates in patients while in hospital",
+  "tipo": "dataset",
+  "actualizado": "2026-06-11T12:06:31.000Z",
+  "columnas": [
+   "YEAR",
+   "MRSA Rate (p/10000 days)",
+   "ZONE",
+   "DHA",
+   "Quarter",
+   "Canadian Benchmark"
+  ],
+  "url": "https://data.novascotia.ca/d/fhgh-hs5y",
+  "descripcion": "Methicillin-resistant Staphylococcus aureus (MRSA) bloodstream infection rates while in hospital are measured and monitored by infection prevention and control staff as a means to evaluate the effectiveness of their infection control protocols. MRSA rates are calculated by dividing the number of clo"
+ },
+ "6kt2-5vdn": {
+  "nombre": "Emergency Patient Canadian Triage and Acuity Scale (CTAS) Level Breakdown by Zone",
+  "tipo": "chart",
+  "actualizado": "2024-05-07T13:16:18.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/6kt2-5vdn",
+  "descripcion": "The Hospital Services Volumes dataset includes various service-related  metrics and indicators related to the service volumes in the hospitals of Nova Scotia Health and the IWK. The data is collected from multiple sources within the health system, including Hospital Inpatient, Emergency, and Surgica"
+ },
+ "m9ng-y7cu": {
+  "nombre": "Action for Health",
+  "tipo": "dataset",
+  "actualizado": "2024-05-07T13:16:18.000Z",
+  "columnas": [
+   "Type",
+   "Date",
+   "Measure Name",
+   "Actual",
+   "Zone",
+   "CTAS",
+   "Hospital"
+  ],
+  "url": "https://data.novascotia.ca/d/m9ng-y7cu",
+  "descripcion": "The dataset includes various health service-related metrics and indicators related to the Nova Scotia Health. The data is collected from multiple sources within the health system, including Hospital Inpatient, Emergency, Surgical Databases, Continuing Care Home Support and Long-term Care Reports and"
+ },
+ "c39g-gsdd": {
+  "nombre": "Long-term Care Waitlist",
+  "tipo": "dataset",
+  "actualizado": "2026-04-20T11:19:27.000Z",
+  "columnas": [
+   "Year",
+   "Date",
+   "Total Waiting for Initial Placement",
+   "Waiting for Inter-Facility Transfer",
+   "Waiting In Hospital",
+   "Waiting in the Community"
+  ],
+  "url": "https://data.novascotia.ca/d/c39g-gsdd",
+  "descripcion": "Number of individuals waiting for Long-term Care placement - weekly"
+ },
+ "77h9-je62": {
+  "nombre": "Death Registrations 1864-1877, 1908-1974; City of Halifax 1890-1908",
+  "tipo": "dataset",
+  "actualizado": "2025-07-17T14:42:50.000Z",
+  "columnas": [
+   "Cause 1A",
+   "Hospital",
+   "Undertaker",
+   "Race",
+   "Birth Day",
+   "Birth Year",
+   "County",
+   "Citizenship",
+   "Married Status",
+   "Age Years",
+   "Age Hours",
+   "Occupation",
+   "Time Occupation",
+   "Father First Name",
+   "Mother First Name",
+   "Birth Mother",
+   "Burial Date",
+   "Cause 1B",
+   "Deathid",
+   "RegYear",
+   "RegBook",
+   "LastName",
+   "Year",
+   "Day",
+   "FirstName",
+   "RegPage",
+   "Reference",
+   "VSComplete",
+   "Gender",
+   "Birth Month",
+   "RegNumber",
+   "Cause2",
+   "Cause 1C",
+   "Industry",
+   "Age Minutes",
+   "Month",
+   "Place",
+   "Age Days",
+   "Age Months",
+   "Note"
+  ],
+  "url": "https://data.novascotia.ca/d/77h9-je62",
+  "descripcion": "Civil registration of deaths in Nova Scotia began in 1864, continued to 1877, then lapsed until 1908, when the province resumed record-keeping. Registrations for 1864-1877 are incomplete. There are two registers for the city of Halifax 1890-1908. Since 1 October 1908, the records have been maintaine"
+ },
+ "s7ui-kx6d": {
+  "nombre": "Long-term Care and Residential Care Facilities Map",
+  "tipo": "map",
+  "actualizado": "2026-11-23T12:05:49.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/s7ui-kx6d",
+  "descripcion": "The locations of all Long Term Care and Residential Care facilties in Nova Scotia by their civic address."
+ },
+ "wu5w-qxki": {
+  "nombre": "Surgical Wait Times",
+  "tipo": "dataset",
+  "actualizado": "2025-08-05T13:50:25.000Z",
+  "columnas": [
+   "Procedure",
+   "Consult_90th",
+   "Year",
+   "Period",
+   "Surgery_Median",
+   "Zone",
+   "Surgery_90th",
+   "Quarter",
+   "Facility",
+   "Provider",
+   "Consult_Median",
+   "Specialty"
+  ],
+  "url": "https://data.novascotia.ca/d/wu5w-qxki",
+  "descripcion": "Wait time and access data for surgical consult and surgery. Also available on: https://waittimes.novascotia.ca/"
+ },
+ "75nx-yut7": {
+  "nombre": "Emergency Department Closure Hours by Zone, Facility, and Facility Type",
+  "tipo": "dataset",
+  "actualizado": "2025-06-05T16:32:02.000Z",
+  "columnas": [
+   "Temporary",
+   "Site",
+   "Total",
+   "YEAR",
+   "TYPE",
+   "Zone",
+   "Scheduled"
+  ],
+  "url": "https://data.novascotia.ca/d/75nx-yut7",
+  "descripcion": "Emergency Department closure hours by zone, facility, and facility type. Includes the following data fields: Year, Zone,  Type, Site, Temporary, Scheduled, Total"
+ },
+ "x76a-axw2": {
+  "nombre": "Long-term Care and Residential Care Facilities",
+  "tipo": "dataset",
+  "actualizado": "2026-11-23T12:05:49.000Z",
+  "columnas": [
+   "Location (state)",
+   "Facility Name",
+   "Location (zip)",
+   "RCF Respite Beds",
+   "Nursing Homes (NH) No. of Beds",
+   "Facility ID",
+   "Address",
+   "Postal Code",
+   "Single Entry Access (SEA) Participating",
+   "Facility Type",
+   "X Coordinate",
+   "Nursing Homes (NH) No. of Respite Beds",
+   "Location (city)",
+   "Town",
+   "Residential Care Facilities (RCF) No.of Beds",
+   "the_geom",
+   "Zone",
+   "Location",
+   "Y  Coordinate",
+   "Location (address)"
+  ],
+  "url": "https://data.novascotia.ca/d/x76a-axw2",
+  "descripcion": "The locations of all Long-term Care and Residential Care facilities in Nova Scotia by their civic address."
+ },
+ "pkj5-hhwu": {
+  "nombre": "Emergency Department Closure Hours by Year",
+  "tipo": "chart",
+  "actualizado": "2025-06-05T16:32:02.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/pkj5-hhwu",
+  "descripcion": "Emergency Department closure hours by zone, facility, and facility type. Includes the following data fields: Year, Zone,  Type, Site, Temporary, Scheduled, Total"
+ },
+ "7t68-9xmm": {
+  "nombre": "Boil Water Advisories",
+  "tipo": "dataset",
+  "actualizado": "2026-06-16T13:58:43.000Z",
+  "columnas": [
+   "County",
+   "Facility Type",
+   "Date Advisory Removed",
+   "Length of Advisory in Days",
+   "Site Name",
+   "Date Advisory Issued",
+   "Reason for the Report"
+  ],
+  "url": "https://data.novascotia.ca/d/7t68-9xmm",
+  "descripcion": "This dataset includes the following information for public registered and municipal drinking water supplies:  Site Name, County, Date Boil Advisory Issued, Date Boil Advisory Removed, Facility Type (Registered or Municipal), Length of Advisory in Days, Reason for the Report. This dataset includes bo"
+ },
+ "vy3k-snwm": {
+  "nombre": "Surgical Wait Times for Procedures: Median Average by Facility and Year",
+  "tipo": "chart",
+  "actualizado": "2025-08-05T13:50:25.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/vy3k-snwm",
+  "descripcion": "Wait time and access data for surgical consult and surgery. Also available on: https://waittimes.novascotia.ca/"
+ },
+ "dyij-8xgr": {
+  "nombre": "Long-term Care Waitlist Totals by Month",
+  "tipo": "chart",
+  "actualizado": "2026-04-20T11:19:27.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/dyij-8xgr",
+  "descripcion": "Number of individuals waiting for Long Term Care placement - weekly"
+ },
+ "shcq-4v93": {
+  "nombre": "Municipal Fiscal Statistics - Consolidated Revenues and Expenses by Municipality",
+  "tipo": "dataset",
+  "actualizado": "2026-01-16T12:27:02.000Z",
+  "columnas": [
+   "Provincial government and provincial government agencies",
+   "Return on investments",
+   "Fire protection",
+   "Total Other Rates, Charges and Assessments",
+   "Total Other Assessable Property Tax Revenue",
+   "Region Type",
+   "Protective Services Short-term interest and other debt charges",
+   "Annual Surplus(Surplus)",
+   "TOTAL EXPENSES",
+   "TOTAL ELECTRIC FUND",
+   "Electric Fund Amortization, gain / loss, writedowns on capital assets",
+   "Electric Fund Interest on long-term debt",
+   "Electric fund expenses",
+   "TOTAL WATER FUND",
+   "Water Fund Amortization, gain / loss, writedowns on capital assets",
+   "Water Fund Interest on long-term debt",
+   "Water fund expenses",
+   "TOTAL EXTRAORDINARY OR SPECIAL ITEMS",
+   "Optional (supplementary) education contributions",
+   "Extraordinary or special expenditure items",
+   "Extraordinary or special revenue items ",
+   "TOTAL RECREATION AND CULTURAL SERVICES",
+   "Other recreation and cultural services",
+   "Recreation Amortization, gain / loss, writedowns on capital assets",
+   "Short-term interest and other debt charges",
+   "Recreation Interest on long-term debt",
+   "Transfers to regional library",
+   "Cultural buildings and facilities",
+   "Recreation facilities",
+   "TOTAL ENVIRONMENTAL DEVELOPMENT SERVICES",
+   "Other environmental development services",
+   "Environmental Development Amortization, gain / loss, writedowns on capital assets",
+   "Environmental Development Short-term interest and other debt charges",
+   "Environmental planning and zoning",
+   "Other public health services",
+   "Public Health Interest on long-term debt",
+   "Public Health",
+   "TOTAL ENVIRONMENTAL HEALTH SERVICES",
+   "Other environmental health services",
+   "Environmental Health Amortization, gain / loss, writedowns on capital assets"
+  ],
+  "url": "https://data.novascotia.ca/d/shcq-4v93",
+  "descripcion": "Under the <i>Municipal Government Act</i>, the Minister has the authority to prescribe the type of information to be provided by a municipality to the Minister [s.451 (1(b)]. In Nova Scotia, the municipality is required to submit financial information to the Department of Municipal Affairs (DMA) thr"
+ },
+ "7bqh-hssn": {
+  "nombre": "Municipality Boundaries",
+  "tipo": "dataset",
+  "actualizado": "2025-12-05T12:02:47.000Z",
+  "columnas": [
+   "NAME",
+   "FeatDesc",
+   "OBJECTID",
+   "the_geom",
+   "FullName",
+   "County",
+   "SHAPE_Area",
+   "SHAPE_Leng",
+   "CGNDB_KEY"
+  ],
+  "url": "https://data.novascotia.ca/d/7bqh-hssn",
+  "descripcion": "This dataset delineates the municipal boundaries for towns and district, county and regional municipalities in Nova Scotia."
+ },
+ "4s9u-shxs": {
+  "nombre": "Boundaries for Municipal Districts",
+  "tipo": "map",
+  "actualizado": "2025-12-05T12:02:47.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/4s9u-shxs",
+  "descripcion": "This map delineates the municipal boundaries for municipal districts in Nova Scotia."
+ },
+ "hi6r-rzid": {
+  "nombre": "Boundaries for Municipal Counties",
+  "tipo": "map",
+  "actualizado": "2025-12-05T12:02:47.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/hi6r-rzid",
+  "descripcion": "This map delineates the municipal boundaries for municipal counties in Nova Scotia."
+ },
+ "swqc-jpc3": {
+  "nombre": "Boundaries for Towns",
+  "tipo": "map",
+  "actualizado": "2025-12-05T12:02:47.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/swqc-jpc3",
+  "descripcion": "This map delineates the municipal boundaries for towns in Nova Scotia."
+ },
+ "iymb-rmgy": {
+  "nombre": "Boundaries for Regional Municipalities",
+  "tipo": "map",
+  "actualizado": "2025-12-05T12:02:47.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/iymb-rmgy",
+  "descripcion": "This map delineates the municipal boundaries for regional municipalities in Nova Scotia."
+ },
+ "i54i-va96": {
+  "nombre": "Boundaries for Villages",
+  "tipo": "map",
+  "actualizado": "2026-09-01T11:02:42.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/i54i-va96",
+  "descripcion": "This map delineates the municipal boundaries for villages in Nova Scotia."
+ },
+ "23hp-7dde": {
+  "nombre": "Village Boundaries",
+  "tipo": "dataset",
+  "actualizado": "2026-09-01T11:02:42.000Z",
+  "columnas": [
+   "NAME",
+   "SHAPE_Area",
+   "FeatDesc",
+   "CGNDB_KEY",
+   "SHAPE_Leng",
+   "OBJECTID",
+   "Municipality",
+   "the_geom"
+  ],
+  "url": "https://data.novascotia.ca/d/23hp-7dde",
+  "descripcion": "This dataset delineates the village boundaries for Nova Scotia."
+ },
+ "gcep-xeci": {
+  "nombre": "Municipal Polling Districts",
+  "tipo": "dataset",
+  "actualizado": "2025-11-19T13:08:59.000Z",
+  "columnas": [
+   "SHAPE_Area",
+   "Reg_Num",
+   "Poll_Dist",
+   "Mun",
+   "MU_Code",
+   "CO_Code",
+   "SHAPE_Leng",
+   "the_geom"
+  ],
+  "url": "https://data.novascotia.ca/d/gcep-xeci",
+  "descripcion": "This dataset delineates the municipal polling districts for towns and rural, district, county and regional municipalities."
+ },
+ "a89z-tinp": {
+  "nombre": "Nova Scotia Civic Address File (NSCAF) - Community Boundaries",
+  "tipo": "dataset",
+  "actualizado": "2026-11-05T12:02:16.000Z",
+  "columnas": [
+   "RETIRED",
+   "VERIFIED",
+   "LOCKED",
+   "MUN_CODE",
+   "GSA_CODE",
+   "GSA_NAME",
+   "CO_CODE",
+   "GSA_KEY",
+   "EDIT_V",
+   "the_geom",
+   "MUN_ID"
+  ],
+  "url": "https://data.novascotia.ca/d/a89z-tinp",
+  "descripcion": "The NSCAF Community Boundaries dataset includes the boundary for each Nova Scotia civic community. These boundaries were defined in consultation with Nova Scotia municipalities with input from municipal councilors, Emergency Health Services (Nova Scotia Department of Health and Wellness), local fire"
+ },
+ "qazs-jfca": {
+  "nombre": "Nova Scotia Civic Address File (NSCAF) - Community Boundaries Map",
+  "tipo": "map",
+  "actualizado": "2026-11-05T12:02:16.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/qazs-jfca",
+  "descripcion": "The NSCAF Community Boundaries dataset includes the boundary for each Nova Scotia civic community. These boundaries were defined in consultation with Nova Scotia municipalities with input from municipal councilors, Emergency Health Services (Nova Scotia Department of Health and Wellness), local fire"
+ },
+ "4qyk-69iq": {
+  "nombre": "Municipal Polling Districts",
+  "tipo": "map",
+  "actualizado": "2025-11-19T13:08:59.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/4qyk-69iq",
+  "descripcion": "This dataset delineates the municipal polling districts for towns and rural, district, county and regional municipalities."
+ },
+ "agxn-dwx7": {
+  "nombre": "Boundary File of Nova Scotia’s Self-contained Labour Areas (2016)",
+  "tipo": "dataset",
+  "actualizado": "2024-08-13T13:20:56.000Z",
+  "columnas": [
+   "SLA_CODE",
+   "the_geom",
+   "SLA_NAME"
+  ],
+  "url": "https://data.novascotia.ca/d/agxn-dwx7",
+  "descripcion": "A geographic shape file of Nova Scotia’s Functional Economic Regions. The most widely accepted approach to identifying functional economic regions is based on self-contained labour areas (SLAs) - a group of two or more Census Subdivisions (CSDs) where at least 75% of the workers both live and work i"
+ },
+ "p3ve-n8ge": {
+  "nombre": "Boundary File of Nova Scotia’s Self-contained Labour Areas (2021)",
+  "tipo": "dataset",
+  "actualizado": "2024-08-13T13:07:30.000Z",
+  "columnas": [
+   "Self-contained Labour Area Boundary",
+   "Self-contained Labour Area Name"
+  ],
+  "url": "https://data.novascotia.ca/d/p3ve-n8ge",
+  "descripcion": "A geographic shape file of Nova Scotia’s Functional Economic Regions based on the 2021 census data. The most widely accepted approach to identifying functional economic regions is based on self-contained labour areas (SLAs) - a group of two or more Census Subdivisions (CSDs) where at least 75% of th"
+ },
+ "jk9s-dhfu": {
+  "nombre": "Nova Scotia Functional Economic Regions (2021)",
+  "tipo": "map",
+  "actualizado": "2024-08-13T13:07:30.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/jk9s-dhfu",
+  "descripcion": "A geographic shape file of Nova Scotia’s Functional Economic Regions based on the 2021 census data. The most widely accepted approach to identifying functional economic regions is based on self-contained labour areas (SLAs) - a group of two or more Census Subdivisions (CSDs) where at least 75% of th"
+ },
+ "wwaq-2akq": {
+  "nombre": "Gaelic Placenames in Nova Scotia",
+  "tipo": "dataset",
+  "actualizado": "2019-05-22T16:55:13.000Z",
+  "columnas": [
+   "lat",
+   "COUNTY",
+   "Georeferenced Column",
+   "SIORRAMACHD",
+   "long",
+   "ÀINM-AITE 'S A' GHÀIDHLIG",
+   "easting",
+   "northing",
+   "ENGLISH PLACENAME"
+  ],
+  "url": "https://data.novascotia.ca/d/wwaq-2akq",
+  "descripcion": "Gaelic placenames in Nova Scotia contain placenames Nova Scotia Gaels have for communities in Pictou, Antigonish, Guysborough, Inverness, Victoria, Richmond and the Cape Breton Regional Municipality"
+ },
+ "ure8-3w7m": {
+  "nombre": "Municipal Property Tax Rates",
+  "tipo": "dataset",
+  "actualizado": "2026-02-24T12:08:46.000Z",
+  "columnas": [
+   "Commercial",
+   "Residential",
+   "Year",
+   "Area Type",
+   "Area"
+  ],
+  "url": "https://data.novascotia.ca/d/ure8-3w7m",
+  "descripcion": "Municipal property taxes are set by the council of each municipality and help fund a variety of municipal services and programs provided by the municipality. There are two different types of tax rates: residential and commercial. All tax rates are applied per $100 of taxable property assessment valu"
+ },
+ "4hyt-4nhy": {
+  "nombre": "911 Municipal Grants",
+  "tipo": "dataset",
+  "actualizado": "2025-12-22T12:34:19.000Z",
+  "columnas": [
+   "Region Type",
+   "Region",
+   "Funds Allotted",
+   "Dwelling Count",
+   "Year"
+  ],
+  "url": "https://data.novascotia.ca/d/4hyt-4nhy",
+  "descripcion": "This data shows how much each municipality receives in 911 grant funding on an annual basis."
+ },
+ "597s-9r3k": {
+  "nombre": "Municipal Contribution To Roads",
+  "tipo": "dataset",
+  "actualizado": "2026-05-20T11:30:50.000Z",
+  "columnas": [
+   " Number of Kms ",
+   " Municipality ",
+   "Year",
+   "Contribution Total",
+   "Area or Region Type"
+  ],
+  "url": "https://data.novascotia.ca/d/597s-9r3k",
+  "descripcion": "According to the Provincial Municipal Service Exchange Agreement, municipalities are required to pay the province for the cost of maintaining of the local roads constructed pre-April 1, 1995. The fees paid by municipalities started at $3,500 per kilometer and is adjusted annually by the CPI for Cana"
+ },
+ "sbzw-ajrm": {
+  "nombre": "Municipal Fiscal Statistics: Operating Fund Total Revenues and Expenditures by Municipality",
+  "tipo": "dataset",
+  "actualizado": "2026-01-16T12:53:15.000Z",
+  "columnas": [
+   "Region",
+   "General Government Services",
+   "Conditional Transfers From Other Local Governments",
+   "Conditional Transfers From Federal Or Provincial Governments Or Agencies",
+   "Conditional transfers from other governments",
+   "Unconditional Transfers From Other Governments",
+   "Other Revenue From Own Sources",
+   "Sales Of Services",
+   "Services Provided To Other Governments",
+   "Assessable Property Taxes (Net Of School Board Appropriations, corrections, housing deficits)",
+   "Net property taxes and payments in lieu of taxes",
+   "Year",
+   "Region Type",
+   "ANNUAL SURPLUS (DEFICIT)",
+   "Operating surplus (deficit) before financing and transfers",
+   "Recreation And Cultural Services",
+   "Environmental Development Services",
+   "Total Revenues",
+   "Grants In Lieu Of Taxes",
+   "Extraordinary Or Special Items",
+   "Total Expenses",
+   "TOTAL FINANCING AND TRANSFERS",
+   "Public Health Services",
+   "Environmental Health Services",
+   "Transportation Services",
+   "Protective Services"
+  ],
+  "url": "https://data.novascotia.ca/d/sbzw-ajrm",
+  "descripcion": "Under the <i>Municipal Government Act</i>, the Minister has the authority to prescribe the type of information to be provided by a municipality to the Minister [s.451 (1(b)]. In Nova Scotia, the municipality is required to submit financial information to the Department of Municipal Affairs through t"
+ },
+ "5rgt-der6": {
+  "nombre": "Municipal Affairs Funding Programs",
+  "tipo": "dataset",
+  "actualizado": "2024-07-05T12:11:52.000Z",
+  "columnas": [
+   "Area",
+   "Actual Funding Amount",
+   "Funding Program",
+   "Year"
+  ],
+  "url": "https://data.novascotia.ca/d/5rgt-der6",
+  "descripcion": "The Department of Municipal Affairs and Housing administers a variety of programs that provide funding to municipalities and not-for-profit community groups. This dataset includes a list of the funding programs that are administered by Department of Municipal Affairs and Housing. Information include"
+ },
+ "44ah-ugrd": {
+  "nombre": "Municipal Fiscal Statistics - Financial Condition Indicators",
+  "tipo": "dataset",
+  "actualizado": "2026-01-16T12:17:37.000Z",
+  "columnas": [
+   "3 Year Change in Tax Base",
+   "Debt Service Cost",
+   "Undepreciated Assets",
+   "Outstanding Operating Debt",
+   "Year",
+   "Region Type",
+   "Reliance on Government Transfers",
+   "Reliance on Single Business or Instituion",
+   "Liquidity",
+   "Combined Operating   Capital Reserves",
+   "Operating Reserve",
+   "Residential Tax Effort",
+   "Total # of Budget Accuracy within + or - 5% ",
+   "Total # of Deficits",
+   "Uncollected Taxes",
+   "Region"
+  ],
+  "url": "https://data.novascotia.ca/d/44ah-ugrd",
+  "descripcion": "Financial Condition Indicators are produced by the Department which provide a general picture of a municipality's financial condition. The source of information for this dataset is derived from the Financial Information Return (FIR) and the audited financial statements of Nova Scotia’s municipalitie"
+ },
+ "mp68-kdz7": {
+  "nombre": "Municipal Solid Waste Disposal Totals",
+  "tipo": "dataset",
+  "actualizado": "2026-06-23T12:37:02.000Z",
+  "columnas": [
+   "IC&I/Capita",
+   "Population",
+   "Total",
+   "IC&I",
+   "Garbage",
+   "Municipality",
+   "Year",
+   "C&D",
+   "Total/Capita",
+   "C&D/Capita",
+   "Region"
+  ],
+  "url": "https://data.novascotia.ca/d/mp68-kdz7",
+  "descripcion": "Tonnages landfilled (residential, ICI (industrial commercial, institutional) C&D construction demolition), in totals and per capita (383kg/person for NS for 2014/1%)"
+ },
+ "m3zv-87rm": {
+  "nombre": "Municipal Land Use Planning Comprehensiveness",
+  "tipo": "dataset",
+  "actualizado": "2016-10-27T12:22:24.000Z",
+  "columnas": [
+   "Level of Planning Comprehensiveness ",
+   "Date of Plan",
+   "Municipality Name "
+  ],
+  "url": "https://data.novascotia.ca/d/m3zv-87rm",
+  "descripcion": "This dataset provides information about the extent of municipal land use planning in Nova Scotia. Each municipality is listed along with the type of its land use planning described as either comprehensive for entire municipality, comprehensive for local areas only, comprehensive for towns, or single"
+ },
+ "57fm-m8a8": {
+  "nombre": "Nova Scotia Museum - Locations Map",
+  "tipo": "map",
+  "actualizado": "2026-06-22T11:11:38.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/57fm-m8a8",
+  "descripcion": "A list of the 28 provincial museum sites with the location of each site."
+ },
+ "f84a-3hfv": {
+  "nombre": "Nova Scotia Museum - Locations",
+  "tipo": "dataset",
+  "actualizado": "2026-06-22T11:11:38.000Z",
+  "columnas": [
+   "Town",
+   "County",
+   "geolocation",
+   "Site",
+   "Address",
+   "Postal Code"
+  ],
+  "url": "https://data.novascotia.ca/d/f84a-3hfv",
+  "descripcion": "A list of provincial museum sites with the location of each site."
+ },
+ "7pnv-7sdm": {
+  "nombre": "Registered Heritage Properties",
+  "tipo": "dataset",
+  "actualizado": "2026-07-17T16:30:45.000Z",
+  "columnas": [
+   "TYPE",
+   "REASON FOR REGISTRATION",
+   "CHARACTER-DEFINING ELEMENTS",
+   "BUILDER",
+   "CULTURAL ASSOCIATION",
+   "YEAR BUILT",
+   "DECADE BUILT",
+   "PROPERTY NAME",
+   "CIVIC ADDRESS",
+   "COMMUNITY",
+   "COUNTY",
+   "PID #",
+   "NOTICE OF REGISTRATION DATE (Y/M/D)",
+   "LEVEL OF REGISTRATION",
+   "ARCHITECT/DESIGNER",
+   "UNIQUE IDENTIFIER/FILE NO.",
+   "LATITUDE",
+   "LONGITUDE"
+  ],
+  "url": "https://data.novascotia.ca/d/7pnv-7sdm",
+  "descripcion": "The Government of Nova Scotia helps identify, protect and preserve built heritage throughout the province. The Heritage Property Program was created to assist Nova Scotians to better understand the heritage values of our unique properties and to better preserve these heritage assets. It is an outcom"
+ },
+ "jzzj-4e9w": {
+  "nombre": "Nova Scotia Open Data Portal Survey",
+  "tipo": "dataset",
+  "actualizado": "2025-12-23T19:53:35.000Z",
+  "columnas": [
+   "Used or helped others find open data",
+   "Interactions with datasets on the portal",
+   "Other activities on the portal",
+   "NS Portal needs and experiences",
+   "Barriers to use of the portal",
+   "Use portal in future",
+   "Nova Scotia Government employee",
+   "Purpose of portal use",
+   "Open data needs and experiences",
+   "Tools used for analysis and visualization of open data",
+   "Open data formats used",
+   "How open data is accessed",
+   "Open data sources used",
+   "Data sources",
+   "As a Nova Scotia Government employee, please select the most appropriate statement(s) as they apply to your experience with the Nova Scotia Open Data Portal.",
+   "Do you work or volunteer for an organization where you've used, gathered, or directed people to data from Nova Scotia's Open Data Portal?",
+   "Best describes you",
+   "Date Completed",
+   "Index",
+   "Live in Nova Scotia",
+   "Level of data detail interest",
+   "Level of use of the portal",
+   "Open data interests",
+   "Open data useful now or in future",
+   "Outside of your work as a government employee, do you work or volunteer for an organization where you've used, gathered, or directed people to data from Nova Scotia's Open Data Portal?"
+  ],
+  "url": "https://data.novascotia.ca/d/jzzj-4e9w",
+  "descripcion": "Nova Scotia’s Open Data Program conducts an ongoing survey to understand how to provide open data that is useful to the people and organizations who need it. Questions relate to people's use of and interest in data, open data, and the Nova Scotia Open Data Portal. Findings inform improvements to the"
+ },
+ "aasp-xptj": {
+  "nombre": "[ARCHIVED] Nova Scotia Communities Engaged in Age-Friendly Community Planning",
+  "tipo": "dataset",
+  "actualizado": "2016-01-22T15:12:29.000Z",
+  "columnas": [
+   "Location (zip)",
+   "Mailing Address",
+   "Location (city)",
+   "Community",
+   "Location",
+   "Longitude",
+   "Latitude",
+   "Province",
+   "Email",
+   "Phone",
+   "Postal Code",
+   "City/Town",
+   "Street Address",
+   "Contact",
+   "Website",
+   "Location (state)",
+   "Location (address)"
+  ],
+  "url": "https://data.novascotia.ca/d/aasp-xptj",
+  "descripcion": "<b>[ARCHIVED]</b> The “Nova Scotia Communities Engaged in Age-Friendly Community Planning” dataset is no longer being updated. This dataset has been superseded by <a href=\"https://data.novascotia.ca/Community-Services/Age-Friendly-Communities-Grant-Funding-Recipients/izys-5emb\">Age-Friendly Communit"
+ },
+ "ndaw-w8n7": {
+  "nombre": "Nova Scotia Community Clusters Map",
+  "tipo": "map",
+  "actualizado": "2020-11-30T14:53:57.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/ndaw-w8n7",
+  "descripcion": "Nova Scotia Community Clusters for health service planning and research. Includes the following data fields: GIS_UID, GIS_SELECTED, GIS_HIDDEN, GIS_LENGTH, GIS_AREA, Cluster, ClusterID"
+ },
+ "v47v-22q4": {
+  "nombre": "Feeding Communities Fund",
+  "tipo": "dataset",
+  "actualizado": "2026-09-18T17:57:09.000Z",
+  "columnas": [
+   "Amount",
+   "Grant Program",
+   "Organization",
+   "Region",
+   "Year"
+  ],
+  "url": "https://data.novascotia.ca/d/v47v-22q4",
+  "descripcion": "The full list of funding recipients of the Feeding Communities Fund."
+ },
+ "5zdi-iics": {
+  "nombre": "Community Health Boards",
+  "tipo": "dataset",
+  "actualizado": "2026-04-08T11:49:58.000Z",
+  "columnas": [
+   "REGN_CD",
+   "Shape_Area",
+   "Shape_Leng",
+   "Zone_Name",
+   "Zone",
+   "the_geom",
+   "CHB_NAME",
+   "CHB_NO"
+  ],
+  "url": "https://data.novascotia.ca/d/5zdi-iics",
+  "descripcion": "The Community Health Boards of Nova Scotia and the areas that they are responsible as shown by their spatial distribution."
+ },
+ "2rfn-4b6m": {
+  "nombre": "Nova Scotia Community Clusters",
+  "tipo": "dataset",
+  "actualizado": "2020-11-30T14:53:57.000Z",
+  "columnas": [
+   "Cluster",
+   "ClusterID",
+   "the_geom"
+  ],
+  "url": "https://data.novascotia.ca/d/2rfn-4b6m",
+  "descripcion": "Nova Scotia Community Clusters for health service planning and research. Includes the following data fields: GIS_UID, GIS_SELECTED, GIS_HIDDEN, GIS_LENGTH, GIS_AREA, Cluster, ClusterID"
+ },
+ "is4a-t3qd": {
+  "nombre": "Tourism Nova Scotia Visitor Exit Survey Communities",
+  "tipo": "dataset",
+  "actualizado": "2024-05-07T12:51:20.000Z",
+  "columnas": [
+   "Region",
+   "Community",
+   "Year",
+   "Percent"
+  ],
+  "url": "https://data.novascotia.ca/d/is4a-t3qd",
+  "descripcion": "Non-resident overnight visitors to Nova Scotia are asked if they or others in their travel party visited particular communities, whether overnight or for a short visit."
+ },
+ "cxaa-6d86": {
+  "nombre": "Community Health Boards Map",
+  "tipo": "map",
+  "actualizado": "2026-04-08T11:49:58.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/cxaa-6d86",
+  "descripcion": "The Community Health Boards of Nova Scotia and the areas that they are responsible as shown by their spatial distribution."
+ },
+ "bcxb-v7fu": {
+  "nombre": "Community Economic Development Fund",
+  "tipo": "dataset",
+  "actualizado": "2022-02-02T16:45:26.000Z",
+  "columnas": [
+   "Number of Applications",
+   "Year",
+   "Invest Nova Scotia Applications"
+  ],
+  "url": "https://data.novascotia.ca/d/bcxb-v7fu",
+  "descripcion": "The number of Community Economic Development applications received, declined, and approved."
+ },
+ "axmt-riwq": {
+  "nombre": "Community Living - Disability Support Program",
+  "tipo": "dataset",
+  "actualizado": "2026-11-05T19:03:46.000Z",
+  "columnas": [
+   "DSP participants in community-based living",
+   "Date",
+   "Year",
+   "% in community-based living",
+   "Total DSP participants"
+  ],
+  "url": "https://data.novascotia.ca/d/axmt-riwq",
+  "descripcion": "Number of Disability Support Program participants currently in community-based living. Community-based living includes those whose primary placement is in Alternative Family Support, Developmental Residences, Flex Independent, Flex In Home, Group Homes, Independent Living Support, Supervised Apartme"
+ },
+ "v5z7-rzy4": {
+  "nombre": "Nova Scotia Community Health Network",
+  "tipo": "dataset",
+  "actualizado": "2019-06-20T18:53:53.000Z",
+  "columnas": [
+   "Network",
+   "the_geom",
+   "Network_ID"
+  ],
+  "url": "https://data.novascotia.ca/d/v5z7-rzy4",
+  "descripcion": "Nova Scotia Community Community Health Networks are used for health service planning and research. Includes the following data fields: GIS_UID, GIS_SELECTED, GIS_HIDDEN, GIS_LENGTH, GIS_AREA, Network, NetworkID"
+ },
+ "chvv-syvv": {
+  "nombre": "Community Feed-in Tariff Program",
+  "tipo": "dataset",
+  "actualizado": "2023-04-18T16:41:11.000Z",
+  "columnas": [
+   "#ID",
+   "Megawatts",
+   "Entity Type",
+   "Project Description",
+   "Technology",
+   "Applicant Name",
+   "Project Location",
+   "Project Status (Approval Date)",
+   "Anticipated In-service Date"
+  ],
+  "url": "https://data.novascotia.ca/d/chvv-syvv",
+  "descripcion": "Successful applicants to Community Feed-in Tariff Program, which ran from 2011-2016. COMFIT allowed community-owned groups to own locally-distributed renewable electricity projects."
+ },
+ "58d7-yrbq": {
+  "nombre": "Treaty Day Awards by Community",
+  "tipo": "chart",
+  "actualizado": "2024-12-05T12:45:19.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/58d7-yrbq",
+  "descripcion": "This dataset provides the names of individuals who have received an award during Treaty Day Celebrations. In addition to the recipient’s name, the following data is also included: community, award name, and the year the award was presented."
+ },
+ "4qqi-i6zp": {
+  "nombre": "Nova Scotia Community Clusters Census Population",
+  "tipo": "dataset",
+  "actualizado": "2019-02-05T13:50:19.000Z",
+  "columnas": [
+   "Community Cluster",
+   "ClusterID",
+   "NetworkID",
+   "Zone",
+   "Community Health Network",
+   "Population Weight",
+   "Population After Weighing",
+   "Census Year",
+   "ZoneID",
+   "Population Un-Weighted"
+  ],
+  "url": "https://data.novascotia.ca/d/4qqi-i6zp",
+  "descripcion": "Nova Scotia Community Cluster Census Population for 2011 and 2016. Includes the following data fields: Census Year, Zone, ZoneID, Community Health Network, NetworkID, Community Cluster, ClusterID, Population Un-Weighted, Population Weight, Population After Weighting"
+ },
+ "fkyr-wmdy": {
+  "nombre": "Solar Electricity for Community Buildings Program",
+  "tipo": "dataset",
+  "actualizado": "2020-01-09T17:31:54.000Z",
+  "columnas": [
+   "Size (kW)",
+   "Location (address)",
+   "Location (city)",
+   "Solar Project County",
+   "Price (cents/kWh)",
+   "Solar Project Address 2",
+   "Solar Project Town/Municipality",
+   "Location",
+   "Year",
+   "Location (zip)",
+   "Solar Project Address 1",
+   "Organization Name",
+   "Location (state)",
+   "Project Description"
+  ],
+  "url": "https://data.novascotia.ca/d/fkyr-wmdy",
+  "descripcion": "Successful applicants of the 2017-2019 Solar for Community Buildings Program, that enables eligible community groups and organizations to generate solar photovoltaic (PV) electricity on their roofs or properties"
+ },
+ "p9y5-d99g": {
+  "nombre": "Low Carbon Communities Grant Recipients",
+  "tipo": "dataset",
+  "actualizado": "2025-03-26T20:14:45.000Z",
+  "columnas": [
+   "Category",
+   "Area",
+   "Project Name",
+   "Funding Round",
+   "Fiscal year",
+   "Organization",
+   "Amount Awarded by Program"
+  ],
+  "url": "https://data.novascotia.ca/d/p9y5-d99g",
+  "descripcion": "The Nova Scotia Department of Natural Resources and Renewables is committed to supporting locally driven projects that create long-lasting greenhouse gas (GHG) reductions in addition to helping communities develop and advance innovative solutions in the building efficiency, clean electricity, and cl"
+ },
+ "miff-bspm": {
+  "nombre": "[ARCHIVED] Census Long Form Low Income",
+  "tipo": "dataset",
+  "actualizado": "2016-04-06T18:14:30.000Z",
+  "columnas": [
+   "1996 - %",
+   "Percent Change 1996 - 2006",
+   "2006 - %",
+   "2006 - .",
+   "2001 - %",
+   "2001 - .",
+   "1996 - .",
+   "1991 - %",
+   "1991 - .",
+   "GeogName",
+   "DataGroup1_Order",
+   "DataGroup2",
+   "ComID",
+   "DataGroup1"
+  ],
+  "url": "https://data.novascotia.ca/d/miff-bspm",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "244y-didh": {
+  "nombre": "[ARCHIVED] Taxfiler Data by County Distribution of Income",
+  "tipo": "dataset",
+  "actualizado": "2016-04-01T17:20:20.000Z",
+  "columnas": [
+   "65-74 Years",
+   "Total",
+   "45-54 Years",
+   "35-44 Years",
+   "25-34 Years",
+   "ComID",
+   "Year",
+   "55-64 Years",
+   "DataGroup1",
+   "DataGroup2",
+   "0-24 Years",
+   "DataGroup1_Order",
+   "GeogName",
+   "75+ Years"
+  ],
+  "url": "https://data.novascotia.ca/d/244y-didh",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "s6f2-3jrq": {
+  "nombre": "[ARCHIVED] Census Population Density",
+  "tipo": "dataset",
+  "actualizado": "2016-04-07T13:56:21.000Z",
+  "columnas": [
+   "Percent Change 1996 - 2006",
+   "1996 - .",
+   "Percent Change 1991 - 2001",
+   "2001 - .",
+   "1991 - .",
+   "ComID",
+   "GeogName",
+   "DataGroup2",
+   "DataGroup1_Order",
+   "2011 - .",
+   "2006 - .",
+   "DataGroup1",
+   "Percent Change 2001 - 2011"
+  ],
+  "url": "https://data.novascotia.ca/d/s6f2-3jrq",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "wa8g-ji9a": {
+  "nombre": "[ARCHIVED] Business Establishments 2010-2011",
+  "tipo": "dataset",
+  "actualizado": "2016-04-06T13:14:47.000Z",
+  "columnas": [
+   "Year",
+   "Small: 0-49 Employees",
+   "Total",
+   "Datagroup",
+   "ComID",
+   "GeogName",
+   "Datagroup_Order",
+   "Medium: 50-99 Employees",
+   "Large: 100+ Employees"
+  ],
+  "url": "https://data.novascotia.ca/d/wa8g-ji9a",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "ctq8-2wjx": {
+  "nombre": "[ARCHIVED] NHS Labour Employment by Industry",
+  "tipo": "dataset",
+  "actualizado": "2016-04-05T14:54:06.000Z",
+  "columnas": [
+   "ComID",
+   "Total - .",
+   "Male - %",
+   "GeogName",
+   "Female - %",
+   "Male - .",
+   "DataGroup",
+   "DataGroup_Order",
+   "Total - %",
+   "Year",
+   "Female - ."
+  ],
+  "url": "https://data.novascotia.ca/d/ctq8-2wjx",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "7axg-w7xa": {
+  "nombre": "[ARCHIVED] Health Statistics Mental Health 2001-2007",
+  "tipo": "dataset",
+  "actualizado": "2016-04-05T18:42:44.000Z",
+  "columnas": [
+   "Seriously considered suicide - lifetime",
+   "Mood Disorder",
+   "ComID",
+   "Takes positive attitude towards self",
+   "Learning Disability - ADHD",
+   "Felt sad/blue/depressed for 2 weeks",
+   "Year",
+   "Has someone for suggestions for personal",
+   "Self-Esteem Scale - Moderate",
+   "Schizophrenia",
+   "Attempted suicide - past 12 months",
+   "Geogname",
+   "Learning Disability",
+   "Self-Esteem Scale - High",
+   "Datagroup",
+   "Depression scale - Predicted probability",
+   "Chronicity of distress/impairment",
+   "Self-Esteem Scale - Low",
+   "Has someone who shows love and affection",
+   "Ability to handle day-to-day demands",
+   "Anxiety",
+   "Learning Disability - ADD",
+   "Ability to handle unexpected problem",
+   "Has someone to help with daily chores if sick",
+   "Has someone to receive advice about a crisis",
+   "Seriously considered suicide - past 12 months",
+   "Attempted suicide - lifetime"
+  ],
+  "url": "https://data.novascotia.ca/d/7axg-w7xa",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "uqj2-7kdz": {
+  "nombre": "[ARCHIVED] Collision Statistics Monthly 2000-2003",
+  "tipo": "dataset",
+  "actualizado": "2016-04-06T17:00:20.000Z",
+  "columnas": [
+   "GeogName",
+   "DataGroup1_Order",
+   "DataGroup2",
+   "Fatal",
+   "Injury",
+   "Property Damage",
+   "Year",
+   "DataGroup1",
+   "ComID",
+   "Total"
+  ],
+  "url": "https://data.novascotia.ca/d/uqj2-7kdz",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "ymgy-r83d": {
+  "nombre": "[ARCHIVED] Census Long Form Citizenship and Immigration",
+  "tipo": "dataset",
+  "actualizado": "2016-04-06T15:54:25.000Z",
+  "columnas": [
+   "1996 - %",
+   "2001 - %",
+   "Percent Change 1996 - 2006",
+   "2006 - %",
+   "2006 - .",
+   "1991 - .",
+   "DataGroup2",
+   "DataGroup1",
+   "2001 - .",
+   "ComID",
+   "GeogName",
+   "DataGroup1_Order",
+   "1991 - %",
+   "1996 - ."
+  ],
+  "url": "https://data.novascotia.ca/d/ymgy-r83d",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "jaam-rhea": {
+  "nombre": "[ARCHIVED] Census Long Form Mobility",
+  "tipo": "dataset",
+  "actualizado": "2016-04-07T12:50:28.000Z",
+  "columnas": [
+   "DataGroup",
+   "Prior 5 Years - .",
+   "Prior 5 Years - %",
+   "Prior Year - .",
+   "ComID",
+   "Year",
+   "Prior Year - %",
+   "DataGroup_Order",
+   "GeogName"
+  ],
+  "url": "https://data.novascotia.ca/d/jaam-rhea",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "r6tu-vrnh": {
+  "nombre": "[ARCHIVED] Census Long Form Major Field of Study 1991-2001",
+  "tipo": "dataset",
+  "actualizado": "2016-04-07T12:55:28.000Z",
+  "columnas": [
+   "1996 - .",
+   "GeogName",
+   "DataGroup2",
+   "1996 - %",
+   "ComID",
+   "DataGroup1",
+   "DataGroup1_Order",
+   "1991 - .",
+   "Percent Change 1991 - 2001",
+   "2001 - .",
+   "2001 - %",
+   "1991 - %"
+  ],
+  "url": "https://data.novascotia.ca/d/r6tu-vrnh",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "kcq6-bptz": {
+  "nombre": "[ARCHIVED] NHS Income Single Persons",
+  "tipo": "dataset",
+  "actualizado": "2016-04-05T16:27:24.000Z",
+  "columnas": [
+   "Male - .",
+   "ComID",
+   "DataGroup_Order",
+   "Total - .",
+   "GeogName",
+   "DataGroup",
+   "Year",
+   "Female - ."
+  ],
+  "url": "https://data.novascotia.ca/d/kcq6-bptz",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "qtxk-xxni": {
+  "nombre": "[ARCHIVED] Census Housing Dwelling Characteristics",
+  "tipo": "dataset",
+  "actualizado": "2016-04-06T15:44:45.000Z",
+  "columnas": [
+   "DataGroup1_Order",
+   "2011 - %",
+   "DataGroup2",
+   "ComID",
+   "1991 - .",
+   "1996 - %",
+   "2001 - .",
+   "1996 - .",
+   "1991 - %",
+   "GeogName",
+   "2011 - .",
+   "Percent Change 2001 - 2011",
+   "2006 - %",
+   "2006 - .",
+   "2001 - %",
+   "DataGroup1"
+  ],
+  "url": "https://data.novascotia.ca/d/qtxk-xxni",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "eytb-9sg2": {
+  "nombre": "[ARCHIVED] Canadian Community Health Survey 2001-2010",
+  "tipo": "dataset",
+  "actualizado": "2016-04-06T13:24:38.000Z",
+  "columnas": [
+   "Datagroup",
+   "Physical Activity during Leisure",
+   "Smoker (Daily or Occasional)",
+   "High Blood Pressure",
+   "Respiratory Disease",
+   "Diabetes",
+   "Overweight or Obese",
+   "Perceived Mental Health",
+   "Perceived Health",
+   "Year",
+   "Geogname",
+   "ComID",
+   "Exposure to Secondhand Smoke in vehicles public places",
+   "Fruit and Vegetable Consumption",
+   "Heavy Drinking (5 or more drinks on one occasion)",
+   "Household Food Insecurity",
+   "Participation and activity limitation",
+   "Life Satisfaction",
+   "Exposure to Secondhand Smoke at Home",
+   "Contact with Medical Doctor",
+   "Contact with Health Professionals about MH",
+   "Sense of Belonging"
+  ],
+  "url": "https://data.novascotia.ca/d/eytb-9sg2",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "dfg8-y2y2": {
+  "nombre": "[ARCHIVED] Census Population - Selected Age Groups",
+  "tipo": "dataset",
+  "actualizado": "2016-04-07T13:53:03.000Z",
+  "columnas": [
+   "2006 - %",
+   "2006 - .",
+   "2001 - .",
+   "Percent Change 2001 - 2011",
+   "Percent Change 1996 - 2006",
+   "Percent Change 1991 - 2001",
+   "2011 - %",
+   "2011 - .",
+   "1991 - %",
+   "2001 - %",
+   "1991 - .",
+   "DataGroup1",
+   "GeogName",
+   "ComID",
+   "1996 - .",
+   "DataGroup1_Order",
+   "DataGroup2",
+   "1996 - %"
+  ],
+  "url": "https://data.novascotia.ca/d/dfg8-y2y2",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "34ag-x55f": {
+  "nombre": "[ARCHIVED] Population Estimates",
+  "tipo": "dataset",
+  "actualizado": "2016-04-01T18:32:17.000Z",
+  "columnas": [
+   "Total - %",
+   "Female - %",
+   "Female - .",
+   "ComID",
+   "Total - .",
+   "Male - .",
+   "DataGroup_Order",
+   "DataGroup",
+   "Year",
+   "GeogName",
+   "Male - %"
+  ],
+  "url": "https://data.novascotia.ca/d/34ag-x55f",
+  "descripcion": "<b>[ARCHIVED]</b> Community Counts data is retained for archival purposes only, such as research, reference and record-keeping. This data has not been maintained or updated.  Users looking for the latest information should refer to Statistics Canada’s Census Program (https://www12.statcan.gc.ca/cens"
+ },
+ "s2fr-akki": {
+  "nombre": "Gaelic Courses Taught by Regional Centre for Education, School and Grade",
+  "tipo": "dataset",
+  "actualizado": "2026-03-24T12:33:23.000Z",
+  "columnas": [
+   "Course",
+   "School Name",
+   "Regional Centre for Education Code",
+   "School Code",
+   "Regional Centre for Education Name",
+   "Year"
+  ],
+  "url": "https://data.novascotia.ca/d/s2fr-akki",
+  "descripcion": "Gaelic Courses Taught by Regional Centre for Education, School and Grade"
+ },
+ "hwzw-sx5c": {
+  "nombre": "School Bus Survey Data",
+  "tipo": "dataset",
+  "actualizado": "2019-11-06T14:14:10.000Z",
+  "columnas": [
+   "SAMPLE SIZE (#)",
+   "GROUP #",
+   "RESPONSE",
+   "GROUP %",
+   "TABLE",
+   "GROUP"
+  ],
+  "url": "https://data.novascotia.ca/d/hwzw-sx5c",
+  "descripcion": "raw data from the school bus survey"
+ },
+ "fqau-nfyv": {
+  "nombre": "Graduation Rates",
+  "tipo": "dataset",
+  "actualizado": "2018-01-05T19:12:47.000Z",
+  "columnas": [
+   "Graduation Rate (%)",
+   "Year",
+   "Number of Graduating Students",
+   "Grade 9 Enrolment Year",
+   "Grade 9 Enrolment Number"
+  ],
+  "url": "https://data.novascotia.ca/d/fqau-nfyv",
+  "descripcion": "2016-17 Graduation Information by board, 2016-17 Graduation Information by gender, and Historical Graduation Rates.\r\n\r\nNote: Graduation Rate is the percentage of the number of students receiving a  High School Graduation Diploma compared to the number of students in grade 9 three years earlier."
+ },
+ "kyn8-d3kj": {
+  "nombre": "Skilled Trades Centres",
+  "tipo": "dataset",
+  "actualizado": "2026-07-21T11:50:52.000Z",
+  "columnas": [
+   "RCE/Board_name",
+   "City/Town",
+   "Postal_Code_Civic_Address",
+   "Mailing_address_city_town",
+   "Mailing_Address ",
+   "Civic_Address ",
+   "Postal_Code_Mailing_Address",
+   "Trade_Centre_School"
+  ],
+  "url": "https://data.novascotia.ca/d/kyn8-d3kj",
+  "descripcion": "A listing of public schools offering Skilled Trades programming. Includes RCE/board, school, civic address and mailing address."
+ },
+ "fmxh-aef7": {
+  "nombre": "Graduation Information by Board",
+  "tipo": "dataset",
+  "actualizado": "2018-01-05T19:28:29.000Z",
+  "columnas": [
+   "Graduation Rate (%)",
+   "School Board",
+   "Grade 9 Enrolment Year",
+   "Number of Graduating Students",
+   "Grade 9 Enrolment"
+  ],
+  "url": "https://data.novascotia.ca/d/fmxh-aef7",
+  "descripcion": "Graduation Information arranged by School Board;  the percentage of the number of students receiving a  High School Graduation Diploma compared to the number of students in grade 9 three years earlier."
+ },
+ "dfrt-tihs": {
+  "nombre": "Gaelic Courses Offered",
+  "tipo": "dataset",
+  "actualizado": "2026-03-24T12:23:59.000Z",
+  "columnas": [
+   "Year",
+   "Course Code",
+   "Course Title"
+  ],
+  "url": "https://data.novascotia.ca/d/dfrt-tihs",
+  "descripcion": "Listing of Gaelic courses offered"
+ },
+ "76iu-75v2": {
+  "nombre": "Nova Scotia School Board Zones - French",
+  "tipo": "dataset",
+  "actualizado": "2020-11-20T19:47:24.000Z",
+  "columnas": [
+   "BRDNAME",
+   "CPOSTCODE",
+   "WEB",
+   "Shape_Leng",
+   "BRDCODE",
+   "the_geom",
+   "CIVIC2",
+   "CIVIC1",
+   "PHONE",
+   "FAX",
+   "SCHLYR",
+   "Shape_Area"
+  ],
+  "url": "https://data.novascotia.ca/d/76iu-75v2",
+  "descripcion": "Nova Scotia School Board zones."
+ },
+ "6pvu-62js": {
+  "nombre": "Nova Scotia's Functional Economic Regions",
+  "tipo": "map",
+  "actualizado": "2024-08-13T13:20:56.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/6pvu-62js",
+  "descripcion": "A geographic shape file of Nova Scotia’s Functional Economic Regions. The most widely accepted approach to identifying functional economic regions is based on self-contained labour areas (SLAs) - a group of two or more Census Subdivisions (CSDs) where at least 75% of the workers both live and work i"
+ },
+ "fwxc-ehtr": {
+  "nombre": "Sea Level Rise Over Time and Across Regions in Nova Scotia (SSP5-8.5 scenario, 2070 and 2100)",
+  "tipo": "chart",
+  "actualizado": "2026-07-09T11:40:44.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/fwxc-ehtr",
+  "descripcion": "o\tDescription: This chart illustrates how the NS Sea Level Rise Projections dataset can be used to analyze changes between regions and over time for mean projected sea level. Values are shown across 18 geographic regions for two time periods (2070 and 2100) using the same emissions scenario (SSP5-8."
+ },
+ "abep-wtes": {
+  "nombre": "Sea Level Rise Uncertainty in Nova Scotia (SSP5-8.5 scenario, 2100)",
+  "tipo": "chart",
+  "actualizado": "2026-07-09T11:40:44.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/abep-wtes",
+  "descripcion": "This chart illustrates how the NS Sea Level Rise Projections dataset can be used to analyze uncertainty for mean projected sea level. Results are depicted across three model percentiles (p05, p50, p95), which show the projected rise in sea level at the low end (5%), median (50%), and high end (95%) "
+ },
+ "dci8-twta": {
+  "nombre": "Mean Annual Temperature Across Regions in Nova Scotia (SSP5-8.5 scenario, p50, 2071-2100)",
+  "tipo": "chart",
+  "actualizado": "2026-07-09T11:31:22.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/dci8-twta",
+  "descripcion": "This chart illustrates how the NS Climate Change Projections dataset can be used to analyze changes between regions for one climate variable. Results for mean annual temperature are depicted across 18 geographic regions, showing the projected warming of our climate in each location. Each value shown"
+ },
+ "3r68-jx4q": {
+  "nombre": "Mean Annual Temperature Uncertainty in Nova Scotia (SSP5-8.5 scenario, 2071-2100)",
+  "tipo": "chart",
+  "actualizado": "2026-07-09T11:31:22.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/3r68-jx4q",
+  "descripcion": "This chart illustrates how the NS Climate Change Projections dataset can be used to analyze uncertainty for one climate variable. Results for mean annual temperature are depicted across three model percentiles (p10, p50, p90), which show the projected warming of our climate at the low end (10%), med"
+ },
+ "trk2-6yfx": {
+  "nombre": "Mean Annual Temperature Over Time in Nova Scotia (SSP5-8.5 scenario, p50)",
+  "tipo": "chart",
+  "actualizado": "2026-07-09T11:31:22.000Z",
+  "columnas": [],
+  "url": "https://data.novascotia.ca/d/trk2-6yfx",
+  "descripcion": "This chart illustrates how the NS Climate Change Projections dataset can be used to analyze changes over time for one climate variable. Results for mean annual temperature are depicted across three time periods (1981-2010, 2041-2070, and 2071-2100), showing the projected warming of our climate in fu"
+ },
+ "ncpw-qf9z": {
+  "nombre": "NS Sea Level Rise Projections (CMIP6)",
+  "tipo": "dataset",
+  "actualizado": "2026-07-09T11:40:44.000Z",
+  "columnas": [
+   "ssp245_p50_2100",
+   "ssp245_p95_2100",
+   "ssp585_p05_2070",
+   "ssp585_p05_2100",
+   "ssp585_p50_2100",
+   "ssp585_p95_2100",
+   "ssp585_p95_2070",
+   "ssp585_p50_2070",
+   "ssp245_p95_2070",
+   "Units",
+   "Common Name",
+   "Region",
+   "Geo_ID",
+   "Region Type",
+   "Variable",
+   "Description",
+   "ssp245_p05_2070",
+   "ssp245_p50_2070",
+   "ssp245_p05_2100"
+  ],
+  "url": "https://data.novascotia.ca/d/ncpw-qf9z",
+  "descripcion": "Sea level rise projections for the province of Nova Scotia"
+ },
+ "vmh8-8a3a": {
+  "nombre": "NS Climate Change Projections (CMIP6)",
+  "tipo": "dataset",
+  "actualizado": "2026-07-09T11:31:22.000Z",
+  "columnas": [
+   "Region Type",
+   "Variable",
+   "Common Name",
+   "Description",
+   "ssp245_p10_1981-2010",
+   "ssp245_p50_1981-2010",
+   "ssp245_p90_1981-2010",
+   "ssp245_mean_1981-2010",
+   "ssp245_p10_2041-2070",
+   "ssp245_p50_2041-2070",
+   "ssp585_p90_2041-2070",
+   "ssp585_mean_2041-2070",
+   "ssp585_p50_2071-2100",
+   "ssp585_p10_2041-2070",
+   "ssp585_p50_2041-2070",
+   "ssp245_p90_2041-2070",
+   "ssp245_mean_2041-2070",
+   "ssp245_p10_2071-2100",
+   "ssp245_p50_2071-2100",
+   "ssp245_p90_2071-2100",
+   "ssp245_mean_2071-2100",
+   "ssp585_p10_1981-2010",
+   "ssp585_p50_1981-2010",
+   "ssp585_p90_1981-2010",
+   "ssp585_mean_2071-2100",
+   "ssp585_p90_2071-2100",
+   "ssp585_p10_2071-2100",
+   "Units",
+   "ssp585_mean_1981-2010",
+   "Region",
+   "Geo_ID"
+  ],
+  "url": "https://data.novascotia.ca/d/vmh8-8a3a",
+  "descripcion": "Climate change projections for the province of Nova Scotia"
+ }
+}

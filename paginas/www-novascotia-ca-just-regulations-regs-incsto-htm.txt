@@ -1,0 +1,483 @@
+URL: https://www.novascotia.ca/just/regulations/regs/incsto.htm
+TÍTULO: Tax Refund for Skilled Trades and Occupations Regulations - * Act (Nova Scotia)
+MODIFICADA: —
+ESTADO: 200 | FINAL: https://novascotia.ca/just/regulations/regs/incsto.htm
+
+Tax Refund for Skilled Trades and Occupations Regulations - * Act (Nova Scotia) 
+ This consolidation is unofficial and is for reference only. 
+For the official version of the regulations, consult the original documents on file with the Office of the Registrar of Regulations , or refer to the Royal Gazette Part II . 
+ Regulations are amended frequently. 
+Please check the list of Regulations by Act to see if there are any recent amendments to these regulations filed with our office that are not yet included in this consolidation. 
+ Although every effort has been made to ensure the accuracy of this electronic version, the Office of the Registrar of Regulations assumes no responsibility for any discrepancies that may have resulted from reformatting. 
+ This electronic version is copyright ©
+ , Province of Nova Scotia , all rights reserved. It is for your personal use and may not be copied for the purposes of resale in this or any other form. 
+ Tax Refund for Skilled Trades and Occupations Regulations 
+ made under clauses 80(1)(aa) and (ab) of the 
+ Income Tax Act 
+ R.S.N.S. 1989, c. 217 
+ O.I.C. 2024-82 (effective January 1, 2023), N.S. Reg. 57/2024 
+ Table of Contents 
+Please note: this table of contents is provided for convenience of reference and does not form part of the regulations.
+ Click here to go to the text of the regulations .
+ Citation 
+ Definitions 
+ Designated persons 
+ Payment of tax refund 
+ Criteria for eligible individual 
+ Criteria for eligible income 
+ Criteria for eligible live-action film or video 
+ Calculation of tax refund 
+ Information from eligible employer 
+ Application for tax refund 
+ Lapsed application for tax refund 
+ Recovering payment of tax refund 
+ Tax refund payment may be applied to amount owing 
+ Exemption from recovery of tax refund payment 
+ Tax refund is assignable and not exempt from seizure 
+ Effect of death 
+ Debt due to Crown 
+ Entities to provide information for administrative purposes 
+ Sharing of information 
+ Audit and retention of records by eligible individual or eligible employer 
+ Use of information by Minister of Finance and Treasury Board 
+ Citation 
+ 1 These regulations may be cited as the Tax Refund for Skilled Trades and Occupations
+Regulations . 
+ Definitions 
+ 2 In these regulations, 
+ “Act” means Income Tax Act ; 
+ “apprentice” means an apprentice as defined in the Apprenticeship and Trades
+Qualifications Act ; 
+ “eligible employer” means a person who 
+ (i) employs individuals in the Province in an eligible trade, 
+ (ii) employs individuals in the Province in an eligible film occupation
+and whose business consists primarily of producing films or videos
+that are considered eligible live-action films or videos under Section
+7, or 
+ (iii) employs individuals in the Province in an eligible nursing position,
+but does not include a travel agency, staffing agency or similar
+agency that supplies nurses to other organizations to work on a
+contract basis; 
+ “eligible film occupation” means an occupation, other than an eligible trade, that
+involves producing an eligible live-action film or video that is included as a sub-code of any of the following categories used by Telefilm Canada: 
+ (i) 15.00, Set Dressing Labour, 
+ (ii) 16.00, Props Labour, 
+ (iii) 19.00, Wardrobe Labour, 
+ (iv) 21.00, Video Technical Crew, 
+ (v) 22.00, Camera Labour, 
+ (vi) 24.00, Grip Labour, 
+ (vii) 25.00, Production Sound Labour; 
+ “eligible income” means income that meets the criteria in Section 6; 
+ “eligible individual” means an individual who meets the criteria in Section 5; 
+ “eligible nursing position” means a position that requires the individual working in
+the position to be a nurse and hold a valid conditional licence or practising licence
+under the Nursing Act ; 
+ “eligible position” means an eligible film occupation, eligible nursing position or
+eligible trade; 
+ “eligible trade” means a trade or branch of a trade designated under the
+ Apprenticeship and Trades Qualifications Act ; 
+ “individual” includes the estate of an individual; 
+ “interprovincial red seal endorsement” means an interprovincial red seal
+endorsement as defined in the Apprenticeship and Trades Qualifications Act ; 
+ “journeyperson” means a journeyperson as defined in the Apprenticeship and
+Trades Qualification Act or an individual who holds an interprovincial red seal
+endorsement; 
+ “Minister of Finance and Treasury Board” means the Minister of Finance and
+Treasury Board for the Province; 
+ “nurse” means a licensed practical nurse, registered nurse or nurse practitioner as
+defined in the Nursing Act ; 
+ “prorated tax liability” means the amount of tax liability determined under
+subsection 8(2); 
+ “taxable income” means the amount determined by Part I, Division C of the
+ Income Tax Act (Canada) for the taxation year; 
+ “tax refund” means the amount of the tax refund determined under subsection 8(4); 
+ “tax return” means an individual income tax and benefit return filed with the
+Canada Revenue Agency for the taxation year; 
+ “total eligible income” means the lesser of the total of all eligible income amounts
+under Section 6 for the taxation year and $50 000; 
+ “total income” means the amount determined by Part I, Division B of the Income
+Tax Act (Canada) for the taxation year. 
+ Designated persons 
+ 3 Anything required to be done by the Minister of Finance and Treasury Board under these
+regulations may also be done by a person or persons in the public service designated by
+the Minister of Finance and Treasury Board. 
+ Payment of tax refund 
+ 4 (1) The Minister of Finance and Treasury Board must pay a tax refund to an eligible
+individual equal to the amount determined under Section 8, subject to subsections
+(2) and (3). 
+ (2) To verify and approve an application for a tax refund made under Section 10, the
+Minister of Finance and Treasury Board must review all of the following
+information: 
+ (a) amounts reported on the individual’s tax return or on the most recent
+assessment or reassessment for the taxation year issued by the Canada
+Revenue Agency; 
+ (b) information reported by an eligible employer under Section 9 or information
+reported on the declaration referred to in clause 10(2)(m) for an individual
+who is self-employed in an eligible trade or eligible film occupation; 
+ (c) credentials issued by the Nova Scotia Apprenticeship Agency or obtained by
+the Nova Scotia Apprenticeship Agency for an individual who is certified in
+a jurisdiction outside the Province; 
+ (d) a licence issued by the Nova Scotia College of Nursing for an applicant in
+an eligible nursing position; 
+ (e) any additional information requested by the Minister of Finance and
+Treasury Board to ensure the spirit and intent of the Act or these regulations
+is met. 
+ (3) Despite subsection (1), the Minister of Finance and Treasury Board must not pay a
+tax refund under these regulations if, in the opinion of the Minister of Finance and
+Treasury Board, 
+ (a) any information provided by an individual or their employer is false,
+misleading or fails to disclose a material fact; or 
+ (b) the individual has not complied with any provision of the Act or these
+regulations or the spirit and intent of the Act or these regulations. 
+ (4) Regardless of when the payment is made, a tax refund payment is for the 12-month
+period beginning on January 1 in the taxation year and ending on December 31 in
+that year. 
+ (5) A tax refund may be paid by cheque, direct deposit or another method approved by
+the Minister of Finance and Treasury Board. 
+ (6) If an eligible individual’s application for a tax refund results in an amount that is
+less than $2.00, a tax refund payment will not be made. 
+ Criteria for eligible individual 
+ 5 An individual must meet all of the following criteria to be considered an eligible
+individual for the taxation year: 
+ (a) the individual is a resident of the Province for the taxation year; 
+ (b) the individual is younger than 30 years of age on January 1 of the taxation
+year; 
+ (c) the individual filed a Nova Scotia income tax return for the taxation year
+and reported all eligible income earned during the taxation year; 
+ (d) for an individual whose eligible income was earned in an eligible trade, the
+individual is 1 of the following: 
+ (i) registered as an apprentice with the Nova Scotia Apprenticeship
+Agency and has a valid Nova Scotia Apprenticeship Agency identity
+card, 
+ (ii) a journeyperson who is certified in the Province or in another
+jurisdiction of Canada; 
+ (e) for an individual whose eligible income was earned in an eligible nursing
+position, the individual has a valid conditional licence or practising licence
+issued by the Nova Scotia College of Nursing. 
+ Criteria for eligible income 
+ 6 Income earned in an eligible position must meet all of the following criteria to be
+considered eligible income for a taxation year: 
+ (a) it is reported by an eligible individual on their tax return for the taxation
+year as either of the following: 
+ (i) self-employed net income, or 
+ (ii) employment income that was included on a T4 Statement of
+Remuneration Paid issued by an eligible employer for the taxation
+year; 
+ (b) it is reasonable in the circumstances; 
+ (c) it is earned in the taxation year for performing work in an eligible position
+in the Province; 
+ (d) for an individual working in an eligible trade or eligible film occupation, it
+is paid to an eligible individual by an eligible employer or was earned by an
+eligible individual who was self-employed in the taxation year, after
+December 31, 2021, and before January 1, 2027; 
+ (e) for an individual working in an eligible nursing position, it is paid to an
+eligible individual by an eligible employer in the taxation year, after
+December 31, 2022, and before January 1, 2027; 
+ (f) it does not form part of the eligible income claimed for a prior taxation year. 
+ Criteria for eligible live-action film or video 
+ 7 A film or video must meet all of the following criteria to be considered an eligible live-action film or video: 
+ (a) it is intended to be broadcast, distributed or available for viewing no later
+than 24 months after the date it is completed, and a production services
+agreement for this exists, or a written agreement for this exists between the
+production’s corporation and 1 of the following for consideration at fair
+market value: 
+ (i) a corporation that is a distributor of film or video productions, 
+ (ii) a broadcaster that is not associated, within the meaning of
+Section 256 of the Federal Act , with the corporation; 
+ (b) it is intended for a television, cinema, videotape or non-theatrical production
+and the subject matter is drama, variety, performing arts, an informational
+series, a documentary or music programming; 
+ (c) it is not any of the following: 
+ (i) a film or video production prohibited for use or exhibition under the
+ Theatres and Amusements Act , 
+ (ii) a film or video production that solicits funds, 
+ (iii) a film or video, other than a documentary, all or substantially all of
+which consists of stock footage, 
+ (iv) a film or video production primarily for industrial, corporate or
+institutional purposes, 
+ (v) a film or video production for which public financial support would
+be contrary to public policy, in the opinion of the Minister of Finance
+and Treasury Board, 
+ (vi) a console or online video game, 
+ (vii) software or programming application; 
+ (d) it does not consist of any of the following types of programming: 
+ (i) news, current events or public affairs programming, or a program that
+includes weather or market reports, 
+ (ii) talk show, 
+ (iii) programming of a game, questionnaire or contest, 
+ (iv) sports event or activity, 
+ (v) gala presentation or awards show, 
+ (vi) reality television, 
+ (vii) pornography, 
+ (viii) advertising. 
+ Calculation of tax refund 
+ 8 (1) In this Section, 
+ “eligible income proportion” means the amount determined by dividing total
+eligible income by total income; 
+ “eligible tax proportion” means the amount determined by dividing the amount
+determined by Section 8 of the Act replacing taxable income with prorated taxable
+income by the amount determined by Section 8 of the Act; 
+ “prorated Federal deductions” means the difference between total income and
+taxable income multiplied by eligible income proportion; 
+ “prorated taxable income” means the amount determined by deducting prorated
+Federal deductions from total eligible income. 
+ (2) Prorated tax liability is determined 
+ (a) after December 31, 2021, and before January 1, 2023, by adjusting the tax
+payable determined under subsection (3) by all other amounts added or
+deducted by Divisions B and D of the Act multiplied by eligible income
+proportion; 
+ (b) after December 31, 2022, and before January 1, 2027, by adjusting the tax
+payable determined under subsection (3) by all other amounts added or
+deducted by Divisions B and D of the Act multiplied by eligible tax
+proportion. 
+ (3) The tax payable for the purpose of subsection (2) is the amount determined by
+Section 8 of the Act replacing taxable income with prorated taxable income. 
+ (4) The tax refund is the amount calculated under subsection (2) not exceeding the
+amount of Provincial tax otherwise payable by the individual for the taxation year
+under the Act. 
+ (5) If the amount of the tax refund determined under subsection (4) changes as a result
+of adjustments made to an individual’s tax return after their application was
+submitted, the Minister of Finance and Treasury Board may recalculate the
+individual’s tax refund. 
+ Information from eligible employer 
+ 9 (1) After the end of the taxation year, an eligible employer must issue a statement, in a
+form acceptable to the Minister of Finance and Treasury Board, to an eligible
+individual confirming all of the following: 
+ (a) that the employer is an eligible employer; 
+ (b) that the individual was employed by the employer in the Province during the
+taxation year; 
+ (c) the eligible position or positions in which the individual worked in the
+Province for the employer during the taxation year; 
+ (d) the eligible income paid to the eligible individual by the employer during
+the taxation year. 
+ (2) A statement from an eligible employer under subsection (1) must be signed by an
+authorized officer of the eligible employer. 
+ (3) After the end of the calendar year, the Minister of Finance and Treasury Board may
+require an eligible employer to submit a report in a form acceptable to the Minister
+of Finance and Treasury Board confirming all of the following for the calendar
+year: 
+ (a) that the employer is an eligible employer; 
+ (b) the name and eligible position of each eligible individual that it employed; 
+ (c) the amount of eligible income paid to each eligible individual. 
+ (4) The Minister of Finance and Treasury Board may waive the requirements in
+subsection (1) if the Minister of Finance and Treasury Board is satisfied with the
+report received from an eligible employer under subsection (3). 
+ (5) The Minister of Finance and Treasury Board may request additional information
+from an employer to be included in a statement under subsection (1) or a report
+under subsection (3) that the Minister of Finance and Treasury Board requires to
+ensure the requirements of the Act and these regulations are met. 
+ Application for tax refund 
+ 10 (1) An application for a tax refund under clauses 80(1)(aa) and (ab) of the Act must be
+made by an eligible individual no later than 18 months after the end of the taxation
+year. 
+ (2) An application for a tax refund under clauses 80(1)(aa) and (ab) of the Act must be
+in a form acceptable to the Minister of Finance and Treasury Board and must
+include all of the following information: 
+ (a) the eligible individual’s social insurance number; 
+ (b) the eligible individual’s birth date; 
+ (c) the eligible individual’s total income as reported on the most recent notice
+of assessment or reassessment issued by the Canada Revenue Agency for
+the individual’s tax return for the taxation year; 
+ (d) the eligible individual’s taxable income as reported on the most recent
+notice of assessment or reassessment issued by the Canada Revenue Agency
+for the individual’s tax return for the taxation year; 
+ (e) the eligible individual’s provincial tax for the taxation year as reported on
+the most recent notice of assessment or reassessment issued by the Canada
+Revenue Agency for the individual’s tax return for the taxation year; 
+ (f) the eligible individual’s Nova Scotia tax on taxable income for the taxation
+year as reported on Form NS428 of their tax return for the taxation year; 
+ (g) a copy of the eligible individual’s tax return for the taxation year, including
+the T1 General form and Form NS428; 
+ (h) a copy of the eligible individual’s most recent notice of assessment or
+reassessment for the taxation year issued by the Canada Revenue Agency; 
+ (i) the total amount of eligible income earned by the eligible individual in all
+eligible positions during the taxation year; 
+ (j) a copy of every T4 Statement of Remuneration Paid issued to the eligible
+individual for the taxation year by an eligible employer; 
+ (k) details on all employment during the taxation year in which the eligible
+individual earned eligible income in an eligible position during the taxation
+year; 
+ (l) for an eligible individual who was an employee of an eligible employer, the
+statement referred to in subsection 9(1), unless the Minister of Finance and
+Treasury Board has waived the requirement for a statement under
+subsection 9(4); 
+ (m) for an eligible individual who earned eligible income from self-employment
+in an eligible trade or eligible film occupation, a declaration, in a form
+acceptable to the Minister of Finance and Treasury Board, signed by the
+eligible individual confirming all of the following: 
+ (i) that the individual was self-employed during the taxation year and
+earned corresponding eligible income in the Province, 
+ (ii) the nature and amount of the individual’s eligible income earned
+from self-employment in the Province during the taxation year; 
+ (n) for an individual whose eligible income was earned in an eligible trade, the
+individual’s Nova Scotia Apprenticeship Agency identity card or certificate
+of qualification number or, if the individual is certified in another
+jurisdiction of Canada, their interprovincial red seal endorsement or
+certificate number; 
+ (o) for an individual whose eligible income was earned in an eligible nursing
+position, the individual’s licence with the Nova Scotia College of Nursing; 
+ (p) any additional information the Minister of Finance and Treasury Board may
+require to ensure the requirements of the Act and these regulations are met. 
+ (3) If the Minister issues a notice of reassessment after an eligible individual submits
+an application, the individual may submit a subsequent tax refund application, in a
+form acceptable to the Minister of Finance and Treasury Board, no later than 6
+months after the date the notice of reassessment was issued and before January 1,
+2029. 
+ Lapsed application for tax refund 
+ 11 If the Minister of Finance and Treasury Board for the Province does not issue a tax
+refund within 6 months of the date that the individual applied for the tax refund, the
+application may be considered lapsed. 
+ Recovering payment of tax refund 
+ 12 An individual who receives a tax refund to which they are not entitled or in an amount
+greater than the amount to which they were entitled must immediately repay the amount
+or the excess amount to the Minister of Finance and Treasury Board. 
+ Tax refund payment may be applied to amount owing 
+ 13 If an individual owes an amount under Section 12, the Minister of Finance and Treasury
+Board may apply all or a portion of the tax refund that would otherwise be paid to the
+individual under Section 4 to the individual’s liability to the Minister of Finance and
+Treasury Board and must notify the individual of that action. 
+ Exemption from recovery of tax refund payment 
+ 14 If the Minister of Finance and Treasury Board decides that recovering an amount owed
+by an individual under Section 12 would cause hardship to the individual, the Minister of
+Finance and Treasury Board may accept a lesser amount that the Minister of Finance and
+Treasury Board considers reasonable in the circumstances and must notify the individual
+of that decision. 
+ Tax refund is assignable and not exempt from seizure 
+ 15 A tax refund is assignable to the Province and subject to seizure or garnishment by the
+Province. 
+ Effect of death 
+ 16 If an eligible individual dies before a tax refund for the taxation year is paid, the Minister
+of Finance and Treasury Board must pay the tax refund to the individual’s estate. 
+ Debt due to Crown 
+ 17 Any amount required to be paid to the Minister of Finance and Treasury Board under
+these regulations is a debt due to the Crown in right of the Province and may be
+recovered in a court. 
+ Entities to provide information for administrative purposes 
+ 18 (1) All of the following must provide any information to the Minister of Finance and
+Treasury Board, including personal information, that the Minister of Finance and
+Treasury Board requests to assess an individual’s eligibility for the tax refund: 
+ (a) the Nova Scotia Apprenticeship Agency; 
+ (b) the Minister of Communities, Culture, Tourism and Heritage; 
+ (c) the Nova Scotia College of Nursing. 
+ (2) The Minister of Finance and Treasury Board may use any personal information
+provided under subsection (1) to assess the individual’s eligibility for the tax
+refund. 
+ (3) For the purposes of making a request for information from either of the bodies
+listed in subsection (1), the Minister of Finance and Treasury Board may share
+personal information about an applicant with that body. 
+ Sharing of information 
+ 19 (1) The Minister of Finance and Treasury Board may enter into an information-sharing
+agreement with any of the following for the purpose of administering the Act and
+these regulations: 
+ (a) the chief executive officer of the Nova Scotia Apprenticeship Agency; 
+ (b) the Minister of Communities, Culture, Tourism and Heritage; 
+ (c) the chief executive officer of the Nova Scotia College of Nursing; 
+ (d) the Government of Canada or a department or agency of that government; 
+ (e) the government of a province of Canada or a department or an agency of a
+province of Canada; 
+ (f) any person, group of persons, 1 or more employers or representatives of
+employers, 1 or more trade unions or 1 or more representatives of
+employees; 
+ (g) a public body, as defined in the Freedom of Information and Protection of
+Privacy Act ; 
+ (h) any other persons or groups of persons the Minister of Finance and Treasury
+Board considers necessary. 
+ (2) The Minister of Finance and Treasury Board may use any personal information
+provided under subsection (1) to assess the individual’s eligibility for the tax
+refund. 
+ Audit and retention of records by eligible individual or eligible employer 
+ 20 (1) At the discretion of the Minister of Finance and Treasury Board, an audit of
+information provided by an individual or an employer of an individual may be
+performed to assess eligibility and compliance with these regulations. 
+ (2) If requested by the Minister of Finance and Treasury Board, a person who
+previously provided information or documents in respect of these regulations must
+provide any additional information the Minister of Finance and Treasury Board
+requires to assess eligibility and compliance with these regulations. 
+ (3) Any person who provides information in respect of these regulations must retain
+the information for at least 7 years after the end of the taxation year to which the
+information relates. 
+ Use of information by Minister of Finance and Treasury Board 
+ 21 The Minister of Finance and Treasury Board may use the information collected under the
+Act and these regulations for the purpose of analyzing and reviewing the tax refund for
+policy purposes. 
+ Legislative History
+ Reference Tables
+ STYLEREF 
+ RegTitle \* MERGEFORMAT 
+ Tax Refund for Skilled Trades and Occupations
+ Regulations 
+ N.S. Reg.
+ STYLEREF 
+ BaseReg \* MERGEFORMAT 
+ 57/2024 
+ STYLEREF 
+ "Act title" \*
+ MERGEFORMAT 
+ Income Tax Act 
+ Note: The
+ information in these tables does not form part of the regulations and is
+ compiled by the Office of the Registrar of Regulations for reference only.
+ Source Law
+ The current consolidation of the Tax Refund for Skilled Trades and Occupations Regulations made
+ under the Income Tax Act includes all of the following regulations:
+ N.S.
+ Regulation
+ In force 
+ date*
+ How in force
+ Royal Gazette
+ Part II Issue
+ 57/2024
+ Jan 1, 2023
+ date specified
+ Mar 8, 2024
+ The following regulations are not
+ yet in force and are not included in the current consolidation:
+ N.S.
+ Regulation
+ In force 
+ date*
+ How in force
+ Royal Gazette
+ Part II Issue
+ *See subsection 3(6) of the Regulations Act for
+ rules about in force dates of regulations. 
+ Amendments by Provision 
+ ad. = added 
+ am. = amended
+ fc. = fee change
+ ra. = reassigned
+ rep. = repealed
+ rs . = repealed and substituted
+ Provision affected
+ How affected 
+ .......................................................... 
+ Note that changes to headings are not
+ included in the above table.
+ Editorial Notes and Corrections
+ Note
+ Effective
+ date
+ Repealed and Superseded
+ N.S.
+ Regulation
+ Title
+ In force
+ date
+ Repealed
+ date
+ 69/2023
+ Tax Refund for Skilled Trades and
+ Occupations Regulations 
+ Jan 1, 2022
+ Jan 1, 2023
+ Note: Only
+ regulations that are specifically repealed and replaced appear in this
+ table. It may not reflect the entire
+ history of regulations on this subject matter.
+
+--- ENLACES ---
+Office of the Registrar of Regulations | https://www.novascotia.ca/just/regulations/index.htm
+Royal Gazette Part II | https://www.novascotia.ca/just/regulations/rg2/index.htm
+Regulations by Act | https://www.novascotia.ca/just/regulations/rxaa-l.htm
+Province of Nova Scotia | http://www.novascotia.ca/
