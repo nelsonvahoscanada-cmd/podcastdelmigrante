@@ -1,0 +1,458 @@
+DISTINTA /canada-en-datos/alberta
+657d656
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/british-columbia
+312d311
+<       <p class="cd-alert">Si alguien te pide pagar al BC PNP por otro medio que no sea su portal oficial, o te promete una nominación, es una señal de fraude. El programa pide reportarlo a PNP.fraud.tips@gov.bc.ca.</p>
+858d856
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/
+233d232
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/manitoba
+880d879
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/new-brunswick
+254d253
+<         <li>Employment Standards: 1-888-452-2687 (gratis); employmentstandards@gnb.ca.</li>
+355d353
+<         <li>Oficina de Relaciones entre Inquilinos y Propietarios: 1-888-762-8600; renting@gnb.ca.</li>
+486d483
+<       <p>Immigration New Brunswick ofrece una guía de orientación en línea para recién llegados (requiere crear una cuenta) y un servicio de navegación para preguntas sobre inmigración: 506-451-2083, immigration@gnb.ca, de lunes a viernes.</p>
+DISTINTA /canada-en-datos/northwest-territories
+346c346
+<         <a href="https://www.immigratenwt.ca/nominee-support" target="_blank" rel="noopener">NTNP — Apoyo a nominados (contacto: immigration@gov.nt.ca, 1-855-440-5450)</a>
+---
+>         <a href="https://www.immigratenwt.ca/nominee-support" target="_blank" rel="noopener">NTNP — Apoyo a nominados (contacto: <span class="__cf_email__" data-cfemail="c2abafafaba5b0a3b6abadac82a5adb4ecacb6eca1a3">[email&#160;protected]</span>, 1-855-440-5450)</a>
+795d794
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia
+255d254
+<         <li>Labour Standards: 1-888-315-0110 (gratis dentro de Nueva Escocia); labourstandards@novascotia.ca.</li>
+853d851
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nunavut
+422d421
+<       <p>El Gobierno de Nunavut no publica en esa página las reglas para cambiar una licencia de otro país: antes de mudarte, pregunta a la oficina de vehículos motorizados (1-888-975-5999, motorvehicles@gov.nu.ca) si puedes cambiar la tuya o si debes presentar los exámenes. Para conducir vehículos comerciales o con frenos de aire se necesita una licencia profesional, con requisitos adicionales.</p>
+817d815
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/ontario
+856d855
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/prince-edward-island
+250d249
+<         <li>Labour and Industrial Relations: 902-368-5550, o gratis al 1-800-333-4362; labourrelations@gov.pe.ca.</li>
+771d769
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/quebec
+988d987
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/saskatchewan
+848d847
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/yukon
+785d784
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/amherst
+322d321
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/annapolis-royal
+324d323
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/annapolis-subd-a
+334d333
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/annapolis-subd-b
+337d336
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/annapolis-subd-c
+328d327
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/annapolis-subd-d
+330d329
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/annapolis-valley-first-nation
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/antigonish-subd-a
+333d332
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/antigonish-subd-b
+339d338
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/antigonish
+324d323
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/argyle
+336d335
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/barrington
+333d332
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/bear-river-6b
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/bear-river-part-6-annapolis
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/bear-river-part-6-digby
+326d325
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/beaver-lake-17
+327d326
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/berwick
+324d323
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/bridgewater
+326d325
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/cape-breton
+394d393
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/chapel-island-5
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/chester
+337d336
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/clare
+334d333
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/clark-s-harbour
+321d320
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/colchester-subd-a
+334d333
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/colchester-subd-b
+347d346
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/colchester-subd-c
+341d340
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/cole-harbour-30
+319d318
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/cumberland-subd-a
+342d341
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/cumberland-subd-b
+337d336
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/cumberland-subd-c
+340d339
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/cumberland-subd-d
+344d343
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/dartmouth
+370d369
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/digby-municipal-district
+336d335
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/digby
+325d324
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/east-hants
+342d341
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/eskasoni-3
+329d328
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/fisher-s-grant-24
+319d318
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/glooscap-35
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/gold-river-21
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/guysborough
+341d340
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/halifax
+521d520
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/indian-brook-14
+327d326
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/inverness-subd-a
+337d336
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/inverness-subd-b
+340d339
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/inverness-subd-c
+328d327
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/kentville
+340d339
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/kings-subd-a
+347d346
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/kings-subd-b
+342d341
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/kings-subd-c
+337d336
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/kings-subd-d
+335d334
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/lockeport
+322d321
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/lunenburg-municipal-district
+344d343
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/lunenburg
+321d320
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/mahone-bay
+322d321
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/malagawatch-4
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/medway-river-11
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/membertou-28b
+327d326
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/merigomish-harbour-31
+319d318
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/middleton
+325d324
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/millbrook-27
+327d326
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/mulgrave
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/new-glasgow
+353d352
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/new-ross-20
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/oxford
+321d320
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/paqtnkek-niktuek-no-23
+326d325
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/pennal-19
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/pictou-subd-a
+335d334
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/pictou-subd-b
+335d334
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/pictou-subd-c
+334d333
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/pictou
+333d332
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/ponhook-lake-10
+326d325
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/port-hawkesbury
+322d321
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/queens
+341d340
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/richmond-subd-a
+339d338
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/richmond-subd-b
+328d327
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/richmond-subd-c
+334d333
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/sheet-harbour-36
+319d318
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/shelburne-municipal-district
+334d333
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/shelburne
+321d320
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/st-mary-s
+334d333
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/stellarton
+330d329
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/stewiacke
+321d320
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/sydney
+353d352
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/trenton
+331d330
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/truro
+346d345
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/victoria-subd-a
+336d335
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/victoria-subd-b
+341d340
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/wagmatcook-1
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/wallace-hills-14a
+319d318
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/west-hants
+348d347
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/westville
+322d321
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/whycocomagh-2
+326d325
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/wildcat-12
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/wolfville
+324d323
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/yarmouth-33
+318d317
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/yarmouth-municipal-district
+334d333
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nova-scotia/yarmouth
+332d331
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/alberta/acme
+301d300
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/alberta/airdrie
+301d300
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/alberta/alberta-beach
+301d300
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/british-columbia/100-mile-house
+343d342
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/british-columbia/105-mile-post-2
+316d315
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/british-columbia/abbotsford
+369d368
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/manitoba/a-kwis-ki-mahka
+316d315
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/manitoba/alexander
+333d332
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/manitoba/alonsa
+330d329
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/new-brunswick/aberdeen
+327d326
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/new-brunswick/acadieville
+325d324
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/new-brunswick/addington
+328d327
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/northwest-territories/aklavik
+341d340
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/northwest-territories/beaufort-delta-zona-no-organizada
+315d314
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/northwest-territories/behchoko
+353d352
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nunavut/arctic-bay
+320d319
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nunavut/arviat
+342d341
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/nunavut/baker-lake
+341d340
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/ontario/addington-highlands
+311d310
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/ontario/adelaide-metcalfe
+311d310
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/ontario/adjala-tosorontio
+311d310
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/prince-edward-island/abram-village
+314d313
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/prince-edward-island/alberton-fire-district
+326d325
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/prince-edward-island/alberton
+325d324
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/quebec/abercorn
+324d323
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/quebec/acton-vale
+345d344
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/quebec/adstock
+349d348
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/saskatchewan/abbey
+311d310
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/saskatchewan/aberdeen-no-373
+323d322
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/saskatchewan/aberdeen
+315d314
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/yukon/beaver-creek
+333d332
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/yukon/burwash-landing
+349d348
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+DISTINTA /canada-en-datos/yukon/carcross-4
+329d328
+< <script>window.PDM_SITE_ROOT_LINKS = true;</script>
+idénticas: 0 | distintas: 143 | errores: 0
+igual sitemap.xml
+igual js/canada-datos.js
+igual js/canada-datos-disponibles.js
+igual js/nova-scotia-localidades.js
+igual assets/canada-en-datos/descubre-mapa.svg
+igual assets/canada-en-datos/nova-scotia-regiones.svg
+igual assets/canada-en-datos/bandera-nova-scotia.svg
+igual assets/canada-en-datos/social-nova-scotia.jpg
+igual assets/canada-en-datos/nova-scotia/halifax.jpg
+igual assets/canada-en-datos/nova-scotia/dartmouth.jpg
+sitemap URL de Nueva Escocia: 11
+GET /api/events: 405
