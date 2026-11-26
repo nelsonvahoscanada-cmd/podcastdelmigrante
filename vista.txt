@@ -1,0 +1,8 @@
+tel: href="tel:+12899686235" data-track="phone_click" data-track-target="phone" href="tel:+12899686235" data-track="phone_click" data-track-target="phone-final" 
+whatsapp: href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final" 
+JSON-LD: "telephone":"+1 289 968 6235"
+número anterior en la página: 2 (solo WhatsApp)
+vCard: TEL;TYPE=WORK,VOICE:+12899686235
+igual assets/qr/contacto-santa-latino.png
+igual assets/qr/perfil-santa-latino.png
+igual css/temas/navidad.css

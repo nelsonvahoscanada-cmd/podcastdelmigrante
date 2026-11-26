@@ -1,0 +1,6 @@
+ok iPhone SE: dos fotografías de 131×164 px, separación 18 px
+ok iPhone 13: dos fotografías de 166×208 px, separación 18 px
+ok iPhone 14 Pro Max: dos fotografías de 186×233 px, separación 18 px
+ok tableta: dos fotografías de 349×436 px, separación 31 px
+ok computador: dos fotografías de 373×466 px, separación 34 px
+OK galería de Santa Latino: dos fotografías lado a lado
