@@ -1,0 +1,50 @@
+# TEMPORAL: verificar en producción el PR #140 (solo lectura; sin estadísticas). Se elimina después.
+name: tmp santa tel prod
+on:
+  push:
+    branches: [claude/santa-latino-telefono-prod]
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      P: https://podcastdelmigrante.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Esperar el despliegue en producción (máx. 40 min)
+        run: |
+          for i in $(seq 240); do
+            curl -fsS "$P/perfil-santa-latino?nc=$i$RANDOM" | grep -q 'tel:+12899686235' && { echo "desplegado (intento $i)"; exit 0; }
+            sleep 10
+          done; exit 1
+      - name: Producción (solo GET)
+        if: always()
+        run: |
+          mkdir -p /tmp/out; o=/tmp/out/produccion.txt
+          curl -fsS "$P/perfil-santa-latino?nc=$RANDOM" -o /tmp/h
+          { echo "llamadas: $(grep -o 'href="tel:[^"]*" data-track="phone_click" data-track-target="[^"]*"' /tmp/h | tr '\n' ' ')"
+            echo "whatsapp: $(grep -o 'href="https://wa.me/[^"]*"[^>]*data-track-target="[^"]*"' /tmp/h | tr '\n' ' ')"
+            echo "JSON-LD: $(grep -o '"telephone":"[^"]*"' /tmp/h) $(grep -o '"dateModified":"[^"]*"' /tmp/h)"
+            echo "vCard: $(curl -fsS "$P/vcard/santa-latino.vcf?nc=$RANDOM" | grep TEL)"
+            echo "sitemap: $(curl -fsS "$P/sitemap.xml?nc=$RANDOM" | grep -A1 'perfil-santa-latino<' | grep -o '<lastmod>[^<]*')"
+            for f in vcard/santa-latino.vcf assets/qr/contacto-santa-latino.png assets/qr/contacto-santa-latino.svg assets/qr/perfil-santa-latino.png assets/qr/perfil-santa-latino.svg css/temas/navidad.css sitemap.xml $(git ls-files 'vcard/*' 'assets/qr/*' | grep -v santa-latino); do curl -fsS "$P/$f?nc=$RANDOM" -o /tmp/f && cmp -s /tmp/f $f && echo "igual $f" || echo "DISTINTO $f"; done
+            norm() { grep -v -e 'email-decode' -e 'email-protection' -e 'js/data.js' -e 'mailto:' -e '@' "$1"; }
+            for h in $(git ls-files 'perfil-*.html') quien-puede-ayudarte.html; do u=/${h%.html}; curl -fsS "$P$u?nc=$RANDOM" -o /tmp/p; diff -q <(norm $h) <(norm /tmp/p) >/dev/null && echo "página igual $u" || echo "PÁGINA DISTINTA $u"; done
+          } | tee $o
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright && npx playwright install --with-deps chromium >/dev/null
+      - name: E2E en producción (estadísticas bloqueadas)
+        if: always()
+        run: |
+          r=0
+          for t in santa-latino santa-latino-galeria nelson-vahos; do
+            BASE=$P SHOTS=/tmp/out NODE_PATH=/tmp/pw/node_modules NODE_OPTIONS="--require $PWD/tmp-prod/sin-estadisticas.cjs" node tests/e2e-$t.cjs 2>&1 | grep -v "^\s*at " | tail -20 | tee /tmp/out/e2e-$t.txt; [ ${PIPESTATUS[0]} = 0 ] || r=1
+          done; exit $r
+      - name: Publicar
+        if: always()
+        run: |
+          cd /tmp/out && git init -q -b datos && git config user.name datos && git config user.email datos@users.noreply.github.com && git add -A && git commit -qm "producción Santa Latino teléfono [CF-Pages-Skip]"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" datos:refs/heads/claude/santa-latino-telefono-prod-datos-${{ github.run_number }}
