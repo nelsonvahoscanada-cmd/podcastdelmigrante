@@ -430,7 +430,7 @@ const BUSINESSES = [
     id: "BIZ-003",
     slug: "santa-latino",
     published: true,
-    updatedAt: "2026-11-06",       /* última modificación real del registro (historial de git) */
+    updatedAt: "2026-11-26",       /* última modificación real del registro (historial de git) */
     featured: false,
     foundingProfile: false,
 
