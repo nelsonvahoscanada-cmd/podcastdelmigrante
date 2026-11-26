@@ -70,7 +70,7 @@ const jsonLd = (page) => page.evaluate(() => [...document.querySelectorAll('scri
     const hrefs = await page.$$eval("a[data-track]", (as) => as.map((a) => [a.getAttribute("data-track"), a.getAttribute("data-track-target"), a.getAttribute("href")]));
     const has = (track, target, href) => assert.ok(hrefs.some(([a, b, c]) => a === track && b === target && c === href), `${perfil}: falta ${track}/${target} → ${href}`);
     has("whatsapp_click", "whatsapp", "https://wa.me/12896965721");
-    has("phone_click", "phone", "tel:+12896965721");
+    has("phone_click", "phone", "tel:+12899686235");
     has("instagram_click", "instagram-hero", "https://www.instagram.com/latinsantaon/");
     has("instagram_click", "instagram-final", "https://www.instagram.com/latinsantaon/");
     has("video_click", "profile-video-youtube", "https://www.youtube.com/watch?v=LxTr1Zda3dg");

@@ -28,7 +28,7 @@ const PERFILES = {
 const MINIWEBS = {
   "tomas-velazquez": { nombre: "Tomás Velázquez", lugar: "Calgary, Alberta", textos: ["Asesor de ventas automotrices", "Country Hills Toyota", "¿Buscas vehículo en Calgary?", "20 Freeport Landing NE"], tel: "tel:+15878948527" },
   "carlos-d-castillo": { nombre: "Carlos D. Castillo", lugar: "Calgary, Alberta", textos: ["Seguros de vida", "TFSA", "Planificación para el retiro", "Atención con cita previa"], tel: "tel:+14039184019" },
-  "santa-latino": { nombre: "Santa Latino", lugar: "Niagara Falls, Ontario", textos: ["Visitas de Santa a hogares", "Eventos privados y empresariales", "Representante: Héctor Rivero", "santalatinoon@gmail.com"], tel: "tel:+12896965721" },
+  "santa-latino": { nombre: "Santa Latino", lugar: "Niagara Falls, Ontario", textos: ["Visitas de Santa a hogares", "Eventos privados y empresariales", "Representante: Héctor Rivero", "santalatinoon@gmail.com"], tel: "tel:+12899686235" },
   "1juanromero1": { nombre: "1JuanRomero1 Inc.", lugar: "Calgary, Alberta", textos: ["Edición profesional de video", "Animación", "Contenido con inteligencia artificial", "contact1juanromero1@gmail.com"], tel: "tel:+14033637566" },
 };
 
