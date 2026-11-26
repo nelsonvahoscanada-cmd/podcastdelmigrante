@@ -1,0 +1,39 @@
+llamadas: href="tel:+12899686235" data-track="phone_click" data-track-target="phone" href="tel:+12899686235" data-track="phone_click" data-track-target="phone-final" 
+whatsapp: href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp" href="https://wa.me/12896965721" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-target="whatsapp-final" 
+JSON-LD: "telephone":"+1 289 968 6235" "dateModified":"2026-11-26"
+vCard: TEL;TYPE=WORK,VOICE:+12899686235
+sitemap: <lastmod>2026-11-26
+igual vcard/santa-latino.vcf
+igual assets/qr/contacto-santa-latino.png
+igual assets/qr/contacto-santa-latino.svg
+igual assets/qr/perfil-santa-latino.png
+igual assets/qr/perfil-santa-latino.svg
+igual css/temas/navidad.css
+igual sitemap.xml
+igual assets/qr/contacto-1juanromero1.png
+igual assets/qr/contacto-1juanromero1.svg
+igual assets/qr/contacto-carlos-d-castillo.png
+igual assets/qr/contacto-carlos-d-castillo.svg
+igual assets/qr/contacto-nelson-vahos.png
+igual assets/qr/contacto-nelson-vahos.svg
+igual assets/qr/contacto-tomas-velazquez.png
+igual assets/qr/contacto-tomas-velazquez.svg
+igual assets/qr/perfil-1juanromero1.png
+igual assets/qr/perfil-1juanromero1.svg
+igual assets/qr/perfil-carlos-d-castillo.png
+igual assets/qr/perfil-carlos-d-castillo.svg
+igual assets/qr/perfil-nelson-vahos.png
+igual assets/qr/perfil-nelson-vahos.svg
+igual assets/qr/perfil-tomas-velazquez.png
+igual assets/qr/perfil-tomas-velazquez.svg
+igual assets/qr/qr-guia-carlos.png
+igual vcard/1juanromero1.vcf
+igual vcard/carlos-d-castillo.vcf
+igual vcard/nelson-vahos.vcf
+igual vcard/tomas-velazquez.vcf
+página igual /perfil-1juanromero1
+página igual /perfil-carlos-d-castillo
+página igual /perfil-nelson-vahos
+página igual /perfil-santa-latino
+página igual /perfil-tomas-velazquez
+página igual /quien-puede-ayudarte
