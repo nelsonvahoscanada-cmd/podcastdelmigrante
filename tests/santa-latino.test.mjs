@@ -55,7 +55,7 @@ test("identidad: «Santa Latino» es el nombre principal y Héctor Rivero el rep
 });
 
 test("contacto público exacto; el correo privado no se publica", () => {
-  assert.equal(S.phone, "+1 289 696 5721");
+  assert.equal(S.phone, "+1 289 968 6235"); /* llamadas: número actualizado (26-11-2026); WhatsApp sin cambios */
   assert.equal(S.whatsapp, "12896965721");
   assert.equal(S.instagram, "https://www.instagram.com/latinsantaon/");
   assert.equal(S.tiktok, "https://www.tiktok.com/@santalatino_");
@@ -133,7 +133,7 @@ test("vCard: se guarda como «Santa Latino» con Héctor Rivero como representan
   assert.match(v, /\r\nN:Rivero;Héctor;;;\r\n/);
   assert.match(v, /\r\nFN:Santa Latino\r\nORG:Santa Latino\r\nX-ABShowAs:COMPANY\r\n/);
   assert.match(v, /\r\nNOTE:Representante: Héctor Rivero\r\n/);
-  assert.match(v, /\r\nTEL;TYPE=WORK,VOICE:\+12896965721\r\n/);
+  assert.match(v, /\r\nTEL;TYPE=WORK,VOICE:\+12899686235\r\n/);
   assert.match(v, /\r\nEMAIL;TYPE=INTERNET,WORK:santalatinoon@gmail\.com\r\n/);
   assert.equal((v.match(/EMAIL/g) || []).length, 1);
   assert.match(read("vcard/tomas-velazquez.vcf"), /\r\nFN:Tomás Velázquez\r\nORG:Country Hills Toyota\r\n/);

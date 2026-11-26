@@ -472,7 +472,7 @@ const BUSINESSES = [
 
     testimonials: [],
 
-    phone: "+1 289 696 5721",
+    phone: "+1 289 968 6235",
     whatsapp: "12896965721",
     email: "santalatinoon@gmail.com", /* correo oficial autorizado (6-11-2026) */
     showEmail: true,          /* muestra la dirección como texto en el bloque de contacto */
