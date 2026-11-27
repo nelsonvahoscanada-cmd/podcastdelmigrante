@@ -50,6 +50,15 @@ export function fakeStripe({ livemode = false } = {}) {
       out = S.subscriptions.get(u.pathname.split("/").pop());
       if (!out) return notFound();
       Object.assign(out, { status: "canceled", canceled_at: Math.floor(Date.now() / 1000), ended_at: Math.floor(Date.now() / 1000) });
+    } else if (method === "POST" && /^\/v1\/subscriptions\/[^/]+$/.test(u.pathname)) {
+      out = S.subscriptions.get(u.pathname.split("/").pop());
+      if (!out) return notFound();
+      if (body.has("cancel_at_period_end")) out.cancel_at_period_end = body.get("cancel_at_period_end") === "true";
+    } else if (method === "GET" && /^\/v1\/charges\/[^/]+$/.test(u.pathname)) {
+      const cid = u.pathname.split("/").pop();
+      const inv = [...S.invoices.values()].find((i) => i.charge === cid);
+      if (!inv) return notFound();
+      out = { id: cid, object: "charge", amount: inv.amount_paid, balance_transaction: S.feesPending ? null : { id: "txn_" + cid, fee: Math.round(inv.amount_paid * 0.029) + 30 } };
     } else if (method === "GET" && u.pathname === "/v1/subscriptions") {
       out = { object: "list", data: [...S.subscriptions.values()], has_more: false };
     } else if (method === "GET" && /^\/v1\/invoices\/[^/]+$/.test(u.pathname)) {

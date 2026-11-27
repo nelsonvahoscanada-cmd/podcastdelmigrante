@@ -30,15 +30,29 @@
     POST /api/invitaciones/INV-…/renovar       enlace nuevo (el anterior deja de funcionar)
     GET  /api/membresias/MEM-…                 historial de una membresía
     POST /api/membresias/MEM-…/accion          activar | suspender | reactivar | retirar (con confirmación)
+    GET  /facturacion                          suscripciones y facturación (public/facturacion.html)
+    GET  /api/facturacion/resumen|suscripciones|pendientes|facturas|auditoria   (filtros: empresa, estado, desde, hasta, periodo)
+    GET  /api/facturacion/membresias/MEM-…     historia editorial + financiera
+    GET  /api/facturacion/exportar?tipo=facturas|suscripciones|resumen   CSV
+    POST /api/facturacion/enlaces              enlace individual de pago (se muestra UNA vez)
+    POST /api/facturacion/enlaces/PAY-…/revocar
+    POST /api/facturacion/membresias/MEM-…/cancelar|reactivar|devolver
+    POST /api/facturacion/conciliar            conciliación manual (también diaria, programada)
+    POST /api/facturacion/ajustes              plazo de entrega, gracia y vigencia del enlace
+    Facturación: solo con PAGOS_DB (base de PRUEBAS) y PAGOS_MODO="test"; las
+    acciones exigen BILLING_ADMIN_EMAILS. Ver src/facturacion.js.
 */
 
 import { verifyAccess, localDevIdentity, canViewBusiness } from "./auth.js";
+import { canManageBilling } from "./facturacion.js";
 import { parseMonth, DEFAULT_TIMEZONE } from "./period.js";
 import { listBusinesses, businessStats, BUSINESS_ID_RE } from "./stats.js";
 import { listApplications, getApplication, applicationImage, applicationExtraImage, updateApplication, publicationPackage, applicationHistory } from "./solicitudes.js";
 import { deletionState, scheduleDeletion, cancelDeletion, executeDeletion, listDeletions, markDeletionStep } from "./eliminaciones.js";
 import { emailConfig, sendReportEmail, MAX_BODY_BYTES } from "./reportes.js";
 import { overview, createInvitation, revokeInvitation, renewInvitation, prepareSchema, membershipAction, membershipHistory } from "./membresias.js";
+import * as F from "./facturacion.js";
+import { conciliar } from "../../functions/_lib/pagos.js";
 
 const SITE_ORIGIN = "https://podcastdelmigrante.com";
 
@@ -81,7 +95,7 @@ function withNoStore(res) {
 }
 
 /* Únicas rutas que aceptan POST (todas JSON y del mismo origen). */
-const POST_ROUTES = [/^\/api\/solicitudes\/[^/]+\/(?:estado|eliminacion)$/, /^\/api\/eliminaciones\/[^/]+\/pasos$/, /^\/api\/reportes\/enviar$/, /^\/api\/invitaciones(?:\/instalar|\/[^/]+\/(?:revocar|renovar))?$/, /^\/api\/membresias\/[^/]+\/accion$/];
+const POST_ROUTES = [/^\/api\/solicitudes\/[^/]+\/(?:estado|eliminacion)$/, /^\/api\/eliminaciones\/[^/]+\/pasos$/, /^\/api\/reportes\/enviar$/, /^\/api\/invitaciones(?:\/instalar|\/[^/]+\/(?:revocar|renovar))?$/, /^\/api\/membresias\/[^/]+\/accion$/, F.BILLING_POST_RE];
 
 /* Defensa contra CSRF además de Access: mismo origen y JSON.
    Devuelve { input } o { error: Response }. */
@@ -214,10 +228,67 @@ export default {
       return withNoStore(json(Object.assign({ ok: true }, rest)));
     }
 
+    /* ---------- Suscripciones y Facturación (solo base de PRUEBAS) ---------- */
+    if (url.pathname.startsWith("/api/facturacion/")) {
+      if (identity.role !== "admin") return deny(403, "Solo administradores");
+      const faltan = F.billingConfig(env);
+      if (faltan.length) return json({ error: "Facturación no configurada en este panel", faltan }, 503);
+      const db = env.PAGOS_DB;
+      if (isPost) {
+        if (!canManageBilling(identity, env)) return deny(403, "Sin permiso de facturación (BILLING_ADMIN_EMAILS)");
+        const ruta = F.rutaAccion(url.pathname);
+        if (!ruta) return deny(404, "No encontrado");
+        const necesitaStripe = ["cancelar", "reactivar", "devolver", "conciliar"].includes(ruta.tipo);
+        const faltaStripe = F.billingConfig(env, { necesitaStripe });
+        if (faltaStripe.length) return json({ error: "Falta configuración de Stripe (modo de prueba)", faltan: faltaStripe }, 503);
+        const { input, error } = await readJson(request, url);
+        if (error) return error;
+        const out = await F.accion(env, identity, ruta, input, env.PAGOS_SITE_ORIGIN);
+        if (!out.ok) return json({ error: out.error }, out.status);
+        const { ok, status, ...rest } = out;
+        return withNoStore(json(Object.assign({ ok: true, modo: "prueba" }, rest)));
+      }
+      const f = F.parseFiltros(url.searchParams);
+      const base = { modo: "prueba", puedeGestionar: canManageBilling(identity, env) };
+      if (url.pathname === "/api/facturacion/resumen") return json(Object.assign(base, await F.resumen(db, f)));
+      if (url.pathname === "/api/facturacion/suscripciones") return json(Object.assign(base, { suscripciones: await F.suscripciones(db, f) }));
+      if (url.pathname === "/api/facturacion/pendientes") return json(Object.assign(base, { pendientes: await F.pendientesDePago(db) }));
+      if (url.pathname === "/api/facturacion/facturas") return json(Object.assign(base, { facturas: await F.facturas(db, f) }));
+      if (url.pathname === "/api/facturacion/auditoria") return json(Object.assign(base, { auditoria: await F.auditoria(db, f) }));
+      const det = url.pathname.match(/^\/api\/facturacion\/membresias\/([^/]+)$/);
+      if (det) {
+        const d = await F.detalle(db, det[1]);
+        return d ? json(Object.assign(base, d)) : deny(404, "Membresía no encontrada");
+      }
+      if (url.pathname === "/api/facturacion/exportar") {
+        const tipo = url.searchParams.get("tipo") || "";
+        const csv = await F.exportarCSV(db, tipo, f);
+        if (csv == null) return deny(400, "Tipo de informe no válido");
+        const nombre = `facturacion-${tipo}-prueba-${new Date().toISOString().slice(0, 10)}.csv`;
+        return withSecurity(new Response("\uFEFF" + csv, { headers: { "Content-Type": "text/csv; charset=utf-8", "Content-Disposition": `attachment; filename="${nombre}"` } }));
+      }
+      return deny(404, "No encontrado");
+    }
+
     if (url.pathname.startsWith("/api/")) return deny(404, "No encontrado");
 
     /* Archivos del panel (public/). Pasan por aquí gracias a run_worker_first,
        así que ningún archivo se sirve sin identidad verificada. */
     return withSecurity(await env.ASSETS.fetch(request));
+  },
+
+  /* Conciliación automática diaria (Cron Trigger, solo en el entorno de
+     pruebas: [env.pruebas.triggers] en wrangler.toml). Sin PAGOS_DB o sin una
+     clave de prueba no hace nada. */
+  async scheduled(event, env, ctx) {
+    if (F.billingConfig(env, { necesitaStripe: true }).length) {
+      console.log("Conciliación omitida: facturación no configurada en este panel");
+      return;
+    }
+    ctx.waitUntil(
+      conciliar(env, env.PAGOS_DB)
+        .then((r) => console.log("Conciliación diaria", JSON.stringify(r)))
+        .catch((e) => console.error("Conciliación diaria con error", (e && (e.code || e.status)) || "error"))
+    );
   },
 };

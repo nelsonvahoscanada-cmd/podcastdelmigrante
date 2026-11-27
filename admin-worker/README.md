@@ -163,3 +163,7 @@ local (`ALLOW_LOCAL_DEV=1`) solo funciona para conexiones desde la propia máqui
 - Envío automático por email y PDF generado en servidor (Browser Rendering): hoy el envío es manual y el PDF lo genera el navegador.
 - Acceso propio por empresario (tabla `business_access`, vía `canViewBusiness`).
 - Comparación entre meses, tendencias y exportación CSV (`businessStats` ya acepta cualquier período).
+
+## Suscripciones y Facturación (solo entorno de PRUEBAS)
+
+Sección `/facturacion` (`src/facturacion.js`, `public/facturacion.html`). Funciona solo en el Worker separado `podcastdelmigrante-admin-pruebas` (`npx wrangler deploy --env pruebas`), conectado a la base `podcastdelmigrante-directorio-test`. En el panel de producción responde 503. Configuración: `docs/facturacion-panel-configuracion.md`.

@@ -109,4 +109,4 @@ En todas: fecha futura, cualquier CVC y cualquier código postal canadiense.
 | Fallo en la vista previa | Borra `PAGOS_ABIERTOS` en Preview. `/pagos/*` queda cerrado al instante, sin desplegar. |
 | Revertir el código | Revertir el PR. Las tablas nuevas quedan sin uso y no afectan al registro, las invitaciones ni las cortesías. |
 | Rehacer la base de pruebas | Ver la reversión comentada al final de `0006_facturacion.sql`. **Solo en la base de pruebas.** |
-| Webhook caído | Stripe reintenta durante días. La conciliación (`conciliar()`, programada en el panel en el siguiente PR) corrige lo que falte usando la API como fuente de verdad. |
+| Webhook caído | Stripe reintenta durante días. La conciliación (`conciliar()`, diaria en el panel de pruebas y también manual) corrige lo que falte usando la API como fuente de verdad. |

@@ -151,8 +151,10 @@ export async function crearEnlacePago(db, { applicationId, actor, livemode = 0, 
   const stmts = [];
   if (!m) {
     m = { id: newMembershipId(now), plan: "PREMIUM_PAID" };
-    stmts.push(db.prepare("INSERT INTO business_memberships (id, plan, status, business_name, application_id, business_id, created_at, updated_at, updated_by) VALUES (?, 'PREMIUM_PAID', 'en_revision', ?, ?, ?, ?, ?, ?)").bind(m.id, app.name, app.id, app.business_id || null, now.toISOString(), now.toISOString(), actor));
-    stmts.push(db.prepare("INSERT INTO membership_events (membership_id, at, actor, action, to_status, detail) VALUES (?, ?, ?, 'crear', 'en_revision', ?)").bind(m.id, now.toISOString(), actor, `Membresía Premium de pago creada para el enlace de pago de ${app.id}`));
+    /* Dentro de la transacción: solo si nadie creó otra membresía para la
+       misma solicitud entre la lectura y la escritura (dos clics a la vez). */
+    stmts.push(db.prepare("INSERT INTO business_memberships (id, plan, status, business_name, application_id, business_id, created_at, updated_at, updated_by) SELECT ?, 'PREMIUM_PAID', 'en_revision', ?, ?, ?, ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM business_memberships WHERE application_id = ? AND status <> 'retirada')").bind(m.id, app.name, app.id, app.business_id || null, now.toISOString(), now.toISOString(), actor, app.id));
+    stmts.push(db.prepare("INSERT INTO membership_events (membership_id, at, actor, action, to_status, detail) SELECT ?, ?, ?, 'crear', 'en_revision', ? WHERE EXISTS (SELECT 1 FROM business_memberships WHERE id = ?)").bind(m.id, now.toISOString(), actor, `Membresía Premium de pago creada para el enlace de pago de ${app.id}`, m.id));
   } else {
     const ok = await puedeCobrar(db, m.id);
     if (!ok.ok) throw fail(ok.motivo, "Esta membresía no admite cobros (" + ok.motivo + ").");
@@ -163,11 +165,15 @@ export async function crearEnlacePago(db, { applicationId, actor, livemode = 0, 
   const token = newToken();
   const link = { id: newLinkId(now), expires_at: new Date(now.getTime() + cfg.link_ttl_days * 86400000).toISOString() };
   stmts.push(db.prepare("UPDATE billing_payment_links SET status = 'revocado', revoked_at = ?, revoked_by = ? WHERE membership_id = ? AND status = 'pendiente'").bind(now.toISOString(), actor, m.id));
-  stmts.push(db.prepare("INSERT INTO billing_payment_links (id, membership_id, application_id, business_name, email, token_sha256, livemode, created_at, created_by, expires_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)").bind(link.id, m.id, app.id, app.name, app.email || null, await hashToken(token), livemode ? 1 : 0, now.toISOString(), actor, link.expires_at));
-  stmts.push(db.prepare("INSERT INTO billing_audit (at, actor, action, membership_id, object_id, detail) VALUES (?, ?, 'enlace_creado', ?, ?, ?)").bind(now.toISOString(), actor, m.id, link.id, `Vence ${link.expires_at.slice(0, 10)}`));
+  const linkIdx = stmts.length;
+  stmts.push(db.prepare("INSERT INTO billing_payment_links (id, membership_id, application_id, business_name, email, token_sha256, livemode, created_at, created_by, expires_at) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ? WHERE EXISTS (SELECT 1 FROM business_memberships WHERE id = ?)").bind(link.id, m.id, app.id, app.name, app.email || null, await hashToken(token), livemode ? 1 : 0, now.toISOString(), actor, link.expires_at, m.id));
+  stmts.push(db.prepare("INSERT INTO billing_audit (at, actor, action, membership_id, object_id, detail) SELECT ?, ?, 'enlace_creado', ?, ?, ? WHERE EXISTS (SELECT 1 FROM billing_payment_links WHERE id = ?)").bind(now.toISOString(), actor, m.id, link.id, `Vence ${link.expires_at.slice(0, 10)}`, link.id));
   try {
-    await db.batch(stmts);
+    const out = await db.batch(stmts);
+    const changes = out[linkIdx] && out[linkIdx].meta ? out[linkIdx].meta.changes : 1;
+    if (!changes) throw fail("concurrente", "Otra persona generó el enlace al mismo tiempo.");
   } catch (e) {
+    if (e && e.code) throw e;
     if (/cobro no permitido/.test(String(e && e.message))) throw fail("protegido", "Cobro no permitido para esta membresía.");
     throw e;
   }
@@ -414,7 +420,8 @@ export async function guardarFactura(env, db, inv, subscriptionId) {
   const tax = inv.tax != null ? inv.tax : taxes.reduce((a, t) => a + (t.amount || 0), 0);
   const pay = inv.payments && inv.payments.data && inv.payments.data[0] && inv.payments.data[0].payment;
   const pi = typeof inv.payment_intent === "object" && inv.payment_intent ? inv.payment_intent.id : inv.payment_intent || (pay && (typeof pay.payment_intent === "object" ? pay.payment_intent && pay.payment_intent.id : pay.payment_intent)) || null;
-  const charge = typeof inv.charge === "object" && inv.charge ? inv.charge.id : inv.charge || (pay && pay.charge) || null;
+  const piObj = (typeof inv.payment_intent === "object" && inv.payment_intent) || (pay && typeof pay.payment_intent === "object" && pay.payment_intent) || null;
+  const charge = (typeof inv.charge === "object" && inv.charge ? inv.charge.id : inv.charge) || (pay && pay.charge) || (piObj && (typeof piObj.latest_charge === "object" ? piObj.latest_charge && piObj.latest_charge.id : piObj.latest_charge)) || null;
   const addr = inv.customer_address || {};
   const paidAt = inv.status_transitions && inv.status_transitions.paid_at;
   await db
@@ -430,6 +437,21 @@ export async function guardarFactura(env, db, inv, subscriptionId) {
       inv.livemode ? 1 : 0, inv.created || null, nowIso(), nowIso()
     )
     .run();
+  if (inv.status === "paid" && charge) await registrarComision(env, db, inv.id, charge);
+}
+
+/* Comisión REAL de Stripe del cobro (balance transaction). Si Stripe todavía
+   no la tiene, queda vacía y la conciliación diaria la completa. */
+export async function registrarComision(env, db, invoiceId, chargeId) {
+  const cur = await db.prepare("SELECT stripe_fee FROM billing_invoices WHERE stripe_invoice_id = ?").bind(invoiceId).first();
+  if (!cur || cur.stripe_fee != null) return;
+  try {
+    const ch = await stripeRequest(env, "GET", `/v1/charges/${chargeId}`, { expand: ["balance_transaction"] });
+    const bt = ch && typeof ch.balance_transaction === "object" ? ch.balance_transaction : null;
+    if (bt && Number.isFinite(bt.fee)) await db.prepare("UPDATE billing_invoices SET stripe_fee = ?, updated_at = ? WHERE stripe_invoice_id = ?").bind(bt.fee, nowIso(), invoiceId).run();
+  } catch (e) {
+    console.error("Comisión no disponible todavía", invoiceId, (e && (e.code || e.status)) || "error");
+  }
 }
 
 /* Primer pago confirmado: la solicitud queda «pagada» en su historial (el
@@ -498,6 +520,10 @@ export async function devolverPrimerPago(env, db, { membershipId, actor, motivo,
   const pagado = new Date(inv.paid_at || inv.created_at);
   if (now - pagado > cfg.refund_window_days * 86400000) throw fail("fuera_de_plazo");
   if ((inv.amount_refunded || 0) >= (inv.amount_paid || 0)) throw fail("ya_devuelto");
+  /* La factura se actualiza con el webhook charge.refunded; hasta entonces,
+     una devolución ya registrada también cuenta (no se pide dos veces). */
+  const previa = await db.prepare("SELECT 1 AS x FROM billing_refunds WHERE stripe_invoice_id = ? AND COALESCE(status, '') NOT IN ('failed', 'canceled')").bind(inv.stripe_invoice_id).first();
+  if (previa) throw fail("ya_devuelto");
   const params = { amount: (inv.amount_paid || 0) - (inv.amount_refunded || 0), reason: "requested_by_customer", metadata: { membership_id: membershipId, motivo: String(motivo || "").slice(0, 200) } };
   if (inv.payment_intent_id) params.payment_intent = inv.payment_intent_id;
   else if (inv.charge_id) params.charge = inv.charge_id;
@@ -534,6 +560,57 @@ export async function conciliar(env, db, { desde = Math.floor(Date.now() / 1000)
     if (!page.has_more || !(page.data || []).length) break;
     after = page.data[page.data.length - 1].id;
   }
-  await audit(db, "sistema", "conciliacion", null, null, `revisadas ${res.revisadas}, corregidas ${res.corregidas}, alertas ${res.alertas}`);
+  const sinComision = await db.prepare("SELECT stripe_invoice_id, charge_id FROM billing_invoices WHERE status = 'paid' AND stripe_fee IS NULL AND charge_id IS NOT NULL LIMIT 100").all();
+  res.comisiones = 0;
+  for (const f of sinComision.results || []) {
+    await registrarComision(env, db, f.stripe_invoice_id, f.charge_id);
+    const r = await db.prepare("SELECT stripe_fee FROM billing_invoices WHERE stripe_invoice_id = ?").bind(f.stripe_invoice_id).first();
+    if (r && r.stripe_fee != null) res.comisiones++;
+  }
+  await db.prepare("UPDATE billing_payment_links SET status = 'vencido' WHERE status = 'pendiente' AND expires_at <= ?").bind(nowIso()).run();
+  await audit(db, "sistema", "conciliacion", null, null, `revisadas ${res.revisadas}, corregidas ${res.corregidas}, alertas ${res.alertas}, comisiones ${res.comisiones}`);
   return res;
+}
+
+/* ---------- Acciones administrativas (panel, con confirmación y auditoría) ---------- */
+export async function revocarEnlace(db, { linkId, actor, now = new Date() }) {
+  const l = await db.prepare("SELECT id, membership_id, status FROM billing_payment_links WHERE id = ?").bind(linkId).first();
+  if (!l) throw Object.assign(new Error("no_existe"), { code: "no_existe" });
+  if (l.status !== "pendiente") throw Object.assign(new Error("no_pendiente"), { code: "no_pendiente" });
+  await db.batch([
+    db.prepare("UPDATE billing_payment_links SET status = 'revocado', revoked_at = ?, revoked_by = ? WHERE id = ? AND status = 'pendiente'").bind(now.toISOString(), actor, l.id),
+    db.prepare("INSERT INTO billing_audit (at, actor, action, membership_id, object_id) VALUES (?, ?, 'enlace_revocado', ?, ?)").bind(now.toISOString(), actor, l.membership_id, l.id),
+  ]);
+  return { ok: true };
+}
+
+/* Cancelar al final del período (cancelar = true) o deshacerlo (false). */
+export async function cancelarAlFinal(env, db, { membershipId, actor, cancelar, now = new Date() }) {
+  const sub = await db.prepare(`SELECT stripe_subscription_id, cancel_at_period_end FROM billing_subscriptions WHERE membership_id = ? AND status IN (${LIVE_STATUSES.map(() => "?").join(",")})`).bind(membershipId, ...LIVE_STATUSES).first();
+  if (!sub) throw Object.assign(new Error("sin_suscripcion"), { code: "sin_suscripcion" });
+  if (!!sub.cancel_at_period_end === !!cancelar) return { ok: true, sinCambios: true };
+  await stripeRequest(env, "POST", `/v1/subscriptions/${sub.stripe_subscription_id}`, { cancel_at_period_end: !!cancelar }, { idempotencyKey: `${cancelar ? "cancelar" : "reactivar"}-${sub.stripe_subscription_id}-${now.toISOString().slice(0, 16)}` });
+  await sincronizarSuscripcion(env, db, sub.stripe_subscription_id, Math.floor(now.getTime() / 1000));
+  await audit(db, actor, cancelar ? "cancelacion_programada" : "cancelacion_retirada", membershipId, sub.stripe_subscription_id, null);
+  return { ok: true };
+}
+
+/* Parámetros configurables (con límites). El plazo de entrega cambia el texto
+   de las condiciones que se muestran antes del pago. */
+export const AJUSTES = {
+  delivery_business_days: { min: 1, max: 30, label: "Plazo de entrega de la miniweb (días hábiles)" },
+  grace_days: { min: 0, max: 30, label: "Período de gracia (días)" },
+  link_ttl_days: { min: 1, max: 30, label: "Vigencia del enlace de pago (días)" },
+};
+export async function actualizarAjuste(db, { key, value, actor, now = new Date() }) {
+  const def = AJUSTES[key];
+  const n = Number(value);
+  if (!def) throw Object.assign(new Error("ajuste_desconocido"), { code: "ajuste_desconocido" });
+  if (!Number.isInteger(n) || n < def.min || n > def.max) throw Object.assign(new Error("fuera_de_rango"), { code: "fuera_de_rango" });
+  const prev = await settings(db);
+  await db.batch([
+    db.prepare("INSERT INTO billing_settings (key, value, updated_at, updated_by) VALUES (?, ?, ?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at, updated_by = excluded.updated_by").bind(key, String(n), now.toISOString(), actor),
+    db.prepare("INSERT INTO billing_audit (at, actor, action, object_id, detail) VALUES (?, ?, 'ajuste', ?, ?)").bind(now.toISOString(), actor, key, `${prev[key]} → ${n}`),
+  ]);
+  return { ok: true, value: n };
 }
