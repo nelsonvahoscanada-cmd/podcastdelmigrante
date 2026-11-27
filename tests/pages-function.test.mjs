@@ -65,10 +65,10 @@ test("la lista de publicados coincide con las páginas generadas", async () => {
   for (const slug of PUBLISHED_ARTICLES) assert.ok(existsSync(new URL(`articulo-${slug}.html`, ROOT)), slug);
 });
 
-test("_routes.json limita las funciones a las plantillas, al contador de visualizaciones, al registro y a las carpetas internas", () => {
+test("_routes.json limita las funciones a las plantillas, al contador de visualizaciones, al registro, a los pagos y a las carpetas internas", () => {
   const routes = JSON.parse(readFileSync(new URL("_routes.json", ROOT), "utf8"));
   assert.equal(routes.version, 1);
-  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/guia", "/guia.html", "/guia-ruta", "/guia-ruta.html", "/historia", "/historia.html", "/historia-vida", "/historia-vida.html", "/columna", "/columna.html", "/colaborador", "/colaborador.html", "/business-profile", "/business-profile.html", "/api/vistas/*", "/registro/*", "/admin-worker/*", "/analytics-worker/*", "/db/*", "/docs/*", "/tests/*", "/scripts/*", "/functions/*", "/.github/*"].sort());
+  assert.deepEqual([...routes.include].sort(), ["/articulo", "/articulo.html", "/articulo/", "/guia", "/guia.html", "/guia-ruta", "/guia-ruta.html", "/historia", "/historia.html", "/historia-vida", "/historia-vida.html", "/columna", "/columna.html", "/colaborador", "/colaborador.html", "/business-profile", "/business-profile.html", "/api/vistas/*", "/registro/*", "/pagos/*", "/admin-worker/*", "/analytics-worker/*", "/db/*", "/docs/*", "/tests/*", "/scripts/*", "/functions/*", "/.github/*"].sort());
 });
 
 test("carpetas internas del repositorio → 404 (no forman parte del sitio)", async () => {
@@ -79,7 +79,7 @@ test("carpetas internas del repositorio → 404 (no forman parte del sitio)", as
     assert.equal(c.nextCalled, false, p);
     assert.equal(r.headers.get("X-Robots-Tag"), "noindex");
   }
-  for (const p of ["/js/directorio/solicitud-core.js", "/assets/logo.png", "/registro/config", "/documentos", "/dbx"]) {
+  for (const p of ["/js/directorio/solicitud-core.js", "/assets/logo.png", "/registro/config", "/pagos/enlace", "/pagos/webhook", "/documentos", "/dbx"]) {
     const c = ctx(p);
     await onRequest(c);
     assert.equal(c.nextCalled, true, `${p} sigue sirviéndose`);
