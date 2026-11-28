@@ -62,7 +62,9 @@
     const tile = (value, label, hint, cls) => `<div class="tile${cls ? " " + cls : ""}"><span class="tile__value">${value}</span><span class="tile__label">${esc(label)}</span>${hint ? `<span class="tile__hint">${esc(hint)}</span>` : ""}</div>`;
     const c = r.conteos;
     $("#tiles").innerHTML = [
-      tile(cad(r.mrr.centavos), "MRR", `${r.mrr.suscripciones} suscripciones de pago que se renuevan`),
+      tile(cad(r.mrr.centavos), "MRR actual", `${r.mrr.suscripciones} suscripciones de pago vigentes`),
+      tile(cad(r.cancelacion_programada.centavos), "Cancelaciones programadas", `${r.cancelacion_programada.suscripciones} terminan al final de su período`),
+      tile(cad(r.mrr_futuro.centavos), "MRR futuro previsto", "MRR actual − cancelaciones programadas"),
       tile(cad(r.ingresos), "Ingresos cobrados", `Sin impuestos · ${r.facturas_pagadas} facturas`),
       tile(cad(r.impuestos), "Impuestos recaudados", "Se remiten: no son ingreso"),
       tile(cad(r.comisiones), "Comisiones de Stripe", "Comisión real de cada cobro"),
@@ -73,7 +75,8 @@
       tile(String(c.en_gracia), "En período de gracia", `Gracia: ${r.ajustes.grace_days} días`, c.en_gracia ? "tile--alerta" : ""),
       tile(String(c.gracia_vencida), "Gracia vencida", "Beneficios suspendibles; el perfil no se borra", c.gracia_vencida ? "tile--alerta" : ""),
       tile(String(c.pagos_rechazados_periodo), "Pagos rechazados", "En el período"),
-      tile(String(c.canceladas_periodo), "Cancelaciones", "En el período"),
+      tile(String(c.canceladas_periodo), "Canceladas", "Suscripciones terminadas en el período"),
+      tile(String(r.alertas_cancelacion), "Alertas de cancelación", "Cancelaciones no pedidas: revisar en la auditoría", r.alertas_cancelacion ? "tile--alerta" : ""),
     ].join("");
     const note = $("#feeNote");
     note.hidden = !r.facturas_sin_comision;

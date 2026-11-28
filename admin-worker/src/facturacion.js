@@ -20,9 +20,15 @@
     comisiones     comisión REAL de Stripe (balance transaction)
     devoluciones   reembolsos hechos
     neto           ingresos − comisiones − parte sin impuestos de las devoluciones
-    MRR            precio mensual de las suscripciones de PAGO vigentes que se
-                   renuevan (activas o en pago fallido, sin cancelación
-                   programada). Las cortesías nunca suman: no tienen suscripción.
+    MRR actual     precio mensual de TODAS las suscripciones de PAGO vigentes
+                   (activas, en prueba o con pago pendiente), aunque tengan una
+                   cancelación programada: siguen activas y pagadas.
+    cancelación    suscripciones vigentes que terminan al final del período
+    programada     (cancel_at_period_end); su importe se muestra aparte.
+    MRR futuro     MRR actual − cancelaciones programadas (lo que se prevé
+                   seguir cobrando).
+    canceladas     suscripciones ya terminadas en el período.
+    Las cortesías nunca suman: no tienen suscripción.
 */
 import { keyMode, LIVE_MODE_ALLOWED } from "../../functions/_lib/stripe.js";
 import * as P from "../../functions/_lib/pagos.js";
@@ -142,7 +148,8 @@ export async function resumen(db, f = {}, now = new Date()) {
   const empresa = f.empresa ? " AND m.business_name LIKE ?" : "";
   const eb = f.empresa ? [like(f.empresa)] : [];
   const PAGO = "m.plan = 'PREMIUM_PAID' AND NOT EXISTS (SELECT 1 FROM billing_protected p WHERE p.business_id = m.business_id)";
-  const mrr = await db.prepare(`SELECT COALESCE(SUM(s.amount), 0) AS c, COUNT(*) AS n FROM billing_subscriptions s JOIN business_memberships m ON m.id = s.membership_id WHERE ${PAGO} AND s.status IN ('active','past_due','trialing') AND s.cancel_at_period_end = 0${empresa}`).bind(...eb).first();
+  const mrr = await db.prepare(`SELECT COALESCE(SUM(s.amount), 0) AS c, COUNT(*) AS n, COALESCE(SUM(CASE WHEN s.cancel_at_period_end = 1 THEN s.amount ELSE 0 END), 0) AS pc, SUM(CASE WHEN s.cancel_at_period_end = 1 THEN 1 ELSE 0 END) AS pn FROM billing_subscriptions s JOIN business_memberships m ON m.id = s.membership_id WHERE ${PAGO} AND s.status IN ('active','past_due','trialing')${empresa}`).bind(...eb).first();
+  const alertasCancel = await db.prepare(`SELECT COUNT(*) AS n FROM billing_audit a LEFT JOIN business_memberships m ON m.id = a.membership_id WHERE a.action IN ('alerta_cancelacion_programada','alerta_cancelacion_inesperada')${empresa}`).bind(...eb).first();
   const fact = await db
     .prepare(`SELECT COUNT(*) AS n, COALESCE(SUM(i.subtotal),0) AS ingresos, COALESCE(SUM(i.tax),0) AS impuestos, COALESCE(SUM(i.amount_paid),0) AS cobrado, COALESCE(SUM(i.stripe_fee),0) AS comisiones, SUM(CASE WHEN i.stripe_fee IS NULL THEN 1 ELSE 0 END) AS sin_comision
                 FROM billing_invoices i JOIN business_memberships m ON m.id = i.membership_id WHERE ${PAGO} AND i.status = 'paid' AND i.paid_at BETWEEN ? AND ?${empresa}`)
@@ -168,6 +175,9 @@ export async function resumen(db, f = {}, now = new Date()) {
     periodo: { desde: desde.slice(0, 10), hasta: hasta.slice(0, 10) },
     ajustes: cfg,
     mrr: { centavos: mrr.c, suscripciones: mrr.n },
+    cancelacion_programada: { centavos: mrr.pc || 0, suscripciones: mrr.pn || 0 },
+    mrr_futuro: { centavos: mrr.c - (mrr.pc || 0), suscripciones: mrr.n - (mrr.pn || 0) },
+    alertas_cancelacion: alertasCancel.n,
     ingresos: fact.ingresos,
     impuestos: fact.impuestos,
     cobrado: fact.cobrado,
@@ -266,7 +276,7 @@ export async function exportarCSV(db, tipo, f = {}) {
   }
   if (tipo === "resumen") {
     const r = await resumen(db, f);
-    const lines = [["Concepto", "CAD"], ["Período", `${r.periodo.desde} a ${r.periodo.hasta}`], ["Ingresos (sin impuestos)", money(r.ingresos)], ["Impuestos recaudados (no son ingreso)", money(r.impuestos)], ["Total cobrado", money(r.cobrado)], ["Comisiones de Stripe", money(r.comisiones)], ["Devoluciones", money(r.devoluciones.total)], ["Ingresos netos después de comisiones y devoluciones", money(r.neto)], ["Ingreso recurrente mensual (MRR)", money(r.mrr.centavos)], ["Facturas pagadas", r.facturas_pagadas], ["Facturas sin comisión conciliada", r.facturas_sin_comision]];
+    const lines = [["Concepto", "CAD"], ["Período", `${r.periodo.desde} a ${r.periodo.hasta}`], ["Ingresos (sin impuestos)", money(r.ingresos)], ["Impuestos recaudados (no son ingreso)", money(r.impuestos)], ["Total cobrado", money(r.cobrado)], ["Comisiones de Stripe", money(r.comisiones)], ["Devoluciones", money(r.devoluciones.total)], ["Ingresos netos después de comisiones y devoluciones", money(r.neto)], ["Ingreso recurrente mensual actual (MRR)", money(r.mrr.centavos)], ["Cancelaciones programadas (importe mensual)", money(r.cancelacion_programada.centavos)], ["MRR futuro previsto", money(r.mrr_futuro.centavos)], ["Facturas pagadas", r.facturas_pagadas], ["Facturas sin comisión conciliada", r.facturas_sin_comision]];
     return lines.map((l) => l.map(csvCell).join(",")).join("\r\n") + "\r\n";
   }
   return null;

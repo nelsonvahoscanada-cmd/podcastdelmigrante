@@ -269,13 +269,14 @@ test("eventos duplicados no se aplican dos veces; un evento antiguo no retrocede
   assert.equal(r2.resultado, "duplicado");
   assert.equal(S.emails.length, 1, "sin correos repetidos");
   assert.equal(row("SELECT COUNT(*) AS n FROM billing_audit WHERE action = 'primer_pago_confirmado'").n, 1);
-  /* Fuera de orden: llega primero el cambio nuevo y después uno antiguo */
+  /* Fuera de orden: llega primero el cambio nuevo y después un evento antiguo.
+     El estado se relee siempre de la API (fuente de verdad): el evento
+     atrasado no puede devolver la suscripción a un estado anterior. */
   const t = Math.floor(Date.now() / 1000);
   S.subscriptions.get(sub.id).cancel_at_period_end = true;
   await sendEvent(event("customer.subscription.updated", { id: sub.id }, { created: t + 100 }));
-  S.subscriptions.get(sub.id).cancel_at_period_end = false; /* lo que diría la API si se consultara un estado viejo */
   const old = await (await sendEvent(event("customer.subscription.updated", { id: sub.id }, { created: t + 50 }))).json();
-  assert.equal(old.resultado, "ignorado");
+  assert.ok(["aplicado", "ignorado"].includes(old.resultado));
   assert.equal(row("SELECT cancel_at_period_end FROM billing_subscriptions WHERE stripe_subscription_id = ?", sub.id).cancel_at_period_end, 1);
   /* Una factura pagada no vuelve a «abierta» por un evento atrasado */
   S.invoices.get(inv.id).status = "open";

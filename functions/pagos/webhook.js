@@ -13,7 +13,7 @@
 */
 import { pagosStatus, closedResponse, jsonResponse } from "../_lib/pagos-env.js";
 import { verifyWebhook, LIVE_MODE_ALLOWED } from "../_lib/stripe.js";
-import { procesarEvento, schemaReady } from "../_lib/pagos.js";
+import { procesarEvento, limpiarError, schemaReady } from "../_lib/pagos.js";
 
 const MAX_BODY = 512 * 1024;
 
@@ -42,7 +42,12 @@ export async function onRequestPost({ request, env }) {
     console.log("Webhook", event.type, event.id, r.resultado);
     return jsonResponse({ ok: true, resultado: r.resultado });
   } catch (e) {
-    console.error("Webhook con error", event.type, event.id, (e && (e.code || e.status)) || "error");
+    if (e && e.code === "en_curso") {
+      /* Otra entrega del mismo evento lo está procesando: Stripe reintentará. */
+      console.log("Webhook en curso por otra entrega", event.type, event.id);
+      return jsonResponse({ ok: false, resultado: "en_curso" }, 409);
+    }
+    console.error("Webhook con error", event.type, event.id, limpiarError(e));
     return jsonResponse({ ok: false }, 500);
   }
 }

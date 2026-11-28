@@ -226,12 +226,16 @@ test("pago rechazado → en gracia y alerta en el panel; nunca despublica", asyn
   assert.notEqual(row("SELECT status FROM business_memberships WHERE id = ?", p.membershipId).status, "retirada");
 });
 
-test("cancelar al final del período y anular: idempotentes en Stripe; el MRR deja de contarla", async () => {
+test("cancelar al final del período y anular: idempotentes en Stripe; MRR actual, cancelación programada y MRR futuro", async () => {
   const p = await pagar("SOL-20261127-EEEEE1");
   const c1 = await call(post(`/api/facturacion/membresias/${p.membershipId}/cancelar`, { confirm: true }));
   assert.equal(c1.res.status, 200, JSON.stringify(c1.body));
   assert.equal(S.subscriptions.get(p.sub.id).cancel_at_period_end, true);
-  assert.equal((await get("/api/facturacion/resumen")).body.mrr.centavos, 0);
+  /* Sigue activa y pagada: cuenta en el MRR actual; sale del MRR futuro */
+  const rc = (await get("/api/facturacion/resumen")).body;
+  assert.equal(rc.mrr.centavos, 2499);
+  assert.deepEqual(rc.cancelacion_programada, { centavos: 2499, suscripciones: 1 });
+  assert.deepEqual(rc.mrr_futuro, { centavos: 0, suscripciones: 0 });
   assert.equal((await get("/api/facturacion/suscripciones?estado=cancela_al_final")).body.suscripciones.length, 1);
   const c2 = await call(post(`/api/facturacion/membresias/${p.membershipId}/cancelar`, { confirm: true }));
   assert.equal(c2.res.status, 200);
@@ -343,4 +347,22 @@ test("página y navegación: /facturacion existe con el enlace en todas las secc
   for (const f of ["index.html", "solicitudes.html", "invitaciones.html", "facturacion.html"]) {
     assert.match(readFileSync(new URL("../public/" + f, import.meta.url), "utf8"), /href="\/facturacion"/, f);
   }
+});
+
+test("indicadores: una suscripción activa con alerta de cancelación sigue en el MRR actual; la alerta se cuenta aparte", async () => {
+  const p = await pagar("SOL-20261128-KKKKK1");
+  S.subscriptions.get(p.sub.id).cancel_at = Math.floor(Date.UTC(2027, 1, 26) / 1000);
+  await P.sincronizarSuscripcion(env, db(), p.sub.id);
+  const r = (await get("/api/facturacion/resumen")).body;
+  assert.equal(r.mrr.centavos, 2499, "no se excluye una suscripción activa y pagada");
+  assert.equal(r.alertas_cancelacion, 1);
+  assert.deepEqual(r.cancelacion_programada, { centavos: 0, suscripciones: 0 });
+  const csv = (await call(req("/api/facturacion/exportar?tipo=resumen"))).body;
+  assert.ok(csv.includes("MRR futuro previsto") && csv.includes("Cancelaciones programadas"));
+});
+
+test("página de confirmación: no afirma que se envió un correo; remite al portal de Stripe", () => {
+  const html = readFileSync(new URL("../../pago-confirmado.html", import.meta.url), "utf8");
+  assert.ok(html.includes("Tu pago está confirmado. Puedes consultar y descargar tu recibo y tu factura desde el portal seguro de Stripe."));
+  assert.ok(!/te envió por correo|recibirás el recibo por correo/.test(html));
 });

@@ -25,7 +25,13 @@ export const CURRENCY = "cad";
 export const PRICE_LABEL = "$24.99 CAD al mes";
 /* Versión de las condiciones que se muestran y aceptan antes del pago.
    Cambiarla cada vez que cambie el texto de pago.html / condiciones(). */
-export const TERMS_VERSION = "pagos-premium-2026-11-v1";
+export const TERMS_VERSION = "pagos-premium-2026-11-v2";
+/* Historial de versiones (lo aceptado queda en billing_payment_links.terms_version):
+   v1 — entrega «…en un plazo de hasta N días hábiles desde la confirmación del
+        pago. Se publica solo cuando tú apruebas la vista previa.»
+   v2 — el plazo se cuenta desde la confirmación del primer pago Y la recepción
+        completa de los materiales (texto aprobado por la dirección). */
+export const TERMS_V1_ENTREGA = (n) => `Preparamos tu miniweb y te enviamos la vista previa en un plazo de hasta ${n} días hábiles desde la confirmación del pago. Se publica solo cuando tú apruebas la vista previa.`;
 
 export const LINK_ID_RE = /^PAY-\d{8}-[A-Z2-9]{6}$/;
 export const TOKEN_RE = /^[A-Za-z0-9_-]{32}$/;
@@ -33,6 +39,8 @@ const SESSION_RE = /^cs_(test|live)_[A-Za-z0-9]{10,}$/;
 const DEFAULTS = { grace_days: 7, link_ttl_days: 7, delivery_business_days: 10, refund_window_days: 30 };
 const LIVE_STATUSES = ["incomplete", "trialing", "active", "past_due", "unpaid", "paused"];
 const INVOICE_RANK = { draft: 0, open: 1, uncollectible: 2, void: 3, paid: 3 };
+/* El estado de una factura solo avanza; la comparación va dentro del UPSERT. */
+const RANGO_SQL = (col) => `(CASE ${col} ${Object.entries(INVOICE_RANK).map(([k, v]) => `WHEN '${k}' THEN ${v}`).join(" ")} ELSE 0 END)`;
 
 const ID_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 const stamp = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
@@ -56,6 +64,7 @@ export async function hashToken(token) {
   return [...new Uint8Array(d)].map((x) => x.toString(16).padStart(2, "0")).join("");
 }
 
+const diasHabiles = (n) => (Number(n) === 1 ? "1 día hábil" : `${n} días hábiles`);
 const iso = (sec) => (sec ? new Date(sec * 1000).toISOString() : null);
 const nowIso = () => new Date().toISOString();
 
@@ -92,7 +101,7 @@ export function condiciones(cfg) {
     permanencia: "Sin permanencia mínima.",
     cancelacion: "Puedes cancelar cuando quieras desde el portal seguro de Stripe: la cancelación se aplica al final del período ya pagado y no se cobra la siguiente renovación.",
     inicio: "El período contratado empieza el día en que se confirma tu primer pago.",
-    entrega: `Preparamos tu miniweb y te enviamos la vista previa en un plazo de hasta ${cfg.delivery_business_days} días hábiles desde la confirmación del pago. Se publica solo cuando tú apruebas la vista previa.`,
+    entrega: `Preparamos tu miniweb y te enviamos una vista previa en un plazo máximo de ${diasHabiles(cfg.delivery_business_days)}, contados a partir de la confirmación del primer pago y de la recepción completa de todos los materiales necesarios para su elaboración. Tu miniweb se publicará únicamente después de recibir tu aprobación de la vista previa.`,
     devolucion: `Si tu empresa no puede aprobarse para el Directorio, te devolvemos el 100 % del primer pago dentro de los ${cfg.refund_window_days} días siguientes y cancelamos la suscripción para que no haya renovaciones.`,
     impago: `Si un cobro mensual es rechazado, Stripe vuelve a intentarlo y te avisa por correo. Tienes ${cfg.grace_days} días de gracia para actualizar tu tarjeta; un impago nunca borra tu perfil ni tus estadísticas.`,
   };
@@ -120,6 +129,19 @@ export async function puedeCobrar(db, membershipId) {
 async function audit(db, actor, action, membershipId, objectId, detail) {
   await db.prepare("INSERT INTO billing_audit (at, actor, action, membership_id, object_id, detail) VALUES (?, ?, ?, ?, ?, ?)").bind(nowIso(), actor, action, membershipId || null, objectId || null, detail || null).run();
 }
+const cambios = (r) => Number((r && r.meta && r.meta.changes) || 0);
+
+/* Mensaje técnico apto para registros: sin correos, claves ni secretos, corto. */
+export function limpiarError(e) {
+  const m = String((e && (e.message || e.code)) || e || "error");
+  return m
+    .replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g, "[correo]")
+    .replace(/\b(sk|rk|pk)_(test|live)_[A-Za-z0-9]+/g, "[clave]")
+    .replace(/whsec_[A-Za-z0-9]+/g, "[secreto]")
+    .replace(/Bearer\s+\S+/gi, "Bearer [oculto]")
+    .slice(0, 200);
+}
+
 async function applicationNote(db, applicationId, detail) {
   if (!applicationId) return;
   try {
@@ -273,18 +295,30 @@ export const EVENTOS = [
 /* Registra el evento (idempotencia) y lo aplica. Devuelve { resultado }. Un
    evento ya aplicado o ignorado no se vuelve a aplicar; uno con error sí
    (Stripe reintenta). */
+/* Un evento en proceso «reserva» su fila; otra entrega simultánea del mismo
+   evento no lo procesa dos veces (recibe 409 y Stripe la reintenta). Si un
+   proceso se interrumpe, la reserva caduca y el reintento lo retoma. */
+export const RESERVA_MS = 60000;
+
 export async function procesarEvento(env, db, event) {
-  const prev = await db.prepare("SELECT result FROM billing_events WHERE stripe_event_id = ?").bind(event.id).first();
-  if (prev && ["aplicado", "ignorado", "rechazado"].includes(prev.result)) return { resultado: "duplicado" };
   const obj = (event.data && event.data.object) || {};
   /* El webhook debe estar registrado con la misma versión que la API. Si no,
      se procesa igual (el estado se relee de la API) pero queda el aviso. */
   if (event.api_version && event.api_version !== STRIPE_API_VERSION) console.warn("Webhook con otra versión de la API", event.api_version, "esperada", STRIPE_API_VERSION);
-  if (!prev) {
-    await db
-      .prepare("INSERT OR IGNORE INTO billing_events (stripe_event_id, type, livemode, stripe_created, object_id, received_at) VALUES (?, ?, ?, ?, ?, ?)")
-      .bind(event.id, event.type, event.livemode ? 1 : 0, event.created || 0, obj.id || null, nowIso())
+  const ahora = nowIso();
+  const nuevo = await db
+    .prepare("INSERT OR IGNORE INTO billing_events (stripe_event_id, type, livemode, stripe_created, object_id, received_at, processed_at) VALUES (?, ?, ?, ?, ?, ?, ?)")
+    .bind(event.id, event.type, event.livemode ? 1 : 0, event.created || 0, obj.id || null, ahora, ahora)
+    .run();
+  if (!cambios(nuevo)) {
+    const prev = await db.prepare("SELECT result FROM billing_events WHERE stripe_event_id = ?").bind(event.id).first();
+    if (prev && ["aplicado", "ignorado", "rechazado"].includes(prev.result)) return { resultado: "duplicado" };
+    const caducada = new Date(Date.now() - RESERVA_MS).toISOString();
+    const reserva = await db
+      .prepare("UPDATE billing_events SET result = 'procesando', processed_at = ? WHERE stripe_event_id = ? AND (result = 'error' OR (result = 'procesando' AND (processed_at IS NULL OR processed_at < ?)))")
+      .bind(ahora, event.id, caducada)
       .run();
+    if (!cambios(reserva)) throw Object.assign(new Error("evento en proceso por otra entrega"), { code: "en_curso", status: 409 });
   }
   const done = (result, detail) =>
     db.prepare("UPDATE billing_events SET result = ?, processed_at = ?, detail = ? WHERE stripe_event_id = ?").bind(result, nowIso(), detail || null, event.id).run();
@@ -293,7 +327,10 @@ export async function procesarEvento(env, db, event) {
     await done(out.result, out.detail);
     return { resultado: out.result };
   } catch (e) {
-    await done("error", String((e && e.code) || (e && e.message) || "error").slice(0, 120));
+    const msg = limpiarError(e);
+    /* El historial del error se conserva aunque Stripe recupere luego la entrega. */
+    await audit(db, "sistema", "error_webhook", null, event.id, `${event.type}: ${msg}`).catch(() => {});
+    await done("error", msg.slice(0, 120)).catch(() => {});
     throw e;
   }
 }
@@ -348,11 +385,13 @@ async function aplicar(env, db, event, obj) {
       await guardarFactura(env, db, inv, subId);
       const sub = await db.prepare("SELECT membership_id FROM billing_subscriptions WHERE stripe_subscription_id = ?").bind(subId).first();
       if (event.type === "invoice.payment_failed" && sub) {
-        await db.prepare("UPDATE billing_subscriptions SET first_failed_at = COALESCE(first_failed_at, ?), updated_at = ? WHERE stripe_subscription_id = ?").bind(iso(event.created), nowIso(), subId).run();
+        /* Un aviso de rechazo que llega tarde (la factura ya está pagada) no
+           vuelve a abrir el período de gracia. */
+        if (inv.status !== "paid") await db.prepare("UPDATE billing_subscriptions SET first_failed_at = COALESCE(first_failed_at, ?), updated_at = ? WHERE stripe_subscription_id = ? AND status <> 'active'").bind(iso(event.created), nowIso(), subId).run();
         await audit(db, "stripe", "pago_rechazado", sub.membership_id, obj.id, `intento ${obj.attempt_count || 1}`);
       }
       if (event.type === "invoice.paid" && sub) {
-        await db.prepare("UPDATE billing_subscriptions SET first_failed_at = NULL, updated_at = ? WHERE stripe_subscription_id = ?").bind(nowIso(), subId).run();
+        await db.prepare("UPDATE billing_subscriptions SET first_failed_at = NULL, updated_at = ? WHERE stripe_subscription_id = ? AND status = 'active'").bind(nowIso(), subId).run();
         if ((inv.billing_reason || obj.billing_reason) === "subscription_create") await primerPagoConfirmado(env, db, sub.membership_id, inv);
       }
       return { result: "aplicado" };
@@ -365,9 +404,11 @@ async function aplicar(env, db, event, obj) {
           .prepare("INSERT OR IGNORE INTO billing_refunds (stripe_refund_id, stripe_invoice_id, charge_id, membership_id, amount, currency, status, reason, requested_by, livemode, stripe_created, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'stripe', ?, ?, ?)")
           .bind(rf.id, inv ? inv.stripe_invoice_id : null, obj.id, inv ? inv.membership_id : null, rf.amount, rf.currency, rf.status || null, rf.reason || null, obj.livemode ? 1 : 0, rf.created || null, nowIso())
           .run();
-        await db.prepare("UPDATE billing_refunds SET status = ? WHERE stripe_refund_id = ?").bind(rf.status || null, rf.id).run();
+        /* Un estado final (succeeded/failed/canceled) no retrocede a «pending». */
+        await db.prepare("UPDATE billing_refunds SET status = ? WHERE stripe_refund_id = ? AND NOT (? = 'pending' AND COALESCE(status, '') IN ('succeeded', 'failed', 'canceled'))").bind(rf.status || null, rf.id, rf.status || "").run();
       }
-      if (inv) await db.prepare("UPDATE billing_invoices SET amount_refunded = ?, updated_at = ? WHERE stripe_invoice_id = ?").bind(obj.amount_refunded || 0, nowIso(), inv.stripe_invoice_id).run();
+      /* amount_refunded es acumulado: un evento antiguo no lo reduce. */
+      if (inv) await db.prepare("UPDATE billing_invoices SET amount_refunded = MAX(COALESCE(amount_refunded, 0), ?), updated_at = ? WHERE stripe_invoice_id = ?").bind(obj.amount_refunded || 0, nowIso(), inv.stripe_invoice_id).run();
       return { result: "aplicado" };
     }
     case "charge.dispute.created":
@@ -381,17 +422,27 @@ async function aplicar(env, db, event, obj) {
   }
 }
 
-/* Lee la suscripción ACTUAL en la API (no la del evento) y la guarda solo si
-   es más reciente que lo ya aplicado: resiste eventos fuera de orden. */
-export async function sincronizarSuscripcion(env, db, subscriptionId, eventCreated = 0) {
+/* Lee la suscripción ACTUAL en la API (no la del evento) y la guarda con una
+   sola escritura atómica (UPSERT condicional):
+   - versión = hora (ms) en que se pidió la lectura a Stripe. Una lectura más
+     antigua que termine después nunca pisa a una más nueva; con la misma
+     versión gana la última (son igual de recientes).
+   - Dos eventos simultáneos ya no chocan al crear la suscripción.
+   - Solo se actualiza la fila con el MISMO identificador de Stripe: otra
+     suscripción de la misma membresía nunca la sobrescribe. */
+export async function sincronizarSuscripcion(env, db, subscriptionId, _eventCreated = 0, { reintento = false } = {}) {
+  const version = Date.now();
   const s = await stripeRequest(env, "GET", `/v1/subscriptions/${subscriptionId}`, {});
   if (s.livemode) return { result: "rechazado", detail: "modo real" };
   const membershipId = (s.metadata && s.metadata.membership_id) || null;
-  const known = await db.prepare("SELECT membership_id, stripe_updated FROM billing_subscriptions WHERE stripe_subscription_id = ?").bind(s.id).first();
+  const known = await db.prepare("SELECT membership_id FROM billing_subscriptions WHERE stripe_subscription_id = ?").bind(s.id).first();
   const mid = (known && known.membership_id) || membershipId;
   if (!mid) {
     await audit(db, "sistema", "alerta_suscripcion_sin_membresia", null, s.id, "Suscripción sin metadata membership_id");
     return { result: "rechazado", detail: "sin membresía" };
+  }
+  if (known && membershipId && membershipId !== known.membership_id) {
+    await auditUnaVez(db, "alerta_membresia_distinta", known.membership_id, s.id, `metadata ${membershipId}`);
   }
   if (!known) {
     const ok = await puedeCobrar(db, mid);
@@ -400,31 +451,66 @@ export async function sincronizarSuscripcion(env, db, subscriptionId, eventCreat
       return { result: "rechazado", detail: "cobro no permitido: " + ok.motivo };
     }
   }
+  await alertasCancelacion(db, s, mid);
   const item = (s.items && s.items.data && s.items.data[0]) || {};
   const periodStart = s.current_period_start || item.current_period_start;
   const periodEnd = s.current_period_end || item.current_period_end;
-  const version = Math.max(Number(eventCreated) || 0, 1);
-  if (known && known.stripe_updated && known.stripe_updated > version) return { result: "ignorado", detail: "evento antiguo" };
   const price = item.price || {};
-  const vals = [s.status, s.cancel_at_period_end ? 1 : 0, iso(periodStart), iso(periodEnd), iso(s.canceled_at), iso(s.ended_at), price.id || null, price.unit_amount != null ? price.unit_amount : null, price.currency || s.currency || null, version, nowIso()];
-  if (known) {
-    await db.prepare("UPDATE billing_subscriptions SET status = ?, cancel_at_period_end = ?, current_period_start = ?, current_period_end = ?, canceled_at = ?, ended_at = ?, price_id = ?, amount = ?, currency = ?, stripe_updated = ?, updated_at = ? WHERE stripe_subscription_id = ?").bind(...vals, s.id).run();
-  } else {
-    await db
-      .prepare("INSERT INTO billing_subscriptions (status, cancel_at_period_end, current_period_start, current_period_end, canceled_at, ended_at, price_id, amount, currency, stripe_updated, updated_at, stripe_subscription_id, membership_id, stripe_customer_id, livemode, stripe_created, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
-      .bind(...vals, s.id, mid, typeof s.customer === "object" ? s.customer.id : s.customer, s.livemode ? 1 : 0, s.created || null, nowIso())
+  const customer = typeof s.customer === "object" && s.customer ? s.customer.id : s.customer;
+  let r;
+  try {
+    r = await db
+      .prepare(
+        `INSERT INTO billing_subscriptions (stripe_subscription_id, membership_id, stripe_customer_id, status, cancel_at_period_end, current_period_start, current_period_end, canceled_at, ended_at, price_id, amount, currency, livemode, stripe_created, stripe_updated, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         ON CONFLICT(stripe_subscription_id) DO UPDATE SET status = excluded.status, cancel_at_period_end = excluded.cancel_at_period_end, current_period_start = excluded.current_period_start, current_period_end = excluded.current_period_end,
+           canceled_at = excluded.canceled_at, ended_at = excluded.ended_at, price_id = excluded.price_id, amount = excluded.amount, currency = excluded.currency, stripe_updated = excluded.stripe_updated, updated_at = excluded.updated_at
+         WHERE excluded.stripe_updated >= COALESCE(billing_subscriptions.stripe_updated, 0)`
+      )
+      .bind(s.id, mid, customer, s.status, s.cancel_at_period_end ? 1 : 0, iso(periodStart), iso(periodEnd), iso(s.canceled_at), iso(s.ended_at), price.id || null, price.unit_amount != null ? price.unit_amount : null, price.currency || s.currency || null, s.livemode ? 1 : 0, s.created || null, version, nowIso(), nowIso())
       .run();
-    await db.prepare("INSERT OR IGNORE INTO billing_customers (membership_id, stripe_customer_id, livemode, created_at) VALUES (?, ?, ?, ?)").bind(mid, typeof s.customer === "object" ? s.customer.id : s.customer, 0, nowIso()).run();
+  } catch (e) {
+    if (!/UNIQUE/i.test(String(e && e.message))) throw e;
+    /* Otra suscripción (otro identificador) figura vigente para la misma
+       membresía. Se relee esa otra en la API: si ya terminó, se corrige y se
+       reintenta; si sigue vigente, es un duplicado real y queda como alerta
+       para revisión humana. Nunca se sobrescribe. */
+    const otra = await db.prepare(`SELECT stripe_subscription_id FROM billing_subscriptions WHERE membership_id = ? AND stripe_subscription_id <> ? AND status IN (${LIVE_STATUSES.map(() => "?").join(",")})`).bind(mid, s.id, ...LIVE_STATUSES).first();
+    if (otra && !reintento) {
+      await sincronizarSuscripcion(env, db, otra.stripe_subscription_id, 0, { reintento: true });
+      return sincronizarSuscripcion(env, db, s.id, 0, { reintento: true });
+    }
+    await auditUnaVez(db, "alerta_suscripcion_duplicada", mid, s.id, `Otra suscripción vigente: ${otra ? otra.stripe_subscription_id : "?"}`);
+    return { result: "rechazado", detail: "otra suscripción vigente para la membresía" };
   }
+  if (!cambios(r)) return { result: "ignorado", detail: "ya hay un estado más reciente" };
+  if (customer) await db.prepare("INSERT OR IGNORE INTO billing_customers (membership_id, stripe_customer_id, livemode, created_at) VALUES (?, ?, 0, ?)").bind(mid, customer, nowIso()).run();
+  /* Facturas guardadas antes de conocer la suscripción: quedan vinculadas. */
+  await db.prepare("UPDATE billing_invoices SET membership_id = ? WHERE stripe_subscription_id = ? AND membership_id IS NULL").bind(mid, s.id).run();
   return { result: "aplicado" };
+}
+
+/* Una alerta por objeto y detalle (no se repite en cada evento). */
+async function auditUnaVez(db, action, membershipId, objectId, detail) {
+  await db
+    .prepare("INSERT INTO billing_audit (at, actor, action, membership_id, object_id, detail) SELECT ?, 'sistema', ?, ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM billing_audit WHERE action = ? AND object_id IS ? AND detail IS ?)")
+    .bind(nowIso(), action, membershipId || null, objectId || null, detail || null, action, objectId || null, detail || null)
+    .run();
+}
+
+/* Cancelaciones que no pidió el cliente desde el portal ni el equipo desde el
+   panel: fecha de cancelación fija (cancel_at) o una baja por otro motivo.
+   Solo alertan; no cambian el MRR de una suscripción que sigue activa. */
+async function alertasCancelacion(db, s, mid) {
+  if (s.cancel_at && !s.cancel_at_period_end) await auditUnaVez(db, "alerta_cancelacion_programada", mid, s.id, `cancel_at ${iso(s.cancel_at)}`);
+  const motivo = s.cancellation_details && s.cancellation_details.reason;
+  if (s.status === "canceled" && motivo && motivo !== "cancellation_requested") await auditUnaVez(db, "alerta_cancelacion_inesperada", mid, s.id, `motivo ${motivo}`);
 }
 
 /* Guarda la factura (subtotal, impuestos y total por separado). Su estado solo
    avanza: un evento antiguo no devuelve una factura pagada a «abierta». */
 export async function guardarFactura(env, db, inv, subscriptionId) {
   const sub = await db.prepare("SELECT membership_id FROM billing_subscriptions WHERE stripe_subscription_id = ?").bind(subscriptionId).first();
-  const prev = await db.prepare("SELECT status FROM billing_invoices WHERE stripe_invoice_id = ?").bind(inv.id).first();
-  if (prev && (INVOICE_RANK[prev.status] || 0) > (INVOICE_RANK[inv.status] || 0)) return;
   const line = (inv.lines && inv.lines.data && inv.lines.data[0]) || {};
   const taxes = (inv.total_taxes || inv.total_tax_amounts || []).map((t) => ({ amount: t.amount, rate: t.tax_rate_details || t.tax_rate || null, taxable: t.taxable_amount }));
   const tax = inv.tax != null ? inv.tax : taxes.reduce((a, t) => a + (t.amount || 0), 0);
@@ -438,7 +524,8 @@ export async function guardarFactura(env, db, inv, subscriptionId) {
     .prepare(
       `INSERT INTO billing_invoices (stripe_invoice_id, stripe_subscription_id, membership_id, stripe_customer_id, number, status, billing_reason, currency, subtotal, tax, total, amount_paid, tax_breakdown, customer_province, payment_intent_id, charge_id, hosted_invoice_url, invoice_pdf, period_start, period_end, paid_at, attempt_count, next_payment_attempt, livemode, stripe_created, created_at, updated_at)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-       ON CONFLICT(stripe_invoice_id) DO UPDATE SET number = excluded.number, status = excluded.status, subtotal = excluded.subtotal, tax = excluded.tax, total = excluded.total, amount_paid = excluded.amount_paid, tax_breakdown = excluded.tax_breakdown, customer_province = excluded.customer_province, payment_intent_id = COALESCE(excluded.payment_intent_id, billing_invoices.payment_intent_id), charge_id = COALESCE(excluded.charge_id, billing_invoices.charge_id), hosted_invoice_url = excluded.hosted_invoice_url, invoice_pdf = excluded.invoice_pdf, paid_at = COALESCE(excluded.paid_at, billing_invoices.paid_at), attempt_count = excluded.attempt_count, next_payment_attempt = excluded.next_payment_attempt, updated_at = excluded.updated_at`
+       ON CONFLICT(stripe_invoice_id) DO UPDATE SET membership_id = COALESCE(billing_invoices.membership_id, excluded.membership_id), stripe_subscription_id = COALESCE(billing_invoices.stripe_subscription_id, excluded.stripe_subscription_id), number = excluded.number, status = excluded.status, subtotal = excluded.subtotal, tax = excluded.tax, total = excluded.total, amount_paid = excluded.amount_paid, tax_breakdown = excluded.tax_breakdown, customer_province = excluded.customer_province, payment_intent_id = COALESCE(excluded.payment_intent_id, billing_invoices.payment_intent_id), charge_id = COALESCE(excluded.charge_id, billing_invoices.charge_id), hosted_invoice_url = excluded.hosted_invoice_url, invoice_pdf = excluded.invoice_pdf, paid_at = COALESCE(excluded.paid_at, billing_invoices.paid_at), attempt_count = excluded.attempt_count, next_payment_attempt = excluded.next_payment_attempt, updated_at = excluded.updated_at
+       WHERE ${RANGO_SQL("excluded.status")} >= ${RANGO_SQL("billing_invoices.status")}`
     )
     .bind(
       inv.id, subscriptionId, sub ? sub.membership_id : null, typeof inv.customer === "object" ? inv.customer && inv.customer.id : inv.customer || null, inv.number || null, inv.status, inv.billing_reason || null, inv.currency || null,
@@ -471,9 +558,13 @@ export async function registrarComision(env, db, invoiceId, chargeId) {
 /* Primer pago confirmado: la solicitud queda «pagada» en su historial (el
    estado editorial no cambia) y se avisa al empresario. Una sola vez. */
 async function primerPagoConfirmado(env, db, membershipId, inv) {
-  const done = await db.prepare("SELECT 1 AS x FROM billing_audit WHERE membership_id = ? AND action = 'primer_pago_confirmado'").bind(membershipId).first();
-  if (done) return;
-  await audit(db, "stripe", "primer_pago_confirmado", membershipId, inv.id, `Factura ${inv.number || inv.id}`);
+  /* Comprobar y registrar en UNA instrucción: dos entregas simultáneas no
+     pueden confirmar dos veces. */
+  const r = await db
+    .prepare("INSERT INTO billing_audit (at, actor, action, membership_id, object_id, detail) SELECT ?, 'stripe', 'primer_pago_confirmado', ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM billing_audit WHERE membership_id = ? AND action = 'primer_pago_confirmado')")
+    .bind(nowIso(), membershipId, inv.id, `Factura ${inv.number || inv.id}`, membershipId)
+    .run();
+  if (!cambios(r)) return;
   const m = await db.prepare("SELECT application_id FROM business_memberships WHERE id = ?").bind(membershipId).first();
   await membershipNote(db, membershipId, "pago_confirmado", `Primer pago confirmado (${inv.number || inv.id}). La miniweb se prepara y se publica tras la aprobación de la vista previa.`);
   if (m && m.application_id) await applicationNote(db, m.application_id, `Solicitud pagada: primer pago confirmado por Stripe (${inv.number || inv.id}). Preparar la miniweb.`);
@@ -493,7 +584,7 @@ async function correoConfirmacion(env, db, membershipId, inv) {
 <p>Hola, recibimos el primer pago del <strong>Perfil Empresarial Premium</strong> de <strong>${esc(link.business_name)}</strong>.</p>
 <p>${esc(c.inicio)} ${esc(c.entrega)}</p>
 <p>${esc(c.renovacion)} ${esc(c.cancelacion)}</p>
-${inv.hosted_invoice_url ? `<p>Tu factura y recibo: <a href="${esc(inv.hosted_invoice_url)}">ver factura</a>. Stripe también te envía el recibo por correo.</p>` : ""}
+${inv.hosted_invoice_url ? `<p>Tu factura y recibo: <a href="${esc(inv.hosted_invoice_url)}">ver factura</a>. También puedes consultarlos en el portal seguro de Stripe.</p>` : ""}
 ${portal}
 <p style="color:#555;font-size:13px">El Podcast del Migrante · eRadio Global Corp.</p></div>`;
   await fetch(env.RESEND_API_URL || "https://api.resend.com/emails", {
@@ -550,7 +641,10 @@ export async function devolverPrimerPago(env, db, { membershipId, actor, motivo,
     });
     await sincronizarSuscripcion(env, db, inv.stripe_subscription_id, Math.floor(now.getTime() / 1000)).catch(() => {});
   }
-  await audit(db, actor, "devolucion_primer_pago", membershipId, refund.id, `${(refund.amount / 100).toFixed(2)} ${String(refund.currency || "").toUpperCase()} · suscripción cancelada`);
+  await db
+    .prepare("INSERT INTO billing_audit (at, actor, action, membership_id, object_id, detail) SELECT ?, ?, 'devolucion_primer_pago', ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM billing_audit WHERE action = 'devolucion_primer_pago' AND object_id = ?)")
+    .bind(nowIso(), actor, membershipId, refund.id, `${(refund.amount / 100).toFixed(2)} ${String(refund.currency || "").toUpperCase()} · suscripción cancelada`, refund.id)
+    .run();
   return { refundId: refund.id, amount: refund.amount };
 }
 
@@ -567,7 +661,7 @@ export async function conciliar(env, db, { desde = Math.floor(Date.now() / 1000)
       res.revisadas++;
       const known = await db.prepare("SELECT status, cancel_at_period_end FROM billing_subscriptions WHERE stripe_subscription_id = ?").bind(s.id).first();
       if (known && known.status === s.status && !!known.cancel_at_period_end === !!s.cancel_at_period_end) continue;
-      const r = await sincronizarSuscripcion(env, db, s.id, Math.floor(Date.now() / 1000));
+      const r = await sincronizarSuscripcion(env, db, s.id);
       if (r.result === "aplicado") res.corregidas++;
       else res.alertas++;
     }

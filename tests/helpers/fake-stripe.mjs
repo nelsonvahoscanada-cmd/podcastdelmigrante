@@ -46,7 +46,16 @@ export function fakeStripe({ livemode = false } = {}) {
   const json = (data, status = 200) => new Response(JSON.stringify(data), { status, headers: { "Content-Type": "application/json" } });
   const notFound = () => json({ error: { type: "invalid_request_error", code: "resource_missing", message: "No such object" } }, 404);
 
+  /* Devuelve una función que libera la respuesta retenida. */
+  S.retenerRespuesta = (metodo, ruta) => {
+    let liberar;
+    S.retener = { metodo, ruta, usada: false, hasta: new Promise((r) => (liberar = r)) };
+    return () => liberar();
+  };
   S.handle = async (url, init = {}) => {
+    /* Latencia de red opcional (ms): con ella, varias llamadas simultáneas se
+       solapan como en producción y aparecen las carreras reales. */
+    if (S.latencia) await new Promise((r) => setTimeout(r, typeof S.latencia === "function" ? S.latencia() : S.latencia));
     const u = new URL(url);
     const method = init.method || "GET";
     const auth = (init.headers && (init.headers.Authorization || init.headers.authorization)) || "";
@@ -62,6 +71,11 @@ export function fakeStripe({ livemode = false } = {}) {
     for (const [k, v] of u.searchParams) if (/^expand\[\d*\]$/.test(k)) expand.push(v);
     const resource = /^\/v1\/invoices\//.test(u.pathname) ? "invoice" : /^\/v1\/charges\//.test(u.pathname) ? "charge" : null;
     for (const e of expand) if (!resource || !ACACIA_EXPAND[resource].includes(e)) return reject("This property cannot be expanded (" + e + ").");
+    /* Fallo provocado (p. ej. error 500 de la API) en las próximas N llamadas a una ruta */
+    if (S.fallar && S.fallar.metodo === method && u.pathname.startsWith(S.fallar.ruta) && S.fallar.veces > 0) {
+      S.fallar.veces--;
+      return json({ error: { type: "api_error", message: S.fallar.mensaje || "fallo simulado" } }, S.fallar.status || 500);
+    }
     const idem = init.headers && init.headers["Idempotency-Key"];
     if (idem && S.idem.has(idem)) return json(S.idem.get(idem));
     const body = new URLSearchParams(init.body || "");
@@ -100,6 +114,14 @@ export function fakeStripe({ livemode = false } = {}) {
       return notFound();
     }
     if (idem) S.idem.set(idem, out);
+    /* Retener una respuesta: la foto del objeto se toma AHORA y se entrega
+       cuando la prueba lo libere (simula una lectura lenta de la API). */
+    if (S.retener && S.retener.metodo === method && S.retener.ruta === u.pathname && !S.retener.usada) {
+      S.retener.usada = true;
+      const foto = JSON.parse(JSON.stringify(out));
+      await S.retener.hasta;
+      return json(foto);
+    }
     return json(out);
   };
   return S;
