@@ -56,6 +56,20 @@ export class StripeError extends Error {
   }
 }
 
+/* Versión de la API FIJADA. Debe coincidir con la versión del webhook
+   registrado en Stripe (2025-01-27.acacia), para que las respuestas de la API y
+   los eventos tengan siempre la misma forma. Cambiarla exige revisar las
+   expansiones (EXPANSIONES_VALIDAS) y las pruebas. */
+export const STRIPE_API_VERSION = "2025-01-27.acacia";
+
+/* Expansiones que el código usa y que existen en esa versión. En acacia la
+   factura tiene «charge» y «payment_intent»; «payments» no existe (llegó en
+   2025-03-31.basil) y Stripe rechaza la consulta entera si se pide. */
+export const EXPANSIONES_VALIDAS = {
+  invoice: ["charge", "charge.balance_transaction", "payment_intent"],
+  charge: ["balance_transaction"],
+};
+
 /* Llamada a la API. `idempotencyKey` evita cobros u objetos duplicados si la
    misma operación se repite (reintento, doble clic, dos pestañas). */
 export async function stripeRequest(env, method, path, params, { idempotencyKey } = {}) {
@@ -64,7 +78,7 @@ export async function stripeRequest(env, method, path, params, { idempotencyKey 
   if (!mode) throw new StripeError(0, "config", "clave_invalida", "");
   if (mode === "live" && !LIVE_MODE_ALLOWED) throw new StripeError(0, "config", "modo_real_desactivado", "");
   const base = (env.STRIPE_API_BASE || STRIPE_API).replace(/\/$/, "");
-  const headers = { Authorization: `Bearer ${key}` };
+  const headers = { Authorization: `Bearer ${key}`, "Stripe-Version": STRIPE_API_VERSION };
   let url = base + path;
   let body;
   if (method === "GET") {

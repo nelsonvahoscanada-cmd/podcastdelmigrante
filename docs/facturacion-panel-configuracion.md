@@ -62,7 +62,6 @@ Ruta: **Workers & Pages → `podcastdelmigrante-admin-pruebas` → Settings → 
 | Variable (texto) | `ACCESS_TEAM_DOMAIN` | p. ej. `https://eradio.cloudflareaccess.com` | Zero Trust → Settings → Team domain |
 | Variable (texto) | `ACCESS_AUD` | AUD de la aplicación del paso 2 | Zero Trust → Access → Applications |
 | Variable (texto) | `PAGOS_SITE_ORIGIN` | `https://<rama>.podcastdelmigrante.pages.dev` | La vista previa del sitio donde está `/pago` (se la doy al abrir el PR) |
-| Variable (texto) | `STRIPE_PRICE_ID` | `price_…` de prueba | Stripe (Test) → Product catalog |
 | Ya definida | `PAGOS_MODO` | `test` | Viene en `wrangler.toml`; no la cambies |
 | **Secreto** | `ADMIN_EMAILS` | correos con acceso al panel, separados por comas | Tú |
 | **Secreto** | `BILLING_ADMIN_EMAILS` | correos que pueden hacer acciones financieras | Tú. Sin este secreto, el panel es de solo lectura |
@@ -74,6 +73,7 @@ Los secretos también pueden cargarse desde la terminal, que pide el valor sin m
 
 Qué **no** definir:
 
+- `STRIPE_PRICE_ID`, porque el panel no crea sesiones de pago (eso lo hace el sitio);
 - `ALLOW_LOCAL_DEV`, que es solo para desarrollo local;
 - ningún binding a `podcastdelmigrante-directorio` de producción;
 - `STRIPE_AUTOMATIC_TAX`.

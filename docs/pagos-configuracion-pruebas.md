@@ -85,6 +85,8 @@ Stripe (Test mode) → Developers → Webhooks → **Add endpoint**.
   - `customer.subscription.created`, `customer.subscription.updated` y `customer.subscription.deleted`;
   - `invoice.finalized`, `invoice.paid`, `invoice.payment_failed` e `invoice.payment_action_required`;
   - `charge.refunded`, `charge.dispute.created` y `charge.dispute.closed`.
+- **Versión de la API:** `2025-01-27.acacia`. Es la misma que fija el código (`STRIPE_API_VERSION` en `functions/_lib/stripe.js`); el webhook y la API deben usar siempre la misma. Cambiarla exige un PR que revise las expansiones y las pruebas.
+- **Payload:** *Snapshot*.
 - **Secreto:** copia el *Signing secret* (`whsec_…`) y pégalo como secreto `STRIPE_WEBHOOK_SECRET` en el entorno Preview.
 
 ### 5. Avísame cuando esté listo

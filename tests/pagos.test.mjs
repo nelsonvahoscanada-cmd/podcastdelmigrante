@@ -13,7 +13,7 @@ import { readFileSync } from "node:fs";
 import { fakeD1 } from "./helpers/fake-cloudflare.mjs";
 import { fakeStripe, installStripeFetch, event } from "./helpers/fake-stripe.mjs";
 import * as P from "../functions/_lib/pagos.js";
-import { verifyWebhook, signPayload, keyMode, encodeForm, LIVE_MODE_ALLOWED } from "../functions/_lib/stripe.js";
+import { verifyWebhook, signPayload, keyMode, encodeForm, LIVE_MODE_ALLOWED, STRIPE_API_VERSION, EXPANSIONES_VALIDAS, stripeRequest } from "../functions/_lib/stripe.js";
 import { missingConfig } from "../functions/_lib/pagos-env.js";
 import { onRequestPost as enlace, onRequest as enlaceOtro } from "../functions/pagos/enlace.js";
 import { onRequestPost as checkout } from "../functions/pagos/checkout.js";
@@ -428,4 +428,69 @@ test("/pagos/estado y consultas sin permiso: no revelan nada; registros sin secr
 test("formato de la API de Stripe: parámetros anidados", () => {
   const f = encodeForm({ mode: "subscription", line_items: [{ price: "price_1", quantity: 1 }], metadata: { a: "b" }, flag: true, nada: null });
   assert.equal(f.toString(), "mode=subscription&line_items%5B0%5D%5Bprice%5D=price_1&line_items%5B0%5D%5Bquantity%5D=1&metadata%5Ba%5D=b&flag=true");
+});
+
+/* ---------- Versión de la API fijada (2025-01-27.acacia) ---------- */
+test("API fijada en 2025-01-27.acacia: todas las llamadas llevan la versión y ninguna expansión es rechazada", async () => {
+  assert.equal(STRIPE_API_VERSION, "2025-01-27.acacia", "debe coincidir con la versión del webhook registrado en Stripe");
+  const { link, sub, inv } = await pagarPrimerMes();
+  /* Renovación y cancelación al final del período */
+  const r2 = S.addInvoice({ subscription: sub.id, billing_reason: "subscription_cycle", tax: 0, total: 2499, amount_paid: 2499, total_tax_amounts: [] });
+  await sendEvent(event("invoice.paid", { id: r2.id, subscription: sub.id, billing_reason: "subscription_cycle" }));
+  S.subscriptions.get(sub.id).cancel_at_period_end = true;
+  await sendEvent(event("customer.subscription.updated", { id: sub.id }));
+  await P.conciliar(env, db());
+  await P.devolverPrimerPago(env, db(), { membershipId: link.membershipId, actor: "admin@example.com", motivo: "No se pudo aprobar" });
+
+  assert.ok(S.calls.length > 5);
+  assert.deepEqual(S.calls.filter((c) => c.version !== STRIPE_API_VERSION), [], "toda llamada fija Stripe-Version");
+  assert.deepEqual(S.rejected, [], "Stripe no rechazó ninguna consulta (versión ni expansiones)");
+  const f = row("SELECT charge_id, payment_intent_id, stripe_fee FROM billing_invoices WHERE stripe_invoice_id = ?", inv.id);
+  assert.equal(f.charge_id, inv.charge, "identificador del cargo recuperado");
+  assert.equal(f.payment_intent_id, inv.payment_intent);
+  assert.equal(f.stripe_fee, Math.round(2624 * 0.029) + 30, "comisión real desde la transacción de saldo");
+  assert.equal(row("SELECT stripe_fee FROM billing_invoices WHERE stripe_invoice_id = ?", r2.id).stripe_fee, Math.round(2499 * 0.029) + 30);
+  assert.equal(S.calls.filter((c) => c.path.startsWith("/v1/charges/")).length, 0, "la comisión llega con la factura, sin consultas extra");
+  assert.equal(S.refunds[0].payment_intent, inv.payment_intent, "la devolución usa el pago del primer cobro");
+});
+
+test("acacia: el período de facturación y la cancelación se leen de la suscripción; renovaciones con su propio período", async () => {
+  const { sub } = await pagarPrimerMes();
+  const s = row("SELECT current_period_start, current_period_end, cancel_at_period_end FROM billing_subscriptions WHERE stripe_subscription_id = ?", sub.id);
+  assert.equal(s.current_period_end, new Date(sub.current_period_end * 1000).toISOString());
+  const start = sub.current_period_end, end = start + 31 * 86400;
+  Object.assign(S.subscriptions.get(sub.id), { current_period_start: start, current_period_end: end });
+  const r = S.addInvoice({ subscription: sub.id, billing_reason: "subscription_cycle", lines: { data: [{ period: { start, end } }] } });
+  await sendEvent(event("invoice.paid", { id: r.id, subscription: sub.id }, { created: Math.floor(Date.now() / 1000) + 5 }));
+  assert.equal(row("SELECT current_period_end FROM billing_subscriptions WHERE stripe_subscription_id = ?", sub.id).current_period_end, new Date(end * 1000).toISOString());
+  const fr = row("SELECT period_start, period_end, tax_breakdown FROM billing_invoices WHERE stripe_invoice_id = ?", r.id);
+  assert.equal(fr.period_end, new Date(end * 1000).toISOString());
+  assert.equal(JSON.parse(fr.tax_breakdown)[0].amount, 125, "impuestos de acacia (total_tax_amounts)");
+});
+
+test("regresión: una expansión inexistente en acacia (p. ej. «payments») es rechazada por Stripe y la lista del código solo usa válidas", async () => {
+  await assert.rejects(stripeRequest(env, "GET", "/v1/invoices/in_x", { expand: ["payments.data.payment.payment_intent"] }), (e) => e.status === 400);
+  const inv = S.addInvoice({});
+  await stripeRequest(env, "GET", `/v1/invoices/${inv.id}`, { expand: EXPANSIONES_VALIDAS.invoice });
+  await stripeRequest(env, "GET", `/v1/charges/${inv.charge}`, { expand: EXPANSIONES_VALIDAS.charge });
+  assert.equal(S.rejected.length, 1);
+  /* Ninguna expansión escrita a mano fuera de la lista declarada */
+  const src = readFileSync(new URL("../functions/_lib/pagos.js", import.meta.url), "utf8");
+  assert.ok(!/expand:\s*\[/.test(src), "las expansiones salen solo de EXPANSIONES_VALIDAS");
+  assert.ok(!/["'`]payments\./.test(src), "ninguna ruta de expansión «payments.…» (no existe en acacia)");
+});
+
+test("webhook con otra versión de la API: se procesa leyendo el estado de la API y queda el aviso", async () => {
+  const warns = [];
+  const orig = console.warn;
+  console.warn = (...a) => warns.push(a.join(" "));
+  try {
+    const { sub } = await pagarPrimerMes();
+    S.subscriptions.get(sub.id).cancel_at_period_end = true;
+    await sendEvent(event("customer.subscription.updated", { id: sub.id }, { apiVersion: "2025-03-31.basil", created: Math.floor(Date.now() / 1000) + 9 }));
+    assert.equal(row("SELECT cancel_at_period_end AS c FROM billing_subscriptions WHERE stripe_subscription_id = ?", sub.id).c, 1);
+    assert.ok(warns.some((w) => /2025-03-31\.basil/.test(w) && w.includes(STRIPE_API_VERSION)));
+  } finally {
+    console.warn = orig;
+  }
 });

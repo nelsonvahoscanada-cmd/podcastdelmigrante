@@ -18,7 +18,7 @@
     cortesía PREMIUM_GIFT o figuran en billing_protected. La regla se aplica
     aquí (mensaje claro) y en la base (triggers de 0006).
 */
-import { stripeRequest } from "./stripe.js";
+import { stripeRequest, EXPANSIONES_VALIDAS, STRIPE_API_VERSION } from "./stripe.js";
 
 export const PRICE_CENTS = 2499;
 export const CURRENCY = "cad";
@@ -277,6 +277,9 @@ export async function procesarEvento(env, db, event) {
   const prev = await db.prepare("SELECT result FROM billing_events WHERE stripe_event_id = ?").bind(event.id).first();
   if (prev && ["aplicado", "ignorado", "rechazado"].includes(prev.result)) return { resultado: "duplicado" };
   const obj = (event.data && event.data.object) || {};
+  /* El webhook debe estar registrado con la misma versión que la API. Si no,
+     se procesa igual (el estado se relee de la API) pero queda el aviso. */
+  if (event.api_version && event.api_version !== STRIPE_API_VERSION) console.warn("Webhook con otra versión de la API", event.api_version, "esperada", STRIPE_API_VERSION);
   if (!prev) {
     await db
       .prepare("INSERT OR IGNORE INTO billing_events (stripe_event_id, type, livemode, stripe_created, object_id, received_at) VALUES (?, ?, ?, ?, ?, ?)")
@@ -334,7 +337,14 @@ async function aplicar(env, db, event, obj) {
       /* La suscripción primero (estado y orden), luego la factura desde la API */
       const s = await sincronizarSuscripcion(env, db, subId, event.created);
       if (s.result === "rechazado") return s;
-      const inv = await stripeRequest(env, "GET", `/v1/invoices/${obj.id}`, { expand: ["payments.data.payment.payment_intent", "charge"] }).catch(() => obj);
+      /* Factura desde la API (fuente de verdad) con el cargo y su transacción
+         de saldo: así se obtienen el cargo, el pago y la comisión real en una
+         sola consulta. Si la API falla, se usa el evento y la conciliación
+         completa lo que falte. */
+      const inv = await stripeRequest(env, "GET", `/v1/invoices/${obj.id}`, { expand: EXPANSIONES_VALIDAS.invoice }).catch((e) => {
+        console.error("Factura no disponible en la API; se usa el evento", obj.id, (e && (e.code || e.status)) || "error");
+        return obj;
+      });
       await guardarFactura(env, db, inv, subId);
       const sub = await db.prepare("SELECT membership_id FROM billing_subscriptions WHERE stripe_subscription_id = ?").bind(subId).first();
       if (event.type === "invoice.payment_failed" && sub) {
@@ -437,7 +447,11 @@ export async function guardarFactura(env, db, inv, subscriptionId) {
       inv.livemode ? 1 : 0, inv.created || null, nowIso(), nowIso()
     )
     .run();
-  if (inv.status === "paid" && charge) await registrarComision(env, db, inv.id, charge);
+  const chObj = typeof inv.charge === "object" && inv.charge ? inv.charge : null;
+  const bt = chObj && typeof chObj.balance_transaction === "object" ? chObj.balance_transaction : null;
+  if (inv.status === "paid" && bt && Number.isFinite(bt.fee)) {
+    await db.prepare("UPDATE billing_invoices SET stripe_fee = ?, updated_at = ? WHERE stripe_invoice_id = ? AND stripe_fee IS NULL").bind(bt.fee, nowIso(), inv.id).run();
+  } else if (inv.status === "paid" && charge) await registrarComision(env, db, inv.id, charge);
 }
 
 /* Comisión REAL de Stripe del cobro (balance transaction). Si Stripe todavía
@@ -446,7 +460,7 @@ export async function registrarComision(env, db, invoiceId, chargeId) {
   const cur = await db.prepare("SELECT stripe_fee FROM billing_invoices WHERE stripe_invoice_id = ?").bind(invoiceId).first();
   if (!cur || cur.stripe_fee != null) return;
   try {
-    const ch = await stripeRequest(env, "GET", `/v1/charges/${chargeId}`, { expand: ["balance_transaction"] });
+    const ch = await stripeRequest(env, "GET", `/v1/charges/${chargeId}`, { expand: EXPANSIONES_VALIDAS.charge });
     const bt = ch && typeof ch.balance_transaction === "object" ? ch.balance_transaction : null;
     if (bt && Number.isFinite(bt.fee)) await db.prepare("UPDATE billing_invoices SET stripe_fee = ?, updated_at = ? WHERE stripe_invoice_id = ?").bind(bt.fee, nowIso(), invoiceId).run();
   } catch (e) {
