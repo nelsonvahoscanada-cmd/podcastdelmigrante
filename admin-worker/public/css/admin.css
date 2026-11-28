@@ -192,3 +192,26 @@ summary { cursor: pointer; color: var(--verde-oscuro); font-weight: 600; font-si
 .badge--activa, .badge--inv-usada { background: var(--verde-suave); color: var(--verde-oscuro); }
 .badge--suspendida, .badge--inv-pendiente { background: #fff4d6; color: #7a5600; }
 .badge--retirada, .badge--inv-revocada { background: #fdecea; color: var(--rojo); }
+
+/* ---------- Suscripciones y Facturación ---------- */
+.fac-mode { margin: 0 0 14px; padding: 8px 12px; border-radius: 6px; background: var(--negro); color: #c9d8a6; font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+.fac-off { border-left: 4px solid var(--rojo); }
+.fac-filters { flex-wrap: wrap; align-items: flex-end; }
+.tile--neto { border-top-color: var(--negro); }
+.tile--neto .tile__value { color: var(--verde-oscuro); }
+.tile--alerta { border-top-color: var(--rojo); }
+.fac-cats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.fac-cat { border: var(--border); border-radius: 6px; padding: 12px; background: var(--blanco); }
+.fac-cat h3 { font-size: 14px; margin-bottom: 6px; }
+.fac-cat ul { margin: 0; padding-left: 18px; font-size: 13px; }
+.fac-cat__n { font-family: var(--font-display); font-size: 26px; font-weight: 700; }
+.fac-table-wrap { overflow-x: auto; }
+.fac-table td, .fac-table th { white-space: nowrap; }
+.fac-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.fac-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.badge--al_dia { background: var(--verde-suave); color: var(--verde-oscuro); }
+.badge--pendiente_pago, .badge--cancela_al_final, .badge--enlace_enviado { background: #fff4d6; color: #7a5600; }
+.badge--en_gracia { background: #fff4d6; color: #7a5600; }
+.badge--gracia_vencida, .badge--cancelada, .badge--enlace_vencido { background: #fdecea; color: var(--rojo); }
+.badge--sin_suscripcion, .badge--sin_enlace { background: var(--gris-100); color: var(--gris-800); }
+.fac-table td:last-child:not(.num) { text-align: left; }

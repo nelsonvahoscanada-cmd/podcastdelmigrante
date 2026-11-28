@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Suscripciones y Facturación</title>
+<link rel="icon" href="/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="panel">
+<header class="topbar">
+  <img src="/img/logo.png" alt="" width="44" height="44">
+  <div>
+    <p class="topbar__kicker">El Podcast del Migrante · eRadio Global Corp.</p>
+    <h1 class="topbar__title">Suscripciones y Facturación</h1>
+  </div>
+  <nav class="topbar__nav" aria-label="Secciones del panel">
+    <a href="/">Estadísticas</a>
+    <a href="/solicitudes">Solicitudes</a>
+    <a href="/invitaciones">Invitaciones</a>
+    <a href="/facturacion" aria-current="page">Facturación</a>
+  </nav>
+  <span class="topbar__badge">Privado</span>
+</header>
+
+<main class="wrap">
+  <p class="fac-mode" id="mode">MODO DE PRUEBA · Stripe simulado o en Test Mode · no se realizan cobros reales</p>
+
+  <section class="card fac-off" id="off" hidden aria-labelledby="offTitle">
+    <h2 id="offTitle" class="sol-h2">Facturación no disponible en este panel</h2>
+    <p>Esta sección solo funciona en el panel de <strong>pruebas</strong>, conectado a la base <code>podcastdelmigrante-directorio-test</code>. El panel de producción no tiene acceso a pagos.</p>
+    <p class="card__hint" id="offList"></p>
+  </section>
+
+  <div id="app" hidden>
+  <form class="filters fac-filters" id="filters">
+    <label>Negocio <input type="search" name="empresa" maxlength="80" placeholder="Nombre, BIZ o MEM"></label>
+    <label>Estado financiero
+      <select name="estado">
+        <option value="">Todos</option>
+        <option value="al_dia">Al día</option>
+        <option value="pendiente_pago">Pendiente de pago</option>
+        <option value="en_gracia">En período de gracia</option>
+        <option value="gracia_vencida">Gracia vencida</option>
+        <option value="cancela_al_final">Cancela al final del período</option>
+        <option value="cancelada">Cancelada</option>
+        <option value="sin_suscripcion">Sin suscripción</option>
+      </select>
+    </label>
+    <label>Desde <input type="date" name="desde"></label>
+    <label>Hasta <input type="date" name="hasta"></label>
+    <label>Período facturado <input type="month" name="periodo"></label>
+    <button class="btn btn--primary" type="submit">Aplicar</button>
+    <button class="btn btn--outline" type="reset">Limpiar</button>
+  </form>
+
+  <section class="tiles" id="tiles" aria-label="Indicadores"></section>
+  <p class="card__hint" id="feeNote" hidden></p>
+
+  <section class="card" aria-labelledby="catTitle">
+    <h2 id="catTitle" class="sol-h2">Perfiles por categoría</h2>
+    <p class="card__hint">Las cortesías, los fundadores y los perfiles institucionales nunca se cobran y nunca suman al MRR.</p>
+    <div class="fac-cats" id="cats"></div>
+  </section>
+
+  <section class="card" aria-labelledby="pendTitle">
+    <h2 id="pendTitle" class="sol-h2">Solicitudes pendientes de pago</h2>
+    <p class="card__hint">Solicitudes Premium en revisión o aprobadas. El enlace de pago es individual, vence y se muestra una sola vez. Pagar no publica la miniweb: la publicación sigue siendo manual.</p>
+    <div id="pendientes"><p class="empty">Cargando…</p></div>
+    <div class="inv-result" id="linkResult" hidden aria-live="polite">
+      <p class="inv-result__title" id="linkTitle"></p>
+      <label class="sol-code">Enlace de pago (solo se muestra ahora)
+        <input id="linkValue" readonly spellcheck="false">
+      </label>
+      <div class="sol-form__actions">
+        <button class="btn btn--primary" type="button" id="copyLink">Copiar enlace</button>
+        <button class="btn btn--outline" type="button" id="hideLink">Ocultar enlace</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="subTitle">
+    <div class="sol-list__head">
+      <h2 id="subTitle" class="sol-h2">Suscripciones Premium de pago</h2>
+      <a class="btn btn--outline btn--small" data-export="suscripciones" href="#">Exportar CSV</a>
+    </div>
+    <div id="suscripciones"><p class="empty">Cargando…</p></div>
+  </section>
+
+  <section class="card" aria-labelledby="renTitle">
+    <h2 id="renTitle" class="sol-h2">Próximas renovaciones (30 días)</h2>
+    <div id="renovaciones"><p class="empty">Cargando…</p></div>
+  </section>
+
+  <section class="card" aria-labelledby="factTitle">
+    <div class="sol-list__head">
+      <h2 id="factTitle" class="sol-h2">Historial de facturas</h2>
+      <span>
+        <a class="btn btn--outline btn--small" data-export="facturas" href="#">Exportar facturas (CSV)</a>
+        <a class="btn btn--outline btn--small" data-export="resumen" href="#">Exportar resumen (CSV)</a>
+      </span>
+    </div>
+    <div id="facturas"><p class="empty">Cargando…</p></div>
+  </section>
+
+  <section class="card" id="detalleCard" hidden aria-labelledby="detTitle">
+    <div class="sol-list__head">
+      <h2 id="detTitle" class="sol-h2">Detalle</h2>
+      <button class="btn btn--outline btn--small" type="button" id="closeDet">Cerrar</button>
+    </div>
+    <div id="detalle"></div>
+  </section>
+
+  <section class="card" aria-labelledby="ajTitle">
+    <h2 id="ajTitle" class="sol-h2">Parámetros y conciliación</h2>
+    <p class="card__hint">El plazo de entrega se muestra al cliente antes de pagar («desde la recepción del pago y de todos los materiales necesarios»). Cambiarlo solo afecta a los enlaces nuevos.</p>
+    <form class="sol-form fac-settings" id="settings">
+      <div class="sol-form__row">
+        <label>Plazo de entrega (días hábiles) <input type="number" name="delivery_business_days" min="1" max="30" required></label>
+        <label>Período de gracia (días) <input type="number" name="grace_days" min="0" max="30" required></label>
+        <label>Vigencia del enlace de pago (días) <input type="number" name="link_ttl_days" min="1" max="30" required></label>
+      </div>
+      <div class="sol-form__actions">
+        <button class="btn btn--primary" type="submit" data-manage>Guardar parámetros</button>
+        <button class="btn btn--outline" type="button" id="reconcile" data-manage>Conciliar ahora con Stripe</button>
+      </div>
+    </form>
+    <p class="card__hint">La conciliación también corre sola cada día: compara con Stripe, completa las comisiones reales y vence los enlaces caducados.</p>
+  </section>
+
+  <section class="card" aria-labelledby="audTitle">
+    <h2 id="audTitle" class="sol-h2">Registro de auditoría</h2>
+    <div id="auditoria"><p class="empty">Cargando…</p></div>
+  </section>
+  </div>
+
+  <p class="status" id="status" role="status"></p>
+  <p class="footnote">Importes en dólares canadienses. Los impuestos se muestran aparte: se remiten al gobierno y no son ingreso. El panel nunca ve ni guarda datos de tarjetas. Un impago no borra ni despublica perfiles ni estadísticas.</p>
+</main>
+
+<script src="/js/facturacion.js"></script>
+</body>
+</html>

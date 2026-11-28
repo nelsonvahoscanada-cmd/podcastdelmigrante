@@ -59,3 +59,46 @@ REPORT_TIMEZONE = "America/Edmonton"
 #   ACCESS_AUD          Zero Trust → Access → Applications → (app del panel) → Application Audience (AUD) Tag
 # ADMIN_EMAILS se configura como SECRETO (no aquí):
 #   npx wrangler secret put ADMIN_EMAILS     → "correo1@dominio.com,correo2@dominio.com"
+
+# ============================================================================
+# Entorno de PRUEBAS de pagos: «npx wrangler deploy --env pruebas»
+# ----------------------------------------------------------------------------
+# Worker SEPARADO (podcastdelmigrante-admin-pruebas). Wrangler NO hereda en un
+# entorno los bindings ni las variables del nivel superior, así que aquí solo
+# existen la base D1 de PRUEBAS y ninguna base de producción: el panel de
+# pruebas no puede leer ni escribir el directorio real, las estadísticas ni
+# las imágenes de las solicitudes. El panel de producción (arriba) no tiene
+# PAGOS_DB: su sección de Facturación responde 503.
+# Secretos (nunca aquí; «npx wrangler secret put NOMBRE --env pruebas»):
+#   ADMIN_EMAILS, BILLING_ADMIN_EMAILS, STRIPE_SECRET_KEY (rk_test_… / sk_test_…)
+# Variables en Cloudflare (keep_vars): ACCESS_TEAM_DOMAIN, ACCESS_AUD de la
+# aplicación de Access del dominio de pruebas.
+# ============================================================================
+[env.pruebas]
+name = "podcastdelmigrante-admin-pruebas"
+workers_dev = false
+preview_urls = false
+routes = [
+  { pattern = "admin-pruebas.podcastdelmigrante.com", custom_domain = true }
+]
+
+# Conciliación automática diaria con Stripe (modo de prueba): 09:17 UTC.
+[env.pruebas.triggers]
+crons = ["17 9 * * *"]
+
+[[env.pruebas.d1_databases]]
+binding = "DIRECTORIO_DB"
+database_name = "podcastdelmigrante-directorio-test"
+database_id = "b5dc23a4-7c79-4e96-99a7-abf97456d92d"   # base de PRUEBAS (no es producción)
+
+[[env.pruebas.d1_databases]]
+binding = "PAGOS_DB"
+database_name = "podcastdelmigrante-directorio-test"
+database_id = "b5dc23a4-7c79-4e96-99a7-abf97456d92d"   # misma base de PRUEBAS
+
+[env.pruebas.vars]
+REPORT_TIMEZONE = "America/Edmonton"
+PAGOS_MODO = "test"
+# Dirección de la vista previa de Cloudflare Pages donde vive /pago (pruebas).
+# Se define en Cloudflare (keep_vars) cuando exista la vista previa, p. ej.
+#   PAGOS_SITE_ORIGIN = "https://<rama>.podcastdelmigrante.pages.dev"

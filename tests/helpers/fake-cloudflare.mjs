@@ -10,7 +10,11 @@ import { DatabaseSync } from "node:sqlite";
 /* Aplica todas las migraciones de db/<base> (por defecto db/directorio) en
    orden (o solo hasta `upTo`, o todas menos las de `skip`, para simular una
    base a la que aún no se le aplicó una migración). */
-export function fakeD1({ upTo, skip = [], base = "directorio" } = {}) {
+/* latencia (ms o función): cada consulta espera como una llamada de red a D1
+   real. Sin ella las consultas resuelven al instante y algunas carreras entre
+   peticiones simultáneas no pueden aparecer en las pruebas. */
+export function fakeD1({ upTo, skip = [], base = "directorio", latencia = 0 } = {}) {
+  const espera = () => (latencia ? new Promise((r) => setTimeout(r, typeof latencia === "function" ? latencia() : latencia)) : null);
   const db = new DatabaseSync(":memory:");
   const dir = new URL(`../../db/${base}/`, import.meta.url);
   for (const f of readdirSync(dir).filter((f) => f.endsWith(".sql")).sort()) {
@@ -22,15 +26,16 @@ export function fakeD1({ upTo, skip = [], base = "directorio" } = {}) {
     let args = [];
     const stmt = {
       bind(...a) { args = a.map((v) => (v === undefined ? null : v)); return stmt; },
-      async first() { return db.prepare(sql).get(...args) || null; },
-      async all() { return { results: db.prepare(sql).all(...args) }; },
-      async run() { return stmt._run(); },
+      async first() { await espera(); return db.prepare(sql).get(...args) || null; },
+      async all() { await espera(); return { results: db.prepare(sql).all(...args) }; },
+      async run() { await espera(); return stmt._run(); },
       _run() { const r = db.prepare(sql).run(...args); return { success: true, meta: { changes: r.changes } }; },
     };
     return stmt;
   };
   /* Como D1: batch() es una transacción (todo o nada). */
   async function batch(stmts) {
+    await espera();
     db.exec("BEGIN");
     try {
       const out = stmts.map((s) => s._run());
